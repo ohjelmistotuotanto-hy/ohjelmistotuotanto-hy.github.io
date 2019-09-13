@@ -435,63 +435,64 @@ Definition done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ket
 
 ### Sprintin suunnittelu
 
-Ennen jokaista sprinttiä järjestetään _sprint planning_, sprintin suunnittelukokous
+Ennen jokaista sprinttiä järjestetään _sprint planning_, sprintin suunnittelukokous.
 
-Aiemmin Scrum määritteli, että kokous on kaksiosainen, nykyään puhutaan ainoastaan kokouksen kahdesta aiheesta (engl. topic)
+Aiemmin Scrum määritteli, että kokous on kaksiosainen, vuoden 2017 Scrum guide yksinkertaisti asioita ja nykyään puhutaan ainoastaan sprintin suunnittelun kahdesta aiheesta (engl. topic).
 
-Ensimmäisen aihe on selvittää mitä sprintin aikana tehdään
-Product owner esittelee product backlogin kärjessä olevat vaatimukset
-Tiimin on tarkoitus olla riittävällä tasolla selvillä siitä, mitä vaatimuksilla tarkoitetaan
-Tiimi arvioi kuinka monta backlogin eli tehtävälistan vaatimuksista se kykenee sprintin aikana toteuttamaan (Definition of donen määrittelemällä laadulla)
+Ensimmäisenä aiheena on selvittää _mitä_ sprintin aikana tehdään. Product owner esittelee tiimille product backlogin kärjessä olevia vaatimuksia. Tiimin tulee päästä selvyyteen vaatimuksista sillä tasolla, että heidän on vähintäänkin summittaisesti mahdollista arvioida kuinka paljon vaatimuksen toteuttaminen vaatisi resursseja, sillä tiimin tulee arvioida kuinka monta backlogin se kykenee sprintin aikana toteuttamaan Definition of donen määrittelemällä laadulla.
 
-Sprintin aikana toteutettavien vaatimusten lisäksi asetetaan sprintin tavoite (sprint goal)
-Tavoite on yksittäisiä vaatimuksia geneerisempi ilmaus siitä mitä tulevassa sprintissä on tarkoitus tehdä
+Sprintin aikana toteutettavien vaatimusten valinnan lisäksi asetetaan sprintin tavoite _sprint goal_, joka on yksittäisiä vaatimuksia geneerisempi ilmaus siitä, mitä tulevassa sprintissä on tarkoitus tehdä. 
 
-### Sprint planning
+Suunnittelukokouksen toisena aiheena on selvittää _miten_ sprintin tavoitteet saavutetaan. 
 
-Sprint planning Suunnittelukokouksen toisena aiheena on selvittää miten sprintin
-tavoitteet saavutetaan
-Tämä yleensä edellyttää että tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla
-Aikaansaannoksena on usein lista tehtävistä (task), jotka sprintin aikana on toteutettava, jotta sprinttiin valitut vaatimukset saadaan toteutettua
-Suunnittelun aikana identifioidut tehtävät kirjataan sprintin backlogiin eli sprintin tehtävälistaan
-Sprint planningin maksimikesto on 8 tuntia jos sprinttien pituus on 4 viikkoa ja muuten 4 tuntia
-Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa ensi viikolla
+Tämä yleensä tarkoittaa, että tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla. Suunnittelukokouksen toisen osan tuotoksena on usein lista tehtävistä (task), jotka sprintin aikana on toteutettava, jotta sprinttiin valitut vaatimukset saadaan toteutettua. Suunnittelun aikana identifioidut tehtävät kirjataan sprintin backlogiin eli sprintin tehtävälistaan.
+
+Sprint planningin maksimikesto on 8 tuntia jos sprinttien pituus on 4 viikkoa ja muuten 4 tuntia.
+
+Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa [viikolla 2](/viikko2/)
 
 ### Daily scrum – päiväpalaveri
 
-Jokainen päivä sprintin aikana aloitetaan daily scrumilla eli korkeintaan 15 minuutin mittaisella palaverilla
-Aina samaan aikaan, samassa paikassa, kaikkien kehittäjien oltava paikalla
-Jokainen tiimin jäsen vastaa vuorollaan kolmeen kysymykseen
-Mitä sain aikaan edellisen tapaamisen jälkeen?
-Mitä aion saada aikaan ennen seuraavaa tapaamista? Mitä esteitä etenemiselläni on?
+Jokainen päivä sprintin aikana aloitetaan _daily scrumilla_ eli korkeintaan 15 minuutin mittaisella palaverilla. Palaveri pidetään aina samaan aikaan, samassa paikassa ja kaikkien kehittäjien oletetaan olevan paikalla.
 
-Kuka tahansa saa olla seuraamassa daily scrumia, mutta vain tiimin jäsenillä on puheoikeus
-Palaverin on tarkoitus olla lyhyt ja muu keskustelu ei ole sallittua
-Jos jollakin on ongelmia, Scrum master keskustelee asianomaisen kanssa daily scrumin jälkeen
+Daily scrumin on tarkoituksena ylläpitää läpinäkyvyyttä siihen mitä sprintissä tapahtuu. Standardimallisessa päiväpalaverissa jokainen kehitystiimin jäsen vastaa vuorollaan kolmeen kysymykseen
+- Mitä sain aikaan edellisen tapaamisen jälkeen?
+- Mitä aion saada aikaan ennen seuraavaa tapaamista? 
+- Mitä esteitä etenemiselläni on?
 
-Jos muuhun palaverointiin, esim. suunnitteluun tai vaatimusten tarkentamiseen on tarvetta, tulee palaverit järjestää daily scrumista erillään
+Kuka tahansa saa olla seuraamassa daily scrumia, mutta vain tiimin jäsenillä on puheoikeus. Palaverin on tarkoitus olla lyhyt ja liian rönsyilevä keskustelu ei ole soutavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, scrum master huolehtii, että ongelmiin palataan asianomaisen kanssa daily scrumin jälkeen.
 
-Scrum ei ota kantaa muihin palavereihin
+Jos muuhun palaverointiin, esim. suunnitteluun tai vaatimusten tarkentamiseen on tarvetta, tulee palaverit järjestää daily scrumista erillään. Scrum ei ota kantaa muihin sprintin aikaisiin palavereihin. 
 
-### Sprint review
+Syyskuun 3. 2019 ilmestynyt [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book), jonka kirjoittajissa on mukana mm. toinen Scrumin kehittäjistä Jeff Sutherland, antaa hieman Scrum guidea laajemman ja mielenkiintoisemmankin kuvauksen siitä mikä Daily Scrum -palaverin rooli on:
+
+> Have a short event every day to replan the Sprint, to optimize the chances first of meeting the Sprint Goal and second of completing all Sprint Backlog Items. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development. Focus on the next day’s work but keep the remainder of the Sprint in mind.
+
+Pelkän statuspalaverin (mitä tein eilen, mitä tänään ja mitä esteitä minulla on) sijaan  päiväpalaverin roolina on myös tarvittaessa uudelleensuunnata kehitystyötä siten, että sprintin tavoitteet pyrittäisiin edelleen saavuttamaan. 
+
+Eli siinä missä scrum guide antaa päiväpalaverille vaatimattoman läpinäkyvyyttä korostavan tehtävän, on uuden kirjan näkemyksen mukaan päiväpalaverilla roolinsa Scrumin inspect-and-adapt-syklissä, eli asioiden tilaa tarkastellaan ja tarvittaessa uudelleensuunnataan.
+
+### Sprintin katselmointi
  
-Sprintin katselmointi Sprintin päätteeksi järjestetään sprint review eli katselmointi
-Katselmointiin voi osallistua kuka tahansa
-Informaali tilaisuus, jonka aikana tiimi esittelee sprintin aikaansaannoksia
-Katselmoinnissa tarkastellaan/demotaan toteutettua, toimivaa ohjelmistoa, powerpoint-kalvojen näyttäminen katselmoinnissa on kielletty!
+Sprintin katselmointi Sprintin päätteeksi järjestetään sprint review eli katselmointi. Katselmointi on informaali tilaisuus, jonka aikana kehitystiimi esittelee sprintin aikaansaannoksia kaikille kehitettävästä tuotteesta kiinnostuneille.
 
-Scrum master huolehtii, että ainoastaan niitä ominaisuuksia demonstroidaan jotka on toteutettu ”kokonaan” eli definition of donen mukaisesti
-Product owner varmistaa, mitkä vaatimuksista toteutettiin hyväksyttävällä tavalla. Ne vaatimukset joita ei hyväksytä toteutetuksi siirretään takaisin product backlogiin
-Katselmoinnin aikana kuka tahansa saa antaa palautetta tuotteesta ja esim. ehdottaa uusia vaatimuksia lisättäväksi product backlogiin
-Katselmointi aiheuttaa usein myös tarpeen product backlogin osittaiseen uudelleenpriorisointiin
+Katselmoinnissa on tarkoituksena tarkastella, demota ja kokeilla toteutettua, toimivaa ohjelmistoa. Powerpoint-kalvojen näyttäminen katselmoinnissa on suorastaan kiellettyä. 
 
-Myös katselmoinnin kesto on rajoitettu (4h tai 2h riippuen sprintin kestosta)
+Scrum master huolehtii, että katselmoinnissa demonstroidaan ainoastaan niitä ominaisuuksia, jotka on toteutettu kokonaan eli Definition of donen tasolla. Näin pyritään antamaan mahdollisimman realistinen kuva siitä miten sovelluksen kehitys etenee. 
+
+Product owner varmistaa (joko katselmoinnissa tai ennen sitä), mitkä sprintisä kehitetyistä vaatimuksista on toteutettu hyväksyttävällä tavalla, eli että ne toimivat oletusten ja odotusten mukaan sen lisäksi että ne on toteutettu Definition of donen määrittelemällä laatutasolla. Ne vaatimukset, joita ei hyväksytä toteutetuksi, siirretään takaisin product backlogiin viimeisteltäväksi myöhempien sprinttien aikana. 
+
+Katselmoinnin aikana kuka tahansa saa antaa palautetta tuotteesta ja esimerkiksi ehdottaa uusia vaatimuksia lisättäväksi product backlogiin. Katselmointi aiheuttaa usein myös tarpeen product backlogin osittaiseen uudelleenpriorisointiin.
+
+Myös katselmoinnin kesto on rajoitettu (4h tai 2h riippuen sprintin kestosta).
 
 ### Retrospektiivi
 
 Sprintin katselmoinnin ja seuraavan sprintin alun välissä pidettävä palaveri, jonka aikana tiimi tarkastelee omaa työskentelyprosessiaan
 Identifioidaan mikä meni hyvin ja missä asioissa on parantamisen varaa
 Mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana
+
+### Periaattet: transparency - inspection -adaptation
 
 Retrospektiivien ja koko scrumin tärkeimmät taustaperiaatteet ovatkin
 transparency (läpinäkyvyys), inspection (tarkkailu) ja adaption (mukauttaminen)
@@ -503,10 +504,10 @@ Jokaisen sprintin yhteydessä järjestetään uusi sprintin suunnittelu, jok
 
 Eli asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja, että kehitettävää tuotetta on mahdollista mukauttaa
 
-### Periaattet: transparency - inspection -adaptation
-
 ![]({{ "/images/2-2.png" | absolute_url }})
 
 ### Arvot
+
+### Scrum in real life...
 
 ## Scrumin ongelmia
