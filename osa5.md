@@ -1,8 +1,8 @@
 ---
 layout: page
-title: osa 5
+title: viikko5 5
 inheader: yes
-permalink: /osa5/
+permalink: /viikko5/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
@@ -10,4 +10,4 @@ permalink: /osa5/
   />
 </a>
 
-# Laadunhallinta
+# Viikko 5: Ketterien menetelmien skaalaaminen

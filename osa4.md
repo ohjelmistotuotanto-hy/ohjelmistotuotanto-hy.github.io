@@ -10,4 +10,4 @@ permalink: /osa4/
   />
 </a>
 
-# Ketterä projektinhallinta
+# Viikko 4: Ohjelmistojen suunnittelu

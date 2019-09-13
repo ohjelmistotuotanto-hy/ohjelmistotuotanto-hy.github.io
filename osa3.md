@@ -10,4 +10,4 @@ permalink: /osa3/
   />
 </a>
 
-# Vaatimusmäärittely
+# Viikko 3: Ohjelmistojen laadunhallinta
