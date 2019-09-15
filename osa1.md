@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Viikko 1: Ohjelmistotuotanto, ketteryys, Scrum'
+title: 'Viikko 1'
 inheader: yes
 permalink: /viikko1/
 ---
@@ -9,6 +9,8 @@ permalink: /viikko1/
   <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
   />
 </a>
+
+# Viikko 1: Ohjelmistotuotanto, ketteryys, Scrum
 
 Ensimmäisen viikon teemoina...
 
@@ -488,26 +490,80 @@ Myös katselmoinnin kesto on rajoitettu (4h tai 2h riippuen sprintin kestosta).
 
 ### Retrospektiivi
 
-Sprintin katselmoinnin ja seuraavan sprintin alun välissä pidettävä palaveri, jonka aikana tiimi tarkastelee omaa työskentelyprosessiaan
-Identifioidaan mikä meni hyvin ja missä asioissa on parantamisen varaa
-Mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana
+Eräs ketterän manifestin periaatteista toteaa seuraavasti
 
-### Periaattet: transparency - inspection -adaptation
+> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
 
-Retrospektiivien ja koko scrumin tärkeimmät taustaperiaatteet ovatkin
-transparency (läpinäkyvyys), inspection (tarkkailu) ja adaption (mukauttaminen)
-Lyhyt kehityssykli mahdollistaa vaatimusten uudelleenpriorisoinnin ja muuttamisen ymmärryksen kasvaessa tai bisnesympäristön muuttuessa
-Retrospektiivi kannustaa tiimiä jatkuvasti parantamaan työprosessiaan
-Daily scrumit tuovat esiin projektin tilanteen päivittäisellä tasolla kaikille tiimin jäsenille
+Scrumissa jokaisen sprintin päätteeksi pidettävä retrospeektiivi on tämän periaatteen ilmentymä. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä tiimi tarkastelee nimenomaan omaa työskentelyprosessiaan.
 
-Jokaisen sprintin yhteydessä järjestetään uusi sprintin suunnittelu, joka mahdollistaa kehitystyön aikana opitun huomioimisen priorisoinnissa ja uusien ominaisuuksien suunnittelussa
+Tarkoituksena on identifioida mikä meni hyvin ja missä asioissa on parantamisen varaa.
+Palaverissa mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana.
 
-Eli asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja, että kehitettävää tuotetta on mahdollista mukauttaa
+Aikojen saatossa on kehitetty [lukuisia tekniikoita](https://retrospectivewiki.org) retrospektiivien pitämiseen. Palaamme niihin laskareiden yhteydessä.
+
+### Scrumin periaattet: transparency - inspection - adaptation
+
+Kuten aiemmin mainittiin, on Scrumin takana kolme periaatetta, läpinäkyvyys (transparency), tarkkailu (inspection) ja mukauttaminen (adaptation). Retrospektiivi on nimenomaan kehitysprosessin tarkkailun ja mukauttamisen väline. 
+
+Kehitettävän tarkkailun ja sen suunnan mukauttamisen työkaluja ovat ensinnäkin lyhyt sprinteissä tapahtuva kehityssykli sekä säännölliset palaverit, aina sprinteittäisestä suunnittelusta ja katselmoinnista päiväpalaveriin.
+
+Tarkkailun ja mukauttamisen taas mahdollistaa läpinäkyvyys, eli asioita ei piilotella, vaan sekä tuotteen kehityssuunta, valmiin määritelmä että menossa olevan sprintin status pidetään koko ajan avoimesti kaikkien nähtävillä ja asioista keskustellaan sekä sprintittäisellä että päivittäisellä tasolla.
+
+Toisinsanoen asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja, että kehitettävää tuotetta on mahdollista mukauttaa haluttuun suuntaan.
 
 ![]({{ "/images/2-2.png" | absolute_url }})
 
-### Arvot
+### Scrumin arvot
 
-### Scrum in real life...
+Scrum guide nostaa esiin myös joukon _arvoja_ (engl. values) oleellisena seikkana sen taustalla että oikeanlainen mentaliteetti tehokkaaseen sovelluskehitykseen pääsee syntymään.
+
+> When the values of commitment, courage, focus, openness and respect are embodied and lived by the Scrum Team, the Scrum pillars of transparency, inspection, and adaptation come to life and build trust for everyone.
+
+
+Tiimin tulee olla sitoutunut (commitment) yhteisen tavoitteen saavuttamiseksi ja fokusoida oikeiden asioiden tekemiseen. Tulee olla myös rohkeutta tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli kaiken suhteen tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin kunnioittaen koko ajan kaikkia kehitystiimin jäseniä sekä ohjelmisston sidosryhmiä.
+
+Syksyllä 2019 [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil, eli se hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa. 
+
+Scrumin ei siis pidä missään tapauksessa olevan orjallista Scrum Guiden ohjeiden noudattamista, jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. 
 
 ## Scrumin ongelmia
+
+Scrum on osoittautunut monin paikoin paremmaksi tavaksi ohjelmistojen kehittämiseen kuin vesiputousmalli tai muut suunnitelmavetoiset mallit. Scrum ei kuitenkaan ole mikään [silver bullet](https://en.wikipedia.org/wiki/No_Silver_Bullet), eli yleispätevä resepti, joka ratkaisisi kaikki sovelluskehityksen ongelmat, ja Scrumin käytön yleistyessä myös epäonnistuneiden Scrum-projektien määrä kasvaa.
+
+Arvojen noudattamattomuus...
+
+Yhdetenä syynä ongelmiin sanotaan olevan [ScrumBut](https://www.scrum.org/resources/what-scrumbut):
+
+- We use Scrum, but having a Daily Scrum every day is too much overhead, so we only have one per week.
+- We use Scrum, but Retrospectives are a waste of time, so we don't do them.
+- We use Scrum, but we can't build a piece of functionality in two weeks, so our Sprints are 3 months long
+
+ScrumButilla siis viitataan siihen että noudatetaan jotain Scrumin osa-alueita, mutta tehdään todella isoja kompromisseja joidenkin oleellisten osien suhteen ja näin ollen tehdään suuria kompromisseja läpinäkyvyyden, tarkkailun tai mukauttamisen suhteen.
+
+Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluokkaa olevat projektit aiheuttavat edelleen haasteita Scrumille ja muillekin ketterille menetelmille vaikkakin asiaan on viime vuosina kiinnitetty huomiota. [Uncle Bob Martinin Scrum-kritiikki](https://www.infoq.com/news/2010/02/scrum-failings) nostaa esiin nämä ja muutamia muitakin oleellisia seikkoja:
+
+- _No Technical Practices_: Scrum is a project management framework and doesn’t make any technical recommendations.
+- _Automated Testing_: without high quality automated tests it is difficult to work in short cycles and know that stories are really done.
+- _30 Day Sprints are too long_ 
+- _Certification in CSM_: The Certificate that a Scrum Master, a trained CSM, holds means that on many teams only that person plays the role.
+- _Scrum Master sometimes turns into Project Manager_: Some Scrum Masters use Scrum as a form of micro management and control. 
+- _Scrum carries an anti-management undercurrent_: "Scrum over-emphasizes the role of the team as  self-managing. Self-organizing and self-managing teams are a good thing. But there is a limit. Scrum does not describe this with enough balance."
+- _Multiple Teams_: Scrum and generic Agile have little to say about how to scale.
+- _Insufficient Guidance Regarding the Product Backlog_
+
+Koska Scrum ei ota mitään kantaa ohjelmistokehityksen teknisiin periaatteisiin, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden, kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riksiä nostaa se jos projektissa ei ole automaattisia testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
+
+Martin pitää Scrum masterin roolia ongelmallisena monellakin tavalla. Ensinnäkin häntä hiertää sertifiointisysteemi, Scrum mastereita pikakoulutetaan parin päivän kursseilla ja joskus Scrum masterina toimiikin aiemmin projektimanagerin titteliä kantanut, vaikka sertifikaatti on suoritettu, ei henkilön toimintatapaan ole välttämättä tullut muita muutoksia kuin uusi terminologia. 
+
+Vaikka Martin pelkää, että Scrum masterit monesti ovat ainoastaan managereita valekaavussa, hän pitää ongelmallisena myös sitä että Scrum olettaa tiimien olevan täysin itseorganisoituvia. Itseorganisoituminen toimii monissa konteksteissa ja joillaki tiimeillä, mutta sillä on rajansa, varsinkin jos tuotetta on tekemässä useita Scrum-tiimejä, voidaan ajautua ongelmiin jos luotetaan pelkkään itseorganisoitumiseen.
+
+Monimutkaisen tuotteen hallinnoiminen on kompleksista, Scrum ei kuitenkaan ota millään tavalla kantaa product backlogin organisointiin ja jättää soveltajat omilleen asian suhteen.
+
+Uncle Bobin kritiikki on vuodelta 2010 mutta pitkälti validi edelleen. 
+
+Scrumin rinnalle viime vuosina voimakkaasti erityisesti Suomessa noussut [Scaled agile framework eli SAFe](https://www.scaledagileframework.com/) itseasiassa tarjoaa monia lääkkeitä Martininkin esiin nostamiin ongelmiin. SAFe on kuitenkin saanut myös voimakasta kritiikkiä ja autoritiivisetkin tahot (kuten Scrumin kehittäjä Ken Schwaber) ovat jopa kyseenalaistaneet menetelmän ketteryyden. Tutustumme SAFeen [viikolla 5](/viikko5).
+
+Scrum kuten muutkin ketterät kehitystavat ovat syntyneet pitkälti ohjelmistokehittäjien keskuudessa. Melko yleinen raportoitu ongelma ketterään kehitykseen siirryttäessä onkin se, että muu organisaatio jää täysin ennalleen. Tällöin tuloksena on usein nimikkeen [waterscrumfall](https://www.infoq.com/news/2011/12/water-scrum-fall-is-the-norm/) saanut kehitysmalli, missä ainoastaan ohjelman uusien toiminnallisuuksien kehitys tapahtuu Scrumia mukaillen, muttabudjetointi, vaatimusten hallinta sekä tuotantoonvienti etenevät edelleen vanhoja kontrolloituja prosesseja noudattaen. 
+
+Päätetään alustava Scrumiin tutustumisemme menetelmän kehittäjien sanoihin
+_Scrum is easy to undestand but extremely difficult to master_.
