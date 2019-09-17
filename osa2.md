@@ -10,7 +10,7 @@ permalink: /osa2/
   />
 </a>
 
-# Viikko 2: Ohjelmistojen vaatimusmäärittely ja tuotteen hallinta
+# Viikko 2: Ohjelmistojen vaatimusmäärittely, tuotteen ja sprintin hallinta
 
 Viikon aiheina ohjelmistojen vaatimusmäärittely erityisesti ketterien menetelmien menetelmät siihen. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
@@ -28,57 +28,52 @@ Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely t
  
 ## Vaatimusmäärittelyn vaiheet
 
- Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä prosessimallista
-Joka tapauksessa asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana
+Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä prosessimallista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
+
 Vaatimusmäärittely jaotellaan yleensä muutamaan työvaiheeseen
-Vaatimusten kartoitus (engl. elicitation) Vaatimusten analyysi
-Vaatimusten validointi
-Vaatimusten dokumentointi Vaatimusten hallinnointi
+- vaatimusten kartoitus (engl. elicitation) 
+- vaatimusten analyysi
+- vaatimusten validointi
+- vaatimusten dokumentointi 
+- vaatimusten hallinnointi
  
-Useimmiten työvaiheet limittyvät ja vaatimusmäärittely etenee spiraalimaisesti tarkentuen
-Ensin kartoitetaan, analysoidaan ja dokumentoidaan osa vaatimuksista
-Prosessia jatketaan kunnes haluttu määrä vaatimuksia on saatu dokumentoitua tarvittavalla tarkkuudella
+Useimmiten työvaiheet limittyvät ja vaatimusmäärittely etenee spiraalimaisesti tarkentuen, eli ensin kartoitetaan, analysoidaan ja dokumentoidaan osa vaatimuksista. Prosessia jatketaan kunnes haluttu määrä vaatimuksia on saatu dokumentoitua tarvittavalla tarkkuudella.
          
-   
-Vaatimusmäärittelyn vaiheet
+### Vaatimusten kartoituksen menetelmiä
   
+Vaatimusmäärittelyn aluksi on syytä selittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tälläisia ovat luonnolliseti ohjemiston aiotut loppukäyttäjät sekä ylläpitäjät,
+tilaavan yrityksen päätösvaltaiset edustajat sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määritteltävä ohjelmisto integroituu.
+
+Kun eri sidosryhmät on karotitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
+- haastatellaan sidosryhmien edustajia
+- pidetään brainstormaussessioita asiakkaan ja sovelluskehitystiimin kesken
  
-Selvitetään järjestelmän sidosryhmät (stakeholders) eli tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa
-Käytetään ”kaikki mahdolliset keinot” vaatimusten esiin kaivamiseen, esim.:
-Haastatellaan sidosryhmien edustajia
-Pidetään brainstormaussessioita asiakkaan ja kehittäjien kesken
+Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään mitä erilaisa käyttäjäryhmiä sovelluksella on, ja keksitään eri käyttäjäryhmille tyypillisä sovelluksen käyttöskenaarioita. 
+
+Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
+
+Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä, voidaan vaatimuksia selvittää myös havainnoimalla loppukäyttäjän työskentelyä, tästä menetelmästä käytetään nimitystä _etnografia_.
+
+Jos uuden sovelluksen on tarkoitus korvata olemassaoleva työskentelyprosessi, esimerkiksi tilanvarausjärjestelmä, on usein hyödyllistä tarkastella myös itse työskentelyprosessia ja koittaa miettiä sen suoraviivaistamista. Ei nimittäin ole useinkaan mielekästä toisintaa vanhaa, ehkä kankeaaki työskentelyprosessia sellaisenaan uuteen sovellukseen.
  
-Alustavien keskustelujen jälkeen kehittäjätiimi voi strukturoida vaatimusten kartoitusta
-Mietitään järjestelmän kuviteltuja käyttäjiä ja keksitään käyttäjille tyypillisiä käyttöskenaarioita
-Tehdään paperiprototyyppejä ja käyttöliittymäluonnoksia
+### Vaatimusten analysointi, dokumentointi ja validointi
+
+Vaatimusten keräämisen lisäksi vaatimuksia täytyy analysoida. Onko vaatimuksissa keskinäisiä ristiriitoja ja ovatko ne riittävän kattavat, eli tottavatko ne huomioon kaikki mahdolliset käyttöskenaariot. On myös oleellista varmistaa, että vaatimusten toteutuminen on ylipäätään mahdollista ja taloudellisesti järkevää. 
+
+Usein on myös järkevä varmistaa, että vaatimus on _todennettavissa_, eli että valmiista järjestelmästä pystytään ylipäätään toteamaan noudattaako järjestelmä vaatimusta. Esim. vaatimus _järjestelmä on helppokäyttöinen_ ei ole sikäli hyvä, että helppokäyttöisyyden testaaminen on vaikeaa. Käytettävyyteenkin liittyviä vaatimuksia on mahdollista määritellä [todennettavalla tavalla](http://www.pcuf.fi/sytyke/lehti/kirj/st20093/ST093-18A.pdf).
  
+Kartoiteut vaatimukset on myös pakko _dokumentoida_ muodossa tai toisessa. Ennen koodaamaan ryhtymistä sovelluskehittäjä tarvitsee "speksin", eli kuvauksen siitä miten sovelluksen tulee toimia. Myös testaamista varten tarvitaan kuvaus sille miten testattavan ohjelman oletetaan toimivan.
+
+Erityisesti vesiputousmallia sovellettaessa vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmistotuottajatiimin välisessä sopimuksessa. Sovelluksen hinta perustuu vaatimusmäärittelyssä kuvauttuun toiminnallisuuteen, ja jos asiakas muuttaakin mieltään, tulee siitä lisää kustannuksia. 
  
-Skenaarioita ja prototyyppejä läpikäymällä asiakas voi tarkentaa näkemystään vaatimuksista
-Jos kehitettävän järjestelmän on tarkoitus korvata olemassa oleva järjestelmä, voidaan vaatimuksia selvittää myös havainnoimalla loppukäyttäjän työskentelyä (etnografia)
+Vaatimukset on myös oleellista _validoida_, eli tulee varmistaa, että kerätyt ja dokumentoidut vaatimukset todellakin vastaavat asiakkaan mielipidettä, että ne 
+kuvaavat sellaisen järjestelmät mitä asiakas kokee tarvitsevansa tarvitsee.
  
- 
- 
- 
-Vaatimusten kartoituksen menetelmiä
-  
-Vaatimusten keräämisen lisäksi vaatimuksia täytyy analysoida:
-Onko vaatimuksissa keskinäisiä ristiriitoja Ovatko vaatimukset riittävän kattavat
-Ovatko vaatimukset sellaisia että niiden toteutuminen on mahdollista, taloudellisesti järkevää ja testattavissa
- 
-Vaatimukset on myös pakko dokumentoida muodossa tai toisessa
-Ohjelmistokehittäjiä varten: mitä tehdään
-Testaajia varten: toimiiko järjestelmä kuten vaatimukset määrittelevät
-Usein vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmistotuottajatiimin välisessä sopimuksessa
- 
-Ja validoida:
-Onko asiakas vielä sitä mieltä että kirjatut vaatimukset edustavat asiakkaan mielipidettä, eli kuvaavat sellaisen järjestelmät mitä asiakas tarvitsee
- 
+Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaatimukset muuttuvat kesken sovelluskehitysprosessin. 
    
-   
- 
- 
-Vaatimusten analysointi, validointi ja dokumentointi
-  
+Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, siis vaihtelee paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
+
+## Toiminnalliset vaatimukset
  
 Vaatimukset jakaantuvat toiminnallisiin ja ei-toiminnallisiin vaatimuksiin
 Toiminnalliset vaatimukset (functional requirements) kuvaavat mitä toimintoja järjestelmällä on
