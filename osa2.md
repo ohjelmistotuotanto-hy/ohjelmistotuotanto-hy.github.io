@@ -48,7 +48,7 @@ Kun eri sidosryhmät on karotitettu, käytetään "kaikki mahdolliset keinot"
 - haastatellaan sidosryhmien edustajia
 - pidetään brainstormaussessioita asiakkaan ja sovelluskehitystiimin kesken
  
-Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään mitä erilaisa käyttäjäryhmiä sovelluksella on, ja keksitään eri käyttäjäryhmille tyypillisä sovelluksen käyttöskenaarioita. 
+Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään mitä erilaisa _käyttäjärooleja_  sovelluksella on, ja keksitään eri käyttäjärooleille tyypillisä sovelluksen käyttöskenaarioita. 
 
 Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
 
@@ -73,24 +73,27 @@ Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaati
    
 Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, siis vaihtelee paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
 
-## Toiminnalliset vaatimukset
+## Vaatimusten luokittelu – toiminnalliset vaatimukset
  
-Vaatimukset jakaantuvat toiminnallisiin ja ei-toiminnallisiin vaatimuksiin
-Toiminnalliset vaatimukset (functional requirements) kuvaavat mitä toimintoja järjestelmällä on
-Esim.
-Asiakas voi lisätä tuotteen ostoskoriin
-Onnistuneen luottokorttimaksun yhteydessä asiakkaalle vahvistetaan ostotapahtuman onnistuminen sähköpostitse
+Kuten mainittiin vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
+
+Toiminnalliset vaatimukset (engl. functional requirements) kuvaavat mitä järjestelmällä voi tehdä, eli mitä toimintoja siinä on.
+
+Esimerkiksi verkkokaupan toiminnallisia vaatimuksia voisivat olla seuraavat
+- rekisteröitynyt asiakas voi lisätä tuotteen ostoskoriin
+- onnistuneen luottokorttimaksun yhteydessä asiakkaalle vahvistetaan ostotapahtuman onnistuminen sähköpostitse
+- järjestelmään kirjautunut asiakas näkee oman ostoshistoriansa
+- ylläpitäjä voi lisätä valikoimaan uusia tuotteita kaupan
+- tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden hintatietoja
+
+Toiminnallisten vaatimusten dokumentointi voi tapahtua esim. "feature-listoina" kuten kurssilla Ohjelmistotekniikka on tehty jo parin vuoden ajan tai UML-käyttötapauksina, joita kurssi Ohjelmistotekniikka käytti noin vuoteen 2017 asti. Ketterissä menetelmissä vaatimukset dokumentoidaan yleensä _user storyinä_, joihin tutustumme kohta tarkemmin.
+
+Riippumatta toiminnallisten vaatimusten dokumentointitavasta on melko yleistä, että vaatimuskset ilmaistaan muodossa, jossa kerrotaan jonkin käyttäjäroolin yksittäinen järjestelmän käyttöskenaario.
+
+Esim. _tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden hintatietoja_ kertoo erään järjestelmän toiminnallisuuden roolin _tavarantoimittaja_ omaaville käyttäjille. 
+
+## Vaatimusten luokittelu – ei-toiminnalliset vaatimukset
  
-Toiminnallisten vaatimusten dokumentointi voi tapahtua esim.
-”feature-listoina”
-UML-käyttötapauksina (joita käsiteltiin aiemmin kurssilla OTM)
-Ketterissä menetelmissä yleensä User storyinä, joihin tutustumme kohta tarkemmin
-Vaatimusten luokittelu – toiminnalliset vaatimukset
- 
-– –
-   
- 
-  
  
 Ei-toiminnalliset vaatimukst Ei-toiminnalliset vaatimukset (nonfunctional requirements) jakautuvat
 kahteen luokkaan: laatuvaatimuksiin ja toimintoympäristön rajoitteisiin Laatuvaatimukset (quality attributes), ovat koko järjestelmän
