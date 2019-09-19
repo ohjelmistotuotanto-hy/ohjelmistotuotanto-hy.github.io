@@ -189,104 +189,120 @@ Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Hen
   
 ## User story
 
-Ketterän vaatimusmäärittelyn tärkein työväline on User story
-Käsitteelle ei ole vakiintunutta käännöstä, joten käytämme jatkossa englanninkielistä termiä
+Ketterän vaatimusmäärittelyn tärkein työväline on _user story_. Samasta asiasta käytetään joskus suomenkielistä termiä _käyttäjätarina_, käännös ei kuitenkaan ole täysin vakiintunut, joten käytämme jatkossa englanninkielistä termiä.
  
-Alan suurimman auktoriteetin Mike Cohnin mukaan:
+Alan suurimman auktoriteetin [Mike Cohnin mukaan](https://www.mountaingoatsoftware.com/articles/advantages-of-user-stories-for-requirements):
+
 A user story describes functionality that will be valuable to either user or purchaser of software. User stories are composed of three aspects:
-1) A written description of the story, used for planning and reminder 2) Conversations about the story to serve to flesh the details of the
+
+1) A written description of the story, used for planning and reminder 
+2) Conversations about the story to serve to flesh the details of the
 story
 3) Tests that convey and document details and that will be used to determine that the story is complete
  
-Mitä ylläoleva kuvaus tarkoittaa? Jatketaan user storyihin tutustumista käymällä samalla läpi esimerkkijärjestelmää Kumpula beershop:
-https://github.com/mluukkai/BeerShop http://kumpulabeershop.herokuapp.com/
+User storyt siis kuvaavat loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia.
+
+Määritelmän alakohtien 1 ja 2 mukaan user story on karkean tason tekstuaalinen kuvaus ja lupaus/muistutus siitä, että toiminnallisuuden tarkka kuvaus on selvitettävä asiakkaan kanssa.
+
+Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvausia (_written description_)
+
+- asiakas voi lisätä tuotteen ostoskoriin
+- asiakas voi poistaa ostoskorissa olevan tuotteen
+- asiakas voi maksaa luottokortilla ostoskorissa olevat tuotteet
  
-User story
-User Storyt kuvaavat loppukäyttäjän kannalta arvoa tuottavia
-toiminnallisuuksia
-US:n ”määritelmän” alakohdat 1 ja 2 antavat ilmi sen, että User story on karkean tason tekstuaalinen kuvaus ja lupaus/muistutus siitä, että toiminnallisuuden vaatimukset on selvitettävä asiakkaan kanssa
-Seuraavat voisivat olla biershopin User storyjen tekstuaalisia kuvauksia:
-Asiakas voi lisätä oluen ostoskoriin
-Asiakas voi poistaa ostoskorissa olevan oluen
-Asiakas voi maksaa luottokortilla ostoskorissa olevat oluet
+User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimuksia, user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja lupaus, siitä että toiminnallisuuden vaatimukset tulee selventää riittävällä tasolla ennen kuin user story toteutetaan.
+
+User storyn henkeen siis kuuluu, että story on lupaus kommunikoinnista asiakkaan kanssa vaatimuksen selvittämiseksi, pelkän tekstuaalisen kuvauksen esim. _asiakas voi lisätä tuotteen ostoskoriin_ perusteella storyä ei voi vielä ruveta toteuttamaan.
+
+Määritelmän kolmas alikohta sanoo että Storyyn kuuluu "Tests that convey and document details and that will be used to determine that the story is complete". Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, minkä perusteella voidaan katsoa että story on suoriteetu.
+
+Vaihtelee hyvin paljon miten user storyihin liittyvät hyväksymökriteerit ilmaistaan. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunallinnasta vastaava taho hyväksyy storyn valmiiksi kokeilemalla vastaavaa toiminnallisuutta järjestelmästä.
+
+Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on tehnyt [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
+
+- card, eli story muistilappumainen usein jopa fyysinen pahvikortti, eli ei missään tapauksessa vesiputousmainen mappiin talletettava laaja vaatimusmäärittelydokumentti
+- conversation: jotta storyn voi toteuttaa tarvitaan paljon keskustelua sovelluskehittäjien ja product ownerin, asiakkaiden, loppukäyttäjien ym. välillä, jotta saadaan selville mistä storystä todella on kysymys
+- confirmation: kriteerit minkä perusteella voidaan todeta storyn olevan toteutettu valmiiksi
+
+### Esimerkki user storystä
+
+Usein on tapana kirjoittaa user storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle. [Scott Amblerilta](http://www.agilemodeling.com/artifacts/userStory.htm) lainattu esimerkki
+
+![]({{ "/images/2-4.jpg" | absolute_url }})
+
+Kortin etupuolelle on kirjoitettu lyhyt kuvaus storyn sisällöstä, prioriteetti ja estimaatti. 
+_Estimaatilla_ tarkoitetaan kortin toiminnallisuuden toteuttamisen työmääräarviota. Palaamme estimointiin pian tarkemmin
+
+Kortin takapuolella suhteellisen informaalilla kielellä kirjoitettu joukko storyn hyväksymiskriteerejä.
+
+Usein hyväksymiskriteerit kuvaavat joukon erilaisia ehtoja sille miten storyn kuvaaman 
+toiminnallisuuden tulee käyttäytyä eri tilanteissa. Esim. nyt storyn sisältö on _As a student I want to purhase a parking pass_, eli _opiskelija voi ostaa parkkiluvan_, hyväksymäkriteerit tarkentavat erilaisia ostamiseen liittyviä ehtoja
+
+- parkkiluvan ostajan on oltava ilmoittautunut läsnäolleeksi
+- parkkilupa myönnetään kuukaudeksi kerrallaan
+- on mahdollista ostaa vain yksi parkkilupa kuukaudessa 
  
-User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi miten joku toiminnallisuus tulee toteuttaa
-User story on ”placeholder” vaatimukselle, muistilappu ja lupaus, että toiminnallisuuden vaatimukset tulee selventää tarvittavalla tasolla ennen kuin se toteutetaan
+Hyväksymäkriteerit ovat tuloksena niistä keskusteluista mitä storyn toiminnallisuuden rajaamisesta käytään product ownerin tai asiakkaan kanssa. Usein ne nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen, miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
+
+- parkkilupa maksetaan käteisellä tai verkkopankissa
+- verkkomaksun tapauksessa on käytettävä opiskelijalle henkilökohtaisesti generoitua viitenumeroa
+
+### Hyvän user storyn kriteerit 
+
+Edellinen erimerkki 
+
+> As a student I want to purchase a parking pass so that I can drive to school
+
+on formuloitu monin paikoin [suositussa muodossa](https://www.agilealliance.org/glossary/user-story-template/) 
+
+> As a <type of user>, I want <functionality> so that <business value> 
+
+Näin muotoilemalla on ajateltu että user story kiinnittää huomion siihen kenelle kuvattava järjestelmän toiminto tuottaa arvoa. Muoto ei oikein taivu suomenkielisiin kuvauksiin, joten sitä ei tällä kurssilla käytetä. Viime aikoina tätä tapaa muotoilla user storyt on myöskin ruvettu kritisoimaan muun muassa siksi että kiinnittää liikaa huomioita siihen miten story kirjataan itse asian, eli mistä storyssä on kysymys sijaan ja formaatti on menettämässä suosiotaan.
+
+![]({{ "/images/2-5.png" | absolute_url }})
+
+Bill Wake luettelee artikkelissa [INVEST in good User Stories](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) kuusi user storyille toivottavaa ominaisuutta:
+
+- Independent
+- Negotiable
+- Valuable
+- Estimable
+- Small
+- Testable 
  
-Usein on tapana kirjoittaa User storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle
-     
-Kun User story päätetään toteuttaa, on pakko selvittää tyhjentävästi, mitkä ovat Storyn kirjaaman toiminnon vaatimukset
-User storyn henkeen siis kuuluu, että Story on lupaus kommunikoinnista asiakkaan kanssa vaatimuksen selvittämiseksi
-conversations about the story to serve to flesh the details of the story
+_Valuable_ tarkoittaa, että storyn tulee kuvata käyttäjälle arvoa tuottavia ominaisuuksia, jotka on muotoiltu käyttäen asiakkaan kieltä, ei teknistä jargonia.
  
-User story
-”määritelmän” kolmas alikohta sanoo että Storyyn kuuluu ”Tests that convey and document details and that will be used to determine that the story is complete”
-User storyyn liittyviä testejä kutsutaan yleensä Storyn hyväksymätes- teiksi (acceptance test) tai hyväksymäkriteereiksi (acceptance criteria)
-Hyväksymätesti tarkoittaa yleensä joukkoa konkreettisia testiskenaarioita joiden on toimittava, jotta User storyn kuvaaman toiminnallisuuden katsotaan olevan valmis
-Hyväksymätestien luonne vaihtelee projekteittain
-Ne voivat olla Storyn kuvauksen sisältävän kortin kääntöpuolelle kirjoitettavia tekstuaalisia skenaarioita (varsinkin jos projektissa on käytettävissä on-site customer, joka voi suorittaa hyväksymätestauksen)
+Hyvänä käytäntönä pidetään että user story kuvaa järjestelmän kaikkia osia koskevaa (esim. käyttöliittymä, bisneslogiikka, tietokanta) eli "end to end"-toiminnallisuutta, eikä pelkästään yksittästä järjestelmän teknistä kerrosta koskevaa, käyttäjän kannalta näkymätöntä teknistä ratkaisua.
+
+Esimerkiksi _lisää jokaisesta asiakkaasta rivi tietokantatauluun customers_ ei olisi suositeltava muotoilu user storylle, sillä se ei ole kirjattu käyttäjän kannalta ymmärrettävällä tavalla ja ottaa kantaa ainoastaan tietokantakerrokseen.
  
-Tai parhaassa tapauksessa automaattisesti suoritettavia testejä
+Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kun story otetaan toteutettavaksi.
+
+_Estimatable_ taas sanoo, että user storyn toteuttamisen vaatima työmäärä pitää olla arvioitavissa kohtuullisella tasolla.
+
+Työmäärän arviointi onnistuu paremmin jos user storyt ovat riittävän pieniä, _small_. 
+User story on ehdottomasti toiminnallisuudeltaan liian iso, jos se ei ole toteutettavissa yhdessä sprintissä. Juuri ja juuri yhdessä sprintissä toteutettavissa oleva story on myöskin huomattavan riskialtis, parempi koko storylle onkin lähempänä yhden päivän kuin vaikkapa viikon vaadittavaa työmäärää.
+
+Liian suuret user storyt tulee jakaa osiin. Esimerkiksi verkkokaupassa voisi olla käyttötapaus _kaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää tuotteiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten listaa_ tulisi ehdottomasti jakaa useaan osaan:
+- ylläpitäjä voi kirjautua sovellukseen
+- ylläpitäjä voi lisätä tuotteita valikoimaan
+- ylläpitäjä voi päivittää tuotteiden tietoja
+- ylläpitäjä voi tarkastella asiakkaille tehtyjen toimitusten listaa
   
-Esimerkki
-Alla esimerkki pahvikortille kirjoitetusta User storystä
-Kortin etupuolella kuvaus, prioriteetti ja estimaatti
-Estimaatilla tarkoitetaan kortin toiminnallisuuden toteuttamisen työmääräarviota. Palaamme estimointiin pian tarkemmin
+Kuudes toivottu ominaisuus on testattavuus, _testability_, eli user storyjen tulisi olla sellaisia, että niille on mahdollista tehdä testit tai laatia kriteerit, joiden avulla on mahdollista yksikäsitteisesti todeta onko story toteutettu hyväksyttävästi. Ei-toiminnalliset vaatimukset (esim. suorituskyky, käytettävyys) aiheuttavat usein haasteita testattavuudelle.
+
+Esimerkiksi verkkokaupan user story _kaupan tulee toimia tarpeeksi nopeasti kovassakin kuormituksessa_ on mahdollista muotoilla testattavaksi esimerkiksi seuraavasti:
+_käyttäjän vasteaika saa olla korkeinaan 0.5 sekuntia 99% tapauksissa jos yhtäaikaisia käyttäjiä sivulla on maksimissaan 1000_.
  
-Kortin takapuolella suhteellisen informaalilla kielellä kirjoitettu hyväksymistesti
- 
-Kuten jo mainittu, tulee User storyn kuvata asiakkaalle arvoa tuottavia toimintoja
-Käytettävä asiakkaan kieltä, ei teknistä jargonia
- 
-Hyvänä käytäntönä pidetään että User story kuvaa järjestelmän kaikkia osia koskevaa (esim. käyttöliittymä, bisneslogiikka, tietokanta) eli ”end to end”-toiminnallisuutta
-Esim. ”lisää jokaisesta asiakkaasta rivi tietokantatauluun customers” ei olisi suositeltava muotoilu User storylle
- 
-Edellisen sivun esimerkki on formuloitu viimeaikaisen muodin mukaisessa muodossa
-As a <type of user>, I want <functionality> so that <business value> As a student I want to purchase a parking pass so that I can drive to
-school
-Näin muotoilemalla on ajateltu että User story kiinnittää huomion siihen kenelle kuvattava järjestelmän toiminto tuo arvoa
-Muoto ei oikein taivu suomenkielisiin kuvauksiin, joten sitä ei tällä kurssilla käytetä
-   
-Minkälainen on hyvä User Story
-  
-Bill Wake luettelee artikkelissa INVEST in good User Stories kuusi User storyille toivottavaa ominaisuutta:
-Independent
-Negotiable
-Valuable to user or customer
-Estimable
-Small
-Testable http://xp123.com/articles/invest-in-good-stories-and-smart-tasks/
- 
-Independent User storyjen pitäisi olla toisistaan mahdollisimman riippumattomia
-Riippumattomuus mahdollistaa eri käyttötapausten toteuttamisen mahdollisimman riippumattomasti toisistaan
-Tämä taas antaa asiakkaalle enemmän vapausasteita storyjen priorisointiin
- 
-Esim. biershopin Storyjen Lisää olut ostoskoriin ja Poista olut ostoskorista välillä on riippuvuus, jota on vaikea välttää
- 
-Minkälainen on hyvä User Story
-  
-Negotiable hyvä User story ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat User storyn toiminnallisuuden sisällön ennen toteutusvaihetta
-Estimatable User storyn toteuttamisen vaatima työmäärä pitää olla arvioitavissa kohtuullisella tasolla
-Small Työmäärän arviointi onnistuu paremmin jos User storyt ovat riittävän pieniä. User storyä pidetään yleensä liian isona, jos se ei ole toteutettavissa noin viikon työpanoksella
-Liian suuret User storyt kannattaa jakaa osiin
-Esim käyttötapaus Olutkaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää oluiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten lista kannattaa jakaa useaan osaan:
-Ylläpitäjä voi kirjautua sivulle
-Ylläpitäjä voi lisätä ja päivittää oluiden tietoja
-Ylläpitäjä voi tarkastella asiakkaille tehtyjen toimitusten listaa
-Sivulle kirjautunut ylläpitäjä voi lisätä ja päivittää oluiden tietoja
-Sivulle kirjautunut ylläpitäjä voi tarkastella asiakkaille tehtyjä toimituksia
- 
-Minkälainen on hyvä User Story
-  
-Testability Kuudes toivottu ominaisuus on testattavuus, eli User storyjen pitää olla sellaisia, että niille on mahdollista tehdä testit tai laatia kriteerit, joiden avulla voi yksikäsitteisesti todeta onko Story toteutettu hyväksyttävästi
-Ei-toiminnalliset vaatimukset (esim. suorituskyky, käytettävyys) aiheuttavat usein haasteita testattavuudelle
-Esim. user story Olutkaupan tulee toimia tarpeeksi nopeasti kovassakin kuormituksessa voidaan muotoilla testattavaksi esim. seuraavasti:
-käyttäjän vasteaika saa olla korkeinaan 0.5 sekuntia 99% tapauksissa jos yhtäaikaisia käyttäjiä sivulla on maksimissaan 1000
- 
+Kriteerin _Independent_ mukaan user storyjen pitäisi olla toisistaan mahdollisimman riippumattomia eli storyjen kuvaamia toiminnallisuuksia pitäisi pystyä toteuttamaan mahdollisimman riippumatta toisten storyjen tilanteesta. Tämä taas antaa product ownerille enemmän vapausasteita storyjen priorisointiin, eli sen määrittelyyn missä järjestyksessä sovelluksen toiminnallisuudet valmistuvat. 
+
+On toki tilanteita, joissa storyjen keskinäistä riippuvuutta ei voi välttää, esimerkiksi verkkokaupan storyjen _lisää tuote ostoskoriin_ ja _poista tuoteolut ostoskorista_ tapauksessa.
+
+##
+
 Edellisellä luennolla Scrumin yhteydessä puhuttiin product backlogista, joka siis on priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista
 Nykyään käytäntönä on, että product backlog koostuu nimenomaan User storyistä
  
-Minkälainen on hyvä User Story
   
 Projektin aluksi kannattaa heti ruveta etsimään ja määrittelemään User storyja ja muodostaa näistä alustava Product Backlog
 Käytettävissä ovat kaikki yleiset vaatimusten kartoitustekniikat
