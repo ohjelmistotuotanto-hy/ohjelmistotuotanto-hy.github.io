@@ -338,7 +338,7 @@ _guestimation_ joska työmääräarviointi on lopulta useimmiten lähinnä arvai
  
 Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainity_
 
-![]({{ "/images/2-5.png" | absolute_url }})
+![]({{ "/images/2-6.png" | absolute_url }})
 
 Eli kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja myös työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storyä _tuotteen voi poistaa ostoskorista_ on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne. muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvio jo huomattavasti helpommaksi.
 
@@ -390,40 +390,42 @@ Kuten äsken mainittiin suhteellisessa estimoinnissa käytetty yksikkö _story p
  
 ## Estimoinnin menetelmiä
   
-Suhteelliseen kokoon perustuva estimointi Kun estimoitavana on suuri määrä User storyjä
-Esimerkki Rasmussenin kirjasta Agile samurai
- 
- Suhteelliseen kokoon perustuva estimointi
-saattaa olla kannattavaa arvioida ensin muutama hieman erikokoinen Story ja valita nämä referensseiksi
-1 pt 3 pt 5p
- 
-Suhteelliseen kokoon perustuva estimointi Ja arvioida muut User storyt näiden suhteen
- 
+Eräs melko suosittu tapa estimoinnille on estimoida kiinnittää muutama erikoikoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
 
-Hyvänä periaatteena pidetään että kaikki tiimin jäsenet osallistuvat estimointiin
-Tiimille syntyy yhtenäinen ymmärrys User storyn sisällöstä Planning poker on eräs suosittu tapa estimoinnin tekemiseen
+![]({{ "/images/2-7.png" | absolute_url }})
 
-Planning poker
-Käydään läpi Backlogissa olevia User storyja yksi kerrallaan
-Asiakas lukee User storyn sisällön ja selittää tarkemmin Storyn luonnetta ja vaatimuksia
-Tiimi keskustelee Storystä, miettii kenties Storyn jakautumista teknisiin työvaiheisiin
-Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis Story point)
-Usein tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa
-Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti User storylle
-Jos seuraa eroavaisuutta, keskustelee tiimi eroavaisuuksien syistä
-Voi esim. olla, että osa tiimin jäsenistä ymmärtää User storyn vaatimukset eri tavalla ja tämä aiheuttaa eroavaisuutta estimaatteihin
- 
-Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja konsensus todennäköisesti saavutetaan pian
- 
-Koska estimointi on joka tapauksessa melko epätarkkaa, ei estimoinnissa ole tapana käyttää kovin tarkkaa skaalaa
-Yleistä on esim. käyttää ainoastaan arvoja 1, 2, 3, 5, 10, 20, 40, 100 tai vastaavaa yläpäästä harvenevaa skaalaa
-Motivaationa se, että mitä suuremmasta kokonaisuudesta kyse, sitä vaikeampaa estimointi on, ja skaala yläpäässä on tarkoituksella harva, jotta estimaatit eivät antaisi valheellista kuvaa tarkkuudesta
-Joskus käytetään myös estimaattia epic jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä User storyä että sitä ei voida vielä estimoida
-Alan suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille estimaatti epic
+Koska estimointi on joka tapauksessa melko epätarkkaa, ei estimoinnissa ole tarkoituksenmukaista käyttää kovin tarkkaa skaalaa. Useimmiten käytetään yläpäästä harvenevaa skaalaa esim. 1, 2, 3, 5, 10, 20, 40, 100.  Myös fibonaccin lukujono 1, 2, 3, 5, 8, 13, 21, 34, 55 on suosiossa estimoinnin skaalana.
 
+Motivaationa harvalle skaalalle on se, että koska isojen storyjen estimointiin liittyy erityisen suuri epävarmuus, ei kannata edes teeskennellä että skaala olisi isojen storyjen suhteen kovin tarkka.
+
+Joskus estimoinnissa käytetään arvoa _epic_, jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä user storyä että sitä ei ole toistaiseksi mieltä estimoida, itseasiassa alan suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille estimaatti epic. 
+
+Jotta estimaatin _epic_ saaneet storyt tulisivat estimoitua, ne tulee pilkkoa pienempiin, paremminhallittaviin storyihin. Käsittellä epic on eräs toinenkin merkitys user storyjen parissa mihin palaamme hieman myöhemmin.
+
+Hyvänä periaatteena pidetään että kaikki kehitystiimin jäsenet osallistuvat estimointiin. Näin tiimille syntyy yhtenäinen ymmärrys user storyn sisällöstä. Eräs suosittu tapa osallistaa koko tiimi estimointiin on [_planning poker_](https://www.crisp.se/bocker-och-produkter/planning-poker).
+
+### Planning poker
+
+Planning pokerissa käydään läpi backlogilla olevia user storyja yksi kerrallaan. Product owner esittelee user storyn sisällön ja selittää tarkemmin storyn luonnetta ja vaatimuksia.
+
+Tiimi keskustelee storystä, miettii kenties storyn jakautumista teknisiin työvaiheisiin
+Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis story point). Usein tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa.
+
+Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti User storylle ja siirrytään seuraavaan.
+
+Jos ehdotetuissa estimaateissa on paljon eroavaisuutta, keskustelee tiimi eroavaisuuksien syistä. Voi esimerkiksi olla, että osa tiimin jäsenistä ymmärtää user storyn vaatimukset aivan eri tavalla ja tämä aiheuttaa eroavaisuutta estimaatteihin
+ 
+Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja konsensus todennäköisesti saavutetaan pian.
+
+![]({{ "/images/2-8.png" | absolute_url }})
+ 
 ## NoEstimates - kannattaako estimointi?
 
-##
+User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota
+- auttaa asiakasta priorisoinnissa
+- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioden viemän ajan summittainen arviointi
+
+## Hyvä baclog
 
 Hyvä product backlog on DEEP
 http://www.romanpichler.com/blog/product-backlog/making-the-product-backlog-deep/
