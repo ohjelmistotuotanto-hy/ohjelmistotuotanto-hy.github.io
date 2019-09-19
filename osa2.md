@@ -419,50 +419,28 @@ Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja konsensus 
 
 ![]({{ "/images/2-8.png" | absolute_url }})
  
-## NoEstimates - kannattaako estimointi?
+## Hyvä product backlog on DEEP
 
-User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota
-- auttaa asiakasta priorisoinnissa
-- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioden viemän ajan summittainen arviointi
+Mike Cohn ja Roman Pichler lanseerasivat lyhenteen
+[DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) kuvaimaan hyvän backlogin ominaisuuksia. Lyhenne tulee sanoista _detailed appropriatly, estimated, emergent_ ja _prioritized_.
 
-## Hyvä baclog
+Hyvä ominaisuuksista _estimated_ ja _prioritized_ ovat meille tuttuja: storyillä on työmääräarviot ja storyt on priorisoitu eli asetettu tärkeysjärjestykseen.
 
-Hyvä product backlog on DEEP
-http://www.romanpichler.com/blog/product-backlog/making-the-product-backlog-deep/
-Mike Cohn lanseerasi lyhenteen DEEP kuvaamaan hyvän backlogin ominaisuuksia
-Detailed appropriatly Estimated
-Emergent
-Prioritized
-
-Detailed appropriately eli sopivan detaljoitu:
-Backlogin prioriteeteiltaan korkeimpien eli pian toteutettavaksi otettavien User Storyjen kannattaa olla suhteellisen pieniä ja näin tarkemmin estimoituja
-Alemman prioriteetin User Storyt voivat vielä olla isompia ja karkeammin estimoituja
+Hyvä backlog on myös _detailed appropriately_ eli sopivan detaljoitu. Backlogin prioriteeteiltaan korkeimpien eli pian toteutettavaksi tulevien user storyjen tulee olla suhteellisen pieniä, niiden hyväksymäkriteerit tulisi olla suunilleen selvillä ja vaadittusta työmäärä tulisi olla kohtuullisen hyvä kuva. Alemman prioriteetin user storyt voivat vielä olla isompia ja karkeammin estimoituja. Itseasiassa alemman prioriteetin storyjä ei edes kannata määritellä kovin tarkasti, sillä kestää vielä pitkään ennen kuin ne otetaan toteutettavaksi johonkin sprinttiin. Itseasiassa usein käy niin, että alemman prioriteetin storyjä ei lopulta toteuteta koskaan, eli niihin ei todellakaan kannata spekulatiivisesti investoida liikaa aikaa.
    
+_Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) :
 
+> The product backlog has an organic quality. It evolves, and its contents change frequently. New items emerge based on customer and user feedback, and they are added to the product backlog. Existing items are modified, reprioritized, refined, or removed on an ongoing basis.
 
- Hyvä product backlog on DEEP
- 
+Backlog ei siis pysy muuttumattomana vaan elää koko ajan, uusia storyjä tulee, olemassaolevia storyjä tarkennetaan ja pilkotaan, tarpeettomia storyjä poistetaan. Työmääräarvioia ja prioriteetteja uudelleenmääritellään.
 
-Hyvä product backlog on DEEP DEEP ominaisuuksista estimated ja prioritized ovat meille tuttuja
-Emergent kuvaa backlogin muuttuvaa luonnetta:
-The product backlog has an organic quality. It evolves, and its contents change frequently. New items emerge based on customer and user feedback, and they are added to the product backlog. Existing items are modified, reprioritized, refined, or removed on an ongoing basis.
+Tämä kaikki ei tietenkään tapahdu itsestään, vaan takia backlogia tulee aktiivisesti hoitaa (engl. backlog grooming tai backlog refinement) projektin edetessä. [Scrum guide](https://scrumguides.org/scrum-guide.html#artifacts-productbacklog) mainitsee että backlogin groomausta tulee tapahtua läpi sprintin yhteistyössä product ownerin ja kehitystiimin kesken. 
 
-Muuttuvan luonteensa takia backlogia tulee hoitaa (backlog grooming) projektin edetessä
-Backlogiin lisätään uusia User storyja ja vanhoja tarpeettomaksi käyneitä poistetaan
-Isoja User storyja pilkotaan tarpeentullen pienemmiksi (erityisesti prioriteetin kasvaessa täytyy isot Storyt jakaa useaksi pienemmäksi)
-Backlogiin lisättäviä uusia User storyjä estimoidaan ja vanhojen Storyjen estimaatteja tarkastetaan ymmärryksen kasvaessa
-Backlogin hoitamiseen osallistuu koko ohjelmistotuotantotiimi, pääasiallinen vastuu on Product Ownerilla
+Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleellisesti ennen jokaista uutta sprinttiä tehtävää sprintin suunnittelua. Jos backlog on huonossa kunnossa (eli prioriteetit miten sattuu, tärkeät storyt epämääräisessä tilanteessa, uusia tunnistettuja tarpeita vastaavia storyjä ei ole lisätty) sprintin suunnittelua tehtäessä, menee kaikkien aikaa hukkaan.  
 
-http://www.romanpichler.com/blog/product-backlog/grooming-the-product-backlog/
+![]({{ "/images/2-9.png" | absolute_url }})
 
-
-
-
-
- 
-
-
-
+## velositetti
 
 Estimoinnin toinen tarkoitus on, että se mahdollistaa koko projektin viemän aikamäärän summittaisen arvioinnin eli julkaisun suunnittelun (engl. release planning)
 Jos estimoinnin yksikkönä kuitenkin on abstrakti käsite Story point, miten estimaattien avulla on mahdollista arvioida projektin viemää aikamäärää?
@@ -471,6 +449,7 @@ keskimäärin toteuttamaan yhden sprintin aikana
 Jos tiimin velositeetti on selvillä ja projektissa toteutettavaksi tarkoitetut User storyt on estimoitu, on helppo tehdä alustava arvio projektin viemästä aikamäärästä
 (User storyjen estimaattien summa) / velositeetti * sprintin pituus
 
+## velocity
 
 Projektin alkaessa velositeetti ei yleensä ole selvillä, ellei kyseessä ole jo yhdessä työskennellyt tiimi
 On kehitetty tapoja joiden avulla velositeetti voidaan yrittää etukäteen ennustaa
@@ -483,22 +462,18 @@ Estimointi on aluksi vaikeampaa varsinkin jos sovellusalue ja käytetyt teknolo
 
 Tiimin velositeetti ja siihen perustuva projektin keston arvio alkaakin tarkentumaan pikkuhiljaa
 
-Velositeetti
- 
- 
+## aa
 
 Ketterissä menetelmissä on oleellista kuvata mahdollisimman realistisesti projektin etenemistä
 Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli Definition of Donen mukaisesti) toteutettujen User storyjen Story pointit
 ”lähes valmiiksi” tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi
 http://jamesshore.com/Agile-Book/done_done.html
  
- 
- 
 Ketterän projektin etenemistä kuvataan yleensä Release Burndown -kaavion avulla
 Aika etenee x-akselissa sprintti kerrallaan
 y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna
  
-Julkaisun suunnittelu – release planning
+## Julkaisun suunnittelu – release planning
  
 Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siksi jäljellä olevan työn määrä ei aina vähene
  
@@ -511,10 +486,14 @@ teema -> epic -> stroy
 
 storymapping
 
+## NoEstimates - kannattaako estimointi?
+
+User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota
+- auttaa asiakasta priorisoinnissa
+- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioden viemän ajan summittainen arviointi
 
 # Sprintin suunnittelu
  
-
 Sprintin/iteraation suunnittelu
 Kertauksena viime viikolta: Scrum määrittelee pidettäväksi ennen jokaista
 sprinttiä suunnittelupalaverin
@@ -523,18 +502,10 @@ Product Owner esittelee Product backlogin kärjessä olevat vaatimukset
 Tiimin on tarkoitus olla riittävällä tasolla selvillä mitä vaatimuksilla tarkoitetaan
 Tiimi valitsee tehtäväksi niin monta Backlogin storyistä kuin se arvioi kykenevänsä sprintin aikana toteuttamaan Definition of Donen määrittelemällä laatutasolla
 
-
 Sprintin aikana toteutettavien vaatimusten lisäksi asetetaan sprintin tavoite Suunnittelukokouksen toisena tavoitteena miten sprintin tavoitteet
 saavutetaan
 Tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla Tarkennetaan nyt Sprintin suunnitteluun ja läpivientiin liittyviä asioita
 Lähteenä Kniberg Scrum and XP From the Trenches, luvut 3-6
-
-
-
-
-
-
- 
 
 Sprintin suunnittelu Suunnitteluun osallistuu Product Owner ja kehittäjätiimi
 Lähtökohtana on sopivassa tilassa oleva eli DEEP Product backlog
@@ -547,11 +518,6 @@ Tavoite on jotain geneerisempää kuin yksittäisten backlogissa olevien User
 Scrumin kehittäjä Ken Schwaber mainitsee 2002 kirjoitetussa kirjassaan asettavansa usein ensimmäisen sprintin tavoitteeksi: ”demonstrate a key piece of user functionality on the selected technology”
 Seuraavalla sivulla Mike Cohnin määritelmä sprintin tavoitteesta
 
- 
-
- 
-
-
 A sprint goal is a short, one- or two-sentence, description of what the team plans to achieve during the sprint
 It is written collaboratively by the team and the product owner
 The following are typical sprint goals on an eCommerce application:
@@ -561,22 +527,16 @@ The checkout process—pay for an order, pick shipping, order gift wrapping, etc
 The sprint goal can be used for quick reporting to those outside the sprint
 There are always stakeholders who want to know what the team is working on, but who do not need to hear about each product backlog item (User story) in detail
 
-
 The success of the sprint will later be assessed during the Sprint Review Meeting against the sprint goal, rather than against each specific item selected from the product backlog
 http://www.mountaingoatsoftware.com/scrum/sprint-planning-meeting
 
-
-
 Sprintin tavoite [Mike Cohn]
  
-
 Sprintin tavoitteen asettamisen lisäksi tulee valita backlogista sprintin aikana toteutettavat User storyt
 Pääperiaate on valita ”sopiva määrä” backlogin korkeimmalle priorisoituja Storyjä
 Valituksi tulevat Storyt siirretään sprintin backlogiin
 Toteutettavien user storyjen valinta
  
- 
-
 Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi
 Tapoja päättää sprinttiin otettavien user storyjen määrä on muutamia:
 ”perstuntuma”: otetaan niin monta korkeimman priotiteetin Storyä kuin mihin kaikki tiimiläiset tuntevat voivansa sitoutua
@@ -587,40 +547,24 @@ Jos user storyjä ei ole estimoitu tai velositeetti ei ole tiedossa, ”perstun
 Tässäkin menetelmässä tiimi saa valita vain sellaiseen määrän storyjä, jotka se kokee voivansa toteuttaa kunnolla eli ”definition of donen” määrittelemän (eli suunnittelu, toteutus, automaattiset testit, testaus, integrointi, dokumentointi) mukaan valmiiksi
 Velositeetin käsite ja estimaatithan huomioivat ”definition of donen”
 
-
-
-
-
 Sprinttiin otettavien User storyjen määrä
  
-
 Jos tiimin velositeetti on tiedossa ja user storyt on estimoitu, otetaan Storyjä mukaan maksimissaan velositeetin verran
 Product ownerilla on mahdollisuuksia vaikuttaa sprinttiin mukaan otettaviin User storyihin tekemällä uudelleenpriorisointia
 Entä jos Product Owner haluaa storyn D mukaan sprinttiin?
 Toteutettavien user stroyjen valinta
  
- 
 Product Owner nostaa D:n prioriteettia, C tippuu pois sprinttiin valittavien User Storyjen joukosta
 Entä jos Product Owner haluaa Sprintiin mukaan kaikki user storyt A-D?
 Uudelleenpriorisointi
- 
  
 Jostain on luovuttava: Product Owner pienentää user storyn A määrittelemää toiminnallisuutta, kehitystiimi estimoi pienennetyn A:n ja nyt A-D mahtuvat sprinttiin:
 Entä jos A:n toiminnallisuutta ei saa karsia ja silti Product Owner haluaa A-D:n mukaan sprinttiin?
 User Storyn scopen pienentäminen
  
- 
 User Storyn jakaminen
 Ratkaisu on jakaa User story A kahteen pienempään osaan A1:n ja A2:n
 A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin A2 saa alemman prioriteetin ja jää sprintin ulkopuolelle
-
-
- 
- 
-
-
-
-
 
 Storyjen jakaminen pienemmiksi ei ole aloittelijalle, eikä aina ammattilaisellekaan helppoa
 Seuraavassa Richard Lawrencen ohjeita
@@ -631,7 +575,6 @@ Good user stories follow Bill Wake’s INVEST model. They’re Independent, Nego
 Many new agile teams attempt to split stories by architectural layer: one story for the UI, another for the database, etc.
 This may satisfy small, but it fails at independent and valuable. How small should stories be?
 I recommend 6-10 stories per iteration, so how small is small enough depends on your team’s velocity.
-
 
 Over my years with agile, I’ve discovered nine patterns for splitting user stories into good, smaller stories.
  
@@ -650,17 +593,6 @@ As a user, I can search for flights with flexible dates. ==>
 ... as “a weekend in December.”
 ... as “± n days of dates x and y.”
 
-
-
-
-
-
-
-
-
-
-
- 
 User storyjen jakaminen Pattern #3: Major Effort
 As a user, I can pay for my flight with VISA, MasterCard, Diners Club, or American Express.
 ==>
@@ -673,14 +605,6 @@ As a user, I can search for flights between two destinations. ==>
 ... specifying a max number of stops.
 ... including nearby airports. ... using flexible dates.
 
-
-
-
-
-
-
-
- 
 User storyjen jakaminen Pattern #6: Data Entry Methods
 As a user, I can search for flights between two destinations. ==>
 ... using simple date input.
@@ -692,10 +616,6 @@ As a user, I can manage my account. ==>
 ... I can edit my account settings.
 ... I can cancel my account
 
- 
-
-  
- 
 User storyjen jakaminen Pattern #8: Defer Performance
 As a user, I can search for flights between two destinations. ==>
 ... (slow—just get it done, show a “searching” animation). ... (in under 5 seconds).
@@ -705,13 +625,6 @@ A story may be large not because it’s necessarily complex, but because the imp
 As a user, I can pay by credit card. ==>
 Investigate credit card processing. Implement credit card processing.
 
-
-
-
-
-
-
- 
 Sprintin suunnittelun yhteydessä sprinttiin valituille User storyille tehdään karkean tason suunnittelu
 Mietitään mitä teknisen tason tehtäviä (task) on toteutettava, jotta user story saadaan valmiiksi
 Suunnitellaan komponentteja ja rajapintoja karkealla tasolla
@@ -720,20 +633,10 @@ Kaikkia storyyn liittyviä taskeja ei sprintin suunnittelun aikana välttäma
 Uusia taskeja generoidaan tarvittaessa sprintin edetessä
 Sprintin suunnittelun toinen vaihe
  
-
-
-
-
- 
-
 Sprintin tehtävälista eli Sprint backlog koostuu sprintiin valituista user storeista ja niihin liittyvistä tehtävistä eli taskeista
 Backlog voi olla organisoitu ”taskboardiksi”:
 Sprint backlog
  
-
-
-
-
 Kuvassa sprinttiin on valittu 4 user storyä ja taskboard on jaettu neljään kaistaan (swimlane), jokaiselle Storylle oma kaista
 Kuten arvata saattaa, jokaisen taskin on tarkoitus siirtyä sarakkeesta ”not checked out” sarakkeeseen ”done”
 Sprintissä arvioidaan päivittäin jäljellä olevaksi arvioitua työmäärää
@@ -748,29 +651,22 @@ Uudet taskit saavat olla ainoastaan kehittäjätiimin itse identifioimia menos
 
 Eli sprintissä jäljellä oleva työaika-arvio voi kasvaa kesken sprintin!
 
- 
-
 Taskboard
  
-
 Sprintissä jäljellä olevan työmäärän arviointi
 Jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa
 Jäljellä olevaa työmäärää (tunteina mitattuna) visualisoidaan sprintin etenemistä kuvaavalla burndown-käyrällä
 Tätä sprintin burndown:ia ei pidä sekottaa projektin burndown-käyrään!
 
- 
- 
  Tilanne sprintin alussa
  Ja puolen välin jälkeen
  
-
 Taskboardin sijaan sprintin seuranta hoidetaan usein taulukkolaskennan avulla, erityisesti jos tiimillä ei ole käytössä omaa ”seinää”
 Tällöin sprintin jokaiselle päivälle on oma sarake, johon merkitään kunkin päivän alussa estimaatti taskien jäljellä olevasta työmäärästä (tunteina)
 Erään ohtuprojektin product- ja sprintbacklogit:
 https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK 8AZNuHS571Wlxo/edit?usp=sharing
 Sprintin seuranta taulukkomuodossa
  
-
  Taskboardissa voi olla merkattu useampiakin työvaiheita
  
 Yhtä aikaa työn alla olevien taskien suuri määrä voi koitua Scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa
@@ -782,33 +678,18 @@ WIP-rajoitukset on lainattu Kanban-menetelmästä
 Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä Scrumban
 Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP- rajoitukset
 
-
 Esimerkki kirjasta http://www.infoq.com/minibooks/kanban-scrum-minibook
 Kunkin vaiheen WIP-rajoitus on merkitty numerona, eli vaiheessa saa olla yhtä aikaa vain rajoituksen verran taskeja
-
-
-
- 
- 
- 
-  
- 
- 
- 
-
 
 Yhtäaikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä
 Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista
 Lean-ajattelun taustalla on idea turhuuden (engl. waste, jap. muda) eli arvoa tuottamattomien asioiden eliminoimisessa organisaatioiden toiminnassa
 Lean-ajattelu on peräisin jo kymmeniä vuosia vanhasta Toyota Production Systemistä
 
-
 Lean tunnistaa useita erilaisia turhuuksia (lean waste), näiden joukossa ovat esim. osittain tehty työ (partially done work), välivarastointi ja turha odottaminen
 Ohjelmistotuotannon kontekstiin sovellettuna työvaiheet, jotka eivät ole vielä definition of donen mielessä valmiina edustavat leanin mukaista turhuutta
 Esim. testaamista odottavien toiminnallisuuksien (user storyjen) katsotaan olevan ”välivarastoituna”, samoin jo testatut mutta tuotantoon viemistä vielä odottavat toiminnallisuudet ovat ”välivastastossa”
 Asiakkaalle toiminnallisuudet alkavat tuottaa arvoa vasta kun ne saadaan käyttöön, siinä vaiheessa kun toiminnallisuudet ovat työn alla, ne aiheuttavat ainoastaan kustannuksia ja muodostavat riskin
-
-
 
 Yhtäaikaa tehtävän työn rajoittamisien motivaatio
  
@@ -824,15 +705,8 @@ tai yksittäisellä sovelluskehittäjän kerrallaan työn alla olevien tö
 
 WIP-rajoitteita säädetään usein retrospektiivien yhteydessä jos kehitystyössä havaitaan ongelmia
 
-
-
-
-
-
 Yhtäaikaa tehtävän työn rajoittaminen
  
-
-
 Taskboard ja burndown-käyrä tuovat selkeästi esille sprintin etenemisen asteen ja onkin suositeltavaa, että ne ovat kaikkien tiimiläisten ja projektin sidosryhmäläisten nähtävillä
 Ketterät menetelmät korostavat läpinäkyvyyttä (transparency) ja tiedon maksimaalista kommunikoitumista, näin mahdolliset ongelmatkaan eivät tule yllätyksenä ja niihin on helpompi puuttua ajoissa
 Lisää aiheesta:
@@ -845,10 +719,7 @@ Asana, Trello, Github project, Pivotal Tracker, JIRA, trac, bugzilla, ...
 
 Yleinen konsensus on kuitenkin, että ainakin Sprintin hallintaan manuaalinen postit-lappuja hyödyntävä taskboard on käytettävyydeltään ylivoimainen
  
-
-
 Sprintin etenemisen seuranta
-
 
 Kuten luennolla 2 mainittiin pidetään sprintin lopussa sprint review eli katselmointi ja sprintin retrospektiivi
 Katselmoinnissa arvioidaan kehitystiimin tekemää työtä
