@@ -185,7 +185,7 @@ Lean startup -"menetelmällä" on siis tarkoitus oppia systemaattisesti ja mah
 Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunnitteluun ketterässä ohjelmistotuotantoprojektissa. 
 
 Tapa pohjautuu Scrumin ja eXtreme Programingin eli XP:n eräiden käytänteiden soveltamiseen
-Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/)ja [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) sekä Mike Cohnin loistavat kirjat Agile Estimation and Planning ja User stories applied.
+Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/) ja [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) sekä Mike Cohnin loistavat kirjat Agile Estimation and Planning ja User stories applied.
   
 ## User story
 
@@ -440,154 +440,183 @@ Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleel
 
 ![]({{ "/images/2-9.png" | absolute_url }})
 
-## velositetti
+## User story ja epiikki
 
-Estimoinnin toinen tarkoitus on, että se mahdollistaa koko projektin viemän aikamäärän summittaisen arvioinnin eli julkaisun suunnittelun (engl. release planning)
-Jos estimoinnin yksikkönä kuitenkin on abstrakti käsite Story point, miten estimaattien avulla on mahdollista arvioida projektin viemää aikamäärää?
-Kehitystiimin velositeetti (engl velocity) tarjoaa osittaisen ratkaisun tähän Velositeetilla tarkoitetaan Story pointtien määrää, minkä verran tiimi pystyy
-keskimäärin toteuttamaan yhden sprintin aikana
-Jos tiimin velositeetti on selvillä ja projektissa toteutettavaksi tarkoitetut User storyt on estimoitu, on helppo tehdä alustava arvio projektin viemästä aikamäärästä
-(User storyjen estimaattien summa) / velositeetti * sprintin pituus
+Aiemmin mainitsimme, että hyvän user storyn kriteerinä voidaan pitää että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlokin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, ennen kun story voidaan otaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerin tulee olla selkeä. 
 
-## velocity
+Backlogin alaosoissa olevat storyt taas voivat olla isoja, jopa sellaisia että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee jakaa pienempiin, rajatumpiin storyihin. Tälläisiä isoja storyjä nimitetään usein _epiikeiksi_ (engl. epic). 
 
-Projektin alkaessa velositeetti ei yleensä ole selvillä, ellei kyseessä ole jo yhdessä työskennellyt tiimi
-On kehitetty tapoja joiden avulla velositeetti voidaan yrittää etukäteen ennustaa
+## Velositeetti
 
-Hyvin epäluotettavia, emme käsittele niitä nyt
-Julkaisun suunnittelu – release planning
- 
-Velositeetti vaihtelee tyypillisesti alussa melko paljon ja alkaa stabiloitumaan vasta muutaman sprintin päästä
-Estimointi on aluksi vaikeampaa varsinkin jos sovellusalue ja käytetyt teknologiat eivät ole täysin tuttuja
+User storyjen estimoinnin toinen tarkoitus on, että se mahdollistaa koko projektin tai jonkin sen suuremman kokonaisuuden viemän aikamäärän summittaisen arvioinnin. 
 
-Tiimin velositeetti ja siihen perustuva projektin keston arvio alkaakin tarkentumaan pikkuhiljaa
+Jos estimoinnin yksikkönä kuitenkin on abstrakti käsite _story point_, miten estimaattien avulla on mahdollista arvioida projektin viemää aikamäärää?
 
-## aa
+Kehitystiimin _velositeetti_ (engll velocity) tarjoaa tähän osittaisen ratkaisun. Velositeetilla tarkoitetaan story pointtien määrää, minkä verran tiimi pystyy keskimäärin toteuttamaan yhden sprintin aikana.
 
-Ketterissä menetelmissä on oleellista kuvata mahdollisimman realistisesti projektin etenemistä
-Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli Definition of Donen mukaisesti) toteutettujen User storyjen Story pointit
-”lähes valmiiksi” tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi
-http://jamesshore.com/Agile-Book/done_done.html
- 
-Ketterän projektin etenemistä kuvataan yleensä Release Burndown -kaavion avulla
-Aika etenee x-akselissa sprintti kerrallaan
-y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna
- 
-## Julkaisun suunnittelu – release planning
- 
-Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siksi jäljellä olevan työn määrä ei aina vähene
- 
-Julkaisun suunnittelu – release planning
-Joskus käytetäänkin Burn Up -kaavioita joka tuo selkeämmin esiin kesken projektin etenemisen tapahtuvan työmäärän kasvun
- 
-## Roadmap
+Jos tiimin velositeetti on selvillä ja projektissa tai sen jossain kokonaisuudessa toteutettavaksi tarkoitetut user storyt on estimoitu, on helppo tehdä alustava arvio vaadittavasta aikamäärästä
 
-teema -> epic -> stroy
+> (user storyjen estimaattien summa) / velositeetti * sprintin pituus
 
-storymapping
+Projektin alkaessa velositeetti ei yleensä ole selvillä, ellei kyseessä ole jo aiemmin yhdessä työskennellyt tiimi. On kehitetty useita erilaisia tapoja, joiden avulla velositeetti voidaan yrittää ennustaa jo ennen projektin aloittamista. Nämä ovat kuitenin hyvin epäluotettavia, ja emme käsittele niitä nyt.
 
-## NoEstimates - kannattaako estimointi?
+Velositeetti vaihtelee tyypillisesti alussa melko paljon, erityisesti jos sovellusalue ja/tai käytetyt teknologiat eivät ole tiimille täysin tuttuja. Velositeetti kuitenkin alkaa yleensä stabiloitumaan stabiloitumaan vasta muutaman sprintin jälkeen.
 
-User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota
+![]({{ "/images/2-11.png" | absolute_url }})
+
+Tiimin velositeetti ja siihen perustuva projektin tai sen osakokonaisuuden keston arvio alkaakin tarkentumaan pikkuhiljaa.
+
+Ketterissä menetelmissä on oleellista kuvata mahdollisimman realistisesti projektin etenemistä. Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli Definition of donen mukaisesti) toteutettujen user storyjen story pointit "lähes valmiiksi" tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi
+
+![]({{ "/images/2-12.png" | absolute_url }})
+
+Ketterän projektin etenemistä kuvataan joskus _release burndown_ -kaavion avulla
+Aika etenee x-akselissa sprintti kerrallaan, y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna.
+  
+![]({{ "/images/2-13.png" | absolute_url }})
+
+Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siksi jäljellä olevan työn määrä ei aina vähene. Joskus käytetäänkin Burn Up -kaavioita joka tuo selkeämmin esiin kesken projektin etenemisen tapahtuvan työmäärän kasvun.
+
+![]({{ "/images/2-14.png" | absolute_url }})
+
+## Julkaisun suunnittelu ja tuotteen roadmap
+
+Product backlog siis järjestelmän vaatimukset määrittelevät user storyt prioriteettijärjestyksessä, usein siten että asiakkaalle eniten arvoa tuottavat user storyt on sijoitettu korkeimmalle. Jokaiseen sprinttiin otetaan toteutettavaksi aina muutama suurimman prioriteetin omaava user story, eli kehitystiimi toteuttaa user storyjä pikkuhiljaa alkaen eniten arvoa tuottavista, edeten alemman prioriteetin omaaviin. 
+
+Ohjelmistoja kehitettäessä tarvitaan usein myös backlogia ja yksittäisiä sprinttejä korkeammalla tasolla olevaa näkymää aikataulutukseen ja kehitystyön etenemiseen. Syitä tälle on monia, sovelluksilla saattaa esimerkiksi olla erilaisia deadlineja, joihin mennessä tiettyjen ominaisuuksin on pakko olla valmiina. Joissain tilanteissa sovelluksen versioita halutaan julkaista tasaisin väliajoin, esimerkiksi 4 kuukauden välein, jne.
+
+Tälläistä yksittäisiä sprinttejä pidemmän katsauksen tekemistä nimitetään usein _julkaisun sunnitteluksi_ (engl. release planning). Julkaisun suunnittelussa mietitään yleensä user storyjä karkeammalla tasolla mitä isompia kokonaisuuksia kuhunkin isompaan osakokonaisuuteen (engl. milestone) halutaan mukaan, milestone taas koostuu tyypillisesti useammasta sprintistä. 
+
+Jossain määrin voidaan ajatella, että julkaisun suunnittelussa jaetaan backlogin sisältö karkeasti isompiin lohkoihin, joihin kuhunkin kuuluu joukko user storyjä, joiden ajatellaan suunnitteluhetkellä tulevan tiettyyn milestoneen: 
+
+![]({{ "/images/2-10.png" | absolute_url }})
+
+Eri milestonet ovat tyypillisesti ajallisesti saman pituisia, eli koostuvat vakiomäärästä sprinttejä. Kullakin milestonella voi olla oma tavoitteensa, esim: 
+
+- milestone 1: verkkokaupan perustoiminnallisuus
+- milestone 2: tuotteiden arvostelu ja siihen perustuva suosittelu
+- milestone 3: käyttäjien ostoshistoriaan liittyvä tuotteiden suosittelu 
+
+Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä kauempana olevasta tulevaisuudesta kyse, sitä spekulatiivisempi julkaisusuunnitelman sisältö on. Julkaisusuunnitelmaa nimitetään usein myös tuotteen [roadmapiksi](https://www.romanpichler.com/blog/product-roadmap-vs-release-plan/).
+
+## User story mapping
+
+Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille.  [User story mapping](https://www.jpattonassociates.com/user-story-mapping/) on viime aikoina huomiota saanut tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun. 
+
+Tekniikka jakaa user storyt sovelluksen eri toiminnallisten teemojen alle omaksi sarakkeekseen tärkeysjärjestykseen:
+
+![]({{ "/images/2-15.png" | absolute_url }})
+
+Story mapin rivit ovat taas loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
+
+## Kannattaako estimointi?
+
+User storyjen viemän työmäärän arvioimiseen on siis kaksi motivaatiota
 - auttaa asiakasta priorisoinnissa
-- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioden viemän ajan summittainen arviointi
+- mahdollistaa koko projektin tai tiettyjä milestonejen viemän ajan ja täten myös kustannuksen arvioinnin
 
-# Sprintin suunnittelu
+Story point -pohjainen suhteellinen estimointi on saavuttanut vankan aseman ketterän ohjelmistokehityksen kirjallisuudessa. Scrum guide mainitsee että backlogilla olevat vaatimukset ovat estimoituja, samoin kuten monet parhaat käytänteet kuten DEEP.
+
+Viime vuosina syntynyt [#NoEstimates](https://twitter.com/search?q=%23noestimates)-liike on kuitenkin ruvennut kyseenalaistamaan ketterässä ohjelmistokehityksessä käytettyä story point -muotoista estimointitapaa ja pitää siitä saavutettuja hyötyjä liian vähäisinä verrattuna estimointiin käytettyyn aikaan ja vaivaan. 
+#NoEstimates-liike [ei missään tapauksessa kiistä](https://plan.io/blog/noestimates-6-software-experts-give-their-view/) etteiköä työmääräarvioista olisi hyötyä, tarkoituksena onkin saada saada ihmiset ajattelemaan, missä tilanteissa ja estimointi on järkevää ja nostaa esiin vaihtoehtoisista tapoja estimoinnin tekoon.
+
+Eräs jo [vuosia käytössä](https://ronjeffries.com/xprog/articles/jatrtsmetric/) ollut menetelmä on story point -perustaisen estimoinnin sijaan on arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen lukumäärä. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia. 
+
+# Sprintin aikainen toiminta
+
+Tarkastellaan nyt mitä sprintin aikana tapahtuu.
+
+## Sprintin suunnittelu
  
-Sprintin/iteraation suunnittelu
-Kertauksena viime viikolta: Scrum määrittelee pidettäväksi ennen jokaista
-sprinttiä suunnittelupalaverin
-Palaverin ensimmäinen tavoite on selvittää mitä sprintin aikana tehdään
-Product Owner esittelee Product backlogin kärjessä olevat vaatimukset
-Tiimin on tarkoitus olla riittävällä tasolla selvillä mitä vaatimuksilla tarkoitetaan
-Tiimi valitsee tehtäväksi niin monta Backlogin storyistä kuin se arvioi kykenevänsä sprintin aikana toteuttamaan Definition of Donen määrittelemällä laatutasolla
+Kertauksena [viime viikolta](vikko1), Scrum määrittelee pidettäväksi ennen jokaista sprinttiä suunnittelupalaverin. Palaverin primäärisenä tavoiteena on selvittää _mitä user storyjä sprintiin_ valitaan toteutettavaksi.
 
-Sprintin aikana toteutettavien vaatimusten lisäksi asetetaan sprintin tavoite Suunnittelukokouksen toisena tavoitteena miten sprintin tavoitteet
-saavutetaan
-Tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla Tarkennetaan nyt Sprintin suunnitteluun ja läpivientiin liittyviä asioita
-Lähteenä Kniberg Scrum and XP From the Trenches, luvut 3-6
+Sprintin suunnittelun lähtökohtana on sopivassa tilassa oleva eli DEEP product backlog, eli backlog on priorisoitu ja estimoitu ja korkeimman prioriteetin omaavat user storyt tarpeeksi pieniä ja product ownerin hyvin ymmärtämiä.
 
-Sprintin suunnittelu Suunnitteluun osallistuu Product Owner ja kehittäjätiimi
-Lähtökohtana on sopivassa tilassa oleva eli DEEP Product backlog
-Priorisoitu ja estimoitu
-Korkeimman prioriteetin omaavat User storyt tarpeeksi pieniä ja Product Ownerin hyvin ymmärtämiä
+Sprintin suunnittelussa product owner varmistaa, että kehitystiimi ymmärtää hyvin product backlogin kärkipäässä olevat user storyt. Tiimi valitsee tehtäväksi niin monta backlogin storyistä kuin se arvioi kykenevänsä sprintin aikana toteuttamaan Definition of Donen määrittelemällä laatutasolla.
 
-Suunnittelun yhteydessä määritellään sprintin tavoite (sprint goal)
-Tavoite on jotain geneerisempää kuin yksittäisten backlogissa olevien User storyjen toteuttaminen
+## Sprintin tavoite
 
-Scrumin kehittäjä Ken Schwaber mainitsee 2002 kirjoitetussa kirjassaan asettavansa usein ensimmäisen sprintin tavoitteeksi: ”demonstrate a key piece of user functionality on the selected technology”
-Seuraavalla sivulla Mike Cohnin määritelmä sprintin tavoitteesta
+Scrum guide kehottaa että suunnittelun yhteydessä määritellään _sprintin tavoite_ (engl. sprint goal), jolla tarkoitetaan lyhyttä, yhden tai kahden lauseen kuvausta mitä siitä mitä tiimi on aikeissa sprintin aikana tehdä.
 
-A sprint goal is a short, one- or two-sentence, description of what the team plans to achieve during the sprint
-It is written collaboratively by the team and the product owner
-The following are typical sprint goals on an eCommerce application:
-Implement basic shopping cart functionality including add, remove, and update quantities
-The checkout process—pay for an order, pick shipping, order gift wrapping, etc.
+Esimeriksi verkkokaupaa kehitettäessä sprinttien tavoitteita voisivat olla:
+- Ostorskorin perustoiminnallisuus: tuotteiden lisäys ja poisto
+- Ostosten maksaminen ja toimitustavan valinta
 
-The sprint goal can be used for quick reporting to those outside the sprint
-There are always stakeholders who want to know what the team is working on, but who do not need to hear about each product backlog item (User story) in detail
+Scrumin kehittäjä Ken Schwaber mainitsee 2002 kirjoitetussa kirjassaan asettavansa usein ensimmäisen sprintin tavoitteeksi: "demonstrate a key piece of user functionality on the selected technology".
 
-The success of the sprint will later be assessed during the Sprint Review Meeting against the sprint goal, rather than against each specific item selected from the product backlog
-http://www.mountaingoatsoftware.com/scrum/sprint-planning-meeting
+Sprintin tavoite toimii tiimin ulkopuoliselle nopeana kuvauksena siitä mitä tiimi on menossa olevan sprintin aikana tekemässä. Vaikka sama asia periaatteessa selviää myös katsomalla mitkä user storyt ovat tiimillä työn alla, on geneerisemmässä muodossa oleva lyhyempi kuvaus parempi monille ohjelmiston sidosryhmille, kuten firman johdolle, joita ei kiinnosta seurata tapahtumia yksittäisten storyjen tarkkuudella.
 
-Sprintin tavoite [Mike Cohn]
+Sprintin onnistumista tarkastellaan yleensä suhteessa sprintin tavoitteeseen, eli vaikka sprintissä jäisikin yksittäisiä user storyjä toteuttamatta, voidaan sprintti todeta onnistuneeksi jos toteutettu toiminnallisuus kattaa sprintin tavoitteiden oleelliset osat.
+
+## Sprintissä toteutettavien user storyjen määrä
+
+Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi. Pääperiaate on valita "sopiva määrä" backlogin korkeimmalle priorisoituja user storyjä ja siirtää ne _sprint backlogiin_.
+
+![]({{ "/images/2-16.png" | absolute_url }})
+
+Tapoja päättää sprinttiin otettavien storyjen määrä on [useita](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/):
+- jos storyt on estimoitu ja tiimin velositeetti tunnetaan, otetaan sprinttiin velositeetin verran storyjä
+- jos estimaatteja ei ole ja/tai velositeettiä ei tunneta, otetaan niin monta korkeimman priotiteetin storyä kuin mihin kaikki tiimiläiset tuntevat voivansa sitoutua
+- edellisten yhdistelmä, eli vaikka velositeetti ja estimaatit olisi tiedossa, niin käytetään myös harkintaa sen suhteen onko velositeetin avulla valittu määrä tiimiläisistä sopivan tuntuinen
+
+Käytetään mitä valintaperiaatetta periaatetta tahansa, on jokatapauksessa oleellista että toteutettavaksi valitaan vain sellainen määrä storyjä, jotka tiimi kokee voivansa toteuttaa kunnolla, "definition of donen" määrittelemällä laatutasolla (eli suunniteltu, toteutettu, integroitu, testattu ja mohdollisesti myös dokumentoitu ja käyttöönotettu). 
+
+## Sprintissä toteutettavien user storyjen valinta
+
+Oletusarvoisesti sprinttiin siis otetaan joukko backlogin kärjessä olevia user storyjä: 
+
+![]({{ "/images/2-17.png" | absolute_url }})
+
+Product ownerilla on kuitenkin mahdollisuuksia vaikuttaa sprinttiin mukaan otettaviin storyihin tekemällä _uudelleenpriorisointia_. 
+
+Entä jos Product Owner haluaa storyn D mukaan sprinttiin? Product Owner nostaa D:n prioriteettia, C tippuu pois sprinttiin valittavien user storyjen joukosta:
+
+![]({{ "/images/2-18.png" | absolute_url }})
+
+
+Entä jos Product Owner haluaa Sprintiin mukaan kaikki user storyt A-D? Jostain on luovuttava: Product owner pienentää user storyn A määrittelemää toiminnallisuutta, kehitystiimi estimoi pienennetyn A:n ja nyt A-D mahtuvat sprinttiin:
  
-Sprintin tavoitteen asettamisen lisäksi tulee valita backlogista sprintin aikana toteutettavat User storyt
-Pääperiaate on valita ”sopiva määrä” backlogin korkeimmalle priorisoituja Storyjä
-Valituksi tulevat Storyt siirretään sprintin backlogiin
-Toteutettavien user storyjen valinta
- 
-Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi
-Tapoja päättää sprinttiin otettavien user storyjen määrä on muutamia:
-”perstuntuma”: otetaan niin monta korkeimman priotiteetin Storyä kuin mihin kaikki tiimiläiset tuntevat voivansa sitoutua
-Jos storyt on estimoitu ja tiimin velositeetti tunnetaan, otetaan sprinttiin velositeetin verran storyjä
-Edellisten yhdistelmä
+![]({{ "/images/2-19.png" | absolute_url }})
 
-Jos user storyjä ei ole estimoitu tai velositeetti ei ole tiedossa, ”perstuntumamenetelmä” lienee ainoa jota voidaan käyttää
-Tässäkin menetelmässä tiimi saa valita vain sellaiseen määrän storyjä, jotka se kokee voivansa toteuttaa kunnolla eli ”definition of donen” määrittelemän (eli suunnittelu, toteutus, automaattiset testit, testaus, integrointi, dokumentointi) mukaan valmiiksi
-Velositeetin käsite ja estimaatithan huomioivat ”definition of donen”
-
-Sprinttiin otettavien User storyjen määrä
- 
-Jos tiimin velositeetti on tiedossa ja user storyt on estimoitu, otetaan Storyjä mukaan maksimissaan velositeetin verran
-Product ownerilla on mahdollisuuksia vaikuttaa sprinttiin mukaan otettaviin User storyihin tekemällä uudelleenpriorisointia
-Entä jos Product Owner haluaa storyn D mukaan sprinttiin?
-Toteutettavien user stroyjen valinta
- 
-Product Owner nostaa D:n prioriteettia, C tippuu pois sprinttiin valittavien User Storyjen joukosta
-Entä jos Product Owner haluaa Sprintiin mukaan kaikki user storyt A-D?
-Uudelleenpriorisointi
- 
-Jostain on luovuttava: Product Owner pienentää user storyn A määrittelemää toiminnallisuutta, kehitystiimi estimoi pienennetyn A:n ja nyt A-D mahtuvat sprinttiin:
 Entä jos A:n toiminnallisuutta ei saa karsia ja silti Product Owner haluaa A-D:n mukaan sprinttiin?
-User Storyn scopen pienentäminen
+Ratkaisu on jakaa user story A kahteen pienempään osaan A1:n ja A2:n. A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin, A2 saa alemman prioriteetin ja jää sprintin ulkopuolelle:
  
-User Storyn jakaminen
-Ratkaisu on jakaa User story A kahteen pienempään osaan A1:n ja A2:n
-A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin A2 saa alemman prioriteetin ja jää sprintin ulkopuolelle
+![]({{ "/images/2-20.png" | absolute_url }})
 
-Storyjen jakaminen pienemmiksi ei ole aloittelijalle, eikä aina ammattilaisellekaan helppoa
-Seuraavassa Richard Lawrencen ohjeita
-http://www.richardlawrence.info/2009/10/28/patterns-for-splitting-user- stories/
+## User storyjen jakaminen
 
-User storyjen jakaminen
-Good user stories follow Bill Wake’s INVEST model. They’re Independent, Negotiable, Valuable, Estimable, Small, and Testable
-Many new agile teams attempt to split stories by architectural layer: one story for the UI, another for the database, etc.
-This may satisfy small, but it fails at independent and valuable. How small should stories be?
-I recommend 6-10 stories per iteration, so how small is small enough depends on your team’s velocity.
+User storyjen jakaminen pienemmiksi ei ole aloittelijalle, eikä aina ammattilaisellekaan helppoa.
 
-Over my years with agile, I’ve discovered nine patterns for splitting user stories into good, smaller stories.
- 
-User storyjen jakaminen Pattern #1: Workflow Steps
-As a content manager, I can publish a news story to the corporate website. ==>
-... I can write and save a news story.
-... I can edit a saved news story.
-... I can publish a news story directly to the corporate website.
-... I can publish a news story with editor review.
-... I can view a news story on a editor review site.
-... I can publish a news story from the editor review site to production
+Jo aiemmin mainitti [INVEST]()-periaate antaa kuusi kriteeriä hyvälle, toteutettavaksi sopivalle user storylle, ja nämä kriteerit kannattaa pitää myös jakaessa storyjä pienemmiksi. Eräs melko ilmeinen tapa olisi jakaa storyjä ohjelmiston arkkitehtuurikerrosten mukaan, eli esim. _lisää tuote ostoskoriin_ jaettaisiin seuraaviin storyihin:
 
-Pattern #2: Business Rule Variations
+- selaimessa toimivaan käyttöliittymään nappi ostoksen lisäämiseksi
+- palvelimella olevaan sovelluslogiikkaan mekanismi ostoskorin päivittämiselle
+- tietokantaan taulu ostoskorin esittämineen
+
+Tälläinen jako ei kuitenkaan ole hyvä, storyt eivät ole asiakkaalle arvoa tuottavia (valuable), eivätkä toisistaan riippumattomia (independent), eli jos storyistä toteutettaisiin vaikkapa ensimmäinen ja toinen, oltaisiin vielä riippuvaisia kolmannesta storystä ennen kuin toiminnallisuus olisi mielekäs.
+
+Seuraavassa muutamia erilaisia tapoja [Richard Lawrencen](http://www.richardlawrence.info/2009/10/28/patterns-for-splitting-user- stories/) inspiroimana.
+
+* Tapa 1: workflow steps*
+
+Tarkastellaan Flamman kaltaista sovellusta jonka avulla voi mm. julkaista artikkeleja yrityksen web-sivulle. Eräs sovelluksen user storyistä on seuraava:
+
+_As a content manager, I can publish a news story to the corporate website._ 
+
+Artikkelien julkaisu sovellusta käyttävässä yrityksessä on monivaiheinen prosessi, kukin artikkeli kulkee usean työvaiheen (workflow) läpi, artikkelit mm. tarkastetaan kielellisesti (editor review) ja lainopillisesti (legal review), ja näitä varten artikkelit julkaistaan ensin ns. _staging_-ympäristöön. 
+
+Eräs tapa pilkkoa alkuperäin story onkin jakaa se useampaan osaan eri työvaiheiden mukaan:
+
+- ... I can publish a news story directly to the corporate website.
+- ... I can publish a news story with editor review on a staging site.
+- ... I can publish a news story with legal review on a staging site.
+- ... I can view a news story on a staging site.
+- ... I can publish a news story from the staging site to production.
+
+Vaikka ensimmäinen story ei vielä yksistään tarjoa tukea kaikille työvaiheille, riittää sen toteuttaminen jo ehkä ominaisuuden käyttöönottoon, muut työvaiheet (editointi ja lainopillisuuden tarkastus) voidaan aluksi hoitaa järjestelmän ulkopuolella esim. emailitse. Myöhemmissä sprinteissä voidaan sitten toiminnallisuutta tarpeen mukaan laajentaa toteuttamalla muut storyt.
+
+* Tapa #2: business Rule Variations*
+
 As a user, I can search for flights with flexible dates. ==>
 ... as “between dates x and y.”
 ... as “a weekend in December.”
@@ -622,8 +651,11 @@ As a user, I can search for flights between two destinations. ==>
 
 Pattern #9: Break Out a Spike
 A story may be large not because it’s necessarily complex, but because the implementation is poorly understood. In this case, no amount of talking about the business part of the story will allow you to break it up. Do a time-boxed spike first to resolve uncertainty around the implementation. Then, you can do the implementation or have a better idea of how to break it up.
+
 As a user, I can pay by credit card. ==>
 Investigate credit card processing. Implement credit card processing.
+
+## Sprintin suunnittelun toinen tavoite
 
 Sprintin suunnittelun yhteydessä sprinttiin valituille User storyille tehdään karkean tason suunnittelu
 Mietitään mitä teknisen tason tehtäviä (task) on toteutettava, jotta user story saadaan valmiiksi
