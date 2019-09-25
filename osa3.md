@@ -329,108 +329,70 @@ Automatisoitu yksikkötestaus on jo aiemmilta kursseilta tuttu aihe. Käsittele
 
 ## Ketterien menetelmien testauskäytänteet
 
-Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousmallisesta ohjelmistotuotannosta
-Iteraation/sprintin aikana toteutettavat ominaisuudet integroidaan muuhun koodiin ja testataan yksikkö-, integraatio- ja järjestelmätasolla
-Sykli ominaisuuden määrittelystä siihen että se on valmis ja testattu on erittäin lyhyt, viikosta kuukauteen
+Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousmallisesta ohjelmistotuotannosta. Iteraation/sprintin aikana toteutettavat ominaisuudet integroidaan muuhun koodiin ja testataan yksikkö-, integraatio- sekä järjestelmätasolla. Sykli ominaisuuden määrittelystä siihen että se on valmis ja testattu on erittäin lyhyt, viikosta kuukauteen.
 
+Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
 
-Testausta tehdään sprintin "ensimmäisestä päivästä" lähtien, testaus "integroitu" suunnitteluun ja toteutukseen
-Testauksen automatisointi erittäin tärkeässä roolissa, sillä testejä suoritetaan usein
-Regressiotestaus tärkeää
+Ketterän kehityksen luonne vaatii että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
-Ideaalitilanteessa testaajia sijoitettu kehittäjätiimiin, ja myös ohjelmoijat kirjoittavat testejä
-Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin
+Kuten mainitsimme [viikolla 2](viikko2) ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito mitä järjestelmän kehittäminen ja valmiiksisaattaminen edellyttää, tämän takia testaajat ovat ideaalitilanteessa 
+sijoitettu kehittäjätiimiin (eikä erilliseen laadusta hallitsevaan QA-organisaatioon),  ja myös ohjelmoijat kirjoittavat testejä.
 
+Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunllinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [built quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/), toisinsanoen laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimi) vastuulla olevana asiana, vaan jo sovelluskehityksen lähtökohtana on se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo tekovaiheessa. 
 
-
+Käymme tässä luvussa läpi joukon ketterien menetelmien suosimia testauskäytenteitä.
  
-Test driven development (TDD)
-Nimestään huolimatta kyseessä suunnittelu- ja toteutustason tekniikka
-"sivutuotteena" syntyy kattava joukko automaattisesti suoritettavia testejä
+_Test driven development_ (TDD) eli kehitysmenetelmä, missä testit tedään jo ennen koodin kirjoittamista. Nimestään huolimatta kyseessä tosin on enemmän suunnittelu- ja toteutustason tekniikka, sen "sivutuotteena" syntyy kuitenkin kattava joukko automaattisesti suoritettavia testejä.
 
+TDD:n idea laajennus järjestelmätason testien tasolla toimivaksi kulkee nimillä _Acceptance Test Driven Development_ ja _Behavior Driven Development_.
 
+_Continuous Integration_ eli jatkuva integraatio ja _(Continuous delivery)_ eli jatkuva tuotantovalmius ovat perinteisen integraatio- ja integraatiotestausvaiheen korvaava työskentelytapa, jossa pyrkimyksenä on integroida ja jopa viedä jokainen sovellukseen tehty muutos. 
 
+Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisia (eli yksikkö-, integraatio-, järjestelmä-) automatisoituja testejä, joiden avulla tehty regressiotestaus mahdollistaa sen, että järjestelmän jatkokehityksen aikana voidaan olla turvallisin mielin siitä, että jo toimivia asioita ei sovelluksesta hajoa. 
 
-Acceptance Test Driven Development / Behavior Driven Development
-Käyttäjätason vaatimusten tasolla tapahtuva "TDD" Continuous Integration (CI) suomeksi jatkuva integraatio
-Perinteisen integraatio- ja integraatiotestausvaiheen korvaava työskentelytapa
+Nousevana terendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Testauksen kattavuudesta riippumatta nimittäin on hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Systematisoimalla tuotantokäytössä olevan ohjelmiston monitorointia on mahdollista joissain tilanteissa jopa parempaa laadunhallintaa verrattuna kuin ennen tuotantoon tapahtuvassa testauksessa.
 
-Tuotannossa tapahtuva testaus
-Nouseva trendi on suorittaa uusien ominaisuuksien laadunhallintaa siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä
+Voimakkaasta automatisointitrendistä huolimatta myös manuaalisesti tehtävällä testauksella on paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman formaalia testisuunnitelmaa, testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
 
+ ## Test driven development 
 
+[Test driven development](https://martinfowler.com/bliki/TestDrivenDevelopment.html) eli TDD on yksi [eXtreme Programmingin](http://www.extremeprogramming.org/) käytänteistä, missä siis testit on tarkoitus tehdä ennen varsinaisen sovelluksen koodin kirjoittamista.
 
+Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän mukainen](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) TDD etenee seuraavasti
 
-Ketterien menetelmien testauskäytänteitä
-Kaikista edellisistä käytänteistä seurauksena suuri joukko eritasoisia (eli yksikkö-, integraatio-, järjestelmä-) automatisoituja testejä
-Exploratory testing, suomeksi tutkiva testaus
-Järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman formaalia testisuunnitelmaa, testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella
-
-
+1. Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä vaan edetään yksi testi kerrallaan.
+2. Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
+3. Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan esim. copypastea koodissa, liian pitkiä metodeja, ...) _refaktoroidaan_ koodin rakenne paremmaksi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista sen rajapinnan ja toiminnallisuuden säilyessä muuttumattomana.
+4. Jatketaan askeleesta 1
  
+TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään teksti joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
-Test driven development TDD on yksi XP:n käytänteistä, Kent Beckin lanseeraama
-Joskus TDD:ksi kutsutaan tapaa, jossa testit kirjoitetaan ennen koodin kirjoittamista
-Tätä tekniikkaa parempi kuitenkin kutsua nimellä test first programming "määritelmän mukainen" TDD etenee seuraavasti
-1) Kirjoitetaan sen verran testiä että testi ei mene läpi
-Ei siis luoda heti kaikkia luokan testejä, edetään tekemällä ainoastaan yksi testi kerrallaan
-2) Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi
-Ei heti yritetäkään kirjoittaa "lopullista" koodia
-3) Jos huomataan koodin rakenteen menneen huonoksi (copypastea koodissa, liian pitkiä metodeja, ...) refaktoroidaan koodin rakenne paremmaksi
-Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista sen rajapinnan ja toiminnallisuuden säilyessä muuttumattomana
+![]({{ "/images/3-6.png" | absolute_url }}){:height="350px" } 
 
+TDD:llä ohjelmoitaessa toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponentin käyttäjää, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta. 
 
+TDD:ssä perinteisen suunnittelu-toteutus-testaus -syklin voi ajatella kääntyneen täysin päinvastaiseen järjestykseen, tarkka oliosuunnittelu tapahtuu vasta refaktorointivaiheiden kautta.
 
+### TDD:n hyviä puolia
 
+TDD:tä tehtäessä korostetaan yleensä lopputuloksen yksinkertaisuutta, tarkoituksena on toteuttaa toiminnallisuutta vain sen verran, mitä testien läpimeno edellyttää.
+Ei siis toteuteta "varalta" ekstratoiminnallisuutta, sillä sitä ei todennäköisesti tarvita tai ["You ain't gonna need it", YAGNI](https://martinfowler.com/bliki/Yagni.html) kuten monet koodarit asian ilmaisevat.
 
-4) Jatketaan askeleesta 1
+Koodista on vaikea tehdä testattavaa jos se ei ole modulaarista ja löyhästi kytketyistä selkeärajapintaisista komponenteista koostuvaa. Määritelmän mukaisella TDD:llä ohjelmoitaessa taas koodista tulee useimmiten jo lähtökohtaisesti modulaarista, selkeärajapintaista ja vähäistä turhilta riippuvuuksiltaan. Tälläisen koodin taas on huomattu olevan laadukasta ylläpidettävyyden ja laajennettavuuden kannalta. Eli eräs argumentti TDD:n puolesta on juuri ollut sen tuottama, laajennettavuuden ja jatkokehitettävyyden kannalta hyvä koodin laatu.
+
+Muina TDD:n hyvinä puolina manitaan että se rohkaisee ottamaan pieniä askelia kerrallaan ja näin toimimaan fokusoidusti, ja että hyvin kirjoitetut testit toimivat toteutetun komponentin rajapinnan dokumentaationa.
  
+TDD:tä on tutkittu akateemisesti kohtuullisen paljon. Kovin suurta evidenssiä sen hyödyistä [ei ole](https://researchportal.helsinki.fi/fi/publications/effects-of-test-driven-development-a-comparative-analysis-of-empi) havaittu, tosin tutkimusasetelmatkaan eivät ole olleet kovin vakuuttavia ja realistisia käyttötilanteita vastaavia.
 
-TDD:llä ohjelmoitaessa toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen
-Testit kirjoitetaan ensisijaisesti ajatellen komponentin käyttäjää
-huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa
+### TDD:llä on myös ikävät puolensa
 
-Komponentin sisäinen rakenne muotoutuu refaktorointien kautta
+Käytettäessä TDD:tä testikoodia tulee paljon, usein suunnilleen saman verran kuin varsinaista koodia. Jos ja kun sovellus muuttuu, tulee testejä ylläpitää myös ylläpitää sillä moni suuremmat rakenteelliset muutokset hajoittavat usein osan testeistä.
 
-TDD
- 
- 
+TDD:n käyttö on haastavaa (mutta ei mahdotonta) mm. käyttöliittymä-, tietokanta- ja verkkoyhteyksistä huolehtivan koodin yhteydessä. Testauksen kannalta hankalat komponentit kannattaakin eristää mahdollisimman hyvin muusta koodista, näin on järkevää tehdä, käytettiin TDD:tä tai ei.
 
-TDD:ssä perinteisen suunnittelu-toteutus-testaus -syklin voi ajatella kääntyneen täysin päinvastaiseen järjestykseen, tarkka oliosuunnittelu tapahtuu vasta refaktorointivaiheiden kautta
-TDD:tä tehtäessä korostetaan yleensä lopputuloksen yksinkertaisuutta, toteutetaan toiminnallisuutta vain sen verran, mitä testien läpimeno edellyttää
-Ei siis toteuteta "varalta" ekstratoiminnallisuutta, sillä "You ain't gonna need it" (YAGNI)
+Jo olemassaolevan eli koodin laajentaminen TDD:llä voi olla erittäin haastavaa.
 
-Koodista on vaikea tehdä testattavaa jos se ei ole modulaarista ja löyhästi kytketyistä selkeärajapintaisista komponenteista koostuvaa
-Tämän takia TDD:llä tehty koodi on yleensä laadukasta ylläpidettävyyden ja laajennettavuuden kannalta
-
-Muita TDD:n hyviä puolia:
-Rohkaisee ottamaan pieniä askelia kerrallaan ja näin toimimaan fokusoidusti Tehdyt virheet havaitaan nopeasti suuren testijoukon takia
-Hyvin kirjoitetut testit toimivat toteutetun komponentin rajapinnan dokumentaationa
-
-
-
-
-
-TDD
- 
-TDD TDD:llä on myös ikävät puolensa
-Testikoodia tulee paljon, usein suunnilleen saman verran kuin varsinaista koodia
-Toisaalta TDD:llä tehty tuotantokoodi on usein hieman normaalisti tehtyä koodia lyhempi
-Jos ja kun koodi muuttuu, tulee testejä ylläpitää
-TDD:n käyttö on haastavaa (mutta ei mahdotonta) mm. käyttöliittymä-, tietokanta- ja verkkoyhteyksistä huolehtivan koodin yhteydessä
-testauksen kannalta hankalat komponentit kannattaakin eristää mahdollisimman hyvin muusta koodista, näin on järkevää tehdä, käytettiin TDD:tä tai ei
-
-Lisää TDD:stä
-http://jamesshore.com/Agile-Book/test_driven_development.html http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd
-
-–
- 
-–
-
-Jo olemassaolevan "legacy"-koodin laajentaminen TDD:llä voi olla haastavaa
-
-
- 
+## Riippuvuuksien hallinta testeissä
 
 TDD:tä ja muutenkin yksikkötestejä tehdessä on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää
 Dependency Injection -suunnittelumalli parantaa luokkien testattavuutta sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin
@@ -439,18 +401,11 @@ https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/laskarit/1.md# 16
 Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja eli stubeja, näin tehtiin mm. viikon 1 tehtävässä 16:
 https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laska rit/1.md#16-nhlstatistics-ohjelman-yksikk%C3%B6testaus
 
-
-
-
 Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi
 Testi voi myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui Stubeja on viimeaikoina ruvettu myös kutsumaan mock-olioiksi
 Martin Fowlerin artikkeli selventää asiaa ja terminologiaa
 http://martinfowler.com/articles/mocksArentStubs.html
 
-
-
-
-Riippuvuudet yksikkötesteissä
 On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa Javalle tarkoitettuun Mockito-kirjastoon
  
 
@@ -459,7 +414,6 @@ Ostotapahtuman yhteydessä kaupan tulisi veloittaa asiakkaan tililtä ostosten
 Pankki myNetBank = new Pankki();
 Viitegeneraattori viitteet = new Viitegeneraattori(); Kauppa kauppa = new Kauppa(myNetBank, viitteet);
 kauppa.aloitaOstokset(); kauppa.lisaaOstos(5); kauppa.lisaaOstos(7); kauppa.maksa("1111");
-
 
 Miten varmistamme, että tilisiirron suorittavaa metodia on kutsuttu? Käytetään mockito-kirjastoa
 Riippuvuudet yksikkötesteissä: mockito
@@ -474,19 +428,16 @@ verify(mockPankki).tilisiirto(eq("1111"), eq(10), anyInt());
 }
 Pankkia edustavalle mock-oliolle on asetettu ekspektaatio, eli vaatimus joka varmistaa, että metodia tilisiirto on kutsuttu testin aikana sopivilla parametreilla
 
- 
+## User Storyjen testaaminen
+
 Luennon 2 kalvolla 16 mainittiin, että tärkeä osa user storyn käsitettä ovat Storyn hyväksymätestit (tai hyväksymäkriteerit), eli Mike Cohnin sanoin:
 Tests that convey and document details and that will be used to determine that the story is complete"
-
-
 
 User storyt kuvaavat loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia, esim:
 Asiakas voi lisätä oluen ostoskoriin
 
 Storyn hyväksymätestit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa
 
-
-User Storyjen testaaminen
 Myös hyväksymätestit on tarkoituksenmukaista ilmaista käyttäjän kielellä
 Usein pidetään hyvänä asiana, että asiakas on mukana laatimassa hyväksymätestejä
 
@@ -494,8 +445,6 @@ Edellisen user storyn hyväksymätestejä voisivat olla
 Ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
 Ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
 
-
- 
 Jos näin tehdään voidaan sprintissä tapahtuva ohjelmistokehitys ajatella hyväksymätestien tasolla tapahtuvana TDD:nä
  
 User Storyjen testaaminen Tälläisestä käytännöstä käytetään nimitystä Acceptance Test Driven
@@ -503,22 +452,17 @@ Development, ATDD
 ATDD:stä käytetään myös muutamaa muuta nimeä, ks. esim.
 http://testobsessed.com/wp-content/uploads/2011/04/atddexample.pdf http://www.methodsandtools.com/archive/archive.php?id=23 www.industriallogic.com/papers/storytest.pdf
 
-
 Osittain sama idea kulkee nimellä Behavior Driven Development, BDD
 http://dannorth.net/introducing-bdd/
 
 ATDD:ssä sovelluskehityksen lähtökohta on user story eli asiakkaan tasolla mielekäs toiminnallisuus
 Asiakkaan terminologialla yhdessä asiakkaan kanssa kirjoitetut hyväksymätestit määrittelevät toiminnallisuuden ja näin ollen korvaavat perinteisen vaatimusdokumentin
    
-
 Myös joidenkin käyttämä nimike Specification by Example tarkoittaa käytännössä aivan samaa asiaa
 https://en.wikipedia.org/wiki/Specification_by_example
 
-
-
 Testien kirjoittamisprosessi lisää asiakkaan ja tiimin välistä kommunikaatiota
  
-
 Ideaalitilanteessa hyväksymätesteistä tehdään automaattisesti suoritettavia
 Automaattisen hyväksymätestauksen työkaluja mm:
 Fitnesse, FIT, Robot (ATDD)
@@ -529,20 +473,10 @@ BDD:llä voidaan tehdä myös muita kuin hyväksymätason testejä
 kurssilla käytämme pääosin BDD:n nimentäkäytäntöjä Tutustumme johtavaan BDD-työkaluun Cucumberiin
 https://cucumber.io
 
-
-
-
-
-
-
-
-
-
 Hyväksymätestauksen työkalut
 Kuten kaikissa ATDD/BDD-työkaluissa, Cucumberissa testit kirjoitetaan asiakkaan kielellä
 Ohjelmoija kirjoittaa testeistä mäppäyksen koodiin, näin testeistä tulee automaattisesti suoritettavia
  
-
 Tarkastellaan esimerkkinä käyttäjätunnuksen luomisen ja sisäänkirjautumisen tarjoamaa palvelua
 Palvelun vaatimuksen määrittelevät user storyt
 A new user account can be created if a proper unused username and a proper password are given
@@ -551,9 +485,6 @@ User can log in with a valid username/password-combination
 Cucumberissa jokaisesta User Storystä kirjoitetaan oma .feature- päätteinen tiedosto, joka sisältää
 nimen ja
 joukon storyyn liittyvä hyväksymätestejä joita Cucumber kutsuu
-
-
-
 
 Cucumber
 skenaarioiksi
@@ -575,10 +506,8 @@ Scenario: nonexistent user can not login to
 Given command login is selected
 When username "nonexisting" and password "wrong" are entered Then system will respond with "incorrect username or password"
  
-
 Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla niistä mäppäys ohjelmakoodiin
 Ohjelmoijat tekevät mäppäyksen siinä vaiheessa, kun tuotantokoodia on tarpeellinen määrä valmiina
-
 
 Esimerkki seuraavalla sivulla
 Käytännössä jokaista testin given, when ja then-askelta vastaa oma metodinsa
@@ -589,12 +518,7 @@ Cucumber: skenaarioiden mäppäys koodiksi
 Ideana on että asiakas tai product owner kirjoittaa tiimissä olevien testaajien tai tiimiläisten kanssa yhteistyössä storyyn liittyvät testit
 Samalla storyn haluttu toiminnallisuus tulee dokumentoitua sillä tarkkuudella, että ohjelmoijat toivon mukaan ymmärtävät mistä on kyse
 
-
-
-
- 
- 
-
+## Websovellusten testien automatisointi
 
 Olemme jo nähneet, miten dependency injectionin avulla on helppo tehdä komentoriviltä toimivista ohjelmista testattavia
 Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web- selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista
@@ -604,35 +528,23 @@ http://seleniumhq.org/docs/03_webdriver.html
 Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testikoodista käsin selaimen toimintaa, esim. linkkien klikkauksia ja tiedon syöttämistä lomakkeeseen
 Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä
 
-
 Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan joko JUnit- tai Cucumber-testeinä
 Katsotaan esimerkkinä käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-versiota
 
-
-
 Asiaan tutustutaan tarkemmin viikon 3 laskareissa
-Websovellusten testien automatisointi
- 
- 
+
 Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelmiston toteutusvaiheen päättää integrointivaihe
 yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi
 suoritetaan integraatiotestaus, joka varmistaa yhteistoiminnallisuuden Perinteisesti juuri integrointivaihe on tuonut esiin suuren joukon ongelmia
 tarkasta suunnittelusta huolimatta erillisten tiimien toteuttamat komponentit rajapinnoiltaan tai toiminnallisuudeltaan epäsopivia
 
+## Ohjelmiston integraatio
 
-
-
-
-
-Ohjelmiston integraatio
 Suurten projektien integrointivaihe on kestänyt ennakoimattoman kauan
 integrointivaiheen ongelmat ovat aiheuttaneet ohjelmaan suunnittelutason muutoksia
 
 Integraatio on ollut perinteisesti niin hankala vaihe, että sitä kuvaamaan on lanseerattu termi integratiohelvetti
 http://wiki.c2.com/?IntegrationHell
-
- 
-
 
 90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa
 best practiceksi muodostui päivittäin tehtävä koko projektin kääntäminen daily/nightly build ja samassa yhteydessä ns. smoke test:in suorittaminen
@@ -643,16 +555,8 @@ Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio 
 Komponenttien yhteensopivuusongelmat huomataan nopeasti ja niiden korjaaminen helpottuu
 Tiimin moraali paranee, kun ohjelmistosta on olemassa päivittäin kasvava toimiva versio
 
-
-
 Pois integraatiohelvetistä
  
-
-
-
-
-
-
 Mahdollisimman usein tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Tästä syntyi idea toistaa integraatiota vielä päivittäistä sykliäkin useammin: jatkuva integraatio eli continuous integration
 Integraatiovaiheen yllätysten minimoinnin lisäksi jatkuvassa integraatiossa on tarkoitus eliminoida "but it works on my machine"-ilmiö
 Integraatiosta tarkoitus tehdä todella vaivaton operaatio, ohjelmistosta koko ajan olemassa integroitu ja testattu tuore versio
@@ -663,11 +567,6 @@ Päivittäisestä jatkuvaan integraatioon
 Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varattu CI-palvelimeksi
 CI-palvelin tarkkailee repositoriota ja jos huomaa siinä muutoksia, hakee koodin, kääntää sen ja ajaa testit
 Jos koodi ei käänny tai testit eivät mene läpi, seurauksena poikkeustilanne joka korjattava välittömästi: do not break the build
-
- 
-
-
-
 
 Kun kehittäjän omalla koneella kaikki testit menevät läpi ja koodi on integroitu muuhun ohjelmakoodiin, pushaa kehittäjä koodin repositorioon
 CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit
@@ -681,34 +580,21 @@ Haetaan repositoriosta koodin uusi versio
 Toteutetaan työn alla oleva toiminnallisuus ja sille automatisoidut testit Integroidaan kirjoitettu koodi suoraan muun koodin yhteyteen
 Kun työ valmiina, haetaan repositorioon tulleet muutokset ja ajetaan testit
 
-
-
-
-
-
- 
-
-
 Ensimmäisellä viikolla käyttämämme Travis on tämän hetken ehkä eniten huomiota saanut CI-palvelinohjelmisto
 Eräs travisin suurista eduista on se, että ohjelmisto toimii pilvessä ja tarvetta oman CI-palvelimen asentamiselle ei ole
 
 Travisia paljon vanhempi Jenkins lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto
 Tällä hetkellä ei taida olla olemassa yhtään ilmaista verkossa olevaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle
+
 Jatkuva integraatio – Continuous Integration
+
 Jotta CI-prosessi toimisi joustavasti, tulee testien ajamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia
 Jos osa testeistä on hitaita, voidaan testit konfiguroida ajettavaksi kahdessa (tai tarvittaessa useammassakin) vaiheessa
 commit build:in läpimeno antaa kehittäjälle oikeuden pushata koodi repositorioon
 CI-palvelimella suoritetaan myös hitaammat testit sisältävä secondary build
 
-
-
-
- 
 Viime aikoina nousseen trendin mukaan CI:tä viedään vielä askel pidemmälle ja integraatioprosessiin lisätään myös automaattinen "deployaus"
 käännetty ja testattu koodi siirretään suoritettavaksi ns. staging- eli testipalvelimelle
-
-
-
 
 Staging-palvelin, on ympäristö, joka on konfiguraatioidensa ja myös sovelluksen käsittelemän datan osalta mahdollisimman lähellä varsinaista tuotantoympäristöä
 Kun ohjelmiston uusi versio on viety eli deployattu staging-palvelimelle, suoritetaan sille hyväksymätestit
@@ -716,31 +602,23 @@ Hyväksymätestien suorittamisen jälkeen uusi versio voidaan siirtää tuo
 Parhaassa tapauksessa myös staging-ympäristössä tehtävien hyväksymätestien suoritus on automatisoitu, ja ohjelmisto kulkee koko deployment pipelinen läpi, eli sovelluskehittäjän koneelta CI- palvelimelle, sieltä stagingiin ja lopulta tuotantoon, automaattisesti
 Termillä deployment pipeline siis tarkoitetaan niitä ohjelman käännöksen ja testauksen vaiheita, joiden suorittamista edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön asiakkaan käyttöön
 
-
 Jatkuva toimitusvalmius ja käyttöönotto
  
 Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston uusi versio viedään staging-palvelimelle ja siellä tapahtuvan hyväksymätestauksen jälkeen tuotantoon, käytetään nimitystä jatkuva toimitusvalmius engl. continuous delivery
 Jos staging-palvelimella ajettavat testit ja siirto tuotantopalvelimelle tapahtuvat automattisesti, puhutaan jatkuvasta käyttöönotosta engl. continuous deployment
 Viime aikoina on ruvettu suosimaan tyyliä, jossa web-palveluna toteutettu ohjelmisto julkaistaan tuotantoon jopa useita kertoja päivästä
 
-
 Jatkuva toimitusvalmius ja käyttöönotto
  
- 
-
 Jotta järjestelmä saadaan niin virheettömäksi, että se voidaan laittaa tuotantoon, on testauksen oltava erittäin perusteellinen
 Perinteinen tapa järjestelmätestauksen suorittamiseen on ollut laatia ennen testausta hyvin perinpohjainen testaussuunnitelma
 Jokaisesta testistä on kirjattu testisyötteet ja odotettu tulos
 Testauksen tuloksen tarkastaminen on suoritettu vertaamalla järjestelmän toimintaa testitapaukseen kirjattuun odotettuun tulokseen
 
-
-
-
 Automatisoitujen hyväksymätestien luonne on täsmälleen samanlainen, syöte on tarkkaan kiinnitetty samoin kuin odotettu tuloskin
 Jos testaus tapahtuu pelkästään etukäteen mietittyjen testien avulla, ovat ne kuinka tarkkaan tahansa harkittuja, ei kaikkia yllättäviä tilanteita osata välttämättä ennakoida
 Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta
 Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu nimittämään tutkivaksi testaamiseksi (exploratory testing)
-
 
 Tutkiva testaaminen
  
@@ -748,22 +626,16 @@ Exploratory testing is simultaneous learning, test design and test execution
 www.satisfice.com/articles/et-article.pdf
 http://www.satisfice.com/articles/what_is_et.shtml
 
-
-
-
-
 Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien tuloksen perusteella
 Testitapauksia ei suunnitella kattavasti etukäteen, vaan testaaja pyrkii kokemuksensa ja suoritettujen testien perusteella löytämään järjestelmästä virheitä
 Tutkiva testaus ei kuitenkaan etene täysin sattumanvaraisesti Testaussessiolle asetetaan jonkinlainen tavoite
 Mitä tutkitaan ja minkälaisia virheitä etsitään
 
-
-
 Tutkiva testaaminen
+
 Ketterässä ohjelmistotuotannossa tavoite voi hyvin jäsentyä yhden tai useamman User storyn määrittelemän toiminnallisuuden ympärille
 Esim. testataan ostosten lisäystä ja poistoa ostoskorista
 
- 
 Tutkivassa testauksessa keskeistä on kaiken järjestelmän tekemien asioiden havainnointi
 Normaaleissa etukäteen määritellyissä testeissähän havainnoidaan ainoastaan reagoiko järjestelmä odotetulla tavalla
 Tutkivassa testaamisessa kiinnitetään huomio myös varsinaisen testattavan asian ulkopuoleisiin asioihin
@@ -774,66 +646,14 @@ voitaisiin yrittää muuttaa käsin ostoskorin id:tä ja yrittää saada j
 Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannattaa eliminoida lisäämällä ohjelmalle sopivat automaattiset regressiotestit
 Tutkivaa testaamista ei siis kannata käyttää regressiotestaamisen menetelmänä vaan sen avulla kannattaa ensisijaisesti testata sprintin yhteydessä toteutettuja uusia ominaisuuksia
 
-
 Tutkiva testaaminen siis ei ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille testeille vaan niitä täydentävä testauksen muoto
 
-
-
-Tutkiva testaaminen
+## Ketterien menetelmien testauskäytänteitä
  
-Loppupäätelmiä testauksesta Seuraavalla sivulla alunperin Brian Maricin ketterän testauksen kenttää
-jäsentävä kaavio Agile Testing Quadrants
-http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/ http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2 Kaavio on jo hieman vanha, alunperin vuodelta 2003
-
-Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1...Q4) seuraavien dimensioiden suhteen
-Business facing ... technology facing
-Supporting team ... critique to the product
-
-
-Testit ovat suurelta osin automatisoitavissa, mutta esim. tutkiva testaaminen ja käyttäjän hyväksymätestaus ovat luonteeltaan manuaalista työtä edellyttäviä
-Kaikilla "neljänneksillä" on oma roolinsa ja paikkansa ketterissä projekteissa, ja on pitkälti kontekstisidonnaista missä suhteessa testaukseen ja laadunhallintaan käytettävissä olevat resurssit kannattaa kohdentaa
-
-
-
-
-
- 
- 
-
-
-
-
-
-Seuraavassa esitettävät asiat ovat osin omia, kokemuksen ja kirjallisuuden perusteella hankittuja testaukseen liittyviä mielipiteitä
-Ketterissä menetelmissä kantavana teemana on arvon tuottaminen asiakkaalle
-Tätä kannattaa käyttää ohjenuorana myös arvioitaessa mitä ja miten paljon projektissa tulisi testata
-Testauksella ei ole itseisarvoista merkitystä, mutta testaamattomuus alkaa pian heikentää tuotteen laatua liikaa
-Joka tapauksessa testausta ja laadunhallintaa on tehtävä paljon ja toistuvasti, tämän takia testauksen automatisointi on yleensä pidemmällä tähtäimellä kannattavaa
-Testauksen automatisointi ei ole halpaa eikä helppoa ja väärin, väärään aikaan tai väärälle "tasolle" tehdyt automatisoidut testit voivat tuottaa enemmän harmia ja kustannuksia kuin hyötyä
-Loppupäätelmiä testauksesta
- 
-Jos ohjelmistossa on komponentteja, jotka tullaan ehkä poistamaan tai korvaamaan pian, saattaa olla järkevää olla automatisoimatta niiden testejä
-Esim. luennolla 3 esitelty MVP eli Minimal Viable Product on karsittu toteutus, jonka avulla halutaan nopeasti selvittää, onko jokin ominaisuus ylipäätään käyttäjien kannalta arvokas
-Jos MVP:n toteuttama ominaisuus osoittautuu tarpeettomaksi, se poistetaan järjestelmästä
-
-
-Ongelmallista kuitenkin usein on, että tätä ei tiedetä yleensä ennalta ja pian poistettavaksi tarkoitettu komponentti voi jäädä järjestelmään pitkäksikin aikaa
-Kokonaan uutta ohjelmistoa tai komponenttia tehtäessä voi olla järkevää antaa ohjelman rakenteen ensin stabiloitua ja tehdä kattavammat testit vasta myöhemmin
-Komponenttien testattavuus kannattaa kuitenkin pitää koko ajan mielessä vaikka niille ei heti testejä tehtäisikään
-
-
-
-Ketterien menetelmien testauskäytänteitä
- 
-–
-
-–
-
 Exploratory testing, suomeksi tutkiva testaus
 Continuous Integration (CI) suomeksi jatkuva integraatio
 Moderni kehitys on kulkenut kohti Continuous deploymentiä eli automaattisesti tapahtuvaa jatkuvaa tuotantoonvientiä
  
-
 Jatkuvassa tuotantoonviennissä (continuous deployment) siis jokainen sovelluskehittäjän commit voi mahdollisesti johtaa järjestelmän uuden version tuotantoonvientiin
 Commit kulkee deployment pipelinen läpi
 CI-palvelin suorittaa commitille joukon testejä
@@ -845,27 +665,17 @@ Testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, etta�
 
 Staging-ympäristö on sekä konfiguraatioiltaan, että käsiteltävän datan suhteen mahdollisimman paljon tuotantoympäristön kaltainen ympäristö
  
-
-–
-
 Jos staging-ympäristössä suoritetut testit menevät läpi, siirtyy uusi versio tuotantoympäristöön
 Continuous deployment ja deployment pipeline
  
-
 Continuous deployment ja deployment pipeline Lopullinen tuotantoonvienti voi olla automaattinen, tällöin puhutaan
 jatkuvasta tuotantoonviennistä, continuous deployment
 Tai tuotantoonvienti voi myös tapahtua ihmisen päätöksen toimesta "nappia painamalla", tästä käytänteestä käytetään nimitystä jatkuva toimitusvalmius, continuous delivery
 Ohjelmiston asiakkaalla voi olla useita syitä miksi sovelluksen uusia versiota ei välttämättä haluta heti käyttöön vaan esim. kahden viikon välein
-
  
  Tuotannossa tapahtuva testaaminen ja laadunhallinta
 Perinteisesti on ajateltu, että kaiken ohjelmiston laadunhallintaan liittyvän testauksen tulee tapahtua ennen kuin ohjelmisto tai sen uudet toiminnallisuudet on otettu käyttöön eli viety tuotantoympäristöön
 Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa
-
-
- 
- 
-
 
 Eräs tuotannossa tapahtuvan testaamisen tekniikka on blue-green- deployment, missä periaatteena on ylläpitää rinnakkain kahta tuotantoympäristöä (tai palvelinta), joista käytetään nimiä blue ja green
 Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa käytössä
@@ -873,17 +683,14 @@ Käyttäjien ja tuotantopalvelinten välissä oleva komponentti esim, ns. re
 Kun järjestelmään toteutetaan uusi ominaisuus, deployataan se ensin passiivisena olevaan ympäristöön
 Blue-green-deployment
  
- 
 Passiiviselle, uuden ominaisuuden sisältämälle ympäristölle voidaan sitten tehdä erilaisia testejä
 esim. osa käyttäjien liikenteestä voidaan ohjata aktiivisen lisäksi passiiviseen ympäristöön ja varmistaa, että se toimii odotetulla tavalla
 
 Kun uuden ominaisuuden sisältävän passiivinen ympäristön todetaan toimivan ongelmattomasti myös tuotantoympäristössä, voidaan palvelinten rooli vaihtaa, uuden ominaisuuden sisältämästä palvelimesta tulee uusi aktiivinen tuotantoympäristö
 Aktiivisen tuotantoympäristön vaihto tapahtuu määrittelemällä web- palvelin ohjaamaan liikenne uudelle palvelimelle
 
-
 Jos uuden ominaisuuden sisältämässä ympäristössä havaitaan aktivoinnin jälkeen jotain ongelmia, on mahdollista suorittaa erittäin nopeasti rollback-operaatio, ja vaihtaa vanha versio jälleen aktiiviseksi
 On tarkoituksenmukaista, että kaikki blue-green-deploymentiin liittyvät testit, niiden tulosten varmistaminen, tuotantoympäristön vaihto ja mahdollinen rollback tapahtuvat automatisoidusti
-
 
 Blue-green-deployment
  
@@ -892,9 +699,6 @@ Uuden ominaisuuden sisältämää versiota monitoroidaan aktiivisesti ja jos
 Kuten blue-green-deploymentin tapauksessa, ongelmatilanteissa palautetaan käyttäjät aiempaan, toimivaksi todettuun versioon
 Canary release
  
-
- 
-
 Uuden version toimivaksi varmistaminen siis perustuu järjestelmän monitorointiin
 Jos kyseessä olisi esim. sosiaalisen median palvelu, monitoroinnissa voitaisiin tarkastella esim:
 Palvelun muistin ja prosessoriajan kulutusta sekä verkkoliikenteen määrää Sovelluksen eri sivujen vasteaikoja eli latautumiseen menevää aikaa Kirjautuneiden käyttäjien määrää
@@ -904,17 +708,13 @@ Monitoroinnissa tulee siis palvelimen yleisen toimivuuden lisäksi seurata
 käyttäjätason metriikoita (engl. bussiness level metrics)
 Jos niissä huomataan eroja aiempaan (esim. kirjautuneet käyttäjät eivät lähetä viestejä samaa määrää kuin keskimäärin normaalisti), voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma ja voi olla tarpeen tehdä rollback vanhaan järjestelmäversioon ja analysoida vikaa tarkemmin
 
-
 Myös canary releasejen yhteydessä testauksen ja kaikkien tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti
-    
-
+   
 Canary release
  
-
 Edellisillä kalvoilla oli merkitty järjestelmän vanhalle ja uudelle versiolle erillinen tietokantapalvelin (database server)
 Tilanne ei välttämättä ole tämä ja erityisesti canary releasejen yhteydessä järjestelmän molemmat versiot käyttävät yleensä samaa tietokantaa
 Tuotannossa testaaminen ja tietokanta
- 
  
 Tämä taas asettaa haasteita, jos järjestelmään toteutetut uudet ominaisuudet edellyttävät muutoksia tietokannan skeemaan
 Canary releasejen yhteydessä tarvitaan periaatteessa yhtä aikaa sekä tietokannan uutta että vanhaa versiota
@@ -924,7 +724,6 @@ yhteen kantaa sovelluksen tekemät päivitykset on siis tavalla tai toisella t
 
 Nimi canary release periytyy kaivostyöläisten tavasta käyttää kanarialintuja tutkimaan sitä onko kaivoksessa myrkyllisiä kaasuja, jos kaivokseen viety lintu ei kuole, ilma on turvallista
 
-
 Tuotannossa testaaminen ja tietokanta
  
 Jos hyödynnetään feature toggleja voidaan Canary releaseja toteuttaa myös käyttämällä pelkästään yhtä tuotantopalvelinta
@@ -933,9 +732,7 @@ Sama asia kulkee myös nimillä feature flag, conditional feature, config flag
 Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadun hallinnan alla olevaan toteutukseen
 Esim. sosiaalisen median palvelussa voitaisiin käyttäjälle näytettävien uutisten listaan asettaa feature toggle, jonka avulla tietyin perustein valituille käyttäjille näytettäisiinkin uuden algoritmin perusteella generoitu lista uutisia
 
-
 feature toggle
- 
  
 feature toggle
 Canary releaset eivät ole feature togglejen ainoa sovellus, niitä käytetään
@@ -945,14 +742,8 @@ Käytännössä feature toggle siis palauttaa aina vanhan version normaaleil
 Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, voi feature togglen avulla sitten esim. julkaista ominaisuuden ensin kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena
 Lopulta feature toggle ja vanha toteutus voidaan poistaa
 
-
 Suuret internetpalvelut kuten Facebook, Netflix, Google ja Flickr soveltavat laajalti canary releaseihin ja feature flageihin perustuvaa kehitysmallia
 Aiheesta löytyy internetistä suuret määrät kiinnostavaa materiaalia, hyvän yleiskuvan antaa https://martinfowler.com/articles/feature-toggles.html
-
-
-
-
- 
 
 Edellisellä kalvolla mainittiin feature branchit
 Kyseessä on siis käytäntö, missä uudet uusi ominaisuus, esim user story toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. masteriin)
@@ -960,21 +751,8 @@ Monet pitävät feature brancheja versionhallinnan käytön best practicena
 Viime aikoina on kuitenkin huomattu, että feature branchit aiheuttavat helposti pahoja merge-konflikteja sprintin lopussa
 Seurauksena pienimuotoinen integraatiohelvetti: merge hell Arkipäivää ohjelmistotiimissä
 
-
-
-
 Feature branchit ja merge hell
  
- 
-
-
-
-
-
-
-
-
-
 Trunk based development
 Viime aikaisena suuntauksena noussut esiin ns trunk based development missä pitkäikäisiä feature brancheja ei käytetä ollenkaan
 Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä trunk
@@ -985,8 +763,6 @@ Trunk-pohjainen kehitys yhdistetään usein feature toggleihin, näin puoliva
 Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä kuria ja systemaattisuutta
 Feature togglejen holtiton käyttö voi johtaa feature toggle helvettiin... Trunk-pohjaista kehitysmallia noudattavat esim. Google, Facebook ja Netflix
 https://trunkbaseddevelopment.com
- 
-
 
 Jatkuvan toimitusvalmiuden (Continuous delivery), käyttöönoton (Continuous deployment) ja tuotannossa testaamisen soveltaminen ei useimmiten ole ollenkaan suoraviivaista
 Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (developers, dev) ja tuotantopalvelimista vastaavan järjestelmäylläpitäjien (operations, ops) välillä
@@ -994,12 +770,8 @@ On erittäin tavallista, että sovelluskehittäjät eivät pääse edes k
 Tälläisessä ympäristössä esim. continuous deploymentin harjoittaminen on erittäin haastavaa, tilanne ajautuukin helposti siihen, että tuotantopalvelimelle pystytään viemään uusia versioita vain harvoin, esim 4 kertaa vuodessa
 Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä
 Sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle, scrum-tiimiin sijoitetaan ylläpitovastuilla olevia ihmisiä
-
-
-
 Dev vs ops
  
-
 DevOps
 Toimintamallia missä dev ja ops työskentelevät tiiviisti yhdessä on alettu
 kutsua termillä DevOps
@@ -1015,17 +787,6 @@ virtualisointi ja kontainerisointi (docker)
 infrastructure as code
 pilvipalveluna toimivat palvelimet ja sovellusympäristöt (PaaS, IaaS, SaaS)
 
-
-
-
-
-
-
-
-
-
- 
-
 Monet edellisistä ovat kehittyneet vasta viimeisen 5-10 vuoden aikana ja täten mahdollistaneet devops:in helpomman soveltamisen
 Eräs tärkeimmistä devops:ia mahdollistavista asioista on ollut siirtyminen yhä enemmän käyttämään fyysisten palvelinten sijaan virtuaalisia ja pilvessä toimivia palvelimia, tällöin raudastakin on tullut "koodia", eli infrastructure as code
 Tämä on tehnyt palvelinten ohjelmoinnillisen hallinnoinnin mahdolliseksi
@@ -1034,17 +795,12 @@ Sovelluskehitys ja ylläpito ovat alkaneet muistuttaa enemmän toisiaan kuin v
 
 Työkalujen käyttöönotto ei kuitenkaan riitä, DevOps:in "tekeminen" lähtee pohjimmiltaan kulttuurisista tekijöistä, tiimirakenteista, sekä asioiden sallimisesta
 
-
-
 DevOps
  
 Scrumin ja agilen eräs tärkeimmistä periaatteista on tehdä kehitystiimeistä itseorganisoituvia ja "cross functional", eli sellaisia että ne sisältävät kaiken tietotaidon uusien ominaisuuksien Definition of Donen tasolla valmiiksi saattamista varten
 DevOps onkin eräs keino viedä ketteryyttä askeleen pitemmälle, mahdollistaa se, että ketterät tiimit ovat todella cross functional ja että ne pystyvät viemään vaivattomasti toteuttamansa uudet toiminnallisuudet tuotantoympäristöön asti ja jopa testaamaan ja operoimaan niitä tuotannossa
 
 DevOps
- 
-  
- 
  
 Loppupäätelmiä testauksesta Seuraavalla sivulla alunperin Brian Maricin ketterän testauksen kenttää
 jäsentävä kaavio Agile Testing Quadrants
@@ -1054,20 +810,8 @@ Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1..
 Business facing ... technology facing
 Supporting team ... critique to the product
 
-
 Testit ovat suurelta osin automatisoitavissa, mutta esim. tutkiva testaaminen ja käyttäjän hyväksymätestaus ovat luonteeltaan manuaalista työtä edellyttäviä
 Kaikilla "neljänneksillä" on oma roolinsa ja paikkansa ketterissä projekteissa, ja on pitkälti kontekstisidonnaista missä suhteessa testaukseen ja laadunhallintaan käytettävissä olevat resurssit kannattaa kohdentaa
-
-
-
-
-
- 
- 
-
-
-
-
 
 Seuraavassa esitettävät asiat ovat osin omia, kokemuksen ja kirjallisuuden perusteella hankittuja testaukseen liittyviä mielipiteitä
 Ketterissä menetelmissä kantavana teemana on arvon tuottaminen asiakkaalle
@@ -1086,14 +830,10 @@ Ongelmallista kuitenkin usein on, että tätä ei tiedetä yleensä ennalta
 Kokonaan uutta ohjelmistoa tai komponenttia tehtäessä voi olla järkevää antaa ohjelman rakenteen ensin stabiloitua ja tehdä kattavammat testit vasta myöhemmin
 Komponenttien testattavuus kannattaa kuitenkin pitää koko ajan mielessä vaikka niille ei heti testejä tehtäisikään
 
-
-
-Loppupäätelmiä testauksesta
+## Loppupäätelmiä testauksesta
  
 Kattavien yksikkötestien tekeminen ei välttämättä ole mielekästä ohjelman kaikille luokille, parempi vaihtoehto voi olla tehdä integraatiotason testejä ohjelman isompien komponenttien rajapintoja vasten
 Testit pysyvät todennäköisemmin valideina komponenttien sisäisen rakenteen muuttuessa
-
-
 
 Yksikkötestaus lienee hyödyllisimmillään kompleksia logiikkaa sisältäviä luokkia testattaessa
 Oppikirjamääritelmän mukaista TDD:tä sovelletaan melko harvoin
@@ -1108,8 +848,5 @@ Testitapauksissa kannattaa käyttää mahdollisimman oikeanlaista dataa, erit
 Koodissa nimittäin lähes aina hajoaa jokin kun käytetään oikeaa dataa riippumatta siitä miten hyvin testaus on suoritettu
 Parasta onkin jos staging-ympäristössä on käytössä sama data kuin tuotantoympäristössä
 
-
 Automaattisia testejä kannattaa kirjoittaa mahdollisimman paljon etenkin niiden järjestelmän komponenttien rajapintoihin, joita muokataan usein
 Liian aikaisessa vaiheessa projektia tehtävät käyttöliittymän läpi suoritettavat testit saattavat aiheuttaa kohtuuttoman paljon ylläpitovaivaa, sillä testit hajoavat helposti pienistäkin käyttöliittymään tehtävistä muutoksista
-
-Loppupäätelmiä testauksesta
