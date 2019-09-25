@@ -394,86 +394,60 @@ Jo olemassaolevan eli koodin laajentaminen TDD:llä voi olla erittäin haastava
 
 ## Riippuvuuksien hallinta testeissä
 
-TDD:tä ja muutenkin yksikkötestejä tehdessä on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää
-Dependency Injection -suunnittelumalli parantaa luokkien testattavuutta sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin
-https://github.com/mluukkai/ohjelmistotuotanto2017/blob/master/laskarit/1.md# 16--nhlstatistics-ohjelman-yksikkötestaus
+TDD:tä ja muutenkin yksikkötestejä tehdessä on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää.
 
-Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja eli stubeja, näin tehtiin mm. viikon 1 tehtävässä 16:
-https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laska rit/1.md#16-nhlstatistics-ohjelman-yksikk%C3%B6testaus
+Laskareista tuttu [riippuvuuksien injektio](linkki) -suunnittelumalli parantaa luokkien testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin.
 
-Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi
-Testi voi myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui Stubeja on viimeaikoina ruvettu myös kutsumaan mock-olioiksi
-Martin Fowlerin artikkeli selventää asiaa ja terminologiaa
-http://martinfowler.com/articles/mocksArentStubs.html
+Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, näin tehtiin mm. [viikon 1 tehtävässä 16](linkki). Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
 
-On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa Javalle tarkoitettuun Mockito-kirjastoon
+Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa.
+
+On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa Javalle tarkoitettuun [Mockito](https://site.mockito.org/)-kirjastoon.
  
+Esimerkki viikon 2 laskareiden verkkokauppatehtävästä.
 
-Esimerkki viikon 2 laskareista (Verkkokauppa)
-Ostotapahtuman yhteydessä kaupan tulisi veloittaa asiakkaan tililtä ostosten hinta kutsumalla luokan pankki metodia tilisiirto:
-Pankki myNetBank = new Pankki();
-Viitegeneraattori viitteet = new Viitegeneraattori(); Kauppa kauppa = new Kauppa(myNetBank, viitteet);
-kauppa.aloitaOstokset(); kauppa.lisaaOstos(5); kauppa.lisaaOstos(7); kauppa.maksa("1111");
+Ostotapahtuman yhteydessä kaupan tulisi veloittaa asiakkaan tililtä ostosten hinta _kutsumalla luokan pankki metodia tilisiirto_:
 
-Miten varmistamme, että tilisiirron suorittavaa metodia on kutsuttu? Käytetään mockito-kirjastoa
-Riippuvuudet yksikkötesteissä: mockito
+![]({{ "/images/3-7.png" | absolute_url }}){:height="350px" } 
+
+Miten varmistamme, että tilisiirron suorittavaa metodia on kutsuttu? 
+
+Mockito-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kaupan riippuvuuksista mock-oliot:
+
+![]({{ "/images/3-8.png" | absolute_url }}){:height="350px" } 
+
+Pankkia edustavalle mock-oliolle on asetettu _ekspektaatio_, eli vaatimus joka varmistaa, että metodia tilisiirto on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
+
+## User storyjen testaaminen 
+
+User storyn [määritelmän](viikko2) yhteydessä mainittiin, että user storyn käsite pitää sisällään _hyväksymäkriteerit_, Mike Cohnin sanoin:
+
+_tests that convey and document details and that will be used to determine that the story is complete_
+
+Esimerkiksi userstoryn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksymäkriteerejä voisivat olla
+- ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
+- ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
+
+Optimaalisessa tilanteesa user storyjen hyväksymäkriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavia, testejä.
+
+Storyn hyväksymäkriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa, mielellään yhteistyössä tiimin kesken sekä product ownerin tai jonkun muun asiakkaan edustajan kesken. Usein käytäntönä on ilmaista hyväksymäkriteerit user storyjen tapaan asiakkaan kielellä, käyttämättä teknistä jargonia. Hyväksymäkriteerien kirjoittamisprosessi lisääkin parhaassa tapauksessa asiakkaan ja tiimin välistä kommunikaatiota.
  
-Riippuvuudet yksikkötesteissä: mockito Luodaan testissä kaupan riippuvuuksista mock-oliot:
-@Test
-public void kutsutaanPankkiaOikeallaTilinumerollaJaSummalla() {
-Pankki mockPankki = mock(Pankki.class);
-Viitegeneraattori mockViite = mock(Viitegeneraattori.class); kauppa = new Kauppa(mockPankki, mockViite);
-kauppa.aloitaOstokset(); kauppa.lisaaOstos(5); kauppa.lisaaOstos(5); kauppa.maksa("1111");
-verify(mockPankki).tilisiirto(eq("1111"), eq(10), anyInt());
-}
-Pankkia edustavalle mock-oliolle on asetettu ekspektaatio, eli vaatimus joka varmistaa, että metodia tilisiirto on kutsuttu testin aikana sopivilla parametreilla
+### Järjestelmätestien automatisointi, ATDD ja BDD
 
-## User Storyjen testaaminen
+Ideaalitilanteessa storyjen hyväksymäkriteereistä tehdään automaattisesti suoritettavia. 
 
-Luennon 2 kalvolla 16 mainittiin, että tärkeä osa user storyn käsitettä ovat Storyn hyväksymätestit (tai hyväksymäkriteerit), eli Mike Cohnin sanoin:
-Tests that convey and document details and that will be used to determine that the story is complete"
+Automaattisen hyväksymätestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla useita eri kieliä tukevaa [Cucumber](https://cucumber.io/):ia. 
 
-User storyt kuvaavat loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia, esim:
-Asiakas voi lisätä oluen ostoskoriin
 
-Storyn hyväksymätestit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa
 
-Myös hyväksymätestit on tarkoituksenmukaista ilmaista käyttäjän kielellä
-Usein pidetään hyvänä asiana, että asiakas on mukana laatimassa hyväksymätestejä
-
-Edellisen user storyn hyväksymätestejä voisivat olla
-Ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
-Ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
-
-Jos näin tehdään voidaan sprintissä tapahtuva ohjelmistokehitys ajatella hyväksymätestien tasolla tapahtuvana TDD:nä
- 
-User Storyjen testaaminen Tälläisestä käytännöstä käytetään nimitystä Acceptance Test Driven
-Development, ATDD
-ATDD:stä käytetään myös muutamaa muuta nimeä, ks. esim.
-http://testobsessed.com/wp-content/uploads/2011/04/atddexample.pdf http://www.methodsandtools.com/archive/archive.php?id=23 www.industriallogic.com/papers/storytest.pdf
-
-Osittain sama idea kulkee nimellä Behavior Driven Development, BDD
-http://dannorth.net/introducing-bdd/
-
-ATDD:ssä sovelluskehityksen lähtökohta on user story eli asiakkaan tasolla mielekäs toiminnallisuus
-Asiakkaan terminologialla yhdessä asiakkaan kanssa kirjoitetut hyväksymätestit määrittelevät toiminnallisuuden ja näin ollen korvaavat perinteisen vaatimusdokumentin
-   
-Myös joidenkin käyttämä nimike Specification by Example tarkoittaa käytännössä aivan samaa asiaa
-https://en.wikipedia.org/wiki/Specification_by_example
-
-Testien kirjoittamisprosessi lisää asiakkaan ja tiimin välistä kommunikaatiota
- 
-Ideaalitilanteessa hyväksymätesteistä tehdään automaattisesti suoritettavia
-Automaattisen hyväksymätestauksen työkaluja mm:
-Fitnesse, FIT, Robot (ATDD)
-Cucumber ja JBehave (BDD)
 ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin
 BDD kiinnittää testeissä käytettävän terminologian tarkemmin, BDD ei mm. puhu ollenkaan testeistä vaan spesifikaatioista
 BDD:llä voidaan tehdä myös muita kuin hyväksymätason testejä
 kurssilla käytämme pääosin BDD:n nimentäkäytäntöjä Tutustumme johtavaan BDD-työkaluun Cucumberiin
-https://cucumber.io
 
-Hyväksymätestauksen työkalut
+
+### Hyväksymätestauksen työkalut
+
 Kuten kaikissa ATDD/BDD-työkaluissa, Cucumberissa testit kirjoitetaan asiakkaan kielellä
 Ohjelmoija kirjoittaa testeistä mäppäyksen koodiin, näin testeistä tulee automaattisesti suoritettavia
  
@@ -537,6 +511,23 @@ Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelm
 yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi
 suoritetaan integraatiotestaus, joka varmistaa yhteistoiminnallisuuden Perinteisesti juuri integrointivaihe on tuonut esiin suuren joukon ongelmia
 tarkasta suunnittelusta huolimatta erillisten tiimien toteuttamat komponentit rajapinnoiltaan tai toiminnallisuudeltaan epäsopivia
+
+## ATDD / BDD
+
+Jos näin tehdään voidaan sprintissä tapahtuva ohjelmistokehitys ajatella hyväksymätestien tasolla tapahtuvana TDD:nä
+ 
+User Storyjen testaaminen Tälläisestä käytännöstä käytetään nimitystä Acceptance Test Driven
+Development, ATDD
+ATDD:stä käytetään myös muutamaa muuta nimeä, ks. esim.
+http://testobsessed.com/wp-content/uploads/2011/04/atddexample.pdf http://www.methodsandtools.com/archive/archive.php?id=23 www.industriallogic.com/papers/storytest.pdf
+
+Osittain sama idea kulkee nimellä Behavior Driven Development, BDD
+http://dannorth.net/introducing-bdd/
+
+ATDD:ssä sovelluskehityksen lähtökohta on user story eli asiakkaan tasolla mielekäs toiminnallisuus
+Asiakkaan terminologialla yhdessä asiakkaan kanssa kirjoitetut hyväksymätestit määrittelevät toiminnallisuuden ja näin ollen korvaavat perinteisen vaatimusdokumentin
+   
+##
 
 ## Ohjelmiston integraatio
 
