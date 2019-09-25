@@ -1,6 +1,7 @@
 ---
 layout: page
 title: osa 0
+title_long: 'Johdanto'
 inheader: yes
 permalink: /osa0/
 ---
@@ -9,7 +10,6 @@ permalink: /osa0/
   <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
   />
 </a>
-# Johdanto
 
 Kurssi on jo ohjelmointia hallitseville tarjoitettu johdanto ohjelmistotuotantoon, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantometetelmissä. 
 

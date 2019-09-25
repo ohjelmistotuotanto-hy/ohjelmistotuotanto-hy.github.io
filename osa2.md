@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Viikko 2
+title_long: 'Ohjelmistojen vaatimusmäärittely, tuotteen ja sprintin hallinta'
 inheader: yes
 permalink: /viikko2/
 ---
@@ -9,8 +10,6 @@ permalink: /viikko2/
   <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
   />
 </a>
-
-# Viikko 2: Ohjelmistojen vaatimusmäärittely, tuotteen ja sprintin hallinta
 
 Viikon aiheina ohjelmistojen vaatimusmäärittely erityisesti ketterien menetelmien menetelmät siihen. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
