@@ -408,7 +408,7 @@ Esimerkki viikon 2 laskareiden verkkokauppatehtävästä.
 
 Ostotapahtuman yhteydessä kaupan tulisi veloittaa asiakkaan tililtä ostosten hinta _kutsumalla luokan pankki metodia tilisiirto_:
 
-![]({{ "/images/3-7.png" | absolute_url }}){:height="350px" } 
+![]({{ "/images/3-7.png" | absolute_url }}){:height="220px" } 
 
 Miten varmistamme, että tilisiirron suorittavaa metodia on kutsuttu? 
 
@@ -436,153 +436,105 @@ Storyn hyväksymäkriteerit on tarkoituksenmukaista kirjoittaa heti storyn tot
 
 Ideaalitilanteessa storyjen hyväksymäkriteereistä tehdään automaattisesti suoritettavia. 
 
-Automaattisen hyväksymätestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla useita eri kieliä tukevaa [Cucumber](https://cucumber.io/):ia. 
+Automaattisen hyväksymätestauksen on olemassa monia työkaluja, eräs suosituimmista on Suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
 
+Automatisoidusta hyväksymistestauksesta käytetän joskus nimitystä [Acceptance test driven development])(https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteuteaan jo iteraation alkupuolella, ennen kun itse toteutus on valmis.
 
+ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomioita testeissä käytettävän terminologian, BDD ei muunmuassa puhu ollenkaan testeistä vaan käyttää sensijaan kuvailee hyväksymiskriteeriot esimerkkikäyttäytymisten (example behavior) avulla. Kurssilla käytämme pääosin BDD:n nimentäkäytäntöjä, sillä käyttämämme [Cucumber](https://cucumber.io/) on nimenomaan BDD-piirien kehittämä työkalu. 
 
-ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin
-BDD kiinnittää testeissä käytettävän terminologian tarkemmin, BDD ei mm. puhu ollenkaan testeistä vaan spesifikaatioista
-BDD:llä voidaan tehdä myös muita kuin hyväksymätason testejä
-kurssilla käytämme pääosin BDD:n nimentäkäytäntöjä Tutustumme johtavaan BDD-työkaluun Cucumberiin
+Käsite ATDD pitää sisällään aina ainoastaan hyväksymätason testausta. BDD:llä voidaan tehdä myös muita kuin hyväksymätason testejä. Rubylle alun perin kehitetty [rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymätestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin-tapaan toimivia BDD_henkisiä kirjastoja, kuten Javascriptmaailman [mocha](https://mochajs.org/) ja [jest](https://jestjs.io/).
 
+### Cucumber
 
-### Hyväksymätestauksen työkalut
+Kuten useimmissa hyväksymistason testauksen työkalussa myös Cucumberissa testit kirjoitetaan asiakkaan kielellä.
 
-Kuten kaikissa ATDD/BDD-työkaluissa, Cucumberissa testit kirjoitetaan asiakkaan kielellä
-Ohjelmoija kirjoittaa testeistä mäppäyksen koodiin, näin testeistä tulee automaattisesti suoritettavia
- 
-Tarkastellaan esimerkkinä käyttäjätunnuksen luomisen ja sisäänkirjautumisen tarjoamaa palvelua
+Tarkastellaan esimerkkinä käyttäjätunnuksen luomisen ja sisäänkirjautumisen tarjoamaa palvelua.
+
 Palvelun vaatimuksen määrittelevät user storyt
-A new user account can be created if a proper unused username and a proper password are given
-User can log in with a valid username/password-combination
+- _a new user account can be created if a proper unused username and a proper password are given_
+- _user can log in with a valid username/password-combination_
 
-Cucumberissa jokaisesta User Storystä kirjoitetaan oma .feature- päätteinen tiedosto, joka sisältää
-nimen ja
-joukon storyyn liittyvä hyväksymätestejä joita Cucumber kutsuu
-
-Cucumber
-skenaarioiksi
-Storyn hyväksymätestit eli skenaariot kirjoitetaan Gherkin-kielellä,
-
+Cucumberissa jokaisesta User Storystä kirjoitetaan oma _.feature_-päätteinen tiedosto, joka sisältää storyn nimen ja joukon storyyn liittyvä hyväksymätestejä joita Cucumber kutsuu _skenaarioiksi_. Storyn hyväksymätestit eli skenaariot kirjoitetaan [Gherkin](https://cucumber.io/docs/gherkin/reference/)-kielellä,
 muodossa
-Given [initial context], when [event occurs], then [ensure some outcomes]
 
-Esimerkki seuraavalla sivulla
+_Given [initial context], when [event occurs], then [ensure some outcomes]_
 
- Feature: User can log in with valid username/password-combination
-Scenario: user can login with correct password
-Given command login is selected
-When username "pekka" and password "akkep" are entered Then system will respond with "logged in"
-Scenario: user can not login with incorrect password
-Given command login is selected
-When username "pekka" and password "wrong" are entered Then system will respond with "incorrect username or password"
-Scenario: nonexistent user can not login to
-Given command login is selected
-When username "nonexisting" and password "wrong" are entered Then system will respond with "incorrect username or password"
- 
-Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla niistä mäppäys ohjelmakoodiin
-Ohjelmoijat tekevät mäppäyksen siinä vaiheessa, kun tuotantokoodia on tarpeellinen määrä valmiina
+Esimerkkimme ensimmäinen user story hyväksymiskriteereineen kirjoitettasiin seuraavasti:
 
-Esimerkki seuraavalla sivulla
-Käytännössä jokaista testin given, when ja then-askelta vastaa oma metodinsa
-Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä
-varmistaen että ohjelma reagoi käyttäjän toimiin halutulla tavalla Palaamme cucumberiin laskareissa
+![]({{ "/images/3-9.png" | absolute_url }}){:height="450px" }
 
-Cucumber: skenaarioiden mäppäys koodiksi
-Ideana on että asiakas tai product owner kirjoittaa tiimissä olevien testaajien tai tiimiläisten kanssa yhteistyössä storyyn liittyvät testit
-Samalla storyn haluttu toiminnallisuus tulee dokumentoitua sillä tarkkuudella, että ohjelmoijat toivon mukaan ymmärtävät mistä on kyse
+Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla niistä mäppäys ohjelmakoodiin. Ohjelmoijat tekevät mäppäyksen siinä vaiheessa, kun tuotantokoodia on tarpeellinen määrä valmiina.
+
+Käytännössä jokaista testin _given_, _when_ ja _then_-askelta vastaa oma metodinsa.
+Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä varmistaen että ohjelma reagoi käyttäjän toimiin halutulla tavalla. 
+
+![]({{ "/images/3-10.png" | absolute_url }}){:height="500px" }
 
 ## Websovellusten testien automatisointi
 
-Olemme jo nähneet, miten dependency injectionin avulla on helppo tehdä komentoriviltä toimivista ohjelmista testattavia
-Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web- selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista
-Tutustumme laskareissa web-sovellusten testauksen automatisointiin käytettävään Selenium 2.0 WebDriver -kirjastoon
-http://seleniumhq.org/docs/03_webdriver.html
+Olemme jo nähneet, miten riippuvuuksien injektoinnin avulla on helppo tehdä komentoriviltä toimivista ohjelmista testattavia. Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web-selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista. Tutustumme laskareissa web-sovellusten testauksen automatisointiin käytettävään [Selenium 2.0 WebDriver](http://seleniumhq.org/docs/03_webdriver.html) -kirjastoon.
 
-Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testikoodista käsin selaimen toimintaa, esim. linkkien klikkauksia ja tiedon syöttämistä lomakkeeseen
-Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä
+Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testikoodista käsin selaimen toimintaa, esim. linkkien klikkauksia ja tiedon syöttämistä lomakkeeseen. Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä.
 
-Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan joko JUnit- tai Cucumber-testeinä
-Katsotaan esimerkkinä käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-versiota
+Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan joko JUnit- tai Cucumber-testeinä.
 
-Asiaan tutustutaan tarkemmin viikon 3 laskareissa
+Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-version testien mäppäyksestä:
 
-Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelmiston toteutusvaiheen päättää integrointivaihe
-yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi
-suoritetaan integraatiotestaus, joka varmistaa yhteistoiminnallisuuden Perinteisesti juuri integrointivaihe on tuonut esiin suuren joukon ongelmia
-tarkasta suunnittelusta huolimatta erillisten tiimien toteuttamat komponentit rajapinnoiltaan tai toiminnallisuudeltaan epäsopivia
+![]({{ "/images/3-10.png" | absolute_url }}){:height="500px" }
 
-## ATDD / BDD
-
-Jos näin tehdään voidaan sprintissä tapahtuva ohjelmistokehitys ajatella hyväksymätestien tasolla tapahtuvana TDD:nä
- 
-User Storyjen testaaminen Tälläisestä käytännöstä käytetään nimitystä Acceptance Test Driven
-Development, ATDD
-ATDD:stä käytetään myös muutamaa muuta nimeä, ks. esim.
-http://testobsessed.com/wp-content/uploads/2011/04/atddexample.pdf http://www.methodsandtools.com/archive/archive.php?id=23 www.industriallogic.com/papers/storytest.pdf
-
-Osittain sama idea kulkee nimellä Behavior Driven Development, BDD
-http://dannorth.net/introducing-bdd/
-
-ATDD:ssä sovelluskehityksen lähtökohta on user story eli asiakkaan tasolla mielekäs toiminnallisuus
-Asiakkaan terminologialla yhdessä asiakkaan kanssa kirjoitetut hyväksymätestit määrittelevät toiminnallisuuden ja näin ollen korvaavat perinteisen vaatimusdokumentin
-   
-##
+Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareissa.
 
 ## Ohjelmiston integraatio
 
-Suurten projektien integrointivaihe on kestänyt ennakoimattoman kauan
-integrointivaiheen ongelmat ovat aiheuttaneet ohjelmaan suunnittelutason muutoksia
+Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelmiston toteutusvaiheen päättää integrointivaihe, jonka aikana yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi sekä suoritetaan integraatiotestaus, joka varmistaa yhteistoiminnallisuuden. 
 
-Integraatio on ollut perinteisesti niin hankala vaihe, että sitä kuvaamaan on lanseerattu termi integratiohelvetti
-http://wiki.c2.com/?IntegrationHell
+Perinteisesti juuri integrointivaihe on tuonut esiin suuren joukon ongelmia,
+tarkasta suunnittelusta huolimatta erillisten tiimien toteuttamat komponentit rajapinnoiltaan tai toiminnallisuudeltaan epäsopivia.
 
-90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa
-best practiceksi muodostui päivittäin tehtävä koko projektin kääntäminen daily/nightly build ja samassa yhteydessä ns. smoke test:in suorittaminen
-Smoke test:
-The smoke test should exercise the entire system from end to end. It does not have to be exhaustive, but it should be capable of exposing major problems
+Suurten projektien integrointivaihe on kestänyt ennakoimattoman kauan, ja 
+integrointivaiheen aikana havaitut ongelmat ovat saattaneet aiheuttaa suuriakin suunnittelu- tai jopa vaatimusmäärittelytason muutoksia.
 
-Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio tehdään (ainakin jollain tarkkuustasolla) joka päivä
-Komponenttien yhteensopivuusongelmat huomataan nopeasti ja niiden korjaaminen helpottuu
-Tiimin moraali paranee, kun ohjelmistosta on olemassa päivittäin kasvava toimiva versio
+Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä kuvaamaan on lanseerattu termi [integratiohelvetti](http://wiki.c2.com/?IntegrationHell).
 
-Pois integraatiohelvetistä
+### Daily build ja smoke test
+
+90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet olivat 90-luvun puolessa välissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel ja Windows 95 -tiimien kehittelemiä.
+
+Smoke testillä tarkoitetaan testattavan toiminnalisuuden suhteen kohtuullisen yksinkertaista järjestelmätason testiä, joka kuitenkin testaa järjestelmän kaikkia arkkitehtuurillisia tasoja (käyttöliittymää, sovelluslogiikkaa, tietokanaa), ja havaitsee jos jotain on pahasti pielessä. 
+
+Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio tehdään ainakin jollain tarkkuustasolla joka päivä. Komponenttien yhteensopivuusongelmat huomataan nopeasti ja niiden korjaaminen helpottuu. Tiimin moraali myös paranee, kun ohjelmistosta on olemassa päivittäin kasvava toimiva versio.
+
+### Jatkuva integraatio
  
-Mahdollisimman usein tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Tästä syntyi idea toistaa integraatiota vielä päivittäistä sykliäkin useammin: jatkuva integraatio eli continuous integration
-Integraatiovaiheen yllätysten minimoinnin lisäksi jatkuvassa integraatiossa on tarkoitus eliminoida "but it works on my machine"-ilmiö
-Integraatiosta tarkoitus tehdä todella vaivaton operaatio, ohjelmistosta koko ajan olemassa integroitu ja testattu tuore versio
-Ohjelmisto ja kaikki konfiguraatiot pidetään keskitetyssä repositoriossa Koodi sisältää kattavat automatisoidut testit
-Yksikkö-, integraatio- ja hyväksymätason testejä
+Mahdollisimman usein tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Extreme programming -yhteisö kehitti ideaa vielä päivittäistäkin sykliä pidemmälle ja näin syntyi _jatkuva integraatio_ eli [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) (CI).
 
-Päivittäisestä jatkuvaan integraatioon
-Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varattu CI-palvelimeksi
-CI-palvelin tarkkailee repositoriota ja jos huomaa siinä muutoksia, hakee koodin, kääntää sen ja ajaa testit
-Jos koodi ei käänny tai testit eivät mene läpi, seurauksena poikkeustilanne joka korjattava välittömästi: do not break the build
+Jatkuvaa integraatiota käytettäessä ohjelmakoodi, automatisoidut testit ja sekä ohjelmiston konfiguraatio pidetään keskitetyssä versionhallintarepositoriossa. 
 
-Kun kehittäjän omalla koneella kaikki testit menevät läpi ja koodi on integroitu muuhun ohjelmakoodiin, pushaa kehittäjä koodin repositorioon
+Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. 
+Kun keskitettyyn repositoriossa olevaan koodiin tulevien muutosten yhteydessä,  CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa testit.
+Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua välittömästi välittömästi. 
+
+Sovelluskehittäjän workflow jatkuvaa integraatiota käytettäessä on seuraava. Aloittaessaan uuden ominaisuuden toteuttamisen, kehittäjä hakee versionhallinnasta koodin ajantasaisen version.
+
+Kehittäjä toteuttaa työn alla olevan ominaisuuden, tekee sille automatisoidut testit ja integroi sen muuhun koodiin. Kun kaikki on valmiina, ja testit menevät läpi paikallisesti, pushaa kehittäjä koodin versionhallintaan.
+
 CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit
-Näin minimoituu mahdollisuus sille, että lisätty koodi toimii esim. konfiguraatioerojen takia ainoastaan kehittäjän paikallisella työasemalla
-Tarkoituksena on, että jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä
-CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana
-CI-työprosessin noudattaminen vaatii kurinalaisuutta
-Jatkuva integraatio – Continuous Integration
-Sovelluskehittäjän työprosessi etenee seuraavasti
-Haetaan repositoriosta koodin uusi versio
-Toteutetaan työn alla oleva toiminnallisuus ja sille automatisoidut testit Integroidaan kirjoitettu koodi suoraan muun koodin yhteyteen
-Kun työ valmiina, haetaan repositorioon tulleet muutokset ja ajetaan testit
+Näin minimoituu mahdollisuus sille, että lisätty koodi toimii esimerkiksi konfiguraatioerojen takia ainoastaan kehittäjän omalla työasemalla
 
-Ensimmäisellä viikolla käyttämämme Travis on tämän hetken ehkä eniten huomiota saanut CI-palvelinohjelmisto
-Eräs travisin suurista eduista on se, että ohjelmisto toimii pilvessä ja tarvetta oman CI-palvelimen asentamiselle ei ole
+Jatkuvan integraation tarkoituksena on siis se, että jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. CI-työprosessin noudattaminen vaatiikin suurta kurinalaisuutta.
 
-Travisia paljon vanhempi Jenkins lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto
-Tällä hetkellä ei taida olla olemassa yhtään ilmaista verkossa olevaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle
+Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä tehdä ohjelmiston integoinnista täysin vaivaton operaatio joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen integroitu ja testattu versio.
 
-Jatkuva integraatio – Continuous Integration
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. 
+Erityisesti käyttöliittymän läpi suoritettavat hyväksymätestit voivat kuitenkim olla melko aikaavieviä. Jos testien suoritusaika alkaa kasvaa liian hitaasti, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
 
-Jotta CI-prosessi toimisi joustavasti, tulee testien ajamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia
-Jos osa testeistä on hitaita, voidaan testit konfiguroida ajettavaksi kahdessa (tai tarvittaessa useammassakin) vaiheessa
-commit build:in läpimeno antaa kehittäjälle oikeuden pushata koodi repositorioon
-CI-palvelimella suoritetaan myös hitaammat testit sisältävä secondary build
+Ensimmäisellä viikolla käyttämämme [CircleCI](https://circleci.com) on yksi monista SaaS-palveluna toimivista CI-ratkaisuista, toinen suosittu vaihtoehto on [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se että tarvetta oman CI-palvelimen asentamiselle ei ole.
+
+Circleä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista verkossa olevaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle.
+
+GitHub kertoi loppukesästä julkaisevansa 15.11.2019 ns. [actions](https://www.youtube.com/watch?v=E1OunoCyuhY)-toiminnallisuuden, jonka avulla myös jatkuva integraatio voidaan suorittaa suoraan Githubissa, käyttämättä erillistä palvelua. Tämä on erittäin kiinnostava uutinen, harmi että julkistus tapahtuu tämän kurssin kannalta hieman liian myöhään.
+
+## cd
 
 Viime aikoina nousseen trendin mukaan CI:tä viedään vielä askel pidemmälle ja integraatioprosessiin lisätään myös automaattinen "deployaus"
 käännetty ja testattu koodi siirretään suoritettavaksi ns. staging- eli testipalvelimelle
@@ -593,13 +545,35 @@ Hyväksymätestien suorittamisen jälkeen uusi versio voidaan siirtää tuo
 Parhaassa tapauksessa myös staging-ympäristössä tehtävien hyväksymätestien suoritus on automatisoitu, ja ohjelmisto kulkee koko deployment pipelinen läpi, eli sovelluskehittäjän koneelta CI- palvelimelle, sieltä stagingiin ja lopulta tuotantoon, automaattisesti
 Termillä deployment pipeline siis tarkoitetaan niitä ohjelman käännöksen ja testauksen vaiheita, joiden suorittamista edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön asiakkaan käyttöön
 
-Jatkuva toimitusvalmius ja käyttöönotto
+
+
  
 Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston uusi versio viedään staging-palvelimelle ja siellä tapahtuvan hyväksymätestauksen jälkeen tuotantoon, käytetään nimitystä jatkuva toimitusvalmius engl. continuous delivery
 Jos staging-palvelimella ajettavat testit ja siirto tuotantopalvelimelle tapahtuvat automattisesti, puhutaan jatkuvasta käyttöönotosta engl. continuous deployment
 Viime aikoina on ruvettu suosimaan tyyliä, jossa web-palveluna toteutettu ohjelmisto julkaistaan tuotantoon jopa useita kertoja päivästä
 
-Jatkuva toimitusvalmius ja käyttöönotto
+Moderni kehitys on kulkenut kohti Continuous deploymentiä eli automaattisesti tapahtuvaa jatkuvaa tuotantoonvientiä
+ 
+Jatkuvassa tuotantoonviennissä (continuous deployment) siis jokainen sovelluskehittäjän commit voi mahdollisesti johtaa järjestelmän uuden version tuotantoonvientiin
+Commit kulkee deployment pipelinen läpi
+CI-palvelin suorittaa commitille joukon testejä
+Seuraavassa vaiheessa commitin aikaansaama sovelluksen uusi
+versio siirtyy staging-ympäristöön
+Staging-ympäristössä sovelluksen uudelle versiolle suoritetaan
+lisää testejä
+Testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, että sovellus toimii käyttäjän kannalta halutulla tavalla
+
+Staging-ympäristö on sekä konfiguraatioiltaan, että käsiteltävän datan suhteen mahdollisimman paljon tuotantoympäristön kaltainen ympäristö
+ 
+Jos staging-ympäristössä suoritetut testit menevät läpi, siirtyy uusi versio tuotantoympäristöön
+Continuous deployment ja deployment pipeline
+ 
+Continuous deployment ja deployment pipeline Lopullinen tuotantoonvienti voi olla automaattinen, tällöin puhutaan
+jatkuvasta tuotantoonviennistä, continuous deployment
+Tai tuotantoonvienti voi myös tapahtua ihmisen päätöksen toimesta "nappia painamalla", tästä käytänteestä käytetään nimitystä jatkuva toimitusvalmius, continuous delivery
+Ohjelmiston asiakkaalla voi olla useita syitä miksi sovelluksen uusia versiota ei välttämättä haluta heti käyttöön vaan esim. kahden viikon välein
+
+## Tutkiva testaaminen
  
 Jotta järjestelmä saadaan niin virheettömäksi, että se voidaan laittaa tuotantoon, on testauksen oltava erittäin perusteellinen
 Perinteinen tapa järjestelmätestauksen suorittamiseen on ollut laatia ennen testausta hyvin perinpohjainen testaussuunnitelma
@@ -610,8 +584,6 @@ Automatisoitujen hyväksymätestien luonne on täsmälleen samanlainen, syo�
 Jos testaus tapahtuu pelkästään etukäteen mietittyjen testien avulla, ovat ne kuinka tarkkaan tahansa harkittuja, ei kaikkia yllättäviä tilanteita osata välttämättä ennakoida
 Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta
 Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu nimittämään tutkivaksi testaamiseksi (exploratory testing)
-
-Tutkiva testaaminen
  
 Exploratory testing is simultaneous learning, test design and test execution
 www.satisfice.com/articles/et-article.pdf
@@ -638,33 +610,9 @@ Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannatt
 Tutkivaa testaamista ei siis kannata käyttää regressiotestaamisen menetelmänä vaan sen avulla kannattaa ensisijaisesti testata sprintin yhteydessä toteutettuja uusia ominaisuuksia
 
 Tutkiva testaaminen siis ei ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille testeille vaan niitä täydentävä testauksen muoto
+ 
+## Tuotannossa tapahtuva testaaminen ja laadunhallinta
 
-## Ketterien menetelmien testauskäytänteitä
- 
-Exploratory testing, suomeksi tutkiva testaus
-Continuous Integration (CI) suomeksi jatkuva integraatio
-Moderni kehitys on kulkenut kohti Continuous deploymentiä eli automaattisesti tapahtuvaa jatkuvaa tuotantoonvientiä
- 
-Jatkuvassa tuotantoonviennissä (continuous deployment) siis jokainen sovelluskehittäjän commit voi mahdollisesti johtaa järjestelmän uuden version tuotantoonvientiin
-Commit kulkee deployment pipelinen läpi
-CI-palvelin suorittaa commitille joukon testejä
-Seuraavassa vaiheessa commitin aikaansaama sovelluksen uusi
-versio siirtyy staging-ympäristöön
-Staging-ympäristössä sovelluksen uudelle versiolle suoritetaan
-lisää testejä
-Testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, että sovellus toimii käyttäjän kannalta halutulla tavalla
-
-Staging-ympäristö on sekä konfiguraatioiltaan, että käsiteltävän datan suhteen mahdollisimman paljon tuotantoympäristön kaltainen ympäristö
- 
-Jos staging-ympäristössä suoritetut testit menevät läpi, siirtyy uusi versio tuotantoympäristöön
-Continuous deployment ja deployment pipeline
- 
-Continuous deployment ja deployment pipeline Lopullinen tuotantoonvienti voi olla automaattinen, tällöin puhutaan
-jatkuvasta tuotantoonviennistä, continuous deployment
-Tai tuotantoonvienti voi myös tapahtua ihmisen päätöksen toimesta "nappia painamalla", tästä käytänteestä käytetään nimitystä jatkuva toimitusvalmius, continuous delivery
-Ohjelmiston asiakkaalla voi olla useita syitä miksi sovelluksen uusia versiota ei välttämättä haluta heti käyttöön vaan esim. kahden viikon välein
- 
- Tuotannossa tapahtuva testaaminen ja laadunhallinta
 Perinteisesti on ajateltu, että kaiken ohjelmiston laadunhallintaan liittyvän testauksen tulee tapahtua ennen kuin ohjelmisto tai sen uudet toiminnallisuudet on otettu käyttöön eli viety tuotantoympäristöön
 Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa
 
