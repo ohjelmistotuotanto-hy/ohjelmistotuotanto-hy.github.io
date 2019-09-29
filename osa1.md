@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 'Viikko 1'
+title: 'Osa 1'
 title_long: 'Ohjelmistotuotanto, ketteryys, Scrum'
 inheader: yes
-permalink: /viikko1/
+permalink: /osa1/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">

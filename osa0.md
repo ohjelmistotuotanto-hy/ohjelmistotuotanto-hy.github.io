@@ -1,6 +1,6 @@
 ---
 layout: page
-title: osa 0
+title: Osa 0
 title_long: 'Johdanto'
 inheader: yes
 permalink: /osa0/

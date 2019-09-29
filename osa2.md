@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Viikko 2
+title: Osa 2
 title_long: 'Ohjelmistojen vaatimusmäärittely, tuotteen ja sprintin hallinta'
 inheader: yes
-permalink: /viikko2/
+permalink: /osa2/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
