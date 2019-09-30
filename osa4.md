@@ -11,113 +11,96 @@ permalink: /osa4/
   />
 </a>
 
-# Viikko 4: Ohjelmistojen suunnittelu
+Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Seuraavana aiheena ohjelmiston suunnittelu ja toteutus.
 
-Ohjelmiston suunnittelu ja toteutus
+Ohjelmiston suunnittelun ajatellaan jakautuvan kahteen vaiheeseen: arkkitehtuurisuunnitteluun ja olio/komponenttisuunnitteluun.
+
+_Arkkitehtuurisuunnittelussa_ hahmotellaan ohjelman rakenne karkealla tasolla, eli mietitään mistä suuremmista rakennekomponenteista ohjelma koostuu? Miten komponentit kommunikoivat ja minkälaiset niiden väliset rajapinnat ovat.
+
+_Olio/komponenttisuunnittelussa_ taas suunnitellaan yksityiskohtaisemmin miten yksittäiset komponentit, luokat ja metodit tulisi toteuttaa.
+
+Ohjelmiston suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista.
+Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu valmiina ja dokumentoitu. Ketterissä menetelmissä taas suunnittelua tehdään tarvittava määrä jokaisessa iteraatiossa, tarkkaa suunnitteludokumenttia ei yleensä ole.
+
+Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, "jäykimmissäkin" prosesseissa ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät.
+
+Tarkkaa ja raskasta ennen ohjelmointia tapahtuvaa suunnittelua (josta käytetään joskus nimitystä [Big Design Up Front](https://en.wikipedia.org/wiki/Big_Design_Up_Front) eli BDUF) toki edelleen tapahtuu ja tietynlaisiin järjestelmiin (hyvin tunnettu sovellusalue, muuttumattomat vaatimukset) se osittain sopiikin.
+
+## Ohjelmiston arkkitehtuuri
  
-Ohjelmiston suunnittelu Suunnittelun ajatellaan yleensä jakautuvan kahteen vaiheeseen:
-Arkkitehtuurisuunnittelu
-Ohjelman rakenne karkealla tasolla
-Mistä suuremmista rakennekomponenteista ohjelma koostuu? Miten komponentit yhdistetään, eli komponenttien väliset rajapinnat
+Käsitettä _ohjelmiston arkkitehtuuri_ (engl. software architecture) on käytetty jo vuosikymmeniä. Termi on vakiintunut yleiseen käyttöön 2000-luvun aikana ja on siirtynyt mm. normaalia koodaria seniorimpaa työntekijää tarkoittavaksi nimikkeeksi _ohjelmistoarkkitehti_ engl. software architech.
 
-Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, ”jäykimmissäkin” prosesseissa ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät
-Tarkkaa ja raskasta ennen ohjelmointia tapahtuvaa suunnittelua (BDUF eli Big Design Up Front) toki edelleen tapahtuu ja tietynlaisiin järjestelmiin (hyvin tunnettu sovellusalue, muuttumattomat vaatimukset) se osittain sopiikin
+Useimmilla alan ihmisillä on jonkinlainen kuva siitä, mitä ohjelmiston arkkitehtuurilla tarkoitetaan. Termiä ei ole kuitenkaan yrityksistä huolimatta onnistuttu määrittelemään siten että asiantuntijat olisivat määritelmästä yksimielisiä.
 
-Olio/komponenttisuunnittelu
-yksittäisten komponenttien suunnittelu
-Suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista:
-Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu valmiina ja dokumentoitu
-Ketterissä menetelmissä suunnittelua tehdään tarvittava määrä jokaisessa iteraatiossa, tarkkaa suunnitteludokumenttia ei yleensä ole
+IEEE:n standardi [Recommended practices for Architectural descriptions of Software intensive systems](https://ieeexplore.ieee.org/document/875998) määrittelee käsitteen seuraavasti:
 
- Arkkitehtuurisuunnittelu
+>Ohjelmiston arkkitehtuuri on järjestelmän perusorganisaatio, joka sisältää järjestelmän osat, osien keskinäiset suhteet, osien suhteet ympäristöön sekä periaatteet, jotka ohjaavat järjestelmän suunnittelua ja evoluutiota.
  
-Termiä ohjelmistoarkkitehtuuri (software architecture) on käytetty jo vuosikymmeniä
-Termi on vakiintunut yleiseen käyttöön 2000-luvun aikana ja on siirtynyt mm. ”tärkeää työntekijää” tarkoittavaksi nimikkeeksi
-Ohjelmistoarkkitehti engl. software architech
+Otetaan esimerkiksi pari muutakin määritelmää.
 
-Useimmilla alan ihmisillä on jonkinlainen kuva siitä, mitä ohjelmiston arkkitehtuurilla tarkoitetaan
-Kyseessä ohjelmiston rakenteen suuret linjat
+[Philippe Krutchten](https://www.semanticscholar.org/paper/The-Rational-Unified-Process-An-Introduction%2C-3rd-Kruchten/3239cd654d82aa775cf9382a4d2ad834a3ea1014)
 
-Termiä ei ole kuitenkaan yrityksistä huolimatta onnistuttu määrittelemään siten että asiantuntijat olisivat määritelmästä yksimielisiä
-IEEE:n standardi Recommended practices for Architectural descriptions of Software intensive systems määrittelee käsitteen seuraavasti
-Ohjelmiston arkkitehtuuri on järjestelmän perusorganisaatio, joka sisältää järjestelmän osat, osien keskinäiset suhteet, osien suhteet ympäristöön sekä periaatteet, jotka ohjaavat järjestelmän suunnittelua ja evoluutiota
+> An architecture is the _set of significant decisions about the organization of a software system_, the selection of structural elements and their interfaces by which the system is composed, together with their behavior as specified in the collaborations among those elements, the composition of these elements into progressively larger subsystems, and the _architectural style_ that guides this organization - these elements and their interfaces, their collaborations, and their composition.
 
-Ohjelmiston arkkitehtuuri
- 
-Ohjelmiston arkkitehtuuri, muita määritelmiä Krutchten:
-An architecture is the set of significant decisions about the organization of a software system, the selection of structural elements and their interfaces by which the system is composed, together with their behavior as specified in the collaborations among those elements, the composition of these elements into progressively larger subsystems, and the architectural style that guides this organization -- these elements and their interfaces, their collaborations, and their composition.
+[McGovern](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.1174&rep=rep1&type=pdf):
 
-McGovern:
-The software architecture of a system or a collection of systems consists of all the important design decisions about the software structures and the interactions between those structures that comprise the systems. The design decisions support a desired set of qualities that the system should support to be successful. The design decisions provide a conceptual basis for system development, support, and maintenance.
+> The software architecture of a system or a collection of systems consists of all the important design decisions about the software structures and the interactions between those structures that comprise the systems. _The design decisions support a desired set of qualities that the system should support to be successful_. The design decisions provide a conceptual basis for system development, support, and maintenance.
 
+Vaikka arkkitehtuurin määritelmät hieman vaihtelevat, löytyy määritelmistä joukko samoja teemoja. Jokaisen määritelmän mukaan arkkitehtuuri määrittelee ohjelmiston rakenteen, eli jakautumisen erillisiin osiin ja osien väliset rajapinnat.
 
-Vaikka arkkitehtuurin määritelmät hieman vaihtelevat, löytyy määritelmistä joukko samoja teemoja
-Lähes jokaisen määritelmän mukaan arkkitehtuuri määrittelee ohjelmiston rakenteen, eli jakautumisen erillisiin osiin ja osien väliset rajapinnat
-Arkkitehtuuri ottaa kantaa rakenteen lisäksi myös käyttäytymiseen
-Arkkitehtuuritason rakenneosien vastuut ja niiden keskinäisen kommunikoinnin muodot
+Arkkitehtuuri ottaa kantaa rakenteen lisäksi myös käyttäytymiseen, se määrittelee arkkitehtuuritason rakenneosien vastuut ja niiden keskinäisen kommunikoinnin muodot.
 
-Arkkitehtuuri keskittyy järjestelmän tärkeisiin/keskeisiin osiin
-Arkkitehtuuri ei siis kuvaa järjestelmää kokonaisuudessaan vaan on isoihin linjoihin keskittyvä abstraktio
-Tärkeät osat voivat myös muuttua ajan myötä, eli arkkitehtuuri ei ole muuttumaton
-http://www.ibm.com/developerworks/rational/library/feb06/eeles/
+Arkkitehtuuri keskittyy järjestelmän tärkeisiin/keskeisiin rakenneperiaatteisiin se ei siis kuvaa järjestelmää tarkalla detaljitasolla, vaan on isoihin linjoihin keskittyvä abstraktio. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/).
 
-Artikkelissa ”Who needs architect” Martin Fowler toteaa seuraavasti
-you might end up defining architecture as things that people perceive as hard to change
-https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf
+Artikkelissa [Who needs architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä sellaisiksi asioiksi jotka ovat ohjelmistossa vaikeita muuttaa. 
 
 Melkein sama hieman toisin ilmaistuna oli Krutchtenin määritelmässä
-set of significant decisions about the organization of a software system
-
-Konkreettinen esimerkki tälläisestä arkkitehtoonisesta päätöksestä tuli esiin miniprojektien ensimmäisellä viikolla
-Monissa projekteissa oli seuraava User story
-Ohjelmaa tulee voida käyttää useilta eri koneilta
-
-Story ei ole kaikilla projektilla priorisoitu kovin korkealle eikä sisälly ensimmäisen sprintin tavoitteisiin
+_set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintoja kautta.
  
+## Arkkitehtuuriin vaikuttavia tekijöitä
 
-Kaikki ryhmät tekevät kuitenkin jo ensimmäisellä viikolla tärkeän ratkaisun
-(significant decisions about ...) sen suhteen miten ohjelma toteutetaan:
-Konsolisovelluksena Java Swingillä/FX:llä Web-sovelluksena
+[Osassa 2](/osa2) mainittiin järjestelmän vaatimusten jakautuvat kahteen luokkaan, toiminnallisiin ja ei-toiminnallisiin vaatimuksiin.
 
-Tällä ”arkitehtoonisella päätöksellä” on erittäin suuri vaikutus miten story
-Ohjelmaa tulee voida käyttää useilta eri koneilta
+Järjestelmälle asetetuilla ei-toiminnallisilla [laatuvaatimuksilla]() (engl. -ilities) on suuri vaikutus arkkitehtuuriin. Laatvaatimuksia ovat esimerkiksi käytettävyys, suorituskyky, skaalautuvuus, vikasietoisuus, tiedon ajantasaisuus, tietoturva, ylläpidettävyys, laajennettavuus, testattavuus, hinta, time- to-market, ...
 
-voidaan toteuttaa siinä vaiheessa kun sen toteututuksen aika tulee Tämä ensimmäisen viikon tärkeä arkitehtooninen päätös siis johtaa
-tilanteeseen, joka on myöhemmin hard to change
-Esim. siirtyminen konsolisovelluksesta WebMVC-sovellukseen ei ole suinkaan mahdoton, mutta se edellyttää paljon töitä
-  
-”Arkkitehtuuri on ne asiat joita on vaikea vaihtaa”
+Laatuvaatimukset ovat usein ristiriitaisia, joten arkkitehdin tulee hakea kaikkia sidosryhmiä tyydyttävä kompromissi. Esimerkiksi time-to-market, eli kuinka nopeasti sovellus saadaan loppuasiakkaan käyttöön, lienee ristiriidassa useimpien laatuvaatimusten kanssa.
+
+Tiedon ajantasaisuus, skaalautuvuus ja vikasietoisuus ovat myös piirteitä, joiden suhteen on pakko tehdä kompromisseja, kaikkia ei voida saavuttaa (ks. [CAP-teoreema](http://en.wikipedia.org/wiki/CAP_theorem))
+
+Myös toteutusteknologiat esim. toteutuksessa käytettävät sovelluskehykset ja integraatio olemassaoleviin järjestelmiin sekä järjestelmän toimintaympäristö esim. lääketieteellisiltä ja ilmailualalta säädökset sekä edellytetyt toimintastandardit vaikuttavat arkkitehtuuriin.
+
+Arkkitetuurin suurin merkitys on antaa sovelluksen kehitykselle ja ylläpidolle sellaiset raamit, että sovellus pystyy jatkossakin vastaamaan asiakkaan asettamien toiminnallisten vaatimuksen lisäksi järjestelmälle asetettuihin laatuvaatimuksiin.
+
+## Arkkitehtuurimalli
  
-Järjestelmälle asetetuilla ei-toiminnallisilla laatuvaatimuksilla (engl. -ilities) on suuri vaikutus arkkitehtuuriin
-Käytettävyys, suorituskyky, skaalautuvuus, vikasietoisuus, tiedon ajantasaisuus, tietoturva, ylläpidettävyys, laajennettavuus, hinta, time- to-market, ...
-
-Laatuvaatimukset ovat usein ristiriitaisia, joten arkkitehdin tulee hakea kaikkia sidosryhmiä tyydyttävä kompromissi
-Esim. time-to-market lienee ristiriidassa useimpien laatuvaatimusten kanssa
-Tiedon ajantasaisuus, skaalautuvuus ja vikasietoisuus ovat myös piirteitä, joiden suhteen on pakko tehdä kompromisseja, kaikkia ei voida saavuttaa ks. http://en.wikipedia.org/wiki/CAP_theorem
-
-Myös järjestelmän toimintaympäristö ja valitut toteutusteknologiat muokkaavat arkkitehtuuria
-Organisaation standardit
-Integraatio olemassaoleviin järjestelmiin Toteutuksessa käytettävät sovelluskehykset
-
-Arkkitehtuuriin vaikuttavia tekijöitä
- 
-Ohjelmiston arkkitehtuuri perustuu yleensä yhteen tai useampaan arkkitehtuurimalliin (architectural pattern), jolla tarkoitetaan hyväksi havaittua tapaa strukturoida tietyntyyppisiä sovelluksia
-Samasta asiasta käytetään joskus nimitystä arkkitehtuurityyli (architectural style)
+Ohjelmiston arkkitehtuuri perustuu yleensä yhteen tai useampaan _arkkitehtuurimalliin_ (engl. architectural pattern), jolla tarkoitetaan hyväksi havaittua tapaa strukturoida tietyntyyppisiä sovelluksia. Samasta asiasta käytetään joskus myös nimitystä _arkkitehtuurityyli_ (engl. architectural style)
 
 Arkkitehtuurimalleja on suuri määrä, esim:
-Kerrosarkkitehtuuri MVC Pipes-and-filters Repository Client-server Publish-subscribe Event driven REST Microservice
-SOA
-Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen mallien piirteitä
-        
-Arkkitehtuurimalli
- 
-Kerrosarkkitehtuuri Eräs tunnetuimmista on kerrosarkkitehtuuri
-Kerros on kokoelma toisiinsa liittyviä olioita tai alikomponentteja, jotka muodostavat toiminnallisuuden suhteen loogisen kokonaisuuden
-Pyrkimyksenä järjestellä komponentit siten, että ylempänä oleva kerros käyttää ainoastaan alempana olevien kerroksien tarjoamia palveluita
+- kerrosarkkitehtuuri 
+- model-view-controller
+- pipes-and-filters
+- repository 
+- client-server
+- publish-subscribe 
+- event driven 
+- REST 
+- microservice
+- palveluorientoitu arkkitehtuuri
 
-Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä mutta saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi
+Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen mallien piirteitä.
+        
+### Kerrosarkkitehtuuri
  
-Kumpulabeershop
+Arkkitehtuurimalleista varmasti tunnetuin ja eniten käytetty on _kerrosarkkitehtuuri_ (engl. layered architecture), jossa pyrkimyksenä on jakaa sovellus käsittelliisiin kerroksiin, joissa kukin kerros suorittaa oman "abstraktiotason" tehtäväänsä käyttäen ainoastaan alemman kerroksen palveluja. Kerrosarkkitehtuurissa ylimmät kerrokset ovat käyttäjäläheisiä, ylimpänä yleensä käyttöliittymä ja tämän alapuolella sovelluslogiikasta vastaava kerros. Alimmat kerrokset taas keskittyät koneläheisimpiin asioihin, kuten tiedon pysyväistallennuksesta huolehtiva tallenuskerros (engl. persistence layer). 
+
+Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai komponentteja, jotka muodostavat oman abstraktiotasonsa toiminnallisuuden suhteen loogisen kokonaisuuden.
+
+![]({{ "/images/4-1.png" | absolute_url }}){:height="350px" }
+
+Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä mutta saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
+ 
+# todoapp
+
 Seuraavalla sivulla kuvaus Kumpulabiershopin arkkitehtuurista
 Arkkitehtuuri on mukaelma kerrosarkkitehtuuria (layered architecture) ja MVC-mallia
 Kuvaus on UML-pakkauskaaviona, näyttäen osin myös pakkausten sisäisiä luokkia
@@ -138,15 +121,12 @@ Käytännössä näkymällä tarkoitetaan HTML-tiedostoja
 Kontrollereilla taas tarkoitetaan main-metodin sisällä olevia selaimen tekemien pyyntöjen käsittelymetodeja
 
 Kuva tarjoaa loogisen näkymän arkkitehtuuriin mutta ei ota kantaa siihen mihin eri komponentit sijoitellaan, eli toimiiko esim. käyttöliittymä samassa koneessa kuin sovelluksen käyttämä tietokanta
-
-Kumpula biershopin arkkitehtuuri
  
 Alla fyysisen tason kuvaus, josta selviää että kyseessä on selaimella käytettävä, SpringWebMVC-sovelluskehyksellä tehty sovellus, jota suoritetaan AmazonEC2- palvelimella ja tietokantana on AmazonRDS
 Myös kommunikointitapa järjestelmän käyttämiin ulkoisiin järjestelmiin (Luottokunta ja Postitusjärjestelmä) selviää kuvasta
 
-Kumpula biershopin arkkitehtuuri
- 
-Arkkitehtuurin kuvaamisesta
+## Arkkitehtuurin kuvaamisesta
+
 UML:n lisäksi arkkitehtuurikuvauksille ei ole vakiintunutta formaattia
 Luokka ja pakkauskaavioiden lisäksi UML:n komponentti- ja sijoittelukaaviot voivat olla käyttökelpoisia (ks. seuraavat kalvot)
 Useimmiten käytetään epäformaaleja laatikko/nuoli-kaavioita
@@ -164,51 +144,12 @@ Tarkemmat kuvaukset toimivat ohjeena järjestelmän tarkemmassa suunnittelussa
 http://www.agilemodeling.com/artifacts/componentDiagram.htm
 UML komponenttikaavio
  
- ##
+## Mikropalveluarkkitehtuuri
 
- Ohjelmiston suunnittelu Suunnittelun ajatellaan yleensä jakautuvan kahteen vaiheeseen:
-Arkkitehtuurisuunnittelu
-Ohjelman rakenne karkealla tasolla
-Mistä suuremmista rakennekomponenteista ohjelma koostuu? Miten komponentit yhdistetään, eli komponenttien väliset rajapinnat
-
-
-Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, ”jäykimmissäkin” prosesseissa ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät
-Tarkkaa ja raskasta ennen ohjelmointia tapahtuvaa suunnittelua (BDUF eli Big Design Up Front) toki edelleen tapahtuu ja tietynlaisiin järjestelmiin (hyvin tunnettu sovellusalue, muuttumattomat vaatimukset) se osittain sopiikin
-
-Olio/komponenttisuunnittelu
-yksittäisten komponenttien suunnittelu
-Suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista:
-Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu valmiina ja dokumentoitu
-Ketterissä menetelmissä suunnittelua tehdään tarvittava määrä jokaisessa iteraatiossa, tarkkaa suunnitteludokumenttia ei yleensä ole
-
- Arkkitehtuurisuunnittelu nopea kertaus
- 
-Ohjelmiston arkkitehtuuri on järjestelmän perusorganisaatio, joka sisältää järjestelmän osat, osien keskinäiset suhteet, osien suhteet ympäristöön sekä periaatteet, jotka ohjaavat järjestelmän suunnittelua ja evoluutiota (IEEE)
-Arkkitehtuuri syntyy joukosta arkkitehtoorisia valintoja (...set of significant decisions about the organization of a software system)
-Järjestelmälle asetetuilla ei-toiminnallisilla laatuvaatimuksilla (engl. -ilities) on suuri vaikutus arkkitehtuuriin
-Käytettävyys, suorituskyky, skaalautuvuus, vikasietoisuus, tiedon ajantasaisuus, tietoturva, ylläpidettävyys, laajennettavuus, hinta, time-to-market, ...
-
-Myös toimintaympäristö kuten integraatiot muihin järjestelmiin vaikuttavat arkkitehtuuriin
-Ohjelmiston arkkitehtuuri perustuu yleensä yhteen tai useampaan arkkitehtuurimalliin (architectural pattern), jolla tarkoitetaan hyväksi havaittua tapaa strukturoida tietyntyyppisiä sovelluksia
-Samasta asiasta käytetään joskus nimitystä arkkitehtuurityyli (architectural style)
-
-Ohjelmiston arkkitehtuuri
- 
-Arkkitehtuurimalli Arkkitehtuurimalleja on suuri määrä, esim:
-Kerrosarkkitehtuuri MVC Pipes-and-filters Repository Client-server Publish-subscribe Event driven REST Microservice
-SOA
-Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen mallien piirteitä
-        
-Kerrosarkkitehtuuri Eräs tunnetuimmista on kerrosarkkitehtuuri
-Kerros on kokoelma toisiinsa liittyviä olioita tai alikomponentteja, jotka muodostavat toiminnallisuuden suhteen loogisen kokonaisuuden
-Pyrkimyksenä järjestellä komponentit siten, että ylempänä oleva kerros käyttää ainoastaan alempana olevien kerroksien tarjoamia palveluita
-
-Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä mutta saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi
- 
 Tarkastellaan vielä hieman paria arkkitehtuurimallia
 Edellisellä kalvolla todettiin, että kerrosarkkitehtuuri saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi
 Viime aikoina nopeasti yleistynyt mikropalvelumalli (microservices) pyrkii vastaamaan näihin haasteisiin koostamalla sovelluksen useista (jopa sadoista) pienistä verkossa toimivista autonomisista palveluista jotka keskenään verkon yli kommunikoiden toteuttavat järjestelmän toiminnallisuuden
-Hieman lisää arkkitehtuurimalleista
+
  
 Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman riippumattomia
 Palvelut eivät esim. käytä yhteistä tietokantaa
@@ -222,7 +163,7 @@ Sovelluksen laajentaminen voi olla helpompaa kuin kerrosarkkitehtuurissa
 Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata
 suorituskyvyn pullonkaulan aiheuttavia mikropalveluja voidaan suorittaa useita rinnakkain
 
-Mikropalvelut
+### Mikropalvelut
  
 Mikropalveluiden käyttö mahdollistaa sen, että sovellus voidaan helposti koodata ”monella kielellä”, toisin kuin monoliittisissa projekteissa, mikään ei edellytä, että kaikki mikropalvelut olisi toteutettu samalla kielellä
 Sovelluksen jakaminen järkeviin mikropalveluihin on haastavaa
