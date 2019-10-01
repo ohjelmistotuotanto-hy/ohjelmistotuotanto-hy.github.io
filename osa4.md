@@ -97,88 +97,76 @@ Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai kompo
 
 ![]({{ "/images/4-1.png" | absolute_url }}){:height="350px" }
 
-Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä mutta saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
+Kerrosarkkitehtuurilla on monia etuja. Kerroksittaisuus helpottaa ylläpitoa, sillä jos tietyn kerroksen palvelurajapintaan (eli muille kerroksille näkyvään osaan) tehdään muutoksia, aiheuttavat muutokset ylläpitotoimenpiteitä ainoastaan ylemmän kerroksen riippuvuuksia omaavissa pakkauksessa. Esim. käyttöliittymän muutokset eivät vaikuta sovelluslogiikkaan tai tallennuskerrokseen.
+
+Sovelluslogiikan riippumattomuus käyttöliittymästä helpottaa ohjelman siirtämistä uusille alustoille, esim. toimimaan mobiiliympäristössä. Alimpien kerroksien palveluja, kuten tallennuskerrosta voidaan mahdollisesti uusiokäyttää myös muissa sovelluksissa. 
+
+Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärretty malli, mutta saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
  
-# todoapp
+### Todo-sovelluksen arkkitehtuuri
 
-Seuraavalla sivulla kuvaus Kumpulabiershopin arkkitehtuurista
-Arkkitehtuuri on mukaelma kerrosarkkitehtuuria (layered architecture) ja MVC-mallia
-Kuvaus on UML-pakkauskaaviona, näyttäen osin myös pakkausten sisäisiä luokkia
-Luokkatasolle ei yleensä arkkitehtuurikuvauksissa mennä Koodi osoitteessa https://github.com/mluukkai/BeerShop
-Koodin tasolla arkkitehtuuri ilmenee luokkien sijoittelusta pakkauksiin
-Ohjelman kaikki koodi on nyt yhdessä projektissa
-Laajempien sovellusten tapauksessa voi olla tarkoituksenmukaista jakaa koodi useampaan eri projektiin, erityisesti jos sovelluksessa on komponentteja, joita hyödynnetään useimmissa ohjelmissa
-Kukin komponentti on oma gradle (tai maven) -projektinsa ja sijaitsee omassa git-repositoriossaan
+Eräs konkreettinen joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/materiaali.md#kerrosarkkitehtuuri) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/mluukkai/OtmTodoApp).
 
-Sovelluksen ”pääprojekti” sisällyttää aliprojekteissa toteutetut komponentit esim. gradle-riippuvuuksina
- 
-Arkkitehtuurikuvaus näyttää järjestelmän jakaantumisen kolmeen kerroksittain järjestettyyn komponenttiin
-Käyttöliittymä Sovelluslogiikka Tietokantarajapinta
+Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pakkauksiin 
 
-Sovelluslogiikkakerros on jaettu vielä kahteen alikomponenttiin, sovellusalueen käsitteistön sisältävään domainiin ja sen olioita käyttäviin sekä tietokantarajapinnan kanssa keskusteleviin palveluihin
-Käyttöliittymäkerros on myös jakautunut kahteen osaan, näkymään ja kontrollereihin
-Käytännössä näkymällä tarkoitetaan HTML-tiedostoja
-Kontrollereilla taas tarkoitetaan main-metodin sisällä olevia selaimen tekemien pyyntöjen käsittelymetodeja
+![]({{ "/images/4-2.png" | absolute_url }}){:height="250px" }
 
-Kuva tarjoaa loogisen näkymän arkkitehtuuriin mutta ei ota kantaa siihen mihin eri komponentit sijoitellaan, eli toimiiko esim. käyttöliittymä samassa koneessa kuin sovelluksen käyttämä tietokanta
- 
-Alla fyysisen tason kuvaus, josta selviää että kyseessä on selaimella käytettävä, SpringWebMVC-sovelluskehyksellä tehty sovellus, jota suoritetaan AmazonEC2- palvelimella ja tietokantana on AmazonRDS
-Myös kommunikointitapa järjestelmän käyttämiin ulkoisiin järjestelmiin (Luottokunta ja Postitusjärjestelmä) selviää kuvasta
+Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/materiaali.md#pakkauskaavio) :
 
-## Arkkitehtuurin kuvaamisesta
+![]({{ "/images/4-4.png" | absolute_url }}){:height="200px" }
 
-UML:n lisäksi arkkitehtuurikuvauksille ei ole vakiintunutta formaattia
-Luokka ja pakkauskaavioiden lisäksi UML:n komponentti- ja sijoittelukaaviot voivat olla käyttökelpoisia (ks. seuraavat kalvot)
-Useimmiten käytetään epäformaaleja laatikko/nuoli-kaavioita
+Pakkauksina kuvatujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _todoapp.ui_ riippuu sovelluskoliigasta _todoapp.domain_ ja vastaavasti 
+sovelluslogiikka _todoapp.domain_ riippuu tallennuskerroksesta _todoapp.dao_. 
 
-Arkkitehtuurikuvaus kannattaa tehdä useasta eri näkökulmasta, sillä eri näkökulmat palvelevat erilaisia tarpeita
-Korkean tason kuvauksen avulla voidaan strukturoida keskusteluja eri sidosryhmien kanssa, esim.:
-Vaatimusmäärittelyprosessin jäsentäminen
-Keskustelut järjestelmäylläpitäjien kanssa
+Käytännöss riippuvuus tarkoitta sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
 
-Arkkitehtuurikuvaus ei suinkaan ole pelkkä kuva: mm. komponenttien vastuut tulee tarkentaa sekä niiden väliset rajapinnat määritellä
-Jos näin ei tehdä, kasvaa riski sille että arkkitehtuuria ei noudateta Hyödyllinen kuvaus myös perustelee tehtyjä arkkitehtuurisia valintoja
+Joissain tilanteissa arkkitehtuurin havainnollistama pakkauskaavio saattaa olla tarkoituksenmukaista kuvata vielä tarkemmalla tasolla, näyttäen esim. joidenkin kerrosten tärkeimpiä sisäisiä luokkia tai komponentteja:
 
-Tarkemmat kuvaukset toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa
+![]({{ "/images/4-3.png" | absolute_url }}){:height="350px" }
 
-http://www.agilemodeling.com/artifacts/componentDiagram.htm
-UML komponenttikaavio
- 
+### Arkkitehtuurin kuvaamisesta
+
+Kovista yrityksistä huolimatta ohjelmistojen arkkitehtuurien kuvaamiselle ei ole onnistuttu kehittämään mitään yleisesti käytössä olevaa notaatiota. UML:ää käytetään jonkin verran. Edellisessä esimerkissä ollutta pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
+
+Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman eksplisiittisemmin esin eri komponenttien tarjoamat ja käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa komponentti _web store_, joka vastaa verkkokaupan sovelluslogiikkaa, tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjän hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
+
+![]({{ "/images/4-4.png" | absolute_url }}){:height="400px" }
+
+Arkkitehtuurin kuvaamiseen sopii jossain määrin myös [sijoittelukaavio](https://en.wikipedia.org/wiki/Deployment_diagram), joka kuvailee miten sovelluksen eri palvelut sijoittuvat eri palvelimille:
+
+![]({{ "/images/4-5.png" | absolute_url }}){:height="400px" }
+
+UML:n sijaan arkkitehtuurin kuvaamiseen käytetään kuitenkin useimmiten epäformaaleja laatikko/nuoli-kaavioita.
+
+Riippumatta arkkitehtuurin dokumenointitiotavasta, kannattaa arkkitehtuurikuvaus kannattaa tehdä useasta _eri näkökulmasta_, sillä eri näkökulmat palvelevat erilaisia tarpeita. Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn aikana käytäviä keskusteluja eri sidosryhmien kanssa.
+Detaljoidummat kuvaukset taas toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa.
+
+Kannattaa huomata, että arkkitehtuurikuvaus ei suinkaan ole pelkkä kuva, mm. komponenttien vastuut tulee tarkentaa sekä niiden väliset rajapinnat määritellä.
+Jos näin ei tehdä, kasvaa riski sille että arkkitehtuuria ei noudateta. 
+
+Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkastikkin mietittyjä perusteita silloin tehdyille päätöksille.
+
 ## Mikropalveluarkkitehtuuri
 
-Tarkastellaan vielä hieman paria arkkitehtuurimallia
-Edellisellä kalvolla todettiin, että kerrosarkkitehtuuri saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi
-Viime aikoina nopeasti yleistynyt mikropalvelumalli (microservices) pyrkii vastaamaan näihin haasteisiin koostamalla sovelluksen useista (jopa sadoista) pienistä verkossa toimivista autonomisista palveluista jotka keskenään verkon yli kommunikoiden toteuttavat järjestelmän toiminnallisuuden
+Kerrosarkkitehtuurien erääksi epäkohdaksi todettiin, että sen soveltaminen saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
 
+Viime aikoina nopeasti yleistynyt _mikropalvelumalli_ (engl. microservices) pyrkii vastaamaan näihin haasteisiin koostamalla sovelluksen useista (jopa sadoista) pienistä verkossa toimivista autonomisista palveluista jotka keskenään verkon yli kommunikoiden toteuttavat järjestelmän toiminnallisuuden.
+
+![]({{ "/images/4-6.png" | absolute_url }}){:height="400px" }
+
+Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löydästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa ja on toteutettu omissa koodiprojekteissaan eli ne eivät jaa koodia. Palvelut eivät kutsu suoraan toistensa metodeja vaan, keskustelevat keskenään verkon välityksellä. 
+
+Mikropalveluiden on tarkoitus olla pieniä ja huolehtia vain "yhdestä asiasta".
+Kun järjestelmään lisätään toiminnallisuutta, se yleensä tarkoittaa uusien palveluiden toteuttamista tai ainoastaan joidenkin palveluiden laajentamista.
+Sovelluksen laajentaminen voi olla helpompaa kuin kerrosarkkitehtuurissa.
+
+Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata, sillä
+suorituskyvyn pullonkaulan aiheuttavia mikropalveluja voidaan suorittaa useita rinnakkain.
  
-Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman riippumattomia
-Palvelut eivät esim. käytä yhteistä tietokantaa
-Palvelut on toteutettu omissa koodiprojekteissaan ja ne eivät jaa koodia
-Palvelut eivät kutsu toistensa metodeja vaan ne keskustelevat keskenään verkon välityksellä
+Mikropalveluiden käyttö mahdollistaa sen, että sovellus voidaan helposti koodata monella kielellä tai useita eri sovelluskehyksiä hyödyntämälä, sillä toisin kuin monoliittisissa projekteissa, mikään ei edellytä, että kaikki mikropalvelut olisi toteutettu samalla tekniikalla.
 
-Mikropalveluiden on tarkoitus olla pieniä ja huolehtia vain ”yhdestä asiasta”
-Kun järjestelmään lisätään toiminnallisuutta, se yleensä tarkoittaa uusien palveluiden toteuttamista tai ainoastaan joidenkin palveluiden laajentamista
-Sovelluksen laajentaminen voi olla helpompaa kuin kerrosarkkitehtuurissa
+### Mikropalveluiden kommunikointi
 
-Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata
-suorituskyvyn pullonkaulan aiheuttavia mikropalveluja voidaan suorittaa useita rinnakkain
-
-### Mikropalvelut
- 
-Mikropalveluiden käyttö mahdollistaa sen, että sovellus voidaan helposti koodata ”monella kielellä”, toisin kuin monoliittisissa projekteissa, mikään ei edellytä, että kaikki mikropalvelut olisi toteutettu samalla kielellä
-Sovelluksen jakaminen järkeviin mikropalveluihin on haastavaa
-Kymmenistä tai jopa sadoista mikropalveluista koostuvan ohjelmiston operoiminen eli ”käynnistäminen” tuotantopalvelimilla on haastavaa ja vaatii pitkälle menevää automatisointia
-Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota
-Mikropalveluiden menestyksekäs soveltaminen edellyttää vahvaa devops- kulttuuria
-
-Mikropalveluiden yhteydessä käytetäänkin paljon ns kontainereja eli käytännössä dockeria
-Kontainerit ovat hieman yksinkertaistaen sanottuna kevyitä virtuaalikoneita, joita voi suorittaa yhdellä palvelimella suuren määrän rinnakkain
-Jos mikropalvelu on omassa kontainerissaan, vastaa se käytännössä tilannetta, jossa mikropalvelua suoritettaisiin omalla koneellaan
-Aihe on tärkeä, mutta emme valitettavasti voi mennä siihen tämän kurssin puitteissa ollenkaan...
-
-Mutta pian käynnistyy asiaa käsittelevä kurssi Devops with Docker
-Mikropalvelut
- 
 Mikropalveluiden kommunikointi Mikropalvelut kommunikoivat keskenään verkon välityksellä Kommunikointimekanismeja on useita
 Yksinkertainen vaihtoehto on käyttää kommunikointiin HTTP- protokollaa, eli samaa mekanismia, jonka avulla web-selaimet keskustelevat palvelimien kanssa
 Tällöin sanotaan että mikropalvelut tarjoavat kommunikointia varten REST-rajapinnan
@@ -203,9 +191,21 @@ Viestien lähetys lähettäjän kannalta asynkronista, eli palvelu lähetta
 Asynkronisten viestien (tai eventtien) välitykseen perustuvaa arkkitehtuureja kutsutaan myös event-driven-arkkitehtuureiksi
 kaikki event-driven-arkkitehtuurit eivät välttämättä ole mikroarkkitehtuureja, esim. Java Swing/FX -sovelluksessa käyttöliittymä kommunikoi sovelluksen kanssa asynkronisten tapahtumien avulla
 
-Viestinvälitykseen perustuvat mikropalvelut eivät ole ilmainen lounas, erityisesti debuggaus voi olla välillä melko haastavaa
+### Mikropalveluiden haasteita
 
- Arkkitehtuuri ketterissä menetelmissä
+Monista eduistaan huolimatta mikropalveluarkkitehtuurin soveltaminen tuo mukanaan koko joukon uusia haasteita. Ensinnäkin sovelluksen jakaminen järkeviin mikropalveluihin on melko haastavaa. Vääränlainen jako palveluihin voi tuottaa sovelluksen, jossa jokainen palvelu joutuu keskustelemaan verkon yli pahimmassa tapauksessa kymmenien palvelujen kesken ja näin sovelluksen suorituskyky kärsii. 
+
+Palveluista koostetun sovellusten debuggaaminen ja testaaminen on huomattavasti hankalampaa kuin monoliittisen, erityisesti näin on jos mikropalvelut käyttävät viestinvälitystä.
+
+Kymmenistä tai jopa sadoista mikropalveluista koostuvan ohjelmiston operoiminen eli "käynnistäminen" tuotantopalvelimilla on haastavaa ja vaatii pitkälle menevää automatisointia. Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota.
+Mikropalveluiden menestyksekäs soveltaminen edellyttääkin vahvaa DevOps-kulttuuria.
+
+Mikropalveluiden yhteydessä käytetäänkin paljon ns. kontainereja eli käytännössä[dockeria](https://www.docker.com/). Kontainerit ovat hieman yksinkertaistaen sanottuna kevyitä virtuaalikoneita, joita voi suorittaa yhdellä palvelimella suuren määrän rinnakkain. Jos mikropalvelu on omassa kontainerissaan, vastaa se käytännössä tilannetta, jossa mikropalvelua suoritettaisiin omalla koneellaan.
+
+Aihe on tärkeä, mutta emme valitettavasti voi mennä siihen tämän kurssin 
+puitteissa ollenkaan, onneksi Avoimessa Yliopistossa on tarjolla sopiva kurssi aiheesta: [DevOps with Docker 1-3 op](https://docker-hy.github.io/)
+
+## Arkkitehtuuri ketterissä menetelmissä
  
 Ketterien menetelmien kantava teema on toimivan, asiakkaalle arvoa tuottavan ohjelmiston nopea toimittaminen (agile manifestin periaatteita):
 Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
@@ -256,7 +256,6 @@ Arkkitehtuuri on siis koodin tapaan tiimin yhteisomistama, tästä on muutamia
 Kehittäjät sitoutuvat paremmin arkkitehtuurin noudattamiseen kuin ”norsunluutornissa” olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriiin
 Arkkitehtuurin dokumentointi voi olla kevyt ja informaali (esim. valkotaululle piirretty) sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan
 
-Arkkitehtuuri ketterissä menetelmissä
  
 Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta
 Jo tehtyjä arkkitehtonisia ratkaisuja muutetaan tarvittaessa
@@ -267,9 +266,8 @@ Martin Fowler http://martinfowler.com/articles/designDead.html:
 Essentially evolutionary design means that the design of the system grows as the system is implemented. Design is part of the program- ming processes and as the program evolves the design changes.
 In its common usage, evolutionary design is a disaster. The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter
 
-Seuraavaksi siirrymme käsittelemään olio/komponenttisuunnittelua
 
- Olio/komponenttisuunnittelu
+## Olio/komponenttisuunnittelu
  
 Käytettäessä ohjelmiston toteutukseen olio-ohjelmointikieltä, on suunnitteluvaiheen tarkoituksena löytää sellaiset oliot, jotka pystyvät yhteistoiminnallaan toteuttamaan järjestelmän vaatimuksen
 Jos käytössä jotain muuta paradigmaa käyttävä kieli, tässä suunnittelun vaiheessa suunnitellaan kielen paradigman tukevat rakennekomponentit, esim. funktiot, aliohjelmat, moduulit...
