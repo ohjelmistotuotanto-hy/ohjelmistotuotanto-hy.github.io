@@ -207,65 +207,72 @@ puitteissa ollenkaan, onneksi Avoimessa Yliopistossa on tarjolla sopiva kurssi a
 
 ## Arkkitehtuuri ketterissä menetelmissä
  
-Ketterien menetelmien kantava teema on toimivan, asiakkaalle arvoa tuottavan ohjelmiston nopea toimittaminen (agile manifestin periaatteita):
-Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
-Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+Ketterien menetelmien kantava teema on toimivan, asiakkaalle arvoa tuottavan ohjelmiston nopea toimittaminen, tämä on mainittu selkeästi jo agile menifestin periaatteissa:
 
-Ketterät menetelmät suosivat yksinkertaisuutta suunnitteluratkaisuissa
-Simplicity, the art of maximizing the amount of work not done, is essential
-YAGNI eli ”you are not going to need it”-periaate
+_Our highest priority is to satisfy the customer through early and continuous delivery of valuable software._
 
-Arkkitehtuuriin suunnittelu ja dokumentointi on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe
-BUFD eli Big Up Front Design
+_Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale._
 
-Ketterät menetelmät ja ”arkkitehtuurivetoinen” ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa
+Ketterät menetelmät suosivat yksinkertaisuutta suunnitteluratkaisuissa:
 
-Arkkitehtuuri ketterissä menetelmissä
+_Simplicity, the art of maximizing the amount of work not done, is essential_
+
+Arkkitehtuuriin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
  
-Arkkitehtuuri ketterissä menetelmissä Ketterien menetelmien yhteydessä puhutaan inkrementaalisesta tai
-evolutiivisesta suunnittelusta ja arkkitehtuurista
-Arkkitehtuuri mietitään riittävällä tasolla projektin alussa
-Jotkut projektit alkavat ns. nollasprintillä ja alustava arkkitehtuuri määritellään tällöin
-Scrumin varhaisissa artikkeleissa puhuttiin ”pre game”-vaiheesta jolloin mm. alustava arkkitehtuuri luodaan
-Sittemmin koko käsite on hävinnyt Scrumista ja Ken Schwaber (Scrumin kehittäjä) jopa eksplisiittisesti kieltää ja tyrmää koko ”nollasprintin” olemassaolon: http://www.scrum.org/assessmentdiscussion/post/1317787
+Arkkitehtuuri ketterissä menetelmissä Ketterien menetelmien yhteydessä puhutaan [inkrementaalisesta tai evolutiivisesta suunnittelusta ja arkkitehtuurista](https://www.jamesshore.com/Agile-Book/incremental_design.html). 
 
-Ohjelmiston ”lopullinen” arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmaan toteutetaan uutta toiminnallisuutta
-Esim. kerrosarkkitehtuurin mukaista sovellusta ei rakenneta ”kerros kerrallaan”
-Jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää
+Ideana on, että arkkitehtuuri mietitään riittävällä tasolla projektin alussa. Ohjelmiston "lopullinen" arkkitehtuuri muodostuu lopulta iteraatio iteraatiolta samalla kun ohjelmaan toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.
 
-Walking skeleton
-Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on walking
-skeletonin käyttö
-A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.
-The architecture and the functionality can then evolve in parallel.
+Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) jonka aikana luodaan mm. alustava arkkitehtuuri sekä backlog. 
+
+Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta jonka aikana tehtiin erilaisia kehitystyötä valmistelevia asioita, mm. hahmoteltiin alustava arkkitehtuuri. Sittemmin koko käsite on hävinnyt Scrumista ja Ken Schwaber (Scrumin kehittäjä) jopa eksplisiittisesti kieltää ja [tyrmää](http://www.scrum.org/assessmentdiscussion/post/1317787) koko "nollasprintin" olemassaolon.
+
+### Kävelevä luuranko
+
+Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on kävelevän luurangon, eli _walking skeletonin_ käyttö. [Alistair Coburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavastsi:
+
+> A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.
+>
+> The architecture and the functionality can then evolve in parallel.
 What constitutes a walking skeleton varies with the system being designed
-For a layered architecture system, it is a working connection between all the layers
+For a layered architecture system, it is a working connection between all the layers.
 
-Katso lisää esim http://alistair.cockburn.us/Walking+skeleton
+> The walking skeleton is not complete or robust and it is missing the flesh of the application functionality. Incrementally, over time, the infrastructure will be completed and full functionality will be added.
+>
+> A walking skeleton, is permanent code, built with production coding habits, regression tests, and is intended to grow with the system.
+>
 
-The walking skeleton is not complete or robust and it is missing the flesh of the application functionality. Incrementally, over time, the infrastructure will be completed and full functionality will be added
-A walking skeleton, is permanent code, built with production coding habits, regression tests, and is intended to grow with the system
-Eli tarkoitus on toteuttaa arkkitehtuurin rungon sisältävä Walking skeleton jo ensimmäisessä sprintissä ja kasvattaa se pikkuhiljaa projektin edetessä
+Eli heti projektin alussa, mielellään ensimmäisessä sprintissä on tarkoitus toteuttaa arkkitehtuurin rungon sisältävä _walking skeleton_, joka sisältää jo kaikkia arkkitehtuurin peruskomponentteja ja kerroksia vastaavat tynkäkomponentit sekä niiden välisen kommunikaation. 
+
+Tätä luurankoa sitten kasvatetaan pikkuhiljaa projektin edetessä kun sovelluksen toiminnallisuus rakentuu. 
+
+Walking skeleton ei ole pelkästään poisheitettävää koodia, vaan sovelluksen koodi rakentuu sen ympärille, eli skeletoinia rakennettaessa on jo tarkoituksen mukaisin osin syytä ohjelmoida tuotantokoodin edellyttämällä laadulla. 
  
-Perinteisesti arkkitehtuurista on vastannut ohjelmistoarkkitehti ja ohjelmoijat ovat olleet velvoitettuja noudattamaan arkkitehtuuria
-Ketterissä menetelmissä ei suosita erillistä arkkitehdin roolia, esim. Scrum käyttää kaikista ryhmän jäsenistä nimikettä developer
-Ketterien menetelmien ideaali on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi agile manifestin periaatteista:
-The best architectures, requirements, and designs emerge from self- organizing teams.
+### Inkrementaalisen arkkitehtuurin etuja
 
-Arkkitehtuuri on siis koodin tapaan tiimin yhteisomistama, tästä on muutamia etuja
-Kehittäjät sitoutuvat paremmin arkkitehtuurin noudattamiseen kuin ”norsunluutornissa” olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriiin
-Arkkitehtuurin dokumentointi voi olla kevyt ja informaali (esim. valkotaululle piirretty) sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan
+Perinteisesti arkkitehtuurista on vastannut ohjelmistoarkkitehti ja ohjelmoijat ovat olleet velvoitettuja noudattamaan arkkitehtuuria. Ketterissä menetelmissä taas ei suosita erillistä arkkitehdin roolia, esim. Scrum käyttää kaikista ryhmän jäsenistä nimikettä developer. Ketterien menetelmien ideaalihan on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi agile manifestin periaatteista:
 
- 
-Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta
-Jo tehtyjä arkkitehtonisia ratkaisuja muutetaan tarvittaessa
+> The best architectures, requirements, and designs emerge from self- organizing teams.
 
-Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkii välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä
-Inkrementaalinen lähestymistapa arkkitehtuurin muodostamiseen edellyttää koodilta hyvää sisäistä laatua ja toteuttajilta kurinalaisuutta
-Martin Fowler http://martinfowler.com/articles/designDead.html:
-Essentially evolutionary design means that the design of the system grows as the system is implemented. Design is part of the program- ming processes and as the program evolves the design changes.
-In its common usage, evolutionary design is a disaster. The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter
+Arkkitehtuuri on siis koodin tapaan _tiimin yhteisomistama_ ja tästä on muutamia etuja. Kehittäjät todennäköisesti sitoutuvat paremmin itseomistamansa arkkitehtuurin noudattamiseen kuin "norsunluutornissa" olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriiin.
 
+Tiimin kesken suunnitteleman arkkitehtuurin dokumentointi voi olla kevyt ja informaali, esim. valkotaululle piirretty, sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan. Jos arkkitehtuurin suunnittelee joku ulkopuoleinen, sen kommunikointi tiimille edellyttänee raskaampaa dokumentaatiota.
+
+Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tule parhaalla tavalla ohjelmiston kehittämistä..
+
+Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkii välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
+
+### Inkrementaalisen arkkitehtuurin riskit
+
+Inkrementaalinen lähestymistapa arkkitehtuurin muodostamiseen edellyttää koodilta hyvää sisäistä laatua ja toteuttajilta kurinalaisuutta.
+
+[Martin Fowler](http://martinfowler.com/articles/designDead.html) toteaa seuraavasti 
+
+> Essentially evolutionary design means that the design of the system grows as the system is implemented. Design is part of the programming processes and as the program evolves the design changes.
+>
+> In its common usage, evolutionary design is a disaster. The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+
+Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten aikataulupaineet ajavat siihen että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmiston arkkitehtuuria kuvaa parhaiten sanota [big ball of mud](http://www.laputan.org/mud/).
 
 ## Olio/komponenttisuunnittelu
  
@@ -273,17 +280,17 @@ Käytettäessä ohjelmiston toteutukseen olio-ohjelmointikieltä, on suunnit
 Jos käytössä jotain muuta paradigmaa käyttävä kieli, tässä suunnittelun vaiheessa suunnitellaan kielen paradigman tukevat rakennekomponentit, esim. funktiot, aliohjelmat, moduulit...
 
 Komponenttisuunnittelua ohjaa ohjelmistolle suunniteltu arkkitehtuuri
-Ohjelman ylläpidettävyyden kannalta on suunnittelussa hyvä noudattaa ”ikiaikaisia” hyvän suunnittelun käytänteitä
+Ohjelman ylläpidettävyyden kannalta on suunnittelussa hyvä noudattaa "ikiaikaisia" hyvän suunnittelun käytänteitä
 Ketterissä menetelmissä tämä on erityisen tärkeää, sillä jos ohjelman rakenne pääsee rapistumaan, on ohjelmaa vaikea laajentaa jokaisen sprintin aikana
 
 Ohjelmiston suunnitteluun on olemassa useita erilaisia menetelmiä, mikään niistä ei kuitenkaan ole vakiintunut
-Ohjelmistosuunnittelu onkin ”enemmän taidetta kuin tiedettä”, kokemus ja hyvien käytänteiden opiskelu toki auttaa
+Ohjelmistosuunnittelu onkin "enemmän taidetta kuin tiedettä", kokemus ja hyvien käytänteiden opiskelu toki auttaa
 Erityisesti ketterissä menetelmissä tarkka suunnittelu tapahtuu yleensä vasta ohjelmoitaessa
 
 Olio/komponenttisuunnittelu
  
 Emme keskity kurssilla mihinkään yksittäiseen suunnittelumenetelmään, vaan tutustumme eräisiin tärkeisiin menetelmäriippumattomiin teemoihin:
-Laajennettavuuden ja ylläpidettävyyden suhteen laadukkaan koodin/oliosuunnittelun tunnusmerkkeihin ja laatuattribuutteihin ja niitä tukeviin ”ikiaikaisiin” hyvän suunnittelun periaatteisiin
+Laajennettavuuden ja ylläpidettävyyden suhteen laadukkaan koodin/oliosuunnittelun tunnusmerkkeihin ja laatuattribuutteihin ja niitä tukeviin "ikiaikaisiin" hyvän suunnittelun periaatteisiin
 Koodinhajuihin eli merkkeihin siitä että suunnittelussa ei kaikki ole kunnossa
 Refaktorointiin eli koodin rajapinnan ennalleen jättävään rakenteen parantamiseen
 Erilaisissa tilanteissa toimiviksi todettuihin geneerisiä suunnitteluratkaisuja dokumentoiviin suunnittelumalleihin
@@ -294,10 +301,10 @@ Muilla paradigmoilla on myös omia suunnittelumallejaan, mutta niitä emme kur
 Olio/komponenttisuunnittelu
  
 Helposti ylläpidettävän koodin tunnusmerkit Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja
-Koodin tulee olla luettavuudeltaan selkeää, eli koodin tulee kertoa esim. nimennällään mahdollisimman selkeästi mitä koodi tekee, eli tuoda esiin koodin alla oleva ”design”
+Koodin tulee olla luettavuudeltaan selkeää, eli koodin tulee kertoa esim. nimennällään mahdollisimman selkeästi mitä koodi tekee, eli tuoda esiin koodin alla oleva "design"
 Yhtä paikkaa pitää pystyä muuttamaan siten, ettei muutoksesta aiheudu sivuvaikutuksia sellaisiin kohtiin koodia, jota muuttaja ei pysty ennakoimaan
 Jos ohjelmaan tulee tehdä laajennus tai bugikorjaus, tulee olla helppo selvittää mihin kohtaan koodia muutos tulee tehdä
-Jos ohjelmasta muutetaan ”yhtä asiaa”, tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin tai luokkaan)
+Jos ohjelmasta muutetaan "yhtä asiaa", tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin tai luokkaan)
 Muutosten ja laajennusten jälkeen tulee olla helposti tarkastettavissa ettei muutos aiheuta sivuvaikutuksia muualle järjestelmään
 
 
@@ -319,7 +326,7 @@ https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oli osuunnitt
 Koodiesimerkkejä ei käsitellä luennoilla, mutta on tarkoituksena, että luet ne viikojen 5 ja 6 laskareihin valmistautuessasi
 
 Kapselointi Ohjelmointikursseilla on määritelty kapselointi seuraavasti
-”Tapaa ohjelmoida olion toteutuksen yksityiskohdat luokkamäärittelyn sisään – piiloon olion käyttäjältä – kutsutaan kapseloinniksi. Olion käyttäjän ei tarvitse tietää mitään olioiden sisäisestä toiminnasta. Eikä hän itse asiassa edes saa siitä mitään tietää vaikka kuinka haluaisi!” (vanha ohpen materiaali)
+"Tapaa ohjelmoida olion toteutuksen yksityiskohdat luokkamäärittelyn sisään – piiloon olion käyttäjältä – kutsutaan kapseloinniksi. Olion käyttäjän ei tarvitse tietää mitään olioiden sisäisestä toiminnasta. Eikä hän itse asiassa edes saa siitä mitään tietää vaikka kuinka haluaisi!" (vanha ohpen materiaali)
 
 Aloitteleva ohjelmoija assosioi kapseloinnin yleensä seuraavaan periaatteeseen:
 Oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit
@@ -368,7 +375,7 @@ Riippuvuuksien vähäisyys
 Käsittelimme koodin laatuattribuuteista kapselointia, koheesiota ja riippuvuuksien vähäisyyttä, seuraavana vuorossa redundanssi eli toisteisuus
 Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen: älä copypastaa koodia!
 Alan piireissä toisteisuudesta varoittava periaate kulkee nimellä DRY, don't repeat yourself
-”Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.”
+"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."
 http://c2.com/cgi/wiki?DontRepeatYourself
 DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa eliminointia pidemmälle
 
@@ -380,7 +387,7 @@ Lisää koodin laatuattribuutteja: DRY
 Testattavuus
 
 Koodin selkeys ja luettavuus
-Suuri osa ”ohjelmointiin” kuluvasta ajasta kuluu olemassaolevan koodin (joko kehittäjän itsensä tai jonkun muun kirjoittaman) lukemiseen
+Suuri osa "ohjelmointiin" kuluvasta ajasta kuluu olemassaolevan koodin (joko kehittäjän itsensä tai jonkun muun kirjoittaman) lukemiseen
  
 Hyvä koodi on helppo testata kattavasti iyksikkö- ja integraatiotestein
 Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista ja ei sisällä toisteisuutta
@@ -392,10 +399,10 @@ Lisää laatuattribuutteja
 Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa
 Esim. c-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa
 Metodikutsuja on vältetty tehokkuussyistä
-Muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja ”koodaamalla” dataa bittitasolla
+Muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja "koodaamalla" dataa bittitasolla
 ...
 Ajat ovat muuttuneet ja nykytrendin mukaista on pyrkiä kirjoittamaan koodia, joka nimennällään ja muodollaan ilmaisee mahdollisimman hyvin sen mitä koodi tekee
-Selkeän nimennän lisäksi muita luettavan eli ”puhtaan” koodin (clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat
+Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat
 www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sh eet-V1.3.pdf
 
 Koodin luettavuus
@@ -418,14 +425,14 @@ Tarkoituksena ylläpidettävyyden parantaminen ja kompleksisuuden hallinnan he
 Kerroksen N käyttäjää on turha vaivata kerroksen sisäisellä rakenteella
 Eikä sitä edes kannata paljastaa, koska näin muodostuisi eksplisiittinen riippuvuus käyttäjän ja N:n välille
 
-Pyrkimys siihen että kerrokset ovat mahdollisimman korkean koheesion omaavia, eli ”yhteen asiaan” keskittyvä
+Pyrkimys siihen että kerrokset ovat mahdollisimman korkean koheesion omaavia, eli "yhteen asiaan" keskittyvä
 Käyttöliittymä Tietokantayhteydet Liiketoimintalogiikka
 
 Kerrokset taas ovat keskenään mahdollisimman löyhästi kytkettyjä
  
 Kapselointi ja koheesio ja riippuvuuksien minimointi arkkitehtuuritasolla
   
-Viimeaikaisena voimakkaasti nousevana trendinä on käyttää sovelluksen koodin tasolla nimentää, joka vastaa liiketoiminta-alueen eli ”bisnesdomainin” terminologiaa
+Viimeaikaisena voimakkaasti nousevana trendinä on käyttää sovelluksen koodin tasolla nimentää, joka vastaa liiketoiminta-alueen eli "bisnesdomainin" terminologiaa
 Yleisnimike tälle tyylille on Domain Driven Design, DDD
 ks esim. http://www.infoq.com/articles/ddd-evolving-architecture
 
@@ -461,7 +468,7 @@ Tutustuimme myös yleisiin periaatteisiin, joiden noudattaminen auttaa päät
 single responsibility principle, program to interfaces, favor composition over inheritance, don't repeat yourself
 
 Itseopiskelumateriaalissa esitellään suunnittelumalleja (design patterns), jotka tarjoavat tiettyihin sovellustilanteisiin sopivia yleisiä ratkaisumalleja
-Koodi ja oliosuunnittelu ei ole aina hyvää, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä ”huonoa” koodia
+Koodi ja oliosuunnittelu ei ole aina hyvää, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä "huonoa" koodia
 Huonoa oliosuunnittelua ja huonon koodin kirjoittamista on verrattu velan (engl. design debt tai technical debt) ottamiseen
 http://www.infoq.com/articles/technical-debt-levison
 
@@ -470,7 +477,7 @@ Tekninen velka
 Piittaamattomalla ja laiskalla ohjelmoinnilla/suunnittelulla saadaan ehkä nopeasti aikaan jotain, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin jos ohjelmaa on tarkoitus laajentaa
 Käytännössä käy niin, että tiimin velositeetti laskee, koska teknistä velkaa on maksettava takaisin, jotta järjestelmään saadaan toteutettua uusia ominaisuuksia
 
-Jos korkojen maksun aikaa ei koskaan tule, ohjelma on esim. pelkkä prototyyppi tai sitä ei oteta koskaan käyttöön, voi ”huono koodi” olla asiakkaan kannalta kannattava ratkaisu
+Jos korkojen maksun aikaa ei koskaan tule, ohjelma on esim. pelkkä prototyyppi tai sitä ei oteta koskaan käyttöön, voi "huono koodi" olla asiakkaan kannalta kannattava ratkaisu
 Esim. uuden ominaisuuden käyttökelpoisuuden validointiin toteutettava minimal viable product (MVP) on luonteeltaan sellainen, että sitä tehdessä otetaan tietoisesti teknistä velkaa
 
 Vastaavasti joskus voi lyhytaikaisen teknisen velan ottaminen olla järkevää tai jopa välttämätöntä
@@ -484,9 +491,9 @@ http://www.infoq.com/news/2012/02/tech-debt-361
 Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös
 
 Kaikki tekninen velka ei ole samanlaista, Martin Fowler jaottelee teknisen velan neljään eri luokkaan:
-Reckless and deliberate: ”we do not have time for design” Reckless and inadverent: ”what is layering”?
-Prudent and inadverent: ”now we know how we should have done it”
-Prudent and deliberate: ”we must ship now and will deal with consequences”
+Reckless and deliberate: "we do not have time for design" Reckless and inadverent: "what is layering"?
+Prudent and inadverent: "now we know how we should have done it"
+Prudent and deliberate: "we must ship now and will deal with consequences"
 http://martinfowler.com/bliki/TechnicalDebtQuadrant.html
 
 Koodi haisee: merkki huonosta suunnittelusta Seuraavassa alan ehdoton asiantuntija Martin Fowler selittää mistä on
@@ -546,7 +553,7 @@ Yksi hallittu muutos kerrallaan
 Testit on ajettava mahdollisimman usein ja varmistettava että mikään ei mennyt rikki
 
 Refaktorointia kannattaa suorittaa lähes jatkuvasti
-Koodin ei kannata antaa ”rapistua” pitkiä aikoja, refaktorointi muuttuu vaikeammaksi
+Koodin ei kannata antaa "rapistua" pitkiä aikoja, refaktorointi muuttuu vaikeammaksi
 Lähes jatkuva refaktorointi on helppoa, pitää koodin rakenteen selkeänä ja helpottaa sekä nopeuttaa koodin laajentamista
 
 Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimentä tai pitkien metodien jakaminen osametodeiksi on helppoa, aina ei näin ole
