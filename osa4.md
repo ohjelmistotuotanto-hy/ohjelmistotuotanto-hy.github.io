@@ -272,7 +272,7 @@ Inkrementaalinen lähestymistapa arkkitehtuurin muodostamiseen edellyttää k
 >
 > In its common usage, evolutionary design is a disaster. The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
 
-Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten aikataulupaineet ajavat siihen että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmiston arkkitehtuuria kuvaa parhaiten sanota [big ball of mud](http://www.laputan.org/mud/).
+Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten sovelluskehittäjien huolimattomuus, aikataulupaineet ym. syyt ajavat siihen, että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmisto enää muodoton kasa spagettikoodia, eli [big ball of mud](http://www.laputan.org/mud/) jonka ylläpitäminen ja jatkokehittäminen muuttuu erittäin haastavaksi.
 
 ## Olio/komponenttisuunnittelu
  
