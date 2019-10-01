@@ -606,7 +606,6 @@ http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_Indust ryTrack_1_0.
 Projektien onnistuminen: ketterä vastaan perinteinen Standish CHAOS raport 2015 (tutkittu yli 50000 projektia ympäri maailman)
 https://www.infoq.com/articles/standish-chaos-2015
 
- 
 Kuten tämä(kin) tutkimus osoittaa, on suurien projekteien epäonnistumisriski huomattavasti pieniä korkeampi
  Ketteryydellä saavutettuja etuja tarkemmin eriteltynä
  Ketteryydellä saavutettuja etuja Suomessa...
