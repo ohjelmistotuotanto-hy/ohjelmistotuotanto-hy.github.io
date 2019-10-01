@@ -1068,7 +1068,7 @@ Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioi
 
 Jatkamme muokkaamista seuraavassa luvussa
 
-## laskin ja komento-olio
+#### laskin ja komento-olio
 
 Muutamme Operaatio-luokan olemusta, päädymme jo oikeastaan Strategy-suunnittelumallin lähisukulaisen _Command_-suunnittelumallin puolelle ja annammekin sille nimen Komento, ja teemme siitä rajapinnan sillä siirrämme erillisten komento-olioiden luomisen Komentotehdas-luokalle:
 
@@ -1186,7 +1186,7 @@ Ohjelman rakenne tässä vaiheessa
 ![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-5.png)
 
 
-### Command
+#### Suunnittelumalli: command
 
 Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa nodattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public <code>void suorita()</code>
 
@@ -1197,7 +1197,7 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html
 http://sourcemaking.com/design_patterns/command
 
-### lisää komentoja
+#### lisää komentoja
 
 Jatketaan laskimen komentojen toteuttamista.
 
@@ -1282,7 +1282,7 @@ Ohjelmasta on näinollen saatu laajennettavuudeltaan varsin joustava. Uusia oper
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli __template method__ (kaksiparametrisen komennon toteutukseen). 
 
-### template method
+#### Suunnittelumalli: template method
 
 Template method -suunnittelumallia sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
@@ -1344,473 +1344,6 @@ http://www.oodesign.com/template-method-pattern.html
 http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern
 
 
-#### 
-
-## Dekoroitu pino
-
-Olemme toteuttaneet asiakkaalle pinon:
-
-``` java
-public class Pino {
-
-    private LinkedList<String> alkiot;
-
-    public Pino() {
-        alkiot = new LinkedList<String>();
-    }
-
-    public void push(String alkio){
-        alkiot.addFirst(alkio);
-    }
-
-    public String pop(){
-        return alkiot.remove();
-    }
-
-    public boolean empty(){
-        return alkiot.isEmpty();
-    }
-}
-
-public static void main(String[] args) {
-    Scanner lukija = new Scanner(System.in);
-    Pino pino = new Pino();
-
-    System.out.println("pinotaan, tyhjä lopettaa:");
-    while (true) {
-        String pinoon = lukija.nextLine();
-        if (pinoon.isEmpty()) {
-            break;
-        }
-        pino.push(pinoon);
-    }
-    System.out.println("pinossa oli: ");
-    while (!pino.empty()) {
-        System.out.println( pino.pop() );
-    }
-}
-```
-
-Asiakkaamme haluaa pinosta muutaman uuden version:
-
-* KryptattuPino jossa alkiot talletetaan pinoon kryptattuina, alkiot tulevat pinosta ulos normaalisti
-* LokiPino jossa tieto pinoamisoperaatioista ja niiden parametreista ja paluuarvoista talletetaan lokiin
-* PrepaidPino joka lakkaa toimimasta kun sillä on suoritettu konstruktoriparametrina määritelty määrä operaatioita
-
-On lisäksi toteutettava kaikki mahdolliset kombinaatiot:
-
-* KryptattuLokiPino
-* LokiKryptattuPino (erona edelliseen että lokiin ei kirjata parametreja kryptattuna)
-* KryptattuPrepaidPino
-* KryptattuLokiPrepaidPino
-* LokiPrepaidPino
-
-Alkaa kuulostaa pahalta varsinkin kun Product Owner vihjaa, että seuraavassa sprintissä tullaan todennäköisesti vaatimaan lisää versioita pinosta, mm. ÄänimerkillinenPino, RajallisenkapasiteetinPino ja tietysti kaikki kombinaatiot tarvitaan myös...
-
-Onneksi dekoraattori sopii tilanteeseen kuin nyrkki silmään! Luodaan pinon kolme uutta versiota dekoroituina pinoina. Tarkastellaan ensin PrepaidPinoa:
-
-``` java
-public class PrepaidPino extends Pino {
-
-    private Pino pino;
-    private int krediitteja;
-
-    public PrepaidPino(Pino pino, int krediitteja) {
-        this.pino = pino;
-        this.krediitteja = krediitteja;
-    }
-
-    @Override
-    public String pop() {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
-
-        return pino.pop();
-    }
-
-    @Override
-    public void push(String alkio) {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
-        pino.push(alkio);
-    }
-
-    @Override
-    public boolean empty() {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
-        return pino.empty();
-    }
-}
-```
-
-PrepaidPino siis perii pinon, mutta kun tarkkaa katsotaan, niin yliluokan operaatiot ylikirjoitetaan ja yliluokkaa ei hyödynnetä millään tavalla!
-
-PrepaidPino siis perii luokan Pino, mutta se ei käytä "perittyä" pinouttaan, vaan sensijaan PrepaidPino __sisältää__ pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa PrepaidPino käyttää tallettamaan kaikki alkionsa. Eli jokainen PrepaidPinon operaatio delegoi operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
-
-PrepaidPino luodaan seuraavalla tavalla:
-
-``` java
-Pino pino = new PrepaidPino(new Pino(), 5);
-```
-
-Eli luodaan normaali Pino ja annetaan se PrepaidPinolle konstruktoriparametrina yhdessä pinon krediittien kanssa.
-
-Muut kaksi:
-
-``` java
-public class KryptattuPino extends Pino{
-    private Pino pino;
-
-    public KryptattuPino(Pino pino) {
-        this.pino = pino;
-    }
-
-    @Override
-    public String pop() {
-        String alkio = pino.pop();
-        return dekryptaa(alkio);
-    }
-
-    @Override
-    public void push(String alkio) {
-        pino.push(kryptaa(alkio));
-    }
-
-    @Override
-    public boolean empty() {
-        return pino.empty();
-    }
-
-    private String dekryptaa(String alkio) {
-        String dekryptattu = "";
-        for (int i = 0; i < alkio.length(); i++) {
-            dekryptattu += (char)(alkio.charAt(i)-1);
-        }
-
-        return dekryptattu;
-    }
-
-    private String kryptaa(String alkio) {
-        String kryptattu = "";
-        for (int i = 0; i < alkio.length(); i++) {
-            kryptattu += (char)(alkio.charAt(i)+1);
-        }
-
-        return kryptattu;
-    }
-}
-
-public class LokiPino extends Pino {
-
-    private Pino pino;
-    private PrintWriter loki;
-
-    public LokiPino(Pino pino, PrintWriter loki) {
-        this.pino = pino;
-        this.loki = loki;
-    }
-
-    @Override
-    public String pop() {
-        String popattu = pino.pop();
-        loki.println("pop: "+popattu);
-
-        return popattu;
-    }
-
-    @Override
-    public void push(String alkio) {
-        loki.println("push: "+alkio);
-
-        pino.push(alkio);
-    }
-
-    @Override
-    public boolean empty() {
-        loki.println("empty: "+pino.empty());
-
-        return pino.empty();
-    }
-}
-```
-
-Eli periaate on sama, pinodekoraattorit LokiPino ja KryptattuPino delegoivat kaikki operaationsa sisältämilleen Pino-olioille.
-
-Koska kaikki dekoraattorit perivät luokan Pino, voidaan dekoraattorille antaa parametriksi toinen dekoraattori. Esim. KryptattuLokiPino luodaan seuraavasti:
-
-``` java
-PrintWriter loki = new PrintWriter( new File("loki.txt") );
-Pino pino = new KryptattuPino( new LokiPino( new Pino(), loki ) );
-```
-
-Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle paljon erilaisia ominaisuuskombinaatioita. Jos olisimme yrittäneet hoitaa kaiken normaalilla perinnällä, olisi luokkien määrä kasvanut eksponentiaalisesti eri ominaisuuksien määrän suhteen ja uusiokäytöstäkään ei olisi tullut mitään.
-
-Dekorointi siis ei oleellisesti ole perintää vaan delegointia, jälleen kerran oliosuunnitteun periaate "favour composition over inheritance" on näyttänyt voimansa.
-
-Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/design_patterns/decorator 
-
-## Pinotehdas
-
-Huomaamme, että eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Teemmekin luomista helpottamaan pinotehtaan:
-
-``` java
-public class Pinotehdas {
-    public Pino prepaidPino(int krediitit){
-        return new PrepaidPino(new Pino(), krediitit);
-    }
-
-    public Pino lokiPino(PrintWriter loki){
-        return new LokiPino(new Pino(), loki);
-    }
-
-    public Pino kryptattuPino(){
-        return new KryptattuPino(new Pino());
-    }
-
-    public Pino kryptattuPrepaidPino(int krediitit){
-        return new KryptattuPino(prepaidPino(krediitit));
-    }
-
-    public Pino kryptattuLokiPino(PrintWriter loki){
-        return new KryptattuPino(lokiPino(loki));
-    }
-
-    public Pino prepaidKryptattuLokiPino(int krediitit, PrintWriter loki){
-        return new PrepaidPino(kryptattuLokiPino(loki), krediitit);
-    }
-
-    // monta monta muuta rakentajaa...
-}
-```
-
-Factoryluokka on ikävä ja sisältää hirveän määrän metodeja. Jos pinoon lisätään vielä ominaisuuksia, tulee factory karkaamaan käsistä.
-
-Pinon luominen on kuitenkin factoryn ansiosta helppoa:
-
-``` java
-Pinotehdas tehdas = new Pinotehdas();
-
-Pino omapino = tehdas.kryptattuPrepaidPino(100);
-```
-Factoryperiaate ei kyllä ole tilanteeseen ideaali. Kokeillaan rakentaja (engl. builder) -suunnittelumallia:
-
-## Pinorakentaja
-
-Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
-
-``` java
-Pinorakentaja rakenna = new Pinorakentaja();
-
-Pino pino = rakenna.prepaid(10).kryptattu().pino();
-```
-
-Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (domain specific language) pinojen luomiseen!
-
-Luodaan ensin rakentajasta perusversio, joka soveltuu vasta normaalien pinojen luomiseen:
-
-``` java
-    Pinorakentaja rakenna = new Pinorakentaja();
-
-    Pino pino = rakenna.pino();
-```
-
-Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
-
-``` java
-public class Pinorakentaja {
-    Pino pino;
-
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-}
-```
-
-eli kun <code>Rakentaja</code>-olio luodaan, rakentajan luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia <code>pino()</code>.
-
-Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
-
-``` java
-Pinorakentaja rakenna = new Pinorakentaja();
-
-Pino pino = rakenna.prepaid(10).pino();
-```
-
-Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka tyyppi on <code>Pinorakentaja prepaid(int kreditit)</code>, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia <code>pino</code>, on metodin <code>prepaid</code> palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
-
-``` java
-public class Pinorakentaja {
-    Pino pino;
-
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    Pinorakentaja prepaid(int kreditit) {
-        // ????
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-}
-```
-
-Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia <code>prepaid</code> ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa viitteen <code>this</code> eli rakentajan itsensä. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
-
-``` java
-public class Pinorakentaja {
-    Pino pino;
-
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-
-    Pinorakentaja prepaid(int kreditit) {
-        this.pino = new PrepaidPino(pino, kreditit);
-        return this;
-    }
-}
-```
-
-Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
-
-``` java
-public class Pinorakentaja {
-    Pino pino;
-
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-
-    Pinorakentaja prepaid(int kreditit) {
-        this.pino = new PrepaidPino(pino, kreditit);
-        return this;
-    }
-
-    Pinorakentaja kryptattu() {
-        this.pino = new KryptattuPino(pino);
-        return this;
-    }
-
-    Pinorakentaja loggaava(PrintWriter loki) {
-        this.pino = new LokiPino(pino, loki);
-        return this;
-    }
-}
-```
-
-Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.
-
-Rakentajaa siis käytetään seuraavasti:
-
-``` java
-Pinorakentaja rakenna = new Pinorakentaja();
-
-Pino pino = rakenna.kryptattu().prepaid(10).pino();
-```
-Tässä pyydettiin rakentajalta kryptattu prepaid-pino, jossa krediittejä on 10.
-
-Vastaavalla tavalla voidaan luoda pinoja muillakin ominaisuuksilla:
-
-``` java
-Pinorakentaja rakenna = new Pinorakentaja();
-
-Pino pino1 = rakenna.pino();  // luo normaalin pinon
-Pino pino2 = rakenna.kryptattu().loggaava(loki).prepaid.pino();  // luo sen mitä odottaa saattaa!
-```
-
-Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodien ketjutukseen. Metodit jotka ovat muuten luonteeltaan void:eja onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi. 
-
-Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
-[fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
-
-## Adapteri
-
-Äsken käsiteltyjen suunnittelmallien, dekoraattorin, komposiitin ja proxyn yhteinen puoli on, että saman ulkokuoren eli rajapinnan takana voi olla yhä monimutkaisempaa toiminnallisuutta joka on kuitenkin täysin kapseloitu käyttäjältä.
-
-Nyt tarkastelemme tilannetta, jossa meillä on käytettävissä luokka joka oleellisesti ottaen tarjoaa haluamamme toiminnallisuuden, mutta sen rajapinta on hieman vääränlainen. Emme kuitenkaan voi muuttaa alkuperäistä luokkaa sillä muutos rikkoisi luokan muut käyttäjät.
-
-[Adapteri](http://sourcemaking.com/design_patterns/adapter)-suunnittelumalli sopii tälläisiin tilanteisiin. 
-
-Tehdään aiemmasta esimerkistä tutulle Pinolle adapteri HyväPino joka muuttaa metodien nimiä ja tarjoaa muutaman lisätoiminnallisuuden:
-
-``` java
-public class HyväPino {
-    private Pino pino;
-
-    public HyväPino() {
-        pino = new Pino();
-    }
-
-    public boolean onTyhja(){
-        return pino.empty();
-    }
-
-    public boolean eiOleTyhja(){
-        return !onTyhja();
-    }
-
-    public void pinoon(String pinottava){
-        pino.push(pinottava);
-    }
-
-    public void pinoon(String... pinottavat){
-        for (String pinottava : pinottavat) {
-            pinoon(pinottava);
-        }
-    }
-
-    public String pinosta(){
-        return pino.pop();
-    }
-
-    public List<String> kaikkiPinosta(){
-        ArrayList<String> alkiot = new ArrayList<>();
-
-        while(eiOleTyhja()){
-            alkiot.add(pinosta());
-        }
-
-        return alkiot;
-    }
-}
-```
-
-Eli adapteri __HyväPino__ kapseloi adaptoitavan Pino-olion jolle se delegoi kaikkien metodiensa toiminnallisuuden suorittamisen. Käyttäjä tuntee vaan HyväPino-luokan:
-
-
-``` java
-public static void main(String[] args) {
-    HyväPino pino = new HyväPino();
-    pino.pinoon("eka", "toka", "kolmas", "neljäs");
-
-    System.out.println("pinossa oli: ");
-    for (String alkio : pino.kaikkiPinosta()) {
-        System.out.println( alkio );
-    }
-}
-```
-
 ### Toisteettomuus
 
 Käsittelimme koodin laatuattribuuteista kapselointia, koheesiota ja riippuvuuksien vähäisyyttä, seuraavana vuorossa redundanssi eli toisteisuus
@@ -1825,9 +1358,7 @@ Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on k
 
 Lisää koodin laatuattribuutteja: DRY
  
-#### 
-
-## Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla, Java 8:a hyödyntävä versio
+#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla, Java 8:a hyödyntävä versio
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa <code>GutenbergLukija</code>:
 
@@ -2063,8 +1594,6 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 
 Kuten huomaamme, Javan version 8 tarjoamat funktionaaliset piirteet muuttavat lähes vallankumouksellisella tavalla kielen ilmaisuvoimaa!
 
-
-
 ### Testattavuus
 
 Koodin selkeys ja luettavuus
@@ -2089,56 +1618,410 @@ www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sh eet-V1.3.pdf
 ### Suunnittelumalleja
 
 Suunnittelumallit siis tarjoavat hyviä kooditason ratkaisuja siitä, miten koodi kannattaa muotoilla, jotta siitä saadaan sisäiseltä laadultaan hyvää, eli kapseloitua, hyvän koheesion omaavaa ja eksplisiittiset turhat riippuvuudet välttävää
+
 Kurssin itseopiskelumateriaalissa tutustutaan seuraaviin suunnittelumalleihin
 Factory
 Strategy Command Template method Komposiitti Proxy
-Model view controller
-Observer
-Sunnittelumallien soveltamista harjoitellaan viikon 5-7 laskareissa
-Itseopiskelumateriaali löytyy osoitteesta
-https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuun nittelu.md
 
-Arkkitehtuurin yhteydessä mainitsimme kerrosarkkitehtuurin, josta esimerkkinä oli Kumpula biershopin arkkitehtuuri
-Kerroksittaisuudessa periaate on sama kuin useiden suunnittelumallien ja hyvän oliosuunnittelussa yleensäkin kapseloidaan monimutkaisuutta ja detaljeja rajapintojen taakse
-Tarkoituksena ylläpidettävyyden parantaminen ja kompleksisuuden hallinnan helpottaminen
-Kerroksen N käyttäjää on turha vaivata kerroksen sisäisellä rakenteella
-Eikä sitä edes kannata paljastaa, koska näin muodostuisi eksplisiittinen riippuvuus käyttäjän ja N:n välille
+### Esimerkki Dekoroitu pino
 
-Pyrkimys siihen että kerrokset ovat mahdollisimman korkean koheesion omaavia, eli "yhteen asiaan" keskittyvä
-Käyttöliittymä Tietokantayhteydet Liiketoimintalogiikka
+Olemme toteuttaneet asiakkaalle pinon:
 
-Kerrokset taas ovat keskenään mahdollisimman löyhästi kytkettyjä
- 
-Kapselointi ja koheesio ja riippuvuuksien minimointi arkkitehtuuritasolla
+``` java
+public class Pino {
 
-### Domain Driven Design
+    private LinkedList<String> alkiot;
 
-Viimeaikaisena voimakkaasti nousevana trendinä on käyttää sovelluksen koodin tasolla nimentää, joka vastaa liiketoiminta-alueen eli "bisnesdomainin" terminologiaa
-Yleisnimike tälle tyylille on Domain Driven Design, DDD
-ks esim. http://www.infoq.com/articles/ddd-evolving-architecture
+    public Pino() {
+        alkiot = new LinkedList<String>();
+    }
 
-Ohjelmiston arkkitehtuurissa on DDD:tä sovellettaessa (ja muutenkin kerrosarkkitehtuuria sovellettaessa) on kerros joka kuvaa domainin, eli sisältää liiketoimintaoliot
-Esim. Kumpula Biershopin domain-oliot:
-Tuote
-Varasto
-Ostos
-Ostoskori Asiakas Ostostapahtuma
-  
-Domain Driven Design Domain-oliot tai osa niistä yleensä mäpätään tietokantaan
-Mäppäyksessä käytetään usein DAO-suunnittelumallia, johon tutustuimme ohimennen laskareissa 3
-DAO-suunnittelumallia käsitellään nykyään jossain määrin myös kurssilla Tietokantojen perusteet
+    public void push(String alkio){
+        alkiot.addFirst(alkio);
+    }
 
+    public String pop(){
+        return alkiot.remove();
+    }
 
-Domain-oliot tietokantaan mäppäävät komponentit muodostavat oman kerroksen kerrosarkkitehtuurissa
-Joissain suunnittelutyyleissä Domain-olioiden ja sovelluksen käyttöliittymän välissä on vielä erillinen palveluiden kerros
-http://martinfowler.com/eaaCatalog/serviceLayer.html
-Wepaa käyville Service Layer on tuttu Java Spring:illä tehdyistä web- sovelluksista
+    public boolean empty(){
+        return alkiot.isEmpty();
+    }
+}
 
-Palvelut koordinoivat domain-olioille suoritettavaa toiminnallisuutta, esim. ostoksen laitto ostoskoriin tai ostosten maksaminen
+public static void main(String[] args) {
+    Scanner lukija = new Scanner(System.in);
+    Pino pino = new Pino();
 
-Ideana on eristää palveluiden avulla sovelluslogiikka käyttöliittymältä
+    System.out.println("pinotaan, tyhjä lopettaa:");
+    while (true) {
+        String pinoon = lukija.nextLine();
+        if (pinoon.isEmpty()) {
+            break;
+        }
+        pino.push(pinoon);
+    }
+    System.out.println("pinossa oli: ");
+    while (!pino.empty()) {
+        System.out.println( pino.pop() );
+    }
+}
+```
 
-DAO:n lisäksi on muitakin mäppäystapoja, kuten Ruby on Railsin käyttämä Active Record
+Asiakkaamme haluaa pinosta muutaman uuden version:
+
+* KryptattuPino jossa alkiot talletetaan pinoon kryptattuina, alkiot tulevat pinosta ulos normaalisti
+* LokiPino jossa tieto pinoamisoperaatioista ja niiden parametreista ja paluuarvoista talletetaan lokiin
+* PrepaidPino joka lakkaa toimimasta kun sillä on suoritettu konstruktoriparametrina määritelty määrä operaatioita
+
+On lisäksi toteutettava kaikki mahdolliset kombinaatiot:
+
+* KryptattuLokiPino
+* LokiKryptattuPino (erona edelliseen että lokiin ei kirjata parametreja kryptattuna)
+* KryptattuPrepaidPino
+* KryptattuLokiPrepaidPino
+* LokiPrepaidPino
+
+Alkaa kuulostaa pahalta varsinkin kun Product Owner vihjaa, että seuraavassa sprintissä tullaan todennäköisesti vaatimaan lisää versioita pinosta, mm. ÄänimerkillinenPino, RajallisenkapasiteetinPino ja tietysti kaikki kombinaatiot tarvitaan myös...
+
+Onneksi dekoraattori sopii tilanteeseen kuin nyrkki silmään! Luodaan pinon kolme uutta versiota dekoroituina pinoina. Tarkastellaan ensin PrepaidPinoa:
+
+``` java
+public class PrepaidPino extends Pino {
+
+    private Pino pino;
+    private int krediitteja;
+
+    public PrepaidPino(Pino pino, int krediitteja) {
+        this.pino = pino;
+        this.krediitteja = krediitteja;
+    }
+
+    @Override
+    public String pop() {
+        if (krediitteja == 0) {
+            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
+        }
+        krediitteja--;
+
+        return pino.pop();
+    }
+
+    @Override
+    public void push(String alkio) {
+        if (krediitteja == 0) {
+            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
+        }
+        krediitteja--;
+        pino.push(alkio);
+    }
+
+    @Override
+    public boolean empty() {
+        if (krediitteja == 0) {
+            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
+        }
+        krediitteja--;
+        return pino.empty();
+    }
+}
+```
+
+PrepaidPino siis perii pinon, mutta kun tarkkaa katsotaan, niin yliluokan operaatiot ylikirjoitetaan ja yliluokkaa ei hyödynnetä millään tavalla!
+
+PrepaidPino siis perii luokan Pino, mutta se ei käytä "perittyä" pinouttaan, vaan sensijaan PrepaidPino __sisältää__ pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa PrepaidPino käyttää tallettamaan kaikki alkionsa. Eli jokainen PrepaidPinon operaatio delegoi operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
+
+PrepaidPino luodaan seuraavalla tavalla:
+
+``` java
+Pino pino = new PrepaidPino(new Pino(), 5);
+```
+
+Eli luodaan normaali Pino ja annetaan se PrepaidPinolle konstruktoriparametrina yhdessä pinon krediittien kanssa.
+
+Muut kaksi:
+
+``` java
+public class KryptattuPino extends Pino{
+    private Pino pino;
+
+    public KryptattuPino(Pino pino) {
+        this.pino = pino;
+    }
+
+    @Override
+    public String pop() {
+        String alkio = pino.pop();
+        return dekryptaa(alkio);
+    }
+
+    @Override
+    public void push(String alkio) {
+        pino.push(kryptaa(alkio));
+    }
+
+    @Override
+    public boolean empty() {
+        return pino.empty();
+    }
+
+    private String dekryptaa(String alkio) {
+        String dekryptattu = "";
+        for (int i = 0; i < alkio.length(); i++) {
+            dekryptattu += (char)(alkio.charAt(i)-1);
+        }
+
+        return dekryptattu;
+    }
+
+    private String kryptaa(String alkio) {
+        String kryptattu = "";
+        for (int i = 0; i < alkio.length(); i++) {
+            kryptattu += (char)(alkio.charAt(i)+1);
+        }
+
+        return kryptattu;
+    }
+}
+
+public class LokiPino extends Pino {
+
+    private Pino pino;
+    private PrintWriter loki;
+
+    public LokiPino(Pino pino, PrintWriter loki) {
+        this.pino = pino;
+        this.loki = loki;
+    }
+
+    @Override
+    public String pop() {
+        String popattu = pino.pop();
+        loki.println("pop: "+popattu);
+
+        return popattu;
+    }
+
+    @Override
+    public void push(String alkio) {
+        loki.println("push: "+alkio);
+
+        pino.push(alkio);
+    }
+
+    @Override
+    public boolean empty() {
+        loki.println("empty: "+pino.empty());
+
+        return pino.empty();
+    }
+}
+```
+
+Eli periaate on sama, pinodekoraattorit LokiPino ja KryptattuPino delegoivat kaikki operaationsa sisältämilleen Pino-olioille.
+
+Koska kaikki dekoraattorit perivät luokan Pino, voidaan dekoraattorille antaa parametriksi toinen dekoraattori. Esim. KryptattuLokiPino luodaan seuraavasti:
+
+``` java
+PrintWriter loki = new PrintWriter( new File("loki.txt") );
+Pino pino = new KryptattuPino( new LokiPino( new Pino(), loki ) );
+```
+
+Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle paljon erilaisia ominaisuuskombinaatioita. Jos olisimme yrittäneet hoitaa kaiken normaalilla perinnällä, olisi luokkien määrä kasvanut eksponentiaalisesti eri ominaisuuksien määrän suhteen ja uusiokäytöstäkään ei olisi tullut mitään.
+
+Dekorointi siis ei oleellisesti ole perintää vaan delegointia, jälleen kerran oliosuunnitteun periaate "favour composition over inheritance" on näyttänyt voimansa.
+
+Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/design_patterns/decorator 
+
+#### Pinotehdas
+
+Huomaamme, että eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Teemmekin luomista helpottamaan pinotehtaan:
+
+``` java
+public class Pinotehdas {
+    public Pino prepaidPino(int krediitit){
+        return new PrepaidPino(new Pino(), krediitit);
+    }
+
+    public Pino lokiPino(PrintWriter loki){
+        return new LokiPino(new Pino(), loki);
+    }
+
+    public Pino kryptattuPino(){
+        return new KryptattuPino(new Pino());
+    }
+
+    public Pino kryptattuPrepaidPino(int krediitit){
+        return new KryptattuPino(prepaidPino(krediitit));
+    }
+
+    public Pino kryptattuLokiPino(PrintWriter loki){
+        return new KryptattuPino(lokiPino(loki));
+    }
+
+    public Pino prepaidKryptattuLokiPino(int krediitit, PrintWriter loki){
+        return new PrepaidPino(kryptattuLokiPino(loki), krediitit);
+    }
+
+    // monta monta muuta rakentajaa...
+}
+```
+
+Factoryluokka on ikävä ja sisältää hirveän määrän metodeja. Jos pinoon lisätään vielä ominaisuuksia, tulee factory karkaamaan käsistä.
+
+Pinon luominen on kuitenkin factoryn ansiosta helppoa:
+
+``` java
+Pinotehdas tehdas = new Pinotehdas();
+
+Pino omapino = tehdas.kryptattuPrepaidPino(100);
+```
+Factoryperiaate ei kyllä ole tilanteeseen ideaali. Kokeillaan rakentaja (engl. builder) -suunnittelumallia:
+
+#### Pinorakentaja
+
+Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
+
+``` java
+Pinorakentaja rakenna = new Pinorakentaja();
+
+Pino pino = rakenna.prepaid(10).kryptattu().pino();
+```
+
+Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (domain specific language) pinojen luomiseen!
+
+Luodaan ensin rakentajasta perusversio, joka soveltuu vasta normaalien pinojen luomiseen:
+
+``` java
+    Pinorakentaja rakenna = new Pinorakentaja();
+
+    Pino pino = rakenna.pino();
+```
+
+Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
+
+``` java
+public class Pinorakentaja {
+    Pino pino;
+
+    public Pinorakentaja() {
+        pino = new Pino();
+    }
+
+    public Pino pino() {
+        return pino;
+    }
+}
+```
+
+eli kun <code>Rakentaja</code>-olio luodaan, rakentajan luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia <code>pino()</code>.
+
+Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
+
+``` java
+Pinorakentaja rakenna = new Pinorakentaja();
+
+Pino pino = rakenna.prepaid(10).pino();
+```
+
+Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka tyyppi on <code>Pinorakentaja prepaid(int kreditit)</code>, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia <code>pino</code>, on metodin <code>prepaid</code> palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
+
+``` java
+public class Pinorakentaja {
+    Pino pino;
+
+    public Pinorakentaja() {
+        pino = new Pino();
+    }
+
+    Pinorakentaja prepaid(int kreditit) {
+        // ????
+    }
+
+    public Pino pino() {
+        return pino;
+    }
+}
+```
+
+Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia <code>prepaid</code> ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa viitteen <code>this</code> eli rakentajan itsensä. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
+
+``` java
+public class Pinorakentaja {
+    Pino pino;
+
+    public Pinorakentaja() {
+        pino = new Pino();
+    }
+
+    public Pino pino() {
+        return pino;
+    }
+
+    Pinorakentaja prepaid(int kreditit) {
+        this.pino = new PrepaidPino(pino, kreditit);
+        return this;
+    }
+}
+```
+
+Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
+
+``` java
+public class Pinorakentaja {
+    Pino pino;
+
+    public Pinorakentaja() {
+        pino = new Pino();
+    }
+
+    public Pino pino() {
+        return pino;
+    }
+
+    Pinorakentaja prepaid(int kreditit) {
+        this.pino = new PrepaidPino(pino, kreditit);
+        return this;
+    }
+
+    Pinorakentaja kryptattu() {
+        this.pino = new KryptattuPino(pino);
+        return this;
+    }
+
+    Pinorakentaja loggaava(PrintWriter loki) {
+        this.pino = new LokiPino(pino, loki);
+        return this;
+    }
+}
+```
+
+Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.
+
+Rakentajaa siis käytetään seuraavasti:
+
+``` java
+Pinorakentaja rakenna = new Pinorakentaja();
+
+Pino pino = rakenna.kryptattu().prepaid(10).pino();
+```
+Tässä pyydettiin rakentajalta kryptattu prepaid-pino, jossa krediittejä on 10.
+
+Vastaavalla tavalla voidaan luoda pinoja muillakin ominaisuuksilla:
+
+``` java
+Pinorakentaja rakenna = new Pinorakentaja();
+
+Pino pino1 = rakenna.pino();  // luo normaalin pinon
+Pino pino2 = rakenna.kryptattu().loggaava(loki).prepaid.pino();  // luo sen mitä odottaa saattaa!
+```
+
+Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodien ketjutukseen. Metodit jotka ovat muuten luonteeltaan void:eja onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi. 
+
+Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
+[fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
+
+#### mvc, observer
  
 ### Tekninen velka
 
