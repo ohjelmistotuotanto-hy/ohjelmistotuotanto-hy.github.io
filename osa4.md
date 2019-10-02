@@ -1,6 +1,6 @@
 ---
 layout: page
-title: osa 4
+title: Osa 4
 title_long: 'Ohjelmistojen suunnittelu'
 inheader: yes
 permalink: /osa4/
@@ -302,7 +302,7 @@ Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnittel
 
 Olemme jo nähneet muutamia suunnittelumalleja, ainakin seuraavat: dependency injection singleton, data access object. Suuri osa tällä kurssilla kohtaamistamme suunnittelumalleista on syntynyt olio-ohjelmointikielten parissa. Osa suunnittelumalleista on relevantteja myös muita paragigmoja, kuten funktionaalista ohjelmointia käytettäessa. Muilla paradigmoilla on myös omia suunnittelumallejaan, mutta niitä emme kurssilla käsittele.
 
-### Kapselointi
+### Koodin laatuattribuutti: kapselointi
 
 Ohjelmoinnin peruskurssilla _kapselointi_ (engl. encapsulation) määriteltiin muutama vuosi seuraavasti
 
@@ -316,7 +316,7 @@ Monissa suunnittelumalleissa on kyse juuri eritasoisten asioiden kapseloinnista,
 
 Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerkiksi kerrosarkkitehtuurissa ylempi kerros käyttää ainoastaan alapuolellaan olevan kerroksen ulospäin tarjoamaa rajapintaa, kaikki muu on kapseloitu näkymättömiin. 
 
-### Koheesio ja Single responsibility -periaate
+### Koodin laatuattribuutti: koheesio
 
 _Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi on keskittynyt tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta.
 
@@ -482,7 +482,7 @@ public class KonsoliIO implements IO {
     }
 
     public int nextInt() {
-        return lukija.nextInt();
+        return Integer.parseInt(lukija.nextLine());
     }
 
     public void print(String m) {
@@ -553,9 +553,9 @@ Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa elimi
 
 Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, tämä voi jossain tapauksissa olla ongelmallista. Yksi oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
-Tarkastellaan esimerkkiä tilannetta valottavaa esimerkkiä.
+Tarkastellaan tilannetta valottavaa esimerkkiä.
 
-Meillä on käytössämme luokka, joka mallintaa pankkitiliä:
+Käytössämme luokka, joka mallintaa pankkitiliä:
 
 ``` java
 public class Tili {
@@ -585,7 +585,7 @@ public class Tili {
 }
 ```
 
-Huomaamme, että tulee tarve toisentyyppiselle tilille joko 1, 3, 6 tai 12 kuukaiden Euribor-korkoon perustuvalle tilille. päätämme tehdä uuden luokan EuriborTili perimällä luokan Tili ja ylikirjoittamalla metodin maksaKorko siten että Euribor-koron senhetkinen arvo haetaan verkosta:
+Asiakkaan vaatimukset muuttuvat ja tulee tarve toisentyyppiselle tilille joko 1, 3, 6 tai 12 kuukaiden Euribor-korkoon perustuvalle tilille. päätämme tehdä uuden luokan _EuriborTili_ perimällä luokan _Tili_ ja ylikirjoittamalla metodi _maksaKorko_ siten että Euribor-koron senhetkinen arvo haetaan verkosta:
 
 ``` java
 public class EuriborTili extends Tili {
@@ -598,7 +598,7 @@ public class EuriborTili extends Tili {
 
     @Override
     public void maksaKorko() {
-        saldo += saldo*korko()*100;
+        saldo += saldo * korko() * 100;
     }
 
     private double korko() {
@@ -623,7 +623,7 @@ public class EuriborTili extends Tili {
 }
 ```
 
-Huomaamme, että EuriborTili rikkoo Single Responsibility -periaatetta, sillä luokka sisältää normaalin tiliin liittyvän toiminnan lisäksi koodia, joka hakee tavaraa internetistä. Vastuut kannattaa selkeyttää ja korkoprosentin haku eriyttää omaan rajapinnan takana olevaan luokkaan:
+Huomaamme, että _EuriborTili_ rikkoo _single responsibility_ -periaatetta, sillä luokka sisältää normaalin tiliin liittyvän toiminnan lisäksi koodia, joka hakee tavaraa internetistä. Vastuut kannattaa selkeyttää ja korkoprosentin haku eriyttää omaan rajapinnan takana olevaan luokkaan:
 
 ``` java
 public interface EuriborLukija {
@@ -635,20 +635,19 @@ public class EuriborTili extends Tili {
 
     public EuriborTili(String tiliNumero, String omistaja, int kuukauden) {
         super(tiliNumero, omistaja, 0);
-        euribor = new EuriborlukijaImpl(kuukauden);
+        euribor = new EuriborLukijaImpl(kuukauden);
     }
 
     @Override
     public void maksaKorko() {
-        saldo += saldo*euribor.korko()*100;
+        saldo += saldo * euribor.korko() * 100;
     }
-
 }
 
-public class EuriborlukijaImpl implements EuriborLukija {
+public class EuriborLukijaImpl implements EuriborLukija {
     private int kuukauden;
 
-    public EuriborlukijaImpl(int kuukauden) {
+    public EuriborLukijaImpl(int kuukauden) {
         this.kuukauden = kuukauden;
     }
 
@@ -675,15 +674,15 @@ public class EuriborlukijaImpl implements EuriborLukija {
 }
 ```
 
-EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono, metodi tekee aivan liian montaa asiaa. Palaamme siihen kuitenkin myöhemmin.
+EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono, metodi tekee aivan liian montaa asiaa. 
 
-Seuraavaksi huomaamme että on tarvetta _Määräaikaistilille_, joka on muuten samanlainen kuin Tili mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se tehdään mahdolliseksi tietyn ajan kuluttua. Eli ei ongelmaa, perimme jälleen luokan Tili:
+Seuraavaksi huomaamme että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin _Tili_ mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se tehdään mahdolliseksi tietyn ajan kuluttua. Eli ei ongelmaa, perimme jälleen luokan _Tili_:
 
 ``` java
-public class MääräaikaisTili extends Tili {
+public class MaaraaikaisTili extends Tili {
     private boolean nostokielto;
 
-    public MääräaikaisTili(String tiliNumero, String omistaja, double korkoProsentti) {
+    public MaaraaikaisTili(String tiliNumero, String omistaja, double korkoProsentti) {
         super(tiliNumero, omistaja, korkoProsentti);
         nostokielto = true;
     }
@@ -707,12 +706,12 @@ Luokka syntyi tuskattomasti.
 
 Ohjelman rakenne näyttää tässä vaiheessa seuraavalta:
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-2.png)
+![]({{ "/images/4-8.png" | absolute_url }}){:height="120px" }
 
 Seuraavaksi tulee idea _Euribor-korkoa käyttävistä määräaikaistileistä_. 
-Miten nyt kannattaisi tehdä? Osa toiminnallisuudesta on luokassa Määräaikaistili ja osa luokassa Euribor-tili...
+Miten nyt kannattaisi tehdä? Osa toiminnallisuudesta on luokassa _MaaraaikaisTili_ ja osa luokassa _EuriborTili_...
 
-Ehkä koronmaksun hoitaminen perinnän avulla ei ollutkaan paras ratkaisu, ja kannattaisi noudattaa "favor composition over inheritance"-periaatetta. Eli erotetaan koronmaksu omaksi luokakseen, tai rajapinnan toteuttaviksi luokiksi:
+Koronmaksun hoitaminen perinnän avulla ei ollutkaan paras ratkaisu, ja kannattaakin noudattaa _favor composition over inheritance_ -periaatetta. Eli erotetaan koronmaksu omaksi luokakseen, tai rajapinnan toteuttaviksi luokiksi:
 
 ``` java
 public interface Korko {
@@ -744,7 +743,7 @@ public class EuriborKorko implements Korko {
 }
 ```
 
-Nyt tarve erilliselle EuriborTili-luokalle katoaa, ja pelkkä Tili muutettuna riittää:
+Tarve erilliselle _EuriborTili_-luokalle katoaa, ja pelkkä _Tili _hieman muutetussa muodossa riittää:
 
 ``` java
 public class Tili {
@@ -769,7 +768,7 @@ public class Tili {
     }
 
     public void maksaKorko(){
-        saldo += saldo*korko.korko()*100;
+        saldo += saldo * korko.korko() * 100;
     }
 }
 ```
@@ -777,14 +776,15 @@ public class Tili {
 Erilaisia tilejä luodaan nyt seuraavasti:
 
 ``` java
-Tili normaali = new Tili("1234-1234", "Kasper Hirvikoski", new Tasakorko(4));
-Tili euribor12 = new Tili("4422-3355", "Tero Huomo", new EuriborKorko(12));
+Tili normaali = new Tili("1234-1234", "Jami Kousa", new Tasakorko(4));
+Tili euribor12 = new Tili("4422-3355", "Lea Kutvonen", new EuriborKorko(12));
 ```
 
 Ohjelman rakenne on nyt seuraava
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-3.png)
 
-Muutetaan luokkaa vielä siten, että tilejä saadaan luotua ilman konstruktoria:
+![]({{ "/images/4-9.png" | absolute_url }}){:height="120px" }
+
+Muutetaan luokkaa _Tili_ vielä siten, että tilejä saadaan luotua ilman konstruktoria:
 
 ``` java
 public class Tili {
@@ -798,11 +798,11 @@ public class Tili {
         return new Tili(tiliNumero, omistaja, new EuriborKorko(kuukausia));
     }
 
-    public static Tili luoMääräaikaisTili(String tiliNumero, String omistaja, double korko) {
-        return new MääräaikaisTili(tiliNumero, omistaja, new Tasakorko(korko));
+    public static Tili luoMaaraaikaisTili(String tiliNumero, String omistaja, double korko) {
+        return new MaaraaikaisTili(tiliNumero, omistaja, new Tasakorko(korko));
     }
 
-    public static Tili luoKäyttöTili(String tiliNumero, String omistaja, double korko) {
+    public static Tili luoKayttoTili(String tiliNumero, String omistaja, double korko) {
         return new Tili(tiliNumero, omistaja, new Tasakorko(korko));
     }
 
@@ -820,51 +820,51 @@ public class Tili {
 }
 ```
 
-Lisäsimme luokalle 3 staattista apumetodia helpottamaan tilien luomista. Tilejä voidaan nyt luoda seuraavasti:
+Lisäsimme luokalle kolme _staattista apumetodia_ helpottamaan tilien luomista. Tilejä voidaan nyt luoda seuraavasti:
 
 ``` java
-Tili määräaikais = Tili.luoMääräaikaisTili("1234-1234", "Kasper Hirvikoski", 2.5);
-Tili euribor12 = Tili.luoEuriborTili("4422-3355", "Tero Huomo", 12 );
-Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Esko Ukkonen", 10.75 );
+Tili maaraaikais = Tili.luoMaaraaikaisTili("1234-1234", "Jami Kousa", 2.5);
+Tili euribor12 = Tili.luoEuriborTili("4422-3355", "Lea Kutvonen", 12 );
+Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Indre Zliobaite", 1 );
 ```
 
-#### suunnittelumalli factory
+#### Suunnittelumalli: static factory method
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
 Tili-esimerkissä käytetty static factory method on yksinkertaisin erilaisista tehdas-suunnittelumallin varianteista. Periaatteena suunnittelumallissa on se, että luokalle tehdään staattinen tehdasmetodi tai metodeja, jotka käyttävät konstruktoria ja luovat luokan ilmentymät. Konstruktorin suora käyttö usein estetään määrittelemällä konstruktori privateksi.
 
-Tehdasmetodin avulla voidaan piilottaa olion luomiseen liittyviä yksityiskohtia, esimerkissä Korko-rajapinnan toteuttavien olioiden luominen ja jopa olemassaolo oli tehdasmetodin avulla piilotettu tilin käyttäjältä. 
+Tehdasmetodin avulla voidaan piilottaa olion luomiseen liittyviä yksityiskohtia, esimerkissä _Korko_-rajapinnan toteuttavien olioiden luominen ja jopa olemassaolo oli tehdasmetodin avulla piilotettu tilin käyttäjältä. 
 
 Tehdasmetodin avulla voidaan myös piilottaa käyttäjältä luodun olion todellinen luokka, esimerkissä näin tehtiin määräaikaistilin suhteen.
 
 Tehdasmetodi siis auttaa _kapseloinnissa_, olion luomiseen liittyvät detaljit ja jopa olion todellinen luonne piiloutuu olion käyttäjältä. Tämä taas mahdollistaa erittäin joustavan laajennettavuuden. 
 
-Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esimerkissämme olisi vaikea luoda tili, jolle annetaan Korko-rajapinnan toteuttama mock-olio. Nyt se tosin onnistuu koska konstruktoria ei ole täysin piilotettu.
+Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esimerkissämme olisi vaikea luoda tili, jolle annetaan _Korko_-rajapinnan toteuttama mock-olio. Nyt se tosin onnistuu koska konstruktoria ei ole täysin piilotettu.
 
 Lisätietoa factory-suunnittelumallista esim. seuraavissa https://sourcemaking.com/design_patterns/factory_method ja http://www.oodesign.com/factory-method-pattern.html
 
-Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Kasperin tilihän on määräaikaistili, se kuitenkin pyydetään Tili-luokassa sijaitsevalta factoryltä, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan Määräaikaistili.
+Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään Tili-luokassa sijaitsevalta factoryltä, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan MaaraaikaisTili.
 
-Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Kasperin tasakorkoinen määräaikaistili on helppo muuttaa lennossa kolmen kuukauden Euribor-tiliksi:
+Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Jamin tasakorkoinen määräaikaistili on helppo muuttaa lennossa kolmen kuukauden Euribor-tiliksi:
 
 ```java
-määräaikais.vaihdaKorkoa(new EuriborKorko(3));
+maaraaikais.vaihdaKorkoa(new EuriborKorko(3));
 ```
 
-Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan ajonaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
+Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
 
-#### suunnittelumalli: strategy
+#### Suunnittelumalli: strategy
 
-Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli nimeltään _strategia_ (engl. strategy).
+Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
 Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määritys. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa voi vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
 
 Lisätietoa strategia-suunnittelumallista seuraavissa http://www.oodesign.com/strategy-pattern.html ja https://sourcemaking.com/design_patterns/strategy
 
-#### Tilin luominen
+#### Vastuiden eriyttäminen: tilin luominen pankissa
 
-Loimme äsken luokalle _Tili_ staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, _pankin_ vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
+Loimme äsken luokalle _Tili_ staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, _Pankki_ vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
 
 ``` java
 public class Pankki {
@@ -883,12 +883,12 @@ public class Pankki {
         return new MaaraAikaisTili(generoiTilinro(), omistaja, new Tasakorko(k));
     }    
     
-    public Tili euribortili(String tiliNumero, String omistaja, int kk){
+    public Tili euribortili(String omistaja, int kk){
         return new Tili(generoiTilinro(), omistaja, new EuriborKorko(kk));
     }        
 
-    public Tili maaraaikaisEuribor(String tiliNumero, String omistaja, int kk){
-        return new MaaraAikaisTili(tiliNumero, omistaja, new EuriborKorko(kk));
+    public Tili maaraaikaisEuribor(String omistaja, int kk){
+        return new MaaraAikaisTili(generoiTilinro(), omistaja, new EuriborKorko(kk));
     } 
 }
 ```
@@ -898,15 +898,17 @@ Tilejä luodaan pankin avulla seuraavasti:
 ``` java
 Pankki spankki = new Pankki();
 
-Tili euriborTili = spankki.euribortili("Kasper Hirvikoski", 6);
+Tili euriborTili = spankki.euribortili("Lea Kutvonen", 6);
 Tili maaraaikaistili = spankki.maaraikaistili("Arto Hellas", 0.15);
 ``` 
 
-eli tililin luojan ei enää tarvitse huolehtia tilinumeroiden generoinnista.
+eli tilin luojan ei enää tarvitse huolehtia tilinumeroiden generoinnista.
 
-Nyt tehdasmetodista on siis tehty luokan oman staattisen metdoin sijaan toiseen luokkaan sijoitettu oliometodi.
+Nyt tehdasmetodista on siis tehty luokan oman staattisen metdoin sijaan toiseen luokkaan sijoitettu oliometodi. 
 
-#### Toiminnallisuuden kapselointi: Laskin ilman iffejä
+Luokkien vastuut ovat selkeytyneet, _Tili_ vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. _Pankki_ taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
+
+### Toiminnallisuuden kapselointi: laskin ilman iffejä
 
 Olemme laajentaneet Laskin-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -943,7 +945,7 @@ public class Laskin {
                 vastaus = laskeErotus(luku1, luku2);
             }
 
-            io.print("summa: " + vastaus + "\n");
+            io.print("tulos: " + vastaus + "\n");
         }
     }
 
@@ -967,59 +969,43 @@ Päätämme siirtyä _strategia-suunnittelumallin_ käyttöön, eli hoidetaan la
 
 ``` java
 public abstract class Operaatio {
-
-    protected int luku1;
-    protected int luku2;
-
-    public Operaatio(int luku1, int luku2) {
-        this.luku1 = luku1;
-        this.luku2 = luku2;
-    }
-
-    public static Operaatio luo(String operaatio, int luku1, int luku2) {
+    
+    public static Operaatio luo(String operaatio) {
         if (operaatio.equals("summa")) {
-            return new Summa(luku1, luku2);
+            return new Summa();
         } else if (operaatio.equals("tulo")) {
-            return new Tulo(luku1, luku2);
+            return new Tulo();
         }
-        return new Erotus(luku1, luku2);
+        return new Erotus();
     }
 
-    public abstract int laske();
+    public abstract int laske(int luku1, int luku2);
 }
+``` 
 
+Abstrakti _Operaatio_ luokka määrittelee, että sen toteuttavilla luokilla, eli yksittäisillä operaatioilla on metodi _laske_, joka saa kaksi parametria. Tämän lisäksi luokka sisältää staattisen tehdasmetodin _luo_, jonka avulla voidaan luoda laskuoperaatioita vastaavia olioita.
+
+Laskuoperaatioita vastaavat luokat on määritelty seuraavasti:
+
+```java
 public class Summa extends Operaatio {
-
-    public Summa(int luku1, int luku2) {
-        super(luku1, luku2);
-    }
-
     @Override
-    public int laske() {
+    public int laske(int luku1, int luku2) {
         return luku1 + luku2;
     }
 }
 
+
 public class Tulo extends Operaatio {
-
-    public Tulo(int luku1, int luku2) {
-        super(luku1, luku2);
-    }
-
     @Override
-    public int laske() {
+    public int laske(int luku1, int luku2) {
         return luku1 * luku2;
     }
 }
 
 public class Erotus extends Operaatio {
-
-    public Erotus(int luku1, int luku2) {
-        super(luku1, luku2);
-    }
-
     @Override
-    public int laske() {
+    public int laske(int luku1, int luku2) {
         return luku1 - luku2;
     }
 }
@@ -1050,35 +1036,38 @@ public class Laskin {
             io.print("luku 2: ");
             int luku2 = io.nextInt();
 
-            Operaatio operaatio = Operaatio.luo(komento, luku1, luku2);
+            Operaatio operaatio = Operaatio.luo(komento);
 
-            io.print(komento + ": " + operaatio.laske() + "\n");
+            io.print(komento + ": " + operaatio.laske(luku1, luku2) + "\n");
         }
     }
 }
 ```
 
-Hienona puolena laskimessa on nyt se, että voimme lisätä operaatioita ja Laskinta ei tarvitse muuttaa millään tavalla!
+Hienona puolena laskimessa on nyt se, että voimme lisätä operaatioita ja luokkaa _Laskin_ ei tarvitse muuttaa millään tavalla, ainoa muutosta edellyttävä kohta  olemassaolevassa koodissa on luokan _Operaatio_ metodi _luo_.
 
-Rakenne näyttää seuraavalta
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-4.png)
+Sovelluksen rakenne näyttää seuraavalta
 
+![]({{ "/images/4-10.png" | absolute_url }}){:height="250px" }
 
-Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioita, esim. neliöjuuren?
+#### Laskin ja komento-olio
 
-Jatkamme muokkaamista seuraavassa luvussa
+Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan _Operaatio_ olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
 
-#### laskin ja komento-olio
-
-Muutamme Operaatio-luokan olemusta, päädymme jo oikeastaan Strategy-suunnittelumallin lähisukulaisen _Command_-suunnittelumallin puolelle ja annammekin sille nimen Komento, ja teemme siitä rajapinnan sillä siirrämme erillisten komento-olioiden luomisen Komentotehdas-luokalle:
+Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _Command_-suunnittelumallia, annetaankin operaatiolle uusi nimi _Komento_. Erillisten komento-olioiden luominen siirretään uudelle luokalle _Komentotehdas_:
 
 ``` java
-public interface Komento {
-    void suorita();
+public abstract class Komento {
+    protected IO io;
+    public Komento(IO io) {
+        this.io = io;
+    }
+
+    public abstract void suorita();
 }
 ```
 
-Komento-rajapinta on siis äärimmäisen yksinkertainen. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
+Komennon toteuttavat luokat ovat siis äärimmäisen yksinkertaisia. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
 
 Komento-olioita luova komentotehdas on seuraavassa:
 
@@ -1105,42 +1094,52 @@ public class Komentotehdas {
     }
 }
 ```
-Komentotehdas siis palauttaa hae-metodin merkkijonoparametria vastaavan komennon. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty Komento-olioille, annetaan niille IO-olio konstruktorissa.
+Komentotehdas siis palauttaa _hae_-metodin merkkijonoparametria vastaavan komennon. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty _Komento_-olioille, annetaan niille _IO_-olio konstruktorissa.
 
-if-hässäkkä näyttää hieman ikävältä. Mutta hetkinen! Voisimme tallentaa erilliset komennon HashMap:iin:
+if-hässäkkä näyttää hieman ikävältä. Siitä pääsee kuitenkin helposti eroon tallentamalla erilliset komennon HashMap:iin:
 
 ``` java
 public class Komentotehdas {
     private HashMap<String, Komento> komennot;
+    private Komento tuntemaaton;
 
     public Komentotehdas(IO io) {
         komennot = new HashMap<String, Komento>();
         komennot.put("summa", new Summa(io));
         komennot.put("tulo", new Tulo(io));
         komennot.put("nelio", new Nelio(io));
-        komennot.put("tuntematon", new Tuntematon(io));
+        tuntemaaton = new Tuntematon(io);
     }
 
     public Komento hae(String operaatio) {
-        Komento komento = komennot.get(operaatio);
-        if (komento == null) {
-            komento = komennot.get("tuntematon");
-        }
-        return komento;
+        return komennot.getOrDefault(operaatio, tuntemaaton);
     }
 }
 ```
 
-Pääsimme kokonaan eroon if-ketjusta, loistavaa!
-
-Yksittäiset komennot ovat hyvin yksinkertaisia:
+Yksittäiset komennot ovat erittäin yksinkertaisia:
 
 ``` java
-public class Nelio implements Komento {
-    private IO io;
+public class Summa extends Komento {
+    public Summa(IO io) {
+        super(io);
+    }
 
+    @Override
+    public void suorita() {
+        io.print("luku 1: ");
+        int luku1 = io.nextInt();
+
+         io.print("luku 2: ");
+        int luku2 = io.nextInt();
+        
+        io.print("vastaus: "+luku1 + luku2);
+    }  
+}
+
+public class Nelio extends Komento {
     public Nelio(IO io) {
-        this.io = io;
+        super(io);
     }
 
     @Override
@@ -1148,15 +1147,13 @@ public class Nelio implements Komento {
         io.print("luku 1: ");
         int luku = io.nextInt();
 
-        io.print("vastaus: "+luku*luku);
+        io.print("vastaus: "+luku * luku);
     }
 }
 
-public class Tuntematon implements Komento {
-    private IO io;
-
+public class Tuntematon extends Komento {
     public Tuntematon(IO io) {
-        this.io = io;
+        super(io);
     }
 
     @Override
@@ -1165,11 +1162,9 @@ public class Tuntematon implements Komento {
     }
 }
 
-public class Lopeta implements Komento {
-    private IO io;
-
+public class Lopeta extends Komento {
     public Lopeta(IO io) {
-        this.io = io;
+        super(io);
     }
 
     @Override
@@ -1177,87 +1172,13 @@ public class Lopeta implements Komento {
         io.print("kiitos ja näkemiin");
         System.exit(0);
     }
-
 }
 ```
 
-Ohjelman rakenne tässä vaiheessa
+Luokka _Laskin_ yksinkertaistuu entisestään, se ei tee enää juuri mitään muuta kuin luo komentotehtaan sekä sisältää ikuisen loopin, minkä sisällä käyttäjän syötettä vastaavia komentoja suoritetaan: 
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-5.png)
-
-
-#### Suunnittelumalli: command
-
-Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa nodattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public <code>void suorita()</code>
-
-Ohjelman edellisessä versiossa sovelsimme strategia-suunnittelumallia, missä erilliset laskuoperaatiot oli toteutettu omina olioinaan. Command-suunnittelumalli eroaa siinä, että olemme nyt kapseloineet koko komennon suorituksen, myös käyttäjän kanssa käytävän kommunikoinnin omiin olioihin. Komento-olioiden rajapinta on yksinkertainen, niillä on ainoastaan yksi metodi _suorita_. Strategia-suunnittelumallissa taas strategia-olioiden rajapinta vaihtelee tilanteen mukaan. 
-
-Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilotettiin tehtaan sisälle. Komento-olioiden suorita-metodi suoritettiin esimerkissä välittömästi, näin ei välttämättä ole, komentoja voitaisiin laittaa esim. jonoon ja suorittaa myöhemmin. Joskus komento-olioilla metodin _suorita_ lisäksi myös metodi _peru_, mikä kumoaa komennon suorituksen aiheuttaman toimenpiteen. Esim. editorien undo- ja redo-toiminnallisuus toteutetaan säilyttämällä komento-olioita jonossa. Toteutamme viikon 6 laskareissa _peru_-toiminnallisuuden laskimen komennoille.
-
-Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html
-http://sourcemaking.com/design_patterns/command
-
-#### lisää komentoja
-
-Jatketaan laskimen komentojen toteuttamista.
-
-Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
-
-``` java
-public abstract class KaksiparametrinenLaskuoperaatio implements Komento {
-
-    protected IO io;
-    protected int luku1;
-    protected int luku2;
-
-    public KaksiparametrinenLaskuoperaatio(IO io) {
-        this.io = io;
-    }
-
-    @Override
-    public void suorita() {
-        io.print("luku 1: ");
-        int luku1 = io.nextInt();
-
-        io.print("luku 2: ");
-        int luku2 = io.nextInt();
-
-        io.print("vastaus: "+laske());
-    }
-
-    protected abstract int laske();
-}
-
-public class Summa extends KaksiparametrinenLaskuoperaatio {
-
-    public Summa(IO io) {
-        super(io);
-    }
-
-    @Override
-    protected int laske() {
-        return luku1+luku2;
-    }
-}
-
-public class Tulo extends KaksiparametrinenLaskuoperaatio {
-
-    public Tulo(IO io) {
-        super(io);
-    }
-
-    @Override
-    public int laske() {
-        return luku1*luku2;
-    }
-}
-```
-
-Ja lopulta luokka Laskin, jossa ei ole enää juuri mitään jäljellä:
-
-``` java
+```java
 public class Laskin {
-
     private IO io;
     private Komentotehdas komennot;
 
@@ -1272,35 +1193,36 @@ public class Laskin {
             String komento = io.nextLine();
             komennot.hae(komento).suorita();
         }
-    }
+    }    
 }
 ```
 
-Ohjelmasta on näinollen saatu laajennettavuudeltaan varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. Laskin-luokallahan ei ole riippuvuuksia muualle kuin rajapintoihin IO ja Komento ja luokkaan Komentotehdas.
+Ohjelman rakenne tässä vaiheessa
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-6.png)
+![]({{ "/images/4-11.png" | absolute_url }}){:height="250px" }
 
-Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli __template method__ (kaksiparametrisen komennon toteutukseen). 
+#### Suunnittelumalli: command
 
-#### Suunnittelumalli: template method
+Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
 
-Template method -suunnittelumallia sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
+Ohjelman edellisessä versiossa sovelsimme strategia-suunnittelumallia, missä erilliset laskuoperaatiot oli toteutettu omina olioinaan. Command-suunnittelumalli eroaa siinä, että olemme nyt kapseloineet koko komennon suorituksen, myös käyttäjän kanssa käytävän kommunikoinnin omiin olioihin. Komento-olioiden rajapinta on yksinkertainen, niillä on ainoastaan yksi metodi _suorita_. Strategia-suunnittelumallissa taas strategia-olioiden rajapinta vaihtelee tilanteen mukaan. 
 
-Summa- ja Tulo-komentojen suoritus on oleellisesti samanlainen:
+Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilotettiin tehtaan sisälle. Komento-olioiden suorita-metodi suoritettiin esimerkissä välittömästi, näin ei välttämättä ole, komentoja voitaisiin laittaa esim. jonoon ja suorittaa myöhemmin. Joskus komento-olioilla metodin _suorita_ lisäksi myös metodi _peru_, mikä kumoaa komennon suorituksen aiheuttaman toimenpiteen. Esim. editorien undo- ja redo-toiminnallisuus toteutetaan säilyttämällä komento-olioita jonossa. Toteutamme viikon 6 laskareissa _peru_-toiminnallisuuden laskimen komennoille.
 
-<pre>
-Lue luku1 käyttäjältä
-Lue luku2 käyttäjältä
-Laske operaation tulos
-Tulosta operaation tulos
-</pre>
+Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html ja http://sourcemaking.com/design_patterns/command
 
-Ainoastaan kolmas vaihe eli operaation tuloksen laskeminen eroaa summaa ja tuloa selvitettäessä.
+#### Yhteisen koodin eriyttäminen yliluokkaan
 
-Template methodin hengessä asia hoidetaan tekemällä abstrakti yliluokka, joka sisältää metodin _suorita()_ joka toteuttaa koko komennon suorituslogiikan:
+Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
 
-```java
-public abstract class KaksiparametrinenLaskuoperaatio implements Komento {
+``` java
+public abstract class BinaariOperaatio extends Komento {
+    protected int luku1;
+    protected int luku2;
+
+    public BinaariOperaatio(IO io) {
+        super(io);
+    }
 
     @Override
     public void suorita() {
@@ -1317,17 +1239,100 @@ public abstract class KaksiparametrinenLaskuoperaatio implements Komento {
 }
 ```
 
+Summaa ja tuloa vastaavat komennot yksinkertaistuvat:
 
-Suorituslogiikan vaihtuva osa eli operaation laskun tulos on määritelty abstraktina metodina _laske()_ jota metodi _suorita()_ kutsuu.
-
-Konkreettiset toteutukset Summa ja Tulo ylikirjoittavat abstraktin metodin _laske()_, määrittelemällä miten laskenta tietyssä konkreettisessa, esim. laskettaessa summaa tapahtuu:
-
-```java
-public class Summa extends KaksiparametrinenLaskuoperaatio {
+``` java
+public class Summa extends BinaariOperaatio {
+    public Summa(IO io) {
+        super(io);
+    }
 
     @Override
     protected int laske() {
-        return luku1+luku2;
+        return luku1 + luku2;
+    }
+}
+
+public class Tulo extends BinaariOperaatio {
+    public Tulo(IO io) {
+        super(io);
+    }
+
+    @Override
+    public int laske() {
+        return luku1*luku2;
+    }
+}
+```
+
+Jos sovelluskeen haluttaisiin toteuttaa lisää kaksiparametrisia operaatioita, esimerkiksi erotus, riittäisi eriääin yksinkertainen lisäys:
+
+```java
+public class Erotus extends BinaariOperaatio {
+    public Erotus(IO io) {
+        super(io);
+    }
+
+    @Override
+    protected int laske() {
+        return luku1 - luku2;
+    }
+}
+```
+
+Ja mikä parasta, ainoa muu luokka, jota on koskettava on komentoja luova _Komentotehdas_.
+
+Ohjelmasta on näin ollen saatu laajennettavuudeltaan varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. Laskin-luokallahan ei ole riippuvuuksia muualle kuin rajapintaan IO, abstraktiin luokkaan Komento sekä luokkaan Komentotehdas.
+
+![]({{ "/images/4-12.png" | absolute_url }}){:height="300px" }
+
+Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen). 
+
+#### Suunnittelumalli: template method
+
+Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
+
+Summa- ja Tulo-komentojen suoritus on oleellisesti samanlainen:
+
+1. lue luku1 käyttäjältä
+2. lue luku2 käyttäjältä
+3. laske operaation tulos
+4. tulosta operaation tulos
+
+Ainoastaan kolmas vaihe eli _operaation tuloksen laskeminen_ eroaa summaa ja tuloa selvitettäessä.
+
+Template methodin hengessä asia hoidetaan tekemällä abstrakti yliluokka, jonka metodi _suorita()_ toteuttaa koko komennon suorituslogiikan:
+
+```java
+public abstract class BinaariOperaatio implements Komento {
+    // ...
+
+    @Override
+    public void suorita() {
+        io.print("luku 1: ");
+        int luku1 = io.nextInt();
+
+        io.print("luku 2: ");
+        int luku2 = io.nextInt();
+
+        io.print("vastaus: "+laske());
+    }
+
+    protected abstract int laske();
+}
+```
+
+Suorituslogiikan vaihtuva osa eli operaation laskun tulos on määritelty abstraktina metodina _laske()_, jota metodi _suorita()_ kutsuu.
+
+Konkreettiset toteutukset _Summa_ ja _Tulo_ ylikirjoittavat abstraktin metodin _laske()_, määrittelemällä miten laskenta tietyssä konkreettisessa tilanteessa tapahtuu:
+
+```java
+public class Summa extends BinaariOperaatio {
+    // ...
+
+    @Override
+    protected int laske() {
+        return luku1 + luku2;
     }
 }
 ```
@@ -1337,28 +1342,27 @@ Abstraktin luokan määrittelemä _suorita()_ on _template-metodi_, joka määri
 Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin abstrakteja metodeja määritellään tarpeellinen määrä. 
 
 Strategy-suunnittelumalli on osittain samaa sukua Template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella.
-Strategioita voidaan vaihtaa ajonaikana, template-metodissa olio toimii samalla tavalla koko elinaikansa  
+Strategioita voidaan vaihtaa ajonaikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa  
 
 Lisää template method -suunnittelumallista seuraavissa
-http://www.oodesign.com/template-method-pattern.html
+http://www.oodesign.com/template-method-pattern.html ja
 http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern
 
+### Koodin laatuattribuutti: toisteettomuus
 
-### Toisteettomuus
+Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _riippuvuuksien vähäisyyttä_, seuraavana vuorossa redundanssi eli toisteisuus.
 
-Käsittelimme koodin laatuattribuuteista kapselointia, koheesiota ja riippuvuuksien vähäisyyttä, seuraavana vuorossa redundanssi eli toisteisuus
-Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen: älä copypastaa koodia!
-Alan piireissä toisteisuudesta varoittava periaate kulkee nimellä DRY, don't repeat yourself
-"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."
-http://c2.com/cgi/wiki?DontRepeatYourself
-DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa eliminointia pidemmälle
+Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen, varmaan jokainen on kuullut kiellon _älä copypastaa koodia_!
 
-Ilmeisin toiston muoto koodissa on juuri copypaste ja se onkin helppo eliminoida esim. metodien avulla
-Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista
+Alan piireissä toisteisuudesta varoittava periaate kulkee nimellä [don't repeat yourself](http://c2.com/cgi/wiki?DontRepeatYourself) ja siihen viitataan usein lyhenteellä _DRY_.
 
-Lisää koodin laatuattribuutteja: DRY
- 
-#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla, Java 8:a hyödyntävä versio
+Ilmeisin toiston muoto koodissa on juuri copypaste ja se onkin helppo eliminoida esim. metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan _BinaariOperaatio_ motivaationahan oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa _Summa_ ja _Tulo_.
+
+DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
+
+Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman lisähavainnollistuksia. Oletetaan että kehittämämme webkauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä euroa rahayksikkönä. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hvyin luokan _Money_ vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
+
+#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa <code>GutenbergLukija</code>:
 
@@ -1574,7 +1578,6 @@ public interface Ehto extends Predicate<String>{
 
 Nyt saamme muutettua kirjan rivien streamin _ehdon_ täyttävien rivien streamiksi seuraavasti:
 
-
 ``` java
 public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
     // ei toimi vielä
@@ -1592,19 +1595,21 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Kuten huomaamme, Javan version 8 tarjoamat funktionaaliset piirteet muuttavat lähes vallankumouksellisella tavalla kielen ilmaisuvoimaa!
+#### Hyvä copypaste
 
-### Testattavuus
+Aloittelevaa 
+
+### Koodin laatuattribuutti: testattavuus
 
 Koodin selkeys ja luettavuus
 Suuri osa "ohjelmointiin" kuluvasta ajasta kuluu olemassaolevan koodin (joko kehittäjän itsensä tai jonkun muun kirjoittaman) lukemiseen
  
-Hyvä koodi on helppo testata kattavasti iyksikkö- ja integraatiotestein
+Hyvä koodi on helppo testata kattavasti yksikkö- ja integraatiotestein
 Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista ja ei sisällä toisteisuutta
 Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että olioiden vastuut eivät ole selkeät, olioilla on liikaa riippuvuuksia ja toisteisuutta on paljon
 Olemme pyrkineet jo ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla riippuvuuksia rajapintojen ja dependency injectionin avulla
 
-### Selkeys
+### Koodin laatuattribuutti: selkeys
  
 Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa
 Esim. c-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa
@@ -1623,7 +1628,7 @@ Kurssin itseopiskelumateriaalissa tutustutaan seuraaviin suunnittelumalleihin
 Factory
 Strategy Command Template method Komposiitti Proxy
 
-### Esimerkki Dekoroitu pino
+#### Esimerkki Dekoroitu pino
 
 Olemme toteuttaneet asiakkaalle pinon:
 

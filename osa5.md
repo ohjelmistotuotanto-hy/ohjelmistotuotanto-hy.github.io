@@ -1,6 +1,6 @@
 ---
 layout: page
-title: osa5
+title: Osa 5
 title_long: 'Lean'
 inheader: yes
 permalink: /osa5/

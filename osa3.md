@@ -3,7 +3,7 @@ layout: page
 title: Osa 3
 title_long: 'Ohjelmistojen laadunhallinta'
 inheader: yes
-permalink: /osa/
+permalink: /osa3/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
