@@ -1664,42 +1664,46 @@ Ajat ovat muuttuneet ja nykytrendin mukaista on pyrkiä kirjoittamaan koodia, j
 Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat joita on listattu 
 [täällä](www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sheet-V1.3.pdf).
 
-Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä [suuri osa](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is), jopa 90% "ohjelmointiin" kuluvasta ajasta menee olemassaolevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä ja sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua.
+Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa, [joidenkin arvioiden mukaan jopa 90%](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is),  "ohjelmointiin" kuluvasta ajasta menee olemassaolevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä ja sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua.
 
 ![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px" }
 
-### Code smell
+### Code smell - koodihaju
 
-Epäselkää
+Koodissa olevista epäilyttävistä piireteistä on ruvettu käyttämään nimitystä _code smell_ eli koodihaju.
 
-Koodi haisee: merkki huonosta suunnittelusta Seuraavassa alan ehdoton asiantuntija Martin Fowler selittää mistä on
+Martin Fowlerin [määritelmää mukaillen](https://martinfowler.com/books/refactoring.html) koodihaju on pintatason indikaatio sille, että koodissa on jotain pielessä. Koodihaju on useimmiten helppo huomata, mutta todellinen syy voi olla jossain syvemmällä, jopa ohjelman designissa.
 
-kysymys koodin hajuista:
-A code smell is a surface indication that usually corresponds to a deeper problem in the system. The term was first coined by Kent Beck while helping me with my Refactoring book.
-The quick definition above contains a couple of subtle points. Firstly a smell is by definition something that's quick to spot - or sniffable as I've recently put it. A long method is a good example of this - just looking at the code and my nose twitches if I see more than a dozen lines of java.
-The second is that smells don't always indicate a problem. Some long methods are just fine. You have to look deeper to see if there is an underlying problem there - smells aren't inherently bad on their own - they are often an indicator of a problem rather than the problem themselves.
-One of the nice things about smells is that it's easy for inexperienced people to spot them, even if they don't know enough to evaluate if there's a real problem or to correct them. I've heard of lead developers who will pick a "smell of the week" and ask people to look for the smell and bring it up with the senior members of the team. Doing it one smell at a time is a good way of gradually teaching people on the team to be better programmers.
+Koodihajuja on hyvin monenlaisia ja monentasoisia. Muutamia esimerkkejä helposti tunnistettavista hajuista:
 
-Koodihajuja Koodihajuja on hyvin monenlaisia ja monentasoisia
-On hyvä oppia tunnistamaan ja välttämään tavanomaisimpia
-Internetistä löytyy paljon hajulistoja, esim:
-http://sourcemaking.com/refactoring/bad-smells-in-code http://c2.com/xp/CodeSmell.html http://www.codinghorror.com/blog/2006/05/code-smells.html
+- toisteinen koodi
+- liian pitkät metodit
+- luokat joissa on liikaa oliomuuttujia
+- luokat joissa on liikaa koodia
+- metodien liian pitkät parametrilistat
+- epäselkeät muuttujien, metodien tai luokkien nimet
+- kommentit
 
-Muutamia esimerkkejä helposti tunnistettavista hajuista:
-Duplicated code (eli koodissa copy pastea...) Methods too big
-Classes with too many instance variables Classes with too much code
-Long parameter list
-Uncommunicative name
-Comments (eikö kommentointi muka ole hyvä asia?)
+Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuuttia heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa todennäköisesti että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametrejä, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain muussa luokassa.
 
-Seuraavassa pari ei ehkä niin ilmeistä tai helposti tunnistettavaa koodihajua
-Primitive obsession
+Nykyään koodin [kommentointia](https://medium.com/@fagnerbrack/code-comment-is-a-smell-4e8d78b0415b) on hieman yllättäen alettu pitämään koodihajuna. Kyse on oikeastaan siitä, että koodi pitäisi lähtökohtaisesti kirjoittaa niin selkeäksi ja nimeennältään kommunikoivaksi, että kommentteja ei tarvita. Eli kommentit tulee säästää vain sellaisiin kohtiin, jossa samaa asiaa ei voi jo ilmaista koodin muotoilulla ja nimennällä.
+
+Otetaan pari esimerkkiä hieman vähemmän ilmeisistä koodihajuista.
+
+[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession)
+
 Don't use a gaggle of primitive data type variables as a poor man's substitute for a class. If your data type is sufficiently complex, write a class to represent it.
-http://sourcemaking.com/refactoring/primitive-obsession
 
-Shotgun surgery
+[Shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery)
+
 If a change in one class requires cascading changes in several related classes, consider refactoring so that the changes are limited to a single class.
-http://sourcemaking.com/refactoring/shotgun-surgery
+
+
+Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
+
+- https://sourcemaking.com/refactoring/bad-smells-in-code 
+- https://www.codinghorror.com/blog/2006/05/code-smells.html
+
 
 ### refaktorointi
 
