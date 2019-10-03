@@ -1690,14 +1690,9 @@ Nykyään koodin [kommentointia](https://medium.com/@fagnerbrack/code-comment-is
 
 Otetaan pari esimerkkiä hieman vähemmän ilmeisistä koodihajuista.
 
-[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession)
+[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession) tarkoittaa tilannetta, missä jossa jokin konkreettinen käsite esim. _osoite_, _rahamäärä_ esitetään primitiiviarvoisten muuttujien avulla, sen sijaan että määriteltäisiin luokka ko. asian esittämiseen. 
 
-Don't use a gaggle of primitive data type variables as a poor man's substitute for a class. If your data type is sufficiently complex, write a class to represent it.
-
-[Shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery)
-
-If a change in one class requires cascading changes in several related classes, consider refactoring so that the changes are limited to a single class.
-
+Nimellä [shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery) kuvaillaan tilannetta, missä yhden loogisen asian muuttaminen, laajentaminen tai siihen tehtävä bugikorjaus aiheuttaakin sarjan muutoksia myös todella moneen muuhun paikkaan koodia. Tämä on oire siitä, että toiminnallisuutta ei ole kapseloitu riittävän hyvin yhteen koodimoduuliin, eli kyseessä on DRY-periaatetta rikkova design.
 
 Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
@@ -1705,7 +1700,7 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 - https://www.codinghorror.com/blog/2006/05/code-smells.html
 
 
-### refaktorointi
+### Refaktorointi
 
 Lääke koodihajuun on refaktorointi eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan
 Erilaisia koodin rakennetta parantavia refaktorointeja on lukuisia
