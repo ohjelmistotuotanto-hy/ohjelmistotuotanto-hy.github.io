@@ -322,10 +322,6 @@ _Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa,
 
 Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa ja komponenteissa.
 
-####
-
-Koheesiolla tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi on keskittynyt tietyn toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta. Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa, komponenteissa ja jopa muuttujissa (samaa muuttujaa ei saa uusiokäyttää eri asioiden tallentamiseen). 
-
 #### Koheesio metoditasolla
 
 Esimerkki artikkelista [http://www.ibm.com/developerworks/java/library/j-eaed4/index.html](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html)
@@ -531,6 +527,12 @@ Parannellun laskimen rakenne luokkakaaviona
 ![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-1.png)
 
 Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaamme asiaan hetken kuluttua.
+
+#### Koheesio komponenttitasolla
+
+Koheesio ja _single responsibility_ -periaate evät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy pieneen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Web-sovelluksen tilan käsittely taas pyritään kapseloimaan Redux-storeen, jonka ainoa vastuu on tilasta ja sen muutoksista huolehtiminen. 
+
+Koheesion periaate näkyy myös arkkitehtuuritasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen "bisnesstason" toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
 
 ### Riippuvuuksien vähäisyys
 
@@ -1364,7 +1366,7 @@ Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoit
 
 #### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla
 
-Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa <code>GutenbergLukija</code>:
+Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa _GutenbergLukija_:
 
 ``` java
 public class GutenbergLukija {
@@ -1420,7 +1422,7 @@ public class GutenbergLukija {
 }
 ```
 
-Luokalla on kolme metodia, kaikki kirjan rivit palauttava <code>rivit</code> sekä <code>rivitJotkaPaattyvatHuutomerkkiin</code> ja <code>rivitJoillaSana(String sana)</code> jotka toimivat kuten metodin nimi antaa ymmärtää.
+Luokalla on kolme metodia, kaikki kirjan rivit palauttava _rivit_ sekä _rivitJotkaPaattyvatHuutomerkkiin_ ja _rivitJoillaSana(String sana)_ jotka toimivat kuten metodin nimi antaa ymmärtää.
 
 Luokkaa käytetään seuraavasti:
 
@@ -1430,21 +1432,23 @@ public static void main(String[] args) {
     GutenbergLukija kirja = new GutenbergLukija(osoite);
 
     for( String rivi : kirja.rivitJoillaSana("beer") ) {
-        System.out.println(rivi)
+        System.out.println(rivi);
     }
 }
 ```
 
-Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) tarjoamiin uusiin ominaisuuksiin. Monelle Java 8 on jo tuttu Ohjelmoinnin perusteiden ja jatkokurssin uudemmista versiosta.
+Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin testaavan kriteerion täyttävä, esim. huutomerkkiin loppuva.
 
-Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla) olevaa metodia <code>forEach</code> joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen" (eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin) toteuttavan olion. Tälläisiä ovat Java 8:ssa myös ns. lambda-lausekkeet (lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodin palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
+Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) mukanaan tuomiin funktionaalista ohjelmointitapaa helpottaviin piirteisiin, lambda-lausekkeisiin sekä kokoelmien käsittelyyn streameina. Nämä asiat ovat toki monelle tuttuja jo kursseilta Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi.
+
+Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla) olevaa metodia _forEach_ ,joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen" (eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin) toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodin palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
 
 ``` java
 public static void main(String[] args) {
     String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
     GutenbergLukija kirja = new GutenbergLukija(osoite);
 
-    kirja.rivitJoillaSana("beer").forEach(s->System.out.println(s));
+    kirja.rivitJoillaSana("beer").forEach(s -> System.out.println(s));
 }
 ```
 
@@ -1454,9 +1458,11 @@ Esimerkissä lambdan syntaksi oli seuraava:
 s -> System.out.println(s)
 ```
 
-parametri <code>s</code> saa arvokseen yksi kerrallaan kunkin läpikäytävän tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan <code>s</code> tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
+parametri _s_ saa arvokseen yksi kerrallaan kunkin läpikäytävän tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan _s_ tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
 
-Luokan <code>GutenbergLukija</code> tarjoamat 3 kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen mitä kirjan riveistä ne palauttavat. Voidaankin ajatella, että jokaisessa metodissa on oma _strategiansa_ rivien palauttamiseen. Eriyttämällä rivien valintastrategia omaksi luokakseen, voitaisiin selvitä ainoastaan yhdellä rivien läpikäynnin hoitavalla metodilla.
+Luokan _GutenbergLukija_ tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen mitä kirjan riveistä ne palauttavat. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
+
+Jos mietitään metodien toimintaa, niin voidaan ajatella, että jokaisessa metodissa on oma _strategiansa_ rivien palauttamiseen, ja strategiaa lukuunottamatta kaikki muu on samaa. Tämä onkin erinomainen paikka strategy-suunnittelumallin soveltamiseen. Jos eriytämme rivien valintastrategia omaksi luokakseen, voidaan selvitä ainoastaan yhdellä rivien läpikäynnin hoitavalla metodilla.
 
 Määritellään rivien valintaa varten rajapinta:
 
@@ -1466,9 +1472,9 @@ public interface Ehto {
 }
 ```
 
-Huom: metodin nimen valinta ei ollut täysin sattumanvarainen. Tulemme myöhemmin määrittelemään, että rajapinta <code>Ehto</code> laajentaa rajapinnan, joka vaatii että rajapinnalla on nimenomaan <code>test</code>-niminen metodi.
+Huom: metodin nimen valinta ei ollut täysin sattumanvarainen. Tulemme myöhemmin määrittelemään, että rajapinta _Ehto_ laajentaa rajapinnan, joka vaatii että rajapinnalla on nimenomaan _test_-niminen metodi.
 
-Ideana on luoda jokaista kirjojen erilaista _hakuehtoa_ kohti oma rajapinnan <code>Ehto</code> toteuttava luokka.
+Ideana on luoda jokaista kirjojen erilaista _hakuehtoa_ kohti oma rajapinnan _Ehto_ toteuttava luokka.
 
 Seuraavassa ehto-luokka, joka tarkastaa sisältyykö tietty sana riville:
 
@@ -1499,52 +1505,52 @@ voidaan luokan avulla tarkastella sisältävätkö merkkijonot sanan _olut_:
 ``` java
 Ehto ehto = new SisaltaaSanan("olut");
 ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info");
-ehto.test("Java 8 ilmestyi 18.3.2014");
+ehto.test("Java 13 ilmestyi 17.9.2019");
 ```
 
 Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimäinen _false_.
 
-Kirjasta voidaan nyt palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle <code>GutenbergLukija</code> metodi:
+Kirjasta voidaan nyt palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle _GutenbergLukija_ metodi:
 
 ``` java
-    public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-        List<String> palautettavatRivit = new ArrayList<>();
+public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
+    List<String> palautettavatRivit = new ArrayList<>();
 
-        for (String rivi : rivit) {
-            if (ehto.test(rivi)) {
-                palautettavatRivit.add(rivi);
-            }
+    for (String rivi : rivit) {
+        if (ehto.test(rivi)) {
+            palautettavatRivit.add(rivi);
         }
-
-        return palautettavatRivit;
     }
+
+    return palautettavatRivit;
+}
 ```
 
 ja sanan _beer_ sisältävät rivit saadaan tulostettua seuraavasti:
 
 ``` java
-    kirja.rivitJotkaTayttavatEhdon(new SisaltaaSanan("beer")).forEach(s->System.out.println(s));
+kirja.rivitJotkaTayttavatEhdon(new SisaltaaSanan("beer")).forEach(s -> System.out.println(s));
 ```
 
-Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia rajapinnan <code>Ehto</code> määritteleviä luokkia.
+Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia rajapinnan _Ehto_ määritteleviä luokkia.
 
-Ehto-rajapinta on ns. _functional interface_ eli se määrittelee ainoastaan yhden toteutettavan metodin (huom: Java 8:ssa rajapinnat voivat määritellä myös [oletusarvoisen toteutuksen](http://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html) sisältämiä metodeja!). Java 8:n aikana voimme määritellä ehtoja myös lambda-lausekkeiden avulla. Eli ei ole välttämätöntä tarvetta määritellä eksplisiittisesti rajapinnan <code>Ehto</code> toteuttavia luokkia. Seuraavassa edellinen esimerkki käyttäen lambda-lauseketta ehdon määrittelemiseen:
+Ehto-rajapinta on ns. _funktionaalinen rajainta_ (engl. functional interface) eli se määrittelee ainoastaan yhden toteutettavan metodin. Javan uusimmilla versioilla voimme määritellä ehtoja myös lambda-lausekkeiden avulla. Eli ei ole välttämätöntä tarvetta määritellä eksplisiittisesti rajapinnan _Ehto_ toteuttavia luokkia. Seuraavassa edellinen esimerkki käyttäen lambda-lauseketta ehdon määrittelemiseen:
 
 ``` java
-kirja.rivitJotkaTayttavatEhdon(s->s.contains("beer")).forEach(s->System.out.println(s));
+kirja.rivitJotkaTayttavatEhdon(s -> s.contains("beer")).forEach(s -> System.out.println(s));
 ```
 
-Käytännössä siis määrittelemme "lennossa" rajapinnan <code>Ehto</code> toteuttavan luokan, jonka ainoan metodin toiminnallisuuden määritelmä annetaan lambda-lausekkeen avulla.
+Käytännössä siis määrittelemme "lennossa" rajapinnan _Ehto_ toteuttavan luokan, jonka ainoan metodin toiminnallisuuden määritelmä annetaan lambda-lausekkeen avulla.
 
 Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _beer_ tai _vodka_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
 ``` java
 Ehto ehto = s -> s.contains("beer") || s.contains("vodka");
 
-kirja.rivitJotkaTayttavatEhdon(ehto).forEach(s->System.out.println(s));
+kirja.rivitJotkaTayttavatEhdon(ehto).forEach(s -> System.out.println(s));
 ```
 
-Voimme hyödyntää Java 8:n uusia piirteitä myös luokan <code>GutenbergLukija</code> metodissa <code>rivitJotkaTayttavatEhdon</code>.
+Voimme hyödyntää Javan funktionaalisia piirteitä myös luokan _GutenbergLukija_ metodissa _rivitJotkaTayttavatEhdon_.
 
 Metodi on tällä hetkellä seuraava:
 
@@ -1562,11 +1568,11 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Java 8:ssa kaikki rajapinnan <code>Collection</code> toteuttavat luokat mahdollistavat alkioidensa käsittelyn <code>Stream</code>:ina eli "alkiovirtoina", ks. [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html). Kokoelmaluokasta saadaan sitä vastaava alkiovirta kutsumalla kokoelmalle metodia <code>stream</code>.
+Uusissa Javan versioissa kaikki rajapinnan _Collection_ toteuttavat luokat mahdollistavat alkioidensa käsittelyn _Stream_:ina eli "alkiovirtoina", ks. [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html). Kokoelmaluokasta saadaan sitä vastaava alkiovirta kutsumalla kokoelmalle metodia _stream_.
 
-Alkiovirtoja on taas mahdollista käsitellä monin tavoin, ja meitä nyt kiinnostava metodi on <code>filter</code>, jonka avulla streamistä voidaan tehdä uusi streami, josta on poistettu ne alkiot, jotka eivät täytä filtterille annettua boolean-arvoista, funktionaalisen rajapinnan <code>Predicate<String></code> toteuttavaa ehtoa.
+Alkiovirtoja on taas mahdollista käsitellä monin tavoin, ja meitä nyt kiinnostava metodi on _filter_, jonka avulla streamistä voidaan tehdä uusi streami, josta on poistettu ne alkiot, jotka eivät täytä filtterille annettua boolean-arvoista, funktionaalisen rajapinnan _Predicate<String>_ toteuttavaa ehtoa.
 
-Määrittelemämme rajapinta <code>Ehto</code> on oikeastaan juuri tarkoitukseen sopiva, jotta voisimme käyttää rajapintaa, tulee meidän kuitenkin tyyppitarkastusten takia määritellä että rajapintamme laajentaa rajapintaa  <code>Predicate<String></code>:
+Määrittelemämme rajapinta _Ehto_ on oikeastaan juuri tarkoitukseen sopiva, jotta voisimme käyttää rajapintaa, tulee meidän kuitenkin tyyppitarkastusten takia määritellä että rajapintamme laajentaa rajapintaa  _Predicate<String>_:
 
 ``` java
 import java.util.function.Predicate;
@@ -1585,42 +1591,186 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia <code>collect</code> ja määrittelemällä, että palautetaan streamin sisältämät alkiot niemenomaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
+Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja määrittelemällä, että palautetaan streamin sisältämät alkiot niemenomaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
 
 Metodi on siis seuraavassa:
 
-``` java
+```java
 public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
     return rivit.stream().filter(ehto).collect(Collectors.toList());
 }
 ```
 
-#### Hyvä copypaste
+Voimme oikeastaan luopua itse määrittelemästämme rajapinnasta _Ehto_ sillä valmis funktionaalinen rajapinta _Predicate<String>_ ajaa saman asian. Yksittäisiä ehtoja määrittelevät luokat voidaan muuttaa seuraavasti:
 
-Aloittelevaa 
+```java
+public class SisaltaaSanan implements Predicate<String> {
+    // ...
+}
+```
+
+ja lukija muuttuu muotoon:
+
+```java
+public class GutenbergLukija {
+    private List<String> rivit;
+
+    public GutenbergLukija(String osoite) throws IllegalArgumentException {
+        // ...
+    }
+    
+    public List<String> rivitJotkaTayttavatEhdon(Predicate<String> ehto) {
+        return rivit.stream().filter(ehto).collect(Collectors.toList());
+    }    
+}
+```
+
+Funktionaalinen rajapinta _Predicate_ sisältää itseasiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista koostaa yksittäisistä ehdoista monimutkaisempia ehtoja. Seuraavassa etsitään ne rivit jotka
+- sisältävät sanan _beer_ ja ovat yli 50 riviä pitkiä _tai_
+- alkavat kirjaimella _Z_
+
+```java
+Predicate<String> ehto1 = new SisaltaaSanan("beer");
+Predicate<String> ehto2 = s -> s.length()>50;
+Predicate<String> ehto3 = s -> s.length()>0 && s.charAt(0) == 'Z';
+
+kirja
+    .rivitJotkaTayttavatEhdon((ehto1.and(ehto2)).or(ehto3))
+    .forEach(s->System.out.println(s));
+```
+
+#### Hyvä vs. paha copypaste
+
+Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevääkin ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) se tarvittaessa myöhemmin siistimmäksi. 
+
+Monissa tilanteissa nimittäin copypasten poistamisellakin saattaa olla pieni hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
+
+Melko hyvä periaate onkin _[three strikes and you refactor](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming))_, eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
 ### Koodin laatuattribuutti: testattavuus
 
-Koodin selkeys ja luettavuus
-Suuri osa "ohjelmointiin" kuluvasta ajasta kuluu olemassaolevan koodin (joko kehittäjän itsensä tai jonkun muun kirjoittaman) lukemiseen
- 
-Hyvä koodi on helppo testata kattavasti yksikkö- ja integraatiotestein
-Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista ja ei sisällä toisteisuutta
-Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että olioiden vastuut eivät ole selkeät, olioilla on liikaa riippuvuuksia ja toisteisuutta on paljon
-Olemme pyrkineet jo ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla riippuvuuksia rajapintojen ja dependency injectionin avulla
+Tärkeä piirre hyvällä koodilla on sen testattavuus, eli hyvä koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
+
+Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että komponenttien vastuut eivät ole selkeät, ja niillä on liikaa riippuvuuksia.
+
+Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia rajapintojen ja riippuvuuksien injektoinnin avulla.
 
 ### Koodin laatuattribuutti: selkeys
- 
-Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa
-Esim. c-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa
-Metodikutsuja on vältetty tehokkuussyistä
-Muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja "koodaamalla" dataa bittitasolla
-...
-Ajat ovat muuttuneet ja nykytrendin mukaista on pyrkiä kirjoittamaan koodia, joka nimennällään ja muodollaan ilmaisee mahdollisimman hyvin sen mitä koodi tekee
-Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat
-www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sh eet-V1.3.pdf
 
-### Suunnittelumalleja
+Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa.
+Esim. c-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa, metodikutsuja on vältetty tehokkuussyistä, muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja "koodaamalla" dataa bittitasolla.
+
+Ajat ovat muuttuneet ja nykytrendin mukaista on pyrkiä kirjoittamaan koodia, joka nimennällään ja muodollaan ilmaisee mahdollisimman hyvin sen mitä koodi tekee.
+Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat joita on listattu 
+[täällä](www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sheet-V1.3.pdf).
+
+Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä [suuri osa](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is), jopa 90% "ohjelmointiin" kuluvasta ajasta menee olemassaolevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä ja sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua.
+
+![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px" }
+
+### Code smell
+
+
+
+Koodi haisee: merkki huonosta suunnittelusta Seuraavassa alan ehdoton asiantuntija Martin Fowler selittää mistä on
+
+kysymys koodin hajuista:
+A code smell is a surface indication that usually corresponds to a deeper problem in the system. The term was first coined by Kent Beck while helping me with my Refactoring book.
+The quick definition above contains a couple of subtle points. Firstly a smell is by definition something that's quick to spot - or sniffable as I've recently put it. A long method is a good example of this - just looking at the code and my nose twitches if I see more than a dozen lines of java.
+The second is that smells don't always indicate a problem. Some long methods are just fine. You have to look deeper to see if there is an underlying problem there - smells aren't inherently bad on their own - they are often an indicator of a problem rather than the problem themselves.
+One of the nice things about smells is that it's easy for inexperienced people to spot them, even if they don't know enough to evaluate if there's a real problem or to correct them. I've heard of lead developers who will pick a "smell of the week" and ask people to look for the smell and bring it up with the senior members of the team. Doing it one smell at a time is a good way of gradually teaching people on the team to be better programmers.
+
+Koodihajuja Koodihajuja on hyvin monenlaisia ja monentasoisia
+On hyvä oppia tunnistamaan ja välttämään tavanomaisimpia
+Internetistä löytyy paljon hajulistoja, esim:
+http://sourcemaking.com/refactoring/bad-smells-in-code http://c2.com/xp/CodeSmell.html http://www.codinghorror.com/blog/2006/05/code-smells.html
+
+Muutamia esimerkkejä helposti tunnistettavista hajuista:
+Duplicated code (eli koodissa copy pastea...) Methods too big
+Classes with too many instance variables Classes with too much code
+Long parameter list
+Uncommunicative name
+Comments (eikö kommentointi muka ole hyvä asia?)
+
+Seuraavassa pari ei ehkä niin ilmeistä tai helposti tunnistettavaa koodihajua
+Primitive obsession
+Don't use a gaggle of primitive data type variables as a poor man's substitute for a class. If your data type is sufficiently complex, write a class to represent it.
+http://sourcemaking.com/refactoring/primitive-obsession
+
+Shotgun surgery
+If a change in one class requires cascading changes in several related classes, consider refactoring so that the changes are limited to a single class.
+http://sourcemaking.com/refactoring/shotgun-surgery
+
+### refaktorointi
+
+Lääke koodihajuun on refaktorointi eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan
+Erilaisia koodin rakennetta parantavia refaktorointeja on lukuisia
+ks esim. http://sourcemaking.com/refactoring
+Muutama käyttökelpoinen nykyaikaisessa kehitysympäristössä (esim
+NetBeans, Eclipse, IntelliJ) automatisoitu refaktorointi:
+Rename method (rename variable, rename class)
+Eli uudelleennimetään huonosti nimetty asia
+
+Extract superclass
+–
+Koodin refaktorointi
+Extract method
+Jaetaan liian pitkä metodi erottamalla siitä omia apumetodejaan
+Extract interface
+Luodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
+–
+Luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
+
+Refaktoroinnin melkein ehdoton edellytys on kattavien testien olemassaolo
+Refaktoroinninhan on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana
+
+Kannattaa ehdottomasti edetä pienin askelin
+Yksi hallittu muutos kerrallaan
+Testit on ajettava mahdollisimman usein ja varmistettava että mikään ei mennyt rikki
+
+Refaktorointia kannattaa suorittaa lähes jatkuvasti
+Koodin ei kannata antaa "rapistua" pitkiä aikoja, refaktorointi muuttuu vaikeammaksi
+Lähes jatkuva refaktorointi on helppoa, pitää koodin rakenteen selkeänä ja helpottaa sekä nopeuttaa koodin laajentamista
+
+Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimentä tai pitkien metodien jakaminen osametodeiksi on helppoa, aina ei näin ole
+Joskus on tarve tehdä isoja refaktorointeja joissa ohjelman rakenne eli arkkitehtuuri muuttuu
+
+
+### Tekninen velka
+
+Edellisten kalvojen aikana tutustuimme moniin ohjelman sisäistä laatua kuvaaviin attribuutteihin:
+kapselointi, koheesio, riippuvuuksien vähäisyys, testattavuus, luettavuus
+
+Tutustuimme myös yleisiin periaatteisiin, joiden noudattaminen auttaa päätymään laadukkaaseen koodiin
+single responsibility principle, program to interfaces, favor composition over inheritance, don't repeat yourself
+
+Itseopiskelumateriaalissa esitellään suunnittelumalleja (design patterns), jotka tarjoavat tiettyihin sovellustilanteisiin sopivia yleisiä ratkaisumalleja
+Koodi ja oliosuunnittelu ei ole aina hyvää, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä "huonoa" koodia
+Huonoa oliosuunnittelua ja huonon koodin kirjoittamista on verrattu velan (engl. design debt tai technical debt) ottamiseen
+http://www.infoq.com/articles/technical-debt-levison
+ 
+Piittaamattomalla ja laiskalla ohjelmoinnilla/suunnittelulla saadaan ehkä nopeasti aikaan jotain, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin jos ohjelmaa on tarkoitus laajentaa
+Käytännössä käy niin, että tiimin velositeetti laskee, koska teknistä velkaa on maksettava takaisin, jotta järjestelmään saadaan toteutettua uusia ominaisuuksia
+
+Jos korkojen maksun aikaa ei koskaan tule, ohjelma on esim. pelkkä prototyyppi tai sitä ei oteta koskaan käyttöön, voi "huono koodi" olla asiakkaan kannalta kannattava ratkaisu
+Esim. uuden ominaisuuden käyttökelpoisuuden validointiin toteutettava minimal viable product (MVP) on luonteeltaan sellainen, että sitä tehdessä otetaan tietoisesti teknistä velkaa
+
+Vastaavasti joskus voi lyhytaikaisen teknisen velan ottaminen olla järkevää tai jopa välttämätöntä
+Esim. voidaan saada tuote nopeammin markkinoille tekemällä tietoisesti huonoa designia, joka korjataan myöhemmin
+ 
+Tekninen velka Tekniselle velalle on yritetty jopa arvioida hintaa:
+http://www.infoq.com/news/2012/02/tech-debt-361
+
+Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös
+
+Kaikki tekninen velka ei ole samanlaista, Martin Fowler jaottelee teknisen velan neljään eri luokkaan:
+Reckless and deliberate: "we do not have time for design" Reckless and inadverent: "what is layering"?
+Prudent and inadverent: "now we know how we should have done it"
+Prudent and deliberate: "we must ship now and will deal with consequences"
+http://martinfowler.com/bliki/TechnicalDebtQuadrant.html
+
+
+### Lisää suunnittelumalleja
 
 Suunnittelumallit siis tarjoavat hyviä kooditason ratkaisuja siitä, miten koodi kannattaa muotoilla, jotta siitä saadaan sisäiseltä laadultaan hyvää, eli kapseloitua, hyvän koheesion omaavaa ja eksplisiittiset turhat riippuvuudet välttävää
 
@@ -1919,7 +2069,7 @@ public class Pinorakentaja {
 }
 ```
 
-eli kun <code>Rakentaja</code>-olio luodaan, rakentajan luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia <code>pino()</code>.
+eli kun _Rakentaja_-olio luodaan, rakentajan luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia _pino()_.
 
 Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
 
@@ -1929,7 +2079,7 @@ Pinorakentaja rakenna = new Pinorakentaja();
 Pino pino = rakenna.prepaid(10).pino();
 ```
 
-Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka tyyppi on <code>Pinorakentaja prepaid(int kreditit)</code>, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia <code>pino</code>, on metodin <code>prepaid</code> palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
+Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka tyyppi on _Pinorakentaja prepaid(int kreditit)_, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia _pino_, on metodin _prepaid_ palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
 
 ``` java
 public class Pinorakentaja {
@@ -1949,7 +2099,7 @@ public class Pinorakentaja {
 }
 ```
 
-Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia <code>prepaid</code> ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa viitteen <code>this</code> eli rakentajan itsensä. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
+Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia _prepaid_ ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa viitteen _this_ eli rakentajan itsensä. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
 
 ``` java
 public class Pinorakentaja {
@@ -2027,100 +2177,3 @@ Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
 [fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
 
 #### mvc, observer
- 
-### Tekninen velka
-
-Edellisten kalvojen aikana tutustuimme moniin ohjelman sisäistä laatua kuvaaviin attribuutteihin:
-kapselointi, koheesio, riippuvuuksien vähäisyys, testattavuus, luettavuus
-
-Tutustuimme myös yleisiin periaatteisiin, joiden noudattaminen auttaa päätymään laadukkaaseen koodiin
-single responsibility principle, program to interfaces, favor composition over inheritance, don't repeat yourself
-
-Itseopiskelumateriaalissa esitellään suunnittelumalleja (design patterns), jotka tarjoavat tiettyihin sovellustilanteisiin sopivia yleisiä ratkaisumalleja
-Koodi ja oliosuunnittelu ei ole aina hyvää, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä "huonoa" koodia
-Huonoa oliosuunnittelua ja huonon koodin kirjoittamista on verrattu velan (engl. design debt tai technical debt) ottamiseen
-http://www.infoq.com/articles/technical-debt-levison
- 
-Piittaamattomalla ja laiskalla ohjelmoinnilla/suunnittelulla saadaan ehkä nopeasti aikaan jotain, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin jos ohjelmaa on tarkoitus laajentaa
-Käytännössä käy niin, että tiimin velositeetti laskee, koska teknistä velkaa on maksettava takaisin, jotta järjestelmään saadaan toteutettua uusia ominaisuuksia
-
-Jos korkojen maksun aikaa ei koskaan tule, ohjelma on esim. pelkkä prototyyppi tai sitä ei oteta koskaan käyttöön, voi "huono koodi" olla asiakkaan kannalta kannattava ratkaisu
-Esim. uuden ominaisuuden käyttökelpoisuuden validointiin toteutettava minimal viable product (MVP) on luonteeltaan sellainen, että sitä tehdessä otetaan tietoisesti teknistä velkaa
-
-Vastaavasti joskus voi lyhytaikaisen teknisen velan ottaminen olla järkevää tai jopa välttämätöntä
-Esim. voidaan saada tuote nopeammin markkinoille tekemällä tietoisesti huonoa designia, joka korjataan myöhemmin
- 
-Tekninen velka Tekniselle velalle on yritetty jopa arvioida hintaa:
-http://www.infoq.com/news/2012/02/tech-debt-361
-
-Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös
-
-Kaikki tekninen velka ei ole samanlaista, Martin Fowler jaottelee teknisen velan neljään eri luokkaan:
-Reckless and deliberate: "we do not have time for design" Reckless and inadverent: "what is layering"?
-Prudent and inadverent: "now we know how we should have done it"
-Prudent and deliberate: "we must ship now and will deal with consequences"
-http://martinfowler.com/bliki/TechnicalDebtQuadrant.html
-
-### code smell
-
-Koodi haisee: merkki huonosta suunnittelusta Seuraavassa alan ehdoton asiantuntija Martin Fowler selittää mistä on
-kysymys koodin hajuista:
-A code smell is a surface indication that usually corresponds to a deeper problem in the system. The term was first coined by Kent Beck while helping me with my Refactoring book.
-The quick definition above contains a couple of subtle points. Firstly a smell is by definition something that's quick to spot - or sniffable as I've recently put it. A long method is a good example of this - just looking at the code and my nose twitches if I see more than a dozen lines of java.
-The second is that smells don't always indicate a problem. Some long methods are just fine. You have to look deeper to see if there is an underlying problem there - smells aren't inherently bad on their own - they are often an indicator of a problem rather than the problem themselves.
-One of the nice things about smells is that it's easy for inexperienced people to spot them, even if they don't know enough to evaluate if there's a real problem or to correct them. I've heard of lead developers who will pick a "smell of the week" and ask people to look for the smell and bring it up with the senior members of the team. Doing it one smell at a time is a good way of gradually teaching people on the team to be better programmers.
-
-Koodihajuja Koodihajuja on hyvin monenlaisia ja monentasoisia
-On hyvä oppia tunnistamaan ja välttämään tavanomaisimpia
-Internetistä löytyy paljon hajulistoja, esim:
-http://sourcemaking.com/refactoring/bad-smells-in-code http://c2.com/xp/CodeSmell.html http://www.codinghorror.com/blog/2006/05/code-smells.html
-
-Muutamia esimerkkejä helposti tunnistettavista hajuista:
-Duplicated code (eli koodissa copy pastea...) Methods too big
-Classes with too many instance variables Classes with too much code
-Long parameter list
-Uncommunicative name
-Comments (eikö kommentointi muka ole hyvä asia?)
-
-Seuraavassa pari ei ehkä niin ilmeistä tai helposti tunnistettavaa koodihajua
-Primitive obsession
-Don't use a gaggle of primitive data type variables as a poor man's substitute for a class. If your data type is sufficiently complex, write a class to represent it.
-http://sourcemaking.com/refactoring/primitive-obsession
-
-Shotgun surgery
-If a change in one class requires cascading changes in several related classes, consider refactoring so that the changes are limited to a single class.
-http://sourcemaking.com/refactoring/shotgun-surgery
-
-### refaktorointi
-
-Lääke koodihajuun on refaktorointi eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan
-Erilaisia koodin rakennetta parantavia refaktorointeja on lukuisia
-ks esim. http://sourcemaking.com/refactoring
-Muutama käyttökelpoinen nykyaikaisessa kehitysympäristössä (esim
-NetBeans, Eclipse, IntelliJ) automatisoitu refaktorointi:
-Rename method (rename variable, rename class)
-Eli uudelleennimetään huonosti nimetty asia
-
-Extract superclass
-–
-Koodin refaktorointi
-Extract method
-Jaetaan liian pitkä metodi erottamalla siitä omia apumetodejaan
-Extract interface
-Luodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
-–
-Luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
-
-Refaktoroinnin melkein ehdoton edellytys on kattavien testien olemassaolo
-Refaktoroinninhan on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana
-
-Kannattaa ehdottomasti edetä pienin askelin
-Yksi hallittu muutos kerrallaan
-Testit on ajettava mahdollisimman usein ja varmistettava että mikään ei mennyt rikki
-
-Refaktorointia kannattaa suorittaa lähes jatkuvasti
-Koodin ei kannata antaa "rapistua" pitkiä aikoja, refaktorointi muuttuu vaikeammaksi
-Lähes jatkuva refaktorointi on helppoa, pitää koodin rakenteen selkeänä ja helpottaa sekä nopeuttaa koodin laajentamista
-
-Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimentä tai pitkien metodien jakaminen osametodeiksi on helppoa, aina ei näin ole
-Joskus on tarve tehdä isoja refaktorointeja joissa ohjelman rakenne eli arkkitehtuuri muuttuu
