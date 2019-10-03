@@ -1670,7 +1670,7 @@ Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että kood
 
 ### Code smell
 
-
+Epäselkää
 
 Koodi haisee: merkki huonosta suunnittelusta Seuraavassa alan ehdoton asiantuntija Martin Fowler selittää mistä on
 
