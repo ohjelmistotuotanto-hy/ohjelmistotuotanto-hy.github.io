@@ -1702,71 +1702,51 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 ### Refaktorointi
 
-Lääke koodihajuun on refaktorointi eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan
-Erilaisia koodin rakennetta parantavia refaktorointeja on lukuisia
-ks esim. http://sourcemaking.com/refactoring
-Muutama käyttökelpoinen nykyaikaisessa kehitysympäristössä (esim
-NetBeans, Eclipse, IntelliJ) automatisoitu refaktorointi:
-Rename method (rename variable, rename class)
-Eli uudelleennimetään huonosti nimetty asia
+Lääke koodihajuihin ja muihin sovelluksen moduulien/luokkien sisäisiin laatuongelmiin on _refaktorointi_ eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan. Refaktoroinnin systemaattisena koodin sisäisen laadun parantamiskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 2000 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018. 
 
-Extract superclass
-–
-Koodin refaktorointi
-Extract method
-Jaetaan liian pitkä metodi erottamalla siitä omia apumetodejaan
-Extract interface
-Luodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
-–
-Luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
+Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktoriointija. Vastaavia refaktorointilistoja löytyy toki myös [internetistä](https://sourcemaking.com/refactoring). Seuraavassa muutamia esimerkkejä 
 
-Refaktoroinnin melkein ehdoton edellytys on kattavien testien olemassaolo
-Refaktoroinninhan on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana
+- _rename variable/method/class_ uudelleennimetään huonosti nimetty asia
+- _extract method_ jaetaan liian pitkä metodi erottamalla siitä omia apumetodejaan
+- _move field/method_ siirretään oliomuuttuja tai metodi toiseen luokkaan
+- _extract interface_ .uodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
+- _extract superclass_ tuodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
 
-Kannattaa ehdottomasti edetä pienin askelin
-Yksi hallittu muutos kerrallaan
-Testit on ajettava mahdollisimman usein ja varmistettava että mikään ei mennyt rikki
+Suuri osa tässä luetelluista refaktoroinneista ovat sellaisia, että useimmat ohjelmointiympäristöt (kuten esim. NetBeans, Eclipse, IntelliJ) pystyvät tekemään ne automaattisesti. Automatisoitu refaktorointi onnistuu huomattavasti helpommin staattisesti tyypitetyille kielille kuten Java, dynaamisesti tyypitettyjen kielten kuten Javascript ja Python kohdalla se on humattavasti hankalampaa.
 
-Refaktorointia kannattaa suorittaa lähes jatkuvasti
-Koodin ei kannata antaa "rapistua" pitkiä aikoja, refaktorointi muuttuu vaikeammaksi
-Lähes jatkuva refaktorointi on helppoa, pitää koodin rakenteen selkeänä ja helpottaa sekä nopeuttaa koodin laajentamista
+Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaisimmat automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo.
+Refaktoroinninhan on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana.
 
-Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimentä tai pitkien metodien jakaminen osametodeiksi on helppoa, aina ei näin ole
-Joskus on tarve tehdä isoja refaktorointeja joissa ohjelman rakenne eli arkkitehtuuri muuttuu
+Refaktoroinnissa kannattaa ehdottomasti edetä pienin askelin eli yksi hallittu muutos kerrallaan. Testit on syytä suorittaa jokaisen refaktorointiaskeleen jälkeen, jotta mahdollinen regressio, eli aiemmin toimineen koodin hajoaminen huomataan mahdollisimman nopeasti.
 
+Refaktorointia kannattaa suorittaa lähes koko ajan. Kun koodin rakenne säilyy siistinä, on koodin laajentaminen miellyttävää ja pienien refaktorointienkin tekeminen suhteellisen vaivatonta. Jos koodi pääsee rapostumaan, muuttuu sen laajentaminen hitaaksi ja jossain myös refaktorointi tulee koko ajan työläämmäksi. Monilla ohjelmistokehitystiimeillä onkin _definition of doneen_ kirjattu, että valmiin määritelmä sisältää sen, että koodi on refaktoroitu riittävän siistiksi. Siisteyttä saatetaan valvoa esim. [pull requesteina tehtävänä katselmointina](viikko3).
+
+Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimentä tai pitkien metodien jakaminen osametodeiksi on helppoa, aina ei näin ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tälläiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
 
 ### Tekninen velka
 
-Edellisten kalvojen aikana tutustuimme moniin ohjelman sisäistä laatua kuvaaviin attribuutteihin:
-kapselointi, koheesio, riippuvuuksien vähäisyys, testattavuus, luettavuus
+Koodi ja ohjelmien design ei ole aina optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa sunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsittellä _tekninen velka_ (engl. debt tai technical debt) ottamiseen.
 
-Tutustuimme myös yleisiin periaatteisiin, joiden noudattaminen auttaa päätymään laadukkaaseen koodiin
-single responsibility principle, program to interfaces, favor composition over inheritance, don't repeat yourself
+Oikoteitä ottamalla tehdyllä ohjelmoinnilla/suunnittelulla saadaan ehkä nopeasti aikaan jotain, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin *jos* ohjelmaa on tarkoitus laajentaa. Käytännössä käy siis niin, että koodiin kertyneet sisäisen laadun ongelmat, eli _tekninen velka_ alkaa hidastamaan tiimin etenemistä, ja uusien ominaisuuksien toteuttamisesta tulee koko ajan hankalammaksi. 
 
-Itseopiskelumateriaalissa esitellään suunnittelumalleja (design patterns), jotka tarjoavat tiettyihin sovellustilanteisiin sopivia yleisiä ratkaisumalleja
-Koodi ja oliosuunnittelu ei ole aina hyvää, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä "huonoa" koodia
-Huonoa oliosuunnittelua ja huonon koodin kirjoittamista on verrattu velan (engl. design debt tai technical debt) ottamiseen
-http://www.infoq.com/articles/technical-debt-levison
- 
-Piittaamattomalla ja laiskalla ohjelmoinnilla/suunnittelulla saadaan ehkä nopeasti aikaan jotain, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin jos ohjelmaa on tarkoitus laajentaa
-Käytännössä käy niin, että tiimin velositeetti laskee, koska teknistä velkaa on maksettava takaisin, jotta järjestelmään saadaan toteutettua uusia ominaisuuksia
+Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen  asiakkaan kannalta kannattava ratkaisu.
 
-Jos korkojen maksun aikaa ei koskaan tule, ohjelma on esim. pelkkä prototyyppi tai sitä ei oteta koskaan käyttöön, voi "huono koodi" olla asiakkaan kannalta kannattava ratkaisu
-Esim. uuden ominaisuuden käyttökelpoisuuden validointiin toteutettava minimal viable product (MVP) on luonteeltaan sellainen, että sitä tehdessä otetaan tietoisesti teknistä velkaa
+[Viikolla 3](/viikko3) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimal viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuus voidaan todeta. Kuten nimikin jo antaa ymmärtää on MVP luonteeltaan sellainen rakennelma, että sitä tehdessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutun kaltaiseksi, maksetaan tekninen velka pois, tekemällä toiminnallisuudelle robustimpi toteutus.
 
-Vastaavasti joskus voi lyhytaikaisen teknisen velan ottaminen olla järkevää tai jopa välttämätöntä
-Esim. voidaan saada tuote nopeammin markkinoille tekemällä tietoisesti huonoa designia, joka korjataan myöhemmin
- 
-Tekninen velka Tekniselle velalle on yritetty jopa arvioida hintaa:
-http://www.infoq.com/news/2012/02/tech-debt-361
+Vastaavasti lyhytaikaisen teknisen velan ottaminen voi joskus olla järkevää tai jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti ja huolehtia sovelluksen koodin huonosta laadusta ja testauksen puuttumisesta myöhemmin. 
 
-Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös
+Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytettynä hyväkin väline, aivan kuten esim. asuntolaina, ilman lainaa kaikilla ei ole varaa omistusasuntoon. On kuitenkin oleellista mitoittaa lainan määrä oikein, muuten seurauksena saattaa olla luottokelpoisuuden menetys.
 
-Kaikki tekninen velka ei ole samanlaista, Martin Fowler jaottelee teknisen velan neljään eri luokkaan:
-Reckless and deliberate: "we do not have time for design" Reckless and inadverent: "what is layering"?
-Prudent and inadverent: "now we know how we should have done it"
-Prudent and deliberate: "we must ship now and will deal with consequences"
-http://martinfowler.com/bliki/TechnicalDebtQuadrant.html
+Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös.  [Martin Fowler](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) jaottelee teknisen velan neljään eri luokkaan:
+
+1. reckless and deliberate: "we do not have time for design"
+2. reckless and inadverent: "what is layering"?
+3. prudent and inadverent: "now we know how we should have done it"
+4. prudent and deliberate: "we must ship now and will deal with consequences"
+
+Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voi ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
+
+Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran että tiedetään _kuinka sovellus olisi tullut suunnitella_.
 
 
 ### Lisää suunnittelumalleja
