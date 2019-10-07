@@ -1712,7 +1712,9 @@ Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilantei
 - _extract interface_ .uodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
 - _extract superclass_ tuodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
 
-Suuri osa tässä luetelluista refaktoroinneista ovat sellaisia, että useimmat ohjelmointiympäristöt (kuten esim. NetBeans, Eclipse, IntelliJ) pystyvät tekemään ne automaattisesti. Automatisoitu refaktorointi onnistuu huomattavasti helpommin staattisesti tyypitetyille kielille kuten Java, dynaamisesti tyypitettyjen kielten kuten Javascript ja Python kohdalla se on humattavasti hankalampaa.
+Suuri osa tässä luetelluista refaktoroinneista ovat sellaisia, että useimmat ohjelmointiympäristöt (kuten esim. NetBeans, Eclipse, IntelliJ) pystyvät tekemään ne automaattisesti. Automatisoitu refaktorointi onnistuu huomattavasti helpommin staattisesti tyypitetyille kielille kuten Java, dynaamisesti tyypitettyjen kielten kuten Javascript ja Python kohdalla se on huomattavasti hankalampaa.
+
+Melko monissa ei niin suoraviivaisissa refaktoroinneissa, itseasiassa epäoptimaalinen koodi refaktoroidaan paremmaksi soveltamalla jotain suunnittelumallia. Joshua Kerievsky on kirjoittanut aiheesta mainion kirjan [Refactoring to patterns](https://martinfowler.com/books/r2p.html). Aiemmissa esimerkeissäkin näimme tälläisiä refaktorointeja, esim. tilien koronmaksustrategia [replace conditional with polymorfism](https://sourcemaking.com/refactoring/replace-conditional-with-polymorphism), tilien luominen [replace constructor with factory method](https://sourcemaking.com/refactoring/replace-constructor-with-factory-method), laskimen komennot [replace method with method object](https://sourcemaking.com/refactoring/replace-method-with-method-object), laskimen binäärioperaatiot [form template method](https://sourcemaking.com/refactoring/form-template-method).
 
 Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaisimmat automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo.
 Refaktoroinninhan on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana.
@@ -1748,14 +1750,9 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran että tiedetään _kuinka sovellus olisi tullut suunnitella_.
 
-
 ### Lisää suunnittelumalleja
 
-Suunnittelumallit siis tarjoavat hyviä kooditason ratkaisuja siitä, miten koodi kannattaa muotoilla, jotta siitä saadaan sisäiseltä laadultaan hyvää, eli kapseloitua, hyvän koheesion omaavaa ja eksplisiittiset turhat riippuvuudet välttävää
-
-Kurssin itseopiskelumateriaalissa tutustutaan seuraaviin suunnittelumalleihin
-Factory
-Strategy Command Template method Komposiitti Proxy
+Esitellään viikon lopussa vielä muutama uusi suunnittelumalli.
 
 #### Esimerkki Dekoroitu pino
 
@@ -2154,5 +2151,3 @@ Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en
 
 Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
 [fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
-
-#### mvc, observer
