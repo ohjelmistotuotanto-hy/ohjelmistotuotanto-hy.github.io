@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Osa 5
-title_long: 'Lean'
+title_long: 'Lean, ketterän ohjelmistokehityksen skaalaaminen ja ketterä ohjelmistokehitys tutkimuksen valossa'
 inheader: yes
 permalink: /osa5/
 ---
@@ -11,61 +11,46 @@ permalink: /osa5/
   />
 </a>
 
-Kurssin aikana on jo muutamaan kertaan sivuttu käsitettä Lean, katsotaan nyt hieman tarkemmin mistä on kysymys
-Lean on syntyisin Toyotan tuotannon ja tuotekehityksen menetelmistä
-Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennuksen buumi, mutta pääomaa ja raaka-aineita oli saatavissa niukalti
-Havaittiin, että laadun parantaminen nostaa tuottavuutta: mitä vähemmän tuotteissa ja tuotantoprosesseissa on virheitä ja ongelmia, sitä enemmän tuottavuus kasvaa, ja se taas johtaa markkinaosuuden kasvuun ja sitä kautta uusiin työmahdollisuuksiin
-Japanilaisiin yrityksiin tuli vahva laatua korostava kulttuuri
-Resurssien niukkuus johti siihen, että Toyota kehitti ns. Just In Time (JIT) -tuotantomallin, missä ideaalina oli aloittaa tuotteen valmistus vasta kun ostaja oli jo tilannut tuotteen
-Vastakohtana tälle on perinteinen massatuotanto, missä tehdään paljon tuotteita varastoon
+Kurssin viimeisellä viikolla käsitellään kolmea aihetta viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoja ketterien menetelmien käytöstä ja hyödyistä.
 
-Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle: lyhyt sykliaika (cycle time) tilauksesta toimitukseen
-Taustaa
+## Lean
+
+Kurssin aikana on jo muutamaan kertaan sivuttu käsitettä _Lean_, katsotaan nyt hieman tarkemmin mistä on kysymys
+
+#### Taustaa
+
+Lean on kotoisin Toyotan tuotannon ja tuotekehityksen menetelmistä, ja sen synty on jäljitettävissä 1900-luvun alkupuoliskolle. 
+
+Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennuksen buumi, mutta pääomaa ja raaka-aineita oli saatavissa niukalti. Havaittiin, että laadun parantaminen nostaa tuottavuutta: mitä vähemmän tuotteissa ja tuotantoprosesseissa on virheitä ja ongelmia, sitä enemmän tuottavuus kasvaa, ja se taas johtaa markkinaosuuden kasvuun ja sitä kautta uusiin työmahdollisuuksiin. Japanilaisiin yrityksiin muodostui vahva laatua korostava kulttuuri. 
+
+Resurssien niukkuus johti siihen, että Toyota kehitti ns. _Just In Time (JIT)_ -tuotantomallin, missä ideaalina oli aloittaa tuotteen valmistus vasta kun ostaja oli jo tilannut tuotteen. Vastakohtana tälle on perinteinen massatuotanto, missä tuotteita valmistetaan etukäteen suuret määrät varastoon. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt _sykliaika_ (engl. cycle time) tilauksesta toimitukseen.
  
-JIT-tuotanto JIT-tuotantomallista oli monia hyötyjä
-Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen
-Koska tuotteen sykliaika (tilauksesta asiakkaalle) oli lyhyt, laatuongelmat paljastuivat nopeasti
-Toisin kuin mahdollisesti kuukausia varastossa olevilla tuotteilla
+JIT-tuotantomallista oli monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen sykliaika (tilauksesta asiakkaalle) oli lyhyt, laatuongelmat paljastuivat nopeasti,
+toisin kuin mahdollisesti kuukausia varastossa olevilla tuotteilla.
 
-Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta (ideaalina että koneiden käyttöaste on koko ajan 100%)
-Toyotan JIT-tuotantomallissa optimoinnin kohteeksi tuli tuotteen sykliaika
-Pyrittiin eliminoimaan kaikki mahdollinen jäte tai hukka (waste), joka ei edesauttanut työn (eli tuotannon alla olevan tuotteen) nopeampaa virtausta (flow) tilauksesta asiakkaalle
-Virtausta estäviin tekijöihin, esim. laatuongelmiin puututtiin heti
-Käytännössä jokainen työntekijä oli oikeutettu ja velvollinen pysäyttämään tuotantolinjan havaitessaan ongelmia
+Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta (ideaalina että koneiden käyttöaste on koko ajan 100%). Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen sykliaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _jäte_ tai _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa virtausta (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaaleihin työtapoihin puututtiin heti. 
 
-Työntekijöitä kunnioittava, kuunteleva ja vastuuttava (empowering) tuotannon optimoimisen kulttuuri
+Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä kunnioittavan, kuuntelevan ja _vastuuttavan_ (engl. empowering) tuotannon optimoimisen kulttuurin. Tärkeäksi periaatteeksi tulikin koko henkilöstön tasolla tapahtuva toiminta- ja työskentelytapojen jatkuva parantaminen. Käytännössä jokainen työntekijä oli oikeutettu ja jopa velvollinen vaikka pysäyttämään koko tuotantolinja heti havaitessaan ongelmia. 
 
-Toimintatapojen kaikilla tasoilla tapahtuva jatkuva parantaminen
+#### Toyota production system, TPS
 
-Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa Toyota Production Systemiksi
-Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977
-Toyotan menestys herätti kiinnostusta länsimaissa ja MIT:in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää
-Tutkijat lanseeraavat nimikkeen lean- (eli virtaviivainen) tuotanto Vuonna 1990 ilmestyi kirja The Machine That Changed the World,
-joka toi leanin laajempaan länsimaalaiseen tietoisuuteen
-Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean
+Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa _Toyota Production Systemiksi_ (TPS). Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977. Toyotan menestys herätti kiinnostusta länsimaissa ja MIT:in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää.
+Tutkijat lanseeraavat nimikkeen _lean_- (eli virtaviivainen) tuotanto.
 
-Viimeisen 25 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on Jeffrey Likerin The Toyota Way (2001)
+Vuonna 1990 ilmestyi kirja [The Machine That Changed the World](https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)), joka toi leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
+
+Viimeisen 25 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on [Jeffrey Likerin The Toyota Way](https://www.amazon.com/Toyota-Way-Management-Principles-Manufacturer/dp/0071392319) (2001)
+
+Alun perin lean oli Toyotalla autojen _tuotantoa_ (engl. production) optimoiva toimintatapa, sittemmin leania on ruvettu hyödyntämään myös _tuotekehityksessä_ (engl. development). Tuotanto ja tuotekehitys ovat luonteeltaan hyvin erilaisia ja niihin sovellettavat lean-käytänteet eroavatkin monin paikoin.
+
+Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi 2003 ilmestynyt Mary ja Tom Poppendieckin kirja [Lean software development, an agile toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783). Klassikon asemastaan huolimatta kirja on jo paikoin vanhentunut ja tulkitsee leania osin melko suppeasti. Myös Scrumin kehittäjät Ken Schwaber ja Jeff Sutherland tunsivat hyvin lean-ajattelun, ja monet Scrumin piirteet ovat saaneet vaikutteita leanista.
+
+Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina terveydenhoidosta, pankkitoimintaan. Myös Helsingin yliopiston hallinto on alkanut puhumaan yhä enenevissä määrin leanista ja kuluvan vuoden aikana aiheesta on järjestetty yliopiston sisällä useita tilaisuuksia.  Lean tai mitä erilaisemmat lean-nimikkeen alla olevat (ja myytävät) asiat ovatkin alkaneet elämään omaa, Toyota producton systemistä erillistä elämäänsä ja nykyään on välillä vaikea sanoa tarkemmin mistä on kyse kun joku puhuu leanista. 
+
+Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan Scaling Lean & Agile Development perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [tällä](http://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
+
+### Lean tuotanto ja tuotekehitys
  
-Toyota production system (TPS)
- 
-Alun perin lean oli Toyotalla autojen tuotantoa (production) optimoiva toimintatapa, sittemmin leania on ruvettu hyödyntämään myös tuotekehityksessä (development)
-Tuotanto ja tuotekehitys ovat luonteeltaan hyvin erilaisia ja niihin sovellettavat lean-käytänteet eroavatkin paikoin
-
-Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi 2003 ilmestynyt Mary ja Tom Poppendieckin kirja Lean software development, an agile toolkit
-Klassikon asemastaan huolimatta kirja on jo paikoin vanhentunut ja tulkitsee leania osin melko suppeasti
-Scrumin kehittäjät Ken Schwaber ja Jeff Sutherland tunsivat lean- ajattelun, ja monet Scrumin piirteet ovat saaneet vaikutteita leanista
-
-Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina terveydenhoidosta, pankkitoimintaan
-Lean tai mitä erilaisemmat lean-nimikkeen alla olevat (ja myytävät) asiat ovatkin alkaneet elämään omaa, Toyota producton systemistä erillistä elämäänsä ja nykyään on välillä vaikea sanoa tarkemmin mistä on kyse kun joku puhuu leanista
-
-Lean tuotanto ja tuotekehitys
- 
-Lean prduction-delvelopment-thinking Käsittelemme nyt tarkemmin leania Craig Larmanin ja Bas Vodden
-mainioon kirjaan Scaling Lean & Agile Development perustuen
-Leania esittelevä luku ositteessa
-http://www.leanprimer.com/downloads/lean_primer.pdf
-Luku esittelee nimenomaan Toyota production systemin modernia muotoa
-
 Leania havainnollistetaan useissa lähteissä lean thinking houseksi nimitettävänä kaaviona joka on esitelty seuraavalla kalvolla
 Kaavio havainnollistaa, että leanilla on
 tavoite (goal)
@@ -74,6 +59,8 @@ kaksi peruspilaria (pilars) ja
 joukko näitä tukevia periaatteita (14 principles ja product development -periaatteet)
 
 Näiden lisäksi on olemassa joukko leania tukevia työkaluja
+
+![]({{ "/images/5-1.png" | absolute_url }}){:height="350px" }
 
 Työkaluista kuuluisin lienee kurssinkin aikana mainittu Kanban
  
@@ -364,9 +351,7 @@ Kuten agile, myös lean ei ole joukko työkaluja vaan jatkuva toimintatapa, To
 The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, “Why are we doing this?”
 In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever.
 
-## skaala
-
-Laajan mittakaavan ketterä
+## Laajan mittakaavan ketterä
  
 Scrum of Scrums Scrum of Scrums -periaate on jo hyvin vanha
 Artikkelissa Agile Can Scale: Inventing and Reinventing SCRUM in Five Companies toinen Scrumin kehittäjistä Jeff Sutherland kertoo harjottaneensa Scrum of Scrumia jo vuonna 1996
@@ -557,7 +542,9 @@ Kuten aiemmin todettiin SAFe on suosittu yritysjohdon keskuudessa, mutta saanut 
 En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää
 LeSS vs SAFe
 
-Miten laajalti Agilea käytetään Internetistä löytyy aiheesta jossain määrin dataa
+## Miten laajalti Agilea käytetään 
+
+Internetistä löytyy aiheesta jossain määrin dataa
 Forrester surveyed (2009) nearly 1,300 IT professionals and found that 35 percent of respondents stated that agile most closely reflects their development process
 http://www.infoworld.com/d/developer-world/agile-software-development -now-mainstream-190
 
