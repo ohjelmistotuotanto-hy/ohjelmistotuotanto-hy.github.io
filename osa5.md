@@ -49,90 +49,98 @@ Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina ter
 
 Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan Scaling Lean & Agile Development perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [tällä](http://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
 
-### Lean tuotanto ja tuotekehitys
- 
-Leania havainnollistetaan useissa lähteissä lean thinking houseksi nimitettävänä kaaviona joka on esitelty seuraavalla kalvolla
-Kaavio havainnollistaa, että leanilla on
-tavoite (goal)
-perusta (foundation)
-kaksi peruspilaria (pilars) ja
-joukko näitä tukevia periaatteita (14 principles ja product development -periaatteet)
+### Leanin tavoitteet, perusta ja peruspilarit
 
-Näiden lisäksi on olemassa joukko leania tukevia työkaluja
+Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitettävänä kaaviona:
 
 ![]({{ "/images/5-1.png" | absolute_url }}){:height="350px" }
 
-Työkaluista kuuluisin lienee kurssinkin aikana mainittu Kanban
+Leanilla siis on _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ (engl. pilars) ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
  
-Lean: tavoite ja perusta Leanin tavoite (goal)
-Sustainable shortest lead time, best quality and value (to people and society), most customer delight, lowest cost, high morale, safety
-Tavoitteena saada aikaan pysyvä nopea tapa edetä ”ideasta asiakkaalle myytyyn tuotteeseen”
-siten että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys
+Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaalle myytyyn tuotteeseen" siten, että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys._
 
-Leanin perusta (foundation)
-Management applies and teaches lean thinking, and bases decisions on this long-term philosophy
-Jotta tavoite on mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkälle tähtäävä lean-toimintatapa, mitä johtajat soveltavat ja opettavat alaisille
+Jotta tavoite on mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkälle tähtäävä lean-toimintatapa, mitä johtajat soveltavat ja opettavat alaisille, tätä nimitetään _leanin perustaksi_.
 
-Lean rakentuu kahden peruspilarin varaan
-jatkuvan parantaminen (continuous improvement) ihmisten kunnioittaminen (respect for people)
+Leanin kaksi peruspilaria ovat _jatkuvan parantaminen_ (engl. continuous improvement) ja _ihmisten kunnioittaminen_ (engl. respect for people).
 
-Leanin peruspilarit
-jatkuvan parantaminen (continuous improvement)
-Defines Toyota’s basic approach to doing business
-The true value of continuous improvement is in creating an atmosphere of continuous learning and an environment that not only accepts, but actually embraces change
-The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, “Why are we doing this?”
-Such an environment can only be created where there is respect for people ihmisten kunnioittaminen (respect for people)
-Includes concrete actions and culture within Toyota
-not making people do wasteful work but instead real teamwork
-mentoring to develop skillful people
-humanizing the work and environment, safe and clean environment, and philosophical integrity among the management team
+_Jatkuva parantaminen_ määrittelee pohjimmiltaan koko Toyotan toimintakulttuurin, jonka ytimessä on halukkuus oppia ja kannustava ilmapiiri muutosten tekemiselle:
 
-Leanin tavoitetta ja peruspilareja tukevat konkreettisemmat toimintaa ohjaavat lean-periaatteet (lean principler) joita käsittelemme pian
+_The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"._
 
-TPS:n kehittäjä Taiichi Ohno kuvaa jatkuvan parantamisen periaatetta seuraavasti:
-All we are doing is looking at the time line, from the moment the customer gives us an order to the point where we collect the cash
-And we are reducing the time line by reducing the non-value- adding wastes
+Jatkuvaan oppimiseen ja toiminnan parantamiseen kannustava ilmapiiri taas on mahdollista ainoastaan jos kaikki toiminta perustuu _ihmisten kunnioittamiseen_, joka taas tarkoittaa monia konkreettisia asioita, esim. työntekijöiden kuuntelemista, vastuuttamista ja mentorointia, työympäristön mielekkyyttä ja turvallisuutta. Toyota laajentaa periaatteen kattamaan myös alihankkijat ja loppuasiakkaat, esim. alihankkijoiden kanssa Toyota rakentaa aitoja partneriuksia, joista molemmat hyötyvät sekä opettaa alihankkijoille lean-ajattelua.  
 
-Keino päästä nopeampaan tuotantosykliin on siis eliminoida arvoa (value) tuottamattomia asioita eli jätettä (waste)
-Mitä lean tarkalleen ottaen tarkoittaa arvolla ja jätteellä?
-Arvolla tarkoitetaan niitä asioita ja työnteon vaiheita, mistä asiakas on valmis maksamaan, eli mitkä tuottavat asiakkaalle hyötyä
-Jätteellä taas tarkoitetaan kaikkea tuotantoon liittyvää, mikä ei tuota asiakkaalle arvoa
-Lean tunnistaa alunperin 7 lähdettä jätteelle (muda)
-Over-prodution, In-process inventory, extra processing, transportation, motion, waiting, defects
+Kaikki tämä kuullostaa abstraktilta, ja asia toivon mukaan konkretisoituu hieman kun käsittelemme hetken päästä leanin tavoiteteesen ja peruspilareihin nojaavia _lean-periaatteita_ (engl. lean principles), jotka ohjaavan konkreettisemmin leania toimintaa.
 
-Jatkuva parantaminen – arvo ja jäte
+#### Jatkuva parantaminen – arvo ja jäte/hukka
  
-Lean-jäte ohjelmistotuotannon näkökulmasta Over-prodution ylituotanto
-Tuotteita tulee valmistaa ainoastaan siinä määrin mitä asiakas on niitä tilannut, eli ei kannata tehdä varastoon
-Ohjelmistojen ylimääräiset toiminnallisuudet voidaan ajatella olevan ylituotantoa
-tutkimuksien mukaan 64% ohjelmistojen toiminnallisuuksista on joko ei ollenkaan tai ainoastaan erittäin harvoin käytettyjä
+Toyota production systemin kehittäjä [Taiichi Ohno](https://en.wikipedia.org/wiki/Taiichi_Ohno) kuvaa jatkuvan parantamisen periaatetta seuraavasti:
 
-In-process inventory välivarastointi
-Tähän kategoriaan kuuluu osittain tehty työ ja sen säilöminen
-Ilmentymiä ohjelmistotuotannossa
-Tarkka vaatimusmäärittely ominaisuuksille joita ei vielä toteuteta Valmis koodi mikä ei ole vielä testattu tai otettu käyttöön
-Koodi joka toteuttaa asiakkaan ehkä tulevaisuudessa haluamia toiminnallisuuksia
+> All we are doing is looking at the time line, from the moment the customer gives us an order to the point where we collect the cash And we are reducing the time line by reducing the non-value-adding wastes.
 
-extra processing liikatyö
-prosessin pakottamat turhat työvaiheet ”Pyörän keksiminen uudelleen”
+Ohnon mukaan keino päästä nopeampaan tuotantosykliin on siis eliminoida _arvoa_ (engl. value) tuottamattomia asioita eli _hukkaa_ (engl. waste). 
 
-Lean-jäte ohjelmistotuotannon näkökulmasta Transportation tarpeeton materiaalin siirtely
-Ohjelmistojen kontekstissa ns ”handoff”, eli jos ohjelmistotuote esim.
-määritellään ja toteutetaan erillisten tiimien toimesta tai
+Mitä lean tarkalleen ottaen tarkoittaa arvolla ja jätteellä? Arvolla tarkoitetaan niitä asioita ja työnteon vaiheita, mistä asiakas on valmis maksamaan, eli mitkä tuottavat asiakkaalle hyötyä. Jätteellä taas tarkoitetaan kaikkea tuotantoon liittyvää, mikä ei tuota asiakkaalle arvoa.
 
-toteutetaan ja viedään tuotantoon erillisten tiimien toimesta Motion työntekijöiden tarpeeton liikkuminen
+Leanin mukaan on olemassa kolmen eri tyypin jätettä: muri, mura ja muda.
 
-Waiting turha odotus
-Esim. aika, joka joudutaan odottamaan että yrityksen johto hyväksyy vaatimusmäärittelyn, testaajat ehtivät testaamaan ohjelman uuden version, ylläpito vie sovelluksen uuden version tuotantoon, joku mergeää pullrequestin...
+Käsitellään ensin näistä selkeintä eli _muda_-tyyppistä hukkaa. Lean tunnistaa alunperin 7 lähdettä muda-hukalle:
 
-Defects viat
-Järjestelmässä on väkisinkin jossain tuotannon vaiheessa vikoja, mutta testaaminen ja vikojen havaitseminen vasta tuotannon loppuvaiheessa on asiakkaan arvon tuottamisen kannalta erittäin epäoptimaalista
+- ylituotanto (engl. over production)
+- välivarastointi (engl. in-process inventory)
+- liikatyö (engl. over/extra processing)
+- tarpeeton siirtely (engl. transportation)
+- tarpeeton liikkuminen (engl. motion)
+- odotus (engl. waiting)
+- viat (engl. defects)
 
-– –
-Ohjelmistotuotannossa task switching: eli liian nopea vaihtelu eri työtehtävien välillä, esim. työskentely yhtäaikaa monessa projektissa
+Alunperin nämä ovat olleet autojen valmistuksen tuotantolinjaan liittyvää hukkaa, avataan nyt käsitteitä tulkitsemalla ne samalla ohjelmistokehityksen kontekstiin.
+Ylituotanto
 
-Lean-jäte ohjelmistotuotannon näkökulmasta Myöhemmin on ehdotettu alkuperäisten jätteiden lisäksi uusia, mm.
-Under-realizing people’s potential and varied skill, insight, ideas, suggestion
+#### Ylituotanto (engl. over production)
+
+Tuotteita tulee valmistaa ainoastaan siinä määrin mitä asiakas on niitä tilannut, eli ei kannata tehdä varastoon. Varastoon tehdyt tuotteet ovat monella tapaa ongelmallisia, ne syövät pääomaa ja saattavat myös sisältää systemaattisia vikoja, jotka huomataan vasta kun tuotteet otetaan käyttöön. 
+
+Ohjelmistojen ylimääräiset toiminnallisuudet voidaan ajatella olevan ylituotantoa, joidenkin tutkimuksien mukaan jopa [64% ohjelmistojen toiminnallisuuksista](https://www.mountaingoatsoftware.com/blog/are-64-of-features-really-rarely-or-never-used) on joko ei ollenkaan tai ainoastaan erittäin harvoin käytettyjä. Ylimääräisten timinnallisuuksien toteuttaminen maksaa ja myös kasvataa koodin määrää, ja tämä taas tekee jatkokehityksen riskialttiimmaksi.
+
+#### Yälivarastointi (engl. in-process inventory)
+
+Tähän kategoriaan kuuluu osittain tehty työ ja sen säilöminen, eli esim. komponentit joille ei vielä ole käyttöä. Ongelmat ovat samat kuin ylituotannossa.
+
+Ohjelmistokehityksessä välivarastointia ovat esim. liian tarkkaan tehdyt vaatimusmäärittelyt sellaisille ominaisuuksille, joita ei vielä hetkeen toteuteta,  
+valmis koodi mikä ei ole vielä testattu tai otettu käyttöön tai koodi joka toteuttaa asiakkaan ehkä tulevaisuudessa haluamia toiminnallisuuksia.
+
+#### Liikatyö (engl. over/extra processing)
+
+Kaikki liiat työvaiheet mitä vaaditaan riittävän laadukkaaseen lopputulokseen ovat myös hukkaa. Tälläisiä ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti jota kukaan ei lopulta tarvitse. 
+
+#### Tarpeeton materiaalin siirtely (engl. transportation)
+
+Tuotteen tekemiseen tarvittavia raaka-aineita tai osittain valmista tuotetta ei tulisi joutua siirtelemään tarpeettomasti paikasta toiseen.
+
+Ohjelmistokehityksen kontekstissa tämä tarkoittaa että kehitettävä ohjelmisto tulisi  määritelläa, suunnitella, toteuteta, testata ja viedä tuotantoon yhden tiimin toisesta. Eli ns. "handoff", missä esimerkiksi toteutettu ohjelmisto annetaan kehittäjätiimistä erillisen tiimin (esim. QA-tiimi) testattavaksi ajatellaan hukkana.
+
+#### Työntekijöiden tarpeeton liikkuminen (engl. motion) 
+
+Tuotantovälineet ja materiaalit tulisi sijoittaa siten, että työntekijöiden ei tarvitse tarpeettomasti siirtyä paikasta toiseen tuotetta valmistaessaan.
+
+Ohjelmistokehityksessä tarpeettomaksi liikkumiseksi on ajateltu _task switching_ eli liian nopea vaihtelu eri työtehtävien välillä, esim. työskentely yhtäaikaa monessa projektissa.
+
+#### Turha odotus (engl. waiting)
+
+Turhaa odotusta on esimerkiksi aika, joka joudutaan odottamaan, että tarpeelliset raaka-aineet saapuvat, tai että jokin tuotantoväline vapautuu muusta käytöstä.
+
+Ohjelmistokehityksen kontekstissa turhaa odotusta on se kun joudutaan odottamaan että yrityksen johto hyväksyy vaatimusmäärittelyn, testaajat ehtivät testaamaan ohjelman uuden version, ylläpito vie sovelluksen uuden version tuotantoon, joku mergeää pullrequestin...
+
+#### Viat (engl. defects)
+
+Järjestelmässä on väkisinkin jossain tuotannon vaiheessa vikoja, mutta testaaminen ja vikojen havaitseminen vasta tuotannon loppuvaiheessa on asiakkaan arvon tuottamisen kannalta erittäin epäoptimaalista.
+
+
+Alkuperäiset kauan sitten ...
+
+Myöhemmin on ehdotettu alkuperäisten jätteiden lisäksi uusia, mm. Under-realizing people’s potential and varied skill, insight, ideas, suggestion.
+
+# pois?
 
 Lean jakaa jätteet kahteen eri luokkaan
 Pure waste
@@ -144,6 +152,12 @@ These are things we must do because of some constraint, but still correctly clas
 Eg. banks must do “regulatory compliance” activities that are required by law, but they are not value-adding actions in the eyes of the paying customer
 These are temporary wastes because in the future it may be possible to change things so they are no longer necessary
  
+#
+
+muri, mura
+
+####
+
 Jatkuvassa parantamisessa on siis tarkoitus optimoida toimintaa eliminoimalla asiakkaalle arvoa tuottamatonta jätettä
 Jatkuvasta parantamisesta käytetään usein sen japaninkielista nimitystä kaizen
 Kaizen on kaikkia työntekijöitä koskeva kattava toimintafilosofia:
