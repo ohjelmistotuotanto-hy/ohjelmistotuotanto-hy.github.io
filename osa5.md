@@ -71,7 +71,7 @@ Jatkuvaan oppimiseen ja toiminnan parantamiseen kannustava ilmapiiri taas on mah
 
 Kaikki tämä kuullostaa abstraktilta, ja asia toivon mukaan konkretisoituu hieman kun käsittelemme hetken päästä leanin tavoiteteesen ja peruspilareihin nojaavia _lean-periaatteita_ (engl. lean principles), jotka ohjaavan konkreettisemmin leania toimintaa.
 
-#### Jatkuva parantaminen – arvo ja jäte/hukka
+### Jatkuva parantaminen – arvo ja jäte/hukka
  
 Toyota production systemin kehittäjä [Taiichi Ohno](https://en.wikipedia.org/wiki/Taiichi_Ohno) kuvaa jatkuvan parantamisen periaatetta seuraavasti:
 
@@ -94,7 +94,6 @@ Käsitellään ensin näistä selkeintä eli _muda_-tyyppistä hukkaa. Lean tunn
 - viat (engl. defects)
 
 Alunperin nämä ovat olleet autojen valmistuksen tuotantolinjaan liittyvää hukkaa, avataan nyt käsitteitä tulkitsemalla ne samalla ohjelmistokehityksen kontekstiin.
-Ylituotanto
 
 #### Ylituotanto (engl. over production)
 
@@ -133,63 +132,80 @@ Ohjelmistokehityksen kontekstissa turhaa odotusta on se kun joudutaan odottamaan
 
 #### Viat (engl. defects)
 
-Järjestelmässä on väkisinkin jossain tuotannon vaiheessa vikoja, mutta testaaminen ja vikojen havaitseminen vasta tuotannon loppuvaiheessa on asiakkaan arvon tuottamisen kannalta erittäin epäoptimaalista.
+Jos tuotantolinjan aiheuttamaa systemaattista vikaa ei huomata ajoissa, ehditään viallisia tuotteita/komponentteja ehkä valmistamaan suuret määrät. Vielä pahempaa on, jos viallisia tuotteita pääsee kuluttajille asti. Niiden korvaaminen tai korjaaminen kallista, ja imagohaitta potentiaalisesti suuri. Jos vikoja tulee, onkin oleellista havaita ja korjata ne mahdollisimman nopeasti.
 
+Ohjelmistokehityksessä vikoja tuotteeseen tulee lähes väistämättä, mutta on kustannustehokasta suorittaa laadunhallinta niin aikaisessa vaiheessa kuin mahdollista.
 
-Alkuperäiset kauan sitten ...
+#### Ihmisten potentiaalin alihyödyntäminen
 
-Myöhemmin on ehdotettu alkuperäisten jätteiden lisäksi uusia, mm. Under-realizing people’s potential and varied skill, insight, ideas, suggestion.
+Nämä alkuperäiset vuosikymmeniä sitten autonvalmistuksen kontekstiin sovitetut 7 muda-hukkaa on tulkittu uudelleen yhä uusiin konteksteihin, kuten ohjelmistokehitykseen. 
+
+Vuosien varrella on ehdotettu myös uusia hukan muotoja, näistä eräs _ihmisten potentiaalin alihyödyntäminen_ on jossain määrin jo vakiintunut. Englanniksi tätä hukan muotoa kuvaillaan seuraavasti
+
+> Under-realizing people’s potential and varied skill, insight, ideas, suggestion.
 
 # pois?
 
 Lean jakaa jätteet kahteen eri luokkaan
 Pure waste
+
 These are non-value adding actions that in principle can and should be eliminated now
 For example, if a group is participating in the waste of defects with test-last and correct-last, that can be replaced with acceptance test-driven development
 
 Temporarily necessary waste
 These are things we must do because of some constraint, but still correctly classify as waste.
-Eg. banks must do “regulatory compliance” activities that are required by law, but they are not value-adding actions in the eyes of the paying customer
+Eg. banks must do "regulatory compliance" activities that are required by law, but they are not value-adding actions in the eyes of the paying customer
 These are temporary wastes because in the future it may be possible to change things so they are no longer necessary
  
-#
+#### Muri- ja mura-tyyppinen hukka
 
-muri, mura
+Äsken käsitelty _muda_-tyyppinen hukka eri muodoissaan on eniten esillä oleva leanin hukan muodoista, ja joissain lähteissä ei muita kahta hukkatyypiä eli _muraa_ ja _muria_ välttämättä edes puhuta.
 
-####
+_Mura_ tyyppinen hukka on epäsäännöllisyyttä tai epäyhdenmukaisuutta (engl. unevenness, non-uniformity, irregularity), työtavoissa tai työstettävässä tuotteessa. 
 
-Jatkuvassa parantamisessa on siis tarkoitus optimoida toimintaa eliminoimalla asiakkaalle arvoa tuottamatonta jätettä
-Jatkuvasta parantamisesta käytetään usein sen japaninkielista nimitystä kaizen
-Kaizen on kaikkia työntekijöitä koskeva kattava toimintafilosofia:
-As a mindset, it suggests “My work is to do my work and to improve my work” and “continuously improve for its own sake.”
+Ohjelmistokehityksessä esim. toteutettavien user storyjen suuresti vaihteleva koko on mura-tyyppistä jätettä, jonka seurauksena saattaa olla _muda_-tyyppinen jäte, eli esimerkiksi välivarastoinnin tarve. Tämä taas heikentää arvon läpivirtausta, eli aikaa, miten kauan user storyltä kestää backlogille asettamiseta valmiiksi tuotteen osaksi.  
 
-Kaizeniin liittyvä syklinen parannusprosessiin saattavat liittyä tasaisin väliajoin pidettävät tilaisuudet ”kaizen event”:it
+Kolmas hukan tyyppi _muri_ tarkoittaa ylikuormitusta tai mahdottomia vaatimuksia (engl. unreasonableness, impossible, too difficult). Autojen tuotantolinjaa ajatellessa, esim. koneiden käyttäminen 100% kapasiteetilla ilman säännöllistä huoltoa on luokiteltavissa muriksi. Ohjelmistokehitykseen tulkittuna muria voisivat olla esim. henkilöstön ylityöllistäminen. Muri-tyyppisen jätteen, esim. henkilöstön ylikuormituksen seurauksena on todennäköisesti mudaa, eli esim. tuotteeseen saataa syntyä vikoja.
 
-Jatkuva parantaminen
-Kaizen on myös konkreettinen tapa toimia
-choose and practice techniques/processes “by the book” that the team and/or product group has agreed to try, until they are well understood and mastered
-experiment until you find a better way, then make that the new temporary ‘standard’
-repeat forever
+#### Kaizen 
 
-Scrumin retrospektiivit ovat klassinen esimerkki kaizen eventeistä
+Jatkuvassa parantamisessa on siis tarkoitus optimoida toimintaa eliminoimalla asiakkaalle arvoa tuottamatonta jätettä. Jatkuvasta parantamisesta käytetään usein sen japaninkielista nimitystä _kaizen_, joka on kaikkia työntekijöitä koskeva kattava toimintafilosofia:
+
+> As a mindset, it suggests "My work is to do my work and to improve my work" and "continuously improve for its own sake."
+
+Kaizen on myös konkreettinen tapa toimia:
+- valitaan jokin tekniikka/työskentelytapa ja sitoudutaan sen suorittamiseen joksikin aikaa
+- kun toiminta on stabiloitunut, tarkastellaan valitun työskentelytavan toimintaa ja optimoidaan sitä havaittujen epäkohtien suhteen ja luodaan näin uusi työnteon standarditapa
+- toistetaan tätä sykliä ikuisesti...
+
+Kaizeniin liittyvä syklinen parannusprosessiin liittyy usein tasaisin väliajoin pidettävät tilaisuudet, eli "kaizen event":it. Scrumin retrospektiivit ovat klassinen esimerkki kaizen eventeistä.
  
-Value stream mapping
-Jätteen kartoittamisessa käytetään usein value stream mappingia
-Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen
+#### Lean työkalu: value stream mapping
 
-Jos esim value steream mapping paljastaa prosessista jätteitä, eli arvoa tuottamattomia asioita (ks 7 jätetyypin lista), tulee niistä hankkiutua eroon
-Kaizenissa ei kuitenkaan ole tarkoitus lääkitä pelkkää oiretta, vaan tehdä jätteelle perimmäisen syyn analyysi (root cause analysis) ja pyrkiä näin kestävämpiin ja vaikuttavampiin parannuksiin
-Eräs root cause analysis -tekniikka on ”five whys”, esim.
-Miksi koodin valmistumisesta menee 1.5 viikkoa sen tuotantoon saamiseen?
-QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä
-Miksi? Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä
-Miksi? Ohjelmoijilla on kiire sprintin tavoitteena olevien user storyjen tekemisessä
-Miksi? Edellisten sprinttien aikana tehtyjen storyjen bugikorjaukset vievät yllättävän paljon aikaa
-Miksi? Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan
+Hukan etsimiseen ja kartoittamiseen käytetään usein nimellä [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) tekniikkaa. Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen.
 
-Näin kysymällä toistuvasti miksi on mahdollista päästä ongelman perimmäisen syyn lähteille, eli sinne mitä korjaamalla jäte saadaan toivon mukaan eliminoitua
+![]({{ "/images/5-2.png" | absolute_url }}){:height="350px" }
 
-Perimmäisen syyn analyysi - five whys
+Kuvassa on kuusi työvaihetta, joiden läpi tuote, esim. user story kulkee. Kussakin työvaiheessa kuluvan ajan voidaan kasvattavan työn arvoa, esim. vaihe _code and test_, vie 2 tuntia, joka on välttämätöntä sen kannalta, että story ylipäätään saataisiin julkaistua. Kunkin työvaiheen välillä story on _välivarastossa_, odottamassa seuraavaa työvaihetta, ja välivarastointi oli eräs hukan muoto. Value stream mappingingin onkin tarkoitus tuoda esille kaikki "välivarastot", jotta olisi mahdollista miettiä miten niitä saataisiin minimoitua.
+
+#### Lean työkalu: perimmäisen syyn analyysi - five whys
+
+Jos value steream mapping tai jokin muu menetelmä paljastaa tuotantoprosessista hukkaa, eli arvoa tuottamattomia asioita, piritään niistä hankkiutumaan eroon. Jatkuvan parantamisen eli kaizenin ei kuitenkaan ole tarkoitus lääkitä pelkkää oiretta, vaan tehdä havaitulle hukalle _perimmäisen syyn analyysi_ (engl. root cause analysis) ja pyrkiä näin kestävämpiin ja vaikuttavampiin parannuksiin.
+
+Eräs root cause analysis -tekniikka on [five whys](https://en.wikipedia.org/wiki/Five_whys), minkä toimintaa on helpointa havainnollistaa esimerkillä. 
+
+Edellisestä kuvassa olevasta value stream mapista havaitaan, että koodin valmistumisesta menee 1.5 viikkoa sen tuotantoon saamiseen. 
+
+- _*Miksi?*_ QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
+- _*Miksi?*_ Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
+- _*Miksi?*_ Ohjelmoijilla on kiire sprintin tavoitteena olevien user storyjen tekemisessä.
+- _*Miksi?*_ Edellisten sprinttien aikana tehtyjen storyjen bugikorjaukset vievät .yllättävän paljon aikaa.
+- _*Miksi?*_ Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan.
+- _*Miksi?*_ Sprintteihin otetaan aina liian monta user storyä.
+
+Näin kysymällä toistuvasti _miksi_ on mahdollista päästä ongelman perimmäisen syyn lähteille, eli sinne mitä korjaamalla jäte saadaan toivon mukaan eliminoitua. Esimerkin kuusi miksi-kysymystä siis paljastaa ongelman perimmäiseksi syyksi sen, että _sprintteihin otetaan aina liian monta user storyä_, eli hukan eliminoimiseksi on todennäköistä lähteä liikkeelle sprinttien työmäärän vähentämisellä.
+
+### Leanin periaatteita: pull-systeemi
 
 Leanissa on siis tarkoitus optimoida aikaa, mikä kestää tuotteen suunnittelusta sen asiakkaalle toimittamiseen
 Arvo pyritään saamaan virtaamaan (flow) asiakkaalle ilman turhia viiveitä ja työvaiheita
@@ -199,20 +215,19 @@ Pull-systeemillä tarkoitetaan tuotannonohjaustapaa, missä tuotteita, tai tuo
 Näiden vastakohta on push-systeemi, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi
 Esim. pizzeriat toimivat pull-periaatteen mukaan, pizza valmistetaan vasta kun asiakas tilaa sen. Unicafe taas on push-systeemi, lounaita tehdään varastoon ja toivotaan että ne menevät kaupaksi asiakkaille.
 
+#### Kanban
+
 Pull-systeemi toteutetaan usein kanbanin avulla
 Kanban tarkoittaa signaalikorttia
 Kanban toteuttaa visuaalisen ohjauksen, minkä avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimittaa
 
-Leanin periaatteita: pull-systeemi
- 
-Kanban
 Kun asiakas tilaa tuotteen, viedään tilausta vastaava kanban-kortti tehtaalle
-Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, ”tilataan” komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti
+Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti
 Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella
 
 Kun komponentti on valmis, viedään se tilaajalle, samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten
 Kanban-kortteja on käytössä vain rajallinen määrä, tällä kontrolloidaan sitä että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen
-Näin kanbanin avulla ”vedetään” (pull) tarvittavat komponentit, sensijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon
+Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sensijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon
 Varastoon tehdyt komponentit muodostaisivat riskin
 Niitä ei välttämättä tarvittaisi jos tilauksia ei tulisi tarpeeksi
 Jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty tekemään suuri määrä
@@ -247,7 +262,7 @@ Yksittäisen koneen suuri käyttöaste voi olla lokaalia optimointia, joka vo
 Esim. valmistetaan paljon komponentteja, mitä ei lopulta tarvita
 
 Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista
-Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos ”säästää” jättämällä tiloja käyttämättä
+Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä
 
 Keskittymällä arvon virtaukseen pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat
 
@@ -288,7 +303,7 @@ Jatkuva tuotantoonvienti eli continuous deployment voi tarkoittaa sitä, että
 Arvon virtaaminen ketterässä ohjelmistotuotannossa
 Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs lean waste) siten, että sprinttiin otetaan vaan tiimin velositeetin verran user storyjä
 Kaikissa konteksteissa, esimerkiksi jatkuvaa tuotantoonvientiä sovellettaessa aikarajoitettu sprintti ei ole mielekäs
-Paikoin onkin siirrytty ”puhtaampaan” pull-systeemiin, missä user storyjä toteutetaan yksi kerrallaan niin nopeasti kuin mahdollista
+Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyjä toteutetaan yksi kerrallaan niin nopeasti kuin mahdollista
 Kun tuotantokapasiteettia vapautuu, valitsee product owner tärkeimmän storyn
 Story määritellään, suunnitellaan ja sitten toteutetaan välittömästi alusta loppuun
 Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin 1 tai korkeintaan muutama story
@@ -309,7 +324,7 @@ Leanin johtajat
  
 Leanin johtajat
 Eräs tärkeä johtamisen periaate on go see (genchi genbutsu)
-Työntekijöiden, erityisesti managerien tulee ”nähdä asiat omin silmin” eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja
+Työntekijöiden, erityisesti managerien tulee "nähdä asiat omin silmin" eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja
 Tämä liittyy siihen ideaaliin, että johtajien oletetaan johtavat etulinjassa (gemba) eli siellä missä työ tosiasiallisesti tehdään
 
 Toyota production systemsin kehittäjän T. Ohnon sanoin:
@@ -362,7 +377,7 @@ Lean on ajattelumalli, joka on kehitetty Toyotan tarpeisiin, malli on jalostunut
 on osin epäselvää miten Toyotan käytänteet siirretään eri aloille
 
 Kuten agile, myös lean ei ole joukko työkaluja vaan jatkuva toimintatapa, Toyotan CEO:n sanoin
-The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, “Why are we doing this?”
+The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"
 In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever.
 
 ## Laajan mittakaavan ketterä
@@ -371,7 +386,7 @@ Scrum of Scrums Scrum of Scrums -periaate on jo hyvin vanha
 Artikkelissa Agile Can Scale: Inventing and Reinventing SCRUM in Five Companies toinen Scrumin kehittäjistä Jeff Sutherland kertoo harjottaneensa Scrum of Scrumia jo vuonna 1996
 Sutherland sovelsi periaatetta firmassa, missä oli satoja sovelluskehittäjiä ja kymmeniä Scrum-tiimejä joiden vastuulla oli useita eri tuotteita
 Jokaisen tuotteen tiimejä kordinoi oma, kerran viikossa kokoontuva Scrum of Scrums -tiim
-Koko firman tuotejoukkoa hallinnoi ”management Scrum” eli Scrum of Scrum of Scrums -tiimi joka kokoontui kuukausittain
+Koko firman tuotejoukkoa hallinnoi "management Scrum" eli Scrum of Scrum of Scrums -tiimi joka kokoontui kuukausittain
 Ylimmän tason management Scrum -tiimi koostui yrityksen johdosta, tuotepäälliköistä ja johtavista ohjelmistoarkkitehdeistä
 
 Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten esim backlogien suhteen tulisi toimia laajemman skaalan Scrumissa
@@ -466,7 +481,7 @@ one product A broad complete end-to-end customer-centric solution that real cust
 It’s not a component, platform, layer, or library
 
 It’s about figuring out how to apply the principles, elements, and elegance of Scrum in a large-scale context, as simply as possible
-Like Scrum and other truly agile frameworks, LeSS is “barely sufficient methodology”
+Like Scrum and other truly agile frameworks, LeSS is "barely sufficient methodology"
 
 LeSSin taustalla olevat periaatteet: more with less LeSSin taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita
 Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille
@@ -565,7 +580,7 @@ http://www.infoworld.com/d/developer-world/agile-software-development -now-mains
 Agile methodologies are the primary approach for 39 percent of responding developers, making Agile development the dominant methodology in North America. Waterfall development, is the primary methodology of 16.5 percent of respondents (2010)
 http://visualstudiomagazine.com/articles/2010/03/01/developers-mix-and -match-agile-approaches.aspx
 
-HP:n vuonna 2015 tekemä tutkimus julistaa ”Agile is the new normal”
+HP:n vuonna 2015 tekemä tutkimus julistaa "Agile is the new normal"
 Tutkimuksessa 601 vastaajaa
 
 Miten laajalti Agilea käytetään HP:n tutkimus ei määrittele kovin hyvin käsitteitä
@@ -580,7 +595,7 @@ organizational units are using agile and/or lean methods (58%)
 Markkula ym.: Survey on Agile and Lean usage in Finnish software industry, ESEM 2012 (ks. ACM digital library)
 http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_IndustryT rack_1_0.pdf
 
-Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa Seelannissa tehdyssä tutkimuksessa ”Adoption and Suitability of Software Development Methods and Practices” mainitaan seuraavat luvut
+Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa Seelannissa tehdyssä tutkimuksessa "Adoption and Suitability of Software Development Methods and Practices" mainitaan seuraavat luvut
 Scrum was most often utilized by respondents (71.2%), with Kanban (49.5%), Lean (39.7%) and Waterfall (35.3%) following in that order
 
 http://ieeexplore.ieee.org/document/7890614/
@@ -592,14 +607,14 @@ Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoproje
 https://www2.deloitte.com/insights/us/en/industry/public-sector/agile- in-government-by-the-numbers.html
 
  
-VersionOnen ”internetin virallisesta” vuosiraportista
+VersionOnen "internetin virallisesta" vuosiraportista
 http://stateofagile.versionone.com
 
 Mitä ketteriä menetelmiä käytetään?
  
 VersionOne:
 Ketterät käytänteet
- Ketterät ”engineering”-käytänteet
+ Ketterät "engineering"-käytänteet
 Suomen tilanne:
 http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_Indust ryTrack_1_0.pdf
  Ketterät käytänteet Suomesta tehdyssä tutkimuksessa (n=225)
