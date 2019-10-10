@@ -207,157 +207,122 @@ Näin kysymällä toistuvasti _miksi_ on mahdollista päästä ongelman pe
 
 ### Leanin periaatteita: pull-systeemi
 
-Leanissa on siis tarkoitus optimoida aikaa, mikä kestää tuotteen suunnittelusta sen asiakkaalle toimittamiseen
-Arvo pyritään saamaan virtaamaan (flow) asiakkaalle ilman turhia viiveitä ja työvaiheita
-Value stream map visualisoi arvon virtausta
-Leanin mekanismi virtauksen optimointiin on pull-systeemien käyttö
-Pull-systeemillä tarkoitetaan tuotannonohjaustapaa, missä tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen saapuessa
-Näiden vastakohta on push-systeemi, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi
-Esim. pizzeriat toimivat pull-periaatteen mukaan, pizza valmistetaan vasta kun asiakas tilaa sen. Unicafe taas on push-systeemi, lounaita tehdään varastoon ja toivotaan että ne menevät kaupaksi asiakkaille.
+Leanissa on siis tarkoituksena optimoida aikaa, mikä kuluu tuotteen tilaamisesta sen asiakkaalle toimittamiseen. Arvo pyritään saamaan _virtaamaan_ (engl. flow) asiakkaalle ilman turhia viiveitä ja työvaiheita, äsken esitelty value stream map siis visualisoi  nimenomaan arvon virtausta.
+
+Leanin mekanismi virtauksen optimointiin on _pull-systeemien_ käyttö. Pull-systeemillä tarkoitetaan tuotannonohjaustapaa, missä tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen niitä edellyttäessä. Tämän vastakohta on _push-systeemi_, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi.
+
+Esimerkiksi pizzeriat toimivat pull-periaatteen mukaan, pizza valmistetaan vasta kun asiakas tilaa sen. Unicafe taas on push-systeemi, lounaita tehdään varastoon ja toivotaan että ne menevät kaupaksi asiakkaille.
+
+Leanin taustaa käsitelleessä [luvussa](linkki_tanne) puhutiin Just in time (JIT)-tuotantomallista. Käytännössä pull-systeemi on mekanismi JIT-tuotantomallin toteuttamiseen.
 
 #### Kanban
 
-Pull-systeemi toteutetaan usein kanbanin avulla
-Kanban tarkoittaa signaalikorttia
-Kanban toteuttaa visuaalisen ohjauksen, minkä avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimittaa
+Pull-systeemi toteutetaan usein _kanbanin_ avulla. Japaninkielinen sana kanban tarkoittaa signaalikorttia, englanniksi "card you can see". Kanban toteuttaa _visuaalisen ohjauksen_, jonka avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimittaa.
 
-Kun asiakas tilaa tuotteen, viedään tilausta vastaava kanban-kortti tehtaalle
-Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti
-Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella
+Kun asiakas tilaa tuotteen, viedään tilausta vastaava kanban-kortti tehtaalle.
+Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti. Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella. Kun komponentti on valmis, viedään se tilaajalle, samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten.
 
-Kun komponentti on valmis, viedään se tilaajalle, samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten
-Kanban-kortteja on käytössä vain rajallinen määrä, tällä kontrolloidaan sitä että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen
-Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sensijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon
-Varastoon tehdyt komponentit muodostaisivat riskin
-Niitä ei välttämättä tarvittaisi jos tilauksia ei tulisi tarpeeksi
-Jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty tekemään suuri määrä
+Kanban-kortteja on käytössä vain rajallinen määrä, tällä kontrolloidaan sitä että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen.
+Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sensijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon.
 
-Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan sykliajan optimoitua
+Kuten on jo mainittu välivarastoon tehdyt komponentit on eräs leanin hukan muoto. Varastoidut komponentit sitovat pääomaa, ja jos tilauksia ei tulisi tarpeeksi, niitä
+ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa, jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret  määrät.
 
-Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, luennon 4 kalvoissa puhutaan asiasta enemmän
-Ohjelmistopuolen kanban on periaatteiltaan hieman erilainen Toteutettavaa toiminnallisuutta, esim. user storyä vastaa kanban-kortti Kortti kulkee eri työvaiheiden kautta
-virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamalla tietyissä työvaiheissa kesken olevan työn määrää WIP (work in progress) -rajoitteilla
+Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan sykliajan optimoitua.
 
-Kanban ohjelmistotuotannossa
+#### Kanban ohjelmistotuotannossa
+
+Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, [osassa 2]() sivuttiin jo asiaa. Ohjelmistopuolen kanban on periaatteiltaan hieman erilainen kuin perinteiseen tuotantoon liittynyt kanban.
+
+Toteutettavaa toiminnallisuutta, esim. user storyä tai jotain sen teknistä taskia vastaa kanban-kortti, kortti kulkee eri työvaiheiden kautta.
+
+Virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamalla tietyissä työvaiheissa kesken olevan työn määrää asettamalla _work in progress_ (WIP) -rajoitteilla.
+
+Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analysis, develop, test_, joille kullekin on asetettu WIP-rajoite. Työvaiheiden väliin on myös sijoitettu välivarastoja, _dev ready_ ja _build ready_, joilla myös on WIP-rajoitteet. 
+
+![]({{ "/images/5-3.png" | absolute_url }}){:height="350px" }
+
+Kaikenkaikkiaan kuvan kanban-taulu salli että sille on sijoitettu kaksikymmentä user storyä. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_. 
+
+Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storyä. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanbantaululla kovin optimaalinen. Pienentämällä WIP-rajoja, ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _sykliaikaa_, eli sitä aikaa, joka kuluu kun user story "tilauksesta", siihen kuin sen määrittelemä ominaisuus on valmis. 
+
+### Leanin periaatteita
  
-Jotta pull-järjestelmä toimii hyvin, eli asiakkaan arvo virtaa tasaisesti, on edullista jos eri työvaiheiden kestoon ei liity liikaa varianssia, tähän liittyy leanin periaate level the work
-Yksi varianssin aiheuttaja ovat viat. Leanin periaatteita ovatkin
-Stop and fix
-Build quality in
+Jotta pull-järjestelmä toimii hyvin, eli asiakkaan arvo virtaa tasaisesti, on edullista jos eri työvaiheiden kestoon ei liity liikaa varianssia, tähän liittyy leanin periaate *level the work*. Yksi kolmesta leanin hukan muodoista oliki _mura_ eli epäsäännöllisyys/epäyhdenmukaisuus, työvaiheiden keston tai ohjelmistokehityksen kontekstissa toteutettavien user storyjen koon suuri varianssi on eräs tämän ilmentymistä. 
 
-Stop and fix viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on velvollinen pysäyttämään tuotantolinjan vian, esim. vaurioituneen komponentin havaitessaan
-vian perimmäinen syy (root cause) tulee selvittää mahdollisimman nopeasti ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotantossa tulee olla laatu sisäänrakennettua build quality in
+Eräs varianssin aiheuttaja ovat viat. Leanin periaatteita ovatkin _Stop and fix_ ja _build quality in_.
 
-Ohjelmistotuotannon käytänteistä Continuous integration ja automaattinen testaus voidaan nähdä suoraan stop and fix - ja build quality in -periaatteiden ilmentymänä
+*Stop and fix* viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on velvollinen pysäyttämään tuotantolinjan vian, esimimerkiksi vaurioituneen komponentin havaitessaan.
+Tuotantolinjan pysäyttämisen yhteydessä _vian perimmäinen syy_ (engl. root cause) tulee selvittää mahdollisimman nopeasti ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotantossa tulee olla laatu sisäänrakennettua *build quality in*.
 
-Leanin periaatteita
+Ohjelmistotuotannon käytänteistä automatisoitu testaus ja jatkuvan integraatio voidaan nähdä suoraan _stop and fix_ - ja _build quality in_ -periaatteiden ilmentymänä.
  
-Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot käynnissä maksimikapasiteetilla ja työntekijät koko ajan työllistettyinä
-Yksittäisten työntekijöiden palkkauskin perustuu usein suorituskohtaisiin bonuksiin
+Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot käynnissä maksimikapasiteetilla ja työntekijät koko ajan työllistettyinä, yksittäisten työntekijöiden palkkauskin perustuu usein suorituskohtaisiin bonuksiin. Näin ajatellaan että tuotteiden yksikköhinta saadaan mahdollisimman alhaiseksi ja yrityksen tuottavuus maksimoituu.
 
+Yksittäisten työntekijöiden ja koneiden tehokkuuden tarkastelun sijaan lean keskittyy arvon virtauksen optimoinnin avulla järjestelmien konaisvaltaiseen kehttämiseen ja olettaa, että se on pidemmällä tähtäimellä yritykselle kannattavampaa. Tämän kiteyttää periaate *long term philosophy.
 
-Näin ajatellaan että tuotteiden yksikköhinta saadaan mahdollisimman alhaiseksi ja yrityksen tuottavuus maksimoituu
-Yksittäisten työntekijöiden ja koneiden tehokkuuden tarkastelun sijaan lean keskittyy arvoketjujen optimoinnin avulla järjestelmien konaisvaltaiseen kehttämiseen ja olettaa, että se on pidemmällä tähtäimellä yritykselle kannattavampaa (long term philosophy)
-Yksittäisen koneen suuri käyttöaste voi olla lokaalia optimointia, joka voikin yrityksen kannalta olla jopa haitallista
-Esim. valmistetaan paljon komponentteja, mitä ei lopulta tarvita
+Esimerkiksi yksittäisen koneen suuri käyttöaste tai henkilökohtaisen suorituksen palkitseminen voi olla lokaalia optimointia, joka voikin yrityksen kannalta olla jopa haitallista. Näin voidaan esimerkiksi valmistamaan paljon komponentteja, mitä ei lopulta koskaan tarvita. Yksittäisten tuotantolaitteiden, henkilöiden tai tiimien suorituskyvyn sijaan keskittymällä arvon virtaamiseen tilauksesta asiakkaalle pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat.
 
-Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista
-Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä
+Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on turhan paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista. Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä.
 
-Keskittymällä arvon virtaukseen pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat
+Pull-systeemeissä ei ole tapana tehdä tuotantoon liittyviä päätöksiä (esim. miten paljon tuotetta ja sen tarvitsemia komponentteja tulee valmistaa) aikaisessa vaiheessa, vaan vasta tarpeen vaatiessa. Englanniksi tätä myöhäistä päätöksen tekemistä luonnehditaan  _commit at the last responsible moment_, eli päätöksiä viivytetään, mutta ei kuitenkaan niin kauaa että viivyttely aiheuttaa ongelmia. Tämä kiteytyy periaatteessa *decide as late as possible*.
 
-Leanin periaatteita
+Kun päätös tehdään myöhään on tästä se merkittävä etu, että päätöksen teon tueksi on käytettävissä maksimaalinen määrä tietoa, toisin kuin liian etukäteen tehtävissä päätöksissä mitkä ovat enemmän spekulatiivisia.
+
+Kun päätökset on tehty, toimitaan pull-systeemin hengessä mahdollisimman nopeasti, eli 
+i*mplement rapidly* tai *deliver as fast as possible*, näin arvo saadaan virtaamaan asiakkaalle ilman turhia viiveitä.
+
+Mitä nopeammin arvo saadaan virtaamaan, sitä enemmän päätöksiä on mahdollista viivyttää ja päätökset voidaan tehdä entistä paremman tiedon valossa. 
+
+### Arvon virtaaminen ketterässä ohjelmistotuotannossa
+
+Edellä mainittujen periaatteiden soveltaminen näkyy selkeästi ketterässä ohjelmistotuotannossa. Vaatimuksia hallitaan product backlogilla, joka on parhaassa tapauksessa DEEP eli Detailed aproproately, emergent, estimated, prioritized. 
+
+Alhaisen prioriteetin user storyjä ei ole kovin tarkkaan määritelty. Kun product owner valitsee storyn seuraavaan sprinttiin toteutettavaksi määritellään storyn hyväksymäkriteerit ja suunnitellaan se toteutuksen osalta. Tarkkoja vaatimuksia ei siis määritellä spekulatiivisesti vaan _at the last responsible moment_. Sprintiin valitut storyt toteutetaan valmiiksi sprintin aikana, eli _deliver as fast as possible_
+
+Scrum voidaankin nähdä leanin mukaisena _pull-systeeminä_, missä jokaiseen sprinttiin otetaan kerrallaan asiakkaan edustajan viime hetkellä hetkellä (eli viimeistään sprint planningissa) määrittelemät tilaukset, jotka toteutetaan mahdollisimman nopeasti, eli sprintin aikana. Arvo, eli toimivaksi asti toteutetut uudet toiminnallisuudet, virtaa asiakkaalle sprinttien määrittelemässä rytmissä.
  
-Leanin periaatteita
-Decide as late as possible
-Pull-systeemeissä ei ole tapana tehdä tuotantoon liittyviä päätöksiä (esim. miten paljon tuotetta ja sen tarvitsemia komponentteja tulee valmistaa) aikaisessa vaiheessa, vaan vasta tarpeen vaatiessa
-Englanniksi tätä myöhäistä päätöksen tekemistä luonnehditaan myös seuraavasti commit at the last responsible moment, eli päätöksiä viivytetään, mutta ei kuitenkaan niin kauaa että viivyttely aiheuttaa ongelmia
+Ketterässä ohjelmistotuotannossa on viime aikoina ruvettu tehostamaan arvon virtausta usein eri menetelmin. Alunperin Scrumin pyrkimys viedä uusia ominaisuuksia tuotantoon sprinteittäin, eli muutaman viikon välein. Viime aikojen trendinä on ollut tihentää sykliä, jatkuva tuotantoonvienti eli _continuous deployment_ voi tarkoittaa sitä, että jopa jokainen commit johtaa tuotantoonvientiin, eli ohjelmistosta voi ilmestyä uutta arvoa tuottavia ominaisuuksia jopa kymmeniä kertoja päivässä.
 
-Kun päätös tehdään myöhään on tästä se merkittävä etu, että päätöksen teon tueksi on käytettävissä maksimaalinen määrä tietoa
-Toisin kuin liian etukäteen tehtävissä päätöksissä mitkä ovat enemmän spekulatiivisia
+Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs leanin hukka) siten, että sprinttiin otetaan vaan tiimin velositeetin verran user storyjä. Kaikissa konteksteissa, esimerkiksi jatkuvaa tuotantoonvientiä sovellettaessa aikarajoitettu sprintti ei ole mielekäs. 
 
-Kun päätökset on tehty, toimitaan pull-systeemin hengessä mahdollisimman nopeasti
-implement rapidly tai deliver as fast as possible
-näin arvo saadaan virtaamaan asiakkaalle ilman turhia viiveitä
-
-Mitä nopeammin arvo saadaan virtaamaan, sitä enemmän päätöksiä on mahdollista viivyttää ja päätökset voidaan tehdä entistä paremman tiedon valossa
-
-Edellisen kalvon periaatteiden soveltaminen näkyy selkeästi ketterässä ohjelmistotuotannossa
-Vaatimuksia hallitaan product backlogilla, joka on parhaassa tapauksessa DEEP
-Detailed aproproately, emergent, estimated, prioritized
-Tarkkoja vaatimuksia ei määritellä spekulatiivisesti vaan at the last
-responsible moment
-Alhaisen prioriteetin user storyjä ei ole kovin tarkkaan määritelty
-Kun product owner valitsee storyn seuraavaan sprinttiin toteutettavaksi määritellään storyn hyväksymäkriteerit ja suunnitellaan se toteutuksen osalta
-Ja deliver as fast as possible eli toteutetaan valmiiksi seuraavan sprintin aikana
-
-Scrum voidaankin nähdä leanin mukaisena pull-systeeminä, missä jokaiseen sprinttiin otetaan kerrallaan asiakkaan edustajan viime hetkellä viimeistelemät tilaukset, jotka toteutetaan nopeasti, eli sprintin aikana
-Arvo (eli toimivaksi asti toteutetut toiminnallisuudet) virtaa asiakkaalle sprinttien määrittelemässä rytmissä
-
-Arvon virtaaminen ketterässä ohjelmistotuotannossa
+Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyjä toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](skrumban) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
  
-Ketterässä ohjelmistotuotannossa on viime aikoina ruvettu tehostamaan arvon virtausta usein eri menetelmin
-Alunperin Scrumin pyrkimys viedä uusia ominaisuuksia tuotantoon sprinteittäin Viime aikojen trendinä on ollut tihentää sykliä
-Jatkuva tuotantoonvienti eli continuous deployment voi tarkoittaa sitä, että jopa jokainen commit johtaa tuotantoonvientiin
+### Kasvattaminen leanin ja johtajuuden periaatteet
 
-Arvon virtaaminen ketterässä ohjelmistotuotannossa
-Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs lean waste) siten, että sprinttiin otetaan vaan tiimin velositeetin verran user storyjä
-Kaikissa konteksteissa, esimerkiksi jatkuvaa tuotantoonvientiä sovellettaessa aikarajoitettu sprintti ei ole mielekäs
-Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyjä toteutetaan yksi kerrallaan niin nopeasti kuin mahdollista
-Kun tuotantokapasiteettia vapautuu, valitsee product owner tärkeimmän storyn
-Story määritellään, suunnitellaan ja sitten toteutetaan välittömästi alusta loppuun
-Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin 1 tai korkeintaan muutama story
+Toyotalla useimmat uudet työntekijät koulutetaan huolellisesti perehtymään käytännön tasolla lean-ajattelun periaatteisiin. Useiden kuukauden koulutuksen aikana uudet työntekijät työskentelevät monissa eri työtehtävissä ja heidät opetetaan tunnistamaan lean-hukka sen eri muodoissa. Tarkoituksena on sisäistää jatkuvan parantamisen eli kaizen mentaliteetti.
 
-Luennolla 4 mainittu Scrumban-menetelmä toimii pitkälti juuri näin
+Toyotan johtamiskulttuurissa keskiössä on lean-ajattelun opettajina, mentoreina ja työn valmenajana toimivat johtajat/managerit. Periaate *grow leaders* kuvaa Toyotan tapaa kasvattaa lean-toimintafilosofian sisäistäviä managereja. 
+
+Periaate *my manager can do my job better than me* kuvaa sitä, että managerit ovat ovat firman sisällä eri työtehtävien kautta uusiin vastuisiin kasvaneita ihmisiä, jotka hallitsevat myös työntekijöiden vastuulla olevan _hands on_ -työn. Managerit ovat ensisijaisesti toiminnan etulinjassa toimivia lean-käytänteiden opettajia ja mentoreita.
  
-Toyotalla useimmat uudet työntekijät koulutetaan huolellisesti perehtymään käytännön tasolla lean-ajattelun periaatteisiin
-Useiden kuukauden koulutuksen aikana uudet työntekijät työskentelevät monissa eri työtehtävissä
-Heidät opetetaan tunnistamaan lean-jäte eri muodoissaan
-Tarkoituksena on sisäistää jatkuvan parantamisen (kaizen) mentaliteetti
-
-Johtamiskulttuurissa keskiössä on lean-ajattelun opettajina, mentoreina ja työn valmenajana toimivat johtajat/managerit
-Periaate grow leaders kuvaa Toyotan tapaa kasvattaa lean- toimintafilosofian sisäistäviä johtajia
-Periaate my manager can do my job better than me kuvaa sitä, että johtajat ovat ovat firman sisällä eri työtehtävien kautta uusiin vastuisiin kasvavia ihmisiä, jotka hallitsevat myös työntekijöiden vastuulla olevan hands on -työn
-Johtajat ovat ensisijaisesti toiminnan etulinjassa toimivia lean- käytänteiden opettajia ja mentoreita
-
-Leanin johtajat
- 
-Leanin johtajat
-Eräs tärkeä johtamisen periaate on go see (genchi genbutsu)
-Työntekijöiden, erityisesti managerien tulee "nähdä asiat omin silmin" eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja
-Tämä liittyy siihen ideaaliin, että johtajien oletetaan johtavat etulinjassa (gemba) eli siellä missä työ tosiasiallisesti tehdään
+Eräs tärkeä leanin johtamisen periaate on *go see* (japaniksi genchi genbutsu), työntekijöiden, erityisesti managerien tulee "nähdä asiat omin silmin" eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja. Tämä liittyy siihen ideaaliin, että managerien oletetaan _johtavat etulinjassa_ (japaniksi gemba) eli siellä missä työ tosiasiallisesti tehdään.
 
 Toyota production systemsin kehittäjän T. Ohnon sanoin:
-You can’t come up with useful kaizen sitting at your desk... We have too many people these days who don’t understand the workplace. They think a lot, but they don’t see. I urge you to make a special effort to see what’s happening in the workplace. That’s where the facts are.
 
-Scrum masterin rooli on osin leanin ideaalien mukainen. Tosin kaikkiin scrum mastereihin ei päde periaate my manager can do my job better than me
-Monissa ohjelmistoyrityksissä teknistä puolta johtajuudesta edustaa edustavat esim, lead developer - tai senior developer -nimikkeellä olevat kokeneemmat mentorin roolissa toimivat työntekijät
+> You can’t come up with useful kaizen sitting at your desk... We have too many people these days who don’t understand the workplace. They think a lot, but they don’t see. I urge you to make a special effort to see what’s happening in the workplace. That’s where the facts are.
 
-Sovellettaessa leania tuotantoon (production), pääasiallisena fokuksena on toiminnan parantaminen jätettä eliminoimalla
-Sovellettaessa leania tuotannon optimoinnin sijaan tuotekehitykseen (development) esim. kokonaan uusien automallien suunnitteluun, nousee esiin uusia periaatteita
-Toyotalla periaatteena tuotekehityksessä on
-out-learn the competitors, through generating more useful knowledge and using and remembering it effectively
+Scrum masterin rooli on osin leanin johtajuuden ideaalien mukainen. Tosin useimpiin scrum mastereihin ei päde periaate _my manager can do my job better than me_. Monissa ohjelmisokehitystiimeissä teknistä puolta johtajuudesta edustaa edustavat esim, lead developer - tai senior developer -nimikkeellä olevat kokeneemmat mentorin roolissa toimivat työntekijät.
 
-Fokukseen nousee toiminnan tehostamisen lisäksi oppimisen kiihdyttäminen (amplify learning)
-Kannattaa pyrkiä mahdollisimman arvokkaaseen tietoon (high-value information), mm. kiinnittämällä huomio asioihin, mihin sisältyy paljon epävarmuutta (focus on uncertain things)
-Epävarmat ja suuren teknisen riskin sisältävät ideat tulee toteuttaa/testata nopeasti, niiden suhteen viivästyneellä tiedolla on korkea hinta (cost of delay)
+### Lean-tuotekehityen periaatteita
 
-Lean-tuotekehityen periaatteita
- 
-Lean-tuotekehityen periaatteita
-Eräs leanin mekanismi oppimisen nopeuttamiseen on set based concurrent
-development
-Jos tarkoituksena on kehittää esim. uusi moottorin jäähdytysjärjestelmä, aletaan yhtä aika kehittämään useita vaihtoehtoisia ratkaisuja eri tiimien toimesta
-Tasaisin väliajoin kehitettäviä ratkaisuja vertaillaan, ja osa niistä karsitaan
-Lopulta parhaaksi osoittautuva ratkaisu valitaan käytettäväksi lopputuotteessa
+Sovellettaessa leania _tuotantoon_ (engl. production), pääasiallisena fokuksena on toiminnan parantaminen hukkaa eliminoimalla.
 
-Set based -menetelmä on melko erilainen kuin useimmiten sovellettava iteratiivinen kehitysmenetelmä, missä lähtökohtana on yksi askeleittain paranneltava ratkaisu
-Ohjelmistotuotannossa set based -menetelmää sovelletaan aika harvoin, lähinnä käyttöliittymäsuunnittelussa esittelemällä asiakkaalle aluksi useita rinnakkaisia ehdotelmia mahdollisesta käyttöliittymäratkaisusta
+Sovellettaessa leania tuotannon optimoinnin sijaan _tuotekehitykseen_ (development) esim. kokonaan uusien automallien suunnitteluun, nousee esiin kokonaan uusia periaatteita.
+Kantavana ideana Toyotan tuotekehityksessä on _out-learn the competitors, through generating more useful knowledge and using and remembering it effectively._ 
 
-Toyotalla tuotekehitystä johtaa chief technical engineer
-Vastuussa sekä tuotteiden teknisestä että liiketoiminnallisesta menestyksestä
-Kyseessä tyypillinen leanin etulinjassa toimiva johtaja joka tuntee tarkasti käytännön työn, mutta on myös erittäin lähellä asiakasta
-Poikkeaa Scrumin Product Ownerista teknisen taustansa takia
+Leanissa tuotekehityksessä fokukseen nouseekin toiminnan tehostamisen lisäksi _oppimisen kiihdyttäminen_ (engl. *amplify learning*). Kannattaa pyrkiä mahdollisimman _arvokkaaseen tietoon_ (engl. *high-value information*), mm. kiinnittämällä huomio asioihin, mihin sisältyy paljon epävarmuutta (*focus on uncertain things*). Epävarmat ja suuren teknisen riskin sisältävät ideat kannattaa toteuttaa/testata nopeasti, niiden suhteen viivästyneellä tiedolla on korkea hinta (*cost of delay*).
+
+Eräs leanin tuotekehityksen mekanismi oppimisen nopeuttamiseen on *set based concurrent
+development*. Jos tarkoituksena on kehittää esim. uusi moottorin jäähdytysjärjestelmä, aletaan yhtä aika kehittämään useita vaihtoehtoisia ratkaisuja eri tiimien toimesta. Tasaisin väliajoin kehitettäviä ratkaisuja vertaillaan, ja osa niistä karsitaan. Lopulta parhaaksi osoittautuva ratkaisu valitaan käytettäväksi lopputuotteessa.
+
+Set based development -menetelmä on radikaalisti erilainen kuin usein sovellettava _iteratiivinen_ kehitysmenetelmä, missä lähtökohtana on yksi askeleittain paranneltava ratkaisu.
+
+Ohjelmistokehityskessä set based development -menetelmää sovelletaan melko harvoin, lähinnä käyttöliittymäsuunnittelussa esittelemällä asiakkaalle aluksi useita rinnakkaisia ehdotelmia mahdollisesta käyttöliittymäratkaisusta.
+
+Toyotalla tuotekehitystä johtaa *chief technical engineer*, joka on vastuussa sekä tuotteiden teknisestä että liiketoiminnallisesta menestyksestä. Kyseessä tyypillinen leanin etulinjassa toimiva johtaja, joka tuntee tarkasti käytännön työn, mutta on myös erittäin lähellä asiakasta. Rooli poikkeaa Scrumin _product ownerista_ teknisen taustansa takia.
+
+### Leanin soveltaminen eri aloille
 
 90-luvulta alkaen lean on herättänyt maailmalla suurta kiinnostusta ja sitä on pyritty soveltamaan lähes kaikilla aloilla ohjelmistokehitys mukaan lukien
 Lean-periaatteet ovat olleet hyvin esim. Scrumin kehittäjien tiedossa ja vaikka Scrumin alkuperäiset lähteet eivät käytäkään leanin terminologiaa, on Scrumissa monin paikoin piirteitä leanista
@@ -370,7 +335,8 @@ Esim. Scrumin kehittäjät eivät ole tarkoittaneet Scrumia staattiseksi rake
 Ketteryyttä on läpinäkyvyyden mahdollistava toimintojen parantamiseen keskittyvä inspect-and-adapt-sykli
 
 Käytännössä tämä on täsmälleen sama idea kuin leanin kaizen
-Leanin soveltaminen eri aloille
+
+
 
 Leanin soveltamisessa on kohdattu myös paljon ongelmia
 Lean on ajattelumalli, joka on kehitetty Toyotan tarpeisiin, malli on jalostunut ja muuttunut aikojen kuluessa
