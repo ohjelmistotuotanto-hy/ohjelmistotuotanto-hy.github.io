@@ -339,87 +339,75 @@ Kuten agile, myös lean ei ole joukko työkaluja vaan jatkuva toimintatapa, To
 - _The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"_ 
 - _In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever._
 
-## Laajan mittakaavan ketterä
+## Laajan skaalan ketterä ohjelmistokehitys
  
-Scrum of Scrums Scrum of Scrums -periaate on jo hyvin vanha
-Artikkelissa Agile Can Scale: Inventing and Reinventing SCRUM in Five Companies toinen Scrumin kehittäjistä Jeff Sutherland kertoo harjottaneensa Scrum of Scrumia jo vuonna 1996
-Sutherland sovelsi periaatetta firmassa, missä oli satoja sovelluskehittäjiä ja kymmeniä Scrum-tiimejä joiden vastuulla oli useita eri tuotteita
-Jokaisen tuotteen tiimejä kordinoi oma, kerran viikossa kokoontuva Scrum of Scrums -tiim
-Koko firman tuotejoukkoa hallinnoi "management Scrum" eli Scrum of Scrum of Scrums -tiimi joka kokoontui kuukausittain
-Ylimmän tason management Scrum -tiimi koostui yrityksen johdosta, tuotepäälliköistä ja johtavista ohjelmistoarkkitehdeistä
+Ketterät ohjelmistotuotantomenetelmät ovat alunperin tarkoitettu pienten tiimien hallintaan. Esimerkiksi Scrum mainitsee kehitystiimin koostuvan 3-9:stä henkilöstä Entä jos on kyseessä tuote, joka edellyttää suurempaa kehittäjäjoukkoa?
 
-Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten esim backlogien suhteen tulisi toimia laajemman skaalan Scrumissa
+Perusperiaatteena on edelleen pitää tiimit pieninä, mutta kasvattaa tuotantokapasiteettia käyttämällä useampia tiimejä. Tämä taas edellyttää, että tiimien välistä työtä on koordinoitava jollain tavalla.
 
-Viimeisen kymmenen vuoden aikana ketterän skaalaamiseen on alettu kiinnittämään enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä
-Näistä eniten huomiota saaneet ovat
-Scaled Agile Framework eli SAFe
-http://www.scaledagileframework.com
+### Scrum of Scrums
 
-Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua, eli viime viikolla käsittelemäämme Toyota Production Systemistä kehittynyttä tuotanto-, tuotekehitys- ja johtamismenetelmää
-Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä
-Käsitellään nyt hieman tarkemmin SAFea ja LeSS:iä (DA on listatuista menetelmistä vähimmälle huomiolle jäänyt)
+Jo kauan käytetty tapa Scrumin skaalaamiseen on niinsanottu _Scrum of Scrums_ missä ideana on muodostaa koordinoiva tiimi, johon kuuluu yksi tai
+tarvittaessa useampikin jäsen jokaisesta Scrum-tiimistä. Perinteisin tapa lienee koostaa kordinointitiimi Scrum mastereista, jissain tilanteissa parempi henkilö koordinointiin voi kuitenkin olla ns lead developer, eli Scrum-tiimin kokeneempi sovelluskehittäjä.
+Scrum of Scrums -tiimi voi tavata joka päivä tai jos se ei ole tarpeen niin esimerkiksi viikoittain.
 
-Large Scale Scrum eli LeSS
-https://less.works
-Laajan mittakaavan ketterä
-Disiplined Agile eli DA
-http://www.disciplinedagiledelivery.com
+Scrum of Scrums Scrum of Scrums -periaate on jo hyvin vanha. Artikkelissa [Agile Can Scale: Inventing and Reinventing SCRUM in Five Companies](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) toinen Scrumin kehittäjistä Jeff Sutherland kertoo harjottaneensa Scrum of Scrumia jo vuonna 1996.
+
+Sutherland sovelsi periaatetta firmassa, missä oli satoja sovelluskehittäjiä ja kymmeniä Scrum-tiimejä, joiden vastuulla oli useita eri tuotteita.
+
+Jokaisen tuotteen tiimejä kordinoi oma, kerran viikossa kokoontuva Scrum of Scrums -tiimi.
+Koko firman tuotejoukkoa hallinnoi "management Scrum" eli Scrum of Scrum of Scrums -tiimi joka kokoontui kuukausittain. Tämä ylimmän tason management Scrum-tiimi koostui yrityksen johdosta, tuotepäälliköistä ja johtavista ohjelmistoarkkitehdeistä.
+
+Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten esim backlogien suhteen tulisi toimia laajemman skaalan Scrumissa.
+
+### Laajan skaalan ketterät menetelmät
+
+Viimeisen kymmenen vuoden aikana ketterän skaalaamiseen on alettu kiinnittämään enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä.
+Näistä eniten huomiota saaneet ovat Scaled Agile Framework eli
+[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disiplined Agile eli [DA](http://www.disciplinedagiledelivery.com)
+
+Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua.
+Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFea ja LeSS:iä. DA on listatuista menetelmistä vähimmälle huomiolle jäänyt, joten jätämme sen välistä.
+
+### SAFe® eli Scaled Agile Framework
+
+Scaled Agile Framework eli SAFe® on tämän hetken suosituin laajan mittakaavan ketterä menetelmä, [erään tutkimuksen](https://www.cprime.com/resource/white-papers/scaling-agile-survey-2017/) mukaan 45 % laajan mittakaavan ketterää kehitystä tekevistä organisaatiota hyödyntää SAFe:a, joka on tällä hetkellä käytössä myös Helsingin Yliopiston opetushallinnon tietojärjestelmien ja web-palveluiden kehityksessä.
+
+SAFe:n pääasiallinen kehittäjä on David Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konstulttina 2000-luvulla. SAFe® on syntynyt pitkälti Nokialla tehdyn työn pohjalta, missä käytettiin eräänlaista SAFe:n esiversiota. SAFe:n virallinen ensimmäinen version julkaistiin 2011, tällä hetkellä on menossa versio 4.5.
+
+Kärjistetysti sanoen SAFe® yhdistää kaikki viimeisen 20 vuoden aikana kehitetyt ketterän ja leanin ohjelmistokehityksen parhaat käytänteet sekä joukon yrityksien tuotteiden hallinnointiin suunnattuja käytänteitä.
+
+SAFe® tarjoaa suuren määrän periaatteita (engl. principles), henkilä- ja tiimirooleja sekä käsitteitä. SAFe® kutsuu itseään menetelmäkehykseksi (engl. framework) eli  tarkoitus on, että yritykset räätälöivät itselleen sopivanlaisen prosessin käyttäen SAFe:n tarjoamia työkaluja.
+
+SAFe® tarojaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota.
+Näistä pienin Essential SAFe® on tarkoitettu pienemmille yrityksille ja SAFen soveltamisen alkuvaiheeseen. Konfiguraatiosta suurin Full SAFe® taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön.Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
+
+![]({{ "/images/5-4.png" | absolute_url }}){:height="350px" }
+
+Sovelluskehityksen ytimessä on SAFen hieman modifioima Scrum, johon on liitettu joukko XP:n periaatteita.
+
+Tiimien kordinointia hallitaan ylhäältä päin (engl. top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen _toimitusjuna_ (engl. release train) alle. Release trainin Scrum-tiimit toimivat synkroonissa toistensa kanssa tuottaen yhdessä isompia kokonaisuudessa useammasta sprintistä koostuvan _product increment_ -ajanjakson aikana.
+
+Product incrementtejä ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe® tarjoaa tähänkin paljon tukea käsitteistön ja märittelemiensä roolien kautta.
+
+SAFe® on dokumentoitu todella laajasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFen käyttöönottoa ja noudattamista. Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi.
+
+SAFe® vaikuttaa olevan erityisesti firmojen johdon suosiossa. Tämä on ymmärrettävää, sillä toisin kuin useimmat ketterät menetelmät, SAFe® tarjoaa firman managementille sopivasti tekemistä roolien ja käytänteiden muodossa. 
  
-SAFe:n pääasiallinen kehittäjä on David Leffingwell joka toimi Nokia Mobile Phonesissa (NMP) konstulttina 2000-luvulla
-SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta
-NMP:lla olikin käytössä eräänlainen esiversio SAFe:sta
-SAFe:n virallinen ensimmäinen version julkaistiin 2011
+Kuten aiemmin mainittu, sisältää SAFe® käytännössä kaikki mahdolliset ketterän ja lean-ohjelmistokehityksen parhaat käytänteet vieläpä selkeästi ja yksityiskohtaisesti dokumenoituna. SAFe® onkin eräänlainen agile/lean-kehityksen supermarket, kaikki on helposti saatavissa valmiina pakatussa mudossa. Pick and mix, avaa paketti ja seuraa käyttöohjetta ohjetta...
 
+SAFe® on saanut osakseen myös paljon kritiikkiä. Osa kritiikistä kohdistuu SAFen määrittelemän prosessin raskauteen, osa taas SAFe:n top down -management luonteeseen.
 
-Kärjistetysti sanoen SAFe yhdistää kaikki viimeisen 20 vuoden aikana kehitetyt ketterän ja leanin ohjelmistokehityksen parhaat käytänteet sekä joukon yrityksien tuotteiden hallinnointiin suunnattuja käytänteitä
-SAFe tarjoaa suuren määrän käytänteitä (principles), henkilä- ja tiimirooleja sekä käsitteitä
-SAFe sanoo olevansa framework eli menetelmäkehys, tarkoitus on että yritykset räätälöivät itselleen sopivanlaisen prosessin käyttäen SAFe:n tarjoamia työkaluja
-SAFe tarojaa myös 4 erikokoista valmiiksi räätälöityä konfiguraatiota
-Näistä pienin Essential SAFe on tarkoitettu pienemmille yrityksille ja SAFen soveltamisen alkuvaiheeseen
-Konfiguraatiosta suurin Full SAFe taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön
+Esim. Scrumin kehittäjä Ken Schwaber on [kyseenalaistanut sen että onko SAFe® ylipäätään ketterä menetelmä](https://kenschwaber.wordpress.com/2013/08/06/unsafe-at-any-speed/) ketteryyden alkuperäisen idean mukaan.
+Agile Manifestossahan on periaate _individuals and Interactions Over Processes and Tools_, 
+SAFe® taas prosessina vaikuttaa kovin raskaalta. 
 
-Seuraavalla kalvolla oleva kaavio havainnollistaa Full SAFen käsitteistöä
+### LeSS eli Large Scale Scrum
 
-SAFe
-Sovelluskehityksen ytimessä on SAFen hieman modifioima Scrum
-Tiimien kordinointia hallitaan ylhäältä päin (top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen release train alle
-Release trainin Scrum-tiimit toimivat synkroonissa toistensa kanssa tuottaen yhdessä isompia kokonaisuudessa useammasta sprintistä koostuvan product increment -ajanjakson aikana
+LeSS:in taustalla on Craig Larman ja Bas Vodde jotka työskentelivät konsultteina 2000-luvun alussa mm. Nokia Siemens Networksilla. Toisin kuin SAFe®, LeSS on erittäin yksinkertainen, hyvin vahvasti Scrumiin pohjautuva. Uusia rooleja, artifakteja ja palavereja ei ole.
 
-Product incrementtejä ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten johtajien toimesta
-SAFe tarjoaa tähänkin paljon tukea käsitteistön ja märittelemiensä roolien kautta
-
-SAFe on dokumentoitu laajasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFen käyttöönottoa ja noudattamista
-Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi
-
-SAFe vaikuttaa olevan firmojen johdon suosiossa
-Toisin kuin ketterät menetelmät yleensä SAFe tarjoaakin firman managementille sopivasti tekemistä roolien ja käytänteiden muodossa
+LeSSistä on kaksi eri versiota, _LeSS_ tilanteisiin, missä tuotetta tekee 2-8 Scrum-tiimiä ja _LeSS Huge_ tilanteisiin, missä tiimejä tarvitaan suurempi määrä.
  
-Kuten aiemmin mainittu, sisältää SAFe käytännössä kaikki mahdolliset ketterän ja lean-ohjelmistokehityksen parhaat käytänteet
-Kaikki vieläpä selkeästi ja yksityiskohtaisesti dokumenoituna
-
-SAFe onkin eräänlainen agile/lean-kehityksen supermarket, kaikki on helposti saatavissa valmiina pakatussa mudossa
-Pick and mix, avaa paketti ja seuraa ohjetta...
-SAFe käytetään paljon ja se on erityisen suosittu Suomessa
-SAFe on saanut osakseen myös paljon kritiikkiä
-Osa kritiikistä kohdistuu SAFen määrittelemän prosessin raskauteen
-Osa taas SAFe:n top down -management luonteeseen
-
-Esim. Scrumin kehittäjä Ken Schwaber on kyseenalaistanut sen että onko SAFe ylipäätään ketterä menetelmä ketteryyden alkuperäisen idean mukaan
-Agile Manifestossahan on periaate Individuals and Interactions Over Processes and Tools
-
-SAFe taas prosessina vaikuttaa kovin raskaalta
-SAFen kritiikkiä
- 
-
-LeSS:in taustalla on Craig Larman ja Bas Vodde jotka työskentelivät konsultteina 2000-luvun alussa mm. Nokia Siemens Networksilla
-Toisin kuin SAFe®, LeSS on erittäin yksinkertainen, hyvin vahvasti Scrumiin pohjautuva
-Uusia rooleja, artifakteja ja palavereja ei ole LeSSistä on kaksi eri versiota
-LeSS tilanteisiin, missä tuotetta tekee 2-8 Scrum-tiimiä
-LeSS Huge tilanteisiin, missä tiimejä tarvitaan suurempi määrä
- 
-LeSS eli Large Scale Scrum
- 
-LeSS
 Sekä LeSS että LeSS Huge perustuvat seuraaville oletuksille
 Kehitetään yhtä tuotetta, jolla on yksi Product Owner ja yksi Product Backlog
 Kaikilla tiimeillä on samaan aikaan etenevät Sprintit
@@ -499,7 +487,6 @@ LeSS mainitsee myös Scrum of Scrums -palaverit yhtenä mahdollisena tiimienva
 
 LeSS: Muu tiimien välinen koordinointi
  
-
 Scrum olettaa, että noin 5-10% sprintin työskentelystä käytetään backlog groomingiin, jonka tarkoituksena siis pitää backlog DEEP:inä
 LeSS kiinnittää eksplisiittisesti huomioita backlogin ylläpitämiseen
 The Product Owner shouldn’t work alone on Product Backlog refinement
@@ -522,11 +509,11 @@ Jokaiselle alueelle siitä vastaava Area Product Owner
 Muodostetaan koko tuotetta hallinnoiva Product owner -tiimi
 Vaikka kyseessä yksi backlog, tarjotaan siihen oma aluekohtainen näkymä
 
-On erittäin mielenkiintoista että molemmat SAFe ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla
+On erittäin mielenkiintoista että molemmat SAFe® ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla
 Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehitystapa oli kuitenkin täysin erilainen
-SAFe (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä
+SAFe® (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä
 Osoitteesta http://gosei.fi/blog/less-safe-comparison/ löytyy hyvä vertailu menetelmistä
-Kuten aiemmin todettiin SAFe on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta
+Kuten aiemmin todettiin SAFe® on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta
 En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää
 LeSS vs SAFe
 
