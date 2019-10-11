@@ -406,47 +406,43 @@ SAFe® taas prosessina vaikuttaa kovin raskaalta.
 
 LeSS:in taustalla on Craig Larman ja Bas Vodde jotka työskentelivät konsultteina 2000-luvun alussa mm. Nokia Siemens Networksilla. Toisin kuin SAFe®, LeSS on erittäin yksinkertainen, hyvin vahvasti Scrumiin pohjautuva. Uusia rooleja, artifakteja ja palavereja ei ole.
 
-LeSSistä on kaksi eri versiota, _LeSS_ tilanteisiin, missä tuotetta tekee 2-8 Scrum-tiimiä ja _LeSS Huge_ tilanteisiin, missä tiimejä tarvitaan suurempi määrä.
+LeSSistä on kaksi eri versiota, _LeSS_ tilanteisiin, missä tuotetta tekee 2-8 Scrum-tiimiä ja _LeSS huge_ tilanteisiin, missä tiimejä tarvitaan suurempi määrä.
  
-Sekä LeSS että LeSS Huge perustuvat seuraaville oletuksille
-Kehitetään yhtä tuotetta, jolla on yksi Product Owner ja yksi Product Backlog
-Kaikilla tiimeillä on samaan aikaan etenevät Sprintit
-Tiimit tekevät sprintin aikana yhdessä tuotteesta yhden uuden version
-one shippable product increment
+Sekä LeSS että LeSS huge perustuvat seuraaville oletuksille
+- kehitetään yhtä tuotetta, jolla on yksi product owner ja yksi product backlog
+- kaikilla tiimeillä on samaan aikaan etenevät sprintit
+- tiimit ovat Scrumin tapaan cross-functional ja full-stack eli ne sisältävät kaiken tarvittavan kompetenssin kokonaisen tuotteen osan tekemiseen
+- tiimit tekevät sprintin aikana yhdessä tuotteesta yhden uuden, julkaisuvalmiin, asiakkaalle arvoa tuotavan version (engl. one shippable product increment)
 
-Yksi LeSS-toteutus on tarkoitettu siis yhden tuotteen kehittämiseen.
-Jos yrityksellä on useita ei tuotteita, niitä kutakin varten on oma LeSS-toteutuksensa
-Eli oma erillinen product backlog ja Product owner kullekin LeSS-toteutukselle LeSS ei ota kantaa siihen miten firma hallinnoi tuoteperheitään
+Yksi LeSS-toteutus on tarkoitettu siis yhden tuotteen kehittämiseen. Jos yrityksellä on useita ei tuotteita, niitä kutakin varten on oma LeSS-toteutuksensa, Toisin kuin SAFe, LeSS ei ota mitenkään kantaa siihen miten firma hallinnoi tuoteperheitään.
 
-LeSS is Scrum Large-Scale Scrum (LeSS) isn’t new and improved Scrum
-It’s not Scrum at the bottom for each team, and something different layered on top
+LeSS korostaa, kyseessä _ei_ ole erillinen Scrumin päälle lisätty hallinnollinen kerros vaan ainoastaan tapa miten Scrumin periaatteita ja artefakteja voidaan soveltaa mahdollisimman yksinkertaisella tavalla laajemmassa skaalassa.  
 
+#### LeSSin taustalla olevat periaatteet
 
-applied to many teams cross-functional, cross-component, full-stack feature teams of 3–9 learning-focused people that do all to create done items and a shippable product
-working together The teams are working together because they have a common goal to deliver one common shippable product at the end of a common Sprint, and each team cares about this because they are a feature team responsible for the whole, not a part
-one product A broad complete end-to-end customer-centric solution that real customers use
-It’s not a component, platform, layer, or library
+ LeSSin taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
 
-It’s about figuring out how to apply the principles, elements, and elegance of Scrum in a large-scale context, as simply as possible
-Like Scrum and other truly agile frameworks, LeSS is "barely sufficient methodology"
+![]({{ "/images/5-5.png" | absolute_url }}){:height="300px" }
 
-LeSSin taustalla olevat periaatteet: more with less LeSSin taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita
-Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille
-More with less
-We don’t want more roles because more roles leads to less responsibility to Teams
-We don’t want more artifacts because more artifacts leads to a greater distance between Teams and customers
-We don’t want more process because that leads to less learning and team ownership of process
-Instead we want more responsible Teams by having less (fewer) roles
-We want more customer-focused Teams building useful products by having less artifacts
-We want more Team ownership of process and more meaningful work by having less defined processes.
+Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction.html#LeSSPrinciples)
 
-We want more with less
- LeSS: periaatteet
-Lisää periaatteista https://less.works/less/framework/introduction.html
+*More with less:*
+
+- We don’t want more roles because more roles leads to less responsibility to Teams
+- We don’t want more artifacts because more artifacts leads to a greater distance between Teams and customers
+- We don’t want more process because that leads to less learning and team ownership of process, instead we want more responsible Teams by having less (fewer) roles
+- We want more customer-focused Teams building useful products by having less artifacts
+- We want more Team ownership of process and more meaningful work by having less defined processes.
+- *We want more with less*
+
+Eli minimoimalla prosessin, roolien ja artefaktien määrä pyritään siihen että tiimit ottavat itse omistajuuden tuotteen kehittämisestä ja asiakkaan kanssa käytävästä kommunikaatiosta.
+
+Lisää periaatteista [LeSS:in](https://less.works/less/framework/introduction.html) dokumentaatiossa.
  
+#### LeSS käytännössä
 
-LeSS
 Katsotaan hieman tarkemmin LeSS:in pienempää konfiguraatiota
+
 The smaller LeSS framework is for one (and only one) Product Owner who owns the product, and who manages one Product Backlog worked on by teams in one common Sprint, optimizing for the whole product.
 The LeSS framework elements are about the same as one-team Scrum:
 Roles
@@ -467,11 +463,18 @@ Events
 One common Sprint for the whole product
 it includes all teams and ends in one potentially shippable product increment
 
+![]({{ "/images/5-6.png" | absolute_url }}){:height="300px" }
+
 Sprintin suunnittelun ensimmäisessä osassa Product Owner ja tiimien edustajat valitsevat Product Backlogilta kaikille eri tiimille seuraavan sprintin storyt
 Suunnittelun toisessa osassa tiimit muodostavat kukin oman sprint backlogin joiden avulla sprintin sisäinen toiminta hallitaan normaalin Scrumin tapaan
 LeSS: kaksiosainen sprintin suunnittelu
  
+![]({{ "/images/5-7.png" | absolute_url }}){:height="300px" }
+
+![]({{ "/images/5-8.png" | absolute_url }}){:height="300px" }
+
 LeSS: sprintin katselmointi ja kaksiosainen retrospektiivi
+
 Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katselmoidaan yhdessä
 Retrospektiivi on kaksitasoinen: tiimikohtainen ja koko tuotteen valmistusprosessia tarkasteleva overall-retrospektiivi, missä on edustus kaikista tiimeistä ja mahdollisesti yrityksen johdosta
  
@@ -497,25 +500,26 @@ Product Backlog Grooming is done per team for the items they are likely going to
 Do multi-team and/or overall grooming to increase shared understanding and exploiting coordination opportunities when having closely related items or a need for broader input/learning
 
 LeSS siis rohkaisee voimakkaasti sovelluskehittäjien ja asiakkaiden/loppukäyttäjien läheiseen kanssakäymiseen
-
-LeSS: Backlogin ylläpito
  
-LeSS huge
-Edelleen yksi tuote ja yksi product backlog ja yksi vastuunalainen product owner
-Backlog jaetaan vaatimusalueisiin (requirement area)
+#### LeSS huge
 
+Jos tiimien määrä on suurempi kuin kahdeksan, suositellaan käytettäväksi _LeSS huge_ -versiota. 
+Edelleen oletataan että kehitettävänä on ainoastaan yksi tuote, jolla on yksi product backlog sekä yksi vastuunalainen product owner.
 
-Jokaiselle alueelle siitä vastaava Area Product Owner
-Muodostetaan koko tuotetta hallinnoiva Product owner -tiimi
-Vaikka kyseessä yksi backlog, tarjotaan siihen oma aluekohtainen näkymä
+Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), joista jokaiselle on siitä vastuun kantava _area product owner_, joista muodostetaan tuotteen kokonaisuutta hallinnoiva _product owner -tiimi_, joka toimii koko tuotteen product ownerin johdolla.
 
-On erittäin mielenkiintoista että molemmat SAFe® ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla
-Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehitystapa oli kuitenkin täysin erilainen
-SAFe® (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä
-Osoitteesta http://gosei.fi/blog/less-safe-comparison/ löytyy hyvä vertailu menetelmistä
-Kuten aiemmin todettiin SAFe® on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta
-En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää
-LeSS vs SAFe
+![]({{ "/images/5-9.png" | absolute_url }}){:height="300px" }
+
+#### LeSS vs SAFe
+
+On erittäin mielenkiintoista että molemmat SAFe® ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehitystapa oli kuitenkin täysin erilainen, ja 
+SAFe® (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
+
+Osoitteesta http://gosei.fi/blog/less-safe-comparison/ löytyy hyvä vertailu menetelmistä.
+
+Kuten aiemmin todettiin SAFe® on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta, en myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe®:a.
+
+En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
 
 ## Miten laajalti Agilea käytetään 
 
