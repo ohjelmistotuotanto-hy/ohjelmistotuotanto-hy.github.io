@@ -53,7 +53,7 @@ Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioo
 
 Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitettävänä kaaviona:
 
-![]({{ "/images/5-1.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-1.png" | absolute_url }}){:height="550px" }
 
 Leanilla siis on _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ (engl. pilars) ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
  
@@ -140,22 +140,7 @@ Ohjelmistokehityksessä vikoja tuotteeseen tulee lähes väistämättä, mutta o
 
 Nämä alkuperäiset vuosikymmeniä sitten autonvalmistuksen kontekstiin sovitetut 7 muda-hukkaa on tulkittu uudelleen yhä uusiin konteksteihin, kuten ohjelmistokehitykseen. 
 
-Vuosien varrella on ehdotettu myös uusia hukan muotoja, näistä eräs _ihmisten potentiaalin alihyödyntäminen_ on jossain määrin jo vakiintunut. Englanniksi tätä hukan muotoa kuvaillaan seuraavasti
-
-> Under-realizing people’s potential and varied skill, insight, ideas, suggestion.
-
-# pois?
-
-Lean jakaa jätteet kahteen eri luokkaan
-Pure waste
-
-These are non-value adding actions that in principle can and should be eliminated now
-For example, if a group is participating in the waste of defects with test-last and correct-last, that can be replaced with acceptance test-driven development
-
-Temporarily necessary waste
-These are things we must do because of some constraint, but still correctly classify as waste.
-Eg. banks must do "regulatory compliance" activities that are required by law, but they are not value-adding actions in the eyes of the paying customer
-These are temporary wastes because in the future it may be possible to change things so they are no longer necessary
+Vuosien varrella on ehdotettu myös uusia hukan muotoja, näistä eräs _ihmisten potentiaalin alihyödyntäminen_ on jossain määrin jo vakiintunut. Englanniksi tätä hukan muotoa kuvaillaan seuraavasti _Under-realizing people’s potential and varied skill, insight, ideas, suggestion._
  
 #### Muri- ja mura-tyyppinen hukka
 
@@ -184,7 +169,7 @@ Kaizeniin liittyvä syklinen parannusprosessiin liittyy usein tasaisin väliaj
 
 Hukan etsimiseen ja kartoittamiseen käytetään usein nimellä [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) tekniikkaa. Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen.
 
-![]({{ "/images/5-2.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-2.png" | absolute_url }}){:height="400px" }
 
 Kuvassa on kuusi työvaihetta, joiden läpi tuote, esim. user story kulkee. Kussakin työvaiheessa kuluvan ajan voidaan kasvattavan työn arvoa, esim. vaihe _code and test_, vie 2 tuntia, joka on välttämätöntä sen kannalta, että story ylipäätään saataisiin julkaistua. Kunkin työvaiheen välillä story on _välivarastossa_, odottamassa seuraavaa työvaihetta, ja välivarastointi oli eräs hukan muoto. Value stream mappingingin onkin tarkoitus tuoda esille kaikki "välivarastot", jotta olisi mahdollista miettiä miten niitä saataisiin minimoitua.
 
@@ -196,12 +181,12 @@ Eräs root cause analysis -tekniikka on [five whys](https://en.wikipedia.org/wi
 
 Edellisestä kuvassa olevasta value stream mapista havaitaan, että koodin valmistumisesta menee 1.5 viikkoa sen tuotantoon saamiseen. 
 
-- _*Miksi?*_ QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
-- _*Miksi?*_ Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
-- _*Miksi?*_ Ohjelmoijilla on kiire sprintin tavoitteena olevien user storyjen tekemisessä.
-- _*Miksi?*_ Edellisten sprinttien aikana tehtyjen storyjen bugikorjaukset vievät .yllättävän paljon aikaa.
-- _*Miksi?*_ Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan.
-- _*Miksi?*_ Sprintteihin otetaan aina liian monta user storyä.
+- **Miksi?** QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
+- **Miksi?** Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
+- **Miksi?** Ohjelmoijilla on kiire sprintin tavoitteena olevien user storyjen tekemisessä.
+- **Miksi?** Edellisten sprinttien aikana tehtyjen storyjen bugikorjaukset vievät .yllättävän paljon aikaa.
+- **Miksi?** Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan.
+- **Miksi?** Sprintteihin otetaan aina liian monta user storyä.
 
 Näin kysymällä toistuvasti _miksi_ on mahdollista päästä ongelman perimmäisen syyn lähteille, eli sinne mitä korjaamalla jäte saadaan toivon mukaan eliminoitua. Esimerkin kuusi miksi-kysymystä siis paljastaa ongelman perimmäiseksi syyksi sen, että _sprintteihin otetaan aina liian monta user storyä_, eli hukan eliminoimiseksi on todennäköistä lähteä liikkeelle sprinttien työmäärän vähentämisellä.
 
@@ -240,7 +225,7 @@ Virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamal
 
 Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analysis, develop, test_, joille kullekin on asetettu WIP-rajoite. Työvaiheiden väliin on myös sijoitettu välivarastoja, _dev ready_ ja _build ready_, joilla myös on WIP-rajoitteet. 
 
-![]({{ "/images/5-3.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-3.png" | absolute_url }}){:height="400px" }
 
 Kaikenkaikkiaan kuvan kanban-taulu salli että sille on sijoitettu kaksikymmentä user storyä. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_. 
 
@@ -382,7 +367,7 @@ SAFe® tarjoaa suuren määrän periaatteita (engl. principles), henkilä- j
 SAFe® tarojaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota.
 Näistä pienin Essential SAFe® on tarkoitettu pienemmille yrityksille ja SAFen soveltamisen alkuvaiheeseen. Konfiguraatiosta suurin Full SAFe® taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön.Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
 
-![]({{ "/images/5-4.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-4.png" | absolute_url }}){:height="500px" }
 
 Sovelluskehityksen ytimessä on SAFen hieman modifioima Scrum, johon on liitettu joukko XP:n periaatteita.
 
@@ -422,7 +407,7 @@ LeSS korostaa, kyseessä _ei_ ole erillinen Scrumin päälle lisätty hallinnoll
 
  LeSSin taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
 
-![]({{ "/images/5-5.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-5.png" | absolute_url }}){:height="400px" }
 
 Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction.html#LeSSPrinciples)
 
@@ -441,151 +426,143 @@ Lisää periaatteista [LeSS:in](https://less.works/less/framework/introduction
  
 #### LeSS käytännössä
 
-Katsotaan hieman tarkemmin LeSS:in pienempää konfiguraatiota
+Katsotaan hieman tarkemmin LeSS:in pienempää konfiguraatiota, jonka on tarkoitettu noin 2-8 tiimin hallintaan. 
 
-The smaller LeSS framework is for one (and only one) Product Owner who owns the product, and who manages one Product Backlog worked on by teams in one common Sprint, optimizing for the whole product.
-The LeSS framework elements are about the same as one-team Scrum:
-Roles
-one Product Owner
-two to eight Teams
-a Scrum Master for one to three teams
+Henkilöroolit ovat samat kuin normaalissa Scrumissa. Product ownereita on yksi, Scrum mastereita voi olla muutamia riippuen tiimien määrästä, yksi scrum master pytyy hoitamaan järkevästi noin 1-3 tiimin asioita.
 
-Teams are feature teams
-true cross-functional and cross-component full-stack teams that work together in a shared code environment
-  
-each doing everything to create done items
+Tiimit ovat itseorganisoituvia _full-stack, feature-tiimejä_, eli jokainen tiimi keskittyy asiakkaalle arvoa tuottavien kokonaisuuksien toteuttamiseen. Tiimijako siis _ei noudata_ sovelluksen arkkitehtuurisia kerroksia, eli ei ole esimerkiksi erillisiä frontend-,backend- ja tietokantatiimejä, kukin tiimi operoi ohjelmiston kaikilla tasoilla toteuttaen alusta loppuun user storyjen kuvaaman toiminnallisuuden definition of donen tasalla.
+
+Myös artifaktit ovat samat kuin normaalissa Scrumissa. Product backlogeja on yksi, Sprint backlog sensijaan on jokaisella tiimillä oma. Kaikki tiimit työstävät sprintin aikana samaa ohjelmistoa, _potentially shippable product icremet_ eli sprintin tuotoksena oleva ohjelmiston valmiiksi asti tehty laajennus on kaikille tiimeille sama.
+
+![]({{ "/images/5-6.png" | absolute_url }}){:height="350px" }
+
+Sprintin suunnittelu eli sprint planning on normaalista Scrumista poiketen kaksiosainen.
+
+Ensimmäisessä osassa product owner ja kaikkien tiimien edustajat valitsevat product backlogilta eri tiimille seuraavan sprintin aikana toteutettavan user storyt.
+
+Suunnittelun toinen osa on tiimikohtainen. Kukin tiimi muodostaa oman sprint backlogin, joiden avulla sprintin sisäinen toiminta hallitaan normaalin Scrumin tapaan. Tarpeen vaatiessa tosin useampikin tiimi voi toimia sprintin aikana synkroonissa, käyttäen yhteistä sprint backlogia.
  
-Artifacts
-One potentially shippable product increment one Product Backlog,
-a separate Sprint Backlog for each Team
+![]({{ "/images/5-7.png" | absolute_url }}){:height="350px" }
 
-Events
-One common Sprint for the whole product
-it includes all teams and ends in one potentially shippable product increment
+Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katselmoidaan yhdessä. Retrospektiivi taas on kaksitasoinen, ensin pidetään normaalin Scrumin tapaan tiimikohtainen retrospektiivi ja tämän jälkeen koko tuotteen valmistusprosessia tarkasteleva overall-retrospektiivi, missä on edustus kaikista tiimeistä ja mahdollisesti yrityksen johdosta.
 
-![]({{ "/images/5-6.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-8.png" | absolute_url }}){:height="350px" }
 
-Sprintin suunnittelun ensimmäisessä osassa Product Owner ja tiimien edustajat valitsevat Product Backlogilta kaikille eri tiimille seuraavan sprintin storyt
-Suunnittelun toisessa osassa tiimit muodostavat kukin oman sprint backlogin joiden avulla sprintin sisäinen toiminta hallitaan normaalin Scrumin tapaan
-LeSS: kaksiosainen sprintin suunnittelu
- 
-![]({{ "/images/5-7.png" | absolute_url }}){:height="300px" }
+#### Muu tiimien välinen koordinointi
 
-![]({{ "/images/5-8.png" | absolute_url }}){:height="300px" }
+Kaikille tiimeille yhteisen sprintin suunnittelun ensimmäisen osan, Sprint reviewin ja overall-retrospektiivin lisäksi LeSS ei edellytä muita tiimien väliseen koordinaatioon tarkoitettuja yhteisiä tapaamisia vaan toteaa että tiimit päättävät keskenään miten koordinaatio tapahtuu.
 
-LeSS: sprintin katselmointi ja kaksiosainen retrospektiivi
+LeSS antaa joukon aiheeseen liittyviä ohjeita ja suosituksia:
+- prefer decentralized and informal coordination over centralized coordination
+- Emphasize _just talk_ and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
 
-Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katselmoidaan yhdessä
-Retrospektiivi on kaksitasoinen: tiimikohtainen ja koko tuotteen valmistusprosessia tarkasteleva overall-retrospektiivi, missä on edustus kaikista tiimeistä ja mahdollisesti yrityksen johdosta
- 
-Kaikille tiimeille yhteisen sprintin suunnittelun (ensimmäisen osan), Sprint reviewin ja overall-retrospektiivin lisäksi LeSS ei edellytä muita tiimien väliseen koordinaatioon tarkoitettuja yhteisiä tapaamisia
-LeSS antaa joukon aiheeseen liittyviä ohjeita ja suosituksia Cross-team coordination is decided by the teams
-Prefer decentralized and informal coordination over centralized coordination
-Emphasize Just Talk and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
-Just Talk korostaa suoran kommunikoinnin tärkeyttä
-Communicate in code tarkoittaa ryhmien välistä työskentelyä helpottava ohjelmointitapaa, mm. yhteisiä koodikäytänteitä ja jatkuvaa integraatiota
-Scouteilla tarkoitetaan muiden tiimien daily scrumissa vierailemista
+Periaate _just talk_ korostaa suoran kommunikoinnin tärkeyttä, _communicate in code_ tarkoittaa ryhmien välistä työskentelyä helpottava ohjelmointitapaa, esimerkiksi. yhteisiä koodikäytänteitä ja jatkuvaa integraatiota. _Scouteilla_ tarkoitetaan muiden tiimien daily scrumissa vierailemista.
 
-LeSS mainitsee myös Scrum of Scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mielummin informaalimpia kommunikaation muotoja
+LeSS mainitsee myös Scrum of Scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mielummin informaalimpia kommunikaation muotoja.
 
-LeSS: Muu tiimien välinen koordinointi
- 
-Scrum olettaa, että noin 5-10% sprintin työskentelystä käytetään backlog groomingiin, jonka tarkoituksena siis pitää backlog DEEP:inä
-LeSS kiinnittää eksplisiittisesti huomioita backlogin ylläpitämiseen
-The Product Owner shouldn’t work alone on Product Backlog refinement
-He is supported by the multiple Teams working directly with customers/users and other stakeholders
-All prioritization goes through the Product Owner
-Clarification is as much as possible directly between the Teams and customer/users and other stakeholders
-Product Backlog Grooming is done per team for the items they are likely going to do in the future
-Do multi-team and/or overall grooming to increase shared understanding and exploiting coordination opportunities when having closely related items or a need for broader input/learning
+#### Backlogin ylläpito
 
-LeSS siis rohkaisee voimakkaasti sovelluskehittäjien ja asiakkaiden/loppukäyttäjien läheiseen kanssakäymiseen
+Scrum olettaa, että noin 5-10% sprintin työskentelystä käytetään backlog groomingiin, jonka tarkoituksena siis pitää backlog [DEEP](/linkki_deep):inä. Toisin kuin Scrum, LeSS kiinnittää eksplisiittisesti huomioita backlogin ylläpitämiseen ja antaa aiheeseen liittyvää ohjeistusta.
+
+Product owner on vastuussa backlogista, ja hoitaa kaiken priorisoinnin. Backlogin ylläpidossa (grooming/refinement) tulee olla mukana myös kaikkien tiimien sekä sovelluksen eri sidosryhmien. Oletusarvoisesti kukin tiimi hoitaa niiden storyjen tarkentamista mitkä tiimi tulee todennäköisesti toteuttamaan. Tarpeen mukaan tiimit kuitenkin järjestävät yhteisiä backlogin groomaustilaisuuksia tarkastellessaan toisiinsa läheisesti liittyvien storyjen tarkennusta tai miettiessään sovelluksen kehityksen suurempiin linjauksiin, esimerkiksi arkkitehtuuriin vaikuttavia asioita.
+
+LeSS kannustaa kehittäjätiimejä kommunikoimaan mahdollisimman suoraan asiakkaiden tai loppukäyttäjien kanssa.
  
 #### LeSS huge
 
-Jos tiimien määrä on suurempi kuin kahdeksan, suositellaan käytettäväksi _LeSS huge_ -versiota. 
-Edelleen oletataan että kehitettävänä on ainoastaan yksi tuote, jolla on yksi product backlog sekä yksi vastuunalainen product owner.
+Jos tiimien määrä on suurempi kuin kahdeksan, suositellaan käytettäväksi _LeSS huge_ -versiota. Edelleen oletataan että kehitettävänä on ainoastaan yksi tuote, jolla on yksi product backlog sekä yksi vastuunalainen product owner.
 
-Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), joista jokaiselle on siitä vastuun kantava _area product owner_, joista muodostetaan tuotteen kokonaisuutta hallinnoiva _product owner -tiimi_, joka toimii koko tuotteen product ownerin johdolla.
+Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), joista jokaiselle on siitä vastuun kantava _area product owner_. Area product ownerit muodostavat tuotteen kokonaisuutta hallinnoiva _product owner -tiimin_, joka toimii koko tuotteen product ownerin johdolla.
 
-![]({{ "/images/5-9.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-9.png" | absolute_url }}){:height="380px" }
 
 #### LeSS vs SAFe
 
 On erittäin mielenkiintoista että molemmat SAFe® ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehitystapa oli kuitenkin täysin erilainen, ja 
 SAFe® (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
 
-Osoitteesta http://gosei.fi/blog/less-safe-comparison/ löytyy hyvä vertailu menetelmistä.
+Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyman kirjoittama [menetelmien vertailu](https://gosei.fi/blog/less-safe-comparison/) kannattaa lukea.
 
 Kuten aiemmin todettiin SAFe® on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta, en myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe®:a.
 
 En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
 
-## Miten laajalti Agilea käytetään 
+## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa.
 
-Internetistä löytyy aiheesta jossain määrin dataa
-Forrester surveyed (2009) nearly 1,300 IT professionals and found that 35 percent of respondents stated that agile most closely reflects their development process
-http://www.infoworld.com/d/developer-world/agile-software-development -now-mainstream-190
+Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käytöön ja hyödyllisyytteen liittyvään tutkimukseen.
 
-Agile methodologies are the primary approach for 39 percent of responding developers, making Agile development the dominant methodology in North America. Waterfall development, is the primary methodology of 16.5 percent of respondents (2010)
-http://visualstudiomagazine.com/articles/2010/03/01/developers-mix-and -match-agile-approaches.aspx
+### Miten laajasti ketteriä mentelemiä käytetään
 
-HP:n vuonna 2015 tekemä tutkimus julistaa "Agile is the new normal"
-Tutkimuksessa 601 vastaajaa
+Internetistä löytyy melko paljon erilaisia kyselytytkimuksia, jotka kartoittavan ketterien menetelmien käytön yleisyyttä. 
 
-Miten laajalti Agilea käytetään HP:n tutkimus ei määrittele kovin hyvin käsitteitä
-A hybrid approach: incorporate at least some Agile solutions and principles
-Leaning towards agile jää määrittelemättä
+Max Steinmetz [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytytkimusta, joista löytyy erilaisia lukemia, mm. [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselyn 46% ja [Stack owerflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyn lukema 85.9%. 
 
+Googlailemalla löytyy runsaasti lisää erilaisia kyselyjä, ja kaikissa ketteryyden käyttöaste sijoittuu suunilleen näiden kahden prosentin väliin, useimmiten reilusti viiden kymmenen yläpuolelle.
 
-https://www.hpe.com/h20195/v2/GetPDF.aspx/4AA5-7619ENW.pdf
-Ketteryys on Suomessa suosittua:
-The results of the survey reveal that a majority of respondents'
-organizational units are using agile and/or lean methods (58%)
-Markkula ym.: Survey on Agile and Lean usage in Finnish software industry, ESEM 2012 (ks. ACM digital library)
-http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_IndustryT rack_1_0.pdf
+Valtaosa internetissä olevista kyselyistä ei täytä tieteellisen tutkimuksen kriteerejä, niiden tutkimusotokset eivät ole välttämättä kattavia ja tutkimusmetodologiakin voi olla kyseenlalainen. Osa tutkimusten tekijöistä on kaupallisia toimijoita joiden intressinä saattaa olla itselleen suosiollisten tulosten julkaisu.
 
-Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa Seelannissa tehdyssä tutkimuksessa "Adoption and Suitability of Software Development Methods and Practices" mainitaan seuraavat luvut
-Scrum was most often utilized by respondents (71.2%), with Kanban (49.5%), Lean (39.7%) and Waterfall (35.3%) following in that order
+Aiheesta on tehty myös jonkun verran tieteellistä tutkimusta. Oulun yliopiston tutkijoiden artikkelin [Survey on Agile and Lean usage in Finnish software industry](http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_IndustryTrack_1_0.pdf) mukaan 58% tutkimukseen osallistuneista 200 yrityksestä ilmoitti käyttäänsä ketteriä tai lean-menetelmiä ohjelmistokehityksessä.
 
-http://ieeexplore.ieee.org/document/7890614/
+Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa Seelannissa tehdyssä tutkimuksessa [Adoption and Suitability of Software Development Methods and Practices](https://ieeexplore.ieee.org/document/7890614/) päädyttiin seuraaviin lukuihineri  menetelmien käytön osalta
+- Scrum 71.2%
+- Kanban 49.5% 
+- Lean 39.7%
+- Waterfall 35.3%
+
+Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita2)
+ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät eivät ole yrityksessä ollenkaan käytössä:
+
+![]({{ "/images/5-9a.png" | absolute_url }}){:height="300px" }
+
+Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoprojekteissa, joissa hitaan liikkeellelähdön jälkeen [agile on noussut](https://www2.deloitte.com/insights/us/en/industry/public-sector/agile-in-government-by-the-numbers.html) dominoivaan asemaan
+
+![]({{ "/images/5-10.png" | absolute_url }}){:height="300px" }
+
+### State of Agile -raportti
  
+Jo 13 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin mukaan Scrum dominoi ketterien menetelmien kenttää.
 
-Miten laajalti Agilea käytetään
-Kuten edellisten kalvojen lukemat osoittavat, ketterä kehitys valtaa alaa
-Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoprojekteissa, joissa hitaan liikkeellelähdön jälkeen agile on noussut dominoivaan asemaan
-https://www2.deloitte.com/insights/us/en/industry/public-sector/agile- in-government-by-the-numbers.html
+![]({{ "/images/5-11.png" | absolute_url }}){:height="300px" }
 
+Scrumia ja sen johdannaisia käyttää siis 74 % vastaajista. Extreme programmingin (eli XP) osuus on enää mariginaalinen 1%. 
+
+Ketterien projektinhallintakäytänteiden osuus näytti seuraavalta:
+
+![]({{ "/images/5-12.png" | absolute_url }}){:height="400px" }
+
+_Daily standup_ -palaverit on edellisten vuosien tapaan kärjessä. Ketterien teknisten käytänteiden osalta tilanne näyttää seuraavalta:
+
+![]({{ "/images/5-13.png" | absolute_url }}){:height="300px" }
+
+Lista on osin hieman yllättävä, voisi esimerkiksi olettaa että jatkuva integrointi olisi nykyään lähes kaikkialla käytössä, mutta ainoastaan 53% ilmoittaa käyttävänsä sitä.
  
-VersionOnen "internetin virallisesta" vuosiraportista
-http://stateofagile.versionone.com
+### Toimiiko ketterä ohjelmistokehitys
 
-Mitä ketteriä menetelmiä käytetään?
- 
-VersionOne:
-Ketterät käytänteet
- Ketterät "engineering"-käytänteet
-Suomen tilanne:
-http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_Indust ryTrack_1_0.pdf
- Ketterät käytänteet Suomesta tehdyssä tutkimuksessa (n=225)
- 
-Projektien onnistuminen: ketterä vastaan perinteinen Standish CHAOS raport 2015 (tutkittu yli 50000 projektia ympäri maailman)
-https://www.infoq.com/articles/standish-chaos-2015
+Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaisuut vuodesta 1995 alkaen ohjelmistoprojektien onnistumisen astetta kartoittaava _Chaos Raportia_.
 
-Kuten tämä(kin) tutkimus osoittaa, on suurien projekteien epäonnistumisriski huomattavasti pieniä korkeampi
- Ketteryydellä saavutettuja etuja tarkemmin eriteltynä
- Ketteryydellä saavutettuja etuja Suomessa...
- Suurimmat haasteet ketterien menetelmien käytössä
- 
-Evidenssiä on, mutta... Oikeastaan kaikki edelliset olivat kyselytutkimuksia
-Käsitteitä ei ole kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan)
-Kyselyyn osallistuneet eivät välttämättä edusta tasaisesti koko populaatiota
-Kaikkien kyselyjen tekijät eivät puolueettomia menetelmien suhteen (esim. VersionOne)
+Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
+- _successful_, projekti on onnistunut jos se valmistuu aikataulussa, budjetoituun hintaan ja suunnitellussa laajuudessa
+- _challenged_, projektin onnistuminen on vaarantunut jos jos jokin onnistumisen komponenteista _aikataulu, budjetti, laajuus_ ei ole toteutunut, esimerkiksi jos sovellus on valmistunut aikataulussa, pystyy budjetin puitteissa, mutta kaikkea suunniteltua toiminnallisuutta ei ole toteutettu 
+- _failed_, projekti on epäonnistunut jos se ei valmitu, tai sitä ei oteta koskaan käyttöön
 
-Eli tutkimusten validiteetti on kyseenalainen
-Toisaalta kukaan ei ole edes yrittänyt esittää evidenssiä, jonka mukaan vesiputousmalli toisi systemaattisia etuja ketteriin menetelmiin verrattuna
-Myös akateemista tutkimusta on todella paljon (mm. Markkulan ym. kyselytutkimus) ja eri asioihin kohdistuvaa. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee
-Ohjelmistotuotannossa on liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti
-Menetelmiä soveltavat kuitenkin aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin
+Vuoden 2018 raportissa projektien onnistumisenaste näyttää seuraavalta:
 
-Olemassa olevan evidenssin nojalla kuitenkin näyttää siltä, että ongelmistaan huolimatta ketterät menetelmät ovat ainakin joissakin tapauksissa järkevä tapa ohjelmistokehitykseen
+![]({{ "/images/5-14.png" | absolute_url }}){:height="150px" }
+
+Projektin koolla on itseasiasa todella suuri merkitys onnistumisen kannalta. Jos tarkastelussa otetaan huomioon projektin koko, on onnistumisprosentti seuraavanlainen:
+
+![]({{ "/images/5-15.png" | absolute_url }}){:height="220px" }
+
+Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa mitä suuremmasta projektista on kyse.
+
+[State of Agile](https://www.stateofagile.com) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
+
+![]({{ "/images/5-16.png" | absolute_url }}){:height="400px" }
+
+### Johtopäätöksiä
+
+Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä kaikki edereferoidut tutkimukset ovat kyselytutkimuksia, joissa käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät välttämättä edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskääm puolueettomia menetelmien suhteen, esim. State of Agile -raporttia tuottava [CollabNet/VersionOne](https://www.collab.net/) ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
+
+Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, kahteen näistä  viitattiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osa akateemisesta tutkimuksesta, esim. edellä viitatut ketterien menetelmien käytön yleisyyttä kartoittaneet tuktimukst on tehty kyselytytkimuksena. 
+
+On myös tutkimuksia joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin hyötyjen mittaamiseen tai jatkuvan integraation hyötyjen mittaamiseen ja kartoittamiseen. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat kuitenkin aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
