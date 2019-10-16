@@ -11,7 +11,14 @@ permalink: /osa1/
   />
 </a>
 
-Ensimmäisen viikon teemoina...
+<div class="important">
+DRAFT: Lukeminen omalla vastuulla!
+</div>
+
+
+Ensimmäisessä osassa käydään aluksi katsaus _ohjelmistotuotantoon_, sen historiaan ja osa-alueisiin. Tämän jälkeen tutustutaan ensin ns. vesiputousmalliin, eli aiemmin suosittuun tapaan hallita ohjelmistoprojekteja ja sen jälkeen ketteriin menetelmiin, eli nykyään vallalla olevaan ohjelmistoprojektien kehitys- ja hallintatapaan.
+
+Tämän osan jälkipuolisko keskittyy suosituimpaan ketterään menetelmään _Scrumiin_, joka antaa erään konkreettisen ohjeiston sille miten ketteriä ohjelmistoprojekteja voi hallita.
 
 ## Ohjelmistotuotanto ja sen osa-alueet
 
@@ -19,13 +26,14 @@ IEEE (Institute of Electrical and Electronics Engineers) yksi alamme keskeisist�
 
 > The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software
 
-IEEE:n mukaan ohjelmistotuotannolla tarjoitetaan systemaattista, kurinalaista, mitattavissa olevaa tapaa ohjelmistojen kehittämiseen, operointiin ja ylläpitoon. Määritelmän loppukaneetti sanoo, että kyseessä on siis "insinöörimäinen" tapa ohjelmistojen tekoon ja operointiin.
-
-> On huomioinarvoista, että ohelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono, jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin erihenkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä developemt, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen. 
+IEEE:n mukaan ohjelmistotuotannolla tarjoitetaan systemaattista, kurinalaista, mitattavissa olevaa tapaa ohjelmistojen kehittämiseen, operointiin ja ylläpitoon. Määritelmän loppukaneetti sanoo, että kyseessä on "insinöörimäinen" tapa ohjelmistojen kehittämiseen.
 
 Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesi määritellyt sillä mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan. SWEBOK:in uusin versio 3.0 on vuodelta 2014 eli jo jossain määrin ikääntynyt.
 
-### Osa-alueet
+> Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono, jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin erihenkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä developemt, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen. 
+
+
+### Ohjelmistotuotannon osa-alueet
 
 SWEBOK:in mukaan ohjelmistotuotanto jakautuu seuraaviin osa-alueisiin:
 
@@ -42,31 +50,31 @@ SWEBOK:in mukaan ohjelmistotuotanto jakautuu seuraaviin osa-alueisiin:
 
 _Software requirements_ tarkoittaa ohjelmistolle asetettuja vaatimuksia, eli sitä miten rakennettavan ohjelmiston tulisi loppukäyttäjän tai tilaajan mielestä toimia. 
 
-_Software design_ taas tarkoitta halutun kaltaisen toiminnallisuuden omaavan ohelmiston sisäisen rakenteen ja tekniikkojen omaavan ohjelman suunnittelua. 
+_Software design_ taas tarkoitta halutun kaltaisen toiminnallisuuden omaavan ohelmiston sisäisen rakenteen suunnittelua. 
 
-_Software construction_ viittaa aktiviteetteihin, jonka avulla suunniteltu ohjelmisto saadaan toiminakuntoiseksi eli käytännössä siis tarkoitetaan ohjelmointia ja debuggausta.
+_Software construction_ viittaa aktiviteetteihin, jonka avulla suunniteltu ohjelmisto saadaan toimivaksi tuotteeksi eli käytännössä ohjelmointia ja debuggausta.
 
-Kuten arvata saattaa _Software testing_ tarkoittaa niitä menetelmiä, millä varmistutaan siitä että ohjelmisto toimii kuten halutaan ja että se on riittävän bugiton käytettäväksi.
+Kuten arvata saattaa _software testing_ tarkoittaa niitä menetelmiä, millä varmistutaan että ohjelmisto toimii kuten halutaan ja että se on riittävän bugiton käytettäväksi.
 
-Suurin osa ohjelmisstoista ei valmistu lopullisesti koskaan, kun ohjelman ensimmäinen versio otetaan käyttöön alkaa ylläpito eli _software maintenance_ eli bugeja korjaillaan ja ohjelmaa laajennetaan uusilla toiminnoilla.
+Suurin osa ohjelmisstoista ei valmistu lopullisesti koskaan, kun ensimmäinen versio otetaan käyttöön alkaa ylläpito eli _software maintenance_ eli bugeja korjaillaan ja ohjelmistoa laajennetaan uusilla toiminnoilla.
 
 _Software configuration management_ viittaa ohjelmiston käyttöönsaattamiseen liittyviin kirjastojen, laitteistojen ja käännösprosessin konfigurointiin sekä ohjelmiston versiointiin.
 
-Ohjelmistojen tekemiseen liittyy paljon suunnittelu, koordinointia, hallinnointia ja raportointia eli "managementtiä", _Software engineering management_. 
+Ohjelmistojen tekemiseen liittyy paljon suunnittelu, koordinointia, hallinnointia ja raportointia eli "managementtiä", tähän viittaa _software engineering management_. 
 
-_Software engineering process_ eli ohjelmistoprosessit kuvavat tapoja tai menetelmiä miten ohelmistoa kehittävien ihmisten tulisi tulisi hoitaa ja ajoittaa erilaisia ohjelmiston tekemiseksi vaadittavia aktiviteettejä (requirements, design, construction, testing). Palaamme aiheeseen tarkemmin seuraavassa luvussa.
+_Software engineering process_ eli ohjelmistotuotantoprosessit kuvavat tapoja tai menetelmiä miten ohelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin seuraavassa luvussa.
 
 _Software engineering models and methods_ kuvaa yksityskohtaisempia menetelmiä, joita ohjelmistokehityksessä käytetään, kuten mallinnusta ja erilaisia suunnittelumenetelmiä. 
 
-Ohjelmistojen laatu eli _Software quality_ on vielä testaustakin avarampi näkemys siihen onko ohjelmisto hyvä, bugittomuutta ja oikein toimivuutta keskeisempi kysymys on se, vastaako ohjelmisto ylipäätään käyttäjien tarpeeseen, onko se sopiva käyttötarkoitukseensa.
+Ohjelmistojen laatu eli _software quality_ on vielä testaustakin avarampi näkemys siihen onko ohjelmisto hyvä. Bugittomuutta ja oikein toimimista keskeisempi kysymys onkin se, sopiiko ohjelmisto ylipäätään käyttäjien tarpeeseen, eli onko se sopiva käyttötarkoitukseensa.
 
-Ohjelmistotuotanto pitää siis allaan suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käydään ainakin jossain määrin läpi näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Lähes jokaisesta aihepiiristä on kuitenkin tarjolla kursseja erityisesti maisteripuolella. 
+Ohjelmistotuotanto pitää siis sisällään suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käydään ainakin jossain määrin läpi näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Lähes jokaisesta aihepiiristä on kuitenkin tarjolla syventäviä kursseja maisteriopinnoissa. 
 
-Aloittelevalle ohjelmistoalan opiskelijalle onkin tässä vaiheessa oleellisempaa saada kokonaiskuva ohjlemistotuotannon kentästä ja sen jälkeen soveltaa ja reflektoida oppimaansa käytännön ohjelmistotyössä, esim. Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti) tai oikeassa työelämässä. Aihepiiriä syventävät kurssit ovat todennäköisesti huomattavasti mielekkäämpää suorittaa siinä vaiheessa kun opiskelija omaa jo jonkinlaisen määrän alan käytännön kokemusta.
+Aloittelevalle ohjelmistoalan opiskelijalle on tässä vaiheessa olennaisinta saada kokonaiskuva koko  ohjelmistotuotannon kentästä ja sen jälkeen soveltaa sekä reflektoida oppimaansa "teoriaa" käytännön ohjelmistotyössä, esim. Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti) tai oikeassa työelämässä. Aihepiiriä syventävät kurssit ovat todennäköisesti huomattavasti antoisampia kokemuksia siinä vaiheessa kun opiskelija omaa jo jonkin verran käytännön työkokemusta alalta.
 
-## Ohjelmiston elinkaari
+## Ohjelmiston vaiheet ja elinkaari
 
-Edellisessä luvussa mainituttujen ohjelmistotuotannon osa-alueeiden
+Edellisessä luvussa mainituttujen ohjelmistotuotannon osa-alueiden
 
 - Software requirements, vaatimusten määrittely
 - Software design, suunnittelu
@@ -74,46 +82,46 @@ Edellisessä luvussa mainituttujen ohjelmistotuotannon osa-alueeiden
 - Software testing, testaus
 - Software maintenance, ylläpito 
 
-voidaan ajatella muodostavan _vaiheet_, joiden kautta ohjelmisto kehityksensä aikana etenee. Joskus näistä vaiheista käytetään nimitystä ohjelmiston _elinkaari_ (software lifecycle). Aikojen saatossa on ollut erilaisia tapoja jäsentää ohjelmistojen kehittäminen elinkaaren suhteen, eli se miten ja kenen toimesta vaiheet on suoritettu, on vaihdellut.
+voidaan ajatella muodostavan _vaiheet_ (engl. phases) joiden kautta ohjelmisto kehityksensä aikana etenee. Joskus näistä vaiheista käytetään nimitystä ohjelmiston _elinkaari_ (engl. software lifecycle). Aikojen saatossa on ollut erilaisia tapoja jäsentää ohjelmistojen kehittäminen elinkaaren suhteen, eli se miten ja kenen toimesta vaiheet on suoritettu, on vaihdellut.
 
 ### Code'n'fix
 
-Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot olivat laitteistoihin nähden "triviaaleja". Ohjelmointi tapahtui alussa kaapeleita yhdistelemällä ja hieman myöhemmin konekielellä. Sovellusten käyttäjät, kuten aseteollisuudessa olleet fyysikot jotka laskivat ammusten lentoratoja, yleensä ohjelmoivat itse tarvitsemansa sovellukset. 
+Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot olivat laitteistoihin nähden "triviaaleja". Ohjelmointi tapahtui alussa kaapeleita yhdistelemällä ja hieman myöhemmin konekielellä. Sovellusten käyttäjät, kuten aseteollisuudessa työskennelleet fyysikot ammusten lentoratoja laskeneet fyysikot, yleensä ohjelmoivat itse tarvitsemansa sovellukset. 
 
-Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisne halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa.
+Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisne halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
 
-Vähitellen ohjelmistot alkavat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta koskemaan muitakin elämänalueita kuin sotateollisuutta. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
+Vähitellen ohjelmistot alkavat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin sotateollisuutta. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
 
-Ohjelmistoala alkoi joutua ongelmiin, [wikipedia](https://en.wikipedia.org/wiki/Software_crisis) mukaan ongelmia olivat
+Ohjelmistoala alkoi joutua ongelmiin, [wikipedia](https://en.wikipedia.org/wiki/Software_crisis) mukaan ongelmaksi alkoivat muodostua mm. seuraavat seikat
 
 - budjetit ylittyivät ja projektit myöhästyivät aikatauluista
 - ohjelmistot olivat tehottomia, niiden laatu oli huono ja ne eivät toimineet käyttäjien tarpeiden mukaan
 - koodin ylläpito ja laajentaminen oli vaikeaa
-- ja jopa usein kävi niin, että ohjelmistoja ei hyvistä aikista huolimatta saatu ollenkaan toimitettua
+- ja jopa usein kävi niin, että ohjelmistoja ei hyvistä aikeista huolimatta saatu ollenkaan toimitettua
 
 ### Ohjelmistokriisi
 
 Kesällä 1968 NATO:n järjestämässä konferenssissa julkistettiinkin että maailmassa on _software crisis_, eli ohjelmistokriisi.
 
-Termillä viittaa siihen miten vaikeaa on toteuttaa käyttökelpoisia, oikein toimivia, tehokkaita ja laajennettavissa olevia ohjelmistoja käytössä olevien resurssien puitteissa.
+Termillä viittaa siihen että on vaikeaa toteuttaa käyttökelpoisia, oikein toimivia, tehokkaita ja laajennettavissa olevia ohjelmistoja käytössä olevien resurssien puitteissa.
 
 Eräs tietojenkäsittelyn pioneereista, Turing-palkittu Edsger Dijkstra ilmaisi asian seuraavasti vuonna 1972 pitämässään [esitelmäsä](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) 
 
 > The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.
 
-Eli kun tietokoneita ei ollut, ohjelmointi ei muodotanut ongelmaa. Ensimmäistet tietokoneet olivat laskentateholtaan pieniä, ja ne aiheuttivat ainoastaan pieniä ongelmia ohjelmointiin. Massiivisen tehokkaiden tietokoneiden myötä myös ohjelmoinnista on tullut massiivinen ongelma...
+Eli kun tietokoneita ei ollut, ohjelmointi ei muodotanut ongelmaa. Ensimmäisten tietokoneet olivat laskentateholtaan pieniä, ja ne aiheuttivat ainoastaan pieniä ongelmia ohjelmointiin. Massiivisen tehokkaiden tietokoneiden myötä myös ohjelmoinnista on tullut massiivinen ongelma...
 
-### Ohjelmistokehitys insinööritieteenä: software engineerin
+### Ohjelmistokehitys insinööritieteenä: software engineering
 
-Termi _software engineering_ eli ohjelmistotuotanto määritellään ensimmäistä kertaa 1968:
+Termi _software engineering_ eli ohjelmistotuotanto määriteltiin ensimmäistä kertaa 1968:
 
 > The establishment and use of sound engineering principles in order to obtain economically software that is reliable and works efficiently on real machines
      
-Syntyy idea siitä, että _code'n'fix_ -mentaliteetin sijaan ohjelmistojen kehittämisen tulisi olla kuin mikä tahansa muu insinöörityö, eli kuten esim. siltojen rakentamisessa, tulee ensin rakennettava artefakti määritellä (requirements) tarkasti ja suunnitella (design) aukottomasti ja tämän jälkeen rakentaminen (construction) on melko suoraviivainen vaihe.
+Syntyi idea siitä, että _code'n'fix_ -mentaliteetin sijaan ohjelmistojen kehittämisen tulisi olla kuin mikä tahansa muu insinöörityö, eli kuten esim. siltojen rakentamisessa, tulee rakennettava artefakti ensin määritellä (requirements) tarkasti ja suunnitella (design) aukottomasti ja tämän jälkeen rakentaminen (construction) on melko suoraviivainen vaihe.
 
 ### Vesiputous- eli lineaarinen malli
 
-Winston Roycen vuonna 1970 julkaisema artikkeli [Management of the development of Large Software](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf) pohdiskelee isojen ohjelmistojen kehittämiseen liittyvää problematiikkaa. Artikkelin sivulla 2 Royce esittelee yksinkertaisen prosessimallin (eli ohjeiston työvaiheiden jaksottamiseen), jossa ohjelmiston elinkaaren vaiheet suoritetaan lineaarisesti peräkkäin:
+Winston Roycen vuonna 1970 julkaisema artikkeli [Management of the development of Large Software](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf) pohdiskelee isojen ohjelmistojen kehittämiseen liittyvää problematiikkaa. Artikkelin sivulla 2 Royce esittelee yksinkertaisen _prosessimallin_ (eli ohjeiston työvaiheiden jaksottamiseen), jossa ohjelmiston elinkaaren vaiheet suoritetaan lineaarisesti peräkkäin:
 
 ![](https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/l-1.png)
 
@@ -123,9 +131,9 @@ Roycen versio kuvasta näyttää seuraavalta:
 
 Suoraviivainen lineaarinen malli, jota ruvettiin kutsumaan vesiputousmalliksi, saavutti nopeasti suosiota. Malli on monella tapaan järkeenkäypä, ensi kannattaa selvittää mitä ollaan tekemässä ja suunnittelu hoitaa vasta tämän jälkeen. Kun suunnitelma on valmis, voidaan tuote valmistaa ja sen jälkeen testata että se toimii kuiten haluttiin, näinhän toimitaan monella muullakin tuotannon alalla.
 
-Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltain puolustusministerö (Department of Defence, DoD) joka oli tuohon aikaan eräs maailman suurimmista ohjelmistojen tilaajista, rupesi vaatimaan kaikilta alihankkijoiltaan prosessin noudattamista (Standardi DoD STD 2167). Muutkin ohjelmistoja tuottaneet tahot ajattelivat, että koska DoD vaatii vesiputousmallia, on se hyvä asia ja tapa kannattaa omaksua itselleen
+Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltojen puolustusministerö (Department of Defence, DoD) joka oli tuohon aikaan eräs maailman suurimmista ohjelmistojen tilaajista, rupesi vaatimaan kaikilta alihankkijoiltaan prosessin noudattamista (Standardi DoD STD 2167). Muutkin ohjelmistoja tuottaneet tahot ajattelivat, että koska DoD vaatii vesiputousmallia, on se hyvä asia ja tapa kannattaa omaksua itselleen
 
-Vesiputousmalli perustuu vahvasti siihen, että eri vaiheet ovat erillisten tuotantotiimien tekemiä, joukko analyytikkoja miettii asiakkaan kanssa sovellukselle asetetut vaatimuksen, ohjelmistoarkkitehdit saavat vaatimusmääritelmän tuloksen ja suunnittelevat ohjelman sen perusteella. Ohjelmoijat toteuttavat sovelluksen arkkitehtien suunnitelman mukaan ja antavat sen testaajille laadunhallintaa varten. Tämä tuntuu luonnolliselta työnjaolta, kutakin erilaista vaihetta tekee kyseessä olevaan vaiheen työskentelymenetelmiin erikoistunut ihmisjoukko. 
+Vesiputousmalli perustuu vahvasti siihen, että eri vaiheet ovat erillisten tuotantotiimien tekemiä. Joukko analyytikkoja miettii asiakkaan kanssa sovellukselle asetetut vaatimuksen, ohjelmistoarkkitehdit saavat vaatimusmääritelmän tulokset ja suunnittelevat ohjelman sen perusteella. Ohjelmoijat toteuttavat sovelluksen arkkitehtien suunnitelman mukaan ja antavat sen testaajille laadunhallintaa varten. Tämä tuntuu luonnolliselta työnjaolta, kutakin erilaista vaihetta tekee kyseessä olevaan vaiheen työskentelymenetelmiin erikoistunut ihmisjoukko. 
 
 Jotta tieto ohjelmiston eri vaiheiden välillä, tulee kunkin vaiheen tulokset dokumentoida huolellisesti, erityisesti asiakkaan kanssa tehtävän vaatimusmäärittelyn on oltava huolellisesti tehty ja hyvin dokumentoitu, sillä kaikki myöhemmät vaiheet olettavat että vaatimukset on kattavasti ja virheettömästi kirjattu.
 
@@ -137,26 +145,25 @@ Vesiputousmallin mukainen ohjelmistoprosessi on yleensä tarkkaan etukäteen s
 
 Vesiputousmallin mukainen ohjelmistotuotanto siis ei ole osoittautunut erityisen onnistuneeksi. 
 
-Vesiputosusmalli siis olettaa että ohjelmistotuotannon vaiheet tapahtuvat peräkkäin ja jokainen vaihe ainakin isoissa projekteissa eri ihmisten toimesta. Tästä koituu useita ongelmia.
+Vesiputousmalli siis olettaa että ohjelmistotuotannon vaiheet tapahtuvat peräkkäin ja jokainen vaihe ainakin isoissa projekteissa eri ihmisten toimesta. Tästä koituu useita ongelmia.
 
 Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Kilpailutilanne saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, mailman taloussuhtanteet vaihtuvat. Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmampaa on, että vaatimukset elävät. 
 
-On myös kerta toisensa jälkeen nähty se, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta etukäteen sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
+On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta etukäteen sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
 
-Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärällä tavalla, tai asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli dokumentoidut vaatimukset ovat jo lähtökohtaisesti väärät. 
+Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärällä tavalla, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin.
 
-Vesiputousmallin mukainen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järjevin resurssein. 
+Vesiputousmallin mukainen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järjevin resurssein. 
 
-Suunnittelun ja toteutuksen eriyttäminenkään ei ole osoittautunut toimivaksi ideaksi. Ohjelmistoja on mahdotonta suunnitella siten, että toteutus on suoraviivainen mekaaninen toimenpide, osa suunnittelusta tapahtuu pakosti vasta ohjelmointivaiheessa.
+Suunnittelun ja toteutuksenkaan eriyttäminenkään ei ole osoittautunut toimivaksi ideaksi. Ohjelmistoja on mahdotonta suunnitella siten, että toteutus on suoraviivainen mekaaninen toimenpide, osa suunnittelusta tapahtuu pakosti vasta ohjelmointivaiheessa.
 
-Vesiputousmalliin perustuvan ohjelmistotuotannon takana on siis pitkälti analogia muihin insinööritieteisiin:
-rakennettava artefakti tulee ensin määritellä ja suunnitella (design) aukottomasti, tämän jälkeen rakentaminen (construction) on triviaali vaihe.
+Vesiputousmalliin perustuvan ohjelmistotuotannon takana on siis pitkälti analogia muihin insinööritieteisiin: rakennettava artefakti tulee ensin määritellä ja suunnitella (design) aukottomasti, tämän jälkeen rakentaminen (construction) on triviaali vaihe.
 
 > Perinteisesti ohjelmointi on rinnastettu triviaalina pidettyyn "rakentamisvaiheeseen" ja kaiken haasteen on ajateltu olevan määrittelyssä ja suunnittelussa. Tätä rinnastusta on kuitenkin ruvettu kritisoimaan, sillä ohjelmistojen suunnittelu sillä tarkkuudella, että suunnitelma voidaan muuttaa suoraviivaisesti koodiksi on osoittautunut mahdottomaksi.
 > 
-> Onkin [esitetty](http://www.bleading-edge.com/Publications/C++Journal/Cpjour2.htm) että perinteisen insinööritiedeanalogian triviaali rakennusvaihe ei ohjelmistoprosessissa olekaan ohjelmointi, vaan ohjelmakoodin kääntäminen eli että ohjelmakoodi on itseasiassa ohjelmiston lopullinen suunnitelma siinä mielessä kuin insinööritieteet käsittävät suunnittelun (design).
+> Onkin [esitetty](http://www.bleading-edge.com/Publications/C++Journal/Cpjour2.htm) että perinteisen insinööritiedeanalogian triviaali rakennusvaihe ei ohjelmistoprosessissa olekaan ohjelmointi, vaan ohjelmakoodin kääntäminen. Siispä ohjelmakoodi on itseasiassa ohjelmiston lopullinen suunnitelma siinä mielessä kuin insinööritieteet käsittävät suunnittelun (design).
 
-Vesiputousmallin mukaisessa ohjelmistokehityksessä testaus suoritetaan kun ohjelmisto on valmiina. Vasta lopussa tapahtuva laadunhallinta paljastaa ongelmat kuitenkin aivan liian myöhään. Vikojen korjaaminen saattaa tulla hyvinkin kalliiksi, sillä testaus voi paljastaa ongelmia jotka pakottavat muuttamaan radikaalilla tavalla ohjelmiston rakennetta tai jopa sen vaatimuksia.
+Vesiputousmallin mukaisessa ohjelmistokehityksessä testaus suoritetaan kun ohjelmisto on valmiina. Vasta lopussa tapahtuva laadunhallinta paljastaa ongelmat kuitenkin aivan liian myöhään. Vikojen korjaaminen saattaa tulla hyvinkin kalliiksi, sillä testaus voi tuoda esiin ongelmia, jotka pakottavat muuttamaan radikaalilla tavalla ohjelmiston rakennetta tai jopa sen vaatimuksia.
 
 Martin Fowlerin artikkeli [The New Methodology]( http://martinfowler.com/articles/newMethodology.html) käsittelee laajalti lineaarisen mallin ongelmia.
 
@@ -168,27 +175,27 @@ Roycen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta siitä saa
 
 ![]({{ "/images/1-3.png" | absolute_url }})
 
-Vesiputousmalli tai ainakin Roycen nimeäminen vesiputousmallin isäksi on siis iso väärinymmärrys, onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä.
+Vesiputousmalli tai ainakin Roycen nimeäminen vesiputousmallin isäksi on siis suuri väärinymmärrys, onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
 
 ### Iteratiivinen ja inkrementaalinen ohjelmistokehitys
 
 Lineaarisen mallin ongelmiin reagoinut _iteratiivinen_ tapa tehdä ohjelmistoja alkoi yleistyä 90-luvulla (mm. spiraalimalli, prototyyppimalli, Rational Unified process.
 
-Iteratiivisessa mallissa ohjelmistotuotanto jaetaan pienempiin aikaväleihin, eli iteraatioihin. Toisin kuin vesiputousmallin mukaisessa ohjelmistotuotannossa, iteratiivisesti edetessä ei pyritä tekemään heti alussa kattavaa määrittelyä ja suunnittelua.
+Iteratiivisessa mallissa ohjelmistotuotanto jaetaan pienempiin aikaväleihin, eli _iteraatioihin_. Toisin kuin vesiputousmallin mukaisessa ohjelmistotuotannossa, iteratiivisesti edetessä ei pyritä tekemään heti alussa kattavaa määrittelyä ja suunnittelua.
 
-Jokaisen iteraation aikana määritellään, suunnitellaan toteutetaan ja testataan ohjelmistoa, eli ohjelmisto kehittyy vähitellen. Ohjelma valmistuu siis pala palalta, tämän takia iteratiivisten menetelmien sanotaan olevan myös _inkrementaalisia_.
+Jokaisen iteraation aikana määritellään, suunnitellaan toteutetaan sekä testataan ohjelmistoa, eli ohjelmisto kehittyy vähitellen. Ohjelma valmistuu siis pala palalta, tämän takia iteratiivisten menetelmien sanotaan olevan myös _inkrementaalisia_.
 
 Asiakasta tavataan jokaisen iteraation välissä, asiakas näkee sen hetkisen version ohjelmasta ja pystyy vaikuttamaan seuraavien iteraatioiden kulkuun. Ohjelmiston iinkrementaalisen kasvamisen takia sen perusversio on mahdollista saada loppukäyttäjien käyttöönkin vielä kehitystyön kuluessa.
 
 ![]({{ "/images/1-4.png" | absolute_url }})
 
-Vesiputousmallin "isä" Royce suositteli siis jo vuonna juurikin iteratiivista (kahden iteraation versiota) tapaa monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutetiin.
+Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista (kahden iteraation versiota) tapaa monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutetiin.
 
 Yhdysvaltojen puolustusministeriön vuonna 2000 julkaisema standardi (MIL-STD-498) alkoi suosittelemaan iteratiivista ohjelmistoprosessia:
 
 > There are two approaches, evolutionary (iterative) and single step (waterfall), to full capability. An evolutionary approach is preferred. ... In this approach, the ultimate capability delivered to the user is divided into two or more blocks, with increasing increments of capability...software development shall follow an iterative spiral development process in which continually expanding software versions are based on learning from earlier development. It can also be done in phases
 
-Itseasiassa iteratiivinen ohjelmistokehitys on paljon vanhempi idea kun lineaarinen malli. Esimerkiksi NASA:n ensimmäisen Amerikkalaisen avaruuteen vieneen Project Mercuryn ohjelmisto kehitettiin 50-luvun lopussa iteratiivisesti. Avaruussukkuloiden ohjelmisto tehtiin vesiputousmallin valtakaudella 70-luvun lopussa, mutta sekin kehitetiin lopulta iteratiivista prosessia käyttäen 8 viikon iteraatioissa, 31 kuukauden aikana. Lisää aiheesta Larmanin ja Basilin erinomaisessa artikkelissa [incremental and iterative development, a brief history](http://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf)
+Itseasiassa iteratiivinen ohjelmistokehitys on paljon vanhempi idea kun vesiputousmalli. Esimerkiksi NASA:n ensimmäisen amerikkalaisen avaruuteen vieneen Project Mercuryn ohjelmisto kehitettiin 50-luvun lopussa iteratiivisesti. Avaruussukkuloiden ohjelmisto tehtiin vesiputousmallin valtakaudella 70-luvun lopussa, mutta sekin kehitetiin lopulta iteratiivista prosessia käyttäen 8 viikon iteraatioissa, 31 kuukauden aikana. Lisää aiheesta Larmanin ja Basilin erinomaisessa artikkelissa [incremental and iterative development, a brief history](http://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf)
 
 ### Ketterä ohjelmistokehitys
 
@@ -196,13 +203,13 @@ Itseasiassa iteratiivinen ohjelmistokehitys on paljon vanhempi idea kun lineaari
 
 Perinteisissä prosessimalleissa (myös iteratiivisissa) on pyritty työtä tekevän yksilön merkityksen minimoimiseen. Ajatuksena on ollut että yksilö on "tehdastyöläinen", joka voidaan helposti korvata toisella ja tällä ei ole ohjelmistoprosessin etenemiselle mitään vaikutusta.
 
-Ristiriidan seurauksena syntyi joukko ketteriä menetelmiä (agile methods), jotka korostivat itse ohjelmistoa sekä ohjelmiston asiakkaan ja toteuttajien merkitystä yksityiskohtaisen suunnittelun ja dokumentaation sijaan.
+Ristiriidan seurauksena syntyi joukko ketteriä menetelmiä (engl. agile methods), jotka korostivat itse ohjelmistoa sekä ohjelmiston asiakkaan ja toteuttajien merkitystä yksityiskohtaisen suunnittelun ja dokumentaation sijaan.
 
 ### Ketterä manifesti
 
-17 ketterien menetelmien pioneeria kerääntyi helmikuussa 2001 kokoukseen, jonka tuloksena oli [Agile manifesti](http://agilemanifesto.org/), eli näkemys siitä mitä ketterällä ohjelmistokehityksellä tarkoitetaan.
+17 ketterien menetelmien pioneeria kerääntyi helmikuussa 2001 kokoukseen, jonka tuloksena oli [ketterä manifesti](http://agilemanifesto.org/), eli näkemys siitä, mitä ketterällä ohjelmistokehityksellä tarkoitetaan.
 
-Manifesto on käänneetty monelle kielelle, myös [suomeksi](https://agilemanifesto.org/iso/fi/manifesto.html), mutta tarkastellaan sen englanninkielistä versiota:
+Manifesti on käänneetty monelle kielelle, myös [suomeksi](https://agilemanifesto.org/iso/fi/manifesto.html), mutta tarkastellaan sen englanninkielistä versiota:
 
 We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
 
@@ -219,27 +226,27 @@ Manifestin [laatijoiden joukko](https://agilemanifesto.org/authors.html) koostuu
 
 ### Ketterät periaatteet
 
-Manifesti sisältää yllä olevan lisäksi 12 ketterää periaatetta. Käydään periaatteet nyt läpi ja pohdiskellaan hieman niiden taustalla olevia ajatuksia.
+Manifesti sisältää yllä olevan lisäksi 12 hieman konkreettisempaa toiminnan ohjeistusta antavaa ketterää periaatetta. Käydään periaatteet nyt läpi ja pohditaan myös niiden taustalla olevia ajatuksia.
 
-Aloitetan kolmesta 
+Aloitetan kolmesta periaatteesta.
 
-_Our highest priority is to satisfy the customer through early and continuous delivery of valuable software._
+> Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
 
-_Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale._
+> Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
 
-_Working software is the primary measure of progress._
+> Working software is the primary measure of progress.
 
-Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen, arvoa tuottavan ohjelmiston toimittaminen asiakkaalle. Toisin kuin vesiputousmallissa, aloitetaan valmiiden ohjelmistofeatureiden toimittaminen jo aikaisessa vaiheessa ja sitä tehdään toistuvasti tiheähkösti iteroiden. Manifesti puhuu _from couple of weeks to couple of months_, nykyään ideaali on vieläkin tiheämpi toimitusväli, jopa useiden sovelluksen versioiden julkaisu päivässä. 
+Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen, arvoa tuottavan ohjelmiston toimittaminen asiakkaalle. Toisin kuin vesiputousmallissa, aloitetaan valmiiden ohjelmistofeatureiden toimittaminen jo aikaisessa vaiheessa ja sitä tehdään toistuvasti tiheähkösti iteroiden. Manifesti puhuu _from couple of weeks to couple of months_, nykyään ideaali on vieläkin tiheämpi toimitusväli, jopa joka päivä tapahtuva useiden sovelluksen versioiden julkaisu. 
 
-_Business people and developers must work together daily throughout the project._
+> Business people and developers must work together daily throughout the project.
 
-_The most efficient and effective method of conveying information to and within a development team is face-to-face conversation._
+> The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
 
-_Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage._
+> Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
 
 Vesiputousmallissa fundamentaalina periaattena oli se, että ohjelmiston valmistaminen alkaa kattavalla vaatimusmäärittelyllä, jonka aikana asiakkaan vaatimukset selvitetään, dokumentoidan huolellisesti ja "jäädytetään", eli vaatimuksiin ei sen koommin edes sallita muutoksia. Asiakas on seuraavan kerran mukana kehitystyössä ehkä vasta lopussa tekemässä hyväksymistestausta.
 
-Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohejlmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan jopa keskustellen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen, ja siihen jopa rohkaistaan, jos muuttuneen vaatimusmäärittelyn avulla asiakas pystyy saamaan itselleen etua aikaan. 
+Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohejlmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen, ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä avulla saamaan itselleen etua aikaan. 
 
 > Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
 
@@ -265,14 +272,13 @@ Ketteryys edellyttää että tiimi pystyy muuttamaan tarvittaessa sovelluskehity
 
 ### Ketterät menetelmät ja Lean
 
-Ketterät menetelmät on sateenvarjotermi useille ketterille menetelmille. 2000 luvun alkupuolella [Extreme programming](http://www.extremeprogramming.org/) eli XP oli ketteristä menetelmistä suosituin. Nykyään harva enää soveltaa "oppikirjamaista" XP:tä, mutta runsaasti sen käytänteistä on jäänyt elämään ja omaksuttu monien softatiimien työkalupakkiin. Tutustumme moniin XP:n käytänteisiin kurssin aikana.
+Ketterät menetelmät on sateenvarjotermi useille eri menetelmille. 2000-luvun alkupuolella [Extreme programming](http://www.extremeprogramming.org/) eli XP oli ketteristä menetelmistä suosituin. Nykyään hyvin harva soveltaa "oppikirjamaista" XP:tä, mutta sen käytänteistä moni on jäänyt elämään ja omaksuttu monien softatiimien työkalupakkiin. Tutustumme moniin XP:n käytänteisiin kurssin aikana.
 
 XP:ltä valta-aseman otti pikkuhijaa [Scrum](https://www.scrum.org/), joka lienee tällä hetkellä maailman eniten käytetty ohjelmistokehitysmenetelmä. Tutustumme Scrumiin tarakemmin seuraavassa luvussa.
 
-Ketterä ohjelmistotuotanto on ottanut runsaasti vaikutteita [Toyota production systemin](https://global.toyota/en/company/vision-and-philosophy/production-system/) taustalla olevasta _lean_-ajattelusta. Viime vuosina termi lean on alkanut näkyä yhä tiiviimmin termin agile rinnalla tai sijasta ohjelmistokehityksestä puhuttaessa. Leanista peräisin olevaa [kanbania](https://fi.wikipedia.org/wiki/Kanban) on ruvettu soveltamaan runsaasti ohjelmistokehitykseen, usein se täydentää jotain ketterää menetelmää kuten Scrumia. Kanbanin ja Scrumin yhdistelmä kulkeekin nimellä [Scrumban](https://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20). Palaamme Leaniin tarkemin kurssin osassa 8.
+Ketterä ohjelmistotuotanto on ottanut runsaasti vaikutteita [Toyota production systemin](https://global.toyota/en/company/vision-and-philosophy/production-system/) taustalla olevasta _lean_-ajattelusta. Viime vuosina termi lean on alkanut näkyä yhä tiiviimmin termin agile rinnalla tai sijasta ohjelmistokehityksestä puhuttaessa. Leanista peräisin olevaa [kanbania](https://fi.wikipedia.org/wiki/Kanban) on ruvettu soveltamaan runsaasti ohjelmistokehitykseen, usein se täydentää jotain ketterää menetelmää kuten Scrumia. Kanbanin ja Scrumin yhdistelmä kulkeekin nimellä [Scrumban](https://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20). Palaamme Leaniin tarkemin kurssin [osassa 5](/osa5#lean).
 
-Ketterät menetelmät on alun perin suunniteltu yksittäisen, pienehköjen ohjelmistotiimien hallintaan. Viime aikoina ketterille menetelmille on hahmoteltu useitakin laajennuksia mm. [SaFe](https://www.scaledagileframework.com/) ja [Less](https://less.works/), joiden avulla on mahdollista hallinnoida useista ohjelmistotiimeistä koostuvia kokonaisuuksia. Ketterien periaatteiden lisäksi nämä laajemman skaalan kehitysmenetelmän nojaavat voimakkaasti leanin tarjoamiin periaatteisiin. Palaamme asiaan kurssin yhdekäsnnessä osassa.
-
+Ketterät menetelmät on alun perin suunniteltu yksittäisen, pienehköjen ohjelmistotiimien hallintaan. Viime aikoina ketterille menetelmille on hahmoteltu useitakin laajennuksia mm. [SaFe](https://www.scaledagileframework.com/) ja [Less](https://less.works/), joiden avulla on mahdollista hallinnoida useista ohjelmistotiimeistä koostuvia kokonaisuuksia. Ketterien periaatteiden lisäksi nämä laajemman skaalan kehitysmenetelmän nojaavat voimakkaasti leanin tarjoamiin periaatteisiin. Palaamme asiaan kurssin [viidennessä osassa](/osa5#laajan-skaalan-ketterä-ohjelmistokehitys).
 
 ## Scrum
 

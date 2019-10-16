@@ -11,6 +11,10 @@ permalink: /osa3/
   />
 </a>
 
+<div class="important">
+DRAFT: Lukeminen omalla vastuulla!
+</div>
+
 ## Laadunhallinnan peruskysymykset: verifiointi ja validointi
 
 Ohjelmiston kehittämiseen liittyy oleellisena asiana _verifiointi_ ja _validointi_.

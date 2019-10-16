@@ -11,6 +11,11 @@ permalink: /osa0/
   />
 </a>
 
+<div class="important">
+DRAFT: Lukeminen omalla vastuulla!
+</div>
+
+
 Kurssi on jo ohjelmointia hallitseville tarjoitettu johdanto ohjelmistotuotantoon, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantometetelmissä. 
 
 Kurssin suoritettuaan opiskelijan tulisikin omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).

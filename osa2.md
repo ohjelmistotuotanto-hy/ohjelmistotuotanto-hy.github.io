@@ -11,6 +11,10 @@ permalink: /osa2/
   />
 </a>
 
+<div class="important">
+DRAFT: Lukeminen omalla vastuulla!
+</div>
+
 Viikon aiheina ohjelmistojen vaatimusmäärittely erityisesti ketterien menetelmien menetelmät siihen. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
 ## Vaatimusmäärittely

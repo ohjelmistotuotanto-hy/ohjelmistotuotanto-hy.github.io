@@ -11,6 +11,10 @@ permalink: /osa4/
   />
 </a>
 
+<div class="important">
+DRAFT: Lukeminen omalla vastuulla!
+</div>
+
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Seuraavana aiheena ohjelmiston suunnittelu ja toteutus.
 
 Ohjelmiston suunnittelun ajatellaan jakautuvan kahteen vaiheeseen: arkkitehtuurisuunnitteluun ja olio/komponenttisuunnitteluun.
