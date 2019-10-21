@@ -11,20 +11,16 @@ permalink: /osa0/
   />
 </a>
 
-<div class="important">
-DRAFT: Lukeminen omalla vastuulla!
-</div>
-
 Kurssi on jo ohjelmointia hallitseville tarjoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantometetelmissä. 
 
 Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
 Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
-- tuntee ohjelmistoprosessin, erityisesti ketterän prosessin vaiheet
-- tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
-- ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
-- ymmärtää ohjelmiston laadunhallinnan perusteet
-- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
+- tuntee ohjelmistoprosessin, erityisesti ketterän prosessin vaiheet
+- tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
+- ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
+- ymmärtää ohjelmiston laadunhallinnan perusteet
+- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
 
 # Kurssin suorittaminen ja arvostelu
 
@@ -52,17 +48,17 @@ Kukin miniprojektiryhmä koostuu 4-6 opiskelijasta, ryhmillä on myös asiakas j
 
 Kurssin lopussa on miniprojektien yhteinen 2h kestoinen demotilaisuus.
 
-Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
+Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
 
-*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti
+*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti
 
 ### Miniprojektin hyväksilukeminen
 
-Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
+Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
 
 Kriteerit selviävät [täältä](https://www.helsinki.fi/fi/ohjelmat/kandi/tietojenkasittelytieteen-kandiohjelma/ohjeita-ja-infoa-ohjelman-opiskelijoille#section-41418) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
 
-Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömästi emailitse.
+Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömästi emailitse.
 
 ## Kurssin arvostelu
 
@@ -82,12 +78,12 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoituset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
 
-Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. 
+Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. 
 
 Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin. Versionhallintaa, ohjelmistojen konfigurointia, testausta ja ohjelmointia käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (poislukien testaukseen liittyvä teoria). 
 
-Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
+Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
 
-Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
+Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
 
 Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on eri henkisiä komponentteja, näistä mikään ei ole muita tärkeämpi, kullakin on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
