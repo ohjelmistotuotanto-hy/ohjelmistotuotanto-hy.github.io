@@ -26,9 +26,9 @@ IEEE (Institute of Electrical and Electronics Engineers) yksi alamme keskeisist�
 
 > The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software
 
-IEEE:n mukaan ohjelmistotuotannolla tarjoitetaan systemaattista, kurinalaista, mitattavissa olevaa tapaa ohjelmistojen kehittämiseen, operointiin ja ylläpitoon. Määritelmän loppukaneetti sanoo, että kyseessä on "insinöörimäinen" tapa ohjelmistojen kehittämiseen.
+IEEE:n mukaan ohjelmistotuotannolla tarkoitetaan systemaattista, kurinalaista, mitattavissa olevaa tapaa ohjelmistojen kehittämiseen, operointiin ja ylläpitoon. Määritelmän loppukaneetti sanoo, että kyseessä on "insinöörimäinen" tapa ohjelmistojen kehittämiseen.
 
-Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesi määritellyt sillä mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan. SWEBOK:in uusin versio 3.0 on vuodelta 2014 eli jo jossain määrin ikääntynyt.
+Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesi määritellyt sen, mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan. SWEBOK:in uusin versio 3.0 on vuodelta 2014 eli jo jossain määrin ikääntynyt.
 
 > Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono, jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin erihenkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä developemt, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen. 
 
@@ -52,17 +52,17 @@ _Software requirements_ tarkoittaa ohjelmistolle asetettuja vaatimuksia, eli sit
 
 _Software design_ taas tarkoitta halutun kaltaisen toiminnallisuuden omaavan ohelmiston sisäisen rakenteen suunnittelua. 
 
-_Software construction_ viittaa aktiviteetteihin, jonka avulla suunniteltu ohjelmisto saadaan toimivaksi tuotteeksi eli käytännössä ohjelmointia ja debuggausta.
+_Software construction_ viittaa aktiviteetteihin, joiden avulla suunniteltu ohjelmisto saadaan toimivaksi tuotteeksi eli käytännössä ohjelmointia ja debuggausta.
 
-Kuten arvata saattaa _software testing_ tarkoittaa niitä menetelmiä, millä varmistutaan että ohjelmisto toimii kuten halutaan ja että se on riittävän bugiton käytettäväksi.
+Kuten arvata saattaa, _software testing_ tarkoittaa niitä menetelmiä, joilla varmistutaan siitä, että ohjelmisto toimii kuten halutaan ja että se on riittävän bugiton käytettäväksi.
 
-Suurin osa ohjelmisstoista ei valmistu lopullisesti koskaan, kun ensimmäinen versio otetaan käyttöön alkaa ylläpito eli _software maintenance_ eli bugeja korjaillaan ja ohjelmistoa laajennetaan uusilla toiminnoilla.
+Suurin osa ohjelmistoista ei valmistu lopullisesti koskaan. Kun ensimmäinen versio otetaan käyttöön, alkaa ylläpito eli _software maintenance_ eli bugeja korjaillaan ja ohjelmistoa laajennetaan uusilla toiminnoilla.
 
 _Software configuration management_ viittaa ohjelmiston käyttöönsaattamiseen liittyviin kirjastojen, laitteistojen ja käännösprosessin konfigurointiin sekä ohjelmiston versiointiin.
 
-Ohjelmistojen tekemiseen liittyy paljon suunnittelu, koordinointia, hallinnointia ja raportointia eli "managementtiä", tähän viittaa _software engineering management_. 
+Ohjelmistojen tekemiseen liittyy paljon suunnittelua, koordinointia, hallinnointia ja raportointia eli "managementtiä", tähän viittaa _software engineering management_. 
 
-_Software engineering process_ eli ohjelmistotuotantoprosessit kuvavat tapoja tai menetelmiä miten ohelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin seuraavassa luvussa.
+_Software engineering process_ eli ohjelmistotuotantoprosessi kuvaa tapoja tai menetelmiä miten ohjelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin seuraavassa luvussa.
 
 _Software engineering models and methods_ kuvaa yksityskohtaisempia menetelmiä, joita ohjelmistokehityksessä käytetään, kuten mallinnusta ja erilaisia suunnittelumenetelmiä. 
 
@@ -86,13 +86,13 @@ voidaan ajatella muodostavan _vaiheet_ (engl. phases) joiden kautta ohjelmisto k
 
 ### Code'n'fix
 
-Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot olivat laitteistoihin nähden "triviaaleja". Ohjelmointi tapahtui alussa kaapeleita yhdistelemällä ja hieman myöhemmin konekielellä. Sovellusten käyttäjät, kuten aseteollisuudessa työskennelleet fyysikot ammusten lentoratoja laskeneet fyysikot, yleensä ohjelmoivat itse tarvitsemansa sovellukset. 
+Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot olivat laitteistoihin nähden "triviaaleja". Ohjelmointi tapahtui alussa kaapeleita yhdistelemällä ja hieman myöhemmin konekielellä. Sovellusten käyttäjät, kuten ammusten lentoratoja laskeneet fyysikot, yleensä ohjelmoivat itse tarvitsemansa sovellukset. 
 
-Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisne halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
+Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisen halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
 
-Vähitellen ohjelmistot alkavat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin sotateollisuutta. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
+Vähitellen ohjelmistot alkoivat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin sotateollisuutta. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
 
-Ohjelmistoala alkoi joutua ongelmiin, [wikipedia](https://en.wikipedia.org/wiki/Software_crisis) mukaan ongelmaksi alkoivat muodostua mm. seuraavat seikat
+Ohjelmistoala alkoi joutua ongelmiin, [wikipedian](https://en.wikipedia.org/wiki/Software_crisis) mukaan ongelmaksi alkoivat muodostua mm. seuraavat seikat
 
 - budjetit ylittyivät ja projektit myöhästyivät aikatauluista
 - ohjelmistot olivat tehottomia, niiden laatu oli huono ja ne eivät toimineet käyttäjien tarpeiden mukaan
@@ -131,7 +131,7 @@ Roycen versio kuvasta näyttää seuraavalta:
 
 Suoraviivainen lineaarinen malli, jota ruvettiin kutsumaan vesiputousmalliksi, saavutti nopeasti suosiota. Malli on monella tapaan järkeenkäypä, ensi kannattaa selvittää mitä ollaan tekemässä ja suunnittelu hoitaa vasta tämän jälkeen. Kun suunnitelma on valmis, voidaan tuote valmistaa ja sen jälkeen testata että se toimii kuiten haluttiin, näinhän toimitaan monella muullakin tuotannon alalla.
 
-Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltojen puolustusministerö (Department of Defence, DoD) joka oli tuohon aikaan eräs maailman suurimmista ohjelmistojen tilaajista, rupesi vaatimaan kaikilta alihankkijoiltaan prosessin noudattamista (Standardi DoD STD 2167). Muutkin ohjelmistoja tuottaneet tahot ajattelivat, että koska DoD vaatii vesiputousmallia, on se hyvä asia ja tapa kannattaa omaksua itselleen
+Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltojen puolustusministerö (Department of Defence, DoD) joka oli tuohon aikaan eräs maailman suurimmista ohjelmistojen tilaajista, rupesi vaatimaan kaikilta alihankkijoiltaan prosessin noudattamista (Standardi DoD STD 2167). Muutkin ohjelmistoja tuottaneet tahot ajattelivat, että koska DoD vaatii vesiputousmallia, on se hyvä asia ja tapa kannattaa omaksua itselleen.
 
 Vesiputousmalli perustuu vahvasti siihen, että eri vaiheet ovat erillisten tuotantotiimien tekemiä. Joukko analyytikkoja miettii asiakkaan kanssa sovellukselle asetetut vaatimuksen, ohjelmistoarkkitehdit saavat vaatimusmääritelmän tulokset ja suunnittelevat ohjelman sen perusteella. Ohjelmoijat toteuttavat sovelluksen arkkitehtien suunnitelman mukaan ja antavat sen testaajille laadunhallintaa varten. Tämä tuntuu luonnolliselta työnjaolta, kutakin erilaista vaihetta tekee kyseessä olevaan vaiheen työskentelymenetelmiin erikoistunut ihmisjoukko. 
 
@@ -143,19 +143,19 @@ Vesiputousmallin mukainen ohjelmistoprosessi on yleensä tarkkaan etukäteen s
 
 #### Vesiputousmallin ongelmat
 
-Vesiputousmallin mukainen ohjelmistotuotanto siis ei ole osoittautunut erityisen onnistuneeksi. 
+Vesiputousmallin mukainen ohjelmistotuotanto ei siis ole osoittautunut erityisen onnistuneeksi. 
+ 
+Vesiputousmalli olettaa, että ohjelmistotuotannon vaiheet tapahtuvat peräkkäin ja jokainen vaihe ainakin isoissa projekteissa eri ihmisten toimesta. Tästä koituu useita ongelmia.
 
-Vesiputousmalli siis olettaa että ohjelmistotuotannon vaiheet tapahtuvat peräkkäin ja jokainen vaihe ainakin isoissa projekteissa eri ihmisten toimesta. Tästä koituu useita ongelmia.
+Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Kilpailutilanne saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, maailman taloussuhtanteet vaihtuvat. Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmampaa on, että vaatimukset elävät. 
 
-Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Kilpailutilanne saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, mailman taloussuhtanteet vaihtuvat. Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmampaa on, että vaatimukset elävät. 
-
-On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta etukäteen sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
+On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
 
 Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärällä tavalla, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin.
 
-Vesiputousmallin mukainen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järjevin resurssein. 
+Vesiputousmallin mukainen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järkevin resurssein. 
 
-Suunnittelun ja toteutuksenkaan eriyttäminenkään ei ole osoittautunut toimivaksi ideaksi. Ohjelmistoja on mahdotonta suunnitella siten, että toteutus on suoraviivainen mekaaninen toimenpide, osa suunnittelusta tapahtuu pakosti vasta ohjelmointivaiheessa.
+Suunnittelun ja toteutuksen eriyttäminenkään ei ole osoittautunut toimivaksi ideaksi. Ohjelmistoja on mahdotonta suunnitella siten, että toteutus on suoraviivainen mekaaninen toimenpide, osa suunnittelusta tapahtuu pakosti vasta ohjelmointivaiheessa.
 
 Vesiputousmalliin perustuvan ohjelmistotuotannon takana on siis pitkälti analogia muihin insinööritieteisiin: rakennettava artefakti tulee ensin määritellä ja suunnitella (design) aukottomasti, tämän jälkeen rakentaminen (construction) on triviaali vaihe.
 
@@ -185,11 +185,11 @@ Iteratiivisessa mallissa ohjelmistotuotanto jaetaan pienempiin aikaväleihin, el
 
 Jokaisen iteraation aikana määritellään, suunnitellaan toteutetaan sekä testataan ohjelmistoa, eli ohjelmisto kehittyy vähitellen. Ohjelma valmistuu siis pala palalta, tämän takia iteratiivisten menetelmien sanotaan olevan myös _inkrementaalisia_.
 
-Asiakasta tavataan jokaisen iteraation välissä, asiakas näkee sen hetkisen version ohjelmasta ja pystyy vaikuttamaan seuraavien iteraatioiden kulkuun. Ohjelmiston iinkrementaalisen kasvamisen takia sen perusversio on mahdollista saada loppukäyttäjien käyttöönkin vielä kehitystyön kuluessa.
+Asiakasta tavataan jokaisen iteraation välissä, asiakas näkee sen hetkisen version ohjelmasta ja pystyy vaikuttamaan seuraavien iteraatioiden kulkuun. Ohjelmiston inkrementaalisen kasvamisen takia sen perusversio on mahdollista saada loppukäyttäjien käyttöönkin vielä kehitystyön kuluessa.
 
 ![]({{ "/images/1-4.png" | absolute_url }})
 
-Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista (kahden iteraation versiota) tapaa monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutetiin.
+Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista tapaa (kahden iteraation versiota) monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutetiin.
 
 Yhdysvaltojen puolustusministeriön vuonna 2000 julkaisema standardi (MIL-STD-498) alkoi suosittelemaan iteratiivista ohjelmistoprosessia:
 
@@ -220,7 +220,7 @@ We are uncovering better ways of developing software by doing it and helping oth
 
 That is, while there is value in the items on the right, we value the items on the left more.
 
-Manifesti siis koostuu neljstä vastakkainasettelun sisältäväst kohdasta, jotka ilmaisevat mikä on ketterien menetelmien näkemyksen mukaan oleellisinta ohjelmistokehityksessä. Ensimmäinen kohta sanoo, että erilaiset työkalut ja prosessit voivat olla tärkeää, mutta _vielä tärkeämpää_ ovat ohjelmiston kehittäjät, käyttäjät, tilaajat ja heidän välinen interaktio. Toinen kohta taas ei kiellä dokumentaation tärkeyttä, mutta sanoo että lopulta tärkeintä on toimiva ohjelmisto. Ketterä manifesti ei siis kiellä tai pidä arvottomana "vanhan maailman" tärkeänä pitämiä asioita kuten _suunnitelman noudattamista_, mutta osoittaa, että niitäkin oleellisimpia seikkoja on, kuten _muutokseen reagoiminen_.
+Manifesti siis koostuu neljästä vastakkainasettelun sisältäväst kohdasta, jotka ilmaisevat mikä on ketterien menetelmien näkemyksen mukaan oleellisinta ohjelmistokehityksessä. Ensimmäinen kohta sanoo, että erilaiset työkalut ja prosessit voivat olla tärkeää, mutta _vielä tärkeämpää_ ovat ohjelmiston kehittäjät, käyttäjät, tilaajat ja heidän välinen interaktio. Toinen kohta taas ei kiellä dokumentaation tärkeyttä, mutta sanoo että lopulta tärkeintä on toimiva ohjelmisto. Ketterä manifesti ei siis kiellä tai pidä arvottomana "vanhan maailman" tärkeänä pitämiä asioita kuten _suunnitelman noudattamista_, mutta osoittaa, että niitäkin oleellisimpia seikkoja on, kuten _muutokseen reagoiminen_.
 
 Manifestin [laatijoiden joukko](https://agilemanifesto.org/authors.html) koostuu monesta tutusta ja vaikutusvaltaisesta nimestä, kuten Kent Beck, Robert Martin, Ken Schwaber, Martin Fowler ja Alistair Coburn, jotka ovat vaikuttaneet merkittävästi nykyiseen vallitsevaan ohjelmistokehityksen tapaan.
 
@@ -246,7 +246,7 @@ Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen,
 
 Vesiputousmallissa fundamentaalina periaattena oli se, että ohjelmiston valmistaminen alkaa kattavalla vaatimusmäärittelyllä, jonka aikana asiakkaan vaatimukset selvitetään, dokumentoidan huolellisesti ja "jäädytetään", eli vaatimuksiin ei sen koommin edes sallita muutoksia. Asiakas on seuraavan kerran mukana kehitystyössä ehkä vasta lopussa tekemässä hyväksymistestausta.
 
-Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohejlmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen, ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä avulla saamaan itselleen etua aikaan. 
+Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohjelmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen, ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä saamaan itselleen etua aikaan. 
 
 > Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
 
@@ -260,7 +260,7 @@ Aiemmin mainittu periaate _Welcome changing requirements..._ siis kuvailee, ett�
 
 > Simplicity – the art of maximizing the amount of work not done – is essential.
 
-Vesiputousmalli ja muut vanhemmat kehitysmenetelmät antoivat suuren painoarvon dokumentaatiolle ja erilaisille "prosessin määräämille" raporteille, joihin käytettiin paljon aikaa ja vaivaa, ilman että ne olisivat kuitenkaan kovin paljoa edistäneet itse tuotteen valmistumista. Ketteräissä menetelmissä ideana on eliminoida mahdollisimman pitkälle kaikki mikä ei ole primääristen tavoitteiden kannalta oleellista (_Working software is the primary measure of progress_). Myös ohjelmistokehittäjllä on pyrkimys rakentaa ohjelmistoon tulevaisuuden varalta kaikenlaista ekstraa, myös tälläiseen tulisi ketterässä hengessä suhtautua kriittisesti. 
+Vesiputousmalli ja muut vanhemmat kehitysmenetelmät antoivat suuren painoarvon dokumentaatiolle ja erilaisille "prosessin määräämille" raporteille, joihin käytettiin paljon aikaa ja vaivaa, ilman että ne olisivat kuitenkaan kovin paljoa edistäneet itse tuotteen valmistumista. Ketterissä menetelmissä ideana on eliminoida mahdollisimman pitkälle kaikki mikä ei ole primääristen tavoitteiden kannalta oleellista (_Working software is the primary measure of progress_). Myös ohjelmistokehittäjllä on pyrkimys rakentaa ohjelmistoon tulevaisuuden varalta kaikenlaista ekstraa, myös tälläiseen tulisi ketterässä hengessä suhtautua kriittisesti. 
 
 Viimeiset kaksi periaatetta ovat ne, jotka tahtovat useimmiten unohtua:
 
@@ -300,13 +300,13 @@ Keskiössä on siis tarkka projektisuunnitelma (joka toki iteratiivisissa mallei
 
 Useimmat ohjelmistoprojektit ovat laadultaan uniikkeja. Vaatimukset ovat erilaiset kuin millään jo tehdyllä ohjelmistolla. Tekijätit vaihtuvat usein, kukin tiimi on omanlaisilla kompetensseilla ja persoonallisuuksilla varustettu. Myös toteutusteknologiat kehittyvät koko ajan, joten uusia projekteja tehdään todennäköisesti tavalla, joka ei ole kaikille ohjelmistokehittäjille ennestään tuttu.
 
-Näiden seikkojen takia ketterien menetelmien mukaan järkevää onkin lähteä oletuksesta että kyseessä ei ole kontrolloitu prosessi, joka voidaan tarkkaan etukäteen suunnitella. Parempi onkin ajatella ohjelmiston kehittämien tuotekehitysprojektina, joka sisältää runsaasti epävarmuutta ja tuntemattomia kysymyksiä. Tälläisten projektien hallinnointiin sopii tarkkaan etukäteissuunnitelmaan perustuvan lähestymistavan sijaan _empiirinen prosessi_.
+Näiden seikkojen takia ketterien menetelmien mukaan järkevää onkin lähteä oletuksesta että kyseessä ei ole kontrolloitu prosessi, joka voidaan tarkkaan etukäteen suunnitella. Parempi onkin ajatella ohjelmiston kehittäminen tuotekehitysprojektina, joka sisältää runsaasti epävarmuutta ja tuntemattomia kysymyksiä. Tälläisten projektien hallinnointiin sopii tarkkaan etukäteissuunnitelmaan perustuvan lähestymistavan sijaan _empiirinen prosessi_.
 
 Empiirisessä prosessissa taustalla olevina periaatteina on _läpinäkyvyys_ (transparency), _tarkkailu_ (inspection) ja _muokauttaminen_ (adaptation). On oleellista, että koko tiimi on mahdollisimman hyvin selvissä siitä mitä tapahtuu ja mistä puhutaan, esim. mitä tarkoitetaan kun jonkin asian sanotaan olevan valmiina. Projektiin liittyvien asioiden suhteen tulee siis vallita suuri läpinäkyvyys (transparency) joka taas mahdollistaa asioiden tilan jatkuvan tarkkailun (inspection), eli onko tuotteen kehitys menossa sinne suuntaan, mikä on asiakkan nykyisen näkemyksen mukainen ja tukevatko tiimin käytänteet optimaalisella tavalla sovelluksen kehitystä. Jos ja _kun_ asioissa havaitaan parannuksen varaa, mukautetaan (adaptation) tuotteen kehityssyyntaa tai tiimin toiminnan periaatteita.
 
 Ketterien menetelmien oletuksena on, että perinteinen command-and-control tyylinen hallinnointi ja ihmisten sekä tiimien jakaminen eri vastuualueisiin (suunnittelija, ohjelmoija, testaaja, frontend, backend) ei tuota optimaalista tulosta.
 
-Sen sijaan vahvava oletus on, että ihmiset toimivat parhaiten itseorganisoituvissa tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä.
+Sen sijaan vahvava on oletus, että ihmiset toimivat parhaiten itseorganisoituvissa tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä.
 
 ### Scrumin taustaa
 
@@ -320,9 +320,9 @@ Kehittäjiensä sanoin
 
 > Scrum is a framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value
 
-Scrumin kehittäjät mainitsevat että kysessä on framework, eli _menetelmäkehys_, jonka avulla monimutkaisten tuotteiden kehitystä voidaan hallita siten, että asiakkaalle saadaan tuotteista maksimaalinen arvo. Scrumin kehittäjät korostavat, että kysessä ei ole prosessi (process) tai menetelmä/tekniikka (technique), joka yksistään antaisi riittävän ohjeiston työskentelylle, kyseessä on siis menetelmäkehys, joka antaa kehityksen suuntaviivat mutta mahdollistaa ja oikeastaan edellyttääkin muutakin menetelmiä ja tekniikoita, jotka kukin tulee valita tapauskohtaisesti.
+Scrumin kehittäjät mainitsevat että kysessä on framework, eli _menetelmäkehys_, jonka avulla monimutkaisten tuotteiden kehitystä voidaan hallita siten, että asiakkaalle saadaan tuotteista maksimaalinen arvo. Scrumin kehittäjät korostavat, että kysessä ei ole prosessi (process) tai menetelmä/tekniikka (technique), joka yksistään antaisi riittävän ohjeiston työskentelylle, kyseessä on siis menetelmäkehys, joka antaa kehityksen suuntaviivat mutta mahdollistaa ja oikeastaan edellyttääkin muitakin menetelmiä ja tekniikoita, jotka kukin tulee valita tapauskohtaisesti.
 
-Scrumin tärkein tavoite on tehdä käytettyjen työskentelymenetelmien suorituskyky näkyvästi ja mahdollistaa näinollen tuotteen sekä työskentelyympäristön jatkuva parantaminen, eri edellä mainittu kolmikko _transparency, inspection_ ja _adaption_, läpinäkyvyys, tarkkailu ja mukautuminen on Scrumin keskiössä.
+Scrumin tärkein tavoite on tehdä käytettyjen työskentelymenetelmien suorituskyky näkyvästi ja mahdollistaa näin ollen tuotteen sekä työskentelyympäristön jatkuva parantaminen, eri edellä mainittu kolmikko _transparency, inspection_ ja _adaption_, läpinäkyvyys, tarkkailu ja mukautuminen on Scrumin keskiössä.
 
 Kehittäjiensä mukaan Scrum on
 - _Lightweight_
@@ -337,7 +337,7 @@ Scrum on iteratiivinen ja inkrementaalinen menetelmä tai kehittäjiensä muk
 
 Kehityksestä vastaa _Scrum-tiimi_, joka koostuu 3-9:stä kehittäjästä. _Scrum master_ toimii tiimin apuna ohjaten mm. prosessin noudattamisessa ja parantamisessa sekä toimien rajapintana muihin sidosryhmiin. _Product owner_ eli tuotteen omistaja hallinnoi projektin _backlogia_, joka sisältää priorisoidussa järjestyksessä projektissa toteutettavalle ohjelmistolle asetetut vaatimukset.
 
-Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset, eli ne toiminnallisuudet, jotka sprinti aikana on tarkoitus toteuttaa. Sprintin aikana Scrum-tiimi toteuttaa itseorganisoidusti sprintiin valitut vaatimukset lopputuloksena vaatimusten osalta toimiva ohjelmisto.
+Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset, eli ne toiminnallisuudet, jotka sprintin aikana on tarkoitus toteuttaa. Sprintin aikana Scrum-tiimi toteuttaa itseorganisoidusti sprintiin valitut vaatimukset lopputuloksena vaatimusten osalta toimiva ohjelmisto.
 
 ![]({{ "/images/2-1.png" | absolute_url }})
 
@@ -349,11 +349,11 @@ Scrum määrittelee 3 erilaista _henkilöroolia_: kehittäjän (engl. develo
 
 Scrumiin kuuluvat _artefaktit_ eli "konkreettiset asiat" ovat _product backlog_ eli projektin kehitysjono, _sprint backlog_ eli sprintin tehtävälista sekä työn alla oleva ohjelmiston osa, englanniksi _potentially releasable increment_.
 
-Scrumissa tekeminen rytmittyy _sprintteihin_ eli 1-4 viikon mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (eengl. vents): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
+Scrumissa tekeminen rytmittyy _sprintteihin_ eli 1-4 viikon mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (engl. vents): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
 
 ### Product backlog
 
-Product backlog (jonka virallinen, mutta harvoin käytetty käännös on tuotteen tehtäväkehitysjono) on siis priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista. Backlog voi sisältää myös esimerkiksi isompia bugikorjauksia.
+Product backlog (jonka virallinen, mutta harvoin käytetty käännös on tuotteen tehtäväkehitysjono) on priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista. Backlog voi sisältää myös esimerkiksi isompia bugikorjauksia.
 
 Hyvänä käytänteenä pidetään sitä, että backlogille kirjatut vaatimukset ovat asiakkaan tasolla mielekkäitä, arvoa tuottavia toiminnallisuuksia, esim. _ostoksen voi lisätä ostoskorille_. 
 
@@ -375,13 +375,13 @@ Product ownerin vastuulla on myös varmistua siitä, että kehittäjätiimi v
 
 ### Scrum master
 
-Jokaisella Scrum-tiimillä on _scrum master_, eli henkilö, joka vastaa siitä että Scrumin pelisääntöjä ja henkeä noudatetaan kehitystyössä. Scrum master ei kuitenkaan ole perinteinen projektipäällikkö, vaan pikemminkin ryhmää tukeva valmentaja. Joissain yhteyksissä scrum materin on luonnehdittu olevan _servant leader_.
+Jokaisella Scrum-tiimillä on _scrum master_, eli henkilö, joka vastaa siitä että Scrumin pelisääntöjä ja henkeä noudatetaan kehitystyössä. Scrum master ei kuitenkaan ole perinteinen projektipäällikkö, vaan pikemminkin ryhmää tukeva valmentaja. Joissain yhteyksissä scrum masterin on luonnehdittu olevan _servant leader_.
 
 Scrum masterin tehtävänä on muun muassa opastaa ryhmää hyvien käytänteiden noudattamisessa sekä rohkaista ja auttaa kehitystiimiä itseorganisoitumisessa sekä työskentelytapojen parantamisessa. Scrum master hoitaa myös käytännön asioita, esim. järjestää Scrumiin liittyviä palavereja ja koordinoi kommunikointia sidosryhmiin päin.
 
 Scrum masterin ehkä keskeisin rooli on pyrkiä eliminoimaan kehitystyön esteitä. Esteenä on usein jokin tiimistä riippumaton asia, jonka poistamiseksi scrum master joutuu neuvottelemaan yrityksen hallinnon tai muiden ohjelmistotoimittajien kanssa. Tälläisen esteen voi muodostaa myös esimerkiksi se, että sovelluskehitystiimillä ei ole pääsyä tuotantoympäristöön tai edes vastaaviin palvelinympäristöihin, tai jos kehitettävä sovellus on riippuvainen muiden toimittajien vastuulla olevista rajapinnoista, ja ne eivät valmistu ajoissa tai toimi määritelmien mukaan.
 
-"Este" voi myös liittyä ryhmän tyoöskentelytapoihin, tällöin Scrum master opastaa ryhmää toimimaan siten, että tuottavuutta haittaava este poistuu.
+"Este" voi myös liittyä ryhmän työskentelytapoihin, tällöin Scrum master opastaa ryhmää toimimaan siten, että tuottavuutta haittaava este poistuu.
 
 Scrum masterin roolina on myös taata kehitystiimille työrauha ja suojata tiimiä esim. ulkopuolisten yrityksiltä puuttua sprintin aikaiseen toimintaan.
 
@@ -408,7 +408,7 @@ Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana to
 
 Sprintin aikana Scrum-tiimi toteuttaa itseorganisoidusti sprinttiin valitut ohjelmiston toiminnallisuudet.
 
-Scrumissa periaatteena on, että jokaisen sprintin lopuksi tuotteesta on oltava olemassa _toimiva versio _(engl. potentially shippable product increment), eli sprintin aikana on tarkoitus saada aikaan käyttöön valmiita ominaisuuksia, ei ainoastaan kasaa melkein toimivaa koodia.
+Scrumissa periaatteena on, että jokaisen sprintin lopuksi tuotteesta on oltava olemassa _toimiva versio_ (engl. potentially shippable product increment), eli sprintin aikana on tarkoitus saada aikaan käyttöön valmiita ominaisuuksia, ei ainoastaan kasaa melkein toimivaa koodia.
 
 Sprintin aikana tiimille ei esitetä uusia vaatimuksia, scrum master on vastuussa tiimin suojelemisesta jos joku ulkopuolinen yrittää saada kehitystiimin tekemään sprintin aikana muuta kuin siihen sovittuja backlogilta otettuja vaatimuksia.
 
@@ -418,9 +418,9 @@ Eräs ketterän manifestin periaatteista nostaa ohjelmiston laadun ketteryyttä 
 
 > Continuous attention to technical excellence and good design enhances agility.
 
-Myös Scrum asettaa suuren painoarvon tuotetun ohjelmiston laadulle. Jokaisessa sprintissähän lopputulokena tulee olla "potentially shippable", eli valmiiksi tehty, käyttöön valmis osa ohjelmistoa.
+Myös Scrum asettaa suuren painoarvon tuotetun ohjelmiston laadulle. Jokaisessa sprintissähän lopputuloksena tulee olla "potentially shippable", eli valmiiksi tehty, käyttöön valmis osa ohjelmistoa.
 
-Jotta vallitsisi yksimielisyys siitä, minkälaisella laatutasolla ohjelmistoa on toteutettava, määritellään Scrumissa projektitasolla _definition of done_, suomeki valmiin määritelmä, eli se mitä tarkoittaa, että jokin vaatimus on toteutettu valmiiksi. 
+Jotta vallitsisi yksimielisyys siitä, minkälaisella laatutasolla ohjelmistoa on toteutettava, määritellään Scrumissa projektitasolla _definition of done_, suomeksi valmiin määritelmä, eli se mitä tarkoittaa, että jokin vaatimus on toteutettu valmiiksi. 
 
 Valmiiksi tehty määritellään useimmiten tarkoittamaan sitä, että vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu, testaus automatisoitu, dokumentoitu, integroitu muuhun ohjelmistoon ja viety tuotantoympäristöön.
 
@@ -428,7 +428,7 @@ Eli kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan silla
 
 Jos sprintin aikana osoittautuu että tiimi ei ehdi toteuttamaan kaikea mihin se sitoutui, ei ole hyväksyttävää tinkiä laadusta, vaan osa vaatimuksista jätetään seuraavaan sprinttiin.
 
-Definition done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ketterässä ohjelmistokehityksessä tärkein edistymisen mittari on valmiina oleva ohjelmisto, on erittäin tärkeää, että kaikilla on sama näkemys mitä "valmis" tarkottaa. Asia ei nimittän ole ollenkaan itsestäänselvä, jos sitä ei tarkkaan määritellä. On melko yleistä, että kun ohjelmistokehittäjä ilmaise jonkun ominaisuuden olevan kahden päivän ohjelmoinnin jälkeen "melkein valmis", kestää lopulta parikin viikkoa ennen kun asia on kokonaan valmis siinä mielessä että sovelluksen asiakkaan pääsevät käyttämään uutta ominaisuutta. 
+Definition of done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ketterässä ohjelmistokehityksessä tärkein edistymisen mittari on valmiina oleva ohjelmisto, on erittäin tärkeää, että kaikilla on sama näkemys mitä "valmis" tarkottaa. Asia ei nimittän ole ollenkaan itsestäänselvä, jos sitä ei tarkkaan määritellä. On melko yleistä, että kun ohjelmistokehittäjä ilmaise jonkun ominaisuuden olevan kahden päivän ohjelmoinnin jälkeen "melkein valmis", kestää lopulta parikin viikkoa ennen kun asia on kokonaan valmis siinä mielessä että sovelluksen asiakkaan pääsevät käyttämään uutta ominaisuutta. 
 
 ### Sprintin suunnittelu
 
@@ -505,7 +505,7 @@ Kehitettävän tuotteen tarkkailun ja sen suunnan mukauttamisen työkaluja ovat 
 
 Tarkkailun ja mukauttamisen taas mahdollistaa läpinäkyvyys, eli asioita ei piilotella, vaan sekä tuotteen kehityssuunta, valmiin määritelmä että menossa olevan sprintin status pidetään koko ajan avoimesti kaikkien nähtävillä ja asioista keskustellaan sekä sprintittäisellä että päivittäisellä tasolla.
 
-Toisinsanoen asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja, että kehitettävää tuotetta on mahdollista mukauttaa haluttuun suuntaan.
+Toisinsanoen asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja että kehitettävää tuotetta on mahdollista mukauttaa haluttuun suuntaan.
 
 ![]({{ "/images/2-2.png" | absolute_url }})
 
@@ -515,11 +515,11 @@ Scrum guide nostaa esiin myös joukon _arvoja_ (engl. values) oleellisena seikka
 
 > When the values of commitment, courage, focus, openness and respect are embodied and lived by the Scrum Team, the Scrum pillars of transparency, inspection, and adaptation come to life and build trust for everyone.
 
-Tiimin tulee olla _sitoutunut_ (commitment) yhteisen tavoitteen saavuttamiseksi ja _fokusoitua_ oikeiden asioiden tekemiseen. Tulee olla myös _rohkeutta_ tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin _kunnioittaen_ koko ajan kaikkia kehitystiimin jäseniä sekä ohjelmisston sidosryhmiä.
+Tiimin tulee olla _sitoutunut_ (commitment) yhteisen tavoitteen saavuttamiseksi ja _fokusoitua_ oikeiden asioiden tekemiseen. Tulee olla myös _rohkeutta_ tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin _kunnioittaen_ koko ajan kaikkia kehitystiimin jäseniä sekä ohjelmiston sidosryhmiä.
 
-Syksyllä 2019 [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil, eli hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa. 
+Syksyllä 2019 [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil_, eli hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa. 
 
-Scrumin ei siis pidä missään tapauksessa olevan Scrum Guiden ohjeiden orjallista noudattamista, jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. Scrumin inspect-and-adapt luonne jopa ohjaa siihen että tiimien voi olla jossain vaiheessa toimia joidenkin Scrumin ohjeiden vastaisesti jos tiimin optimaalinen toiminta sitä vaatii.
+Scrumin ei siis pidä missään tapauksessa olla Scrum Guiden ohjeiden orjallista noudattamista. Jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. Scrumin inspect-and-adapt luonne jopa ohjaa siihen, että tiimien kannattaa jossain vaiheessa toimia joidenkin Scrumin ohjeiden vastaisesti, jos tiimin optimaalinen toiminta sitä vaatii.
 
 ## Scrumin ongelmia
 
@@ -531,7 +531,7 @@ Yhdetenä syynä ongelmiin sanotaan olevan [ScrumBut](https://www.scrum.org/reso
 - We use Scrum, but Retrospectives are a waste of time, so we don't do them.
 - We use Scrum, but we can't build a piece of functionality in two weeks, so our Sprints are 3 months long
 
-ScrumButilla siis viitataan siihen että noudatetaan jotain Scrumin osa-alueita, mutta tehdään todella suuria kompromisseja joidenkin oleellisten osien suhteen ja näin ollen läpinäkyvyyden, tarkkailun tai mukauttamisen periaatteet vaarantuvat liiaa.
+ScrumButilla siis viitataan siihen että noudatetaan jotain Scrumin osa-alueita, mutta tehdään todella suuria kompromisseja joidenkin oleellisten osien suhteen ja näin ollen läpinäkyvyyden, tarkkailun tai mukauttamisen periaatteet vaarantuvat liikaa.
 
 Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluokkaa olevat projektit aiheuttavat edelleen haasteita Scrumille ja muillekin ketterille menetelmille vaikkakin asiaan on viime vuosina kiinnitetty huomiota. [Uncle Bob Martinin Scrum-kritiikki](https://www.infoq.com/news/2010/02/scrum-failings) nostaa esiin nämä ja muutamia muitakin oleellisia seikkoja:
 
@@ -544,11 +544,11 @@ Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluo
 - _Multiple Teams_: Scrum and generic Agile have little to say about how to scale.
 - _Insufficient Guidance Regarding the Product Backlog_
 
-Koska Scrum ei ota mitään kantaa ohjelmistokehityksen _teknisiin periaatteisiin_, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden, Kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riskiä nostaa se jos projektissa ei ole automaattisia testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
+Koska Scrum ei ota mitään kantaa ohjelmistokehityksen _teknisiin periaatteisiin_, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden. Kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riskiä nostaa se jos projektissa ei ole automaattisia testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
 
 Martin pitää scrum masterin roolia ongelmallisena monellakin tavalla. Ensinnäkin häntä hiertää sertifiointisysteemi, Scrum mastereita pikakoulutetaan parin päivän kursseilla ja joskus Scrum masterina toimiikin aiemmin projektimanagerin titteliä kantanut henkilö. Vaikka sertifikaatti on suoritettu, ei henkilön toimintatapaan ole välttämättä tullut muita muutoksia kuin uusi terminologia. 
 
-Vaikka Martin pelkää, että Scrum masterit monesti ovat ainoastaan managereita valekaavussa, hän pitää ongelmallisena myös sitä että Scrum olettaa tiimien olevan täysin itseorganisoituvia. Itseorganisoituminen toimii monissa konteksteissa ja joillaki tiimeillä, mutta sillä on rajansa, varsinkin jos tuotetta on tekemässä useita Scrum-tiimejä, voidaan ajautua ongelmiin jos luotetaan pelkkään itseorganisoitumiseen.
+Vaikka Martin pelkää, että Scrum masterit monesti ovat ainoastaan managereita valekaavussa, hän pitää ongelmallisena myös sitä että Scrum olettaa tiimien olevan täysin itseorganisoituvia. Itseorganisoituminen toimii monissa konteksteissa ja joillakin tiimeillä, mutta sillä on rajansa, varsinkin jos tuotetta on tekemässä useita Scrum-tiimejä, voidaan ajautua ongelmiin jos luotetaan pelkkään itseorganisoitumiseen.
 
 Monimutkaisen tuotteen hallinnoiminen on kompleksista, Scrum ei kuitenkaan ota millään tavalla kantaa product backlogin organisointiin ja jättää kehittäjät omilleen asian suhteen.
 
