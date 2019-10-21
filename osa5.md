@@ -491,7 +491,7 @@ Kuten aiemmin todettiin SAFe® on suosittu yritysjohdon keskuudessa, mutta saanu
 
 En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
 
-## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa.
+## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
 Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käytöön ja hyödyllisyytteen liittyvään tutkimukseen.
 
