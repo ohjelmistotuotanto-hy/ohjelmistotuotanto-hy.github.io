@@ -15,7 +15,11 @@ Ensimmäisessä osassa käydään aluksi katsaus _ohjelmistotuotantoon_, sen his
 
 Tämän osan jälkipuolisko keskittyy suosituimpaan ketterään menetelmään _Scrumiin_, joka antaa erään konkreettisen ohjeiston sille miten ketteriä ohjelmistoprojekteja voi hallita.
 
-Olethan jo lukenut [osan 0](/osa0), missä käydään tarkemmin läpi kurssin järjestelyt ja arvosteluperiaatteet.
+Olethan jo lukenut [osan 0](/osa0), missä käydään tarkemmin läpi kurssin järjestelyt ja arvosteluperiaatteet?
+
+## Typoja materiaalissa
+
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa1.md) tiedostoa GitHubissa.
 
 ## Ohjelmistotuotanto ja sen osa-alueet
 

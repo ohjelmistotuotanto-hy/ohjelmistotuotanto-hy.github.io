@@ -17,6 +17,11 @@ DRAFT: Lukeminen omalla vastuulla!
 
 Kurssin viimeisellä viikolla käsitellään kolmea aihetta viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoja ketterien menetelmien käytöstä ja hyödyistä.
 
+## Typoja materiaalissa
+
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa5.md) tiedostoa GitHubissa.
+
+
 ## Lean
 
 Kurssin aikana on jo muutamaan kertaan sivuttu käsitettä _Lean_, katsotaan nyt hieman tarkemmin mistä on kysymys

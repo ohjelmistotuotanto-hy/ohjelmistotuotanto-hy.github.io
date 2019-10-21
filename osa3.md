@@ -15,6 +15,12 @@ permalink: /osa3/
 DRAFT: Lukeminen omalla vastuulla!
 </div>
 
+Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterien menetelmien suosimiin testauksen ja laadunhallinnan menetelmiin.
+
+## Typoja materiaalissa
+
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa3.md) tiedostoa GitHubissa.
+
 ## Laadunhallinnan peruskysymykset: verifiointi ja validointi
 
 Ohjelmiston kehittämiseen liittyy oleellisena asiana _verifiointi_ ja _validointi_.

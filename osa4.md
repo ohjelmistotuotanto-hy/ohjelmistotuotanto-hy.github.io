@@ -15,7 +15,13 @@ permalink: /osa4/
 DRAFT: Lukeminen omalla vastuulla!
 </div>
 
-Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Seuraavana aiheena ohjelmiston suunnittelu ja toteutus.
+Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
+
+## Typoja materiaalissa
+
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa4.md) tiedostoa GitHubissa.
+
+## Ohjelmiston suunnittelu
 
 Ohjelmiston suunnittelun ajatellaan jakautuvan kahteen vaiheeseen: arkkitehtuurisuunnitteluun ja olio/komponenttisuunnitteluun.
 
