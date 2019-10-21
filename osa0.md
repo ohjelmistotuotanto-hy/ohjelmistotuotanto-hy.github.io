@@ -66,7 +66,7 @@ Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömä
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
-- laskarit 10 pistettä
+- laskarit 12 pistettä
   - luentoihin liittyvät monivalintatehtävät 3 pistettä 
   - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 9 pistettä
 - miniprojekti 8 pistettä
