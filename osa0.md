@@ -11,7 +11,7 @@ permalink: /osa0/
   />
 </a>
 
-Kurssi on jo ohjelmointia hallitseville tarjoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantometetelmissä. 
+Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä. 
 
 Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
@@ -50,7 +50,7 @@ Kurssin lopussa on miniprojektien yhteinen 2h kestoinen demotilaisuus.
 
 Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
 
-*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti
+*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
 
 #### Miniprojektin hyväksilukeminen
 
@@ -82,7 +82,7 @@ Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssi pistettä*. T
 
 Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisesta monivalintakysymyksestä (joita kurssilla on todennäköisesti 60 kappaletta) on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan _oikeatVastaukset/vaittamaLukumaara * 0.1.2 - 0.2_. Eli vastaamalla kaikki kohdat oikein, saa yhden mvpn, ja kaikki väärin saa -0.2 mvp. Puolet oikein tuottaa 0.4 mvptä. 
 
-Normaaleista laskareista on tarjolla *9 kurssi pistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
+Normaaleista laskareista on tarjolla *9 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
 ### Luennot - laskuharjoitukset - miniprojekti
 
@@ -96,7 +96,7 @@ Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsi
 
 Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
 
-Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on eri henkisiä komponentteja, näistä yksikän ei ole muita tärkeämpi, kullakin on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
+Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on eri henkisiä komponentteja, näistä yksikään ei ole muita tärkeämpi, kullakin on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
 
 ## Aikataulu
 
@@ -119,7 +119,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 - Luento 4: tiistai 5.11. klo 12-14 CK112
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
-  - [Sprintin suunnittelu- ja hallinta](/osa2#sprintin-suunnittelu)
+  - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/2) deadline sunnuntaina 10.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-2) deadline maanantaina 11.11. klo 23:59 
@@ -136,10 +136,10 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 ### Viikko 4
  
-- Luento 7: maanantai 17.11. klo 12-14 CK112
+- Luento 7: maanantai 18.11. klo 12-14 CK112
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops) 
-- Luento 8: tiistai 18.11. klo 12-14 CK112
+- Luento 8: tiistai 19.11. klo 12-14 CK112
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
@@ -151,8 +151,8 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 ### Viikko 5
 
-- _Maanantaina 24.11. ei todennäköisesti ole luentoa_
-- Luento 9: tiistai 25.11. klo 12-14 CK112
+- _Maanantaina 25.11. ei todennäköisesti ole luentoa_
+- Luento 9: tiistai 26.11. klo 12-14 CK112
   - [Lean](/osa5#lean)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/5) deadline sunnuntaina 1.12. klo 23:59  
