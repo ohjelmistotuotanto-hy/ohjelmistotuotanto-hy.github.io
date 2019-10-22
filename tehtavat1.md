@@ -11,6 +11,10 @@ Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59.
 
 Muista myös tämän viikon [monivalitatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59.  
 
+Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeiden ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
+
+Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
+
 ### 1 komentorivi
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa. 
@@ -18,9 +22,9 @@ Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edel
 Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista). 
 
 Jos osaamisessasi on puutteita (ks alla oleva lista) kertaa haluamastasi resurssista:
-https://www.codecademy.com/learn/learn-the-command-line online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
 
-https://ryanstutorials.net/linuxtutorial/ oppaasta 4 osaa _1. The Command Line_, _2. Basic Navigation_, _ 3.More About Files_ ja _5. File Manipulation_
+- <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
+- <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
 
 Myös kurssin Tietokone työvälineenä tämän syksyn [komentorivimateriaali](https://tkt-lapio.github.io/command-line/) käsittelee myös suurta osaa tehtävän komennoista.
 
@@ -57,15 +61,15 @@ Luo githubiin repositorio nimellä ohtu-viikko1
 * klikkaa yläpalkin oikeassa reunassa olevaa  "Create a new repo"-ikonia 
 * **laita rasti** kohtaan Initialize this repository with a README 
 
-![README-tiedoston alustusrasti](https://github.com/mluukkai/ohtu2017/raw/master/images/lh1-1.png)
+![]({{ "/images/lh1-1.png" | absolute_url }})
 
-Jos et ole vielä luonut koneellesi _ssh-avainta_, tee se nyt
+**Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
-* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell) riittää että teet stepit 1 ja 2 tai viime kevään [OTM](https://github.com/mluukkai/Ohjelmistotekniikka2018/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
+* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell) riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
 
 Lisää julkinen avain githubiin:
 
-* https://github.com/settings/ssh
+* <https://github.com/settings/ssh>
 
 Näin pystyt käyttämään GitHubia ilman salasanan syöttämistä koneelta, josta juuri luodun avaimen salainen pari löytyy
 
@@ -86,13 +90,13 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento
 
-    git clone git@github.com:omatunnustahan/ohtu-viikko1.git
+    git clone git@github.com:omatunnustahan//ohtu-2019-viikko1.git
 
-missä komennon <code>git clone</code> parametrina on repositoriosi sivulta selviävä 'clone URL' (huomaa, että formaatin on oltava SSH):
+missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
-![ssh-kloonausurlin sijainti](https://github.com/mluukkai/ohtu2017/raw/master/images/lh1-2.png)
+![]({{ "/images/lh1-2.png" | absolute_url }})
 
-Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-viikko1</code>, joka on on githubissa olevan repositorion klooni.
+Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-2019-viikko1</code> (hakemiston nimi on sama kuin repositoriosi), joka on on githubissa olevan repositorion klooni.
 
 ### 3 Gitin alkeet [versionhallinta]
 
@@ -105,7 +109,8 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 * git reset HEAD
 * .gitignore
 
-* Jos et vielä hallitse komentoja, käy läpi kevään 2018 OTM:n [Git-tutoriaali](https://github.com/mluukkai/Ohjelmistotekniikka2018/blob/master/tehtavat/viikko1.md#gitin-alkeet) Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+* Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka 
+[Git-tutoriaali](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#gitin-alkeet)Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
 
 Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
@@ -114,15 +119,16 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * <https://we.riseup.net/debian/git-development-howto>
   * <http://www.ralfebert.de/tutorials/git/>
 
-
 **tee nyt seuraavat:**
 
 * mene edellisessä tehtävässä luotuun repositorion klooniin (eli komennon <code>git clone</code> luomaan hakemistoon)
 * lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
   * muista hyödyllinen komento git status
 * muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
-* tee .gitignore-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ja hakemisto jonka nimi on _build_ ignoroidaan
+* tee .gitignore-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ja hakemistot joiden nimi on _build_ ja _.gradle_ ignoroidaan 
   * huomaa, että ainoastaan hakemisto nimeltä _build_ pitää ignoroida, tiedostot joiden nimi alkaa sanalla build, esim tehtävässä 7 lisättävä _build.gradle_ eivät saa ignoroitua!
+  * toinen ignorattava hakemisto on siis _.gradle_, jonka nimi alkaa pisteellä
+  * pistealkuiset hakemistot ja tiedostot eivät näy oletusaroisesti komennon _ls_ listauksissa, saat ne näkyville komennolla _ls -a_
 * lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
   * saat asian tarkastettua komennolla _git status_
 * lisää myös hakemisto nimeltä _build_  ja hakemiston sisälle joku tiedosto. Varmista että build sisältöineen ei mene versionhallinnan alaisuuteen
@@ -148,6 +154,9 @@ Tehtävässä 2 tehtiin GitHubiin repositorio, joka liitettiin paikalliselle kon
 * "pushaa" nämä GitHubissa olevaan etärepositorioon antamalla komento <code>git push</code>
 * varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
+Githubissa pitäisi näyttää suunilleen seuraavalta
+
+![]({{ "/images/lh1-3.png" | absolute_url }})
 
 ### 5 Monta kloonia samasta repositoriosta [versionhallinta]
 
@@ -186,30 +195,34 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
-* hae osoitteesta https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/koodi/ohtuvarasto.zip?raw=true löytyvä zipattu paketti
+* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
 * pura paketti sopivaan paikkaan 
 * siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 
 * repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/lh1-3a.png)
+![]({{ "/images/lh1-4.png" | absolute_url }})
 
 * lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne githubiin
 * katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/ex-1-3.png" | absolute_url }})
+![]({{ "/images/lh1-5.png" | absolute_url }})
 
 **Jos hakemisto _src_ ja tiedostot _build.gradle_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
 ### 7 Gradle
 
-[Gradlen](https://gradle.org) GitHub-repositorio sisältää seuraavan kuvauksen 
+Ohjelmoinnin peruskursseilla koodi suoritettiin painamalla NetBeansin "vihreää nuolta", ja testit painamalla "mustaa silmää". Ammattimaisessa ohjelmistokehityksessä koodin suorituskelpoiseksi tekemisen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahasa koneella, _skriptatusti_ komentoriviltä, eli riippumatta NetBeansin kaltaisista kehitysympäristöistä.
+
+Tähän tarkoitukseen on kehitetty useita _build-ohjelmistoja_. Käytämme tällä kurssilla Java-ekosysteemin uunista build-ohjelmistoa _Gradlea_. 
+
+[Gradlen](https://gradle.org) dokumentaatio sisältää seuraavan kuvauksen 
 
 > Gradle is a build tool with a focus on build automation and support for multi-language development. If you are building, testing, publishing, and deploying software on any platform, Gradle offers a flexible model that can support the entire development lifecycle from compiling and packaging code to publishing web sites. Gradle has been designed to support build automation across multiple languages and platforms including Java, Scala, Android, C/C++, and Groovy, and is closely integrated with development tools and continuous integration servers including Eclipse, IntelliJ, and Jenkins.
 
-Olet todennäköisesti käyttänyt aiemmilla kursseilla "buildaustyökaluna" mavenia. Gradle on uuden generaation buildaustyökalu, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
+Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle on uuden generaation build-ohjelmisto, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
 
 * edellisessä tehtävässä lisättiin repositorioon gradle-muodossa oleva projekti, joka sisältää aikoinaan [ohjelmoinnin perusteissa](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/materiaali/02_oliot/#15) olleen luokan <code>Varasto</code>, sen käyttöä demonstroivan pääohjelman ja muutaman JUnit-testin
 * tutki gradle-muotoisen projektin hakemistorakennetta esim. antamalla komento <code>tree</code> projektin sisältävän hakemiston juuressa (_tree_ ei ole gradleen liittyvä käsky vaan normaali shell-komento)
@@ -221,7 +234,7 @@ Olet todennäköisesti käyttänyt aiemmilla kursseilla "buildaustyökaluna" mav
 * tarkastele projektin määrittelevän tiedoston _build.gradle_ sisältöä
   * tiedosto määrittelee mm. pääohjelman sijainnin `mainClassName = 'ohtu.ohtuvarasto.Main'`  
 
-**avaa edellisen tehtävän projekti suosikki-idelläsi**
+**Avaa edellisen tehtävän projekti suosikki-idelläsi**
 
 * Huomaa, että NetBeans ei tue oletusarvoisesti Gradlea, ja joudut asentamaan gradle-pluginin valitsemalla _tools -> plugins -> available plugins_
 * HUOM: jos et ole aiemmin kääntänyt koneellasi gradle-muotoisia projekteja, saattaa IDE valittaa tässä vaiheessa joidenkin kirjastojen (mm. JUnit) puuttumisesta. Asia korjaantuu "buildaamalla" tai kääntämällä projekti komentoriviltä (ohjeet alla) 
@@ -231,34 +244,32 @@ Ohjelmakoodin editointi kannattaa tehdä IDE:llä kuten usein myös ohjelman ja 
 **Kokeillaan nyt gradlen käyttöä komentoriviltä:**
  
 Gradle on siinä mielessä mielenkiintoinen työkalu, että sitä ei ole pakko asentaa ennen käytön aloittamista. Gradle-projektit sisältävät skriptit _gradlew_ (Linuxille) ja _gradlew.bat_ (Windowsille), jotka osaavat tarvittaessa asentaa Gradlen koneellesi.
-* **HUOM** OSX:llä (eli Macilla) automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli OSX-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew). Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
-* **HUOM2** Linuxillakaan automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Automaattinen asennus on toiminut ainakin vuoden 2016 Linux -fuksiläppärissä SDKMAN!:lla (SDKMANin asennus: `$ curl -s "https://get.sdkman.io" | bash`) [tämän](https://gradle.org/install#with-a-package-manager) ohjeen mukaan. Asennus Linuxiin manuaalisesti voidaan tehdä [tämän](https://gradle.org/install#manually) ohjeen mukaan. **ÄLÄ** asenna gradlea apt-get:illä, sillä paketinhallinnasta asentuu todella vanha versio.
 
-Suorita projektin juuressa (eli samassa hakemistossa missä tiedosto _build.gradle_ sijaitsee) komento <code>./gradlew build</code> (Linux) <code>gradlew.bat build</code> (Windows). Gradle asentuu koneellesi. 
+Suorita projektin juuressa (eli samassa hakemistossa missä tiedosto _build.gradle_ sijaitsee) komento <code>./gradlew build</code> (Linux) <code>gradlew.bat build</code> (Windows). Gradle asentuu koneellesi. Jos edelliset komennot eivät toimi, kokeile komentoa <code>gradle build</code> joka näyttää toimivan ainakin laitoksen koneilla. 
 
-Jos komento ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on todennäköisesti Javan konfiguraatiossa jotain häikkää. Koneellasi tulee olla _Java Development Kit_ (eli JDK) asennettuna ja ympäristömuuttuja *JAVA_HOME* tulee olla asetettu siten, että sen arvona on JDK:n sijainti, ks. esim. <http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/>. JAVA_PATH:in asettamisen jälkeen komentorivi tulee käynnistää uudelleen. 
+* **HUOM** OSX:llä (eli Macilla) automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli OSX-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew, ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
 
-Jos saat JDK:n asennuksesta ja *JAVA_HOME*:n asettamisesta ja komentorivin uudelleenkäynnistämisestä  huolimatta virheen _Could not find tools.jar_,
-tee projektiisi tiedosto _gradle.properties_ ja määrittele sinne JDK:n sijainti seuraavaan tyyliin (polun kohdalle siis tulee oman koneesi JDK:n polku):
+Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on todennäköisesti Javan konfiguraatiossa jotain häikkää. Koneellasi tulee olla _Java Development Kit_ (eli JDK) asennettuna ja ympäristömuuttuja *JAVA_HOME* tulee olla asetettu siten, että sen arvona on JDK:n sijainti, ks. esim. <http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/>. JAVA_PATH:in asettamisen jälkeen komentorivi tulee käynnistää uudelleen. 
 
-<pre>
-org.gradle.java.home=C:\\Program Files\\Java\\jdk1.8.0_45
-</pre>
+> Jos saat JDK:n asennuksesta ja *JAVA_HOME*:n asettamisesta ja komentorivin uudelleenkäynnistämisestä  huolimatta virheen _Could not find tools.jar_, tee projektiisi tiedosto _gradle.properties_ ja määrittele sinne JDK:n sijainti seuraavaan tyyliin (polun kohdalle siis tulee oman koneesi JDK:n polku):
+>
+><pre>
+>org.gradle.java.home=C:\\Program Files\\Java\\jdk1.8.0_45
+></pre>
+>
+>Lisää tiedostoon _.gitignore_ rivi 
+>
+><pre>
+>gradle.properties
+></pre>
+>
+>Emme halua laittaa määrittelyä versionhallintaan asti, sillä kyseessä on konekohtainen asetus.
+>
+>Jos jouduit tekemään tämän ratkaisun, on todennäköistä, että joudut toimimaan samoin jatkossa kaikkien gradle-projektien kohdalla.
 
-Lisää tiedostoon _.gitignore_ rivi 
+Kun komento <code>./gradlew build</code> (Linux, OSX) tai <code>gradlew.bat build</code> (Windows) tai <code>gradle build</code> toimii, olet valmis siirtymään seuraavaan kohtaan.
 
-<pre>
-gradle.properties
-</pre>
-
-Emme halua laittaa määrittelyä versionhallintaan asti, sillä kyseessä on konekohtainen asetus.
-
-Jos jouduit tekemään tämän ratkaisun, on todennäköistä, että joudut toimimaan samoin jatkossa kaikkien gradle-projektien kohdalla.
-
-Kun komento <code>./gradlew build</code> (Linux, OSX) tai <code>gradlew.bat build</code> (Windows) toimii, olet valmis siirtymään seuraavaan kohtaan.
-
-**HUOM:** voit jatkossa (eli kun gradle on asentunut koneelle) käyttää kumpaa tahansa komentoa <code>gradle</code> tai <code>./gradlew</code>. Joissain windowseissa ja Linuxeissa on tosin havaittu että vain <code>./gradlew</code> toimii.
-* jos gradle on asennettu koneelle komento <code>./gradlew</code> kutsuu komentoa <code>gradle</code>
+Tee nyt seuraavat toimenpiteet. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi.
 
 * aloita nyt puhtaalta pöydältä komennolla <code>gradle clean</code>
   * käytä siis komennosta muotoa <code>./gradlew</code> jos <code>gradle</code> ei toimi
@@ -285,7 +296,7 @@ jar {
 }
 ```
 
-Lisätty konfiguraatio siis kertoo, mikä ohjelman luokista on pääohjelma, eli sisältää metodin _main_
+Lisätty konfiguraatio kertoo, mikä ohjelman luokista on ns. pääohjelma, eli sisältää metodin _main_
 
 * generoi jar-tiedosto komennolla <code>gradle jar</code>
   *  komennolla tree näet minne hakemistoon jar tulee
@@ -296,19 +307,17 @@ Lisätty konfiguraatio siis kertoo, mikä ohjelman luokista on pääohjelma, eli
 
 ### 8. JUnit
 
-* kertaa tarvittaessa JUnitin perusteet OTM:n [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka2018/blob/master/web/junit.md) 
 
+
+* kertaa tarvittaessa JUnitin perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2019/blob/master/web/junit.md) 
 * täydennä Ohtuvaraston testejä siten, että luokan Varasto testien rivikattavuudeksi (line coverage) tulee 100%
   * Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
   * edellinenkään ei vielä riitä
-
 * testauskattavuuden saat selville Gradlen [JaCoCo](https://docs.gradle.org/current/userguide/jacoco_plugin.html#gsc.tab=0)-pluginin avulla
 * ota plugin projektissasi käyttöön lisämäällä tiedostoon _build.gradle_ seuraava rivi:
-
 ```groovy
 apply plugin: "jacoco" 
 ```
-
 ja suorittamalla komento <code>gradle test jacocoTestReport</code>
 * näet html-muodossa olevean testien rivikattavuusraportin avaamalla selaimella tiedoston _build/reports/jacoco/test/html/index.html_
   * pääset klikkailemalla luokkien ja metodien nimiä näkemään mitkä rivit ovat vielä testien ulottumattomissa
@@ -316,7 +325,6 @@ ja suorittamalla komento <code>gradle test jacocoTestReport</code>
   * **HUOM2** jos gradle ilmoittaa _:jacocoTestReport SKIPPED_, suorita komento <code>gradle clean</code> ja yritä uudelleen.
 
 * kun luokan <code>Varasto</code> testien rivikattavuus (line coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
-
 
 ### 9. CircleCI, osa 1
 
