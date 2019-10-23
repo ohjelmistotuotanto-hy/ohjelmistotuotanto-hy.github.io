@@ -15,6 +15,16 @@ Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeiden ohjelmistoke
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
+### Typoja tai epäselvyyksiä tehtävissä?
+
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat1.md) tiedostoa GitHubissa.
+
+### Tehtävien palauttaminen
+
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>. Käytännössä tällä viikolla tehdään palautusta varten kaksi erillistä GitHub-repositoria, ensimmäinen tehtäviä 2-13 varten ja toinen tehtäviä 14-16 varten. Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
+
+Tehtävää 1 ei varsinaisesti palauteta minnekään.
+
 ### 1 komentorivi
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa. 
@@ -304,7 +314,6 @@ Lisätty konfiguraatio kertoo, mikä ohjelman luokista on ns. pääohjelma, eli 
   * komento tulee suorittaa hakemistosta, jossa jar-tiedosto sijaitsee 
 * voit nyt suorittaa ohjelman millä tahansa koneella kopioimalla jar-tiedoston koneelle ja suorittamalla edellä mainitun komennon. 
 
-
 ### 8. JUnit
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa. 
@@ -374,34 +383,76 @@ nyt Circle alkaa tarkkailla jokaista muutosta, jonka teet repositorioon.
 Mitä Circlessä oikeastaan tapahtuu?
 
 * Kun Circleen rekisteröity projekti pushataan GitHubiin, ilmoittaa GitHub-asiasta Circlelle
-* CircleCI käynnistää [Docker kontin](https://www.docker.com/resources/what-container), jonne se vaiheessa kloonaa muuttuneen repositorion (komennolla git clone ...)
-* CircleCI lukee repositoriossa olevan konfiguraatiotiedoston .circleci/config.yml ja toimii tiedostossa olevien ohjeiden mukaan.
-* Circle 
+* CircleCI käynnistää [Docker-kontin](https://www.docker.com/resources/what-container) (eri eräänlaisen virtuaalisen suoritusympäristön), jonne se kloonaa muuttuneen repositorion tekemällä komennon _git clone_ 
+* CircleCI lukee repositoriossa olevan konfiguraatiotiedoston _.circleci/config.yml_ ja toimii tiedostossa olevien ohjeiden mukaan.
 * Jos testit menevät läpi on Circlen buildin tila _Success_.
 
-CircleCI-buildien toimintaa on mahdollista [konfiguroida](https://circleci.com/docs/2.0/configuration-reference/) melko vapaasti.
+Oletusarvoinen konfiguraatiotiedosto näyttää seuraavalta:
 
-* Muuta jotain testiä siten, että testi ei mene läpi ja pushaa koodi GitHubiin
-* Tarkkaile projektin CircleCI _JOBS_-näkymää. Lisätiedot avautuvat painamalla punaista "Failed" painiketta. Lue näkymään alaosassa avautuva loki kokonaisuudessaan läpi.
+```yml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/repo
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - run: gradle test
+```
+
+Kohdan _build_ alla määritellään ensin suoritusympäristö (_docker_ ja _environment_) ja sen jälkeen _steps_ eli mitä toimenpiteitä tarkkailun alla olevalle koodille tehdään. Tärkeimmät askeleet ovat _checkout_, joka kloonaa projektin koodin, _run: gradle dependencies_, joka lataa projektin tarvitsemat kirjastot sekä _run: gradle test_, joka suorittaa testit. 
+
+Klikkaamalla buildin tilaa kertovaa vihreää tai punaista palkkia pääset katsomaan tarkemmin mitä kussakin käännösprosessin askeleessa eli stepissä tapahtuu:
+
+![]({{ "/images/lh1-7.png" | absolute_url }})
+
+CircleCI-buildien toimintaa onkin mahdollista [konfiguroida](https://circleci.com/docs/2.0/configuration-reference/) melko vapaasti.
+
+* Muuta nyt jotain testiä siten, että testi ei mene läpi ja pushaa koodi GitHubiin
+* Tarkkaile projektin CircleCI _jobs_-näkymää. Lisätiedot avautuvat painamalla punaista "Failed" painiketta. Lue näkymään alaosassa avautuva loki kokonaisuudessaan läpi.
 * Korjaa testi ja pushaa muutokset uudelleen GitHubiin
 * Tarkkaile jälleen CircleCI-näkymää ja lue loki läpi
 
 ### 11. CircleCI, osa 3
 
-Laita repositiossa olevaan tiedostoon _README.md_ koodin tilasta kertova [Status Badge](https://circleci.com/docs/2.0/status-badges/). Ohjeissa näkyvän asetussivun saa auki mm. _JOBS_ näkymästä:
+Laita repositiossa olevaan tiedostoon _README.md_ koodin tilasta kertova [Status Badge](https://circleci.com/docs/2.0/status-badges/). Avaa ensin asetussivu saa _jobs_-näkymästä:
 
-![]({{ "/images/ex-11-1.png" | absolute_url }})
+![]({{ "/images/lh1-8.png" | absolute_url }})
+
+ja kopioi badgen määrittelevä markdown-koodi
+
+![]({{ "/images/lh1-9.png" | absolute_url }})
 
 Editoi tiedostoa README.md suoraan GitHubissa:
 
-![]({{ "/images/ex-11-2.png" | absolute_url }})
+![]({{ "/images/lh1-10.png" | absolute_url }})
 
-Tee nyt jokin muutos repositorioosi ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
+Tee nyt jokin muutos koneellasi repositorioon ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 <pre>
-To github.com:mluukkai/ohtu-viikko1.git
+To github.com:mluukkai/ohtu-2019-viikko1.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2019-viikko1.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -419,10 +470,10 @@ Pullauksen yhteydessä syntyy ns. merge commit ja git avaa oletuseditorisi ja ha
 
 Tehtävässä 8 määrittelimme projektin testauskattavuuden _JaCoCo:n_ avulla. https://codecov.io -palvelu mahdollistaa projektien koodikattavuuden julkaisemisen verkossa.
 
-* kirjaudu [Codecoviin](https://codecov.io) (GitHub signin)
+* kirjaudu [Codecoviin](https://codecov.io) (GitHub sign up)
 * lisää repositorio Codecoviin alaisuuteen: 
 
-![](https://raw.githubusercontent.com/mluukkai/Ohjelmistotuotanto2018/master/images/lh1-5.png)
+![]({{ "/images/lh1-12.png" | absolute_url }})
 
 Saat Codecov:in tarkkailemaan projektisi koodikattavuutta lisäämällä tiedoston _build.gradle_ loppuun seuraava:
 
@@ -435,7 +486,7 @@ jacocoTestReport {
 }
 ```
 
-Sekä lisäämällä circlelle tiedoston <code>.circleci/config.yml</code> loppuun seuraavat rivit:
+Sekä lisäämällä tiedoston <code>.circleci/config.yml</code> loppuun seuraavat rivit:
 
 ```yml
   - run: ./gradlew check
@@ -443,17 +494,19 @@ Sekä lisäämällä circlelle tiedoston <code>.circleci/config.yml</code> loppu
   - run: bash <(curl -s https://codecov.io/bash)
 ```
 
-**HUOM** et tarvitse Codecovin tarjoamaa _upload tokenia_ mihinkään:
+**HUOM1** rivit on sisennettävä samalle tasolle kuin muut _run_-komennot.
 
-![](https://raw.githubusercontent.com/mluukkai/Ohjelmistotuotanto2018/master/images/lh1-6.png)
+**HUOM2** et tarvitse Codecovin tarjoamaa _upload tokenia_ mihinkään:
+
+![]({{ "/images/lh1-13.png" | absolute_url }})
 
 Kun seuraavan kerran pushaamme koodin Githubiin, ilmestyy Codecov:iin koodin testikattavuusraportti:
 
-![](https://raw.githubusercontent.com/mluukkai/Ohjelmistotuotanto2018/master/images/lh1-8a.png)
+![]({{ "/images/lh1-14.png" | absolute_url }})
 
 Klikkaailemalla sivun alalaidassa olevasta kohdasta _Files_ tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
-![](https://raw.githubusercontent.com/mluukkai/Ohjelmistotuotanto2018/master/images/lh1-7a.png)
+![]({{ "/images/lh1-15.png" | absolute_url }})
 
 Käytännössä pyydämme Circleä suorittamaan onnistuneen buildin (eli komennon <code>gradle check</code>) jälkeen gradle-komennon, joka ensin suorittaa testien kattavuusanalyysin JaCoCo:lla ja sen jälkeen lähettää tiedot Codecoviin.
 
@@ -461,9 +514,9 @@ Pushaa nyt muutokset GitHubiin ja seuraa _sekä_ CircleCI-buildin lokia, että r
 
 Lisää projektin _readme badge_ repositoriosi README.md-tiedostoon. Löydät badgen Codecovin settings-valikosta.
 
-Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta:
+Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta (poislukien liian alhainen testauskattvuus):
 
-![]({{ "/images/ex-12-4.png" | absolute_url }})
+![]({{ "/images/lh1-16.png" | absolute_url }})
 
 Huomaa, että CircleCIn ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
@@ -491,18 +544,39 @@ jacocoTestReport {
 ```
 
 Muuta myös saman tiedoston muut viitteet pääohjelmaan oikeaan muotoon ja varmista, että 
-[tehtävässä 7](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
+[tehtävässä 7](/tehtava1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
 
 Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että _Main_ jätetään huomioimatta.
 
+### Tehtävien palautusrepositoriot
+
+Tehtävät 14-16 kannattaa tehdä eri repositorioon kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavan viikkojen tehtävien palauttamiseen. Repositorion rakenne voi tällöin olla esim. seuraava:
+
+```
+viikko1
+  nhltilastot
+viikko2
+  tehtavat1-4
+  tehtavat5-7
+viikko3
+   tehtavat1-2
+   tehtava3
+   tehtavat7-11
+...
+```
+
+Lisää tehtäviin 2-13 käyttämäsi repositorion README.md-tiedostoon linkki tehtävien 14-16 palautusrepositorioosi.
+
+README.md-tiedoston tulisi siis näyttää suunilleen tältä
+
+![]({{ "/images/lh1-11.png" | absolute_url }})
 
 ### 14. riippuvuuksien injektointi osa 1
 
-* Tutustu riippuvuuksien injektointiin lukemalla https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md
+* Tutustu riippuvuuksien injektointiin lukemalla <https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md>
 * hae esimerkkiprojekti kurssirepositorion hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
-  * **tämän jälkeen kannattaa kopioida projekti tehtävien palautukseen käyttämäsi repositorion sisälle**
-
+  * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
 Tutustu riippuvuuksien injektointiin esimerkin avulla.
 
@@ -568,7 +642,7 @@ Kun injektoit readerStub-olion testissä Statistics-oliolle, palauttaa se aina s
 
 ### Tehtävien palautus
 
-Palauta tehtävät [https://study.cs.helsinki.fi/stats/courses/ohtu2019](https://study.cs.helsinki.fi/stats/courses/ohtu2019)
+Pushaa kaikki tekemäsi tehtävät (paitsi ne joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
 
 ## Viikko 2
 
