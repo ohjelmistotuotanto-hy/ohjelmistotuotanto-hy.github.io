@@ -66,10 +66,10 @@ Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömä
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
-- laskarit 12 pistettä
+- laskarit 11 pistettä
   - luentoihin liittyvät monivalintatehtävät 3 pistettä 
-  - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 9 pistettä
-- miniprojekti 8 pistettä
+  - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 8 pistettä
+- miniprojekti 9 pistettä
 - koe 20 pistettä
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä. 
@@ -80,7 +80,7 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssi pistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. 
 
-Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisesta monivalintakysymyksestä (joita kurssilla on todennäköisesti 60 kappaletta) on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan _oikeatVastaukset/vaittamaLukumaara * 0.1.2 - 0.2_. Eli vastaamalla kaikki kohdat oikein, saa yhden mvpn, ja kaikki väärin saa -0.2 mvp. Puolet oikein tuottaa 0.4 mvptä. 
+Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan _oikeatVastaukset/vaittamaLukumaara * 1.2 - 0.2_. Eli vastaamalla kaikki kohdat oikein, saa yhden mvpn, ja kaikki väärin saa -0.2 mvp. Puolet oikein tuottaa 0.4 mvptä. 
 
 Normaaleista laskareista on tarjolla *9 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 

@@ -119,7 +119,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * <https://we.riseup.net/debian/git-development-howto>
   * <http://www.ralfebert.de/tutorials/git/>
 
-**tee nyt seuraavat:**
+**Tee nyt seuraavat:**
 
 * mene edellisessä tehtävässä luotuun repositorion klooniin (eli komennon <code>git clone</code> luomaan hakemistoon)
 * lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
@@ -216,13 +216,13 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
 Ohjelmoinnin peruskursseilla koodi suoritettiin painamalla NetBeansin "vihreää nuolta", ja testit painamalla "mustaa silmää". Ammattimaisessa ohjelmistokehityksessä koodin suorituskelpoiseksi tekemisen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahasa koneella, _skriptatusti_ komentoriviltä, eli riippumatta NetBeansin kaltaisista kehitysympäristöistä.
 
-Tähän tarkoitukseen on kehitetty useita _build-ohjelmistoja_. Käytämme tällä kurssilla Java-ekosysteemin uunista build-ohjelmistoa _Gradlea_. 
+Tähän tarkoitukseen on kehitetty useita _build-ohjelmistoja_. Käytämme tällä kurssilla Java-ekosysteemin uusista build-ohjelmistoa _Gradlea_. 
 
 [Gradlen](https://gradle.org) dokumentaatio sisältää seuraavan kuvauksen 
 
 > Gradle is a build tool with a focus on build automation and support for multi-language development. If you are building, testing, publishing, and deploying software on any platform, Gradle offers a flexible model that can support the entire development lifecycle from compiling and packaging code to publishing web sites. Gradle has been designed to support build automation across multiple languages and platforms including Java, Scala, Android, C/C++, and Groovy, and is closely integrated with development tools and continuous integration servers including Eclipse, IntelliJ, and Jenkins.
 
-Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle on uuden generaation build-ohjelmisto, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
+Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle on uuden sukupolven build-ohjelmisto, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
 
 * edellisessä tehtävässä lisättiin repositorioon gradle-muodossa oleva projekti, joka sisältää aikoinaan [ohjelmoinnin perusteissa](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/materiaali/02_oliot/#15) olleen luokan <code>Varasto</code>, sen käyttöä demonstroivan pääohjelman ja muutaman JUnit-testin
 * tutki gradle-muotoisen projektin hakemistorakennetta esim. antamalla komento <code>tree</code> projektin sisältävän hakemiston juuressa (_tree_ ei ole gradleen liittyvä käsky vaan normaali shell-komento)
@@ -241,7 +241,7 @@ Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle o
 
 Ohjelmakoodin editointi kannattaa tehdä IDE:llä kuten usein myös ohjelman ja testien ajaminenkin, mutta **gradlea kannattaa kuitenkin ehdottomasti totutella käyttämään myös komentoriviltä.** 
 
-**Kokeillaan nyt gradlen käyttöä komentoriviltä:**
+**Kokeillaan nyt gradlen käyttöä komentoriviltä**
  
 Gradle on siinä mielessä mielenkiintoinen työkalu, että sitä ei ole pakko asentaa ennen käytön aloittamista. Gradle-projektit sisältävät skriptit _gradlew_ (Linuxille) ja _gradlew.bat_ (Windowsille), jotka osaavat tarvittaessa asentaa Gradlen koneellesi.
 
@@ -269,7 +269,7 @@ Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on toden
 
 Kun komento <code>./gradlew build</code> (Linux, OSX) tai <code>gradlew.bat build</code> (Windows) tai <code>gradle build</code> toimii, olet valmis siirtymään seuraavaan kohtaan.
 
-Tee nyt seuraavat toimenpiteet. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi.
+**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi.
 
 * aloita nyt puhtaalta pöydältä komennolla <code>gradle clean</code>
   * käytä siis komennosta muotoa <code>./gradlew</code> jos <code>gradle</code> ei toimi
@@ -279,7 +279,7 @@ Tee nyt seuraavat toimenpiteet. Ohjeen kaikissa kohdissa komento on annettu muod
 * suorita pääohjelma komennolla <code>gradle run</code>
 * tee <code>gradle clean</code>
   * suorita cleanin jälkeen tree-komento. Mitä clean tekee?
-* aja testit komennolla <code>gradle test</code>
+* suorita testit komennolla <code>gradle test</code>
   * suorita jälleen komento <code>tree</code>
   * huomaat, että testien ajaminen luo hakemiston _build/reports/tests/test_. Testien diagnostiikka tulee tähän hakemistoon
 * avaa selaimella testien tuloksen raportoiva tiedosto _build/reports/tests/test/index.html_
@@ -307,13 +307,19 @@ Lisätty konfiguraatio kertoo, mikä ohjelman luokista on ns. pääohjelma, eli 
 
 ### 8. JUnit
 
+Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa. 
 
+Java-maailmassa automatisoidun testaamisen johtava työkalu on JUnit, johton olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. 
+  * Jos JUnit on vieras tai pääsyt unohtumaan kertaa perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2019/blob/master/web/junit.md) 
 
-* kertaa tarvittaessa JUnitin perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2019/blob/master/web/junit.md) 
-* täydennä Ohtuvaraston testejä siten, että luokan Varasto testien rivikattavuudeksi (line coverage) tulee 100%
-  * Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
+Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran JUnit-testejä, **laajennetaan nyt testejä**.
+
+Muista, että testit suoritetaan komennolla <code>gradle test</code>
+
+* Täydennä Ohtuvaraston testejä siten, että luokan _Varasto_ testien rivikattavuudeksi (line coverage) tulee 100%
+  * joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
   * edellinenkään ei vielä riitä
-* testauskattavuuden saat selville Gradlen [JaCoCo](https://docs.gradle.org/current/userguide/jacoco_plugin.html#gsc.tab=0)-pluginin avulla
+* testauksen rivikattavuuden saat selville Gradlen [JaCoCo](https://docs.gradle.org/current/userguide/jacoco_plugin.html#gsc.tab=0)-pluginin avulla
 * ota plugin projektissasi käyttöön lisämäällä tiedostoon _build.gradle_ seuraava rivi:
 ```groovy
 apply plugin: "jacoco" 
@@ -328,28 +334,40 @@ ja suorittamalla komento <code>gradle test jacocoTestReport</code>
 
 ### 9. CircleCI, osa 1
 
-[https://circleci.com/](https://circleci.com/) on jatkuvaan integrointiin ja käyttöönottoon tarkoitettu web-palvelu. 
+Gradlen avulla ohjelmiston käännös ja testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Käännöksen automatisoinin jälkeen seuraava askel on suorittaa buildausprosessi, eli ohjelman kääntäminen ja siihen liittyvien testien suoritus, erillisillä _build-palvelimella_ (engl. build server).
+
+Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
+- uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän työasemalle
+- isäykset ja niitä testaavat testit tehdään paikalliseen kopioon
+- käännös ja testit ajetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
+- jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
+- build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, kääntää - käännöspalvelin koodin ja suorittaa sille testit
+- build-palvelin raportoi havaituista virheistä
+
+Erillisen build-palvelimen avulla varmistetaan, että ohjelmisto toimii muuallakin kuin muutokset tehneen ohjelmistokehittäjän koneella. Tätä käytännettä kutsutaan _jatkuvaksi integraatioksi_ (engl. continuous integration). Palaamme asiaan tarkemmin kurssin [kolmannessa osassa](http://localhost:4000/osa3#jatkuva-integraatio)
+
+Kurssilla käytämme pilvessä toimivaa [CircleCI](https://circleci.com/)-nimistä build-palvelinohjelmistoa.
 
 Konfiguroidaan seuraavaksi Circle huolehtimaan projektistamme. 
 
-* mene osoitteeseen [https://circleci.com/](https://circleci.com/) ja valitse _Sign Up_ ja _Sign Up with GitHub_
+* mene osoitteeseen <https://circleci.com/> ja valitse _Sign Up_ ja _Sign Up with GitHub_
 * palvelu kysyy käyttölupia, tässä tapauksessa pääsy repositorioihin riittää.
-* avaa palvelun vasemmassa reunasta "ADD PROJECTS" välilehti ja valitse "Set Up Project" repositorion vierestä
+* avaa palvelun vasemmassa reunasta "add project"-välilehti ja valitse "Set Up Project" repositorion vierestä
 
 Tästä aukeaa ohjeistus, seuraamme sitä, mutta hyppäämme 3. kohdan yli.
 
 * valitaan configuraatioksi Linux ja Gradle (Java)
-* lisää repositoriosi juureen kansio nimeltään _.circleci_
-  * huomaa, että kansion nimen pitää alkaa pisteellä!
-* tee tiedosto _config.yml_ kansion _.cirleci_ sisälle ja kopioi sinne CircleCI antama _Sample .yml file_ sisältö.
-* commitoi ja pushaa repositorio GitHubiin.
+* lisää repositoriosi juureen hakemisto nimeltään _.circleci_
+  * huomaa, että nimeltään nimen pitää alkaa pisteellä!
+* tee tiedosto _config.yml_ kansion _.cirleci_ sisälle ja kopioi sinne CircleCI antama _Sample.yml_-tiedoston  sisältö
+* commitoi ja pushaa repositorio GitHubiin
 * paina _Start Building_
 
 nyt Circle alkaa tarkkailla jokaista muutosta, jonka teet repositorioon.
 
 * sivulle avautuu näkymä, joka kertoo siitä, että Circle yrittää _buildata_ koodin, jonka repositorio sisältää
 
-![]({{ "/images/ex-9-1.png" | absolute_url }})
+![]({{ "/images/lh1-6.png" | absolute_url }})
 
 ### 10. CircleCI, osa 2
 
