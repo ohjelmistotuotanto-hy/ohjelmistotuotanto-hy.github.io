@@ -593,11 +593,11 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
   * <code>Player</code>  on luokka, jonka olioina Statistics käsittelee yksittäisen pelaajan tietoja
   * <code>PlayerReader</code>  on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 * Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
- * **HUOM:** kun suoritat koodin ensimmäisen kerran, kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
+ * **HUOM:** kun suoritat koodin ensimmäisen kerran (komennolla _gradle run_), staattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
 
-**itse tehtävä:**
+**Itse tehtävä:**
 
-* Määrittele rajapinta <code>Reader</code>, jolla on samat julkiset metodit kuin PlayerReaderilla, eli ainoastaan metodi <code>List<Player> getPlayers()</code>. Laita PlayerReader toteuttamaan rajapinta.
+* Määrittele rajapinta <code>Reader</code>, jolla on samat julkiset metodit kuin PlayerReaderilla, eli ainoastaan metodi <code>getPlayers()</code>. Laita PlayerReader toteuttamaan rajapinta.
   * HUOM: NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
 * Muokkaa ohjelman rakennetta siten, että Statictics saa konstruktoriparametrina <code>Reader</code>-tyyppisen olion.
 * Muokkaa pääohjelma siten, että se injektoi Statistics-oliolle PlayerReaderin ja kokeile että ohjelma toimii edelleen:
@@ -609,7 +609,7 @@ Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforoht
 ### 16. NHLStatistics-ohjelman yksikkötestaus
 
 * tee yksikkötestit luokalle Statistics
-  * testien kattavuuden (sekä instructions että branches) tulee (Statistics-luokan osalta) olla 100% (mitataan JaCoCo:lla, ks. [tehtävä 8](/tehtavat1.md#8-junit))
+  * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/tehtävät1#8-junit))
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
   * voit luoda stubin testin sisälle anonyyminä sisäluokkana seuraavasti:
