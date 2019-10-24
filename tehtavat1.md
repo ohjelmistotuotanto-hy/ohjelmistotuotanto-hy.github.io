@@ -573,16 +573,20 @@ README.md-tiedoston tulisi siis näyttää suunilleen tältä
 
 ### 14. riippuvuuksien injektointi osa 1
 
-* Tutustu riippuvuuksien injektointiin lukemalla <https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md>
-* hae esimerkkiprojekti kurssirepositorion hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
+
+Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla. 
+
+* Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi)
+* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
-Tutustu riippuvuuksien injektointiin esimerkin avulla.
+Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin komennolla _gradle run_. Jos haluat suorittaa koodin ilman gradlen välitulostuksia, anna komento muodossa _gradle -q --console plain run_
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-* Kurssirepositorion hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia [http://nhl.com](http://nhl.com)-sivulla olevia, vuoden 2013-14 tilastotietoja
+* Kurssin kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia [http://nhl.com](http://nhl.com)-sivulla olevia, kuluvan kauden tilastotietoja
   * Kopioi projekti edellisen tehtävän reposiotorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
@@ -599,13 +603,13 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla.
 * Muokkaa pääohjelma siten, että se injektoi Statistics-oliolle PlayerReaderin ja kokeile että ohjelma toimii edelleen:
 
 ``` java
-Statistics stats = new Statistics( new PlayerReader("http://nhlstats-2013-14.herokuapp.com/players.txt") );
+Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players.txt") );
 ```
 
 ### 16. NHLStatistics-ohjelman yksikkötestaus
 
 * tee yksikkötestit luokalle Statistics
-  * testien kattavuuden (sekä instructions että branches) tulee (Statistics-luokan osalta) olla 100% (mitataan JaCoCo:lla, ks. [tehtävä 8](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#8-junit))
+  * testien kattavuuden (sekä instructions että branches) tulee (Statistics-luokan osalta) olla 100% (mitataan JaCoCo:lla, ks. [tehtävä 8](/tehtavat1.md#8-junit))
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
   * voit luoda stubin testin sisälle anonyyminä sisäluokkana seuraavasti:
@@ -616,7 +620,7 @@ public class StatisticsTest {
     Reader readerStub = new Reader() {
  
         public List<Player> getPlayers() {
-            ArrayList<Player> players = new ArrayList<Player>();
+            ArrayList<Player> players = new ArrayList<>();
  
             players.add(new Player("Semenko", "EDM", 4, 12));
             players.add(new Player("Lemieux", "PIT", 45, 54));
