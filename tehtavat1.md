@@ -25,7 +25,7 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Tehtävää 1 ei varsinaisesti palauteta minnekään.
 
-### 1 komentorivi
+### 1. komentorivi
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa. 
 
@@ -47,8 +47,7 @@ Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
   * parent directory
   * child directory
   * working directory
-  * .. 
-  * *
+  * .. ja *
 * ja osata käyttää komentoja
   * pwd
   * cd
@@ -63,7 +62,7 @@ Tulet tarvitsemaan komentorivin käyttötaitoja tällä kurssilla ja muutenkin o
 
 Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaat yllä luetellut asiat.
 
-### 2 Githubiin [versionhallinta]
+### 2. Githubiin [versionhallinta]
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
@@ -76,7 +75,7 @@ Luo githubiin repositorio nimellä ohtu-viikko1
 
 **Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
-* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell) riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
+* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
 
 Lisää julkinen avain githubiin:
 
@@ -109,7 +108,7 @@ missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näk
 
 Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-2019-viikko1</code> (hakemiston nimi on sama kuin repositoriosi), joka on on githubissa olevan repositorion klooni.
 
-### 3 Gitin alkeet [versionhallinta]
+### 3. Gitin alkeet [versionhallinta]
 
 Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä tehtävässä harjoitellaan seuraavia komentoja:
 
@@ -121,7 +120,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 * .gitignore
 
 * Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka 
-[Git-tutoriaali](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#gitin-alkeet)Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+[Git-tutoriaali](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#gitin-alkeet). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
 
 Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
@@ -139,7 +138,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 * tee .gitignore-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ja hakemistot joiden nimi on _build_ ja _.gradle_ ignoroidaan 
   * huomaa, että ainoastaan hakemisto nimeltä _build_ pitää ignoroida, tiedostot joiden nimi alkaa sanalla build, esim tehtävässä 7 lisättävä _build.gradle_ eivät saa ignoroitua!
   * toinen ignorattava hakemisto on siis _.gradle_, jonka nimi alkaa pisteellä
-  * pistealkuiset hakemistot ja tiedostot eivät näy oletusaroisesti komennon _ls_ listauksissa, saat ne näkyville komennolla _ls -a_
+  * pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon _ls_ listauksissa, saat ne näkyville komennolla _ls -a_
 * lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
   * saat asian tarkastettua komennolla _git status_
 * lisää myös hakemisto nimeltä _build_  ja hakemiston sisälle joku tiedosto. Varmista että build sisältöineen ei mene versionhallinnan alaisuuteen
@@ -158,7 +157,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 
 komennolla man git add saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset. 
 
-### 4 Tiedostojen lisääminen GitHubiin [versionhallinta]
+### 4. Tiedostojen lisääminen GitHubiin [versionhallinta]
 
 Tehtävässä 2 tehtiin GitHubiin repositorio, joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja githubin tilanne:
 
@@ -169,7 +168,7 @@ Githubissa pitäisi näyttää suunilleen seuraavalta
 
 ![]({{ "/images/lh1-3.png" | absolute_url }})
 
-### 5 Monta kloonia samasta repositoriosta [versionhallinta]
+### 5. Monta kloonia samasta repositoriosta [versionhallinta]
 
 Yleensä on tapana pitää GitHubissa olevaa repositorioa tiedostojen "keskitettynä" sijoituspaikkana ja liittää paikallisella koneella oleva repositorio GitHubissa olevan repositorion etärepositorioksi, kuten teimme tehtävässä 1. 
 
@@ -202,7 +201,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 * committaa muutokset 
   * varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_ 
   * joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen gitistä tapahtuu
-* pushaa muutokset githubiin katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositiossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_ 
+* pushaa muutokset githubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositiossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_ 
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
@@ -223,7 +222,7 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
 **Jos hakemisto _src_ ja tiedostot _build.gradle_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
-### 7 Gradle
+### 7. Gradle
 
 Ohjelmoinnin peruskursseilla koodi suoritettiin painamalla NetBeansin "vihreää nuolta", ja testit painamalla "mustaa silmää". Ammattimaisessa ohjelmistokehityksessä koodin suorituskelpoiseksi tekemisen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahasa koneella, _skriptatusti_ komentoriviltä, eli riippumatta NetBeansin kaltaisista kehitysympäristöistä.
 
@@ -344,11 +343,11 @@ ja suorittamalla komento <code>gradle test jacocoTestReport</code>
 
 ### 9. CircleCI, osa 1
 
-Gradlen avulla ohjelmiston käännös ja testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Käännöksen automatisoinin jälkeen seuraava askel on suorittaa buildausprosessi, eli ohjelman kääntäminen ja siihen liittyvien testien suoritus, erillisillä _build-palvelimella_ (engl. build server).
+Gradlen avulla ohjelmiston käännös ja testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Käännöksen automatisoinnin jälkeen seuraava askel on suorittaa buildausprosessi, eli ohjelman kääntäminen ja siihen liittyvien testien suoritus, erillisillä _build-palvelimella_ (engl. build server).
 
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 - uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän työasemalle
-- isäykset ja niitä testaavat testit tehdään paikalliseen kopioon
+- lisäykset ja niitä testaavat testit tehdään paikalliseen kopioon
 - käännös ja testit ajetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
 - jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
 - build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, kääntää - käännöspalvelin koodin ja suorittaa sille testit
@@ -368,8 +367,8 @@ Tästä aukeaa ohjeistus, seuraamme sitä, mutta hyppäämme 3. kohdan yli.
 
 * valitaan configuraatioksi Linux ja Gradle (Java)
 * lisää repositoriosi juureen hakemisto nimeltään _.circleci_
-  * huomaa, että nimeltään nimen pitää alkaa pisteellä!
-* tee tiedosto _config.yml_ kansion _.cirleci_ sisälle ja kopioi sinne CircleCI antama _Sample.yml_-tiedoston  sisältö
+  * huomaa, että nimen pitää alkaa pisteellä!
+* tee tiedosto _config.yml_ kansion _.cirleci_ sisälle ja kopioi sinne CircleCI:n antama _Sample.yml_-tiedoston  sisältö
 * commitoi ja pushaa repositorio GitHubiin
 * paina _Start Building_
 
@@ -551,11 +550,11 @@ Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että 
 
 ### Tehtävien palautusrepositoriot
 
-Tehtävät 14-16 kannattaa tehdä eri repositorioon kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavan viikkojen tehtävien palauttamiseen. Repositorion rakenne voi tällöin olla esim. seuraava:
+Tehtävät 14-16 kannattaa tehdä *eri repositorioon* kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavan viikkojen tehtävien palauttamiseen. Nyt  tehtävän repositorion rakenne voi tällöin olla esim. seuraava:
 
 ```
 viikko1
-  nhltilastot
+  tehtavat14-16
 viikko2
   tehtavat1-4
   tehtavat5-7
@@ -568,7 +567,7 @@ viikko3
 
 Lisää tehtäviin 2-13 käyttämäsi repositorion README.md-tiedostoon linkki tehtävien 14-16 palautusrepositorioosi.
 
-README.md-tiedoston tulisi siis näyttää suunilleen tältä
+Tehtävien 2-13 repositorion README.md-tiedoston tulisi siis näyttää suunnilleen tältä
 
 ![]({{ "/images/lh1-11.png" | absolute_url }})
 
@@ -588,13 +587,13 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
 * Kurssin kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia [http://nhl.com](http://nhl.com)-sivulla olevia, kuluvan kauden tilastotietoja
-  * Kopioi projekti edellisen tehtävän reposiotorion alle omaksi hakemistoksi
+  * Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   * <code>Player</code>  on luokka, jonka olioina Statistics käsittelee yksittäisen pelaajan tietoja
   * <code>PlayerReader</code>  on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 * Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
- * **HUOM:** kun suoritat koodin ensimmäisen kerran (komennolla _gradle run_), staattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
+ * **HUOM:** kun suoritat koodin ensimmäisen kerran (komennolla _gradle run_), saattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia.
 
 **Itse tehtävä:**
 
