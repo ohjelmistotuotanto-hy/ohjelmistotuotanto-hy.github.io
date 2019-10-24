@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 1
 inheader: no
-permalink: /tehtävät1/
+permalink: /tehtavat1/
 ---
 
 ## Viikko 1
@@ -609,7 +609,7 @@ Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforoht
 ### 16. NHLStatistics-ohjelman yksikkötestaus
 
 * tee yksikkötestit luokalle Statistics
-  * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/tehtävät1#8-junit))
+  * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/tehtavat1#8-junit))
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
   * voit luoda stubin testin sisälle anonyyminä sisäluokkana seuraavasti:
@@ -647,15 +647,3 @@ Kun injektoit readerStub-olion testissä Statistics-oliolle, palauttaa se aina s
 ### Tehtävien palautus
 
 Pushaa kaikki tekemäsi tehtävät (paitsi ne joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
-
-## Viikko 2
-
-## Viikko 3
-
-## Viikko 4
-
-## Viikko 5
-
-## Viikko 6
-
-## Viikko 7

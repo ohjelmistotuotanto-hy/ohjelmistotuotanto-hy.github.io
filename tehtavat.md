@@ -2,7 +2,7 @@
 layout: page
 title: Tehtävät
 inheader: yes
-permalink: /tehtävät/
+permalink: /tehtavat/
 ---
 
 ## Tehtävät
@@ -16,7 +16,7 @@ Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvos
 ### Viikko 1
 
 - [monivalitatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1) deadline sunnuntaina 3.11. klo 23:59  
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtävät1) deadline maanantaina 4.11. klo 23:59 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 4.11. klo 23:59 
 
 ### Viikko 2
 
