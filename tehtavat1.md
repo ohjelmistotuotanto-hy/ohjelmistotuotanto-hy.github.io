@@ -9,9 +9,9 @@ permalink: /tehtävät1/
 
 Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59.
 
-Muista myös tämän viikon [monivalitatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59.  
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59.  
 
-Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeiden ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
+Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
@@ -31,14 +31,14 @@ Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edel
 
 Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista). 
 
-Jos osaamisessasi on puutteita (ks alla oleva lista) kertaa haluamastasi resurssista:
+Jos osaamisessasi on puutteita (ks. alla oleva lista) kertaa haluamastasi resurssista:
 
 - <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
-- <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
+- <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa: _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
 
 Myös kurssin Tietokone työvälineenä tämän syksyn [komentorivimateriaali](https://tkt-lapio.github.io/command-line/) käsittelee myös suurta osaa tehtävän komennoista.
 
-*HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, niin se tunnus pitäisi kaikilla vähintään olla olemassa, jotta pääsee kirjautumaan.*
+*HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla olemassa, jotta pääsee kirjautumaan.*
 
 Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 * käsitteet
@@ -47,7 +47,8 @@ Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
   * parent directory
   * child directory
   * working directory
-  * .. ja *
+  * .. 
+  * *
 * ja osata käyttää komentoja
   * pwd
   * cd
