@@ -175,7 +175,7 @@ public class LaskinTest {
 
 Riippuvuuksien injektointi on siis oikeastaan äärimmäisen simppeli tekniikka, moni on varmaan sitä käyttänytkin jo ohjelmoinnin peruskursseilla. 
 
-Jos ajatellaan vaikkapa tietokonepelejä, joiden toiminta riippuu usein satunnaisluvuista, jos peli on koodattu seuraavasti, on automatisoitu testaus erittäin vaikeaa:
+Jos ajatellaan vaikkapa tietokonepelejä, joiden toiminta riippuu usein satunnaisluvuista. Jos peli on koodattu seuraavasti, on automatisoitu testaus erittäin vaikeaa:
 
 ``` java
 public class Peli {
