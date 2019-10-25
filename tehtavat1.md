@@ -577,7 +577,7 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla. 
 
-* Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi)
+* Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
 * hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
