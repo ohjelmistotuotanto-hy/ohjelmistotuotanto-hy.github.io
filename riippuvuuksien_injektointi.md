@@ -7,7 +7,7 @@ permalink: /riippuvuuksien_injektointi/
 
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
 
-Allaolevat koodiesimerkit löytyvät gradle-muotoisina projekteina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy/syksy2019) (hakemistossa koodi/viikko1/RiippuvuuksienInjektointi1)
+Allaolevat koodiesimerkit löytyvät gradle-muotoisina projekteina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta koodi/viikko1/RiippuvuuksienInjektointi1
 
 Seuraavassa yksinkertainen laskin:
 
