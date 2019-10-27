@@ -86,6 +86,8 @@ Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla
 
 Normaaleista laskareista on tarjolla *9 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
+Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versiohallintatehtävät ja suorittamalla hyväksytysti miniprojektin
+
 ### Luennot - laskuharjoitukset - miniprojekti
 
 Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoituset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
