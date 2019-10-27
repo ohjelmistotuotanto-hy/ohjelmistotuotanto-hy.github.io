@@ -13,6 +13,10 @@ Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä harjoituksissa on _k
 
 Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvostelu).
 
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
+- ma 14-16 B221 (maanantain paja vasta 4.11. alkaen)
+- ke 14-16 B221
+
 ### Viikko 1
 
 - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1) deadline sunnuntaina 3.11. klo 23:59:00 

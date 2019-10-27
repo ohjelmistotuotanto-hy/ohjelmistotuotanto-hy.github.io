@@ -80,7 +80,9 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssi pistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. 
 
-Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan _oikeatVastaukset/vaittamaLukumaara * 1.2 - 0.2_. Eli vastaamalla kaikki kohdat oikein, saa yhden mvpn, ja kaikki väärin saa -0.2 mvp. Puolet oikein tuottaa 0.4 mvptä. 
+Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan: 
+- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, on tuloksena 0 mvp:tä. 
+- jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikki kohdat oikein tuo yhden mvp:n. 
 
 Normaaleista laskareista on tarjolla *9 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 

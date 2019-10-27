@@ -64,7 +64,7 @@ Jos uuden sovelluksen on tarkoitus korvata olemassaoleva työskentelyprosessi, e
  
 ### Vaatimusten analysointi, dokumentointi ja validointi
 
-Vaatimusten keräämisen lisäksi vaatimuksia täytyy analysoida. Onko vaatimuksissa keskinäisiä ristiriitoja ja ovatko ne riittävän kattavat, eli ottavatko ne huomioon kaikki mahdolliset käyttöskenaariot. On myös oleellista varmistaa, että vaatimusten toteutuminen on ylipäätään mahdollista ja taloudellisesti järkevää. 
+Vaatimusten keräämisen lisäksi vaatimuksia täytyy _analysoida_. Onko vaatimuksissa keskinäisiä ristiriitoja ja ovatko ne riittävän kattavat, eli ottavatko ne huomioon kaikki mahdolliset käyttöskenaariot. On myös oleellista varmistaa, että vaatimusten toteutuminen on ylipäätään mahdollista ja taloudellisesti järkevää. 
 
 Usein on myös hyvä varmistaa, että vaatimus on _todennettavissa_, eli että valmiista järjestelmästä pystytään ylipäätään toteamaan noudattaako järjestelmä tätä vaatimusta. Esim. vaatimus _järjestelmä on helppokäyttöinen_ ei ole sikäli hyvä, että helppokäyttöisyyden testaaminen on vaikeaa. Käytettävyyteenkin liittyviä vaatimuksia on mahdollista määritellä [todennettavalla tavalla](http://www.pcuf.fi/sytyke/lehti/kirj/st20093/ST093-18A.pdf).
  
@@ -113,17 +113,17 @@ Kaikki laatuvaatimukset eivät ole suoraan järjestelmän käyttäjän havaittav
 - laajennettavuus: onko sovelluksen toiminnallisuutta helppo kasvataa jatkossa
 - testattavuus: onko sovelluksen virheettömyys varmistettavissa helposti jatkokehityksen yhteydessä
 
-On olemassa suuri määrä erilaisia kategorioita laatuvaatimuksille, esim. [Wikipedian lista](http://en.wikipedia.org/wiki/List_of_system_quality_attributes) luettelee niitä suuret määrät.
+On olemassa suuri määrä erilaisia kategorioita laatuvaatimuksille, esim. [Wikipedian](http://en.wikipedia.org/wiki/List_of_system_quality_attributes) listaa niitä suuret määrät.
 
 Toimintaympäristön rajoitteita (constraints) ovat esim.
 - toteutusteknologia: millä ohjelmointikielillä ja kirjastoilla sovellus toteutetaan, mitä tietokantoja käytetään
 - käyttöympäristö: käytetäänkö sovellusta selaimella vai onko se desktop- tai mobiilisovellus
-- integroituminen muihin järjestelmiin: käytetäänkö vaikkapa jonkin ulkoisen palvelun kertakirjautumista tai jotain avoimia rajapintojen tarjoamaa dataa
+- integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimia rajapintojen tarjoamaa dataa
 - mukautuminen lakeihin ja standardeihin: eräs esimerkki tälläisistä on GDPR:n asettamat vaatimukset
  
 Toisin kuin toiminnalliset vaatimukset jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten "koko järjestelmää", ja vaikuttavat siihen miten koko järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa. 
- 
- ## Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
+
+## Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
   
 Vesiputousmallin hengen mukaista oli, että vaatimusmäärittelyä pidettiin erillisenä ohjelmistoprosessin vaiheena, joka on tehtävä kokonaisuudessaan ennen suunnittelun aloittamista. Ideana oli että suunnittelun ei pidä vaikuttaa vaatimuksiin ja vastaavasti vaatimukset eivät saa rajoittaa tarpeettomasti suunnittelua.
  
@@ -131,40 +131,42 @@ Asiantuntijat korostivat, että vaatimusten dokumentaation on oltava kattava ja
 Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumentoitiin kaikki asiakkaan vaatimukset. Oli jopa suuntauksia, joissa vaatimukset haluttiin luonnollisen kielen sijaan ilmaista formaalilla kielellä eli matemaattisesti jotta esim. ristiriidattomuuden osoittaminen olisi mahdollista.
  
 Tiedetään nimittäin että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoistivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
- 
+
 ## Vaatimusmäärittely 1900-luvulla – ei toimi 
- 
-Kuten [viikolla 1](/viikko1) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi on osoittautunut utopiaksi. 
 
-On useita sitä, jotka johtavat siihen että vaatimusten muuttumien on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti, mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide muuttumaan suurella todennäköisyydellä muuttumaan kun asiakas näkee lopputuloksen. 
+Kuten [osassa 1](/osa1#vesiputousmallin-ongelmia) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi on osoittautunut utopiaksi. 
 
-Suunnattoman ongelman aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittelystä, ohjelmistokehittäjät eivät osaa tulkita kirjattuja vaatimuksia samoin kuin vaatimukset kertonut asiakas tai loppukäyttäjä. Jos kehittäjien ja käyttäjien välillä ei ole suoraa kommunikaatiota, väärinymmärrysten syntyminen on erittäin todennäköistä.
+On useita syitä, jotka johtavat siihen että vaatimusten muuttumien on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti, mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide muuttumaan suurella todennäköisyydellä muuttumaan kun asiakas näkee lopputuloksen. 
+
+Ongelmia aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittelystä, ohjelmistokehittäjät eivät osaa tulkita kirjattuja vaatimuksia siten kuin vaatimukset kertonut asiakas tai loppukäyttäjä on tarkoittanut. Jos kehittäjien ja käyttäjien välillä ei ole suoraa kommunikaatiota, väärinymmärrysten syntyminen on erittäin todennäköistä.
  
-Vaatimusmäärittelyä ei myöskääm ole mahdollista tai järkevää irrottaa kokonaan suunnittelusta. Suunnittelu auttaa ymmärtämään ongelma-aluetta syvällisemmin ja se taas generoi usein muutoksia vaatimuksiin. Ohjelmia tehdään enenemissä määrin valmiiden komponenttien, esim. open source -koodin tai verkossa olevien SaaS-palveluiden varaan, ja tämä on oleellista ottaa huomioon vaatimusmäärittelyssä.
+Vaatimusmäärittelyä ei myöskääm ole mahdollista tai järkevää irrottaa kokonaan suunnittelusta. Suunnittelu auttaa ymmärtämään ongelma-aluetta syvällisemmin ja se taas generoi usein muutoksia vaatimuksiin. 
+
+Ohjelmia tehdään enenemissä määrin valmiiden komponenttien, esim. open source -koodin tai verkossa olevien SaaS-palveluiden varaan, ja tämäkin on oleellista ottaa huomioon vaatimusmäärittelyssä. 
 
 Jos suunnittelu ja toteutustason asiat otetaan huomioon vaatimusmäärittelyssä, on vaatimusten muotoilu ja priorisointikin helpompaa: näin on mahdollista edes jollain tavalla arvioida vaatimusten toteuttamisen hintaa.
  
-Ilman suunnittelun ja toteutuksen huomioimista riskinä siis on että asiakas haluaa vaatimuksen sellaisessa muodossa, joka moninkertaistaa toteutuksen hinnan verrattuna periaatteessa asiakkaan kannalta yhtä hyvään, mutta hieman eri tavalla muotoiltuun vaatimukseen.
+Ilman suunnittelun ja toteutuksen huomioimista riskinä on, että asiakas haluaa vaatimuksen sellaisessa muodossa, joka moninkertaistaa toteutuksen hinnan verrattuna periaatteessa asiakkaan kannalta yhtä hyvään, mutta hieman eri tavalla muotoiltuun vaatimukseen.
  
 ## Vaatimusmäärittely 2000-luvulla
   
-2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan elelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmääittely on vasta suuntaa-antava ja tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeieen verran.
+2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan elelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmääittely on vasta suuntaa-antava ja sitä on tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeieen verran.
 
-Ketterän vaatimusmäärittelyn hengen mukaista on, että asiakas (Scrumia käytettäessä product owner) priorisoi vaatimukset siten, että kuhunkin iteraatioon valitaan toteutettavaksi ne vaatimukset, jotka tuovat asiakkaalle mahdollisimman paljon liiketoiminnallista arvoa.
-Ohjelmistokehittäjät arvioivat vaatimusten toteuttamiseen tarvittavaa työmäärää, ja päättävät sen kuinka paljon he voivat ottaa kuhunkin iteraatioon toteutettavia vaatimuksia. 
+Ketterän vaatimusmäärittelyn hengen mukaista on, että asiakas (Scrumia käytettäessä product owner) priorisoi vaatimukset siten, että kuhunkin iteraatioon valitaan toteutettavaksi ne vaatimukset, jotka tuovat asiakkaalle mahdollisimman paljon liiketoiminnallista arvoa. Ohjelmistokehittäjät arvioivat vaatimusten toteuttamiseen tarvittavaa työmäärää, ja päättävät sen kuinka paljon he voivat ottaa kuhunkin iteraatioon toteutettavia vaatimuksia. 
 
-Jokaisen iteraation aikana tehdään määrittelyä, suunnittelua, ohjelmointia ja testausta siinä määrin kuin tarve vaatii. Vaatimusmäärittelykin siis tarkentuu projektin kuluessa.
-Jokaisen iteraation on tarkoitus saada aikaan valmiita lisätoiminnallisuuksia kehitettävään sovellukseen. Jokaisen iteraation tuotos toimiikin syötteenä seuraavan iteraation vaatimusten määrittelyyn..
+Jokaisen iteraation aikana tehdään määrittelyä, suunnittelua, ohjelmointia ja testausta siinä määrin kuin tarve vaatii. Vaatimusmäärittelykin siis tarkentuu projektin kuluessa. Jokaisen iteraation on tarkoitus saada aikaan valmiita lisätoiminnallisuuksia kehitettävään sovellukseen. Jokaisen iteraation tuotos toimiikin syötteenä seuraavan iteraation vaatimusten määrittelyyn..
  
 Ohjelmiston kasvaessa iteratiivisesti ja inkrementaalisesti pala palalta mahdollistaakin sen, että sovellus voidaan viedä tuotantokäyttöön eli todellisten käyttäjien käytettäväksi jo ennen sovelluksen valmistumista. 
 
 Tällä on monia etuja. Sovellus voi ruveta tuottamaan rahallista arvoakin jo ennen sovelluskehitysprojektin päättymistä, ja todellisilta käyttäjiltä saatavan palautteen avulla vaatimusmäärittelyn ja sovelluksen jatkokehityksen suuntaa on vielä mahdollista tarkentaa. 
  
-Kattavana teemana ketterässä ohjelmistotuotannossa ja  siihen liittyvässä vaatimusmäärittelyssä onkin kaikin mahdollisin tavoin tuottaa asiakkaalle maksimaalisesti arvoa. 
+Kattavana teemana ketterässä ohjelmistotuotannossa ja siihen liittyvässä vaatimusmäärittelyssä onkin kaikin mahdollisin tavoin tuottaa asiakkaalle maksimaalisesti arvoa. 
 
 ## Vaatimusmäärittely 2010-luvulla: Lean startup
 
-Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartup.com/) kuvaa/formalisoi systemaattisen tavan kartoittaa vaatimuksia erityisen epävarmoissa konteksteissa, kuten startup-yrityksissä. Malli perustuu kolmiosaisen build-measure-learn-syklin toistamiseen
+Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartup.com/) kuvaa/formalisoi systemaattisen tavan kartoittaa vaatimuksia erityisen epävarmoissa konteksteissa, kuten startup-yrityksissä. 
+
+Malli perustuu kolmiosaisen build-measure-learn-syklin toistamiseen
 
 ![]({{ "/images/2-3.png" | absolute_url }}){:height="300px" }
 
@@ -176,38 +178,43 @@ Tämän jälkeen rakennetaan nopeasti niin sanottu _minimum viable product (MVP)
 
 > A minimum viable product (MVP) is a product with just enough features to satisfy early customers and provide feedback for future product development.
 
-MVP laitetaan tuotantokäyttöön ja sen jälkeen _mitataan_ miten ihmiset asiakkaat käyttäytyvät uuden ominaisuusjoukon suhteen, esim. jos kyseessä on internetpalvelu, voidaan mitata kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjaantuu järjestelmään, kirjaantuu vielä viikon jälkeen rekisteröitymisestä ym.
+MVP siis on jonkinlainen minimalistinen toteutus ohjelmistosta tai jostain sen uudesta ominaisuudesta, jonka motivaationa on käyttäjäpalautteen kerääminen. MVP ei ole vielä kaikilta osin ohjelistokehityksen parhaiden käytänteiden mukaan rakennettu ja se on usein ominaisuuksiltaan rajoitettu, sisältäen ainoastaan sen verran toiminnallisuutta kuin hypoteesin mittaamiseen minimissään tarvitaan.
 
-Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein A/B-testausta: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan helposti mitata tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
+MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeille asiakkaille. TÄmän jälkeen _mitataan_ miten ihmiset asiakkaat käyttäytyvät MVP:n toteuttaman uuden ominaisuusjoukon suhteen. Jos esimerkiksi kyseessä on internetpalvelu, voidaan _mitata_ kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjaantuu järjestelmään, kirjaantuu vielä viikon jälkeen rekisteröitymisestä ym.
 
-Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään oppimaan olivatko toteutetut vaatimukset sellaisia jotka ovat järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominiaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne asiakasta enemmän sovelluksen käyttöön, saavatko ne asiakkaan tuhlaamaan enemmän rahaa ym... 
+Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan helposti _mitata_ tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
 
-Jos toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn-sykliä tekemällä hypoteesi jostain muusta ideasta
-Lean startup -"menetelmällä" on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat.
+Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään _oppimaan_ olivatko toteutetut vaatimukset sellaisia jotka ovat järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominiaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne asiakasta enemmän sovelluksen käyttöön, saavatko ne asiakkaan tuhlaamaan enemmän rahaa ym... 
+
+Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP:n sijaan robustimpi toteutus kyseisestä toiminnallisuudesta. Jos taas toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn-sykliä tekemällä hypoteesi jostain muusta ideasta. 
+
+Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat.
+
+Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon isoissa internetpalveluita tuottavissa yhtiöissä, kuten Facebook, Google, Netflix ja Amazon. Myös tietokonepelialalla menetelmä on aktiivisessa käytössä kun pelien koukuttavuutta yritetään maksimoida. 
 
 # Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa
   
 Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunnitteluun ketterässä ohjelmistotuotantoprojektissa. 
 
 Tapa pohjautuu Scrumin ja eXtreme Programingin eli XP:n eräiden käytänteiden soveltamiseen
-Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/), [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) ja [Jeff Sutherland ym.:A Scrum book](http://scrumbook.org/) sekä [Mike Cohnin](https://www.mountaingoatsoftware.com/blog) loistavat kirjat Agile Estimation and Planning ja User stories applied.
+Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/), [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) ja [Jeff Sutherland ym.:A Scrum book](http://scrumbook.org/) sekä [Mike Cohnin](https://www.mountaingoatsoftware.com/blog) loistavat kirjat _Agile Estimation and Planning_ ja _User stories applied_.
   
-## User story
+## User story 
 
 Ketterän vaatimusmäärittelyn tärkein työväline on _user story_. Samasta asiasta käytetään joskus suomenkielistä termiä _käyttäjätarina_, käännös ei kuitenkaan ole täysin vakiintunut, joten käytämme jatkossa englanninkielistä termiä.
  
 Alan suurimman auktoriteetin [Mike Cohnin mukaan](https://www.mountaingoatsoftware.com/articles/advantages-of-user-stories-for-requirements):
 
-A user story describes functionality that will be valuable to either user or purchaser of software. User stories are composed of three aspects:
-
-1) A written description of the story, used for planning and reminder 
-2) Conversations about the story to serve to flesh the details of the
+>A user story describes functionality that will be valuable to either user or purchaser of software. User stories are composed of three aspects:
+>
+>1. A written description of the story, used for planning and reminder 
+>2. Conversations about the story to serve to flesh the details of the
 story
-3) Tests that convey and document details and that will be used to determine that the story is complete
+>3. Tests that convey and document details and that will be used to determine that the story is complete
  
-User storyt siis kuvaavat loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia.
+User storyt siis kuvaavat _loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia_. Jotta näin olisi, kirjoitetaan storyt asiakkaan kannalta ymmärrettävällä kielellä.
 
-Määritelmän alakohtien 1 ja 2 mukaan user story on karkean tason tekstuaalinen kuvaus ja lupaus/muistutus siitä, että toiminnallisuuden tarkka kuvaus on selvitettävä asiakkaan kanssa.
+Määritelmän alakohtien 1 ja 2 mukaan user story on _karkean tason tekstuaalinen kuvaus_ ja lupaus/muistutus siitä, että toiminnallisuuden _tarkka kuvaus on selvitettävä asiakkaan kanssa_.
 
 Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvausia (_written description_)
 
@@ -215,17 +222,16 @@ Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvausia (_written
 - asiakas voi poistaa ostoskorissa olevan tuotteen
 - asiakas voi maksaa luottokortilla ostoskorissa olevat tuotteet
  
-User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimuksia, user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja lupaus, siitä että toiminnallisuuden vaatimukset tulee selventää riittävällä tasolla ennen kuin user story toteutetaan.
+User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimukset, user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja lupaus siitä, että toiminnallisuuden vaatimukset tullaan selvittämään riittävällä tasolla ennen kuin user story toteutetaan.
 
-User storyn henkeen siis kuuluu, että story on lupaus kommunikoinnista asiakkaan kanssa vaatimuksen selvittämiseksi, pelkän tekstuaalisen kuvauksen esim. _asiakas voi lisätä tuotteen ostoskoriin_ perusteella storyä ei voi vielä ruveta toteuttamaan.
 
-Määritelmän kolmas alikohta sanoo että Storyyn kuuluu "Tests that convey and document details and that will be used to determine that the story is complete". Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, minkä perusteella voidaan katsoa että story on suoriteetu.
+Määritelmän kolmas alikohta sanoo että Storyyn kuuluu _Tests that convey and document details and that will be used to determine that the story is complete_. Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, minkä perusteella voidaan katsoa että story on toteutettu.
 
-Vaihtelee hyvin paljon miten user storyihin liittyvät hyväksymökriteerit ilmaistaan. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunallinnasta vastaava taho hyväksyy storyn valmiiksi kokeilemalla vastaavaa toiminnallisuutta järjestelmästä.
+Vaihtelee hyvin paljon miten user storyihin liittyvät hyväksymäkriteerit ilmaistaan. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunallinnasta vastaava taho hyväksyy storyn valmiiksi testaamalla manuaalisesti vastaavaa toiminnallisuutta järjestelmästä.
 
-Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on tehnyt [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
+Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on antanut [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
 
-- card, eli story muistilappumainen usein jopa fyysinen pahvikortti, eli ei missään tapauksessa vesiputousmainen mappiin talletettava laaja vaatimusmäärittelydokumentti
+- card: muistilappumainen usein jopa fyysinen pahvikortti, ei siis missään tapauksessa vesiputousmainen mappiin talletettava laaja vaatimusmäärittelydokumentti
 - conversation: jotta storyn voi toteuttaa tarvitaan paljon keskustelua sovelluskehittäjien ja product ownerin, asiakkaiden, loppukäyttäjien ym. välillä, jotta saadaan selville mistä storystä todella on kysymys
 - confirmation: kriteerit minkä perusteella voidaan todeta storyn olevan toteutettu valmiiksi
 
@@ -260,9 +266,11 @@ Edellinen erimerkki
 
 on formuloitu monin paikoin [suositussa muodossa](https://www.agilealliance.org/glossary/user-story-template/) 
 
-> As a <type of user>, I want <functionality> so that <business value> 
+> As a _type of user_, I want _functionality_ so that _business value_ 
 
-Näin muotoilemalla on ajateltu että user story kiinnittää huomion siihen kenelle kuvattava järjestelmän toiminto tuottaa arvoa. Muoto ei oikein taivu suomenkielisiin kuvauksiin, joten sitä ei tällä kurssilla käytetä. Viime aikoina tätä tapaa muotoilla user storyt on myöskin ruvettu kritisoimaan muun muassa siksi että kiinnittää liikaa huomioita siihen miten story kirjataan itse asian, eli mistä storyssä on kysymys sijaan ja formaatti on menettämässä suosiotaan.
+Näin muotoilemalla on ajateltu että user story kiinnittää huomion siihen, kenelle kuvattava järjestelmän toiminto tuottaa arvoa. Muoto ei oikein taivu suomenkielisiin kuvauksiin, joten sitä ei tällä kurssilla käytetä. 
+
+Viime aikoina tätä tapaa muotoilla user storyt on myöskin ruvettu kritisoimaan muun muassa siksi että kiinnittää liikaa huomioita siihen miten story kirjataan, itse asian eli _mistä storyssä on kysymys_ sijaan. Formaatti onkin menettämässä suosiotaan.
 
 ![]({{ "/images/2-5.png" | absolute_url }}){:height="200px" }
 
@@ -281,27 +289,29 @@ Hyvänä käytäntönä pidetään että user story kuvaa järjestelma
 
 Esimerkiksi _lisää jokaisesta asiakkaasta rivi tietokantatauluun customers_ ei olisi suositeltava muotoilu user storylle, sillä se ei ole kirjattu käyttäjän kannalta ymmärrettävällä tavalla ja ottaa kantaa ainoastaan tietokantakerrokseen.
  
-Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kun story otetaan toteutettavaksi.
+Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kun story otetaan toteutettavaksi. 
 
 _Estimatable_ taas sanoo, että user storyn toteuttamisen vaatima työmäärä pitää olla arvioitavissa kohtuullisella tasolla.
 
 Työmäärän arviointi onnistuu paremmin jos user storyt ovat riittävän pieniä, _small_. 
 User story on ehdottomasti toiminnallisuudeltaan liian iso, jos se ei ole toteutettavissa yhdessä sprintissä. Juuri ja juuri yhdessä sprintissä toteutettavissa oleva story on myöskin huomattavan riskialtis, parempi koko storylle onkin lähempänä yhden päivän kuin vaikkapa viikon vaadittavaa työmäärää.
 
-Liian suuret user storyt tulee jakaa osiin. Esimerkiksi verkkokaupassa voisi olla käyttötapaus _kaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää tuotteiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten listaa_ tulisi ehdottomasti jakaa useaan osaan:
+Liian suuret user storyt tulee jakaa osiin ennen kun ne otetaan toteutettavaksi. Esimerkiksi verkkokaupassa voisi olla käyttötapaus _kaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää tuotteiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten listaa_ tulisi ehdottomasti jakaa useaan osaan:
 - ylläpitäjä voi kirjautua sovellukseen
 - ylläpitäjä voi lisätä tuotteita valikoimaan
 - ylläpitäjä voi päivittää tuotteiden tietoja
 - ylläpitäjä voi tarkastella asiakkaille tehtyjen toimitusten listaa
   
-Kuudes toivottu ominaisuus on testattavuus, _testability_, eli user storyjen tulisi olla sellaisia, että niille on mahdollista tehdä testit tai laatia kriteerit, joiden avulla on mahdollista yksikäsitteisesti todeta onko story toteutettu hyväksyttävästi. Ei-toiminnalliset vaatimukset (esim. suorituskyky, käytettävyys) aiheuttavat usein haasteita testattavuudelle.
+Kuudes toivottu ominaisuus on testattavuus, _testability_, eli toteutettavaksi valittavien user storyjen tulisi olla sellaisia, että niille on mahdollista tehdä testit tai laatia kriteerit, joiden avulla on mahdollista yksikäsitteisesti todeta onko story toteutettu hyväksyttävästi. Ei-toiminnalliset vaatimukset (esim. suorituskyky, käytettävyys) aiheuttavat usein haasteita testattavuudelle.
 
 Esimerkiksi verkkokaupan user story _kaupan tulee toimia tarpeeksi nopeasti kovassakin kuormituksessa_ on mahdollista muotoilla testattavaksi esimerkiksi seuraavasti:
 _käyttäjän vasteaika saa olla korkeinaan 0.5 sekuntia 99% tapauksissa jos yhtäaikaisia käyttäjiä sivulla on maksimissaan 1000_.
  
 Kriteerin _Independent_ mukaan user storyjen pitäisi olla toisistaan mahdollisimman riippumattomia eli storyjen kuvaamia toiminnallisuuksia pitäisi pystyä toteuttamaan mahdollisimman riippumatta toisten storyjen tilanteesta. Tämä taas antaa product ownerille enemmän vapausasteita storyjen priorisointiin, eli sen määrittelyyn missä järjestyksessä sovelluksen toiminnallisuudet valmistuvat. 
 
-On toki tilanteita, joissa storyjen keskinäistä riippuvuutta ei voi välttää, esimerkiksi verkkokaupan storyjen _lisää tuote ostoskoriin_ ja _poista tuoteolut ostoskorista_ tapauksessa.
+On toki tilanteita, joissa storyjen keskinäistä riippuvuutta ei voi välttää, esimerkiksi verkkokaupan storyjen _lisää tuote ostoskoriin_ ja _poista tuote ostoskorista_ tapauksessa.
+
+Kuten tulemme myöhemmin [tässä osassa](/osa2#user-story-ja-epiikki) toteamaan, user storyjen ei kannata olla koko aikaa _hyvän storyn_ INVEST-kriteerien mukaista. Kriteeristö koskeekin kokonaisuudessaa oikeastaan vain korkean prioriteetin user storyjä, eli sellaisia jotka tullaan toteuttamaan lähitulevaisuudessa. Matamlamman prioriteetin storyt voivat aivan hyvin olla vielä isompia, ja testattavuudenltaan sekä työmääräarvioiltaan epämääräisempiä. Storyt tulee jakaa ja saattaa INVEST-kriteerien mukaiseksi viimeistään siinä vaiheessa kun story nousee lähemmäs prioriteettijärjestyksen huippua.
 
 ## Alustava product backlog
 
@@ -314,23 +324,23 @@ Alustavan product backlogin muodostamisessa ovat käytettävissä ovat kaikki
 - brainstormaus
 - workshopit 
  
-Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän. User storyjen luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee niistä hyvän työkalun projektin aloitukseen.
-Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä asioita tarkennetaan myöhemmin, user storyn määritelmän kolmas kohtahan on että story sisältää _conversations about the story to serve to flesh the details of the story_.
+Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän. User storyjen luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee niistä hyvän työkalun projektin aloitukseen. Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän kolmas kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
  
-Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaatima _työmäärä arvioidaan_ tarvittavalla tasolla. Näin muodostuu alustava product backlog, eli priorisoitu lista vaatimuksista.
-  
+Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaatima _työmäärä arvioidaan_ projektille tarkoituksenmukaisella tasolla. Näin muodostuu alustava product backlog, eli priorisoitu lista vaatimuksista.
+
 ## Backlogin priorisointi
 
 Product backlog siis on _priorisoitu lista user storyjä_. 
 
-Kuten todettiin [Scrumin esittelyn yhteydessä](viikko1/) priorisoinnista vastaa _product owner_.Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat
-ohjelmiston ominaisuuksia. Priorisoinnin motivaationa on pyrkiä maksimoimaan asiakkaan kehitettävästä ohjelmistosta saama hyöty/arvo. Tärkeimmät asiat halutaan toteuttaa mahdollisimman nopeasti ja näin saada tuotteesta alustava versio markkinoille niin pian kuin mahdollista.
+Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1 #scrum) priorisoinnista vastaa _product owner_.  Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia. 
+
+Priorisoinnin motivaationa on pyrkiä maksimoimaan asiakkaan kehitettävästä ohjelmistosta saama hyöty/arvo. Tärkeimmät asiat halutaan toteuttaa mahdollisimman nopeasti ja näin saada tuotteesta alustava versio markkinoille niin pian kuin mahdollista.
  
 User storyjen priorisointiin vaikuttaa storyn kuvaaman toiminnallisuuden asiakkaalle tuovan arvon lisäksi ainakin storyn toteuttamiseen kuluva _työmäärä_ sekä storyn kuvaamaan ominaisuuteen sisältyvä _tekninen riski_.
  
-Ei ole siis kokonaistaloudellisesti edullista tehdä priorisointia välttämättä pelkästään perustuen asiakkaan user storyistä saamaan arvoon, joku story voi tuottaa paljon arvoa, mutta voi olla toteutukseltaan erittäin työläs. Parempi [sijoitetun pääoman tuotto eli ROI](https://fi.wikipedia.org/wiki/Sijoitetun_p%C3%A4%C3%A4oman_tuottoaste) voidaan saada jollain vaihtoehtoisella storyllä joka on toteutukseltaan vähemmän työläs.
+Ei ole siis kokonaistaloudellisesti edullista tehdä priorisointia välttämättä pelkästään perustuen asiakkaan user storyistä saamaan arvoon, joku story voi tuottaa paljon arvoa, mutta voi olla toteutukseltaan liian työläs. Parempi [sijoitetun pääoman tuotto eli ROI](https://fi.wikipedia.org/wiki/Sijoitetun_p%C3%A4%C3%A4oman_tuottoaste) voidaan saada jollain vaihtoehtoisella storyllä, joka on toteutukseltaan vähemmän työläs.
 
-Myös projektiin liittyvät tekniset riskit kannattaa ottaa priorisoinnissa huomioon. Tekninen riski voi olla esim. se onko jokin ohjelmiston kannalta kriittinen ominaisuus ylipäätään mahdollista toteuttaa tehokkaasti ja taloudellisesti järkevin resurssein. Tälläinnen riskitekijä kannattaa selvittää mielummin heti kuin vasta siinä vaiheessa kun projektiin on jo sijoitettu suuri määrä resursseja. 
+Myös projektiin liittyvät tekniset riskit kannattaa ottaa priorisoinnissa huomioon. Tekninen riski voi olla esim. se onko jokin ohjelmiston kannalta kriittinen ominaisuus ylipäätään mahdollista toteuttaa tehokkaasti ja taloudellisesti järkevin resurssein. Tälläinnen riskitekijä kannattaa selvittää mielummin heti kuin vasta siinä vaiheessa, kun projektiin on jo sijoitettu suuri määrä resursseja. 
 
 ## Estimointi eli työmäärän arviointi
  
@@ -363,10 +373,9 @@ Verkkokaupan tapauksessa voitaisiinkin kiinnittää että user storyn _tuotteen 
 
 ## Estimoinnin suorittaminen
 
-Estimointi tehdään yhteistyössä kehitystiimin ja product ownerin kanssa. Product ownerin roolina on tarkentaa estimoitaviin user storeihin liittyviä vaatimuksia siinä määrin että kehitystiimi ymmärtää tarkasti mistä on kyse. Varsinaisen estimoinnin eli työmääränarvion tekee kuitenkin aina ohjelmistokehitystiimi, tämä on tärkeää silla ainoastaan sovelluskehittäjillä on edes jossain määrin realistisia edellytyksiä arvion tekemiseen. 
+Estimointi tehdään yhteistyössä kehitystiimin ja product ownerin kanssa. Product ownerin roolina on tarkentaa estimoitaviin user storeihin liittyviä vaatimuksia siinä määrin että kehitystiimi ymmärtää tarkasti mistä on kyse. Varsinaisen estimoinnin eli _työmääränarvion tekee kuitenkin aina ohjelmistokehitystiimi_, tämä on tärkeää silla ainoastaan sovelluskehittäjillä on edes jossain määrin realistisia edellytyksiä arvion tekemiseen. 
 
-Kuten edellisellä viikolla mainittiin, määritellään ketterissä projekteissa yleensä _definition of done_, eli se yleinen taso mitä valmiilla tarkoitetaan. 
-Useimmiten valmiin määritellään sisältävän user storyn määrittelyn, suunnittelun, toteutuksen, automatisoitujen testien tekemisen, integroinnin muuhun sovellukseen, dokumentoinnin ja joskus jopa tuotantoon viennin.
+Kuten edellisellä viikolla mainittiin, määritellään ketterissä projekteissa yleensä [definition of done](/osa1#definition-of-done), eli se yleinen taso mitä valmiilla tarkoitetaan. Useimmiten valmiin määritellään sisältävän user storyn määrittelyn, suunnittelun, toteutuksen, automatisoitujen testien tekemisen, integroinnin muuhun sovellukseen, dokumentoinnin ja joskus jopa tuotantoon viennin.
 
 Estimoinnissa tuleekin arvioida user storyn viemä aika definition of donen tarkkuudella, eikä missään nimessä esim. ottaen huomioon pelkkä ohjelmointiin kuluva aika.
 
@@ -401,13 +410,13 @@ Eräs melko suosittu tapa estimoinnille on estimoida kiinnittää muutama erikoi
 
 Koska estimointi on joka tapauksessa melko epätarkkaa, ei estimoinnissa ole tarkoituksenmukaista käyttää kovin tarkkaa skaalaa. Useimmiten käytetään yläpäästä harvenevaa skaalaa esim. 1, 2, 3, 5, 10, 20, 40, 100.  Myös fibonaccin lukujono 1, 2, 3, 5, 8, 13, 21, 34, 55 on suosiossa estimoinnin skaalana.
 
-Motivaationa harvalle skaalalle on se, että koska isojen storyjen estimointiin liittyy erityisen suuri epävarmuus, ei kannata edes teeskennellä että skaala olisi isojen storyjen suhteen kovin tarkka.
+Motivaationa yläpäästä harvenevalle skaalalle on se, että koska isojen storyjen estimointiin liittyy erityisen suuri epävarmuus, ei kannata edes teeskennellä että skaala olisi isojen storyjen suhteen kovin tarkka.
 
-Joskus estimoinnissa käytetään arvoa _epic_, jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä user storyä että sitä ei ole toistaiseksi mieltä estimoida, itseasiassa alan suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille estimaatti epic. 
+Joskus estimoinnissa käytetään arvoa _epic_, jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä user storyä että sitä ei ole toistaiseksi mieltä estimoida, itseasiassa alan suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille storyille estimaatti epic. 
 
 Jotta estimaatin _epic_ saaneet storyt tulisivat estimoitua, ne tulee pilkkoa pienempiin, paremminhallittaviin storyihin. Käsittellä epic on eräs toinenkin merkitys user storyjen parissa mihin palaamme hieman myöhemmin.
 
-Hyvänä periaatteena pidetään että kaikki kehitystiimin jäsenet osallistuvat estimointiin. Näin tiimille syntyy yhtenäinen ymmärrys user storyn sisällöstä. Eräs suosittu tapa osallistaa koko tiimi estimointiin on [_planning poker_](https://www.crisp.se/bocker-och-produkter/planning-poker).
+Hyvänä periaatteena pidetään että kaikki kehitystiimin jäsenet osallistuvat estimointiin. Näin tiimille syntyy yhtenäinen ymmärrys user storyn sisällöstä. Eräs suosittu tapa osallistaa koko tiimi estimointiin on [planning poker](https://www.crisp.se/bocker-och-produkter/planning-poker).
 
 ### Planning poker
 
@@ -416,11 +425,11 @@ Planning pokerissa käydään läpi backlogilla olevia user storyja yksi kerral
 Tiimi keskustelee storystä, miettii kenties storyn jakautumista teknisiin työvaiheisiin
 Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis story point). Usein tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa.
 
-Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti User storylle ja siirrytään seuraavaan.
+Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti user storylle ja siirrytään seuraavaan.
 
-Jos ehdotetuissa estimaateissa on paljon eroavaisuutta, keskustelee tiimi eroavaisuuksien syistä. Voi esimerkiksi olla, että osa tiimin jäsenistä ymmärtää user storyn vaatimukset aivan eri tavalla ja tämä aiheuttaa eroavaisuutta estimaatteihin
+Jos ehdotetuissa estimaateissa on paljon eroavaisuuksia, keskustelee tiimi eroavaisuuksien syistä. Voi esimerkiksi olla, että osa tiimin jäsenistä ymmärtää user storyn vaatimukset aivan eri tavalla ja tämä aiheuttaa eroavaisuutta estimaatteihin
  
-Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja konsensus todennäköisesti saavutetaan pian.
+Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja riittävä konsensus todennäköisesti saavutetaan pian.
 
 ![]({{ "/images/2-8.png" | absolute_url }}){:height="350px" }
  

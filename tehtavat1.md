@@ -9,6 +9,10 @@ permalink: /tehtavat1/
 
 *Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59*
 
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
+- ma 14-16 B221 (maanantain paja vasta 4.11. alkaen)
+- ke 14-16 B221
+
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59:00.  
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
