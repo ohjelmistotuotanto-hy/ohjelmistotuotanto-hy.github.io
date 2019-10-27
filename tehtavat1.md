@@ -7,9 +7,9 @@ permalink: /tehtavat1/
 
 ## Viikko 1
 
-*Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59.*
+*Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59*
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59.  
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1), joiden deadline on sunnuntaina 3.11. klo 23:59:00.  
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 
