@@ -307,7 +307,7 @@ Empiirisessä prosessissa taustalla olevina periaatteina on _läpinäkyvyys_ (tr
 
 Ketterien menetelmien oletuksena on, että perinteinen command-and-control tyylinen hallinnointi ja ihmisten sekä tiimien jakaminen eri vastuualueisiin (suunnittelija, ohjelmoija, testaaja, frontend, backend) ei tuota optimaalista tulosta.
 
-Sen sijaan vahvava on oletus, että ihmiset toimivat parhaiten itseorganisoituvissa tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä.
+Sen sijaan vahvana on oletus, että ihmiset toimivat parhaiten itseorganisoituvissa tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä.
 
 ### Scrumin taustaa
 
