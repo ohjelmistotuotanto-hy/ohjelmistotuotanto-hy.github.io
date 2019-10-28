@@ -104,7 +104,7 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento
 
-    git clone git@github.com:omatunnustahan//ohtu-2019-viikko1.git
+    git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
 
 missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
