@@ -111,7 +111,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
 - Luento 2: tiistai 29.10. klo 12-14 CK112
-  - [Scrum](osa1#scrum)
+  - [Scrum](/osa1#scrum)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1) deadline sunnuntaina 3.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-1) deadline maanantaina 4.11. klo 23:59 
