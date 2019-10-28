@@ -51,7 +51,7 @@ SWEBOK:in mukaan ohjelmistotuotanto jakautuu seuraaviin osa-alueisiin:
 
 _Software requirements_ tarkoittaa ohjelmistolle asetettuja vaatimuksia, eli sitä miten rakennettavan ohjelmiston tulisi loppukäyttäjän tai tilaajan mielestä toimia. 
 
-_Software design_ taas tarkoitta halutun kaltaisen toiminnallisuuden omaavan ohelmiston sisäisen rakenteen suunnittelua. 
+_Software design_ taas tarkoittaa halutun kaltaisen toiminnallisuuden omaavan ohjelmiston sisäisen rakenteen suunnittelua. 
 
 _Software construction_ viittaa aktiviteetteihin, joiden avulla suunniteltu ohjelmisto saadaan toimivaksi tuotteeksi eli käytännössä ohjelmointia ja debuggausta.
 
