@@ -136,7 +136,7 @@ Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltojen puolustu
 
 Vesiputousmalli perustuu vahvasti siihen, että eri vaiheet ovat erillisten tuotantotiimien tekemiä. Joukko analyytikkoja miettii asiakkaan kanssa sovellukselle asetetut vaatimukset, ohjelmistoarkkitehdit saavat vaatimusmääritelmän tulokset ja suunnittelevat ohjelman sen perusteella. Ohjelmoijat toteuttavat sovelluksen arkkitehtien suunnitelman mukaan ja antavat sen testaajille laadunhallintaa varten. Tämä tuntuu luonnolliselta työnjaolta, kutakin erilaista vaihetta tekee kyseessä olevaan vaiheen työskentelymenetelmiin erikoistunut ihmisjoukko. 
 
-Jotta tieto kulkee ohjelmistokehityksen eri vaiheiden välillä, tulee kunkin vaiheen tulokset dokumentoida huolellisesti, erityisesti asiakkaan kanssa tehtävän vaatimusmäärittelyn on oltava huolellisesti tehty ja hyvin dokumentoitu, sillä kaikki myöhemmät vaiheet olettavat että vaatimukset on kattavasti ja virheettömästi kirjattu.
+Jotta tieto kulkee ohjelmistokehityksen eri vaiheiden välillä, tulee kunkin vaiheen tulokset dokumentoida huolellisesti. Erityisesti asiakkaan kanssa tehtävän vaatimusmäärittelyn on oltava huolellisesti tehty ja hyvin dokumentoitu, sillä kaikki myöhemmät vaiheet olettavat että vaatimukset on kattavasti ja virheettömästi kirjattu.
 
 Vesiputousmallin mukaisesta toiminnasta käytetään joskus luonnehdintaa _Big Design Up Front_ lyhenteenä BDUF, kuvaamaan sitä faktaa, että koko ohjelmisto määritellään ja suunnitellaan tyhjentävästi ennen ohjelmointivaiheen aloittamista. Termiä BDUF käytetään yleensä negatiivisessa merkityksessä kuvaamaan vesiputousmallin raskautta.
 
