@@ -230,13 +230,11 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
 Ohjelmoinnin peruskursseilla koodi suoritettiin painamalla NetBeansin "vihreää nuolta", ja testit painamalla "mustaa silmää". Ammattimaisessa ohjelmistokehityksessä koodin suorituskelpoiseksi tekemisen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahasa koneella, _skriptatusti_ komentoriviltä, eli riippumatta NetBeansin kaltaisista kehitysympäristöistä.
 
-Tähän tarkoitukseen on kehitetty useita _build-ohjelmistoja_. Käytämme tällä kurssilla Java-ekosysteemin uusista build-ohjelmistoa _Gradlea_. 
+Tähän tarkoitukseen on kehitetty useita _build-ohjelmistoja_. Olet ehkä käyttänyt aikaisemmilla kursseilla [Mavenia](https://maven.apache.org/). Tällä kurssilla käytetään [Gradlea](https://gradle.org), joka on uusissa projekteissa paljolti korvannut Mavenin. Se on Mavenia helpommin konfiguroitava, ja joissain tilanteissa myös tätä nopeampi.
 
-[Gradlen](https://gradle.org) dokumentaatio sisältää seuraavan kuvauksen 
+Gradlen dokumentaatio sisältää seuraavan kuvauksen:
 
 > Gradle is a build tool with a focus on build automation and support for multi-language development. If you are building, testing, publishing, and deploying software on any platform, Gradle offers a flexible model that can support the entire development lifecycle from compiling and packaging code to publishing web sites. Gradle has been designed to support build automation across multiple languages and platforms including Java, Scala, Android, C/C++, and Groovy, and is closely integrated with development tools and continuous integration servers including Eclipse, IntelliJ, and Jenkins.
-
-Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle on uuden sukupolven build-ohjelmisto, jonka on tarkoitus korvata maven. Gradle toimii pitkälti samojen periaatteiden mukaan kuin maven, mutta on kuitenkin huomattavasti helpommin konfiguroitavissa ja myös nopeampi kuin edeltäjänsä. Maven on vielä erittäin laajalti käytössä, mutta valtaosassa uusista projekteista käytetään nykyään gradlea. Gradle on myös oletusarvoinen buildinhallintatyökalu Android-sovelluskehityksessä. 
 
 * edellisessä tehtävässä lisättiin repositorioon gradle-muodossa oleva projekti, joka sisältää aikoinaan [ohjelmoinnin perusteissa](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/materiaali/02_oliot/#15) olleen luokan <code>Varasto</code>, sen käyttöä demonstroivan pääohjelman ja muutaman JUnit-testin
 * tutki gradle-muotoisen projektin hakemistorakennetta esim. antamalla komento <code>tree</code> projektin sisältävän hakemiston juuressa (_tree_ ei ole gradleen liittyvä käsky vaan normaali shell-komento)
@@ -251,6 +249,7 @@ Olet ehkä käyttänyt aiemmilla kursseilla build-ohjelmistona mavenia. Gradle o
 **Avaa edellisen tehtävän projekti suosikki-idelläsi**
 
 * Huomaa, että NetBeans ei tue oletusarvoisesti Gradlea, ja joudut asentamaan gradle-pluginin valitsemalla _tools -> plugins -> available plugins_
+  * Uudet versiot Eclipsestä ja IntelliJ IDEAsta osaavat avata Gradle-projekteja suoraan
 * HUOM: jos et ole aiemmin kääntänyt koneellasi gradle-muotoisia projekteja, saattaa IDE valittaa tässä vaiheessa joidenkin kirjastojen (mm. JUnit) puuttumisesta. Asia korjaantuu "buildaamalla" tai kääntämällä projekti komentoriviltä (ohjeet alla) 
 
 Ohjelmakoodin editointi kannattaa tehdä IDE:llä kuten usein myös ohjelman ja testien ajaminenkin, mutta **gradlea kannattaa kuitenkin ehdottomasti totutella käyttämään myös komentoriviltä.** 
