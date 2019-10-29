@@ -184,7 +184,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 14: tiistai 10.12. klo 12-14 CK112
   - Vierailuluento Marko Klemetti Eficode
 - Laskarit
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-7) deadline maanantaina 2.12. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-7) deadline maanantaina 16.12. klo 23:59 
 - Miniprojekti
   - Loppudemot (sprintin 3 review)
 
