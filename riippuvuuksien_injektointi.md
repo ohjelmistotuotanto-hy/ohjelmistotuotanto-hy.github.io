@@ -203,7 +203,7 @@ public class Peli {
 }
 ``` 
 
-voidaan testatessa injektoida pelille versio satunnaisgeneraattorista, jonka arpomomia lukuja voidaan kontrolloida testeistä käsin. Esimerkiksi seuraavassa sellainen versio satunnaislukugeneraattorista, joka palauttaa aina luvun 1 kutsuttaessa metodia _nextInt_:
+voidaan testatessa injektoida pelille versio satunnaisgeneraattorista, jonka arpomia lukuja voidaan kontrolloida testeistä käsin. Esimerkiksi seuraavassa sellainen versio satunnaislukugeneraattorista, joka palauttaa aina luvun 1 kutsuttaessa metodia _nextInt_:
 
 ```java
 public class FakeRandom extends Random {

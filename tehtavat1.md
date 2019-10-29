@@ -70,7 +70,7 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtu-viikko1 
+Luo githubiin repositorio nimellä ohtu-2019-viikko1 
 
 * klikkaa yläpalkin oikeassa reunassa olevaa  "Create a new repo"-ikonia 
 * **laita rasti** kohtaan Initialize this repository with a README 
@@ -104,7 +104,7 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento
 
-    git clone git@github.com:omatunnustahan//ohtu-2019-viikko1.git
+    git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
 
 missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
