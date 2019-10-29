@@ -547,7 +547,7 @@ jacocoTestReport {
 ```
 
 Muuta myös saman tiedoston muut viitteet pääohjelmaan oikeaan muotoon ja varmista, että 
-[tehtävässä 7](/tehtava1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
+[tehtävässä 7](/tehtavat1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
 
 Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että _Main_ jätetään huomioimatta.
 
