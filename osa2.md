@@ -778,7 +778,7 @@ Jäljellä olevaa työmäärää (tunteina mitattuna) voidaan visualisoid
 
 Työmääräarvio voi myös nousta kesken sprintin jos kesken sprintin identifioidaan uusia taskeja tai jokin task huomataan monimutkaisemmaksi kuin alunperin ajateltiin. Oleellista on, että taskien työmääräarviot ovat _arvioita niihin vielä tarvittavasta työmäärästä_. Scrumissa ei seurata millään tavalla taskeihin _käytettyä_ työmäärää, eli vaikka johonkin taskiin olisi käytetty 5 tuntia, sitä ei merkata mihinkään eikä sitä suoraan vähennetä työmääräarviosta vaan tehdään _uusi työmääräarvio_ siitä paljonko vielä ajatellaan tarvittavan aikaa, jotta story saadaan valmiiksi.
 
-## Sptintin taskboardin formaatti
+### Sptintin taskboardin formaatti
 
 Yleinen konsensus on että ainakin Sprintin hallintaan manuaalinen postit-lappuja hyödyntävä taskboard on käytettävyydeltään ja informatiivisuudeltaan ylivertainen.
 
@@ -794,7 +794,7 @@ Näin sprintin burndown-kaavion piirto on helppo automatisoida. Erään ohjelm
 
 Taskboard ja mahdollisesti käytössä oleva burndown-käyrä tuovat selkeästi esille sprintin etenemisen asteen ja onkin suositeltavaa, että ne ovat kaikkien tiimiläisten ja projektin sidosryhmäläisten nähtävillä. Elektronisia taskboardeja käytettäessä on aina se riski, että ne eivät säteile informaatiota yhtä hyvin kuin seinällä oleva manuaalinen taskboard. Näin ketterän kehityksen kannalta elintärkeä läpinäkyvyyden periaate saattaa vaarantua. 
 
-## Kannattako sprintin sisäinen työmäärän estimointi
+### Kannattako sprintin sisäinen työmäärän estimointi
 
 On hieman kiistanalaista kannattaako storyihin liittyvien taskien työmäärää estimoida. Syksyllä 2019 julkaistu kirja [A Scrum book](http://scrumbook.org/value-stream/information-radiator/sprint-burndown-chart.html), ei suosittele taskien tasolla pidettävää työmääräarviota, vaan kehoittaa seuraamaan sprinttienkin aikana ainoastaan sitä _kuinka monen story pointin verran user storyja on saatu valmiiksi_. 
 
@@ -833,8 +833,8 @@ WIP-rajoitteita säädetään usein retrospektiivien yhteydessä jos kehity
 
 ## Ennen seuraavaa sprintin 
 
-Kuten luennolla 2 mainittiin pidetään sprintin lopussa sprint review eli katselmointi ja sprintin retrospektiivi. Katselmoinnissa arvioidaan kehitystiimin tekemää työtä. Kesken jääneet tai epäkelvosti toteutetut user storyt siirretään takaisin backlogiin. 
+Kuten edellisessä osassa [mainittiin](/osa1#sprintin-katselmointi) pidetään sprintin lopussa sprint review eli katselmointi sekä sprintin retrospektiivi. Katselmoinnissa arvioidaan kehitystiimin tekemää työtä. Kesken jääneet tai epäkelvosti toteutetut user storyt siirretään takaisin backlogiin. 
 
-Sprintin aikana on product backlogiin tullut ehkä uusia User storyja tai jo olemassa olevia storyjä on muutettu ja uudelleenpriorisoitu. On suositeltavaa että kehitystiimi käyttää pienen määrän aikaa sprintin aikana product backlogin vaatimiin toimiin eli (backlog groomingiin), esim. uusien user storyjen estimointiin. Jos product backlog on hyvässä kunnossa (DEEP) sprintin loppuessa, on jälleen helppo lähteä sprintin suunnitteluun ja uuteen sprinttiin.
+Sprintin aikana product backlogiin on ehkä tullut uusia user storyja tai jo olemassa olevia storyjä on muokattu ja uudelleenpriorisoitu. On suositeltavaa että kehitystiimi käyttää pienen määrän aikaa sprintin aikana product backlogin vaatimiin toimiin eli [backlog groomingiin](/osa2#hyva%CC%88-product-backlog-on-deep), esim. uusien user storyjen estimointiin. Jos product backlog on hyvässä kunnossa eli [DEEP](/osa2#hyva%CC%88-product-backlog-on-deep) sprintin loppuessa, on jälleen helppo lähteä sprintin suunnitteluun ja uuteen sprinttiin.
 
-Retrospektiivissä taas tiimi itse tarkastelee omaa toimintatapaansa ja identifioi mahdollisia kehityskohteita seuraavaan sprinttiin. Eräs tärkeä tarkastelun kohde retrospektiivissa on sprintin taskboard, toiko se riittävästi läpinäkyvyyttä sprintin seurantaan, tulisko boardille lisätä näkyviin useampia työvaiheita (esim. testing, releasing, ...), jumiutuiko taskeja odottamattomalla tavalla joihinkin työvaiheisiin, tulisiko boardille lisätä WIP-rajoitteita?
+Retrospektiivissä taas tiimi itse tarkastelee omaa toimintatapaansa ja identifioi mahdollisia kehityskohteita seuraavaan sprinttiin. Eräs tärkeä tarkastelun kohde retrospektiivissa on sprintin taskboard, tuoko se riittävästi läpinäkyvyyttä sprintin seurantaan, tulisko boardille lisätä näkyviin useampia työvaiheita (esim. testing, releasing, ...), jumiutuiko taskeja odottamattomalla tavalla joihinkin työvaiheisiin, tulisiko boardille lisätä WIP-rajoitteita?
