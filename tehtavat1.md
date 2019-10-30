@@ -371,7 +371,7 @@ Tästä aukeaa ohjeistus, seuraamme sitä, mutta hyppäämme 3. kohdan yli.
 * valitaan configuraatioksi Linux ja Gradle (Java)
 * lisää repositoriosi juureen hakemisto nimeltään _.circleci_
   * huomaa, että nimen pitää alkaa pisteellä!
-* tee tiedosto _config.yml_ kansion _.cirleci_ sisälle ja kopioi sinne CircleCI:n antama _Sample.yml_-tiedoston  sisältö
+* tee tiedosto _config.yml_ kansion _.circleci_ sisälle ja kopioi sinne CircleCI:n antama _Sample.yml_-tiedoston  sisältö
 * commitoi ja pushaa repositorio GitHubiin
 * paina _Start Building_
 
