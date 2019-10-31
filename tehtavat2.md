@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Viikko 1
+title: Viikko 2
 inheader: no
 permalink: /tehtavat2/
 ---
 
-## Viikko 1
+## Viikko 2
 
 *Alla olevien tehtävien deadline on maanantaina 11.11. klo 23:59*
 
@@ -23,7 +23,7 @@ Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://gi
 
 ### Tehtävien palauttaminen
 
-Osa github-tehtävistä (4-6) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.
+Osa git-tehtävistä (tehtävät 4-6) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.
 
 Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
 
@@ -46,9 +46,9 @@ Ilman tätä määrittelyä ohjelmaa gradlella suorittaessa, eli komennolla `gra
 
 Tämän viikon tehtäviin liittyviin projekteihin määrittely on jo lisätty.
 
-Jos käytät komentorivisyötettä, kannattaa ohjelma suorittaa komennolla `gradle -q --console plain run`, jolloin gradle jättää omat tulostuksensa tekemättä.
+Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla `gradle -q --console plain run`, jolloin gradlen tekemät tulostukset eivät tule konsoliin.
 
-Näyttää siltä, että NetBeans 11.1.:llä Scanner ei toimi ollenkaan gradlea käytettäessä, jos näin käy, suorita ohjelmat komentoriviltä.
+*HUOM* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle.projekteissa, jos näin käy, suorita ohjelmat komentoriviltä.
 
 ### 1. gradlen perusteita
 
@@ -137,7 +137,7 @@ Viime viikon [tehtävässä 12](https://github.com/mluukkai/ohjelmistotuotanto20
 
 [Code climate](https://codeclimate.com/) on palvelu, jonka avulla voimme suorittaa helposti staattista analyysiä githubissa olevalle koodille. 
 
-Kirjautu Code Climateen [täällä](https://codeclimate.com/login/github/join). Valitse _open source_:
+Kirjaudu Code Climateen [täällä](https://codeclimate.com/login/github/join). Valitse _open source_:
 
 ![]({{ "/images/lh2-3.png" | absolute_url }})
 
@@ -415,7 +415,7 @@ Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com
   * Kauppa --> Pankki
   * Kauppa --> Viitegeneraatori
   * Kauppa --> Varasto
-* Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllämainittuihin luokkiin _rajapintojen avulla_
+* Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllä mainittuihin luokkiin _rajapintojen avulla_
   * riippuvuus luokkaan Ostoskori voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
   * *HUOM:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
   * muut riippuvuudet jätetään vielä
@@ -440,7 +440,7 @@ Kauppa kauppa = new Kauppa(
   * katso esim. [http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx](http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx)
 * **poista** kaikista luokista <code>getInstance</code>-metodit ja staattinen <code>instance</code>-muuttuja
   * joudut muuttamaan luokilla olevat private-konstruktorit julkisiksi
-* poista rajapintojen ja dependency injektionin avulla edellisen tehtävän jäljiltä jääneet riippuvuudet, eli
+* poista rajapintojen ja riippuvuuksien injektoinnin avulla edellisen tehtävän jäljiltä jääneet riippuvuudet, eli
   * Varasto --> Kirjanpito
   * Pankki --> Kirjanpito
 * Muokkaa pääohjelmasi vastaamaan uutta tilannetta, eli suunnilleen muotoon:
@@ -472,7 +472,7 @@ Palataan sitten verkkokaupan pariin.
 * Projektiin on konfiguroitu valmiiksi springin tarvitsemat riippuvuudet, sekä konfiguraatiot 
   * *HUOM* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
 * Ota riippuvuuksien injektointi käyttöön lisäämällä luokille annotaatioita <code>@Component</code> ja <code>@Autowired</code> 
-* Aloita muuttamalla pääohjelma siten, että ainoastaan viitegeneraattori luodaan Springin avulla. Muutos on suunilleen seuraava:
+* Aloita muuttamalla pääohjelma siten, että ainoastaan viitegeneraattori luodaan Springin avulla. Muutos on suunnilleen seuraava:
 
 ``` java
 public static void main(String[] args) {
