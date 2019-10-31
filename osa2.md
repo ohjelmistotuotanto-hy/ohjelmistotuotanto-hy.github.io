@@ -31,7 +31,7 @@ Ohjelmistojen vaatimusten ajatellaan jakaantuvat kahteen luokkaan. _Toiminnallis
 Vaatimusten selvittämistä, dokumentoimista ja hallinnointia kutsutaan
 _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä prosessimallista riippumatta vaatimusmäärittelyn tulee ainakin alkaa ennen ohjelmiston suunnittelua ja toteuttamista. 
 
-Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelya taas tapahtuu vähän kerrassaan ohjelmiston toiminnallisuuden kasvamisen myötä.
+Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelyä taas tapahtuu vähän kerrassaan ohjelmiston toiminnallisuuden kasvamisen myötä.
  
 ## Vaatimusmäärittelyn vaiheet
 
@@ -48,7 +48,7 @@ Useimmiten nämä työvaiheet limittyvät ja vaatimusmäärittely etenee spi
          
 ### Vaatimusten kartoituksen menetelmiä
   
-Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnolliseti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määritteltävä ohjelmisto integroituu.
+Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määritteltävä ohjelmisto integroituu.
 
 Kun eri sidosryhmät on kartoitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
 - haastatellaan sidosryhmien edustajia
@@ -70,16 +70,16 @@ Usein on myös hyvä varmistaa, että vaatimus on _todennettavissa_, eli että v
  
 Kartoitetut vaatimukset on myös pakko _dokumentoida_ muodossa tai toisessa. Ennen koodaamaan ryhtymistä sovelluskehittäjä tarvitsee "speksin", eli kuvauksen siitä miten sovelluksen tai sen osan tulee toimia. Myös testaamista varten tarvitaan kuvaus sille, miten testattavan ohjelman halutaan toimivan.
 
-Erityisesti vesiputousmallia sovellettaessa vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmistotuottajatiimin välisessä sopimuksessa. Sovelluksen hinta perustuu vaatimusmäärittelyssä kuvattuun toiminnallisuuteen, ja jos asiakas muuttaakin mieltään, saattaa siitä tulla lisäkustannuksia. 
+Erityisesti vesiputousmallia käyttäessä vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmiston kehittäjien välisessä sopimuksessa. Sovelluksen hinta perustuu vaatimusmäärittelyssä kuvattuun toiminnallisuuteen, ja jos asiakas muuttaakin mieltään, saattaa siitä tulla lisäkustannuksia. 
  
 Vaatimukset on myös oleellista _validoida_, eli tulee varmistaa, että kerätyt ja dokumentoidut vaatimukset todellakin vastaavat asiakkaan mielipidettä, että ne kuvaavat sellaisen järjestelmät mitä asiakas kokee tarvitsevansa.
  
 Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaatimukset muuttuvat kesken sovelluskehitysprosessin. 
-   
+
 Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, siis vaihtelee paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
 
 ## Vaatimusten luokittelu – toiminnalliset vaatimukset
- 
+
 Kuten mainittiin vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
 
 Toiminnalliset vaatimukset (engl. functional requirements) kuvaavat mitä järjestelmällä voi tehdä, eli mitä toimintoja siinä on.
@@ -91,7 +91,7 @@ Esimerkiksi verkkokaupan toiminnallisia vaatimuksia voisivat olla seuraavat
 - ylläpitäjä voi lisätä valikoimaan uusia tuotteita kaupan inventaarioon
 - tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden hintatietoja
 
-Toiminnallisten vaatimusten dokumentointi voi tapahtua esim. "feature-listoina" kuten kurssilla Ohjelmistotekniikka on tehty jo parin vuoden ajan tai UML-käyttötapauksina, joita kurssi Ohjelmistotekniikka käytti noin vuoteen 2017 asti. Ketterissä menetelmissä vaatimukset dokumentoidaan yleensä _user storyinä_, joihin tutustumme kohta tarkemmin.
+Toiminnallisten vaatimusten dokumentointi voi tapahtua esim. "feature-listoina" kuten kurssilla Ohjelmistotekniikka on tehty jo parin vuoden ajan tai UML-käyttötapauksina, joita kurssi Ohjelmistotekniikka käytti noin vuoteen 2017 asti. Ketterissä menetelmissä vaatimukset dokumentoidaan yleensä _user storyina_, joihin tutustumme kohta tarkemmin.
 
 Riippumatta toiminnallisten vaatimusten dokumentointitavasta on melko yleistä, että vaatimukset ilmaistaan muodossa, jossa kerrotaan jonkin käyttäjäroolin yksittäinen järjestelmän käyttöskenaario.
 
@@ -100,16 +100,16 @@ Esim. _tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden h
 ## Vaatimusten luokittelu – ei-toiminnalliset vaatimukset
  
 Vaatimusten toinen luokka, ei-toiminnalliset vaatimukset (engl. nonfunctional requirements) 
-jakautuvat kahteen osa-alueeseen: laatuvaatimuksiin ja toimintoympäristön rajoitteisiin. 
+jakautuvat kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoitteisiin. 
 
 _Laatuvaatimukset_ (engl. quality attributes), ovat koko järjestelmän toiminnallisuutta ohjaavia ja rajoittavia tekijöitä, esim. 
 - käytettävyys: minkälainen sovelluksen käyttökokemus on
 - tietoturva: kenellä on pääsy järjestelmään ja siinä käsiteltävään dataan
 - suorituskyky: miten nopeasti sovellus reagoi erilaisiin käyttäjän syötteisiin
-- skaalautuvuus: pysyykö sovellus responsiivisena, eli riittävän nopeasti toimivana käyttäjäkuorman tai käsiteltävän datamäärän kasvaessa 
+- skaalautuvuus: pysyykö sovellus responsiivisena, eli riittävän nopeasti toimivana käyttäjäkuorman tai käsiteltävän datan määrän kasvaessa 
 - stabiilius: toipuuko järjestelmä erilaisista virhetilanteista
 
-Kaikki laatuvaatimukset eivät ole suoraan järjestelmän käyttäjän havaittavissa, tällaisiä ovat esimerkiksi
+Kaikki laatuvaatimukset eivät ole suoraan järjestelmän käyttäjän havaittavissa, tällaisia ovat esimerkiksi
 - laajennettavuus: onko sovelluksen toiminnallisuutta helppo kasvattaa jatkossa
 - testattavuus: onko sovelluksen virheettömyys varmistettavissa helposti jatkokehityksen yhteydessä
 
@@ -119,7 +119,7 @@ Toimintaympäristön rajoitteita (constraints) ovat esim.
 - toteutusteknologia: millä ohjelmointikielillä ja kirjastoilla sovellus toteutetaan, mitä tietokantoja käytetään
 - käyttöympäristö: käytetäänkö sovellusta selaimella vai onko se desktop- tai mobiilisovellus
 - integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimia rajapintojen tarjoamaa dataa
-- mukautuminen lakeihin ja standardeihin: eräs esimerkki tällaisistä on GDPR:n asettamat vaatimukset
+- mukautuminen lakeihin ja standardeihin: eräs esimerkki tällaisesta on GDPR:n asettamat vaatimukset
  
 Toisin kuin toiminnalliset vaatimukset jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten "koko järjestelmää", ja vaikuttavat siihen miten koko järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa. 
 
