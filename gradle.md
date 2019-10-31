@@ -65,9 +65,9 @@ Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https:/
 
 Eli taskit ovat siis "komentoja", joita voimme suorittaa gradle-projekteille.
 
-Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_), valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
+Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
 
-Huomaat että alustuksen jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
+Huomaat että operaation jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
 <pre>
 $ ls -la
@@ -80,7 +80,7 @@ drwxr-xr-x  3 mluukkai  ATKK\hyad-all   102 Oct 31 12:24 gradle
 -rw-r--r--  1 mluukkai  ATKK\hyad-all   360 Oct 31 12:24 settings.gradle
 </pre>
 
-Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle taskien generoimat tiedostot sijoitetaan. Gradle luokin valmiiksi tilanteeseen sopivan gitignore-tiedoston. 
+Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle-taskien generoimat tiedostot sijoitetaan. Gradle luokin valmiiksi tilanteeseen sopivan gitignore-tiedoston. 
 
 Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, Javan kääntämiseen liittyviä taskeja.
 
