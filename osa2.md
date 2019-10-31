@@ -534,7 +534,7 @@ Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä ka
 
 Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille.  [User story mapping](https://www.jpattonassociates.com/user-story-mapping/) on viime aikoina huomiota saanut tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun. 
 
-Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omaksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, mikä jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
+Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, mikä jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
 
 ![]({{ "/images/2-15.png" | absolute_url }}){:height="400px" }
 
@@ -567,7 +567,7 @@ Scrum guide kehottaa että suunnittelun yhteydessä määritellään _sprin
 
 Scrumin kehittäjä Ken Schwaber mainitsee 2002 kirjoitetussa kirjassaan asettavansa usein ensimmäisen sprintin tavoitteeksi: _demonstrate a key piece of user functionality on the selected technology_.
 
-Esimeriksi verkkokaupaa kehitettäessä seuraavien sprinttien tavoitteita voisivat olla:
+Esimeriksi verkkokauppaa kehitettäessä seuraavien sprinttien tavoitteita voisivat olla:
 - Ostoskorin perustoiminnallisuus: tuotteiden lisäys ja poisto
 - Ostosten maksaminen ja toimitustavan valinta
 
@@ -632,7 +632,7 @@ _As a content manager, I can publish a news story to the corporate website._
 
 Artikkelien julkaisu sovellusta käyttävässä yrityksessä on monivaiheinen prosessi, kukin artikkeli kulkee usean työvaiheen (workflow) läpi, artikkelit mm. tarkastetaan kielellisesti (editor review) ja lainopillisesti (legal review), ja näitä varten artikkelit julkaistaan ensin ns. _staging_-ympäristöön. 
 
-Eräs tapa pilkkoa alkuperäin story onkin jakaa se useampaan osaan eri työvaiheiden mukaan:
+Eräs tapa pilkkoa alkuperäinen story onkin jakaa se useampaan osaan eri työvaiheiden mukaan:
 
 - _... I can publish a news story directly to the corporate website_
 - _... I can publish a news story with editor review on a staging site_
@@ -699,8 +699,8 @@ _As a user, I can search for flights between two destinations_
 
 siis jakaantuu kahtia seuraavasti:
 
-- _... (slow—just get it done, show a "searching" animation)_
-- _... (in under 5 seconds)_
+- _... slow—just get it done, show a "searching" animation_
+- _... in under 5 seconds_
 
 #### Pattern 7: Operations
 
@@ -733,7 +733,7 @@ kannattaa eriyttää aikarajattu eksperimentti joka suoritetaan aiemmassa sprint
 
 Aiemmin tässä osassa puhuimme [Lean-startup](http://localhost:4000/osa2#vaatimusma%CC%88a%CC%88rittely-2010-luvulla)-menetelmästä, jossa uusien ideoiden toimivuutta kokeillaan A/B-testauksella, eli ideasta toteutetaan minimal viable product (MVP) eli minimalistinen versio, joka annetaan käyttöön osalle järjestelmän käyttäjistä. Jos uusi idea vaikuttaa toimivalta, toteuteaan se kunnolla ja korvataan sillä alkuperäinen toiminnallisuus. A/B-testaus onkin idealtaan hyvin samankaltainen kuin _spike_-solution, eli A/B-testissä rakennettavan MVP-version avulla selvitetään jonkin idean toimivuus ja vasta sen jälkeen toteutetaan toiminnallisuus kokonaisessa laajuudessaan.
 
-User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan stoyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
+User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan storyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
 
 ## Sprintin suunnittelun toinen tavoite
 
@@ -770,7 +770,7 @@ Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka ku
 
 [Scrum guiden](https://scrumguides.org/scrum-guide.html#artifacts-sprintbacklog) mukaan tiimin tulee seurata sprintin aikana kuinka paljon sprintissä on vielä töitä jäljellä. Eräs tapa toteuttaa sprintinaikainen työmäärän seuranta on estimoida sprintissä olevien taskien työmäärää. Useiden [asiantuntijoiden](https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels) mukaan sprinttiin kuuluvat taskit tulisi estimoida niiden vaatiman _työtuntimäärän_ mukaan, toisin kuin user storyt, jotka estimoidaan abstraktin aikamääreen eli story pointin tarkkuudella.
 
-Taskien esimaatit tulee pitää  salla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa. 
+Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa. 
 
 Jäljellä olevaa työmäärää (tunteina mitattuna) voidaan visualisoidaan sprintin etenemistä kuvaavalla burndown-käyrällä:
 
@@ -818,7 +818,7 @@ Yhtäaikaa tehtävän työn määrää kontrolloivien WIP- eli Work in p
 
 Lean-ajattelun taustalla on idea hukan (engl. waste, jap. muda) eli arvoa tuottamattomien asioiden eliminointi organisaatioiden toiminnasta. Lean-ajattelu on peräisin jo kymmeniä vuosia vanhasta [Toyota Production Systemistä](https://global.toyota/en/company/vision-and-philosophy/production-system/).
 
-Lean tunnistaa usean tyyppistä hukkaa (lean waste), näiden joukossa ovat esimerkiksi osittain tehty työ (partially done work), välivarastointi ja turha odottaminen. Ohjelmistotuotannon kontekstiin sovellettuna työvaiheet, jotka eivät ole vielä definition of donen mielessä valmiina edustavat leanin mukaista hukkaa. Esimerkiksi testaamista odottavien toiminnallisuuksien (user storyjen) katsotaan olevan "välivarastoituna", samoin jo testatut mutta tuotantoon viemistä vielä odottavat toiminnallisuudet ovat "välivastastossa".
+Lean tunnistaa usean tyyppistä hukkaa (lean waste), näiden joukossa ovat esimerkiksi osittain tehty työ (partially done work), välivarastointi ja turha odottaminen. Ohjelmistotuotannon kontekstiin sovellettuna työvaiheet, jotka eivät ole vielä definition of donen mielessä valmiina edustavat leanin mukaista hukkaa. Esimerkiksi testaamista odottavien toiminnallisuuksien (user storyjen) katsotaan olevan "välivarastoituna", samoin jo testatut mutta tuotantoon viemistä vielä odottavat toiminnallisuudet ovat "välivarastossa".
 
 Asiakkaalle toiminnallisuudet alkavat tuottaa arvoa vasta kun ne saadaan käyttöön, siinä vaiheessa kun toiminnallisuudet ovat työn alla, ne aiheuttavat ainoastaan kustannuksia ja muodostavat riskin.
 
