@@ -131,7 +131,7 @@ Tämä ei vielä oikein kerro mitään. Java-pluginin [dokumentaatio selventää
 
 ![]({{ "/images/lh2-1.png" | absolute_url }})
 
-Build riippuu kahdesta pluginista _check_ ja _assemble_:
+_Build_ siis riippuu kahdesta pluginista _check_ ja _assemble_:
 
 ![]({{ "/images/lh2-2.png" | absolute_url }})
 
@@ -150,19 +150,19 @@ test
 check
 </pre>
 
-Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä suorittaa projektiin liittyvät testit. 
+Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä projektiin liittyvät testit. 
 
-Ennen kun siirryt eteenpäin suorita _gradle clean_ joka poistaa kaikki edellisen komennon luomat tiedostot.
+Ennen kun siirryt eteenpäin, suorita _gradle clean_ joka poistaa kaikki edellisen komennon luomat tiedostot.
 
 ## Järkevä editori
 
-Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi tekstieditorilla. 
+Älä käytä tällä kertaa NetBeansia tai muutakaan IDE:ä vaan tee kaikki koodi ja konfiguraatiot tekstieditorilla. 
 
-Hyvä vaihtoehto on laitoksen koneilta ja fuksikannettavista löytyvä [Visual Studio Code](https://code.visualstudio.com)
+Hyvä vaihtoehto editoriksi on laitoksen koneilta ja fuksikannettavista löytyvä [Visual Studio Code](https://code.visualstudio.com)
 
 ## Koodin lisääminen projektiin
 
-Gradle olettaa, että ohjelman koodi sijaitsee projektin juuren alla hakemistossa _src/main/java_. Luo hakemisto(t) ja tiedosto _src/main/java/Main.java_ ja sille esim. seuraava sisältö:
+Gradle olettaa, että ohjelman koodi sijaitsee projektin juuren alla olevassa hakemistossa _src/main/java_. Luo hakemisto(t) ja tiedosto _src/main/java/Main.java_ ja sille esim. seuraava sisältö:
 
 <pre>
 public class Main {
@@ -182,24 +182,10 @@ $ tree
 │   │   └── java
 │   │       └── main
 │   │           └── Main.class
-│   ├── generated
-│   │   └── sources
-│   │       └── annotationProcessor
-│   │           └── java
-│   │               └── main
-│   └── tmp
-│       └── compileJava
-
-...
-
-└── src
-    └── main
-        └── java
-            └── Main.java      └── compileJava
 ...
 </pre>
 
-Taski _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
+Tasi _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
 
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java Main_:
 
@@ -209,9 +195,9 @@ $ java Main
 Hello gradle!
 </pre>
 
-Yleensä java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](/tehtavat1#7-gradle) tapaan.
+Yleensä Java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Parempi tapa on pakata koodi  _jar_-tiedostoksi viikon 1 [tehtävän 7](/tehtavat1#7-gradle) tapaan.
 
-Jar-tiedosto muodostetaan gradlen taskilla jar. Help kertoo seuraavaa:
+Jar-tiedosto muodostetaan gradlen taskilla _jar_. Help kertoo seuraavaa:
 
 <pre>
 $ gradle help --task jar
@@ -229,7 +215,7 @@ Description
 
 **HUOM** komento _gradle_ tulee suorittaa aina projektihakemiston juuressa, eli hakemistossa missä tiedosto _build.gradle_ sijaitsee.
 
-Määritellään taskia varten pääohjelman sijainti lisäämällä seuraava tiedostoon _build.gradle_:
+Määritellään taskia varten _pääohjelman sijainti_ lisäämällä seuraava tiedostoon _build.gradle_:
 
 <pre>
 jar {
@@ -239,9 +225,9 @@ jar {
 }
 </pre>
 
-Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva task _jar_ (eli komento _gradle _jar). 
+Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva task _jar_ (eli anna komento _gradle_ jar). 
 
-Voit suorittaa syntyneen jar-tiedoston seuraavasti (huomaa että tiedoston nimi riippuu hprojektisi nimestä ja todennäköisesti ei ole _gradle-test.jar_):
+Voit suorittaa syntyneen jar-tiedoston seuraavasti (huomaa että tiedoston nimi riippuu projektisi nimestä ja todennäköisesti ei ole _gradle-test.jar_):
 
 <pre>
 $ java -jar build/libs/gradle-test.jar
@@ -252,7 +238,7 @@ Hello gradle!
 
 Aiemmissa tehtävissä olemme pystyneet suorittamaan koodin myös komennolla _gradle run_. Komento aiheuttaa kuitenkin nyt virheilmoituksen _Task 'run' not found in root project_.
 
-Syynä tälle on se, että task _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan käyttöön myös application plugin lisäämällä tiedostoon _build.gradle_ rivi 
+Syynä tälle on se, että task _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan tämä käyttöön  lisäämällä tiedostoon _build.gradle_ rivi 
 
 <pre>
 apply plugin: 'application'
@@ -262,7 +248,7 @@ apply plugin: 'application'
 
 Komento aiheuttaa virheen _No main class specified_.
 
-Pluginin [dokumentaatio](https://docs.gradle.org/current/userguide/application_plugin.html) kertoo, että _main class_ tulee määritellä lisäämällä tiedostoon _build.gradle_ seuraava rivi:
+Pluginin [dokumentaatio](https://docs.gradle.org/current/userguide/application_plugin.html) kertoo, että pääohjelman sisältävä luokka, eli _main class_ tulee määritellä lisäämällä tiedostoon _build.gradle_ seuraava rivi:
 
 <pre>
 mainClassName = 'Main'
@@ -314,7 +300,7 @@ mluukkai
 Hello mluukkai
 </pre>
 
-Jos ohjelma suoritetaan gradlen _run_-taskin seurauksena on kuitenkin virhe:
+Jos ohjelma suoritetaan gradlen _run_-taskin avulla, seurauksena on virhe:
 
 <pre>
 $ gradle run
@@ -331,7 +317,7 @@ Execution failed for task ':run'.
 
 </pre>
 
-Syynä tälle on se, että oletusarvoisesti gradlen _run_-task ei liitä terminaalia syötevirtaan _System.in_. Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
+Syynä tälle on se, että oletusarvoisesti gradlen task _run_ ei liitä terminaalia syötevirtaan _System.in_. Asia saadaan korjautumaan lisäämällä tiedostoon _build.gradle_ seuraava: 
 
 <pre>
 run {
@@ -343,7 +329,7 @@ Nyt komento _gradle run_ toimii.
 
 ## Toinen luokka
 
-Lisätään vielä ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokka pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
+Lisätään ohjelmalle luokka, jonka avulla on mahdollista laskea kertolaskuja. Sijoitetaan luokka pakkaukseen _ohtu_ eli tiedostoon _src/main/java/ohtu/Multiplier.java_
 
 ```java
 package ohtu;
@@ -361,7 +347,7 @@ public class Multiplier {
 }
 ```
 
-Käytetään luokkaa pääohjelmasta. Huomaa, että koska luokka on eri pakkauksessa kuin pääohjelma, tulee pakkaus importata:
+Käytetään luokkaa pääohjelmasta käsin. Huomaa, että koska luokka on eri pakkauksessa kuin pääohjelma, tulee pakkaus importata:
 
 ```java
 import java.util.*;
@@ -443,7 +429,7 @@ JUnit-kirjasto on siis ohjelmamme testien käännöksen aikainen _riippuvuus_.
 
 ## Riippuvuudet
 
-Käytännössä riippuvuudet ovat jar-tiedostoja, jotka sisältävät käytettävien apukirjastojen, eli tässä tapauksessa JUnitin koodin. Gradlen samoin kuin Mavenin hyvä puoli on se, että ohjelmoijan ei tarvitse itse latailla riippuvuuksia vaan riittää kun projektin riippuvuudet määritellään tiedostossa _build.gradle_ ja gradle hoitaa sitten automaattisesti riippuvuuksien lataamisen jos niitä ei jo löydy koneelta.
+Käytännössä riippuvuudet ovat jar-tiedostoja, jotka sisältävät käytettävien apukirjastojen, eli tässä tapauksessa JUnitin koodin. Gradlen samoin kuin Mavenin hyvä puoli on se, että ohjelmoijan ei tarvitse itse latailla riippuvuuksia, riittää kun projektin riippuvuudet määritellään tiedostossa _build.gradle_ ja gradle hoitaa automaattisesti riippuvuuksien lataamisen, jos niitä ei koneelta löydy.
 
 Tarvittava määrittely on seuraava:
 
@@ -459,10 +445,10 @@ dependencies {
 
 Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuvuuksia. [jcenter](https://bintray.com/bintray/jcenter) on eräs niistä paikoista, johon on talletettu suuri määrä gradlen ja mavenin käyttämiä kirjastoja. Toinen vaihtoehtoinen paikka riippuvuuksien etsimiseen on [mavenCentral](https://search.maven.org). _repositories_-osassa voidaan määritellä myös useita paikkoja joista gradle käy etsimässä projektiin määriteltyjä riippuvuuksia.
 
-Toinen osa määrittelee, että _testCompile_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.12. Käytännössä tämä tarkoittaa että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
+Toinen osa määrittelee, että _testCompile_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.12. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
 
 Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
 
-Rikotaan vielä testi ja varmistetaan että junit huomaa virheen.
+Rikotaan vielä testi ja varmistetaan että testit huomaa virheen.
 
 JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen viime vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on edelleen vielä niin keskeneräinen, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
