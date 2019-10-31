@@ -46,7 +46,9 @@ Ilman tätä määrittelyä ohjelmaa gradlella suorittaessa, eli komennolla `gra
 
 Tämän viikon tehtäviin liittyviin projekteihin määrittely on jo lisätty.
 
-Jos käytät komentorivisyötettä, kannattaa ohjelma suorittaa komennolla `gradle -q run`, jolloin gradle jättää omat tulostuksensa tekemättä.
+Jos käytät komentorivisyötettä, kannattaa ohjelma suorittaa komennolla `gradle -q --console plain run`, jolloin gradle jättää omat tulostuksensa tekemättä.
+
+Näyttää siltä, että NetBeans 11.1.:llä Scanner ei toimi ollenkaan gradlea käytettäessä, jos näin käy, suorita ohjelmat komentoriviltä.
 
 ### 1. gradlen perusteita
 
@@ -338,6 +340,7 @@ palaa vielä alkuperäiseen lokaaliin repositorioon
 ```
 * suorita _git pull_ branchissä _haara1_
 * komennon tuloste antaa ohjeen, miten saat konfiguroitua _haara1_:n träkkäämään githubissa olevaa haaraa:
+
 ```
 There is no tracking information for the current branch.
 Please specify which branch you want to merge with.
@@ -350,11 +353,12 @@ If you wish to set tracking information for this branch you can do so with:
     git branch --set-upstream-to=origin/<branch> haara1
  
 ```
+
 * Kun annat komennon, sen jälkeen haara träkkää githubissa olevaa haaraa ja komento _git pull_ voidaan antaa ilman parametreja
 
 Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHub:issa on myös useita brancheja.
 
-### mihin brancheja käytetään?
+### Mihin brancheja käytetään?
 
 Ohjelmistotiimi voi käyttää Gitiä hyvin monella eri tyylillä. Artikkeli
 <https://de.atlassian.com/git/tutorials/comparing-workflows> esittelee muutamia erilaisia tapoja järjestellä tiimin gitin käyttöön liittyvä workflow. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
@@ -397,40 +401,43 @@ Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippu
 
 Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com/mluukkai/Ohjelmistotuotanto-2019/tree/master/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
 
-
-* hae esimerkkiprojekti kurssirepositoriosta
+* Hae esimerkkiprojekti kurssirepositoriosta
   * järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle
   * **tämän jälkeen kannattaa kopioida projekti tehtävien palautukseen käyttämäsi repositorion sisälle**
-* tutustu koodiin, piirrä luokkakaavio ohjelman rakenteesta
+* Tutustu koodiin, piirrä luokkakaavio ohjelman rakenteesta
   * luokkakaavioita ei tarvitse palauttaa...
-* ohjelman luokista <code>Pankki</code>, <code>Varasto</code>, <code>Viitegeneraattori</code> ja <code>Kirjanpito</code> ovat sellaisia, että niistä on tarkoitus olla olemassa vain yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla"
+* Ohjelman luokista <code>Pankki</code>, <code>Varasto</code>, <code>Viitegeneraattori</code> ja <code>Kirjanpito</code> ovat sellaisia, että niistä on tarkoitus olla olemassa ainoastaan yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla"
   * Singleton on [GoF-kirjan](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) yksi alkuperäisistä suunnittelumalleista, lue lisää singletoneista esim. [täältä](http://www.oodesign.com/singleton-pattern.html)
   * Singleton ei ole erinäisistä syistä enää oikein muodissa, ja korvaamme sen seuraavassa tehtävässä
 
-* kuten huomaamme, on koodissa toivottoman paljon konkreettisia riippuvuuksia:
+* Kuten huomaamme, on koodissa toivottoman paljon konkreettisia riippuvuuksia:
   * Varasto --> Kirjanpito
   * Pankki --> Kirjanpito
   * Kauppa --> Pankki
   * Kauppa --> Viitegeneraatori
   * Kauppa --> Varasto
-* Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllämainittuihin luokkiin rajapintojen avulla
-  * Riippuvuus luokkaan Ostoskori voi jäädä sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
+* Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllämainittuihin luokkiin _rajapintojen avulla_
+  * riippuvuus luokkaan Ostoskori voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
   * *HUOM:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
   * muut riippuvuudet jätetään vielä
    
-* Määrittele luokalle sopiva konstruktori, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään **rajapintoja**
+* Määrittele luokalle <code>Kauppa</code> sopiva konstruktori, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään **rajapintoja**
 * Älä käytä luokan _Kauppa_ sisällä enää konkreettisia luokkia  _Varasto_, _Viitegeneraattori_ ja _Pankki_ vaan ainoastaan niitä vastaavia rajapintoja!
 * Muokkaa pääohjelmasi, siten että se luo kaupan seuraavasti:
 
 ``` java
-Kauppa kauppa = new Kauppa(Varasto.getInstance(), Pankki.getInstance(), Viitegeneraattori.getInstance() );
+Kauppa kauppa = new Kauppa(
+  Varasto.getInstance(), 
+  Pankki.getInstance(), 
+  Viitegeneraattori.getInstance() 
+);
 ```
 
-* varmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
+*Vvarmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
 
 ### 10. riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
 
-* singleton-suunnittelumallia pidetään osittain ongelmallisena, poistammekin edellisestä tehtävästä singletonit
+* Singleton-suunnittelumallia pidetään osittain ongelmallisena, poistammekin edellisestä tehtävästä singletonit
   * katso esim. [http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx](http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx)
 * **poista** kaikista luokista <code>getInstance</code>-metodit ja staattinen <code>instance</code>-muuttuja
   * joudut muuttamaan luokilla olevat private-konstruktorit julkisiksi
@@ -440,10 +447,10 @@ Kauppa kauppa = new Kauppa(Varasto.getInstance(), Pankki.getInstance(), Viitegen
 * Muokkaa pääohjelmasi vastaamaan uutta tilannetta, eli suunnilleen muotoon:
 
 ``` java
+Viitegeneraattori viitegen = new Viitegeneraattori();
 Kirjanpito kirjanpito      = new Kirjanpito();
 Varasto varasto            = new Varasto(kirjanpito);
 Pankki pankki              = new Pankki(kirjanpito);
-Viitegeneraattori viitegen = new Viitegeneraattori();
 Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
 ```
 
@@ -451,9 +458,9 @@ Kuten huomaamme, alkaa kaupan konfigurointi olla aika vaivalloista...
 
 ### 11 Spring osa 1: riippuvuuksien injektointi
 
-Spring tarjoaa pelastuksen käsillä olevaan tilanteeseen.
+Kurssilla [Web-palvelinohjelmointi](https://courses.helsinki.fi/fi/tkt21007) käytettävä [Spring](https://spring.io/)-sovelluskehys tarjoaa pelastuksen käsillä olevaan tilanteeseen.
 
-Lue nyt https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi_spring.md 
+Lue nyt [täällä oleva](/riippuvuuksien_injektointi_spring/) kuvaus miten riippuvuuksien injektointi voidaan automatisoida Springillä
 
 > Tulet todennäköisesti saamaan Springiä käyttäessäsi pitkiä ja kryptiseltä vaikuttavia virheilmoituksia. Lue virheilmoitusten _stack trace_ huolellisesti läpi, yleensä se antaa vihjeitä siitä, missä vika on. Virheilmoitusten tulkitseminen ja virheiden etsiminen on yksi tärkeimpiä taitoja ohjelmistoalalla, se voi tuntua ikävältä, mutta oikoteitä ei ole. Usein googlailu ja stack overflow auttavat, mutta kaikesta ei selviä pelkällä trial and error -menetelmällä. Usein käytettävän kirjaston toimintaa on ymmärrettävä jollain tasolla, jotta virheiden jäljitys onnistuu.
 >
@@ -463,31 +470,37 @@ Lue nyt https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riipp
 
 Palataan sitten verkkokaupan pariin.
 
-*  projektiin on konfiguroitu valmiiksi springin tarvitsemat riippuvuudet, konfiguraatiotiedosto <code>spring-context.xml</code> löytyy hakemiston _src/main/resources_ alta (NetBeansissa tämä löytyy kohdan Other Sources -alta)
+* Projektiin on konfiguroitu valmiiksi springin tarvitsemat riippuvuudet, sekä konfiguraatiot 
   * *HUOM* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
-* ota mallia yllä olevan linkin ohjeesta ja konfiguroi verkkokauppa Springin xml-muotoista konfiguraatiota siten, että kauppa-olion luominen onnistuu Springin avulla seuraavasti:
+* Ota riippuvuuksien injektointi käyttöön lisäämällä luokille annotaatioita <code>@Component</code> ja <code>@Autowired</code> 
+* Aloita muuttamalla pääohjelma siten, että ainoastaan viitegeneraattori luodaan Springin avulla. Muutos on suunilleen seuraava:
+
+``` java
+public static void main(String[] args) {
+    ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
+ 
+    Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class);
+    Kirjanpito kirjanpito      = new Kirjanpito();
+    Varasto varasto            = new Varasto(kirjanpito);
+    Pankki pankki              = new Pankki(kirjanpito);
+    Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
+
+    //...
+}
+```
+
+* Muuta seuraavaksi muutkin luokat käyttämään Springin riippuvuuksien injektointia, jolloin pääohjelman alku muuttuu muotoon: 
 
 ``` java
 public static void main(String[] args) {
     ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
  
     Kauppa kauppa = ctx.getBean(Kauppa.class);
-    //...
+    // ...
 }
 ```
 
-**Kannattanee edetä tehtävässä pienin askelin siirtäen yksi luokka kerrallaan Springin hallinnoinnin alle.** 
-
-### 13. Spring osa 3: Verkkokauppa siistiksi annotaatioilla
-
-**HUOM** tee tämän tehtävän muutokset branchiin nimeltään _annotaatio_, pushaa branchi githubiin
-
-* muuta edellistä tehtävää siten, että konfigurointi tapahtuu annotaatioiden <code>@Component</code> ja <code>@Autowired</code> avulla
-* huom: 
-  * tehtävää ei välttämättä kannata tehdä yhtenä isona askeleena, saattaa olla viisasta muuttaa luokka kerrallaan xml-konfiguraatiosta annotaatiokonfiguroiduksi
-  * virheilmoitukset eivät ole noviisille selkeimpiä mahdollisia
-  * muista määritellä <code>@Component</code> kaikkiin edellisessä tehtävässä xml:ssä määriteltyihin luokkiin
-  * muista laittaa <code>@Autowired</code> jokaiseen luokkaan, jolla on riippuvuuksia
+* Huom: pääohjelman tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
 
 ### Tehtävien palautus
 
