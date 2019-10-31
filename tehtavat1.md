@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat1/
 ---
 
-## Viikko 1
+## Viikko 2
 
 *Allaolevien tehtävien deadline on maanantaina 4.11. klo 23:59*
 
