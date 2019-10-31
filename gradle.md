@@ -13,7 +13,7 @@ Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain
 
 Aloita antamalla komento _gradle_:
 
-<pre>
+```
 Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
 
 > Task :help
@@ -25,11 +25,11 @@ To run a build, run gradle <task> ...
 To see a list of available tasks, run gradle tasks
 
 ...
-</pre>
+```
 
 Ohje neuvoo meitä seuraavasti "To see a list of available tasks, run gradle tasks", eli kokeillaan komentoa _gradle tasks_:
 
-<pre>
+```
 > Task :tasks
 
 ------------------------------------------------------------
@@ -57,7 +57,7 @@ tasks - Displays the tasks runnable from root project 'gradle-testi'.
 To see all tasks and more detail, run gradle tasks --all
 
 To see more detail about a task, run gradle help --task <task>
-</pre>
+```
 
 Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) kuvaa taskeja seuraavasti:
 
