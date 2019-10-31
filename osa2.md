@@ -15,7 +15,7 @@ permalink: /osa2/
 DRAFT: Lukeminen omalla vastuulla!
 </div>
 
-Viikon aiheina on ohjelmistojen vaatimusmäärittely, erityisesti ketterien menetelmien näkökulma vaatimusmäärittelyyn. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
+Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien menetelmien näkökulma vaatimusmäärittelyyn. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
 ## Typoja materiaalissa
 
@@ -48,13 +48,13 @@ Useimmiten nämä työvaiheet limittyvät ja vaatimusmäärittely etenee spi
          
 ### Vaatimusten kartoituksen menetelmiä
   
-Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnolliseti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määritteltävä ohjelmisto integroituu.
+Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnolliseti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat sekä tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
 
 Kun eri sidosryhmät on kartoitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
 - haastatellaan sidosryhmien edustajia
 - pidetään brainstormaussessioita asiakkaan ja sovelluskehitystiimin kesken
  
-Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään, mitä erilaisa _käyttäjärooleja_  sovelluksella on, ja keksitään eri käyttäjärooleille tyypillisiä sovelluksen käyttöskenaarioita. 
+Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään, mitä erilaisia _käyttäjärooleja_  sovelluksella on, ja keksitään eri käyttäjärooleille tyypillisiä sovelluksen käyttöskenaarioita. 
 
 Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
 
@@ -76,11 +76,11 @@ Vaatimukset on myös oleellista _validoida_, eli tulee varmistaa, että kerätyt
  
 Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaatimukset muuttuvat kesken sovelluskehitysprosessin. 
    
-Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, siis vaihtelee paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
+Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, vaihtelee siis paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
 
 ## Vaatimusten luokittelu – toiminnalliset vaatimukset
  
-Kuten mainittiin vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
+Kuten mainittiin, vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
 
 Toiminnalliset vaatimukset (engl. functional requirements) kuvaavat mitä järjestelmällä voi tehdä, eli mitä toimintoja siinä on.
 
@@ -113,9 +113,9 @@ Kaikki laatuvaatimukset eivät ole suoraan järjestelmän käyttäjän havaittav
 - laajennettavuus: onko sovelluksen toiminnallisuutta helppo kasvattaa jatkossa
 - testattavuus: onko sovelluksen virheettömyys varmistettavissa helposti jatkokehityksen yhteydessä
 
-On olemassa suuri määrä erilaisia kategorioita laatuvaatimuksille, esim. [Wikipedian](http://en.wikipedia.org/wiki/List_of_system_quality_attributes) listaa niitä suuret määrät.
+On olemassa suuri määrä erilaisia kategorioita laatuvaatimuksille, esim. [Wikipedia](http://en.wikipedia.org/wiki/List_of_system_quality_attributes) listaa niitä suuret määrät.
 
-Toimintaympäristön rajoitteita (constraints) ovat esim.
+Toimintaympäristön rajoitteita (constraints) ovat muun muassa
 - toteutusteknologia: millä ohjelmointikielillä ja kirjastoilla sovellus toteutetaan, mitä tietokantoja käytetään
 - käyttöympäristö: käytetäänkö sovellusta selaimella vai onko se desktop- tai mobiilisovellus
 - integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimia rajapintojen tarjoamaa dataa
@@ -130,13 +130,13 @@ Vesiputousmallin hengen mukaista oli, että vaatimusmäärittelyä pidettiin
 Asiantuntijat korostivat, että vaatimusten dokumentaation on oltava kattava ja ristiriidaton.
 Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumentoitiin kaikki asiakkaan vaatimukset. Oli jopa suuntauksia, joissa vaatimukset haluttiin luonnollisen kielen sijaan ilmaista formaalilla kielellä eli matemaattisesti jotta esim. ristiriidattomuuden osoittaminen olisi mahdollista.
  
-Tiedetään nimittäin että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoistivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
+Tiedetään nimittäin että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
 
 ## Vaatimusmäärittely 1900-luvulla – ei toimi 
 
-Kuten [osassa 1](/osa1#vesiputousmallin-ongelmia) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi on osoittautunut utopiaksi. 
+Kuten [osassa 1](/osa1#vesiputousmallin-ongelmia) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi, on osoittautunut utopiaksi. 
 
-On useita syitä, jotka johtavat siihen että vaatimusten muuttumien on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti, mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide muuttumaan suurella todennäköisyydellä muuttumaan kun asiakas näkee lopputuloksen. 
+On useita syitä, jotka johtavat siihen että vaatimusten muuttumien on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti, mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide  suurella todennäköisyydellä muuttumaan, kun asiakas näkee lopputuloksen. 
 
 Ongelmia aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittelystä, ohjelmistokehittäjät eivät osaa tulkita kirjattuja vaatimuksia siten kuin vaatimukset kertonut asiakas tai loppukäyttäjä on tarkoittanut. Jos kehittäjien ja käyttäjien välillä ei ole suoraa kommunikaatiota, väärinymmärrysten syntyminen on erittäin todennäköistä.
  
@@ -150,7 +150,7 @@ Ilman suunnittelun ja toteutuksen huomioimista riskinä on, että asiakas halu
  
 ## Vaatimusmäärittely 2000-luvulla
   
-2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan elelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmäärittely on vasta suuntaa antava ja sitä on tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeiden verran.
+2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan edelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmäärittely on vasta suuntaa antava ja sitä on tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeiden verran.
 
 Ketterän vaatimusmäärittelyn hengen mukaista on, että asiakas (Scrumia käytettäessä product owner) priorisoi vaatimukset siten, että kuhunkin iteraatioon valitaan toteutettavaksi ne vaatimukset, jotka tuovat asiakkaalle mahdollisimman paljon liiketoiminnallista arvoa. Ohjelmistokehittäjät arvioivat vaatimusten toteuttamiseen tarvittavaa työmäärää, ja päättävät sen kuinka paljon he voivat ottaa kuhunkin iteraatioon toteutettavia vaatimuksia. 
 
@@ -180,7 +180,7 @@ Tämän jälkeen rakennetaan nopeasti niin sanottu _minimum viable product (MVP)
 
 MVP siis on jonkinlainen minimalistinen toteutus ohjelmistosta tai jostain sen uudesta ominaisuudesta, jonka motivaationa on käyttäjäpalautteen kerääminen. MVP ei ole vielä kaikilta osin ohjelmistokehityksen parhaiden käytänteiden mukaan rakennettu ja se on usein ominaisuuksiltaan rajoitettu, sisältäen ainoastaan sen verran toiminnallisuutta kuin hypoteesin mittaamiseen minimissään tarvitaan.
 
-MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeille asiakkaille. Tämän jälkeen _mitataan_ miten ihmiset asiakkaat käyttäytyvät MVP:n toteuttaman uuden ominaisuusjoukon suhteen. Jos esimerkiksi kyseessä on internetpalvelu, voidaan _mitata_ kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjautuu järjestelmään, kirjautuu vielä viikon jälkeen rekisteröitymisestä ym.
+MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeille asiakkaille. Tämän jälkeen _mitataan_ miten asiakkaat käyttäytyvät MVP:n toteuttaman uuden ominaisuusjoukon suhteen. Jos esimerkiksi kyseessä on internetpalvelu, voidaan _mitata_ kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjautuu järjestelmään, kirjautuu vielä viikon jälkeen rekisteröitymisestä ym.
 
 Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan helposti _mitata_ tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
 
@@ -289,14 +289,14 @@ Hyvänä käytäntönä pidetään että user story kuvaa järjestelma
 
 Esimerkiksi _lisää jokaisesta asiakkaasta rivi tietokantatauluun customers_ ei olisi suositeltava muotoilu user storylle, sillä se ei ole kirjattu käyttäjän kannalta ymmärrettävällä tavalla ja ottaa kantaa ainoastaan tietokantakerrokseen.
  
-Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kun story otetaan toteutettavaksi. 
+Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kuin story otetaan toteutettavaksi. 
 
 _Estimatable_ taas sanoo, että user storyn toteuttamisen vaatima työmäärä pitää olla arvioitavissa kohtuullisella tasolla.
 
 Työmäärän arviointi onnistuu paremmin jos user storyt ovat riittävän pieniä, _small_. 
 User story on ehdottomasti toiminnallisuudeltaan liian iso, jos se ei ole toteutettavissa yhdessä sprintissä. Juuri ja juuri yhdessä sprintissä toteutettavissa oleva story on myöskin huomattavan riskialtis, parempi koko storylle onkin lähempänä yhden päivän kuin vaikkapa viikon vaadittavaa työmäärää.
 
-Liian suuret user storyt tulee jakaa osiin ennen kun ne otetaan toteutettavaksi. Esimerkiksi verkkokaupassa voisi olla käyttötapaus _kaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää tuotteiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten listaa_ tulisi ehdottomasti jakaa useaan osaan:
+Liian suuret user storyt tulee jakaa osiin ennen kuin ne otetaan toteutettavaksi. Esimerkiksi verkkokaupassa voisi olla käyttötapaus _kaupan ylläpitäjä voi kirjautua sivulle, lisätä ja päivittää tuotteiden tietoja sekä tarkastella asiakkaille tehtyjen toimitusten listaa_ tulisi ehdottomasti jakaa useaan osaan:
 - ylläpitäjä voi kirjautua sovellukseen
 - ylläpitäjä voi lisätä tuotteita valikoimaan
 - ylläpitäjä voi päivittää tuotteiden tietoja
@@ -458,7 +458,7 @@ Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleel
 
 ## User story ja epiikki
 
-Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlokin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kun story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä. 
+Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlokin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä. 
 
 Backlogin alaosissa olevat storyt taas voivat olla isoja, jopa sellaisia että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee ennen mahdollista toteuttamista jakaa pienempiin, rajatumpiin storyihin. Tällaisiä isoja storyjä nimitetään usein _epiikeiksi_ (engl. epic). 
 
