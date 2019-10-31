@@ -48,7 +48,7 @@ Tämän viikon tehtäviin liittyviin projekteihin määrittely on jo lisätty.
 
 Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla `gradle -q --console plain run`, jolloin gradlen tekemät tulostukset eivät tule konsoliin.
 
-*HUOM* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle.projekteissa, jos näin käy, suorita ohjelmat komentoriviltä.
+*HUOM* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle-projekteissa, eli jos törmään samaan ongelmaan, suorita ohjelmat komentoriviltä.
 
 ### 1. gradlen perusteita
 
