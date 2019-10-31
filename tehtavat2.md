@@ -477,7 +477,7 @@ Palataan sitten verkkokaupan pariin.
 
 ``` java
 public static void main(String[] args) {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
  
     Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class);
     Kirjanpito kirjanpito      = new Kirjanpito();
@@ -493,7 +493,7 @@ public static void main(String[] args) {
 
 ``` java
 public static void main(String[] args) {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
  
     Kauppa kauppa = ctx.getBean(Kauppa.class);
     // ...
