@@ -547,13 +547,13 @@ jacocoTestReport {
 ```
 
 Muuta myös saman tiedoston muut viitteet pääohjelmaan oikeaan muotoon ja varmista, että 
-[tehtävässä 7](/tehtava1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
+[tehtävässä 7](/tehtavat1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
 
 Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että _Main_ jätetään huomioimatta.
 
 ### Tehtävien palautusrepositoriot
 
-Tehtävät 14-16 kannattaa tehdä *eri repositorioon* kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavan viikkojen tehtävien palauttamiseen. Nyt  tehtävän repositorion rakenne voi tällöin olla esim. seuraava:
+Tehtävät 14-16 kannattaa tehdä *eri repositorioon* kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavien viikkojen tehtävien palauttamiseen. Nyt  tehtävän repositorion rakenne voi tällöin olla esim. seuraava:
 
 ```
 viikko1
