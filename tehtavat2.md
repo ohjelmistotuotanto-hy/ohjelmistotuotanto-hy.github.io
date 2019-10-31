@@ -126,7 +126,6 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
       }
     ```  
   * syklomaattinen koodikompleksisuus korkeintaan 3 (selvitä mitä tarkoittaa!)
-  * koodi ei sisällä taikanumeroita (magic numbers)
 
 * muuta koodiasi siten, että saat jokaisen määritellyistä checkstyle-säännöistä rikkoutumaan
 * korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
