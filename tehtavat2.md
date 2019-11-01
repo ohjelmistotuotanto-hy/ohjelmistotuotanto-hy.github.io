@@ -60,9 +60,9 @@ Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. E
 
 Tutustutaan nyt staattisen analyysin työkaluun [checkstyleen](https://checkstyle.sourceforge.net/), jonka käyttäminen on suhteellisen vaivatonta gradlen [checkstyle-pluginin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) avulla.
 
-Mene nyt viikon 1 tehtävien _Ohtuvarastoon_ liityvien tehtävien palautusrepositorioosi.
+Mene nyt viikon 1 tehtävien _Ohtuvarastoon_ liittyvien tehtävien palautusrepositorioosi.
 
-Lisää projektiin checkstyle-plugin [tämän ohjeen mukaa](https://docs.gradle.org/current/userguide/checkstyle_plugin.html), eli lisäämällä konfiguraationtiedoston _build.gradle_ **alkuun**
+Lisää projektiin checkstyle-plugin [tämän ohjeen mukaan](https://docs.gradle.org/current/userguide/checkstyle_plugin.html), eli lisäämällä konfiguraationtiedoston _build.gradle_ **alkuun**
 
 ```
 plugins {
@@ -145,7 +145,7 @@ ja sitten _add repository_
 
 ![]({{ "/images/lh2-4.png" | absolute_url }})
 
-Etsi Ohtuvaraston palautusrepositioriosi listalta ja valitse _add repo_.
+Etsi Ohtuvaraston palautusrepositoriosi listalta ja valitse _add repo_.
 
 Hetken kuluttua koodillesi on tehty ensimmäinen analyysi
 
@@ -161,7 +161,7 @@ Tee koodiisi jokin checkstylen rikkova virhe, ja varmista että virhe näkyy _is
 
 ![]({{ "/images/lh2-8.png" | absolute_url }})
 
-Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, ja syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
+Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
 
 ![]({{ "/images/lh2-10.png" | absolute_url }})
 
@@ -258,7 +258,7 @@ Tee paikalliseen git-repoon seuraavat
 * mene takaisin __master__-branchiin, editoi tiedoston __tarkea.txt__ alkua (lisää alkuun muutama rivi) ja committaa
 * mergeä branchin __toka__ sisältö __masteriin__
   * mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
-    * jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
+    * jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     * vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, google auttaa tarvittaessa
   * katso tiedoston __tarkea.txt__-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   * **huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
@@ -290,14 +290,14 @@ Lisätään seuraavaksi branch githubiin:
 * mene branchiin __haara1__, lisää sinne tiedosto __haara1.txt__ ja committaa
 * mene branchiin __haara2__, lisää sinne tiedosto __haara2.txt__ ja committaa
 * pushaa uudet branchit GitHubiin
-* tarkastele GitHub-repositoria selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
+* tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
 
 Kloonaa GitHub-repositoriosta koneellesi toinen kopio
 
 * kuten huomaat, eivät branchit tule kloonattuun kopioon
 * tee paikalliseen kopioon branch joka "träkkää" GitHub:issa olevan projektisi branchia __haara1__ (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
 * lisää "träkkäävään" branchiin joku tiedosto, committaa ja pushaa branchi GitHubiin
-* tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
+* tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Mene GitHub-repon alkuperäiseen paikalliseen kopioon
 
@@ -315,7 +315,7 @@ Mene jälleen toiseen kopioon
 * suorita jälleen <code>git remote show origin</code>, mitä muutoksia huomaat?
 * tee branchiin muutoksia ja pushaa ne githubiin
   *  huom: koska kyseessä on träkkäävä branch, riittää git push
-* tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
+* tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Palaa vielä alkuperäiseen lokaaliin repositorioon
 
