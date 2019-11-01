@@ -560,4 +560,4 @@ Scrumin rinnalle viime vuosina voimakkaasti erityisesti Suomessa noussut [Scaled
 Scrum kuten muutkin ketterät kehitystavat ovat syntyneet pitkälti ohjelmistokehittäjien keskuudessa. Melko yleinen raportoitu ongelma ketterään kehitykseen siirryttäessä onkin se, että muu organisaatio jää täysin ennalleen. Tällöin tuloksena on usein nimikkeen [waterscrumfall](https://www.infoq.com/news/2011/12/water-scrum-fall-is-the-norm/) saanut kehitysmalli, missä ainoastaan ohjelman uusien toiminnallisuuksien kehitys tapahtuu Scrumia mukaillen, mutta budjetointi, vaatimusten hallinta sekä tuotantoonvienti etenevät edelleen vanhoja kontrolloituja prosesseja noudattaen. 
 
 Päätetään alustava Scrumiin tutustumisemme menetelmän kehittäjien sanoihin
-_Scrum is easy to undestand but extremely difficult to master_.
+_Scrum is easy to understand but extremely difficult to master_.
