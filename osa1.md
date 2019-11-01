@@ -106,7 +106,7 @@ Kesällä 1968 NATO:n järjestämässä konferenssissa julkistettiinkin että ma
 
 Termillä viitataan siihen että on vaikeaa toteuttaa käyttökelpoisia, oikein toimivia, tehokkaita ja laajennettavissa olevia ohjelmistoja käytössä olevien resurssien puitteissa.
 
-Eräs tietojenkäsittelyn pioneereista, Turing-palkittu Edsger Dijkstra ilmaisi asian seuraavasti vuonna 1972 pitämässään [esitelmäsä](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) 
+Eräs tietojenkäsittelyn pioneereista, Turing-palkittu Edsger Dijkstra ilmaisi asian seuraavasti vuonna 1972 pitämässään [esitelmässä](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) 
 
 > The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.
 
