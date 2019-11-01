@@ -114,16 +114,16 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
   * koodi on oikein sisennettyä
   * lohkon avaava aaltosulku on aina rivin lopussa, eli esim. ehtolauseissa aaltosulku tulee merkitä
     ```java
-      if ( ehto ) 
-      {
-        System.out.println("virhe");
-      }
+    if ( ehto ) 
+    {
+      System.out.println("virhe");
+    }
     ```
   sijaan seuraavasti:
     ```java
-      if ( ehto ) {
-        System.out.println("virhe");
-      }
+    if ( ehto ) {
+      System.out.println("virhe");
+    }
     ```  
   * syklomaattinen koodikompleksisuus korkeintaan 3 (selvitä mitä tarkoittaa!)
 
@@ -161,7 +161,7 @@ Tee koodiisi jokin checkstylen rikkova virhe, ja varmista että virhe näkyy _is
 
 ![]({{ "/images/lh2-8.png" | absolute_url }})
 
-Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy ja syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
+Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, ja syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
 
 ![]({{ "/images/lh2-10.png" | absolute_url }})
 
@@ -193,8 +193,7 @@ tee seuraavat paikalliseen git-repositorioosi (kyseessä ei siis tarvitse olla t
 * siirry takaisin __master__-branchiin
 * tarkasta että __eka__-branchiin lisätyt muutokset eivät ole masterissa
 * tarkastele komennolla <code>gitk --all</code> miltä repositorio ja branchit näyttävät (gitk toimii windowsilla ainakin Github for Windowsin Git Shellissä.)
-  * jos käytät Macia voit halutessasi asentaa [gitx:n](http://gitx.frim.nl/) joka on modernisoitu versio gitk-ohjelmasta
-  * gitx ei toimi ilmeisesti joissain uusimmissa maceissa, hyvä korvaaja sille on [sourcetree](https://www.sourcetreeapp.com)
+  * gitk ei toimi maceissa, hyvä korvaaja sille on [sourcetree](https://www.sourcetreeapp.com)
 * mergeä branchin __eka__ sisältö __masteriin__
 * katso jälleen miltä näyttää gitk --all
 
@@ -252,7 +251,7 @@ nothing to commit, working tree clean
 
 ### 6. git: konflikti! [versionhallinta]
 
-tee paikalliseen git-repoon seuraavat
+Tee paikalliseen git-repoon seuraavat
 
 * lisää __master__-branchiin tiedosto __tarkea.txt__, kirjota sinne muutama rivi tekstiä ja committaa
 * tee uusi branchi __toka__, mene branchiin ja editoi tiedoston __tarkea.txt__ loppua (lisää esim loppuun muutama uusi rivi) ja committaa
@@ -285,7 +284,7 @@ Jotkut editorit, esim [visual studio code](https://code.visualstudio.com) sisäl
 
 Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches)
 
-branch githubiin:
+Lisätään seuraavaksi branch githubiin:
 
 * lisää tehtävien palauttamiseen käyttämäsi GitHub-repositorion paikalliseen kopioon branchit __haara1__ ja __haara2__
 * mene branchiin __haara1__, lisää sinne tiedosto __haara1.txt__ ja committaa
@@ -293,14 +292,14 @@ branch githubiin:
 * pushaa uudet branchit GitHubiin
 * tarkastele GitHub-repositoria selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
 
-kloonaa GitHub-repositoriosta koneellesi toinen kopio
+Kloonaa GitHub-repositoriosta koneellesi toinen kopio
 
 * kuten huomaat, eivät branchit tule kloonattuun kopioon
 * tee paikalliseen kopioon branch joka "träkkää" GitHub:issa olevan projektisi branchia __haara1__ (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
 * lisää "träkkäävään" branchiin joku tiedosto, committaa ja pushaa branchi GitHubiin
 * tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
 
-mene GitHub-repon alkuperäiseen paikalliseen kopioon
+Mene GitHub-repon alkuperäiseen paikalliseen kopioon
 
 * mene branchiin __haara1__ ja pullaa muutokset GitHub:in vastaavasta branchista
   * huom: koska kyseessä ei ole "träkkäävä" branchi, joudut pullaamaan komennolla <code>git pull origin haara1</code>
@@ -308,7 +307,8 @@ mene GitHub-repon alkuperäiseen paikalliseen kopioon
   * koska kyseessä ei ole "träkkäävä" branchi, ei vanhemmilla gitin versiolla komento _git push_ riitä vaan joudut määrittelemään branchin jonne push kohdistuu eli antamaan komennon <code>git push origin haara2</code>
   * uudemmilla gitin versioilla pushaus onnistuu suoraan
 
-mene jälleen toiseen kopioon
+Mene jälleen toiseen kopioon
+
 * suorita komento <code>git remote show origin</code>
   * komento kertoo 'origin':issa eli githubissa olevien branchien ja paikallisten branchien suhteen 
 * tee sinne GitHub:issa olevan projektisi branchia __haara2__ träkkäävä branch
@@ -317,7 +317,8 @@ mene jälleen toiseen kopioon
   *  huom: koska kyseessä on träkkäävä branch, riittää git push
 * tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
 
-palaa vielä alkuperäiseen lokaaliin repositorioon
+Palaa vielä alkuperäiseen lokaaliin repositorioon
+
 * suorita komento <code>git remote show origin</code> 
 * tulostus kertoo, että lokaaleista haaroista ainoastaan _master_ on konfiguroitu komennon _git pull_ osalta, eli on träkkäävä branchi:
 
