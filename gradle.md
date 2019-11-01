@@ -27,7 +27,7 @@ To see a list of available tasks, run gradle tasks
 ...
 ```
 
-Ohje neuvoo meitä seuraavasti "To see a list of available tasks, run gradle tasks", eli kokeillaan komentoa _gradle tasks_:
+Ohje neuvoo meitä seuraavasti: "To see a list of available tasks, run gradle tasks", eli kokeillaan komentoa _gradle tasks_:
 
 ```
 > Task :tasks
@@ -63,7 +63,7 @@ Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https:/
 
 > Each project is made up of one or more tasks. A task represents some atomic piece of work which a build performs. This might be compiling some classes, creating a JAR, generating Javadoc, or publishing some archives to a repository.
 
-Eli taskit ovat siis "komentoja", joita voimme suorittaa gradle-projekteille.
+Taskit ovat siis "komentoja", joita voimme suorittaa gradle-projekteille.
 
 Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
 
@@ -121,7 +121,7 @@ test - Runs the unit tests.
 
 Voimme nyt siis suorittaa projektille esim. viime viikoilta tutut komennot _gradle build_ ja _gradle test_.
 
-Jos suoritamme esim. taskin _build_ eli komennon _gradle build_ on tulostus seuraava
+Jos suoritamme esimerkiksi taskin _build_ eli komennon _gradle build_, on tulostus seuraava
 
 <pre>
 BUILD SUCCESSFUL in 885ms
@@ -152,7 +152,7 @@ check
 
 Eli _build_ suorittaa koodin käännöksen, paketoinnin jar-tiedostoksi sekä projektiin liittyvät testit. 
 
-Ennen kun siirryt eteenpäin, suorita _gradle clean_ joka poistaa kaikki edellisen komennon luomat tiedostot.
+Ennen kun siirryt eteenpäin, suorita _gradle clean_, joka poistaa kaikki edellisen komennon luomat tiedostot.
 
 ## Järkevä editori
 
@@ -185,7 +185,7 @@ $ tree
 ...
 </pre>
 
-Tasi _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
+Task _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
 
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java Main_:
 
@@ -449,6 +449,6 @@ Toinen osa määrittelee, että _testCompile_-vaiheeseen otetaan käyttöön JUn
 
 Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
 
-Rikotaan vielä testi ja varmistetaan että testit huomaa virheen.
+Rikotaan vielä testi ja varmistetaan että testit huomaavat virheen.
 
 JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen viime vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on edelleen vielä niin keskeneräinen, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
