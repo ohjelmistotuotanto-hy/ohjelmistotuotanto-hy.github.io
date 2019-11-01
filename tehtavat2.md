@@ -19,7 +19,7 @@ Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja k
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat1.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat2.md) tiedostoa GitHubissa.
 
 ### Tehtävien palauttaminen
 
