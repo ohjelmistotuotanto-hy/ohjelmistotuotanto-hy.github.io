@@ -13,7 +13,7 @@ Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtäväreposit
 
 Päädyimme siis tilanteeseen, missä Laskin-luokasta on erotettu konkreettinen riippuvuus syötteen lukemiseen ja tulostamiseen. Laskin tuntee ainoastaan _rajapinnan_ <code>IO</code> jonka kautta se hoitaa syötteen käsittelyn ja tulostamisen. 
 
-Ennen käynnistämistä refakotoroitu laskin pitää _konfiguroida_ injektoimalla sille sopivat riippuvuudet:
+Ennen käynnistämistä refaktoroitu laskin pitää _konfiguroida_ injektoimalla sille sopivat riippuvuudet:
 
 ``` java
 // konfigurointivaihe
@@ -33,7 +33,7 @@ Spring saadaan käyttöön lisäämällä Spring riippuvuudeksi gradle-projektin
 
 Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen olioisäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
 
-Springissä on kaksi tapoja määritellä sovelluskontekstin oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
+Springissä on kaksi tapaa määritellä sovelluskontekstin oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
 
 Sovelluskontekstin huolehdittavaksi annettavien olioiden luokat merkitään annotaatiolla  <code>@Component</code>. Luokka _KonsoliIO_ annotoidaan seuraavasti:
 
@@ -107,4 +107,4 @@ Oletusarvoisesti Spring luo ainoastaan _yhden_ olion kustakin luokasta, eli jos 
 
 Jos tämä ei ole haluttu toimintatapa, voidaan Spring [konfiguroida](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-scanning-scope-resolver) palauttamaan jokaisella kutsulla uusi olio.
 
-Lisää tieto Springin kontainereiden toiminnasta löytyy [dokumentaatiosta](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans).
+Lisää tietoa Springin kontainereiden toiminnasta löytyy [dokumentaatiosta](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans).

@@ -19,7 +19,7 @@ Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja k
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat1.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat2.md) tiedostoa GitHubissa.
 
 ### Tehtävien palauttaminen
 
@@ -30,7 +30,7 @@ Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät p
 Tehtävät 2 ja 3 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin Ohtuvarasto. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-16.
 
 Katso tarkempi ohje palautusrepositorioita koskien
-[täältä](http://localhost:4000/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+[täältä](https://ohjelmistotuotanto-hy.github.io/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### Huomio gradleen liittyen
 
@@ -48,7 +48,7 @@ Tämän viikon tehtäviin liittyviin projekteihin määrittely on jo lisätty.
 
 Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla `gradle -q --console plain run`, jolloin gradlen tekemät tulostukset eivät tule konsoliin.
 
-*HUOM* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle-projekteissa, eli jos törmään samaan ongelmaan, suorita ohjelmat komentoriviltä.
+*HUOM!* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle-projekteissa, eli jos törmäät samaan ongelmaan, suorita ohjelmat komentoriviltä.
 
 ### 1. gradlen perusteita
 
@@ -60,9 +60,9 @@ Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. E
 
 Tutustutaan nyt staattisen analyysin työkaluun [checkstyleen](https://checkstyle.sourceforge.net/), jonka käyttäminen on suhteellisen vaivatonta gradlen [checkstyle-pluginin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) avulla.
 
-Mene nyt viikon 1 tehtävien _Ohtuvarastoon_ liityvien tehtävien palautusrepositorioosi.
+Mene nyt viikon 1 tehtävien _Ohtuvarastoon_ liittyvien tehtävien palautusrepositorioosi.
 
-Lisää projektiin checkstyle-plugin [tämän ohjeen mukaa](https://docs.gradle.org/current/userguide/checkstyle_plugin.html), eli lisäämällä konfiguraationtiedoston _build.gradle_ **alkuun**
+Lisää projektiin checkstyle-plugin [tämän ohjeen mukaan](https://docs.gradle.org/current/userguide/checkstyle_plugin.html), eli lisäämällä konfiguraationtiedoston _build.gradle_ **alkuun**
 
 ```
 plugins {
@@ -145,7 +145,7 @@ ja sitten _add repository_
 
 ![]({{ "/images/lh2-4.png" | absolute_url }})
 
-Etsi Ohtuvaraston palautusrepositioriosi listalta ja valitse _add repo_.
+Etsi Ohtuvaraston palautusrepositoriosi listalta ja valitse _add repo_.
 
 Hetken kuluttua koodillesi on tehty ensimmäinen analyysi
 
@@ -161,7 +161,7 @@ Tee koodiisi jokin checkstylen rikkova virhe, ja varmista että virhe näkyy _is
 
 ![]({{ "/images/lh2-8.png" | absolute_url }})
 
-Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, ja syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
+Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
 
 ![]({{ "/images/lh2-10.png" | absolute_url }})
 
@@ -258,7 +258,7 @@ Tee paikalliseen git-repoon seuraavat
 * mene takaisin __master__-branchiin, editoi tiedoston __tarkea.txt__ alkua (lisää alkuun muutama rivi) ja committaa
 * mergeä branchin __toka__ sisältö __masteriin__
   * mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
-    * jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
+    * jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     * vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, google auttaa tarvittaessa
   * katso tiedoston __tarkea.txt__-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   * **huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
@@ -290,14 +290,14 @@ Lisätään seuraavaksi branch githubiin:
 * mene branchiin __haara1__, lisää sinne tiedosto __haara1.txt__ ja committaa
 * mene branchiin __haara2__, lisää sinne tiedosto __haara2.txt__ ja committaa
 * pushaa uudet branchit GitHubiin
-* tarkastele GitHub-repositoria selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
+* tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
 
 Kloonaa GitHub-repositoriosta koneellesi toinen kopio
 
 * kuten huomaat, eivät branchit tule kloonattuun kopioon
 * tee paikalliseen kopioon branch joka "träkkää" GitHub:issa olevan projektisi branchia __haara1__ (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
 * lisää "träkkäävään" branchiin joku tiedosto, committaa ja pushaa branchi GitHubiin
-* tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
+* tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Mene GitHub-repon alkuperäiseen paikalliseen kopioon
 
@@ -315,7 +315,7 @@ Mene jälleen toiseen kopioon
 * suorita jälleen <code>git remote show origin</code>, mitä muutoksia huomaat?
 * tee branchiin muutoksia ja pushaa ne githubiin
   *  huom: koska kyseessä on träkkäävä branch, riittää git push
-* tarkastele GitHub-repositoria selaimella, varmista että branchi päivittyy
+* tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Palaa vielä alkuperäiseen lokaaliin repositorioon
 
@@ -371,7 +371,7 @@ Jos kiinnostaa, lue lisää yo. dokumentista.
 
 Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen githubissa olevaan etärepositorioon epäonnistuu.
 
-* mene alkuperäisen repositorion paikallisen kopion __master__ haaraan, tee joku muutos, commitoi ja pushaa se githubiin
+* mene alkuperäisen repositorion paikallisen kopion __master__ -haaraan, tee joku muutos, commitoi ja pushaa se githubiin
 * mene toisen kopion __master__-haaraan ja  tee sinne joku muutos 
 * commitoi ja pushaa muutos githubiin
 * kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
@@ -390,7 +390,7 @@ $
 </pre>
 
 Virheen syynä on se, että githubissa oleva __master__-haara oli edellä paikallisen repositorion __master__-haaraa. Ongelma korjaantuu tekemällä ensin <code>git pull</code>, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen
-* komennon _git pull_ yhteydessä syntyy merge-commit, ja avautuu tekstieditorin mihin joudut kirjoittamaan commit-viestin
+* komennon _git pull_ yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 * eli toimi näin ja varmista, että tekemäsi muutokset menevät githubiin
 
 ### 9. riippuvuuksien injektointi osa 3: Verkkokauppa
@@ -418,7 +418,7 @@ Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com
   * Kauppa --> Varasto
 * **Poista luokan <code>Kauppa</code> konkreettiset riippuvuudet** yllä mainittuihin luokkiin _rajapintojen avulla_
   * riippuvuus luokkaan Ostoskori voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
-  * *HUOM:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
+  * *HUOM!:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
   * muut riippuvuudet jätetään vielä
    
 * **Määrittele luokalle <code>Kauppa</code> sopiva konstruktori**, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään _rajapintoja_
@@ -470,7 +470,7 @@ Lue nyt [täällä oleva](/riippuvuuksien_injektointi_spring/) kuvaus miten riip
 Palataan sitten verkkokaupan pariin.
 
 * Projektiin on konfiguroitu valmiiksi springin tarvitsemat riippuvuudet, sekä konfiguraatiot 
-  * *HUOM* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
+  * *HUOM!* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
 * Ota riippuvuuksien injektointi käyttöön lisäämällä luokille annotaatioita <code>@Component</code> ja <code>@Autowired</code> 
 * Aloita muuttamalla pääohjelma siten, että ainoastaan viitegeneraattori luodaan Springin avulla. Muutos on suunnilleen seuraava:
 
@@ -499,7 +499,7 @@ public static void main(String[] args) {
 }
 ```
 
-* Huom: pääohjelman tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
+* Huom: pääohjelma tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
 
 ### Tehtävien palautus
 

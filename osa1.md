@@ -106,7 +106,7 @@ Kesällä 1968 NATO:n järjestämässä konferenssissa julkistettiinkin että ma
 
 Termillä viitataan siihen että on vaikeaa toteuttaa käyttökelpoisia, oikein toimivia, tehokkaita ja laajennettavissa olevia ohjelmistoja käytössä olevien resurssien puitteissa.
 
-Eräs tietojenkäsittelyn pioneereista, Turing-palkittu Edsger Dijkstra ilmaisi asian seuraavasti vuonna 1972 pitämässään [esitelmäsä](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) 
+Eräs tietojenkäsittelyn pioneereista, Turing-palkittu Edsger Dijkstra ilmaisi asian seuraavasti vuonna 1972 pitämässään [esitelmässä](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) 
 
 > The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.
 
@@ -148,7 +148,7 @@ Vesiputousmallin mukainen ohjelmistotuotanto ei siis ole osoittautunut erityisen
  
 Vesiputousmalli olettaa, että ohjelmistotuotannon vaiheet tapahtuvat peräkkäin ja jokainen vaihe ainakin isoissa projekteissa eri ihmisten toimesta. Tästä koituu useita ongelmia.
 
-Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Kilpailutilanne saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, maailman taloussuhtanteet vaihtuvat. Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmempaa on, että vaatimukset elävät. 
+Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Kilpailutilanne saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, maailman taloussuhdanteet vaihtuvat. Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmempaa on, että vaatimukset elävät. 
 
 On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
 
@@ -396,7 +396,7 @@ Kehittäjätiimi koostuu noin 3-9:stä henkilöstä, joista kaikista käytetää
 
 Scrum-tiimien tulee olla _cross-functional_, eli tiimin jäsenten tulisi sisältää kaikki tarvittava osaaminen järjestelmän suunnitteluun, toteuttamiseen, testaamiseen ja jopa tuotantoympäristössä operoimiseen.
 
-Tiimit ovat autonomisia, eli periaatteena on että kehitystiimiä ei johdeta ulkopuolelta vaan tiimi päättää mihin tavoitteisiin se kussakin sprintissä sitoutuu, eli miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös tiettyjen reunaehtojen puitteissa itse miten se sprintin tavoiteen toteuttaa. Tiimi on siis _itseorganisoituva_ (self organizing).
+Tiimit ovat autonomisia, eli periaatteena on että kehitystiimiä ei johdeta ulkopuolelta vaan tiimi päättää mihin tavoitteisiin se kussakin sprintissä sitoutuu, eli miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös tiettyjen reunaehtojen puitteissa itse miten se sprintin tavoitteen toteuttaa. Tiimi on siis _itseorganisoituva_ (self organizing).
 
 Scrumin mukaan tiimin tulee oletusarvoisesti työskennellä samassa paikassa, mieluiten yhteisessä tiimille varatussa avokonttorissa ja oletuksena on että tiimin jäsenet työskentelevät tiimissä 100%:lla työajalla.
 
@@ -492,13 +492,13 @@ Eräs ketterän manifestin periaatteista toteaa seuraavasti
 
 > At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
 
-Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospeektiivi_ on tämän periaatteen ilmentymä. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä tiimi scrum masterin johdolla tarkastelee nimenomaan omaa työskentelyprosessiaan. 
+Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospektiivi_ on tämän periaatteen ilmentymä. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä tiimi scrum masterin johdolla tarkastelee nimenomaan omaa työskentelyprosessiaan. 
 
 Tarkoituksena on identifioida mikä meni hyvin ja missä asioissa on parantamisen varaa. Palaverissa mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana.
 
 Aikojen saatossa on kehitetty [lukuisia tekniikoita](https://retrospectivewiki.org) retrospektiivien pitämiseen. Palaamme niihin laskareiden yhteydessä.
 
-### Scrumin periaattet: transparency - inspection - adaptation
+### Scrumin periaatteet: transparency - inspection - adaptation
 
 Kuten aiemmin mainittiin, on Scrumin takana kolme periaatetta, läpinäkyvyys (transparency), tarkkailu (inspection) ja mukauttaminen (adaptation). Retrospektiivi on nimenomaan kehitysprosessin tarkkailun ja mukauttamisen väline. 
 
@@ -560,4 +560,4 @@ Scrumin rinnalle viime vuosina voimakkaasti erityisesti Suomessa noussut [Scaled
 Scrum kuten muutkin ketterät kehitystavat ovat syntyneet pitkälti ohjelmistokehittäjien keskuudessa. Melko yleinen raportoitu ongelma ketterään kehitykseen siirryttäessä onkin se, että muu organisaatio jää täysin ennalleen. Tällöin tuloksena on usein nimikkeen [waterscrumfall](https://www.infoq.com/news/2011/12/water-scrum-fall-is-the-norm/) saanut kehitysmalli, missä ainoastaan ohjelman uusien toiminnallisuuksien kehitys tapahtuu Scrumia mukaillen, mutta budjetointi, vaatimusten hallinta sekä tuotantoonvienti etenevät edelleen vanhoja kontrolloituja prosesseja noudattaen. 
 
 Päätetään alustava Scrumiin tutustumisemme menetelmän kehittäjien sanoihin
-_Scrum is easy to undestand but extremely difficult to master_.
+_Scrum is easy to understand but extremely difficult to master_.
