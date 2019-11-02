@@ -197,7 +197,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 Kun huomaat kurssimateriaalissa kirjoitusvirheitä, tee korjausehdotus. Kurssimateriaali on repositoriossa
 [https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io ) tiedostoissa [osa0.md](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa0.md) jne.
 
-Muutosehdotusksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
+Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
 
 ![]({{ "/images/0-1.png" | absolute_url }})
 
