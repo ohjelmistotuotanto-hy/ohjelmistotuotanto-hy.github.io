@@ -360,8 +360,8 @@ Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHub:i
 
 ### Mihin brancheja käytetään?
 
-Ohjelmistotiimi voi käyttää Gitiä hyvin monella eri tyylillä. Artikkeli
-<https://de.atlassian.com/git/tutorials/comparing-workflows> esittelee muutamia erilaisia tapoja järjestellä tiimin gitin käyttöön liittyvä workflow. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
+Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
+<https://de.atlassian.com/git/tutorials/comparing-workflows> esittele tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
 
 > The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.
 
@@ -378,9 +378,9 @@ Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorio
 
 <pre>
 $ git push
-To git@github.com:mluukkai/ohtu-viikko1-2018.git
+To git@github.com:mluukkai/ohtu-viikko1-2019.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1-2018.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1-2019.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first merge the remote changes (e.g.,
@@ -395,19 +395,19 @@ Virheen syynä on se, että githubissa oleva __master__-haara oli edellä paikal
 
 ### 9. riippuvuuksien injektointi osa 3: Verkkokauppa
 
-Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä testauksen helpottamiseen.
+Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä yksikkötestauksen helpottamiseen.
 
-Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi/)
+Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi/).
 
 Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com/mluukkai/Ohjelmistotuotanto-2019/tree/master/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
 
-* Hae esimerkkiprojekti kurssirepositoriosta
+* Hae projekti kurssirepositoriosta
   * järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle
   * **tämän jälkeen kannattaa kopioida projekti tehtävien palautukseen käyttämäsi repositorion sisälle**
 * Tutustu koodiin, piirrä luokkakaavio ohjelman rakenteesta
   * luokkakaavioita ei tarvitse palauttaa...
-* Ohjelman luokista <code>Pankki</code>, <code>Varasto</code>, <code>Viitegeneraattori</code> ja <code>Kirjanpito</code> ovat sellaisia, että niistä on tarkoitus olla olemassa ainoastaan yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla"
-  * Singleton on [GoF-kirjan](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) yksi alkuperäisistä suunnittelumalleista, lue lisää singletoneista esim. [täältä](http://www.oodesign.com/singleton-pattern.html)
+* Ohjelman luokista <code>Pankki</code>, <code>Varasto</code>, <code>Viitegeneraattori</code> ja <code>Kirjanpito</code> ovat sellaisia, että niistä on tarkoitus olla olemassa ainoastaan yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla", eli piilottamalla konstruktori ja käyttämällä staattista muuttujaa ja metodia säilömään ja palauttamaan luokan ainoa olio
+  * Singleton on ns. [GoF-kirjan](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) yksi alkuperäisistä suunnittelumalleista, lue lisää singletoneista esim. [täältä](https://sourcemaking.com/design_patterns/singleton)
   * Singleton ei ole erinäisistä syistä enää oikein muodissa, ja korvaamme sen seuraavassa tehtävässä
 
 * Kuten huomaamme, on koodissa toivottoman paljon konkreettisia riippuvuuksia:
@@ -416,14 +416,14 @@ Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com
   * Kauppa --> Pankki
   * Kauppa --> Viitegeneraatori
   * Kauppa --> Varasto
-* Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllä mainittuihin luokkiin _rajapintojen avulla_
+* **Poista luokan <code>Kauppa</code> konkreettiset riippuvuudet** yllä mainittuihin luokkiin _rajapintojen avulla_
   * riippuvuus luokkaan Ostoskori voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
   * *HUOM:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
   * muut riippuvuudet jätetään vielä
    
-* Määrittele luokalle <code>Kauppa</code> sopiva konstruktori, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään **rajapintoja**
+* **Määrittele luokalle <code>Kauppa</code> sopiva konstruktori**, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään _rajapintoja_
 * Älä käytä luokan _Kauppa_ sisällä enää konkreettisia luokkia  _Varasto_, _Viitegeneraattori_ ja _Pankki_ vaan ainoastaan niitä vastaavia rajapintoja!
-* Muokkaa pääohjelmasi, siten että se luo kaupan seuraavasti:
+* **Muokkaa pääohjelmasi**, siten että se luo kaupan seuraavasti:
 
 ``` java
 Kauppa kauppa = new Kauppa(
@@ -433,18 +433,17 @@ Kauppa kauppa = new Kauppa(
 );
 ```
 
-*Vvarmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
+* Varmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
 
 ### 10. riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
 
-* Singleton-suunnittelumallia pidetään osittain ongelmallisena, poistammekin edellisestä tehtävästä singletonit
-  * katso esim. [http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx](http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx)
-* **poista** kaikista luokista <code>getInstance</code>-metodit ja staattinen <code>instance</code>-muuttuja
+* Singleton-suunnittelumallia pidetään [osittain ongelmallisena](http://rcardin.github.io/design/programming/2015/07/03/the-good-the-bad-and-the-singleton.html), poistammekin edellisestä tehtävästä singletonit
+* **Poista** kaikista luokista <code>getInstance</code>-metodit ja staattinen <code>instance</code>-muuttuja
   * joudut muuttamaan luokilla olevat private-konstruktorit julkisiksi
-* poista rajapintojen ja riippuvuuksien injektoinnin avulla edellisen tehtävän jäljiltä jääneet riippuvuudet, eli
+* **Poista** rajapintojen ja riippuvuuksien injektoinnin avulla edellisen tehtävän jäljiltä jääneet riippuvuudet, eli
   * Varasto --> Kirjanpito
   * Pankki --> Kirjanpito
-* Muokkaa pääohjelmasi vastaamaan uutta tilannetta, eli suunnilleen muotoon:
+* **Muokkaa pääohjelmasi** vastaamaan uutta tilannetta, eli suunnilleen muotoon:
 
 ``` java
 Viitegeneraattori viitegen = new Viitegeneraattori();
