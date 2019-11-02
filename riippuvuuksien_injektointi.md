@@ -5,6 +5,8 @@ inheader: no
 permalink: /riippuvuuksien_injektointi/
 ---
 
+## Riippuvuuksien injektointi
+
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
 
 Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta koodi/viikko1/RiippuvuuksienInjektointi1

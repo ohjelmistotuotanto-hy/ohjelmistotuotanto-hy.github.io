@@ -30,7 +30,7 @@ Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät p
 Tehtävät 2 ja 3 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin Ohtuvarasto. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-16.
 
 Katso tarkempi ohje palautusrepositorioita koskien
-[täältä](https://ohjelmistotuotanto-hy.github.io/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+[täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### Huomio gradleen liittyen
 
@@ -82,7 +82,7 @@ Execution failed for task ':checkstyleMain'.
 
 Eli kuten [manuaali kertoo](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout), Gradle olettaa että projektista löytyy checkstylen toiminnan määrittelevä konfiguraatiotiedosto. 
 
-Luo tiedosto ja hae sille sisältö [täältä](https://github.com/mluukkai/ohjelmistotuotanto-2019/blob/master/koodi/viikko2/checkstyle.xml)
+Luo tiedosto ja hae sille sisältö [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle.xml)
 
 Huomaa, että tiedoston tulee olla oikeassa paikassa. Virheilmoitus ja [manuaali](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout) kertovat oikean sijainnin.
 
@@ -399,7 +399,7 @@ Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injek
 
 Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi/).
 
-Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com/mluukkai/Ohjelmistotuotanto-2019/tree/master/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
+Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
 
 * Hae projekti kurssirepositoriosta
   * järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle

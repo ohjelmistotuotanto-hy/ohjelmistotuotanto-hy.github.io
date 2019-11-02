@@ -5,7 +5,7 @@ inheader: no
 permalink: /riippuvuuksien_injektointi_spring/
 ---
 
-## Dependency injection Spring-sovelluskehyksessä
+## Riippuvuuksien injektointi Spring-sovelluskehyksessä
 
 Jatketaan viime viikolla käsittelemämme [laskimen](/riippuvuuksien_injektointi/) tarkastelua. Kertaa tarvittaessa yllä olevan linkin takana oleva teksti.  
 
@@ -29,11 +29,11 @@ Kurssilta [Web-palvelinohjelmointi](https://courses.helsinki.fi/fi/tkt21007) osa
 
 > Spring on laaja ja monikäyttöinen sovelluskehys, jota käytetään yleisesti mm. Javalla tapahtuvassa web-sovelluskehityksessä. Tutustumme kurssilla oikeastaan ainoastaan Springin riippuvuuksien injektointiin. 
 
-Spring saadaan käyttöön lisäämällä Spring riippuvuudeksi gradle-projektin määrittelemään build.gradle-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko2/RiippuvuuksienInjektointiSpring)
+Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _build.gradle_-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko2/RiippuvuuksienInjektointiSpring).
 
-Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen olioisäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
+Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen oliosäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
 
-Springissä on kaksi tapaa määritellä sovelluskontekstin oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
+Springissä on kaksi tapaa määritellä sovelluskontekstin kontrolloivat oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
 
 Sovelluskontekstin huolehdittavaksi annettavien olioiden luokat merkitään annotaatiolla  <code>@Component</code>. Luokka _KonsoliIO_ annotoidaan seuraavasti:
 
@@ -61,7 +61,7 @@ public class Laskin {
 }
 ```
 
-Itseasiassa samaan lopputulokseen päästäisiin vieläkin helpommin merkkaamalla laskimen oliomuuttuja _io_ annotaatiolla <code>@Autowired</code>, tällöin konstruktoria ei tarvita:
+Itseasiassa samaan lopputulokseen päästäisiin vieläkin helpommin merkitsemällä  laskimen oliomuuttuja _io_ annotaatiolla <code>@Autowired</code>, tällöin konstruktoria ei tarvita:
 
 ``` java
 @Component
@@ -74,7 +74,7 @@ public class Laskin {
 }
 ``` 
 
-Sovellus on vielä konfiguroitava, jotta Spring tietää, että käytössä on annotaatiopohjainen määrittely. Konfigurointi voidaan tehdä joko xml-tiedostona tai [Java-luokkana](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-java). 
+Sovellus on vielä konfiguroitava, jotta Spring tietää, että käytössä on annotaatioihin perustuva määrittely. Konfigurointi voidaan tehdä joko xml-tiedostona tai [Java-luokkana](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-java). 
 
 Käytetään luokkapohjaista tapaa. Konfiguroinnin hoitava luokka on yksinkertainen:
 
@@ -84,7 +84,7 @@ Käytetään luokkapohjaista tapaa. Konfiguroinnin hoitava luokka on yksinkertai
 public class AppConfig  {}
 ```
 
-Käytännössä luokka siis määrittelee, että käytetään annotaatiopohjaista konfiguraatiota, ja etsitään annotoituja luokkia pakkauksen _ohtu.laskin_ alta.
+Käytännössä luokka siis konfiguroi, että käytetään annotaatioihin perustuvaa määrittelyä, ja etsitään annotoituja luokkia pakkauksen _ohtu.laskin_ alta.
 
 Pääohjelma on nyt seuraava:
 
