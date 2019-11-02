@@ -48,7 +48,7 @@ Tämän viikon tehtäviin liittyviin projekteihin määrittely on jo lisätty.
 
 Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla `gradle -q --console plain run`, jolloin gradlen tekemät tulostukset eivät tule konsoliin.
 
-*HUOM* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle-projekteissa, eli jos törmäät samaan ongelmaan, suorita ohjelmat komentoriviltä.
+*HUOM!* näyttää siltä, että NetBeans 11.1:llä Scanner ei toimi ollenkaan gradle-projekteissa, eli jos törmäät samaan ongelmaan, suorita ohjelmat komentoriviltä.
 
 ### 1. gradlen perusteita
 
@@ -371,7 +371,7 @@ Jos kiinnostaa, lue lisää yo. dokumentista.
 
 Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen githubissa olevaan etärepositorioon epäonnistuu.
 
-* mene alkuperäisen repositorion paikallisen kopion __master__ haaraan, tee joku muutos, commitoi ja pushaa se githubiin
+* mene alkuperäisen repositorion paikallisen kopion __master__ -haaraan, tee joku muutos, commitoi ja pushaa se githubiin
 * mene toisen kopion __master__-haaraan ja  tee sinne joku muutos 
 * commitoi ja pushaa muutos githubiin
 * kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
@@ -390,7 +390,7 @@ $
 </pre>
 
 Virheen syynä on se, että githubissa oleva __master__-haara oli edellä paikallisen repositorion __master__-haaraa. Ongelma korjaantuu tekemällä ensin <code>git pull</code>, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen
-* komennon _git pull_ yhteydessä syntyy merge-commit, ja avautuu tekstieditorin mihin joudut kirjoittamaan commit-viestin
+* komennon _git pull_ yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 * eli toimi näin ja varmista, että tekemäsi muutokset menevät githubiin
 
 ### 9. riippuvuuksien injektointi osa 3: Verkkokauppa
@@ -418,7 +418,7 @@ Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com
   * Kauppa --> Varasto
 * Pura luokan <code>Kauppa</code> konkreettiset riippuvuudet yllä mainittuihin luokkiin _rajapintojen avulla_
   * riippuvuus luokkaan Ostoskori voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
-  * *HUOM:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
+  * *HUOM!:* NetBeansissa on automaattinen refaktorointiominaisuus, jonka avulla luokasta saa helposti generoitua rajapinnan, jolla on samat metodit kuin luokalla. Klikkaa luokan kohdalla hiiren oikeaa nappia, valitse refactor ja "extract interface"
   * muut riippuvuudet jätetään vielä
    
 * Määrittele luokalle <code>Kauppa</code> sopiva konstruktori, jotta voit injektoida riippuvuudet, konstruktorin parametrien tulee olla tyypiltään **rajapintoja**
@@ -433,7 +433,7 @@ Kauppa kauppa = new Kauppa(
 );
 ```
 
-*Vvarmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
+* Varmista ohjelman toimivuus suorittamalla se komentoriviltä komennolla _gradle run_
 
 ### 10. riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
 
@@ -471,7 +471,7 @@ Lue nyt [täällä oleva](/riippuvuuksien_injektointi_spring/) kuvaus miten riip
 Palataan sitten verkkokaupan pariin.
 
 * Projektiin on konfiguroitu valmiiksi springin tarvitsemat riippuvuudet, sekä konfiguraatiot 
-  * *HUOM* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
+  * *HUOM!* mahdolliset virheilmoitukset __"org.springframework... package does not exist"__ katoavat kun buildaat projektin ensimmäisen kerran!
 * Ota riippuvuuksien injektointi käyttöön lisäämällä luokille annotaatioita <code>@Component</code> ja <code>@Autowired</code> 
 * Aloita muuttamalla pääohjelma siten, että ainoastaan viitegeneraattori luodaan Springin avulla. Muutos on suunnilleen seuraava:
 
@@ -500,7 +500,7 @@ public static void main(String[] args) {
 }
 ```
 
-* Huom: pääohjelman tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
+* Huom: pääohjelma tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
 
 ### Tehtävien palautus
 
