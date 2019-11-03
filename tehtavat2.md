@@ -100,7 +100,7 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
 
 * poista checkstylen konfiguraatiotiedostosta kaikki elementin <code>tree walker</code> sisällä olevat tarkistukset
 * suorita `gradle checkstyleMain` ja varmista, että tarkastus menee läpi
-* määrittele nyt tiedostoon seuraavat säännöt (ks. kohta checks checkstylen [sivuilta](https://checkstyle.sourceforge.net/checks.html)):
+* määrittele nyt tiedostoon seuraavat säännöt (ks. kohta checks checkstylen [sivuilta](https://checkstyle.sourceforge.io/checks.html)):
   * metodien pituus max 15 riviä (tämä ja seuraavat säännöt määritellään moduulin tree walker sisälle)
   * ei yli yhtä sisäkkäisiä if-komentoja  
   * ei sisäkkäisiä for-komentoja, seuraavan siis pitäisi aiheuttaa virhe:
