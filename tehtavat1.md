@@ -106,7 +106,7 @@ Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapah
 
     git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
 
-missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
+missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono:
 
 ![]({{ "/images/lh1-2.png" | absolute_url }})
 
