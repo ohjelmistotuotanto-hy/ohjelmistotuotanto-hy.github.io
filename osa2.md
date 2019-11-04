@@ -794,7 +794,7 @@ Taskboard ja mahdollisesti käytössä oleva burndown-käyrä tuovat selkeäs
 
 On hieman kiistanalaista kannattaako storyihin liittyvien taskien työmäärää estimoida. Syksyllä 2019 julkaistu kirja [A Scrum book](http://scrumbook.org/value-stream/information-radiator/sprint-burndown-chart.html), ei suosittele taskien tasolla pidettävää työmääräarviota, vaan kehottaa seuraamaan sprinttienkin aikana ainoastaan sitä _kuinka monen story pointin verran user storyja on saatu valmiiksi_. 
 
-Neuvo onkin varsin viisas, on nimittän mahdollista, että tiimi saa sprintissä valmiiksi lähes kaikki taskit, saamatta kuitenkaan yhtäkään storya täysin valmiiksi, eli burn down voi näyttää melko hyvältä mutta asiakkaan saama arvo on lopulta nolla.
+Neuvo onkin varsin viisas, on nimittäin mahdollista, että tiimi saa sprintissä valmiiksi lähes kaikki taskit, saamatta kuitenkaan yhtäkään storya täysin valmiiksi, eli burn down voi näyttää melko hyvältä mutta asiakkaan saama arvo on lopulta nolla.
  
 Fyysistä taskboardia käytettäessä sprintin työmäärän estimoinnin ja burndown-käyrän piirtämisen sijaan erittäin simppeli tapa sprintin etenemisen seurantaan on laskea, tai jopa ainoastaan visuaalisesti katsoa taskboardilta, mikä on jo valmiiden ja vielä valmistumattomien sprinttiin kuuluvien taskien lukumäärä. 
 

@@ -282,7 +282,7 @@ Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on toden
 
 Kun komento <code>./gradlew build</code> (Linux, OSX) tai <code>gradlew.bat build</code> (Windows) tai <code>gradle build</code> toimii, olet valmis siirtymään seuraavaan kohtaan.
 
-**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi.
+**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi, suositeltavinta on käyttää versiota <code>./gradlew</code>, näin varmistat että käytössäsi on uusin gradlen versio.
 
 * aloita nyt puhtaalta pöydältä komennolla <code>gradle clean</code>
   * käytä siis komennosta muotoa <code>./gradlew</code> jos <code>gradle</code> ei toimi
@@ -326,6 +326,8 @@ Java-maailmassa automatisoidun testaamisen johtava työkalu on JUnit, johton ole
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran JUnit-testejä, **laajennetaan nyt testejä**.
 
+**HUOM** tehtävässä käytettävä _jacoco_-plugin edellyttää toimiakseen gradlen versiota 5.6. Voit testata käyttämäsi version komennolla _gradle -v_. 
+
 Muista, että testit suoritetaan komennolla <code>gradle test</code>
 
 * Täydennä Ohtuvaraston testejä siten, että luokan _Varasto_ testien rivikattavuudeksi (line coverage) tulee 100%
@@ -343,6 +345,27 @@ ja suorittamalla komento <code>gradle test jacocoTestReport</code>
   * **HUOM2** jos gradle ilmoittaa _:jacocoTestReport SKIPPED_, suorita komento <code>gradle clean</code> ja yritä uudelleen.
 
 * kun luokan <code>Varasto</code> testien rivikattavuus (line coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
+
+**HUOM** tehtävässä käytettävä _jacoco_-plugin edellyttää toimiakseen gradlen versiota 5.6. Voit tarkistaa käyttämäsi version komennolla _gradle -v_. Cubbli-Linuxien oletusarvoinen versio on 4.4.1. ja sitä käyttäessä (eli komennolla _gradle_) jacoco ei toimi:
+
+```
+mluukkai@melkki:~/ohtu-2019-viikko1$ gradle test jacocoTestReport
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :test
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+```
+
+Komennolla _./gradlew_ on käytössä projektin lokaali versio 5.6.3 ja sillä projekti toimii.
+
+```
+mluukkai@melkki:~/ohtu-2019-viikko1$ ./gradlew test jacocoTestReport
+
+...
+
+BUILD SUCCESSFUL in 16s
+```
 
 ### 9. CircleCI, osa 1
 
