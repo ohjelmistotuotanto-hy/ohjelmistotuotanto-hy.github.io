@@ -332,14 +332,39 @@ Yksikkötestauksen tapaan, koodin integroinnin ja usein myös integraatiotestauk
 
 ## Regressiotestaus
 
-Iteratiivisessa ja ketterässä ohjelmistotuotannossa, jossa jokainen iteraatio tuottaa ohjelmistoon uusia ominaisuuksia, on oltava koko ajan valppaana sen suhteen , että lisäykset eivät hajota ohjelman jo toimivia osia.
+Iteratiivisessa ja ketterässä ohjelmistotuotannossa, jossa jokainen iteraatio tuottaa ohjelmistoon uusia ominaisuuksia, on oltava koko ajan valppaana sen suhteen, että lisäykset eivät hajota ohjelman jo toimivia osia.
 
-Testit on siis suoritettava uudelleen aina kun ohjelmistoon tehdään muutoksia.
-Tätä käytäntöä sanotaan _regressiotestaukseksi_. Jotta varmuus ohjelmiston hajoamattomuudesta olisi mahdollisimman suuri, tulee regressiotestijoukkon koostua sekä yksikkö-, integraatio- että järjestelmätesteistä.
+Testit on siis suoritettava uudelleen aina kun ohjelmistoon tehdään muutoksia. Tätä käytäntöä kutsutaan _regressiotestaukseksi_. Jotta varmuus ohjelmiston virheettömänä pysymisestä olisi mahdollisimman suuri, tulee regressiotestien joukon koostua sekä yksikkö-, integraatio- että järjestelmätesteistä.
 
-Usein regressiotesteinä käytetään kaikkia sovelluskehityksen aikana tehtyjä testejä. On myös tilanteita, joissa tämä ei ole mielekästä ja sopiva osajoukko kaikista testeistä voi taata riittävän luottamuksen.
+Usein regressiotesteinä käytetään kaikkia sovelluskehityksen aikana tehtyjä testejä. On myös tilanteita, joissa tämä ei ole mielekästä esimerkiksi testien suorituksen viemän ajan takia, ja sopiva osajoukko kaikista testeistä voi taata riittävän luottamuksen sovelluksen virheettömänä säilymisestä.
 
 Testaaminen on erittäin työlästä ja regressiotestauksen tarve tekee siitä entistä työläämpää. Tämän takia on erittäin tärkeää pyrkiä automatisoimaan testit mahdollisimman suurissa määrin. 
 
-Automatisoitu yksikkötestaus on jo aiemmilta kursseilta tuttu aihe. Käsittelemme muutamia järjestelmätason testauksen automatisoinnin menetelmiä seuraavissa luvuissa.
+Automatisoitu yksikkötestaus on jo aiemmilta kursseilta tuttu aihe. Käsittelemme muutamia järjestelmätestauksen automatisoinnin menetelmiä seuraavissa luvuissa.
 
+## Ketterien menetelmien testauskäytänteitä
+
+Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousmallisesta ohjelmistotuotannosta. Iteraation/sprintin aikana toteutettavat ominaisuudet integroidaan muuhun koodiin ja testataan yksikkö-, integraatio- sekä järjestelmätasolla. Sykli ominaisuuden määrittelystä siihen, että se on valmis ja testattu on erittäin lyhyt, viikosta kuukauteen.
+
+Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
+
+Ketterän kehityksen luonne vaatiikin että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
+
+Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi) ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää, tämän takia testaajat ovat ideaalitilanteessa 
+sijoitettuja erilliseen laatua valvovan QA-organisaatioon sijaan kehittäjätiimeihin ja myös ohjelmoijat kirjoittavat testejä.
+
+Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [built quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa. 
+
+Käymme tässä luvussa läpi joukon ketterien menetelmien suosimia testauskäytäntöjä.
+ 
+_Test driven development_ eli TDD on kehitysmenetelmä, missä testit tehdään jo ennen koodin kirjoittamista. Nimestään huolimatta kyseessä tosin on enemmän suunnittelu- ja toteutustason tekniikka, jonka sivutuotteena syntyy kattava joukko automaattisesti suoritettavia testejä.
+
+TDD:n idea laajennus järjestelmätason testien tasolla toimivaksi kulkee nimillä _acceptance test driven Development_ ja _behavior driven development_.
+
+_Continuous Integration_ eli jatkuva integraatio ja _(continuous delivery)_ eli jatkuva tuotantovalmius ovat perinteisen integraatio- ja integraatiotestausvaiheen korvaava työskentelytapa, jossa pyrkimyksenä on integroida ja jopa viedä tuotantoympäristöön jokainen sovellukseen tehty muutos. 
+
+Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisia (eli yksikkö-, integraatio-, järjestelmä-) automatisoituja testejä, joiden avulla tehty regressiotestaus mahdollistaa sen, että ohjelmiston jatkokehityksen aikana voidaan olla turvallisin mielin siitä, että jo toimivia asioita ei pääse hajoamaan. 
+
+Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Tuotantokäytössä tapahtuva testaus on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
+
+Voimakkaasta automatisointiatrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
