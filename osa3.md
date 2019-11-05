@@ -368,3 +368,39 @@ Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisi
 Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Tuotantokäytössä tapahtuva testaus on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
 
 Voimakkaasta automatisointiatrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
+
+ ## Test driven development 
+
+[Test driven development](https://martinfowler.com/bliki/TestDrivenDevelopment.html) eli TDD on yksi [eXtreme Programmingin](http://www.extremeprogramming.org/) käytänteistä, missä siis testit on tarkoitus tehdä ennen varsinaisen koodin kirjoittamista.
+
+Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän mukainen](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) TDD etenee seuraavasti
+
+1. Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
+2. Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
+3. Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) _refaktoroidaan_ koodin rakenne paremmaksi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
+4. Jatketaan askeleesta 1
+ 
+TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään teksti joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
+
+![]({{ "/images/3-6a.png" | absolute_url }}){:height="350px" } 
+
+TDD:llä ohjelmoitaessa toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponenttia käyttöä, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta. 
+
+TDD:ssä perinteisen suunnittelu-toteutus-testaus -syklin voi ajatella kääntyneen täysin päinvastaiseen järjestykseen, komponentin tarkka suunnittelu tapahtuu vasta refaktorointien yhteydessä.
+
+### TDD:n hyviä puolia
+
+TDD:tä tehtäessä korostetaan yleensä lopputuloksen yksinkertaisuutta, tarkoituksena on toteuttaa toiminnallisuutta vain sen verran, mitä testien läpimeno edellyttää. Ei siis toteuteta "varalta" ekstratoiminnallisuutta, sillä sitä ei todennäköisesti tarvita. Tästä yksinkertaisiin ratkaisuihin pyrkivästä käytännöstä käytetään usein nimitystä ["You ain't gonna need it", YAGNI](https://martinfowler.com/bliki/Yagni.html), sama periaate on kirjattuna ketterään manifestiin muodossa _Simplicity – the art of maximizing the amount of work not done – is essential_.
+
+Koodista on vaikea tehdä helposti testattavissa olevaa, jos se ei ole modulaarista ja löyhästi kytketyistä selkeän rajapinnan omaavista komponenteista koostuvaa. Määritelmän mukaisella TDD:llä ohjelmoitaessa taas koodista tulee useimmiten jo lähtökohtaisesti modulaarista ja vähäistä turhilta riippuvuuksiltaan. Tälläisen koodin taas on huomattu olevan laadukasta ylläpidettävyyden ja laajennettavuuden kannalta. Eli eräs argumentti TDD:n puolesta on juuri ollut sen tuottama laajennettavuuden ja jatkokehitettävyyden kannalta edullinen koodin laatu.
+
+Muina TDD:n hyvinä puolina mainitaan, että se rohkaisee ottamaan pieniä askelia kerrallaan ja näin toimimaan fokusoidusti, ja että hyvin kirjoitetut testit toimivat toteutetun komponentin rajapinnan dokumentaationa.
+ 
+TDD:tä on tutkittu akateemisesti kohtuullisen paljon. Kovin suurta evidenssiä sen hyödyistä [ei ole](https://researchportal.helsinki.fi/fi/publications/effects-of-test-driven-development-a-comparative-analysis-of-empi) havaittu, tosin tutkimusasetelmat eivät ole olleet kovin vakuuttavia ja realistisia käyttötilanteita vastaavia, niissä ei ole juurikaan otettu kantaa mahdollisia pitkän ajan hyötyjä, jota ylläpidettävyydeltään laadukas koodi mahdollisesti tuottaa.
+
+### TDD:llä on myös ikävät puolensa
+
+Käytettäessä TDD:tä testikoodia tulee paljon, usein suunnilleen saman verran kuin varsinaista koodia. Jos ja kun sovellus muuttuu, tulee testejä myös ylläpitää, sillä monet suuremmat rakenteelliset muutokset rikkovat usein osan testeistä.
+
+TDD:n soveltaminen on haastavaa mm. käyttöliittymä-, tietokantayhteyksistä sekä verkon yli kommunikoinnista huolehtivaa koodia tehtäessä, mahdotonta se ei kuitenkaan ole. Jo olemassa olevan koodin laajentaminen TDD:llä voi myöskin olla erittäin haastavaa erityisesti jos laajennettava koodi on rakenteeltaan vanhan liiton spagettikoodia.
+
