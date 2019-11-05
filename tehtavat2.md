@@ -7,6 +7,8 @@ permalink: /tehtavat2/
 
 ## Viikko 2
 
+**HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. Ilmoittaudu nyt!
+
 *Alla olevien tehtävien deadline on maanantaina 11.11. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
