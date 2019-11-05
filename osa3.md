@@ -433,3 +433,17 @@ Mockito-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kau
 Pankkia edustavalle mock-oliolle on asetettu _ekspektaatio_, eli vaatimus, joka varmistaa että metodia _tilisiirto_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
 
 Pääset harjoittelemaan Mockiton käyttöä viikon 3 [laskareissa](/tehtavat3/).
+
+## User storyjen testaaminen 
+
+User storyn [määritelmän](/osa2#user-story) yhteydessä mainittiin, että user storyn käsite pitää sisällään _hyväksymiskriteerit_, Mike Cohnin sanoin:
+
+_tests that convey and document details and that will be used to determine that the story is complete_
+
+Esimerkiksi user storyn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksymiskriteeriejä voisivat olla
+- ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
+- ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
+
+Optimaalisessa tilanteessa user storyjen hyväksymiskriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavia, testejä.
+ 
+Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa, mielellään yhteistyössä kehitystiimin ja product ownerin tai jonkun muun asiakkaan edustajan kesken. Usein käytäntönä on ilmaista hyväksymiskriteerit user storyjen tapaan asiakkaan kielellä, käyttämättä teknistä jargonia. Hyväksymiskriteerien kirjoitusprosessi lisääkin parhaassa tapauksessa asiakkaan ja tiimin välistä kommunikaatiota.
