@@ -382,7 +382,7 @@ Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän muk
  
 TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään teksti joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
-![]({{ "/images/3-6a.png" | absolute_url }}){:height="350px" } 
+![]({{ "/images/3-6a.png" | absolute_url }}){:height="250px" } 
 
 TDD:llä ohjelmoitaessa toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponenttia käyttöä, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta. 
 
@@ -404,3 +404,32 @@ Käytettäessä TDD:tä testikoodia tulee paljon, usein suunnilleen saman verran
 
 TDD:n soveltaminen on haastavaa mm. käyttöliittymä-, tietokantayhteyksistä sekä verkon yli kommunikoinnista huolehtivaa koodia tehtäessä, mahdotonta se ei kuitenkaan ole. Jo olemassa olevan koodin laajentaminen TDD:llä voi myöskin olla erittäin haastavaa erityisesti jos laajennettava koodi on rakenteeltaan vanhan liiton spagettikoodia.
 
+## Riippuvuuksien hallinta testeissä
+
+TDD:tä ja muutenkin yksikkötestejä tehdessä on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää.
+
+Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunnittelumalli parantaa luokkien testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin.
+
+Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, eli _stubeja_, näin tehtiin mm. [viikon 1 tehtävässä 16](/tehtavat1#16-nhlstatistics-ohjelman-yksikk%C3%B6testaus. Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
+
+Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. 
+
+On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa Javalle tarkoitettuun [Mockito](https://site.mockito.org/)-kirjastoon.
+ 
+Tarkastellaan hieman Mockiton toimintalogiikkaa viikon 2 [laskareiden](/tehtavat2/) verkkokauppatehtävää esimerkkinä käyttäen.
+
+Ostotapahtuman yhteydessä verkkokaupan tulisi veloittaa asiakkaan tililtä ostosten hinta _kutsumalla luokan pankki metodia tilisiirto_. 
+
+![]({{ "/images/3-7.png" | absolute_url }}){:height="220px" } 
+
+Tästä koodista pitäisi siis testata, että metodikutsu _kauppa.maksa("1111")_ tekee ostosten summaa vastaavan tilisiirron pankkitililtä _"1111"_ kaupan tilille. 
+
+Miten varmistamme, että tilisiirron suorittavaa luokan _Pankki_ olion metodia on kutsuttu oikeilla parametreilla? 
+
+Mockito-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kaupan riippuvuuksista mock-oliot:
+
+![]({{ "/images/3-8.png" | absolute_url }}){:height="350px" } 
+
+Pankkia edustavalle mock-oliolle on asetettu _ekspektaatio_, eli vaatimus, joka varmistaa, että metodia _tilisiirto_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
+
+Pääset harjoittelemaan Mockiton käyttöä viikon 3 [laskareissa](/tehtavat3/).
