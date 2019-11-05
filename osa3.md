@@ -159,7 +159,7 @@ _Integraatiotestaus_ (engl. integration testing) taas sisältää yksittäisist�
 
 _Järjestelmätestauksessa_ (engl. system testing) varmistetaan, että ohjelmisto kokonaisuudessaan toimii vaatimuksiin kirjatulla tavalla. Ohjelmistoa testataan saman rajapinnan kautta, jonka kautta käyttäjät sitä käyttävät. Järjestelmätestauksesta on useimmiten vastuussa ohjelmiston kehittäjäorganisaation laadunhallinnasta vastaavat ihmiset. 
 
-Ohjelmiston tilaaja- tai käyttäjäorganisaation tekemää testausta kutsutaan _käyttäjän hyväksymistestaukseksi_ (engl. user acceptance testing), ja sen on tarkoitus varmistaa, että kehitetty ohjelmisto on varmasti odotuksien mukainen ja toimii oikeassa käytössä. Hyväksymistestaus tapahtuu monesti normaalissa tuotantokäytössä, esim. betatestaamalla sovellusta pienen käyttäjäjoukon avulla. 
+Ohjelmiston tilaaja- tai käyttäjäorganisaation tekemää testausta kutsutaan _käyttäjän hyväksymistestaukseksi_ (engl. user acceptance testing), ja sen on tarkoitus varmistaa, että kehitetty ohjelmisto on varmasti odotuksien mukainen ja toimii oikeassa käytössä. Hyväksymistestaus tapahtuu monesti normaalissa tuotantokäytössä ohjelmiston tilanneen organisaation tai loppukäyttäjien toimesta, esim. betatestaamalla sovellusta pienen käyttäjäjoukon avulla. 
 
 ## Järjestelmätestaus
 
@@ -208,37 +208,36 @@ Olemassa olevaa sivua vastaavan ekvivalenssin rajatapaukset, eli luvut 100 ja 89
 
 ## Yksikkötestaus 
 
-Yksikkötestauksessa kohteena siis yksittäiset metodit ja luokat. Yksikkötestauksen hoitavat nykyään ohjelmoijat, usein odotetaan että uuteen koodiin tehdään jo yksikkötestit jo samalla kuin koodi kirjoitetaan. Ohjelmoihien vastuulla olevasta testauksesta, eli yksikkö- ja integraatiotessteistä käytetään usein nimitystä [developer testing](https://developertesting.rocks/). 
+Yksikkötestauksen kohteena siis ovat yksittäiset metodit ja luokat. Yksikkötestauksen hoitavat ohjelmoijat, usein oletetaan että uuteen koodiin tehdään yksikkötestit jo samalla kuin koodi kirjoitetaan. Ohjelmoijien vastuulla olevasta testauksesta, eli yksikkö- ja integraatiotestauksesta käytetään usein nimitystä [developer testing](https://developertesting.rocks/). 
 
-Yksikkötestejä laadittaessa testattavan koodin rakenne (esim. minkälaisia ehtolauseita koodissa on käytetty) otetaan huomioon testejä laatiessa. Tälläisistä testeistä käytetään usein nimitystä _lasilaatikkotestaus_ (engl. white box testing).
+Yksikkötestejä laadittaessa otetaan huomioon testattavan koodin rakenne, esimerkiksi minkälaisia ehtolauseita koodissa on käytetty. Tälläisistä testeistä käytetään usein nimitystä _lasilaatikkotestaus_ (engl. white box testing).
 
-Yksikkötestauksella ei testata suoranaisesti sitä täyttääkö ohjelmisto vaatimuksensa, pikemminkin tavoitteena on ohjelman _sisäisen laadun_ (engl. internal quality) kontrollointi. [Sisäinen laatu](http://c2.com/cgi/wiki?InternalAndExternalQuality) viittaa siihen kuina hyvä ohjelma on sisäiseltä rakenteeltaan, ja erityisesti tekeekö koodi virheenjäljityksen, korjaamisen sekä toiminnallisuuden laajentamisen helpoksi.
+Yksikkötestauksella ei testata suoranaisesti sitä, täyttääkö ohjelmisto käyttäjän sille asettamat vaatimukset, pikemminkin tavoitteena on ohjelman _sisäisen laadun_ (engl. internal quality) kontrollointi. [Sisäinen laatu](http://c2.com/cgi/wiki?InternalAndExternalQuality) viittaa koodin sisäisen rakenteen hyvyyteen: onko koodia helppo jatkokehittää, onko virheiden jäljitys ja korjaaminen helppoa ja pystytäänkö koodin toiminnallisuuden oikeellisuus varmistamaan muutoksia tehtäessä.
 
-Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä, jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskeneleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät loppukäyttäjällekin asti. 
+Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä, jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle asti. 
 
 Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavilla yksikkötesteillä saadaan parannettua myös ohjelman ulkoista, eli asiakkaan kokemaa laatua. Yksikkötestit voivat eliminoida joitain asiakkaalle näkyviä virheitä, joita järjestelmätestauksen testitapaukset eivät löydä.
 
 Tiedetään että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
 
-Koska yksikkötestejä joudutaan ajamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu xUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. rspec, jest, jasmine. 
+Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu jUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. rspec, jest, jasmine. 
 
 Kurssilla [Ohjelmistotekiikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
  
 ### Mitä ja miten paljon tulee testata?
 
-Mitä tulisi testata yksikkötestein? Vastaus ei ole helppo. JUnitin alkuperäinen kehittäjä [Kent Beck](https://junit.org/junit4/faq.html#best_2) vastaa kysymykseen seuraavasti:
+Mitä kaikkea ohjelmistosta tulisi testata yksikkötesteillä? Vastaus ei ole helppo. JUnitin alkuperäinen kehittäjä [Kent Beck](https://junit.org/junit4/faq.html#best_2) vastaa kysymykseen seuraavasti:
 
 > "Do I have to write a test for everything?"
 > "No, just test everything that could reasonably break" 
 
-Jos pyritään kattavaan yksikkötestaukseen tulisi ainakin olla testata
-kaikkien metodien (ja loogisten metodikombinaatioden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
+Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin olla testata kaikkien metodien (ja loogisten metodikombinaatioden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
 
-Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta valita yksi arvo testiä varten, myös ekvivalenssiluokkien raja-arvot kannattaa valita mukaan.
+Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta kannattaa  valita ainakin yksi arvo testisyötteeksi, erityisesti ekvivalenssiluokkien raja-arvot kannattaa kannattaa valita mukaan testattaviin arvoihin.
 
-Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testattavien arvojen parametrien ekvivalenssiluokat ja raja-arvot pääteltävissä koodista
+Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testattavien arvojen parametrien ekvivalenssiluokat ja raja-arvot ovat useimmiten pääteltävissä koodista.
 
-Tarkastellaan esimerkkinä 1 viikon laskareista tutun _Ohtuvaraston_ metodia _otaVarastosta_, mitä testitapauksia tulisi generoida testit olisivat kattavat?
+Tarkastellaan esimerkkinä ensimmäisen viikon laskareista tutun _Ohtuvaraston_ metodia _otaVarastosta_, mitä testitapauksia tulisi generoida testit olisivat kattavat?
 
 ```java
 public class Varasto { 
@@ -260,44 +259,41 @@ public class Varasto {
 }
 ```
 
-Metodia _otaVarastosta_ testatessa testitapauksessa on huomioitava parametrin _maara_ lisäksi varaston tilanne. Varastotilanteita on kolmea "ekvivalenssiluokkaa"
-_tyhjä_ (esim. saldo 0, tilavuus 10), _ei tyhjä eikä täysi_ (esim. saldo 5, tilavuus 10) ja _täysi_ (saldo 10, tilavuus 10).
+Metodia _otaVarastosta_ testatessa testitapauksessa on huomioitava parametrin _maara_ lisäksi varaston tilanne. Varaston tilanteella on kolme "ekvivalenssiluokkaa":
+- _tyhjä_ (esim. saldo 0, tilavuus 10) 
+- _ei tyhjä eikä täysi_ (esim. saldo 5, tilavuus 10)
+- _täysi_ (saldo 10, tilavuus 10).
 
-Näitä kutakin kohti on metodin parametrilla maara omat ekvivalenssiluokkansa
-Jos varasto on "puolitäysi", eli saldo on 5, muuttujan _maara_ arvoiksi voitaisiin _-1, 0, 5, 6. Jos varasto on täysi, muuttujan _maara_ arvoiksi voitaisiin _-1, 0, 10, 11_. 
-
-Jos varasto on tyhjä, muuttujan _maara_ arvoiksi valitaan _-1, 0, 1_, ja varmistetaan että 
+Näitä kutakin kohti on metodin parametrilla _maara_ omat ekvivalenssiluokkansa. Jos varasto on "puolitäysi", eli saldo on 5, muuttujan _maara_ arvoiksi voitaisiin valita _-1, 0, 5, 6_. Jos varasto on täysi, muuttujan _maara_ arvoiksi sopisivat _-1, 0, 10, 11_. Jos varasto on tyhjä, muuttujan _maara_ arvoiksi voidaan valita _-1, 0, 1_.
 
 Nollan ja negatiivisen määrän ottamista tuskin kannattaa erikseen testata kaikkien varastotilanteiden suhteen, tosin tämäkin voisi olla riski, jos varaston sisäinen toteutus muutettaisiin täysin.
 
-Huomaamme siis, että jo naurettavan pienen luokan yhden metodin kattava testaus vaatisi suuren määrän testitapauksia. Useimmissa tapauksissa ei ole kuitenkaan realisitista olettaa, että testejä tehdään vastaavalla kattavuudella, aika/hyötysuhde on yksinkertaisesti liian huono, useimmat softassa olevat ikävät bugit jäävät jokatapauksessa yksikkötestauksen ulottumattomiin.
+Huomaamme siis, että jo naurettavan pienen luokan yhden metodin kattava testaaminen vaatii suuren määrän testitapauksia. Useimmissa tapauksissa ei ole kuitenkaan ole realisitista olettaa, että testejä tehdään vastaavalla kattavuudella, aika/hyötysuhde on yksinkertaisesti liian huono. Useimmat softassa olevat ikävät bugit jäävät joka tapauksessa yksikkötestauksen ulottumattomiin.
 
 ### Testauskattavuus
 
-Yksikkötestien (ja toki myös muunkinlaisten testien) hyvyyttä voidaan
-mitata _testauskattavuuden_ (engl. test coverage) käsitteellä. Testauskattavuutta on muutamaa eri tyyppiä.
+Yksikkötestien (ja toki myös muunlaisten testien) hyvyyttä voidaan mitata _testauskattavuuden_ (engl. test coverage) käsitteellä. Testauskattavuutta on muutamaa eri tyyppiä.
 
-_Rivikattavuudella_ (engl. line coverage) tarkoitetaan kuinka montaa prosenttia testattavan metodin/luokan koodirivejistä testitapausten suorittaminen käy läpi.
-Vaikka rivikattavuus olisi 100% ei tämä tietenkään tarkoita, että kaikki oleellinen toiminnallisuus olisi tutkittu.
+_Rivikattavuudella_ (engl. line coverage) tarkoitetaan kuinka montaa prosenttia ohjelman koodiriveistä testitapausten suorittaminen käy läpi. Vaikka rivikattavuus olisi 100% ei tämä tietenkään tarkoita, että kaikki oleellinen toiminnallisuus olisi tutkittu.
 
-_Haarautumakattavuudella_ (engl. branch coverage) tarkoitetaan kuinka montaa prosenttia testattavan metodin/luokan sisältävistä ehtolauseiden haaroista testit ovat suorittaneet
+_Haarautumakattavuudella_ (engl. branch coverage) tarkoitetaan kuinka montaa prosenttia testattavan metodin/luokan sisältävistä ehtolauseiden haaroista testit ovat käyneet läpi.
 
 Monet työkalut, esim. laskareissa käyttämämme JaCoCo mittaavat testien suorituksen yhteydessä testauskattavuuden. Muitakin kattavuuden tyyppejä on olemassa, mm. ehtokattavuus ja polkukattavuus, useat työkalut eivät niitä kuitenkaan tue.
 
 ![]({{ "/images/3-5.png" | absolute_url }}){:height="350px" }
 
-JaCoCo ilmoittaa sekä rivi- (instruction) että haaraumakattavuuden (branches)
-Testauskattavuus JaCoCossa. Epäkattavasti testattu haarautumiskohta esim. if ilmaistaan keltaisella.
+JaCoCo ilmoittaa sekä rivi- (instruction) että haarautumakattavuuden (branches)
+Testauskattavuus JaCoCossa. Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella.
 
 Testauskattavuus toimii siis hyvänä apuvälineenä sen arvioimisessa testataanko sovellusta riittävästi.
 
 ### Mutaatiotestaus
 
-Pelkkä testikattavuus ei kuitenkaan vielä kerro oikeastaan mitään testien hyvyydestä. Hyvät testit ovat  sellaisia, että jos ohjelmaan tulee bugi, huomaavat testit virheen. Testien hyvyys taas riippuu oleellisesti testien syötteidden lisäksi siitä minkälaisia assert-lauseilla tehtäviä tarkistuksia testeissä on. 
+Pelkkä testikattavuus ei kuitenkaan vielä kerro oikeastaan mitään testien hyvyydestä. Hyvät testit ovat  ellaisia, että jos ohjelmaan tulee bugi, huomaavat testit virheen. Testien hyvyys taas riippuu oleellisesti testien syötteiden lisäksi siitä, minkälaisia assert-lauseilla suoritettavia tarkistuksia testeissä on. 
 
-_Mutaatiotestauksen_ (engl. mutation testing) idea on nimenomaan testata testitapausten hyvyyttä generoimalla koodiin systemaattisesti mutantteja eli pieniä "bugeja" ja katsoa havaitsevatko testit koodiin tulleet bugit.
+_Mutaatiotestauksen_ (engl. mutation testing) idea on nimenomaan testata testitapausten hyvyyttä generoimalla koodiin systemaattisesti mutantteja eli pieniä "bugeja", ja katsoa havaitsevatko testit koodiin tulleet bugit.
 
-Erilaisia mutanttityyppejä, joita mutaatiotestauksessa koodiin generoidaan on paljon  mm.
+Erilaisia mutanttityyppejä, joita mutaatiotestauksessa generoidaan koodiin on paljon mm.
 
 - manipuloidaan ehtolausetta: <tt>if ( x<0 )</tt> muutetaan muotoon <tt>if (x <= 0)</tt> tai <tt>if ( true ) </tt>
 - vaihdetaan operaattoria: <tt>x += 1</tt> muutetaan muotoon <tt>x -= 1</tt>
@@ -305,32 +301,33 @@ Erilaisia mutanttityyppejä, joita mutaatiotestauksessa koodiin generoidaan on 
 - korvataan konstruktorikutsu: <tt>olio = new Olio()</tt>  muutetaan muotoon <tt>olio = null;</tt>
 
 Mutaatiotestauksen ongelmana on mutaatioiden suuri määrä ja ns. _ekvivalentit mutantit_, joiden takia mutaatiotestauksen tulos vaatii aina ihmisen tulkintaa.
-Ekvivalentti mutantti tarkoittaa muutosta koodissa, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Eli mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
+
+Ekvivalentti mutantti tarkoittaa sellaista koodiin tehtyä muutosta, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Eli tälläisen mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
 
 Lisätietoa mutaatiotestauksesta esim. [wikipediassa](http://en.wikipedia.org/wiki/) ja [pit](http://pitest.org/)-työkalun sivulla.
  
 ## Integraatiotestaus
 
-Järjestelmän yksittäiset, erillään yksikkötestatut luokat tulee integroida toimivaksi kokonaisuudeksi. Integroinnin yhteydessä tai sen jälkeen suoritetaan integrointitestaus, missä painopisteenä on ohjelman komponenttien välisten rajapintojen toimivuuden tutkimisessa sekä komponenttien yhdessä tuottaman toiminnallisuuden oikeellisuuden varmistamisessa.
+Järjestelmän yksittäiset, erillään yksikkötestatut luokat tulee integroida toimivaksi kokonaisuudeksi. Integroinnin yhteydessä tai sen jälkeen suoritetaan integraatiotestaus, missä painopisteenä on ohjelman komponenttien välisten rajapintojen toimivuuden tutkimisessa sekä komponenttien yhdessä tuottaman toiminnallisuuden oikeellisuuden varmistamisessa.
 
 Järjestelmän integrointi voi edetä joko järjestelmän rakenteeseen perustuen tai järjestelmän toteuttamien ominaisuuksien mukaan.
 
-_Rakenteeseen perustuvassa integraatiossa_ keskitytään kerrallaan sovelluksen yksittäisten rakenteellisten komponenttien integrointiin, esimerkiksi verkkokaupan toteutuksessa integroitaisiin ensin arkkitehtuurilliset kerrokset, eli sovelluslogiikan luokat, käyttöliittymän toteutus ja tietokantarajapinta omina kokonaisuuksinaan. Tämän jälkeen kerrokset integroitaisiin kokonaiseksi soveukseksi.
+_Rakenteeseen perustuvassa integraatiossa_ keskitytään kerrallaan sovelluksen yksittäisten rakenteellisten komponenttien integrointiin, esimerkiksi verkkokaupan toteutuksessa integroitaisiin ensin arkkitehtuurilliset komponentit tai kerrokset, eli sovelluslogiikan luokat, käyttöliittymän toteutus ja tietokantarajapinta omina kokonaisuuksinaan. Tämän jälkeen kerrokset integroitaisiin kokonaiseksi sovellukseksi.
 
-_Ominaisuuksiin perustuvassa integroinnissa_, taas liitetään yhteen alikomponentit, jotka toteuttavat järjestelmän loogisen toiminnallisuuden. Verkkokaupassa voitaisiin esimerkiksi integroida kerrallaan kaikki toiminnallisuuteen _lisää tuote ostoskoriin_ liittyvät luokat ja edetä toiminnallisuus kerralla kunnes koko sovellus on valmis.
+_Ominaisuuksiin perustuvassa integroinnissa_, taas liitetään yhteen alikomponentit, jotka toteuttavat järjestelmän loogisen toiminnallisuuden. Verkkokaupassa voitaisiin esimerkiksi integroida kerrallaan kaikki toiminnallisuuteen _lisää tuote ostoskoriin_ liittyvä koodi ja edetä toiminnallisuus kerralla kunnes koko sovellus on valmis.
  
-Sekä rakenteeseen, että ominaisuuksiin perustuva integrointi voi tapahtua joko ylhäältä alas tai alhaalta ylös.
-
-_Alhaalta ylös_ (engl. bottom up): integroidessa lähdetään liikkeelle yksittäisistä komponenteista, liitetään niitä yhteen ja suoritetaan testejä kunnes kaikki integroitavat komponentit on yhdistetty.
-
-Ylhäältä alas (engl. top-down) edetessä kehitetään ensin järjestelmän korkean tason rakenteet siten, että yksittäisten komponenttien paikalla on tynkäkomponentteja (engl. stub). Tyngät korvataan sitten yksi kerrallaan todellisilla komponenteilla koko ajan kokonaisuutta testaten
-
 Vanhan liiton ohjelmistotuotannossa toimintatapa oli se, että kaikki ohjelman yksittäiset komponentit ohjelmoitiin ja yksikkötestattiin erikseen ja tämän jälkeen ne integroitiin (yleensä rakenteeseen perustuen) kerralla yhteen.
-Tämän tyylinen, vesiputousmallin maailmassa yleinen nimikkeellä _big bang_ -integraatio kulkeva tekniikka on osoittautunut todella riskialttiiksi (seurauksena usein ns. integraatiohelvetti) ja sitä ei enää kukaan täysijärkinen suosittele käytettäväksi.
 
-Moderni ohjelmistotuotanto suosii ns. _jatkuvaa integraatiota_, joka on hyvin tiheässä tahdissa tapahtuvaa ominaisuuksiin perustuvaa integrointia. Palaamme aiheeseen tarkemmin pian.
+Tällainen vesiputousmallin maailmassa yleinen, nimikkeellä _big bang_ -integraatio kulkeva tekniikka on osoittautunut todella riskialttiiksi (siitä on seurauksena usein ns. integraatiohelvetti) ja sitä ei enää kukaan täysijärkinen suosittele käytettäväksi.
 
-Itseasiassa koko termi _integraatiotestaus_ on käsitteenä melko häilyvä, ja joskus on vaikea tehdä selkeää rajanvetoa yksikkö- ja integraatiotestauksen välillä. Useimmiten ajatellaan että yksikkötestien kohteena on yksittäinen metodi, luokka tai ohjelmamoduuli. Entä jos testauksen alla oleva luokka/moduuli pitää sisällään rajapinnan takana useita muitakin luokkia, onko kyseessä enää yksikkötesti? 
+Moderni ohjelmistotuotanto suosii ns. _jatkuvaa integraatiota_ (engl. continuous integration), joka on hyvin tiheässä tahdissa tapahtuvaa ominaisuuksiin perustuvaa integrointia. Palaamme aiheeseen tarkemmin pian.
+
+Itseasiassa koko termi _integraatiotestaus_ on käsitteenä melko häilyvä, ja joskus on vaikea tehdä selkeää rajanvetoa yksikkö- ja integraatiotestauksen välillä. Useimmiten ajatellaan että yksikkötestien kohteena on yksittäinen metodi, luokka tai ohjelmamoduuli. Entä jos testauksen alla oleva luokka/moduuli pitää sisällään rajapinnan takana useita muitakin luokkia, onko kyseessä enää yksikkötesti vai onko kyseessä jo suurempaa kokonaisuutta kartoittava integraatiotesti? 
+
+Selkeästi integraatiotestaukseksi luokiteltavia testejä ovat esimerkiksi seuraavat
+- sovelluslogiikan ja tietokannan yhteistoiminnallisuuden varmistaminen 
+- sovelluksen palvelimen eli backendin tarjoaman HTTP-rajapinnan oikean toiminnallisuuden varmistaminen
+- 
 
 ## Regressiotestaus
 
