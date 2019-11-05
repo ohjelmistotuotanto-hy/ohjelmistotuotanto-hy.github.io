@@ -324,10 +324,11 @@ Moderni ohjelmistotuotanto suosii ns. _jatkuvaa integraatiota_ (engl. continuous
 
 Itseasiassa koko termi _integraatiotestaus_ on käsitteenä melko häilyvä, ja joskus on vaikea tehdä selkeää rajanvetoa yksikkö- ja integraatiotestauksen välillä. Useimmiten ajatellaan että yksikkötestien kohteena on yksittäinen metodi, luokka tai ohjelmamoduuli. Entä jos testauksen alla oleva luokka/moduuli pitää sisällään rajapinnan takana useita muitakin luokkia, onko kyseessä enää yksikkötesti vai onko kyseessä jo suurempaa kokonaisuutta kartoittava integraatiotesti? 
 
-Selkeästi integraatiotestaukseksi luokiteltavia testejä ovat esimerkiksi seuraavat
+Integraatiotestaukseksi luokiteltavia testejä ovat ainakin seuraavanlaiset, selkeästi isompia osakokonaisuuksia testaavat testit
 - sovelluslogiikan ja tietokannan yhteistoiminnallisuuden varmistaminen 
 - sovelluksen palvelimen eli backendin tarjoaman HTTP-rajapinnan oikean toiminnallisuuden varmistaminen
-- 
+
+Yksikkötestauksen tapaan, koodin integroinnin ja usein myös integraatiotestauksen katsotaan nykyään olevan sovelluskehittäjien vastuulla, eli integraatiotestaus kuuluu käsitteen [developer testing](https://developertesting.rocks/) alle.
 
 ## Regressiotestaus
 
