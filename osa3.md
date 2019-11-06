@@ -550,3 +550,27 @@ GitHub kertoi loppukesästä julkaisevansa 15.11.2019 [actions](https://www.yout
 Palataan vielä siihen mitä jatkuva integraatio menetelmän [pioneerien](https://martinfowler.com/articles/continuousIntegration.html) mukaan oikeastaan tarkoittaa. Jatkuvan integraation tekemiseen _ei riitä_ että joku on konfiguroinut tiimille CI-palvelimen. Jotta tiimin voidaan sanoa tekevän jatkuvaa integraatiota, tulee sovelluskehittäjien todellakin synkronoida tekemänsä koodi mahdollisimman usein (vähintään päivittäin) yhteisen keskitetyn repositorion koodin kanssa. Tämä taas tarkoittaa sitä, että esimerkiksi jokaisen aamun alussa kaikilla sovelluskehittäjillä tulisi olla päivän työnsä lähtökohtana _sama koodi_. Kuten jokainen tiimissä sovelluskehitystä tehnyt tietää, kaikkien koodin synkronointi päivittäisellä tasolla ei välttämättä ole helppoa ja se vaatii systemaattista ja kurinalaista työskentelyä.
 
 Nykyään monin paikoin käytössä oleva tapa käyttää useiden päivien tai jopa viikkojen ikäisiä [feature branchejä](https://martinfowler.com/bliki/FeatureBranch.html), eli jokaiselle uudelle toiminnallisuudelle tarkoitettuja omia versionhallinnan haaroja tarkoittaa oikeastaan jo lähtökohtaisesti sitä, että tiimi [ei harjoita jatkuvaa integraatiota](https://www.innoq.com/en/blog/continuous-integration-contradicts-feature-branches/). Palaamme asiaan [myöhemmin](/osa3/-feature-branchit-ja-merge-hell) tässä osassa.
+
+## Jatkuva käyttöönotto ja toimitusvalmius
+
+Viime aikoina nousseen trendin mukaan jatkuvaa integraatiota on ruvettu viemään vielä muutama askel pidemmälle ja integraatioprosessiin on enenevissä määrin ruvettu lisäämään myös automaattinen "deployaus", eli käännetty ja testattu koodi siirretään automatisoidusti suoritettavaksi ns. _staging_- eli testipalvelimelle.
+
+Staging-palvelin on ympäristö, joka on konfiguraatioidensa sekä myös sovelluksessa käsiteltävän datan (käytännössä siis tietokannan sisällön) osalta mahdollisimman lähellä varsinaista tuotantoympäristöä. Kun ohjelmiston uusi versio on viety eli deployattu staging-palvelimelle, suoritetaan sille hyväksymistestaus. Nämä testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, että sovellus toimii käyttäjän haluamalla tavalla mahdollisimman tuotannon kaltaisessa ympäristössä. 
+
+Hyväksymistestauksen jälkeen uusi versio voidaan siirtää tuotantopalvelimelle, eli loppukäyttäjien käyttöön. Parhaassa tapauksessa myös staging-ympäristössä tehtävien hyväksymistestien suoritus on automatisoitu, ja ohjelmisto kulkee koko _deployment pipelinen_ läpi, eli sovelluskehittäjän koneelta CI-palvelimelle, sieltä staging-ympäristöön ja lopulta tuotantoon, automaattisesti.
+
+Termillä _deployment pipeline_ tarkoitetaan niitä ohjelman käännöksen ja testauksen vaiheita, joiden läpikäymistä edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön loppukäyttäjien käyttöön.
+
+Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteellisen "liukuhihnan" läpi
+- CI-palvelin suorittaa commitille joukon testejä
+- seuraavassa vaiheessa commitin aikaansaama sovelluksen uusi versio siirtyy staging-ympäristöön
+- staging-ympäristössä sovelluksen uudelle versiolle suoritetaan lisää testejä
+- lopulta commit siirtyy tuotantoympäristöön
+
+![]({{ "/images/3-12.png" | absolute_url }}){:height="280px" }
+
+Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi käyttöönotoksi_ (engl. continuous deployment).
+
+On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta "nappia painamalla", puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery). 
+
+Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä.
