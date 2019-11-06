@@ -521,9 +521,9 @@ Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio 
  
 Kerran päivässä tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Extreme programming -yhteisö kehitti 90-luvun loppupuolella ideaa vielä pidemmälle ja päätyi edelleen tihentämään integraatiosykliä. Näin syntyi _jatkuva integraatio_ eli [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) (CI).
 
-Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit ja sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat skriptit pidetään keskitetyssä versionhallintarepositoriossa. 
+Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat "build skriptit" (kuten _build.gradle_-tiedosto) pidetään keskitetyssä versionhallintarepositoriossa. 
 
-Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia,  CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua välittömästi välittömästi. 
+Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia,  CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa sille testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua **välittömästi**. 
 
 Sovelluskehittäjän työskentely jatkuvaa integraatiota käytettäessä etenee seuraavasti. 
 
@@ -531,11 +531,11 @@ Aloittaessaan uuden ominaisuuden toteuttamisen, kehittäjä hakee versionhallinn
 
 CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit. Näin minimoituu mahdollisuus sille, että lisätty koodi toimii esimerkiksi konfiguraatioerojen takia ainoastaan kehittäjän omalla koneella.
 
-Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä_. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. CI-työprosessin noudattaminen vaatiikin suurta kurinalaisuutta. 
+Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä_. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. Jatkuvan integraation soveltaminen vaatiikin suurta kurinalaisuutta. 
 
 Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta täysin vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
 
-Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat hyväksymistestit voivat kuitenkin olla yllättävän aikaa vievät. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat hyväksymistestit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. kuormituksen kestoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
 
