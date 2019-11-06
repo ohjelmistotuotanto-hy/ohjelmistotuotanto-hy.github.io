@@ -35,7 +35,7 @@ Verifioinnin ja validoinnin suorittamista käytetään yleisesti nimitystä 
  
 ## Laadunhallinnan tekniikat
  
-Perinteisesti laadunhallinnassa on käytetty kahta eri henkistä tekniikkaa, katselmointeja/tarkastuksia sekä testausta.
+Perinteisesti laadunhallinnassa on käytetty kahta erihenkistä tekniikkaa, katselmointeja/tarkastuksia sekä testausta.
 
 _Katselmoinnissa_ (engl. review) käydään läpi ohjelmiston tuotantoprosessin aikana syntyneitä dokumentteja sekä ohjelmakoodia, ja etsitään näistä erilaisia ongelmia.
 
@@ -48,7 +48,7 @@ Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelma koodin 
 
 ## Vaatimusten validointi
 
-Validointi siis vastaa kysymykseen kysymykseen ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
+Validointi siis vastaa kysymykseen ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
 
 Ohjelmistolle määritellyt vaatimukset onkin validoitava, eli on varmistettava, että määrittelydokumentti kuvaa sellaisen ohjelmiston, joka vastaa asiakkaan tarpeita.
 
@@ -81,7 +81,7 @@ Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekev
 
 Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
 
-Codeclimate myös huomauttaa koodin laadun muutoksista, esim. jos koodin kompleksisuus kasvaa muutosten yhteydessä sekä. 
+Codeclimate myös huomauttaa koodin laadun muutoksista, esim. jos koodin kompleksisuus kasvaa muutosten yhteydessä. 
 
 Minkä tahansa GitHubissa olevan projektin saa konfiguroitua Codeclimaten tarkastettavaksi nappia painamalla. Codeclimate suorittaa tarkastukset koodille aina kun uutta koodia pushataan GitHubiin. 
 
@@ -143,7 +143,7 @@ _Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi mää
 
 Ohjelmistojen osoittaminen virheettömäksi on käytännössä mahdotonta, sillä ohjelmiston mahdollisten käyttöskenaarioiden ja syötteiden kombinaatio on yksinkertaisesti liian suuri. Testauksen tarkoituksena onkin vakuuttaa asiakas ja järjestelmän kehitystiimi siitä, että ohjelmisto on riittävän hyvä käytettäväksi.
 
-Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutusta ohjelmista. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään ohjelma rikkoa tai saattaa se, jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
+Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutusta ohjelmista. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään ohjelma rikkoa tai saattaa se jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
 
 Molemmat näistä tavoitteista tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (engl. external quality) eli käyttäjän kokeman laadun varmistamiseen. [Ulkoisella laadulla](http://c2.com/cgi/wiki?InternalAndExternalQuality) tarkoitetaan sitä, onko ohjelmisto sopiva käyttötarkoitukseensa, eli pystyykö käyttäjä tekemään ohjelmistolla haluamansa asiat.
 
@@ -181,7 +181,7 @@ Järjestelmätestaus tapahtuu pääosin kehittäjäorganisaation toimesta. Joiss
 
 Täysin kattava testaaminen on mahdotonta ja testaus on joka tapauksessa työlästä, eli onkin tärkeää löytää kohtuullisen kokoinen testitapausten joukko, jonka avulla on kuitenkin mahdollista löytää mahdollisimman suuri määrä virheitä.
 
-Yksittäinen _testitapaus_ (engl. test case) testaa järjestelmän toiminnallisuutta jollain syötearvolla, tai arvojen kombinaatiolla jos toiminnallisuus edellyttää usean syötteen antamista. Monet syötteistä ovat järjestelmän toiminnan kannalta samanlaisia. Esimerkiksi, jos henkilötietoja käsittelevä järjestelmä tallettaa henkilön iän on todennäköistä, että järjestelmän toiminta ei poikkea ollenkaan sen suhteen, onko ikä 20 tai 30, mutta jos ikä taas on 17, saattaa järjestelmän toiminnallisuus olla erilainen kuin iän ollessa vähintään 18. 
+Yksittäinen _testitapaus_ (engl. test case) testaa järjestelmän toiminnallisuutta jollain syötearvolla, tai arvojen kombinaatiolla jos toiminnallisuus edellyttää usean syötteen antamista. Monet syötteistä ovat järjestelmän toiminnan kannalta samanlaisia. Esimerkiksi, jos henkilötietoja käsittelevä järjestelmä tallettaa henkilön iän, on todennäköistä, että järjestelmän toiminta ei poikkea ollenkaan sen suhteen, onko ikä 20 tai 30, mutta jos ikä taas on 17, saattaa järjestelmän toiminnallisuus olla erilainen kuin iän ollessa vähintään 18. 
 
 Testeissä kannattaakin pyrkiä jakamaan syötteet _ekvivalenssiluokkiin_, eli ryhmiin joihin kuuluvien syötteiden suhteen ohjelma toimii oleellisesti samalla tavalla. Testitapauksia kannattaa tehdä useimmiten ainoastaan yksi tai kaksi kutakin ekvivalenssiluokkaa tai syötteiden ekvivalenssiluokkien kombinaatiota kohti. Ekvivalenssiluokkien edustajiksi kannattaa erityisesti valita ekvivalenssiluokkien _raja-arvoja_, koodissa olevat bugit nimittäin liittyvät erittäin usein toisto- ja ehtolauseiden ehtojen äärimmäisiin arvoihin.
 
@@ -231,7 +231,7 @@ Mitä kaikkea ohjelmistosta tulisi testata yksikkötesteillä? Vastaus ei ole 
 > "Do I have to write a test for everything?"
 > "No, just test everything that could reasonably break" 
 
-Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin olla testata kaikkien metodien (ja loogisten metodikombinaatioden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
+Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin testata kaikkien metodien (ja loogisten metodikombinaatioden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
 
 Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta kannattaa  valita ainakin yksi arvo testisyötteeksi, erityisesti ekvivalenssiluokkien raja-arvot kannattaa kannattaa valita mukaan testattaviin arvoihin.
 
