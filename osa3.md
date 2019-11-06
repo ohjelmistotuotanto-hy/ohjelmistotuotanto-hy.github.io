@@ -574,3 +574,29 @@ Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli
 On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta "nappia painamalla", puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery). 
 
 Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä.
+
+
+## Tutkiva testaaminen
+ 
+Jotta järjestelmä saadaan niin virheettömäksi, että se voidaan laittaa tuotantoon, on testaus suoritettava erittäin perusteellisesti. Perinteinen tapa järjestelmätestauksen suorittamiseen on perustunut ennen testausta laadittuun perinpohjaiseen testaussuunnitelmaan. Jokaisesta testistä on kirjattu testisyötteet ja odotettu tulos. Testauksen tuloksen kontrolloiminen on suoritettu vertaamalla järjestelmän toimintaa testitapaukseen kirjattuun odotettuun tulokseen.
+
+Automatisoitujen hyväksymistestien luonne on täsmälleen samanlainen, jokaisen testin syötteet sekä odotetut tulokset ovat tarkkaan etukäteen kiinnitettyjä. Jos testaus tapahtuu pelkästään etukäteen mietittyjen testien avulla, ovat ne kuinka tahansa tarkkaan harkittuja, ei kaikkia yllättäviä tilanteita osata ennakoida. Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta. Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu kutsumaan nimellä _tutkiva testaaminen_ (engl. exploratory testing).
+ 
+Käsitteen kehittäjä [Cam Kaner](http://www.satisfice.com/articles/what_is_et.shtml) määrittelee termin seuraavasti
+
+_exploratory testing is simultaneous learning, test design and test execution_
+
+Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmassa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sensijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien ja kokeilujen perusteella löytämään järjestelmästä virheitä.
+
+Tutkiva testaus ei kuitenkaan etene täysin sattumanvaraisesti, kullekin testisessiolle asetetaan jonkinlainen tavoite, eli mitä on osaa tai toiminnallisuuksia sovelluksesta on tarkoitus tutkia ja minkälaisia virheitä tarkoitus etsiä.
+
+Ketterässä ohjelmistotuotannossa tavoite voi hyvin jäsentyä yhden tai useamman user storyn määrittelemän toiminnallisuuden ympärille. Esimerkiksi verkkokaupassa voitaisiin testata ostosten lisäystä ja poistoa ostoskorista.
+
+Tutkivassa testauksessa keskeistä on kaikkien testattavassa ohjelmistossa tapahtuvien seikkojen havainnointi. Normaaleissa etukäteen määritellyissä testeissähän havainnoidaan ainoastaan reagoiko järjestelmä odotetulla, ennakkoon määritellyllä tavalla. Tutkivassa testaamisessa kiinnitetään huomio myös varsinaisen testattavan toiminnallisuuden ulkopuolisiin asioihin.
+
+Esimerkiksi jos huomattaisiin selaimen osoiterivillä URL
+https://www.verkkokauppa.com/ostoskori?id=10 voitaisiin yrittää muuttaa käsin ostoskorin id:tä ja yrittää saada järjestelmä epästabiiliin tilaan.
+
+Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannattaa eliminoida lisäämällä ohjelmalle sopivat automaattiset regressiotestit. Tutkivaa testaamista ei siis kannata käyttää regressiotestauksen menetelmänä, vaan sen avulla kannattaa ensisijaisesti testata sprintin yhteydessä toteutettuja uusia ominaisuuksia.
+
+Tutkiva testaaminen siis ei missään tapauksessa ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille ja automatisoiduille testeille vaan niitä täydentävä testauksen muoto.
