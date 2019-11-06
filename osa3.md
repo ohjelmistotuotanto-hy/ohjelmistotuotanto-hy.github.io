@@ -454,8 +454,47 @@ Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti
 
 Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on Suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
 
-Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development])(https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
+Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
 ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomioita käytettävän terminologian, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sensijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla. Kurssilla käytämme pääosin BDD:n nimeämiskäytäntöjä, sillä käyttämämme [Cucumber](https://cucumber.io/) on nimenomaan BDD-piirien kehittämä työkalu. 
 
 Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin-tapaan toimivia BDD-henkisiä kirjastoja, kuten Javascript-maailman [mocha](https://mochajs.org/) ja [jest](https://jestjs.io/). Seuraavaksi käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline, yksikkötestaamiseen sitä ei kannata käyttää.
+
+### Cucumber
+
+Kuten useimmissa hyväksymistason testauksen työkaluissa, myös Cucumberia käytettäessä testit kirjoitetaan asiakkaan kielellä.
+
+Tarkastellaan esimerkkinä käyttäjätunnuksen luomisen ja sisäänkirjautumisen tarjoamaa palvelua.
+
+Palvelun vaatimuksen määrittelevät user storyt
+- _a new user account can be created if a proper unused username and a proper password are given_
+- _user can log in with a valid username/password-combination_
+
+Cucumberissa jokaisesta user storysta kirjoitetaan oma _.feature_-päätteinen tiedosto, joka sisältää storyn nimen ja joukon storyyn liittyvä hyväksymiskriteereitä ,joita Cucumber kutsuu _skenaarioiksi_. Storyn hyväksymiskriteerit eli skenaariot kirjoitetaan [Gherkin](https://cucumber.io/docs/gherkin/reference/)-kielellä, seuraavassa muodossa
+
+_Given [initial context], when [event occurs], then [ensure some outcomes]_
+
+Esimerkkimme ensimmäinen user story hyväksymiskriteereineen kirjoitettaisiin seuraavasti:
+
+![]({{ "/images/3-9.png" | absolute_url }}){:height="450px" }
+
+Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla niistä mäppäys ohjelmakoodiin. Ohjelmoijat tekevät mäppäyksen siinä vaiheessa, kun tuotantokoodia on tarpeellinen määrä valmiina.
+
+Käytännössä jokaista testin _given_, _when_ ja _then_-askelta vastaa oma metodinsa.
+Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä varmistaen, että ohjelma reagoi käyttäjän toimiin halutulla tavalla. 
+
+![]({{ "/images/3-10.png" | absolute_url }}){:height="500px" }
+
+### Websovellusten testauksen automatisointi
+
+Olemme jo nähneet ensimmäisen ja toisen viikon laskareissa, miten riippuvuuksien injektoinnin avulla on helppo tehdä komentoriviltä toimivista ohjelmista automatisoidusti testattavia. Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web-selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista. Tutustumme laskareissa web-sovellusten testauksen automatisointiin käytettävään [Selenium 2.0 WebDriver](http://seleniumhq.org/docs/03_webdriver.html) -kirjastoon.
+
+Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testeistä käsin selaimen toimintaa, esim. linkkien klikkaamista ja tiedon syöttämistä lomakkeeseen. Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä.
+
+Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan joko JUnit- tai Cucumber-testeinä.
+
+Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-version testien mäppäyksestä:
+
+![]({{ "/images/3-11.png" | absolute_url }}){:height="500px" }
+
+Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareissa.
