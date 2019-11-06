@@ -190,7 +190,7 @@ Task _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöks
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java Main_:
 
 <pre>
-$ cd build/classes/main/
+$ cd build/classes/java/main/
 $ java Main
 Hello gradle!
 </pre>
