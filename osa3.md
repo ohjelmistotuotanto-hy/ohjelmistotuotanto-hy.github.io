@@ -447,3 +447,15 @@ Esimerkiksi user storyn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksym
 Optimaalisessa tilanteessa user storyjen hyväksymiskriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavia, testejä.
  
 Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa, mielellään yhteistyössä kehitystiimin ja product ownerin tai jonkun muun asiakkaan edustajan kesken. Usein käytäntönä on ilmaista hyväksymiskriteerit user storyjen tapaan asiakkaan kielellä, käyttämättä teknistä jargonia. Hyväksymiskriteerien kirjoitusprosessi lisääkin parhaassa tapauksessa asiakkaan ja tiimin välistä kommunikaatiota.
+
+### Järjestelmätestauksen automatisointi, ATDD ja BDD
+
+Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti suoritettavia. 
+
+Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on Suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
+
+Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development])(https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
+
+ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomioita käytettävän terminologian, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sensijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla. Kurssilla käytämme pääosin BDD:n nimeämiskäytäntöjä, sillä käyttämämme [Cucumber](https://cucumber.io/) on nimenomaan BDD-piirien kehittämä työkalu. 
+
+Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin-tapaan toimivia BDD-henkisiä kirjastoja, kuten Javascript-maailman [mocha](https://mochajs.org/) ja [jest](https://jestjs.io/). Seuraavaksi käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline, yksikkötestaamiseen sitä ei kannata käyttää.
