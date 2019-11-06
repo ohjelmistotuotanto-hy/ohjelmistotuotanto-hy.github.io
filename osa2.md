@@ -432,7 +432,7 @@ Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja riittävä
 ## Hyvä product backlog on DEEP
 
 Mike Cohn ja Roman Pichler ovat lanseeranneet lyhenteen
-[DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) kuvaimaan hyvän backlogin ominaisuuksia. Lyhenne tulee sanoista _detailed appropriatly, estimated, emergent_ ja _prioritized_.
+[DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) kuvaimaan hyvän backlogin ominaisuuksia. Lyhenne tulee sanoista _detailed appropriately, estimated, emergent_ ja _prioritized_.
 
 Näistä ominaisuuksista _estimated_ ja _prioritized_ ovat meille tuttuja: storyillä on työmääräarviot ja storyt on priorisoitu eli asetettu tärkeysjärjestykseen.
 
