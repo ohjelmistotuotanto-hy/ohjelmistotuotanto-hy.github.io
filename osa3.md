@@ -498,3 +498,55 @@ Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huo
 ![]({{ "/images/3-11.png" | absolute_url }}){:height="500px" }
 
 Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareissa.
+
+## Ohjelmiston integraatio
+
+Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelmiston toteutusvaiheen päättää integraatiovaihe, jonka aikana yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi sekä suoritetaan integraatiotestaus, joka varmistaa komponenttien yhteistoiminnallisuuden. 
+
+Perinteisesti juuri integraatiovaihe on tuonut esiin suuren joukon ongelmia. Tarkasta etukäteissuunnittelusta huolimatta erillisten tiimien toteuttamat komponentit ovat kuitenkin olleet rajapinnoiltaan tai toiminnallisuuksiltaan epäyhteensopivia.
+
+Suurten projektien integraatiovaihe on kestänyt ennakoimattoman kauan, ja integraation aikana havaitut ongelmat ovat saattaneet aiheuttaa suuriakin suunnitteluun tai jopa vaatimusmäärittelyyn tarvittavia muutoksia.
+
+Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä kuvaamaan on lanseerattu termi [integratiohelvetti](http://wiki.c2.com/?IntegrationHell).
+
+### Daily build ja smoke test
+
+90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostumaan päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolessa välissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel ja Windows 95 -tiimien menestysten ansiosta.
+
+Smoke testillä tarkoitetaan kohtuullisen yksinkertaista järjestelmätason testiä, joka kuitenkin testaa järjestelmän kaikkia arkkitehtuurillisia tasoja (käyttöliittymää, sovelluslogiikkaa, tietokantaa), ja havaitsee jos jotain on pahasti pielessä. Smoke test ei siis kata kovin paljoa sovelluksen toiminnallisuudesta, mutta kuitenkin riittävästi havaitakseen jos sovellus hajoaa perustavanlaatuisella tavalla, esimerkiksi jos sovelluslogiikan ja tietokannan välille syntyy epäyhteensopivuus, joka estää kokonaan tietokantayhteyksien muodostamisen.
+
+Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio tehdään ainakin jollain tarkkuustasolla joka päivä. Komponenttien yhteensopivuusongelmat huomataan nopeasti ja niiden korjaaminen helpottuu. Tiimin moraali myös paranee, kun ohjelmistosta on olemassa päivittäin kasvava ainakin jossain määrin toimiva versio.
+
+### Jatkuva integraatio
+ 
+Kerran päivässä tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Extreme programming -yhteisö kehitti 90-luvun loppupuolella ideaa vielä pidemmälle ja päätyi edelleen tihentämään integraatiosykliä. Näin syntyi _jatkuva integraatio_ eli [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) (CI).
+
+Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit ja sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat skriptit pidetään keskitetyssä versionhallintarepositoriossa. 
+
+Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia,  CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua välittömästi välittömästi. 
+
+Sovelluskehittäjän työskentely jatkuvaa integraatiota käytettäessä etenee seuraavasti. 
+
+Aloittaessaan uuden ominaisuuden toteuttamisen, kehittäjä hakee versionhallinnasta koodin ajantasaisen version. Kehittäjä toteuttaa työn alla olevan ominaisuuden, tekee sille automatisoidut testit ja integroi sen muuhun koodiin. Kun kaikki on valmiina, ja testit menevät läpi paikallisesti, pushaa kehittäjä koodin versionhallintaan.
+
+CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit. Näin minimoituu mahdollisuus sille, että lisätty koodi toimii esimerkiksi konfiguraatioerojen takia ainoastaan kehittäjän omalla koneella.
+
+Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä_. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. CI-työprosessin noudattaminen vaatiikin suurta kurinalaisuutta. 
+
+Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta täysin vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
+
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat hyväksymistestit voivat kuitenkin olla yllättävän aikaa vievät. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
+
+Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. kuormituksen kestoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
+
+Ensimmäisellä viikolla käyttämämme [CircleCI](https://circleci.com) on yksi monista SaaS-palveluna eli internetissä toimivista CI-ratkaisuista, toinen suosittu vaihtoehto on [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
+
+Circlea ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin, kuten Circleen.
+
+GitHub kertoi loppukesästä julkaisevansa 15.11.2019 [actions](https://www.youtube.com/watch?v=E1OunoCyuhY)-toiminnallisuuden, jonka avulla myös jatkuva integraatio voidaan suorittaa suoraan GitHubissa, käyttämättä erillistä palvelua. Tämä on erittäin kiinnostava uutinen, harmi että julkistus tapahtuu tämän kurssin kannalta hieman liian myöhään. Ennakkotiedot ovat kuitenkin olleet sen suuntaisia, että ainakaan ihan lähiaikoina GitHubin actionit eivät ole toiminnallisuudeltaan riittävän joustavia moneen tosielämän jatkuvan integraation tarpeeseen. 
+
+### Jatkuvan integraation määritelmä
+
+Palataan vielä siihen mitä jatkuva integraatio menetelmän [pioneerien](https://martinfowler.com/articles/continuousIntegration.html) mukaan oikeastaan tarkoittaa. Jatkuvan integraation tekemiseen _ei riitä_ että joku on konfiguroinut tiimille CI-palvelimen. Jotta tiimin voidaan sanoa tekevän jatkuvaa integraatiota, tulee sovelluskehittäjien todellakin synkronoida tekemänsä koodi mahdollisimman usein (vähintään päivittäin) yhteisen keskitetyn repositorion koodin kanssa. Tämä taas tarkoittaa sitä, että esimerkiksi jokaisen aamun alussa kaikilla sovelluskehittäjillä tulisi olla päivän työnsä lähtökohtana _sama koodi_. Kuten jokainen tiimissä sovelluskehitystä tehnyt tietää, kaikkien koodin synkronointi päivittäisellä tasolla ei välttämättä ole helppoa ja se vaatii systemaattista ja kurinalaista työskentelyä.
+
+Nykyään monin paikoin käytössä oleva tapa käyttää useiden päivien tai jopa viikkojen ikäisiä [feature branchejä](https://martinfowler.com/bliki/FeatureBranch.html), eli jokaiselle uudelle toiminnallisuudelle tarkoitettuja omia versionhallinnan haaroja tarkoittaa oikeastaan jo lähtökohtaisesti sitä, että tiimi [ei harjoita jatkuvaa integraatiota](https://www.innoq.com/en/blog/continuous-integration-contradicts-feature-branches/). Palaamme asiaan [myöhemmin](/osa3/-feature-branchit-ja-merge-hell) tässä osassa.
