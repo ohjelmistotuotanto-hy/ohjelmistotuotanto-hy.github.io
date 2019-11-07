@@ -31,8 +31,7 @@ Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät p
 
 Tehtävät 2 ja 3 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin Ohtuvarasto. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-16.
 
-Katso tarkempi ohje palautusrepositorioita koskien
-[täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### Huomio gradleen liittyen
 

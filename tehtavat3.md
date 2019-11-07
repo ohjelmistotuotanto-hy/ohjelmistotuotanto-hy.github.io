@@ -17,7 +17,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/3), joiden deadline on sunnuntaina 17.11. klo 23:59:00.  
 
-johdanto
+Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi, sekä miten riippuvuuksia sisältävästä koodista saadaan generoitua jar-paketti. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Cucumberin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -25,14 +25,9 @@ Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://gi
 
 ### Tehtävien palauttaminen
 
-Osa git-tehtävistä (tehtävät 4-6) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
 
-Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
-
-Tehtävät 2 ja 3 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin Ohtuvarasto. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-16.
-
-Katso tarkempi ohje palautusrepositorioita koskien
-[täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### Huomio gradleen liittyen
 
@@ -101,14 +96,13 @@ public class Main {
         System.out.println("Oliot:");
         for (Player player : players) {
             System.out.println(player);
-        }
-        
+        }   
     }
   
 }
 ```
 
-Tehtäväpohjassa on valmiina luokan <code>Player</code> koodin runko. Gson-kirjaston avulla json-muotoisesta datasta saadaan taulukollinen <code>Player</code>-olioita, joissa jokainen olio vastaa yhden pelaajan tietoja. Tee luokkaan oliomuuttuja (sekä tarvittaessa getteri ja setteri) kaikille json-datassa oleville kentille, joita ohjelmasi tarvitsee. 
+Tehtäväpohjassa on valmiina luokan <code>Player</code> koodin runko. Gson-kirjaston avulla json-muotoisesta datasta saadaan taulukollinen <code>Player</code>-olioita, joissa jokainen olio vastaa yhden pelaajan tietoja. Tee luokkaan oliomuuttujat (sekä tarvittaessa getterit ja setterit) kaikille json-datassa oleville kentille, joita ohjelmasi tarvitsee. 
 
 Ohjelmasi voi toimia esimerkiksi seuraavalla tavalla:
 
@@ -130,7 +124,7 @@ Artturi Lehkonen team MTL goals 2 assists 4
 ...
 </pre>
 
-Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostat.
+Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
 
 ### 2. siistimpi pelaajalista
 
@@ -199,28 +193,30 @@ Generoi jar ja varmista, että ohjelma toimii komennolla <code>java -jar shadowi
 
 ### 4. Tutustuminen cucumberiin
 
-Lue sivulla https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/cucumber.md oleva Cucumber-johdanto ja tee siihen liittyvät tehtävät
+Lue [täällä](/cucumber/) oleva Cucumber-johdanto ja tee siihen liittyvät tehtävät.
 
 ### 5. Kirjautumisen testit
 
-Hae kurssirepositorion hakemistossa [koodi/viikko3/LoginCucumber](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko3/LoginCucumber) oleva NetBeans-projekti. 
+Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _viikko3/LoginCucumber_ oleva projekti. 
 
 Tutustu ohjelman rakenteeseen. Piirrä ohjelman rakenteesta UML-kaavio.
 
 Huomaa, että ohjelman _AuthenticationService_-olio ei talleta suoraan User-oliota vaan epäsuorasti _UserDAO_-rajapinnan kautta. Mistä on kysymys?
 
-> DAO eli Data Access Object on yleisesti käytetty suunnittelumalli jonka avulla abstrahoidaan sovellukselta se miten oliot on talletettu, ks. http://www.corej2eepatterns.com/Patterns2ndEd/DataAccessObject.htm
+> DAO eli Data Access Object on yleisesti käytetty suunnittelumalli jonka avulla abstrahoidaan sovellukselta se, miten oliot on talletettu, ks. esim. <https://www.oracle.com/technetwork/java/dataaccessobject-138824.html>
 >
-> Ideana on, että sovellus "hakee" ja "tallettaa" User-oliot aina UserDAO-rajapinnan metodeja käyttäen. Sovellukselle on injektoitu konkreettinen toteutus, joka tallettaa oliot esim. tietokantaan tai tiedostoon. Se minne talletus tapahtuu on kuitenkin läpinäkyvää sovelluksen muiden osien kannalta.
+> Ideana on, että sovellus "hakee" ja "tallettaa" User-oliot aina UserDAO-rajapinnan metodeja käyttäen. Sovellukselle on injektoitu konkreettinen toteutus, joka tallettaa oliot esim. tietokantaan tai tiedostoon. Se minne ja miten talletus tapahtuu on kuitenkin läpinäkyvää sovelluksen muiden osien kannalta.
 >
-> Ohjelmaamme on määritelty testauskäyttöön sopiva InMemoryUserDao, joka tallettaa User-oliot ainoastaan muistiin. Muu ohjelma säilyisi täysin muuttumattomana jos määriteltäisiin esim. MySQLUserDao, joka hoitaa talletuksen tietokantaan ja injektoitaisiin tämä sovellukselle.
+> Ohjelmaamme on määritelty testauskäyttöön sopiva InMemoryUserDao, joka tallettaa User-oliot ainoastaan muistiin. Muu ohjelma säilyisi täysin muuttumattomana jos määriteltäisiin esim. SqliteUserDao, joka hoitaa talletuksen tietokantaan ja injektoitaisiin tämä sovellukselle.
 
 Kokeile ohjelman suorittamista (ohjelman tuntemat komennot ovat _login_ ja _new_) ja suorita siihen liittyvät testit.
 
-Tutki miten testien stepit on määritelty suoritettavaksi tiedostossa _src/test/java/ohtu/StepDefs.java_ 
-Huomioi erityisesti miten testit käyttävät testaamisen mahdollistavaa stubolioa käyttäjän syötteen ja ohjelman tulosteen käsittelyyn. Periaate tässä on täsmälleen sama kuin viikon 1 [riippuvuuksien injektointiin](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi.md) liittyvissä esimerkeissä.
+*Muistutus*: saat suoritettua ohjelman ilman gradlen välitulostuksia komennolla _gradle run --console=plain_
 
-Lisää User storylle *User can log in with valid username/password-combination* seuraavat skenaariot ja määrittele niihin sopivat _When_ ja _Then_ -stepit:
+Tutki miten testien stepit on määritelty suoritettavaksi tiedostossa _src/test/java/ohtu/StepDefs.java_ 
+Huomioi erityisesti, miten testit käyttävät testaamisen mahdollistavaa stub-olioa käyttäjän syötteen ja ohjelman tulosteen käsittelyyn. Periaate on täsmälleen sama kuin viikon 1 tehtävien [riippuvuuksien injektointiin](/riippuvuuksien_injektointi/) liittyvässä esimerkissä.
+
+Lisää user storylle *User can log in with valid username/password-combination* seuraavat skenaariot ja määrittele niihin sopivat _When_ ja _Then_ -stepit:
 
 <pre>
 Scenario: user can not login with incorrect password
@@ -238,7 +234,7 @@ Tee stepeistä suoritettavat ja varmista että testit menevät läpi.
 
 ### 6. Uuden käyttäjän rekisteröitymisen testit
 
-Tee User storylle *A new user account can be created if a proper unused username and a proper password are given* seuraavat skenaariot ja niille sopivat stepit:
+Tee user storylle *A new user account can be created if a proper unused username and a proper password are given* seuraavat skenaariot ja niille sopivat stepit:
 
 <pre>
 Feature: A new user account can be created if a proper unused username and password are given
@@ -276,39 +272,91 @@ Feature: A new user account can be created if a proper unused username and passw
 </pre>
 
 * käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja sen tulee sisältää vähintään yksi numero tai erikoismerkki ([vihje](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html))
+* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjimista ([vihje](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html))
 
 Tee stepeistä suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on luokan _AuthenticationService_ metodi _invalid_
 
-**HUOM** skenaarioita kannattaa tehdä yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerralla _feature_-tiedostoon vaan etene pienin askelin. Jos yksi skenaario ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty.
+**HUOM** skenaarioita kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan _feature_-tiedostoon, vaan etene pienin askelin. Jos yksi skenaario ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
+
+### Cucumber-testien debuggaaminen
+
+On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia. 
+
+#### Suoritettavien testien lukumäärän rajoittaminen
+
+Jos näin käy, kannattaa ongelmaa selvitellessä suorittaa ainoastaan yhtä testiä kerrallaan. Tämä onnistuu merkkaamalla ongelmallinen testi _tagilla_, eli _@_-merkillä alkavalla merkkijonolla. Seuraavassa on merkattu eräs testiskenaario tagilla _@problem_:  
+
+<pre>
+Feature: User can log in with valid username/password-combination
+
+    // ...
+
+    @problem
+    Scenario: user can not login with incorrect password
+        Given command login is selected
+        When  username "pekka" and password "wrong" are entered
+        Then  system will respond with "wrong username or password"
+
+    // ...
+</pre>
+
+Määrittelemällä luokkaan _RunCucumberTest_ annotaatiolle _@CucumberOptions_ parametri _tags_, on mahdollista säädellä mitä testejä Cucumber suorittaa:
+
+```java
+@RunWith(Cucumber.class)
+@CucumberOptions(
+    plugin = "pretty", 
+    features = "src/test/resources/ohtu", 
+    snippets = SnippetType.CAMELCASE,
+    tags = { "@problem" }
+)
+
+public class RunCucumberTest {}
+```
+
+Näin määriteltynä tulee suoritetuksi ainoastaan tagilla _@problem_ merkitty testi.
+
+Sama tagi on mahdollista liittää myös useampaan skenaarioon, tai suoraan featureen, jolloin jokainen featureen liittyvä story tulee tagatyksi.
+
+#### println-debuggaus
+
+Myös vanha kunnon println-debuggaus toimii Cucumberin yhteydessä. Voit lisäillä println-komentoja testattavassa tai testikoodissa koodissa: 
+
+```java
+@Then("system will respond with {string}")
+public void systemWillRespondWith(String expectedOutput) {
+    System.out.println("ohjelma tulosti seuraavat rivit "+io.getPrints());
+    assertTrue(io.getPrints().contains(expectedOutput));
+}    
+```
 
 ### 7. WebLogin
 
-**HUOM:** tätä tehtävää varten koneellasi on oltava Java 8
+Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _viikko3/WebLogin_ oleva projekti. 
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto2018) hakemistossa [koodi/viikko3/WebLogin](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko3/WebLogin)
-
-Sovellus on toteutettu [Spark](http://sparkjava.com)-nimisellä minimalistisella Web-sovelluskehyksellä. Spark on jo monille tuttu kurssilta [Tietokantojen perusteet](https://tietokantojen-perusteet.github.io).
+Sovellus on toteutettu [Spark](http://sparkjava.com)-nimisellä minimalistisella Web-sovelluskehyksellä. Spark on osalle kenties tuttu kurssilta [Tietokantojen perusteet](https://tietokantojen-perusteet.github.io).
 
 **Hae projekti ja käynnistä se komennolla** <code>gradle run</code>
 
-Pääset käyttämään sovellusta avaamalla selaimella osoitteen [http://localhost:4567](http://localhost:4567)
+Pääset käyttämään sovellusta avaamalla selaimella osoitteen <http://localhost:4567>
+
+![]({{ "/images/lh3-2.png" | absolute_url }}){:height="200px" }
 
 Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 4567.
 
-Sovelluksen rakenne on suunnilleen sama kuin [tehtävien 6-8](https://github.com/mluukkai/ohjelmistotuotanto8/blob/master/laskarit/3.md#6-kirjautumisen-testit) ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää koodin, joka käsittelee sovelluksen eri sivuille tulevat pyynnöt. Tässä vaiheessa ei ole tarpeen tuntea sivupyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
+Sovelluksen rakenne on suunnilleen sama kuin tehtävien 4-6 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemät HTTP-pyynnöt. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
 
-Sovelluksen juureen (polulle "/"), eli osoitteeseen [http://localhost:4567](http://localhost:4567) tulevat pyynnöt käsittelee mainista seuraava koodinpätkä:
+Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:4567> tulevat pyynnöt käsittelee mainista seuraava koodinpätkä:
 
 ```java
 get("/", (request, response) -> {
-    HashMap<String, String> model = new HashMap<>();
-    model.put("template", "templates/index.html");
-    return new ModelAndView(model, LAYOUT);
+  HashMap<String, String> model = new HashMap<>();
+  model.put("template", "templates/index.html");
+  return new ModelAndView(model, LAYOUT);
 }, new VelocityTemplateEngine());             
 ```
 
-koodin oleellinen sisältö on se, että se pyytää muodostamaan osoitteessa _templates/index.html_ olevan HTML-sivun ja palauttamaan sen käyttäjän selaimelle. 
+Koodi muodostaa luokan _VelocityTemplateEngine_ avulla hakemistossa _templates/index.html_ olevan "templateen" perustuvan HTML-sivun, ja palauttamaan sen käyttäjän selaimelle. 
 
 Sivun HTML-koodi on seuraava:
 
@@ -321,28 +369,28 @@ Sivun HTML-koodi on seuraava:
 </ul>
 ```
 
-kaikki _get_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-koodin (jotka sijaitsevat hakemistossa _templates_) ja palauttavat koodin selaimelle.
+Kaikki _get_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät templatet sijaitsevat hakemistossa _templates_) ja palauttavat sivun selaimelle.
 
-_post_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esim. käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
+_post_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esimerkiksi käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
 
 ```java
 post("/login", (request, response) -> {
-    HashMap<String, String> model = new HashMap<>();
-    String username = request.queryParams("username");
-    String password = request.queryParams("password");
-    
-    if ( !authenticationService().logIn(username, password) ) {
-        model.put("error", "invalid username or password");
-        model.put("template", "templates/login.html");
-        return new ModelAndView(model, LAYOUT);
-    }
-        
-    response.redirect("/ohtu");
+  HashMap<String, String> model = new HashMap<>();
+  String username = request.queryParams("username");
+  String password = request.queryParams("password");
+  
+  if ( !authenticationService().logIn(username, password) ) {
+    model.put("error", "invalid username or password");
+    model.put("template", "templates/login.html");
     return new ModelAndView(model, LAYOUT);
+  }
+      
+  response.redirect("/ohtu");
+  return new ModelAndView(model, LAYOUT);
 }, new VelocityTemplateEngine());
 ```
 
-Koodi pääsee käsiksi käyttäjän lomakkeen avulla lähettämiin tietoihin _request_-olion kautta:
+Koodi pääsee käsiksi käyttäjän _lomakkeen_ avulla lähettämiin tietoihin _request_-olion kautta:
 
 ```java
 String username = request.queryParams("username");
@@ -355,7 +403,11 @@ Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sov
 
 ### 8. Selenium, eli web-selaimen simulointi ohjelmakoodista
 
-Web-selaimen simulointi onnistuu mukavasti [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla. Edellisessä tehtävässä olevassa projektissa on luokassa __ohtu.Tester.java__ pääohjelma, jonka koodi on seuraava:
+Jatketaan saman sovelluksen parissa.
+
+**Käynnistä websovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella että sovellus on päällä.
+
+[Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Sovelluksen luokassa _ohtu.Tester.java_ on "toinen pääohjelma", jonka koodi on seuraava:
 
 ```java
 public static void main(String[] args) {
@@ -377,12 +429,9 @@ public static void main(String[] args) {
 }
 ```
 
-**Käynnistä websovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella että sovellus on päällä.
+Avaa toinen terminaali ja suorita siellä komento _gradle browse_, joka on konfiguroitu suorittamaan luokan _Tester_ metodin _main_ koodi.
 
-Avaa toinen terminaali ja suorita siellä komento _gradle browse_ joka on konfiguroitu suorittamaan luokan _Tester_ metodin _main_ koodi.
-
-**HUOM:** osalla on ollut ongelmia seleniumin kanssa. [Tänne](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/selenium_troubleshooting.md) on koottu joitain tapoja, miten ongelmia on saatu ratkaistua. Jos törmäät ongelmaan ja saat sen ratkaistua jollain em. dokumentissa mainitsemattomalla tavalla, lisää ohje dokumenttiin.
-
+**HUOM:** osalla on ollut ongelmia Seleniumin kanssa. [Tänne](/selenium_troubleshooting/) on koottu joitain tapoja, miten ongelmia on saatu ratkaistua. Jos törmäät ongelmaan ja saat sen ratkaistua jollain em. dokumentissa mainitsemattomalla tavalla, lisää ohje dokumenttiin. 
 
 Seuraa avautuvasta selaimesta mitä tapahtuu.
 
