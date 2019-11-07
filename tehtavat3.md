@@ -127,24 +127,7 @@ Markus Granlund team EDM goals 0 assists 1
 Henri Jokiharju team BUF goals 1 assists 4
 Joel Armia team MTL goals 6 assists 4
 Artturi Lehkonen team MTL goals 2 assists 4
-Kaapo Kakko team NYR goals 3 assists 2
-Teuvo Teravainen team CAR goals 4 assists 8
-Joonas Donskoi team COL goals 5 assists 3
-Kasperi Kapanen team TOR goals 4 assists 6
-Valtteri Filppula team DET goals 1 assists 5
-Rasmus Ristolainen team BUF goals 0 assists 5
-Mikko Rantanen team COL goals 5 assists 7
-Sami Vatanen team NJD goals 4 assists 4
-Markus Nutivaara team CBJ goals 2 assists 0
-Ville Heinola team WPG goals 1 assists 4
-Esa Lindell team DAL goals 1 assists 2
-Mikko Koivu team MIN goals 1 assists 5
-Juuso Riikola team PIT goals 0 assists 0
-Jesperi Kotkaniemi team MTL goals 2 assists 1
-Leo Komarov team NYI goals 0 assists 3
-Patrik Laine team WPG goals 3 assists 11
-Olli Maatta team CHI goals 0 assists 2
-Aleksander Barkov team FLA goals 2 assists 15
+...
 </pre>
 
 Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostat.
@@ -175,17 +158,7 @@ Kaapo Kakko         NYR   3 +  2 =  5
 Henri Jokiharju     BUF   1 +  4 =  5
 Ville Heinola       WPG   1 +  4 =  5
 Rasmus Ristolainen  BUF   0 +  5 =  5
-Mikael Granlund     NSH   2 +  2 =  4
-Jesperi Kotkaniemi  MTL   2 +  1 =  3
-Esa Lindell         DAL   1 +  2 =  3
-Leo Komarov         NYI   0 +  3 =  3
-Markus Nutivaara    CBJ   2 +  0 =  2
-Olli Maatta         CHI   0 +  2 =  2
-Miikka Salomaki     NSH   1 +  0 =  1
-Markus Granlund     EDM   0 +  1 =  1
-Henrik Borgstrom    FLA   0 +  0 =  0
-Sami Niku           WPG   0 +  0 =  0
-Juuso Riikola       PIT   0 +  0 =  0
+...
 </pre>
 
 ### 3. lisää gradlea: jar joka sisältää kaikki riippuvuudet
@@ -309,33 +282,7 @@ Tee stepeistä suoritettavia ja **täydennä ohjelmaa siten että testit menevä
 
 **HUOM** skenaarioita kannattaa tehdä yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerralla _feature_-tiedostoon vaan etene pienin askelin. Jos yksi skenaario ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty.
 
-### 7. Spring jälleen kerran
-
-Ennen kuin sovellus päästään käynnistämään, on se konfiguroitava:
-
-``` java
-public static void main(String[] args) {
-    UserDao dao = new InMemoryUserDao();
-    IO io = new ConsoleIO();
-    AuthenticationService auth = new AuthenticationService(dao);
-    new App(io, auth).run();
-}
-```
-
-Muuta ohjelmaa siten, että sovelluksen konfigurointi hoidetaan Springin avulla (joko xml- tai annotaatioperustaisesti), ja main:iksi riittää:
-
-``` java
-public static void main(String[] args) {
-    ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
- 
-    App application = ctx.getBean(App.class);
-    application.run();
-}
-```
-
-Ohjeita löytyy viikon 2 laskareiden [lisämateriaalista](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/riippuvuuksien_injektointi_spring.md)
-
-### 8. WebLogin
+### 7. WebLogin
 
 **HUOM:** tätä tehtävää varten koneellasi on oltava Java 8
 
@@ -406,7 +353,7 @@ Koodi käyttää metodikutsulla <code>authenticationService()</code> saamaansa <
 
 Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla konsolissa ctrl+c tai ctrl+d.
 
-### 9. Selenium, eli web-selaimen simulointi ohjelmakoodista
+### 8. Selenium, eli web-selaimen simulointi ohjelmakoodista
 
 Web-selaimen simulointi onnistuu mukavasti [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla. Edellisessä tehtävässä olevassa projektissa on luokassa __ohtu.Tester.java__ pääohjelma, jonka koodi on seuraava:
 
@@ -521,7 +468,7 @@ public class Tester {
 Lisää asiasta esim.
 [täällä](https://stackoverflow.com/questions/12967541/how-to-avoid-staleelementreferenceexception-in-selenium)
 
-### 10. Web-sovelluksen testaaminen: Cucumber+Selenium
+### 9. Web-sovelluksen testaaminen: Cucumber+Selenium
 
 Pääsemme jälleen käyttämään [cucumberia](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/cucumber.md).
 
@@ -643,7 +590,7 @@ try{ Thread.sleep(120000); } catch(Exception e){}  // suoritus pysähtyy 120 sek
 ```
 ja tarkastella sitten ohjelman tilaa testin käyttämästä selaimesta.
 
-### 11. Web-sovelluksen testaaminen osa 2
+### 10. Web-sovelluksen testaaminen osa 2
 
 **HUOM:** saat testien suorituksen huomattavasti nopeammaksi käyttämällä ChromeDriverin sijaan [HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver):iä joka ns. headless eli käyttöliittymätön selain. Ohje HtmlUnitDriverin käyttöön [täällä](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/selenium_troubleshooting.md#tapa-1-htmlunit-driver)
 
@@ -681,7 +628,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin [tehtäväss�
 
 **Laajenna koodiasi siten, että testit menevät läpi.** 
 
-### 12. Web-sovelluksen testaaminen osa 3
+### 11. Web-sovelluksen testaaminen osa 3
 
 Tee User storylle *A new user account can be created if a proper unused username and a proper password are given* vielä seuraavat skenaariot ja niille sopivat stepit:
 
@@ -698,8 +645,6 @@ Scenario: user can not login with account that is not successfully created
     When  ...
     Then  ...  
 </pre>
-
-
 
 
 
