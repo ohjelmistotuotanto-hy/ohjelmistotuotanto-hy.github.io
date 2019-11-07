@@ -51,7 +51,7 @@ Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla
 
 Hae kurssirepositorion <https://github.com/ohjelmistotuotanto-hy/syksy2019> hakemistossa viikko3/nhlreader lähes tyhjä gradle-projektin runko.
 
-* mukana on kohta tarvitsemasi luokka __Player__ 
+* mukana on kohta tarvitsemasi luokka _Player_ 
 
 Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta kuluvan kauden NHL-liigan tilastotietoja. Jos tarkkoja ollaan, niin tilastot haetaan tämän kurssin tarpeisiin rakennetulta palvelimelta, joka hakee todelliset tilastot NHL:n sivulta kerran vuorokaudessa.
 
@@ -272,7 +272,7 @@ Feature: A new user account can be created if a proper unused username and passw
 </pre>
 
 * käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjimista ([vihje](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html))
+* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista ([vihje](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html))
 
 Tee stepeistä suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on luokan _AuthenticationService_ metodi _invalid_
 
@@ -435,13 +435,16 @@ Avaa toinen terminaali ja suorita siellä komento _gradle browse_, joka on konfi
 
 Seuraa avautuvasta selaimesta mitä tapahtuu.
 
-Tester-ohjelmassa luodaan alussa selainta koodista käsin käyttävä olio __WebDriver driver__. Tämän jälkeen mennään selaimella osoitteeseen __localhost:4567__. Tämän jälkeen haetaan sivulta elementti, jossa on linkkiteksti __login__ eli
+Tester-ohjelmassa luodaan alussa selainta koodista käsin käyttävä olio _WebDriver driver_. Tämän jälkeen mennään selaimella osoitteeseen _localhost:4567_. 
+
+Kahden sekunnin odottelun jälkeen haetaan sivulta elementti, jossa on linkkiteksti _login_ ja linkkiä klikataan:
 
 ```java
 WebElement element = driver.findElement(By.linkText("login"));
+element.click();
 ```
 
-Linkkielementtiä klikataan. Seuraavaksi etsitään sivulta elementti, jonka nimi on __username__, kyseessä on lomakkeen input-kenttä, ja ohjelma "kirjoittaa" kenttään metodia <code>sendKeys()</code> käyttäen nimen _"pekka"_
+Seuraavaksi etsitään sivulta elementti, jonka nimi on _username_, kyseessä on lomakkeen input-kenttä, ja ohjelma "kirjoittaa" kenttään metodia <code>sendKeys()</code> käyttäen nimen _"pekka"_
 
 ```java
 element = driver.findElement(By.name("username"));
@@ -451,24 +454,21 @@ element.sendKeys("pekka");
 Mistä tiedetään, miten lomakkeen elementti tulee etsiä, eli miksi sen nimi oli nyt _username_?
 Elementin nimi on määritelty tiedostossa _src/main/resources/templates/login.html_:
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh4-4.png)   
+![]({{ "/images/lh3-3.png" | absolute_url }}){:height="250px" }
 
-Tämän jälkeen täytetään vielä salasanakenttä ja painetaan lomakkeessa olevaa nappia. Lopuksi tulostetaan vielä sivun lähdekoodi.
+Tämän jälkeen täytetään vielä salasanakenttä ja painetaan lomakkeessa olevaa nappia. 
 
 Ohjelma siis simuloi selaimen käyttöskenaarion, jossa kirjaudutaan sovellukseen.
 
-Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_ joka hidastaa selainsimulaation etenemistä siten että ihminenkin pystyy seuraamaan tapahtumia.
+Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_ joka hidastaa selainsimulaation etenemistä siten, että ihminenkin pystyy seuraamaan tapahtumia.
 
 **Muuta nyt koodia siten, että läpikäyt seuraavat skenaariot**
 
 * epäonnistunut kirjautuminen: oikea käyttäjätunnus, väärä salasana
-* epäonnistunut kirjautuminen: ei-olemassaoleva käyttäjätunnus
-* uuden käyttäjätunnuksen luominen
+* uuden käyttäjätunnuksen luominnen
 * uuden käyttäjätunnuksen luomisen jälkeen tapahtuva ulkoskirjautuminen sovelluksesta
 
-**HUOM0:** jos törmäät ongelmiin tai ehkä jo ennen sitä lue alla olevat kolme huomautusta!
-
-**HUOM1:** salasanan varmistuskentän (confirm password) nimi on __passwordConfirmation__
+**HUOM1:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
 
 **HUOM2:**
 
@@ -485,7 +485,7 @@ element.sendKeys("arto"+r.nextInt(100000));
 
 Joskus linkin klikkaaminen Seleniumissa aiheuttaa poikkeuksen _StaleElementReferenceException_ 
 
-Käytännössä syynä on se, että selenium yrittää klikata linkkiä "liian aikaisin". Ongelma on mahdollista kiertää klikkaamalla poikkeuksen tapahtuessa linkkiä uudelleen. Jos törmäät ongelmaan, voit ottaa koodiisi seuraavassa olevan apumetodin _clickLinkWithText_, joka suorittaa sopivan määrän uudelleenklikkauksia:
+Käytännössä syynä on se, että Selenium yrittää klikata linkkiä "liian aikaisin". Ongelma on mahdollista kiertää klikkaamalla poikkeuksen tapahtuessa linkkiä uudelleen. Jos törmäät ongelmaan, voit ottaa koodiisi seuraavassa olevan apumetodin _clickLinkWithText_, joka suorittaa sopivan määrän uudelleenklikkauksia:
 
 ```java
 public class Tester {
@@ -514,39 +514,63 @@ public class Tester {
         }
     }
 ```
-Lisää asiasta esim.
-[täällä](https://stackoverflow.com/questions/12967541/how-to-avoid-staleelementreferenceexception-in-selenium)
+Lisää asiasta esimerkiksi [täällä](https://stackoverflow.com/questions/12967541/how-to-avoid-staleelementreferenceexception-in-selenium).
 
 ### 9. Web-sovelluksen testaaminen: Cucumber+Selenium
 
-Pääsemme jälleen käyttämään [cucumberia](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/cucumber.md).
+Tehdään nyt sovellukselle hyväksymätestejä [Cucumberilla](/cucumber/).
 
 Projektissa on valmiina User storystä _As a registered user can log in with valid username/password-combination_ kaksi eri _feature_-määrittelyä: 
 * _logging_in.feature_ ja 
 * _logging_in_antipattern.feature_
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh4-2.png)
-
 Näistä ensimmäinen, eli _logging_in.feature_ on tehty "hyvien käytäntöjen" mukaan ja jälkimmäinen eli _logging_in_antipattern.feature_ on taas huonompi.
 
-Huonommassa versiossa skenaarioiden stepeistä on tehty monikäyttöisemmät. Sekä onnistuneet että epäonnistuneen skenaariot käyttävät samoja steppejä ja eroavat ainoastaan parametreiltaan.
+Huonommassa versiossa skenaarioiden stepeistä on tehty monikäyttöisemmät. Sekä onnistuneet että epäonnistuneen skenaariot käyttävät samoja steppejä ja eroavat ainoastaan parametreiltaan:
+
+```gherkin
+Feature: As a registered user can log in with valid username/password-combination
+
+    Scenario: user can login with correct password
+        Given login is selected
+        When username "jukka" and password "akkuj" are given
+        Then system will respond "Ohtu Application main page"
+
+    Scenario: user can not login with incorrect password
+        Given login is selected
+        When username "jukka" and password "wrong" are given
+        Then system will respond "invalid username or password"
+```
+
 
 Paremmassa versiossa taas stepit ovat erilaiset, paremmin tilannetta kuvaavat:
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh4-3.png)
+```gherkin
+Feature: As a registered user can log in with valid username/password-combination
+
+    Scenario: user can login with correct password
+        Given login is selected
+        When correct username "jukka" and password "akkuj" are given
+        Then user is logged in
+
+    Scenario: user can not login with incorrect password
+        Given login is selected
+        When correct username "jukka" and incorrect password "wrong" are given
+        Then user is not logged in and error message is given
+```
 
 Tästä seurauksena on se, että stepit mappaavia metodeja tulee suurempi määrä. Metodit kannattaakin määritellä siten, että ne kutsuvat testejä varten määriteltyjä apumetodeita, jotta koodiin ei tule turhaa toistoa:
 
 ```java
-@When("^correct username \"([^\"]*)\" and password \"([^\"]*)\" are given$")
-public void username_correct_and_password_are_given(String username, String password) throws Throwable {
-    logInWith(username, password);
-}
+  @When("correct username {string} and password {string} are given")
+  public void correctUsernameAndPasswordAreGiven(String username, String password) {
+      logInWith(username, password);
+  }    
 
-@When("^correct username \"([^\"]*)\" and incorrect password \"([^\"]*)\" are given$")
-public void username_and_incorrect_password_are_given(String username, String password) throws Throwable {
-    logInWith(username, password);
-} 
+  @When("correct username {string} and incorrect password {string} are given")
+  public void correctUsernameAndIncorrectPasswordAreGiven(String username, String password) {
+      logInWith(username, password);
+  }    
 
 private void logInWith(String username, String password) {
     assertTrue(driver.getPageSource().contains("Give your credentials to login"));
@@ -561,12 +585,17 @@ private void logInWith(String username, String password) {
 
 Vaikka siis kuvaavammin kirjoitetut stepit johtavatkin hieman suurempaan määrään mappayksestä huolehtivaa koodia, on stepit syytä kirjata mahdollisimman kuvaavasti ja huolehtia detaljeista mappaavan koodin puolella. Stepit mappaavien eri metodien samankaltainen koodi kannattaa ehdottomasti eriyttää omiin apumetodeihin kuten esimerkissäkin tapahtuu (metodit _logInWith_ ja _pageHasContent_). 
 
-Testien konfiguraatioon liittyy vielä muutama detalji. Testit alustava luokka <code>RunCukesTest</code> on nyt seuraava:
+Testien konfiguraatioon liittyy vielä muutama detalji. Testit alustava luokka <code>RunCucumberTest</code> on nyt seuraava:
 
 ```java
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty"})
-public class RunCukesTest {
+@CucumberOptions(
+    plugin = "pretty", 
+    features = "src/test/resources/ohtu", 
+    snippets = SnippetType.CAMELCASE 
+)
+
+public class RunCucumberTest {
     @ClassRule
     public static ServerRule server = new ServerRule(4567);
 }
@@ -607,14 +636,24 @@ Metodi <code>after</code> sulkee web-sovelluksen testien päätteeksi.
 
 Suorita nyt testit komennolla <code>gradle test</code>
 
-Huomaa, että testit käynnistävät sovelluksen samaan porttiin kuin sovellus käynnistyy komennolla <code>gradle run</code>. Eli jos saat (erittäin pitkän) virheilmoituksen:
+Huomaa, että testit käynnistävät sovelluksen samaan porttiin kuin sovellus käynnistyy komennolla <code>gradle run</code>. Jos saat  virheilmoituksen:
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/lh4-5.png)
+<pre>
+FAILURE: Build failed with an exception.
 
+* What went wrong:
+Execution failed for task ':test'.
+> Process 'Gradle Test Executor 6' finished with non-zero exit value 100
+  This problem might be caused by incorrect test process configuration.
+  Please refer to the test execution section in the User Manual at https://docs.gradle.org/5.6.3/userguide/java_testing.html#sec:test_execution
 
-syynä on todennäköisesti se, että sovellus on päällä. Joudutkin sulkemaan sovelluksen testien suorittamisen ajaksi.
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output. Run with --scan to get full insights.
+</pre>
 
-Jos seleniumin kanssa oli ongelmia ja käytit HtmlUnitDriveria niin määrittele luokassa Stepdefs driver kentäksi new HtmlUnitDriver();
+syynä on todennäköisesti se, että sovellus on päällä. Joudutkin sulkemaan sovelluksen testien suorittamisen ajaksi. 
+
+Jos Seleniumin kanssa oli ongelmia ja käytit HtmlUnitDriveria niin määrittele luokassa Stepdefs driver kentäksi new HtmlUnitDriver();
 
 Jos haluat pitää sovelluksen päällä testatessasi, käynnistä se johonkin muuhun portiin, esim. komento 
 <code>PORT=4569 gradle run</code> käynnistää sovelluksen porttiin 4569. 
@@ -639,9 +678,18 @@ try{ Thread.sleep(120000); } catch(Exception e){}  // suoritus pysähtyy 120 sek
 ```
 ja tarkastella sitten ohjelman tilaa testin käyttämästä selaimesta.
 
+*HUOM*: konsoliin tulostuu seuraava *STANDARD_ERROR* jota ei tarvitse välittää:
+
+<pre>
+ohtu.RunCucumberTest STANDARD_ERROR
+    SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+    SLF4J: Defaulting to no-operation (NOP) logger implementation
+    SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+</pre>
+
 ### 10. Web-sovelluksen testaaminen osa 2
 
-**HUOM:** saat testien suorituksen huomattavasti nopeammaksi käyttämällä ChromeDriverin sijaan [HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver):iä joka ns. headless eli käyttöliittymätön selain. Ohje HtmlUnitDriverin käyttöön [täällä](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/selenium_troubleshooting.md#tapa-1-htmlunit-driver)
+**HUOM:** saat testien suorituksen huomattavasti nopeammaksi käyttämällä ChromeDriverin sijaan [HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver):iä joka ns. headless- eli käyttöliittymätön selain. 
 
 HtmlUnitDriver vaikeuttaa testien debuggaamista, joten jos jotain ongelmia ilmenee, kannattanee debuggaamiseen käyttää ChromeDriveriä.
 
@@ -671,9 +719,9 @@ Feature: A new user account can be created if a proper unused username and passw
         Then user is not created and error "password and password confirmation do not match" is reported   
 </pre>
 
-Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin [tehtävässä 7](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/3.md#7-uuden-käyttäjän-rekisteröitymisen-testit) eli
+Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 7_ eli
 * käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja sen tulee sisältää vähintään yksi numero tai erikoismerkki 
+* salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
 **Laajenna koodiasi siten, että testit menevät läpi.** 
 
@@ -695,11 +743,6 @@ Scenario: user can not login with account that is not successfully created
     Then  ...  
 </pre>
 
-
-
-
-
-
 ### Tehtävien palautus
 
-Pushaa kaikki tekemäsi tehtävät (paitsi ne joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
+Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
