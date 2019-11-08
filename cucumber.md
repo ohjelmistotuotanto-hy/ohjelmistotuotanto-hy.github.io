@@ -92,7 +92,7 @@ Avainsanan _And_ avulla jokaiseen skenaarion askeleista voidaan liittää useita
 
 ### Testien suorituskelpoiseksi tekeminen
 
-Jotta testeistä saadaan suorituskelpoisia tulee projektiin kirjoittaa skenaarion steppejä vastaava koodi. Jokainen steppi määritellään omana metodina luokassa _Stepdefs_. Esimerkin steppien määrittely tapahtuu seuraavasti: 
+Jotta testeistä saadaan suorituskelpoisia, tulee projektiin kirjoittaa skenaarion steppejä vastaava koodi. Jokainen steppi määritellään omana metodina luokassa _Stepdefs_. Esimerkin steppien määrittely tapahtuu seuraavasti: 
 
 ```java
 public class Stepdefs {
