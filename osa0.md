@@ -151,7 +151,11 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/4) deadline sunnuntaina 24.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-4) deadline maanantaina 25.11. klo 23:59 
 - Miniprojekti
-  - Aloitustilaisuudet (sprintin 1 suunnittelu)
+  - Aloitustilaisuudet (jokainen osallistuu _yhteen_ tilaisuuteen)
+    - maanantai 18.11. klo 14-16
+    - tiistai 19.11. klo 14-16
+    - keskiviikko 20.11. klo 12-14
+    - torstai 21.11. klo 14-16
 
 ### Viikko 5
 
@@ -186,7 +190,9 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Laskarit
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-7) deadline maanantaina 16.12. klo 23:59 
 - Miniprojekti
-  - Loppudemot (sprintin 3 review)
+  - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
+    - maanantai 9.12. klo 14-17
+    - tiistai 10.12. klo 14-17
 
 ### Viikko 8
 
