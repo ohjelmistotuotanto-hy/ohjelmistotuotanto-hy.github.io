@@ -356,7 +356,7 @@ get("/", (request, response) -> {
 }, new VelocityTemplateEngine());             
 ```
 
-Koodi muodostaa luokan _VelocityTemplateEngine_ avulla hakemistossa _templates/index.html_ olevan "templateen" perustuvan HTML-sivun, ja palauttamaan sen käyttäjän selaimelle. 
+Koodi muodostaa luokan _VelocityTemplateEngine_ avulla hakemistossa _templates/index.html_ olevan "templateen" perustuvan HTML-sivun, ja palauttaa sen käyttäjän selaimelle. 
 
 Sivun HTML-koodi on seuraava:
 
@@ -405,7 +405,7 @@ Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sov
 
 Jatketaan saman sovelluksen parissa.
 
-**Käynnistä websovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella että sovellus on päällä.
+**Käynnistä websovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä.
 
 [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Sovelluksen luokassa _ohtu.Tester.java_ on "toinen pääohjelma", jonka koodi on seuraava:
 
@@ -460,12 +460,12 @@ Tämän jälkeen täytetään vielä salasanakenttä ja painetaan lomakkeessa ol
 
 Ohjelma siis simuloi selaimen käyttöskenaarion, jossa kirjaudutaan sovellukseen.
 
-Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_ joka hidastaa selainsimulaation etenemistä siten, että ihminenkin pystyy seuraamaan tapahtumia.
+Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_, joka hidastaa selainsimulaation etenemistä siten, että ihminenkin pystyy seuraamaan tapahtumia.
 
 **Muuta nyt koodia siten, että läpikäyt seuraavat skenaariot**
 
 * epäonnistunut kirjautuminen: oikea käyttäjätunnus, väärä salasana
-* uuden käyttäjätunnuksen luominnen
+* uuden käyttäjätunnuksen luominen
 * uuden käyttäjätunnuksen luomisen jälkeen tapahtuva ulkoskirjautuminen sovelluksesta
 
 **HUOM1:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
@@ -583,7 +583,7 @@ private void logInWith(String username, String password) {
 }     
 ```    
 
-Vaikka siis kuvaavammin kirjoitetut stepit johtavatkin hieman suurempaan määrään mappayksestä huolehtivaa koodia, on stepit syytä kirjata mahdollisimman kuvaavasti ja huolehtia detaljeista mappaavan koodin puolella. Stepit mappaavien eri metodien samankaltainen koodi kannattaa ehdottomasti eriyttää omiin apumetodeihin kuten esimerkissäkin tapahtuu (metodit _logInWith_ ja _pageHasContent_). 
+Vaikka siis kuvaavammin kirjoitetut stepit johtavatkin hieman suurempaan määrään mappayksestä huolehtivaa koodia, on stepit syytä kirjata mahdollisimman kuvaavasti ja huolehtia detaljeista mappaavan koodin puolella. Stepit mappaavien eri metodien samankaltainen koodi kannattaa ehdottomasti eriyttää omiin apumetodeihin, kuten esimerkissäkin tapahtuu (metodit _logInWith_ ja _pageHasContent_). 
 
 Testien konfiguraatioon liittyy vielä muutama detalji. Testit alustava luokka <code>RunCucumberTest</code> on nyt seuraava:
 
@@ -669,7 +669,7 @@ Scenario: nonexistent user can not login to
     Then  ...
 </pre>
 
-Tee stepien nimistä kuvaavasti nimettyjä.
+Tee steppien nimistä kuvaavasti nimettyjä.
 
 **Protip** jos et saa jotain testiä menemään läpi, kannattaa "pysäyttää" testin suoritus ongelmalliseen paikkaan lisäämällä stepin koodiin esim. rivi
 
