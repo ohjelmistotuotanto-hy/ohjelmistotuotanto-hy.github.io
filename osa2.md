@@ -503,10 +503,10 @@ Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siks
 
 Product backlog siis listaa järjestelmän vaatimuksia kuvaavat user storyt prioriteettijärjestyksessä. Prioriteetin määrittelee useimmiten storyjen asiakkaalle tuova arvo. Kehitystiimi toteuttaa storyja sprintti kerrallaan, valiten kuhunkin sprinttiin joukon sillä hetkellä korkeimman prioriteetin omaavia storyjä.
 
-Ohjelmistoja kehitettäessä tarvitaan usein pelkkää backlogia ja yksittäisiä sprinttejä korkeammalla tasolla olevaa näkymä projektin aikataulutukseen ja kehitystyön suuntaamiseen. Syitä tälle on monia. 
+Ohjelmistoja kehitettäessä tarvitaan usein pelkkää backlogia ja yksittäisiä sprinttejä korkeammalla tasolla olevaa näkymää projektin aikataulutukseen ja kehitystyön suuntaamiseen. Syitä tälle on monia. 
 Sovelluksilla saattaa esimerkiksi olla erilaisia deadlineja, joihin mennessä tiettyjen ominaisuuksien on pakko olla valmiina. Joissain tilanteissa taas sovelluksen versioita halutaan julkaista tasaisin väliajoin, esimerkiksi 4 kuukauden välein. 
 
-Tällaistä yksittäisiä sprinttejä pidemmän aikavälin suunnittelun tekemistä nimitetään usein _julkaisun suunnitteluksi_ (engl. release planning). Julkaisun suunnittelussa mietitään yleensä user storyjä yleisemmällä tasolla mitä isompia toiminnallisia kokonaisuuksia kuhunkin julkaisuun tai etappiin (engl. milestone) halutaan mukaan. Etapit eli milestonet taas koostuvat tyypillisesti useammasta sprintistä. 
+Tällaistä yksittäisiä sprinttejä pidemmän aikavälin suunnittelun tekemistä nimitetään usein _julkaisun suunnitteluksi_ (engl. release planning). Julkaisun suunnittelussa mietitään yleensä user storyjä yleisemmällä tasolla, mitä isompia toiminnallisia kokonaisuuksia kuhunkin julkaisuun tai etappiin (engl. milestone) halutaan mukaan. Etapit eli milestonet taas koostuvat tyypillisesti useammasta sprintistä. 
 
 Voidaankin ajatella, että julkaisun suunnittelussa backlogin sisältö jaetaan karkeasti isompiin lohkoihin, joihin sijoitetaan ne user storyt, joiden ajatellaan suunnitteluhetkellä sisältyvän kyseiseen milestoneen: 
 
@@ -514,7 +514,7 @@ Voidaankin ajatella, että julkaisun suunnittelussa backlogin sisältö jaetaan 
 
 Eri milestonet saattavat olla ajallisesti saman pituisia, eli ne voivat koostua vakiomäärästä sprinttejä. Kaikissa tilanteissa tämäkään ole tarkoituksenmukaista, ja voi olla mielekästä että milestonejen pituus vaihtelee.
 
-Kullakin milestonella voi olla oma korkeamman tason tavoitteensa, esim: 
+Kullakin milestonella voi olla oma korkeamman tason tavoitteensa, esim.: 
 
 - milestone/release 1: verkkokaupan perustoiminnallisuus
 - milestone/release 2: tuotteiden arvostelu ja arvosteluihin perustuva suosittelu
@@ -536,7 +536,7 @@ Story mapin rivit ovat taas loogisia kokonaisuuksia, joista kustakin muodostuu s
 
 ## Kannattaako estimointi?
 
-User storyjen viemän työmäärän arvioimiseen on siis kaksi motivaatiota
+User storyjen viemän työmäärän arvioimiseen on siis kaksi motivaatiota:
 - auttaa asiakasta priorisoinnissa
 - mahdollistaa koko projektin tai tiettyjä milestonejen viemän ajan ja täten myös kustannuksen arviointi
 
@@ -561,7 +561,7 @@ Scrum guide kehottaa että suunnittelun yhteydessä määritellään _sprintin t
 
 Scrumin kehittäjä Ken Schwaber mainitsee 2002 kirjoitetussa kirjassaan asettavansa usein ensimmäisen sprintin tavoitteeksi: _demonstrate a key piece of user functionality on the selected technology_.
 
-Esimeriksi verkkokauppaa kehitettäessä seuraavien sprinttien tavoitteita voisivat olla:
+Esimerkiksi verkkokauppaa kehitettäessä seuraavien sprinttien tavoitteita voisivat olla:
 - Ostoskorin perustoiminnallisuus: tuotteiden lisäys ja poisto
 - Ostosten maksaminen ja toimitustavan valinta
 
@@ -638,11 +638,11 @@ Vaikka ensimmäinen story ei vielä yksistään tarjoa tukea kaikille työvaihei
 
 #### Pattern 2: business rule variations
 
-Story joka sisältää monenlaisia kompleksisia ehtoja (bussines rule), esim.  
+Story joka sisältää monenlaisia kompleksisia ehtoja (business rule), esim.  
 
 _As a user, I can search for flights with flexible dates._
 
-kannattaa jakaa siten että jokainen näistä ehdoista eritellään omaksi storykseen
+kannattaa jakaa siten että jokainen näistä ehdoista eritellään omaksi storykseen:
 
 - _... as "between dates x and y"_
 - _... as "a weekend in December"_
@@ -735,7 +735,7 @@ Sprintin suunnittelun yhteydessä sprinttiin valituille user storyille tehdään
 
 Suunnittelun yhteydessä on usein tapana pilkkoa kukin user story teknisen tason tehtäviksi (engl. task) jotka on toteutettava, jotta user story saadaan valmiiksi.
 
-Esimerkiksi story _tuotteen lisääminen ostoskoriin_, voitaisiin pilkkoa seuraaviin teknisen tason taskeihin:
+Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voitaisiin pilkkoa seuraaviin teknisen tason taskeihin:
 - tarvitaan sessio, joka muistaa asiakkaan 
 - domain-olio ostoskorin ja ostoksen esittämiseen 
 - laajennus tietokantaskeemaan 
@@ -766,7 +766,7 @@ Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka ku
 
 Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa. 
 
-Jäljellä olevaa työmäärää (tunteina mitattuna) voidaan visualisoidaan sprintin etenemistä kuvaavalla burndown-käyrällä:
+Jäljellä olevaa työmäärää (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
 
 ![]({{ "/images/2-22.png" | absolute_url }})
 
@@ -778,7 +778,7 @@ Yleinen konsensus on, että ainakin Sprintin hallintaan manuaalinen postit-lappu
 
 Usein toki käytetään elektronisia versioita taskboardista, joskus siihen pakottavat yritysten käytänteet, joskus taas tiimiläisten työskentelytapa ja paikka, esimerkiksi etätiimin kannalta elektroninen taskboard voi olla ainoa toimiva ratkaisu.
 
-Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta esimerkiksi exceliä tai google driveä. Github projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän Githubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon JIRA, Asana, Trello, Pivotal Tracker, trac ja bugzilla.
+Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi exceliä tai google driveä. Github projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän Githubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon JIRA, Asana, Trello, Pivotal Tracker, trac ja bugzilla.
 
 Taulukkolaskentaohjelmat toimivat kohtuullisen hyvin elektronisena taskboardina. Taulukkolaskentaa käyttäessä sprintin jokaiselle päivälle on oma sarake, johon merkitään kunkin päivän alussa estimaatti taskien jäljellä olevasta työmäärästä (tunteina):
 
@@ -820,14 +820,14 @@ Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aik
 
 Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voi Kanbanissa ja Scrumbanissa tapahtua sovitun aikataulun, esimerkiksi 2 viikon välein vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
 
-WIP-rajoitteita voidaan soveltaa Scrumin yhteydessä monella tapaa. Edellä olleessa esimerkissä rajoitettiin kerrallaan yhdessä työvaiheessa sallittujen taskien määrää. Voi olla mielekästä myös määritellä kuinka monta taskia yhdellä henkilöllä saa olla yhdellä kertaa työn alla. 
+WIP-rajoitteita voidaan soveltaa Scrumin yhteydessä monella tapaa. Edellä olleessa esimerkissä rajoitettiin kerrallaan yhdessä työvaiheessa sallittujen taskien määrää. Voi olla mielekästä myös määritellä, kuinka monta taskia yhdellä henkilöllä saa olla yhdellä kertaa työn alla. 
 Ehkä paras tapa soveltaa WIP-rajoitteita on rajoittaa kerrallaan työn alla olevien user storyjen määrää. Esimerkiksi [Scrum book](http://scrumbook.org/) suosittelee, että työn alla on kerrallaan ainoastaan yksi user story. Näin taataan että arvoa tuottavia kokonaisuuksia "virtaa" sovelluksen käyttäjälle mahdollisimman tasaisesti.
 
 WIP-rajoitteita säädetään usein retrospektiivien yhteydessä jos kehitystyössä havaitaan ongelmia.
 
 ## Ennen seuraavaa sprintin alkua
 
-Kuten edellisessä osassa [mainittiin](/osa1#sprintin-katselmointi) pidetään sprintin lopussa sprint review eli katselmointi sekä sprintin retrospektiivi. Katselmoinnissa arvioidaan kehitystiimin tekemää työtä. Kesken jääneet tai epäkelvosti toteutetut user storyt siirretään takaisin backlogiin. 
+Kuten edellisessä osassa [mainittiin](/osa1#sprintin-katselmointi), pidetään sprintin lopussa sprint review eli katselmointi sekä sprintin retrospektiivi. Katselmoinnissa arvioidaan kehitystiimin tekemää työtä. Kesken jääneet tai epäkelvosti toteutetut user storyt siirretään takaisin backlogiin. 
 
 Sprintin aikana product backlogiin on ehkä tullut uusia user storyja tai jo olemassa olevia storyjä on muokattu ja uudelleenpriorisoitu. On suositeltavaa että kehitystiimi käyttää pienen määrän aikaa sprintin aikana product backlogin vaatimiin toimiin eli [backlog groomingiin](/osa2#hyva%CC%88-product-backlog-on-deep), esim. uusien user storyjen estimointiin. Jos product backlog on hyvässä kunnossa eli [DEEP](/osa2#hyva%CC%88-product-backlog-on-deep) sprintin loppuessa, on jälleen helppo lähteä sprintin suunnitteluun ja uuteen sprinttiin.
 
