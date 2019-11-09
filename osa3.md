@@ -231,7 +231,7 @@ Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin testata kaikkien me
 
 Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta kannattaa  valita ainakin yksi arvo testisyötteeksi, erityisesti ekvivalenssiluokkien raja-arvot kannattaa valita mukaan testattaviin arvoihin.
 
-Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testattavien arvojen parametrien ekvivalenssiluokat ja raja-arvot useimmiten pääteltävissä koodista.
+Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testien parametrien ekvivalenssiluokat ja raja-arvot useimmiten pääteltävissä koodista.
 
 Tarkastellaan esimerkkinä ensimmäisen viikon laskareista tutun _Ohtuvaraston_ metodia _otaVarastosta_. Mitä testitapauksia tulisi generoida, jotta testit olisivat kattavat?
 
