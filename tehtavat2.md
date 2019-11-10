@@ -85,6 +85,8 @@ Eli kuten [manuaali kertoo](https://docs.gradle.org/current/userguide/checkstyle
 
 Luo tiedosto ja hae sille sisältö [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle_gradle5.xml) tai [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle.xml) jos käytössäsi on gradlen versio 6.
 
+Tiedostoissa on pieni ero, sillä tyylisääntö _LineLength_ pitää määritellä gradle 6:ssa, _TreeWalker_-moduulin ulkopuolella.
+
 Huomaa, että tiedoston tulee olla oikeassa paikassa. Virheilmoitus ja [manuaali](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout) kertovat oikean sijainnin.
 
 Kun nyt suoritat komennon `gradle checkstyleMain`, tulee jälleen virhe, mutta nyt virheen syynä on se, että koodi rikkoo konfiguraatiotiedostossa määriteltyjä tyylisääntöjä. Virheilmoitus kertoo raportin sijainnin:
@@ -99,9 +101,9 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
 
 **Toimi nyt seuraavasti**
 
-* poista checkstylen konfiguraatiotiedostosta kaikki elementin <code>tree walker</code> sisällä olevat tarkistukset
-* suorita `gradle checkstyleMain` ja varmista, että tarkastus menee läpi
-* määrittele nyt tiedostoon seuraavat säännöt (ks. kohta checks checkstylen [sivuilta](https://checkstyle.sourceforge.io/checks.html)):
+* Poista checkstylen konfiguraatiotiedostosta kaikki elementin <code>Tree Waker</code> sisällä olevat tarkistukset (gradlen versiota 6 käyttäessäsi poista myös _LineLength_)
+* Suorita `gradle checkstyleMain` ja varmista, että tarkastus menee läpi
+* Määrittele nyt tiedostoon seuraavat säännöt (ks. kohta checks checkstylen [sivuilta](https://checkstyle.sourceforge.io/checks.html)):
   * metodien pituus max 15 riviä (tämä ja seuraavat säännöt määritellään moduulin tree walker sisälle)
   * ei yli yhtä sisäkkäisiä if-komentoja  
   * ei sisäkkäisiä for-komentoja, seuraavan siis pitäisi aiheuttaa virhe:
@@ -128,8 +130,8 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
     ```  
   * syklomaattinen koodikompleksisuus korkeintaan 3 (selvitä mitä tarkoittaa!)
 
-* muuta koodiasi siten, että saat jokaisen määritellyistä checkstyle-säännöistä rikkoutumaan
-* korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
+* Muuta koodiasi siten, että saat jokaisen määritellyistä checkstyle-säännöistä rikkoutumaan
+* Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
   * pääohjelman koodin voi poistaa tarvittaessa kokonaan, jotta saat koodin säännönmukaiseksi  
 
 ### 3. Koodin staattinen analyysi pilvessä
