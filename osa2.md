@@ -95,10 +95,10 @@ Esim. _tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden h
 
 ## Vaatimusten luokittelu – ei-toiminnalliset vaatimukset
  
-Vaatimusten toinen luokka, ei-toiminnalliset vaatimukset (engl. nonfunctional requirements) 
-jakautuvat kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoitteisiin. 
+Vaatimusten toinen luokka, ei-toiminnalliset vaatimukset (engl. nonfunctional requirements), 
+jakautuu kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoitteisiin. 
 
-_Laatuvaatimukset_ (engl. quality attributes), ovat koko järjestelmän toiminnallisuutta ohjaavia ja rajoittavia tekijöitä, esim. 
+_Laatuvaatimukset_ (engl. quality attributes) ovat koko järjestelmän toiminnallisuutta ohjaavia ja rajoittavia tekijöitä, esim. 
 - käytettävyys: minkälainen sovelluksen käyttökokemus on
 - tietoturva: kenellä on pääsy järjestelmään ja siinä käsiteltävään dataan
 - suorituskyky: miten nopeasti sovellus reagoi erilaisiin käyttäjän syötteisiin
@@ -117,7 +117,7 @@ Toimintaympäristön rajoitteita (constraints) ovat muun muassa
 - integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimia rajapintojen tarjoamaa dataa
 - mukautuminen lakeihin ja standardeihin: eräs esimerkki tällaisesta on GDPR:n asettamat vaatimukset
  
-Toisin kuin toiminnalliset vaatimukset jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten "koko järjestelmää", ja vaikuttavat siihen miten koko järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa. 
+Toisin kuin toiminnalliset vaatimukset, jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten "koko järjestelmää", ja vaikuttavat siihen miten koko järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa. 
 
 ## Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
   
@@ -192,7 +192,7 @@ Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon 
   
 Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunnitteluun ketterässä ohjelmistotuotantoprojektissa. 
 
-Tapa pohjautuu Scrumin ja eXtreme Programingin eli XP:n eräiden käytänteiden soveltamiseen
+Tapa pohjautuu Scrumin ja eXtreme Programingin eli XP:n eräiden käytänteiden soveltamiseen.
 Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/), [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) ja [Jeff Sutherland ym.:A Scrum book](http://scrumbook.org/) sekä [Mike Cohnin](https://www.mountaingoatsoftware.com/blog) loistavat kirjat _Agile Estimation and Planning_ ja _User stories applied_.
   
 ## User story 
@@ -212,7 +212,7 @@ User storyt siis kuvaavat _loppukäyttäjän kannalta arvoa tuottavia toiminnall
 
 Määritelmän alakohtien 1 ja 2 mukaan user story on _karkean tason tekstuaalinen kuvaus_ ja lupaus/muistutus siitä, että toiminnallisuuden _tarkka kuvaus on selvitettävä asiakkaan kanssa_.
 
-Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvauksia (_written description_)
+Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvauksia (_written description_):
 
 - asiakas voi lisätä tuotteen ostoskoriin
 - asiakas voi poistaa ostoskorissa olevan tuotteen
@@ -222,7 +222,7 @@ User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhje
 
 Määritelmän kolmas alikohta sanoo, että Storyyn kuuluu _Tests that convey and document details and that will be used to determine that the story is complete_. Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, minkä perusteella voidaan katsoa että story on toteutettu.
 
-Se, miten user storyihin liittyvät hyväksymäkriteerit ilmaistaan, vaihtelee hyvin paljon. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin, että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunallinnasta vastaava taho hyväksyy storyn valmiiksi testaamalla manuaalisesti vastaavaa toiminnallisuutta järjestelmästä.
+Se, miten user storyihin liittyvät hyväksymäkriteerit ilmaistaan, vaihtelee hyvin paljon. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin, että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunhallinnasta vastaava taho hyväksyy storyn valmiiksi testaamalla manuaalisesti vastaavaa toiminnallisuutta järjestelmästä.
 
 Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on antanut [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
 
@@ -314,7 +314,7 @@ Edellisellä viikolla Scrumin yhteydessä puhuttiin _product backlogista_, joka 
  
 Projektin aluksi kannattaa heti ruveta etsimään ja määrittelemään user storyja ja muodostaa näistä alustava product backlog. Scrumia sovellettaessa tämä tehdään useimmiten ennen ensimmäisen sprintin alkua. Joskus tästä vaiheesta käytetään nimitystä [nollasprintti](https://www.mountaingoatsoftware.com/blog/sprint-zero-a-good-idea-or-not).
 
-Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset vaatimusten kartoitustekniikat
+Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset vaatimusten kartoitustekniikat:
 - haastattelut
 - brainstormaus
 - workshopit 
@@ -339,23 +339,23 @@ Myös projektiin liittyvät tekniset riskit kannattaa ottaa priorisoinnissa huom
 
 ## Estimointi eli työmäärän arviointi
  
-User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota
+User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota:
 - auttaa asiakasta priorisoinnissa
 - mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioiden viemän ajan summittainen arviointi
 
 Työmäärän arvioimiseen on kehitetty vuosien varrella useita erilaisia menetelmiä. Kaikille yhteistä on se, että ne eivät toimi kunnolla, eli tarkkoja työmääräarvioita on mahdoton antaa. Joskus työmäärän arvioinnista käytetäänkin leikillisesti termiä _guestimation_ koska työmääräarviointi on lopulta useimmiten lähinnä arvailua.
  
-Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_
+Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
 ![]({{ "/images/2-6.png" | absolute_url }}){:height="400px" }
 
-Eli kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja myös työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
+Eli mitä kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
 
 ## Suhteelliseen kokoon perustuva estimointi
   
 Ketterät ohjelmistotuotantomenetelmät ottavat itsestäänselvyytenä sen, että estimointi on epävarmaa ja tarkentuu vasta projektin kuluessa. Koska näin on, pyritään vahvoja estimointiin perustuvia lupauksia ohjelmiston valmistumisaikatauluista välttämään.
   
-On olemassa jonkin verran evidenssiä (ks [Cohn: Agile estimation and planning](https://www.mountaingoatsoftware.com/books/agile-estimating-and-planning), luku 8), siitä että vaikka ominaisuuksien toteuttamiseen menevän tarkan ajan arvioiminen on vaikeaa, osaavat ohjelmistokehittäjät jossain määrin arvioida eri tehtävien vaatimaa työmäärää suhteessa toisiinsa.
+On olemassa jonkin verran evidenssiä (ks [Cohn: Agile estimation and planning](https://www.mountaingoatsoftware.com/books/agile-estimating-and-planning), luku 8) siitä, että vaikka ominaisuuksien toteuttamiseen menevän tarkan ajan arvioiminen on vaikeaa, osaavat ohjelmistokehittäjät jossain määrin arvioida eri tehtävien vaatimaa työmäärää suhteessa toisiinsa.
 
 Esimerkkejä tällaisestä suhteellisesta estimoinnista ovat
 - user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ vie yhtä kauan kuin user storyn _tuotteen poistaminen ostoskorista toteuttaminen_
