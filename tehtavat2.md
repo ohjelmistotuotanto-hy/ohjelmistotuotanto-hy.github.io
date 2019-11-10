@@ -83,7 +83,7 @@ Execution failed for task ':checkstyleMain'.
 
 Eli kuten [manuaali kertoo](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout), Gradle olettaa että projektista löytyy checkstylen toiminnan määrittelevä konfiguraatiotiedosto. 
 
-Luo tiedosto ja hae sille sisältö [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle.xml)
+Luo tiedosto ja hae sille sisältö [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle_gradle5.xml) tai [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/blob/master/koodi/viikko2/checkstyle.xml) jos käytössäsi on gradlen versio 6.
 
 Huomaa, että tiedoston tulee olla oikeassa paikassa. Virheilmoitus ja [manuaali](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout) kertovat oikean sijainnin.
 
