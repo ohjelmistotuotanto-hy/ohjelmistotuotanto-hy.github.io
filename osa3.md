@@ -402,7 +402,7 @@ TDD:n soveltaminen on haastavaa mm. käyttöliittymä-, tietokantayhteyksist�
 
 ## Riippuvuuksien hallinta testeissä
 
-TDD:tä ja muutenkin yksikkötestejä tehdessä on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää.
+Testatessa on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää.
 
 Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunnittelumalli parantaa luokkien testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin.
 
@@ -440,7 +440,7 @@ Esimerkiksi user storyn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksym
 - ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
 - ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
 
-Optimaalisessa tilanteessa user storyjen hyväksymiskriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavia, testejä.
+Optimaalisessa tilanteessa user storyjen hyväksymiskriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavista toiminnallisista testeistä.
  
 Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteuttavan sprintin alussa, mielellään yhteistyössä kehitystiimin ja product ownerin tai jonkun muun asiakkaan edustajan kesken. Usein käytäntönä on ilmaista hyväksymiskriteerit user storyjen tapaan asiakkaan kielellä, käyttämättä teknistä jargonia. Hyväksymiskriteerien kirjoitusprosessi lisääkin parhaassa tapauksessa asiakkaan ja tiimin välistä kommunikaatiota.
 
@@ -448,7 +448,7 @@ Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn tote
 
 Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti suoritettavia. 
 
-Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on Suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
+Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
 
 Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
@@ -479,7 +479,7 @@ Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla ni
 Käytännössä jokaista testin _given_, _when_ ja _then_-askelta vastaa oma metodinsa.
 Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä varmistaen, että ohjelma reagoi käyttäjän toimiin halutulla tavalla. 
 
-![]({{ "/images/3-10.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/3-10a.png" | absolute_url }}){:height="500px" }
 
 ### Websovellusten testauksen automatisointi
 
@@ -491,7 +491,7 @@ Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan joko 
 
 Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-version testien mäppäyksestä:
 
-![]({{ "/images/3-11.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/3-11a.png" | absolute_url }}){:height="500px" }
 
 Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareissa.
 
