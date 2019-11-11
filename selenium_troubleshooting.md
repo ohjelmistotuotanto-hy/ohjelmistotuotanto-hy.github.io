@@ -55,9 +55,13 @@ _sudo mv geckodriver /usr/local/bin/_
 Ota koodissa käyttöön _FirefoxDriver_:
 
 ```java
-WebDriver driver = new FirefoxDriver();
-final String URL = "http://localhost:4567";
-driver.get(URL);
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/// ...
+
+    WebDriver driver = new FirefoxDriver();
+    final String URL = "http://localhost:4567";
+    driver.get(URL);
 ```
 
 ### Tapa 3: chromedriverin downloadaus
