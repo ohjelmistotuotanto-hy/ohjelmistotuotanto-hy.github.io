@@ -114,7 +114,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Scrum](/osa1#scrum)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/1) deadline sunnuntaina 3.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-1) deadline maanantaina 4.11. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 4.11. klo 23:59 
 
 ### Viikko 2
 
@@ -126,7 +126,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/2) deadline sunnuntaina 10.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-2) deadline maanantaina 11.11. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 11.11. klo 23:59 
 
 ### Viikko 3
 
@@ -136,7 +136,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/3) deadline sunnuntaina 17.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-3) deadline maanantaina 18.11. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 18.11. klo 23:59 
 
 ### Viikko 4
  
@@ -149,7 +149,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/4) deadline sunnuntaina 24.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-4) deadline maanantaina 25.11. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 25.11. klo 23:59 
 - Miniprojekti
   - Aloitustilaisuudet (jokainen osallistuu _yhteen_ tilaisuuteen)
     - maanantai 18.11. klo 14-16
@@ -164,7 +164,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Lean](/osa5#lean)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/5) deadline sunnuntaina 1.12. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-5) deadline maanantaina 2.12. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 2.12. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
@@ -177,7 +177,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - Vierailuluento Niko Laitinen Nitor
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6) deadline sunnuntaina 8.12. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-6) deadline maanantaina 9.12. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 9.12. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
@@ -188,7 +188,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 14: tiistai 10.12. klo 12-14 CK112
   - Vierailuluento Marko Klemetti Eficode
 - Laskarit
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](teht%C3%A4v%C3%A4t/#viikko-7) deadline maanantaina 16.12. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 16.12. klo 23:59 
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
     - maanantai 9.12. klo 14-17
