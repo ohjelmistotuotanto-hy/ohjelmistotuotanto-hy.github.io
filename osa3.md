@@ -535,7 +535,7 @@ Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen ta
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. kuormituksen kestoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
 
-Ensimmäisellä viikolla käyttämämme [CircleCI](https://circleci.com) on yksi monista SaaS-palveluna eli internetissä toimivista CI-ratkaisuista, toinen suosittu vaihtoehto on [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
+Ensimmäisen viikon laskareissa käytetty [CircleCI](https://circleci.com) on yksi monista SaaS-palveluna eli internetissä toimivista CI-ratkaisuista, toinen suosittu vaihtoehto on [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
 
 Circlea ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin, kuten Circleen.
 

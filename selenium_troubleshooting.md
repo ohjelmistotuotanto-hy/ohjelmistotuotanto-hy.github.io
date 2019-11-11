@@ -44,7 +44,23 @@ public class Tester {
 
 HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
 
-### Tapa 2: chromedriverin downloadaus
+### Tapa 2: geckodriver downloadaus (testattu syksyllä 2019)
+
+Lataa ja asenna geckodriver [täällä olevan ensimmäisen vastauksen mukaan](https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu)
+
+Korvaa ohjeen kohta 4. tällä: 
+
+_sudo mv geckodriver /usr/local/bin/_
+
+Ota koodissa käyttöön _FirefoxDriver_:
+
+```java
+WebDriver driver = new FirefoxDriver();
+final String URL = "http://localhost:4567";
+driver.get(URL);
+```
+
+### Tapa 3: chromedriverin downloadaus
 
 **Tätä ja seuraavia tapoja ei ole testattu tämän kurssin aikana**, joten on epäselvää toimivatko nämä, tai jos toimivat niin todennäköisesti vasta jos kirjastojen versiot muutetaan uudempiin. Tee sivulle pull request, jos saat jonkin tavan toimimaan.
 
@@ -64,7 +80,7 @@ System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver");
 
 Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> metodiin <code>before</code>.
 
-### Tapa 3: WebDriverManager
+### Tapa 4: WebDriverManager
 
 Lisää projektille riippuvuus _webdrivermanager_:
 
@@ -102,7 +118,7 @@ public void setUp() {
 }
 ```
 
-### tapa 4: firefox-driver
+### tapa 5: firefox-driver
 
 Kokeile käyttää FirefoxDriveria Chromen sijaan. 
 
