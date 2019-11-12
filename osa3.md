@@ -357,7 +357,7 @@ _Test driven development_ eli TDD on kehitysmenetelmä, missä testit tehdään 
 
 User storyjen tasolla tapahtuva automatisoitu testaus, joka kulkee nimillä _acceptance test driven development_ ja _behavior driven development_.
 
-_Continuous Integration_ eli jatkuva integraatio ja _(continuous delivery)_ eli jatkuva tuotantovalmius ovat perinteisen integraatio- ja integraatiotestausvaiheen korvaava työskentelytapa, jossa pyrkimyksenä on integroida ja jopa viedä tuotantoympäristöön jokainen sovellukseen tehty muutos. 
+_Continuous Integration_ eli jatkuva integraatio ja _(continuous delivery)_ eli jatkuva toimitusvalmius ovat perinteisen integraatio- ja integraatiotestausvaiheen korvaava työskentelytapa, jossa pyrkimyksenä on integroida ja jopa viedä tuotantoympäristöön jokainen sovellukseen tehty muutos. 
 
 Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisia (eli yksikkö-, integraatio-, järjestelmä-) automatisoituja testejä, joiden avulla tehty regressiotestaus mahdollistaa sen, että ohjelmiston jatkokehityksen aikana voidaan olla turvallisin mielin siitä, että jo toimivia asioita ei pääse hajoamaan. 
 
@@ -571,7 +571,6 @@ On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisest
 
 Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä.
 
-
 ## Tutkiva testaaminen
  
 Jotta järjestelmä saadaan niin virheettömäksi, että se voidaan laittaa tuotantoon, on testaus suoritettava erittäin perusteellisesti. Perinteinen tapa järjestelmätestauksen suorittamiseen on perustunut ennen testausta laadittuun perinpohjaiseen testaussuunnitelmaan. Jokaisesta testistä on kirjattu testisyötteet ja odotettu tulos. Testauksen tuloksen kontrolloiminen on suoritettu vertaamalla järjestelmän toimintaa testitapaukseen kirjattuun odotettuun tulokseen.
@@ -596,6 +595,11 @@ https://www.verkkokauppa.com/ostoskori?id=10 voitaisiin yrittää muuttaa kä
 Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannattaa eliminoida lisäämällä ohjelmalle sopivat automaattiset regressiotestit. Tutkivaa testaamista ei siis kannata käyttää regressiotestauksen menetelmänä, vaan sen avulla kannattaa ensisijaisesti testata sprintin yhteydessä toteutettuja uusia ominaisuuksia.
 
 Tutkiva testaaminen siis ei missään tapauksessa ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille ja automatisoiduille testeille, vaan niitä täydentävä testauksen muoto.
+
+<div class="important">
+Tästä kohdasta alkaa DRAFT, eli lukeminen omalla vastuulla!
+</div>
+
 
 ## Tuotannossa tapahtuva testaaminen ja laadunhallinta
 
@@ -667,7 +671,7 @@ Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytett
 ![]({{ "/images/3-17.png" | absolute_url }}){:height="180px" }
 
 Canary releaset eivät ole feature togglejen ainoa sovellus, niitä käytetään
-yleisesti myös eliminoimaan tarve pitkäikäisille feature brancheille. ELi sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
+yleisesti myös eliminoimaan tarve pitkäikäisille feature brancheille. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
 
 Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, on ominaisuus mahdollista julkaista feature togglen avulla esim. kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
 
@@ -685,7 +689,7 @@ Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin no
  
 Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/) missä pitkäikäisiä feature brancheja ei käytetä ollenkaan.
 
-Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä trunk. Pääkehityshaara voi olla master tai joku erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
+Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla master tai joku erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
 Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin, näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
 
@@ -694,63 +698,61 @@ Feature togglejen holtiton käyttö voi johtaa feature toggle helvettiin, eli 
 
 Trunk-pohjaista kehitysmallia noudattavat monet maailman suurimmista internetpalveluista, esim. Google, Facebook ja Netflix.
 
-<div class="important">
-Tästä kohdasta alkaa DRAFT, eli lukeminen omalla vastuulla!
-</div>
-
 ## DevOps
 
-Jatkuvan toimitusvalmiuden (Continuous delivery), käyttöönoton (Continuous deployment) ja tuotannossa testaamisen soveltaminen ei useimmiten ole ollenkaan suoraviivaista.
+Jatkuvan toimitusvalmiuden (Continuous delivery), jatkuvan käyttöönoton (Continuous deployment) ja tuotannossa testaamisen soveltaminen ei useimmiten ole ollenkaan suoraviivaista.
 
-Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (developers, dev) ja tuotantopalvelimista vastaavan järjestelmäylläpitäjien (operations, ops) välillä. On erittäin tavallista, että sovelluskehittäjät eivät pääse edes kirjautumaan tuotantopalvelimille ja sovellusten tuotantoon vieminen sekä esim. tuotantotietokantaan tehtävät skeeman päivitykset tapahtuvat ylläpitäjien toimesta.
+Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (developers, dev) ja palvelinympäristöistä vastaavien järjestelmäylläpitäjien (operations, ops) välillä. On erittäin tavallista, että sovelluskehittäjät eivät pääse edes kirjautumaan tuotantopalvelimille ja sovellusten tuotantoon vieminen sekä esim. tuotantotietokantaan tehtävät skeeman päivitykset tapahtuvat ainoastaan ylläpitäjien toimesta.
 
-Tälläisessä ympäristössä esim. continuous deploymentin harjoittaminen on erittäin haastavaa, tilanne ajautuukin helposti siihen, että tuotantopalvelimelle pystytään viemään uusia versioita vain harvoin, esimerkiksi vain 4 kertaa vuodessa.
-Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin sijoitetaan ylläpitovastuilla olevia ihmisiä.
+Tälläisessä ympäristössä esim. continuous deploymentin harjoittaminen on lähes mahdotonta, tilanne ajautuukin helposti siihen, että tuotantopalvelimelle pystytään viemään uusia versioita vain harvoin, esimerkiksi ainoastaan 4 kertaa vuodessa.
 
-Toimintamallia missä dev ja ops työskentelevät tiiviisti yhdessä on alettu
-kutsua termillä [DevOps](https://en.wikipedia.org/wiki/DevOps). DevOps on termi, joka on nykyään monin paikoin esillä esim. työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin.
+Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoitetaan palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä dev ja ops työskentelevät tiiviisti yhdessä on käyttää nimeä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
 
-On myös myynnissä mitä erilaisempia DevOps-työkaluja. On kuitenkin erittäin epäselvää mitä kukin tarkoittaa DevOps:illa
+DevOps on termi, joka on nykyään monin paikoin esillä, esimerkiksi työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin. On myös myynnissä mitä erilaisempia DevOps-työkaluja. On kuitenkin jossain määrin epäselvää mitä kukin tarkoittaa termillä DevOps.
 
-Suurin osa (järkevistä) määritelmistä tarkoittaa DevOpsilla nimenomaan kehittäjien ja järjestelmäylläpidon yhteistä työnteon tapaa jonka pyrkimyksenä on tehdä sovelluskehityksen aikaansannosten käyttöönotto mahdollisimman sujuvaksi. Tämän takia onkin hyvä puhua DevOps-kulttuurista.
+Suurin osa (järkevistä) määritelmistä tarkoittaa DevOpsilla nimenomaan kehittäjien ja järjestelmäylläpidon yhteistä työnteon ja kommunikaation tapaa, jonka pyrkimyksenä on tehdä sovelluskehityksen aikaansannosten käyttöönotto mahdollisimman sujuvaksi. Tämän takia onkin hyvä puhua DevOps-kulttuurista.
 
-On olemassa joukko käsitteellisiä ja teknisiäkin työkaluja, jotka usein liitetään DevOps-tyyliseen työskentelyyn, esim.
+On olemassa joukko käsitteellisiä ja teknisiä työkaluja, jotka usein liitetään DevOps-tyyliseen työskentelyyn, esim.
 
 - automatisoitu testaus
 - continuous deployment
-- laitteistokapasiteetin virtualisointi ja kontainerisointi (docker)
+- laskenta- ja tallennuskapasiteetin virtualisointi
+- kontainerisointi (docker)
 - infrastructure as code
 - pilvipalveluna toimivat palvelimet ja sovellusympäristöt (PaaS, IaaS, SaaS)
 
 Monet edellisistä ovat kehittyneet vasta viimeisen 5-10 vuoden aikana ja täten mahdollistaneet DevOps:in helpomman soveltamisen.
 
-Eräs tärkeimmistä DevOps:ia mahdollistavista asioista on ollut siirtyminen yhä enemmän käyttämään fyysisten palvelinten sijaan virtuaalisia ja pilvessä toimivia palvelimia, tällöin raudastakin on tullut "koodia", englanniksi tästä käytetään nimitystä [infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code).
+Eräs tärkeimmistä DevOps:ia mahdollistavista asioista on ollut siirtyminen yhä enenevissä määrin käyttämään fyysisten palvelinten sijaan virtuaalisia ja pilvessä toimivia palvelimia. Pikkuhiljaa myös "palvelinrautaa" on ruvettu määrittelemään koodin avulla käsiteltävien konfiguraatiotiedostojen avulla. Englanniksi tästä ilmiöstä käytetään nimitystä [infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code).
 
-Tämä on tehnyt palvelinten ohjelmoinnillisen hallinnoinnin mahdolliseksi. Palvelinten konfiguraatioita voidaan tallettaa versionhallintaan ja jopa testata. Sovelluskehitys ja ylläpito ovat alkaneet muistuttaa enemmän toisiaan kuin vanhoina (huonoina) aikoina.
+Palvelinten, tallennuskapasiteetin ja verkon konfiguraatioiden automatisoitu ohjelmallisesti tapahtuva hallinnointi on siis yleistynyt koko ajan. Palvelinten konfiguraatioita voidaan tallettaa versionhallintaan ja jopa testata. Sovelluskehitys ja ylläpito ovat alkaneet muistuttaa enemmän toisiaan kuin vanhoina (huonoina) aikoina. Tämä suuntaus on johtanut siihen, että sovelluskehittäjiltä on ruvettu pikkuhiljaa vaatimaan sellaisia taitoja, jotka olivat aiemmin selkeästi järjestelmäylläpitäjien vastuulla. 
 
-Työkalujen käyttöönotto ei kuitenkaan riitä, DevOps:in "tekeminen" lähtee pohjimmiltaan kulttuurisista tekijöistä, tiimirakenteista, sekä asioiden sallimisesta..
+Työkalujen käyttöönotto ei kuitenkaan riitä, DevOps:in "tekeminen" lähtee pohjimmiltaan kulttuurisista tekijöistä, tiimirakenteista, sekä asioiden sallimisesta.
  
-Scrumin ja agilen eräs tärkeimmistä periaatteista on tehdä kehitystiimeistä itseorganisoituvia ja "cross functional", eli sellaisia että ne sisältävät kaiken tietotaidon uusien ominaisuuksien Definition of Donen tasolla valmiiksi saattamista varten. DevOps onkin eräs keino viedä ketteryyttä askeleen pitemmälle, mahdollistaa se, että ketterät tiimit ovat todella cross functional ja että ne pystyvät viemään vaivattomasti toteuttamansa uudet toiminnallisuudet tuotantoympäristöön asti ja jopa testaamaan ja operoimaan niitä tuotannossa.
+Scrumin ja ketterien menetelmien eräs tärkeimmistä periaatteista on tehdä kehitystiimeistä  _"cross functional"_, eli sellaisia, että ne sisältävät kaiken tietotaidon, joka tarvitaan saamaan user storyt valmiiksi definition of donen määrittelemällä laatutasolla. DevOps onkin eräs keino viedä ketteryyttä vielä askel pitemmälle, mahdollistaa se, että ketterät tiimit ovat todella cross functional ja että ne pystyvät viemään vaivattomasti toteuttamansa uudet toiminnallisuudet tuotantoympäristöön asti sekä jopa testaamaan ja operoimaan niitä tuotannossa.
 
-Eräs parhaista DevOpsin määritelmistä [Daniel Storin](http://turnoff.us/geek/devops-explained/) käsialaa:
+Eräs parhaista DevOpsin määritelmistä on [Daniel Storin](http://turnoff.us/geek/devops-explained/) käsialaa:
 
 ![]({{ "/images/3-19.png" | absolute_url }}){:height="750px" }
- 
+
 ## Yhteenveto - ketterän testauksen nelikettä
 
-Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maric käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
+Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maric käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
 
 ![]({{ "/images/3-20.png" | absolute_url }}){:height="350px" }
 
-Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1...Q4) seuraavien dimensioiden suhteen:
+Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1...Q4) seuraavien dimensioiden suhteen:
 - business facing vs. technology facing, kohdistuuko testaus käyttäjän kokemaan toiminnallisuuteen vai enemmän ohjelmist sisäisen toiminnallisuuden yksityiskohtiin 
 - supporting team vs. critique to the product, onko testien rooli toimia sovelluskehittäjien tukena vai varmistaa sovelluksen ulkoinen laatu
 
-Testit ovat suurelta osin automatisoitavissa, mutta esim. tutkiva testaaminen (exploratory testing) ja käyttäjän hyväksymätestaus (user acceptance testing) ovat luonteeltaan manuaalista työtä edellyttäviä.
+Testit ovat suurelta osin automatisoitavissa, mutta esim. tutkiva testaaminen (exploratory testing) ja käyttäjän hyväksymistestaus (user acceptance testing) ovat luonteeltaan manuaalista työtä edellyttäviä.
 
-Kaikilla "neljänneksillä" on oma roolinsa ja paikkansa ketterässä ohjelmistokehityksessä, ja on pitkälti kontekstisidonnaista missä suhteessa testaukseen ja laadunhallintaan käytettävissä olevat resurssit kannattaa kuhunkin neljännekseen kohdentaa.
+Kaikilla "neljänneksillä" on oma roolinsa ja paikkansa ketterässä ohjelmistokehityksessä, ja on pitkälti kontekstisidonnaista missä suhteessa testaukseen ja laadunhallintaan käytettävissä olevat resurssit kannattaa kuhunkin neljännekseen kohdentaa.
 
-Kaavio on jo hieman vanha, alunperin vuodelta 2003 joten se ei tunne vielä käsitett tuotannossa testaaminen.
+Kaavio on jo hieman vanha, alunperin vuodelta 2003 joten se ei tunne vielä käsitettä tuotannossa testaaminen.
+
+
+ 
 
 ## Loppupäätelmiä testauksesta ja laadunhallinnasta
 

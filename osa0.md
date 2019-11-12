@@ -17,10 +17,10 @@ Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja teknis
 
 Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 - tuntee ohjelmistoprosessin vaiheet (vaatimusmäärittely, suunnittelu, toteutus ja laadunhallinta) 
-- tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
-- ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
-- ymmärtää ohjelmiston laadunhallinnan perusteet
-- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
+- tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
+- ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
+- ymmärtää ohjelmiston laadunhallinnan perusteet
+- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
 
 ## Kurssin suorittaminen ja arvostelu
 
@@ -50,17 +50,17 @@ Kurssin lopussa on miniprojektien yhteinen 2h kestoinen demotilaisuus.
 
 Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
 
-*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
+*Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
 
 #### Miniprojektin hyväksilukeminen
 
-Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
+Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
 
 Kriteerit selviävät [täältä](https://www.helsinki.fi/fi/ohjelmat/kandi/tietojenkasittelytieteen-kandiohjelma/ohjeita-ja-infoa-ohjelman-opiskelijoille#section-41418) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
 
 Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _6 kuukauden työkokemus_.
 
-Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömästi emailitse.
+Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömästi emailitse.
 
 ### Kurssin arvostelu
 
@@ -92,13 +92,13 @@ Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemäl
 
 Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoituset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
 
-Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin. 
+Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin. 
 
 Versionhallintaa, ohjelmistojen konfigurointia, testausta ja ohjelmointia käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (poislukien testaukseen liittyvä teoria). 
 
-Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
+Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
 
-Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
+Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
 
 Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on eri henkisiä komponentteja, näistä yksikään ei ole muita tärkeämpi, kullakin on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
 
@@ -119,7 +119,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 ### Viikko 2
 
 - Luento 3: maanantai 4.11. klo 12-14 CK112
-  - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
+  - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 - Luento 4: tiistai 5.11. klo 12-14 CK112
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
@@ -145,7 +145,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [DevOps](/osa3#devops) 
 - Luento 8: tiistai 19.11. klo 12-14 CK112
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
-  - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
+  - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/4) deadline sunnuntaina 24.11. klo 23:59  
@@ -171,7 +171,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 ### Viikko 6
 
 - Luento 10: maanantai 2.12. klo 12-14 CK112
-  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
+  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Luento 11: tiistai 3.12. klo 12-14 CK112
   - Vierailuluento Niko Laitinen Nitor
