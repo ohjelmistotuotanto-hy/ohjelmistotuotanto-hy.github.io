@@ -74,7 +74,7 @@ Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaati
    
 Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analysoidaan, dokumentoidaan, validoidaan ja miten niitä hallinnoidaan, vaihtelee siis paljon ohjelmistoprojektin luonteesta riippuen. Palaamme jatkossa vielä hieman tarkemmin eräisiin vaatimusmäärittelyn osa-alueisiin.
 
-## Vaatimusten luokittelu – toiminnalliset vaatimukset
+### Toiminnalliset vaatimukset
  
 Kuten mainittiin, vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
 
@@ -93,7 +93,7 @@ Riippumatta toiminnallisten vaatimusten dokumentointitavasta on melko yleistä, 
 
 Esim. _tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden hintatietoja_ kertoo erään järjestelmän toiminnallisuuden roolin _tavarantoimittaja_ omaaville käyttäjille. 
 
-## Vaatimusten luokittelu – ei-toiminnalliset vaatimukset
+### Ei-toiminnalliset vaatimukset
  
 Vaatimusten toinen luokka, ei-toiminnalliset vaatimukset (engl. nonfunctional requirements), 
 jakautuu kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoitteisiin. 
