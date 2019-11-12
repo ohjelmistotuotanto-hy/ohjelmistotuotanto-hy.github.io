@@ -687,7 +687,7 @@ Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://
 
 Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä trunk. Pääkehityshaara voi olla master tai joku erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
-Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin, näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
+Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin, näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
 
 Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityisen suurta kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta.
 Feature togglejen holtiton käyttö voi johtaa feature toggle helvettiin, eli suunnittelua ja systemaattisuutta todellakin tarvitaan. 
