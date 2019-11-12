@@ -596,11 +596,6 @@ Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannatt
 
 Tutkiva testaaminen siis ei missään tapauksessa ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille ja automatisoiduille testeille, vaan niitä täydentävä testauksen muoto.
 
-<div class="important">
-Tästä kohdasta alkaa DRAFT, eli lukeminen omalla vastuulla!
-</div>
-
-
 ## Tuotannossa tapahtuva testaaminen ja laadunhallinta
 
 Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testaus tulee suorittaa ennen kuin ohjelmisto tai sen uudet toiminnallisuudet on otettu käyttöön eli viety tuotantoympäristöön. Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa.
