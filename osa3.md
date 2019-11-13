@@ -606,7 +606,7 @@ Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testau
 
 Eräs tuotannossa tapahtuvan testaamisen tekniikka on [blue-green-deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html), missä periaatteena on ylläpitää rinnakkain kahta tuotantoympäristöä (tai palvelinta), joista käytetään nimiä blue ja green.
 
-Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa käytössä. Käyttäjien ja tuotantopalvelinten välissä oleva komponentti esimerkiksi, ns. reverse proxyna toimiva web-palvelin (kuvassa router) ohjaa käyttäjien liikenteen aktiivisena olevaan ympäristöön. 
+Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa käytössä. Käyttäjien ja tuotantopalvelinten välissä oleva komponentti, esimerkiksi ns. reverse proxyna toimiva web-palvelin (kuvassa router) ohjaa käyttäjien liikenteen aktiivisena olevaan ympäristöön. 
 
 Kun järjestelmään toteutetaan uusi ominaisuus, deployataan se ensin passiivisena olevaan ympäristöön.
  
@@ -639,9 +639,9 @@ Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitoroi
 Monitoroinnissa tulee siis palvelimen yleisen toimivuuden lisäksi seurata
 _käyttäjätason metriikoita_ (engl. bussiness level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
 
-Myös canary releasejen yhteydessä testauksen ja kaikkien tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti. 
+Myös canary releasejen yhteydessä testauksen ja kaiken tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti. 
  
-Nimi canary release periytyy kaivostyöläisten tavasta käyttää kanarialintuja tutkimaan sitä onko kaivoksessa myrkyllisiä kaasuja, jos kaivokseen viety lintu ei kuole, ilma on turvallista. 
+Nimi canary release periytyy kaivostyöläisten tavasta käyttää kanarialintuja tutkimaan sitä onko kaivoksessa myrkyllisiä kaasuja: jos kaivokseen viety lintu ei kuole, ilma on turvallista. 
 
 ### Tuotannossa testaaminen ja tietokanta
 
@@ -651,15 +651,15 @@ Tilanne ei välttämättä ole tämä ja erityisesti canary releasejen yht
  
 ![]({{ "/images/3-16.png" | absolute_url }}){:height="200px" }
 
-Tämä taas asettaa haasteita, jos järjestelmään toteutetut uudet ominaisuudet edellyttävät muutoksia tietokannan skeemaan, sillä canary releasejen yhteydessä tarvitaan usein yhtä aikaa sekä tietokannan uutta että vanhaa versiota
+Tämä taas asettaa haasteita, jos järjestelmään toteutetut uudet ominaisuudet edellyttävät muutoksia tietokannan skeemaan, sillä canary releasejen yhteydessä tarvitaan usein yhtä aikaa sekä tietokannan uutta että vanhaa versiota.
 
-Jos järjestelmän uusi ja vanha versio joutuvat jostain syystä käyttämään eri tietokantaa, täytyy kantojen tila synkronoida, jotta järjestelmien vaihtaminen onnistuu saumattomasti yhteen kantaa sovelluksen tekemät päivitykset on siis tavalla tai toisella tehtävä myös toiseen, kenties skeemaltaan jo muuttuneeseen kantaan.
+Jos järjestelmän uusi ja vanha versio joutuvat jostain syystä käyttämään eri tietokantaa, täytyy kantojen tila synkronoida, jotta järjestelmien vaihtaminen onnistuu saumattomasti. Yhteen kantaan sovelluksen tekemät päivitykset on siis tavalla tai toisella tehtävä myös toiseen, kenties skeemaltaan jo muuttuneeseen kantaan.
 
 ### Feature toggle
 
-Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisenä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature toggleja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature flag, conditional feature, config flag, nimi feature toggle alkaa kuitenkin vakiintua.
+Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisenä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature toggleja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature flag, conditional feature ja config flag. Nimi feature toggle alkaa kuitenkin vakiintua.
 
-Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadun hallinnan alla olevaan toteutukseen.
+Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadunhallinnan alla olevaan toteutukseen.
 
 Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytettävien uutisten listaan asettaa feature toggle, jonka avulla tietyin perustein valituille käyttäjille näytettäisiinkin uuden algoritmin perusteella generoitu lista uutisia:
 
@@ -674,7 +674,7 @@ Suuret internetpalvelut kuten Facebook, Netflix, Google ja Flickr soveltavat laa
 
 ### Feature branchit ja merge hell
 
-Edellisessä luvussa mainittiin [feature branchit](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), kyseessä on siis käytäntö, missä uudet ominaisuudet, esimerkikri user storyn vaatima toiminnallisuus toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. masteriin).
+Edellisessä luvussa mainittiin [feature branchit](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Kyseessä on siis käytäntö, missä uudet ominaisuudet, esimerkiksi user storyn vaatima toiminnallisuus toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. masteriin).
 
 Monet pitävät feature brancheja versionhallinnan käytön best practicena. Viime aikoina on kuitenkin monissa piireissä ruvettu pitämään feature branchaystä ikävänä käytänteenä, sillä se johtaa helposti pahoihin merge-konflikteihin, erityisesti jos branchit ovat pitkäikäisiä.
 
@@ -703,9 +703,9 @@ Tälläisessä ympäristössä esim. continuous deploymentin harjoittamine
 
 Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoitetaan palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä dev ja ops työskentelevät tiiviisti yhdessä on käyttää nimeä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
 
-DevOps on termi, joka on nykyään monin paikoin esillä, esimerkiksi työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin. On myös myynnissä mitä erilaisempia DevOps-työkaluja. On kuitenkin jossain määrin epäselvää mitä kukin tarkoittaa termillä DevOps.
+DevOps on termi, joka on nykyään monin paikoin esillä, esimerkiksi työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin. On myös myynnissä mitä erilaisimpia DevOps-työkaluja. On kuitenkin jossain määrin epäselvää mitä kukin tarkoittaa termillä DevOps.
 
-Suurin osa (järkevistä) määritelmistä tarkoittaa DevOpsilla nimenomaan kehittäjien ja järjestelmäylläpidon yhteistä työnteon ja kommunikaation tapaa, jonka pyrkimyksenä on tehdä sovelluskehityksen aikaansannosten käyttöönotto mahdollisimman sujuvaksi. Tämän takia onkin hyvä puhua DevOps-kulttuurista.
+Suurin osa (järkevistä) määritelmistä tarkoittaa DevOpsilla nimenomaan kehittäjien ja järjestelmäylläpidon yhteistä työnteon ja kommunikaation tapaa, jonka pyrkimyksenä on tehdä sovelluskehityksen aikaansaannosten käyttöönotto mahdollisimman sujuvaksi. Tämän takia onkin hyvä puhua DevOps-kulttuurista.
 
 On olemassa joukko käsitteellisiä ja teknisiä työkaluja, jotka usein liitetään DevOps-tyyliseen työskentelyyn, esim.
 
