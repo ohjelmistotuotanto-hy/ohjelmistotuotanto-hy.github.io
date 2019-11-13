@@ -468,9 +468,11 @@ Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_, joka hidastaa selai
 * uuden käyttäjätunnuksen luominen
 * uuden käyttäjätunnuksen luomisen jälkeen tapahtuva ulkoskirjautuminen sovelluksesta
 
-**HUOM1:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
+**HUOM1:** voit tehdä skenaariot yksi kerrallaan, kaiken main-metodiin, siten että laitat esim. kommentteihin muiden skenaarioiden koodin kun suoritat yhtä skernaariota
 
-**HUOM2:**
+**HUOM2:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
+
+**HUOM3:**
 
 Uuden käyttäjän luomisen kokeilua hankaloittaa se, että käyttäjänimen on oltava uniikki. Kannattanee generoida koodissa satunnaisia käyttäjänimiä esim. seuraavasti:
 
