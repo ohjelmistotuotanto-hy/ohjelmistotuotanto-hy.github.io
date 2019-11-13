@@ -17,6 +17,8 @@ DRAFT: Lukeminen omalla vastuulla!
 
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
+Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">viikko 5</span> liittyvät viikon 5 laskareihin, eli voit skipata ne viikolla 4.
+
 ## Typoja materiaalissa
 
 Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa4.md) tiedostoa GitHubissa.
@@ -327,40 +329,33 @@ Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnittelu
 
 Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, _singleton_ sekä _data access object_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
 
-
-
-
-
-
-
-
-
-
 ### Koodin laatuattribuutti: kapselointi
 
 Ohjelmoinnin peruskurssilla _kapselointi_ (engl. encapsulation) määriteltiin muutama vuosi seuraavasti
 
 > Tapaa ohjelmoida olion toteutuksen yksityiskohdat luokkamäärittelyn sisään – piiloon olion käyttäjältä – kutsutaan kapseloinniksi. Olion käyttäjän ei tarvitse tietää mitään olioiden sisäisestä toiminnasta. 
 
-Määritelmä ei ole enää sanatarkkaan sama, mutta aloitteleva ohjelmoija assosioi kapseloinnin nykyäänkin seuraavaan periaatteeseen: _oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit_
+Määritelmä ei ole nykyisellä kurssilla sanatarkkaan sama, mutta aloitteleva ohjelmoija assosioi kapseloinnin nykyäänkin seuraavaan periaatteeseen: _oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit_
 
-Tämä on kuitenkin aika kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, algoritmi, olioiden luomistapa, käytettävän komponentin rakenne, jne...
+Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
 Monissa suunnittelumalleissa on kyse juuri eritasoisten asioiden kapseloinnista, ja tulemme pian näkemään esimerkkejä asiasta.
 
-Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerkiksi kerrosarkkitehtuurissa ylempi kerros käyttää ainoastaan alapuolellaan olevan kerroksen ulospäin tarjoamaa rajapintaa, kaikki muu on kapseloitu näkymättömiin. 
+Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerkiksi kerrosarkkitehtuurissa ylempi kerros käyttää ainoastaan alapuolellaan olevan kerroksen ulospäin tarjoamaa rajapintaa, kaikki muu on kapseloitu näkymättömiin. Vastaavasti mikropalveluarkkitehtuureissa yksittäinen palvelu kapseloi toiminnallisuutensa sisäisen logiikan ja tarjoaa ulospäin ainoastaan verkon välityksellä käytettävän rajapinnan.
 
 ### Koodin laatuattribuutti: koheesio
 
-_Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi on keskittynyt tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta.
+_Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi keskittyy tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta.
 
 Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa ja komponenteissa.
 
 #### Koheesio metoditasolla
 
-Esimerkki artikkelista [http://www.ibm.com/developerworks/java/library/j-eaed4/index.html](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html)
+Tarkastellaan esimerkkinä [Neal Fordin artikkelista](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) olevaa tietokannasta tietoa hakevaa metodia. Metodin koodi näyttää seuraavalta:
 
 ``` java
+// SQL_SELECT_PARTS on vakio, joka sisältää SQL-kyselyn
+
 public void populate() throws Exception {
     try (Connection c = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
         Statement stmt = c.createStatement();
@@ -378,14 +373,16 @@ public void populate() throws Exception {
 
 Metodissa tehdään montaa asiaa:
 
-* luodaan yhteys tietokantaan
-* tehdään tietokantakysely
-* käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti Part-olio
-* suljetaan yhteys
+- luodaan yhteys tietokantaan
+- tehdään tietokantakysely
+- käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti _Part_-olio
+- suljetaan yhteys
 
-Ikävänä seurauksena tästä on myös se, että metodi toimii monella abstraktiotasolla. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta "bisnestason" olioita.
+Metodi toimii myös monella erilaisella _abstraktiotasolla_. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta sovelluslogiikan tasolla mielekkäitä _Part_-olioita.
 
-Metodi on helppo __refaktoroida__ pilkkomalla se pienempiin osiin joiden kutsumista alkuperäinen metodi koordinoi.
+Metodin koheesion taso on siis erittäin huono.
+
+Metodi on helppo _refaktoroida_ pilkkomalla se pienempiin osiin, joiden kutsumista alkuperäinen metodi koordinoi.
 
 ``` java
 public void populate() throws Exception {
@@ -415,15 +412,16 @@ private void addPartToListFromResultSet(ResultSet rs) throws SQLException {
 }
 ```
 
-Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja hyvin nimettyjä.
+Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja kuvaavasti nimettyjä.
 
-Nyt aikaansaatu lopputulos ei ole vielä välttämättä ideaali koko ohjelman kontekstissa. [Artikkelissa](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) esimerkkiä jatketaankin eristäen tietokantaoperaatiot (joita myös muut ohjelman osat tarvitsevat) omaan luokkaansa.
+ Aikaansaatu lopputulos ei ole vielä ideaali koko ohjelman kontekstissa. [Artikkelissa](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) esimerkkiä jatketaan eristäen tietokantaoperaatiot, joita myös muut ohjelman osat tarvitsevat omaan luokkaansa.
+
 
 #### Koheesio luokkatasolla
 
-Luokkatason koheesiossa pyrkimyksenä on, että luokan vastuulla on vain yksi asia, tämä tunnetaan myös nimellä [Single Responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle) (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_. 
+Luokkatason koheesiossa pyrkimyksenä on, että luokan _vastuulla _on vain yksi asia, tämä tunnetaan myös nimellä [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle)-periaate (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_. 
 
-Kurssin alussa tarkastelimme yksinkertaista laskinta:
+Kurssin ensimmäisissä laskareissa tarkasteltiin yksinkertaista laskinta:
 
 ``` java
 public class Laskin {
@@ -456,12 +454,12 @@ public class Laskin {
 }
 ```
 
-Luokka rikkoo Single responsibility -periaatteen. Miksi? Periaate sanoo, että luokalla saa olla vain yksi vastuu eli syy muuttua. Nyt luokalla on kuitenkin useita syitä muuttua:
+Luokka rikkoo single responsibility -periaatetta. Miksi? Periaate sanoo, että luokalla saa olla vain yksi vastuu eli syy muuttua. Nyt luokalla on kuitenkin useita syitä muuttua:
 
-* luokalle halutaan toteuttaa uusia laskutoimituksia
-* kommunikointi käyttäjän kanssa halutaan hoitaa jotenkin muuten kuin konsolin välityksellä
+- luokalle halutaan toteuttaa uusia laskutoimituksia
+- kommunikointi käyttäjän kanssa halutaan hoitaa jotenkin muuten kuin konsolin välityksellä
 
-Eriyttämällä käyttäjän kanssa kommunikointi omaan luokkaan ja eristämällä se rajapinnan taakse (eli _kapseloimalla kommunikoinnin toteutustapa_) saadaan luokan Laskin vastuita vähennettyä:
+Eriyttämällä käyttäjän kanssa kommunikointi omaan luokkaan ja eristämällä se rajapinnan taakse eli _kapseloimalla kommunikoinnin toteutustapa_ saadaan luokan Laskin vastuita vähennettyä:
 
 ``` java
 public interface IO {
@@ -497,9 +495,9 @@ public class Laskin {
 }
 ```
 
-Nyt kommunikointitavan muutos ei edellytä luokkaan mitään muutoksia edellyttäen että uusikin kommunikoinitapa toteuttaa rajapinnan, jonka kautta Laskin hoitaa kommunikoinnin.
+Nyt kommunikointitavan muutos ei edellytä luokkaan mitään muutoksia edellyttäen että uusikin kommunikointitapa toteuttaa rajapinnan, jonka kautta _Laskin_ hoitaa kommunikoinnin.
 
-Vaikka luokka Laskin siis toteuttaakin edelleen käyttäjänsä näkökulmasta samat asiat kuin aiemmin, ei se hoida kaikkea itse vaan _delegoi_ osan vastuistaan muualle.
+Vaikka luokka _Laskin_ siis toteuttaakin edelleen käyttäjänsä näkökulmasta samat asiat kuin aiemmin, ei se hoida kaikkea itse vaan _delegoi_ osan vastuistaan muualle.
 
 Kommunikointirajapinta voidaan toteuttaa esim. seuraavasti:
 
@@ -521,7 +519,7 @@ public class KonsoliIO implements IO {
 }
 ```
 
-Ja laskin konfiguroidaan injektoimalla _IO_-rajapinnan toteuttava luokka konstruktorin parametrina:
+Laskin konfiguroidaan injektoimalla _IO_-rajapinnan toteuttava luokka konstruktorin parametrina:
 
 ```java
 public class Main {
@@ -564,14 +562,9 @@ Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaam
 
 #### Koheesio komponenttitasolla
 
-Koheesio ja _single responsibility_ -periaate evät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy pieneen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Web-sovelluksen tilan käsittely taas pyritään kapseloimaan Redux-storeen, jonka ainoa vastuu on tilasta ja sen muutoksista huolehtiminen. 
+Koheesio ja _single responsibility_ -periaate eivät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy yhteen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Web-sovelluksen tilan käsittely taas pyritään kapseloimaan Redux-storeen, jonka ainoa vastuu on tilasta ja sen muutoksista huolehtiminen. 
 
-Koheesion periaate näkyy myös arkkitehtuuritasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen "bisnesstason" toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
-
-
-
-
-
+Koheesion periaate näkyy myös sovelluksen arkkitehtuurien tasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen liiketoiminnan tason toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
 
 ### Riippuvuuksien vähäisyys
 
@@ -590,7 +583,7 @@ Dependency Injection -suunnittelumalli toimi usein apuvälineenä konkreettisen 
 
 Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa eliminoida muuttamalla luokan vastuita.
 
-#### Favour composition over inheritance eli milloin ei kannata periä
+#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">viikko 5</span>
 
 Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, tämä voi jossain tapauksissa olla ongelmallista. Yksi oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
@@ -869,7 +862,7 @@ Tili euribor12 = Tili.luoEuriborTili("4422-3355", "Lea Kutvonen", 12 );
 Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Indre Zliobaite", 1 );
 ```
 
-#### Suunnittelumalli: static factory method
+#### Suunnittelumalli: static factory method <span style="color:blue">viikko 5</span>
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
@@ -895,7 +888,7 @@ maaraaikais.vaihdaKorkoa(new EuriborKorko(3));
 
 Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
 
-#### Suunnittelumalli: strategy
+#### Suunnittelumalli: strategy <span style="color:blue">viikko 5</span>
 
 Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
@@ -903,7 +896,7 @@ Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on 
 
 Lisätietoa strategia-suunnittelumallista seuraavissa http://www.oodesign.com/strategy-pattern.html ja https://sourcemaking.com/design_patterns/strategy
 
-#### Vastuiden eriyttäminen: tilin luominen pankissa
+#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">viikko 5</span>
 
 Loimme äsken luokalle _Tili_ staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, _Pankki_ vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
 
@@ -949,7 +942,7 @@ Nyt tehdasmetodista on siis tehty luokan oman staattisen metdoin sijaan toiseen 
 
 Luokkien vastuut ovat selkeytyneet, _Tili_ vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. _Pankki_ taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
-### Toiminnallisuuden kapselointi: laskin ilman iffejä
+### Toiminnallisuuden kapselointi: laskin ilman iffejä <span style="color:blue">viikko 5</span>
 
 Olemme laajentaneet Laskin-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -1091,7 +1084,7 @@ Sovelluksen rakenne näyttää seuraavalta
 
 ![]({{ "/images/4-10.png" | absolute_url }}){:height="250px" }
 
-#### Laskin ja komento-olio
+#### Laskin ja komento-olio <span style="color:blue">viikko 5</span>
 
 Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan _Operaatio_ olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
 
@@ -1242,7 +1235,7 @@ Ohjelman rakenne tässä vaiheessa
 
 ![]({{ "/images/4-11.png" | absolute_url }}){:height="250px" }
 
-#### Suunnittelumalli: command
+#### Suunnittelumalli: command <span style="color:blue">viikko 5</span>
 
 Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
 
@@ -1252,7 +1245,7 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 
 Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html ja http://sourcemaking.com/design_patterns/command
 
-#### Yhteisen koodin eriyttäminen yliluokkaan
+#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">viikko 5</span>
 
 Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
 
@@ -1329,7 +1322,7 @@ Ohjelmasta on näin ollen saatu laajennettavuudeltaan varsin joustava. Uusia ope
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen). 
 
-#### Suunnittelumalli: template method
+#### Suunnittelumalli: template method <span style="color:blue">viikko 5</span>
 
 Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
@@ -1389,7 +1382,7 @@ Lisää template method -suunnittelumallista seuraavissa
 http://www.oodesign.com/template-method-pattern.html ja
 http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern
 
-### Koodin laatuattribuutti: toisteettomuus
+### Koodin laatuattribuutti: toisteettomuus 
 
 Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _riippuvuuksien vähäisyyttä_, seuraavana vuorossa redundanssi eli toisteisuus.
 
@@ -1403,7 +1396,7 @@ DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa el
 
 Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman lisähavainnollistuksia. Oletetaan että kehittämämme webkauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä euroa rahayksikkönä. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hvyin luokan _Money_ vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
-#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla
+#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">viikko 5</span>
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa _GutenbergLukija_:
 
@@ -1678,7 +1671,7 @@ kirja
     .forEach(s->System.out.println(s));
 ```
 
-#### Hyvä vs. paha copypaste
+#### Hyvä vs. paha copypaste <span style="color:blue">viikko 5</span>
 
 Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevääkin ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) se tarvittaessa myöhemmin siistimmäksi. 
 
@@ -1707,7 +1700,7 @@ Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että kood
 
 ![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px" }
 
-### Code smell - koodihaju
+### Code smell
 
 Koodissa olevista epäilyttävistä piireteistä on ruvettu käyttämään nimitystä _code smell_ eli koodihaju.
 
@@ -1737,7 +1730,6 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 - https://sourcemaking.com/refactoring/bad-smells-in-code 
 - https://www.codinghorror.com/blog/2006/05/code-smells.html
-
 
 ### Refaktorointi
 
@@ -1789,11 +1781,11 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran että tiedetään _kuinka sovellus olisi tullut suunnitella_.
 
-### Lisää suunnittelumalleja
+### Lisää suunnittelumalleja <span style="color:blue">viikko 5</span>
 
-Tutustutaan viikon lopuksi vielä muutama uuteen suunnittelumalliin.
+Tutustutaan osan lopuksi vielä muutama uuteen suunnittelumalliin.
 
-#### Esimerkki Dekoroitu pino
+#### Esimerkki Dekoroitu pino <span style="color:blue">viikko 5</span>
 
 Olemme toteuttaneet asiakkaalle pinon:
 
@@ -2001,7 +1993,7 @@ Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerr
 
 Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/ jadesign_patterns/decorator 
 
-#### Pinotehdas
+#### Pinotehdas <span style="color:blue">viikko 5</span>
 
 Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehtaan:
 
@@ -2047,7 +2039,7 @@ Pino omapino = tehdas.kryptattuPrepaidPino(100);
 
 Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan _rakentaja_ (engl. builder) -suunnittelumallia:
 
-#### Pinorakentaja
+#### Pinorakentaja <span style="color:blue">viikko 5</span>
 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 
