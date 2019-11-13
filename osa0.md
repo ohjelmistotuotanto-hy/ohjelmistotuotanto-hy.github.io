@@ -160,8 +160,11 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 ### Viikko 5
 
 - _Maanantaina 25.11. ei todennäköisesti ole luentoa_
-- Luento 9: tiistai 26.11. klo 12-14 CK112
+- Luento 9: maanantai 25.11. klo 12-14 CK112
   - [Lean](/osa5#lean)
+- Luento 10: tiistai 26.11. klo 12-14 CK112
+  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
+  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/5) deadline sunnuntaina 1.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 2.12. klo 23:59 
@@ -171,8 +174,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 ### Viikko 6
 
 - Luento 10: maanantai 2.12. klo 12-14 CK112
-  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
-  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
+  - Vierailuluento Juha Viljanen Smartly
 - Luento 11: tiistai 3.12. klo 12-14 CK112
   - Vierailuluento Niko Laitinen Nitor
 - Laskarit
