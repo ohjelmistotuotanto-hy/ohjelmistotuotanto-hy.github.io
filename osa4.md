@@ -298,31 +298,23 @@ Inkrementaalinen lähestymistapa arkkitehtuurin muodostamiseen edellyttää kood
 
 Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten sovelluskehittäjien huolimattomuus, aikataulupaineet ym. syyt johtavat siihen, että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmisto on muodoton kasa spagettikoodia, eli [big ball of mud](http://www.laputan.org/mud/) jonka ylläpitäminen ja jatkokehittäminen muuttuu erittäin haastavaksi.
 
-
-
-
-
-
-
-
-
-
-## Olio/komponenttisuunnittelu
+## Olio- ja komponenttisuunnittelu
  
-Sovelluksen arkkitehtuuri siis antaa raamit jotka ohjaavat sovelluksen tarkempaa sunnittelua ja toteuttamista. Tätä detaljoidumman tason suunnittelua nimitetään olio- tai komponenttisuunnitteluksi ja sen tarkoituksena on tarkentaa komponenttien väliset rajapinnat sekä hahmotella ohjelman tarkempi luokka- tai moduulirakenne.
+Sovelluksen arkkitehtuuri siis antaa raamit, jotka ohjaavat sovelluksen tarkempaa suunnittelua ja toteuttamista. Tätä tarkemman tason suunnittelua kutsutaan olio- tai komponenttisuunnitteluksi ja sen tarkoituksena on tarkentaa arkkitehtuuristen komponenttien väliset rajapinnat sekä hahmotella ohjelman tarkempi luokka- tai moduulirakenne.
 
-Vesiputousmaisessa työskentelyssä komponenttisuunnittelu saattaa olla dokumentoitu esim. UML:n luokka- ja sekvenssikaavioina. Erityisesti ketterässä ohjelmistotuotannossa tarkka suunnittelu tapahtuu kuitenkin yleensä vasta ohjelmoitaessa. 
+Vesiputousmaisessa työskentelyssä komponenttisuunnittelu saattaa olla dokumentoitu hyvinkin tarkkaan esim. UML:n luokka- ja sekvenssikaavioita hyväksikäyttäen. Erityisesti ketterässä ohjelmistotuotannossa tarkka suunnittelu tapahtuu kuitenkin yleensä vasta ohjelmoitaessa. 
 
-Ohjelmiston suunnittelussa pyritään ennenkaikkia maksimoimaan [koodin sisäinen laatu](/osa3), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana. 
+Ohjelmiston suunnittelussa pyritään ennen kaikkia maksimoimaan [koodin sisäinen laatu](/osa3#yksikkötestaus), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana. 
 
 Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja ovat mm. seuraavat
-- koodin tulee olla luettavuudeltaan selkeää, ja sen tulee kertoa esim. nimennällään mahdollisimman selkeästi mitä koodi tekee, ja tuoda esiin koodin alla oleva "design"
-- yhtä paikkaa pitää pystyä muuttamaan siten, ettei muutoksesta aiheudu sivuvaikutuksia sellaisiin kohtiin koodia, jota muuttaja ei pysty ennakoimaan
-- jos ohjelmaan tulee tehdä laajennus tai bugikorjaus, tulee olla helppo selvittää mihin kohtaan koodia muutos tulee tehdä
-- jos ohjelmasta muutetaan "yhtä asiaa", tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin tai luokkaan)
+
+- koodin tulee olla luettavuudeltaan selkeää, ja sen tulee kertoa esim. nimeämisellä mahdollisimman selkeästi mitä koodi tekee, ja tuoda esiin koodin alla oleva "design"
+- yhtä paikkaa pitää pystyä muuttamaan siten, ettei muutoksesta aiheudu sivuvaikutuksia sellaisiin kohtiin koodia, jota muutoksen tekijä ei pysty ennakoimaan
+- jos ohjelmaan tulee tehdä laajennus tai bugikorjaus, tulee olla helppo selvitettävissä mihin kohtaan koodia muutos tulee tehdä
+- jos ohjelmasta muutetaan "yhtä asiaa", tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin, luokkaan tai komponenttiin)
 - muutosten ja laajennusten jälkeen tulee olla helposti tarkastettavissa ettei muutos aiheuta sivuvaikutuksia muualle järjestelmään
 
-Ohjelmistoalle kertyneen [kansanviisauden](https://www.amazon.com/Software-Development-Principles-Practices-Paperback/dp/B011DBKELY) mukaan ylläpidettävyyden ja laajennettavuuden kannalta hyvällä koodilla on joukko yhteneviä ominaisuuksia, tai _laatuattribuutteja_, näitä ovat esim. seuraavat:
+Ohjelmistoalalle vuosien varrella kerääntyneen [kansanviisauden](https://www.amazon.com/Software-Development-Principles-Practices-Paperback/dp/B011DBKELY) mukaan ylläpidettävyyden ja laajennettavuuden kannalta hyvällä koodilla on joukko yhteneviä ominaisuuksia, tai _laatuattribuutteja_, joita ovat esim. seuraavat:
 
 - kapselointi
 - korkea koheesion aste
@@ -331,9 +323,18 @@ Ohjelmistoalle kertyneen [kansanviisauden](https://www.amazon.com/Software-Devel
 - testattavuus
 - selkeys
 
-Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnitteluratkaisuihin, joita noudattaen on mahdollista kirjoittaa laatuatribuuteilla mitaten laadukasta koodia. Monet näistä periaatteista on tullut nimetyksi ja dokumentoiduksi _suunnittelumallien_ (engl. design patterns) muodossa. 
+Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnitteluratkaisuihin, joita noudattamalla on mahdollista kirjoittaa ylläpidettävyydeltään laadukasta koodia. Monet näistä hyvän suunnittelun periaatteista on nimetty ja dokumentoitu _suunnittelumalleina_ (engl. design patterns). 
 
-Olemme jo nähneet muutamia suunnittelumalleja, ainakin seuraavat: dependency injection singleton, data access object. Suuri osa tällä kurssilla kohtaamistamme suunnittelumalleista on syntynyt olio-ohjelmointikielten parissa. Osa suunnittelumalleista on relevantteja myös muita paragigmoja, kuten funktionaalista ohjelmointia käytettäessa. Muilla paradigmoilla on myös omia suunnittelumallejaan, mutta niitä emme kurssilla käsittele.
+Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, _singleton_ sekä _data access object_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
+
+
+
+
+
+
+
+
+
 
 ### Koodin laatuattribuutti: kapselointi
 
@@ -348,10 +349,6 @@ Tämä on kuitenkin aika kapea näkökulma kapselointiin. Olion sisäisen tilan
 Monissa suunnittelumalleissa on kyse juuri eritasoisten asioiden kapseloinnista, ja tulemme pian näkemään esimerkkejä asiasta.
 
 Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerkiksi kerrosarkkitehtuurissa ylempi kerros käyttää ainoastaan alapuolellaan olevan kerroksen ulospäin tarjoamaa rajapintaa, kaikki muu on kapseloitu näkymättömiin. 
-
-
-
-
 
 ### Koodin laatuattribuutti: koheesio
 
@@ -570,6 +567,11 @@ Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaam
 Koheesio ja _single responsibility_ -periaate evät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy pieneen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Web-sovelluksen tilan käsittely taas pyritään kapseloimaan Redux-storeen, jonka ainoa vastuu on tilasta ja sen muutoksista huolehtiminen. 
 
 Koheesion periaate näkyy myös arkkitehtuuritasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen "bisnesstason" toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
+
+
+
+
+
 
 ### Riippuvuuksien vähäisyys
 
