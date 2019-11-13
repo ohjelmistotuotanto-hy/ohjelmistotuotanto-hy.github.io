@@ -249,38 +249,39 @@ Riippuen käyttämästäsi NetBeansin versiosta, saatat joutua luomaan testejä 
 
 Tee seuraavat testit:
 
-* aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan _tilimaksu()_, varmistettava että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
+* aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan _tilimaksu()_, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumeroilla ja summalla
   * tämä siis on muuten copypaste esimerkistä, mutta verify:ssä on tarkastettava että parametreilla on oikeat arvot
-* aloitetaan asiointi, koriin lisätään kaksi eri tuotetta, joita varastossa on ja suoritetaan ostos, varmistettava että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
-* aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta jota on varastossa tarpeeksi ja suoritetaan ostos, varmistettava että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
-* aloitetaan asiointi, koriin lisätään tuote jota on varastossa tarpeeksi ja tuote joka on loppu ja suoritetaan ostos, varmistettava että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
+* aloitetaan asiointi, koriin lisätään kaksi eri tuotetta, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
+* aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta, jota on varastossa tarpeeksi ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
+* aloitetaan asiointi, koriin lisätään tuote, jota on varastossa tarpeeksi ja tuote joka on loppu ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
 
 Kaikkien testien tarkastukset onnistuvat mockiton _verify_-komennolla.
+
+Muista, että kaikille testeille yhteiset alustukset on mahdollista tehdä metodissa, joka toistetaan ennen jokaista testiä:
+
+```java
+Pankki pankki;
+// ...
+
+@Before
+public void setUp() {
+    pankki = mock(Pankki.class);
+    // ...
+}
+```
 
 ### 4. Yksikkötestaus ja riippuvuudet: Mockito, osa 4
 
 Jatketaan edellisen tehtävän koodin testaamista
 
-* varmistettava, että metodin <code>aloitaAsiointi</code> kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin [MockitoDemo](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko4/MockitoDemo)  testeistä!
-* varmistettava, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua projektin MockitoDemo testeistä!
+* varmista, että metodin <code>aloitaAsiointi</code> kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin MockitoDemo testeistä!
+* varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua projektin MockitoDemo testeistä!
 
-Kaikkien testien tarkastukset onnistuvat mockiton __verify__-komennolla.
+Kaikkien testien tarkastukset onnistuvat mockiton _verify_-komennolla.
 
-Tarkasta viikoilla 1 ja 2 käytetyn [JaCoCon](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/1.md#8-junit) avulla mikä on luokan Kauppa testauskattavuus. 
-
-Huom: jos käytät Java 9:ä ja et saa jacocoa toimimaan, pakota käyttöön uusin versio seuraavasti:
-
-```
-apply plugin: "jacoco"
-
-jacoco {
-    toolVersion = "0.8.2"
-}
-```
+Tarkasta viikoilla 1 ja 2 käytetyn JaCoCon avulla mikä on luokan Kauppa testauskattavuus. 
 
 Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin!
-
-Commitoi tehtävän koodi ja lisää commitille tagi lh4_5. Pushaa koodi ja tagi githubin.
 
 ### Mock-olioiden käytöstä
 
