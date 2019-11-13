@@ -17,7 +17,7 @@ DRAFT: Lukeminen omalla vastuulla!
 
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
-Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">viikko 5</span> liittyvät viikon 5 laskareihin, eli voit skipata ne viikolla 4.
+Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]</span> liittyvät viikon 5 laskareihin, eli voit skipata ne viikolla 4.
 
 ## Typoja materiaalissa
 
@@ -582,7 +582,7 @@ Konkreettisen riippuvuuden eliminointi voidaan tehdä rajapintojen (tai abstrakt
 
 Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa eliminoida muuttamalla luokan vastuita.
 
-#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">viikko 5</span>
+#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">[viikko 5]</span>
 
 Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, tämä voi jossain tapauksissa olla ongelmallista. Yksi oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
@@ -861,7 +861,7 @@ Tili euribor12 = Tili.luoEuriborTili("4422-3355", "Lea Kutvonen", 12 );
 Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Indre Zliobaite", 1 );
 ```
 
-#### Suunnittelumalli: static factory method <span style="color:blue">viikko 5</span>
+#### Suunnittelumalli: static factory method <span style="color:blue">[viikko 5]</span>
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
@@ -887,7 +887,7 @@ maaraaikais.vaihdaKorkoa(new EuriborKorko(3));
 
 Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
 
-#### Suunnittelumalli: strategy <span style="color:blue">viikko 5</span>
+#### Suunnittelumalli: strategy <span style="color:blue">[viikko 5]</span>
 
 Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
@@ -895,7 +895,7 @@ Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on 
 
 Lisätietoa strategia-suunnittelumallista seuraavissa http://www.oodesign.com/strategy-pattern.html ja https://sourcemaking.com/design_patterns/strategy
 
-#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">viikko 5</span>
+#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 5]</span>
 
 Loimme äsken luokalle _Tili_ staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, _Pankki_ vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
 
@@ -941,7 +941,7 @@ Nyt tehdasmetodista on siis tehty luokan oman staattisen metdoin sijaan toiseen 
 
 Luokkien vastuut ovat selkeytyneet, _Tili_ vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. _Pankki_ taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
-### Toiminnallisuuden kapselointi: laskin ilman iffejä <span style="color:blue">viikko 5</span>
+### Toiminnallisuuden kapselointi: laskin ilman iffejä <span style="color:blue">[viikko 5]</span>
 
 Olemme laajentaneet Laskin-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -1083,7 +1083,7 @@ Sovelluksen rakenne näyttää seuraavalta
 
 ![]({{ "/images/4-10.png" | absolute_url }}){:height="250px" }
 
-#### Laskin ja komento-olio <span style="color:blue">viikko 5</span>
+#### Laskin ja komento-olio <span style="color:blue">[viikko 5]</span>
 
 Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan _Operaatio_ olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
 
@@ -1234,7 +1234,7 @@ Ohjelman rakenne tässä vaiheessa
 
 ![]({{ "/images/4-11.png" | absolute_url }}){:height="250px" }
 
-#### Suunnittelumalli: command <span style="color:blue">viikko 5</span>
+#### Suunnittelumalli: command <span style="color:blue">[viikko 5]</span>
 
 Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
 
@@ -1244,7 +1244,7 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 
 Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html ja http://sourcemaking.com/design_patterns/command
 
-#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">viikko 5</span>
+#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
 
 Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
 
@@ -1321,7 +1321,7 @@ Ohjelmasta on näin ollen saatu laajennettavuudeltaan varsin joustava. Uusia ope
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen). 
 
-#### Suunnittelumalli: template method <span style="color:blue">viikko 5</span>
+#### Suunnittelumalli: template method <span style="color:blue">[viikko 5]</span>
 
 Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
@@ -1395,7 +1395,7 @@ DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa el
 
 Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan _Money_ vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
-#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">viikko 5</span>
+#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 5]</span>
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa _GutenbergLukija_:
 
@@ -1670,7 +1670,7 @@ kirja
     .forEach(s->System.out.println(s));
 ```
 
-#### Hyvä vs. paha copypaste <span style="color:blue">viikko 5</span>
+#### Hyvä vs. paha copypaste <span style="color:blue">[viikko 5]</span>
 
 Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevääkin ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) se tarvittaessa myöhemmin siistimmäksi. 
 
@@ -1698,7 +1698,7 @@ Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean co
 
 Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa, [joidenkin arvioiden mukaan jopa 90%](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is)  "ohjelmointiin" kuluvasta ajasta menee olemassa olevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
 
-![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px" 
+![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px"}
 
 ### Code smell
 
@@ -1733,7 +1733,9 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 ### Refaktorointi
 
-Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin rakenteeseen joka kuitenkin pitää koodin toiminnan ennallaan. Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 2000 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018. 
+Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen joka kuitenkin pitää sen toiminnallisuuden ennallaan. 
+
+Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 2000 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018. 
 
 Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktorointioperaatioita. Kirjan listaamat refaktoroinnit löytyvät myös [internetistä](https://refactoring.com/catalog/index.html). Seuraavassa muutamia esimerkkejä 
 
@@ -1795,11 +1797,11 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
 
-### Lisää suunnittelumalleja <span style="color:blue">viikko 5</span>
+### Lisää suunnittelumalleja <span style="color:blue">[viikko 5]</span>
 
 Tutustutaan osan lopuksi vielä muutama uuteen suunnittelumalliin.
 
-#### Esimerkki Dekoroitu pino <span style="color:blue">viikko 5</span>
+#### Esimerkki Dekoroitu pino <span style="color:blue">[viikko 5]</span>
 
 Olemme toteuttaneet asiakkaalle pinon:
 
@@ -2007,7 +2009,7 @@ Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerr
 
 Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/ jadesign_patterns/decorator 
 
-#### Pinotehdas <span style="color:blue">viikko 5</span>
+#### Pinotehdas <span style="color:blue">[viikko 5]</span>
 
 Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehtaan:
 
@@ -2053,7 +2055,7 @@ Pino omapino = tehdas.kryptattuPrepaidPino(100);
 
 Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan _rakentaja_ (engl. builder) -suunnittelumallia:
 
-#### Pinorakentaja <span style="color:blue">viikko 5</span>
+#### Pinorakentaja <span style="color:blue">[viikko 5]</span>
 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 
