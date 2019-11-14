@@ -289,21 +289,20 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 5. IntJoukon testaus ja siistiminen
 
-* Hae [kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto2018) hakemistossa [koodi/viikko5/IntJoukkoSovellus](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko5/IntJoukkoSovellus)
-aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin Jatkokurssin viikon 2 tehtävään 3 (ks. http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/
-  * ratkaisussa joukko-operaatiot on toteutettu suoraan luokkaan IntJoukko staattisina metodeina
-* koodi jättää hieman toivomisen varaa ylläpidettävyyden suhteen
-* refaktoroi luokan IntJoukko koodi mahdollisimman siistiksi
-  * copypaste pois
-  * muuttujille selkeät nimet
-  * ei pitkiä (yli 10 rivisiä) metodeja
-* koodissa on refaktorointia helpottamaan joukko yksikkötestejä
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
 
-*HUOM* refaktoroi mahdollisimman pienin askelin ja pidä koodi koko ajan toimivana. Suorita testit aina jokaisen refaktorointiaskeleen jälkeen! Järkevä refaktorointiaskeleen koko on pieni muutos yhteen metodiin.
+
+Koodi jättää hieman toivomisen varaa ylläpidettävyyden suhteen. Refaktoroi luokan _IntJoukko_ koodi mahdollisimman siistiksi
+- poista copypaste
+- anna muuttujille selkeät nimet
+- tee metodeista pienempiä ja hyvän koheesion omaavia
+
+Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia. 
+
+*HUOM* suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen! 
 
 ### 6. Tenniksen pisteenlaskun refaktorointi
-
-[Kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto2018) hakemistossa [koodi/viikko5/Tennis](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko5/Tennis), löytyy ohjelma joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/Tennis, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tennispisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code> jossa parametrina on pallon voittanut pelaaja.
 
@@ -348,13 +347,13 @@ Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koo
 
 Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää "taikanumeroita" ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
 
-Etene refaktoroinnissa __todella pienin askelin__. Aja testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
+Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
 
 Jos haluat käyttää jotain muuta kieltä kuin Javaa, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
 
 Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
 
-Lisää samantapaisia refaktorointitehtäviä Emily Bachen [GitHubista](https://github.com/emilybache).
+Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
 ### Tehtävien palautus
 
