@@ -278,8 +278,7 @@ Monet työkalut, esim. laskareissa käyttämämme JaCoCo mittaavat testien s
 
 ![]({{ "/images/3-5.png" | absolute_url }}){:height="350px" }
 
-JaCoCo ilmoittaa sekä rivi- (instruction) että haarautumakattavuuden (branches)
-Testauskattavuus JaCoCossa. Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella.
+JaCoCo ilmoittaa sekä rivi- (instruction) että haarautumakattavuuden (branches). Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella.
 
 Testauskattavuus toimii siis hyvänä apuvälineenä sen arvioimisessa testataanko sovellusta riittävästi.
 
@@ -376,7 +375,7 @@ Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän muk
 3. Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) _refaktoroidaan_ koodin rakenne paremmaksi, ja huolehditaan koko ajan. että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
 4. Jatketaan askeleesta 1
  
-TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään teksti joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
+TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään testi joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
 ![]({{ "/images/3-6a.png" | absolute_url }}){:height="250px" } 
 
@@ -701,7 +700,7 @@ Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (deve
 
 Tälläisessä ympäristössä esim. continuous deploymentin harjoittaminen on lähes mahdotonta, tilanne ajautuukin helposti siihen, että tuotantopalvelimelle pystytään viemään uusia versioita vain harvoin, esimerkiksi ainoastaan 4 kertaa vuodessa.
 
-Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoitetaan palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä dev ja ops työskentelevät tiiviisti yhdessä on käyttää nimeä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
+Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoittaa palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä dev ja ops työskentelevät tiiviisti yhdessä on käyttää nimeä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
 
 DevOps on termi, joka on nykyään monin paikoin esillä, esimerkiksi työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin. On myös myynnissä mitä erilaisimpia DevOps-työkaluja. On kuitenkin jossain määrin epäselvää mitä kukin tarkoittaa termillä DevOps.
 
