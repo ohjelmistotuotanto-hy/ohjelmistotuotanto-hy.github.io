@@ -131,7 +131,7 @@ Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaavioll
 
 ![]({{ "/images/4-1b.png" | absolute_url }}){:height="200px" }
 
-Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _todoapp.ui_ riippuu sovelluslogiikasta _todoapp.domain_ joka taas riippuu tallennuskerroksesta _todoapp.dao_. 
+Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _todoapp.ui_ riippuu sovelluslogiikasta _todoapp.domain_, joka taas riippuu tallennuskerroksesta _todoapp.dao_. 
 
 Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
 
@@ -312,7 +312,7 @@ Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja ovat mm. s
 
 - koodin tulee olla luettavuudeltaan selkeää, ja sen tulee kertoa esim. nimeämisellä mahdollisimman selkeästi mitä koodi tekee, ja tuoda esiin koodin alla oleva "design"
 - yhtä paikkaa pitää pystyä muuttamaan siten, ettei muutoksesta aiheudu sivuvaikutuksia sellaisiin kohtiin koodia, jota muutoksen tekijä ei pysty ennakoimaan
-- jos ohjelmaan tulee tehdä laajennus tai bugikorjaus, tulee olla helppo selvitettävissä mihin kohtaan koodia muutos tulee tehdä
+- jos ohjelmaan tulee tehdä laajennus tai bugikorjaus, tulee olla helposti selvitettävissä mihin kohtaan koodia muutos tulee tehdä
 - jos ohjelmasta muutetaan "yhtä asiaa", tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin, luokkaan tai komponenttiin)
 - muutosten ja laajennusten jälkeen tulee olla helposti tarkastettavissa ettei muutos aiheuta sivuvaikutuksia muualle järjestelmään
 
@@ -419,7 +419,7 @@ Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja kuvaa
 
 #### Koheesio luokkatasolla
 
-Luokkatason koheesiossa pyrkimyksenä on, että luokan _vastuulla _on vain yksi asia, tämä tunnetaan myös nimellä [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle)-periaate (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_. 
+Luokkatason koheesiossa pyrkimyksenä on, että luokan _vastuulla_ on vain yksi asia, tämä tunnetaan myös nimellä [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle)-periaate (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_. 
 
 Kurssin ensimmäisissä laskareissa tarkasteltiin yksinkertaista laskinta:
 
@@ -459,7 +459,7 @@ Luokka rikkoo single responsibility -periaatetta. Miksi? Periaate sanoo, että l
 - luokalle halutaan toteuttaa uusia laskutoimituksia
 - kommunikointi käyttäjän kanssa halutaan hoitaa jotenkin muuten kuin konsolin välityksellä
 
-Eriyttämällä käyttäjän kanssa kommunikointi omaan luokkaan ja eristämällä se rajapinnan taakse eli _kapseloimalla kommunikoinnin toteutustapa_ saadaan luokan Laskin vastuita vähennettyä:
+Eriyttämällä käyttäjän kanssa kommunikointi omaan luokkaan ja eristämällä se rajapinnan taakse eli _kapseloimalla kommunikoinnin toteutustapa_, saadaan luokan Laskin vastuita vähennettyä:
 
 ``` java
 public interface IO {
@@ -885,7 +885,7 @@ Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Jamin tasakorkoinen 
 maaraaikais.vaihdaKorkoa(new EuriborKorko(3));
 ```
 
-Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa) joka perintää käyttämällä ei onnistu.
+Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa), joka perintää käyttämällä ei onnistu.
 
 #### Suunnittelumalli: strategy <span style="color:blue">[viikko 5]</span>
 
@@ -1733,7 +1733,7 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 ### Refaktorointi
 
-Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen joka kuitenkin pitää sen toiminnallisuuden ennallaan. 
+Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen, joka kuitenkin pitää sen toiminnallisuuden ennallaan. 
 
 Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 2000 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018. 
 
@@ -1795,7 +1795,7 @@ Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaa
 
 Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voi ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
 
-Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
+Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
 
 ### Lisää suunnittelumalleja <span style="color:blue">[viikko 5]</span>
 
@@ -1855,7 +1855,7 @@ Asiakkaamme haluaa pinosta muutaman uuden version:
 On lisäksi toteutettava kaikki mahdolliset kombinaatiot:
 
 * _KryptattuLokiPino_
-* _LokiKryptattuPino_ (erona edelliseen että lokiin ei kirjata parametreja kryptattuna)
+* _LokiKryptattuPino_ (erona edelliseen se että lokiin ei kirjata parametreja kryptattuna)
 * _KryptattuPrepaidPino_
 * _KryptattuLokiPrepaidPino_
 * _LokiPrepaidPino_
