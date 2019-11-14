@@ -31,7 +31,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 ### 1. Yksikkötestaus ja riippuvuudet: Mockito, osa 1
 
-Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](http://localhost:4000/tehtavat2#9-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka Kauppa riippui Pankista, Varastosta ja Viitegeneraattorista. Riippuvuuksien injektion ja rajapintojen saimme mukavasti purettua riippuvuudet luokkien väliltä.
+Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](http://localhost:4000/tehtavat2#9-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka Kauppa riippui Pankista, Varastosta ja Viitegeneraattorista. Riippuvuuksien injektion ja rajapintojen avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
 
 Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa _Kauppa_ tulisi testata? Tuleeko kaupan testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
 
@@ -90,7 +90,7 @@ Viitegeneraattori mockViite = mock(Viitegeneraattori.class);
 kauppa = new Kauppa(mockPankki, mockViite);
 ``` 
 
-kyseessä siis eivät ole normaalit oliot vaan normaaleja olioita "matkivat" valeoliot, jotka myös pystyvät tarkastamaan, että niiden metodeja on kutsuttu oikeilla parametreilla. 
+kyseessä eivät ole normaalit oliot vaan normaaleja olioita "matkivat" valeoliot, jotka myös pystyvät tarkastamaan, että niiden metodeja on kutsuttu oikeilla parametreilla. 
 
 Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin mock-olion metodia <code>maksa</code> on kutsuttu oikeilla parametreilla. Kolmanteen parametriin eli tilinumeroon ei kiinnitetä huomiota:
 
@@ -302,7 +302,7 @@ Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 *HUOM* suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen! 
 
 ### 6. Tenniksen pisteenlaskun refaktorointi
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/Tennis, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tennispisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code> jossa parametrina on pallon voittanut pelaaja.
 
