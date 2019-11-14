@@ -34,7 +34,7 @@ _Olio- tai komponenttisuunnittelussa_ taas suunnitellaan yksityiskohtaisemmin mi
 Näiden teknisten näkökulmien lisäksi ohjelmiston määrittelyn ja suunnittelun välimaastossa on [käyttöliittymä- ja käyttökokemussuunnittelu](https://www.itewiki.fi/opas/kayttoliittymasuunnittelu-ux-user-experience-design-eli-kayttajakokemus/), joihin kurssin materiaalissa ei valitettavasti pystytä syventymään. Laitoksella on muutamia syventäviä kursseja aihepiiristä, mm. [Human computer interaction](https://courses.helsinki.fi/fi/csm13401).
 
 Ohjelmiston suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista.
-Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu valmiina ja dokumentoitu. Ketterissä menetelmissä taas suunnittelua tehdään tarvittava määrä jokaisessa sprintissä ja tarkkaa suunnitteludokumenttia ei yleensä ole.
+Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu on valmiina ja dokumentoitu. Ketterissä menetelmissä taas suunnittelua tehdään tarvittava määrä jokaisessa sprintissä ja tarkkaa suunnitteludokumenttia ei yleensä ole.
 
 Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, ja ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät.
 
@@ -75,11 +75,11 @@ _set of significant decisions about the organization of a software system_, eli 
 
 Järjestelmälle asetetuilla ei-toiminnallisilla [laatuvaatimuksilla](/osa2#ei-toiminnalliset-vaatimukset) (engl. -ilities) on suuri vaikutus arkkitehtuuriin. Laatuvaatimuksia ovat esimerkiksi käytettävyys, suorituskyky, skaalautuvuus, vikasietoisuus, tiedon ajantasaisuus, tietoturva, ylläpidettävyys, laajennettavuus, testattavuus, hinta, time-to-market, ...
 
-Jotkut laatuvaatimuksista ovat keskenään ristiriidassa, joten arkkitehdin tulee hakea niiden suhteen kaikkia sidosryhmiä tyydyttävä kompromissi. Esimerkiksi time-to-market, eli kuinka nopeasti sovellus saadaan loppuakäyttäjille ja alhainen hinta, lienevät ristiriidassa lähes kaikkien laatuvaatimusten kanssa.
+Jotkut laatuvaatimuksista ovat keskenään ristiriidassa, joten arkkitehdin tulee hakea niiden suhteen kaikkia sidosryhmiä tyydyttävä kompromissi. Esimerkiksi time-to-market, eli kuinka nopeasti sovellus saadaan loppukäyttäjille ja alhainen hinta, lienevät ristiriidassa lähes kaikkien laatuvaatimusten kanssa.
 
-Tiedon ajantasaisuus, skaalautuvuus ja vikasietoisuus ovat myös piirteitä, joiden suhteen on pakko tehdä kompromisseja, on jopa todistettu matemaattisesti on tilanteita, missä kaikkia ei voida saavuttaa (ks. [CAP-teoreema](http://en.wikipedia.org/wiki/CAP_theorem)).
+Tiedon ajantasaisuus, skaalautuvuus ja vikasietoisuus ovat myös piirteitä, joiden suhteen on pakko tehdä kompromisseja, on jopa todistettu matemaattisesti olevan tilanteita, missä kaikkia ei voida saavuttaa (ks. [CAP-teoreema](http://en.wikipedia.org/wiki/CAP_theorem)).
 
-Myös toteutusteknologiat esimerkiksi toteutuksessa käytettävät sovelluskehykset ja integraatio olemassaoleviin järjestelmiin sekä järjestelmän toimintaympäristö esim. lääketieteen ja ilmailualan säädökset sekä edellytetyt toimintastandardit vaikuttavat arkkitehtuuriin.
+Myös toteutusteknologiat, esimerkiksi toteutuksessa käytettävät sovelluskehykset ja integraatio olemassaoleviin järjestelmiin sekä järjestelmän toimintaympäristö esim. lääketieteen ja ilmailualan säädökset sekä edellytetyt toimintastandardit, vaikuttavat arkkitehtuuriin.
 
 Arkkitehtuurin suurin merkitys on antaa sovelluksen kehitykselle ja ylläpidolle sellaiset raamit, että sovellus pystyy jatkossakin vastaamaan asiakkaan asettamien toiminnallisten vaatimuksien lisäksi järjestelmälle asetettuihin laatuvaatimuksiin.
 
@@ -159,7 +159,7 @@ Viime aikoina nopeasti yleistynyt _mikropalveluarkkitehtuuri_ (engl. microservic
 
 ![]({{ "/images/4-6.png" | absolute_url }}){:height="300px" }
 
-Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löyhästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa eivätkä käytä yhteistä koodia. Palvelut eivät kutsu suoraan toistensa metodeja, sensijaan ne kommunikoivat verkon välityksellä. 
+Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löyhästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa eivätkä käytä yhteistä koodia. Palvelut eivät kutsu suoraan toistensa metodeja, sen sijaan ne kommunikoivat verkon välityksellä. 
 
 Mikropalveluiden on tarkoitus olla suhteellisen pieniä ja huolehtia vain "yhdestä asiasta". Esimerkiksi verkkokaupassa erillisiä mikropalveluja voisivat olla
 
@@ -197,7 +197,7 @@ Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish)
     username: "Arto Hellas", 
     age: 31, 
     education: "PhD",
-    occupation: "Aalto university" 
+    occupation: "Aalto University" 
   }
 }
 
@@ -249,7 +249,7 @@ Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana t
 
 ### Kävelevä luuranko
 
-Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _ävelevän luurangon, eli _walking skeletonin_ käyttö. [Alistair Coburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
+Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luurangon, eli walking skeletonin_ käyttö. [Alistair Coburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
 
 > A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.
 >
@@ -284,7 +284,7 @@ Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman ar
 
 Tiimin kesken suunnitteleman arkkitehtuurin dokumentointi voi olla kevyt ja informaali, esim. valkotaululle piirretty, sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan. Jos arkkitehtuurin suunnittelee joku ulkopuoleinen, sen kommunikointi tiimille edellyttää raskaampaa dokumentaatiota.
 
-Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa, jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tule parhaalla tavalla ohjelmiston kehittämistä..
+Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa, jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tue parhaalla tavalla ohjelmiston kehittämistä.
 
 Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkii välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
 
@@ -1905,7 +1905,7 @@ public class PrepaidPino extends Pino {
 }
 ```
 
-_PrepaidPino_ siis perii luokan _Pino_, mutta se ei käytä "perittyä" pinouttaan, vaan sensijaan PrepaidPino __sisältää__ pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa PrepaidPino käyttää tallettamaan kaikki alkionsa. Eli jokainen PrepaidPinon operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
+_PrepaidPino_ siis perii luokan _Pino_, mutta se ei käytä "perittyä" pinouttaan, vaan sen sijaan PrepaidPino __sisältää__ pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa PrepaidPino käyttää tallettamaan kaikki alkionsa. Eli jokainen PrepaidPinon operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
 
 PrepaidPino luodaan seuraavalla tavalla:
 
