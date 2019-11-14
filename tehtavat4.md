@@ -292,7 +292,8 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 [Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
 
 
-Koodi jättää hieman toivomisen varaa ylläpidettävyyden suhteen. Refaktoroi luokan _IntJoukko_ koodi mahdollisimman siistiksi
+Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan _IntJoukko_ koodi mahdollisimman siistiksi
+
 - poista copypaste
 - anna muuttujille selkeät nimet
 - tee metodeista pienempiä ja hyvän koheesion omaavia
@@ -302,11 +303,13 @@ Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 *HUOM* suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen! 
 
 ### 6. Tenniksen pisteenlaskun refaktorointi
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/Tennis, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
-Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tennispisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code> jossa parametrina on pallon voittanut pelaaja.
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _koodi/viikko4/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+
+Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code>, jossa parametrina on pallon voittanut pelaaja.
 
 Esim. käytettäessä pisteenlaskentaa seuraavasti: 
+
 ``` java
 public static void main(String[] args) {
     TennisGame game = new TennisGame("player1", "player2");
@@ -343,7 +346,7 @@ Win for player1
 
 Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _player1_ voittaa ensimmäiset 2 palloa, _player2_ kolmannen pallon ja _player1_ loput 2 palloa. 
 
-Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin luettavuudeltaan erittäin huonossa kunnossa. 
+Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta. 
 
 Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää "taikanumeroita" ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
 

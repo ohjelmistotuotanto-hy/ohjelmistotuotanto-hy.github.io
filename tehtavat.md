@@ -32,8 +32,10 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/3) deadline sunnuntaina 17.11. klo 23:59:00 
 - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 18.11. klo 23:59 
 
-
 ### Viikko 4
+
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/4) deadline sunnuntaina 24.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 25.11. klo 23:59 
 
 ### Viikko 5
 
