@@ -1765,13 +1765,6 @@ Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu sä
 
 Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitkien metodien jakaminen pienemmiksi on helppoa. Aina ei näin kuitenkaan ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja, joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tällaiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
 
-
-
-
-
-
-Melko monissa ei niin suoraviivaisissa refaktoroinneissa, itseasiassa epäoptimaalinen koodi refaktoroidaan paremmaksi soveltamalla jotain suunnittelumallia. Joshua Kerievsky on kirjoittanut aiheesta mainion kirjan [Refactoring to patterns](https://martinfowler.com/books/r2p.html). Aiemmissa esimerkeissäkin näimme tälläisiä refaktorointeja, esim. tilien koronmaksustrategia [replace conditional with polymorfism](https://sourcemaking.com/refactoring/replace-conditional-with-polymorphism), tilien luominen [replace constructor with factory method](https://sourcemaking.com/refactoring/replace-constructor-with-factory-method), laskimen komennot [replace method with method object](https://sourcemaking.com/refactoring/replace-method-with-method-object), laskimen binäärioperaatiot [form template method](https://sourcemaking.com/refactoring/form-template-method).
-
 ### Tekninen velka
 
 Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. technical debt).

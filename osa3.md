@@ -503,7 +503,7 @@ Perinteisesti juuri integraatiovaihe on tuonut esiin suuren joukon ongelmia. Tar
 
 Suurten projektien integraatiovaihe on kestänyt ennakoimattoman kauan, ja integraation aikana havaitut ongelmat ovat saattaneet aiheuttaa suuriakin suunnitteluun tai jopa vaatimusmäärittelyyn tarvittavia muutoksia.
 
-Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä kuvaamaan on lanseerattu termi [integratiohelvetti](http://wiki.c2.com/?IntegrationHell).
+Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä kuvaamaan on lanseerattu termi [integraatiohelvetti](http://wiki.c2.com/?IntegrationHell).
 
 ### Daily build ja smoke test
 
