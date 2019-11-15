@@ -17,7 +17,7 @@ DRAFT: Lukeminen omalla vastuulla!
 
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
-Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]</span> liittyvät viikon 5 laskareihin, eli voit skipata ne viikolla 4.
+Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai  <span style="color:blue">[viikko 6]</span> liittyvät myöhempien viikkojen laskareihin, eli voit skipata ne viikolla 4.
 
 ## Typoja materiaalissa
 
@@ -582,11 +582,12 @@ Konkreettisen riippuvuuden eliminointi voidaan tehdä rajapintojen (tai abstrakt
 
 Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa eliminoida muuttamalla luokan vastuita.
 
+
 #### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">[viikko 5]</span>
 
-Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, tämä voi jossain tapauksissa olla ongelmallista. Yksi oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
+Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, ja tämä voi jossain tapauksissa olla ongelmallista. Eräs oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
-Tarkastellaan tilannetta valottavaa esimerkkiä.
+Tarkastellaan tilannetta havainnollistavaa esimerkkiä.
 
 Käytössämme luokka, joka mallintaa pankkitiliä:
 
@@ -618,7 +619,7 @@ public class Tili {
 }
 ```
 
-Asiakkaan vaatimukset muuttuvat ja tulee tarve toisentyyppiselle tilille joko 1, 3, 6 tai 12 kuukaiden Euribor-korkoon perustuvalle tilille. päätämme tehdä uuden luokan _EuriborTili_ perimällä luokan _Tili_ ja ylikirjoittamalla metodi _maksaKorko_ siten että Euribor-koron senhetkinen arvo haetaan verkosta:
+Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukaiden Euribor-korkoon. Päätämme tehdä uuden luokan _EuriborTili_ perimällä luokan _Tili_ ja ylikirjoittamalla metodin _maksaKorko_ siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
 
 ``` java
 public class EuriborTili extends Tili {
@@ -707,9 +708,9 @@ public class EuriborLukijaImpl implements EuriborLukija {
 }
 ```
 
-EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono, metodi tekee aivan liian montaa asiaa. 
+EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono, metodi tekee aivan liian montaa asiaa eli sen koheesio on huono.
 
-Seuraavaksi huomaamme että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin _Tili_ mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se tehdään mahdolliseksi tietyn ajan kuluttua. Eli ei ongelmaa, perimme jälleen luokan _Tili_:
+Seuraavaksi huomaamme että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin _Tili_,mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se on tehty tietyn ajan kuluttua mahdolliseksi. Perimme jälleen luokan _Tili_:
 
 ``` java
 public class MaaraaikaisTili extends Tili {
@@ -735,16 +736,13 @@ public class MaaraaikaisTili extends Tili {
 }
 ```
 
-Luokka syntyi tuskattomasti.
-
 Ohjelman rakenne näyttää tässä vaiheessa seuraavalta:
 
 ![]({{ "/images/4-8.png" | absolute_url }}){:height="120px" }
 
-Seuraavaksi tulee idea _Euribor-korkoa käyttävistä määräaikaistileistä_. 
-Miten nyt kannattaisi tehdä? Osa toiminnallisuudesta on luokassa _MaaraaikaisTili_ ja osa luokassa _EuriborTili_...
+Seuraavaksi tulee idea _Euribor-korkoa käyttävistä määräaikaistileistä_. Miten nyt kannattaisi tehdä? Osa toiminnallisuudesta on luokassa _MaaraaikaisTili_ ja osa luokassa _EuriborTili_...
 
-Koronmaksun hoitaminen perinnän avulla ei ollutkaan paras ratkaisu, ja kannattaakin noudattaa _favor composition over inheritance_ -periaatetta. Eli erotetaan koronmaksu omaksi luokakseen, tai rajapinnan toteuttaviksi luokiksi:
+Koronmaksun hoitaminen perinnän avulla ei ollutkaan paras ratkaisu, parempi on noudattaa _favor composition over inheritance_ -periaatetta. Eli erotetaan _koronmaksu_ omaksi luokakseen, tai rajapinnan toteuttaviksi luokiksi:
 
 ``` java
 public interface Korko {
@@ -806,7 +804,7 @@ public class Tili {
 }
 ```
 
-Erilaisia tilejä luodaan nyt seuraavasti:
+Erilaisia tilejä luodaan seuraavasti:
 
 ``` java
 Tili normaali = new Tili("1234-1234", "Jami Kousa", new Tasakorko(4));
@@ -817,7 +815,7 @@ Ohjelman rakenne on nyt seuraava
 
 ![]({{ "/images/4-9.png" | absolute_url }}){:height="120px" }
 
-Muutetaan luokkaa _Tili_ vielä siten, että tilejä saadaan luotua ilman konstruktoria:
+Muutetaan luokkaa _Tili_ vielä siten, että tilejä voidaan luoda ilman konstruktoria:
 
 ``` java
 public class Tili {
@@ -865,7 +863,7 @@ Tili fyrkka = Tili.luoEuriborTili("7895-4571", "Indre Zliobaite", 1 );
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
-Tili-esimerkissä käytetty static factory method on yksinkertaisin erilaisista tehdas-suunnittelumallin varianteista. Periaatteena suunnittelumallissa on se, että luokalle tehdään staattinen tehdasmetodi tai metodeja, jotka käyttävät konstruktoria ja luovat luokan ilmentymät. Konstruktorin suora käyttö usein estetään määrittelemällä konstruktori privateksi.
+Tili-esimerkissä käytetty static factory method on yksinkertaisin monista tehdas-suunnittelumallin varianteista. Periaatteena suunnittelumallissa on se, että luokalle tehdään staattinen tehdasmetodi tai metodeja, jotka käyttävät konstruktoria ja luovat luokan ilmentymät. Konstruktorin suora käyttö usein estetään määrittelemällä konstruktori privateksi.
 
 Tehdasmetodin avulla voidaan piilottaa olion luomiseen liittyviä yksityiskohtia, esimerkissä _Korko_-rajapinnan toteuttavien olioiden luominen ja jopa olemassaolo oli tehdasmetodin avulla piilotettu tilin käyttäjältä. 
 
@@ -875,7 +873,7 @@ Tehdasmetodi siis auttaa _kapseloinnissa_, olion luomiseen liittyvät detaljit j
 
 Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esimerkissämme olisi vaikea luoda tili, jolle annetaan _Korko_-rajapinnan toteuttama mock-olio. Nyt se tosin onnistuu koska konstruktoria ei ole täysin piilotettu.
 
-Lisätietoa factory-suunnittelumallista esim. seuraavissa https://sourcemaking.com/design_patterns/factory_method ja http://www.oodesign.com/factory-method-pattern.html
+Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method ja http://www.oodesign.com/factory-method-pattern.html).
 
 Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään Tili-luokassa sijaitsevalta factoryltä, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan MaaraaikaisTili.
 
@@ -885,15 +883,15 @@ Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Jamin tasakorkoinen 
 maaraaikais.vaihdaKorkoa(new EuriborKorko(3));
 ```
 
-Eli luopumalla perinnästä selkeytyy oliorakenne huomattavasti ja saavutetaan suoritusaikaista joustavuuttaa (koronlaskutapa), joka perintää käyttämällä ei onnistu.
+Eli luopumalla perinnästä oliorakenne selkeytyy huomattavasti ja saavutetaan suoritusaikaista joustavuutta (koronlaskutapa), joka perintää käyttämällä ei onnistu.
 
 #### Suunnittelumalli: strategy <span style="color:blue">[viikko 5]</span>
 
 Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
-Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määritys. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa voi vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
+Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määrittely. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa on mahdollista vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
 
-Lisätietoa strategia-suunnittelumallista seuraavissa http://www.oodesign.com/strategy-pattern.html ja https://sourcemaking.com/design_patterns/strategy
+Lisätietoa strategia-suunnittelumallista [täällä](http://www.oodesign.com/strategy-pattern.html) ja [täällä(https://sourcemaking.com/design_patterns/strategy).
 
 #### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 5]</span>
 
@@ -937,7 +935,7 @@ Tili maaraaikaistili = spankki.maaraikaistili("Arto Hellas", 0.15);
 
 eli tilin luojan ei enää tarvitse huolehtia tilinumeroiden generoinnista.
 
-Nyt tehdasmetodista on siis tehty luokan oman staattisen metdoin sijaan toiseen luokkaan sijoitettu oliometodi. 
+Jokaisesta tehdasmetodista on siis tehty luokan oman staattisen metodin sijaan toiseen luokkaan sijoitettu oliometodi. 
 
 Luokkien vastuut ovat selkeytyneet, _Tili_ vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. _Pankki_ taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
@@ -1016,7 +1014,7 @@ public abstract class Operaatio {
 }
 ``` 
 
-Abstrakti _Operaatio_ luokka määrittelee, että sen toteuttavilla luokilla, eli yksittäisillä operaatioilla on metodi _laske_, joka saa kaksi parametria. Tämän lisäksi luokka sisältää staattisen tehdasmetodin _luo_, jonka avulla voidaan luoda laskuoperaatioita vastaavia olioita.
+Abstrakti _Operaatio_ luokka määrittelee, että sen toteuttavilla luokilla eli yksittäisillä operaatioilla on metodi _laske_, joka saa kaksi parametria. Tämän lisäksi luokka sisältää staattisen tehdasmetodin _luo_, jonka avulla voidaan luoda laskuoperaatioita vastaavia olioita.
 
 Laskuoperaatioita vastaavat luokat on määritelty seuraavasti:
 
@@ -1077,7 +1075,7 @@ public class Laskin {
 }
 ```
 
-Hienona puolena laskimessa on nyt se, että voimme lisätä operaatioita ja luokkaa _Laskin_ ei tarvitse muuttaa millään tavalla, ainoa muutosta edellyttävä kohta  olemassaolevassa koodissa on luokan _Operaatio_ metodi _luo_.
+Hienona puolena laskimessa on nyt se, että voimme lisätä operaatioita ja luokkaa _Laskin_ ei tarvitse muuttaa millään tavalla, ainoa muutosta edellyttävä kohta olemassaolevassa koodissa on luokan _Operaatio_ metodi _luo_.
 
 Sovelluksen rakenne näyttää seuraavalta
 
@@ -1085,9 +1083,9 @@ Sovelluksen rakenne näyttää seuraavalta
 
 #### Laskin ja komento-olio <span style="color:blue">[viikko 5]</span>
 
-Entä jos haluamme laskimelle muunkinlaisia kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan _Operaatio_ olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
+Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan _Operaatio_ olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
 
-Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _Command_-suunnittelumallia, annetaankin operaatiolle uusi nimi _Komento_. Erillisten komento-olioiden luominen siirretään uudelle luokalle _Komentotehdas_:
+Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _command_-suunnittelumallia, annetaankin operaatiolle uusi nimi _Komento_.
 
 ``` java
 public abstract class Komento {
@@ -1102,7 +1100,7 @@ public abstract class Komento {
 
 Komennon toteuttavat luokat ovat siis äärimmäisen yksinkertaisia. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
 
-Komento-olioita luova komentotehdas on seuraavassa:
+Erillisten komento-olioiden luominen siirretään uudelle luokalle _Komentotehdas_:
 
 ``` java
 public class Komentotehdas {
@@ -1127,7 +1125,8 @@ public class Komentotehdas {
     }
 }
 ```
-Komentotehdas siis palauttaa _hae_-metodin merkkijonoparametria vastaavan komennon. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty _Komento_-olioille, annetaan niille _IO_-olio konstruktorissa.
+
+Komentotehdas siis palauttaa _hae_-metodin merkkijonoparametria vastaavan komennon. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty _Komento_-olioille, annetaan niille _IO_-olio konstruktorin pararametrina.
 
 if-hässäkkä näyttää hieman ikävältä. Siitä pääsee kuitenkin helposti eroon tallentamalla erilliset komennon HashMap:iin:
 
@@ -1236,13 +1235,13 @@ Ohjelman rakenne tässä vaiheessa
 
 #### Suunnittelumalli: command <span style="color:blue">[viikko 5]</span>
 
-Eristämme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
+Eristimme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
 
 Ohjelman edellisessä versiossa sovelsimme strategia-suunnittelumallia, missä erilliset laskuoperaatiot oli toteutettu omina olioinaan. Command-suunnittelumalli eroaa siinä, että olemme nyt kapseloineet koko komennon suorituksen, myös käyttäjän kanssa käytävän kommunikoinnin omiin olioihin. Komento-olioiden rajapinta on yksinkertainen, niillä on ainoastaan yksi metodi _suorita_. Strategia-suunnittelumallissa taas strategia-olioiden rajapinta vaihtelee tilanteen mukaan. 
 
 Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilotettiin tehtaan sisälle. Komento-olioiden suorita-metodi suoritettiin esimerkissä välittömästi, näin ei välttämättä ole, komentoja voitaisiin laittaa esim. jonoon ja suorittaa myöhemmin. Joskus komento-olioilla metodin _suorita_ lisäksi myös metodi _peru_, mikä kumoaa komennon suorituksen aiheuttaman toimenpiteen. Esim. editorien undo- ja redo-toiminnallisuus toteutetaan säilyttämällä komento-olioita jonossa. Toteutamme viikon 6 laskareissa _peru_-toiminnallisuuden laskimen komennoille.
 
-Lisää command-suunnittelimallista esim. seuraavissa ttp://www.oodesign.com/command-pattern.html ja http://sourcemaking.com/design_patterns/command
+Lisää command-suunnittelimallista esim. [täällä](http://www.oodesign.com/command-pattern.html] ja [täällä](http://sourcemaking.com/design_patterns/command).
 
 #### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
 
@@ -1298,7 +1297,7 @@ public class Tulo extends BinaariOperaatio {
 }
 ```
 
-Jos sovelluskeen haluttaisiin toteuttaa lisää kaksiparametrisia operaatioita, esimerkiksi erotus, riittäisi eriääin yksinkertainen lisäys:
+Jos sovellukseen haluttaisiin toteuttaa lisää kaksiparametrisia operaatioita, esimerkiksi erotus, riittäisi erittäin yksinkertainen lisäys:
 
 ```java
 public class Erotus extends BinaariOperaatio {
@@ -1315,7 +1314,7 @@ public class Erotus extends BinaariOperaatio {
 
 Ja mikä parasta, ainoa muu luokka, jota on koskettava on komentoja luova _Komentotehdas_.
 
-Ohjelmasta on näin ollen saatu laajennettavuudeltaan varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. Laskin-luokallahan ei ole riippuvuuksia muualle kuin rajapintaan IO, abstraktiin luokkaan Komento sekä luokkaan Komentotehdas.
+Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. Laskin-luokallahan ei ole riippuvuuksia muualle kuin rajapintaan IO, abstraktiin luokkaan Komento sekä luokkaan Komentotehdas.
 
 ![]({{ "/images/4-12.png" | absolute_url }}){:height="300px" }
 
@@ -1323,13 +1322,13 @@ Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaa
 
 #### Suunnittelumalli: template method <span style="color:blue">[viikko 5]</span>
 
-Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
+Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operaation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
 Summa- ja Tulo-komentojen suoritus on oleellisesti samanlainen:
 
 1. lue luku1 käyttäjältä
 2. lue luku2 käyttäjältä
-3. laske operaation tulos
+3. _laske operaation tulos_
 4. tulosta operaation tulos
 
 Ainoastaan kolmas vaihe eli _operaation tuloksen laskeminen_ eroaa summaa ja tuloa selvitettäessä.
@@ -1370,16 +1369,13 @@ public class Summa extends BinaariOperaatio {
 }
 ```
 
-Abstraktin luokan määrittelemä _suorita()_ on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan abstraktina metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
+Abstraktin luokan metodi _suorita()_ on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan abstraktina metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
 
 Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin abstrakteja metodeja määritellään tarpeellinen määrä. 
 
-Strategy-suunnittelumalli on osittain samaa sukua Template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella.
-Strategioita voidaan vaihtaa ajonaikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa  
+Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.  
 
-Lisää template method -suunnittelumallista seuraavissa
-http://www.oodesign.com/template-method-pattern.html ja
-http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern
+Lisää template method -suunnittelumallista [täällä](http://www.oodesign.com/template-method-pattern.html) ja [täällä](http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern).
 
 ### Koodin laatuattribuutti: toisteettomuus 
 
@@ -1395,7 +1391,7 @@ DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa el
 
 Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan _Money_ vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
-#### Koodissa olevan epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 5]</span>
+#### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 5]</span>
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa _GutenbergLukija_:
 
@@ -1468,11 +1464,11 @@ public static void main(String[] args) {
 }
 ```
 
-Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin testaavan kriteerion täyttävä, esim. huutomerkkiin loppuva.
+Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin kriteerit täyttävä, esim. huutomerkkiin loppuva.
 
-Tutustutaan tehtävässä hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) mukanaan tuomiin funktionaalista ohjelmointitapaa helpottaviin piirteisiin, lambda-lausekkeisiin sekä kokoelmien käsittelyyn streameina. Nämä asiat ovat toki monelle tuttuja jo kursseilta Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi.
+Tutustutaan seuraavassa hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) mukanaan tuomiin funktionaalista ohjelmointitapaa helpottaviin piirteisiin, lambda-lausekkeisiin sekä kokoelmien käsittelyyn streameina. Nämä asiat ovat toki monelle tuttuja jo kursseilta Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi.
 
-Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla) olevaa metodia _forEach_ ,joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen" (eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin) toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodin palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
+Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla luokilla) olevaa metodia _forEach_, joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen", eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin, toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodikutsun _rivitJoillaSana("beer")_ palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
 
 ``` java
 public static void main(String[] args) {
@@ -1489,9 +1485,9 @@ Esimerkissä lambdan syntaksi oli seuraava:
 s -> System.out.println(s)
 ```
 
-parametri _s_ saa arvokseen yksi kerrallaan kunkin läpikäytävän tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan _s_ tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
+parametri _s_ saa arvokseen yksi kerrallaan kunkin tiedoston tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan _s_ tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
 
-Luokan _GutenbergLukija_ tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen mitä kirjan riveistä ne palauttavat. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
+Luokan _GutenbergLukija_ tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen _mitä kirjan riveistä ne palauttavat_. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
 
 Jos mietitään metodien toimintaa, niin voidaan ajatella, että jokaisessa metodissa on oma _strategiansa_ rivien palauttamiseen, ja strategiaa lukuunottamatta kaikki muu on samaa. Tämä onkin erinomainen paikka strategy-suunnittelumallin soveltamiseen. Jos eriytämme rivien valintastrategia omaksi luokakseen, voidaan selvitä ainoastaan yhdellä rivien läpikäynnin hoitavalla metodilla.
 
@@ -1539,9 +1535,9 @@ ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info");
 ehto.test("Java 13 ilmestyi 17.9.2019");
 ```
 
-Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimäinen _false_.
+Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimmäinen _false_.
 
-Kirjasta voidaan nyt palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle _GutenbergLukija_ metodi:
+Kirjasta voidaan palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle _GutenbergLukija_ metodi:
 
 ``` java
 public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
@@ -1565,13 +1561,17 @@ kirja.rivitJotkaTayttavatEhdon(new SisaltaaSanan("beer")).forEach(s -> System.ou
 
 Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia rajapinnan _Ehto_ määritteleviä luokkia.
 
-Ehto-rajapinta on ns. _funktionaalinen rajainta_ (engl. functional interface) eli se määrittelee ainoastaan yhden toteutettavan metodin. Javan uusimmilla versioilla voimme määritellä ehtoja myös lambda-lausekkeiden avulla. Eli ei ole välttämätöntä tarvetta määritellä eksplisiittisesti rajapinnan _Ehto_ toteuttavia luokkia. Seuraavassa edellinen esimerkki käyttäen lambda-lauseketta ehdon määrittelemiseen:
+Ehto-rajapinta on ns. _funktionaalinen rajapinta_ (engl. functional interface) eli se määrittelee ainoastaan yhden toteutettavan metodin. Javan uusimmilla versioilla voimme määritellä ehtoja myös lambda-lausekkeiden avulla. Eli ei ole välttämätöntä tarvetta määritellä eksplisiittisesti rajapinnan _Ehto_ toteuttavia luokkia. Seuraavassa edellinen esimerkki käyttäen lambda-lauseketta ehdon määrittelemiseen:
 
-``` java
+```java
 kirja.rivitJotkaTayttavatEhdon(s -> s.contains("beer")).forEach(s -> System.out.println(s));
 ```
 
-Käytännössä siis määrittelemme "lennossa" rajapinnan _Ehto_ toteuttavan luokan, jonka ainoan metodin toiminnallisuuden määritelmä annetaan lambda-lausekkeen avulla.
+Käytännössä siis määrittelemme "lennossa" rajapinnan _Ehto_ toteuttavan luokan, jonka ainoan metodin toiminnallisuuden määritelmä annetaan lambda-lausekkeen avulla:
+
+```java
+s -> s.contains("beer")
+```
 
 Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _beer_ tai _vodka_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
@@ -1601,9 +1601,9 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 
 Uusissa Javan versioissa kaikki rajapinnan _Collection_ toteuttavat luokat mahdollistavat alkioidensa käsittelyn _Stream_:ina eli "alkiovirtoina", ks. [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html). Kokoelmaluokasta saadaan sitä vastaava alkiovirta kutsumalla kokoelmalle metodia _stream_.
 
-Alkiovirtoja on taas mahdollista käsitellä monin tavoin, ja meitä nyt kiinnostava metodi on _filter_, jonka avulla streamistä voidaan tehdä uusi streami, josta on poistettu ne alkiot, jotka eivät täytä filtterille annettua boolean-arvoista, funktionaalisen rajapinnan _Predicate<String>_ toteuttavaa ehtoa.
+Alkiovirtoja on taas mahdollista käsitellä monin tavoin, nyt meitä kiinnostava metodi on _filter_, jonka avulla streamista voidaan tehdä uusi streami, josta on poistettu ne alkiot, jotka eivät täytä filtterille annettua boolean-arvoista, funktionaalisen rajapinnan _Predicate<String>_ toteuttavaa ehtoa.
 
-Määrittelemämme rajapinta _Ehto_ on oikeastaan juuri tarkoitukseen sopiva, jotta voisimme käyttää rajapintaa, tulee meidän kuitenkin tyyppitarkastusten takia määritellä että rajapintamme laajentaa rajapintaa  _Predicate<String>_:
+Määrittelemämme rajapinta _Ehto_ on oikeastaan juuri tarkoitukseen sopiva. Jotta voisimme käyttää rajapintaa, tulee meidän kuitenkin tyyppitarkastusten takia määritellä että rajapintamme laajentaa rajapintaa _Predicate<String>_:
 
 ``` java
 import java.util.function.Predicate;
@@ -1622,9 +1622,9 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja määrittelemällä, että palautetaan streamin sisältämät alkiot niemenomaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
+Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja kertomalla sille parametrina, että halutaan streamin sisältämät alkiot niemen omaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
 
-Metodi on siis seuraavassa:
+Metodi on seuraavassa:
 
 ```java
 public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
@@ -1656,7 +1656,8 @@ public class GutenbergLukija {
 }
 ```
 
-Funktionaalinen rajapinta _Predicate_ sisältää itseasiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista koostaa yksittäisistä ehdoista monimutkaisempia ehtoja. Seuraavassa etsitään ne rivit jotka
+Funktionaalinen rajapinta _Predicate_ sisältää itseasiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista _koostaa_ yksittäisistä ehdoista _monimutkaisempia ehtoja_. Seuraavassa etsitään ne rivit jotka
+
 - sisältävät sanan _beer_ ja ovat yli 50 riviä pitkiä _tai_
 - alkavat kirjaimella _Z_
 
@@ -1672,9 +1673,9 @@ kirja
 
 #### Hyvä vs. paha copypaste <span style="color:blue">[viikko 5]</span>
 
-Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevääkin ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) se tarvittaessa myöhemmin siistimmäksi. 
+Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi. 
 
-Monissa tilanteissa nimittäin copypasten poistamisellakin saattaa olla pieni hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
+Monissa tilanteissa nimittäin copypasten poistamisella on pieni hintansa, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
 
 Melko hyvä periaate onkin _[three strikes and you refactor](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming))_, eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
@@ -1790,11 +1791,11 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
 
-### Lisää suunnittelumalleja <span style="color:blue">[viikko 5]</span>
+### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
 
 Tutustutaan osan lopuksi vielä muutama uuteen suunnittelumalliin.
 
-#### Esimerkki Dekoroitu pino <span style="color:blue">[viikko 5]</span>
+#### Esimerkki Dekoroitu pino <span style="color:blue">[viikko 6]</span>
 
 Olemme toteuttaneet asiakkaalle pinon:
 

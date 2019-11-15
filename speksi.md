@@ -9,7 +9,7 @@ permalink: /speksi/
 
 Asiakkaanne on innokas tietojenkäsittelytieteen ammattikirjallisuuden lukija. Hän lukee  mm. blogipostauksia ja kirjoja sekä kuuntelee podcasteja. Hänen selaimensa bookmark-kansio alkaa olla jo aika täynnä sekalaisia linkkejä ja olisi aikaa laittaa lukuvinkit järjestykseen. Asiakas haluaisi lukuvinkeilleen sovelluksen, jossa erilaiset linkit ja muut muistiinpanot pysyisivät järjestyksessä. 
 
-Lukuvinkeistä pitäisi pystyä tallentamaan otsikon ja kirjoittajan lisäksi esimerkiksi erilaisia tageja ja url. Lisäksi lukuvinkkiin pitää pystyä lisäämään jokin lyhyt kuvaus sekä mahdollisesti muitakin kommentteja tai muistiinpanoja. Vinkkejä pitäisi pystyä selaamaan erilaisten hakukriteerien avulla. Merkitsemällä vinkkeihin myös aiheeseen liittyviä kursseja saisi vinkit jaoteltua kätevästi eri kurssien aihepiirien mukaan. 
+Lukuvinkeistä pitäisi pystyä tallentamaan otsikon ja kirjoittajan lisäksi esimerkiksi erilaisia tageja ja url. Lisäksi lukuvinkkiin pitää pystyä lisäämään lyhyt kuvaus sekä mahdollisesti muitakin kommentteja tai muistiinpanoja. Vinkkejä pitäisi pystyä selaamaan erilaisten hakukriteerien avulla. Merkitsemällä vinkkeihin myös aiheeseen liittyviä kursseja saisi vinkit jaoteltua kätevästi eri kurssien käsittelemien aihepiirien mukaan. 
 
 Olisi kätevää, jos lukuvinkit voisi jaotella myös luettuihin ja lukemista odottaviin. Lukuvinkin yhteyteen kannattaa ehkä tallentaa tieto lukemisen ajankohdasta.
 
@@ -23,7 +23,6 @@ Otsikko: Clean Code: A Handbook of Agile Software Craftsmanship
 Tyyppi: Kirja
 ISBN: 978-0132350884
 Tagit: Ohjelmointi, design patterns
-Esitietokurssit: TKT10003 Ohjelmoinnin jatkokurssi
 Related courses: TKT20006 Ohjelmistotuotanto
 
 Otsikko: Merge sort algorithm
