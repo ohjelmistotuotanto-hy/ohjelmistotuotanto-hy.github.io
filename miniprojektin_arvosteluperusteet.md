@@ -38,7 +38,7 @@ Projekti tulee olla rekisteröity osoitteeseen <https://study.cs.helsinki.fi/sta
 
 **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.** 
 
-Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja CircleCI:hin tulee laittaa projektin githubin README:hen!
+Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja CircleCI:hin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin githubin README:hen!
 
 ### Pisteitä kertyy seuraavista asioista
 
@@ -56,7 +56,7 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
   * ainakin jossain storyssa hyväksymiskriteerien testausta (cucumber)	
 * (0.5p) jatkuva integraatio
   * koodi githubissa
-  * CircleCI suorttaa ainakin yksikkötestit ja ne menevät läpi
+  * CircleCI (tai jokin muu CI-palvelu) suorttaa ainakin yksikkötestit ja ne menevät läpi
 * (0.5p) toteutus
   * ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 * (0.25p) työtä tehty tasaisesti

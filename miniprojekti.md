@@ -44,7 +44,7 @@ permalink: /miniprojekti/
   * sprint backlog
   * hyväksymäkriteeri
   * definition of done
-* Tämä dokumentti ja miniprojektin [arvosteluperusteet](miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
+* Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
 * Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
   * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
@@ -106,7 +106,7 @@ permalink: /miniprojekti/
     * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     * taskin tekijä(t)
 * Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) 
-  * <https://circleci.com/> 
+  * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua [CircleCI:tä](https://circleci.com/), muita vaihtoehtoja esim. TravisCI ja Github Actions
 * Koodi on talletettu GitHub:iin 
 * Projektin Github-repositoriolla on järkevä README.md 
 
@@ -141,7 +141,7 @@ Seuraavassa lähtökohta definition donelle. Ryhmän tuleemääritellä github-r
 
 README:ssa tulee löytyä ainakin seuraavat asiat: 
 * Linkit backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä)
-* Linkki CircleCI:hin 
+* Linkki CI-palveluun
 * Linkki sovelluksen toimivaan versioon (jos sovellus on verkossa)
 * Jos kyse työpöytäsovelluksesta, tulee ohjelmalle olla asennus- ja käyttöohje
 * Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
@@ -152,13 +152,13 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
 - Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa
 - Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _sqlite_ hyvä vaihtoehto  
-  - Tikapen laskareissa käytetyn todo-sovelluksen gradle-versio osoitteessa <https://github.com/mluukkai/tikape-todo>
+  - Tikapen laskareissa käytetyn todo-sovelluksen gradle-versio osoitteessa <https://github.com/ohjelmistotuotanto-hy/tikape-todo>
 - Viikon 3 laskareista kannattaa ottaa mallia Cucumberilla tapahtuvaan storyjen testaamiseen 
 - JavaFX:llä tehtyjen sovellusten automatisoitu testaaminen on mahdollista [TestFX](https://github.com/TestFX/TestFX)-kirjaston avulla. Kirjaston dokumentaatio ei ole parhaasta päästä
-  - yksinkertainen gradle+javaFX+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/mluukkai/fx-testing>
+  - yksinkertainen gradle+javaFX+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/fx-testing>
   - Java Swing-sovellusten Cucumberilla tapahtuva käyttöliittymätason testaus on täysi mysteeri
-- **DANGER** edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja CircleCI:n kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
-  - yksinkertainen gradle+spring+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/mluukkai/spring-cucumber>
+- Edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja CircleCI:n kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
+  - yksinkertainen gradle+spring+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/spring-cucumber>
 
 ### Työn arvostelu
 
