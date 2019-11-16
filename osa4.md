@@ -11,10 +11,6 @@ permalink: /osa4/
   />
 </a>
 
-<div class="important">
-DRAFT: Lukeminen omalla vastuulla!
-</div>
-
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
 Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai  <span style="color:blue">[viikko 6]</span> liittyvät myöhempien viikkojen laskareihin, eli voit skipata ne viikolla 4.
