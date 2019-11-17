@@ -44,7 +44,7 @@ Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelma koodin 
 
 ## Vaatimusten validointi
 
-Validointi siis vastaa kysymykseen ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
+Validointi siis vastaa kysymykseen, ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
 
 Ohjelmistolle määritellyt vaatimukset onkin validoitava, eli on varmistettava, että määrittelydokumentti kuvaa sellaisen ohjelmiston, joka vastaa asiakkaan tarpeita.
 
@@ -52,7 +52,7 @@ Vesiputousmallissa määrittelydokumenttiin kirjattujen vaatimusten validointi
 
 Ketterässä ohjelmistotuotannossa vaatimusten validointi tapahtuu iteraation päättävien demonstraatioiden (Scrumissa sprint reviewin) yhteydessä.
 
-Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
+Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata, vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
 
 Jos asiakas havaitsee, että sovellus ei ole etenemässä haluttuun suuntaan, eli kirjatut vaatimukset eivät vastannet todellista tarvetta, tarve on muuttunut tai vaatimuksia on tulkittu väärin, on seuraavassa iteraatiossa mahdollista ottaa korjausliike.
 
