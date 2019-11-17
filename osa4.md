@@ -615,7 +615,7 @@ public class Tili {
 }
 ```
 
-Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukaiden Euribor-korkoon. Päätämme tehdä uuden luokan _EuriborTili_ perimällä luokan _Tili_ ja ylikirjoittamalla metodin _maksaKorko_ siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
+Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan _EuriborTili_ perimällä luokan _Tili_ ja ylikirjoittamalla metodin _maksaKorko_ siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
 
 ``` java
 public class EuriborTili extends Tili {
@@ -704,9 +704,9 @@ public class EuriborLukijaImpl implements EuriborLukija {
 }
 ```
 
-EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono, metodi tekee aivan liian montaa asiaa eli sen koheesio on huono.
+EuriborTili-luokka alkaa olla nyt melko siisti, EuriborLukijassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono: metodi tekee aivan liian montaa asiaa.
 
-Seuraavaksi huomaamme että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin _Tili_,mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se on tehty tietyn ajan kuluttua mahdolliseksi. Perimme jälleen luokan _Tili_:
+Seuraavaksi huomaamme, että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin _Tili_, mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se on tehty tietyn ajan kuluttua mahdolliseksi. Perimme jälleen luokan _Tili_:
 
 ``` java
 public class MaaraaikaisTili extends Tili {
@@ -770,7 +770,7 @@ public class EuriborKorko implements Korko {
 }
 ```
 
-Tarve erilliselle _EuriborTili_-luokalle katoaa, ja pelkkä _Tili _hieman muutetussa muodossa riittää:
+Tarve erilliselle _EuriborTili_-luokalle katoaa, ja pelkkä _Tili_ hieman muutetussa muodossa riittää:
 
 ``` java
 public class Tili {
@@ -869,7 +869,7 @@ Tehdasmetodi siis auttaa _kapseloinnissa_, olion luomiseen liittyvät detaljit j
 
 Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esimerkissämme olisi vaikea luoda tili, jolle annetaan _Korko_-rajapinnan toteuttama mock-olio. Nyt se tosin onnistuu koska konstruktoria ei ole täysin piilotettu.
 
-Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method ja http://www.oodesign.com/factory-method-pattern.html).
+Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method) ja [täältä] (http://www.oodesign.com/factory-method-pattern.html).
 
 Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään Tili-luokassa sijaitsevalta factoryltä, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan MaaraaikaisTili.
 
@@ -887,7 +887,7 @@ Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _
 
 Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määrittely. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa on mahdollista vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
 
-Lisätietoa strategia-suunnittelumallista [täällä](http://www.oodesign.com/strategy-pattern.html) ja [täällä(https://sourcemaking.com/design_patterns/strategy).
+Lisätietoa strategia-suunnittelumallista [täällä](http://www.oodesign.com/strategy-pattern.html) ja [täällä](https://sourcemaking.com/design_patterns/strategy).
 
 #### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 5]</span>
 
