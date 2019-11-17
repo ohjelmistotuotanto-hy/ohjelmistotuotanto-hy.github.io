@@ -935,7 +935,7 @@ Jokaisesta tehdasmetodista on siis tehty luokan oman staattisen metodin sijaan t
 
 Luokkien vastuut ovat selkeytyneet, _Tili_ vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. _Pankki_ taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
-### Toiminnallisuuden kapselointi: laskin ilman iffejä <span style="color:blue">[viikko 5]</span>
+### Toiminnallisuuden kapselointi: laskin ja strategia <span style="color:blue">[viikko 5]</span>
 
 Olemme laajentaneet Laskin-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -1136,7 +1136,7 @@ public class Komentotehdas {
         komennot.put("summa", new Summa(io));
         komennot.put("tulo", new Tulo(io));
         komennot.put("nelio", new Nelio(io));
-        tuntemaaton = new Tuntematon(io);
+        tuntematon = new Tuntematon(io);
     }
 
     public Komento hae(String operaatio) {
@@ -1231,13 +1231,13 @@ Ohjelman rakenne tässä vaiheessa
 
 #### Suunnittelumalli: command <span style="color:blue">[viikko 5]</span>
 
-Eristimme siis jokaiseen erilliseen laskuoperaatioon liittyvä toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
+Eristimme siis jokaiseen erilliseen laskuoperaatioon liittyvän toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi public _void suorita()_
 
 Ohjelman edellisessä versiossa sovelsimme strategia-suunnittelumallia, missä erilliset laskuoperaatiot oli toteutettu omina olioinaan. Command-suunnittelumalli eroaa siinä, että olemme nyt kapseloineet koko komennon suorituksen, myös käyttäjän kanssa käytävän kommunikoinnin omiin olioihin. Komento-olioiden rajapinta on yksinkertainen, niillä on ainoastaan yksi metodi _suorita_. Strategia-suunnittelumallissa taas strategia-olioiden rajapinta vaihtelee tilanteen mukaan. 
 
 Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilotettiin tehtaan sisälle. Komento-olioiden suorita-metodi suoritettiin esimerkissä välittömästi, näin ei välttämättä ole, komentoja voitaisiin laittaa esim. jonoon ja suorittaa myöhemmin. Joskus komento-olioilla metodin _suorita_ lisäksi myös metodi _peru_, mikä kumoaa komennon suorituksen aiheuttaman toimenpiteen. Esim. editorien undo- ja redo-toiminnallisuus toteutetaan säilyttämällä komento-olioita jonossa. Toteutamme viikon 6 laskareissa _peru_-toiminnallisuuden laskimen komennoille.
 
-Lisää command-suunnittelimallista esim. [täällä](http://www.oodesign.com/command-pattern.html] ja [täällä](http://sourcemaking.com/design_patterns/command).
+Lisää command-suunnittelimallista esim. [täällä](http://www.oodesign.com/command-pattern.html) ja [täällä](http://sourcemaking.com/design_patterns/command).
 
 #### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
 
@@ -1618,7 +1618,7 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja kertomalla sille parametrina, että halutaan streamin sisältämät alkiot niemen omaan listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
+Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja kertomalla sille parametrina, että halutaan streamin sisältämät alkiot niemen omana listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
 
 Metodi on seuraavassa:
 
@@ -1628,7 +1628,7 @@ public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
 }
 ```
 
-Voimme oikeastaan luopua itse määrittelemästämme rajapinnasta _Ehto_ sillä valmis funktionaalinen rajapinta _Predicate<String>_ ajaa saman asian. Yksittäisiä ehtoja määrittelevät luokat voidaan muuttaa seuraavasti:
+Voimme oikeastaan luopua itse määrittelemästämme rajapinnasta _Ehto_, sillä valmis funktionaalinen rajapinta _Predicate<String>_ ajaa saman asian. Yksittäisiä ehtoja määrittelevät luokat voidaan muuttaa seuraavasti:
 
 ```java
 public class SisaltaaSanan implements Predicate<String> {
@@ -1652,7 +1652,7 @@ public class GutenbergLukija {
 }
 ```
 
-Funktionaalinen rajapinta _Predicate_ sisältää itseasiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista _koostaa_ yksittäisistä ehdoista _monimutkaisempia ehtoja_. Seuraavassa etsitään ne rivit jotka
+Funktionaalinen rajapinta _Predicate_ sisältää itse asiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista _koostaa_ yksittäisistä ehdoista _monimutkaisempia ehtoja_. Seuraavassa etsitään ne rivit jotka
 
 - sisältävät sanan _beer_ ja ovat yli 50 riviä pitkiä _tai_
 - alkavat kirjaimella _Z_
