@@ -40,7 +40,7 @@ Tarkastus suoritetaan järjestämällä formaali kokous, jolla on tarkkaan mäa
 
 Katselmointi on _staattinen tekniikka_, suorituskelpoista ohjelmakoodia ei välttämättä tarvita, ja jos katselmoinnin kohteena on ohjelmakoodi, ei ohjelmaa katselmoitaessa yleensä suoriteta.
 
-Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelma koodin suorittamista. Testauksessa tarkkaillaan miten ohjelma reagoi annettuihin testisyötteisiin.
+Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelmakoodin suorittamista. Testauksessa tarkkaillaan, miten ohjelma reagoi annettuihin testisyötteisiin.
 
 ## Vaatimusten validointi
 
