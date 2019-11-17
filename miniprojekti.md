@@ -51,7 +51,7 @@ permalink: /miniprojekti/
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 * Ryhmä varataa aijan sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä]()
+  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 ### Työn eteneminen
 
@@ -65,7 +65,7 @@ permalink: /miniprojekti/
   * backlogien sisällöstä enemmän [täällä](/miniprojekti#tekniset-ja-prosessiin-liittyvät-vaatimukset)
 * Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet) kannattaa lukea huolellisesti
 * Ryhmät varaavat tapaamisen sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä]()
+  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 #### viikko 5 (25-29.11.)
 
