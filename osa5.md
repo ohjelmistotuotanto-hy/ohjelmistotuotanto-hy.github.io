@@ -315,46 +315,22 @@ Ohjelmistokehityksessä set based development -menetelmää sovelletaan melko ha
 
 Toyotalla tuotekehitystä johtaa *chief technical engineer*, joka on vastuussa sekä tuotteiden teknisestä että liiketoiminnallisesta menestyksestä. Kyseessä on tyypillinen leanin etulinjassa toimiva johtaja, joka tuntee tarkasti käytännön työn, mutta on myös erittäin lähellä asiakasta. Rooli poikkeaa Scrumin _product ownerista_ teknisen taustansa takia.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Leanin soveltaminen eri aloille
 
 90-luvulta alkaen lean on herättänyt maailmalla suurta kiinnostusta ja sitä on pyritty soveltamaan lähes kaikilla aloilla ohjelmistokehitys mukaan lukien. Lean-periaatteet ovat olleet hyvin esim. Scrumin kehittäjien tiedossa ja vaikka Scrumin alkuperäiset lähteet eivät käytäkään leanin terminologiaa, on Scrumissa monin paikoin piirteitä leanista. 
 
-Viime aikainen ketterien menetelmien kehitys on vienyt tiettyjä ideoita, esimerkiksi arvoketjun optimoimista user storyjen läpimenoaikoja minimoimalla huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle, nykyään puhutaankin paljon leanista ohjelmistokehityksestä.
+Viime aikainen ketterien menetelmien kehitys on vienyt tiettyjä ideoita, esimerkiksi user storyjen läpimenoaikoja minimointia huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle, nykyään puhutaankin paljon leanista ohjelmistokehityksestä.
 
-Sekä ketterissä menetelmissä, että leanissa on sama fundamentaali periaate, _toimintojen jatkuva kehittäminen_. Rajanveto leanin ja ketterän välillä ei olekaan ollenkaan selvä ja osin täysin keinotekoista. Esimerkiksi Scrumin kehittäjät eivät ole missään nimessä tarkoittaneet Scrumia staattiseksi rakennelmaksi, jota noudatetaan kirjaimellisesti tästä ikuisuuteen, sellainen toiminta ei olisi ketteryyttä.
+Sekä ketterissä menetelmissä, että leanissa on sama fundamentaali periaate, _toimintojen jatkuva kehittäminen_. Rajanveto leanin ja ketterän välillä ei olekaan ollenkaan selvä ja se on osin täysin keinotekoista. Esimerkiksi Scrumin kehittäjät eivät ole missään nimessä tarkoittaneet Scrumia staattiseksi rakennelmaksi, jota noudatetaan kirjaimellisesti tästä ikuisuuteen, sellainen toiminta ei olisi ketteryyttä.
 Ketteryyttä on _läpinäkyvyyden_ (engl. transparency) mahdollistava toimintojen jatkuvaan parantamiseen keskittyvä _inspect-and-adapt_-sykli. Käytännössä tämä on täsmälleen sama idea kuin leanin _kaizen_.
 
 Leanin soveltamisessa on kohdattu myös paljon ongelmia. Lean on ajattelumalli, joka on kehitetty Toyotan tarpeisiin, malli on jalostunut ja muuttunut vuosikymmenten kuluessa.
 Onkin osin epäselvää miten Toyotan käytänteet siirretään eri aloille.
 
-Kuten agile, myös lean ei ole joukko työkaluja vaan jatkuva toimintatapa, Toyotan CEO:n [Akio Toyodan](https://en.wikipedia.org/wiki/Akio_Toyoda) sanoin
+Kuten ketterä, myös lean ei ole joukko työkaluja vaan jatkuva toimintatapa, Toyotan CEO:n [Akio Toyodan](https://en.wikipedia.org/wiki/Akio_Toyoda) sanoin
 
 - _The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"_ 
 - _In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever._
-
-
-
-
-
-
-
-
-
-
 
 
 ## Laajan skaalan ketterä ohjelmistokehitys
