@@ -44,7 +44,7 @@ Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä
 
 Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa _Toyota Production Systemiksi_ (TPS). Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977. Toyotan menestys herätti kiinnostusta länsimaissa ja MIT:in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää. Tutkijat lanseeraavat nimikkeen _lean_- eli virtaviivainen tuotanto kuvaamaan TPS:n taustafilosofiaa.
 
-Vuonna 1990 ilmestynyt kirja [The Machine That Changed the World](https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)), joka leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
+Vuonna 1991 ilmestynyt kirja [The Machine That Changed the World](https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)), joka leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
 
 Viimeisen 30 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on [Jeffrey Likerin The Toyota Way](https://www.amazon.com/Toyota-Way-Management-Principles-Manufacturer/dp/0071392319) (2001).
 
