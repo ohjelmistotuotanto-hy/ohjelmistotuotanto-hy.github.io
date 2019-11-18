@@ -343,7 +343,7 @@ Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousma
 
 Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
 
-Ketterän kehityksen luonne vaatiikin että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
+Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
 Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tämän takia testaajat on ideaalitilanteessa sijoitettu erillisen laatua valvovan QA-organisaation sijaan kehittäjätiimeihin, ja myös ohjelmoijat kirjoittavat testejä.
 
