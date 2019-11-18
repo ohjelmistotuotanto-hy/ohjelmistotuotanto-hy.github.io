@@ -40,11 +40,11 @@ Tarkastus suoritetaan järjestämällä formaali kokous, jolla on tarkkaan mäa
 
 Katselmointi on _staattinen tekniikka_, suorituskelpoista ohjelmakoodia ei välttämättä tarvita, ja jos katselmoinnin kohteena on ohjelmakoodi, ei ohjelmaa katselmoitaessa yleensä suoriteta.
 
-Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelma koodin suorittamista. Testauksessa tarkkaillaan miten ohjelma reagoi annettuihin testisyötteisiin.
+Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelmakoodin suorittamista. Testauksessa tarkkaillaan, miten ohjelma reagoi annettuihin testisyötteisiin.
 
 ## Vaatimusten validointi
 
-Validointi siis vastaa kysymykseen ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
+Validointi siis vastaa kysymykseen, ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
 
 Ohjelmistolle määritellyt vaatimukset onkin validoitava, eli on varmistettava, että määrittelydokumentti kuvaa sellaisen ohjelmiston, joka vastaa asiakkaan tarpeita.
 
@@ -52,7 +52,7 @@ Vesiputousmallissa määrittelydokumenttiin kirjattujen vaatimusten validointi
 
 Ketterässä ohjelmistotuotannossa vaatimusten validointi tapahtuu iteraation päättävien demonstraatioiden (Scrumissa sprint reviewin) yhteydessä.
 
-Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
+Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata, vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
 
 Jos asiakas havaitsee, että sovellus ei ole etenemässä haluttuun suuntaan, eli kirjatut vaatimukset eivät vastannet todellista tarvetta, tarve on muuttunut tai vaatimuksia on tulkittu väärin, on seuraavassa iteraatiossa mahdollista ottaa korjausliike.
 
@@ -64,7 +64,7 @@ Koodin katselmointi eli koodin lukeminen jonkun muun, kuin ohjelmoijan toimesta 
 
 Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, että koodista ei löydy erilaisissa "checklisteissä" lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
 
-Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/), johon tutustuttiin jo viikon 2 laskareissa.
+Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/), johon tutustuttiin jo viikon 2 laskareissa.
 
 ### Staattinen analyysi pilvessä
 
@@ -75,7 +75,7 @@ Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekev
 - copy paste -koodi
 - testaamaton koodi
 
-Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
+Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille, kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
 
 Codeclimate myös huomauttaa koodin laadun muutoksista, esim. jos koodin kompleksisuus kasvaa muutosten yhteydessä. 
 
@@ -191,11 +191,11 @@ Mitä testitapauksia kannattaisi valita tekstitv:n sivun valintaikkunan toimivu
 
 Tekstitv:n sivu vastaa lukua väliltä 100-899. Osaa välin luvuista vastaavaa sivua ei kuitenkaan ole olemassa. 
 
-Syötteen ekvivalenssiluokkia olisivat ainakin seuraavat
+Syötteen ekvivalenssiluokkia olisivat ainakin seuraavat:
 - olemassa olevaa sivua vastaavat luvut 
 - validit luvut, jotka eivät vastaa mitään sivua 
 - liian pienet ja liian suuret luvut
-- syötteet jotka sisältävät kiellettyjä merkkejä esimerkiksi aakkosia
+- syötteet, jotka sisältävät kiellettyjä merkkejä esimerkiksi aakkosia
 - tyhjä syöte
 
 Jos testeistä halutaan kattavat, olisi jokaisesta ekvivalenssiluokasta hyvä valita ainakin yksi testattava syötearvo.
@@ -210,15 +210,15 @@ Yksikkötestejä laadittaessa otetaan huomioon testattavan koodin rakenne, esime
 
 Yksikkötestauksella ei testata suoranaisesti sitä, täyttääkö ohjelmisto käyttäjän sille asettamat vaatimukset, pikemminkin tavoitteena on ohjelman _sisäisen laadun_ (engl. internal quality) kontrollointi. [Sisäinen laatu](http://c2.com/cgi/wiki?InternalAndExternalQuality) viittaa koodin sisäisen rakenteen hyvyyteen: onko koodia helppo jatkokehittää, onko virheiden jäljitys ja korjaaminen helppoa ja pystytäänkö koodin toiminnallisuuden oikeellisuus varmistamaan muutoksia tehtäessä.
 
-Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä, jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle asti. 
+Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä: jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle asti. 
 
 Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavilla yksikkötesteillä saadaan parannettua myös ohjelman ulkoista, eli asiakkaan kokemaa laatua. Yksikkötestit voivat eliminoida joitain asiakkaalle näkyviä virheitä, joita järjestelmätestauksen testitapaukset eivät löydä.
 
-Tiedetään että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
+Tiedetään, että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
 
 Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu jUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. rspec, jest, jasmine. 
 
-Kurssilla [Ohjelmistotekiikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
+Kurssilla [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
  
 ### Mitä ja miten paljon tulee testata?
 
@@ -343,12 +343,11 @@ Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousma
 
 Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
 
-Ketterän kehityksen luonne vaatiikin että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
+Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
-Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi) ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää, tämän takia testaajat ovat ideaalitilanteessa 
-sijoitettuja erilliseen laatua valvovan QA-organisaatioon sijaan kehittäjätiimeihin ja myös ohjelmoijat kirjoittavat testejä.
+Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tämän takia testaajat on ideaalitilanteessa sijoitettu erillisen laatua valvovan QA-organisaation sijaan kehittäjätiimeihin, ja myös ohjelmoijat kirjoittavat testejä.
 
-Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [built quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa. 
+Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [build quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa. 
 
 Käymme tässä luvussa läpi joukon ketterien menetelmien suosimia testauskäytäntöjä.
  
@@ -362,7 +361,7 @@ Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisi
 
 Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Tuotantokäytössä tapahtuva testaus on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
 
-Voimakkaasta automatisointiatrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
+Voimakkaasta automatisointitrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
 
 ## Test driven development 
 
@@ -627,7 +626,7 @@ Blue-green-deploymentin hieman pidemmälle viedyssä versiossa [canary-release
 
 Uuden ominaisuuden sisältämää versiota monitoroidaan aktiivisesti ja jos ongelmia ei ilmene, vähitellen kaikki liikenne ohjataan uuteen versioon. Kuten blue-green-deploymentin tapauksessa, ongelmatilanteissa palautetaan käyttäjät aiempaan, toimivaksi todettuun versioon.
 
-Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitorointiin_. Jos kyseessä olisi esim. sosiaalisen median palvelu, monitoroinnissa voitaisiin tarkastella esim:
+Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitorointiin_. Jos kyseessä olisi esim. sosiaalisen median palvelu, monitoroinnissa voitaisiin tarkastella esim.:
 
 - palvelun muistin ja prosessoriajan kulutusta sekä verkkoliikenteen määrää 
 - sovelluksen eri sivujen vasteaikoja eli latautumiseen menevää aikaa 
@@ -636,7 +635,7 @@ Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitoroi
 - kirjautuneen käyttäjän sovelluksessa viettämää aikaa
 
 Monitoroinnissa tulee siis palvelimen yleisen toimivuuden lisäksi seurata
-_käyttäjätason metriikoita_ (engl. bussiness level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
+_käyttäjätason metriikoita_ (engl. business level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
 
 Myös canary releasejen yhteydessä testauksen ja kaiken tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti. 
  
@@ -656,7 +655,7 @@ Jos järjestelmän uusi ja vanha versio joutuvat jostain syystä käyttäma
 
 ### Feature toggle
 
-Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisenä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature toggleja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature flag, conditional feature ja config flag. Nimi feature toggle alkaa kuitenkin vakiintua.
+Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisinä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature toggleja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature flag, conditional feature ja config flag. Nimi feature toggle alkaa kuitenkin vakiintua.
 
 Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadunhallinnan alla olevaan toteutukseen.
 
@@ -667,7 +666,7 @@ Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytett
 Canary releaset eivät ole feature togglejen ainoa sovellus, niitä käytetään
 yleisesti myös eliminoimaan tarve pitkäikäisille feature brancheille. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
 
-Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, on ominaisuus mahdollista julkaista feature togglen avulla esim. kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
+Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, on ominaisuus mahdollista julkaista feature togglen avulla esim. kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
 
 Suuret internetpalvelut kuten Facebook, Netflix, Google ja Flickr soveltavat laajalti canary releaseihin ja feature toggleihin perustuvaa kehitysmallia. 
 

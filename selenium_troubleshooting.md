@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cucumber
+title: Selenium troubleshooting
 inheader: no
 permalink: /selenium_troubleshooting/
 ---
@@ -70,7 +70,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 Lataa [täältä](https://sites.google.com/a/chromium.org/chromedriver/downloads) ja asenna ChromeDriver.
 
-Lataaminen ja asentaminen macillä tapahtuu komennolla `brew install chromedriver`. Tämän jälkeen pitäisi toimia ilman muuta määrittelyä. (brew pitää olla asennettuna etukäteen)
+Lataaminen ja asentaminen macillä tapahtuu komennolla `brew cask install chromedriver`. Tämän jälkeen pitäisi toimia ilman muuta määrittelyä. (brew pitää olla asennettuna etukäteen)
 
 Tee seuraava määrittely seleniumia käyttävässä tiedostossa:
 
