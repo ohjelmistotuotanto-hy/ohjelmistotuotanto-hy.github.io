@@ -626,7 +626,7 @@ Blue-green-deploymentin hieman pidemmälle viedyssä versiossa [canary-release
 
 Uuden ominaisuuden sisältämää versiota monitoroidaan aktiivisesti ja jos ongelmia ei ilmene, vähitellen kaikki liikenne ohjataan uuteen versioon. Kuten blue-green-deploymentin tapauksessa, ongelmatilanteissa palautetaan käyttäjät aiempaan, toimivaksi todettuun versioon.
 
-Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitorointiin_. Jos kyseessä olisi esim. sosiaalisen median palvelu, monitoroinnissa voitaisiin tarkastella esim:
+Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitorointiin_. Jos kyseessä olisi esim. sosiaalisen median palvelu, monitoroinnissa voitaisiin tarkastella esim.:
 
 - palvelun muistin ja prosessoriajan kulutusta sekä verkkoliikenteen määrää 
 - sovelluksen eri sivujen vasteaikoja eli latautumiseen menevää aikaa 
@@ -635,7 +635,7 @@ Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitoroi
 - kirjautuneen käyttäjän sovelluksessa viettämää aikaa
 
 Monitoroinnissa tulee siis palvelimen yleisen toimivuuden lisäksi seurata
-_käyttäjätason metriikoita_ (engl. bussiness level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
+_käyttäjätason metriikoita_ (engl. business level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
 
 Myös canary releasejen yhteydessä testauksen ja kaiken tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti. 
  
