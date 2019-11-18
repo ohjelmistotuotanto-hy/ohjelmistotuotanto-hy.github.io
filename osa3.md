@@ -64,7 +64,7 @@ Koodin katselmointi eli koodin lukeminen jonkun muun, kuin ohjelmoijan toimesta 
 
 Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, että koodista ei löydy erilaisissa "checklisteissä" lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
 
-Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/), johon tutustuttiin jo viikon 2 laskareissa.
+Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/), johon tutustuttiin jo viikon 2 laskareissa.
 
 ### Staattinen analyysi pilvessä
 
@@ -75,7 +75,7 @@ Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekev
 - copy paste -koodi
 - testaamaton koodi
 
-Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
+Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille, kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
 
 Codeclimate myös huomauttaa koodin laadun muutoksista, esim. jos koodin kompleksisuus kasvaa muutosten yhteydessä. 
 
