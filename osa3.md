@@ -191,11 +191,11 @@ Mitä testitapauksia kannattaisi valita tekstitv:n sivun valintaikkunan toimivu
 
 Tekstitv:n sivu vastaa lukua väliltä 100-899. Osaa välin luvuista vastaavaa sivua ei kuitenkaan ole olemassa. 
 
-Syötteen ekvivalenssiluokkia olisivat ainakin seuraavat
+Syötteen ekvivalenssiluokkia olisivat ainakin seuraavat:
 - olemassa olevaa sivua vastaavat luvut 
 - validit luvut, jotka eivät vastaa mitään sivua 
 - liian pienet ja liian suuret luvut
-- syötteet jotka sisältävät kiellettyjä merkkejä esimerkiksi aakkosia
+- syötteet, jotka sisältävät kiellettyjä merkkejä esimerkiksi aakkosia
 - tyhjä syöte
 
 Jos testeistä halutaan kattavat, olisi jokaisesta ekvivalenssiluokasta hyvä valita ainakin yksi testattava syötearvo.
@@ -210,15 +210,15 @@ Yksikkötestejä laadittaessa otetaan huomioon testattavan koodin rakenne, esime
 
 Yksikkötestauksella ei testata suoranaisesti sitä, täyttääkö ohjelmisto käyttäjän sille asettamat vaatimukset, pikemminkin tavoitteena on ohjelman _sisäisen laadun_ (engl. internal quality) kontrollointi. [Sisäinen laatu](http://c2.com/cgi/wiki?InternalAndExternalQuality) viittaa koodin sisäisen rakenteen hyvyyteen: onko koodia helppo jatkokehittää, onko virheiden jäljitys ja korjaaminen helppoa ja pystytäänkö koodin toiminnallisuuden oikeellisuus varmistamaan muutoksia tehtäessä.
 
-Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä, jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle asti. 
+Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä: jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertymään enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle asti. 
 
 Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavilla yksikkötesteillä saadaan parannettua myös ohjelman ulkoista, eli asiakkaan kokemaa laatua. Yksikkötestit voivat eliminoida joitain asiakkaalle näkyviä virheitä, joita järjestelmätestauksen testitapaukset eivät löydä.
 
-Tiedetään että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
+Tiedetään, että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
 
 Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu jUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. rspec, jest, jasmine. 
 
-Kurssilla [Ohjelmistotekiikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
+Kurssilla [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
  
 ### Mitä ja miten paljon tulee testata?
 
