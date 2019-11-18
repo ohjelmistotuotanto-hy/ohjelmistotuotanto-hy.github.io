@@ -15,6 +15,7 @@ permalink: /miniprojekti/
   - keskiviikko 20.11. klo 12-14 C222 Exactum
   - torstai 21.11. klo 14-16 C222 Exactum
 - Ensimmäisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
+- [aiheen kuvaus](/speksi)
 
 ### Johdanto
 
@@ -86,7 +87,7 @@ permalink: /miniprojekti/
 
 ### Toteutettava ohjelmisto
 
-* selviää aloitustilaisuudessa
+* [aiheen kuvaus](/speksi)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
