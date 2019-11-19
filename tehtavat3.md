@@ -7,7 +7,7 @@ permalink: /tehtavat3/
 
 ## Viikko 3
 
-**HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. Ilmoittautuminen kokeeseen alkaa 16.11.
+**HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. Ilmoittautuminen kokeeseen alkaa 16.11.
 
 *Alla olevien tehtävien deadline on maanantaina 18.11. klo 23:59*
 
