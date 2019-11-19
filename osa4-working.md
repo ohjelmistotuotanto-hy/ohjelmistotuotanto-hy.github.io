@@ -1,83 +1,79 @@
-#### LeSSin taustalla olevat periaatteet
+## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
- LeSSin taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
+Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käytöön ja hyödyllisyytteen liittyvään tutkimukseen.
 
-![]({{ "/images/5-5.png" | absolute_url }}){:height="400px" }
+### Miten laajasti ketteriä mentelemiä käytetään
 
-Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction.html#LeSSPrinciples)
+Internetistä löytyy melko paljon erilaisia kyselytytkimuksia, jotka kartoittavan ketterien menetelmien käytön yleisyyttä. 
 
-*More with less:*
+Max Steinmetz [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytytkimusta, joista löytyy erilaisia lukemia, mm. [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselyn 46% ja [Stack owerflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyn lukema 85.9%. 
 
-- We don’t want more roles because more roles leads to less responsibility to Teams
-- We don’t want more artifacts because more artifacts leads to a greater distance between Teams and customers
-- We don’t want more process because that leads to less learning and team ownership of process, instead we want more responsible Teams by having less (fewer) roles
-- We want more customer-focused Teams building useful products by having less artifacts
-- We want more Team ownership of process and more meaningful work by having less defined processes.
-- *We want more with less*
+Googlailemalla löytyy runsaasti lisää erilaisia kyselyjä, ja kaikissa ketteryyden käyttöaste sijoittuu suunilleen näiden kahden prosentin väliin, useimmiten reilusti viiden kymmenen yläpuolelle.
 
-Eli minimoimalla prosessin, roolien ja artefaktien määrä pyritään siihen että tiimit ottavat itse omistajuuden tuotteen kehittämisestä ja asiakkaan kanssa käytävästä kommunikaatiosta.
+Valtaosa internetissä olevista kyselyistä ei täytä tieteellisen tutkimuksen kriteerejä, niiden tutkimusotokset eivät ole välttämättä kattavia ja tutkimusmetodologiakin voi olla kyseenlalainen. Osa tutkimusten tekijöistä on kaupallisia toimijoita joiden intressinä saattaa olla itselleen suosiollisten tulosten julkaisu.
 
-Lisää periaatteista [LeSS:in](https://less.works/less/framework/introduction.html) dokumentaatiossa.
+Aiheesta on tehty myös jonkun verran tieteellistä tutkimusta. Oulun yliopiston tutkijoiden artikkelin [Survey on Agile and Lean usage in Finnish software industry](http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_IndustryTrack_1_0.pdf) mukaan 58% tutkimukseen osallistuneista 200 yrityksestä ilmoitti käyttäänsä ketteriä tai lean-menetelmiä ohjelmistokehityksessä.
+
+Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa Seelannissa tehdyssä tutkimuksessa [Adoption and Suitability of Software Development Methods and Practices](https://ieeexplore.ieee.org/document/7890614/) päädyttiin seuraaviin lukuihineri  menetelmien käytön osalta
+- Scrum 71.2%
+- Kanban 49.5% 
+- Lean 39.7%
+- Waterfall 35.3%
+
+Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita2)
+ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät eivät ole yrityksessä ollenkaan käytössä:
+
+![]({{ "/images/5-9a.png" | absolute_url }}){:height="300px" }
+
+Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoprojekteissa, joissa hitaan liikkeellelähdön jälkeen [agile on noussut](https://www2.deloitte.com/insights/us/en/industry/public-sector/agile-in-government-by-the-numbers.html) dominoivaan asemaan
+
+![]({{ "/images/5-10.png" | absolute_url }}){:height="300px" }
+
+### State of Agile -raportti
  
-#### LeSS käytännössä
+Jo 13 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin mukaan Scrum dominoi ketterien menetelmien kenttää.
 
-Katsotaan hieman tarkemmin LeSS:in pienempää konfiguraatiota, jonka on tarkoitettu noin 2-8 tiimin hallintaan. 
+![]({{ "/images/5-11.png" | absolute_url }}){:height="300px" }
 
-Henkilöroolit ovat samat kuin normaalissa Scrumissa. Product ownereita on yksi, Scrum mastereita voi olla muutamia riippuen tiimien määrästä, yksi scrum master pytyy hoitamaan järkevästi noin 1-3 tiimin asioita.
+Scrumia ja sen johdannaisia käyttää siis 74 % vastaajista. Extreme programmingin (eli XP) osuus on enää mariginaalinen 1%. 
 
-Tiimit ovat itseorganisoituvia _full-stack, feature-tiimejä_, eli jokainen tiimi keskittyy asiakkaalle arvoa tuottavien kokonaisuuksien toteuttamiseen. Tiimijako siis _ei noudata_ sovelluksen arkkitehtuurisia kerroksia, eli ei ole esimerkiksi erillisiä frontend-, backend- ja tietokantatiimejä, kukin tiimi operoi ohjelmiston kaikilla tasoilla toteuttaen alusta loppuun user storyjen kuvaaman toiminnallisuuden definition of donen tasalla.
+Ketterien projektinhallintakäytänteiden osuus näytti seuraavalta:
 
-Myös artifaktit ovat samat kuin normaalissa Scrumissa. Product backlogeja on yksi, Sprint backlog sensijaan on jokaisella tiimillä oma. Kaikki tiimit työstävät sprintin aikana samaa ohjelmistoa, _potentially shippable product icremet_ eli sprintin tuotoksena oleva ohjelmiston valmiiksi asti tehty laajennus on kaikille tiimeille sama.
+![]({{ "/images/5-12.png" | absolute_url }}){:height="400px" }
 
-![]({{ "/images/5-6.png" | absolute_url }}){:height="350px" }
+_Daily standup_ -palaverit on edellisten vuosien tapaan kärjessä. Ketterien teknisten käytänteiden osalta tilanne näyttää seuraavalta:
 
-Sprintin suunnittelu eli sprint planning on normaalista Scrumista poiketen kaksiosainen.
+![]({{ "/images/5-13.png" | absolute_url }}){:height="300px" }
 
-Ensimmäisessä osassa product owner ja kaikkien tiimien edustajat valitsevat product backlogilta eri tiimille seuraavan sprintin aikana toteutettavan user storyt.
-
-Suunnittelun toinen osa on tiimikohtainen. Kukin tiimi muodostaa oman sprint backlogin, joiden avulla sprintin sisäinen toiminta hallitaan normaalin Scrumin tapaan. Tarpeen vaatiessa tosin useampikin tiimi voi toimia sprintin aikana synkroonissa, käyttäen yhteistä sprint backlogia.
+Lista on osin hieman yllättävä, voisi esimerkiksi olettaa että jatkuva integrointi olisi nykyään lähes kaikkialla käytössä, mutta ainoastaan 53% ilmoittaa käyttävänsä sitä.
  
-![]({{ "/images/5-7.png" | absolute_url }}){:height="350px" }
+### Toimiiko ketterä ohjelmistokehitys
 
-Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katselmoidaan yhdessä. Retrospektiivi taas on kaksitasoinen, ensin pidetään normaalin Scrumin tapaan tiimikohtainen retrospektiivi ja tämän jälkeen koko tuotteen valmistusprosessia tarkasteleva overall-retrospektiivi, missä on edustus kaikista tiimeistä ja mahdollisesti yrityksen johdosta.
+Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaisuut vuodesta 1995 alkaen ohjelmistoprojektien onnistumisen astetta kartoittaava _Chaos Raportia_.
 
-![]({{ "/images/5-8.png" | absolute_url }}){:height="350px" }
+Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
+- _successful_, projekti on onnistunut jos se valmistuu aikataulussa, budjetoituun hintaan ja suunnitellussa laajuudessa
+- _challenged_, projektin onnistuminen on vaarantunut jos jos jokin onnistumisen komponenteista _aikataulu, budjetti, laajuus_ ei ole toteutunut, esimerkiksi jos sovellus on valmistunut aikataulussa, pystyy budjetin puitteissa, mutta kaikkea suunniteltua toiminnallisuutta ei ole toteutettu 
+- _failed_, projekti on epäonnistunut jos se ei valmitu, tai sitä ei oteta koskaan käyttöön
 
-#### Muu tiimien välinen koordinointi
+Vuoden 2018 raportissa projektien onnistumisenaste näyttää seuraavalta:
 
-Kaikille tiimeille yhteisen sprintin suunnittelun ensimmäisen osan, Sprint reviewin ja overall-retrospektiivin lisäksi LeSS ei edellytä muita tiimien väliseen koordinaatioon tarkoitettuja yhteisiä tapaamisia vaan toteaa että tiimit päättävät keskenään miten koordinaatio tapahtuu.
+![]({{ "/images/5-14.png" | absolute_url }}){:height="150px" }
 
-LeSS antaa joukon aiheeseen liittyviä ohjeita ja suosituksia:
-- prefer decentralized and informal coordination over centralized coordination
-- Emphasize _just talk_ and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
+Projektin koolla on itseasiasa todella suuri merkitys onnistumisen kannalta. Jos tarkastelussa otetaan huomioon projektin koko, on onnistumisprosentti seuraavanlainen:
 
-Periaate _just talk_ korostaa suoran kommunikoinnin tärkeyttä, _communicate in code_ tarkoittaa ryhmien välistä työskentelyä helpottava ohjelmointitapaa, esimerkiksi. yhteisiä koodikäytänteitä ja jatkuvaa integraatiota. _Scouteilla_ tarkoitetaan muiden tiimien daily scrumissa vierailemista.
+![]({{ "/images/5-15.png" | absolute_url }}){:height="220px" }
 
-LeSS mainitsee myös Scrum of Scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mielummin informaalimpia kommunikaation muotoja.
+Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa mitä suuremmasta projektista on kyse.
 
-#### Backlogin ylläpito
+[State of Agile](https://www.stateofagile.com) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
 
-Scrum olettaa, että noin 5-10% sprintin työskentelystä käytetään backlog groomingiin, jonka tarkoituksena siis pitää backlog [DEEP](/linkki_deep):inä. Toisin kuin Scrum, LeSS kiinnittää eksplisiittisesti huomioita backlogin ylläpitämiseen ja antaa aiheeseen liittyvää ohjeistusta.
+![]({{ "/images/5-16.png" | absolute_url }}){:height="400px" }
 
-Product owner on vastuussa backlogista, ja hoitaa kaiken priorisoinnin. Backlogin ylläpidossa (grooming/refinement) tulee olla mukana myös kaikkien tiimien sekä sovelluksen eri sidosryhmien. Oletusarvoisesti kukin tiimi hoitaa niiden storyjen tarkentamista mitkä tiimi tulee todennäköisesti toteuttamaan. Tarpeen mukaan tiimit kuitenkin järjestävät yhteisiä backlogin groomaustilaisuuksia tarkastellessaan toisiinsa läheisesti liittyvien storyjen tarkennusta tai miettiessään sovelluksen kehityksen suurempiin linjauksiin, esimerkiksi arkkitehtuuriin vaikuttavia asioita.
+### Johtopäätöksiä
 
-LeSS kannustaa kehittäjätiimejä kommunikoimaan mahdollisimman suoraan asiakkaiden tai loppukäyttäjien kanssa.
- 
-#### LeSS huge
+Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä kaikki edereferoidut tutkimukset ovat kyselytutkimuksia, joissa käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät välttämättä edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskääm puolueettomia menetelmien suhteen, esim. State of Agile -raporttia tuottava [CollabNet/VersionOne](https://www.collab.net/) ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
 
-Jos tiimien määrä on suurempi kuin kahdeksan, suositellaan käytettäväksi _LeSS huge_ -versiota. Edelleen oletataan että kehitettävänä on ainoastaan yksi tuote, jolla on yksi product backlog sekä yksi vastuunalainen product owner.
+Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, kahteen näistä  viitattiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osa akateemisesta tutkimuksesta, esim. edellä viitatut ketterien menetelmien käytön yleisyyttä kartoittaneet tuktimukst on tehty kyselytytkimuksena. 
 
-Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), joista jokaiselle on siitä vastuun kantava _area product owner_. Area product ownerit muodostavat tuotteen kokonaisuutta hallinnoiva _product owner -tiimin_, joka toimii koko tuotteen product ownerin johdolla.
-
-![]({{ "/images/5-9.png" | absolute_url }}){:height="380px" }
-
-#### LeSS vs SAFe
-
-On erittäin mielenkiintoista että molemmat SAFe ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehitystapa oli kuitenkin täysin erilainen, ja 
-SAFe (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteistaan ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
-
-Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyman kirjoittama [menetelmien vertailu](https://gosei.fi/blog/less-safe-comparison/) kannattaa lukea.
-
-Kuten aiemmin todettiin SAFe on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaistenkin ketterän kehityksen edustajien toimesta, en myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe:a.
-
-En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
+On myös tutkimuksia joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin hyötyjen mittaamiseen tai jatkuvan integraation hyötyjen mittaamiseen ja kartoittamiseen. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat kuitenkin aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
