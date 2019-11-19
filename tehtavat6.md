@@ -8,7 +8,7 @@ permalink: /tehtavat6/
 ## Viikko 6
 
 <div class="important">
-  DRAFT: Pahasti kesken...
+  DRAFT: Erittäin pahasti kesken...
 </div>
 
 **HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
