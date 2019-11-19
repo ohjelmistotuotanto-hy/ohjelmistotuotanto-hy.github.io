@@ -8,7 +8,7 @@ permalink: /tehtavat5/
 ## Viikko 5
 
 <div class="important">
-  DRAFT: Pahasti kesken...
+  DRAFT: kesken... voi jo tehdä omalla vastuulla
 </div>
 
 **HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
@@ -20,6 +20,13 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 - ke 14-16 B221
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/5), joiden deadline on sunnuntaina 1.12. klo 23:59:00.  
+
+Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
+
+Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
+
+Tehtävä 6 käsittelee retrospektiivitekniikoita.
+
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -39,9 +46,10 @@ Tutustutaan tässä tehtävässä Gitin tageihin:
 
 Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit skipata kohdat 'signed tags' ja 'verifying tags')
 
-Tee seuraavat repositorioon, jonka palautat
+Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
+
 * tee tägi nimellä tagi1 (lightweight tag riittää)
-* tee kolme committia (eli 3 kertaa muutos+add+commit)
+* tee kolme committia (eli 3 kertaa muutos + add + commit)
 * tee tägi nimellä tagi2
 * katso <code>gitk</code>-komennolla miltä historiasi näyttää
 * palaa tagi1:n aikaan, eli anna komento <code>git checkout tagi1</code>
@@ -57,7 +65,7 @@ Tee seuraavat repositorioon, jonka palautat
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-Varmista, että tagit siirtyvät Githubiin:
+Varmista, että tagit siirtyvät GitHubiin:
 
 ![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/master/images/viikko4-1.png)
 
@@ -138,7 +146,12 @@ Changes not staged for commit:
 
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto2018) hakemistosta [koodi/viikko6/Laskin](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko6/Laskin) löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
+
+Koodista on kolme eri versiota, _LaskinFX8_ jonka pitäisi toimia Java8:llä (myös cubbli-linuxeilla, ks README), _LaskinFX11_ jonka pitäisi toimia Java11:lla, ja _LaskinSwing_ jonka pitäisi toimia kaikilla versiolla.
+
+Valitse sellainen versio, joka toimii koneellasi (komennolla _gradle run_).
+
 
 Sovellusta on laajennettu lisäämällä siihen painike _undo_-toiminnallisuutta varten, undoa ei kuitenkaan ole vielä toteutettu.
 
@@ -178,11 +191,13 @@ public void handle(Event event) {
 }
 ```
 
-Refaktoroi koodi iffittömäksi itseopiskelumateriaalissa esiteltyä suunnittelumallia [command](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#laskin-ja-komento-olio) käyttäen.
+Versiossa _LaskinSwing_ metodi näyttää hieman erilaiselta, sillä se käyttää FX:n sijaan _Swing_-käyttöliittymäkirastoa.
+
+Refaktoroi koodi iffittömäksi itseopiskelumateriaalissa esiteltyä suunnittelumallia [command](https://ohjelmistotuotanto-hy.github.io/osa4#laskin-ja-komento-olio-viikko-5) käyttäen.
 
 Tässä tehtävässä ei tarvitse vielä toteuttaa undo-komennon toiminnallisuutta!
 
-Luokka <code>Tapahtumankuuntelija</code> voi näyttää refaktoroituna esim. seuraavalta:
+Luokka <code>Tapahtumankuuntelija</code> (Java FX-versioissa) voi näyttää refaktoroituna esim. seuraavalta:
 
 ``` java
 public class Tapahtumankuuntelija implements EventHandler {
@@ -234,8 +249,6 @@ Tutustu sivulla [http://retrospectivewiki.org/index.php?title=Retrospective_Plan
 Tee aiheesta noin 0.25 sivun tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
-
-
 
 ### Tehtävien palautus
 
