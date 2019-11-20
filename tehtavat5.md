@@ -69,7 +69,7 @@ Varmista, että tagit siirtyvät GitHubiin:
 
 Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
-Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon tehtävät eivät näy palautuksissa.
+Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
 
 * tee jokin tiedosto, esim. nimeltään _xxx_, lisää ja committaa se
 * poista tiedosto ja committaa
@@ -80,7 +80,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon tehtäv�
 (1) - (2) - (3)
 </pre>
     
-* Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa, nykyhetkellä ja (2):ssa xxx:ää ei ole.
+* Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa nykyhetkellä ja (2):ssa xxx:ää ei ole.
   * huom: komennolla <code>gitk</code> voit tutkia historiaa
 * haluamme palauttaa tiedoston
 * selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
@@ -101,13 +101,13 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon tehtäv�
 * syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
   * ilman optiota __no-edit__ pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä 
   * huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
-* vastaavalla tavalla voidaan revertata mikä tahansa commit eli: <code>git revert kumottavancommitinid</code>
+* vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
 ### 4. Laskin ja komento-oliot
 
 [Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
 
-Koodista on kolme eri versiota, _LaskinFX8_ jonka pitäisi toimia Java8:llä (myös cubbli-linuxeilla, ks README), _LaskinFX11_ jonka pitäisi toimia Java11:lla, ja _LaskinSwing_ jonka pitäisi toimia kaikilla versiolla.
+Koodista on kolme eri versiota, _LaskinFX8_, jonka pitäisi toimia Java8:llä (myös cubbli-linuxeilla, ks. README), _LaskinFX11_, jonka pitäisi toimia Java11:lla ja _LaskinSwing_, jonka pitäisi toimia kaikilla versiolla.
 
 Valitse sellainen versio, joka toimii koneellasi (komennolla _gradle run_).
 
@@ -150,7 +150,7 @@ public void handle(Event event) {
 }
 ```
 
-Versiossa _LaskinSwing_ metodi näyttää hieman erilaiselta, sillä se käyttää FX:n sijaan _Swing_-käyttöliittymäkirastoa.
+Versiossa _LaskinSwing_ metodi näyttää hieman erilaiselta, sillä se käyttää FX:n sijaan _Swing_-käyttöliittymäkirjastoa.
 
 Refaktoroi koodi iffittömäksi kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](https://ohjelmistotuotanto-hy.github.io/osa4#laskin-ja-komento-olio-viikko-5) käyttäen.
 
