@@ -44,13 +44,13 @@ Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä
 
 Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa _Toyota Production Systemiksi_ (TPS). Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977. Toyotan menestys herätti kiinnostusta länsimaissa ja MIT:in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää. Tutkijat lanseeraavat nimikkeen _lean_- eli virtaviivainen tuotanto kuvaamaan TPS:n taustafilosofiaa.
 
-Vuonna 1990 ilmestynyt kirja [The Machine That Changed the World](https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)), joka leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
+Vuonna 1990 ilmestynyt kirja [The Machine That Changed the World](https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)), joka toi leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
 
 Viimeisen 30 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on [Jeffrey Likerin The Toyota Way](https://www.amazon.com/Toyota-Way-Management-Principles-Manufacturer/dp/0071392319) (2001).
 
 Alun perin lean oli Toyotalla autojen _tuotantoa_ (engl. production) optimoiva toimintatapa, sittemmin leania on ruvettu hyödyntämään myös _tuotekehityksessä_ (engl. development). Tuotanto ja tuotekehitys ovat luonteeltaan hyvin erilaisia ja niihin sovellettavat lean-käytänteet eroavat monin paikoin.
 
-Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi 2003 ilmestynyt Mary ja Tom Poppendieckin kirja [Lean software development, an agile toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783). Klassikon asemastaan huolimatta kirja onpaikoin vanhentunut ja tulkitsee leania osin melko suppeasti. Myös Scrumin kehittäjät Ken Schwaber ja Jeff Sutherland tunsivat hyvin lean-ajattelun, ja monet Scrumin piirteet ovat saaneet vaikutteita leanista.
+Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi 2003 ilmestynyt Mary ja Tom Poppendieckin kirja [Lean software development, an agile toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783). Klassikon asemastaan huolimatta kirja on paikoin vanhentunut ja tulkitsee leania osin melko suppeasti. Myös Scrumin kehittäjät Ken Schwaber ja Jeff Sutherland tunsivat hyvin lean-ajattelun, ja monet Scrumin piirteet ovat saaneet vaikutteita leanista.
 
 Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina terveydenhoidosta, leipomoihin ja  pankkitoimintaan. Myös Helsingin yliopiston hallinto on alkanut puhumaan yhä enenevissä määrin leanista ja kuluvan vuoden aikana aiheesta on järjestetty yliopiston sisällä useita tilaisuuksia.  Lean tai mitä erilaisimmat lean-nimikkeen alla olevat ja myytävät asiat ovatkin alkaneet elämään omaa, Toyota producton systemistä erillistä elämäänsä ja nykyään on välillä vaikea sanoa tarkemmin mistä on kyse kun joku puhuu leanista. 
 
@@ -62,11 +62,11 @@ Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitett�
 
 ![]({{ "/images/5-1.png" | absolute_url }}){:height="550px" }
 
-Leanilla siis on _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ (engl. pilars) ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
+Leanilla siis on _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
  
 Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaalle myytyyn tuotteeseen" siten, että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys._
 
-Jotta tavoite olisi mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkän tähtäimen hyötyihin tähtäävä lean-toimintatapa, mitä johtajat soveltavat ja opettavat alaisille, tätä nimitetään _leanin perustaksi_.
+Jotta tavoite olisi mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkän tähtäimen hyötyihin tähtäävä lean-toimintatapa, mitä johtajat soveltavat ja opettavat alaisille. Tätä nimitetään _leanin perustaksi_.
 
 Leanin kaksi peruspilaria ovat _jatkuvan parantaminen_ (engl. continuous improvement) ja _ihmisten kunnioittaminen_ (engl. respect for people).
 
@@ -112,8 +112,7 @@ Ohjelmistojen ylimääräisten toiminnallisuuksien voidaan ajatella olevan ylitu
 
 Tähän kategoriaan kuuluu osittain tehty työ ja sen säilöminen, eli esim. komponentit joille ei vielä ole käyttöä. Ongelmat ovat samat kuin ylituotannossa.
 
-Ohjelmistokehityksessä välivarastointia ovat esim. liian tarkkaan tehty vaatimusmäärittely sellaisille ominaisuuksille, joita ei vielä hetkeen toteuteta,  
-valmis koodi jota ei ole vielä testattu tai otettu käyttöön tai koodi, joka toteuttaa asiakkaan ehkä tulevaisuudessa haluamia toiminnallisuuksia.
+Ohjelmistokehityksessä välivarastointia ovat esim. liian tarkkaan tehty vaatimusmäärittely sellaisille ominaisuuksille, joita ei vielä hetkeen toteuteta, valmis koodi jota ei ole vielä testattu tai otettu käyttöön tai koodi, joka toteuttaa asiakkaan ehkä tulevaisuudessa haluamia toiminnallisuuksia.
 
 #### Liikatyö (engl. over/extra processing)
 
@@ -123,7 +122,7 @@ Kaikki liiat työvaiheet, mitä vaaditaan riittävän laadukkaaseen lopputulokse
 
 Tuotteen tekemiseen tarvittavia raaka-aineita tai osittain valmista tuotetta ei tulisi joutua siirtelemään tarpeettomasti paikasta toiseen.
 
-Ohjelmistokehityksen kontekstissa tämä tarkoittaa että kehitettävä ohjelmisto tulisi  määritellä, suunnitella, toteuteta, testata ja viedä tuotantoon yhden tiimin toisesta. Eli ns. "handoff", missä esimerkiksi toteutettu ohjelmisto annetaan kehittäjätiimistä erillisen tiimin (esim. QA-tiimi) testattavaksi ajatellaan hukkana.
+Ohjelmistokehityksen kontekstissa tämä tarkoittaa että kehitettävä ohjelmisto tulisi  määritellä, suunnitella, toteuteta, testata ja viedä tuotantoon yhden tiimin toimesta. Eli ns. "handoff", missä esimerkiksi toteutettu ohjelmisto annetaan kehittäjätiimistä erillisen tiimin (esim. QA-tiimi) testattavaksi ajatellaan hukkana.
 
 #### Työntekijöiden tarpeeton liikkuminen (engl. motion) 
 
@@ -139,7 +138,7 @@ Ohjelmistokehityksen kontekstissa turhaa odotusta on, kun joudutaan odottamaan e
 
 #### Viat (engl. defects)
 
-Jos tuotantolinjan aiheuttamaa systemaattista vikaa ei huomata ajoissa, ehditään viallisia tuotteita/komponentteja ehkä valmistamaan suuret määrät. Vielä pahempaa on, jos viallisia tuotteita pääsee kuluttajille asti. Niiden korvaaminen tai korjaaminen kallista, ja imagolle aiheutunut haitta potentiaalisesti suuri. Jos vikoja tulee, onkin oleellista havaita ja korjata ne mahdollisimman nopeasti.
+Jos tuotantolinjan aiheuttamaa systemaattista vikaa ei huomata ajoissa, ehditään viallisia tuotteita/komponentteja ehkä valmistamaan suuret määrät. Vielä pahempaa on, jos viallisia tuotteita pääsee kuluttajille asti. Niiden korvaaminen tai korjaaminen on kallista, ja imagolle aiheutunut haitta potentiaalisesti suuri. Jos vikoja tulee, onkin oleellista havaita ja korjata ne mahdollisimman nopeasti.
 
 Ohjelmistokehityksessä tuotteeseen tulee lähes väistämättä vikoja, ja on kustannustehokasta suorittaa laadunhallinta niin aikaisessa vaiheessa kuin mahdollista.
 
@@ -211,7 +210,7 @@ Leanin taustaa käsitelleessä [luvussa](/osa5#taustaa) puhutiin Just in time (J
 
 #### Kanban
 
-Pull-systeemi toteutetaan usein _kanbanin_ avulla. Japaninkielinen sana kanban tarkoittaa signaalikorttia, englanniksi "card you can see". Kanban toteuttaa _visuaalisen ohjauksen_, jonka avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimittaa.
+Pull-systeemi toteutetaan usein _kanbanin_ avulla. Japaninkielinen sana kanban tarkoittaa signaalikorttia, englanniksi "card you can see". Kanban toteuttaa _visuaalisen ohjauksen_, jonka avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimia.
 
 Kun asiakas tilaa tuotteen, viedään tilausta vastaava kanban-kortti tehtaalle.
 Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti. Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella. Kun komponentti on valmis, viedään se tilaajalle, samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten.
@@ -219,7 +218,7 @@ Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataa
 Kanban-kortteja on käytössä vain rajallinen määrä, tällä kontrolloidaan sitä, että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen. Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sensijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon.
 
 Kuten on jo mainittu välivarastoon tehdyt komponentit on eräs leanin hukan muoto. Varastoidut komponentit sitovat pääomaa, ja jos tilauksia ei tulisi tarpeeksi, niitä
-ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa, jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret  määrät.
+ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa: jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret  määrät.
 
 Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan sykliajan optimoitua.
 
