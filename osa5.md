@@ -11,10 +11,6 @@ permalink: /osa5/
   />
 </a>
 
-<div class="important">
-  DRAFT: Lukeminen omalla vastuulla!
-</div>
-
 Kurssin viidennellä viikolla käsitellään kolmea aihetta viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoa ketterien menetelmien käytöstä ja hyödyistä.
 
 ## Typoja materiaalissa
