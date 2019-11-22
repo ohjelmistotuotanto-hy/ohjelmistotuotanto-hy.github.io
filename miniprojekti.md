@@ -114,6 +114,7 @@ permalink: /miniprojekti/
 #### Product ja sprint backlog
 
 * Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
+  * **minprojektissa ei ole tarvetta estimoida user storya**, ainoastaan sprintissä olevien taskien työmäärä estimoidaan
 * Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta 
   * jäljellä olevan työajan estimaatti
   * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
