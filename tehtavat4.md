@@ -181,7 +181,7 @@ Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi raha
 
 Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. Maksukortin saldoa ei erikseen tarkasteta, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
 
-Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin <code>ostaLounas</code> kutsuminen kysyy kortin saldon mutta _ei_ velota kortilta rahaa.
+Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin <code>ostaLounas</code> kutsuminen kysyy kortin saldon mutta _ei_ veloita kortilta rahaa.
 
 **Testit eivät mene läpi. Korjaa kassapäätteen metodi <code>ostaLounas</code>.**
 
