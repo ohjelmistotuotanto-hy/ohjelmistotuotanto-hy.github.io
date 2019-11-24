@@ -9,13 +9,11 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Aloitustilaisuudet:
-  - maanantai 18.11. klo 14-16 C222 Exactum
-  - tiistai 19.11. klo 14-16 A128 Chemicum
-  - keskiviikko 20.11. klo 12-14 C222 Exactum
-  - torstai 21.11. klo 14-16 C222 Exactum
 - Ensimmäisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
+- Toisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 - [aiheen kuvaus](/speksi)
+- Loppudemojen [ajanvaraus](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit) 
+  - dokumentin toisella sivulla
 
 ### Johdanto
 
@@ -83,7 +81,7 @@ permalink: /miniprojekti/
   * tilaisuuksia järjestetään kaksi:
     - maanantai 9.12. klo 14-17 A110 Chemicum
     - tiistai 10.12. klo 14-17 A110 Chemicum
-  * varaa ryhmällesi aika [täältä]()
+  * varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit)
 
 ### Toteutettava ohjelmisto
 
