@@ -15,6 +15,7 @@ permalink: /miniprojekti/
   - keskiviikko 20.11. klo 12-14 C222 Exactum
   - torstai 21.11. klo 14-16 C222 Exactum
 - Ensimmäisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
+- [aiheen kuvaus](/speksi)
 
 ### Johdanto
 
@@ -51,7 +52,7 @@ permalink: /miniprojekti/
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 * Ryhmä varataa aijan sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä]()
+  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 ### Työn eteneminen
 
@@ -65,7 +66,7 @@ permalink: /miniprojekti/
   * backlogien sisällöstä enemmän [täällä](/miniprojekti#tekniset-ja-prosessiin-liittyvät-vaatimukset)
 * Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet) kannattaa lukea huolellisesti
 * Ryhmät varaavat tapaamisen sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä]()
+  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 #### viikko 5 (25-29.11.)
 
@@ -86,7 +87,7 @@ permalink: /miniprojekti/
 
 ### Toteutettava ohjelmisto
 
-* selviää aloitustilaisuudessa
+* [aiheen kuvaus](/speksi)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -113,6 +114,7 @@ permalink: /miniprojekti/
 #### Product ja sprint backlog
 
 * Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
+  * **minprojektissa ei ole tarvetta estimoida user storya**, ainoastaan sprintissä olevien taskien työmäärä estimoidaan
 * Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta 
   * jäljellä olevan työajan estimaatti
   * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)

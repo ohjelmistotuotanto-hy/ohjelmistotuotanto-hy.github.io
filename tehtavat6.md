@@ -8,10 +8,10 @@ permalink: /tehtavat6/
 ## Viikko 6
 
 <div class="important">
-  DRAFT: Pahasti kesken...
+  DRAFT: Erittäin pahasti kesken...
 </div>
 
-**HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
+**HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
 
 *Alla olevien tehtävien deadline on maanantaina 9.12. klo 23:59*
 
@@ -31,45 +31,45 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
+### 1. git: stash [versionhallinta]
 
-_tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
+_Tätä tehtävää ei palauteta mihinkään!_
 
-* viikon 5 [tehtävässä 1](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/laskarit/4.md#1-git-tägit) palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan
-* katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan
-* tee tiedosto xxx, lisää ja committaa se
-* poista tiedosto ja committaa
-* tee jotain muutoksia johonkin tiedostoon ja committaa
-* historiasi näyttää seuraavalta
+Lue [http://git-scm.com/book/en/Git-Tools-Stashing](http://git-scm.com/book/en/Git-Tools-Stashing) kohtaan Un-applying a Stash asti.
 
-<pre>
-(1) - (2) - (3)
-</pre>
-    
-* Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto xxx on olemassa, nykyhetkellä ja (2):ssa xxx:ää ei ole.
-  * huom: komennolla <code>gitk</code> voit tutkia historiaa
-* haluamme palauttaa tiedoston
-* selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
-* anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- xxx</code> missä pitkä merkkijono on siis kyseisen commitin id
-  * varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
-* tee commit
-* xxx on palannut!
-* HUOM: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa
-  * "Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters." [7.1 Git Tools - Revision Selection
-](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
+Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja joku toinen (kutsutaan sitä tässä nimellä __toinen__).
 
-* Täsmälleen samalla tavalla onnistuu olemassaolevan tiedoston vanhan version palauttaminen.
+* ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunilleen seuraavalta
 
-### 2. git: commitin muutosten kumoaminen [versionhallinta]
+```
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
 
-* huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
-  * HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
-* syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
-  * ilman optiota __no-edit__ pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä 
-  * huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
-* vastaavalla tavalla voidaan revertata mikä tahansa commit eli: <code>git revert kumottavancommitinid</code>
+	new file:   README.md
+    modified:   src/main/java/Main.java
 
-### 3. Kyselykieli NHLStatistics-ohjelmaan
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/main/java/Olutvarasto.java              
+```
+ 
+* pomosi käskee sinua välittömästi tekemään pari muutosta branchiin __toinen__. Et kuitenkaan halua vielä comittoida masterissa olevia muutoksia
+* jos siirryt branchiin __toinen__ tekemättä comittia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
+* **git stash** pelastaa tästä tilanteesta, eli stashaa masterissa olevat muutoset
+  * kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
+* siirry branchiin toinen, tee sinne joku muutos jonka committaat
+* palaa jälleen masteriin
+* palauta stashatyt muutokset komennolla <code>git stash apply</code>
+  * varmista että muutokset palasivat
+  * kuten huomaat, staging-alueelle jo lisätty muutos ei palaa staging-alueelle, vaan joudut lisäämään sen uudelleen
+  * jos edellisessä komento olisi annettu muodossa <code>git stash apply --index</code>, olisi tilanne palautunut täysin ennalleen
+
+
+### 2. Kyselykieli NHLStatistics-ohjelmaan
 
 [Kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto8) hakemistosta [koodi/viikko6/QueryLanguage](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko6/QueryLanguage) löytyy jälleen yksi versio tutusta NHL-tilastoja lukevasta ohjelmasta.
 
@@ -160,7 +160,7 @@ tulisi palauttaa täsmälleen sama lista kuin ylempänä _not_-matcherin avulla 
 
 Kyselyt perustuvat rakenteeltaan __decorator__-suunnittelumalliin, vastaavasti kuten itseopiskelumateriaalin [dekoroitu pino](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#dekoroitu-pino). __And__- ja __OR__-muotoiset kyseltyt on muodostettu [composite-suunnittelumallin](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#komposiitti) hengessä, ne ovat __Matcher__-rajapinnan toteuttavia olioita, jotka sisältävät itse monta __Matcher__-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
-### 4. Parannettu kyselykieli, osa 1
+### 3. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on hieman ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. Tee itseopiskelumateriaalin [pinorakentajan](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#pinorakentaja) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
 
@@ -221,7 +221,7 @@ Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
 
 Tässä tehtävässä riittää, että kyselyrakentajasi osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
 
-### 5. Parannettu kyselykieli, osa 2
+### 4. Parannettu kyselykieli, osa 2
 
 Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä. Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
@@ -261,7 +261,7 @@ Matcher m = query.oneOf(
 
 Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla. Riittää, että sillä voi jollain tavalla muodostaa _and_- ja _or_-muotoisia kyselyjä.
 
-### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+### 5. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun osa-alueitakin rupeaa jo kertymään useita. On vaikeaa olla joka paikan höylä ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...". Ehkäpä et edes ajatellut asiaa, mutta joku silti osoittaa, että puurakenne olisi tässä tehokkaampi ratkaisu. Mokoma tekee vielä korjauksetkin puolestasi lähdekoodiin ja pistää pullrequestin. Onneksi julkaisit projektisi Open Sourcena!
 

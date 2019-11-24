@@ -8,10 +8,10 @@ permalink: /tehtavat7/
 ## Viikko 7
 
 <div class="important">
-  DRAFT: Pahasti kesken...
+  DRAFT: Täysin kesken...
 </div>
 
-**HUOM**: [Kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
+**HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
 
 *Alla olevien tehtävien deadline on maanantaina 16.12. klo 23:59*
 
