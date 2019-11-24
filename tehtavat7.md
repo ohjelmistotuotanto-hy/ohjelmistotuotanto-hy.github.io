@@ -88,23 +88,22 @@ Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
-[Kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto2018) hakemistosta 
-[koodi/viikko7/KiviPaperiSakset](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko7/KiviPaperiSakset) löytyy tutun pelin tietokoneversio 
+[Kurssirepositorion]([Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019)  
+_koodi/viikko7/KiviPaperiSakset_ löytyy tutun pelin tietokoneversio 
 
 * ohjelmassa on kolme pelimoodia: ihminen vs. ihminen, ihminen vs. yksinkertainen tekoäly ja ihminen vs. monimutkainen tekoäly
 * koodi sisältää runsaat määrät copy pastea, muutenkaan oliosuunnittelun periaatteet eivät ole vielä alkuperäisellä ohjelmoijalla olleet hallussa
 * poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti luennon 8 hengessä oikeaoppinen
-  * pelaa-metodi tulee toteuttaa [template-metodina](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#template-method)
+  * pelaa-metodi tulee toteuttaa [template-metodina](/osa4#suunnittelumalli-template-method-viikko-5)
   * sopivan peliolion (kaksinpeli, helppo yksinpeli, vaikea yksinpeli) luominen tulee toteuttaa staattisen tehdasmetodin avulla
   * pääohjelmalla ei saa olla riippuvuuksia konkreettisiin pelin toteuttaviin luokkiin
 
 * jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti
 
-## #5. lunttilappu
+### 5. lunttilappu
 
-kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [luennon 10 kalvot](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/kalvot/luento10.pdf)
+kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/koe)
 
-**HUOM:** lue kaikki kokeeseen liittyvät vihjeet luennon 10 kalvoilta!
 
 ### 6. pullrequestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
