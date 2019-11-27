@@ -13,7 +13,6 @@ permalink: /miniprojekti/
 - Toisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 - [aiheen kuvaus](/speksi)
 - Loppudemojen [ajanvaraus](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit) 
-  - dokumentin toisella sivulla
 
 ### Johdanto
 
