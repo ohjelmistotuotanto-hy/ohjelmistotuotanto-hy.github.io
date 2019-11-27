@@ -1997,7 +1997,7 @@ Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerr
 
 Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/ jadesign_patterns/decorator 
 
-#### Pinotehdas <span style="color:blue">[viikko 5]</span>
+#### Pinotehdas <span style="color:blue">[viikko 6]</span>
 
 Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehtaan:
 
@@ -2043,7 +2043,7 @@ Pino omapino = tehdas.kryptattuPrepaidPino(100);
 
 Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan _rakentaja_ (engl. builder) -suunnittelumallia:
 
-#### Pinorakentaja <span style="color:blue">[viikko 5]</span>
+#### Pinorakentaja <span style="color:blue">[viikko 6]</span>
 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 

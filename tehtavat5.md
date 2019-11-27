@@ -23,7 +23,6 @@ Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [
 
 Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat5.md) tiedostoa GitHubissa.

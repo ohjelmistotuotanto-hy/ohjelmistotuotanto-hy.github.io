@@ -19,7 +19,9 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 - ma 14-16 B221 
 - ke 14-16 B221
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6), joiden deadline on sunnuntaina 8.12. klo 23:59:00.  
+Tehtävät 2-4 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>.
+
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6), joiden deadline on poikkeuksellisesti vasta keskiviikkona 11.12. klo 23:59:00.  
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -71,20 +73,18 @@ Changes not staged for commit:
 
 ### 2. Kyselykieli NHLStatistics-ohjelmaan
 
-[Kurssirepositorion](https://github.com/mluukkai/ohjelmistotuotanto8) hakemistosta [koodi/viikko6/QueryLanguage](https://github.com/mluukkai/ohjelmistotuotanto2018/tree/master/koodi/viikko6/QueryLanguage) löytyy jälleen yksi versio tutusta NHL-tilastoja lukevasta ohjelmasta.
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastoja lukevasta ohjelmasta.
 
+Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
-Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. __listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 10 syöttöä__.
-
-Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Edelläolevan kyselyn voi suorittaa seuraavasti:
-
+Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Edellä olevan kyselyn voi suorittaa seuraavasti:
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("http://nhlstats-2013-14.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhl27112019.herokuapp.com/players.txt"));
  
     Matcher m = new And( new HasAtLeast(5, "goals"),
-                         new HasAtLeast(10, "assists"),
+                         new HasAtLeast(5, "assists"),
                          new PlaysIn("PHI")
     );
  
@@ -94,19 +94,19 @@ public static void main(String[] args) {
 }
 ```
 
-Luokalle __Statistics__ on tehty metodi __matches__, joka palauttaa listan niistä pelaajista, joille parametrina annettu __Matcher__-rajapinnan toteuttava olio palauttaa __true__
+Luokalle _Statistics_ on tehty metodi _matches_, joka palauttaa listan niistä pelaajista, joille parametrina annettu _Matcher_-rajapinnan toteuttava olio palauttaa _true_
 
 Tutustu ohjelman rakenteeseen
 
-* huomioi miten __HasAtLeast__ käyttää Javan ns. reflektio-ominaisuutta kutsuessaan merkkijonoparametria vastaavaa metodia
-* toinen huomioinarvoinen piirre on __And__-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, eli "vararg", ks. lisää esim: https://www.javatpoint.com/varargs
+* huomioi miten _HasAtLeast_ käyttää Javan ns. reflektio-ominaisuutta kutsuessaan merkkijonoparametria vastaavaa metodia
+* toinen huomioinarvoinen piirre on _And_-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, eli "vararg", ks. lisää esim: <https://www.javatpoint.com/varargs>
 
-Tee rajapinnan __Matcher__ toteuttavat luokat, joiden avulla voit tehdä operaatiot
+Tee rajapinnan _Matcher_ toteuttavat luokat, joiden avulla voit tehdä operaatiot
 
 * all (tosi kaikille pelaajille)
 * not (parameetrina olevan ehdon negaatio)
 * or (tosi jollekin ehdolle)
-* HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 25 maalia)
+* HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
 
 Tee erilaisia kyselyjä, ja varmista että uudetkin operaatiot toimivat
 
@@ -158,11 +158,13 @@ Matcher m = new HasFewerThan(1, "goals");
 
 tulisi palauttaa täsmälleen sama lista kuin ylempänä _not_-matcherin avulla toteutettu kysely niistä pelaajista jotka eivät ole tehneet yhtään maalia.
 
-Kyselyt perustuvat rakenteeltaan __decorator__-suunnittelumalliin, vastaavasti kuten itseopiskelumateriaalin [dekoroitu pino](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#dekoroitu-pino). __And__- ja __OR__-muotoiset kyseltyt on muodostettu [composite-suunnittelumallin](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#komposiitti) hengessä, ne ovat __Matcher__-rajapinnan toteuttavia olioita, jotka sisältävät itse monta __Matcher__-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 3. Parannettu kyselykieli, osa 1
 
-Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on hieman ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. Tee itseopiskelumateriaalin [pinorakentajan](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/master/web/oliosuunnittelu.md#pinorakentaja) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
+Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on hieman ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. 
+
+Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
@@ -170,7 +172,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("http://nhlstats-2013-14.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhl27112019.herokuapp.com/players.txt"));
     
     QueryBuilder query = new QueryBuilder();
     Matcher m = query.build();
@@ -187,7 +189,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on NYR
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("http://nhlstats-2013-14.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhl27112019.herokuapp.com/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
@@ -199,17 +201,17 @@ public static void main(String[] args) {
 }
 ```
 
-Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on NYR, joilla on vähintään 10 ja vähemmän kuin 25 maalia:
+Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on NYR, joilla on vähintään 5 ja vähemmän kuin 10 maalia:
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("http://nhlstats-2013-14.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhl27112019.herokuapp.com/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
     Matcher m = query.playsIn("NYR")
-                     .hasAtLeast(10, "goals")
-                     .hasFewerThan(25, "goals").build();
+                     .hasAtLeast(5, "goals")
+                     .hasFewerThan(10, "goals").build();
  
     for (Player player : stats.matches(m)) {
         System.out.println( player );
@@ -227,11 +229,11 @@ Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-e
 
 ``` java
 Matcher m1 = query.playsIn("PHI")
-                  .hasAtLeast(10, "goals")
-                  .hasFewerThan(20, "assists").build();
+                  .hasAtLeast(5, "goals")
+                  .hasFewerThan(10, "assists").build();
  
 Matcher m2 = query.playsIn("EDM")
-                  .hasAtLeast(60, "points").build();
+                  .hasAtLeast(20, "points").build();
  
 Matcher m = query.oneOf(m1, m2).build();
 ```
@@ -251,11 +253,11 @@ Tai kaikki sama ilman apumuuttujia:
 
 Matcher m = query.oneOf(
                         query.playsIn("PHI")
-                             .hasAtLeast(10, "goals")
-                             .hasFewerThan(20, "assists").build(),
+                             .hasAtLeast(5, "goals")
+                             .hasFewerThan(10, "assists").build(),
  
                         query.playsIn("EDM")
-                             .hasAtLeast(60, "points").build()
+                             .hasAtLeast(20, "points").build()
                        ).build();
 ```
 
@@ -268,6 +270,7 @@ Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oi
 Kontribuutiotasi kaivataan! GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs sen kivempaa, kuin käyttää muutama tunti suosikki repositioriosi lähdekoodin parissa ja korvata sieltä huomaamasi tehoton algoritmi mielestäsi paremmalla ratkaisulla. Useilla repositorioilla on valmiit ohjeet contribuuttamiseen Contributing.md:ssä repositorion juuressa. Tässä esimerkiksi bluebird.js:än [CONTRIBUTING.md](https://github.com/petkaantonov/bluebird/blob/master/CONTRIBUTING.md).
 
 Tehtävänäsi on harjoitella contribuuttamista ja vieraan koodin refaktorointia. 
+
 * Valitse yksi ryhmä [miniprojektien](https://studies.cs.helsinki.fi/courses/ohtu2018/projects/repositories) joukosta
 * Forkkaa sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. Jos ryhmällä on jo viisi pullrequestia, valitse jokin toinen ryhmä
 * Tee uusi branch nimellä "muutoksia"
