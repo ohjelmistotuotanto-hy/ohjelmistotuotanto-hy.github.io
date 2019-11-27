@@ -124,7 +124,7 @@ Matcher m = new And(
 );
 ```
 
-vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
+vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
 
 <pre>
 Lias Andersson       NYR           0 +  1 = 1
@@ -252,9 +252,20 @@ public static void main(String[] args) {
 }
 ```
 
+Pelaajien lista on seuraava
+
+```
+Chris Kreider        NYR           6 +  7 = 13
+Tony DeAngelo        NYR           7 + 10 = 17
+Vladislav Namestnikov NYR, OTT      6 +  6 = 12
+Ryan Strome          NYR           6 + 16 = 22
+Kaapo Kakko          NYR           6 +  4 = 10
+Filip Chytil         NYR           7 +  2 = 9
+```
+
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella. 
 
-Tässä tehtävässä riittää, että kyselyrakentajasi osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
+Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
 
 ### 5. Parannettu kyselykieli, osa 2
 
