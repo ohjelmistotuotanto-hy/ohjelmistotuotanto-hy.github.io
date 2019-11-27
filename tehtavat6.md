@@ -8,7 +8,7 @@ permalink: /tehtavat6/
 ## Viikko 6
 
 <div class="important">
-  DRAFT: Erittäin pahasti kesken...
+  DRAFT: hieman kesken...
 </div>
 
 **HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
@@ -19,7 +19,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 - ma 14-16 B221 
 - ke 14-16 B221
 
-Tehtävät 2-4 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>.
+Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6), joiden deadline on poikkeuksellisesti vasta keskiviikkona 11.12. klo 23:59:00.  
 
@@ -71,13 +71,13 @@ Changes not staged for commit:
   * jos edellisessä komento olisi annettu muodossa <code>git stash apply --index</code>, olisi tilanne palautunut täysin ennalleen
 
 
-### 2. Kyselykieli NHLStatistics-ohjelmaan
+### 2. Kyselykieli NHLStatistics-ohjelmaan, osa 1
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastoja lukevasta ohjelmasta.
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta  ohjelmasta.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
-Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Edellä olevan kyselyn voi suorittaa seuraavasti:
+Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä olevan kyselyn voi suorittaa seuraavasti:
 
 ``` java
 public static void main(String[] args) {
@@ -96,73 +96,106 @@ public static void main(String[] args) {
 
 Luokalle _Statistics_ on tehty metodi _matches_, joka palauttaa listan niistä pelaajista, joille parametrina annettu _Matcher_-rajapinnan toteuttava olio palauttaa _true_
 
+HUOM: Tilastotiedot haetaan palvelimelta, josta on olemassa kaksi erillistä versiota.
+- Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät ajantasaiset tilastotiedot
+- Osoitteesta _https://nhl27112019.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot 
+- Seuraavassa olevat esimerkkitulostukset ovat marraskuun lopun tilastoista
+
+
 Tutustu ohjelman rakenteeseen
 
 * huomioi miten _HasAtLeast_ käyttää Javan ns. reflektio-ominaisuutta kutsuessaan merkkijonoparametria vastaavaa metodia
 * toinen huomioinarvoinen piirre on _And_-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, eli "vararg", ks. lisää esim: <https://www.javatpoint.com/varargs>
 
-Tee rajapinnan _Matcher_ toteuttavat luokat, joiden avulla voit tehdä operaatiot
+**Tee rajapinnan _Matcher_ toteuttavat luokat, joiden avulla voit tehdä operaatiot**
 
-* all (tosi kaikille pelaajille)
-* not (parameetrina olevan ehdon negaatio)
-* or (tosi jollekin ehdolle)
+* All (tosi kaikille pelaajille)
+* Not (parameetrina olevan ehdon negaatio)
 * HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
-
-Tee erilaisia kyselyjä, ja varmista että uudetkin operaatiot toimivat
 
 Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään seuraavassa tehtävässä.
 
-Seuraavassa muutama esimerkki:
-
-Kyselyn
+Voit tarkistaa toteutuksesi toimivuuden tekemällä kyselyn
 
 ```java
-Matcher m = new Not( new HasAtLeast(1, "goals") );
-
-for (Player player : stats.matches(m)) {
-    System.out.println( player );
-}
+Matcher m = new And( 
+    new Not( new HasAtLeast(1, "goals") ), 
+    new PlaysIn("NYR")
+);
 ```
 
-vastauksena pitäisi olla vain ne pelaajat (yht 18), joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*. 
+vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
+
+<pre>
+Lias Andersson       NYR           0 +  1 = 1
+Boo Nieves           NYR           0 +  0 = 0
+Tim Gettinger        NYR           0 +  1 = 1
+Libor Hajek          NYR           0 +  4 = 4
+</pre>
 
 Kyselyn
 
 ```java
-Matcher m = new Or( new HasAtLeast(40, "goals"),
-                    new HasAtLeast(60, "assists"),
-                    new HasAtLeast(85, "points")
+Matcher m = new And( 
+    new HasFewerThan(1, "goals"), 
+    new PlaysIn("NYR")
+);
+```
+
+tulisi palauttaa täsmälleen sama lista.
+
+### 3. Kyselykieli NHLStatistics-ohjelmaan, osa 2
+
+**Tee** rajapinnan _Matcher_ toteuttava _Or_, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
+
+Kyselyn
+
+```java
+Matcher m = new Or( new HasAtLeast(20, "goals"),
+                    new HasAtLeast(20, "assists")
 );   
 ```
 
-tulisi palauttaa seuraava lista
+tulee palauttaa ne, joilla on vähintään 20 maalia tai syöttöä, eli seuraava lista
 
 ```
-Sidney Crosby        PIT          36 + 68 = 104
-Ryan Getzlaf         ANA          31 + 56 = 87
-Claude Giroux        PHI          28 + 58 = 86
-Corey Perry          ANA          43 + 39 = 82
-Alex Ovechkin        WSH          51 + 28 = 79
-Joe Pavelski         SJS          41 + 38 = 79
-Nicklas Backstrom    WSH          18 + 61 = 79
-Joe Thornton         SJS          11 + 65 = 76
+Leon Draisaitl       EDM          16 + 32 = 48
+John Carlson         WSH           8 + 28 = 36
+Jonathan Huberdeau   FLA          10 + 20 = 30
+Connor McDavid       EDM          18 + 29 = 47
+David Pastrnak       BOS          23 + 16 = 39
+Aleksander Barkov    FLA           7 + 22 = 29
+Logan Couture        SJS           5 + 20 = 25
+Brad Marchand        BOS          17 + 25 = 42
 ```
 
-näille siis vähintään yksi _or_-kyselyn kriteereistä on tosi.
-
-Kyselyn
+Kyselyn 
 
 ```java
-Matcher m = new HasFewerThan(1, "goals");  
+Matcher m = new And(
+    new HasAtLeast(20, "points"),
+    new Or( 
+        new PlaysIn("NYR"),
+        new PlaysIn("NYI"),
+        new PlaysIn("NJD")
+    )
+); 
 ```
 
-tulisi palauttaa täsmälleen sama lista kuin ylempänä _not_-matcherin avulla toteutettu kysely niistä pelaajista jotka eivät ole tehneet yhtään maalia.
+tulee palauttaa kaikki yli 20 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _NJD_. Lista näyttää seuraavalta: 
+
+```
+Mathew Barzal        NYI           9 + 11 = 20
+Artemi Panarin       NYR          12 + 18 = 30
+Ryan Strome          NYR           6 + 16 = 22
+Taylor Hall          NJD           4 + 17 = 21
+```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
-### 3. Parannettu kyselykieli, osa 1
+### 4. Parannettu kyselykieli, osa 1
 
-Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on hieman ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. 
+Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. 
 
 Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
 
@@ -223,7 +256,7 @@ Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
 
 Tässä tehtävässä riittää, että kyselyrakentajasi osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
 
-### 4. Parannettu kyselykieli, osa 2
+### 5. Parannettu kyselykieli, osa 2
 
 Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä. Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
@@ -263,7 +296,7 @@ Matcher m = query.oneOf(
 
 Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla. Riittää, että sillä voi jollain tavalla muodostaa _and_- ja _or_-muotoisia kyselyjä.
 
-### 5. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun osa-alueitakin rupeaa jo kertymään useita. On vaikeaa olla joka paikan höylä ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...". Ehkäpä et edes ajatellut asiaa, mutta joku silti osoittaa, että puurakenne olisi tässä tehokkaampi ratkaisu. Mokoma tekee vielä korjauksetkin puolestasi lähdekoodiin ja pistää pullrequestin. Onneksi julkaisit projektisi Open Sourcena!
 
