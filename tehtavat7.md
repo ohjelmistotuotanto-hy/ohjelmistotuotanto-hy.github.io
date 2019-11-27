@@ -32,16 +32,54 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. git: branchin "siirtäminen" [versionhallinta]
+### 1. git: stash [versionhallinta]
+
+_tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
+
+
+Lue [http://git-scm.com/book/en/Git-Tools-Stashing](http://git-scm.com/book/en/Git-Tools-Stashing) kohtaan Un-applying a Stash asti.
+
+Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja joku toinen (kutsutaan sitä tässä nimellä __toinen__).
+
+* ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunilleen seuraavalta
+
+```
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   README.md
+    modified:   src/main/java/Main.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/main/java/Olutvarasto.java              
+```
+ 
+* pomosi käskee sinua välittömästi tekemään pari muutosta branchiin __toinen__. Et kuitenkaan halua vielä comittoida masterissa olevia muutoksia
+* jos siirryt branchiin __toinen__ tekemättä comittia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
+* **git stash** pelastaa tästä tilanteesta, eli stashaa masterissa olevat muutoset
+  * kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
+* siirry branchiin toinen, tee sinne joku muutos jonka committaat
+* palaa jälleen masteriin
+* palauta stashatyt muutokset komennolla <code>git stash apply</code>
+  * varmista että muutokset palasivat
+  * kuten huomaat, staging-alueelle jo lisätty muutos ei palaa staging-alueelle, vaan joudut lisäämään sen uudelleen
+  * jos edellisessä komento olisi annettu muodossa <code>git stash apply --index</code>, olisi tilanne palautunut täysin ennalleen
+
+### 2. git: branchin "siirtäminen" [versionhallinta]
 
 _tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
 
 * tee repoosi branchi nimeltä haara ja tee masteriin ja haaraan committeja siten että saat aikaan seuraavankaltaisen tilanteen:
 
 <pre>
-/------master
---
-   \---haara
+    ____master
+__/
+  \_____haara
 </pre>
 
 * eli sekä master että haara ovat edenneet muutamien commitien verran haarautumisen tapahduttua
@@ -51,40 +89,6 @@ _tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtäv
   * varmista että komento toimii oikein
   * vanhan master-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata
   * vanhaan committiin palaaminen onnistuu, jos commitin id on tiedossa -- jos ei, on olemassa [muutamia keinoja](http://stackoverflow.com/questions/4786972/list-of-all-git-commits) sen selvittämiseksi
-
-### 2. git: rebase [versionhallinta]
-
-Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja <https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase>
-
-Aikaansaa seuraavankaltainen tilanne
-
-<pre>
-------- master
-\
- \--- haara
-</pre>
-
-"rebeissaa" haara masteriin, eli aikaansaa seuraava tilanne:
-
-<pre>
-------- master
-       \
-        \--- haara
-</pre>
-
-Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
-
-"mergeä" master vielä haaraan:
-
-<pre>
--------
-       \     master
-        \--- haara
-</pre>
-
-Lopputuloksena pitäisi siis olla lineaarinen historia ja master sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
-
-Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 

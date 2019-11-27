@@ -8,7 +8,7 @@ permalink: /tehtavat6/
 ## Viikko 6
 
 <div class="important">
-  DRAFT: hieman kesken...
+  DRAFT: kesken tehtävän 6 osalta
 </div>
 
 **HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
@@ -33,43 +33,41 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. git: stash [versionhallinta]
+### 1. git: rebase [versionhallinta]
 
 _Tätä tehtävää ei palauteta mihinkään!_
 
-Lue [http://git-scm.com/book/en/Git-Tools-Stashing](http://git-scm.com/book/en/Git-Tools-Stashing) kohtaan Un-applying a Stash asti.
+Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja <https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase>
 
-Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja joku toinen (kutsutaan sitä tässä nimellä __toinen__).
+Aikaansaa seuraavankaltainen tilanne
 
-* ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunilleen seuraavalta
+<pre>
+------- master
+\
+ \--- haara
+</pre>
 
-```
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+"rebeissaa" haara masteriin, eli aikaansaa seuraava tilanne:
 
-	new file:   README.md
-    modified:   src/main/java/Main.java
+<pre>
+------- master
+       \
+        \--- haara
+</pre>
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
-	modified:   src/main/java/Olutvarasto.java              
-```
- 
-* pomosi käskee sinua välittömästi tekemään pari muutosta branchiin __toinen__. Et kuitenkaan halua vielä comittoida masterissa olevia muutoksia
-* jos siirryt branchiin __toinen__ tekemättä comittia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
-* **git stash** pelastaa tästä tilanteesta, eli stashaa masterissa olevat muutoset
-  * kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
-* siirry branchiin toinen, tee sinne joku muutos jonka committaat
-* palaa jälleen masteriin
-* palauta stashatyt muutokset komennolla <code>git stash apply</code>
-  * varmista että muutokset palasivat
-  * kuten huomaat, staging-alueelle jo lisätty muutos ei palaa staging-alueelle, vaan joudut lisäämään sen uudelleen
-  * jos edellisessä komento olisi annettu muodossa <code>git stash apply --index</code>, olisi tilanne palautunut täysin ennalleen
+"mergeä" master vielä haaraan:
 
+<pre>
+-------
+       \     master
+        \--- haara
+</pre>
+
+Lopputuloksena pitäisi siis olla lineaarinen historia ja master sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+
+Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 2. Kyselykieli NHLStatistics-ohjelmaan, osa 1
 
@@ -273,63 +271,71 @@ Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-e
 
 ``` java
 Matcher m1 = query.playsIn("PHI")
-                  .hasAtLeast(5, "goals")
-                  .hasFewerThan(10, "assists").build();
- 
+          .hasAtLeast(10, "assists")
+          .hasFewerThan(8, "goals").build();
+
 Matcher m2 = query.playsIn("EDM")
-                  .hasAtLeast(20, "points").build();
- 
+          .hasAtLeast(20, "points").build();
+
 Matcher m = query.oneOf(m1, m2).build();
 ```
 
 Pelaajalistan tulisi olla:
 
 <pre>
-Taylor Hall          EDM          27 + 53 = 80
-Jordan Eberle        EDM          28 + 37 = 65
-Matt Read            PHI          22 + 18 = 40
-Vincent Lecavalier   PHI          20 + 17 = 37
+Jakub Voracek        PHI           6 + 10 = 16
+Leon Draisaitl       EDM          16 + 32 = 48
+Claude Giroux        PHI           7 + 10 = 17
+Sean Couturier       PHI           7 + 11 = 18
+Connor McDavid       EDM          18 + 29 = 47
 </pre>
 
-Tai kaikki sama ilman apumuuttujia:
+Tai sama ilman apumuuttujia:
 
 ``` java
-
 Matcher m = query.oneOf(
-                        query.playsIn("PHI")
-                             .hasAtLeast(5, "goals")
-                             .hasFewerThan(10, "assists").build(),
- 
-                        query.playsIn("EDM")
-                             .hasAtLeast(20, "points").build()
-                       ).build();
+    query.playsIn("PHI")
+        .hasAtLeast(10, "assists")
+        .hasFewerThan(8, "goals").build(),
+
+    query.playsIn("EDM")
+        .hasAtLeast(20, "points").build()
+).build();
 ```
 
-Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla. Riittää, että sillä voi jollain tavalla muodostaa _and_- ja _or_-muotoisia kyselyjä.
+Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla kuin esimerkkikoodin. Riittää, että sillä voi jollain tavalla muodostaa _and_- ja _or_-muotoisia kyselyjä.
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun osa-alueitakin rupeaa jo kertymään useita. On vaikeaa olla joka paikan höylä ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...". Ehkäpä et edes ajatellut asiaa, mutta joku silti osoittaa, että puurakenne olisi tässä tehokkaampi ratkaisu. Mokoma tekee vielä korjauksetkin puolestasi lähdekoodiin ja pistää pullrequestin. Onneksi julkaisit projektisi Open Sourcena!
+<div class="important">
+  DRAFT: tehtävä kesken
+</div>
 
-Kontribuutiotasi kaivataan! GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs sen kivempaa, kuin käyttää muutama tunti suosikki repositioriosi lähdekoodin parissa ja korvata sieltä huomaamasi tehoton algoritmi mielestäsi paremmalla ratkaisulla. Useilla repositorioilla on valmiit ohjeet contribuuttamiseen Contributing.md:ssä repositorion juuressa. Tässä esimerkiksi bluebird.js:än [CONTRIBUTING.md](https://github.com/petkaantonov/bluebird/blob/master/CONTRIBUTING.md).
+Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...". 
 
-Tehtävänäsi on harjoitella contribuuttamista ja vieraan koodin refaktorointia. 
+Ehkäpä et edes ajatellut asiaa, mutta joku silti näyttää, että binäärihakupuu onkin tilanteessa tehokkaampi ratkaisu, koodaa korjaukset puolestasi lähdekoodiin sekä tekee muutoksista _pull requestin_. Onneksi julkaisit projektisi Open Sourcena!
 
-* Valitse yksi ryhmä [miniprojektien](https://studies.cs.helsinki.fi/courses/ohtu2018/projects/repositories) joukosta
-* Forkkaa sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. Jos ryhmällä on jo viisi pullrequestia, valitse jokin toinen ryhmä
-* Tee uusi branch nimellä "muutoksia"
-* Tee luomaasi branchiin "tyhjä" pull request: Eli lisää vaikka yksi tyhjä rivi README.md:hen, pushaa uusi branch GitHubiin ja tee branchista pull request. Tyhjän pullrequestin tarkoituksena on varata sinulle paikka kyseisen repositorion contribuuttajien joukosta. Haluamme, että kaikki ryhmät saavat tasaisesti pullrequesteja ja siksi olemme rajanneet maksimimäärän viiteen. Jos kaikki ryhmät ovat saaneet jo viisi pullrequestia niin valitse joukosta mieleisesi
+GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs sen kivempaa, kuin käyttää muutama tunti suosikkirepositioriosi lähdekoodin parissa ja korvata sieltä huomaamasi epäelegantti ratkaisu paremmalla. Useilla repositorioilla on valmiit ohjeet muutosehdotusten  tekemiseen repositorion juuresta löytyvässä tiedostossa Contributing.md. Tässä esimerkiksi bluebird.js:än [CONTRIBUTING.md](https://github.com/petkaantonov/bluebird/blob/master/CONTRIBUTING.md).
+
+Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia. 
+
+* Valitse yksi repositorio [miniprojektien]() joukosta
+    - mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. 
+    - ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
+* [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
+* Tee forkattuun repositorioon uusi branch nimellä "muutoksia" 
+* Tee luomaasi branchiin "tyhjä" [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request): lisää esimerkiksi yksi tyhjä rivi README.md:hen, pushaa uusi branch GitHubiin ja tee branchista pull request. 
+    - Tyhjän pullrequestin tarkoituksena on varata sinulle paikka kyseisen repositorion muutoksentekijöiden joukosta. Haluamme, että kaikki ryhmät saavat suunilleen tasaisesti pull requesteja, eli jos repositoriossa on niitä jo runsaasti, etsi mielellään jokin muu repositorio.
 * Etsi ryhmän lähdekoodista jotain refaktoroitavaa
-  * kyseessä ei tarvitse olla iso muutos 
+  * kyseessä ei tarvitse olla iso muutos, esimerkiksi muuttujan/metodin uudelleennimeäminenkin riittää
 * Refaktoroi ja committaa
 * Käy katsomassa tekemääsi tyhjää pullrequestia. Mitä tapahtui?
-* [Rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) luomasi branch paikalliseen master branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
+* Rebeissaa (ks. tämän viikon ensimmäinen tehtävä) luomasi branch paikalliseen master branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
 * Otsikoi tekemäsi pullrequest niin, että se kuvaa tekemiäsi muutoksia. Tarkenna otsikon alle mitä teit ja miksi.
-* Jos ryhmä pyytää sinua tekemään muutoksia pullrequestiisi, tee tarvittavat muutokset ja committaa. Päivittyikö pullrequest?
+* Jos ryhmä pyytää sinua tekemään muutoksia pull requestiisi, tee halutessasi tarvittavat muutokset ja committaa. Päivittyikö pullrequest?
 * Kun ryhmä on hyväksynyt muutoksesi, voit poistaa luomasi branchin
 
-Laita palautusrepositorioosi tiedosto PULL.md ja sen sisällöksi linkki pullrequestiin.
-
+Laita palautusrepositorioosi tiedosto PULL.md ja sen sisällöksi linkki pull requestiin.
 
 ### Tehtävien palautus
 
