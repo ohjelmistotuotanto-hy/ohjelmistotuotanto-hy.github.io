@@ -7,10 +7,6 @@ permalink: /tehtavat6/
 
 ## Viikko 6
 
-<div class="important">
-  DRAFT: kesken tehtävän 6 osalta
-</div>
-
 **HUOM**: [kurssikoe](https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111. Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua. 
 
 *Alla olevien tehtävien deadline on maanantaina 9.12. klo 23:59*
@@ -307,10 +303,6 @@ Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla 
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-<div class="important">
-  DRAFT: tehtävä kesken
-</div>
-
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...". 
 
 Ehkäpä et edes ajatellut asiaa, mutta joku silti näyttää, että binäärihakupuu onkin tilanteessa tehokkaampi ratkaisu, koodaa korjaukset puolestasi lähdekoodiin sekä tekee muutoksista _pull requestin_. Onneksi julkaisit projektisi Open Sourcena!
@@ -319,7 +311,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia. 
 
-* Valitse yksi repositorio [miniprojektien]() joukosta
+* Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2019/projects/repositories) joukosta
     - mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. 
     - ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
 * [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
