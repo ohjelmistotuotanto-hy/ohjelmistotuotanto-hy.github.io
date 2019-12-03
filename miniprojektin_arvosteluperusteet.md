@@ -7,9 +7,9 @@ permalink: /miniprojektin_arvosteluperusteet/
 
 ## Miniprojektin arvosteluperusteet
 
-* [ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
-
 * [toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
+
+* [kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
 
 Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan
 
@@ -92,6 +92,63 @@ Sprintin maksimi on 2.5 pistettä.
   * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
 
 Sprintin maksimi on 2.5 pistettä.
+
+### Sprintin 3 arvosteluperusteet
+
+Huom: miniprojektit tarkastetaan jossain vaiheessa torstain 12.12. klo 23.59 jälkeen. Sen jälkeen tehtyjä muutoksia ei työssä enää huomioida. 
+
+#### Pisteytys jakautuu seuraavasti:
+
+* (0.25p) product backlog 
+  * backlog on DEEP (storyjä ei tarvitse estimoida)
+  * backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein
+* (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu cucumber-featureina
+  * hyväksymisehtoja ei kirjoteta erikseen backlogille, backlogista linkki cucumber-featureen
+* (0.25p) sprintin 3 backlog
+  * vaatimukset kuten edellisissä sprinteissä
+* (0.5p) kattavahko testaus yksikkö- ja storytasolla
+* (0.25p) jatkuva integraatio
+  * CI-palvelu suorittaa testit
+  * master-branch ei ole hajonnut
+* (0.25p) githubin README:stä linkki testikattavuusraporttiin
+* (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/). 
+  * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+* (0.25p) Demoon on valmistauduttu hyvin
+  * on sovittu etukäteen kuka tekee mitäkin
+  * on mietitty mitä esitetään
+    * kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
+  * testidata on järkevää
+    * tietokanta ei saa olla etukäteen tyhjä
+    * tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli *ei* esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_  
+
+
+Sprintin maksimi on 2.5 pistettä.
+
+### Lopputoimenpiteet
+
+#### Vertaispalaute
+
+<div class="important">
+Vertaispalauteen tekeminen on mahdollista vasta 
+</div>
+
+* Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
+* Jokaisen ryhmäläisen tulee antaa vertaispalaute viimeistään lauantaina 21.12. klo 23:59
+  * Vertaispalautteen antaminen on pakollista, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
+* vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2019) miniproject-tabissa
+
+#### Raportti
+
+Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
+
+*  kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
+* mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
+* mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
+* jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
+* raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin Readme:hen
+* raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
+* **raportin deadline lauantaina 21.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät githubissa oikein
 
