@@ -50,7 +50,7 @@ Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi
 
 Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina terveydenhoidosta, leipomoihin ja  pankkitoimintaan. Myös Helsingin yliopiston hallinto on alkanut puhumaan yhä enenevissä määrin leanista ja kuluvan vuoden aikana aiheesta on järjestetty yliopiston sisällä useita tilaisuuksia.  Lean tai mitä erilaisimmat lean-nimikkeen alla olevat ja myytävät asiat ovatkin alkaneet elämään omaa, Toyota producton systemistä erillistä elämäänsä ja nykyään on välillä vaikea sanoa tarkemmin mistä on kyse kun joku puhuu leanista. 
 
-Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan Scaling Lean and Agile Development perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [tällä](http://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
+Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan Scaling Lean and Agile Development perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [täällä](http://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
 
 ### Leanin tavoitteet, perusta ja peruspilarit
 
@@ -265,7 +265,7 @@ Mitä nopeammin arvo saadaan virtaamaan, sitä enemmän päätöksiä on mahdol
 
 ### Arvon virtaaminen ketterässä ohjelmistotuotannossa
 
-Edellä mainittujen periaatteiden soveltaminen näkyy selkeästi ketterässä ohjelmistotuotannossa. Vaatimuksia hallitaan product backlogilla, joka on parhaassa tapauksessa [DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep) eli Detailed aproproately, emergent, estimated, prioritized. 
+Edellä mainittujen periaatteiden soveltaminen näkyy selkeästi ketterässä ohjelmistotuotannossa. Vaatimuksia hallitaan product backlogilla, joka on parhaassa tapauksessa [DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep) eli Detailed appropriately, emergent, estimated, prioritized. 
 
 Alhaisen prioriteetin user storyja ei ole määritelty kovin tarkkaan. Kun product owner valitsee storyn seuraavaan sprinttiin toteutettavaksi, määritellään storyn hyväksymäkriteerit ja suunnitellaan se toteutuksen osalta. Tarkkoja vaatimuksia ei siis määritellä spekulatiivisesti vaan _at the last responsible moment_. Sprintiin valitut storyt toteutetaan valmiiksi sprintin aikana, eli _deliver as fast as possible_
 
@@ -348,7 +348,7 @@ Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten
 ### Laajan skaalan ketterät menetelmät
 
 Viimeisen kymmenen vuoden aikana ketterän skaalaamiseen on alettu kiinnittämään enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä. Näistä eniten huomiota saaneet ovat Scaled Agile Framework eli
-[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disiplined Agile eli [DA](http://www.disciplinedagiledelivery.com)
+[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disciplined Agile eli [DA](http://www.disciplinedagiledelivery.com)
 
 Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua.
 Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFea ja LeSS:iä. DA on listatuista menetelmistä vähimmälle huomiolle jäänyt, joten jätämme sen välistä.
