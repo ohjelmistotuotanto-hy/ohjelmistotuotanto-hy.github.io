@@ -122,7 +122,6 @@ _Huom: miniprojektit tarkastetaan jossain vaiheessa torstain 12.12. klo 23.59 j�
     * tietokanta ei saa olla etukäteen tyhjä
     * tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli *ei* esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_  
 
-
 Sprintin maksimi on 2.5 pistettä.
 
 ### Lopputoimenpiteet
@@ -130,7 +129,7 @@ Sprintin maksimi on 2.5 pistettä.
 #### Vertaispalaute
 
 <div class="important">
-Vertaispalauteen tekeminen on mahdollista vasta torstaina 12.12.
+Vertaispalauteen antaminen on mahdollista vasta torstaina 12.12.
 </div>
 
 * Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
