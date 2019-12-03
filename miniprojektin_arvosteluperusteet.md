@@ -8,8 +8,8 @@ permalink: /miniprojektin_arvosteluperusteet/
 ## Miniprojektin arvosteluperusteet
 
 * [toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
-
 * [kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
+* [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
 Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan
 
@@ -86,37 +86,37 @@ Sprintin maksimi on 2.5 pistettä.
 * (0.5p) kattavahko testaus yksikkö- ja storytasolla
 * (0.25p) jatkuva integraatio
   * CI-palvelu suorittaa testit
-* (0.25p) githubin README:stä linkki testikattavuusraporttiin
+* (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
 * (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
 * (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/). 
   * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
 
 Sprintin maksimi on 2.5 pistettä.
 
-### Sprintin 3 arvosteluperusteet
+### Kolmannen sprintin arvosteluperusteet
 
-Huom: miniprojektit tarkastetaan jossain vaiheessa torstain 12.12. klo 23.59 jälkeen. Sen jälkeen tehtyjä muutoksia ei työssä enää huomioida. 
+_Huom: miniprojektit tarkastetaan jossain vaiheessa torstain 12.12. klo 23.59 jälkeen. Sen jälkeen tehtyjä muutoksia ei työssä enää huomioida._ 
 
 #### Pisteytys jakautuu seuraavasti:
 
 * (0.25p) product backlog 
   * backlog on DEEP (storyjä ei tarvitse estimoida)
-  * backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein
+  * backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
 * (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu cucumber-featureina
-  * hyväksymisehtoja ei kirjoteta erikseen backlogille, backlogista linkki cucumber-featureen
+  * hyväksymisehtoja ei kirjoteta erikseen backlogin, backlogista linkki cucumber-featureen
 * (0.25p) sprintin 3 backlog
   * vaatimukset kuten edellisissä sprinteissä
 * (0.5p) kattavahko testaus yksikkö- ja storytasolla
 * (0.25p) jatkuva integraatio
   * CI-palvelu suorittaa testit
   * master-branch ei ole hajonnut
-* (0.25p) githubin README:stä linkki testikattavuusraporttiin
+* (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
 * (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/). 
-  * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
-* (0.25p) Demoon on valmistauduttu hyvin
-  * on sovittu etukäteen kuka tekee mitäkin
-  * on mietitty mitä esitetään
+* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  * jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+* (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
+  * sovittu etukäteen kuka tekee mitäkin
+  * mietitty mitä esitetään
     * kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
   * testidata on järkevää
     * tietokanta ei saa olla etukäteen tyhjä
@@ -130,13 +130,14 @@ Sprintin maksimi on 2.5 pistettä.
 #### Vertaispalaute
 
 <div class="important">
-Vertaispalauteen tekeminen on mahdollista vasta 
+Vertaispalauteen tekeminen on mahdollista vasta torstaina 12.12.
 </div>
 
 * Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-* Jokaisen ryhmäläisen tulee antaa vertaispalaute viimeistään lauantaina 21.12. klo 23:59
-  * Vertaispalautteen antaminen on pakollista, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
-* vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2019) miniproject-tabissa
+* Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina 21.12. klo 23:59**
+  * vertaispalautteen antaminen on _pakollista_, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
+* Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2019) miniproject-tabissa
+  * ryhmäläiset eivät näe toistensa vertaispalautteita
 
 #### Raportti
 
