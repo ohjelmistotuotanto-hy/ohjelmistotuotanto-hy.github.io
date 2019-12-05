@@ -36,7 +36,6 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 _tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
 
-
 Lue [http://git-scm.com/book/en/Git-Tools-Stashing](http://git-scm.com/book/en/Git-Tools-Stashing) kohtaan Un-applying a Stash asti.
 
 Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja joku toinen (kutsutaan sitä tässä nimellä __toinen__).
@@ -93,7 +92,7 @@ __/
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
 [Kurssirepositorion]([Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019)  
-_koodi/viikko7/KiviPaperiSakset_ löytyy tutun pelin tietokoneversio 
+_koodi/viikko7/KiviPaperiSakset_ löytyy tutun pelin tietokoneversio. 
 
 * ohjelmassa on kolme pelimoodia: ihminen vs. ihminen, ihminen vs. yksinkertainen tekoäly ja ihminen vs. monimutkainen tekoäly
 * koodi sisältää runsaat määrät copy pastea, muutenkaan oliosuunnittelun periaatteet eivät ole vielä alkuperäisellä ohjelmoijalla olleet hallussa
@@ -102,12 +101,11 @@ _koodi/viikko7/KiviPaperiSakset_ löytyy tutun pelin tietokoneversio
   * sopivan peliolion (kaksinpeli, helppo yksinpeli, vaikea yksinpeli) luominen tulee toteuttaa staattisen tehdasmetodin avulla
   * pääohjelmalla ei saa olla riippuvuuksia konkreettisiin pelin toteuttaviin luokkiin
 
-* jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti
+Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti.
 
 ### 5. lunttilappu
 
-kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/koe)
-
+kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/ohje_kokeeseen)
 
 ### 6. pullrequestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
