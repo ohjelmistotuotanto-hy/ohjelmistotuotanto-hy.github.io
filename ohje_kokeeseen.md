@@ -17,18 +17,19 @@ Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien k
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä. 
 
-Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä.
+Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja **vähintään puolia kokeen pisteistä**.
 
-**Kokeessa on sallittu yhden A4:n kokoinen käsin, itse kynällä kirjoitettu lunttilappu.**
-
-Koealueena tämän materiaalin osat 1-5 sekä laskarit, paitsi
+Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 
 - Git
 - Gradle 
-- CircleCI 
+- CircleCI
+- CodeClimate 
 - JUnit 
 - Mockito 
 - Cucumber 
 - Selenium
 
-Vierailuluennot eivät kuulu koealueeseen
+Vierailuluennot eivät kuulu koealueeseen.
+
+**Kokeessa on sallittu yhden A4:n kokoinen käsin, itse kynällä kirjoitettu lunttilappu.**
