@@ -14,7 +14,7 @@ Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä harjoituksissa on _k
 Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvostelu).
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
-- ma 14-16 B221 (maanantain paja vasta 4.11. alkaen)
+- ma 14-16 B221 (maanantain 9.12. paja peruttu)
 - ke 14-16 B221
 
 ### Viikko 1
