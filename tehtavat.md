@@ -49,3 +49,6 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 
 ### Viikko 7
+
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/7) ilmestyvät keskiviikkona 11.12. (klo 23 mennessä), deadline on perjantaina 20.12 klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 16.12. klo 23:59 

@@ -20,11 +20,11 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Maanantain pajaa ei tällä viikolla pidetä.
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/7), joiden deadline on sunnuntaina 15.12. klo 23:59:00.  
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 20.12 klo 23:59:00   
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat4.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat7.md) tiedostoa GitHubissa.
 
 ### Tehtävien palauttaminen
 
@@ -109,13 +109,17 @@ kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu
 
 ### 6. pullrequestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Laita palautusrepositorioosi tiedosto MERGE.md ja sen sisällöksi linkki mergettyyn pullrequestiin.
+Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin.
 
-Jos miniprojektillesi ei ole tehty pullrequestia, voit korvata tehtävän artikkelireferaatilla. 
+**Vaihtoehtoinen tehtävä**
+
+Jos et ollut miniprojektissa tai et halua tehdä mergeämistä, voit merkata tehtävän tehdyksi listaamalla kurssin monivalintatehtävistä ne, jotka on ilmaistu mielestäsi epäselvästi tai moniselitteisesti. 
+
+Laita palautusrepositorioosi tiedosto _QUIZZ.md_, ja listaa epäselvät kohdat sinne.
 
 ### 7. kurssipalaute
 
-Anna kurssipalautetta WebOodissa. En ole varma voiko palautteen antaa jo nyt ja vaikka voisi voit antaa palautteen esim. kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa.
+Anna kurssipalautetta WebOodissa. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa.
 
 ### Tehtävien palautus
 
