@@ -114,6 +114,10 @@ Jos et ollut miniprojektissa tai et halua tehdä mergeämistä, voit merkata teh
 
 Laita palautusrepositorioosi tiedosto _QUIZZ.md_, ja listaa epäselvät kohdat sinne.
 
+**Toinen vaihtoehtoinen tehtävä**
+
+Toinen korvaava vaihtoehto on kirjoittaa referaatti, viime vuoden [laskareiden speksin](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/master/laskarit/7.md#4-referaatti) mukaan.
+
 ### 7. Kurssipalaute
 
 Anna kurssipalautetta WebOodissa. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa.
