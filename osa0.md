@@ -178,7 +178,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 11: tiistai 3.12. klo 12-14 CK112
   - Vierailuluento Niko Laitinen Nitor
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6) deadline sunnuntaina 8.12. klo 23:59  
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6) deadline perjantaina 13.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 9.12. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
