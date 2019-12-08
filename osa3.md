@@ -732,7 +732,7 @@ Eräs parhaista DevOpsin määritelmistä on [Daniel Storin](http://turnoff.us/g
 
 Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maric käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
 
-![]({{ "/images/3-20.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/3-20.png" | absolute_url }}){:height="400px" }
 
 Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1...Q4) seuraavien dimensioiden suhteen:
 - business facing vs. technology facing, kohdistuuko testaus käyttäjän kokemaan toiminnallisuuteen vai enemmän ohjelmiston sisäisen toiminnallisuuden yksityiskohtiin 
