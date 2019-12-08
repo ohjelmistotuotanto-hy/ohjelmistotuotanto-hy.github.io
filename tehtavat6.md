@@ -95,7 +95,6 @@ HUOM: Tilastotiedot haetaan palvelimelta, josta on olemassa kaksi erillistä ver
 - Osoitteesta _https://nhl27112019.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot 
 - Seuraavassa olevat esimerkkitulostukset ovat marraskuun lopun tilastoista
 
-
 Tutustu ohjelman rakenteeseen
 
 * huomioi miten _HasAtLeast_ käyttää Javan ns. reflektio-ominaisuutta kutsuessaan merkkijonoparametria vastaavaa metodia
@@ -107,7 +106,7 @@ Tutustu ohjelman rakenteeseen
 * Not (parameetrina olevan ehdon negaatio)
 * HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
 
-Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään seuraavassa tehtävässä.
+Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
 
 Voit tarkistaa toteutuksesi toimivuuden tekemällä kyselyn
 
