@@ -190,6 +190,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 14: tiistai 10.12. klo 12-14 CK112
   - Vierailuluento Marko Klemetti Eficode
 - Laskarit
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2019/quiz/6) deadline perjantaina 20.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 16.12. klo 23:59 
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
