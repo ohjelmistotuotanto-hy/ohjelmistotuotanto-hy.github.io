@@ -277,7 +277,7 @@ Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs leanin hukka
 
 Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyja toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](/osa2#lean-waste-ja-scrumban) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
  
-### Kasvattaminen leanin ja johtajuuden periaatteet
+### Kasvattaminen leaniin ja johtajuuden periaatteet
 
 Toyotalla useimmat uudet työntekijät koulutetaan huolellisesti perehtymään käytännön tasolla lean-ajattelun periaatteisiin. Useiden kuukausien koulutuksen aikana uudet työntekijät työskentelevät monissa eri työtehtävissä ja heidät opetetaan tunnistamaan lean-hukka sen eri muodoissa. Tarkoituksena on sisäistää jatkuvan parantamisen eli kaizen mentaliteetti.
 
