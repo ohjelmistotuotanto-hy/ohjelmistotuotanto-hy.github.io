@@ -129,10 +129,6 @@ Sprintin maksimi on 2.5 pistettä.
 
 #### Vertaispalaute
 
-<div class="important">
-Vertaispalauteen antaminen on mahdollista vasta torstaina 12.12.
-</div>
-
 * Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
 * Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina 21.12. klo 23:59**
   * vertaispalautteen antaminen on _pakollista_, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
