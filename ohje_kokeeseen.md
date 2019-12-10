@@ -33,3 +33,7 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 Vierailuluennot eivät kuulu koealueeseen.
 
 **Kokeessa on sallittu yhden A4:n kokoinen käsin, itse kynällä kirjoitettu lunttilappu.**
+
+Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
+- <https://github.com/mluukkai/Ohjelmistotuotanto2018>
+- <https://github.com/mluukkai/ohjelmistotuotanto2017>
