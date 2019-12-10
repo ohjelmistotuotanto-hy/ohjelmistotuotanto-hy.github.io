@@ -7,6 +7,7 @@ permalink: /miniprojektin_arvosteluperusteet/
 
 ## Miniprojektin arvosteluperusteet
 
+* [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
 * [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 * [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
 * [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)

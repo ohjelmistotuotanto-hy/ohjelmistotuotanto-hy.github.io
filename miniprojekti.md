@@ -9,7 +9,6 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Toisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 - Kolmannen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
 - Loppudemojen [ajanvaraus](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit) 
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
