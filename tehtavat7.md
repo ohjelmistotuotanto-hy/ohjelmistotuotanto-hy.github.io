@@ -100,7 +100,9 @@ Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 ras
 
 ### 5. Lunttilappu
 
-kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/ohje_kokeeseen)
+_tehtävän ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
+
+Kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/ohje_kokeeseen)
 
 ### 6. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
