@@ -23,7 +23,7 @@ Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://gi
 
 ## Ohjelmistotuotanto ja sen osa-alueet
 
-IEEE (Institute of Electrical and Electronics Engineers) yksi alamme keskeisistä vaikuttajajärjestöistä määrittelee ohjelmistotuotannon (engl. software engineering) seuraavasti:
+IEEE (Institute of Electrical and Electronics Engineers), yksi alamme keskeisistä vaikuttajajärjestöistä, määrittelee ohjelmistotuotannon (engl. software engineering) seuraavasti:
 
 > The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software
 
