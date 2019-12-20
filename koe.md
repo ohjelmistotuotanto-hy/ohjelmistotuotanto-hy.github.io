@@ -7,6 +7,8 @@ permalink: /koe/
 
 ## Tehtävä 1 _Scrum ja user story_ (6p) 
 
+Tehtävän arvioi Matti Luukkainen. Omasta arvioinnista voi tarvittaessa kysyä matti.luukkainen@helsinki.fi tai telegramissa
+
 **(a)  Scrumin tärkeä taustaperiaate on adaptation eli mukauttaminen. Mitä tällä tarkoitetaan, ja miten Scrum pyrkii edesauttamaan mukauttamista?**
 
 **(b) Eräs scrumin määrittelemistä eventeistä eli tapahtumista on sprintin suunnittelukokous. Mitä kokouksessa tapahtuu ja ketkä siihen osallistuvat?**
@@ -17,7 +19,7 @@ permalink: /koe/
 
 ## Tehtävä 2: _Estimointi_ (2p) 
 
-Tehtävän arvioinut Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
+Tehtävän arvioi Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
 
 **(a) Mitä tarkoitetaan estimoinnilla?**
 
@@ -30,17 +32,17 @@ Tehtävän arvioinut Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä m
 
 ## Tehtävä 3: _Lean Startup_ (2p) 
 
-Tehtävän arvioinut Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
+Tehtävän arvioi Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
 
 **(a) Mitä tarkoitetaan Lean startup -menetelmällä? Mihin ja miten sitä käytetään?**
 
-**(b) Mitä tarkoittaa käsite Minimal Viable product (MVP)?**
+**(b) Mitä tarkoittaa käsite Minimal Viable Product (MVP)?**
 
 **(c) Entä A/B-testaus?**
 
 ## Tehtävä 4: _Laadunhallinta_ (5p) 
 
-Tehtävän arvioinut Tero Tapio. Omasta arvioinnista voi tarvittaessa kysyä tero.tapio@helsinki.fi tai telegrammissa.
+Tehtävän arvioi Tero Tapio. Omasta arvioinnista voi tarvittaessa kysyä tero.tapio@helsinki.fi tai telegrammissa.
 
 **(a) Mitä tarkoitetaan verifioinnilla ja validoinnilla?**
 
@@ -55,7 +57,7 @@ Tehtävän arvioinut Tero Tapio. Omasta arvioinnista voi tarvittaessa kysyä ter
 
 ## Tehtävä 5 (5p) 
 
-Tehtävän arvioinut Jami Kousa. Omasta arvioinnista voi tarvittaessa kysyä jami.kousa@helsinki.fi tai telegrammissa. 
+Tehtävän arvioi Jami Kousa. Omasta arvioinnista voi tarvittaessa kysyä jami.kousa@helsinki.fi tai telegrammissa. 
 
 **(a) Ketterien menetelmien yhteydessä puhutaan usein inkrementaalisesta arkkitehtuurista? Mitä tällä tarkoitetaan? Mitä hyvää/huonoa lähestymistavalla on?**
 
