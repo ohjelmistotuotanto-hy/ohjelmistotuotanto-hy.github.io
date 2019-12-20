@@ -78,32 +78,32 @@ Tehtävän arvioi Jami Kousa. Omasta arvioinnista voi tarvittaessa kysyä jami.k
 
 **(a) Ketterien menetelmien yhteydessä puhutaan usein inkrementaalisesta arkkitehtuurista? Mitä tällä tarkoitetaan? Mitä hyvää/huonoa lähestymistavalla on?**
 
-Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan riittävällä tasolla projektin alussa. Ohjelmiston "lopullinen" arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta.
+Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan riittävällä tasolla projektin alussa. Ohjelmiston "lopullinen" arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. 0,5p
 
-Etuja:
+Etuja: 0,25p
 - Vältetään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
 - Koska arkkitehtuuria ei suunnittele joku ulkopuoleinen, sen kommunikointi tiimille ei edellytä raskasta dokumentaatiota.
 - Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman arkkitehtuurin noudattamiseen
 
-Riskejä:
+Riskejä: 0,25p
 - Ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmisto on muodoton kasa spagettikoodia, eli big ball of mud
 
 **(b) Mitä tarkoitetaan käsitteellä DevOps?**
 
-DevOps pyrkii edistämään ohjelmistokehittäjien ja ylläpitäjien yhteistyötä. DevOpsissa usein pyrkimyksenä on tehdä sovelluskehityksen aikaansaannosten käyttöönotto mahdollisimman sujuvaksi käyttäen monia työkaluja sen automatisointiin (automaattiset testit, continuous deployment, etc.) mutta se perustuu pohjimmiltaan kulttuurisiin tekijöihin, tiimirakenteisiin, sekä asioiden sallimiseen.
+DevOps pyrkii edistämään ohjelmistokehittäjien ja ylläpitäjien yhteistyötä. 0,25p DevOpsissa usein pyrkimyksenä on tehdä sovelluskehityksen aikaansaannosten käyttöönotto mahdollisimman sujuvaksi käyttäen monia työkaluja sen automatisointiin (automaattiset testit, continuous deployment, etc.) 0,25p mutta se perustuu pohjimmiltaan kulttuurisiin tekijöihin, tiimirakenteisiin, sekä asioiden sallimiseen. 0,5p
 
 **(c) Mitä tarkoitetaan Just in time -tuotantomallilla ja pull-systeemeillä?**
 
-JIT -tuotantomallissa ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt sykliaika (engl. cycle time) tilauksesta toimitukseen. 
+JIT -tuotantomallissa ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt sykliaika (engl. cycle time) tilauksesta toimitukseen. 0,5p
 
-Käytännössä pull-systeemi on mekanismi JIT-tuotantomallin toteuttamiseen. Pull-systeemissä tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen niitä edellyttäessä eikä varastoon. Vastakohta on push-systeemi, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi.
+Käytännössä pull-systeemi on mekanismi JIT-tuotantomallin toteuttamiseen. Pull-systeemissä tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen niitä edellyttäessä eikä varastoon. Vastakohta on push-systeemi, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi. 0,5p
 
 **(d) Mitä lean tarkoittaa muri- ja mura-tyyppisellä hukalla?**
 
-Muri: ylikuormitusta tai mahdottomia vaatimuksia
+Muri: ylikuormitusta tai mahdottomia vaatimuksia 0,5p
 
-Mura: epäsäännöllisyyttä tai epäyhdenmukaisuutta työtavoissa tai työstettävässä tuotteessa. 
+Mura: epäsäännöllisyyttä tai epäyhdenmukaisuutta työtavoissa tai työstettävässä tuotteessa. 0,5p
 
 **(e) Mitä tarkoitetaan work in progress eli WIP-rajoitteilla? Miten niitä sovelletaan ohjelmistotuotannossa?**
 
-WIP-rajoitteita käytetään rajaamaan samanaikaisesti tehtävää työtä. Sillä saadaan aikaan ‘Virtaus’, eli yksittäisen storyn nopea valmistuminen. Ohjelmistotuotannossa niitä sovelletaan mm. rajoittamalla in progress olevien taskien määrää & rajoittamalla user storyjen määrää kanban taululla.
+WIP-rajoitteita käytetään rajaamaan samanaikaisesti tehtävää työtä. Sillä saadaan aikaan ‘Virtaus’, eli yksittäisen storyn nopea valmistuminen. 0,5p Ohjelmistotuotannossa niitä sovelletaan mm. rajoittamalla in progress olevien taskien määrää & rajoittamalla user storyjen määrää kanban taululla. 0,5p
