@@ -39,3 +39,5 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [syksy 2018](https://github.com/mluukkai/ohjelmistotuotanto2017)
 - [kevät 2017](https://github.com/mluukkai/ohtu2017)
 - [kevät 2017](https://github.com/mluukkai/ohtu2016)
+
+**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet mitä kurssikoetta**
