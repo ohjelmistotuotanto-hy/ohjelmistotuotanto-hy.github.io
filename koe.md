@@ -46,13 +46,30 @@ Tehtävän arvioi Tero Tapio. Omasta arvioinnista voi tarvittaessa kysyä tero.t
 
 **(a) Mitä tarkoitetaan verifioinnilla ja validoinnilla?**
 
+Verifioimalla varmistetaan että ohjelmisto/ominaisuus täyttää sille sovitut vaatimusmäärittelyt.
+Validoimalla varmistetaan että ohjelmisto/ominaisuus vastaa asiakkaan odotuksia ja tarpeita.
+
 **(b) Mitä tarkoitetaan ohjelmiston sisäisellä laadulla?**
+
+Sisäinen laatu viittaa ohjelmiston asiakkaalle näkymättömän osan, eli koodin laatuun. Hyvälaatuinen koodi on mm. järjestelmällistä ja helppolukuista, ja noudattaa hyväksi havaittuja käytäntöjä (best practices). Huonolaatuista koodia on vaikea tulkita tai jatkokehittää.
 
 **(c) Mitä tarkoittavat jatkuva integraatio (continuous integration), jatkuva toimitusvalmius (continuous delivery) ja jatkuva käyttöönotto (continuous deployment)?**
 
+Jatkuva integraatio toteutuu kun kehittäjät liittävät uuden tai muokkaamansa koodin mahdollisimman usein (jopa useasti päivässä) yhteiseen koodikantaan. Jokainen lisäys testataan automaattisesti CI-palvelimella jotta varmistuu että muutokset toimivat muuallakin kuin kehitttäjän omalla koneella.
+
+Jatkuva toimitusvalmius jatkaa CI:tä pidemmälle siten, että jokainen uusi versio koodikannasta siirretään automaattisesti testipalvelimelle (staging), jossa se testataan uudestaan mahdollisimman paljon tuotantoympäristöä muistuttavilla asetuksilla ja datalla. Näin ohjelmistosta on aina valmis versio, joka voidaan (asiakkaan) halutessa/luvalla siirtää tuotantoon vaivattomasti.
+
+Jatkuva käyttöönotto ei odota manuaalista hyväksyntää, vaan jokainen uusi versio ohjelmistosta siirretään onnistuneen integraation ja testipalvelintestien jälkeen automaattisesti tuotantoon.
+
 **(d) Mikä on feature toggle/flag ja mihin tarkoitukseen niitä käytetään?**
 
+FT/F ehdollistaa (esim. if-lauseella) osan koodia, jolloin se voidaan piilottaa tuotantoversioon jatkokehitystä varten (feature branchien sijaan), tai ajaa vain tietylle käyttäjäkunnalle (canary, A/B) testaamista varten.
+
 **(e) Mitä tarkoitetaan käsitteellä tekninen velka (technical debt)? Mitä haittaa/hyötyä teknisestä velasta on?**
+
+Teknistä velkaa kerryttävät ohjelmistotekniset ratkaisut, jotka on vahingossa tai tarkoituksellisesti tehty siten, että laadun sijaan on panostettu nopeaan ja helppoon toteutukseen, mutta jotka heikentävät koodin laatua ja siten vaikeuttavat jatkokehitystä.
+- Hyöty: MVP:n tai prototyypin saamista tuotantoon voidaan nopeuttaa ottamalla teknistä velkaa.
+- Haitta: Jatkokehitys on työlästä, vaikeaa, tai vaatii refaktorointia.
 
 
 ## Tehtävä 5 (5p) 
