@@ -53,11 +53,21 @@ Mainittu seuraavat:
 
 Tehtävän arvioi Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
 
-**(a) Mitä tarkoitetaan Lean startup -menetelmällä? Mihin ja miten sitä käytetään?**
+**(a) Mitä tarkoitetaan Lean startup -menetelmällä? Mihin ja miten sitä käytetään?** (0.75p)
 
-**(b) Mitä tarkoittaa käsite Minimal Viable Product (MVP)?**
+Mainittu, että lean startup menetelmässä pyritään oppimaan systemaattisesti ja mahdollisimman nopeasti mitä ohjelman käyttäjät haluavat. (0.25p)
 
-**(c) Entä A/B-testaus?**
+Avattu build / measure / learn -sykli ja kerrottu miten sitä käytetään. (0.5p)
+
+**(b) Mitä tarkoittaa käsite Minimal Viable Product (MVP)?** (0.75p)
+
+- Tehdään tuotteesta / ominaisuudesta mahdollisimman nopeasti versio, niin että tuotteen ominaisuudet ja toiminnallisuus toimii. (0.5p)
+- MVP tuotetta / ominaisuutta testataan oikeilla käyttäjillä, ja saadusta datasta opitaan. (0.25p)
+
+**(c) Entä A/B-testaus?** (0.5p)
+
+- Testataan käyttäjillä kahta eri versiota ohjelmasta. (0.25p)
+- Kerätyn datan perusteella päätetään kumpi versio tuo suuremman arvon (mittareita voi olla erilaisia). (0.25p)
 
 ## Tehtävä 4: _Laadunhallinta_ (5p) 
 
