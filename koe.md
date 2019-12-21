@@ -21,14 +21,33 @@ Tehtävän arvioi Matti Luukkainen. Omasta arvioinnista voi tarvittaessa kysyä 
 
 Tehtävän arvioi Mauri Karlin. Omasta arvioinnista voi tarvittaessa kysyä mauri.karlin@helsinki.fi tai telegramissa
 
-**(a) Mitä tarkoitetaan estimoinnilla?**
+**(a) Mitä tarkoitetaan estimoinnilla?** (0.25p)
 
-**(b) Minkä takia ohjelmistoprojekteissa suoritetaan estimointia?**
+Mainittu, että estimointi tarkoittaa työmäärän arviointia. 
 
-**(c) Miten estimointi tyypillisesti tapahtuu ketterissä ohjelmistoprojekteissa?**
+**(b) Minkä takia ohjelmistoprojekteissa suoritetaan estimointia?** (0.5p)
 
-**(d) Mitä tarkoitetaan NoEstimates-liikeellä?**
+Mainittu seuraavat:
 
+- Auttaa asiakasta priorisoinnissa. 
+- Mahdollistaa koko projektin tai tiettyjen toiminnallisuuskokonaisuuksia sisältävien versioiden viemän ajan summittaisen arvionnin. 
+
+**(c) Miten estimointi tyypillisesti tapahtuu ketterissä ohjelmistoprojekteissa?** (0.75p)
+
+Mainittu kolme seuraavista:
+
+- Varsinaisen estimoinnin tekee aina kehitystiimi.
+- Tehdään yhteistyössä kehitystiimin ja product ownerin kanssa.
+- Mainittu tai kuvailtu jokin suosittu estimointitapa (esim. Planning poker)
+- Tapahtuu ketterissä ohjelmistotuotantoprojekteissa sprintin yhteydessä.
+- Mainittu estimaattien yksikkö (story point) tai velositeetti.
+
+**(d) Mitä tarkoitetaan NoEstimates-liikeellä?** (0.5p)
+
+Mainittu seuraavat:
+
+- NoEstimates-liike kyseenalaistaa joitakin estimointimenetelmiä, koska hyödyt ovat liian vähäiset verrattuna työmäärään.
+- NoEstimates-liike ei kiistä estimaattien hyötyä, vaan yrittää saada ajattelemaan missä tilanteissa estimointi on järkevää, sekä nostaa esiin vaihtoehtoisia tapoja estimointiin.
 
 ## Tehtävä 3: _Lean Startup_ (2p) 
 
