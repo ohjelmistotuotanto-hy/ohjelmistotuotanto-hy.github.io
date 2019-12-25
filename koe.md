@@ -17,13 +17,16 @@ Lyhyet 1-4 viikon kehitysjaksot eli sprintit antavat mahdollisuuden tiheään mu
 
 **(b) Eräs scrumin määrittelemistä eventeistä eli tapahtumista on sprintin suunnittelukokous. Mitä kokouksessa tapahtuu ja ketkä siihen osallistuvat?**
 
-Kokouksen ensimmäisenä tavoitteena on valita sprintissä toteutettavat user storyt (0.5p). 
+Kokoukseen osallistuvat ainakin kehitystiimin jäsenet sekä product owner (0.25p).
+
+Ensimmäisenä tavoitteena on valita sprintissä toteutettavat user storyt. (0.25p)
+
+Product owner esittelee storyjä tiimille ja tiimi valitsee sopivan määrän storyjä sprinttiin (0.5p). 
 
 Toinen tavoite on määritellä sprint backlog, joka usein koostuu teknisistä tehtävistä, taskeista, jotka tiimin tulee suorittaa saadakseen valitut storyt tehtyä (0.25p).
 
 Kokouksessa asetetaan myös sprintin tavoite, joka on lyhyt storyjen tasoa geneerisempi luonnehdinta siitä, mitä sprintissä on tarkoitus saavuttaa (0.25p).
 
-Kokoukseen osallistuvat ainakin kehitystiimin jäsenet sekä product owner (0.5p).
 
 **(c) Mitä tarkoitetaan user storylla?**
 
