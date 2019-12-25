@@ -11,7 +11,7 @@ Tehtävän arvioi Matti Luukkainen. Omasta arvioinnista voi tarvittaessa kysyä 
 
 **(a) Scrumin tärkeä taustaperiaate on adaptation eli mukauttaminen. Mitä tällä tarkoitetaan, ja miten Scrum pyrkii edesauttamaan mukauttamista?** 1.5p
 
-Scrum mahdollistaa sekä kehitettävän tuotteen kehityssuunnan ohjaamisen, että kehittämiseen käytettyjen menetelmien jatkuvan parantamisen. (0.75p)
+Mukauttamisella tarkoitetaan sitä, että Scrum mahdollistaa asiakkaan muuttuvista tarpeista johtuvan kehitettävän tuotteen kehityssuunnan ohjaamisen sekä kehittämiseen käytettyjen menetelmien jatkuvan parantamisen. (0.75p)
 
 Lyhyet 1-4 viikon kehitysjaksot eli sprintit antavat mahdollisuuden tiheään mukauttamissykliin. Sprinttien lopuksi kehittäjätiimi pitää retrospektiivin, jonka aikana se miettii omaa työskentelyään ja etsii siitä kehityskohteita. Sprinttien päätteeksi pidettävä sprint review mahdollistaa sidosryhmille kehityksen suunnan tarkastelun. Tuotteen mukauttaminen tapahtuu "groomaamalla", eli muokkaamalla tuotteen backlogia, eli sovellukselle asetettujen vaatimusten priorisoitua listaa. (0.75p)
 
