@@ -21,16 +21,34 @@ Kokoukseen osallistuvat ainakin kehitystiimin jäsenet sekä product owner (0.25
 
 Ensimmäisenä tavoitteena on valita sprintissä toteutettavat user storyt. (0.25p)
 
-Product owner esittelee storyjä tiimille ja tiimi valitsee sopivan määrän storyjä sprinttiin (0.5p). 
+Product owner esittelee storyja tiimille ja tiimi valitsee sopivan määrän storyjä sprinttiin (0.5p). 
 
 Toinen tavoite on määritellä sprint backlog, joka usein koostuu teknisistä tehtävistä, taskeista, jotka tiimin tulee suorittaa saadakseen valitut storyt tehtyä (0.25p).
 
 Kokouksessa asetetaan myös sprintin tavoite, joka on lyhyt storyjen tasoa geneerisempi luonnehdinta siitä, mitä sprintissä on tarkoitus saavuttaa (0.25p).
 
+**(c) Mitä tarkoitetaan user storylla?** 1.5p
 
-**(c) Mitä tarkoitetaan user storylla?**
+Ks. <https://ohjelmistotuotanto-hy.github.io/osa2/#user-story>
 
-**(d) Minkälainen on hyvä user story?**
+Kuvaus käyttäjän kannalta arvokkaasta toiminnallisuudesta (0.5p)
+
+Koostuu seuraavista: (1p) 
+- lyhyt kuvaus
+- keskustelut joiden aikana storyn detaljit selvitetään
+- hyväksymäkriteerit, jotka kertovat milloin story in valmis
+
+**(d) Minkälainen on hyvä user story?** 1.5p
+
+Ks. <https://ohjelmistotuotanto-hy.github.io/osa2/#hyv%C3%A4n-user-storyn-kriteerit>
+
+Asiakkaan kielellä 0.25p
+
+INVEST-kriteerit 0.25p/kohta
+
+Pelkkä kriteerin mainita tuo ainoastaan 0.125p
+
+_As a (user) ..._ muodon kertomisella voi kompensoida 0.25p jos INVEST:istä jäi jotain kertomatta.
 
 ## Tehtävä 2: _Estimointi_ (2p) 
 
