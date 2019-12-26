@@ -48,7 +48,7 @@ INVEST-kriteerit 0.25p/kohta
 
 Pelkkä kriteerin mainita tuo ainoastaan 0.125p
 
-_As a (user) ..._ muodon kertomisella voi kompensoida 0.25p jos INVEST:istä jäi jotain kertomatta.
+_As a (user) ..._ muodon kertomisella voi kompensoida 0.25p jos INVEST:istä jäi jotain kertomatta. Samoin jos mainitsi että alhaisen prioriteetin story voi olla vähemmän detaljoitu kuin korkean prioriteetin story.
 
 ## Tehtävä 2: _Estimointi_ (2p) 
 
