@@ -7,8 +7,8 @@ permalink: /tehtavat/
 
 ## Tehtävät
 
-Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä harjoituksissa on _kahden tyyppisiä_ 
-- luennoilla ja kurssi materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, joiden deadline on sunnuntaina klo 23:59:00
+Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä on _kahden tyyppisiä_ 
+- luennoilla ja kurssimateriaalissa läpikäytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, joiden deadline on sunnuntaina klo 23:59:00
 - toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_
 
 Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvostelu).
