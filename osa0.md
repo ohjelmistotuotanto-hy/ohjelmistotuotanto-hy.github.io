@@ -42,7 +42,7 @@ Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen vi
 
 ### Miniprojekti
 
-Kurssin loppupuolella, viikoilla 4-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tehtävänä on projektinhallinnan sekä eräiden laadunhallintatekniikkoiden harjoittelu. 
+Kurssin loppupuolella, viikoilla 4-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikkoiden harjoittelu. 
 
 Kukin miniprojektiryhmä koostuu 4-6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, jälkimmäisillä 30 minuuttia.
 
