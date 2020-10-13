@@ -42,7 +42,7 @@ permalink: /miniprojekti/
   * hyväksymäkriteeri
   * definition of done
 * Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
-* Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2019>
+* Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
   * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodin projektin id:n
