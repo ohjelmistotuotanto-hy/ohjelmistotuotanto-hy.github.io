@@ -13,42 +13,40 @@ Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä on _kahden tyyppisi�
 
 Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvostelu).
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
-- ~~ma 14-16 B221~~ (maanantain 9.12. paja peruttu)
-- ke 14-16 B221
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa
 
 ### Viikko 1
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 3.11. klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 4.11. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 1.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 2.11. klo 23:59 
 
 ### Viikko 2
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2) deadline sunnuntaina 10.11. klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 11.11. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2) deadline sunnuntaina 8.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 9.11. klo 23:59 
 
 ### Viikko 3
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3) deadline sunnuntaina 17.11. klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 18.11. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3) deadline sunnuntaina 15.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 16.11. klo 23:59 
 
 ### Viikko 4
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/4) deadline sunnuntaina 24.11. klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 25.11. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/4) deadline sunnuntaina 22.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 23.11. klo 23:59 
 
 ### Viikko 5
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 1.12. klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 2.12. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 29.11. klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 30.11. klo 23:59 
 
 ### Viikko 6
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline on perjantaina 13.12 klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 9.12. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline on perjantaina 11.12 klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 7.12. klo 23:59 
 
 
 ### Viikko 7
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7) ilmestyvät keskiviikkona 11.12. (klo 23 mennessä), deadline on perjantaina 20.12 klo 23:59:00 
-- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 16.12. klo 23:59 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7) deadline on perjantaina 18.12 klo 23:59:00 
+- [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 14.12. klo 23:59 

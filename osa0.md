@@ -28,7 +28,9 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa ja 3 vierailuluentoa (Marko Klemetti Eficode, Niko Laitinen Nitor ja Hannu Kokko Elisa). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy. Kurssin aihepiiriä syventäväille vierailuluennoille osallistuminen palkitaan laskaripisteillä.
+Kurssilla on 10 luentoa sekä kolme vuonna 2019 tallennettua vierailuluentoa (Marko Klemetti Eficode, Niko Laitinen Nitor ja Hannu Kokko Elisa). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy. 
+
+Kurssin luennot pidetään zoomissa ja tallenteet ovat nähtävillä luentojen jälkeen.
 
 ### Laskuharjoitukset
 
@@ -52,13 +54,15 @@ Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viik
 
 *Kurssin läpäisyn edellytyksenä* on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
 
+Kaikki miniprojekteihin liittyvä järjestetään virtuaalisesti, lähinnä zoomissa.
+
 #### Miniprojektin hyväksilukeminen
 
 Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
 
 Kriteerit selviävät [täältä](https://www.helsinki.fi/fi/ohjelmat/kandi/tietojenkasittelytieteen-kandiohjelma/ohjeita-ja-infoa-ohjelman-opiskelijoille#section-41418) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
 
-Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _6 kuukauden työkokemus_.
+Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _neljän kuukauden työkokemus_.
 
 Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta välittömästi emailitse.
 
@@ -106,101 +110,90 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 ### Viikko 1
 
-- Luento 1: maanantai 28.10. klo 12-14 CK112
+- Luento 1: maanantai 26.10. klo 12-14
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
-- Luento 2: tiistai 29.10. klo 12-14 CK112
+- Luento 2: tiistai 27.10. klo 12-14
   - [Scrum](/osa1#scrum)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 3.11. klo 23:59  
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 1.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 4.11. klo 23:59 
 
 ### Viikko 2
 
-- Luento 3: maanantai 4.11. klo 12-14 CK112
+- Luento 3: maanantai 2.11. klo 12-14
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
-- Luento 4: tiistai 5.11. klo 12-14 CK112
+- Luento 4: tiistai 3.11. klo 12-14
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2) deadline sunnuntaina 10.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 11.11. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2) deadline sunnuntaina 8.11. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 9.11. klo 23:59 
 
 ### Viikko 3
 
-- Luento 5: maanantai 11.11. klo 12-14 CK112
+- Luento 5: maanantai 9.11. klo 12-14
   - [Laadunhallinnan perusteet](/osa3)
-- Luento 6: tiistai 12.11. klo 12-14 CK112
+- Luento 6: tiistai 10.11. klo 12-14
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3) deadline sunnuntaina 17.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 18.11. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3) deadline sunnuntaina 15.11. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 16.11. klo 23:59 
 
 ### Viikko 4
  
-- Luento 7: maanantai 18.11. klo 12-14 CK112
+- Luento 7: maanantai 16.11. klo 12-14
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops) 
-- Luento 8: tiistai 19.11. klo 12-14 CK112
+- Luento 8: tiistai 17.11. klo 12-14
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/4) deadline sunnuntaina 24.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 25.11. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/4) deadline sunnuntaina 22.11. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 23.11. klo 23:59 
 - Miniprojekti
   - Aloitustilaisuudet (jokainen osallistuu _yhteen_ tilaisuuteen)
-    - maanantai 18.11. klo 14-16
-    - tiistai 19.11. klo 14-16
-    - keskiviikko 20.11. klo 12-14
-    - torstai 21.11. klo 14-16
+    - ajankohta
 
 ### Viikko 5
 
-- _Maanantaina 25.11. ei todennäköisesti ole luentoa_
-- Luento 9: maanantai 25.11. klo 12-14 CK112
+- Luento 9: maanantai 23.11. klo 12-14
   - [Lean](/osa5#lean)
-- Luento 10: tiistai 26.11. klo 12-14 CK112
+- Luento 10: tiistai 24.11. klo 12-14
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 1.12. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 2.12. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 29.11. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 30.11. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
 ### Viikko 6
 
-- Luento 10: maanantai 2.12. klo 12-14 CK112
-  - Vierailuluento Juha Viljanen Smartly
-- Luento 11: tiistai 3.12. klo 12-14 CK112
-  - Vierailuluento Niko Laitinen Nitor
+- Vierailuluennot
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 13.12. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 9.12. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 11.12. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 7.12. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
 ### Viikko 7
 
-- Luento 13: maanantai 9.12. klo 12-14 CK112
-  - Vierailuluento Hannu Kokko Elisa
-- Luento 14: tiistai 10.12. klo 12-14 CK112
-  - Vierailuluento Marko Klemetti Eficode
+- Vierailuluennot
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 20.12. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 16.12. klo 23:59 
+  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 28.12. klo 23:59  
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 14.12. klo 23:59 
 - Miniprojekti
-  - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
-    - maanantai 9.12. klo 14-17
-    - tiistai 10.12. klo 14-17
+  - Loppudemot
+    - ajankohdat selviävät myöhemmin
+
 
 ### Viikko 8
 
-- [Kurssikoe](
-https://courses.helsinki.fi/fi/TKT20006/133010615) maanantaina 16.12. 9-12 salissa A111
+- [Kurssikoe]() 
   - Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua
 
 ## Typoja materiaalissa
