@@ -193,8 +193,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 ### Viikko 8
 
-- [Kurssikoe]() 
-  - Kokeeseen tulee ilmoittautua viimeistään 10 päivää ennen kokeen alkua
+- Kurssikoe torstaina 17.12. klo 17-20
 
 ## Typoja materiaalissa
 
