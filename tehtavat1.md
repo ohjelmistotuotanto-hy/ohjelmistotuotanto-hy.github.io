@@ -260,7 +260,30 @@ Ohjelmakoodin editointi kannattaa tehdä IDE:llä kuten usein myös ohjelman ja 
  
 Gradle on siinä mielessä mielenkiintoinen työkalu, että sitä ei ole pakko asentaa ennen käytön aloittamista. Gradle-projektit sisältävät skriptit _gradlew_ (Linuxille) ja _gradlew.bat_ (Windowsille), jotka osaavat tarvittaessa asentaa Gradlen koneellesi.
 
-Suorita projektin juuressa (eli samassa hakemistossa missä tiedosto _build.gradle_ sijaitsee) komento <code>./gradlew build</code> (Linux) <code>gradlew.bat build</code> (Windows). Gradle asentuu koneellesi. Jos edelliset komennot eivät toimi, kokeile komentoa <code>gradle build</code> joka näyttää toimivan ainakin laitoksen koneilla. 
+Suorita projektin juuressa (eli samassa hakemistossa missä tiedosto _build.gradle_ sijaitsee) komento <code>./gradlew build</code> (Linux) <code>gradlew.bat build</code> (Windows). Gradle asentuu koneellesi. 
+
+Jos edelliset komennot eivät toimi, asenna gradle koneellesi ja käytä suoraan komentoa <code>gradle build</code>. 
+
+Huomaa, että gradlen version tulee olla vähintään 5.6. Esim. laitoksen koneilla valmiina oleva versio on liian vanha. Versio selviää komennolla _gradle -v_, ja tuloksen pitäisi näyttää suunilleen seuraavalta:
+
+````
+$ gradle -v
+
+------------------------------------------------------------
+Gradle 6.7
+------------------------------------------------------------
+
+Build time:   2020-10-14 16:13:12 UTC
+Revision:     312ba9e0f4f8a02d01854d1ed743b79ed996dfd3
+
+Kotlin:       1.3.72
+Groovy:       2.5.12
+Ant:          Apache Ant(TM) version 1.10.8 compiled on May 10 2020
+JVM:          11.0.8 (AdoptOpenJDK 11.0.8+10)
+OS:           Mac OS X 10.14.6 x86_64
+
+➜  repo git:(main)
+```
 
 * **HUOM** OSX:llä (eli Macilla) automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli OSX-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew), ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
 
