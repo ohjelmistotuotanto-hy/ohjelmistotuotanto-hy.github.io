@@ -15,7 +15,7 @@ Cucumber on [behavior-driven development eli BDD](https://en.wikipedia.org/wiki/
 
 Vaikka Cucumber on varsinaisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Cucumberin toimintaperiaatteita testaamalla yksittäistä luokkaa.
 
-Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistossa _viikko3/HelloCucumber_ oleva projekti. 
+Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/HelloCucumber_ oleva projekti. 
 
 Testattavana on yksinkertainen laskuri:
 

@@ -9,7 +9,7 @@ permalink: /riippuvuuksien_injektointi_spring/
 
 Jatketaan viime viikolla käsittelemämme [laskimen](/riippuvuuksien_injektointi/) tarkastelua. Kertaa tarvittaessa yllä olevan linkin takana oleva teksti.  
 
-Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy/syksy2019) hakemistosta koodi/viikko2/RiippuvuuksienInjektointiSpring
+Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta koodi/viikko2/RiippuvuuksienInjektointiSpring
 
 Päädyimme siis tilanteeseen, missä Laskin-luokasta on erotettu konkreettinen riippuvuus syötteen lukemiseen ja tulostamiseen. Laskin tuntee ainoastaan _rajapinnan_ <code>IO</code> jonka kautta se hoitaa syötteen käsittelyn ja tulostamisen. 
 
@@ -29,7 +29,7 @@ Kurssilta [Web-palvelinohjelmointi](https://courses.helsinki.fi/fi/tkt21007) osa
 
 > Spring on laaja ja monikäyttöinen sovelluskehys, jota käytetään yleisesti mm. Javalla tapahtuvassa web-sovelluskehityksessä. Tutustumme kurssilla oikeastaan ainoastaan Springin riippuvuuksien injektointiin. 
 
-Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _build.gradle_-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2019/tree/master/koodi/viikko2/RiippuvuuksienInjektointiSpring).
+Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _build.gradle_-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko2/RiippuvuuksienInjektointiSpring).
 
 Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen oliosäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
 
