@@ -7,8 +7,6 @@ permalink: /tehtavat1
 
 ## Viikko 1
 
-**KESKEN LUKEMINEN OMALLA VASTUULLA**
-
 *Allaolevien tehtävien deadline on maanantaina 2.11. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa.
@@ -516,7 +514,7 @@ Eli _checkout_ action siis hakee repositorion koodin askeleet suorittavalle virt
 
 Toinen askel on action [setup-java](https://github.com/marketplace/actions/setup-java-jdk), joka asentaan työn suorittavalle virtuaalikoneelle Javan.
 
-Molemmat näistä actioneista olivat GitHubin [marketplacesta](https://github.com/marketplace?type=actions) löytyivä valmiita actioneja. Esim. Javan asentaminen työn suorittavalle virtuaalikoneelle on itsessään aika monimutkainen toimenpide, mutta valmiiksi määritelty action tekee sen helpoksi.
+Molemmat näistä actioneista olivat GitHubin [marketplacesta](https://github.com/marketplace?type=actions) löytyviä valmiita actioneja. Esim. Javan asentaminen työn suorittavalle virtuaalikoneelle on itsessään aika monimutkainen toimenpide, mutta valmiiksi määritelty action tekee sen helpoksi.
 
 Kolmas askel on hieman erilainen:
 
@@ -739,7 +737,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia, kuluvan kauden tilastotietoja
+* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viine vuodelta)
   * Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
