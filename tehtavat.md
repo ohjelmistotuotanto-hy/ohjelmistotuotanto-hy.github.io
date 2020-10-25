@@ -13,7 +13,10 @@ Kurssiin liittyy viikottaiset laskuharjoitukset. Teht채vi채 on _kahden tyyppisi�
 
 Teht채vien vaikutus kurssin arvosteluun selvi채채 [osasta 0](/osa0#kurssin-arvostelu).
 
-Apua teht채vien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sek채 zoom-pajassa
+Apua teht채vien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sek채 zoomissa:
+
+- Maanantai 14-16 [zoom]() alkaen 2.11
+- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
 
 ### Viikko 1
 
