@@ -273,6 +273,10 @@ Viimeiset kaksi periaatetta ovat ne, jotka tahtovat useimmiten unohtua:
 
 Ketteryys edellyttää että tiimi pystyy muuttamaan tarvittaessa sovelluskehityksen suuntaa uusien tarpeiden noustessa esiin. Tämä taas edellyttää, että tiimin on ylläpidettävä ohjelmiston laatua riittävällä tasolla, jos nimittäin sovellus on sisäiseltä rakenteeltaan huono purkkaviritys, on siitä koko ajan vaikeampi laajentaa uusilla toiminnallisuuksilla, erityisesti sellaisilla, joiden tarvetta ei aiemmin ehkä osattu ennakoida. Eli jos laatuun ei kiinnitetä riittävää huomiota, ketteryys menetetään, ja sovelluksen kehitys muuttuu erittäin hitaaksi.
 
+Tyypillisesti ohjelmistoprojekteihin saatetaan suhtautua deadlinevetoisesti, eli lähellä deadlinea siirrytään paniikinomaiseen ylityömoodiin, jotta toimiva tuote saadaan puristettua kasaan. Tämän jälkeen hengähdetään, mutta pian edessä on taas seuraava tärkeä deadline ja kun vuodet kuluvat loppuunpalamisenkin riski alkaa kasvaa. Kaikesta tästä on usein seurauksena myös huonolaatuista koodia, joka on päivä päivältä hankalammin muokattavaa.
+
+Manifesti kuitenkin muistuttaa, että tällainen oravanpyörä ei ole välttämätön, ja suosittelee että sovellusta kehitettäisiin sellaisella nopeudella, joka on mahdollista ylläpitää vaikkapa ikuisesti.
+
 ### Ketterät menetelmät ja Lean
 
 Ketterät menetelmät on sateenvarjotermi useille eri menetelmille. 2000-luvun alkupuolella [Extreme programming](http://www.extremeprogramming.org/) eli XP oli ketteristä menetelmistä suosituin. Nykyään hyvin harva soveltaa "oppikirjamaista" XP:tä, mutta sen käytänteistä moni on jäänyt elämään ja omaksuttu monien softatiimien työkalupakkiin. Tutustumme moniin XP:n käytänteisiin kurssin aikana.
