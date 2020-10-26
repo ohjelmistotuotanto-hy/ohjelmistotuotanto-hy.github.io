@@ -210,7 +210,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
-* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/master/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
+* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
 * pura paketti sopivaan paikkaan 
 * siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 
