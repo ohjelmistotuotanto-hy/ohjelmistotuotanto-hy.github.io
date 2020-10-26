@@ -356,7 +356,7 @@ Scrum määrittelee 3 erilaista _henkilöroolia_: kehittäjän (engl. developer)
 
 Scrumiin kuuluvat _artefaktit_ eli "konkreettiset asiat" ovat _product backlog_ eli projektin kehitysjono, _sprint backlog_ eli sprintin tehtävälista sekä työn alla oleva ohjelmiston osa, englanniksi _potentially releasable increment_.
 
-Scrumissa tekeminen rytmittyy _sprintteihin_ eli 1-4 viikon mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (engl. vents): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
+Scrumissa tekeminen rytmittyy _sprintteihin_ eli 1-4 viikon mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (engl. events): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
 
 ### Product backlog
 
