@@ -732,7 +732,7 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla. 
 
 * Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
@@ -740,7 +740,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viine vuodelta)
+* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viine vuodelta)
   * Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
