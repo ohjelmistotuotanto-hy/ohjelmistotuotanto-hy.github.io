@@ -388,7 +388,7 @@ Scrum masterin tehtävänä on muun muassa opastaa ryhmää hyvien käytänteide
 
 Scrum masterin ehkä keskeisin rooli on pyrkiä eliminoimaan kehitystyön esteitä. Esteenä on usein jokin tiimistä riippumaton asia, jonka poistamiseksi scrum master joutuu neuvottelemaan yrityksen hallinnon tai muiden ohjelmistotoimittajien kanssa. Tällaisen esteen voi muodostaa myös esimerkiksi se, että sovelluskehitystiimillä ei ole pääsyä tuotantoympäristöön tai edes vastaaviin palvelinympäristöihin, tai jos kehitettävä sovellus on riippuvainen muiden toimittajien vastuulla olevista rajapinnoista, ja ne eivät valmistu ajoissa tai toimi määritelmien mukaan.
 
-"Este" voi myös liittyä ryhmän työskentelytapoihin, tällöin Scrum master opastaa ryhmää toimimaan siten, että tuottavuutta haittaava este poistuu.
+"Este" voi myös liittyä ryhmän työskentelytapoihin, tällöin Scrum master opastaa ryhmää muuttamaan toimintaansa siten, että tuottavuutta haittaava este poistuu.
 
 Scrum masterin roolina on myös taata kehitystiimille työrauha ja suojata tiimiä esim. ulkopuolisten yrityksiltä puuttua sprintin aikaiseen toimintaan.
 
