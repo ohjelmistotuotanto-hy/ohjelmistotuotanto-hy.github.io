@@ -114,7 +114,6 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
 </module>
 ```
 
-
 * Suorita `gradle checkstyleMain` ja varmista, että tarkastus menee läpi
 * Määrittele nyt tiedostoon seuraavat säännöt (ks. kohta checks checkstylen [sivuilta](https://checkstyle.sourceforge.io/checks.html)):
   * metodien pituus max 15 riviä (tämä ja seuraavat säännöt määritellään moduulin tree walker sisälle)
@@ -147,43 +146,17 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
 * Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
   * pääohjelman koodin voi poistaa tarvittaessa kokonaan, jotta saat koodin säännönmukaiseksi  
 
-### 3. Koodin staattinen analyysi pilvessä
+### 3. Koodin staattinen analyysi ja GitHub Actionit 
 
-Viime viikon [tehtävässä 12](https://github.com/mluukkai/ohjelmistotuotanto2018/blob/main/laskarit/1.md#12-codecov) konfiguroimme <https://codecov.io>-palvelun tarkkailemaan koodin testauskattavuutta.
+Laajenna projektisi GitHub Actionien määritelmää siten, että myös checkstyle-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin.
 
-[Code climate](https://codeclimate.com/) on palvelu, jonka avulla voimme suorittaa helposti staattista analyysiä githubissa olevalle koodille. 
+Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin checkstyle-sääntöjä:
 
-Kirjaudu Code Climateen [täällä](https://codeclimate.com/login/github/join). Valitse _open source_:
+![]({{ "/images/lh2-11.png" | absolute_url }})
 
-![]({{ "/images/lh2-3.png" | absolute_url }})
+Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
-ja sitten _add repository_
-
-![]({{ "/images/lh2-4.png" | absolute_url }})
-
-Etsi Ohtuvaraston palautusrepositoriosi listalta ja valitse _add repo_.
-
-Hetken kuluttua koodillesi on tehty ensimmäinen analyysi
-
-![]({{ "/images/lh2-5.png" | absolute_url }})
-
-Välilehden _repo settings_ osasta _maintainability_ näet Code climaten tekemät oletusarvoiset tarkastukset:
-
-![]({{ "/images/lh2-7.png" | absolute_url }})
-
-Konfiguroi Code climate käyttämään checkstyleä [tämän ohjeen](https://docs.codeclimate.com/docs/checkstyle) mukaan. Tiedoston _checkstyle.xml_ sijainti on sovelluksessasi hieman eri kuin ohjeen konfiguraatiossa.
-
-Tee koodiisi jokin checkstylen rikkova virhe, ja varmista että virhe näkyy _issues_-välilehdellä:
-
-![]({{ "/images/lh2-8.png" | absolute_url }})
-
-Code climaten pitäisi tehdä koodillesi analyysi automaattisesti aina, kun pushaat uutta koodia githubiin. Joskus näin ei käy, syy on useimmiten siinä, että konfiguraatio on jollain tavalla hajonnut. Jos näin käy, voit katsoa miten edellisiin committeihin liittyvässä analyysissä on käynyt klikkaamalla edellisen buildin ajankohdasta kertovaa tekstiä
-
-![]({{ "/images/lh2-10.png" | absolute_url }})
-
-Joissain tilanteessa Code climate antaa kohtuullisen hyvän virheilmoituksen
-
-![]({{ "/images/lh2-9.png" | absolute_url }})
+![]({{ "/images/lh2-12.png" | absolute_url }})
 
 ### 4. git: branchit [versionhallinta]
 
