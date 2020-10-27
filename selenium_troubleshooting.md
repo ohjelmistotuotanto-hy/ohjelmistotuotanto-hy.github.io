@@ -130,7 +130,7 @@ Kokeile käyttää FirefoxDriveria Chromen sijaan.
 
 Projektiin oletusarvoisesti määritelty Selenium 2.41.0 tukee ainoastaan Firefoxin versiota 28. Se löytyy [täältä](https://ftp.mozilla.org/pub/firefox/releases/28.0/) kun klikkaat omaa arkkitehtuuriasi. Pura paketti ja ota polku talteen.
 
-#### vaihtoehto 2 (Testattu OSX:llä)
+#### vaihtoehto 2 (Testattu macOS:llä)
 
 Päivitä tiedostossa _build.gradle_ määritelty selenium uudempaan versioon:
 

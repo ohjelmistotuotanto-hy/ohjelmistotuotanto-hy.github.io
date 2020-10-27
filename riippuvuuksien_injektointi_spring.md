@@ -29,7 +29,7 @@ Kurssilta [Web-palvelinohjelmointi](https://courses.helsinki.fi/fi/tkt21007) osa
 
 > Spring on laaja ja monikäyttöinen sovelluskehys, jota käytetään yleisesti mm. Javalla tapahtuvassa web-sovelluskehityksessä. Tutustumme kurssilla oikeastaan ainoastaan Springin riippuvuuksien injektointiin. 
 
-Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _build.gradle_-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko2/RiippuvuuksienInjektointiSpring).
+Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _build.gradle_-tiedostoon, katso tarkemmin [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko2/RiippuvuuksienInjektointiSpring).
 
 Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen oliosäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
 

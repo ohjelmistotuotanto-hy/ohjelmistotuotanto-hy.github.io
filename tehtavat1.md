@@ -93,7 +93,7 @@ Jos et ole jo aiemmin niin tehnyt, konfiguroi nimesi ja email-osoitteesi paikall
     git config --global user.name "Your Name"
     git config --global user.email my.address@gmail.com
 
-Oletuseditoriksi kannattaa Linuxilla ja OSX:lla (eli Macillä) konfiguroida _nano_
+Oletuseditoriksi kannattaa Linuxilla ja macOS:lla konfiguroida _nano_
 
     git config --global core.editor nano
     
@@ -210,7 +210,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
-* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/master/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
+* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
 * pura paketti sopivaan paikkaan 
 * siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 
@@ -243,7 +243,7 @@ Gradlen dokumentaatio sisältää seuraavan kuvauksen:
 * tutki gradle-muotoisen projektin hakemistorakennetta esim. antamalla komento <code>tree</code> projektin sisältävän hakemiston juuressa (_tree_ ei ole gradleen liittyvä käsky vaan normaali shell-komento)
   * Windowsissa komennosta käyttökelpoisin muoto on <code>tree /F</code>
   * Jos käytössäsi on Windowsissa _git bash_ komento on muotoa <code>cmd //c tree</code>
-  * HUOM: OSX:ssä ei ole oletusarvoisesti tree-komentoa
+  * HUOM: macOS:ssä ei ole oletusarvoisesti tree-komentoa
   * mikäli koneellasi on [HomeBrew](http://mxcl.github.com/homebrew/) asennettuna, saat tree:n asennettua <code>brew install tree</code>
   * myöskään kaikissa linuxeissa ei komento _tree_ ole  oletusarvoisesti asennettu. debian-pohjaisissa linuxeissa (esim ubuntussa) saat asennettua tree:n komennolla <code>sudo apt-get install tree</code>
 * tarkastele projektin määrittelevän tiedoston _build.gradle_ sisältöä
@@ -286,7 +286,7 @@ OS:           Mac OS X 10.14.6 x86_64
 ➜  repo git:(main)
 ```
 
-* **HUOM** OSX:llä (eli Macilla) automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli OSX-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew), ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
+* **HUOM** macOS:llä automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli macOS-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew), ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
 
 Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on todennäköisesti Javan konfiguraatiossa jotain häikkää. Koneellasi tulee olla _Java Development Kit_ (eli JDK) asennettuna ja ympäristömuuttuja *JAVA_HOME* tulee olla asetettu siten, että sen arvona on JDK:n sijainti, ks. esim. <http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/>. JAVA_PATH:in asettamisen jälkeen komentorivi tulee käynnistää uudelleen. 
 
@@ -306,7 +306,7 @@ Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on toden
 >
 >Jos jouduit tekemään tämän ratkaisun, on todennäköistä, että joudut toimimaan samoin jatkossa kaikkien gradle-projektien kohdalla.
 
-Kun komento <code>./gradlew build</code> (Linux, OSX) tai <code>gradlew.bat build</code> (Windows) tai <code>gradle build</code> toimii, olet valmis siirtymään seuraavaan kohtaan.
+Kun komento <code>./gradlew build</code> (Linux, macOS) tai <code>gradlew.bat build</code> (Windows) tai <code>gradle build</code> toimii, olet valmis siirtymään seuraavaan kohtaan.
 
 **Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa <code>gradle toimenpide</code>, käytä sitä komennon muotoa joka toimii koneellasi, suositeltavinta on käyttää versiota <code>./gradlew</code>, näin varmistat että käytössäsi on uusin gradlen versio.
 
@@ -732,7 +732,7 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla. 
 
 * Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
@@ -740,7 +740,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/master/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viine vuodelta)
+* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viine vuodelta)
   * Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
