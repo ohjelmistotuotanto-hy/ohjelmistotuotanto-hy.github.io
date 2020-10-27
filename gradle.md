@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Viikko 1
+title: Gradle
 inheader: no
 permalink: /gradle/
 ---
@@ -9,21 +9,37 @@ permalink: /gradle/
 
 Tehdään nyt gradle-projekti alusta asti itse. Tee [palautusrepositorioosi](/tehtavat1#teht%C3%A4vien-palautusrepositoriot) uusi hakemisto ja mene hakemistoon. 
 
-Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi _hakemisto_ gradle ja kokeile komentoja uudelleen.
+Kokeile toimiiko koneessasi komento `gradle`. Huomaa, että esimerkiksi fuksiläppäreissä on asennettuna erittäin vanha gradlen versio. Komennon suorittaminen näyttää mikä versio on kyseessä
+
+```
+mluukkai@melkki:~$ gradle
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :help
+
+Welcome to Gradle 4.4.1.
+```
+
+
+Jos komento ei toimi **tai versio on vanhempi kuin 6.7**, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi _hakemisto_ gradle ja kokeile komentoja uudelleen.
+
 
 Aloita antamalla komento _gradle_:
 
 ```
-Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
-
 > Task :help
 
-Welcome to Gradle 5.6.3.
+Welcome to Gradle 6.7.
 
 To run a build, run gradle <task> ...
 
 To see a list of available tasks, run gradle tasks
 
+To see a list of command-line options, run gradle --help
+
+To see more detail about a task, run gradle help --task <task>
+
+For troubleshooting, visit https://help.gradle.org
 ...
 ```
 
@@ -43,20 +59,17 @@ wrapper - Generates Gradle wrapper files.
 
 Help tasks
 ----------
-buildEnvironment - Displays all buildscript dependencies declared in root project 'gradle-testi'.
-components - Displays the components produced by root project 'gradle-testi'. [incubating]
-dependencies - Displays all dependencies declared in root project 'gradle-testi'.
-dependencyInsight - Displays the insight into a specific dependency in root project 'gradle-testi'.
-dependentComponents - Displays the dependent components of components in root project 'gradle-testi'. [incubating]
+buildEnvironment - Displays all buildscript dependencies declared in root project 'intro_gradle'.
+components - Displays the components produced by root project 'intro_gradle'. [incubating]
+dependencies - Displays all dependencies declared in root project 'intro_gradle'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'intro_gradle'.
+dependentComponents - Displays the dependent components of components in root project 'intro_gradle'. [incubating]
 help - Displays a help message.
-model - Displays the configuration model of root project 'gradle-testi'. [incubating]
-projects - Displays the sub-projects of root project 'gradle-testi'.
-properties - Displays the properties of root project 'gradle-testi'.
-tasks - Displays the tasks runnable from root project 'gradle-testi'.
-
-To see all tasks and more detail, run gradle tasks --all
-
-To see more detail about a task, run gradle help --task <task>
+model - Displays the configuration model of root project 'intro_gradle'. [incubating]
+outgoingVariants - Displays the outgoing variants of root project 'intro_gradle'.
+projects - Displays the sub-projects of root project 'intro_gradle'.
+properties - Displays the properties of root project 'intro_gradle'.
+tasks - Displays the tasks runnable from root project 'intro_gradle'.
 ```
 
 Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) kuvaa taskeja seuraavasti:
@@ -65,19 +78,21 @@ Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https:/
 
 Taskit ovat siis "komentoja", joita voimme suorittaa gradle-projekteille.
 
-Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  Saat luotua tiedoston suorittamalla taskin _init_ (eli antamalla komennon _gradle init_). Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
+Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  
+
+**Saat luotua tiedoston** suorittamalla taskin _init_ (eli antamalla komennon _gradle init_).
+
+Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
 
 Huomaat että operaation jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
 
 <pre>
 $ ls -la
--rw-r--r--  1 mluukkai  ATKK\hyad-all   103 Oct 31 12:24 .gitignore
-drwxr-xr-x  4 mluukkai  ATKK\hyad-all   136 Oct 31 12:24 .gradle
--rw-r--r--  1 mluukkai  ATKK\hyad-all   200 Oct 31 12:24 build.gradle
-drwxr-xr-x  3 mluukkai  ATKK\hyad-all   102 Oct 31 12:24 gradle
--rwxr-xr-x  1 mluukkai  ATKK\hyad-all  5960 Oct 31 12:24 gradlew
--rw-r--r--  1 mluukkai  ATKK\hyad-all  2942 Oct 31 12:24 gradlew.bat
--rw-r--r--  1 mluukkai  ATKK\hyad-all   360 Oct 31 12:24 settings.gradle
+-rw-r--r--  1 mluukkai  984178727   198 Oct 27 18:00 build.gradle
+drwxr-xr-x  3 mluukkai  984178727    96 Oct 27 18:00 gradle
+-rwxr-xr-x  1 mluukkai  984178727  5766 Oct 27 18:00 gradlew
+-rw-r--r--  1 mluukkai  984178727  2763 Oct 27 18:00 gradlew.bat
+-rw-r--r--  1 mluukkai  984178727   359 Oct 27 18:00 settings.gradle
 </pre>
 
 Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle-taskien generoimat tiedostot sijoitetaan. Gradle luokin valmiiksi tilanteeseen sopivan gitignore-tiedoston. 
@@ -87,7 +102,9 @@ Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoi
 Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ rivi:
 
 <pre>
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 </pre>
 
 Kun nyt suoritetaan komento _gradle tasks_ huomataan että listalla on uusia, java-pluginin lisäämiä taskeja:
@@ -112,6 +129,8 @@ wrapper - Generates Gradle wrapper files.
 Documentation tasks
 -------------------
 javadoc - Generates Javadoc API documentation for the main source code.
+
+...
 
 Verification tasks
 ------------------
@@ -215,7 +234,7 @@ Description
 
 **HUOM** komento _gradle_ tulee suorittaa aina projektihakemiston juuressa, eli hakemistossa missä tiedosto _build.gradle_ sijaitsee.
 
-Määritellään taskia varten _pääohjelman sijainti_ lisäämällä seuraava tiedostoon _build.gradle_:
+Määritellään taskia varten _pääohjelman sijainti_ lisäämällä seuraava tiedoston _build.gradle_ loppuun:
 
 <pre>
 jar {
@@ -223,6 +242,20 @@ jar {
         attributes 'Main-Class': 'Main'
     }
 }
+</pre>
+
+Huomaa, että tiedoston _build.gradle_ pitää alkaa _plugins_-määrittelyllä. Jos se ei ole alussa, törmäät seuraavaan virheilmoitukseen:
+
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/Users/mluukkai/dev/intro_gradle/build.gradle' line: 7
+
+...
+
+@ line 7, column 1.
+  plugins {
 </pre>
 
 Palaa nyt projektihakemistoon ja suorita jar-tiedoston generoiva task _jar_ (eli anna komento _gradle_ jar). 
@@ -236,17 +269,22 @@ Hello gradle!
 
 ## application-plugin
 
-Aiemmissa tehtävissä olemme pystyneet suorittamaan koodin myös komennolla _gradle run_. Komento aiheuttaa kuitenkin nyt virheilmoituksen _Task 'run' not found in root project_.
+Aiemmissa tehtävissä olemme pystyneet suorittamaan koodin myös komennolla _gradle run_. 
 
-Syynä tälle on se, että task _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan tämä käyttöön  lisäämällä tiedostoon _build.gradle_ rivi 
+Komento aiheuttaa kuitenkin nyt virheilmoituksen _Task 'run' not found in root project_.
+
+Syynä tälle on se, että task _run_ ei ole java-pluginin vaan [application-pluginin](https://docs.gradle.org/current/userguide/application_plugin.html) määrittelemä. Otetaan tämä käyttöön  muuttamalla tiedoston _build.gradle_ alku muotoon 
 
 <pre>
-apply plugin: 'application'
+plugins {
+    id 'java'
+    id 'application'
+}
 </pre>
 
-**HUOM** pluginien määrittelyn tulee tapahtua tiedoston alussa ennen muita määrittelyjä!
+Itseasiassa _java_-pluginin määrittelevää riviä ei nyt edes tarvita, sillä _application_ sisältää myös sen määrittelevät taskit.
 
-Komento aiheuttaa virheen _No main class specified_.
+Komento  _gradle run_ aiheuttaa nyt virheen _No main class specified_.
 
 Pluginin [dokumentaatio](https://docs.gradle.org/current/userguide/application_plugin.html) kertoo, että pääohjelman sisältävä luokka, eli _main class_ tulee määritellä lisäämällä tiedostoon _build.gradle_ seuraava rivi:
 
@@ -291,7 +329,7 @@ public class Main {
 }
 ```
 
-Jos ohjelmasta tehdään _jar-tiedosto_, toimii se odotetulla tavalla:
+Jos ohjelmasta tehdään _jar-tiedosto_ (suorittamalla komento _gradle jar)_, toimii se odotetulla tavalla:
 
 <pre>
 $ java -jar build/libs/gradle-test.jar
@@ -313,7 +351,7 @@ FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':run'.
-> Process 'command '/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/bin/java'' finished with non-zero exit value 1
+> Process 'command '/Library/Java/JavaVirtualMachines/jdk1.11.0_101.jdk/Contents/Home/bin/java'' finished with non-zero exit value 1
 
 </pre>
 
@@ -394,25 +432,25 @@ Yritetään suorittaa testit komennolla _gradle test_. Seurauksena on suuri mä�
 $ gradle test
 
 > Task :compileTestJava FAILED
-/Users/mluukkai/opetus/ohtu2019/laskarit/viikko2/gradle-test/src/test/java/ohtu/MultiplierTest.java:3: error: package org.junit does not exist
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:3: error: package org.junit does not exist
 import static org.junit.Assert.*;
                        ^
-/Users/mluukkai/opetus/ohtu2019/laskarit/viikko2/gradle-test/src/test/java/ohtu/MultiplierTest.java:4: error: package org.junit does not exist
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:4: error: package org.junit does not exist
 import org.junit.Test;
                 ^
-/Users/mluukkai/opetus/ohtu2019/laskarit/viikko2/gradle-test/src/test/java/ohtu/MultiplierTest.java:8: error: cannot find symbol
-  @Test
-   ^
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:8: error: cannot find symbol
+    @Test
+     ^
   symbol:   class Test
   location: class MultiplierTest
-/Users/mluukkai/opetus/ohtu2019/laskarit/viikko2/gradle-test/src/test/java/ohtu/MultiplierTest.java:12: error: cannot find symbol
-    assertEquals(1, viisi.multipliedBy(1));
-    ^
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:12: error: cannot find symbol
+        assertEquals(5, viisi.multipliedBy(1));
+        ^
   symbol:   method assertEquals(int,int)
   location: class MultiplierTest
-/Users/mluukkai/opetus/ohtu2019/laskarit/viikko2/gradle-test/src/test/java/ohtu/MultiplierTest.java:13: error: cannot find symbol
-    assertEquals(35, viisi.multipliedBy(7));
-    ^
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:13: error: cannot find symbol
+        assertEquals(35, viisi.multipliedBy(7));
+        ^
   symbol:   method assertEquals(int,int)
   location: class MultiplierTest
 5 errors
@@ -439,16 +477,16 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
 }
 </pre>
 
 Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuvuuksia. [jcenter](https://bintray.com/bintray/jcenter) on eräs niistä paikoista, johon on talletettu suuri määrä gradlen ja mavenin käyttämiä kirjastoja. Toinen vaihtoehtoinen paikka riippuvuuksien etsimiseen on [mavenCentral](https://search.maven.org). _repositories_-osassa voidaan määritellä myös useita paikkoja joista gradle käy etsimässä projektiin määriteltyjä riippuvuuksia.
 
-Toinen osa määrittelee, että _testCompile_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.12. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
+Toinen osa määrittelee, että _testImplementation_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.13. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
 
 Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
 
 Rikotaan vielä testi ja varmistetaan että testit huomaavat virheen.
 
-JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen viime vuoden syyskuussa. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on edelleen vielä niin keskeneräinen, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
+JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen jo jonkin aikaa sitten. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on edelleen vielä niin keskeneräinen, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
