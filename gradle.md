@@ -9,7 +9,7 @@ permalink: /gradle/
 
 Tehdään nyt gradle-projekti alusta asti itse. Tee [palautusrepositorioosi](/tehtavat1#teht%C3%A4vien-palautusrepositoriot) uusi hakemisto ja mene hakemistoon. 
 
-Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi _hakemisto_ gradle ja kokeile komentoja uudelleen.
+Kokeile toimiiko koneessasi komento `gradle`. Jos ei, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai macOS tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi _hakemisto_ gradle ja kokeile komentoja uudelleen.
 
 Aloita antamalla komento _gradle_:
 
