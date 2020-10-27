@@ -7,8 +7,6 @@ permalink: /tehtavat2/
 
 ## Viikko 2
 
-KESKEN, LUKEMINEN JA TEKEMINEN OMALLA VASTUULLA!
-
 *Alla olevien tehtävien deadline on maanantaina 9.11. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
@@ -97,7 +95,7 @@ Kun nyt suoritat komennon `gradle checkstyleMain`, tulee jälleen virhe, mutta n
 <pre>
 * What went wrong:
 Execution failed for task ':checkstyleMain'.
-> Checkstyle rule violations were found. See the report at: file:///Users/mluukkai/opetus/ohtu2019/ohtu-2019-viikko1/build/reports/checkstyle/main.html
+> Checkstyle rule violations were found. See the report at: file:///Users/mluukkai/opetus/ohtu2020/ohtu-2020-viikko1/build/reports/checkstyle/main.html
 </pre>
 
 Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. Valitettavasti virheraportti kertoo ainoastaan sen koodirivin, mistä virhe löytyy. Joudut katsomaan vastaavan kohdan koodistasi esim. NetBeansista.
@@ -313,8 +311,8 @@ Palaa vielä alkuperäiseen lokaaliin repositorioon
 
 ```
 * remote origin
-  Fetch URL: git@github.com:mluukkai/ohtu-2019-viikko1.git
-  Push  URL: git@github.com:mluukkai/ohtu-2019-viikko1.git
+  Fetch URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
+  Push  URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
   HEAD branch: master
   Remote branches:
     haara1 tracked
