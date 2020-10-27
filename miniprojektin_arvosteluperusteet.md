@@ -157,12 +157,12 @@ On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden tes
 
 Jos committisi yhteydessä näkyy (gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/commit1.png)
+![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit1.png)
 
 Klikkaa harmaan commitin nimeä katso mikä on email-osoite, joka commitiin liittyy mutta mitä github ei tunnista osoitteeksesi.
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/commit2.png)
+![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit2.png)
 
 Lisää osoite _settings_-valikosta:
 
-![](https://github.com/mluukkai/ohtu2017/raw/master/images/commit3.png)
+![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit3.png)

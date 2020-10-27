@@ -22,7 +22,7 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simp
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat1.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat1.md) tiedostoa GitHubissa.
 
 ### Tehtävien palauttaminen
 
@@ -80,7 +80,7 @@ Luo githubiin repositorio nimellä ohtu-2020-viikko1
 
 **Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
-* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#julkinen-avain)-materiaalista
+* Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/viikko1.md#julkinen-avain)-materiaalista
 
 Lisää julkinen avain githubiin:
 
@@ -125,7 +125,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 * .gitignore
 
 * Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka 
-[Git-tutoriaali](https://github.com/mluukkai/ohjelmistotekniikka-syksy-2019/blob/master/tehtavat/viikko1.md#gitin-alkeet). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+[Git-tutoriaali](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2020/blob/main/tehtavat/viikko1.md#gitin-alkeet). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
 
 Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   * [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
@@ -348,7 +348,7 @@ Lisätty konfiguraatio kertoo, mikä ohjelman luokista on ns. pääohjelma, eli 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa. 
 
 Java-maailmassa automatisoidun testaamisen johtava työkalu on JUnit, johton olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. 
-  * Jos JUnit on vieras tai pääsyt unohtumaan kertaa perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2019/blob/master/web/junit.md) 
+  * Jos JUnit on vieras tai pääsyt unohtumaan kertaa perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2020/blob/main/web/junit.md) 
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran JUnit-testejä, **laajennetaan nyt testejä**.
 

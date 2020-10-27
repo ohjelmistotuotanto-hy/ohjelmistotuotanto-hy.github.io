@@ -17,7 +17,7 @@ Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]
 
 ## Typoja materiaalissa
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa4.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/osa4.md) tiedostoa GitHubissa.
 
 ## Ohjelmiston suunnittelu
 
@@ -123,7 +123,7 @@ Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pak
 
 ![]({{ "/images/4-2.png" | absolute_url }}){:height="250px" }
 
-Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/materiaali.md#pakkauskaavio):
+Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/main/web/materiaali.md#pakkauskaavio):
 
 ![]({{ "/images/4-1b.png" | absolute_url }}){:height="200px" }
 
@@ -551,7 +551,7 @@ public class IOStub implements IO {
 
 Parannellun laskimen rakenne luokkakaaviona
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-1.png)
+![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/main/images/os-1.png)
 
 Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaamme asiaan hetken kuluttua.
 

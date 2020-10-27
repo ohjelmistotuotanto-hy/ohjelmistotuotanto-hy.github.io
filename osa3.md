@@ -15,7 +15,7 @@ Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterie
 
 ## Typoja materiaalissa
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa3.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/osa3.md) tiedostoa GitHubissa.
 
 ## Laadunhallinnan peruskysymykset: verifiointi ja validointi
 
