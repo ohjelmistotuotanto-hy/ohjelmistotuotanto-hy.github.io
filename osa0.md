@@ -118,7 +118,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Scrum](/osa1#scrum)
 - Laskarit
   - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 1.11. klo 23:59  
-  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 4.11. klo 23:59 
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 2.11. klo 23:59 
 
 ### Viikko 2
 
