@@ -764,6 +764,7 @@ Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforoht
 
 * tee yksikkötestit luokalle Statistics
   * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/tehtavat1#8-junit))
+    * huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
   * voit luoda stubin testin sisälle anonyyminä sisäluokkana seuraavasti:

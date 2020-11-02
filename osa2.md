@@ -805,7 +805,7 @@ WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä tas
 
 ![]({{ "/images/2-25.png" | absolute_url }}){:height="350px" }
 
-Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. 
+Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimrkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskiksi määräksi kaksi.
 
 ## Lean waste ja Scrumban
 
