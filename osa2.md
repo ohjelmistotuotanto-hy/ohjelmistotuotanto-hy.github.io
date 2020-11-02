@@ -15,7 +15,7 @@ Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien mene
 
 ## Typoja materiaalissa
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/osa2.md) tiedostoa GitHubissa.
+Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa2.md) tiedostoa GitHubissa.
 
 
 ## Vaatimusmäärittely
