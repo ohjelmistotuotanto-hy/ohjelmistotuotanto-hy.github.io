@@ -169,28 +169,28 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 
 tee seuraavat paikalliseen git-repositorioosi (kyseessä ei siis tarvitse olla tehtävien palautusrepositorio)
 
-* luo repositorio ja committaa masteriin tiedosto __masteri1.txt__
+* luo repositorio ja committaa mainiin tiedosto __main1.txt__
 * luo branch __eka__, siirry branchiin, luo sinne tiedosto __eka.txt__ ja committaa
-* siirry takaisin __master__-branchiin, tiedoston __eka.txt__ ei pitäisi nyt näkyä
+* siirry takaisin __main__-branchiin, tiedoston __eka.txt__ ei pitäisi nyt näkyä
   * **huom:** muistutus vielä siitä, että kun siirryt branchista toiseen varmista **aina** komennolla _git status_ että kaikki muutokset on committoitu 
-* lisää ja committaa __masteriin__ tiedosto __masteri2.txt__
-* mene branchiin __eka__ ja tarkasta, että __masteriin__ lisätty tiedosto ei ole branchissa
+* lisää ja committaa __mainiin__ tiedosto __maini2.txt__
+* mene branchiin __eka__ ja tarkasta, että __mainiin__ lisätty tiedosto ei ole branchissa
 * lisää branchiin tavaraa, esim. tiedosto __eka2.txt__ ja committaa
-* siirry takaisin __master__-branchiin
-* tarkasta että __eka__-branchiin lisätyt muutokset eivät ole masterissa
+* siirry takaisin __main__-branchiin
+* tarkasta että __eka__-branchiin lisätyt muutokset eivät ole mainissa
 * tarkastele komennolla <code>gitk --all</code> miltä repositorio ja branchit näyttävät (gitk toimii windowsilla ainakin Github for Windowsin Git Shellissä.)
   * gitk ei toimi maceissa, hyvä korvaaja sille on [sourcetree](https://www.sourcetreeapp.com)
-* mergeä branchin __eka__ sisältö __masteriin__
+* mergeä branchin __eka__ sisältö __mainiin__
 * katso jälleen miltä näyttää gitk --all
 
 ### 5. git: branchit ja staging-alue [versionhallinta]
 
-* olet nyt repositoriosi master-haarassa
+* olet nyt repositoriosi main-haarassa
 * luo uusi tiedosto _uusi_tiedosto.txt_, **älä** kuitenkaan lisää ja commitoi tiedostoa
 * komennon _git status_ tulostuksen pitäisi olla seuraava
 
 ```
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -202,9 +202,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 * siirry nyt branchiin __eka__
 * suorita uudelleen komento _git status_
 * huomaat, että tulostus on edelleen sama, tiedosto ei edelleenkään ole versionhallinnan alla
-* eli vaikka olit master-haarassa kun loit tiedoston, ei master-haara eikä koko git tiedä tiedostosta vielä mitään ennen kuin lisäät sen versionhallinnan alaisuuteen komennolla _git add_
+* eli vaikka olit main-haarassa kun loit tiedoston, ei main-haara eikä koko git tiedä tiedostosta vielä mitään ennen kuin lisäät sen versionhallinnan alaisuuteen komennolla _git add_
 * lisää tiedosto nyt versionhallinnan alaisuuteen ja commitoi se
-* tiedosto menee nykyiseen branchiisi, eli branchiin _eka_, master ei edelleenkään tiedä tiedostosta mitään
+* tiedosto menee nykyiseen branchiisi, eli branchiin _eka_, main ei edelleenkään tiedä tiedostosta mitään
 * luo uusi tiedosto _uusi_tiedosto2.txt_ ja lisää se versionhallintaan, älä kuitenkaan commitoi
 * tarkasta että komennon _git status_ tulos on
 
@@ -217,21 +217,21 @@ Changes to be committed:
 ```
 
 * olet siis branchissa _eka_ ja _uusi_tiedosto2.txt_ on lisätty staging-alueelle, sitä ei kuitenkaan ole vielä committoitu
-* siirry nyt branchiin __master__ 
+* siirry nyt branchiin __main__ 
 * komennon _git status_ tulos on edelleen sama, _uusi_tiedosto2.txt_ on edelleen staging-alueella mutta committoimattomana
 * staging-alue __ei kuulu__ mihinkään branchiin, eli jos staging-alueella on committoimattomia muutoksia ja vaihdat branchia, säilyvät samat asiat stagingissa
 * muutokset siirtyvät stagingista branchiin ainoastaan komennolla _git commit_ 
-* committoi nyt staging-alueen muutokset eli _uusi_tiedosto2.txt_ masteriin
+* committoi nyt staging-alueen muutokset eli _uusi_tiedosto2.txt_ mainiin
 * komennon  _git status_ tulos kertoo nyt että staging-alue on tyhjä:
 
 ```
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
 * siirry jälleen branchiin __eka__ ja huomaat, että _uusi_tiedosto2.txt_ ei ole olemassa
-* mergeä __master__ branchiin __eka__
-* siirry nyt masteriin ja tuhoa branchi __eka__  
+* mergeä __main__ branchiin __eka__
+* siirry nyt mainiin ja tuhoa branchi __eka__  
 * tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
 **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon _git commit_ suorituksen seurauksena
 
@@ -239,10 +239,10 @@ nothing to commit, working tree clean
 
 Tee paikalliseen git-repoon seuraavat
 
-* lisää __master__-branchiin tiedosto __tarkea.txt__, kirjota sinne muutama rivi tekstiä ja committaa
+* lisää __main__-branchiin tiedosto __tarkea.txt__, kirjota sinne muutama rivi tekstiä ja committaa
 * tee uusi branchi __toka__, mene branchiin ja editoi tiedoston __tarkea.txt__ loppua (lisää esim loppuun muutama uusi rivi) ja committaa
-* mene takaisin __master__-branchiin, editoi tiedoston __tarkea.txt__ alkua (lisää alkuun muutama rivi) ja committaa
-* mergeä branchin __toka__ sisältö __masteriin__
+* mene takaisin __main__-branchiin, editoi tiedoston __tarkea.txt__ alkua (lisää alkuun muutama rivi) ja committaa
+* mergeä branchin __toka__ sisältö __mainiin__
   * mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     * jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     * vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, google auttaa tarvittaessa
@@ -251,7 +251,7 @@ Tee paikalliseen git-repoon seuraavat
 * lisää jotain tiedoston loppuun ja committaa
 * siirry branchiin __toka__
 * lisää jotain tiedoston __tarkea.txt__ loppuun ja committaa
-* mergeä branchin __master__ sisältö branchiin __toka__
+* mergeä branchin __main__ sisältö branchiin __toka__
   * nyt pitäisi aiheutua konflikti, komento aiheuttaa tulostuksen
 ```
 Auto-merging tarkea.txt
@@ -306,23 +306,23 @@ Mene jälleen toiseen kopioon
 Palaa vielä alkuperäiseen lokaaliin repositorioon
 
 * suorita komento <code>git remote show origin</code> 
-* tulostus kertoo, että lokaaleista haaroista ainoastaan _master_ on konfiguroitu komennon _git pull_ osalta, eli on träkkäävä branchi:
+* tulostus kertoo, että lokaaleista haaroista ainoastaan _main_ on konfiguroitu komennon _git pull_ osalta, eli on träkkäävä branchi:
 
 ```
 * remote origin
   Fetch URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
   Push  URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
-  HEAD branch: master
+  HEAD branch: main
   Remote branches:
     haara1 tracked
     haara2 tracked
-    master tracked
+    main tracked
   Local branch configured for 'git pull':
-    master merges with remote master
+    main merges with remote main
   Local refs configured for 'git push':
     haara1 pushes to haara1 (up to date)
     haara2 pushes to haara2 (up to date)
-    master pushes to master (up to date)
+    main pushes to main (up to date)
 ```
 * suorita _git pull_ branchissä _haara1_
 * komennon tuloste antaa ohjeen, miten saat konfiguroitua _haara1_:n träkkäämään githubissa olevaa haaraa:
@@ -349,7 +349,7 @@ Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHub:i
 Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
 <https://www.atlassian.com/git/tutorials/comparing-workflows> esittele tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
 
-> The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.
+> The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the main branch will never contain broken code, which is a huge advantage for continuous integration environments.
 
 Jos kiinnostaa, lue lisää yo. dokumentista.
 
@@ -357,16 +357,16 @@ Jos kiinnostaa, lue lisää yo. dokumentista.
 
 Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen githubissa olevaan etärepositorioon epäonnistuu.
 
-* mene alkuperäisen repositorion paikallisen kopion __master__ -haaraan, tee joku muutos, commitoi ja pushaa se githubiin
-* mene toisen kopion __master__-haaraan ja  tee sinne joku muutos 
+* mene alkuperäisen repositorion paikallisen kopion __main__ -haaraan, tee joku muutos, commitoi ja pushaa se githubiin
+* mene toisen kopion __main__-haaraan ja  tee sinne joku muutos 
 * commitoi ja pushaa muutos githubiin
 * kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
 
 <pre>
 $ git push
-To git@github.com:mluukkai/ohtu-viikko1-2019.git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1-2019.git'
+To git@github.com:mluukkai/ohtu-viikko1-2020.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1-2020.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first merge the remote changes (e.g.,
@@ -375,7 +375,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 $ 
 </pre>
 
-Virheen syynä on se, että githubissa oleva __master__-haara oli edellä paikallisen repositorion __master__-haaraa. Ongelma korjaantuu tekemällä ensin <code>git pull</code>, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen
+Virheen syynä on se, että githubissa oleva __main__-haara oli edellä paikallisen repositorion __main__-haaraa. Ongelma korjaantuu tekemällä ensin <code>git pull</code>, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen
 * komennon _git pull_ yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 * eli toimi näin ja varmista, että tekemäsi muutokset menevät githubiin
 

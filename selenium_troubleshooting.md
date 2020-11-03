@@ -44,7 +44,25 @@ public class Tester {
 
 HtmlUnitDriver:in hyvä puoli on nopeus. Voit käyttää sitä myös testeissä. Testien debuggaaminen muuttuu hankalammaksi, mutta testit toimivat nopeasti. Testejä debugatessa best practice lienee sivun html-koodin tulostaminen konsoliin.
 
-### Tapa 2: geckodriver downloadaus (testattu syksyllä 2019)
+#### Tapa 2: chromedriverin downloadaus
+
+Kun itse kokeilin tehtävää vuoden tauon jälkeen marraskuussa 2020 uudella koneellani törmäsin seuraavaan virheilmoitukseen
+
+```
+Exception in thread "main" java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+        at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
+        at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:125)
+        at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:35)
+        at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:156)
+        at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:346)
+        at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:91)
+        at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
+        at ohtu.Tester.main(Tester.java:11)
+```
+
+Ongelma ratkasi [täällä](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver#quick-installation) olevalla ohjeella (oma koneeni Mac). Ohjeista toisen pitäisi toimia TKT:n fuksikannettaville, mutta ne edellyttävät pääkäyttäjän oikeuksia
+
+### Tapa 3: geckodriver downloadaus (testattu syksyllä 2019)
 
 Lataa ja asenna geckodriver [täällä olevan ensimmäisen vastauksen mukaan](https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu)
 
@@ -63,26 +81,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
     final String URL = "http://localhost:4567";
     driver.get(URL);
 ```
-
-### Tapa 3: chromedriverin downloadaus
-
-**Tätä ja seuraavia tapoja ei ole testattu tämän kurssin aikana**, joten on epäselvää toimivatko nämä, tai jos toimivat niin todennäköisesti vasta jos kirjastojen versiot muutetaan uudempiin. Tee sivulle pull request, jos saat jonkin tavan toimimaan.
-
-Lataa [täältä](https://sites.google.com/a/chromium.org/chromedriver/downloads) ja asenna ChromeDriver.
-
-Lataaminen ja asentaminen macillä tapahtuu komennolla `brew cask install chromedriver`. Tämän jälkeen pitäisi toimia ilman muuta määrittelyä. (brew pitää olla asennettuna etukäteen)
-
-Tee seuraava määrittely seleniumia käyttävässä tiedostossa:
-
-```java
-// windowsissa
-System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver.exe"); 
-
-// macissa ja linuxeissa
-System.setProperty("webdriver.chrome.driver", "oma_polku/chromedriver"); 
-```
-
-Testejä varten kannattaa määrittely sijoittaa luokan <code>ServerRule</code> metodiin <code>before</code>.
 
 ### Tapa 4: WebDriverManager
 
