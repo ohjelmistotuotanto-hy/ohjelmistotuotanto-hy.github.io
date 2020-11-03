@@ -168,7 +168,9 @@ public class RunCucumberTest {}
 
 Määrittely on sikäli hämmentävä, että määriteltävä luokka _RunCucumberTest_ ei sisällä mitään koodia, ja kaikki oleellinen määrittely tapahtuu luokkaan liitetyn annotaation _@CucumberOptions_ parametreina.
 
-Testit suoritetaan komennolla _gradle test_. Huomaa, että testien suorittaminen ei todennäköisesti toimi NetBeansin testinapilla.
+**Testit suoritetaan** komennolla _gradle test_. 
+
+Huomaa, että testien suorittaminen ei todennäköisesti toimi NetBeansin testinapilla.
 
 ### Nollaamisen skenaariot
 
@@ -192,12 +194,30 @@ Feature: As a user I want to be able to set the counter to value zero
     Then the value should be 0
 </pre>
 
-Kun nyt suoritat testit, näyttää tulos seuraavalta:
+Kun nyt suoritat testit komennolla _gradle test_ näyttää tulos seuraavalta:
 
-![]({{ "/images/lh3-1.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/lh3-5.png" | absolute_url }}){:height="350px" }
 
-Cucumber siis ilmoittaa osan stepeistä olevan _undefined_. Cucumber tulostaa myös valmiin metodirungon, jonka avulla stepin voi toteuttaa.
+Cucumber maalaa stepin _And it is reset_ keltaisella ja kertoo virheestä
 
-Kopioi stepin koodirunko luokkaan _Stepdefs_ ja täydennä se järkevällä tavalla. 
+```
+io.cucumber.junit.UndefinedStepException
+```
+
+Cucumber siis ilmoittaa osan stepein olevan määrittelemätön. Avaamalla selaimella virheilmoituksen tarkempi raportti, näyttää Cucumber valmiin metodirungon, jonka avulla stepin voi toteuttaa:
+
+![]({{ "/images/lh3-6.png" | absolute_url }}){:height="350px" }
+
+Kopioi stepin koodirunko 
+
+```java
+@When("it is reset")
+public void itIsReset() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+```
+
+luokkaan _Stepdefs_ ja täydennä se järkevällä tavalla. 
 
 Varmista että testit toimivat.

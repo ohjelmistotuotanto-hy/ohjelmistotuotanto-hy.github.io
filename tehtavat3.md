@@ -180,16 +180,15 @@ Mistä on kyse? Ohjelman riippuvuuksia eli projekteja Apache HttpClientin ja gso
 
 Saamme generoitua ohjelmasta jar-tiedoston, joka sisältää myös kaikki riippuvuudet gradlen [shadow](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)-pluginin avulla. 
 
-Ota plugin käyttöön lisäämällä seuraava tiedoston _build.gradle_ alkuun:
+Ota plugin käyttöön laajentamalla tiedoston _build.gradle_ pluginien määrittelyä seuraavasti:
 
 ```java
 plugins {
-  id 'com.github.johnrengelman.shadow' version '5.1.0'
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 ```
-
-**HUOM:** pluginin määrittely on lisättävä tiedoston _build.gradle_ alkuun, muuten koko konfiguraatio hajoaa.
-
 Tutki komennon _gradle tasks_ avulla, miten saat muodostettua riippuvuudet sisältävän jarrin.
 
 Generoi jar ja varmista, että ohjelma toimii komennolla <code>java -jar shadowilla_tehty_jar.jar</code>
