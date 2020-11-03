@@ -7,13 +7,17 @@ permalink: /tehtavat3/
 
 ## Viikko 3
 
-*Alla olevien tehtävien deadline on maanantaina 18.11. klo 23:59*
+KESKEN, LUKEMINEN OMALLA VASTUULLA
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
-- ma 14-16 B221 
-- ke 14-16 B221
+*Alla olevien tehtävien deadline on maanantaina 16.11. klo 23:59*
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3), joiden deadline on sunnuntaina 17.11. klo 23:59:00.  
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
+
+- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
+- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+
+
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3), joiden deadline on sunnuntaina 15.11. klo 23:59:00.  
 
 Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi, sekä miten riippuvuuksia sisältävästä koodista saadaan generoitua jar-paketti. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Cucumberin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen. 
 
@@ -51,7 +55,7 @@ Hae kurssirepositorion <https://github.com/ohjelmistotuotanto-hy/syksy2020> hake
 
 * mukana on kohta tarvitsemasi luokka _Player_ 
 
-Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta kuluvan kauden NHL-liigan tilastotietoja. Jos tarkkoja ollaan, niin tilastot haetaan tämän kurssin tarpeisiin rakennetulta palvelimelta, joka hakee todelliset tilastot NHL:n sivulta kerran vuorokaudessa.
+Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta kuluvan kauden NHL-liigan tilastotietoja.  Jos tarkkoja ollaan, niin tilastot haetaan tämän kurssin tarpeisiin rakennetulta palvelimelta, joka hakee todelliset tilastot NHL:n sivulta kerran vuorokaudessa. *Pandemian takia kautta ei ole aloitettu ja tilastot ovat viime vuodelta.*
 
 Näet tilastojen [json](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://nhlstatisticsforohtu.herokuapp.com/players>
 
@@ -62,13 +66,14 @@ Ohjelmassa tarvitaan kahta kirjastoa eli _riippuvuutta_:
 * HTTP-pyynnön tekemiseen [Apache HttpClient Fluent API](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/fluent.html)
 * json-muotoisen merkkijonon muuttaminen olioksi [http://code.google.com/p/google-gson/](http://code.google.com/p/google-gson/)
 
-Kertaa nopeasti [viime viikolta](/gradle#riippuvuudet), miten gradle-projektin riippuvuudet määritellään. Tarvittaessa lisää tietoa löytyy [Gradlen manuaalista](https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html)
+Kertaa nopeasti [viime viikolta](/gradle#riippuvuudet), miten gradle-projektin riippuvuudet määritellään. Tarvittaessa lisää tietoa löytyy [Gradlen manuaalista](https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html).
 
 Liitä projektisi _käännösaikaisiksi_ (compile) riippuvuuksiksi
 
 * _Apache HttpClient Fluent API_ ja _gson_
 * löydät riippuvuuksien tiedot osoitteesta [http://mvnrepository.com/](http://mvnrepository.com/)
 * Ota molemmista uusin versio
+  * Klikkaamalla versionmeroa, avautuu näkymä, mistä voit kopioida suoraan riippuvuuden lisäävän rivin
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 

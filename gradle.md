@@ -477,13 +477,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13'
+    testImplementation group: 'junit', name: 'junit', version: '4.13'
 }
 </pre>
 
 Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuvuuksia. [jcenter](https://bintray.com/bintray/jcenter) on eräs niistä paikoista, johon on talletettu suuri määrä gradlen ja mavenin käyttämiä kirjastoja. Toinen vaihtoehtoinen paikka riippuvuuksien etsimiseen on [mavenCentral](https://search.maven.org). _repositories_-osassa voidaan määritellä myös useita paikkoja joista gradle käy etsimässä projektiin määriteltyjä riippuvuuksia.
 
 Toinen osa määrittelee, että _testImplementation_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.13. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
+
+Lisättävän riippuvuuden erittelevälle riville voidaan käyttää myös vaihtoehtoista syntaksia, missä riippuvuus, ja sen versio ilmaistaan yhtenä merkkijonona:
+
+<pre>
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
+</pre>
 
 Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
 
