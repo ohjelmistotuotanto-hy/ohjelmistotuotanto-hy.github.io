@@ -289,7 +289,9 @@ Komento  _gradle run_ aiheuttaa nyt virheen _No main class specified_.
 Pluginin [dokumentaatio](https://docs.gradle.org/current/userguide/application_plugin.html) kertoo, että pääohjelman sisältävä luokka, eli _main class_ tulee määritellä lisäämällä tiedostoon _build.gradle_ seuraava rivi:
 
 <pre>
-mainClassName = 'Main'
+application {
+    mainClass = 'Main'
+}
 </pre>
 
 Nyt ohjelman suorittaminen taskin avulla toimii:
