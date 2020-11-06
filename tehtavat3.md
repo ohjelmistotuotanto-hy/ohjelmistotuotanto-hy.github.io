@@ -7,8 +7,6 @@ permalink: /tehtavat3/
 
 ## Viikko 3
 
-KESKEN, LUKEMINEN OMALLA VASTUULLA
-
 *Alla olevien tehtävien deadline on maanantaina 16.11. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
