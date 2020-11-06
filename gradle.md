@@ -21,8 +21,7 @@ Welcome to Gradle 4.4.1.
 ```
 
 
-Jos komento ei toimi **tai versio on vanhempi kuin 6.7**, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi, kopioi gradlew tiedoston lisäksi _hakemisto_ gradle ja kokeile komentoja uudelleen.
-
+Jos komento ei toimi **tai versio on vanhempi kuin 6.7**, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Mikäli edelleen ei toimi voit ottaa lähtökohdaksesi [täällä](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko2/TyhjaProjeki) olevan tyhjän gradle-projektin.
 
 Aloita antamalla komento _gradle_:
 
