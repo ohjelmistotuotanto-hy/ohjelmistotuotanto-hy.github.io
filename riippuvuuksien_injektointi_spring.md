@@ -33,7 +33,7 @@ Spring saadaan käyttöön lisäämällä se riippuvuudeksi gradle-projektin _bu
 
 Springissä ideana on siirtää osa sovelluksen olioista ns. [Inversion of Control container](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-basics):in eli eräänlaisen oliosäiliönä toimivan sovelluskontekstin hallinnoitavaksi. 
 
-Springissä on kaksi tapaa määritellä sovelluskontekstin kontrolloivat oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
+Springissä on kaksi tapaa määritellä sovelluskontekstin kontrolloimat oliot. Käytämme nykyään suositumpaa  [annotaatioihin](https://docs.spring.io/spring/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-annotation-config) perustuvaa määrittelytapaa. 
 
 Sovelluskontekstin huolehdittavaksi annettavien olioiden luokat merkitään annotaatiolla  <code>@Component</code>. Luokka _KonsoliIO_ annotoidaan seuraavasti:
 
