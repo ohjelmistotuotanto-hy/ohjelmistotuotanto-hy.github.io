@@ -101,7 +101,7 @@ Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. 
 
 **Toimi nyt seuraavasti**
 
-* Poista checkstylen konfiguraatiotiedostosta kaikki määrittelyt säännöt siten, että sen sisällöksi jää vain
+* Poista checkstylen konfiguraatiotiedostosta kaikki määritellyt säännöt siten, että sen sisällöksi jää vain
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
