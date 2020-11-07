@@ -70,7 +70,7 @@ Nykyään on useita paljon katselmointia automatisoivia _staattista analyysia�
 
 Pilvipalvelut ovat helpottaneet sovelluskehittäjien työtä monissa asioissa, esim. GitHubin ansiosta omaa versionhallintapalvelinta ei ole enää tarvinnut ylläpitää vuosiin.
 
-Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi viime viikon laskareissa käytetty [Codeclimate](https://codeclimate.com/), joka analysoi koodista mm. seuraavia asioita:
+Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi [Codeclimate](https://codeclimate.com/), joka analysoi koodista mm. seuraavia asioita:
 - liian kompleksiset metodit ja luokat 
 - copy paste -koodi
 - testaamaton koodi
@@ -97,7 +97,7 @@ Yhä enenevä määrä ohjelmistokehitysprojekteista tallettaa sovelluksen lähd
 
 Pull requesteja käytettäessä työn kulku on seuraava:
 - Sovelluskehittäjä forkkaa repositorion itselleen, tekee muutokset omaan repositorioon ja tekee pull requestin projektia hallinnoivalle taholle.
-- Hallinnoija, esimerkiksi tiimin "senior developer" tai open source -projektin vastaava tekee katselmoinnin pull requestille.
+- Hallinnoija, esimerkiksi tiimin "senior developer", open source -projektin vastaava tai joku muu sovelluskehittäjä  tekee katselmoinnin pull requestille.
 - Jos koodi ei ole vielä siinä kunnossa, että tehdyt muutokset voidaan liittää repositorioon, kirjoittaa hallinnoija pull requestin tekijälle joukon parannusehdotuksia.
 - Muutosten ollessa hyväksyttävästi tehtyjä, pull request mergetään eli yhdistetään päärepositorioon.
 
@@ -123,7 +123,7 @@ _Pariohjelmoinnissa_ (engl. pair programming) kaksi ohjelmoijaa työskentelee yh
 
 Pariohjelmointi parantaa ohjelmoijien kuria ja työhön keskittymistä sekä on erinomainen oppimisen väline: parit oppivat toisiltaan, erityisesti noviisit kokeneemmilta. Jos pariohjelmointia sovelletaan systemaattisesti, ei koodiin jää osa-alueita, jotka ainoastaan yksi ohjelmoija tuntee.
 
-Tutkimuksissa pariohjelmoinnin on todettu vähentävän bugien määrää 15-50%, kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. 
+Pariohjelmointia on tutkittu suhteellisen paljon. [Tutkimuksissa](https://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) sen on todettu vähentävän bugien määrää jossain määrin, kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. Tutkimukset korostavat pelkkien koodin tasolla näkyvien hyötyjen lisäksi myös pariohjelmoinnin myönteistä vaikutusta tiimidynamiikkaan ja jopa työtyytyväisyyteen.
 
 Vaikka pariohjelmointi tai jopa useamman ihmisen versio siitä, [mob-programming](https://en.wikipedia.org/wiki/Mob_programming) on melko suosittua, ei kovin monissa paikoissa kuitenkaan harrasteta systemaattisesti määritelmän mukaista pariohjelmointia ainakaan joka päivä. Hyvin yleistä on, että kehittäjät työskentelevät suurimman osan aikaa yksin, mutta tekevät sopivin paikoin spontaaneja pari- tai mob-ohjelmointisessioita, erityisesti kohdatessaan teknisiä haasteita. 
 
@@ -139,7 +139,7 @@ _Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrit
 
 Ohjelmistojen osoittaminen virheettömäksi on käytännössä mahdotonta, sillä ohjelmiston mahdollisten käyttöskenaarioiden ja syötteiden kombinaatio on yksinkertaisesti liian suuri. Testauksen tarkoituksena onkin vakuuttaa asiakas ja järjestelmän kehitystiimi siitä, että ohjelmisto on riittävän hyvä käytettäväksi.
 
-Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutusta ohjelmista. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään ohjelma rikkoa tai saattaa se jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
+Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutusta ohjelmista. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään rikkoa ohjelma tai saattaa se jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
 
 Molemmat näistä tavoitteista tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (engl. external quality) eli käyttäjän kokeman laadun varmistamiseen. [Ulkoisella laadulla](http://c2.com/cgi/wiki?InternalAndExternalQuality) tarkoitetaan sitä, onko ohjelmisto sopiva käyttötarkoitukseensa, eli pystyykö käyttäjä tekemään ohjelmistolla haluamansa asiat.
 
