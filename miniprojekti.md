@@ -9,16 +9,15 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Kolmannen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
-- Loppudemojen [ajanvaraus](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit) 
-- [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
+- Ilmoittautu miniprojetkiin [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea)
+deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 
 ### Johdanto
 
 - Kurssin viikoilla 4-7 tehdään miniprojekti
 - **Kurssin läpipääsy edellyttää hyväksyttyä osallistumista miniprojektiin** tai sen [hyväksilukemista](/osa0#miniprojektin-hyv%C3%A4ksilukeminen)
 
-- Projekti tehdään noin 4-6 hengen ryhmissä
+- Projekti tehdään noin 5-6 hengen ryhmissä
 - Projektissa ohjelmoidaan jonkin verran, **pääpaino ei ole ohjelmoinnissa** vaan systemaattisen prosessin (tästä lisää myöhemmin) noudattamisessa.
 - **Jokaisen ryhmän jäsenen on tarkoitus tehdä kunkin sprintin aikana töitä noin 6 tuntia projektin eteen**  
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
@@ -27,12 +26,8 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-* Ryhmä muodostetaan "spontaanisti" tai tulemalla paikalle johonkin miniprojektien aloitustilaisuuksista
-  - maanantai 18.11. klo 14-16 C222 Exactum
-  - tiistai 19.11. klo 14-16 A128 Chemicum
-  - keskiviikko 20.11. klo 12-14 C222 Exactum
-  - torstai 21.11. klo 14-16 C222 Exactum
-* Jokaisen _tulee osallistua yhteen tilaisuuteen_. Paikalla on oltava alusta loppuun. Jos olet jo muodostanut miniprojektiryhmän, kaikkien ryhmäläisten tulee osallistua samaan tilaisuuteen.
+* Ryhmät modostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
+* Jokaiselle ryhmälle tiedotetaan viimeistään sunnuntaina 15.11. seuraavalla viikolla pidettävän noin 2h kestävän aloitustilaisuuden ajankohta, johon kaikkien ryhmäläisten on **pakko osallistua**. 
 * Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat: 
   * scrum
   * sprintti
@@ -47,12 +42,12 @@ permalink: /miniprojekti/
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
-* Ryhmä varataa aijan sprinttien 2-3 asiakastapaamisille
+* Ryhmä varataa ajan sprinttien 2-3 asiakastapaamisille
   * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 ### Työn eteneminen
 
-#### viikko 4 (18-22.11.)
+#### viikko 4 (16-20.11.)
 
 * Ryhmä muodostuvat/muodostetaan
 * Ryhmät tapaavat asiakkaan aloitustilaisuuksista
@@ -64,22 +59,18 @@ permalink: /miniprojekti/
 * Ryhmät varaavat tapaamisen sprinttien 2-3 asiakastapaamisille
   * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
-#### viikko 5 (25-29.11.)
+#### viikko 5 (23-29.11.)
 
 * Sprintin 1 katselmointi ja sprintin 2 suunnittelu 
 
-#### viikko 6 (2-6.12.)
+#### viikko 6 (30.11-6.12.)
 
 * Sprintin 2 katselmointi ja sprintin 3 suunnittelu 
 
-#### viikko 7 (9-10.12.)
+#### viikko 7 (7-13.12.)
 
 * Sprintin 3 katselmointi (eli loppudemot)
   * jokainen ryhmä osallistuu yhteen noin 3 h kestoiseen demotilaisuuteen
-  * tilaisuuksia järjestetään kaksi:
-    - maanantai 9.12. klo 14-17 A110 Chemicum
-    - tiistai 10.12. klo 14-17 A110 Chemicum
-  * varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit)
 
 ### Toteutettava ohjelmisto
 
@@ -103,7 +94,7 @@ permalink: /miniprojekti/
     * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     * taskin tekijä(t)
 * Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) 
-  * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua [CircleCI:tä](https://circleci.com/), muita vaihtoehtoja esim. TravisCI ja Github Actions
+  * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua Github Actionsia, muita vaihtoehtoja esim. TravisCI ja Github Actions
 * Koodi on talletettu GitHub:iin 
 * Projektin Github-repositoriolla on järkevä README.md 
 

@@ -8,9 +8,7 @@ permalink: /miniprojektin_arvosteluperusteet/
 ## Miniprojektin arvosteluperusteet
 
 * [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
-* [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
-* [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
-* [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
+
 
 Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan
 
@@ -41,7 +39,7 @@ Projekti tulee olla rekisteröity osoitteeseen <https://study.cs.helsinki.fi/sta
 
 **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.** 
 
-Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja CircleCI:hin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin githubin README:hen!
+Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja GitHub Actionsiin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin githubin README:hen!
 
 ### Pisteitä kertyy seuraavista asioista
 
@@ -59,7 +57,7 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
   * ainakin jossain storyssa hyväksymiskriteerien testausta (cucumber)	
 * (0.5p) jatkuva integraatio
   * koodi githubissa
-  * CircleCI (tai jokin muu CI-palvelu) suorttaa ainakin yksikkötestit ja ne menevät läpi
+  * GitHub Actions (tai jokin muu CI-palvelu) suorttaa ainakin yksikkötestit ja ne menevät läpi
 * (0.5p) toteutus
   * ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 * (0.25p) työtä tehty tasaisesti
@@ -67,85 +65,22 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
 * (0.25p) GitHub readme:
   * readmesta löytyy linkki backlogeihin
   * definition of done kirjattu eksplisiittisesti 
-  * linkki CircleCI:hin ja sovellukseen jos kyse web-sovelluksesta
+  * linkki sovellukseen jos kyse web-sovelluksesta
   * jos kyse työpöytäsovelluksesta: ohjelman asennus- ja käyttöohje
 
 Sprintin maksimi on 2.5 pistettä.
 
 ### Toisen sprintin arvosteluperusteet:
 
-#### pisteet jakautuvat seuraavasti
-
-* (0.25p) product backlog 
-  * backlog on DEEP (storyjä ei tarvitse estimoida)
-* (0.25p) sprintin 2 backlog
-  * sprintiin valitut user storyt jaettu teknisen tason taskeiksi
-  * päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
-  * burndown-käyrä olemassa
-  * jokaiseen taskiin on merkitty sen tekijä(t)
-* (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
-* (0.5p) kattavahko testaus yksikkö- ja storytasolla
-* (0.25p) jatkuva integraatio
-  * CI-palvelu suorittaa testit
-* (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
-* (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/). 
-  * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
-
-Sprintin maksimi on 2.5 pistettä.
+Ilmestyvät myöhemmin
 
 ### Kolmannen sprintin arvosteluperusteet
 
-_Huom: miniprojektit tarkastetaan jossain vaiheessa torstain 12.12. klo 23.59 jälkeen. Sen jälkeen tehtyjä muutoksia ei työssä enää huomioida._ 
-
-#### Pisteytys jakautuu seuraavasti:
-
-* (0.25p) product backlog 
-  * backlog on DEEP (storyjä ei tarvitse estimoida)
-  * backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
-* (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu cucumber-featureina
-  * hyväksymisehtoja ei kirjoteta erikseen backlogin, backlogista linkki cucumber-featureen
-* (0.25p) sprintin 3 backlog
-  * vaatimukset kuten edellisissä sprinteissä
-* (0.5p) kattavahko testaus yksikkö- ja storytasolla
-* (0.25p) jatkuva integraatio
-  * CI-palvelu suorittaa testit
-  * master-branch ei ole hajonnut
-* (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
-* (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  * jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
-* (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
-  * sovittu etukäteen kuka tekee mitäkin
-  * mietitty mitä esitetään
-    * kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
-  * testidata on järkevää
-    * tietokanta ei saa olla etukäteen tyhjä
-    * tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli *ei* esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_  
-
-Sprintin maksimi on 2.5 pistettä.
+Ilmestyvät myöhemmin
 
 ### Lopputoimenpiteet
 
-#### Vertaispalaute
-
-* Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-* Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina 21.12. klo 23:59**
-  * vertaispalautteen antaminen on _pakollista_, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
-* Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2020) miniproject-tabissa
-  * ryhmäläiset eivät näe toistensa vertaispalautteita
-
-#### Raportti
-
-Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
-
-*  kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
-* mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
-* mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
-* jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
-* raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin Readme:hen
-* raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-* **raportin deadline lauantaina 21.12. klo 23:59**
+Ilmestyvät myöhemmin
 
 ### Varmista, että commitisi näkyvät githubissa oikein
 
@@ -157,12 +92,12 @@ On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden tes
 
 Jos committisi yhteydessä näkyy (gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi
 
-![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit1.png)
+![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit1.png)
 
 Klikkaa harmaan commitin nimeä katso mikä on email-osoite, joka commitiin liittyy mutta mitä github ei tunnista osoitteeksesi.
 
-![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit2.png)
+![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit2.png)
 
 Lisää osoite _settings_-valikosta:
 
-![](https://github.com/mluukkai/ohtu2017/raw/main/images/commit3.png)
+![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit3.png)
