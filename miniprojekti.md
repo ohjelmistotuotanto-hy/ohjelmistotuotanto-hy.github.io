@@ -11,6 +11,7 @@ permalink: /miniprojekti/
 
 - Ilmoittautu miniprojektiin [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea)
 deadline ilmoittautumiselle perjantai 13.11. klo 23:59
+- Miniprojektit työskentelevät 100% etänä
 
 ### Johdanto
 
