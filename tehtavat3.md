@@ -7,6 +7,8 @@ permalink: /tehtavat3/
 
 ## Viikko 3
 
+**HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
+
 *Alla olevien tehtävien deadline on maanantaina 16.11. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:

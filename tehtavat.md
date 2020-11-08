@@ -7,6 +7,8 @@ permalink: /tehtavat/
 
 ## Tehtävät
 
+**HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
+
 Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä on _kahden tyyppisiä_ 
 - luennoilla ja kurssimateriaalissa läpikäytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, joiden deadline on sunnuntaina klo 23:59:00
 - toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_
