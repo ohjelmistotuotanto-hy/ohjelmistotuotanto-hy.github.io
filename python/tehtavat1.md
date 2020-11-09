@@ -74,8 +74,8 @@ Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.co
 
 Luo githubiin repositorio nimellä ohtu-2020-viikko1
 
-- klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
-- **laita rasti** kohtaan Initialize this repository with a README
+- Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
+- **Laita rasti** kohtaan Initialize this repository with a README
 
 ![]({{ "/images/lh1-1.png" | absolute_url }})
 
@@ -113,7 +113,7 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
 
 ```bash
-    git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
+git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
 ```
 
 missä komennon `git clone`parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
@@ -219,7 +219,6 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
 <!-- TODO: zip linkki -->
-
 - Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
 - Pura paketti sopivaan paikkaan
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
@@ -267,7 +266,7 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 - Tarkastele juurihakemistossa olevan _poetry.lock_-tiedoston sisältöä
   - Tiedoston sisällön ei ole tarkoitus olla ihmisluettava, _eikä sitä pitäisikään missään nimessä muokata_. Tiedoston on täysin Poetryn ylläpitämä. Poetry tallentaa tiedostoon projektiin asennettujen riippuvuuksien versiot, jotta jokaisen asennuksen yhteydessä riippuvuuksista voidaan asentaa juuri oikeat versiot
 
-Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten VS Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/tree/master/materiaali/poetry.md).
+Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/tree/master/materiaali/poetry.md).
 
 **Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa `python3 -m poetry <komento>`, mutta jos olet asentanut Poetryn globaalisti, voit antaa komennot muodossa `poetry <komento>`.
 
@@ -380,7 +379,7 @@ Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repo
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
-Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. VS Code -editorilla se näyttää seuraavalta:
+Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
 ![]({{ "/images/lh1-22.png" | absolute_url }})
 

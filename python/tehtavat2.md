@@ -32,13 +32,7 @@ Tehtävät 2 ja 3 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. Gradlen perusteita
-
-<!-- TODO -->
-
-Olemme jo käyttäneet gradlea hyvällä menestyksellä viikon ajan. Tutustutaan nyt gradleen hieman tarkemmin tekemällä [täällä](/gradle) oleva interaktiivinen "tutoriaali".
-
-### 2. Pylint ja koodin staattinen analyysi
+### 1. Pylint ja koodin staattinen analyysi
 
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
@@ -77,7 +71,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
 Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana pylintin suosittelemaa konfiguraatiota. Suoitellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
 
-### 3. Koodin staattinen analyysi ja GitHub Actionit
+### 2. Koodin staattinen analyysi ja GitHub Actionit
 
 Laajenna projektisi GitHub Actionien määritelmää siten, että myös pylint-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin.
 
@@ -89,7 +83,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ![]({{ "/images/lh2-12.png" | absolute_url }})
 
-### 4. Git: branchit [versionhallinta]
+### 3. Git: branchit [versionhallinta]
 
 lue brancheja käsittelevät osuudet seuraavasta <http://www.ralfebert.de/tutorials/git/>
 
@@ -118,7 +112,7 @@ Tee seuraavat paikalliseen git-repositorioosi (kyseessä ei siis tarvitse olla t
 - Mergeä branchin **eka** sisältö **masteriin**
 - Katso jälleen miltä näyttää `gitk --all`-komennolla
 
-### 5. Git: branchit ja staging-alue [versionhallinta]
+### 4. Git: branchit ja staging-alue [versionhallinta]
 
 - Olet nyt repositoriosi master-haarassa
 - Luo uusi tiedosto _uusi_tiedosto.txt_, **älä** kuitenkaan lisää ja commitoi tiedostoa
@@ -170,7 +164,7 @@ nothing to commit, working tree clean
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
-### 6. Git: konflikti! [versionhallinta]
+### 5. Git: konflikti! [versionhallinta]
 
 Tee paikalliseen git-repoon seuraavat
 
@@ -203,7 +197,7 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 ![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/main/images/lh2-4a.png)
 
-### 7. Git: branchit ja GitHub [versionhallinta]
+### 6. Git: branchit ja GitHub [versionhallinta]
 
 Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
 
@@ -291,7 +285,7 @@ Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Art
 
 Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
-### 8. Git: epäajantasaisen kopion pushaaminen [versionhallinta]
+### 7. Git: epäajantasaisen kopion pushaaminen [versionhallinta]
 
 Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen githubissa olevaan etärepositorioon epäonnistuu.
 
@@ -318,7 +312,7 @@ Virheen syynä on se, että githubissa oleva **master**-haara oli edellä paikal
 - Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
 
-### 9. Riippuvuuksien injektointi osa 3: Verkkokauppa
+### 8. Riippuvuuksien injektointi osa 3: Verkkokauppa
 
 Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä yksikkötestauksen helpottamiseen.
 
@@ -358,7 +352,7 @@ kauppa = Kauppa(
 - Asenna projektin riippuvuudet komennolla `python3 -m poetry install`
 - Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla `python3 src/index.py`
 
-### 10. Riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
+### 9. Riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
 
 - Singleton-suunnittelumallia pidetään [osittain ongelmallisena](http://rcardin.github.io/design/programming/2015/07/03/the-good-the-bad-and-the-singleton.html), poistammekin edellisestä tehtävästä singletonit
 - **Poista** kaikista luokista `get_instance`-metodit ja staattinen `__instanssi`-muuttuja
@@ -406,7 +400,7 @@ def generoi_viite():
     return seuraava
 ```
 
-### 11. Riippuvuuksien injektointi osa 5: Verkkokauppa siistiksi
+### 10. Riippuvuuksien injektointi osa 5: Verkkokauppa siistiksi
 
 Edellisen tehtävän päätteeksi huomasimme, että `Kauppa`-luokan olion alustaminen vaatii melko paljon toimenpiteitä:
 
@@ -418,7 +412,7 @@ pankki = Pankki(kirjanpito)
 kauppa = Kauppa(varasto, pankki, viitegeneraattori)
 ```
 
-Korjataan tilanne antamalla riippuvuuksille oletusarvot. 
+Korjataan tilanne antamalla riippuvuuksille oletusarvot.
 
 **Tee seuraavat toimenpiteet:**
 
@@ -430,7 +424,7 @@ Korjataan tilanne antamalla riippuvuuksille oletusarvot.
 from kirjanpito import kirjanpito as default_kirjanpito
 
 class Varasto:
-    def __init__(self, kirjanpito = default_kirjanpito):
+    def __init__(self, kirjanpito=default_kirjanpito):
             self.kirjanpito = kirjanpito
             # ...
 
@@ -452,7 +446,7 @@ Huomaa, että luokalle voi silti halutessaan määritellä riippuvuudet argument
 class PankkiStub:
     # ...
 
-kauppa = Kauppa(pankki = PankkiStub())
+kauppa = Kauppa(pankki=PankkiStub())
 ```
 
 ### Tehtävien palautus

@@ -115,182 +115,97 @@ Rasmus Ristolainen  BUF   0 +  5 =  5
 
 Vinkki: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
 
-### 3. lisää gradlea: jar joka sisältää kaikki riippuvuudet
+### 3. Tutustuminen Robot Frameworkkiin
 
-- tehdään äskeisen tehtävän projektista jar-tiedosto komennolla <code>gradle jar</code>
-- suoritetaan ohjelma komennolla <code>java -jar build/libs/nhlreader.jar</code>
-- mutta ohjelma ei toimikaan, tulostuu:
+Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
 
-```bash
-$  java -jar build/libs/nhlreader.jar
-Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/http/client/fluent/Request
-	at ohtu.Main.main(Main.java:16)
-Caused by: java.lang.ClassNotFoundException: org.apache.http.client.fluent.Request
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 1 more
+### 4. Kirjautumisen testit
+
+Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/login-robot_ oleva projekti.
+
+Tutustu ohjelman rakenteeseen. Huomaa, että ohjelman `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
+
+Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita suunnittelumalleja, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
+
+Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien kautta, kuten `find_all`, `create` ja `delete`. Tämän abstraktion avulla sovelluslogiikka ei ole tietoiden operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
+
+Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi SQLite-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
+
+Asenna projektin riippuvuudet ja kokeile suorittaa `index.py`-tiedosto. Ohjelman tuntemat komennot ovat _login_ ja _new_. Suorita myös projektiin siihen liittyvät Robot Framework -testit virtuaaliympäristössä komennolla `robot src/tests`.
+
+Tutki miten Robot Framework -testit on toteutettu hakemistossa _src/tests_. Tutki myös, miten avainsanat on määritelty _src_-hakemiston _AppLibrary.py_-tiedoston `AppLibrary`-luokassa. Huomioi erityisesti, miten testit käyttävät testaamisen mahdollistavaa `StubIO`-oliota käyttäjän syötteen ja ohjelman tulosteen käsittelyyn. Periaate on täsmälleen sama kuin viikon 1 tehtävien [riippuvuuksien injektointiin](/riippuvuuksien_injektointi/) liittyvässä esimerkissä.
+
+Saatat löytää _.robot_-tiedostoista ennestään tuntemattomia ominaisuuksi. _resource.robot_-tiedossa on määritelty avainsana `Input Credentials`, jolla on argumentit `username` ja `password`:
+
+```
+Input Credentials
+    [Arguments]  ${username}  ${password}
+    Input  ${username}
+    Input  ${password}
+    Run Application
 ```
 
-Mistä on kyse? Ohjelman riippuvuuksia eli projekteja Apache HttpClientin ja gson vastaavat jar-tiedostot eivät ole käytettävissä, joten ohjelma ei toimi.
+Kyseinen avainsana on käytössä _login.robot_-tiedostossa seuraavasti:
 
-Saamme generoitua ohjelmasta jar-tiedoston, joka sisältää myös kaikki riippuvuudet gradlen [shadow](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)-pluginin avulla.
-
-Ota plugin käyttöön lisäämällä seuraava tiedoston _build.gradle_ alkuun:
-
-```java
-plugins {
-  id 'com.github.johnrengelman.shadow' version '5.1.0'
-}
+```
+Input Credentials  kalle  kalle123
 ```
 
-**HUOM:** pluginin määrittely on lisättävä tiedoston _build.gradle_ alkuun, muuten koko konfiguraatio hajoaa.
+Lisäksi _login.robot_-tiedoston `*** Settings ***`-osiossa on uusi asetus, `Test Setup`. Kyseisen asetuksen avulla voimme määritellä avainsanan, joka suoritetaan ennen jokaista testitapausta. Tässä tapauksessa ennen jokaista testiä halutaan suorittaa avainsana `Create User And Input Login Command`, joka luo uuden käyttäjän ja antaa sovellukselle _login_-komennon.
 
-Tutki komennon _gradle tasks_ avulla, miten saat muodostettua riippuvuudet sisältävän jarrin.
+Toteuta user storylle _User can log in with valid username/password-combination_ seuraavat testitapaukset _login.robot_-tiedostoon:
 
-Generoi jar ja varmista, että ohjelma toimii komennolla <code>java -jar shadowilla_tehty_jar.jar</code>
+```
+*** Test Cases ***
+Login With Incorrect Password
+# ...
 
-### 4. Tutustuminen cucumberiin
+Login With Nonexistent Username
+# ...
+```
 
-Lue [täällä](/cucumber/) oleva Cucumber-johdanto ja tee siihen liittyvät tehtävät.
+Suorita testitapauksissa sopivat avainsanat, jotta haluttu tapaus tulee testattua.
 
-### 5. Kirjautumisen testit
+### 5. Uuden käyttäjän rekisteröitymisen testit
 
-Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/LoginCucumber_ oleva projekti.
+Lisää testihakemistoon uusi testitiedosto _register.robot_. Toteuta tiedostoon user storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset:
 
-Tutustu ohjelman rakenteeseen. Piirrä ohjelman rakenteesta UML-kaavio.
+```
+*** Test Cases ***
+Register With Valid Username And Password
+# ...
 
-Huomaa, että ohjelman _AuthenticationService_-olio ei talleta suoraan User-oliota vaan epäsuorasti _UserDAO_-rajapinnan kautta. Mistä on kysymys?
+Register With Already Taken Username And Valid Password
+# ...
 
-> DAO eli Data Access Object on yleisesti käytetty suunnittelumalli jonka avulla abstrahoidaan sovellukselta se, miten oliot on talletettu, ks. esim. <https://www.oracle.com/technetwork/java/dataaccessobject-138824.html>
->
-> Ideana on, että sovellus "hakee" ja "tallettaa" User-oliot aina UserDAO-rajapinnan metodeja käyttäen. Sovellukselle on injektoitu konkreettinen toteutus, joka tallettaa oliot esim. tietokantaan tai tiedostoon. Se minne ja miten talletus tapahtuu on kuitenkin läpinäkyvää sovelluksen muiden osien kannalta.
->
-> Ohjelmaamme on määritelty testauskäyttöön sopiva InMemoryUserDao, joka tallettaa User-oliot ainoastaan muistiin. Muu ohjelma säilyisi täysin muuttumattomana jos määriteltäisiin esim. SqliteUserDao, joka hoitaa talletuksen tietokantaan ja injektoitaisiin tämä sovellukselle.
+Register With Too Short Username And Valid Password
+# ...
 
-Kokeile ohjelman suorittamista (ohjelman tuntemat komennot ovat _login_ ja _new_) ja suorita siihen liittyvät testit.
+Register With Valid Username And Too Short Password
+# ...
 
-_Muistutus_: saat suoritettua ohjelman ilman gradlen välitulostuksia komennolla _gradle run --console=plain_
+Register With Valid Username And Long Enough Password Containing Only Letters
+# ...
+```
 
-Tutki miten testien stepit on määritelty suoritettavaksi tiedostossa _src/test/java/ohtu/StepDefs.java_
-Huomioi erityisesti, miten testit käyttävät testaamisen mahdollistavaa stub-olioa käyttäjän syötteen ja ohjelman tulosteen käsittelyyn. Periaate on täsmälleen sama kuin viikon 1 tehtävien [riippuvuuksien injektointiin](/riippuvuuksien_injektointi/) liittyvässä esimerkissä.
+- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja [^[a-z]+\$](https://regexr.com/5fslc)
+- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja [[^a-z]](https://regexr.com/5fsll)
 
-Lisää user storylle _User can log in with valid username/password-combination_ seuraavat skenaariot ja määrittele niihin sopivat _When_ ja _Then_ -stepit:
+Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on luokan <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
-<pre>
-Scenario: user can not login with incorrect password
-    Given command login is selected
-    When  ...
-    Then  ...
+**HUOM 1:** Testitapaukset kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan tiedostoon, vaan etene pienin askelin. Jos yksi testitapaus ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
 
-Scenario: nonexistent user can not login to 
-    Given command login is selected
-    When  ...
-    Then  ...
-</pre>
+**\*HUOM 2:** Saattaa olla hyödyllistä toteuttaa _resource.robot_-tiedostoon avainsana `Input New Command` ja _register.robot_-tiedostoon avainsana `Input New Command And Create User`, joka antaa sovellukselle _new_-komennon ja luo käyttäjän testejä varten. Avainsana kannattaa suorittaa ennen jokaista testitapausta hyödyntämällä `Test Setup`-asetusta.
 
-Tee stepeistä suoritettavat ja varmista että testit menevät läpi.
+### Robot Framework -testien debuggaaminen
 
-### 6. Uuden käyttäjän rekisteröitymisen testit
-
-Tee user storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat skenaariot ja niille sopivat stepit:
-
-<pre>
-Feature: A new user account can be created if a proper unused username and password are given
-
-    Scenario: creation is successful with valid username and password
-        Given command new is selected
-        When  ...
-        Then  ...
-    
-    Scenario: creation fails with already taken username and valid password
-        Given command new is selected
-        When  ...
-        Then  ...
-
-    Scenario: creation fails with too short username and valid password
-        Given command new is selected
-        When  ...
-        Then  ...
-
-    Scenario: creation fails with valid username and too short password
-        Given command new is selected
-        When  ...
-        Then  ...
-
-    Scenario: creation fails with valid username and password long enough but consisting of only letters
-        Given command new is selected
-        When  ...
-        Then  ...
-
-    Scenario: can login with successfully generated account
-        Given user "eero" with password "salainen1" is created
-        And   command login is selected
-        When  ...
-        Then  ...  
-</pre>
-
-- käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-- salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista ([vihje](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html))
-
-Tee stepeistä suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on luokan _AuthenticationService_ metodi _invalid_
-
-**HUOM** skenaarioita kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan _feature_-tiedostoon, vaan etene pienin askelin. Jos yksi skenaario ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
-
-### Cucumber-testien debuggaaminen
+<!-- TODO -->
 
 On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia.
 
 #### Suoritettavien testien lukumäärän rajoittaminen
 
-Jos näin käy, kannattaa ongelmaa selvitellessä suorittaa ainoastaan yhtä testiä kerrallaan. Tämä onnistuu merkkaamalla ongelmallinen testi _tagilla_, eli _@_-merkillä alkavalla merkkijonolla. Seuraavassa on merkattu eräs testiskenaario tagilla _@problem_:
-
-<pre>
-Feature: User can log in with valid username/password-combination
-
-    // ...
-
-    @problem
-    Scenario: user can not login with incorrect password
-        Given command login is selected
-        When  username "pekka" and password "wrong" are entered
-        Then  system will respond with "wrong username or password"
-
-    // ...
-</pre>
-
-Määrittelemällä luokkaan _RunCucumberTest_ annotaatiolle _@CucumberOptions_ parametri _tags_, on mahdollista säädellä mitä testejä Cucumber suorittaa:
-
-```java
-@RunWith(Cucumber.class)
-@CucumberOptions(
-    plugin = "pretty",
-    features = "src/test/resources/ohtu",
-    snippets = SnippetType.CAMELCASE,
-    tags = { "@problem" }
-)
-
-public class RunCucumberTest {}
-```
-
-Näin määriteltynä tulee suoritetuksi ainoastaan tagilla _@problem_ merkitty testi.
-
-Sama tagi on mahdollista liittää myös useampaan skenaarioon, tai suoraan featureen, jolloin jokainen featureen liittyvä story tulee tagatyksi.
-
-#### println-debuggaus
-
-Myös vanha kunnon println-debuggaus toimii Cucumberin yhteydessä. Voit lisäillä println-komentoja testattavassa tai testikoodissa koodissa:
-
-```java
-@Then("system will respond with {string}")
-public void systemWillRespondWith(String expectedOutput) {
-    System.out.println("ohjelma tulosti seuraavat rivit "+io.getPrints());
-    assertTrue(io.getPrints().contains(expectedOutput));
-}
-```
-
-### 7. WebLogin
+### 6. WebLogin
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/WebLogin_ oleva projekti.
 
@@ -361,7 +276,7 @@ Koodi käyttää metodikutsulla <code>authenticationService()</code> saamaansa <
 
 Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla konsolissa ctrl+c tai ctrl+d.
 
-### 8. Selenium, eli web-selaimen simulointi ohjelmakoodista
+### 7. Selenium, eli web-selaimen simulointi ohjelmakoodista
 
 Jatketaan saman sovelluksen parissa.
 
@@ -428,11 +343,11 @@ Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_, joka hidastaa selai
 - uuden käyttäjätunnuksen luominen
 - uuden käyttäjätunnuksen luomisen jälkeen tapahtuva ulkoskirjautuminen sovelluksesta
 
-**HUOM1:** voit tehdä skenaariot yksi kerrallaan, kaiken main-metodiin, siten että laitat esim. kommentteihin muiden skenaarioiden koodin kun suoritat yhtä skernaariota
+**HUOM 1:** voit tehdä skenaariot yksi kerrallaan, kaiken main-metodiin, siten että laitat esim. kommentteihin muiden skenaarioiden koodin kun suoritat yhtä skernaariota
 
-**HUOM2:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
+**HUOM 2:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
 
-**HUOM3:**
+**HUOM 3:**
 
 Uuden käyttäjän luomisen kokeilua hankaloittaa se, että käyttäjänimen on oltava uniikki. Kannattanee generoida koodissa satunnaisia käyttäjänimiä esim. seuraavasti:
 
@@ -479,7 +394,7 @@ public class Tester {
 
 Lisää asiasta esimerkiksi [täällä](https://stackoverflow.com/questions/12967541/how-to-avoid-staleelementreferenceexception-in-selenium).
 
-### 9. Web-sovelluksen testaaminen: Cucumber+Selenium
+### 8. Web-sovelluksen testaaminen: Cucumber+Selenium
 
 Tehdään nyt sovellukselle hyväksymätestejä [Cucumberilla](/cucumber/).
 
@@ -651,7 +566,7 @@ ohtu.RunCucumberTest STANDARD_ERROR
     SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 </pre>
 
-### 10. Web-sovelluksen testaaminen osa 2
+### 9. Web-sovelluksen testaaminen osa 2
 
 **HUOM:** saat testien suorituksen huomattavasti nopeammaksi käyttämällä ChromeDriverin sijaan [HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver):iä joka ns. headless- eli käyttöliittymätön selain.
 
@@ -690,7 +605,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 
 **Laajenna koodiasi siten, että testit menevät läpi.**
 
-### 11. Web-sovelluksen testaaminen osa 3
+### 10. Web-sovelluksen testaaminen osa 3
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat skenaariot ja niille sopivat stepit:
 
