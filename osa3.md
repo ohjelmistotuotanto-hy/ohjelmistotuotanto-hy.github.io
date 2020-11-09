@@ -464,7 +464,7 @@ Palvelun vaatimuksen määrittelevät user storyt
 - _a new user account can be created if a proper unused username and a proper password are given_
 - _user can log in with a valid username/password-combination_
 
-Cucumberissa jokaisesta user storysta kirjoitetaan oma _.feature_-päätteinen tiedosto, joka sisältää storyn nimen ja joukon storyyn liittyvä hyväksymiskriteereitä ,joita Cucumber kutsuu _skenaarioiksi_. Storyn hyväksymiskriteerit eli skenaariot kirjoitetaan [Gherkin](https://cucumber.io/docs/gherkin/reference/)-kielellä, seuraavassa muodossa
+Cucumberissa jokaisesta user storysta kirjoitetaan oma _.feature_-päätteinen tiedosto, joka sisältää storyn nimen ja joukon storyyn liittyvä hyväksymiskriteereitä, joita Cucumber kutsuu _skenaarioiksi_. Storyn hyväksymiskriteerit eli skenaariot kirjoitetaan [Gherkin](https://cucumber.io/docs/gherkin/reference/)-kielellä, seuraavassa muodossa
 
 _Given [initial context], when [event occurs], then [ensure some outcomes]_
 
@@ -531,13 +531,11 @@ Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan in
 
 Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat hyväksymistestit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
 
-Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. kuormituksen kestoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
+Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. suuren kuormituksen sietoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
 
-Ensimmäisen viikon laskareissa käytetty [CircleCI](https://circleci.com) on yksi monista SaaS-palveluna eli internetissä toimivista CI-ratkaisuista, toinen suosittu vaihtoehto on [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
+Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä kovimmassa nosteessa oleva SaaS-palveluna eli pilvessä toimiva CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaithtoehtoja ovat  [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
 
-Circlea ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin, kuten Circleen.
-
-GitHub kertoi loppukesästä julkaisevansa 15.11.2019 [actions](https://www.youtube.com/watch?v=E1OunoCyuhY)-toiminnallisuuden, jonka avulla myös jatkuva integraatio voidaan suorittaa suoraan GitHubissa, käyttämättä erillistä palvelua. Tämä on erittäin kiinnostava uutinen, harmi että julkistus tapahtuu tämän kurssin kannalta hieman liian myöhään. Ennakkotiedot ovat kuitenkin olleet sen suuntaisia, että ainakaan ihan lähiaikoina GitHubin actionit eivät ole toiminnallisuudeltaan riittävän joustavia moneen tosielämän jatkuvan integraation tarpeeseen. 
+GitHub Actionsia, CirclCI:tä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin.
 
 ### Jatkuvan integraation määritelmä
 
@@ -553,10 +551,10 @@ Staging-palvelin on ympäristö, joka on konfiguraatioidensa sekä myös sovellu
 
 Hyväksymistestauksen jälkeen uusi versio voidaan siirtää tuotantopalvelimelle, eli loppukäyttäjien käyttöön. Parhaassa tapauksessa myös staging-ympäristössä tehtävien hyväksymistestien suoritus on automatisoitu, ja ohjelmisto kulkee koko _deployment pipelinen_ läpi, eli sovelluskehittäjän koneelta CI-palvelimelle, sieltä staging-ympäristöön ja lopulta tuotantoon, automaattisesti.
 
-Termillä _deployment pipeline_ tarkoitetaan niitä ohjelman käännöksen ja testauksen vaiheita, joiden läpikäymistä edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön loppukäyttäjien käyttöön.
+Termillä _deployment pipeline_ tarkoitetaan niitä ohjelman käännöksen, testauksen ja muun laadunhallinnan vaiheita, joiden läpikäymistä edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön loppukäyttäjien käyttöön.
 
 Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteellisen "liukuhihnan" läpi
-- CI-palvelin suorittaa commitille joukon testejä
+- CI-palvelin suorittaa commitille joukon testejä ja mahdollisesti staattista analyysiä
 - seuraavassa vaiheessa commitin aikaansaama sovelluksen uusi versio siirtyy staging-ympäristöön
 - staging-ympäristössä sovelluksen uudelle versiolle suoritetaan lisää testejä
 - lopulta commit siirtyy tuotantoympäristöön
@@ -567,17 +565,19 @@ Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versio
 
 On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta "nappia painamalla", puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery). 
 
-Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä.
+Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä. Suomessa tätä käytäntöä harjoittaa mm. monia TKT:n opiskelijoitakin työllistävä [Smartly](https://www.smartly.io/).
 
 ## Tutkiva testaaminen
  
 Jotta järjestelmä saadaan niin virheettömäksi, että se voidaan laittaa tuotantoon, on testaus suoritettava erittäin perusteellisesti. Perinteinen tapa järjestelmätestauksen suorittamiseen on perustunut ennen testausta laadittuun perinpohjaiseen testaussuunnitelmaan. Jokaisesta testistä on kirjattu testisyötteet ja odotettu tulos. Testauksen tuloksen kontrolloiminen on suoritettu vertaamalla järjestelmän toimintaa testitapaukseen kirjattuun odotettuun tulokseen.
 
-Automatisoitujen hyväksymistestien luonne on täsmälleen samanlainen, jokaisen testin syötteet sekä odotetut tulokset ovat tarkkaan etukäteen kiinnitettyjä. Jos testaus tapahtuu pelkästään etukäteen mietittyjen testien avulla, ovat ne kuinka tahansa tarkkaan harkittuja, ei kaikkia yllättäviä tilanteita osata ennakoida. Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta. Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu kutsumaan nimellä _tutkiva testaaminen_ (engl. exploratory testing).
+Automatisoitujen hyväksymistestien luonne on täsmälleen samanlainen, jokaisen testin syötteet sekä odotetut tulokset ovat tarkkaan etukäteen kiinnitettyjä. Jos testaus tapahtuu pelkästään etukäteen mietittyjen testien avulla, ovat ne kuinka tahansa tarkkaan harkittuja, ei kaikkia yllättäviä tilanteita osata ennakoida. 
+
+Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta. Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu kutsumaan nimellä _tutkiva testaaminen_ (engl. exploratory testing).
  
 Käsitteen kehittäjä [Cam Kaner](http://www.satisfice.com/articles/what_is_et.shtml) määrittelee termin seuraavasti
 
-_exploratory testing is simultaneous learning, test design and test execution_
+> _exploratory testing is simultaneous learning, test design and test execution_
 
 Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmassa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sensijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien ja kokeilujen perusteella löytämään järjestelmästä virheitä.
 
