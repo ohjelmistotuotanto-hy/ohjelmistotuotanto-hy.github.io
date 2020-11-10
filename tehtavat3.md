@@ -192,6 +192,16 @@ Tutki komennon _gradle tasks_ avulla, miten saat muodostettua riippuvuudet sisä
 
 Generoi jar ja varmista, että ohjelma toimii komennolla <code>java -jar shadowilla_tehty_jar.jar</code>
 
+**HUOM**: Tässä tehtävässä on pakko käyttää seuraavaa vanhaa tapaa _mainClassin_ määrittelyyn tiedostosssa _build.gradle_ 
+
+
+```
+mainClassName = 'ohtu.Main'
+```
+
+sillä shadowJar-plugin ei osaa uudempaa syntaksia. Jos latasit koodin ennen keskiviikkoa 12.11. saattaa tehtäväpohjassasi olla vanha määrittelytapa käytössä.
+
+
 ### 4. Tutustuminen cucumberiin
 
 Lue [täällä](/cucumber/) oleva Cucumber-johdanto ja tee siihen liittyvät tehtävät.
