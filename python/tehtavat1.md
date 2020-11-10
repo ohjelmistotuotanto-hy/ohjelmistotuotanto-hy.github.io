@@ -16,7 +16,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1), joiden deadline on sunnuntaina 1.11. klo 23:59:00.
 
-Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
+Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
@@ -30,7 +30,7 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Tehtävää 1 ei varsinaisesti palauteta minnekään.
 
-### 1. komentorivi
+### 1. Komentorivi
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa.
 
@@ -68,7 +68,7 @@ Tulet tarvitsemaan komentorivin käyttötaitoja tällä kurssilla ja muutenkin o
 
 Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaat yllä luetellut asiat.
 
-### 2. Githubiin [versionhallinta]
+### 2. GitHubiin [versionhallinta]
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
@@ -268,17 +268,17 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 
 Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/tree/master/materiaali/poetry.md).
 
-**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa `python3 -m poetry <komento>`, mutta jos olet asentanut Poetryn globaalisti, voit antaa komennot muodossa `poetry <komento>`.
+**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa `poetry <komento>`, mutta jos olet asentanut Poetryn globaalisti, voit antaa komennot muodossa `poetry <komento>`.
 
-- Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `python3 -m poetry install`
-- Käynnistä sovellus komennolla `python3 -m poetry run python3 src/index.py`
+- Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
+- Käynnistä sovellus komennolla `poetry run python3 src/index.py`
   - [Run](https://python-poetry.org/docs/cli/#run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
-- Siirry virtuaaliympäristöön komennolla `python3 -m poetry shell`
+- Siirry virtuaaliympäristöön komennolla `poetry shell`
 - Suorita komento `python3 src/index.py`
   - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
   - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
 - Lähde virtuaaliympäristöstä komennolla `exit`
-- Suorita testit komennolla `python3 -m poetry run pytest`
+- Suorita testit komennolla `poetry run pytest`
   - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
 ### 8. Unittest
@@ -289,7 +289,7 @@ Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](http
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
-Muista, että testit voi suorittaa komennolla `python3 -m poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `python3 -m poetry shell` ja suorittamalla sen jälkeen komennon `pytest`.
+Muista, että testit voi suorittaa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla sen jälkeen komennon `pytest`.
 
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
@@ -298,7 +298,7 @@ Muista, että testit voi suorittaa komennolla `python3 -m poetry run pytest` tai
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
-python3 -m poetry add coverage --dev
+poetry add coverage --dev
 ```
 
 - Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
@@ -308,7 +308,7 @@ python3 -m poetry add coverage --dev
 source = src
 ```
 
-- Siirry virtuaaliympäristöön komennolla `python3 -m poetry shell`
+- Siirry virtuaaliympäristöön komennolla `poetry shell`
   - Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
   - Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
 - Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa _htmlcov_ hakemiston _index.html_-tiedoston
@@ -636,13 +636,13 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
   - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
-Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `python3 -m poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`.
+Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`.
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
 - Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
-  - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `python3 -m poetry install`
+  - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
   - `Statistics` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   - `Player` on luokka, jonka olioina `Statistics`-luokka käsittelee yksittäisen pelaajan tietoja

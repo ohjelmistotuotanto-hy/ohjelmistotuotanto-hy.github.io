@@ -16,7 +16,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3), joiden deadline on sunnuntaina 17.11. klo 23:59:00.
 
-Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi, sekä miten riippuvuuksia sisältävästä koodista saadaan generoitua jar-paketti. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Cucumberin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen.
+Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -37,6 +37,8 @@ Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta kuluvan kaud
 Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://nhlstatisticsforohtu.herokuapp.com/players>
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli _riippuvuutta_. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
+
+<!-- TODO: linkki -->
 
 Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeista](/gradle#riippuvuudet), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
@@ -195,7 +197,7 @@ Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit m
 
 **HUOM 1:** Testitapaukset kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan tiedostoon, vaan etene pienin askelin. Jos yksi testitapaus ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
 
-**\*HUOM 2:** Saattaa olla hyödyllistä toteuttaa _resource.robot_-tiedostoon avainsana `Input New Command` ja _register.robot_-tiedostoon avainsana `Input New Command And Create User`, joka antaa sovellukselle _new_-komennon ja luo käyttäjän testejä varten. Avainsana kannattaa suorittaa ennen jokaista testitapausta hyödyntämällä `Test Setup`-asetusta.
+**HUOM 2:** Saattaa olla hyödyllistä toteuttaa _resource.robot_-tiedostoon avainsana `Input New Command` ja _register.robot_-tiedostoon avainsana `Input New Command And Create User`, joka antaa sovellukselle _new_-komennon ja luo käyttäjän testejä varten. Avainsana kannattaa suorittaa ennen jokaista testitapausta hyödyntämällä `Test Setup`-asetusta.
 
 ### Robot Framework -testien debuggaaminen
 
@@ -207,424 +209,297 @@ On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvit
 
 ### 6. WebLogin
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/WebLogin_ oleva projekti.
+Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/web-login-robot_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
 
-Sovellus on toteutettu [Spark](http://sparkjava.com)-nimisellä minimalistisella Web-sovelluskehyksellä. Spark on osalle kenties tuttu kurssilta [Tietokantojen perusteet](https://tietokantojen-perusteet.github.io).
-
-**Hae projekti ja käynnistä se komennolla** <code>gradle run</code>
-
-Pääset käyttämään sovellusta avaamalla selaimella osoitteen <http://localhost:4567>
+Hae projekti, asenna sen riippuvuudet komennollla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
 
 ![]({{ "/images/lh3-2.png" | absolute_url }}){:height="200px" }
 
-Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 4567.
+Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5000.
 
-Sovelluksen rakenne on suunnilleen sama kuin tehtävien 4-6 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemät HTTP-pyynnöt. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
+Sovelluksen rakenne on suunnilleen sama kuin tehtävien 4-5 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemät HTTP-pyynnöt. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
 
-Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:4567> tulevat pyynnöt käsittelee mainista seuraava koodinpätkä:
+Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5000> tulevat pyynnöt käsittelee mainista seuraava koodinpätkä:
 
-```java
-get("/", (request, response) -> {
-  HashMap<String, String> model = new HashMap<>();
-  model.put("template", "templates/index.html");
-  return new ModelAndView(model, LAYOUT);
-}, new VelocityTemplateEngine());
+```python
+@app.route("/")
+def render_home():
+    return render_template("index.html")
 ```
 
-Koodi muodostaa luokan _VelocityTemplateEngine_ avulla hakemistossa _templates/index.html_ olevan "templateen" perustuvan HTML-sivun, ja palauttaa sen käyttäjän selaimelle.
+Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _src/templates/index.html_-tiedostosta löytyvästä sivupohjasta HTML-muotoisen sivun ja palauttaa sen käyttäjän selaimelle.
 
-Sivun HTML-koodi on seuraava:
+Sivupohja näyttää seuraavalta:
 
-```java
-<h1>Ohtu App</h1>
+<!-- TODO: add template file without breaking jekyll build -->
 
-<ul>
-    <li><a href="login">login</a></li>
-    <li><a href="user">register new user</a></li>
-</ul>
-```
+Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
 
-Kaikki _get_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät templatet sijaitsevat hakemistossa _templates_) ja palauttavat sivun selaimelle.
+_POST_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esimerkiksi käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
 
-_post_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esimerkiksi käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
+```python
+@app.route("/login", methods=["POST"])
+def handle_login():
+    username = request.form.get("username")
+    password = request.form.get("password")
 
-```java
-post("/login", (request, response) -> {
-  HashMap<String, String> model = new HashMap<>();
-  String username = request.queryParams("username");
-  String password = request.queryParams("password");
-
-  if ( !authenticationService().logIn(username, password) ) {
-    model.put("error", "invalid username or password");
-    model.put("template", "templates/login.html");
-    return new ModelAndView(model, LAYOUT);
-  }
-
-  response.redirect("/ohtu");
-  return new ModelAndView(model, LAYOUT);
-}, new VelocityTemplateEngine());
+    try:
+        user_service.check_credentials(username, password)
+        return redirect_to_ohtu()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_login()
 ```
 
 Koodi pääsee käsiksi käyttäjän _lomakkeen_ avulla lähettämiin tietoihin _request_-olion kautta:
 
-```java
-String username = request.queryParams("username");
-String password = request.queryParams("password");
+```python
+username = request.form.get("username")
+password = request.form.get("password")
 ```
 
-Koodi käyttää metodikutsulla <code>authenticationService()</code> saamaansa <code>AuthenticationService</code>-oliota kirjautumisen onnistumisen varmistamiseen. Jos kirjautuminen ei onnistu, eli mennään _if_-haaraan, palataan kirjautumislomakkeelle. Lomakkeelle näytettäväksi liitetään virheilmoitus _invalid username or password_.
+Koodi tarkistaa käyttäjätunnuksen ja salasan oikeellisuuden kutsumalla `UserService`-luokan metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi nostaa virheen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
 
-Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla konsolissa ctrl+c tai ctrl+d.
+Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
-### 7. Selenium, eli web-selaimen simulointi ohjelmakoodista
+### 7. Web-sovelluksen testaaminen osa 1
 
 Jatketaan saman sovelluksen parissa.
 
-**Käynnistä websovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä.
+**Käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä.
 
-[Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Sovelluksen luokassa _ohtu.Tester.java_ on "toinen pääohjelma", jonka koodi on seuraava:
+[Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä onnistuu valmiin, [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
 
-```java
-public static void main(String[] args) {
-    WebDriver driver = new ChromeDriver();
+Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome-selainta. Ennen kuin siirrymme testien pariin, asenna Chrome-selaimen käyttöön vaadittava ajuri seuraamalla [tätä](./chromedriver_asennusohjeet) ohjetta.
 
-    driver.get("http://localhost:4567");
+Kun Chrome-ajuri on asennettu onnistuneesti, suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
-    WebElement element = driver.findElement(By.linkText("login"));
-    element.click();
+Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
 
-    element = driver.findElement(By.name("username"));
-    element.sendKeys("pekka");
-    element = driver.findElement(By.name("password"));
-    element.sendKeys("akkep");
-    element = driver.findElement(By.name("login"));
-    element.submit();
+```
+*** Settings ***
+Library  SeleniumLibrary
+Library  ../AppLibrary.py
 
-    driver.quit();
-}
+*** Variables ***
+${SERVER}  localhost:5000
+${BROWSER}  chrome
+${DELAY}  1 second
+${HOME URL}  http://${SERVER}
+${LOGIN URL}  http://${SERVER}/login
+${REGISTER URL}  http://${SERVER}/register
+
+*** Keywords ***
+Open And Configure Browser
+    Open Browser  browser=${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  ${DELAY}
+
+Login Page Should Be Open
+    Title Should Be  Login
+
+Main Page Should Be Open
+    Title Should Be  Ohtu Application main page
+
+Go To Login Page
+    Go To  ${LOGIN URL}
 ```
 
-Avaa toinen terminaali ja suorita siellä komento _gradle browse_, joka on konfiguroitu suorittamaan luokan _Tester_ metodin _main_ koodi.
+`*** Settings ***` osiossa on käytössä projektin oma `AppLibrary.py`-kirjasto sekä edellä mainittu SeleniumLibrary-kirjasto. SeleniumLibrary-kirjasto tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
 
-**HUOM:** osalla on ollut ongelmia Seleniumin kanssa. [Tänne](/selenium_troubleshooting/) on koottu joitain tapoja, miten ongelmia on saatu ratkaistua. Jos törmäät ongelmaan ja saat sen ratkaistua jollain em. dokumentissa mainitsemattomalla tavalla, lisää ohje dokumenttiin.
+Tiedostossa on myös ennestään tuntematon `*** Variables ***`-osio. Kuten osion nimi kertoo, voimme määritellä osion sisällä muuttujia, jotka ovat kaikkien avainsanojen käytössä. Huomaa, että osion alla määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
 
-Seuraa avautuvasta selaimesta mitä tapahtuu.
+`*** Keywords ***`-osiossa on määritelty yleiskäyttöisiä avainsanoja:
 
-Tester-ohjelmassa luodaan alussa selainta koodista käsin käyttävä olio _WebDriver driver_. Tämän jälkeen mennään selaimella osoitteeseen _localhost:4567_.
+- `Open And Configure Browser`-avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser)-avainsanaa antaen `browser`-argumentin arvoksi `BROWSER`-muuttujan arvon, joka on `headlesschrome`. Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed)-avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista
+- `Login Page Should Be Open`- ja `Main Page Should Be Open`-avainsanojen tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain)-avainsanaa
+- `Go To Login Page`-avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To)-avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN URL`-muuttujaan
 
-Kahden sekunnin odottelun jälkeen haetaan sivulta elementti, jossa on linkkiteksti _login_ ja linkkiä klikataan:
+Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto _src/tests/login.robot_. Tiedoston `*** Settings ***`-osio on seuraava:
 
-```java
-WebElement element = driver.findElement(By.linkText("login"));
-element.click();
+```
+*** Settings ***
+Resource  resource.robot
+Suite Setup  Open And Configure Browser
+Suite Teardown  Close Browser
+Test Setup  Create User And Go To Login Page
 ```
 
-Seuraavaksi etsitään sivulta elementti, jonka nimi on _username_, kyseessä on lomakkeen input-kenttä, ja ohjelma "kirjoittaa" kenttään metodia <code>sendKeys()</code> käyttäen nimen _"pekka"_
+Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- ja `Test Setup`-asetukset. Niiden merkitykset ovat seuraavat:
 
-```java
-element = driver.findElement(By.name("username"));
-element.sendKeys("pekka");
+- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston esimmäistä testitapausta (`Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta)
+- `Suite Teardown`-asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen (`Test Teardown` sen sijaan suoritetaan _jokaisen_ testitapauksen jälkeen)
+
+Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
+
+- `Login Should Succeed`-avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
+- `Login Should Fail With Message`-avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain)-avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
+- `Submit Credentials`-avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button)-avainsanaa
+- `Set Username`- ja `Set Password`-avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text)- ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password)-avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
+- `Create User And Go To Login Page`-avainsana luo sovellukseen käyttäjän ja avaa kirjautumis-sivun
+
+Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi `Click Button foo` löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
+
+```html
+<button id="foo">Click</button>
+<button name="foo">Click</button>
+<button>foo</button>
 ```
 
-Mistä tiedetään, miten lomakkeen elementti tulee etsiä, eli miksi sen nimi oli nyt _username_?
-Elementin nimi on määritelty tiedostossa _src/main/resources/templates/login.html_:
+Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu `Click Button Login` löytää siis seuraavan _src/templates/login.html_-tiedostossa määritellyn painikkeen:
 
-![]({{ "/images/lh3-3.png" | absolute_url }}){:height="250px" }
-
-Tämän jälkeen täytetään vielä salasanakenttä ja painetaan lomakkeessa olevaa nappia.
-
-Ohjelma siis simuloi selaimen käyttöskenaarion, jossa kirjaudutaan sovellukseen.
-
-Koodin seassa on kutsuttu sopivissa paikoin metodia _sleep_, joka hidastaa selainsimulaation etenemistä siten, että ihminenkin pystyy seuraamaan tapahtumia.
-
-**Muuta nyt koodia siten, että läpikäyt seuraavat skenaariot**
-
-- epäonnistunut kirjautuminen: oikea käyttäjätunnus, väärä salasana
-- uuden käyttäjätunnuksen luominen
-- uuden käyttäjätunnuksen luomisen jälkeen tapahtuva ulkoskirjautuminen sovelluksesta
-
-**HUOM 1:** voit tehdä skenaariot yksi kerrallaan, kaiken main-metodiin, siten että laitat esim. kommentteihin muiden skenaarioiden koodin kun suoritat yhtä skernaariota
-
-**HUOM 2:** salasanan varmistuskentän (confirm password) nimi on _passwordConfirmation_
-
-**HUOM 3:**
-
-Uuden käyttäjän luomisen kokeilua hankaloittaa se, että käyttäjänimen on oltava uniikki. Kannattanee generoida koodissa satunnaisia käyttäjänimiä esim. seuraavasti:
-
-```java
-Random r = new Random();
-
-element = driver.findElement(By.name("username"));
-element.sendKeys("arto"+r.nextInt(100000));
+```html
+<button>Login</button>
 ```
 
-**HUOM3:**
+Samalla tavoin kutsu `Input Text username kalle` löytää `id`-attribuutin avulla seuraavan `input`-elementin:
 
-Joskus linkin klikkaaminen Seleniumissa aiheuttaa poikkeuksen _StaleElementReferenceException_
+```html
+<input type="text" name="username" id="username" />
+```
 
-Käytännössä syynä on se, että Selenium yrittää klikata linkkiä "liian aikaisin". Ongelma on mahdollista kiertää klikkaamalla poikkeuksen tapahtuessa linkkiä uudelleen. Jos törmäät ongelmaan, voit ottaa koodiisi seuraavassa olevan apumetodin _clickLinkWithText_, joka suorittaa sopivan määrän uudelleenklikkauksia:
+**Toteuta seuraavaksi _login.robot_-tiedostoon seuraava testitapaus:**
 
-```java
-public class Tester {
+```
+Click Register Link
+```
 
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
+Testitapauksen tulee testata, että "Register"-linkin painaminen avaa rekisteröitymis-sivun. Vinkki: voit käyttää [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link)-avainsanaa.
 
-        driver.get("http://localhost:4567");
+### 8. Web-sovelluksen testaaminen osa 2
 
-        clickLinkWithText("register new user", driver);
+Jatketaan kirjautumiseen liittyvien hyväksymistestien toteuttamista. Katsotaan sitä ennen pikaisesti, miltä AppLibrary-kirjaston toteutus näyttää. Kirjaston mmärittelevä luokka `AppLibrary` löytyy tiedostosta _src/AppLibrary.py_, jonka sisältö on seuraava:
 
-        // ...
-    }
+```python
+import requests
 
 
-    private static void clickLinkWithText(String text, WebDriver driver) {
-        int trials = 0;
-        while( trials++<5 ) {
-            try{
-                WebElement element = driver.findElement(By.linkText(text));
-                element.click();
-                break;
-            } catch(Exception e) {
-                System.out.println(e.getStackTrace());
-            }
+class AppLibrary:
+    def __init__(self):
+        self._base_url = "http://localhost:5000"
+
+        self.reset_application()
+
+    def reset_application(self):
+        requests.post(f"{self._base_url}/tests/reset")
+
+    def create_user(self, username, password):
+        data = {
+            "username": username,
+            "password": password
         }
-    }
+
+        requests.post(f"{self._base_url}/register", data=data)
 ```
 
-Lisää asiasta esimerkiksi [täällä](https://stackoverflow.com/questions/12967541/how-to-avoid-staleelementreferenceexception-in-selenium).
+Kirjaston toteutus eroaa jonkin verran edellisestä, komentoriviä hyödyntävän projektin kirjaston toteutuksesta. Erona on, että tässä projektissa testit ja itse sovellus suoritetaan eri prosesseissa, joten testit eivät voi suoraan muuttaa sovelluksen tilaa. Voimme kuitenkin muutta sovelluksen tilaa HTTP-kutsujen avulla jo tutuksi tulleen requests-kirjaston avulla.
 
-### 8. Web-sovelluksen testaaminen: Cucumber+Selenium
+Metodi `reset_application` lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
 
-Tehdään nyt sovellukselle hyväksymätestejä [Cucumberilla](/cucumber/).
-
-Projektissa on valmiina User storystä _As a registered user can log in with valid username/password-combination_ kaksi eri _feature_-määrittelyä:
-
-- _logging_in.feature_ ja
-- _logging_in_antipattern.feature_
-
-Näistä ensimmäinen, eli _logging_in.feature_ on tehty "hyvien käytäntöjen" mukaan ja jälkimmäinen eli _logging_in_antipattern.feature_ on taas huonompi.
-
-Huonommassa versiossa skenaarioiden stepeistä on tehty monikäyttöisemmät. Sekä onnistuneet että epäonnistuneen skenaariot käyttävät samoja steppejä ja eroavat ainoastaan parametreiltaan:
-
-```gherkin
-Feature: As a registered user can log in with valid username/password-combination
-
-    Scenario: user can login with correct password
-        Given login is selected
-        When username "jukka" and password "akkuj" are given
-        Then system will respond "Ohtu Application main page"
-
-    Scenario: user can not login with incorrect password
-        Given login is selected
-        When username "jukka" and password "wrong" are given
-        Then system will respond "invalid username or password"
+```python
+@app.route("/tests/reset", methods=["POST"])
+def reset_tests():
+    user_repository.delete_all()
+    return "Reset"
 ```
 
-Paremmassa versiossa taas stepit ovat erilaiset, paremmin tilannetta kuvaavat:
+Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan.
 
-```gherkin
-Feature: As a registered user can log in with valid username/password-combination
+Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
 
-    Scenario: user can login with correct password
-        Given login is selected
-        When correct username "jukka" and password "akkuj" are given
-        Then user is logged in
+```python
+@app.route("/register", methods=["POST"])
+def handle_register():
+    username = request.form.get("username")
+    password = request.form.get("password")
 
-    Scenario: user can not login with incorrect password
-        Given login is selected
-        When correct username "jukka" and incorrect password "wrong" are given
-        Then user is not logged in and error message is given
+    try:
+        user_service.create_user(username, password)
+        return redirect_to_welcome()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_register()
 ```
 
-Tästä seurauksena on se, että stepit mappaavia metodeja tulee suurempi määrä. Metodit kannattaakin määritellä siten, että ne kutsuvat testejä varten määriteltyjä apumetodeita, jotta koodiin ei tule turhaa toistoa:
+**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus _login.robot_-tiedostoon:
 
-```java
-  @When("correct username {string} and password {string} are given")
-  public void correctUsernameAndPasswordAreGiven(String username, String password) {
-      logInWith(username, password);
-  }
-
-  @When("correct username {string} and incorrect password {string} are given")
-  public void correctUsernameAndIncorrectPasswordAreGiven(String username, String password) {
-      logInWith(username, password);
-  }
-
-private void logInWith(String username, String password) {
-    assertTrue(driver.getPageSource().contains("Give your credentials to login"));
-    WebElement element = driver.findElement(By.name("username"));
-    element.sendKeys(username);
-    element = driver.findElement(By.name("password"));
-    element.sendKeys(password);
-    element = driver.findElement(By.name("login"));
-    element.submit();
-}
+```
+Login With Nonexistent Username
 ```
 
-Vaikka siis kuvaavammin kirjoitetut stepit johtavatkin hieman suurempaan määrään mappayksestä huolehtivaa koodia, on stepit syytä kirjata mahdollisimman kuvaavasti ja huolehtia detaljeista mappaavan koodin puolella. Stepit mappaavien eri metodien samankaltainen koodi kannattaa ehdottomasti eriyttää omiin apumetodeihin, kuten esimerkissäkin tapahtuu (metodit _logInWith_ ja _pageHasContent_).
+### 9. Web-sovelluksen testaaminen osa 3
 
-Testien konfiguraatioon liittyy vielä muutama detalji. Testit alustava luokka <code>RunCucumberTest</code> on nyt seuraava:
+Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)-variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen. Suorita testit Headless Chromen avulla asettamalla `BROWSER`-muuttujan arvoksi `headlesschrome`.
 
-```java
-@RunWith(Cucumber.class)
-@CucumberOptions(
-    plugin = "pretty",
-    features = "src/test/resources/ohtu",
-    snippets = SnippetType.CAMELCASE
-)
+**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit muutta debuggaamista varten `DELAY`- ja `BROWSER`-muuttujien arvoja.
 
-public class RunCucumberTest {
-    @ClassRule
-    public static ServerRule server = new ServerRule(4567);
-}
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset _register.robot_-tiedostoon:
+
+```
+Register With Valid Username And Password
+# ...
+
+Register With Too Short Username And Valid Password
+# ...
+
+Register With Valid Username And Too Short Password
+# ...
+
+Register With Nonmatching Password And Password Confirmation
+# ...
 ```
 
-Luokka määrittelee testeille [ClassRule](https://github.com/junit-team/junit4/wiki/rules#classrule):n, eli joukon toimenpiteitä, jotka suoritetaan ennen kuin testien suoritus aloitetaan ja kun testien suoritus on ohi. Toimenpiteet määrittelevä luokka <code>ServerRule</code> näyttää seuraavalta:
+Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 5_, eli:
 
-```java
-
-public class ServerRule extends ExternalResource {
-
-    private final int port;
-
-    public ServerRule(int port) {
-        this.port = port;
-    }
-
-    @Override
-    protected void before() throws Throwable {
-        Spark.port(port);
-        UserDao dao = new UserDaoForTests();
-        dao.add(new User("jukka", "akkuj"));
-        Main.setDao(dao);
-        Main.main(null);
-    }
-
-    @Override
-    protected void after() {
-        Spark.stop();
-    }
-
-}
-```
-
-Metodi <code>before</code> käynnistää web-sovelluksen _ennen testien suorittamista_ (komento _Main.main(null)_). Web-sovellukselle myös injektoidaan testejä varten tehty _UserDao_-olio, jolle on lisätty yksi käyttäjä- ja salasana.
-
-Metodi <code>after</code> sulkee web-sovelluksen testien päätteeksi.
-
-Suorita nyt testit komennolla <code>gradle test</code>
-
-Huomaa, että testit käynnistävät sovelluksen samaan porttiin kuin sovellus käynnistyy komennolla <code>gradle run</code>. Jos saat virheilmoituksen:
-
-<pre>
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':test'.
-> Process 'Gradle Test Executor 6' finished with non-zero exit value 100
-  This problem might be caused by incorrect test process configuration.
-  Please refer to the test execution section in the User Manual at https://docs.gradle.org/5.6.3/userguide/java_testing.html#sec:test_execution
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output. Run with --scan to get full insights.
-</pre>
-
-syynä on todennäköisesti se, että sovellus on päällä. Joudutkin sulkemaan sovelluksen testien suorittamisen ajaksi.
-
-Jos Seleniumin kanssa oli ongelmia ja käytit HtmlUnitDriveria niin määrittele luokassa Stepdefs driver kentäksi new HtmlUnitDriver();
-
-Jos haluat pitää sovelluksen päällä testatessasi, käynnistä se johonkin muuhun portiin, esim. komento
-<code>PORT=4569 gradle run</code> käynnistää sovelluksen porttiin 4569.
-
-Voit nyt halutessasi poistaa testien huonon version eli tiedoston _logging_in_antipattern.feature_ ja siihen liittyvät Java-stepit.
-
-**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava skenaario ja määrittele sille sopivat _When_ ja _Then_ -stepit:
-
-<pre>
-Scenario: nonexistent user can not login to 
-    Given login is selected
-    When  ...
-    Then  ...
-</pre>
-
-Tee steppien nimistä kuvaavasti nimettyjä.
-
-**Protip** jos et saa jotain testiä menemään läpi, kannattaa "pysäyttää" testin suoritus ongelmalliseen paikkaan lisäämällä stepin koodiin esim. rivi
-
-```java
-try{ Thread.sleep(120000); } catch(Exception e){}  // suoritus pysähtyy 120 sekunniksi
-```
-
-ja tarkastella sitten ohjelman tilaa testin käyttämästä selaimesta.
-
-_HUOM_: konsoliin tulostuu seuraava _STANDARD_ERROR_ jota ei tarvitse välittää:
-
-<pre>
-ohtu.RunCucumberTest STANDARD_ERROR
-    SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-    SLF4J: Defaulting to no-operation (NOP) logger implementation
-    SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-</pre>
-
-### 9. Web-sovelluksen testaaminen osa 2
-
-**HUOM:** saat testien suorituksen huomattavasti nopeammaksi käyttämällä ChromeDriverin sijaan [HtmlUnitDriver](https://github.com/SeleniumHQ/selenium/wiki/HtmlUnitDriver):iä joka ns. headless- eli käyttöliittymätön selain.
-
-HtmlUnitDriver vaikeuttaa testien debuggaamista, joten jos jotain ongelmia ilmenee, kannattanee debuggaamiseen käyttää ChromeDriveriä.
-
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat skenaariot ja niille sopivat stepit:
-
-<pre>
-Feature: A new user account can be created if a proper unused username and password are given
-
-    Scenario: creation is successful with valid username and password
-        Given command new user is selected
-        When  a valid username "liisa" and password "salainen1" and matching password confirmation are entered
-        Then  a new user is created
-
-    Scenario: creation fails with too short username and valid password
-        Given command new user is selected
-        When  ...
-        Then user is not created and error "username should have at least 3 characters" is reported   
-
-    Scenario: creation fails with correct username and too short password
-        Given command new user is selected
-        When  ...
-        Then user is not created and error "password should have at least 8 characters" is reported   
-
-    Scenario: creation fails when password and password confirmation do not match
-        Given command new user is selected
-        When  ...
-        Then user is not created and error "password and password confirmation do not match" is reported   
-</pre>
-
-Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 7_ eli
-
-- käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-- salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
+- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
+- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
 **Laajenna koodiasi siten, että testit menevät läpi.**
 
-### 10. Web-sovelluksen testaaminen osa 3
+### 10. Web-sovelluksen testaaminen osa 4
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat skenaariot ja niille sopivat stepit:
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset _register.robot_-tiedostoon:
 
-<pre>
-Scenario: user can login with successfully generated account
-    Given user with username "lea" with password "salainen1" is successfully created
-    And   login is selected
-    When  ...
-    Then  ...  
+```
+Login After Successful Registration
+# ...
 
-Scenario: user can not login with account that is not successfully created
-    Given user with username "aa" and password "bad" is tried to be created
-    And   login is selected
-    When  ...
-    Then  ...  
-</pre>
+Login After Failed Registration
+# ...
+```
+
+Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
+
+Vinkki: voit halutessasi toteuttaa <i>login_resource.robot</i>-tiedoston, jossa on esimerkiksi tämän kaltaisia avainsanoja:
+
+```
+Login Should Succeed
+# ...
+
+Login Should Fail With Message
+# ...
+
+Submit Credentials
+# ...
+
+Set Username
+# ...
+
+Set Password
+# ...
+
+Login With Credentials
+# ...
+```
+
+Voit hyödyntää tämän tiedoston avainsanoja sekä _login.robot_-, että _register.robot_-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+
+```
+*** Seettings ***
+Resource  resource.robot
+Resource  login_resource.robot
+```
 
 ### Tehtävien palautus
 
 Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
-
-Huom! Varmista, että salasanat.txt on lisätty .gitignoreen. Jos ei ole, lisää se sinne. Et halua salasanojesi, edes testeissä käytettävien, päätyvän githubiin.

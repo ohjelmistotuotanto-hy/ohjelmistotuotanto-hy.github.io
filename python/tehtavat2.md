@@ -16,7 +16,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2), joiden deadline on sunnuntaina 8.11. klo 23:59:00.
 
-Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja kolmas tehtävä käsittelevät koodin _staattisen analyysin_ työkalua checkstyleä. Gitiin tutustuminen jatkuu tehtävissä 4-8. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa.
+Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 3-7. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -54,7 +54,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
 **Toimi nyt seuraavasti:**
 
-- Siirry virtuaaliympäristöön komennolla `python3 -m poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
+- Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
 - Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä pylintin [dokumentaatiosta](http://pylint.pycqa.org/en/2.6/technical_reference/features.html)):
   - Rivin pituus on maksimissaan 110 merkkiä
     - Vinkki: sääntö löytyy [Format checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#format-checker)-osiosta ja tulee määrittää `[FORMAT]`-osion alle
@@ -349,7 +349,7 @@ kauppa = Kauppa(
 )
 ```
 
-- Asenna projektin riippuvuudet komennolla `python3 -m poetry install`
+- Asenna projektin riippuvuudet komennolla `poetry install`
 - Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla `python3 src/index.py`
 
 ### 9. Riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
