@@ -231,21 +231,7 @@ Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _sr
 
 Sivupohja näyttää seuraavalta:
 
-<!-- TODO: fix this
-
-```html
-{% extends "layout.html" %} {% block title %} Ohtu Application {% endblock %} {%
-block body %}
-<h1>Ohtu Application</h1>
-
-<ul>
-  <li><a href="/login">Login</a></li>
-  <li><a href="/register">Register new user</a></li>
-</ul>
-{% endblock %}
-```
-
--->
+<!-- TODO: add template file without breaking jekyll build -->
 
 Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
 
