@@ -33,7 +33,7 @@ class Counter:
 
 ```
 
-Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `python3 -m poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `python3 -m poetry shell` ja suorittamalla siellä komento `robot src/tests`. 
+Robot Frameworkin käyttö onnistuu [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
 
 Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti.
 
@@ -83,6 +83,8 @@ class CounterLibrary:
 ```
 
 Kyseinen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
+
+Robot Framework alustaa kirjastot ennen jokaista testitapausta, joten jokaisella testitapauksella on käytössään kirjastosta oma instanssi. Tämä mahdollistaa mm. sen, että jokaista projektin testitapausta varten alustetaan `CounterLibrary`-luokan konstruktorin kautta uusi `Counter`-olio.
 
 Metodi `increment_counter_by` toteuttaa avainsana `Increment Counter By`, jolla on yksi argumentti, `amount`. **Argumenttien arvot ovat aina merkkijonoja**, joten ne täytyy tarvittaessa muuttaa oikean tyyppisiksi, kuten metodi tekee `int`-funktion avulla.
 
@@ -141,7 +143,7 @@ Increase Counter Three Times
 
 ### Resurssit
 
-Testihakemiston <i>increase_counter.robot</i>-tiedoston `*** Settings ***`-osiosta löytyy rivi `Resource  resource.robot`. Mistä on kyse?
+Testihakemiston <i>increase_counter.robot</i>-tiedoston `*** Settings ***`-osiosta löytyy rivi `Resource resource.robot`. Mistä on kyse?
 
 Uudelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssi-tiedostot voi tuoda muihin tiedostoihin `Resource`-asetuksen kautta:
 
@@ -179,12 +181,12 @@ Reset Counter After Several Increments
     Counter Value Should Be  0
 ```
 
-Siirry virtuaaliympäristöön komennolla `python3 -m poetry shell` ja suorita siellä komento `robot src/tests`. Testit eivät mene läpi ja tulosteessa on seuraava virhe:
+Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita siellä komento `robot src/tests`. Testit eivät mene läpi ja tulosteessa on seuraava virhe:
 
 ```
 No keyword with name 'Reset Counter' found.
 ```
 
-Robot Framework siis ilmoittaa, ettei avainsanalle `Reset Counter` ole toteutusta. 
+Robot Framework siis ilmoittaa, ettei avainsanalle `Reset Counter` ole toteutusta.
 
 **Toteuta seuraavaksi `CounterLibrary`-luokkaan sopiva metodi, jotta testit menevät läpi.**
