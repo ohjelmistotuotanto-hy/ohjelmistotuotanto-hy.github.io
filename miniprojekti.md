@@ -43,7 +43,7 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
-* Ryhmä varataa ajan sprinttien 2-3 asiakastapaamisille
+* Ryhmä varaa ajan sprinttien 2-3:lle asiakastapaamiselle
   * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 ### Työn eteneminen
