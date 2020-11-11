@@ -625,22 +625,22 @@ Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunni
 
 ![]({{ "/images/lh1-32.png" | absolute_url }})
 
-### 14. riippuvuuksien injektointi osa 1
+### 14. Riippuvuuksien injektointi osa 1
 
 Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
 
 - Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-- Hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+- Hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/riippuvuuksien-injektointi-1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
 Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`.
 
-### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
+### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
-- Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
+- Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/nhl-statistics-1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
@@ -661,7 +661,7 @@ stats = Statistics(
 )
 ```
 
-### 16. NHLStatistics-ohjelman yksikkötestaus
+### 16. NHL-tilastot-ohjelman yksikkötestaus
 
 - Tee yksikkötestit luokalle `Statistics`
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/blob/master/materiaali/unittest.md)-mukaisesti. Muuten pytest ei löydä suoritettavia testejä
