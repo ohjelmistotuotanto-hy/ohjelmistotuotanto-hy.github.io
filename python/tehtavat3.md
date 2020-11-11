@@ -201,11 +201,81 @@ Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit m
 
 ### Robot Framework -testien debuggaaminen
 
-<!-- TODO -->
+On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia. Epäonnistuneen testitapauksen kohdalla kannattaa miettiä mahdollisia syitä:
 
-On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia.
+- Onko vika testissä, eli toimiiko sovellus kuten pitääkin? Voit esimerkiksi testata sovelluksen toimivuuden manuaalisesti. Jos näin on, keskity testin korjaamiseen
+- Onko vika sovelluksessa, eli eikö manuaalisesti testattu sovellus toimi kuten pitäisi? Jos näin on, keskity tarkastelemaan ohjelman suoritusta epäonnistuneessa testitapauksessa
+
+Tutustutaan seuraavaksi tekniikoihin, jotka helpottavat ja nopeuttavat virheiden metsästystä.
 
 #### Suoritettavien testien lukumäärän rajoittaminen
+
+Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials`, voimme suorittaa ainoastaan sen seuraavalla komennolla:
+
+```
+robot -t "Login With Correct Credentials" src/tests/login.robot
+```
+
+Komennolle `robot` annetaan siis `-t`-optionin kautta suoritettavan testitapauksen nimi ja tiedosto, jossa testitapaus sijaitsee.
+
+#### Ohjelman suorituksen seuraaminen
+
+Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa alkaa tutkimaan miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Jos esimerkiksi `Login With Correct Credentials`-testitapaus epäonnistuu, on ongelma luultavasti `UserSerivce`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville käyttämällä globaalia [breakpoint](https://docs.python.org/3/library/pdb.html)-funktiota:
+
+```python
+class UserService:
+    def __init__(self, user_repository):
+        self.user_repository = user_repository
+
+    def check_credentials(self, username, password):
+        breakpoint()
+
+        if not username or not password:
+            raise UserInputError("Username and password are required")
+
+        user = self.user_repository.find_by_username(username)
+
+        if not user or user.password != password:
+            raise AuthenticationError("Invalid username or password")
+
+        return user
+
+    # ...
+```
+
+Käynnistä nyt ohjelma uudelleen, jotta muutokset koodiin astuvat voimaan. Suorita sen jälkeen pelkästään `Login With Correct Credentials`-testitapaus edellä mainitun ohjeen mukaisesti. Kun testitapauksen suoritus saavuttaa `check_credentials`-metodin kutsun, koodin suoritus pysähtyy ja palvelinta suorittavalle komentoriville ilmestyy seuraavanlainen komentorivi:
+
+```
+-> if not username or not password:
+(Pdb)
+```
+
+Kyseessä on interaktiivinen komentorivi, jossa voimme suorittaa koodia. Nuoli (`->`) viittaa seuraavaksi suoritettavaan koodiriivin. Katsotaan komentorivin avulla, mitkä ovat muuttujien `username` ja `password` arvot:
+
+```
+(Pdb) username
+'kalle'
+(Pdb) password
+'kalle123'
+(Pdb)
+```
+
+Annamme siis komentoriville syötteen ja painamme Enter-painiketta. Jatketaan koodin suorittamista antamalla syöte `next()`. Koodi on ohittanut `if`-lauseen (koska muuttujilla oli arvot) ja on seuraavaksi suorittamassa riviä `user = self.user_repository.find_by_username(username)`:
+
+```
+-> user = self.user_repository.find_by_username(username)
+(Pdb)
+```
+
+Suoritetaan rivi syöttämällä uudestaan `next()` ja tulostetaan `user`-muuttujan arvo:
+
+```
+-> if not user or user.password != password:
+(Pdb) user
+<entities.user.User object at 0x10f7a55e0>
+```
+
+Kun olet lopettanut debuggaamiseen, syötä `exit()` ja ota `breakpoint()`-rivi pois koodista.
 
 ### 6. WebLogin
 
@@ -231,7 +301,24 @@ Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _sr
 
 Sivupohja näyttää seuraavalta:
 
-<!-- TODO: add template file without breaking jekyll build -->
+```html
+{% raw  %}
+{% extends "layout.html" %}
+
+{% block title %}
+Ohtu Application
+{% endblock %}
+
+{% block body %}
+<h1>Ohtu Application</h1>
+
+<ul>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register new user</a></li>
+</ul>
+{% endblock %}
+{% endraw %}
+```
 
 Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
 
@@ -284,7 +371,7 @@ Library  ../AppLibrary.py
 *** Variables ***
 ${SERVER}  localhost:5000
 ${BROWSER}  chrome
-${DELAY}  1 second
+${DELAY}  0.5 seconds
 ${HOME URL}  http://${SERVER}
 ${LOGIN URL}  http://${SERVER}/login
 ${REGISTER URL}  http://${SERVER}/register
@@ -362,6 +449,7 @@ Samalla tavoin kutsu `Input Text username kalle` löytää `id`-attribuutin avul
 
 ```
 Click Register Link
+# ...
 ```
 
 Testitapauksen tulee testata, että "Register"-linkin painaminen avaa rekisteröitymis-sivun. Vinkki: voit käyttää [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link)-avainsanaa.
@@ -386,7 +474,8 @@ class AppLibrary:
     def create_user(self, username, password):
         data = {
             "username": username,
-            "password": password
+            "password": password,
+            "password_confirmation": password
         }
 
         requests.post(f"{self._base_url}/register", data=data)
@@ -412,9 +501,10 @@ Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sove
 def handle_register():
     username = request.form.get("username")
     password = request.form.get("password")
+    password_confirmation = request.form.get("password_confirmation")
 
     try:
-        user_service.create_user(username, password)
+        user_service.create_user(username, password, password_confirmation)
         return redirect_to_welcome()
     except Exception as error:
         flash(str(error))
@@ -425,6 +515,7 @@ def handle_register():
 
 ```
 Login With Nonexistent Username
+# ...
 ```
 
 ### 9. Web-sovelluksen testaaminen osa 3
@@ -454,7 +545,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 - Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
-**Laajenna koodiasi siten, että testit menevät läpi.**
+**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on luokan <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
 ### 10. Web-sovelluksen testaaminen osa 4
 
@@ -470,29 +561,7 @@ Login After Failed Registration
 
 Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
 
-Vinkki: voit halutessasi toteuttaa <i>login_resource.robot</i>-tiedoston, jossa on esimerkiksi tämän kaltaisia avainsanoja:
-
-```
-Login Should Succeed
-# ...
-
-Login Should Fail With Message
-# ...
-
-Submit Credentials
-# ...
-
-Set Username
-# ...
-
-Set Password
-# ...
-
-Login With Credentials
-# ...
-```
-
-Voit hyödyntää tämän tiedoston avainsanoja sekä _login.robot_-, että _register.robot_-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+Vinkki: voit halutessasi toteuttaa <i>login*resource.robot</i>-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä \_login.robot*-, että _register.robot_-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
 
 ```
 *** Seettings ***
