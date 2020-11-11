@@ -302,22 +302,15 @@ Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _sr
 Sivupohja näyttää seuraavalta:
 
 ```html
-{% raw  %}
-{% extends "layout.html" %}
-
-{% block title %}
-Ohtu Application
-{% endblock %}
-
-{% block body %}
+{% raw %}{% extends "layout.html" %} {% block title %} Ohtu Application {%
+endblock %} {% block body %}
 <h1>Ohtu Application</h1>
 
 <ul>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/register">Register new user</a></li>
+  <li><a href="/login">Login</a></li>
+  <li><a href="/register">Register new user</a></li>
 </ul>
-{% endblock %}
-{% endraw %}
+{% endblock %}{% endraw %}
 ```
 
 Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
@@ -357,7 +350,7 @@ Jatketaan saman sovelluksen parissa.
 
 [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjaston avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä onnistuu valmiin, [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
 
-Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome-selainta. Ennen kuin siirrymme testien pariin, asenna Chrome-selaimen käyttöön vaadittava ajuri seuraamalla [tätä](./chromedriver_asennusohjeet) ohjetta.
+Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome-selainta, jolla testejä voi suorittaa käyttämällä [CromeDriver](https://chromedriver.chromium.org/)-ajuria. Ennen kuin siirrymme testien pariin, asenna ChromeDriver seuraamalla [tätä](./chromedriver_asennusohjeet) ohjetta.
 
 Kun Chrome-ajuri on asennettu onnistuneesti, suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
@@ -561,10 +554,10 @@ Login After Failed Registration
 
 Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
 
-Vinkki: voit halutessasi toteuttaa <i>login*resource.robot</i>-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä \_login.robot*-, että _register.robot_-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+Vinkki: voit halutessasi toteuttaa <i>login_resource.robot</i>-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä <i>login.robot</i>-, että <i>register.robot</i>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
 
 ```
-*** Seettings ***
+*** Settings ***
 Resource  resource.robot
 Resource  login_resource.robot
 ```
