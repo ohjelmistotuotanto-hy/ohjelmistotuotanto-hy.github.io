@@ -27,7 +27,7 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 
 ### Ryhmän muodostaminen
 
-* Ryhmät modostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
+* Ryhmät muodostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
 * Jokaiselle ryhmälle tiedotetaan viimeistään sunnuntaina 15.11. seuraavalla viikolla pidettävän noin 2h kestävän aloitustilaisuuden ajankohta, johon kaikkien ryhmäläisten on **pakko osallistua**. 
 * Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat: 
   * scrum
@@ -43,14 +43,14 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
-* Ryhmä varataa ajan sprinttien 2-3 asiakastapaamisille
+* Ryhmä varaa ajan sprinttien 2-3:lle asiakastapaamiselle
   * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 ### Työn eteneminen
 
 #### viikko 4 (16-20.11.)
 
-* Ryhmä muodostuvat/muodostetaan
+* Ryhmät muodostuvat/muodostetaan
 * Ryhmät tapaavat asiakkaan aloitustilaisuuksista
 * Aloitustilaisuudessa pidettävän asiakastapaamisen pohjalta ryhmä tekee alustavan product backlogin ja sopii asiakkaan kanssa ensimmäisen sprintin tavoitteesta
 * Ryhmä suunnittelee ensimmäisen sprintin ja aloittaa työskentelyn
