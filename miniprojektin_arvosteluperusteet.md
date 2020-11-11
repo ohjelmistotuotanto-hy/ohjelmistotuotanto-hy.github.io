@@ -68,7 +68,7 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
   * linkki sovellukseen jos kyse web-sovelluksesta
   * jos kyse työpöytäsovelluksesta: ohjelman asennus- ja käyttöohje
 
-Sprintin maksimi on 2.5 pistettä.
+Sprintin maksimi on 3.5 pistettä.
 
 ### Toisen sprintin arvosteluperusteet:
 
