@@ -95,7 +95,7 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
     * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     * taskin tekijä(t)
 * Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) 
-  * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua Github Actionsia, muita vaihtoehtoja esim. TravisCI ja Github Actions
+  * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua Github Actionsia, muita vaihtoehtoja esim. TravisCI
 * Koodi on talletettu GitHub:iin 
 * Projektin GitHub-repositoriolla on järkevä README.md 
 
