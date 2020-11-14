@@ -97,12 +97,12 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
 * Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) 
   * Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua Github Actionsia, muita vaihtoehtoja esim. TravisCI ja Github Actions
 * Koodi on talletettu GitHub:iin 
-* Projektin Github-repositoriolla on järkevä README.md 
+* Projektin GitHub-repositoriolla on järkevä README.md 
 
 #### Product ja sprint backlog
 
 * Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
-  * **minprojektissa ei ole tarvetta estimoida user storya**, ainoastaan sprintissä olevien taskien työmäärä estimoidaan
+  * **miniprojektissa ei ole tarvetta estimoida user storya**, ainoastaan sprintissä olevien taskien työmäärä estimoidaan
 * Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta 
   * jäljellä olevan työajan estimaatti
   * taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
@@ -116,7 +116,7 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
 
 #### Definition of done
 
-Seuraavassa lähtökohta definition donelle. Ryhmän tuleemääritellä github-repositorioon oma, omiin lähtökohtiin sopiva DoD
+Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
 * User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan [Cucumberin](/cucumber/) featureiksi
   * hyvänä käytänteenä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
