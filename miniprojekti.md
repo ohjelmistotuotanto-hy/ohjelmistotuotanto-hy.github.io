@@ -9,9 +9,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ilmoittautu miniprojektiin [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea)
-deadline ilmoittautumiselle perjantai 13.11. klo 23:59
-- Miniprojektit työskentelevät 100% etänä
+- Ryhmäjako on valmiina, ryhmä ja aloitustilaisuuden ajankohta selviää [täältä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea)
 
 ### Johdanto
 
@@ -28,7 +26,7 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 ### Ryhmän muodostaminen
 
 * Ryhmät modostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
-* Jokaiselle ryhmälle tiedotetaan viimeistään sunnuntaina 15.11. seuraavalla viikolla pidettävän noin 2h kestävän aloitustilaisuuden ajankohta, johon kaikkien ryhmäläisten on **pakko osallistua**. 
+* Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 * Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat: 
   * scrum
   * sprintti
@@ -43,10 +41,12 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodin projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
-* Ryhmä varataa ajan sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
+
 
 ### Työn eteneminen
+
+Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. 
+Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject) viimeistään sunnuntaina 22.11.
 
 #### viikko 4 (16-20.11.)
 
@@ -57,16 +57,16 @@ deadline ilmoittautumiselle perjantai 13.11. klo 23:59
   * sprintin suunnittelun tuloksena ryhmä tekee sprint backlogin
   * backlogien sisällöstä enemmän [täällä](/miniprojekti#tekniset-ja-prosessiin-liittyvät-vaatimukset)
 * Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet) kannattaa lukea huolellisesti
-* Ryhmät varaavat tapaamisen sprinttien 2-3 asiakastapaamisille
-  * tapaamisaikojen varaaminen [täältä](https://docs.google.com/document/d/1W4HsdtEnejG4mMY9FRwdRFwnAs8VnpFM9T0um8YVDxI/edit?usp=sharing)
 
 #### viikko 5 (23-29.11.)
 
-* Sprintin 1 katselmointi ja sprintin 2 suunnittelu 
+* Sprintin 1 katselmointi ja sprintin 2 suunnittelu
+  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject)
 
 #### viikko 6 (30.11-6.12.)
 
 * Sprintin 2 katselmointi ja sprintin 3 suunnittelu 
+  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject)
 
 #### viikko 7 (7-13.12.)
 
