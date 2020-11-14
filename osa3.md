@@ -604,7 +604,7 @@ Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testaus 
 
 ### Blue-green-deployment
 
-Eräs tuotannossa tapahtuvan testaamisen tekniikka on [blue-green-deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html), missä periaatteena on ylläpitää rinnakkain kahta tuotantoympäristöä (tai palvelinta), joista käytetään nimiä blue ja green.
+Eräs tuotannossa tapahtuvan testaamisen tekniikka on [blue-green-deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html), missä periaatteena on ylläpitää rinnakkain kahta tuotantoympäristöä (tai palvelinta), joista käytetään usein nimiä blue ja green.
 
 Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa käytössä. Käyttäjien ja tuotantopalvelinten välissä oleva komponentti, esimerkiksi ns. reverse proxyna toimiva web-palvelin (kuvassa router) ohjaa käyttäjien liikenteen aktiivisena olevaan ympäristöön. 
 
@@ -701,7 +701,7 @@ Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (develo
 
 Tälläisessä ympäristössä esim. continuous deploymentin harjoittaminen on lähes mahdotonta, tilanne ajautuukin helposti siihen, että tuotantopalvelimelle pystytään viemään uusia versioita vain harvoin, esimerkiksi ainoastaan 4 kertaa vuodessa.
 
-Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoittaa palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä dev ja ops työskentelevät tiiviisti yhdessä on käyttää nimeä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
+Joustavammat toimintamallit uusien ominaisuuksien tuotantoon viemisessä vaativatkin täysin erilaista kulttuuria, sellaista, missä kehittäjät (dev) ja ylläpito (ops) työskentelevät tiiviissä yhteistyössä. Esim. sovelluskehittäjille tulee antaa tarvittava pääsy tuotantopalvelimelle tai Scrum-tiimiin tulee sijoittaa palvelinten ylläpidosta ja operoinnista huolehtivia ihmisiä. Toimintamallista missä kehittäjät ja ylläpitäjät eli *dev-* ja *ops-ihmiset* työskentelevät tiiviisti yhdessä käytetään nimitystä [DevOps](https://en.wikipedia.org/wiki/DevOps). 
 
 DevOps on termi, joka on nykyään monin paikoin esillä, esimerkiksi työpaikkailmoituksissa voidaan arvostaa DevOps-taitoja tai jopa etsiä ihmistä DevOps-tiimiin. On myös myynnissä mitä erilaisimpia DevOps-työkaluja. On kuitenkin jossain määrin epäselvää mitä kukin tarkoittaa termillä DevOps.
 
@@ -732,7 +732,7 @@ Eräs parhaista DevOpsin määritelmistä on [Daniel Storin](http://turnoff.us/g
 
 ## Yhteenveto - ketterän testauksen nelikettä
 
-Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maric käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
+Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maricin käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
 
 ![]({{ "/images/3-20.png" | absolute_url }}){:height="400px" }
 
@@ -771,5 +771,11 @@ Automaattisia testejä kannattaa kirjoittaa mahdollisimman paljon etenkin niiden
 Testitapausten kannattaa olla mahdollisimman paljon testattavan komponentin oikeiden käyttöskenaarioiden kaltaisia. Pelkkiä testauskattavuutta kasvattavia testejä on turha tehdä.
 
 Testitapauksissa kannattaa käyttää mahdollisimman oikean kaltaista dataa, erityisesti järjestelmätason testeissä. Koodissa nimittäin lähes aina hajoaa jokin kun käytetään oikeaa dataa riippumatta siitä, miten hyvin testaus on suoritettu. Parasta onkin jos staging-ympäristössä on käytössä sama data kuin tuotantoympäristössä. 
+
+Oma näkemyksen testaukseen on hieman poikkeava ja jopa jossain määrin vastakkainen kuin niin sanottu [testauspyramiidi](https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid), eli Mike Cohenin ajatus, siitä että pääosan testeistä tulisi olla yksikkötestejä, sillä niitä on helppo tehdä, ja ne ovat nopeita suorittaa. Järjestelmää kokonaisuudessan testaavat end to end -testit taas ovat hitatia, niitä on hankala tehdä ja ne ovat alttiita hajoamaan pienistä muutoksista, joten niiden määrän tulisi olla mahdollisimman vähäinen:
+
+![]({{ "/images/3-23.png" | absolute_url }}){:height="300px" }
+
+Cohenin pyramiidi-idea on jo aika vanha, ja läheskään kaikki eivät ole siitä samaa mieltä. Mielipitetiä löytyy [laidasta laitaan](https://laredoute.io/blog/the-traditional-test-pyramid-pitfalls-and-anti-patterns/) ja varmasti onkin niin, että yhtä totuutta asiasta ei ole. Kuten jo aiemminkin totesin, väärälle "tasolle" väärään aikaan tehdyt automatisoidut testit ovat suuri riski, ja koska järjestelmätason testien tekeminen on todella työlästä, piilee niissä aina hukkainvestoinnin vaara.
 
 Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahdollisimman usein tapahtuva tuotantoonvienti. Se taas edellyttää hyvin rakennettua deployment pipelineä, kohtuullista testauksen automatisointia ja helpottuu oleellisesti jos feature branchien sijaan käytetään trunk based development -periaatetta. Suosittelen lämpimästi että tuotantoonvienti tapahtuu niin usein kuin mahdollista, jopa useita kertoja päivässä. Tämä takaa yleensä sen, että pahoja integrointiongelmia ei synny, ja sovellukseen syntyvät regressiot havaitaan ja pystytään korjaamaan mahdollisimman nopeasti.
