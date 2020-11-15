@@ -793,7 +793,7 @@ Tutkimuksen tuloksia summaa seuraava kaavio:
 
 ![]({{ "/images/3-24.png" | absolute_url }}){:height="400px" }
 
-Tutkimuksen ytimessä on selvittää mitkä tekijät vaikavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrtyksen tehokkuutta on mitattu seuraavilla kysymyksillä:
+Tutkimuksen ytimessä on selvittää mitkä tekijät vaikuttavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrtyksen tehokkuutta on mitattu seuraavilla kysymyksillä:
 
 _Select the number that best indicates degree of conformance to your organization's goals over the past year. (1=Performed well below, 7 = Performed well above)_
 - Overall organizational performance 
@@ -803,16 +803,16 @@ _Select the number that best indicates degree of conformance to your organizatio
 - Time to market
 - Quality and performance of applications
 
-Kuvan vasemmassa reunassa taas on yrityksten harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaornaisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
+Kuvan vasemmassa reunassa taas on yrityksten harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaorgaisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
 
 Tutkimus löysi merkittävän yhteyden DevOps-käytänteiden käytön ja yrityksen tehokkaan toiminnan välillä. Mielenkiintoisena "sivutuotteena" käytänteiden intensiiviselle harjoittamiselle on myös korkeampi työtyytyväisyys ja vähäisempi määrä loppuunpalaneita työntekijöitä.
 
-Ylläoleva kuva on vuonna 2016 ilmestyneestä artikkelista. Tässä vaiheessa Forsgrenin ja kumppaneiden tutkimus keskittyi siihen, miten teknisten DevOps-käytänteet vaikuttavat yrityksen tehokkuuteen.
+Ylläoleva kuva on vuonna 2016 ilmestyneestä artikkelista. Tässä vaiheessa Forsgrenin ja kumppaneiden tutkimus keskittyi siihen, miten tekniset DevOps-käytänteet vaikuttavat yrityksen tehokkuuteen.
 
-Sittemmin tutkimuksen fokus on laajennettu myös firman johtamiskäytänteisiin, useimmat näistä liittyvät Lean-filosofiaan, joka on aiheenamme [osassa 3](/osa5/).
+Sittemmin tutkimuksen fokus on laajennettu myös firman johtamiskäytänteisiin, useimmat näistä liittyvät Lean-filosofiaan, joka on aiheenamme [osassa 5](/osa5/).
 
 On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänteitä, mm. trunk based -development ja tuotannossa olevan sovelluksen monitorointi. 
 
-Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrittyksen tehokkuutta:
+Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrityksen tehokkuutta:
 
 ![]({{ "/images/3-26.png" | absolute_url }}){:height="500px" }
