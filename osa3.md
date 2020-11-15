@@ -343,7 +343,7 @@ Automatisoitu yksikkötestaus on jo aiemmilta kursseilta tuttu aihe. Käsittelem
 
 Testauksen rooli ketterissä menetelmissä poikkeaa huomattavasti vesiputousmallisesta ohjelmistotuotannosta. Iteraation/sprintin aikana toteutettavat ominaisuudet integroidaan muuhun koodiin ja testataan yksikkö-, integraatio- sekä järjestelmätasolla. Sykli ominaisuuden määrittelystä siihen, että se on valmis ja testattu on erittäin lyhyt, viikosta kuukauteen.
 
-Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
+Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testaus on integroitu suunnitteluun ja toteutukseen, eikä ole ketterän näkemyksen mukaan enää oma erillinen vaiheensa.
 
 Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
