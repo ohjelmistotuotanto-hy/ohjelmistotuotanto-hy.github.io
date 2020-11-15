@@ -428,7 +428,7 @@ Mockito-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kaup
 
 Pankkia edustavalle mock-oliolle on asetettu _ekspektaatio_, eli vaatimus, joka varmistaa että metodia _tilisiirto_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
 
-Pääset harjoittelemaan Mockiton käyttöä viikon 3 [laskareissa](/tehtavat3/).
+Pääset harjoittelemaan Mockiton käyttöä viikon 4 [laskareissa](/tehtavat4/).
 
 ## User storyjen testaaminen 
 
