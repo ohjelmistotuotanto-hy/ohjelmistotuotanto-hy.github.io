@@ -145,7 +145,7 @@ Molemmat näistä tavoitteista tähtäävät ensisijaisesti ohjelman _ulkoisen l
 
 ## Testauksen tasot
 
-Testausta jakaantuu eri _tasoihin_ sen mukaan mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
+Testausta jakaantuu eri _tasoihin_ sen mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
 
 ![]({{ "/images/3-3.png" | absolute_url }}){:height="300px" }
 
