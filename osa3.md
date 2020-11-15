@@ -163,7 +163,7 @@ Järjestelmätestauksen tarkoitus on siis varmistaa, että ohjelmisto toimii vaa
 
 Järjestelmätestaus tapahtuu ilman tietoa järjestelmän sisäisestä rakenteesta, tälläistä testauksen tapaa nimitetään _black box_ -testaukseksi.
 
-Järjestelmätesteille on tyypillistä että ne tarkastelevat sovelluksen toiminnalisuutta sen kaikilla tasoilla käyttöliittymästä sovelluslogiikkaan ja tietokantaan. Tämän takia jäsrejstelmätestejä kutsutaan usen _End to End -testeiksi_.
+Järjestelmätesteille on tyypillistä että ne tarkastelevat sovelluksen toiminnalisuutta sen kaikilla tasoilla käyttöliittymästä sovelluslogiikkaan ja tietokantaan. Tämän takia järjestelmätestejä kutsutaan usein _End to End -testeiksi_.
 
 Yleensä järjestelmätestaus perustuu sovelluksen potentiaalisiin käyttöskenaarioihin. Jos vaatimukset on ilmaistu user storyina, on storyjen hyväksymiskriteereistä melko helppo muotoilla testejä, joiden avulla voidaan varmistaa, että ohjelmistolla on storyjen kuvaamat vaatimukset sekä tyypilliset virheskenaariot.
 
