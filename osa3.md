@@ -779,3 +779,30 @@ Oma näkemykseni testaukseen on hieman poikkeava ja jopa jossain määrin vastak
 Cohenin pyramidi-idea on jo aika vanha, ja läheskään kaikki eivät ole siitä samaa mieltä. Mielipiteitä löytyy [laidasta laitaan](https://laredoute.io/blog/the-traditional-test-pyramid-pitfalls-and-anti-patterns/) ja varmasti onkin niin, että yhtä totuutta asiasta ei ole. Kuten jo aiemminkin totesin, väärälle "tasolle" väärään aikaan tehdyt automatisoidut testit ovat suuri riski, ja koska järjestelmätason testien tekeminen on todella työlästä, piilee niissä aina hukkainvestoinnin vaara.
 
 Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahdollisimman usein tapahtuva tuotantoonvienti. Se taas edellyttää hyvin rakennettua deployment pipelineä, kohtuullista testauksen automatisointia ja helpottuu oleellisesti jos feature branchien sijaan käytetään trunk based development -periaatetta. Suosittelen lämpimästi että tuotantoonvienti tapahtuu niin usein kuin mahdollista, jopa useita kertoja päivässä. Tämä takaa yleensä sen, että pahoja integrointiongelmia ei synny, ja sovellukseen syntyvät regressiot havaitaan ja pystytään korjaamaan mahdollisimman nopeasti.
+
+## Tieteellinen evidenssi
+
+Edellä esitellyistä jatkuvan julkaisun ja laadunhallinnan käytenteiden toimivuudesta on runsaasti anekdotaalista evidenssiä ja monista osa-aluiesta on tehny myös akateemista tutkimusta. Myös se, että erinomaisesti menestyneet organisaatiot kuten Google, Netflix, Amazon ja Facebook luottavat näihin käytänteisiin, ja ovat jopa paikoin kehittäneet ne, puhuu niiden puolesta 
+
+Toistaiseksi vakuuttavimman ja tieteellisesti vakaimmalla pohjalla olevan näkemyksen tarjoaa vuonna 2018 julkaistussa kirjassa
+[Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) raportoitu vuosina 2013-2017 tehnty laaja, yli 20000 vastaukseen perustuva kyselytutkimus.
+
+Tutkimustulokset on myös julkaistu korkeatasoisilla vertaisarvioiduilla foorumeilla. Tämän osan kannalta oleellisia tuloksia käsittelee esimerkiksi [Forsgren, Humble: The Role of Continuous Delivery in IT and Organizational Performance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2681909).
+
+Tutkimuksen tuloksia summaa seuraava kaavio:
+
+![]({{ "/images/3-24.png" | absolute_url }}){:height="400px" }
+
+Tutkimuksen ytimessä on selvittää mitkä tekijät vaikavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrtyksen tehokkuutta on mitattu seuraavilla kysymyksillä:
+
+_Select the number that best indicates degree of conformance to your organization's goals over the past year. (1=Performed well below, 7 = Performed well above)_
+- Overall organizational performance 
+- Overall organizational profitability
+- Relative market share for primary products
+- Overall productivity of the delivery system Increased number of customers
+- Time to market
+- Quality and performance of applications
+
+Kuvan vasemmassa reunassa taas on yrityksten harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaornaisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
+
+Tutkimus löysi merkittävän yhteyden DevOps-käytänteiden käytön ja yrityksen tehokkaan toiminnan välillä. Mielenkiintoisena "sivutuotteena" käytänteiden intensiiviselle harjoittamiselle on myös korkeampi työtyytyväisyys ja vähäisempi määrä loppuunpalaneita työntekijöitä.
