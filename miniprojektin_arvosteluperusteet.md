@@ -34,7 +34,7 @@ Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja pe
 Projekti tulee olla rekisteröity osoitteeseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
 * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
   * luo projektin _create project_ -napista avautuvasta lomakkeesta
-  * ja jakaa muille ryhmäläisille luodin projektin id:n
+  * ja jakaa muille ryhmäläisille luodun projektin id:n
 * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
 **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.** 
