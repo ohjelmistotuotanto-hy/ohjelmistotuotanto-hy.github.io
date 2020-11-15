@@ -806,3 +806,13 @@ _Select the number that best indicates degree of conformance to your organizatio
 Kuvan vasemmassa reunassa taas on yrityksten harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaornaisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
 
 Tutkimus löysi merkittävän yhteyden DevOps-käytänteiden käytön ja yrityksen tehokkaan toiminnan välillä. Mielenkiintoisena "sivutuotteena" käytänteiden intensiiviselle harjoittamiselle on myös korkeampi työtyytyväisyys ja vähäisempi määrä loppuunpalaneita työntekijöitä.
+
+Ylläoleva kuva on vuonna 2016 ilmestyneestä artikkelista. Tässä vaiheessa Forsgrenin ja kumppaneiden tutkimus keskittyi siihen, miten teknisten DevOps-käytänteet vaikuttavat yrityksen tehokkuuteen.
+
+Sittemmin tutkimuksen fokus on laajennettu myös firman johtamiskäytänteisiin, useimmat näistä liittyvät Lean-filosofiaan, joka on aiheenamme [osassa 3](/osa5/).
+
+On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänteitä, mm. trunk based -development ja tuotannossa olevan sovelluksen monitorointi. 
+
+Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrittyksen tehokkuutta:
+
+![]({{ "/images/3-26.png" | absolute_url }}){:height="500px" }
