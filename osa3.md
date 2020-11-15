@@ -139,13 +139,13 @@ _Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrit
 
 Ohjelmistojen osoittaminen virheettömäksi on käytännössä mahdotonta, sillä ohjelmiston mahdollisten käyttöskenaarioiden ja syötteiden kombinaatio on yksinkertaisesti liian suuri. Testauksen tarkoituksena onkin vakuuttaa asiakas ja järjestelmän kehitystiimi siitä, että ohjelmisto on riittävän hyvä käytettäväksi.
 
-Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutusta ohjelmista. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään rikkoa ohjelma tai saattaa se jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
+Testauksella on kaksi hieman eriävää tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutetusta ohjelmistosta. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään rikkoa ohjelma tai saattaa se jollain tavalla epäkonsistenttiin tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
 
 Molemmat näistä tavoitteista tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (engl. external quality) eli käyttäjän kokeman laadun varmistamiseen. [Ulkoisella laadulla](http://c2.com/cgi/wiki?InternalAndExternalQuality) tarkoitetaan sitä, onko ohjelmisto sopiva käyttötarkoitukseensa, eli pystyykö käyttäjä tekemään ohjelmistolla haluamansa asiat.
 
 ## Testauksen tasot
 
-Testausta jakaantuu eri _tasoihin_ sen mukaan mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
+Testaus jakaantuu eri _tasoihin_ sen mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
 
 ![]({{ "/images/3-3.png" | absolute_url }}){:height="300px" }
 
@@ -266,7 +266,7 @@ Näitä kutakin kohti on metodin parametrilla _maara_ omat ekvivalenssiluokkansa
 
 Nollan ja negatiivisen määrän ottamista tuskin kannattaa erikseen testata kaikkien varastotilanteiden suhteen, tosin tämäkin voisi olla riski, jos varaston sisäinen toteutus muutettaisiin täysin.
 
-Huomaamme siis, että jo naurettavan pienen luokan yhden metodin kattava testaaminen vaatii suuren määrän testitapauksia. Useimmissa tapauksissa ei ole kuitenkaan ole realisitista olettaa, että testejä tehdään vastaavalla kattavuudella, aika/hyötysuhde on yksinkertaisesti liian huono. Useimmat softassa olevat ikävät bugit jäävät joka tapauksessa yksikkötestauksen ulottumattomiin.
+Huomaamme siis, että jo naurettavan pienen luokan yhden metodin kattava testaaminen vaatii suuren määrän testitapauksia. Useimmissa tapauksissa ei kuitenkaan ole realistista olettaa, että testejä tehdään vastaavalla kattavuudella, aika/hyötysuhde on yksinkertaisesti liian huono. Useimmat softassa olevat ikävät bugit jäävät joka tapauksessa yksikkötestauksen ulottumattomiin.
 
 ### Testauskattavuus
 
@@ -305,7 +305,7 @@ Lisätietoa mutaatiotestauksesta esim. [wikipediassa](http://en.wikipedia.org/wi
  
 ## Integraatiotestaus
 
-Järjestelmän yksittäiset, erillään yksikkötestatut luokat tulee integroida toimivaksi kokonaisuudeksi. Integroinnin yhteydessä tai sen jälkeen suoritetaan integraatiotestaus, missä painopisteenä on ohjelman komponenttien välisten rajapintojen toimivuuden tutkimisessa sekä komponenttien yhdessä tuottaman toiminnallisuuden oikeellisuuden varmistamisessa.
+Järjestelmän yksittäiset, erillään yksikkötestatut luokat tulee integroida toimivaksi kokonaisuudeksi. Integroinnin yhteydessä tai sen jälkeen suoritetaan integraatiotestaus, missä painopiste on ohjelman komponenttien välisten rajapintojen toimivuuden tutkimisessa sekä komponenttien yhdessä tuottaman toiminnallisuuden oikeellisuuden varmistamisessa.
 
 Järjestelmän integrointi voi edetä joko järjestelmän rakenteeseen perustuen tai järjestelmän toteuttamien ominaisuuksien mukaan.
 
