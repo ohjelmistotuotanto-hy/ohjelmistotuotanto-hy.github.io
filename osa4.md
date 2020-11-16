@@ -1788,7 +1788,7 @@ Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaa
 
 Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voi ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
 
-Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
+Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon vasta opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi kannattanut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi. 
 
 ### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
 
