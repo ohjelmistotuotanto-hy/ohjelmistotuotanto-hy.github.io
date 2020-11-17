@@ -319,7 +319,7 @@ Määrittelemällä luokkaan _RunCucumberTest_ annotaatiolle _@CucumberOptions_ 
     plugin = "pretty", 
     features = "src/test/resources/ohtu", 
     snippets = SnippetType.CAMELCASE,
-    tags = { "@problem" }
+    tags = "@problem"
 )
 
 public class RunCucumberTest {}
