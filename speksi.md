@@ -50,7 +50,7 @@ Related courses: TKT20006 Ohjelmistotuotanto
 
 Erityyppisten lukuvinkkien sisältämät tiedot vaihtelevat hieman vinkin tyypin mukaan. Kirjasta pitäisi tallentaa ainakin kirjoittaja ja teoksen nimi. Videoista ja blogipostauksissa riittää minimissään otsikko ja url. Podcast-jaksoista täytyy olla ainakin podcastin nimi, otsikko ja lyhyt kuvausteksti.
 
-Asikkaan tyypillisimmät kkäyttöskenaariot vinkkikirjastolle ovat:
+Asiakkaan tyypillisimmät käyttöskenaariot vinkkikirjastolle ovat:
 
 - Uuden vinkin lisääminen
 - Vinkkien selailu
