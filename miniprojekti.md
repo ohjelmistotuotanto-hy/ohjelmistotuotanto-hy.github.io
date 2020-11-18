@@ -25,7 +25,7 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-* Ryhmät modostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
+* Ryhmät muodostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
 * Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 * Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat: 
   * scrum
@@ -39,7 +39,7 @@ permalink: /miniprojekti/
 * Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
   * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
-    * ja jakaa muille ryhmäläisille luodin projektin id:n
+    * ja jakaa muille ryhmäläisille luodun projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
 
@@ -51,7 +51,7 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
 #### viikko 4 (16-20.11.)
 
 * Ryhmä muodostuvat/muodostetaan
-* Ryhmät tapaavat asiakkaan aloitustilaisuuksista
+* Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
 * Aloitustilaisuudessa pidettävän asiakastapaamisen pohjalta ryhmä tekee alustavan product backlogin ja sopii asiakkaan kanssa ensimmäisen sprintin tavoitteesta
 * Ryhmä suunnittelee ensimmäisen sprintin ja aloittaa työskentelyn
   * sprintin suunnittelun tuloksena ryhmä tekee sprint backlogin
@@ -86,7 +86,7 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
     * Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
   * Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   * Kannattaa huomata, että storyihin sitoutuminen ei tarkoita sitä, että ne on pakko tehdä valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu. 
-  * Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on otava varovainen, konfiguroimiseen ja testaamiseen tulee kulumaan ja ryhmän järjestäytymiseen paljon aikaa
+  * Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on otava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 * Ryhmä ylläpitää _sprint backlogia_
   * User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
   * Ryhmä tekee päivittäin jäljellä olevan työajan arviointia ja dokumentoi tämän sprintin burndown-käyränä

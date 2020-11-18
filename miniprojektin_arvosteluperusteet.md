@@ -57,7 +57,7 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
   * ainakin jossain storyssa hyväksymiskriteerien testausta (cucumber)	
 * (0.5p) jatkuva integraatio
   * koodi githubissa
-  * GitHub Actions (tai jokin muu CI-palvelu) suorttaa ainakin yksikkötestit ja ne menevät läpi
+  * GitHub Actions (tai jokin muu CI-palvelu) suorittaa ainakin yksikkötestit ja ne menevät läpi
 * (0.5p) toteutus
   * ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 * (0.25p) työtä tehty tasaisesti
