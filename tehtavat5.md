@@ -168,21 +168,21 @@ public class Tapahtumankuuntelija implements EventHandler {
     public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
         this.undo = undo;
         this.sovellus = new Sovelluslogiikka();
-        komennot = new HashMap<>();
-        komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
-        komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus) );
-        komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
+        this.komennot = new HashMap<>();
+        this.komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
+        this.komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus) );
+        this.komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
     }
     
     @Override
     public void handle(Event event) {
         if ( event.getTarget() != undo ) {
-            Komento komento = komennot.get((Button)event.getTarget());
+            Komento komento = this.komennot.get((Button)event.getTarget());
             komento.suorita();
-            edellinen = komento;
+            this.edellinen = komento;
         } else {
-            edellinen.peru();
-            edellinen = null;
+            this.edellinen.peru();
+            this.edellinen = null;
         }                  
     }
 
