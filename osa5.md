@@ -542,13 +542,15 @@ Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta 
 ![]({{ "/images/5-23.png" | absolute_url }}){:height="200px" }
 #### Guild eli kilta
 
+Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompentenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen, yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden keskittymä. Esimekiksi testajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta voi myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
+
 ![]({{ "/images/5-22.png" | absolute_url }}){:height="340px" }
+#### Sopityn mallin soveltamisesta
 
+Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Sopifyn mallin dokumentoineen ja "maailmalle esitelleen" Henrik Knibergin 
+[mukaan](https://blog.crisp.se/2015/06/07/henrikkniberg/no-i-didnt-invent-the-spotify-model) Spotifyn mallia ei ollut tarkoitettu muualla sovellettavaksi, ja hänen mukaansa ei edes ole mitään Spotifyn mallia, sillä sovelluskehityksen tapa muuttuu Spotifyllä koko ajan, mukautuen yhä kasvavan yrityksen tarpeisiin, tämä on siis hyvä pitää mielessä myös mallia sovellettaessa. 
 
-
-#### Sopityn mallin soveltaminen
-
-Aika suosittu, mm smartly. Ei ollut tarkotettu muualla käytettäväksi. Ei ole pysynyt samanlainena kun spotify kasvanut. Feilannut monessa paikassa missä vaan termistö kopioitu.
+Spotifyn malli, tai ainakin sen käyttämää terminologiaa on omaksuttu käyttöön myös monessa suomalaisessa yrityksessä, mm. [Smartly](https://www.smartly.io/) soveltaa mallia varsin suurella menestyksellä.
 
 ## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
