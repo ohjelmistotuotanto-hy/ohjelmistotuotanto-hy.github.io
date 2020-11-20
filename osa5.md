@@ -348,10 +348,9 @@ Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten
 ### Laajan skaalan ketterät menetelmät
 
 Viimeisen kymmenen vuoden aikana ketterän skaalaamiseen on alettu kiinnittämään enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä. Näistä eniten huomiota saaneet ovat Scaled Agile Framework eli
-[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disciplined Agile eli [DA](http://www.disciplinedagiledelivery.com)
+[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disciplined Agile eli [DA](http://www.disciplinedagiledelivery.com).
 
-Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua.
-Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFea ja LeSS:iä. DA on listatuista menetelmistä vähimmälle huomiolle jäänyt, joten jätämme sen välistä.
+Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua. Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFea ja LeSS:iä. DA on listatuista menetelmistä vähimmälle huomiolle jäänyt, joten jätämme sen välistä.
 
 ### SAFe eli Scaled Agile Framework
 
@@ -482,6 +481,74 @@ Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyma
 Kuten aiemmin todettiin, SAFe on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaisten ketterän kehityksen edustajien toimesta, en myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe:a.
 
 En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan, Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
+
+### Spotifyn ketterän skaalaamisen viitekehys
+
+**LUKU KESKEN, LUKEMINEN OMALLA VASTUULLA!**
+
+Henrik Knibergin 2012 ilmestynyt artikkeli [Scaling Agile @ Spotify](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) kertoi suurelle yleisölle miten ruotsalainen musiikkistreamauspalvelu Spotify onnistui skaalaamaan toimintansa noin neljän vuoden aikana muutamasta sovelluskehittäjästä yhteensä noin pariin sataan softakehittäjään säilyttäen toiminnassaan startupmaisen "ketteryyden".
+
+Spotifyn malli on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squd) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi- rakenteen lisäksi malli sisältää myös hieman toisenlaisen jaoittelun, missä firman ihmiset jaotellaan heimojen sisälä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
+
+![]({{ "/images/5-17.png" | absolute_url }}){:height="380px" }
+
+Käydään nyt läpi Spotifyn mallia hieman tarkemmalla tasolla.
+
+#### Squad eli tiimi
+
+Spotifyn mallin ytimessä on noin 5-10 hengen tiimi, mistä käytetän englanninkielistä termiä _squad_, joka lienee suomeksi joukkue tai ryhmä. Puhumme tässä kuitenkin tiimistä sillä se lienee squadeista yleisimmin suomeksi käytetty termi.
+
+Tiimit ovat ketterän ideaalin tapaan cross-functional, eli ne sisältävät kaiken tietotaidon vastuullaan olevien ohjelmiston osien saamisesta aina ideasta tuotantoympäristöön asti. Tiimit ovat täysin itseorganisoituneita, ja ne päättävät vapaasti omista työnteon käytänteitä. Tiimit voivat esim. käyttää sisäisesti Scrumia tai mitä tahansa muuta työskentelyn tapaa. 
+
+![]({{ "/images/5-18.png" | absolute_url }}){:height="200px" }
+
+Kunkin tiimin vastuulla on jokin looginen osa sovellusta. Usein tämä sovelluksen osa on jokin suoraan asiakkaalle näkyvä, ja itsenäisesti arvoa tuottava palanen. Tiimin vastuulla saattaa olla esim. Spotifyn IPhone-sovellus, käyttäjän soittolista, päivän suositukset -toiminnallisuus tai laskutustoiminnot. Osalla tiimeistä vastuulla taas on enemmän Spotifyn muiden tiimien sisäisesti hyödyntävät asiat, kuten esimerkiksi backendin eli taustajärjestelmän riittävän suorituskyvyn varmistaminen.
+
+Seuraava kuva havainnollistaa sitä kuinka tiimin vastuulla on usein jopa konkreettinen palanen käyttöliittymän tarjoamasta toiminnallisuudesta:
+
+![]({{ "/images/5-19.png" | absolute_url }}){:height="345px" }
+
+Tiimeillä on _product owner_, joka huolehtii siitä että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Käsitettä _scrum master_ ei Spotifyllä tunneta. Tiimien apuna toimivat Agile coachit, eli ketteryyden valmentajat, joiden vastuulla on tavanomaisia scrum mastereiden vastuita alkaen palaverien järjestämisestä retrospektiivien fasilitointiin.
+
+Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimiimien pyrkimyksenä on hyvödyntää [Lean startup -menetelmästä](/osa2) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
+
+#### Tribe eli heimo
+
+Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka voi toimia ilman riippuvuutta muista tiimeistä. Tiimien välillä on kuitenkin väkisin riippuvuutta, ja myös synergiaa. Samojen aihepiirin ympärillä työskentelevät tiimit onkin jaettu _heimoihin_ (engl. tribe):
+
+![]({{ "/images/5-20.png" | absolute_url }}){:height="380px" }
+
+Spotifyn tiimit työskentelevät (tai ainakin ennen pandemiaa työskentelivät) samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa, ja tämä taas mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
+ 
+Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 
+perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
+
+Kniberg perustelee heimon kokoa myös seuraavasti: _When groups get too big, we start seeing more things like restrictive rules, bureaucracy, politics, extra layers of management, and other waste._ Eli pitämällä heimon koko suunilleen Dunbarin luvun rajoissa, on se vielä mahdollista hallita hyvin kevyesti, ilman turhan monimutkaista ja monikerroksista organisaatiota.
+
+Heimot pitävät aika ajoin yhteisiä kokoontumisia, missä heimon tiimit esittelevät toisilleen aikaansaannoksiaan sekä oman kehityksensä suuntaa.
+
+#### Chapter eli jaosto
+
+Jakautuminen mahdolisiin autonoomisiin tiimeihin on hyvä sikäli että sen ansiosta kunkin tiimin on mahdollista edetä nopeasti kohti liiketoiminnallisia tavoitteita. Negatiivisena puolena autonomiasta taas on se, että samoja ongelmia saatetaan joutua ratkomaan kerta toisensa jälkeen eri tiimien sisällä ja yhden tiimin oppimat asiat eivät automaattisesti leviä muihin tiimeihin.
+
+Eliminoidakseen tätä uhkaa Spotify on lanseerannut _jaostot_ (engl. chapter) jotka koostuvat yhden heimon niistä jäsenistä joilla on samankalatainen osaamisalue. Esim. heimon eri tiimien testaajat voisivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
+
+![]({{ "/images/5-21.png" | absolute_url }}){:height="320px" }
+
+Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, joissa jaoston jäsenet keskustelevast eri tiimien kohtaamista ongelmista ja eri puolilla kehitetyistä ratkaisuista. Näin esim. yhden tiimin sisällä kehiteytyt testaukseen liittyvät hyvät käytänteet saadaan leviämään muihin tiimeihin. Kutakin jaostoa johtaa _chapter lead_, eli senioriteettia omaava jaoston jäsen, joka on kuitenkin itsekin mukana jossain tiimissä, eli kyse ei ole jaostoon dedikoidusta "johtajasta".
+
+Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta hieman eri dimensioilla. Product owner vastaa kuysymykseen _what to build next_, eli ohjaa tuotteen kehityssuuntaa. Jaosto, erityisesti jaoston _lead_ (termi jolle en keksi hyvää suomenkielistä vastinetta) taas pyrkii tarjoamaan tukea kysymykseen "how to build it well". Jaosto myös tukee jäsentensä ammatilliosta kehittymistä.  
+
+![]({{ "/images/5-23.png" | absolute_url }}){:height="200px" }
+#### Guild eli kilta
+
+![]({{ "/images/5-22.png" | absolute_url }}){:height="340px" }
+
+
+
+#### Sopityn mallin soveltaminen
+
+Aika suosittu, mm smartly. Ei ollut tarkotettu muualla käytettäväksi. Ei ole pysynyt samanlainena kun spotify kasvanut. Feilannut monessa paikassa missä vaan termistö kopioitu.
 
 ## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
