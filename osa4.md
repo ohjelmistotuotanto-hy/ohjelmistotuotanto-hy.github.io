@@ -67,7 +67,7 @@ _set of significant decisions about the organization of a software system_, eli 
 
 ### Arkkitehtuuriin vaikuttavia tekijöitä
 
-[Osassa 2](/osa2) mainittiin järjestelmän vaatimusten jakautuvat kahteen luokkaan, toiminnallisiin ja ei-toiminnallisiin vaatimuksiin.
+[Osassa 2](/osa2) mainittiin järjestelmän vaatimusten jakautuvan kahteen luokkaan, toiminnallisiin ja ei-toiminnallisiin vaatimuksiin.
 
 Järjestelmälle asetetuilla ei-toiminnallisilla [laatuvaatimuksilla](/osa2#ei-toiminnalliset-vaatimukset) (engl. -ilities) on suuri vaikutus arkkitehtuuriin. Laatuvaatimuksia ovat esimerkiksi käytettävyys, suorituskyky, skaalautuvuus, vikasietoisuus, tiedon ajantasaisuus, tietoturva, ylläpidettävyys, laajennettavuus, testattavuus, hinta, time-to-market, ...
 
@@ -79,7 +79,7 @@ Myös toteutusteknologiat, esimerkiksi toteutuksessa käytettävät sovelluskeh
 
 Arkkitehtuurin suurin merkitys on antaa sovelluksen kehitykselle ja ylläpidolle sellaiset raamit, että sovellus pystyy jatkossakin vastaamaan asiakkaan asettamien toiminnallisten vaatimuksien lisäksi järjestelmälle asetettuihin laatuvaatimuksiin.
 
-Joskus käy niin, että sovellukselle alunperin valittu arkkitehtuuri ei enää palvele tavoitettaan. Näin voi esimerkiksi käydä, jos sovelluksen laatuvaatimukset muuttuvat radikaalisti, esim. jos tulee tarve saada sovellus skaalautumaan huomattavasti suuremmalle käyttäjäjoukolle, mitä alkuperäinen arkkitehtuuri kykenee. Arkkitehtuurin muuttaminen on hankalaa ja kallista, mutta joskus muuta vaihtoehtoa ei ole.
+Joskus käy niin, että sovellukselle alunperin valittu arkkitehtuuri ei enää palvele tavoitettaan. Näin voi esimerkiksi käydä, jos sovelluksen laatuvaatimukset muuttuvat radikaalisti, esim. jos tulee tarve saada sovellus skaalautumaan huomattavasti suuremmalle käyttäjäjoukolle kuin mihin alkuperäinen arkkitehtuuri kykenee. Arkkitehtuurin muuttaminen on hankalaa ja kallista, mutta joskus muuta vaihtoehtoa ei ole.
 
 ### Arkkitehtuurityyli
  
@@ -561,7 +561,7 @@ Koheesio ja _single responsibility_ -periaate eivät ole pelkästään olio-ohje
 
 Koheesion periaate näkyy myös sovelluksen arkkitehtuurien tasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen liiketoiminnan tason toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
 
-Vastaava idea näkyy oikeastaan kauttaaltaan tietojenkäsittelyssä: Ohjelmoija voi käyttää korkean tason kieltä, vaikkapa Javaa, ja kääntäjä huolehtii sen kääntämisestä konekielelle. Käyttöjärjestelmän tarkoituksena taas on piilottaa laitteistotason asiat sovellusohjelmilta, sovellusohjelmoijan ei tarvitse huolehtia koneella prosessiriytimien tai mustin määrästä, käyttöjärjestelmä huolehtii niistä. Tietoliikenneprotokollat taas koostuvat joukosta _tasoja_ (engl. layers), joissa matalimmat tasot hoitavat tiedonsiirtoa "bittitasolla" kun vaas korkeammat protokollakerrokset keskittyvät tiedon siirtoon esim. HTML-muodossa tai videostreamina ilman että niiden tarvitsee huolehtia bittitasolla tapahtuvista asioista. 
+Vastaava idea näkyy oikeastaan kauttaaltaan tietojenkäsittelyssä: Ohjelmoija voi käyttää korkean tason kieltä, vaikkapa Javaa, ja kääntäjä huolehtii sen kääntämisestä konekielelle. Käyttöjärjestelmän tarkoituksena taas on piilottaa laitteistotason asiat sovellusohjelmilta, sovellusohjelmoijan ei tarvitse huolehtia koneella prosessoriytimien tai muistin määrästä, käyttöjärjestelmä huolehtii niistä. Tietoliikenneprotokollat taas koostuvat joukosta _tasoja_ (engl. layers), joissa matalimmat tasot hoitavat tiedonsiirtoa "bittitasolla" kun taas korkeammat protokollakerrokset keskittyvät tiedon siirtoon esim. HTML-muodossa tai videostreamina ilman että niiden tarvitsee huolehtia bittitasolla tapahtuvista asioista. 
 
 Tästä periaatteesta, missä erilaiset ja eri abstratkiotasoilla tapahtuvat asiat tulee antaa omien yksikköidensä houlehdittavaksi käytetään usein nimitystä 
 [Separation of concers](https://en.wikipedia.org/wiki/Separation_of_concerns).
