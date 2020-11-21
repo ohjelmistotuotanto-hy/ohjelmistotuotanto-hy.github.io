@@ -91,7 +91,7 @@ kauppa = new Kauppa(mockPankki, mockViite);
 
 kyseessä eivät ole normaalit oliot vaan normaaleja olioita "matkivat" valeoliot, jotka myös pystyvät tarkastamaan, että niiden metodeja on kutsuttu oikeilla parametreilla. 
 
-Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin mock-olion metodia <code>maksa</code> on kutsuttu oikeilla parametreilla. Kolmanteen parametriin eli tilinumeroon ei kiinnitetä huomiota:
+Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin mock-olion metodia <code>maksa</code> on kutsuttu oikeilla parametreilla. Kolmanteen parametriin eli viitenumeroon ei kiinnitetä huomiota:
 
 ``` java
 verify(mockPankki).maksa(eq("1111"), eq(10), anyInt());
