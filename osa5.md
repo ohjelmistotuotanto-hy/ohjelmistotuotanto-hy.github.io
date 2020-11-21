@@ -515,7 +515,7 @@ Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yht
 Tiimien toimivuutta ja toimintaolosuhteita mitataan muutaman kuukauden välein. Mittareina on 
 
 - suhde _product owneriin_ ja _agile coacheihin_, onko saatava tuen määrä riittävä, annetaanko tiimille esim. liikaa painetta tuotteen kehittämiseen koodin laadun kustannuksella
-- missä määrin tiimi ja sen jäsenet pysty´vät itse vaikuttamaan työskentelyn tapoihin (_influencing work_)
+- missä määrin tiimi ja sen jäsenet pystyvät itse vaikuttamaan työskentelyn tapoihin (_influencing work_)
 - onko tiimin helppo julkaista tekemänsä muutokset tuotantoon (_easy to release_), tämä on erityisen tärkeä komponentti, sillä tiheä julkaisutahti on oleellista tuotteen nopean A/B-testaukseen perustuvan kehittämisen kannalta
 - onko tiimin käyttämä kehitysprosessi optimaali tiimin tarpeisiin nähden (_process fits the team_)
 - onko tiimin _missio_, eli työtä ohjaava isompi tavoite selkeä
