@@ -512,7 +512,16 @@ Tiimeillä on _product owner_, joka huolehtii että tiimin vastuulla olevaa sove
 
 Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimiimien pyrkimyksenä on hyvödyntää [Lean startup -menetelmästä](/osa2) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
 
+Tiimien toimivuutta ja toimintaolosuhteita mitataan muutaman kuukauden välein. Mittareina on 
 
+- suhde _product owneriin_ ja _agile coacheihin_, onko saatava tuen määrä riittävä, annetaanko tiimille esim. liikaa painetta tuotteen kehittämiseen koodin laadun kustannuksella
+- missä määrin tiimi ja sen jäsenet pysty´vät itse vaikuttamaan työskentelyn tapoihin (_influencing work_)
+- onko tiimin helppo julkaista tekemänsä muutokset tuotantoon (_easy to release_), tämä on erityisen tärkeä komponentti, sillä tiheä julkaisutahti on oleellista tuotteen nopean A/B-testaukseen perustuvan kehittämisen kannalta
+- onko tiimin käyttämä kehitysprosessi optimaali tiimin tarpeisiin nähden (_process fits the team_)
+- onko tiimin _missio_, eli työtä ohjaava isompi tavoite selkeä
+- onko muun _organisaation tuki_ tuki riittävä, niin teknisten kuin vähemmän teknisten ongelmien ratkaisun suhteen
+
+Tiimien mittareiden trendejä seurataan, jotta ongelmakohtiin myös puututtaisiin sopivin toimenpitein.
 
 ![]({{ "/images/5-24.png" | absolute_url }}){:height="245px" }
 
@@ -524,8 +533,7 @@ Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka 
 
 Spotifyn tiimit työskentelevät (tai ainakin ennen pandemiaa työskentelivät) samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa, ja tämä taas mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
  
-Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 
-perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
+Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
 
 Kniberg perustelee heimon kokoa myös seuraavasti: _When groups get too big, we start seeing more things like restrictive rules, bureaucracy, politics, extra layers of management, and other waste._ Eli pitämällä heimon koko suunilleen Dunbarin luvun rajoissa, on se vielä mahdollista hallita hyvin kevyesti, ilman turhan monimutkaista ja monikerroksista organisaatiota.
 
@@ -533,30 +541,32 @@ Heimot pitävät aika ajoin yhteisiä kokoontumisia, missä heimon tiimit esitte
 
 #### Chapter eli jaosto
 
-Jakautuminen mahdolisiin autonoomisiin tiimeihin on hyvä sikäli että sen ansiosta kunkin tiimin on mahdollista edetä nopeasti kohti liiketoiminnallisia tavoitteita. Negatiivisena puolena autonomiasta taas on se, että samoja ongelmia saatetaan joutua ratkomaan kerta toisensa jälkeen eri tiimien sisällä ja yhden tiimin oppimat asiat eivät automaattisesti leviä muihin tiimeihin.
+Jakautuminen mahdollisimman autonoomisiin tiimeihin on hyvä sikäli että sen ansiosta kunkin tiimin on mahdollista edetä nopeasti kohti liiketoiminnallisia tavoitteita. Negatiivisena puolena autonomiasta taas on se, että samoja ongelmia saatetaan joutua ratkomaan kerta toisensa jälkeen eri tiimien sisällä ja yhden tiimin oppimat asiat eivät automaattisesti leviä muihin tiimeihin.
 
 Eliminoidakseen tätä uhkaa Spotify on lanseerannut _jaostot_ (engl. chapter) jotka koostuvat yhden heimon niistä jäsenistä joilla on samankalatainen osaamisalue. Esim. heimon eri tiimien testaajat voisivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
 
 ![]({{ "/images/5-21.png" | absolute_url }}){:height="320px" }
 
-Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, joissa jaoston jäsenet keskustelevast eri tiimien kohtaamista ongelmista ja eri puolilla kehitetyistä ratkaisuista. Näin esim. yhden tiimin sisällä kehiteytyt testaukseen liittyvät hyvät käytänteet saadaan leviämään muihin tiimeihin. Kutakin jaostoa johtaa _chapter lead_, eli senioriteettia omaava jaoston jäsen, joka on kuitenkin itsekin mukana jossain tiimissä, eli kyse ei ole jaostoon dedikoidusta "johtajasta".
+Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, joissa jaoston jäsenet keskustelevast eri tiimien kohtaamista ongelmista ja eri puolilla kehitetyistä ratkaisuista. Näin esim. yhden tiimin sisällä kehiteytyt testaukseen liittyvät hyvät käytänteet saadaan leviämään muihin tiimeihin. Kutakin jaostoa johtaa _chapter lead_, eli senioriteettia omaava jaoston jäsen, joka on kuitenkin itsekin mukana jossain tiimissä, eli kyse _ei ole_ jaostoon dedikoidusta johtajasta.
 
 Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta hieman eri dimensioilla. Product owner vastaa kuysymykseen _what to build next_, eli ohjaa tuotteen kehityssuuntaa. Jaosto, erityisesti jaoston _lead_ (termi jolle en keksi hyvää suomenkielistä vastinetta) taas pyrkii tarjoamaan tukea kysymykseen "how to build it well". Jaosto myös tukee jäsentensä ammatilliosta kehittymistä.  
 
-![]({{ "/images/5-23.png" | absolute_url }}){:height="240px" }
+![]({{ "/images/5-23.png" | absolute_url }}){:height="280px" }
 #### Guild eli kilta
 
-Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompentenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen, yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden keskittymä. Esimekiksi testajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta voi myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
+Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompentenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen mutta yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden ryhmä. Esimekiksi testajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
 
 ![]({{ "/images/5-22.png" | absolute_url }}){:height="360px" }
 #### Sopityn mallin soveltamisesta
 
-Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Sopifyn mallin dokumentoineen ja "maailmalle esitelleen" Henrik Knibergin 
-[mukaan](https://blog.crisp.se/2015/06/07/henrikkniberg/no-i-didnt-invent-the-spotify-model) Spotifyn mallia ei ollut tarkoitettu muualla sovellettavaksi, ja hänen mukaansa ei edes ole mitään Spotifyn mallia, sillä sovelluskehityksen tapa muuttuu Spotifyllä koko ajan, mukautuen yhä kasvavan yrityksen tarpeisiin, tämä on siis hyvä pitää mielessä myös mallia sovellettaessa. 
+Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Sopifyn mallin dokumentoineen ja maailmalle "esitelleen" Henrik Knibergin 
+[mukaan](https://blog.crisp.se/2015/06/07/henrikkniberg/no-i-didnt-invent-the-spotify-model) Spotifyn mallia ei ollut tarkoitettu muualla sovellettavaksi, ja hänen mukaansa ei edes ole mitään Spotifyn mallia, sillä sovelluskehityksen tapa muuttuu Spotifyllä koko ajan, mukautuen yhä kasvavan yrityksen tarpeisiin. 
 
-Spotifyn malli, tai ainakin sen käyttämää terminologiaa on omaksuttu käyttöön myös monessa suomalaisessa yrityksessä, mm. [Smartly](https://www.smartly.io/) soveltaa mallia varsin suurella menestyksellä.
+Spotify on sittemmin lisännyt malliinsa muutaman uuden organisatoorisen komponentin (trio ja allianssi) joiden avulla pystytään hallitsemaan kehityksen suuntaa isossa kuvassa. Spotifyllä on myös muutamia yli kaikkien heimojen toimivia henkilörooleja, mm. _chief architect_ eli henkilö, joka vastaa koko tuotteen arkkitehtuurista. 
 
-Jos Spotifyn malli kiinnostaa, kannattaa ehottomasti katsoa [tämä](https://www.youtube.com/watch?v=Yvfz4HGtoPc&ab_channel=HenrikKniberg)j ja [tämä](https://www.youtube.com/watch?v=vOt4BbWLWQw&ab_channel=HenrikKniberg) aihetta käsittelevä Youtube-video.
+Spotifyn mallia sovellettaessa on siis hyvä pitää mielessä että sen ei todellakaan ole tarkoitettu olevan staattinen rakennelma, jonka voi kopioida kirjaimellisesti toiseen kontekstiin. Spotifyn malli, tai ainakin sen käyttämää terminologiaa on omaksuttu käyttöön myös monessa suomalaisessa yrityksessä, mm. [Smartly](https://www.smartly.io/) soveltaa mallia varsin suurella menestyksellä.
+
+Jos Spotifyn malli kiinnostaa, kannattaa ehottomasti katsoa [tämä](https://www.youtube.com/watch?v=Yvfz4HGtoPc&ab_channel=HenrikKniberg) ja [tämä](https://www.youtube.com/watch?v=vOt4BbWLWQw&ab_channel=HenrikKniberg) aihetta käsittelevä Youtube-video.
 ## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
 Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käyttöön ja hyötyihin liittyvään tutkimukseen.
