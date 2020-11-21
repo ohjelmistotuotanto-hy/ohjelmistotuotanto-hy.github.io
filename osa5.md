@@ -532,12 +532,14 @@ Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka 
 ![]({{ "/images/5-20.png" | absolute_url }}){:height="380px" }
 
 Spotifyn tiimit työskentelevät (tai ainakin ennen pandemiaa työskentelivät) samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa, ja tämä taas mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
- 
+
 Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
 
 Kniberg perustelee heimon kokoa myös seuraavasti: _When groups get too big, we start seeing more things like restrictive rules, bureaucracy, politics, extra layers of management, and other waste._ Eli pitämällä heimon koko suunilleen Dunbarin luvun rajoissa, on se vielä mahdollista hallita hyvin kevyesti, ilman turhan monimutkaista ja monikerroksista organisaatiota.
 
 Heimot pitävät aika ajoin yhteisiä kokoontumisia, missä heimon tiimit esittelevät toisilleen aikaansaannoksiaan sekä oman kehityksensä suuntaa.
+
+Sellaiset tiimit, jotka tekevät samaan teemaan liittyviä kokonaisuuksia, ja joiden tulee kommunikoida usein, on mielekästä sijoittaa samaan heimoon. Näin tiimien keskinäinen kommunikointi ja tiedonvaihto helpottuu sillä jo määritelmänsä mukaan kaikki heimon tiimit työskentelevät lähekkäin, samassa rakennuksessa ja mieluiten vieläpä samassa kerroksessa. 
 
 #### Chapter eli jaosto
 
