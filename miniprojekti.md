@@ -9,7 +9,12 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ryhmäjako on valmiina, ryhmä ja aloitustilaisuuden ajankohta selviää [täältä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea)
+- loppudemojen ajankohdat:
+  - tiistai 8.12. klo 12-14
+  - torstai 10.12. klo 14-16
+  - perjantai 11.12. klo 14-16 
+- jokainen ryhmä osallistuu yhteen loppudemoon
+- varaa aika [täällä](https://docs.google.com/document/d/1534y8QXwYWRYRXWyFlHMOWBHmkQPGcadN5xLbs_Mrjc/edit?usp=sharing)
 
 ### Johdanto
 
@@ -71,7 +76,12 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
 #### viikko 7 (7-13.12.)
 
 * Sprintin 3 katselmointi (eli loppudemot)
-  * jokainen ryhmä osallistuu yhteen noin 3 h kestoiseen demotilaisuuteen
+  - tiistai 8.12. klo 12-14
+  - torstai 10.12. klo 14-16
+  - perjantai 11.12. klo 14-16 
+- jokainen ryhmä osallistuu yhteen loppudemoon
+- varaa aika [täällä](https://docs.google.com/document/d/1534y8QXwYWRYRXWyFlHMOWBHmkQPGcadN5xLbs_Mrjc/edit?usp=sharing)
+
 
 ### Toteutettava ohjelmisto
 

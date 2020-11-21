@@ -241,7 +241,13 @@ Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan riittävällä taso
 
 Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) jonka aikana luodaan mm. alustava arkkitehtuuri sekä backlog. 
 
-Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana tehtiin erilaisia kehitystyötä valmistelevia asioita, mm. hahmoteltiin alustava arkkitehtuuri. Sittemmin koko käsite on hävinnyt Scrumista ja toinen Scrumin alkuperäisistä kehittäjistä Ken Schwaber jopa eksplisiittisesti kieltää ja [tyrmää](http://www.scrum.org/assessmentdiscussion/post/1317787) koko "nollasprintin" olemassaolon.
+Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana tehtiin erilaisia kehitystyötä valmistelevia asioita, mm. hahmoteltiin alustava arkkitehtuuri. Sittemmin koko käsite on hävinnyt Scrumista ja toinen Scrumin alkuperäisistä kehittäjistä Ken Schwaber jopa eksplisiittisesti kieltää ja [tyrmää](http://web-old.archive.org/web/20120319122002/http://www.scrum.org/assessmentdiscussion/post/1317787) koko "nollasprintin" olemassaolon, perustellen asiaa seuraavasti
+
+> The only purpose a Sprint 0 serves is to allow delays in progress. By requiring that teams produce some increment of working functionality every Sprint, the team is required to prioritize its work so it doesn't waste time over-building the best environment known to man while its company's competition races ahead in the marketplace.
+>
+> What better way to get familiar with a new technology that by using it to actually build something useful? How can a team realistically size user stories if it hasn't actually worked on any to know how complex they will be? Release plan activities are performed by the PO during the Sprint...he has no data to base a release plan on until at least one Sprint has been completed. Good data doesn't come until after 3-4 Sprints.
+>
+> A Sprint 0 is exactly that, a cop out. Don't let it happen.
 
 ### Kävelevä luuranko
 
