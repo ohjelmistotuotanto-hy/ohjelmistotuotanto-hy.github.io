@@ -7,13 +7,14 @@ permalink: /tehtavat5/
 
 ## Viikko 5
 
-*Alla olevien tehtävien deadline on maanantaina 2.12. klo 23:59*
+*Alla olevien tehtävien deadline on maanantaina 30.11. klo 23:59*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
-- ma 14-16 B221 
-- ke 14-16 B221
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5), joiden deadline on sunnuntaina 1.12. klo 23:59:00.  
+- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
+- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5), joiden deadline on sunnuntaina 29.11. klo 23:59:00.  
 
 Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 
@@ -167,21 +168,21 @@ public class Tapahtumankuuntelija implements EventHandler {
     public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
         this.undo = undo;
         this.sovellus = new Sovelluslogiikka();
-        komennot = new HashMap<>();
-        komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
-        komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus) );
-        komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
+        this.komennot = new HashMap<>();
+        this.komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
+        this.komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus) );
+        this.komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
     }
     
     @Override
     public void handle(Event event) {
         if ( event.getTarget() != undo ) {
-            Komento komento = komennot.get((Button)event.getTarget());
+            Komento komento = this.komennot.get((Button)event.getTarget());
             komento.suorita();
-            edellinen = komento;
+            this.edellinen = komento;
         } else {
-            edellinen.peru();
-            edellinen = null;
+            this.edellinen.peru();
+            this.edellinen = null;
         }                  
     }
 

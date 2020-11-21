@@ -174,3 +174,41 @@ public class Tester {
 
 Määrittele <code>FirefoxDriver</code> vastaavalla tavalla testeissä.
  
+### Tapa 6
+
+Linuxin alla ChromeDriverin kutsuma chrome-binääri saattaa oletusarvoisesti haluta käyttää käyttöliittymänsä piirtämiseen väärän alustan taustamoottoria, eikä anna erityisen auttavaista virhetulostetta konsoliin.
+
+```
+$ ./gradlew browse
+
+> Task :browse
+Starting ChromeDriver 86.0.4240.75 (c69c33933bfc72a159aceb4aeca939eb0087416c-refs/branch-heads/4240@{#1149}) on port XYZ
+...
+Exception in thread "main" org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: crashed.
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/lib64/chromium-browser/chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+...
+```
+
+Vianselvityksessä voi selvitä esim. seuraavaa:
+
+```
+$ /usr/lib64/chromium-browser/chrome
+[1661360:1661360:1116/191311.250169:ERROR:wayland_connection.cc(72)] Failed to connect to Wayland display
+[1661360:1661360:1116/191311.250227:FATAL:ozone_platform_wayland.cc(191)] Failed to initialize Wayland platform
+(core dumped)  /usr/lib64/chromium-browser/chrome
+```
+
+Selain on yrittänyt piirtää itsensä Wayland-protokollaa käyttäen, vaikka olemme X11-istunnossa!
+
+Ongelmaa voi kiertää muokkaamalla ohjelmakoodia esimerkiksi seuraavasti
+
+```java
+...
+import org.openqa.selenium.chrome.ChromeOptions;
+...
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--ozone-platform=x11");
+        //WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
+```
