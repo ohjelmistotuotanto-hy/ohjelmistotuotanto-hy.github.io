@@ -192,7 +192,7 @@ Edellisestä kuvassa olevasta _value stream mapista_ havaitaan, että koodin val
 - **Miksi?** Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan.
 - **Miksi?** Sprintteihin otetaan aina liian monta user storya.
 
-Näin kysymällä toistuvasti _miksi_ on mahdollista päästä ongelman perimmäisen syyn lähteille, eli sinne, mitä korjaamalla hukka saadaan toivon mukaan eliminoitua. Esimerkin kuusi miksi-kysymystä siis paljastaa ongelman perimmäiseksi syyksi sen, että _sprintteihin otetaan aina liian monta user storya_, eli hukan eliminoimiseksi on todennäköistä parasta lähteä liikkeelle sprinttien työmäärän vähentämisellä.
+Näin kysymällä toistuvasti (noin viisi kertaa) _miksi_ on mahdollista päästä ongelman perimmäisen syyn lähteille, eli sinne, mitä korjaamalla hukka saadaan toivon mukaan eliminoitua. Esimerkin kuusi miksi-kysymystä siis paljastaa ongelman perimmäiseksi syyksi sen, että _sprintteihin otetaan aina liian monta user storya_, eli hukan eliminoimiseksi on todennäköistä parasta lähteä liikkeelle sprinttien työmäärän vähentämisellä.
 
 Itseasiassa olisi ollut hyvä kysyä ainakin yksi _miksi_ lisää. Perimmäisen syyn kannalta oleellista on se, että minkä takia sprintteihin otetaan liikaa storyja. Johtuuko se kehitystiimistä itsestään vai tiimin ulkopuolisista voimista?
 
@@ -234,7 +234,9 @@ Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analys
 
 Kuvan kanban-taulu salli maksimissaan, että sille on sijoitettu kaksikymmentä user storya. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_. 
 
-Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storya. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanbantaululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _sykliaikaa_, eli sitä aikaa, joka kuluu kun user story tulee "tilauksesta" siihen kun sen määrittelemä ominaisuus on valmis. 
+Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storya. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanbantaululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _sykliaikaa_, eli sitä aikaa, joka kuluu kun user story tulee "tilauksesta" siihen kun sen määrittelemä ominaisuus on valmis.
+
+Leanin ideaalin mukaista olisi toteuttaa ns. _one piece flow_, eli toimia siten että user storyt tehtäisiin kokonaisuudessaan valmiiksi ennen seuraavan user storyn aloittamista. Monissa paikoissa sovelletaankin tätä periaatetta, mutta jos työ on organisoitu huonosti, periaate saattaa johtaa liian alhaiseen _utilisaatioon_, eli käytännössä siihen että softatiimin sisällä useat henkilöt joutuvat odottamaan toisten tekemisiä ennen kun he pystyvät jatkamaan omaa työtään. Tämän takia yhden storyn sijaan useimmissa tapauksissa tiimi työstä yhtä aikaa useampaa storyä. Eli sopivien WIP-rajoitteiden hakeminen vaatii aina tiimikohtaista harkintaa ja soveltamista.
 
 ### Leanin periaatteita
  
@@ -244,7 +246,7 @@ Eräs varianssin aiheuttaja ovat viat. Leanin periaatteita ovatkin _Stop and fix
 
 *Stop and fix* viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on velvollinen pysäyttämään tuotantolinjan vian, esimerkiksi vaurioituneen komponentin havaitessaan.
 
-Tuotantolinjan pysäyttämisen yhteydessä _vian perimmäinen syy_ (engl. root cause) tulee selvittää mahdollisimman nopeasti ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotannossa tulee olla laatu sisäänrakennettua *build quality in*.
+Tuotantolinjan pysäyttämisen yhteydessä _vian perimmäinen syy_ (engl. root cause) tulee selvittää mahdollisimman nopeasti (esimerkiksi äsken läpikäydyllä five whys -menetelmällä) ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotannossa tulee olla laatu sisäänrakennettua *build quality in*.
 
 Ohjelmistotuotannon käytänteistä automatisoitu testaus ja jatkuvan integraatio voidaan nähdä suoraan _stop and fix_ - ja _build quality in_ -periaatteiden ilmentymänä.
  
@@ -252,7 +254,7 @@ Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot k�
 
 Yksittäisten työntekijöiden ja koneiden tehokkuuden tarkastelun sijaan lean keskittyy arvon virtauksen optimoinnin avulla järjestelmien kokonaisvaltaiseen kehittämiseen ja olettaa, että se on pidemmällä tähtäimellä yritykselle kannattavampaa. Tämän kiteyttää periaate *long term philosophy*.
 
-Esimerkiksi yksittäisen koneen suuri käyttöaste tai henkilökohtaisen suorituksen palkitseminen voi olla lokaalia optimointia, joka voi koko yrityksen kannalta olla jopa haitallista. Näin voidaan esimerkiksi valmistaa paljon komponentteja, mitä ei lopulta koskaan tarvita. Yksittäisten tuotantolaitteiden, henkilöiden tai tiimien suorituskyvyn sijaan keskittymällä arvon virtaamiseen tilauksesta asiakkaalle pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat.
+Esimerkiksi yksittäisen koneen suuri käyttöaste tai henkilökohtaisen suorituksen palkitseminen voi olla _lokaalia optimointia_, joka voi koko yrityksen kannalta olla jopa haitallista. Näin voidaan esimerkiksi valmistaa paljon komponentteja, mitä ei lopulta koskaan tarvita. Yksittäisten tuotantolaitteiden, henkilöiden tai tiimien suorituskyvyn sijaan keskittymällä arvon virtaamiseen tilauksesta asiakkaalle pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat.
 
 Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on turhan paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista. Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä.
 
