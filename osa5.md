@@ -490,11 +490,13 @@ En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, 
 
 Henrik Knibergin 2012 ilmestynyt artikkeli [Scaling Agile @ Spotify](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) kertoi suurelle yleisölle miten ruotsalainen musiikkistreamauspalvelu Spotify onnistui skaalaamaan toimintansa noin neljän vuoden aikana muutamasta sovelluskehittäjästä useaan sataan, eri kaupungeissa työskentelevään softakehittäjään säilyttäen toiminnassaan startupmaisen ketteryyden.
 
-Spotifyn malli on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squad) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi/heimorakenteen lisäksi malli sisältää myös hieman toisenlaisen jaoittelun, missä firman ihmiset jaotellaan heimojen sisällä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
+Spotifyn "malli" on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squad) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi/heimorakenteen lisäksi malli sisältää myös hieman toisenlaisen jaoittelun, missä firman ihmiset jaotellaan heimojen sisällä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
 
 ![]({{ "/images/5-17.png" | absolute_url }}){:height="380px" }
 
-Käydään nyt läpi Spotifyn mallia hieman tarkemmalla tasolla.
+Vaikka Knibergin kuvauksen tarkoituksena ei ollutkaan se, että _muut firmat_ alkaisivat imitoimaan Spotifyn tapaa, näin kuitenkin kävi. 
+
+Käydään nyt hieman tarkemmalla tasolla läpi Spotifyn mallia, tai sitä miltä se näytti noin 2012 ja siitä muutaman vuoden eteenpäin.
 
 #### Squad eli tiimi
 
@@ -514,7 +516,9 @@ Seuraava kuva havainnollistaa sitä kuinka tiimin vastuulla on usein jopa konkre
 
 Tiimeillä on _product owner_, joka huolehtii että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Käsitettä _scrum master_ ei Spotifyllä tunneta. Tiimien apuna toimivat _agile coachit_, eli ketteryyden valmentajat, joiden vastuulla on tavanomaisia scrum mastereiden vastuita alkaen palaverien järjestämisestä retrospektiivien fasilitointiin. Coachit auttavat myös teknisissä asioissa ja antavat tarvittaessa vaikkapa yksilöllistä uraohjausta tiimien jäsenille.
 
-Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimiimien pyrkimyksenä on hyvödyntää [Lean startup -menetelmästä](/osa2) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
+Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimiimien pyrkimyksenä on hyvödyntää [Lean startup -menetelmästä](/osa2) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä. 
+
+Tiimeillä on valta tehdä jossain määrin liiketoimintaankin liittyviä päätöksiä varsin autonomisesti. Tälle perusteena on se, että koska Spotifyn pitää pystyä toimimaan mahdollisimman nopeasti haastavilla markkinoilla, myös päätöksenteon pitää olla nopeaa ja jopa tiimitasolla tapahtuvaa. Toimiakseen se taas edellyttää vahvaa yhteistä visioa sovelluksen kehityssuunnasta, ja selkeitä mittareita siitä mihin suuntaan kehitystä on vietävä. Spotifyllä monien asioiden käyttökelpoisuutta on helpohko mitata asiakasmetriikoiden esim. päivittäisten aktiivisten käyttäjien lukumäärän avulla.
 
 Tiimien toimivuutta ja toimintaolosuhteita mitataan muutaman kuukauden välein. Mittareina ovat 
 
@@ -535,7 +539,7 @@ Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka 
 
 ![]({{ "/images/5-20.png" | absolute_url }}){:height="380px" }
 
-Spotifyn tiimit työskentelevät (tai ainakin ennen pandemiaa työskentelivät) samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa, ja tämä taas mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
+Spotifyn tiimit työskentelevät samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa, ja tämä taas mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
 
 Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
 
@@ -563,16 +567,23 @@ Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta 
 Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompentenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen mutta yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden ryhmä. Esimekiksi testajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
 
 ![]({{ "/images/5-22.png" | absolute_url }}){:height="360px" }
-#### Spotifyn mallin soveltamisesta
+#### Spotifyn mallin soveltaminen ja kritiikki
 
-Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Sopifyn mallin dokumentoineen ja maailmalle "esitelleen" Henrik Knibergin 
+Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Sopifyn skaalaamisen tavan dokumentoineen ja maailmalle esitelleen Henrik Knibergin 
 [mukaan](https://blog.crisp.se/2015/06/07/henrikkniberg/no-i-didnt-invent-the-spotify-model) Spotifyn mallia ei ollut tarkoitettu muualla sovellettavaksi, ja hänen mukaansa ei edes ole mitään Spotifyn mallia, sillä sovelluskehityksen tapa muuttuu Spotifyllä koko ajan, mukautuen yhä kasvavan yrityksen tarpeisiin. 
 
 Spotify on sittemmin lisännyt malliinsa muutaman uuden organisatoorisen komponentin (trio ja allianssi) joiden avulla pystytään hallitsemaan kehityksen suuntaa isossa kuvassa. Spotifyllä on myös muutamia yli kaikkien heimojen toimivia henkilörooleja, mm. _chief architect_ eli henkilö, joka vastaa koko tuotteen arkkitehtuurista. 
 
-Spotifyn mallia sovellettaessa on siis hyvä pitää mielessä että sen ei todellakaan ole tarkoitettu olevan staattinen rakennelma, jonka voi kopioida kirjaimellisesti toiseen kontekstiin. Spotifyn malli, tai ainakin sen käyttämää terminologiaa on omaksuttu käyttöön myös monessa suomalaisessa yrityksessä, mm. [Smartly](https://www.smartly.io/) soveltaa mallia varsin suurella menestyksellä.
+Spotifyn mallille on annettu internetissä [rajuakin](https://www.linkedin.com/pulse/spotify-sucks-erwin-verweij/) [kritiikkiä](https://www.jeremiahlee.com/posts/failed-squad-goals/). Onkin ilmeistä että Spotifyn toiminta on kohdannut monia vaikeuksia firman kasvettua nopeasti ja tämä on johtanut Spotifyn mallin (mikäli mitään mallia siis voi edes sanoa olevan olemassa) muutoksiin ja mitä ilmeisemmin muokannut firman toimintaa kohti [perinteisempää jäykempää korporaatiota](https://www.youtube.com/watch?v=ar4lq1l8pAc&t=2462s&ab_channel=QAgileQualityinAgile).
 
-Jos Spotifyn malli kiinnostaa, kannattaa ehdottomasti katsoa [tämä](https://www.youtube.com/watch?v=Yvfz4HGtoPc&ab_channel=HenrikKniberg) ja [tämä](https://www.youtube.com/watch?v=vOt4BbWLWQw&ab_channel=HenrikKniberg) aihetta käsittelevä Youtube-video.
+
+Spotifyn mallia sovellettaessa on siis hyvä pitää mielessä että sen ei todellakaan ole tarkoitettu olevan staattinen rakennelma, jonka voi kopioida kirjaimellisesti toiseen kontekstiin. Moni asia Spotifyn mallissa onkin ainoastaan uusi nimi jollekin vanhalle tutulle asialle, joitka löytyvät suoraan esim. Scrumista, Leanista, SAFesta tai LeSSistä, ja voikin olla viisaampi kääntyä suoraan näiden menetelmien kirjallisuuden pariin.
+
+Spotifyn mallin suosion on osin arveltu johtuvan [sädekehävaikutuksesta (engl. halo effect)](https://fi.wikipedia.org/wiki/S%C3%A4dekeh%C3%A4vaikutus), eli myönteinen mielikuva Spotifystä tuotteena on saattanut olla osin sen takana, että on alettu myös kopioimaan ilman sen suurempia perusteita myös firman tapaa toimia. Tämä siitäkin huolimatta, että oman yrityksen toimintaympäristössä ei ole mitään Spotifyn toimintaympäristöä muistuttavaa.
+
+Spotifyn malli, tai ainakin sen käyttämää terminologiaa on omaksuttu käyttöön myös monessa suomalaisessa yrityksessä, mm. [Smartly](https://www.smartly.io/) soveltaa tiettyjä mallin piirteitä varsin suurella menestyksellä.
+
+Jos Spotifyn malli kiinnostaa, kannattaa ehdottomasti katsoa [tämä](https://www.youtube.com/watch?v=Yvfz4HGtoPc&ab_channel=HenrikKniberg) ja [tämä](https://www.youtube.com/watch?v=vOt4BbWLWQw&ab_channel=HenrikKniberg) aihetta käsittelevä vuodelta 2014 Youtube-video.
 ## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
 Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käyttöön ja hyötyihin liittyvään tutkimukseen.
