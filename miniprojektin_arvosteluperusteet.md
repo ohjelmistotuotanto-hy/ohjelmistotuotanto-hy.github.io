@@ -8,7 +8,7 @@ permalink: /miniprojektin_arvosteluperusteet/
 ## Miniprojektin arvosteluperusteet
 
 * [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
-
+* [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 
 Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan
 
@@ -70,9 +70,28 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
 
 Sprintin maksimi on 2.5 pistettä.
 
+
 ### Toisen sprintin arvosteluperusteet:
 
-Ilmestyvät myöhemmin
+#### pisteet jakautuvat seuraavasti
+
+* (0.25p) product backlog 
+  * backlog on DEEP (storyjä ei tarvitse estimoida)
+* (0.25p) sprintin 2 backlog
+  * sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  * päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
+  * burndown-käyrä olemassa
+  * jokaiseen taskiin on merkitty sen tekijä(t)
+* (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
+* (0.5p) kattavahko testaus yksikkö- ja storytasolla
+* (0.25p) jatkuva integraatio
+  * CI-palvelu suorittaa testit
+* (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
+* (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+* (0.25p) toimivasta, demossa näytettävästä versiosta  on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/). 
+  * Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
