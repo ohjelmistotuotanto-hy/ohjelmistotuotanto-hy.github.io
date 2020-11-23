@@ -115,7 +115,8 @@ Rasmus Ristolainen  BUF   0 +  5 =  5
 ...
 ```
 
-Vinkki: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
+- Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
+- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee? Numeroarvot tulee muuttaa merkkijonomuotoisiksi, jotta lopputulos on oikea. Esimerkiksi `f"{str(self.goals):2}"`.
 
 ### 3. Tutustuminen Robot Frameworkkiin
 
@@ -193,7 +194,7 @@ Register With Valid Username And Long Enough Password Containing Only Letters
 - Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja [^[a-z]+\$](https://regexr.com/5fslc)
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja [[^a-z]](https://regexr.com/5fsll)
 
-Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on luokan <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
+Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
 **HUOM 1:** Testitapaukset kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan tiedostoon, vaan etene pienin askelin. Jos yksi testitapaus ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
 
@@ -228,6 +229,7 @@ class UserService:
         self.user_repository = user_repository
 
     def check_credentials(self, username, password):
+        # pysäytetään ohjelman suoritus tälle riville
         breakpoint()
 
         if not username or not password:
@@ -538,7 +540,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 - Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
-**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on luokan <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
+**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
 ### 10. Web-sovelluksen testaaminen osa 4
 

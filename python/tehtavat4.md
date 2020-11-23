@@ -51,7 +51,7 @@ Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unitte
 <Mock id='4568521696'>
 ```
 
-Anna komentoriville syötteet yksi kerrallaan. Enter-painikkeen painallus suorittaa annetun syötteen. Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niillä kaikki mahdolliset attribuutit ja metodit. Mitä tällä tarkoitetaan? Kokeillaan:
+Anna komentoriville syötteet yksi kerrallaan. Enter-painikkeen painallus suorittaa annetun syötteen. Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niillä kaikki mahdolliset toteutukset. Mitä tällä tarkoitetaan? Kokeillaan:
 
 ```python
 >>> mock.foo
@@ -68,7 +68,7 @@ Kaikki annetut operaatiot palauttavat siis uuden `Mock`-olion. Voimme antaa olio
 'Foobar'
 ```
 
-Voimme myös tehdä metodeille uusi toteutuksia [side_effect](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect)-attribuutin avulla:
+Voimme myös antaa metodeille haluttuja toteutuksia [side_effect](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect)-attribuutin avulla:
 
 ```python
 >>> mock.foo.bar.side_effect = lambda name: f"{name}: Foobar"
@@ -79,8 +79,8 @@ Voimme myös tehdä metodeille uusi toteutuksia [side_effect](https://docs.pytho
 Attribuutin `side_effect` arvo pitää olla kutsuttavissa, kuten funktio, metodi, tai lambda. Huomaa, että `Mock`-oliota voi käyttää myös funktion kaltaisesti:
 
 ```python
->>> get_name = Mock(return_value = "Matti")
->>> get_name()
+>>> get_name_mock = Mock(return_value = "Matti")
+>>> get_name_mock()
 'Matti'
 ```
 
@@ -150,7 +150,7 @@ kauppa = Kauppa(pankki_mock, viitegeneraattori_mock)
 
 `Mock`-luokan [konstruktorin](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock) `wraps`-parametrin avulla voimme määritellä, minkä olion `Mock`-olio toteuttaa. Tämä mahdollistaa sen, ettei esimerkiksi `uusi`-metodille tarvitse määritellä toteutusta, vaan voimme käyttää sen oikeaa toteutusta.
 
-Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin `Mock`-olion metodia `maksa` on kutsuttu oikeilla parametreilla. Kolmanteen parametriin, eli tilinumeroon ei kiinnitetä huomiota:
+Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin `Mock`-olion metodia `maksa` on kutsuttu oikeilla parametreilla. Kolmanteen parametriin, eli viitenumeroon ei kiinnitetä huomiota:
 
 ```python
 pankki_mock.maksa.assert_called_with("1111", 10, ANY)
@@ -185,7 +185,7 @@ Tutustu projektiin ja sen kaikkiin testeihin. Asenne projektin riippuvuudet kome
 pankki_mock.maksa.assert_called_with(ANY, ANY, 1000)
 ```
 
-ja varmista että testi ei mene läpi. Katso miltä virheilmoitus näyttää.
+Ja varmista että testi eivät mene läpi. Katso miltä virheilmoitus näyttää.
 
 Voit tutusta aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](https://docs.python.org/3/library/unittest.mock.html).
 
@@ -236,152 +236,141 @@ Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapä�
 
 Korjaa kassapäätettä siten, että testit menevät läpi.
 
-<!-- TODO -->
-
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
-Testataan [viikolta 2](/tehtavat2#9-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutun Verkkokaupan luokkaa <code>Kauppa</code>.
+<!-- TODO: linkki -->
+Testataan [viikolla 2](/tehtavat2#9-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
 
-- Jos et tehnyt tehtävää, sovellus löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/Verkkokauppa_.
+- Jos et tehnyt tehtävää, sovellus löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/verkkokauppa_.
 
-Kaupalle injektoidaan konstruktorissa Pankki, Viitelaskuri ja Varasto. Tehdään näistä testeissä Mockitolla mockatut versiot.
+Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri` ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
-Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia **tilisiirto** on kutsuttu:
+Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
 
-```java
-package ohtu.verkkokauppa;
+```python
+import unittest
+from unittest.mock import Mock, ANY
+from kauppa import Kauppa
+from viitegeneraattori import Viitegeneraattori
+from varasto import Varasto
+from tuote import Tuote
 
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+class TestKauppa(unittest.TestCase):
+    def test_ostoksen_paaytyttya_pankin_metodia_tilisiirto_kutsutaan(self):
+        pankki_mock = Mock()
+        viitegeneraattori_mock = Mock()
 
-public class KauppaTest {
+        # palautetaan aina arvo 42
+        viitegeneraattori_mock.uusi.return_value = 42
 
-    @Test
-    public void ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan() {
-        // luodaan ensin mock-oliot
-        Pankki pankki = mock(Pankki.class);
+        varasto_mock = Mock()
 
-        Viitegeneraattori viite = mock(Viitegeneraattori.class);
-        // määritellään että viitegeneraattori palauttaa viitten 42
-        when(viite.uusi()).thenReturn(42);
+        # tehdään toteutus saldo-metodille
+        def varasto_saldo(tuote_id):
+            if tuote_id == 1:
+                return 10
 
-        Varasto varasto = mock(Varasto.class);
-        // määritellään että tuote numero 1 on maito jonka hinta on 5 ja saldo 10
-        when(varasto.saldo(1)).thenReturn(10);
-        when(varasto.haeTuote(1)).thenReturn(new Tuote(1, "maito", 5));
+        # tehdään toteutus hae_tuote-metodille
+        def varasto_hae_tuote(tuote_id):
+            if tuote_id == 1:
+                return Tuote(1, "maito", 5)
 
-        // sitten testattava kauppa
-        Kauppa k = new Kauppa(varasto, pankki, viite);
+        # otetaan toteutukset käyttöön
+        varasto_mock.saldo.side_effect = varasto_saldo
+        varasto_mock.hae_tuote.side_effect = varasto_hae_tuote
 
-        // tehdään ostokset
-        k.aloitaAsiointi();
-        k.lisaaKoriin(1);     // ostetaan tuotetta numero 1 eli maitoa
-        k.tilimaksu("pekka", "12345");
+        # alustetaan kauppa
+        kauppa = Kauppa(varasto_mock, pankki_mock, viitegeneraattori_mock)
 
-        // sitten suoritetaan varmistus, että pankin metodia tilisiirto on kutsuttu
-        verify(pankki).tilisiirto(anyString(), anyInt(), anyString(), anyString(),anyInt());
-        // toistaiseksi ei välitetty kutsussa käytetyistä parametreista
-    }
-}
+        # tehdään ostokset
+        kauppa.aloita_asiointi()
+        kauppa.lisaa_koriin(1)
+        kauppa.tilimaksu("pekka", "12345")
 
+        # varmistetaan, että metodia tilisiirto on kutsuttu
+        pankki_mock.tilisiirto.assert_called()
+        # toistaiseksi ei välitetä kutsuun liittyvistä argumenteista
 ```
 
-Aloita siten, että saat esimerkkitestin toimimaan.
+Aloita siten, että saat esimerkkitestin toimimaan. Tee sen jälkeen seuraavat testit:
 
-Muista lisätä _build.gradle_ tiedostoon riippuvuudeksi Mockito. Katso mallia edellisten tehtävien projekteista.
+- Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
+  - Tämä siis on muuten copypaste esimerkistä, mutta `assert_called_with`-metodia käytettävä, jotta voidaan tarkastaa, että parametreilla on oikeat arvot
+- Aloitetaan asiointi, koriin lisätään kaksi eri tuotetta, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
+- Aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta, jota on varastossa tarpeeksi ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
+- Aloitetaan asiointi, koriin lisätään tuote, jota on varastossa tarpeeksi ja tuote joka on loppu ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
 
-Riippuen käyttämästäsi NetBeansin versiosta, saatat joutua luomaan testejä varten sopivan hakemistorakenteen (ks. edellisen tehtävän hakemistorakenne), muuten NetBeans ei suostu luomaan projektiin testejä.
+Muista, että kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka toistetaan ennen jokaista testiä:
 
-Tee seuraavat testit:
-
-- aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan _tilimaksu()_, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumeroilla ja summalla
-  - tämä siis on muuten copypaste esimerkistä, mutta verify:ssä on tarkastettava että parametreilla on oikeat arvot
-- aloitetaan asiointi, koriin lisätään kaksi eri tuotetta, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
-- aloitetaan asiointi, koriin lisätään kaksi samaa tuotetta, jota on varastossa tarpeeksi ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
-- aloitetaan asiointi, koriin lisätään tuote, jota on varastossa tarpeeksi ja tuote joka on loppu ja suoritetaan ostos, varmista että kutsutaan pankin metodia _tilisiirto_ oikealla asiakkaalla, tilinumerolla ja summalla
-
-Kaikkien testien tarkastukset onnistuvat mockiton _verify_-komennolla.
-
-Muista, että kaikille testeille yhteiset alustukset on mahdollista tehdä metodissa, joka toistetaan ennen jokaista testiä:
-
-```java
-Pankki pankki;
-// ...
-
-@Before
-public void setUp() {
-    pankki = mock(Pankki.class);
-    // ...
-}
+```python
+class TestKauppa(unittest.TestCase):
+    def setUp(self):
+        self.pankki_mock = Mock()
+        # ...
 ```
 
-### 4. Yksikkötestaus ja riippuvuudet: Mockito, osa 4
+### 4. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 4
 
 Jatketaan edellisen tehtävän koodin testaamista
 
-- varmista, että metodin <code>aloitaAsiointi</code> kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin MockitoDemo testeistä!
-- varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua projektin MockitoDemo testeistä!
+- Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin mock-demo testeistä!
+- Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua projektin mock-demo testeistä!
 
-Kaikkien testien tarkastukset onnistuvat mockiton _verify_-komennolla.
-
-Tarkasta viikoilla 1 ja 2 käytetyn JaCoCon avulla mikä on luokan Kauppa testauskattavuus.
+Tarkasta viikoilla 1 ja 2 käytetyn coveragen avulla mikä on luokan `Kauppa` testauskattavuus.
 
 Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin!
 
 ### Mock-olioiden käytöstä
 
-Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esim. verkkokauppaesimerkissä luokka <code>Pankki</code>, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
+Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esimerkiksi verkkokauppaesimerkissä luokka `Pankki`, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
 
 ### 5. IntJoukon testaus ja siistiminen
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/int-joukko_ on Python-versiona aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
 
-Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan _IntJoukko_ koodi mahdollisimman siistiksi
+Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
 
-- poista copypaste
-- anna muuttujille selkeät nimet
-- tee metodeista pienempiä ja hyvän koheesion omaavia
+- Poista copypaste
+- Vähennä monitkaisuutta
+- Anna muuttujille selkeät nimet
+- Tee metodeista pienempiä ja hyvän koheesion omaavia
 
 Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 
-_HUOM_ suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
+**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
 
 ### 6. Tenniksen pisteenlaskun refaktorointi
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
-Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia <code>void wonPoint(String player)</code>, jossa parametrina on pallon voittanut pelaaja.
+Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
 
 Esim. käytettäessä pisteenlaskentaa seuraavasti:
 
-```java
-public static void main(String[] args) {
-    TennisGame game = new TennisGame("player1", "player2");
+```python
+game = TennisGame("player1", "player2")
 
-    System.out.println(game.getScore());
+print(game.get_score())
 
-    game.wonPoint("player1");
-    System.out.println(game.getScore());
+game.won_point("player1")
+print(game.get_score())
 
-    game.wonPoint("player1");
-    System.out.println(game.getScore());
+game.won_point("player1")
+print(game.get_score())
 
-    game.wonPoint("player2");
-    System.out.println(game.getScore());
+game.won_point("player2")
+print(game.get_score())
 
-    game.wonPoint("player1");
-    System.out.println(game.getScore());
+game.won_point("player1")
+print(game.get_score())
 
-    game.wonPoint("player1");
-    System.out.println(game.getScore());
-}
+game.won_point("player1")
+print(game.get_score())
 ```
 
 tulostuu
 
-```java
+```
 Love-All
 Fifteen-Love
 Thirty-Love
@@ -394,11 +383,11 @@ Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _pl
 
 Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
 
-Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää "taikanumeroita" ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
+Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää ["taikanumeroita"](https://en.wikipedia.org/wiki/Magic_number_(programming)) ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
 
 Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
 
-Jos haluat käyttää jotain muuta kieltä kuin Javaa, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
+Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
 
 Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
 
