@@ -63,7 +63,7 @@ Arkkitehtuuri keskittyy järjestelmän rakenteen tärkeisiin tai keskeisiin peri
 Artikkelissa [Who needs architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa. 
 
 Melkein sama hieman toisin ilmaistuna oli Krutchtenin määritelmässä mainittu
-_set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintoja kautta.
+_set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintojen kautta.
 
 ### Arkkitehtuuriin vaikuttavia tekijöitä
 
@@ -135,7 +135,7 @@ Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista k
 
 Kovista yrityksistä huolimatta ohjelmistojen arkkitehtuurien kuvaamiselle ei ole onnistuttu kehittämään mitään yleisesti käytössä olevaa notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu ja käyttökelpoinen ei sekään ole. Edellisessä esimerkissä käytettyä  pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
 
-Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_  tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjän hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
+Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_  tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjän hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping cart_ -komponentin käyttöön.
 
 ![]({{ "/images/4-4.png" | absolute_url }}){:height="450px" }
 
@@ -233,7 +233,7 @@ Ketterät menetelmät suosivat suunnitteluratkaisujen yksinkertaisuutta:
 
 _Simplicity, the art of maximizing the amount of work not done, is essential_
 
-Arkkitehtuuriin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
+Arkkitehtuurin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
  
 Ketterien menetelmien yhteydessä puhutaan usein [inkrementaalisesta suunnittelusta ja arkkitehtuurista](https://www.jamesshore.com/Agile-Book/incremental_design.html). 
 
@@ -570,11 +570,11 @@ Koheesion periaate näkyy myös sovelluksen arkkitehtuurien tasolla. Kerrosarkki
 Vastaava idea näkyy oikeastaan kauttaaltaan tietojenkäsittelyssä: Ohjelmoija voi käyttää korkean tason kieltä, vaikkapa Javaa, ja kääntäjä huolehtii sen kääntämisestä konekielelle. Käyttöjärjestelmän tarkoituksena taas on piilottaa laitteistotason asiat sovellusohjelmilta, sovellusohjelmoijan ei tarvitse huolehtia koneella prosessoriytimien tai muistin määrästä, käyttöjärjestelmä huolehtii niistä. Tietoliikenneprotokollat taas koostuvat joukosta _tasoja_ (engl. layers), joissa matalimmat tasot hoitavat tiedonsiirtoa "bittitasolla" kun taas korkeammat protokollakerrokset keskittyvät tiedon siirtoon esim. HTML-muodossa tai videostreamina ilman että niiden tarvitsee huolehtia bittitasolla tapahtuvista asioista. 
 
 Tästä periaatteesta, missä erilaiset ja eri abstratkiotasoilla tapahtuvat asiat tulee antaa omien yksikköidensä houlehdittavaksi käytetään usein nimitystä 
-[Separation of concers](https://en.wikipedia.org/wiki/Separation_of_concerns).
+[Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
 ### Riippuvuuksien vähäisyys
 
-Single responsibility -periaatteen hengessä tehty ohjelma koostuu suuresta määrästä oliota/komponentteja, joilla on suuri määrä pieniä metodeja.
+Single responsibility -periaatteen hengessä tehty ohjelma koostuu suuresta määrästä olioita/komponentteja, joilla on suuri määrä pieniä metodeja.
 
 Olioiden on oltava vuorovaikutuksessa toistensa kanssa saadakseen toteutettua ohjelman toiminnallisuuden. _Riippuvuuksien vähäisyyden_ (engl. low coupling) periaate pyrkii eliminoimaan luokkien ja olioiden välisiä riippuvuuksia.
 
@@ -1474,7 +1474,7 @@ Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä
 
 Tutustutaan seuraavassa hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) mukanaan tuomiin funktionaalista ohjelmointitapaa helpottaviin piirteisiin, lambda-lausekkeisiin sekä kokoelmien käsittelyyn streameina. Nämä asiat ovat toki monelle tuttuja jo kursseilta Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi.
 
-Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla luokilla) olevaa metodia _forEach_, joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen", eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin, toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodikutsun _rivitJoillaSana("beer")_ palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
+Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Iterable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla luokilla) olevaa metodia _forEach_, joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen", eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin, toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia.  Seuraavassa metodikutsun _rivitJoillaSana("beer")_ palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
 
 ``` java
 public static void main(String[] args) {
@@ -1543,7 +1543,7 @@ ehto.test("Java 13 ilmestyi 17.9.2019");
 
 Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimmäinen _false_.
 
-Kirjasta voidaan palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle _GutenbergLukija_ metodi:
+Kirjasta voidaan palauttaa oikean ehdon täyttävät rivit lisäämällä luokalle _GutenbergLukija_ metodi:
 
 ``` java
 public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
