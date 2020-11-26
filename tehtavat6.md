@@ -7,7 +7,7 @@ permalink: /tehtavat6/
 
 ## Viikko 6
 
-*Alla olevien tehtävien deadline on maanantaina 9.12. klo 23:59*
+*Alla olevien tehtävien deadline on maanantaina 7.12. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
 
