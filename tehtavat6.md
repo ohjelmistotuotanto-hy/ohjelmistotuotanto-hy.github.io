@@ -115,10 +115,14 @@ Matcher m = new And(
 vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
 
 <pre>
-Lias Andersson       NYR           0 +  1 = 1
+Steven Fogarty       NYR           0 +  0 = 0
 Boo Nieves           NYR           0 +  0 = 0
+Libor Hajek          NYR           0 +  5 = 5
 Tim Gettinger        NYR           0 +  1 = 1
-Libor Hajek          NYR           0 +  4 = 4
+Lias Andersson       NYR           0 +  1 = 1
+Henrik Lundqvist     NYR           0 +  0 = 0
+Igor Shesterkin      NYR           0 +  0 = 0
+Alexandar Georgiev   NYR           0 +  0 = 0
 </pre>
 
 Kyselyn
@@ -131,6 +135,16 @@ Matcher m = new And(
 ```
 
 tulisi palauttaa täsmälleen sama lista.
+
+Ehdon `All` tulisi siis olla tosi kaikille pelaajille., Voit varmistaa sen toimivuudet kokeilemalla seuraavaa:
+
+```java
+System.out.println(stats.matches(new All()).size());
+```
+
+Komennon tulisi tulostaa kaikkien pelaajien lukumäärä, joka on_964_.
+
+Ehto `All` ei ole yksistään kovin hyödyllinen, mutta tulemme tarvitseman sitä pian.
 
 ### 3. Kyselykieli NHLStatistics-ohjelmaan, osa 2
 
