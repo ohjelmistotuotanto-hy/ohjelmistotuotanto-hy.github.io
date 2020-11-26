@@ -343,74 +343,74 @@ _Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, l
 
 Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa ja komponenteissa.
 
-<!-- TODO -->
-
 #### Koheesio metoditasolla
 
-Tarkastellaan esimerkkinä [Neal Fordin artikkelista](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) olevaa tietokannasta tietoa hakevaa metodia. Metodin koodi näyttää seuraavalta:
+Tarkastellaan esimerkkinä tietokannasta tietoa hakevaa metodia. Metodin koodi näyttää seuraavalta:
 
-```java
-// SQL_SELECT_PARTS on vakio, joka sisältää SQL-kyselyn
+```python
+# SQL_SELECT_PARTS on vakio, joka sisältää SQL-kyselyn
 
-public void populate() throws Exception {
-    try (Connection c = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
-        Statement stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery(SQL_SELECT_PARTS);
-        while (rs.next()) {
-            Part p = new Part();
-            p.setName(rs.getString("name"));
-            p.setBrand(rs.getString("brand"));
-            p.setRetailPrice(rs.getDouble("retail_price"));
-            partList.add(p);
-        }
-    }
-}
+def populate(self):
+    connection = sqlite3.connect(DATABASE_FILE_PATH)
+    connection.row_factory = sqlite3.Row
+    cursor = connection.cursor()
+    cursor.execute(SQL_SELECT_PARTS)
+    rows = cursor.fetchall()
+
+    parts = []
+
+    for row in rows:
+        parts.append(Part(row["name"], row["brand"], row["retail_price"]))
+
+    connection.close()
+
+    return parts
 ```
 
 Metodissa tehdään montaa asiaa:
 
-- luodaan yhteys tietokantaan
-- tehdään tietokantakysely
-- käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti _Part_-olio
-- suljetaan yhteys
+- Luodaan yhteys tietokantaan
+- Tehdään tietokantakysely
+- Käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti `Part`-olio
+- Suljetaan yhteys
 
-Metodi toimii myös monella erilaisella _abstraktiotasolla_. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta sovelluslogiikan tasolla mielekkäitä _Part_-olioita.
+Metodi toimii myös monella erilaisella _abstraktiotasolla_. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta sovelluslogiikan tasolla mielekkäitä `Part`-olioita.
 
 Metodin koheesion taso on siis erittäin huono.
 
 Metodi on helppo _refaktoroida_ pilkkomalla se pienempiin osiin, joiden kutsumista alkuperäinen metodi koordinoi.
 
-```java
-public void populate() throws Exception {
-    try (Connection c = getDatabaseConnection()) {
-        ResultSet rs = createResultSet(c);
-        while (rs.next()){
-            addPartToListFromResultSet(rs);
-        }
-    }
-}
+```python
+def populate(self):
+    connection = self.get_database_connection()
+    rows = self.get_rows(connection)
+    parts = self.get_parts_by_rows(rows)
+    connection.close()
 
-private ResultSet createResultSet(Connection c)throws SQLException {
-    return c.createStatement().
-            executeQuery(SQL_SELECT_PARTS);
-}
+    return parts
 
-private Connection getDatabaseConnection() throws ClassNotFoundException, SQLException {
-    return DriverManager.getConnection(DB_URL,"webuser", "webpass");
-}
+def get_database_connection(self):
+    connection = sqlite3.connect(DATABASE_FILE_PATH)
+    connection.row_factory = sqlite3.Row
 
-private void addPartToListFromResultSet(ResultSet rs) throws SQLException {
-    Part p = new Part();
-    p.setName(rs.getString("name"));
-    p.setBrand(rs.getString("brand"));
-    p.setRetailPrice(rs.getDouble("retail_price"));
-    partList.add(p);
-}
+    return connection
+
+def get_rows(self, connection):
+    cursor = connection.cursor()
+    cursor.execute(SQL_SELECT_PARTS)
+
+    return cursor.fetchall()
+
+def get_parts_by_rows(self, rows):
+    parts = []
+
+    for row in rows:
+        parts.append(Part(row["name"], row["brand"], row["retail_price"]))
+
+    return parts
 ```
 
 Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja kuvaavasti nimettyjä.
-
-Aikaansaatu lopputulos ei ole vielä ideaali koko ohjelman kontekstissa. [Artikkelissa](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) esimerkkiä jatketaan eristäen tietokantaoperaatiot, joita myös muut ohjelman osat tarvitsevat omaan luokkaansa.
 
 #### Koheesio luokkatasolla
 
@@ -571,12 +571,11 @@ class Tili:
         return True
 
     def maksa_korko(self):
-        self.saldo = self.saldo + self.saldo * self.korkoprosentti * 100
+        self.saldo = self.saldo + self.saldo * (1 + self.korkoprosentti)
 ```
 
 Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan `EuriborTili` perimällä luokan `Tili` ja ylikirjoittamalla metodin `maksaKorko` siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
 
-<!-- TODO: haetaan oikeasti jostain -->
 ```python
 class EuribolTili(Tili):
     def __init__(self, tilinumero, omistaja, kuukauden):
@@ -584,11 +583,26 @@ class EuribolTili(Tili):
         self.kuukauden = kuukauden
 
     def get_korko(self):
-        # tässä haettaisiin Euribor internetistä
-        return -0.545
+        data = urllib.request.urlopen(
+            "https://www.euribor-rates.eu/en/current-euribor-rates/"
+        ).read()
+
+        rivi_pattern = re.compile(r"Euribor " + str(self.kuukauden) + " months[^%]+%")
+        rivi_match = rivi_pattern.search(str(data))
+
+        if rivi_match is None:
+            return 0
+
+        sarake_pattern = re.compile(r"\-?([0-9]|\.)+ %")
+        sarake_match = sarake_pattern.search(rivi_match.group(0))
+
+        if sarake_match is None:
+            return 0
+
+        return float(sarake_match.group(0).replace("%", "").strip())
 
     def maksa_korko(self):
-        self.saldo = self.saldo * self.get_korko() * 100
+        self.saldo = self.saldo * (1 + self.get_korko())
 ```
 
 Huomaamme, että `EuriborTili`-luokka rikkoo _single responsibility_ -periaatetta, sillä luokka sisältää normaalin tiliin liittyvän toiminnan lisäksi koodia, joka hakee tavaraa internetistä. Vastuut kannattaa selkeyttää ja korkoprosentin haku eriyttää omaan rajapinnan takana olevaan luokkaan:
@@ -597,10 +611,25 @@ Huomaamme, että `EuriborTili`-luokka rikkoo _single responsibility_ -periaatett
 class EuriborLukija:
     def __init__(self, kuukauden):
         self.kuukauden = kuukauden
-    
+
     def get_korko():
-        # tässä haettaisiin Euribor internetistä
-        return -0.545
+        data = urllib.request.urlopen(
+            "https://www.euribor-rates.eu/en/current-euribor-rates/"
+        ).read()
+
+        rivi_pattern = re.compile(r"Euribor " + str(self.kuukauden) + " months[^%]+%")
+        rivi_match = rivi_pattern.search(str(data))
+
+        if rivi_match is None:
+            return 0
+
+        sarake_pattern = re.compile(r"\-?([0-9]|\.)+ %")
+        sarake_match = sarake_pattern.search(rivi_match.group(0))
+
+        if sarake_match is None:
+            return 0
+
+        return float(sarake_match.group(0).replace("%", "").strip())
 
 class EuribolTili(Tili):
     def __init__(self, tilinumero, omistaja, kuukauden):
@@ -608,7 +637,7 @@ class EuribolTili(Tili):
         self.euribor = EuriborLukija(kuukauden)
 
     def maksa_korko(self):
-        self.saldo = self.saldo * self.euribor.get_korko() * 100
+        self.saldo = self.saldo * (1 + self.euribor.get_korko())
 ```
 
 `EuriborTili`-luokka alkaa olla nyt melko siisti, `EuriborLukija`-luokassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono: metodi tekee aivan liian montaa asiaa.
@@ -620,14 +649,14 @@ class MaaraaikaisTili(Tili):
     def __init__(self, tilinumero, omistaja, korkoprosentti):
         super().__init__(tilinumero, omistaja, korkoprosentti)
         self.nostokielto = True
-    
+
     def salli_nosto():
         self.nostokielto = False
-    
+
     def siirra_rahaa_tililta(self, tilille, summa):
         if nostokielto:
             return False
-        
+
         return super().siirra_rahaa_tililta(tilille, summa)
 ```
 
@@ -643,14 +672,14 @@ Koronmaksun hoitaminen perinnän avulla ei ollutkaan paras ratkaisu, parempi on 
 class TasaKorko:
     def __init__(self, korko):
         self.korko = korko
-    
+
     def get_korko():
         return self.korko
 
 class EuriborKorko:
     def __init__(self, kuukausi):
         self.lukija = EuriborLukija(kuukausi)
-    
+
     def get_korko(self):
         return self.lukija.get_korko()
 ```
@@ -675,14 +704,14 @@ class Tili:
         return True
 
     def maksa_korko(self):
-        self.saldo = self.saldo + self.saldo * self.korko.get_korko() * 100
+        self.saldo = self.saldo + self.saldo * (1 + self.korko.get_korko())
 ```
 
 Erilaisia tilejä luodaan seuraavasti:
 
 ```python
-normaali = Tili("1234-1234", "Jami Kousa", Tasakorko(4));
-euribor12 = Tili("4422-3355", "Lea Kutvonen", EuriborKorko(12));
+normaali = Tili("1234-1234", "Jami Kousa", Tasakorko(0.04))
+euribor12 = Tili("4422-3355", "Lea Kutvonen", EuriborKorko(12))
 ```
 
 Ohjelman rakenne on nyt seuraava:
@@ -717,11 +746,10 @@ class Tili:
     # ...
 ```
 
-
 Lisäsimme luokalle kolme _staattista apumetodia_ helpottamaan tilien luomista. Tilejä voidaan nyt luoda seuraavasti:
 
 ```java
-maaraaikais = Tili.luo_maaraaikais_tili("1234-1234", "Jami Kousa", 2.5)
+maaraaikais = Tili.luo_maaraaikais_tili("1234-1234", "Jami Kousa", 0.025)
 euribor12 = Tili.luo_euribor_tili("4422-3355", "Lea Kutvonen", 12)
 fyrkka = Tili.luo_euribor_tili("7895-4571", "Indre Zliobaite", 1)
 ```
@@ -768,17 +796,17 @@ Loimme äsken luokalle `Tili` staattiset apumetodit tilien luomista varten. Vois
 class Pankki:
     def __init__(self):
         self.numero = 0
-    
+
     def generoi_tilinumero(self):
         self.numero = self.numero + 1
         return f"12345-{self.numero}"
-    
+
     def kayttotili(self, omistaja, korko):
         return Tili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
-    
+
     def maaraaikaistili(self, omista, korko):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
-    
+
     def euribortili(self, omistaja, kuukauden):
         return Tili(self.generoi_tilinumero(), omistaja, EriborKorko(kuukauden))
 
@@ -809,7 +837,7 @@ Olemme laajentaneet `Laskin`-luokkaa osaamaan myös muita laskuoperaatioita:
 class Laskin:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         while True:
             komento = self.io.lue("Komento:")
@@ -833,10 +861,10 @@ class Laskin:
 
     def laske_summa(self, luku1, luku2):
         return luku1 + luku2
-    
+
     def laske_tulos(self, luku1, luku2):
         return luku1 * luku2
-    
+
     def laske_erotus(self, luku1, luku2):
         return luku1 - luku2
 ```
@@ -853,7 +881,7 @@ class Operaatiotehdas:
             return Summa()
         elif operaatio == "tulo":
             return Tulo()
-        
+
         return Erotus()
 ```
 
@@ -879,7 +907,7 @@ class Erotus:
 class Laskin:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         while True:
             komento = self.io.lue("Komento:")
@@ -913,7 +941,7 @@ Erillisten komento-olioiden luominen siirretään uudelle luokalle `Komentotehda
 class Komentotehdas:
     def __init__(self, io):
         self.io = io
-    
+
     def hae(self, komento):
         if komento == "summa":
             return Summa(self.io)
@@ -923,7 +951,7 @@ class Komentotehdas:
             return Nelio(self.io)
         elif komento == "lopeta":
             return Lopeta(self.io)
-        
+
         return Tuntematon(self.io)
 ```
 
@@ -942,11 +970,11 @@ class Komentotehdas:
             "nelio": Nelio(self.nelio),
             "lopeta": Lopeta(self.io)
         }
-    
+
     def hae(self, komento):
         if komento in self.komennot:
             return self.komennot[komento]
-        
+
         return Tuntematon(self.io)
 ```
 
@@ -956,7 +984,7 @@ Yksittäiset komennot ovat erittäin yksinkertaisia:
 class Summa:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         luku1 = int(self.io.lue("Luku 1:"))
         luku2 = int(self.io.lue("Luku 2:"))
@@ -966,7 +994,7 @@ class Summa:
 class Nelio:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         luku = int(self.io.lue("Luku 1:"))
 
@@ -975,14 +1003,14 @@ class Nelio:
 class Tuntematon:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         self.io.kirjoita("Sallitut komennot: summa, tulo, nelio, lopeta")
 
 class Lopeta:
     def __init__(self, io):
         self.io = io
-    
+
     def suorita(self):
         self.io.kirjoita("Kiitos ja näkemiin!")
         sys.exit(0)
@@ -1016,79 +1044,59 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 
 Lisää command-suunnittelimallista esim. [täällä](http://www.oodesign.com/command-pattern.html) ja [täällä](http://sourcemaking.com/design_patterns/command).
 
-<!-- TODO -->
 #### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
 
 Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
 
-```java
-public abstract class BinaariOperaatio extends Komento {
-    protected int luku1;
-    protected int luku2;
+```python
+class BinaariOperaatio:
+    def __init__(self, io):
+        self.io = io
+        self.luku1 = 0
+        self.luku2 = 0
 
-    public BinaariOperaatio(IO io) {
-        super(io);
-    }
+    def suorita(self):
+        self.luku1 = int(self.io.lue("Luku 1:"))
+        self.luku2 = int(self.io.lue("Luku 2:"))
 
-    @Override
-    public void suorita() {
-        io.print("luku 1: ");
-        int luku1 = io.nextInt();
+        self.io.kirjoita(f"Vastaus: {self.laske()}")
 
-        io.print("luku 2: ");
-        int luku2 = io.nextInt();
-
-        io.print("vastaus: "+laske());
-    }
-
-    protected abstract int laske();
-}
+    def laske(self):
+        return 0
 ```
 
 Summaa ja tuloa vastaavat komennot yksinkertaistuvat:
 
-```java
-public class Summa extends BinaariOperaatio {
-    public Summa(IO io) {
-        super(io);
-    }
+```python
+class Summa(BinaariOperaatio):
+    def __init__(self, io):
+        super().__init__(io)
 
-    @Override
-    protected int laske() {
-        return luku1 + luku2;
-    }
-}
+    def laske(self):
+        return self.luku1 + self.luku2
 
-public class Tulo extends BinaariOperaatio {
-    public Tulo(IO io) {
-        super(io);
-    }
+class Tulo(BinaariOperaatio):
+    def __init__(self, io):
+        super().__init__(io)
 
-    @Override
-    public int laske() {
-        return luku1*luku2;
-    }
-}
+    def laske(self):
+        return self.luku1 * self.luku2
 ```
 
 Jos sovellukseen haluttaisiin toteuttaa lisää kaksiparametrisia operaatioita, esimerkiksi erotus, riittäisi erittäin yksinkertainen lisäys:
 
-```java
-public class Erotus extends BinaariOperaatio {
-    public Erotus(IO io) {
-        super(io);
-    }
+```python
+class Erotus(BinaariOperaatio):
+    def __init__(self, io):
+        super().__init__(io)
 
-    @Override
-    protected int laske() {
-        return luku1 - luku2;
-    }
-}
+    def laske(self):
+        return self.luku1 - self.luku2
 ```
 
-Ja mikä parasta, ainoa muu luokka, jota on koskettava on komentoja luova _Komentotehdas_.
+Ja mikä parasta, ainoa muu luokka, jota on koskettava on komentoja luova `Komentotehdas`-luokka.
 
-Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. Laskin-luokallahan ei ole riippuvuuksia muualle kuin rajapintaan IO, abstraktiin luokkaan Komento sekä luokkaan Komentotehdas.
+Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. `Laskin`-luokallahan ei ole riippuvuuksia muualle kuin `Komentotehdas`-luokkaan sekä konstruktorin kautta injektoituun `KonsoliIO`-luokkaan.
 
 ![]({{ "/images/4-12.png" | absolute_url }}){:height="300px" }
 
@@ -1100,52 +1108,44 @@ Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman
 
 Summa- ja Tulo-komentojen suoritus on oleellisesti samanlainen:
 
-1. lue luku1 käyttäjältä
-2. lue luku2 käyttäjältä
-3. _laske operaation tulos_
-4. tulosta operaation tulos
+1. Lue luku1 käyttäjältä
+2. Lue luku2 käyttäjältä
+3. _Laske operaation tulos_
+4. Tulosta operaation tulos
 
 Ainoastaan kolmas vaihe eli _operaation tuloksen laskeminen_ eroaa summaa ja tuloa selvitettäessä.
 
-Template methodin hengessä asia hoidetaan tekemällä abstrakti yliluokka, jonka metodi _suorita()_ toteuttaa koko komennon suorituslogiikan:
+Template methodin hengessä asia hoidetaan tekemällä yliluokka, jonka metodi `suorita` toteuttaa koko komennon suorituslogiikan:
 
-```java
-public abstract class BinaariOperaatio implements Komento {
-    // ...
+```python
+class BinaariOperaatio:
+    # ...
 
-    @Override
-    public void suorita() {
-        io.print("luku 1: ");
-        int luku1 = io.nextInt();
+    def suorita(self):
+        self.luku1 = int(self.io.lue("Luku 1:"))
+        self.luku2 = int(self.io.lue("Luku 2:"))
 
-        io.print("luku 2: ");
-        int luku2 = io.nextInt();
+        self.io.kirjoita(f"Vastaus: {self.laske()}")
 
-        io.print("vastaus: "+laske());
-    }
-
-    protected abstract int laske();
-}
+    def laske(self):
+        return 0
 ```
 
-Suorituslogiikan vaihtuva osa eli operaation laskun tulos on määritelty abstraktina metodina _laske()_, jota metodi _suorita()_ kutsuu.
+Suorituslogiikan vaihtuva osa eli operaation laskun tulos on määritelty metodina `laske`, jota metodi `suorita` kutsuu.
 
-Konkreettiset toteutukset _Summa_ ja _Tulo_ ylikirjoittavat abstraktin metodin _laske()_, määrittelemällä miten laskenta tietyssä konkreettisessa tilanteessa tapahtuu:
+Konkreettiset toteutukset `Summa` ja `Tulo` ylikirjoittavat metodin `laske`, määrittelemällä miten laskenta tietyssä konkreettisessa tilanteessa tapahtuu:
 
-```java
-public class Summa extends BinaariOperaatio {
-    // ...
+```python
+class Summa(BinaariOperaatio):
+    # ...
 
-    @Override
-    protected int laske() {
-        return luku1 + luku2;
-    }
-}
+    def laske(self):
+        return self.luku1 + self.luku2
 ```
 
-Abstraktin luokan metodi _suorita()_ on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan abstraktina metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
+Luokan metodi `suorita` on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
 
-Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin abstrakteja metodeja määritellään tarpeellinen määrä.
+Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin metodeja määritellään tarpeellinen määrä.
 
 Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.
 
@@ -1159,290 +1159,197 @@ Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista 
 
 Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yourself](http://c2.com/cgi/wiki?DontRepeatYourself) ja siihen viitataan usein lyhenteellä _DRY_.
 
-Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan _BinaariOperaatio_ motivaationa oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa _Summa_ ja _Tulo_.
+Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi fuktioiden tai metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan `BinaariOperaatio` motivaationa oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa `Summa` ja `Tulo`.
 
 DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
 
-Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan _Money_ vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
+Pragmatic programmerin määritelmän henkeä ei ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
 #### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 5]</span>
 
-Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa _GutenbergLukija_:
+Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
 
-```java
-public class GutenbergLukija {
+```python
+class GutenbergLukija:
+    def __init__(self, osoite):
+        self.rivit = []
 
-    private List<String> rivit;
+        data = request.urlopen(osoite)
 
-    public GutenbergLukija(String osoite) throws IllegalArgumentException {
-        rivit = new ArrayList<String>();
-        try {
-            URL url = new URL(osoite);
-            Scanner lukija = new Scanner(url.openStream());
-            while (lukija.hasNextLine()) {
-                rivit.add(lukija.nextLine());
-            }
-        } catch (Exception e) {
-            throw new IllegalArgumentException(e);
-        }
-    }
+        for rivi in data:
+            self.rivit.append(rivi.encode("utf-8").strip())
 
-    public List<String> rivit() {
-        List<String> palautettavat = new ArrayList<>();
+    def rivit(self):
+        palautettavat = []
 
-        for (String rivi : rivit) {
-            palautettavat.add(rivi);
-        }
+        for rivi in self.rivit:
+            palautettavat.append(rivi)
 
-        return palautettavat;
-    }
+        return palautettavat
 
-    public List<String> rivitJotkaPaattyvatHuutomerkkiin() {
-        List<String> ehdonTayttavat = new ArrayList<>();
+    def rivit_jotka_paattyvat_huutomerkkiin(self):
+        ehdot_tayttavat = []
 
-        for (String rivi : rivit) {
-            if (rivi.endsWith("!")) {
-                ehdonTayttavat.add(rivi);
-            }
-        }
+        for rivi in self.rivit:
+            if rivi.endswith("!"):
+                ehdot_tayttavat.append(rivi)
 
-        return ehdonTayttavat;
-    }
+        return ehdot_tayttavat
 
-    public List<String> rivitJoillaSana(String sana) {
-        List<String> ehdonTayttavat = new ArrayList<String>();
+    def rivit_joilla_sana(self, sana):
+        ehdot_tayttavat = []
 
-        for (String rivi : rivit) {
-            if (rivi.contains(sana)) {
-                ehdonTayttavat.add(rivi);
-            }
-        }
+        for rivi in self.rivit:
+            if sana in rivi:
+                ehdot_tayttavat.append(rivi)
 
-        return ehdonTayttavat;
-    }
-}
+        return ehdot_tayttavat
 ```
 
-Luokalla on kolme metodia, kaikki kirjan rivit palauttava _rivit_ sekä _rivitJotkaPaattyvatHuutomerkkiin_ ja _rivitJoillaSana(String sana)_ jotka toimivat kuten metodin nimi antaa ymmärtää.
+Luokalla on kolme metodia, kaikki kirjan rivit palauttava `rivit` sekä `rivit_jotka_paattyvat_huutomerkkiin` ja `rivit_joilla_sana` jotka toimivat kuten metodin nimi antaa ymmärtää.
 
 Luokkaa käytetään seuraavasti:
 
-```java
-public static void main(String[] args) {
-    String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
+```python
+def main():
+    osoite = "https://www.gutenberg.org/files/2554/2554-0.txt"
+    kirja = GutenbergLukija(osoite)
 
-    for( String rivi : kirja.rivitJoillaSana("beer") ) {
-        System.out.println(rivi);
-    }
-}
+    for rivi in kirja.rivit_joilla_sana("beer"):
+        print(rivi)
+
+if __name__ == "__main__":
+    main()
 ```
 
 Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin kriteerit täyttävä, esim. huutomerkkiin loppuva.
 
-Tutustutaan seuraavassa hieman [Java 8:n](http://docs.oracle.com/javase/8/docs/api/) mukanaan tuomiin funktionaalista ohjelmointitapaa helpottaviin piirteisiin, lambda-lausekkeisiin sekä kokoelmien käsittelyyn streameina. Nämä asiat ovat toki monelle tuttuja jo kursseilta Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi.
-
-Voimme korvata listalla olevien merkkijonojen tulostamisen kutsumalla listoilla (tarkemmin sanottuna rajapinnan [Interable](http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)-toteuttavilla luokilla) olevaa metodia _forEach_, joka mahdollistaa listan alkioiden läpikäynnin "funktionaaliseen" tyyliin. Metodi saa parametrikseen "functional interfacen", eli rajapinnan, joka määrittelee ainoastaan yhden toteutettavan metodin, toteuttavan olion. Tälläisiä ovat uudemmassa Javassa myös ns. _lambda-lausekkeet_ (engl. lambda expression), joka tarkoittaa käytännössä anonyymia mihinkään luokkaan liittymätöntä metodia. Seuraavassa metodikutsun _rivitJoillaSana("beer")_ palauttavien kirjan rivien tulostus forEachia ja lambdaa käyttäen:
-
-```java
-public static void main(String[] args) {
-    String osoite = "https://www.gutenberg.org/files/2554/2554-0.txt";
-    GutenbergLukija kirja = new GutenbergLukija(osoite);
-
-    kirja.rivitJoillaSana("beer").forEach(s -> System.out.println(s));
-}
-```
-
-Esimerkissä lambdan syntaksi oli seuraava:
-
-```java
-s -> System.out.println(s)
-```
-
-parametri _s_ saa arvokseen yksi kerrallaan kunkin tiedoston tekstirivin. Riveille suoritetaan "nuolen" oikealla puolella oleva tulostuskomento. Lisää lambdan syntaksista [täältä](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html). Huomionarvoista on se, että lambdan parametrin eli muuttujan _s_ tyyppiä ei tarvitse määritellä, kääntäjä osaa päätellä sen iteroitavana olevan kokoelman perusteella.
-
-Luokan _GutenbergLukija_ tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen _mitä kirjan riveistä ne palauttavat_. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
+Luokan `GutenbergLukija` tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät jokaisen kirjan rivin läpi ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen _mitä kirjan riveistä ne palauttavat_. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
 
 Jos mietitään metodien toimintaa, niin voidaan ajatella, että jokaisessa metodissa on oma _strategiansa_ rivien palauttamiseen, ja strategiaa lukuunottamatta kaikki muu on samaa. Tämä onkin erinomainen paikka strategy-suunnittelumallin soveltamiseen. Jos eriytämme rivien valintastrategia omaksi luokakseen, voidaan selvitä ainoastaan yhdellä rivien läpikäynnin hoitavalla metodilla.
 
-Määritellään rivien valintaa varten rajapinta:
+Toteutetaan valintastrategiasta vastaavat luokat niin, että ne toteuttavat metodin `test`. Metodin tulee palauttaa `True`, jos parametrina saatu rivi vastaa ehtoa, muutoin `False`. Aloitetaan toteuttamalla `SisaltaaSanan`-luokka:
 
-```java
-public interface Ehto {
-    boolean test(String rivi);
-}
+```python
+class SisaltaaSanan:
+    def __init__(self, sana):
+        self.sana = sana
+
+    def test(self, rivi):
+        return self.sana in rivi
 ```
 
-Huom: metodin nimen valinta ei ollut täysin sattumanvarainen. Tulemme myöhemmin määrittelemään, että rajapinta _Ehto_ laajentaa rajapinnan, joka vaatii että rajapinnalla on nimenomaan _test_-niminen metodi.
+Ideana on luoda jokaista kirjojen erilaista _hakuehtoa_ kohti oma ehdon tarkistava luokkansa. `SisaltaaSanan`-luokasta voi luoda olion seuraavasti:
 
-Ideana on luoda jokaista kirjojen erilaista _hakuehtoa_ kohti oma rajapinnan _Ehto_ toteuttava luokka.
-
-Seuraavassa ehto-luokka, joka tarkastaa sisältyykö tietty sana riville:
-
-```java
-public class SisaltaaSanan implements Ehto {
-    private String sana;
-
-    public SisaltaaSanan(String sana) {
-        this.sana = sana;
-    }
-
-    @Override
-    public boolean test(String rivi) {
-        return rivi.contains(sana);
-    }
-}
+```python
+ehto = SisaltaaSanan("olut")
 ```
 
-Jos luokasta luodaan ilmentymä
+Olion avulla voidaan tarkastella sisältävätkö merkkijonot sanan _olut_:
 
-```java
-Ehto ehto = new SisaltaaSanan("olut");
+```python
+ehto = SisaltaaSanan("olut")
+ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info")
+ehto.test("Python 3.9 julkaistiin 05.10.2020")
 ```
 
-voidaan luokan avulla tarkastella sisältävätkö merkkijonot sanan _olut_:
+Ensimmäinen metodikutsuista palauttaisi `True` ja jälkimmäinen `False`.
 
-```java
-Ehto ehto = new SisaltaaSanan("olut");
-ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info");
-ehto.test("Java 13 ilmestyi 17.9.2019");
-```
+Kirjasta voidaan palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle `GutenbergLukija` metodi:
 
-Ensimmäinen metodikutsuista palauttaisi _true_ ja jälkimmäinen _false_.
+```python
+def rivit_jotka_tayttavat_ehdon(self, ehto):
+    palautettavat_rivit = []
 
-Kirjasta voidaan palauttaa oikean ehdon täyttävät sanat lisäämällä luokalle _GutenbergLukija_ metodi:
+    for rivi in self.rivit:
+        if ehto.test(rivi):
+            palautettavat_rivit.append(rivi)
 
-```java
-public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-    List<String> palautettavatRivit = new ArrayList<>();
-
-    for (String rivi : rivit) {
-        if (ehto.test(rivi)) {
-            palautettavatRivit.add(rivi);
-        }
-    }
-
-    return palautettavatRivit;
-}
+    return palautettavat_rivit
 ```
 
 ja sanan _beer_ sisältävät rivit saadaan tulostettua seuraavasti:
 
-```java
-kirja.rivitJotkaTayttavatEhdon(new SisaltaaSanan("beer")).forEach(s -> System.out.println(s));
+```python
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(SisaltaaSanan("beer")):
+    print(rivi)
 ```
 
-Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia rajapinnan _Ehto_ määritteleviä luokkia.
+Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia luokkia, jotka toteuttavat `test`-metodin.
 
-Ehto-rajapinta on ns. _funktionaalinen rajapinta_ (engl. functional interface) eli se määrittelee ainoastaan yhden toteutettavan metodin. Javan uusimmilla versioilla voimme määritellä ehtoja myös lambda-lausekkeiden avulla. Eli ei ole välttämätöntä tarvetta määritellä eksplisiittisesti rajapinnan _Ehto_ toteuttavia luokkia. Seuraavassa edellinen esimerkki käyttäen lambda-lauseketta ehdon määrittelemiseen:
+Ehdot voidaan esittää luokkien sijaan myös yksinkeritasemma muodossa, esimerkiksi funktioina tai lambdoina. Tutustutaan seuraavaksi hieman _funktionaaliseen ohjelmointiin_, jonka kulmakivenä on juuri funktioiden hyödyntäminen. Muokataan `rivit_jotka_tayttavat_ehdon`-metodia niin, että parametrina saatu `ehto` on kutsuttava arvo:
 
-```java
-kirja.rivitJotkaTayttavatEhdon(s -> s.contains("beer")).forEach(s -> System.out.println(s));
+```python
+def rivit_jotka_tayttavat_ehdon(self, ehto):
+    palautettavat_rivit = []
+
+    for rivi in self.rivit:
+        if ehto(rivi):
+            palautettavat_rivit.append(rivi)
+
+    return palautettavat_rivit
 ```
 
-Käytännössä siis määrittelemme "lennossa" rajapinnan _Ehto_ toteuttavan luokan, jonka ainoan metodin toiminnallisuuden määritelmä annetaan lambda-lausekkeen avulla:
+Huomaa, kuinka `ehto.test(rivi)` muuttui muotoon `ehto(rivi)`. Voimme nyt hyödyntää edellisessä esimerkissä _lambdaa_ ehdon antamiseen:
 
-```java
-s -> s.contains("beer")
+```python
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(lambda rivi: "beer" in rivi):
+    print(rivi)
 ```
+
+Lambda on ikään kuin funktion kompaktimpi esitys. Kuten funktiolla, myös lambdalla voi olla parametreja. Esimerkissä lambdalla on parametri `rivi`. Toisin kuin funktio, lambda määritellään aina yhdellä rivillä. Määritelty rivi suoritetaan ja sen arvo palautetaan ilman erilistä `return`-lausetta.
 
 Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _beer_ tai _vodka_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
-```java
-Ehto ehto = s -> s.contains("beer") || s.contains("vodka");
+```python
+ehto = lambda rivi: "beer" in rivi or "vodka" in rivi
 
-kirja.rivitJotkaTayttavatEhdon(ehto).forEach(s -> System.out.println(s));
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(ehto):
+    print(rivi)
 ```
 
-Voimme hyödyntää Javan funktionaalisia piirteitä myös luokan _GutenbergLukija_ metodissa _rivitJotkaTayttavatEhdon_.
+Voimme myös toteuttaa funktioita, jotka palauttavat lambdoja:
 
-Metodi on tällä hetkellä seuraava:
+```python
+def rakenne_sisaltaa_sanan(sana):
+    return lambda rivi: sana in rivi
 
-```java
-public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-    List<String> palautettavatRivit = new ArrayList<>();
-
-    for (String rivi : rivit) {
-        if (ehto.test(rivi)) {
-            palautettavatRivit.add(rivi);
-        }
-    }
-
-    return palautettavatRivit;
-}
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(rakenna_sisaltaa_sanan("beer")):
+    print(rivi)
 ```
 
-Uusissa Javan versioissa kaikki rajapinnan _Collection_ toteuttavat luokat mahdollistavat alkioidensa käsittelyn _Stream_:ina eli "alkiovirtoina", ks. [API-kuvaus](http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html). Kokoelmaluokasta saadaan sitä vastaava alkiovirta kutsumalla kokoelmalle metodia _stream_.
+Huomaa, kuinka kyseissä esimerkissä funktio `rakenna_sisaltaa_sanan` muistuttaa tehdas-suunnittelumallin mukaisia tehdasmetodeja.
 
-Alkiovirtoja on taas mahdollista käsitellä monin tavoin, nyt meitä kiinnostava metodi on _filter_, jonka avulla streamista voidaan tehdä uusi streami, josta on poistettu ne alkiot, jotka eivät täytä filtterille annettua boolean-arvoista, funktionaalisen rajapinnan _Predicate<String>_ toteuttavaa ehtoa.
+Refaktoroidaan vielä `GutenbergLukija` luokkaa hyödyntämällä Pythonin funktionaalisen ohjelmoinnin työkalupakkia. Koska luokan metodeissa käsitellään paljon listoja, voimme hyödyntää funktiota [map](https://docs.python.org/3/library/functions.html#map) ja [filter](https://docs.python.org/3/library/functions.html#filter).
 
-Määrittelemämme rajapinta _Ehto_ on oikeastaan juuri tarkoitukseen sopiva. Jotta voisimme käyttää rajapintaa, tulee meidän kuitenkin tyyppitarkastusten takia määritellä että rajapintamme laajentaa rajapintaa _Predicate<String>_:
+Funktiota `map` voi hyödyntää listan (tai minkä tahansa muun iteraattorin) alkioiden muokkaamiseen. Funktiolla on kaksi parametria. Ensimmäinen parametri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa alkion uuden arvon. Toinen parametri on iteraattori, jonka alkioista muodostetaan lambdan avulla uusi iteraattori. `map`-funktio ei siis muuta parametrina saatua iteraattoris, vaan palauttaa uuden iteraattorin, johon on tehty halutut muokkaukset.
 
-```java
-import java.util.function.Predicate;
+Voimme hyödyntää `map`-funktiota esimerkiksi `GutenbergLukija`-luokan konstruktorissa:
 
-public interface Ehto extends Predicate<String>{
-    boolean test(String rivi);
-}
+```python
+def __init__(self, osoite):
+    rivit_iterator = map(
+        lambda rivi: rivi.encode("utf-8").strip(),
+        request.urlopen(osoite)
+    )
+
+    self.rivit = list(rivit_iterator)
 ```
 
-Nyt saamme muutettua kirjan rivien streamin _ehdon_ täyttävien rivien streamiksi seuraavasti:
+Huomaa, ettei `map`-funktio palauta listaa, vaan iteraattorin. Iteraattorin voi muuttaa listaksi helposti, [list](https://docs.python.org/3/library/functions.html#func-list)-funktion avulla.
 
-```java
-public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-    // ei toimi vielä
-    rivit.stream().filter(ehto)
-}
+Toinen hyödyllinen funktio listojen käsittelyyn on `filter`-funktio, jonka avulla listan (tai minkä tahansa muun iteraattorin) alkioita voidaan suodattaa. Funktiolla on kaksi parametria. Ensimmäinen paramateri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa `True`, jos alkiota halutaan sisällyttää suodatettuun iteraattoriin, muutoin `False`. Toinen parametri on iteraattori, jonka alkioita suodatetaan. Kuten `map`-funktio, `filter`-funktio ei muuta parametrina saatua iteraattoria vaan palauttaa uuden iteraation, jonka alkiot on suodatettu annetulla ehdolla.
+
+Hyvä käyttökohde `filter`-funktiolle on `GutenbergLukija`-luokan metodi `rivit_jotka_tayttavat_ehdon`:
+
+```python
+def rivit_jotka_tayttavat_ehdon(self, ehto):
+    palautettavat_rivit_iterator = filter(ehto, self.rivit)
+
+    return list(palautettavat_rivit_iterator)
 ```
 
-Metodin tulee palauttaa filtteröidyn streamin alkioista koostuva lista. Stream saadaan muutettua listaksi "keräämällä" sen sisältämät alkiot kutsumalla streamille metodia _collect_ ja kertomalla sille parametrina, että halutaan streamin sisältämät alkiot niemen omana listana. Näin luotu filtteröity lista voidaan sitten palauttaa metodin kutsujalle.
-
-Metodi on seuraavassa:
-
-```java
-public List<String> rivitJotkaTayttavatEhdon(Ehto ehto) {
-    return rivit.stream().filter(ehto).collect(Collectors.toList());
-}
-```
-
-Voimme oikeastaan luopua itse määrittelemästämme rajapinnasta _Ehto_, sillä valmis funktionaalinen rajapinta _Predicate<String>_ ajaa saman asian. Yksittäisiä ehtoja määrittelevät luokat voidaan muuttaa seuraavasti:
-
-```java
-public class SisaltaaSanan implements Predicate<String> {
-    // ...
-}
-```
-
-ja lukija muuttuu muotoon:
-
-```java
-public class GutenbergLukija {
-    private List<String> rivit;
-
-    public GutenbergLukija(String osoite) throws IllegalArgumentException {
-        // ...
-    }
-
-    public List<String> rivitJotkaTayttavatEhdon(Predicate<String> ehto) {
-        return rivit.stream().filter(ehto).collect(Collectors.toList());
-    }
-}
-```
-
-Funktionaalinen rajapinta _Predicate_ sisältää itse asiassa muutamia valmiiksi toteutettuja metodeja, joiden avulla on mahdollista _koostaa_ yksittäisistä ehdoista _monimutkaisempia ehtoja_. Seuraavassa etsitään ne rivit jotka
-
-- sisältävät sanan _beer_ ja ovat yli 50 riviä pitkiä _tai_
-- alkavat kirjaimella _Z_
-
-```java
-Predicate<String> ehto1 = new SisaltaaSanan("beer");
-Predicate<String> ehto2 = s -> s.length()>50;
-Predicate<String> ehto3 = s -> s.length()>0 && s.charAt(0) == 'Z';
-
-kirja
-    .rivitJotkaTayttavatEhdon((ehto1.and(ehto2)).or(ehto3))
-    .forEach(s->System.out.println(s));
-```
+Voimme antaa `filter`-funktiolle suoraan parametrina saaduun ehdon.
 
 #### Hyvä vs. paha copypaste <span style="color:blue">[viikko 5]</span>
 
@@ -1450,7 +1357,7 @@ Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleis
 
 Monissa tilanteissa nimittäin copypasten poistamisella on pieni hintansa, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
 
-Melko hyvä periaate onkin _[three strikes and you refactor](https://en.wikipedia.org/wiki/Rule_of_three_(computer*programming))*, eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
+Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
 ### Koodin laatuattribuutti: testattavuus
 
@@ -1458,7 +1365,7 @@ Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo test
 
 Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että komponenttien vastuut eivät ole selkeät, ja niillä on liikaa riippuvuuksia.
 
-Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia rajapintojen ja riippuvuuksien injektoinnin avulla.
+Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia riippuvuuksien injektoinnin avulla.
 
 ### Koodin laatuattribuutti: selkeys
 
@@ -1482,13 +1389,13 @@ Martin Fowlerin [määritelmää mukaillen](https://martinfowler.com/books/refac
 
 Koodihajuja on hyvin monenlaisia ja monentasoisia. Muutamia esimerkkejä helposti tunnistettavista hajuista:
 
-- toisteinen koodi
-- liian pitkät metodit
-- luokat joissa on liikaa oliomuuttujia
-- luokat joissa on liikaa koodia
-- metodien liian pitkät parametrilistat
-- epäselkeät muuttujien, metodien tai luokkien nimet
-- kommentit
+- Toisteinen koodi
+- Liian pitkät metodit ja funktiot
+- Luokat joissa on liikaa oliomuuttujia
+- Luokat joissa on liikaa koodia
+- Metodien liian pitkät parametrilistat
+- Epäselkeät muuttujien, metodien tai luokkien nimet
+- Kommentit
 
 Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuutteja heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa, että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa suurella todennäköisyydellä että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametreja, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain toisessa luokassa.
 
@@ -1513,22 +1420,19 @@ Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurt
 
 Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktorointioperaatioita. Kirjan listaamat refaktoroinnit löytyvät myös [internetistä](https://refactoring.com/catalog/index.html). Seuraavassa muutamia esimerkkejä
 
-- _rename variable/method/class_ uudelleennimetään huonosti nimetty asia
-- _extract method_ jaetaan liian pitkä metodi erottamalla siitä pienempiä metodeja
-- _move field/method_ siirretään oliomuuttuja tai metodi toiseen luokkaan
-- _extract interface_ luodaan luokan julkisia metodeja vastaava rajapinta, jonka avulla voidaan purkaa olion käyttäjän ja olion väliltä konkreettinen riippuvuus
-- _extract superclass_ luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
-
-Suuri osa tässä luetelluista refaktorointioperaatioista on sellaisia, että useimmat ohjelmointiympäristöt (esim. NetBeans, Eclipse ja IntelliJ) pystyvät tekemään ne suurelta osin automaattisesti. Automatisoitu refaktorointi onnistuu huomattavasti helpommin staattisesti tyypitetyille kielille kuten Java, dynaamisesti tyypitettyjen kielten kuten Javascript ja Python kohdalla se on huomattavasti hankalampaa.
+- _Rename variable/method/class_ uudelleennimetään huonosti nimetty asia
+- _Extract method_ jaetaan liian pitkä metodi erottamalla siitä pienempiä metodeja
+- _Move field/method_ siirretään oliomuuttuja tai metodi toiseen luokkaan
+- _Extract superclass_ luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
 
 Melko monissa ei niin suoraviivaisissa refaktorointioperaatioissa, epäoptimaalinen koodi refaktoroidaan paremmaksi soveltamalla jotain suunnittelumallia. Joshua Kerievsky on kirjoittanut aiheesta mainion kirjan [Refactoring to patterns](https://martinfowler.com/books/r2p.html).
 
 Aiemmissa esimerkeissä näimme tämän kaltaisia refaktorointeja, esim.
 
-- tilien koronmaksustrategia [replace conditional with polymorfism](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)
-- tilien luominen [replace constructor with factory method](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
-- laskimen komennot [replace method with method object](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
-- laskimen binäärioperaatiot [form template method](https://sourcemaking.com/refactoring/form-template-method).
+- Tilien koronmaksustrategia [replace conditional with polymorfism](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)
+- Tilien luominen [replace constructor with factory method](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
+- Laskimen komennot [replace method with method object](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
+- Laskimen binäärioperaatiot [form template method](https://sourcemaking.com/refactoring/form-template-method).
 
 Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaiset automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo. Refaktoroinnissa on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana, ja tästä varmistuminen ilman testejä on erittäin haastavaa.
 
@@ -1554,10 +1458,10 @@ Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytetty
 
 Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
 
-1. reckless and deliberate: "we do not have time for design"
-2. reckless and inadverent: "what is layering"?
-3. prudent and inadverent: "now we know how we should have done it"
-4. prudent and deliberate: "we must ship now and will deal with consequences"
+1. Reckless and deliberate: "we do not have time for design"
+2. Reckless and inadverent: "what is layering"?
+3. Prudent and inadverent: "now we know how we should have done it"
+4. Prudent and deliberate: "we must ship now and will deal with consequences"
 
 Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voi ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
 
@@ -1571,202 +1475,160 @@ Tutustutaan osan lopuksi vielä muutama uuteen suunnittelumalliin.
 
 Olemme toteuttaneet asiakkaalle pinon:
 
-```java
-public class Pino {
+```python
+class Pino:
+    def __init__(self):
+        self.alkiot = []
 
-    private LinkedList<String> alkiot;
+    def push(self, alkio):
+        self.alkiot.append(alkio)
 
-    public Pino() {
-        alkiot = new LinkedList<String>();
-    }
+    def pop(self):
+        return self.alkiot.pop()
 
-    public void push(String alkio){
-        alkiot.addFirst(alkio);
-    }
+    def empty(self):
+        return len(self.alkiot) == 0
 
-    public String pop(){
-        return alkiot.remove();
-    }
+def main():
+    pino = Pino()
 
-    public boolean empty(){
-        return alkiot.isEmpty();
-    }
-}
+    print("Pinotaan, tyhjä lopettaa:")
 
-public static void main(String[] args) {
-    Scanner lukija = new Scanner(System.in);
-    Pino pino = new Pino();
+    while True:
+        pinoon = input()
 
-    System.out.println("pinotaan, tyhjä lopettaa:");
-    while (true) {
-        String pinoon = lukija.nextLine();
-        if (pinoon.isEmpty()) {
-            break;
-        }
-        pino.push(pinoon);
-    }
-    System.out.println("pinossa oli: ");
-    while (!pino.empty()) {
-        System.out.println( pino.pop() );
-    }
-}
+        if not pinoon:
+            break
+
+        pino.push(pinoon)
+
+    while not pino.empty():
+        print(pino.pop())
+
+if __name__ == "__main__":
+    main()
 ```
 
 Asiakkaamme haluaa pinosta muutaman uuden version:
 
-- _KryptattuPino_ jossa alkiot talletetaan pinoon kryptattuina, alkiot tulevat pinosta ulos normaalisti
-- _LokiPino_ jossa tieto pinoamisoperaatioista ja niiden parametreista ja paluuarvoista talletetaan lokiin
-- _PrepaidPino_ joka lakkaa toimimasta kun sillä on suoritettu konstruktoriparametrina määritelty määrä operaatioita
+- `KryptattuPino` jossa alkiot talletetaan pinoon kryptattuina, alkiot tulevat pinosta ulos normaalisti
+- `LokiPino` jossa tieto pinoamisoperaatioista ja niiden parametreista ja paluuarvoista talletetaan lokiin
+- `PrepaidPino` joka lakkaa toimimasta kun sillä on suoritettu konstruktoriparametrina määritelty määrä operaatioita
 
 On lisäksi toteutettava kaikki mahdolliset kombinaatiot:
 
-- _KryptattuLokiPino_
-- _LokiKryptattuPino_ (erona edelliseen se että lokiin ei kirjata parametreja kryptattuna)
-- _KryptattuPrepaidPino_
-- _KryptattuLokiPrepaidPino_
-- _LokiPrepaidPino_
+- `KryptattuLokiPino`
+- `LokiKryptattuPino` (erona edelliseen se että lokiin ei kirjata parametreja kryptattuna)
+- `KryptattuPrepaidPino`
+- `KryptattuLokiPrepaidPino`
+- `LokiPrepaidPino`
 
 Alkaa kuulostaa pahalta varsinkin kun Product Owner vihjaa, että seuraavassa sprintissä tullaan todennäköisesti vaatimaan lisää versioita pinosta, mm. ÄänimerkillinenPino, RajallisenkapasiteetinPino ja tietysti kaikki kombinaatiot tarvitaan myös...
 
 Onneksi suunnittelumalli _dekoraattori_ (engl. decorator) sopii juuri tilanteeseen! Luodaan pinon kolme uutta versiota dekoroituina pinoina. Tarkastellaan ensin PrepaidPinoa:
 
-```java
-public class PrepaidPino extends Pino {
+```python
+class PrepaidPino:
+    def __init__(self, pino, krediitteja):
+        self.pino = pino
+        self.krediitteja = krediitteja
 
-    private Pino pino;
-    private int krediitteja;
+    def kuluta_krediitti(self):
+        if self.krediitteja == 0:
+            raise Exception("Pinossa ei ole enää käyttöoikeutta")
 
-    public PrepaidPino(Pino pino, int krediitteja) {
-        this.pino = pino;
-        this.krediitteja = krediitteja;
-    }
+        self.krediitteja = self.krediitteja - 1
 
-    @Override
-    public String pop() {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
+    def push(self, alkio):
+        self.kuluta_krediitti()
+        self.pino.push(alkio)
 
-        return pino.pop();
-    }
+    def pop():
+        self.kuluta_krediitti()
+        return self.pino.pop()
 
-    @Override
-    public void push(String alkio) {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
-        pino.push(alkio);
-    }
-
-    @Override
-    public boolean empty() {
-        if (krediitteja == 0) {
-            throw new IllegalStateException("pinossa ei enää käyttöoikeutta");
-        }
-        krediitteja--;
-        return pino.empty();
-    }
-}
+    def empty(self):
+        self.kuluta_krediitti()
+        return self.pino.empty()
 ```
 
-_PrepaidPino_ siis perii luokan _Pino_, mutta se ei käytä "perittyä" pinouttaan, vaan sen sijaan PrepaidPino **sisältää** pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa PrepaidPino käyttää tallettamaan kaikki alkionsa. Eli jokainen PrepaidPinon operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
+`PrepaidPino`-luokka **sisältää** pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa `PrepaidPino`-luokka käyttää tallettamaan kaikki alkionsa. Eli jokainen `PrepaidPino`-luokan operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
 
-PrepaidPino luodaan seuraavalla tavalla:
+`PrepaidPino` luodaan seuraavalla tavalla:
 
-```java
-Pino pino = new PrepaidPino(new Pino(), 5);
+```python
+pino = PrepaidPino(Pino(), 5)
 ```
 
-Eli luodaan normaali Pino ja annetaan se PrepaidPinolle konstruktoriparametrina yhdessä pinon krediittien kanssa.
+Eli luodaan normaali `Pino` ja annetaan se `PrepaidPino`-luokalle konstruktoriparametrina yhdessä pinon krediittien kanssa.
 
-Muut kaksi:
+Kahden muun pinon toteutukset ovat seuraavanlaiset:
 
-```java
-public class KryptattuPino extends Pino{
-    private Pino pino;
+```python
+class KryptattuPino:
+    def __init__(self, pino):
+        self.pino = pino
 
-    public KryptattuPino(Pino pino) {
-        this.pino = pino;
-    }
+    def dekryptaa(self, alkio):
+        dekryptattu = ""
+        merkkijono_alkio = str(alkio)
 
-    @Override
-    public String pop() {
-        String alkio = pino.pop();
-        return dekryptaa(alkio);
-    }
+        for i in range(0, len(merkkijono_alkio)):
+            dekryptattu = dekryptattu + chr(ord(merkkijono_alkio[i]) - 1)
 
-    @Override
-    public void push(String alkio) {
-        pino.push(kryptaa(alkio));
-    }
+        return dekryptattu
 
-    @Override
-    public boolean empty() {
-        return pino.empty();
-    }
+    def kryptaa(self, alkio):
+        kryptattu = ""
+        merkkijono_alkio = str(alkio)
 
-    private String dekryptaa(String alkio) {
-        String dekryptattu = "";
-        for (int i = 0; i < alkio.length(); i++) {
-            dekryptattu += (char)(alkio.charAt(i)-1);
-        }
+        for i in range(0, len(merkkijono_alkio)):
+            kryptattu = kryptattu + chr(ord(merkkijono_alkio[i]) + 1)
 
-        return dekryptattu;
-    }
+        return kryptattu
 
-    private String kryptaa(String alkio) {
-        String kryptattu = "";
-        for (int i = 0; i < alkio.length(); i++) {
-            kryptattu += (char)(alkio.charAt(i)+1);
-        }
+    def push(self, alkio):
+        self.pino.push(self.kryptaa(alkio))
 
-        return kryptattu;
-    }
-}
+    def pop(self):
+        return self.dekryptaa(self.pino.pop())
 
-public class LokiPino extends Pino {
+    def empty(self):
+        return self.pino.empty()
 
-    private Pino pino;
-    private PrintWriter loki;
+class LokiPino:
+    def __init__(self, pino, loki):
+        self.pino = pino
+        self.loki = loki
 
-    public LokiPino(Pino pino, PrintWriter loki) {
-        this.pino = pino;
-        this.loki = loki;
-    }
+    def push(self, alkio):
+        self.loki.kirjoita(f"Push: {alkio}")
+        self.pino.push(alkio)
 
-    @Override
-    public String pop() {
-        String popattu = pino.pop();
-        loki.println("pop: "+popattu);
+    def pop(self):
+        alkio = self.pino.pop()
+        self.loki.kirjoita(f"Pop: {alkio}")
 
-        return popattu;
-    }
+        return alkio
 
-    @Override
-    public void push(String alkio) {
-        loki.println("push: "+alkio);
+    def empty(self):
+        onko_tyhja = self.pino.empty()
+        self.loki.kirjoita(f"Empty: {onko_tyhja}")
 
-        pino.push(alkio);
-    }
-
-    @Override
-    public boolean empty() {
-        loki.println("empty: "+pino.empty());
-
-        return pino.empty();
-    }
-}
+        return onko_tyhja
 ```
 
-Periaate on sama, pinodekoraattorit _LokiPino_ ja _KryptattuPino_ delegoivat kaikki operaationsa sisältämilleen Pino-olioille. _LokiPino_ kirjoittaa lokitiedostoon merkinnän jokaisesta pinoon kohdistuvasta operaatiosta. _KryptattuPino_ taas kryptaa alkeellista algoritmia käyttäen jokaisen pinnon laitettavan merkkijonon ja dekryptaa pinosta otettavat merkkijonot takaisin selkokielisiksi.
+Periaate on sama, pinodekoraattorit `LokiPino` ja `KryptattuPino` delegoivat kaikki operaationsa sisältämilleen `Pino`-olioille. `LokiPino` kirjoittaa merkinnän jokaisesta pinoon kohdistuvasta operaatiosta. _KryptattuPino_ taas kryptaa alkeellista algoritmia käyttäen jokaisen pinnon laitettavan merkkijonon ja dekryptaa pinosta otettavat merkkijonot takaisin selkokielisiksi.
 
-Koska kaikki dekoraattorit perivät luokan _Pino_, voidaan dekoraattorille antaa parametriksi toinen dekoraattori. Esim. KryptattuLokiPino luodaan seuraavasti:
+Voimme muodostaa pinon, joka kirjoittaa merkinnän pinon operaatioista sekä kryptaa pinon alkiot seuraavasti:
 
-```java
-PrintWriter loki = new PrintWriter( new File("loki.txt") );
-Pino pino = new KryptattuPino( new LokiPino( new Pino(), loki ) );
+```python
+class KonsoliLoki:
+    def kirjoita(self, viesti):
+        print(viesti)
+
+loki = KonsoliLoki()
+pino = KryptattuPino(LokiPino(Pino(), loki))
 ```
 
 Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle paljon erilaisia ominaisuuskombinaatioita. Jos olisimme yrittäneet hoitaa kaiken normaalilla perinnällä, olisi luokkien määrä kasvanut eksponentiaalisesti eri ominaisuuksien määrän suhteen ja uusiokäytöstäkään ei olisi tullut mitään.
@@ -1779,188 +1641,163 @@ Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.
 
 Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehtaan:
 
-```java
-public class Pinotehdas {
-    public Pino prepaidPino(int krediitit){
-        return new PrepaidPino(new Pino(), krediitit);
-    }
+```python
+class Pinotehdas:
+    prepaid_pino(self, krediitit):
+        return PrepaidPino(Pino(), krediitit)
 
-    public Pino lokiPino(PrintWriter loki){
-        return new LokiPino(new Pino(), loki);
-    }
+    loki_pino(self, loki):
+        return LokiPino(Pino(), loki)
 
-    public Pino kryptattuPino(){
-        return new KryptattuPino(new Pino());
-    }
+    kryptattu_pino():
+        return KryptattuPino(Pino())
 
-    public Pino kryptattuPrepaidPino(int krediitit){
-        return new KryptattuPino(prepaidPino(krediitit));
-    }
+    kryptattu_prepaid_pino(self, krediitit):
+        return KryptattuPino(self.prepaid_pino(krediitit))
 
-    public Pino kryptattuLokiPino(PrintWriter loki){
-        return new KryptattuPino(lokiPino(loki));
-    }
+    kryptattu_loki_pino(self, loki):
+        return KryptattuPino(self.loki_pino(loki))
 
-    public Pino prepaidKryptattuLokiPino(int krediitit, PrintWriter loki){
-        return new PrepaidPino(kryptattuLokiPino(loki), krediitit);
-    }
+    prepaid_kryptattu_loki_pino(self, krediitit, loki):
+        return PrepaidPino(self.kryptattu_loki_pino(loki), krediitit)
 
-    // monta monta muuta rakentajaa...
-}
+    # monta monta muuta rakentajaa...
 ```
 
 Tehdasluokka on ikävä ja sisältää hirveän määrän metodeja. Jos pinoon lisätään vielä ominaisuuksia, tulee factory karkaamaan käsistä.
 
 Pinon luominen on kuitenkin tehtaan ansiosta helppoa:
 
-```java
-Pinotehdas tehdas = new Pinotehdas();
+```python
+tehdas = Pinotehdas()
 
-Pino omapino = tehdas.kryptattuPrepaidPino(100);
+omapino = tehdas.kryptattu_prepaid_pino(100)
 ```
 
-Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan _rakentaja_ (engl. builder) -suunnittelumallia:
+Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan seuraavaksi _rakentaja_ (engl. builder) -suunnittelumallia.
 
 #### Pinorakentaja <span style="color:blue">[viikko 6]</span>
 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 
-```java
-Pinorakentaja rakenna = new Pinorakentaja();
+```python
+rakenna = Pinorakentaja()
 
-Pino pino = rakenna.prepaid(10).kryptattu().pino();
+pino = rakenna.prepaid(10).kryptattu().pino()
 ```
 
-Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (enhl. domain specific language) pinojen luomiseen!
+Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (enhl. domain specific language) pinojen luomiseen.
 
 Luodaan ensin rakentajasta perusversio, joka soveltuu vasta normaalien pinojen luomiseen:
 
-```java
-Pinorakentaja rakenna = new Pinorakentaja();
+```python
+rakenna = Pinorakentaja()
 
-Pino pino = rakenna.pino();
+pino = rakenna.pino()
 ```
 
 Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
 
-```java
-public class Pinorakentaja {
-    Pino pino;
-
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-}
+```python
+class Pinorakentaja:
+    def __init__(self):
+        self.pino = Pino()
+    
+    def pino(self):
+        return self.pino
 ```
 
-eli kun _Rakentaja_-olio luodaan, rakentaja luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia _pino()_.
+Eli kun `Pinorakentaja`-olio luodaan, rakentaja luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia `pino`.
 
 Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
 
-```java
-Pinorakentaja rakenna = new Pinorakentaja();
+```python
+rakenna = Pinorakentaja()
 
-Pino pino = rakenna.prepaid(10).pino();
+pino = rakenna.prepaid(10).pino()
 ```
 
-Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka signatuuri on _public Pinorakentaja prepaid(int kreditit)_, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia _pino_, on metodin _prepaid_ palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
+Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka signatuuri on `prepaid(self, krediitit)`, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia `pino`, on metodin `prepaid` palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
 
-```java
-public class Pinorakentaja {
-    Pino pino;
+```python
+class Pinorakentaja:
+    def __init__(self):
+        self.pino = Pino()
+    
+    def prepaid(self, krediitit):
+        # ???
 
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pinorakentaja prepaid(int kreditit) {
-        // ????
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-}
+    def pino(self):
+        return self.pino
 ```
 
-Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia _prepaid_ ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa viitteen _this_ eli rakentajan itsensä. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
+Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia `prepaid` ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa uuden `Pinorakentaja`-olion, jolle se antaa konstruktorin parametrina dekoroidun pinon. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
 
-```java
-public class Pinorakentaja {
-    Pino pino;
+```python
+class Pinorakentaja:
+    def __init__(self, pino = None):
+        self.pino = pino or Pino()
+    
+    def prepaid(self, krediitit):
+        return Pinorakentaja(PrepaidPino(self.pino, krediitit))
 
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
-
-    public Pino pino() {
-        return pino;
-    }
-
-    public Pinorakentaja prepaid(int kreditit) {
-        this.pino = new PrepaidPino(pino, kreditit);
-        return this;
-    }
-}
+    def pino(self):
+        return self.pino
 ```
 
 Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
 
-```java
-public class Pinorakentaja {
-    Pino pino;
+```python
+class Pinorakentaja:
+    def __init__(self, pino = None):
+        self.pino = pino or Pino()
+    
+    def prepaid(self, krediitit):
+        return Pinorakentaja(PrepaidPino(self.pino, krediitit))
 
-    public Pinorakentaja() {
-        pino = new Pino();
-    }
+    def kryptattu(self):
+        return Pinorakentaja(KryptattuPino(self.pino))
 
-    public Pino pino() {
-        return pino;
-    }
+    def loggaava(self, loki):
+        return Pinorakentaja(LokiPino(self.pino, loki))
 
-    public Pinorakentaja prepaid(int kreditit) {
-        this.pino = new PrepaidPino(pino, kreditit);
-        return this;
-    }
-
-    public Pinorakentaja kryptattu() {
-        this.pino = new KryptattuPino(pino);
-        return this;
-    }
-
-    public Pinorakentaja loggaava(PrintWriter loki) {
-        this.pino = new LokiPino(pino, loki);
-        return this;
-    }
-}
+    def pino(self):
+        return self.pino
 ```
 
 Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.
 
 Rakentajaa siis käytetään seuraavasti:
 
-```java
-Pinorakentaja rakenna = new Pinorakentaja();
+```python
+Pinorakentaja()
 
-Pino pino = rakenna.kryptattu().prepaid(10).pino();
+pino = rakenna.kryptattu().prepaid(10).pino()
 ```
 
 Tässä pyydettiin rakentajalta kryptattu prepaid-pino, jossa krediittejä on 10.
 
 Vastaavalla tavalla voidaan luoda pinoja muillakin ominaisuuksilla:
 
-```java
-Pinorakentaja rakenna = new Pinorakentaja();
+```python
+rakentaja = Pinorakentaja()
 
-Pino pino1 = rakenna.pino();  // luo normaalin pinon
-Pino pino2 = rakenna.kryptattu().loggaava(loki).prepaid.pino();  // luo sen mitä odottaa saattaa!
+pino1 = rakentaja.pino();  # luo normaalin pinon
+pino2 = rakentaja.kryptattu().loggaava(loki).prepaid.pino()  # luo sen mitä odottaa saattaa!
 ```
 
-Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit jotka ovat muuten luonteeltaan void:eja onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
+Huomaa, että rakentajan metodi-kutsuvat luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:
 
-Tällä tekniikalla toteutetuista rajapinnoista käytetään myös nimitystä
-[fluent interface](https://martinfowler.com/bliki/FluentInterface.html).
+```python
+rakentaja = Pinorakentaja()
+
+kryptattu_rakentaja = rakenta.kryptattu()
+kryptatty_loki_rakentaja = kryptattu_rakentaja.loggaava(loki)
+
+kryptattu_pino = kryptatty_rakentaja.pino()
+kryptattu_loki_pino = kryptatty_loki_rakentaja.pino()
+```
+
+Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin loggaavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
+
+Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit jotka ovat muuten luonteeltaan void:eja onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
