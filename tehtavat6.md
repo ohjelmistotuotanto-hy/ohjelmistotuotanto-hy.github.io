@@ -323,7 +323,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia. 
 
-* Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2019/projects/repositories) joukosta
+* Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2020/projects/repositories) joukosta
     - mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. 
     - ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
 * [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
