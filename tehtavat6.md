@@ -152,34 +152,34 @@ Ehto `All` ei ole yksistään kovin hyödyllinen, mutta tulemme tarvitseman sit�
 
 Kyselyn
 
-```java
-Matcher m = new Or( new HasAtLeast(20, "goals"),
-                    new HasAtLeast(20, "assists")
-);   
+```java       
+Matcher m = new Or( new HasAtLeast(40, "goals"),
+                    new HasAtLeast(60, "assists")
+);  
 ```
 
 tulee palauttaa ne, joilla on vähintään 20 maalia tai syöttöä, eli seuraava lista
 
 ```
-Leon Draisaitl       EDM          16 + 32 = 48
-John Carlson         WSH           8 + 28 = 36
-Jonathan Huberdeau   FLA          10 + 20 = 30
-Connor McDavid       EDM          18 + 29 = 47
-David Pastrnak       BOS          23 + 16 = 39
-Aleksander Barkov    FLA           7 + 22 = 29
-Logan Couture        SJS           5 + 20 = 25
-Brad Marchand        BOS          17 + 25 = 42
+Mika Zibanejad       NYR          41 + 34 = 75
+Artemi Panarin       NYR          32 + 63 = 95
+David Pastrnak       BOS          48 + 47 = 95
+Auston Matthews      TOR          47 + 33 = 80
+Alex Ovechkin        WSH          48 + 19 = 67
+John Carlson         WSH          15 + 60 = 75
+Leon Draisaitl       EDM          43 + 67 = 110
+Connor McDavid       EDM          34 + 63 = 97
 ```
 
 Kyselyn 
 
 ```java
 Matcher m = new And(
-    new HasAtLeast(20, "points"),
+    new HasAtLeast(50, "points"),
     new Or( 
         new PlaysIn("NYR"),
         new PlaysIn("NYI"),
-        new PlaysIn("NJD")
+        new PlaysIn("BOS")
     )
 ); 
 ```
@@ -187,10 +187,15 @@ Matcher m = new And(
 tulee palauttaa kaikki yli 20 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _NJD_. Lista näyttää seuraavalta: 
 
 ```
-Mathew Barzal        NYI           9 + 11 = 20
-Artemi Panarin       NYR          12 + 18 = 30
-Ryan Strome          NYR           6 + 16 = 22
-Taylor Hall          NJD           4 + 17 = 21
+Brock Nelson         NYI          26 + 28 = 54
+Mathew Barzal        NYI          19 + 41 = 60
+Ryan Strome          NYR          18 + 41 = 59
+Mika Zibanejad       NYR          41 + 34 = 75
+Tony DeAngelo        NYR          15 + 38 = 53
+Artemi Panarin       NYR          32 + 63 = 95
+Patrice Bergeron     BOS          31 + 25 = 56
+Brad Marchand        BOS          28 + 59 = 87
+David Pastrnak       BOS          48 + 47 = 95
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
