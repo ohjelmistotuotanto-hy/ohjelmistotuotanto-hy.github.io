@@ -278,12 +278,13 @@ Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-peri
 Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä. Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
 ``` java
+QueryBuilder query = new QueryBuilder();
 Matcher m1 = query.playsIn("PHI")
           .hasAtLeast(10, "assists")
-          .hasFewerThan(8, "goals").build();
+          .hasFewerThan(5, "goals").build();
 
 Matcher m2 = query.playsIn("EDM")
-          .hasAtLeast(20, "points").build();
+          .hasAtLeast(40, "points").build();
 
 Matcher m = query.oneOf(m1, m2).build();
 ```
@@ -291,11 +292,12 @@ Matcher m = query.oneOf(m1, m2).build();
 Pelaajalistan tulisi olla:
 
 <pre>
-Jakub Voracek        PHI           6 + 10 = 16
-Leon Draisaitl       EDM          16 + 32 = 48
-Claude Giroux        PHI           7 + 10 = 17
-Sean Couturier       PHI           7 + 11 = 18
-Connor McDavid       EDM          18 + 29 = 47
+Justin Braun         PHI           3 + 16 = 19
+Robert Hagg          PHI           3 + 10 = 13
+Philippe Myers       PHI           4 + 12 = 16
+Ryan Nugent-Hopkins  EDM          22 + 39 = 61
+Leon Draisaitl       EDM          43 + 67 = 110
+Connor McDavid       EDM          34 + 63 = 97
 </pre>
 
 Tai sama ilman apumuuttujia:
@@ -304,14 +306,12 @@ Tai sama ilman apumuuttujia:
 Matcher m = query.oneOf(
     query.playsIn("PHI")
         .hasAtLeast(10, "assists")
-        .hasFewerThan(8, "goals").build(),
+        .hasFewerThan(5, "goals").build(),
 
     query.playsIn("EDM")
-        .hasAtLeast(20, "points").build()
+        .hasAtLeast(40, "points").build()
 ).build();
 ```
-
-Rakentajasi ei ole pakko toimia metodikutsujen syntaksin osalta samalla tavalla kuin esimerkkikoodin. Riittää, että sillä voi jollain tavalla muodostaa _and_- ja _or_-muotoisia kyselyjä.
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
