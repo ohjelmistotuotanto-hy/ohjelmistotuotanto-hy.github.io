@@ -223,7 +223,7 @@ public static void main(String[] args) {
 }
 ```     
 
-Tässä kyselyssä voi ja kannattaa hyödyntää edellisen tehtävän _All_-matcheria.
+Tässä kyselyssä voi ja kannattaa hyödyntää aiemmin tehtyä _All_-matcheria.
 
 Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on NYR
 
@@ -262,12 +262,11 @@ public static void main(String[] args) {
 Pelaajien lista on seuraava
 
 ```
-Chris Kreider        NYR           6 +  7 = 13
-Tony DeAngelo        NYR           7 + 10 = 17
-Vladislav Namestnikov NYR, OTT      6 +  6 = 12
-Ryan Strome          NYR           6 + 16 = 22
-Kaapo Kakko          NYR           6 +  4 = 10
-Filip Chytil         NYR           7 +  2 = 9
+Greg McKegg          NYR           5 +  4 = 9
+Jacob Trouba         NYR           7 + 20 = 27
+Brendan Lemieux      NYR           6 + 12 = 18
+Adam Fox             NYR           8 + 34 = 42
+Brett Howden         NYR           9 + 10 = 19
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella. 
