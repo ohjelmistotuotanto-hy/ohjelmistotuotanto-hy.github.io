@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Osa 4
+inheader: no
 title_long: 'Ohjelmistojen suunnittelu'
-inheader: yes
-permalink: /osa4/
+permalink: /python/osa4/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">

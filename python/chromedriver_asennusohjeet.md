@@ -2,7 +2,7 @@
 layout: page
 title: ChromeDriver-asennusohjeet
 inheader: no
-permalink: /chromedriver_asennusohjeet/
+permalink: /python/chromedriver_asennusohjeet/
 ---
 
 ## ChromeDriver-asennusohjeet

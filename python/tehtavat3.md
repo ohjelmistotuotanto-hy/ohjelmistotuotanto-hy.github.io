@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 3
 inheader: no
-permalink: /tehtavat3/
+permalink: /python/tehtavat3/
 ---
 
 ## Viikko 3
