@@ -39,8 +39,7 @@ Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli _riippuvuutta_. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
 <!-- TODO: linkki -->
-
-Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeista](/gradle#riippuvuudet), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeista](/gradle#riippuvuudet), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen requests-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 
@@ -55,14 +54,22 @@ def main():
     print("JSON-muotoinen vastaus:")
     print(response)
 
-    players = map(lambda p: Player(p['name']), response)
+    players = []
+
+    for player_dict in response:
+        player = Player(
+            player_dict['name']
+        )
+
+        players.append(player)
 
     print("Oliot:")
+
     for player in players:
         print(player)
 ```
 
-Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-oliota [map](https://docs.python.org/3/library/functions.html#map)-funktiota hyödyntämällä.
+Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
 
 Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee. Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
 
@@ -120,7 +127,7 @@ Rasmus Ristolainen  BUF   0 +  5 =  5
 
 ### 3. Tutustuminen Robot Frameworkkiin
 
-Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
+Lue [täällä](/python/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
 
 ### 4. Kirjautumisen testit
 

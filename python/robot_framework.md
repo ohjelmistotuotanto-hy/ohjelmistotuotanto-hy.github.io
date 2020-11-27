@@ -7,7 +7,7 @@ permalink: /python/robot_framework/
 
 ## Robot Framework
 
-[Robot Framework](https://robotframework.org/) on user storyjen hyväksymistestauksen automatisointiin tarkoitettu sovelluskehys. Robot Frameworkin avulla user storyjen testit voidaan kirjoittaa asiakkaan ymmärtämässä muodossa, luonnollisella kielellä, mutta tehdä niistä kuitenkin automaattisesti suoritettavia.
+[Robot Framework](https://robotframework.org/) on user storyjen hyväksymistestauksen automatisointiin hyvin soveltuva sovelluskehys. Robot Frameworkin avulla user storyjen testit voidaan kirjoittaa asiakkaan ymmärtämässä muodossa, luonnollisella kielellä, mutta tehdä niistä kuitenkin automaattisesti suoritettavia.
 
 Vaikka Robot Framework on perinteisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Robot Frameworkin toimintaperiaatteita testaamalla yksittäistä luokkaa. Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/hello-robot_ oleva projekti.
 
@@ -33,7 +33,9 @@ class Counter:
 
 ```
 
-Robot Frameworkin käyttö onnistuu [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
+Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hakemiston <i>increase_counter.robot</i>-tiedostoon. Tutustu tiedoston sisältöön ja pohdi, vaatiiko testattavien skenaarioiden ymmärtäminen lukijalta erityistä teknistä osaamista esimerkiksi unittest-testeihin verrattuna.
+
+Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
 
 Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti.
 
