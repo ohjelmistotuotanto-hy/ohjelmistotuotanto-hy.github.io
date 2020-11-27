@@ -810,7 +810,7 @@ class Pankki:
     def euribortili(self, omistaja, kuukauden):
         return Tili(self.generoi_tilinumero(), omistaja, EriborKorko(kuukauden))
 
-    def maaraaikaisEuriborTili(self, omista, kuukauden):
+    def maaraaikais_euribortili(self, omista, kuukauden):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, EuriborKorko(kuukauden))
 ```
 

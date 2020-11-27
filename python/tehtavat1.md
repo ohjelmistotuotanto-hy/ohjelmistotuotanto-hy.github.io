@@ -166,7 +166,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 - Tutoriaaleissa ei valitettavasti käytetä `git add`-komennon hyödyllistä muotoa `git add -p`
 - Tee muutoksia muutamiin tiedostoihin ja lisää muutokset staging-alueelle komennon git add -p avulla
 - Jos lisäät projektiin uusia tiedostoja, ei `git add -p` huomaa niitä, eli ne on lisättävä staging-alueelle erikseen
-- _käytä jatkossa komentoa `git add -p` aina kun se on suinkin mahdollista!_
+- _Käytä jatkossa komentoa `git add -p` aina kun se on suinkin mahdollista!_
 
 komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset.
 
@@ -204,7 +204,7 @@ Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klo
 - Lisää alkuperäiseen kopioon joitain tiedostoja ja pushaa ne GitHubiin
 - Mene jälleen kloonattuun kopioon ja pullaa
 
-### 6 Repositorion siivous [versionhallinta]
+### 6. Repositorion siivous [versionhallinta]
 
 Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimääräiset tiedostot
 
@@ -268,7 +268,7 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 
 Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/tree/master/materiaali/poetry.md).
 
-**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa komento on annettu muodossa `poetry <komento>`, mutta jos olet asentanut Poetryn globaalisti, voit antaa komennot muodossa `poetry <komento>`.
+**Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa Poetry-komennot on annettu muodossa `poetry <komento>`. Jos et ole asentanut Poetrya globaalisti, joudut antamaan komennot muodossa `python3 -m poetry <komento>`.
 
 - Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Käynnistä sovellus komennolla `poetry run python3 src/index.py`
