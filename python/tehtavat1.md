@@ -256,7 +256,7 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 > Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 
 - Edellisessä tehtävässä lisättiin repositorioon Poetry-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`
-- Tutki Poetry-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektin sisältävän hakemiston juuressa (`tree` ei ole pipenviin liittyvä käsky vaan normaali shell-komento)
+- Tutki Poetry-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektin sisältävän hakemiston juuressa (`tree` ei ole Poetryyn liittyvä käsky vaan normaali shell-komento)
   - Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
   - **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
   - Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
@@ -319,7 +319,7 @@ source = src
 
 ### 9. GitHub Actions, osa 1
 
-Pipenvin avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Seuraava askel on suorittaa buildausprosessi, eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
+Poetryn avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Seuraava askel on suorittaa buildausprosessi, eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
 
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 
@@ -453,7 +453,7 @@ Kolmas askel on hieman erilainen:
   run: pip install poetry
 ```
 
-Se suorittaa komentorivillä komennon, joka asentaa pipenvin.
+Se suorittaa komentorivillä komennon, joka asentaa Poetryn.
 
 Neljäs askel asentaa projektin riippuvuudet `poetry install`-komennolla.
 
