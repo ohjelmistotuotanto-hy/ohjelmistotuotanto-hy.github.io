@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Osa 4
+inheader: no
 title_long: 'Ohjelmistojen suunnittelu'
-inheader: yes
-permalink: /osa4/
+permalink: /python/osa4/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
@@ -810,7 +810,7 @@ class Pankki:
     def euribortili(self, omistaja, kuukauden):
         return Tili(self.generoi_tilinumero(), omistaja, EriborKorko(kuukauden))
 
-    def maaraaikaisEuriborTili(self, omista, kuukauden):
+    def maaraaikais_euribortili(self, omista, kuukauden):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, EuriborKorko(kuukauden))
 ```
 
@@ -1543,7 +1543,7 @@ class PrepaidPino:
         self.kuluta_krediitti()
         self.pino.push(alkio)
 
-    def pop():
+    def pop(self):
         self.kuluta_krediitti()
         return self.pino.pop()
 
@@ -1643,22 +1643,22 @@ Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hiem
 
 ```python
 class Pinotehdas:
-    prepaid_pino(self, krediitit):
+    def prepaid_pino(self, krediitit):
         return PrepaidPino(Pino(), krediitit)
 
-    loki_pino(self, loki):
+    def loki_pino(self, loki):
         return LokiPino(Pino(), loki)
 
-    kryptattu_pino():
+    def kryptattu_pino(self):
         return KryptattuPino(Pino())
 
-    kryptattu_prepaid_pino(self, krediitit):
+    def kryptattu_prepaid_pino(self, krediitit):
         return KryptattuPino(self.prepaid_pino(krediitit))
 
-    kryptattu_loki_pino(self, loki):
+    def kryptattu_loki_pino(self, loki):
         return KryptattuPino(self.loki_pino(loki))
 
-    prepaid_kryptattu_loki_pino(self, krediitit, loki):
+    def prepaid_kryptattu_loki_pino(self, krediitit, loki):
         return PrepaidPino(self.kryptattu_loki_pino(loki), krediitit)
 
     # monta monta muuta rakentajaa...
@@ -1701,10 +1701,10 @@ Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
 ```python
 class Pinorakentaja:
     def __init__(self):
-        self.pino = Pino()
+        self.pino_olio = Pino()
     
     def pino(self):
-        return self.pino
+        return self.pino_olio
 ```
 
 Eli kun `Pinorakentaja`-olio luodaan, rakentaja luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia `pino`.
@@ -1721,48 +1721,48 @@ Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metod
 
 ```python
 class Pinorakentaja:
-    def __init__(self):
-        self.pino = Pino()
+    def __init__(self, pino = Pino()):
+        self.pino_olio = pino
     
     def prepaid(self, krediitit):
         # ???
 
     def pino(self):
-        return self.pino
+        return self.pino_olio
 ```
 
 Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia `prepaid` ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa uuden `Pinorakentaja`-olion, jolle se antaa konstruktorin parametrina dekoroidun pinon. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino = None):
-        self.pino = pino or Pino()
+    def __init__(self, pino = Pino()):
+        self.pino_olio = pino
     
     def prepaid(self, krediitit):
-        return Pinorakentaja(PrepaidPino(self.pino, krediitit))
+        return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
 
     def pino(self):
-        return self.pino
+        return self.pino_olio
 ```
 
 Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino = None):
-        self.pino = pino or Pino()
+    def __init__(self, pino = Pino()):
+        self.pino_olio = pino
     
     def prepaid(self, krediitit):
-        return Pinorakentaja(PrepaidPino(self.pino, krediitit))
+        return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
 
     def kryptattu(self):
-        return Pinorakentaja(KryptattuPino(self.pino))
+        return Pinorakentaja(KryptattuPino(self.pino_olio))
 
     def loggaava(self, loki):
-        return Pinorakentaja(LokiPino(self.pino, loki))
+        return Pinorakentaja(LokiPino(self.pino_olio, loki))
 
     def pino(self):
-        return self.pino
+        return self.pino_olio
 ```
 
 Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.

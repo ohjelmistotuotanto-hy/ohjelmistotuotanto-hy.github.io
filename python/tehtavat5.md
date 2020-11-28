@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 5
 inheader: no
-permalink: /tehtavat5/
+permalink: /python/tehtavat5/
 ---
 
 ## Viikko 5
