@@ -49,7 +49,7 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 * palaa tagi1:n aikaan, eli anna komento <code>git checkout tagi1</code>
   * varmista, että tagin jälkeisiä muutoksia ei näy
 * palaa nykyaikaan
-  * tämä onnistuu komennolla <code>git checkout master</code>
+  * tämä onnistuu komennolla <code>git checkout main</code>
 * lisää tägi _edelliseen_ committiin
   * operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
   * joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
