@@ -7,14 +7,16 @@ permalink: /tehtavat7/
 
 ## Viikko 7
 
-*Alla olevien tehtävien deadline on maanantaina 16.12. klo 23:59*
+TEHTÄVÄT PÄIVITTÄMÄTTÄ, lukeminen omalla vastuulla
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
-- ke 14-16 B221
+*Alla olevien tehtävien deadline on maanantaina 14.12. klo 23:59*
 
-Maanantain pajaa ei tällä viikolla pidetä.
+Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 20.12 klo 23:59:00. Tehtävät ilmestyvät ke 12.12. klo 23 mennessä.  
+- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
+- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+
+Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 18.12 klo 23:59:00. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -109,12 +111,6 @@ Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi 
 Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin. 
 
 **Vaihtoehtoinen tehtävä**
-
-Jos et ollut miniprojektissa tai et halua tehdä mergeämistä, voit merkata tehtävän tehdyksi listaamalla kurssin monivalintatehtävistä ne, jotka on ilmaistu mielestäsi epäselvästi tai moniselitteisesti. 
-
-Laita palautusrepositorioosi tiedosto _QUIZZ.md_, ja listaa epäselvät kohdat sinne.
-
-**Toinen vaihtoehtoinen tehtävä**
 
 Toinen korvaava vaihtoehto on kirjoittaa referaatti, viime vuoden [laskareiden speksin](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/main/laskarit/7.md#4-referaatti) mukaan.
 
