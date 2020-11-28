@@ -40,7 +40,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 ### Viikko 5
 
-- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 29.11. klo 23:59:00 
+- [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline maanantaina 30.11. klo 23:59:00 
 - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 30.11. klo 23:59 
 
 ### Viikko 6
