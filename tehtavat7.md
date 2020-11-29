@@ -112,7 +112,17 @@ Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki merg
 
 **Vaihtoehtoinen tehtävä**
 
-Toinen korvaava vaihtoehto on kirjoittaa referaatti, viime vuoden [laskareiden speksin](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/main/laskarit/7.md#4-referaatti) mukaan.
+lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
+
+* http://www.leanprimer.com/downloads/lean_primer.pdf
+  * aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
+* Lauri Suomalaisen kandidaattityö [Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään](https://www.cs.helsinki.fi/u/mluukkai/ohtu/suomalainen-kandi.pdf)
+* Tero Huomon kandidaattityö [Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin](https://www.cs.helsinki.fi/u/mluukkai/ohtu/huomo-kandi.pdf) 
+* Kasper Hirvikosken kandidaattityö [Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/hirvikoski-kandi.pdf)
+* Kenny Heinosen kandidaattityö [Ohjelmistoala ja ryhmätyöskentely](https://www.cs.helsinki.fi/u/mluukkai/ohtu/heinononen-kandi.pdf)
+* Eero Laineen kandidaattityö [Johtaminen perinteisissä ja ketterissä ohjelmistotuotantoprojekteissa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/laine-kandi.pdf)
+* Esa Kortelaisen kandidaattityö [Jatkuva eksperimentointi ohjelmistokehityksen tukena](https://www.cs.helsinki.fi/u/mluukkai/ohtu/kortelainen-kandi.pdf)
+* Kalle Ilveksen kandidaattityö [Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf)
 
 ### 7. Kurssipalaute
 
