@@ -98,13 +98,62 @@ __/
 
 Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti.
 
-### 5. Lunttilappu
+**Vihje:** eräs tapa lähteä liikkeelle on muodostaa yliluokka `KiviPaperiSakset`, joka sisältää kaikille kolmelle pelityypille yhteisen koodin:
 
-_tehtävän ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
+´´´java
+public abstract class KiviPaperiSakset {
+    private static final Scanner scanner = new Scanner(System.in);
+    
+    // tämä on ns template metodi
+    public void pelaa() {
+        Tuomari tuomari = new Tuomari();
+        // ...
+        
+        String ekanSiirto = ensimmaisenSiirto();
+        System.out.print("Toisen pelaajan siirto: ");
+        String tokanSiirto = toisenSiirto();
+        
+        while (onkoOkSiirto(ekanSiirto) && onkoOkSiirto(tokanSiirto)) {
+           // ...
+        }
 
-Kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/ohje_kokeeseen)
+        System.out.println();
+        System.out.println("Kiitos!");
+        System.out.println(tuomari);
+    }
+    
+    protected String ensimmaisenSiirto() {
+        System.out.print("Ensimmäisen pelaajan siirto: ");
+        return scanner.nextLine();
+    }
 
-### 6. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+    // tämä on abstrakti metodi sillä sen toteutus vaihtelee eri pelityypeissä
+    abstract protected String toisenSiirto();
+    
+    private static boolean onkoOkSiirto(String siirto) {
+        return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
+    }
+}
+´´´ 
+
+Erilliset pelit sitten perivät abstraktin luokan ja erikoistavat sitä tarpidensa mukaan:
+
+´´´java
+public class KPSPelaajaVsPelaaja extends KiviPaperiSakset {
+
+    // funktio pelaa peritääm
+
+    @Override
+    protected String toisenSiirto() {
+        System.out.print("Toisen pelaajan siirto: ");
+        return scanner.nextLine();  
+    }
+
+    // ...
+}
+´´´
+
+### 5. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi. 
 
@@ -114,7 +163,7 @@ Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki merg
 
 lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 
-* http://www.leanprimer.com/downloads/lean_primer.pdf
+* <http://www.leanprimer.com/downloads/lean_primer.pdf>
   * aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
 * Lauri Suomalaisen kandidaattityö [Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään](https://www.cs.helsinki.fi/u/mluukkai/ohtu/suomalainen-kandi.pdf)
 * Tero Huomon kandidaattityö [Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin](https://www.cs.helsinki.fi/u/mluukkai/ohtu/huomo-kandi.pdf) 
@@ -124,7 +173,7 @@ lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 * Esa Kortelaisen kandidaattityö [Jatkuva eksperimentointi ohjelmistokehityksen tukena](https://www.cs.helsinki.fi/u/mluukkai/ohtu/kortelainen-kandi.pdf)
 * Kalle Ilveksen kandidaattityö [Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf)
 
-### 7. Kurssipalaute
+### 6. Kurssipalaute
 
 Anna kurssipalautetta WebOodissa. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa.
 
