@@ -73,7 +73,7 @@ Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä ole
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -92,7 +92,7 @@ Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä p
 HUOM: Tilastotiedot haetaan palvelimelta, josta on olemassa kaksi erillistä versiota.
 
 - Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät ajantasaiset tilastotiedot
-- Osoitteesta _https://nhl27112019.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot
+- Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot
 - Seuraavassa olevat esimerkkitulostukset ovat marraskuun lopun tilastoista
 
 Tutustu ohjelman rakenteeseen.
@@ -203,7 +203,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -221,7 +221,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -237,7 +237,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla 
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
