@@ -7,8 +7,6 @@ permalink: /tehtavat7/
 
 ## Viikko 7
 
-TEHTÄVÄT PÄIVITTÄMÄTTÄ, lukeminen omalla vastuulla
-
 *Alla olevien tehtävien deadline on maanantaina 14.12. klo 23:59*
 
 Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
