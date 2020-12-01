@@ -98,6 +98,12 @@ __/
 
 Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti.
 
+**Muista** että voit suorittaa ohjelman ilman gradlen ikäviä välitulosteita antamalla komennolle _gradle run_ seuraavat lisäoptiot:
+
+´´´java
+gradle -q --console=plain run
+´´´
+
 **Vihje:** eräs tapa lähteä liikkeelle on muodostaa yliluokka `KiviPaperiSakset`, joka sisältää kaikille kolmelle pelityypille yhteisen koodin:
 
 ´´´java
@@ -130,7 +136,7 @@ public abstract class KiviPaperiSakset {
     // tämä on abstrakti metodi sillä sen toteutus vaihtelee eri pelityypeissä
     abstract protected String toisenSiirto();
     
-    private static boolean onkoOkSiirto(String siirto) {
+    protected static boolean onkoOkSiirto(String siirto) {
         return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
     }
 }
