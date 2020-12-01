@@ -355,7 +355,7 @@ Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa j
 
 Tarkastellaan esimerkkinä [Neal Fordin artikkelista](http://www.ibm.com/developerworks/java/library/j-eaed4/index.html) olevaa tietokannasta tietoa hakevaa metodia. Metodin koodi näyttää seuraavalta:
 
-``` java
+```java
 // SQL_SELECT_PARTS on vakio, joka sisältää SQL-kyselyn
 
 public void populate() throws Exception {

@@ -100,13 +100,13 @@ Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 ras
 
 **Muista** että voit suorittaa ohjelman ilman gradlen ikäviä välitulosteita antamalla komennolle _gradle run_ seuraavat lisäoptiot:
 
-´´´java
+```java
 gradle -q --console=plain run
-´´´
+```
 
 **Vihje:** eräs tapa lähteä liikkeelle on muodostaa yliluokka `KiviPaperiSakset`, joka sisältää kaikille kolmelle pelityypille yhteisen koodin:
 
-´´´java
+```java
 public abstract class KiviPaperiSakset {
     private static final Scanner scanner = new Scanner(System.in);
     
@@ -140,11 +140,11 @@ public abstract class KiviPaperiSakset {
         return "k".equals(siirto) || "p".equals(siirto) || "s".equals(siirto);
     }
 }
-´´´ 
+``` 
 
 Erilliset pelit sitten perivät abstraktin luokan ja erikoistavat sitä tarpidensa mukaan:
 
-´´´java
+```java
 public class KPSPelaajaVsPelaaja extends KiviPaperiSakset {
 
     // funktio pelaa peritääm
@@ -157,7 +157,7 @@ public class KPSPelaajaVsPelaaja extends KiviPaperiSakset {
 
     // ...
 }
-´´´
+```
 
 ### 5. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
