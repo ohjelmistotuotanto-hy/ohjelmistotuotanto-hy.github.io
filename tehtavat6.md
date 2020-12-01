@@ -75,7 +75,7 @@ Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä ole
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
  
     Matcher m = new And( new HasAtLeast(5, "goals"),
                          new HasAtLeast(5, "assists"),
@@ -212,7 +212,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
     
     QueryBuilder query = new QueryBuilder();
     Matcher m = query.build();
@@ -229,7 +229,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on NYR
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
@@ -245,7 +245,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on NYR, joilla on
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players"));
+    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
