@@ -59,9 +59,7 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-Varmista, että tagit siirtyvät GitHubiin:
-
-![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
+Varmista, että tagit siirtyvät GitHubiin.
 
 ### 2. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
