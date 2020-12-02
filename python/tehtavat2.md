@@ -75,11 +75,11 @@ Laajenna projektisi GitHub Actionien määritelmää siten, että myös pylint-t
 
 Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin pylint-sääntöjä:
 
-![]({{ "/images/lh2-11.png" | absolute_url }})
+![]({{ "/images/py-lh2-11.png" | absolute_url }})
 
 Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
-![]({{ "/images/lh2-12.png" | absolute_url }})
+![]({{ "/images/py-lh2-12.png" | absolute_url }})
 
 ### 3. Git: branchit [versionhallinta]
 

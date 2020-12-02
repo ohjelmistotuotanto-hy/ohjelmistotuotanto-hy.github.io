@@ -512,7 +512,7 @@ Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/lh1-28.png" | absolute_url }})
+![]({{ "/images/py-lh1-28.png" | absolute_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
@@ -544,7 +544,7 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 
 ![]({{ "/images/py-lh1-12.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtu-viikko1-s2020>
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtu-2021-viikko1>
 
 Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään konfiguraatiomme loppuun kaksi uutta askelta:
 
