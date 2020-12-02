@@ -89,12 +89,6 @@ def main():
 
 Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `matches` palauttaa `True`.
 
-HUOM: Tilastotiedot haetaan palvelimelta, josta on olemassa kaksi erillistä versiota.
-
-- Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät ajantasaiset tilastotiedot
-- Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot
-- Seuraavassa olevat esimerkkitulostukset ovat marraskuun lopun tilastoista
-
 Tutustu ohjelman rakenteeseen.
 
 - Huomioi miten `HasAtLeast`-luokan metodi `matches` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
@@ -106,7 +100,7 @@ Tutustu ohjelman rakenteeseen.
 - Not (parameetrina olevan ehdon negaatio)
 - HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
 
-_HUOM:_ `not` on Pythonissa niin kutsuttu avainsana, jonkä käyttö esimerkiksi importissa `from matchers.not import Not` ei onnistu. Tiedostosta kannattaakin käyttää esimeerkiksi nimeä <i>not_matcher.py</i> (kuten <i>and_matcher.py</i>-tiedoston nimen kanssa on tehty).
+**HUOM:** `not` on Pythonissa niin kutsuttu avainsana, jonkä käyttö esimerkiksi importissa `from matchers.not import Not` ei onnistu. Tiedostosta kannattaakin käyttää esimeerkiksi nimeä <i>not_matcher.py</i> (kuten <i>and_matcher.py</i>-tiedoston nimen kanssa on tehty).
 
 Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
 

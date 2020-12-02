@@ -72,7 +72,7 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtu-2020-viikko1
+Luo githubiin repositorio nimellä ohtu-2021-viikko1
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan Initialize this repository with a README
@@ -221,16 +221,16 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 - Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021/blob/main/koodi/viikko1/varasto.zip?raw=true> löytyvä zipattu paketti
 - Pura paketti sopivaan paikkaan
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
-- Pepositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
+- Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
 
-![]({{ "/images/lh1-4.png" | absolute_url }})
+![]({{ "/images/py-lh1-4.png" | absolute_url }})
 
 - Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
 - Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/lh1-5.png" | absolute_url }})
+![]({{ "/images/py-lh1-5.png" | absolute_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
@@ -339,7 +339,7 @@ Konfiguroidaan seuraavaksi GitHub Actions huolehtimaan projektistamme.
 
 Valitse GitHub-repositoriostasi välilehti _Actions_ ja klikkaa _set up a workflow yourself_-linkkiä:
 
-![]({{ "/images/lh1-20.png" | absolute_url }})
+![]({{ "/images/py-lh1-20.png" | absolute_url }})
 
 Valinta avaa actionien konfiguraatiotiedoston. Muuta se seuraavaan muotoon:
 
@@ -374,17 +374,17 @@ Paina vihreää _Start commit_ -nappia, ja anna sopiva commit-viesti.
 
 Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repositorioosi hakemiston _.github/workflows_ alle:
 
-![]({{ "/images/lh1-21.png" | absolute_url }})
+![]({{ "/images/py-lh1-21.png" | absolute_url }})
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
 Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/lh1-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-22.png" | absolute_url }})
 
 Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
-![]({{ "/images/lh1-23.png" | absolute_url }})
+![]({{ "/images/py-lh1-23.png" | absolute_url }})
 
 ### 10. GitHub Actions, osa 2
 
@@ -467,15 +467,13 @@ Tee nyt koodiin muutos, joka hajottaa testit ja committaa muutos GitHubiin.
 
 Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi (kuvassa niitä on vahingossa kolme), ja että viimeisin on tilaltaan "punainen":
 
-![]({{ "/images/lh1-24.png" | absolute_url }})
+![]({{ "/images/py-lh1-24.png" | absolute_url }})
 
 Klikkaamalla rikki mennyttä committia, päästään tarkastelemaan hieman tarkemmin actionin suorituksen etenemistä:
 
-![]({{ "/images/lh1-25.png" | absolute_url }})
+![]({{ "/images/py-lh1-25.png" | absolute_url }})
 
-Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista:
-
-![]({{ "/images/lh1-26.png" | absolute_url }})
+Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista.
 
 Korjaa testi ja pushaa muutokset uudelleen GitHubiin. Tarkkaile jälleen Actions-näkymää ja varmista, että kaikki toimii oikein.
 
@@ -500,17 +498,17 @@ on:
 # ...
 ```
 
-Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan. Nimessä olevat välilyönnit korvataan osoitteessa merkeillä _%20_.
+Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan.
 
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtu-viikko1-s2020/workflows/Java%20CI%20with%20Gradle/badge.svg
+https://github.com/Kaltsoon/ohtu-2021-viikko1/workflows/CI/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
-![]({{ "/images/lh1-27.png" | absolute_url }})
+![]({{ "/images/py-lh1-27.png" | absolute_url }})
 
 Oikein toimiva badge näyttää seuraavalta:
 
@@ -544,7 +542,7 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 - Kirjaudu [Codecoviin](https://codecov.io) (GitHub sign up)
 - Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/lh1-12.png" | absolute_url }})
+![]({{ "/images/py-lh1-12.png" | absolute_url }})
 
 Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtu-viikko1-s2020>
 
@@ -565,23 +563,23 @@ Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämäll�
 
 Kun seuraavan kerran pushaamme koodin GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/lh1-14.png" | absolute_url }})
+![]({{ "/images/py-lh1-14.png" | absolute_url }})
 
 Klikkaailemalla sivun alalaidassa olevasta kohdasta _Files_ tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
-![]({{ "/images/lh1-15.png" | absolute_url }})
+![]({{ "/images/py-lh1-15.png" | absolute_url }})
 
 Käytännössä pyydämme nyt GitHub actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub actionien loki näyttää miten askelten suoritus etenee:
 
-![]({{ "/images/lh1-29.png" | absolute_url }})
+![]({{ "/images/py-lh1-29.png" | absolute_url }})
 
 Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen Codecovin settings-valikosta.
 
 Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta (poislukien liian alhainen testauskattvuus):
 
-![]({{ "/images/lh1-30.png" | absolute_url }})
+![]({{ "/images/py-lh1-30.png" | absolute_url }})
 
 Huomaa, että GitHub actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
@@ -622,7 +620,7 @@ Lisää tehtäviin 2-13 käyttämäsi repositorion _README.md_-tiedostoon linkki
 
 Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunnilleen tältä
 
-![]({{ "/images/lh1-32.png" | absolute_url }})
+![]({{ "/images/py-lh1-32.png" | absolute_url }})
 
 ### 14. Riippuvuuksien injektointi osa 1
 
