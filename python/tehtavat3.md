@@ -38,7 +38,6 @@ Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli _riippuvuutta_. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
-<!-- TODO: linkki -->
 Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/poetry.md), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen requests-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
@@ -292,7 +291,7 @@ Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esime
 
 Hae projekti, asenna sen riippuvuudet komennollla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
 
-![]({{ "/images/lh3-2.png" | absolute_url }}){:height="200px" }
+![]({{ "/images/py-lh3-2.png" | absolute_url }}){:height="200px" }
 
 Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5000.
 
