@@ -87,12 +87,12 @@ __/
 <!-- TODO -->
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta _koodi/viikko7/KiviPaperiSakset_ löytyy tutun pelin tietokoneversio.
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistosta _koodi/viikko7/kivi-paperi-sakset_ löytyy tutun pelin tietokoneversio.
 
 - Ohjelmassa on kolme pelimoodia: ihminen vs. ihminen, ihminen vs. yksinkertainen tekoäly ja ihminen vs. monimutkainen tekoäly
 - Koodi sisältää runsaat määrät copy pastea, muutenkaan oliosuunnittelun periaatteet eivät ole vielä alkuperäisellä ohjelmoijalla olleet hallussa
-- Poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti materiaalin [osan 4](/osa4) hengessä oikeaoppinen
-  - `pelaa`-metodi tulee toteuttaa [template-metodina](/osa4#suunnittelumalli-template-method-viikko-5)
+- Poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti materiaalin [osan 4](/python/osa4) hengessä oikeaoppinen
+  - `pelaa`-metodi tulee toteuttaa [template-metodina](/python/osa4#suunnittelumalli-template-method-viikko-5)
   - Sopivan peliolion (kaksinpeli, helppo yksinpeli, vaikea yksinpeli) luominen tulee toteuttaa staattisen tehdasmetodin, tai funktion avulla
   - Pääohjelmalla ei saa olla riippuvuuksia konkreettisiin pelin toteuttaviin luokkiin
 

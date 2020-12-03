@@ -49,7 +49,7 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 - Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
   - Varmista, että tagin jälkeisiä muutoksia ei näy
 - Palaa nykyaikaan
-  - Tämä onnistuu komennolla `git checkout master`
+  - Tämä onnistuu komennolla `git checkout main`
 - Lisää tägi _edelliseen_ committiin
   - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
   - Joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
@@ -59,9 +59,7 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-Varmista, että tagit siirtyvät GitHubiin:
-
-![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
+Varmista, että tagit siirtyvät GitHubiin.
 
 ### 2. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
@@ -104,7 +102,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistoissa _koodi/viikko5/laskin_, löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistoissa _koodi/viikko5/laskin_, löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
 
 Asenna projektin riippuvuudet komenolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 

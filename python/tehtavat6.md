@@ -65,7 +65,7 @@ Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 2. Kyselykieli NHL-tilastoihin, osa 1
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta _koodi/viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistosta _koodi/viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
@@ -73,7 +73,7 @@ Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä ole
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -89,12 +89,6 @@ def main():
 
 Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `matches` palauttaa `True`.
 
-HUOM: Tilastotiedot haetaan palvelimelta, josta on olemassa kaksi erillistä versiota.
-
-- Osoitteesta _https://nhlstatisticsforohtu.herokuapp.com/players.txt_ löytyvät ajantasaiset tilastotiedot
-- Osoitteesta _https://nhl27112019.herokuapp.com/players.txt_ löytyvät 27.11.2019 tiedot
-- Seuraavassa olevat esimerkkitulostukset ovat marraskuun lopun tilastoista
-
 Tutustu ohjelman rakenteeseen.
 
 - Huomioi miten `HasAtLeast`-luokan metodi `matches` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
@@ -106,7 +100,7 @@ Tutustu ohjelman rakenteeseen.
 - Not (parameetrina olevan ehdon negaatio)
 - HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
 
-_HUOM:_ `not` on Pythonissa niin kutsuttu avainsana, jonkä käyttö esimerkiksi importissa `from matchers.not import Not` ei onnistu. Tiedostosta kannattaakin käyttää esimeerkiksi nimeä <i>not_matcher.py</i> (kuten <i>and_matcher.py</i>-tiedoston nimen kanssa on tehty).
+**HUOM:** `not` on Pythonissa niin kutsuttu avainsana, jonkä käyttö esimerkiksi importissa `from matchers.not import Not` ei onnistu. Tiedostosta kannattaakin käyttää esimeerkiksi nimeä <i>not_matcher.py</i> (kuten <i>and_matcher.py</i>-tiedoston nimen kanssa on tehty).
 
 Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
 
@@ -187,15 +181,13 @@ Ryan Strome          NYR           6 + 16 = 22
 Taylor Hall          NJD           4 + 17 = 21
 ```
 
-<!-- TODO -->
-Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/python/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
-<!-- TODO -->
 ### 4. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio.
 
-Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
+Tee materiaalin osassa 4 esitellyn [pinorakentajan](/python/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
@@ -203,7 +195,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -221,7 +213,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -237,7 +229,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla 
 
 ```python
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 

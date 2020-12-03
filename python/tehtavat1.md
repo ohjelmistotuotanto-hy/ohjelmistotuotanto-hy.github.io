@@ -72,7 +72,7 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtu-2020-viikko1
+Luo githubiin repositorio nimellä ohtu-2021-viikko1
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan Initialize this repository with a README
@@ -150,7 +150,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
   - Muista hyödyllinen komento `git status`
 - Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
 - Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
-  - Toinen ignorattava hakemisto on siis _.pytest_cache_, jonka nimi alkaa pisteellä
+  - Toinen ignorattava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
   - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
 - Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
   - Saat asian tarkastettua komennolla `git status`
@@ -218,20 +218,19 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
-<!-- TODO: zip linkki -->
-- Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
+- Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021/blob/main/koodi/viikko1/varasto.zip?raw=true> löytyvä zipattu paketti
 - Pura paketti sopivaan paikkaan
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
-- Pepositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
+- Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
 
-![]({{ "/images/lh1-4.png" | absolute_url }})
+![]({{ "/images/py-lh1-4.png" | absolute_url }})
 
 - Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
 - Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/lh1-5.png" | absolute_url }})
+![]({{ "/images/py-lh1-5.png" | absolute_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
@@ -266,7 +265,7 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 - Tarkastele juurihakemistossa olevan _poetry.lock_-tiedoston sisältöä
   - Tiedoston sisällön ei ole tarkoitus olla ihmisluettava, _eikä sitä pitäisikään missään nimessä muokata_. Tiedoston on täysin Poetryn ylläpitämä. Poetry tallentaa tiedostoon projektiin asennettujen riippuvuuksien versiot, jotta jokaisen asennuksen yhteydessä riippuvuuksista voidaan asentaa juuri oikeat versiot
 
-Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/tree/master/materiaali/poetry.md).
+Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/poetry.md).
 
 **Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa Poetry-komennot on annettu muodossa `poetry <komento>`. Jos et ole asentanut Poetrya globaalisti, joudut antamaan komennot muodossa `python3 -m poetry <komento>`.
 
@@ -285,7 +284,7 @@ Ohjelmakoodin editointi kannattaa tehdä IDE:llä, kuten Visual Studio Code, mut
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet kurssin Ohjelmistotekniikka [unittest-ohjeesta](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/blob/master/materiaali/unittest.md).
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet kurssin Ohjelmistotekniikka [unittest-ohjeesta](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/unittest.md).
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
@@ -294,7 +293,7 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
   - Edellinenkään ei vielä riitä
-- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla Ohjelmistotekniikka-kurssin [coverage-ohje](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/blob/master/materiaali/coverage.md)
+- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla Ohjelmistotekniikka-kurssin [coverage-ohje](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/coverage.md)
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
@@ -340,7 +339,7 @@ Konfiguroidaan seuraavaksi GitHub Actions huolehtimaan projektistamme.
 
 Valitse GitHub-repositoriostasi välilehti _Actions_ ja klikkaa _set up a workflow yourself_-linkkiä:
 
-![]({{ "/images/lh1-20.png" | absolute_url }})
+![]({{ "/images/py-lh1-20.png" | absolute_url }})
 
 Valinta avaa actionien konfiguraatiotiedoston. Muuta se seuraavaan muotoon:
 
@@ -375,17 +374,17 @@ Paina vihreää _Start commit_ -nappia, ja anna sopiva commit-viesti.
 
 Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repositorioosi hakemiston _.github/workflows_ alle:
 
-![]({{ "/images/lh1-21.png" | absolute_url }})
+![]({{ "/images/py-lh1-21.png" | absolute_url }})
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
 Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/lh1-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-22.png" | absolute_url }})
 
 Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
-![]({{ "/images/lh1-23.png" | absolute_url }})
+![]({{ "/images/py-lh1-23.png" | absolute_url }})
 
 ### 10. GitHub Actions, osa 2
 
@@ -468,15 +467,13 @@ Tee nyt koodiin muutos, joka hajottaa testit ja committaa muutos GitHubiin.
 
 Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi (kuvassa niitä on vahingossa kolme), ja että viimeisin on tilaltaan "punainen":
 
-![]({{ "/images/lh1-24.png" | absolute_url }})
+![]({{ "/images/py-lh1-24.png" | absolute_url }})
 
 Klikkaamalla rikki mennyttä committia, päästään tarkastelemaan hieman tarkemmin actionin suorituksen etenemistä:
 
-![]({{ "/images/lh1-25.png" | absolute_url }})
+![]({{ "/images/py-lh1-25.png" | absolute_url }})
 
-Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista:
-
-![]({{ "/images/lh1-26.png" | absolute_url }})
+Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista.
 
 Korjaa testi ja pushaa muutokset uudelleen GitHubiin. Tarkkaile jälleen Actions-näkymää ja varmista, että kaikki toimii oikein.
 
@@ -501,21 +498,21 @@ on:
 # ...
 ```
 
-Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan. Nimessä olevat välilyönnit korvataan osoitteessa merkeillä _%20_.
+Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan.
 
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtu-viikko1-s2020/workflows/Java%20CI%20with%20Gradle/badge.svg
+https://github.com/Kaltsoon/ohtu-2021-viikko1/workflows/CI/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
-![]({{ "/images/lh1-27.png" | absolute_url }})
+![]({{ "/images/py-lh1-27.png" | absolute_url }})
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/lh1-28.png" | absolute_url }})
+![]({{ "/images/py-lh1-28.png" | absolute_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
@@ -545,9 +542,9 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 - Kirjaudu [Codecoviin](https://codecov.io) (GitHub sign up)
 - Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/lh1-12.png" | absolute_url }})
+![]({{ "/images/py-lh1-12.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtu-viikko1-s2020>
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtu-2021-viikko1>
 
 Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään konfiguraatiomme loppuun kaksi uutta askelta:
 
@@ -566,23 +563,23 @@ Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämäll�
 
 Kun seuraavan kerran pushaamme koodin GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/lh1-14.png" | absolute_url }})
+![]({{ "/images/py-lh1-14.png" | absolute_url }})
 
 Klikkaailemalla sivun alalaidassa olevasta kohdasta _Files_ tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
-![]({{ "/images/lh1-15.png" | absolute_url }})
+![]({{ "/images/py-lh1-15.png" | absolute_url }})
 
 Käytännössä pyydämme nyt GitHub actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub actionien loki näyttää miten askelten suoritus etenee:
 
-![]({{ "/images/lh1-29.png" | absolute_url }})
+![]({{ "/images/py-lh1-29.png" | absolute_url }})
 
 Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen Codecovin settings-valikosta.
 
 Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta (poislukien liian alhainen testauskattvuus):
 
-![]({{ "/images/lh1-30.png" | absolute_url }})
+![]({{ "/images/py-lh1-30.png" | absolute_url }})
 
 Huomaa, että GitHub actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
@@ -623,7 +620,7 @@ Lisää tehtäviin 2-13 käyttämäsi repositorion _README.md_-tiedostoon linkki
 
 Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunnilleen tältä
 
-![]({{ "/images/lh1-32.png" | absolute_url }})
+![]({{ "/images/py-lh1-32.png" | absolute_url }})
 
 ### 14. Riippuvuuksien injektointi osa 1
 
@@ -632,7 +629,7 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
 
 - Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-- Hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/riippuvuuksien-injektointi-1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+- Hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistosta [koodi/viikko1/riippuvuuksien-injektointi-1](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021/tree/main/koodi/viikko1/riippuvuuksien-injektointi-1) ja kokeile että se toimii
   - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
@@ -640,7 +637,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
-- Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/nhl-statistics-1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
+- Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistossa [koodi/viikko1/nhl-statistics-1](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021/tree/main/koodi/viikko1/nhl-statistics-1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
@@ -664,7 +661,7 @@ stats = Statistics(
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
 
 - Tee yksikkötestit luokalle `Statistics`
-  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://github.com/ohjelmistotekniikka-hy/python-syksy-2020/blob/master/materiaali/unittest.md)-mukaisesti. Muuten pytest ei löydä suoritettavia testejä
+  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/unittest.md)-mukaisesti. Muuten pytest ei löydä suoritettavia testejä
   - Testien haarautumakattavuuden tulee `Statistics`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](/tehtavat1#8-unittest))
     - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Testit eivät saa käyttää verkkoyhteyttä
