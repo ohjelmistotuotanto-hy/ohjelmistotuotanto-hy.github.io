@@ -20,7 +20,7 @@ Tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/course
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat6.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="python/tehtavat6.md" %}
 
 ### Tehtävien palauttaminen
 
@@ -337,6 +337,4 @@ Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projekti
 
 Laita palautusrepositorioosi tiedosto _PULL.md_ ja sen sisällöksi linkki pull requestiin.
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}

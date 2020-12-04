@@ -24,7 +24,7 @@ Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat5.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="python/tehtavat5.md" %}
 
 ### Tehtävien palauttaminen
 
@@ -197,6 +197,4 @@ Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juur
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkitse tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}

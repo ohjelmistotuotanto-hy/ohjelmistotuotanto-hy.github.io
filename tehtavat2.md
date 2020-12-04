@@ -22,7 +22,7 @@ Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja k
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/tehtavat2.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="tehtavat2.md" %}
 
 ### Tehtävien palauttaminen
 
@@ -489,6 +489,4 @@ public static void main(String[] args) {
 
 * Huom: pääohjelma tarvitsee kaupan lisäksi kirjanpito-olioa lopun tulostuksessa, sen saa haltuunsa Springin kontekstilta metodikutsulla _ctx.getBean(Kirjanpito.class)_
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät (paitsi ne joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}

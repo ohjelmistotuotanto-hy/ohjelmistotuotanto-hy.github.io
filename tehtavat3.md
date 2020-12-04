@@ -22,7 +22,7 @@ Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkois
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat3.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="tehtavat3.md" %}
 
 ### Tehtävien palauttaminen
 
@@ -756,8 +756,4 @@ Scenario: user can not login with account that is not successfully created
     Then  ...  
 </pre>
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
-
-Huom! Varmista, että salasanat.txt on lisätty .gitignoreen. Jos ei ole, lisää se sinne. Et halua salasanojesi, edes testeissä käytettävien, päätyvän githubiin.
+{% include submission_instructions.md %}

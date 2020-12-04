@@ -20,7 +20,7 @@ Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat4.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="python/tehtavat4.md" %}
 
 ### Tehtävien palauttaminen
 
@@ -389,6 +389,4 @@ Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävä�
 
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}
