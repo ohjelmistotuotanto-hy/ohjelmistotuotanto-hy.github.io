@@ -14,7 +14,7 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 - Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
 - Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 18.12 klo 23:59:00. 
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 18.12 klo 23:59:00. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -22,7 +22,7 @@ Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 

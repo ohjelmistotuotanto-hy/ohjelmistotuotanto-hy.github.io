@@ -117,7 +117,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 2: tiistai 27.10. klo 12-14
   - [Scrum](/osa1#scrum)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/1) deadline sunnuntaina 1.11. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/1) deadline sunnuntaina 1.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline maanantaina 2.11. klo 23:59 
 
 ### Viikko 2
@@ -129,7 +129,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/2) deadline sunnuntaina 8.11. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/2) deadline sunnuntaina 8.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline maanantaina 9.11. klo 23:59 
 
 ### Viikko 3
@@ -139,7 +139,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 6: tiistai 10.11. klo 12-14
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/3) deadline sunnuntaina 15.11. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/3) deadline sunnuntaina 15.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3) deadline maanantaina 16.11. klo 23:59 
 
 ### Viikko 4
@@ -152,7 +152,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/4) deadline sunnuntaina 22.11. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/4) deadline sunnuntaina 22.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 23.11. klo 23:59 
 - Miniprojekti
   - Aloitustilaisuudet (jokainen osallistuu _yhteen_ tilaisuuteen)
@@ -166,7 +166,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/5) deadline sunnuntaina 29.11. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/5) deadline sunnuntaina 29.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline maanantaina 30.11. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
@@ -175,7 +175,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 - Vierailuluennot
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 11.12. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/6) deadline perjantaina 11.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6) deadline maanantaina 7.12. klo 23:59 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
@@ -184,7 +184,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 - Vierailuluennot
 - Laskarit
-  - [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6) deadline perjantaina 28.12. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/6) deadline perjantaina 28.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 14.12. klo 23:59 
 - Miniprojekti
   - Loppudemot
