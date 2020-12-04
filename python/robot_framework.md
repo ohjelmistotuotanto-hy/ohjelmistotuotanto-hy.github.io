@@ -58,7 +58,9 @@ Increase Counter Once
     Counter Value Should Be  1
 ```
 
-Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimkerkiksi <code>Counter Value Should Be &nbsp;0</code>. Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense)-lisäosa.
+Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimkerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense)-lisäosa:
+
+![]({{ "/images/py-robot-1.png" | absolute_url }})
 
 ### Testien suorituskelpoiseksi tekeminen
 
@@ -84,11 +86,17 @@ class CounterLibrary:
             raise AssertionError(f"{self._counter.value} != {int_expected}")
 ```
 
-Kyseinen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
+Kyseinen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa, vaan se korvaantuu välilyönnillä). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
 
 Robot Framework alustaa kirjastot ennen jokaista testitapausta, joten jokaisella testitapauksella on käytössään kirjastosta oma instanssi. Tämä mahdollistaa mm. sen, että jokaista projektin testitapausta varten alustetaan `CounterLibrary`-luokan konstruktorin kautta uusi `Counter`-olio.
 
-Metodi `increment_counter_by` toteuttaa avainsana `Increment Counter By`, jolla on yksi argumentti, `amount`. **Argumenttien arvot ovat aina merkkijonoja**, joten ne täytyy tarvittaessa muuttaa oikean tyyppisiksi, kuten metodi tekee `int`-funktion avulla.
+Metodi `increment_counter_by` toteuttaa avainsana `Increment Counter By`, jolla on yksi argumentti, `amount`. **Argumenttien arvot ovat aina merkkijonoja**, joten ne täytyy tarvittaessa muuttaa oikean tyyppisiksi, kuten metodi tekee `int`-funktion avulla:
+
+```python
+def increment_counter_by(self, amount):
+    int_amount = int(amount)
+    self._counter.increment(int_amount)
+```
 
 Huomaa, että kaikki metodit, joiden nimessä ei ole <i>\_</i>-etuliitettä muodostavat avainsanan toteutuksen. Jos haluat tehdä kirjastoon metodin, josta et halua avainsanaa, nimeä se <i>\_</i>-etuliitteellä:
 
@@ -134,7 +142,7 @@ Kirjastojen lisäksi avainsanoja voi määritellä myös _.robot_-tiedostoissa. 
 
 ```
 *** Settings ***
-Library ../CounterLibrary.py
+Library  ../CounterLibrary.py
 
 *** Keywords ***
 Increase Counter Three Times
