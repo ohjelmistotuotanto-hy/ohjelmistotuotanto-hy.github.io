@@ -20,7 +20,7 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-{% include typo_instructions.md path="python/tehtavat2.md" %}
+{% include typo_instructions.md path="/python/tehtavat2.md" %}
 
 ### Tehtävien palauttaminen
 

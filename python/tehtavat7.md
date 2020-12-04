@@ -19,7 +19,7 @@ Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/7), 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-{% include typo_instructions.md path="python/tehtavat7.md" %}
+{% include typo_instructions.md path="/python/tehtavat7.md" %}
 
 ### Tehtävien palauttaminen
 

@@ -17,7 +17,7 @@ Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]
 
 ## Typoja materiaalissa
 
-{% include typo_instructions.md path="osa6.md" %}
+{% include typo_instructions.md path="/osa6.md" %}
 
 ## Ohjelmiston suunnittelu
 

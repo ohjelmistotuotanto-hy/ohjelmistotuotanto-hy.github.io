@@ -15,7 +15,7 @@ Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien mene
 
 ## Typoja materiaalissa
 
-{% include typo_instructions.md path="osa2.md" %}
+{% include typo_instructions.md path="/osa2.md" %}
 
 ## Vaatimusmäärittely
 

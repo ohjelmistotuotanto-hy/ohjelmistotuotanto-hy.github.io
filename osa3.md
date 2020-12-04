@@ -15,7 +15,7 @@ Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterie
 
 ## Typoja materiaalissa
 
-{% include typo_instructions.md path="osa3.md" %}
+{% include typo_instructions.md path="/osa3.md" %}
 
 ## Laadunhallinnan peruskysymykset: verifiointi ja validointi
 

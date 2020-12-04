@@ -20,7 +20,7 @@ Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6), deadline on p
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-{% include typo_instructions.md path="python/tehtavat6.md" %}
+{% include typo_instructions.md path="/python/tehtavat6.md" %}
 
 ### Tehtävien palauttaminen
 

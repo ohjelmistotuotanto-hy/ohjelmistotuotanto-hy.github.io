@@ -5,6 +5,10 @@ inheader: no
 permalink: /python/robot_framework/
 ---
 
+## Typoja materiaalissa
+
+{% include typo_instructions.md path="/python/robot_framework.md" %}
+
 ## Robot Framework
 
 [Robot Framework](https://robotframework.org/) on user storyjen hyväksymistestauksen automatisointiin hyvin soveltuva sovelluskehys. Robot Frameworkin avulla user storyjen testit voidaan kirjoittaa asiakkaan ymmärtämässä muodossa, luonnollisella kielellä, mutta tehdä niistä kuitenkin automaattisesti suoritettavia.

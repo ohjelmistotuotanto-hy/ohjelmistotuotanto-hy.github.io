@@ -15,7 +15,7 @@ Kurssin viidennellä viikolla käsitellään kolmea aihetta viime vuosina ketter
 
 ## Typoja materiaalissa
 
-{% include typo_instructions.md path="osa5.md" %}
+{% include typo_instructions.md path="/osa5.md" %}
 
 ## Lean
 

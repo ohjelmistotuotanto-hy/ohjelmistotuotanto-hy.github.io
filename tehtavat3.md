@@ -22,7 +22,7 @@ Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkois
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-{% include typo_instructions.md path="tehtavat3.md" %}
+{% include typo_instructions.md path="/tehtavat3.md" %}
 
 ### Tehtävien palauttaminen
 
