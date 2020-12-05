@@ -325,7 +325,7 @@ Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projekti
 
 * Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2020/projects/repositories) joukosta
     - mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. 
-    - ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
+    - ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 * [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
 * Tee forkattuun repositorioon uusi branch nimellä "muutoksia" 
 * Tee luomaasi branchiin "tyhjä" [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request): lisää esimerkiksi yksi tyhjä rivi README.md:hen, pushaa uusi branch GitHubiin ja tee branchista pull request. 
