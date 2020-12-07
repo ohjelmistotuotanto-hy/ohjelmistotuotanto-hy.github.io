@@ -142,7 +142,7 @@ Ehdon `All` tulisi siis olla tosi kaikille pelaajille., Voit varmistaa sen toimi
 System.out.println(stats.matches(new All()).size());
 ```
 
-Komennon tulisi tulostaa kaikkien pelaajien lukumäärä, joka on_964_.
+Komennon tulisi tulostaa kaikkien pelaajien lukumäärä, joka on __964__.
 
 Ehto `All` ei ole yksistään kovin hyödyllinen, mutta tulemme tarvitseman sitä pian.
 
