@@ -107,7 +107,6 @@ class KPS:
 
     def pelaa(self):
         tuomari = Tuomari()
-        tekoaly = Tekoaly()
 
         ekan_siirto = self.ensimmaisen_siirto()
         tokan_siirto = self.toisen_siirto(ekan_siirto)
