@@ -9,6 +9,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
+- [Lopputoimet ja arvosteluperusteet](https://ohjelmistotuotanto-hy.github.io/miniprojektin_arvosteluperusteet/)
 - loppudemojen ajankohdat:
   - tiistai 8.12. klo 12-14
   - torstai 10.12. klo 14-16

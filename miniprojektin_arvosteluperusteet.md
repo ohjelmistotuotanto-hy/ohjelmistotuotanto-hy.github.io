@@ -130,7 +130,7 @@ Sprintin maksimi on 2.5 pistettä.
 #### Vertaispalaute
 
 * Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-* Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina §9.12. klo 23:59**
+* Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina 19.12. klo 23:59**
   * vertaispalautteen antaminen on _pakollista_, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
 * Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2020) miniproject-tabissa
   * ryhmäläiset eivät näe toistensa vertaispalautteita
