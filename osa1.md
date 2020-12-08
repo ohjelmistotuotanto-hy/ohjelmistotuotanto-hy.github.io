@@ -19,7 +19,7 @@ Olethan jo lukenut [osan 0](/osa0), miss채 k채yd채채n tarkemmin l채pi kurssin j�
 
 ## Typoja materiaalissa
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [t채t채](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa1.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="/osa1.md" %}
 
 ## Ohjelmistotuotanto ja sen osa-alueet
 

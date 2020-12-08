@@ -16,15 +16,15 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
-Tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/6), deadline on poikkeuksellisesti vasta perjantaina 13.12. klo 23:59:00.
+Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6), deadline on poikkeuksellisesti vasta perjantaina 13.12. klo 23:59:00.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat6.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="/python/tehtavat6.md" %}
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -116,10 +116,14 @@ matcher = new And(
 Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yht maalia, eli _0 maalia tehneet_:
 
 <pre>
-Lias Andersson       NYR           0 +  1 = 1
+Steven Fogarty       NYR           0 +  0 = 0
 Boo Nieves           NYR           0 +  0 = 0
+Libor Hajek          NYR           0 +  5 = 5
 Tim Gettinger        NYR           0 +  1 = 1
-Libor Hajek          NYR           0 +  4 = 4
+Lias Andersson       NYR           0 +  1 = 1
+Henrik Lundqvist     NYR           0 +  0 = 0
+Igor Shesterkin      NYR           0 +  0 = 0
+Alexandar Georgiev   NYR           0 +  0 = 0
 </pre>
 
 Kyselyn:
@@ -149,14 +153,14 @@ matcher = Or(
 Tulee palauttaa ne, joilla on vähintään 20 maalia tai syöttöä, eli seuraava lista:
 
 ```
-Leon Draisaitl       EDM          16 + 32 = 48
-John Carlson         WSH           8 + 28 = 36
-Jonathan Huberdeau   FLA          10 + 20 = 30
-Connor McDavid       EDM          18 + 29 = 47
-David Pastrnak       BOS          23 + 16 = 39
-Aleksander Barkov    FLA           7 + 22 = 29
-Logan Couture        SJS           5 + 20 = 25
-Brad Marchand        BOS          17 + 25 = 42
+Mika Zibanejad       NYR          41 + 34 = 75
+Artemi Panarin       NYR          32 + 63 = 95
+David Pastrnak       BOS          48 + 47 = 95
+Auston Matthews      TOR          47 + 33 = 80
+Alex Ovechkin        WSH          48 + 19 = 67
+John Carlson         WSH          15 + 60 = 75
+Leon Draisaitl       EDM          43 + 67 = 110
+Connor McDavid       EDM          34 + 63 = 97
 ```
 
 Kyselyn:
@@ -175,10 +179,15 @@ matcher = And(
 Tulee palauttaa kaikki yli 20 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _NJD_. Lista näyttää seuraavalta:
 
 ```
-Mathew Barzal        NYI           9 + 11 = 20
-Artemi Panarin       NYR          12 + 18 = 30
-Ryan Strome          NYR           6 + 16 = 22
-Taylor Hall          NJD           4 + 17 = 21
+Brock Nelson         NYI          26 + 28 = 54
+Mathew Barzal        NYI          19 + 41 = 60
+Ryan Strome          NYR          18 + 41 = 59
+Mika Zibanejad       NYR          41 + 34 = 75
+Tony DeAngelo        NYR          15 + 38 = 53
+Artemi Panarin       NYR          32 + 63 = 95
+Patrice Bergeron     BOS          31 + 25 = 56
+Brad Marchand        BOS          28 + 59 = 87
+David Pastrnak       BOS          48 + 47 = 95
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/python/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
@@ -248,12 +257,11 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Chris Kreider        NYR           6 +  7 = 13
-Tony DeAngelo        NYR           7 + 10 = 17
-Vladislav Namestnikov NYR, OTT      6 +  6 = 12
-Ryan Strome          NYR           6 + 16 = 22
-Kaapo Kakko          NYR           6 +  4 = 10
-Filip Chytil         NYR           7 +  2 = 9
+Greg McKegg          NYR           5 +  4 = 9
+Jacob Trouba         NYR           7 + 20 = 27
+Brendan Lemieux      NYR           6 + 12 = 18
+Adam Fox             NYR           8 + 34 = 42
+Brett Howden         NYR           9 + 10 = 19
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
@@ -284,11 +292,12 @@ m = query
 Pelaajalistan tulisi olla:
 
 ```
-Jakub Voracek        PHI           6 + 10 = 16
-Leon Draisaitl       EDM          16 + 32 = 48
-Claude Giroux        PHI           7 + 10 = 17
-Sean Couturier       PHI           7 + 11 = 18
-Connor McDavid       EDM          18 + 29 = 47
+Justin Braun         PHI           3 + 16 = 19
+Robert Hagg          PHI           3 + 10 = 13
+Philippe Myers       PHI           4 + 12 = 16
+Ryan Nugent-Hopkins  EDM          22 + 39 = 61
+Leon Draisaitl       EDM          43 + 67 = 110
+Connor McDavid       EDM          34 + 63 = 97
 ```
 
 Tai sama ilman apumuuttujia:
@@ -325,18 +334,16 @@ Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projekti
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
 - Tee forkattuun repositorioon uusi branch nimellä "muutoksia"
 - Tee luomaasi branchiin "tyhjä" [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request): lisää esimerkiksi yksi tyhjä rivi README.md:hen, pushaa uusi branch GitHubiin ja tee branchista pull request.
-  - Tyhjän pullrequestin tarkoituksena on varata sinulle paikka kyseisen repositorion muutoksentekijöiden joukosta. Haluamme, että kaikki ryhmät saavat suunilleen tasaisesti pull requesteja, eli jos repositoriossa on niitä jo runsaasti, etsi mielellään jokin muu repositorio.
+  - Tyhjän pull requestin tarkoituksena on varata sinulle paikka kyseisen repositorion muutoksentekijöiden joukosta. Haluamme, että kaikki ryhmät saavat suunilleen tasaisesti pull requesteja, eli jos repositoriossa on niitä jo runsaasti, etsi mielellään jokin muu repositorio.
 - Etsi ryhmän lähdekoodista jotain refaktoroitavaa
   - Kyseessä ei tarvitse olla iso muutos, esimerkiksi muuttujan/metodin uudelleennimeäminenkin riittää
 - Refaktoroi ja committaa
-- Käy katsomassa tekemääsi tyhjää pullrequestia. Mitä tapahtui?
+- Käy katsomassa tekemääsi tyhjää pull requestia. Mitä tapahtui?
 - Rebeissaa (ks. tämän viikon ensimmäinen tehtävä) luomasi branch paikalliseen master branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
-- Otsikoi tekemäsi pullrequest niin, että se kuvaa tekemiäsi muutoksia. Tarkenna otsikon alle mitä teit ja miksi.
-- Jos ryhmä pyytää sinua tekemään muutoksia pull requestiisi, tee halutessasi tarvittavat muutokset ja committaa. Päivittyikö pullrequest?
+- Otsikoi tekemäsi pull request niin, että se kuvaa tekemiäsi muutoksia. Tarkenna otsikon alle mitä teit ja miksi.
+- Jos ryhmä pyytää sinua tekemään muutoksia pull requestiisi, tee halutessasi tarvittavat muutokset ja committaa. Päivittyikö pull request?
 - Kun ryhmä on hyväksynyt muutoksesi, voit poistaa luomasi branchin
 
 Laita palautusrepositorioosi tiedosto _PULL.md_ ja sen sisällöksi linkki pull requestiin.
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}

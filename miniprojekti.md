@@ -42,7 +42,7 @@ permalink: /miniprojekti/
   * hyväksymäkriteeri
   * definition of done
 * Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
-* Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+* Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <{{site.stats_url}}>
   * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
     * luo projektin _create project_ -napista avautuvasta lomakkeesta
     * ja jakaa muille ryhmäläisille luodun projektin id:n
@@ -52,7 +52,7 @@ permalink: /miniprojekti/
 ### Työn eteneminen
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. 
-Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject) viimeistään sunnuntaina 22.11.
+Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) viimeistään sunnuntaina 22.11.
 
 #### viikko 4 (16-20.11.)
 
@@ -67,12 +67,12 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject](https://study.cs
 #### viikko 5 (23-29.11.)
 
 * Sprintin 1 katselmointi ja sprintin 2 suunnittelu
-  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject)
+  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
 #### viikko 6 (30.11-6.12.)
 
 * Sprintin 2 katselmointi ja sprintin 3 suunnittelu 
-  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject](https://study.cs.helsinki.fi/stats/courses/ohtu2020/miniproject)
+  * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
 #### viikko 7 (7-13.12.)
 

@@ -15,15 +15,15 @@ Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto
 
 Maanantain pajaa ei tällä viikolla pidetä.
 
-Muista myös tämän viikon [monivalintatehtävät](https://study.cs.helsinki.fi/stats/courses/ohtu2020/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 20.12 klo 23:59:00. Tehtävät ilmestyvät ke 12.12. klo 23 mennessä.
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/7), joiden deadline on poikkeuksellisesti perjantaina 20.12 klo 23:59:00. Tehtävät ilmestyvät ke 12.12. klo 23 mennessä.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-Tee [korjausehdotus](/osa0#typoja-materiaalissa) editoimalla [tätä](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/main/tehtavat7.md) tiedostoa GitHubissa.
+{% include typo_instructions.md path="/python/tehtavat7.md" %}
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -84,7 +84,6 @@ __/
   - Vanhan master-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata
   - Vanhaan committiin palaaminen onnistuu, jos commitin id on tiedossa -- jos ei, on olemassa [muutamia keinoja](http://stackoverflow.com/questions/4786972/list-of-all-git-commits) sen selvittämiseksi
 
-<!-- TODO -->
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
 [Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistosta _koodi/viikko7/kivi-paperi-sakset_ löytyy tutun pelin tietokoneversio.
@@ -98,32 +97,69 @@ __/
 
 Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 rastia, jos ratkaisu ei ole kaikin osin tyylikäs, merkkaa yksi rasti.
 
-### 5. Lunttilappu
+**Vinkki:** eräs tapa lähteä liikkeelle on muodostaa yliluokka `KiviPaperiSakset`, joka sisältää kaikille kolmelle pelityypille yhteisen koodin:
 
-_Tehtävän ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
+```python
+class KPS:
+    def __init__(self):
+        self.lue = input
+        self.kirjoita = print
 
-Kertaa koealue ja tee koetta varten käsinkirjoitettu, A4:n kokoinen lunttilappu (molempien puolien käyttö sallittu) ks. [ohje kokeeseen](/ohje_kokeeseen)
+    def pelaa(self):
+        tuomari = Tuomari()
 
-### 6. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+        ekan_siirto = self.ensimmaisen_siirto()
+        tokan_siirto = self.toisen_siirto(ekan_siirto)
+
+        while self.onko_ok_siirto(ekan_siirto) and self.onko_ok_siirto(tokan_siirto):
+            # ...
+
+        self.kirjoita("Kiitos!")
+        self.kirjoita(tuomari)
+
+    # tämän metodin toteutus vaihtelee eri pelityypeissä
+    def toisen_siirto(self, ekan_siirto):
+        # metodin oletustoteutus
+        return "k"
+
+    def onko_ok_siirto(self, siirto):
+        return siirto == "k" or siirto == "p" or siirto == "s"
+```
+
+Erilliset pelit sitten perivät luokan ja erikoistavat sitä tarpeidensa mukaan:
+
+```python
+# luokka perii luokan KPS
+class KPSPelaajaVsPelaaja(KPS):
+    # toteutetaan metodi pelityypin mukaisesti
+    def toisen_siirto(self, ekan_siirto):
+        tokan_siirto = self.lue("Toisen pelaajan siirto: ")
+
+        return tokan_siirto
+```
+
+### 5. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi.
 
 Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin.
 
-**Vaihtoehtoinen tehtävä**
+**Vaihtoehtoinen tehtävä:**
 
-Jos et ollut miniprojektissa tai et halua tehdä mergeämistä, voit merkata tehtävän tehdyksi listaamalla kurssin monivalintatehtävistä ne, jotka on ilmaistu mielestäsi epäselvästi tai moniselitteisesti.
+lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 
-Laita palautusrepositorioosi tiedosto _QUIZZ.md_, ja listaa epäselvät kohdat sinne.
+- <http://www.leanprimer.com/downloads/lean_primer.pdf>
+  - Aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
+- Lauri Suomalaisen kandidaattityö [Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään](https://www.cs.helsinki.fi/u/mluukkai/ohtu/suomalainen-kandi.pdf)
+- Tero Huomon kandidaattityö [Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin](https://www.cs.helsinki.fi/u/mluukkai/ohtu/huomo-kandi.pdf)
+- Kasper Hirvikosken kandidaattityö [Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/hirvikoski-kandi.pdf)
+- Kenny Heinosen kandidaattityö [Ohjelmistoala ja ryhmätyöskentely](https://www.cs.helsinki.fi/u/mluukkai/ohtu/heinononen-kandi.pdf)
+- Eero Laineen kandidaattityö [Johtaminen perinteisissä ja ketterissä ohjelmistotuotantoprojekteissa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/laine-kandi.pdf)
+- Esa Kortelaisen kandidaattityö [Jatkuva eksperimentointi ohjelmistokehityksen tukena](https://www.cs.helsinki.fi/u/mluukkai/ohtu/kortelainen-kandi.pdf)
+- Kalle Ilveksen kandidaattityö [Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf)
 
-**Toinen vaihtoehtoinen tehtävä**
-
-Toinen korvaava vaihtoehto on kirjoittaa referaatti, viime vuoden [laskareiden speksin](https://github.com/mluukkai/Ohjelmistotuotanto2018/blob/main/laskarit/7.md#4-referaatti) mukaan.
-
-### 7. Kurssipalaute
+### 6. Kurssipalaute
 
 Anna kurssipalautetta WebOodissa. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa.
 
-### Tehtävien palautus
-
-Pushaa kaikki tekemäsi tehtävät GitHubiin ja merkkaa tekemäsi tehtävät palautussovellukseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+{% include submission_instructions.md %}

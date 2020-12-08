@@ -33,7 +33,7 @@ Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja pe
 
 ### Ensimmäisen sprintin arvosteluperusteet:
 
-Projekti tulee olla rekisteröity osoitteeseen <https://study.cs.helsinki.fi/stats/courses/ohtu2020>
+Projekti tulee olla rekisteröity osoitteeseen <{{site.stats_url}}>
 * **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
   * luo projektin _create project_ -napista avautuvasta lomakkeesta
   * ja jakaa muille ryhmäläisille luodun projektin id:n
@@ -132,7 +132,7 @@ Sprintin maksimi on 2.5 pistettä.
 * Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
 * Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään lauantaina 19.12. klo 23:59**
   * vertaispalautteen antaminen on _pakollista_, ilman vertaispalautteen antamista kurssin arvosanaa ei kirjata
-* Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2020) miniproject-tabissa
+* Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   * ryhmäläiset eivät näe toistensa vertaispalautteita
 
 #### Raportti

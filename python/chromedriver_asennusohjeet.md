@@ -5,6 +5,10 @@ inheader: no
 permalink: /python/chromedriver_asennusohjeet/
 ---
 
+## Typoja materiaalissa
+
+{% include typo_instructions.md path="/python/chromedriver_asennusohjeet.md" %}
+
 ## ChromeDriver-asennusohjeet
 
 Jos tietokoneellesi ei ole asennettu Chrome-selainta, aloita asentamalla sen viimeisin versio [täältä](https://www.google.com/chrome/). Lataa sen jälkeen käyttöjärjestelmällesi ja Chrome-versiollesi sopiva _chromedriver_-binääri [täältä](https://chromedriver.chromium.org/downloads). Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
