@@ -7,7 +7,7 @@ permalink: /ohje_kokeeseen/
 
 Kurssikoe pidetään torstaina 17.12. klo 17-20 Moodlessa, ja internet on kokeessa vapaasti käytettävissä.
 
-Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja erityisesti niitä valvotaan nyt kun koe on verkossa. 
+Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun koe on verkossa. 
 
 Eli **jos copy/pasteat** kurssimateriaaliaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesti hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
 
