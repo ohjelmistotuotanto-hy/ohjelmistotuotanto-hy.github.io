@@ -167,8 +167,6 @@ Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki merg
 
 lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 
-* <http://www.leanprimer.com/downloads/lean_primer.pdf>
-  * aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
 * Lauri Suomalaisen kandidaattityö [Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään](https://www.cs.helsinki.fi/u/mluukkai/ohtu/suomalainen-kandi.pdf)
 * Tero Huomon kandidaattityö [Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin](https://www.cs.helsinki.fi/u/mluukkai/ohtu/huomo-kandi.pdf) 
 * Kasper Hirvikosken kandidaattityö [Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/hirvikoski-kandi.pdf)
