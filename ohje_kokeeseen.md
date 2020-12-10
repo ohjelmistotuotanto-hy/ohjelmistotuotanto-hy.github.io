@@ -5,7 +5,7 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-Kurssikoe pidetään torstaina 17.12. klo 17-20 Moodlessa, ja internet on kokeessa vapaasti käytettävissä.
+Kurssikoe pidetään torstaina 17.12. klo 17-21 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=42876), ja internet on kokeessa vapaasti käytettävissä.
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun koe on verkossa. 
 
