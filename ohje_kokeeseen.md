@@ -9,7 +9,7 @@ Kurssikoe pidetään torstaina 17.12. klo 17-20 Moodlessa, ja internet on kokees
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja erityisesti niitä valvotaan nyt kun koe on verkossa. 
 
-Eli jos copypastat  kurssimateriaaliaalia tai jotain internetistä löydettyä tavaraa vastaukseksi, koesuorituksesti hyvälttään kokonaisuudessaan.
+Eli **jos copy/pasteat** kurssimateriaaliaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesti hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
