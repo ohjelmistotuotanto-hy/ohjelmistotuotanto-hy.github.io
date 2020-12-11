@@ -27,8 +27,7 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 
 - Git
 - Gradle 
-- Git Actions
-- CodeClimate 
+- GitHub Actions
 - JUnit 
 - Mockito 
 - Cucumber 
