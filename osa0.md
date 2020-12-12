@@ -82,11 +82,23 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 #### Laskarien pisteytysperusteet
 
-Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssipistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. 
+Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssipistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. Pisteet tulevat seuraavan kaavan mukaan:
 
-Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan: 
+|monivalnintapisteitä  |kurssipisteitä| 
+| ------------- |:-------------:| 
+| 6.3	| 3   | 
+| 5.8	| 2.5 | 
+| 5.3	| 2 | 
+| 4.8	| 1.5 | 
+| 4.3	| 1 | 
+| 3.8	| 0.5 | 
+| 3.3	| 0 | 
+
+Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai | väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan: 
 - jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, on tuloksena 0 mvp:tä. 
 - jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikki kohdat oikein tuo yhden mvp:n. 
+
+
 
 Normaaleista laskareista on tarjolla *8 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
