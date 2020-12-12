@@ -82,7 +82,9 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 #### Laskarien pisteytysperusteet
 
-Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssipistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. Pisteet tulevat seuraavan kaavan mukaan:
+Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssipistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. 
+
+Pisteet tulevat seuraavan kaavan mukaan:
 
 |monivalnintapisteitä  |kurssipisteitä| 
 | ------------- |:-------------:| 
@@ -99,8 +101,20 @@ Kaikki monivalitatehtävät ovat joukkoja väittämiä, joista jokainen voi olla
 - jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikki kohdat oikein tuo yhden mvp:n. 
 
 
-
 Normaaleista laskareista on tarjolla *8 kurssipistettä*. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
+
+Pisteet tulevat seuraavan kaavan mukaan:
+
+|tehtäviä  |kurssipisteitä| 
+| ------------- |:-------------:| 
+| 57	| :8   | 
+| 54	| :7.5 | 
+| 50	| 7 | 
+| 47	| 6.5 | 
+| 43	| 6 | 
+| ...	| --- | 
+| 8	| 1 | 
+| 5	| 0.5 | 
 
 Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versiohallintatehtävät ja suorittamalla hyväksytysti miniprojektin
 
