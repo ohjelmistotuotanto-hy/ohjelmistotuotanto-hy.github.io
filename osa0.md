@@ -28,7 +28,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä kolme vuonna 2019 tallennettua vierailuluentoa (Marko Klemetti Eficode, Niko Laitinen Nitor ja Hannu Kokko Elisa). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy. 
+Kurssilla on 10 luentoa sekä neljä vuonna 2019 tallennettua vierailuluentoa (Marko Klemetti Eficode, Niko Laitinen Nitor, Juha Viljanen Smartly ja Hannu Kokko Elisa). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy. 
 
 Kurssin luennot pidetään zoomissa ja tallenteet ovat nähtävillä luentojen jälkeen.
 
@@ -184,7 +184,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 
 - Vierailuluennot
 - Laskarit
-  - [monivalintatehtävät]({{site.stats_url}}/quiz/6) deadline perjantaina 28.12. klo 23:59  
+  - [monivalintatehtävät]({{site.stats_url}}/quiz/6) deadline perjantaina 18.12. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7) deadline maanantaina 14.12. klo 23:59 
 - Miniprojekti
   - Loppudemot
