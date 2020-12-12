@@ -107,8 +107,8 @@ Pisteet tulevat seuraavan kaavan mukaan:
 
 |tehtäviä  |kurssipisteitä| 
 | ------------- |:-------------:| 
-| 57	|: 8   | 
-| 54	|: 7.5 | 
+| 57	|  8   | 
+| 54	| 7.5 | 
 | 50	| 7 | 
 | 47	| 6.5 | 
 | 43	| 6 | 
