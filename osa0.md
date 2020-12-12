@@ -150,7 +150,7 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 - Luento 8: tiistai 17.11. klo 12-14
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
-  - [Olio/komponenttisuunnittelu](http://localhost:4000/osa4#olio/komponenttisuunnittelu)
+  - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
 - Laskarit
   - [monivalintatehtävät]({{site.stats_url}}/quiz/4) deadline sunnuntaina 22.11. klo 23:59  
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4) deadline maanantaina 23.11. klo 23:59 
