@@ -1342,7 +1342,7 @@ Ainoastaan kolmas vaihe eli _operaation tuloksen laskeminen_ eroaa summaa ja tul
 Template methodin hengessä asia hoidetaan tekemällä abstrakti yliluokka, jonka metodi _suorita()_ toteuttaa koko komennon suorituslogiikan:
 
 ```java
-public abstract class BinaariOperaatio implements Komento {
+public abstract class BinaariOperaatio extends Komento {
     // ...
 
     @Override
