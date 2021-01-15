@@ -2,7 +2,7 @@
 layout: page
 title: Miniprojektin arvosteluperusteet
 inheader: no
-permalink: /miniprojektin_arvosteluperusteet/
+permalink: /miniprojektin_arvosteluperustet/
 ---
 
 ## Miniprojektin arvosteluperusteet
