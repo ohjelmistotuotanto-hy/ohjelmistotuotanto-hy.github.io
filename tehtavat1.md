@@ -352,8 +352,6 @@ Java-maailmassa automatisoidun testaamisen johtava työkalu on JUnit, johon olet
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran JUnit-testejä, **laajennetaan nyt testejä**.
 
-**HUOM** tehtävässä käytettävä _jacoco_-plugin edellyttää toimiakseen gradlen versiota 5.6. Voit testata käyttämäsi version komennolla _gradle -v_. 
-
 Muista, että testit suoritetaan komennolla <code>gradle test</code>
 
 * Täydennä Ohtuvaraston testejä siten, että luokan _Varasto_ testien rivikattavuudeksi (line coverage) tulee 100%
