@@ -785,7 +785,7 @@ Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahd
 Edellä esitellyistä jatkuvan julkaisun ja laadunhallinnan käytenteiden toimivuudesta on runsaasti anekdotaalista evidenssiä ja monista osa-aluiesta on tehny myös akateemista tutkimusta. Myös se, että erinomaisesti menestyneet organisaatiot kuten Google, Netflix, Amazon ja Facebook luottavat näihin käytänteisiin, ja ovat jopa paikoin kehittäneet ne, puhuu niiden puolesta 
 
 Toistaiseksi vakuuttavimman ja tieteellisesti vakaimmalla pohjalla olevan näkemyksen tarjoaa vuonna 2018 julkaistussa kirjassa
-[Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) raportoitu vuosina 2013-2017 tehnty laaja, yli 20000 vastaukseen perustuva kyselytutkimus.
+[Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) raportoitu vuosina 2013-2017 tehty laaja, yli 20000 vastaukseen perustuva kyselytutkimus.
 
 Tutkimustulokset on myös julkaistu korkeatasoisilla vertaisarvioiduilla foorumeilla. Tämän osan kannalta oleellisia tuloksia käsittelee esimerkiksi [Forsgren, Humble: The Role of Continuous Delivery in IT and Organizational Performance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2681909).
 
@@ -803,7 +803,7 @@ _Select the number that best indicates degree of conformance to your organizatio
 - Time to market
 - Quality and performance of applications
 
-Kuvan vasemmassa reunassa taas on yrityksten harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaorgaisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
+Kuvan vasemmassa reunassa taas on yrityksien harjoittamia käytänteitä: versionhallinta, testiautomaatio, jatkuva integraatio ja tuotantoonviennin automatisointi, siis "DevOps"-käytänteet, jotka muodostavat jatkuvan tuotantoonviennin (continuous delivery) ytimen. Myös näiden käyttöä vastaajaorganisaatioissa on mitattu kyselytutkimuksessa skaalalla 1-7. 
 
 Tutkimus löysi merkittävän yhteyden DevOps-käytänteiden käytön ja yrityksen tehokkaan toiminnan välillä. Mielenkiintoisena "sivutuotteena" käytänteiden intensiiviselle harjoittamiselle on myös korkeampi työtyytyväisyys ja vähäisempi määrä loppuunpalaneita työntekijöitä.
 
