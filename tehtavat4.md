@@ -2,19 +2,19 @@
 layout: page
 title: Viikko 4
 inheader: no
-permalink: /tehtavat4/
+permalink: /tehtavat4a/
 ---
 
 ## Viikko 4
 
 *Alla olevien tehtävien deadline on maanantaina 23.11. klo 23:59*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
+*Allaolevien tehtävien deadline on {{site.dl4_l}}*
 
-- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
-- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+{% include paja.md path="/tehtavat4.md" %}
 
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/4), joiden deadline on sunnuntaina 22.11. klo 23:59:00.  
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/4), joiden deadline on {{site.dl4_m}}.  
+
 
 Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. Tehtävissä 5 ja 6 refaktoroidaan sisäiseltä laadultaan heikossa kunnossa olevaa koodia.
 

@@ -2,19 +2,19 @@
 layout: page
 title: Viikko 5
 inheader: no
-permalink: /tehtavat5/
+permalink: /tehtavat5a/
 ---
 
 ## Viikko 5
 
 *Alla olevien tehtävien deadline on maanantaina 30.11. klo 23:59*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
+*Allaolevien tehtävien deadline on {{site.dl5_l}}*
 
-- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
-- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+{% include paja.md path="/tehtavat5.md" %}
 
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/5), joiden deadline on sunnuntaina 29.11. klo 23:59:00.  
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/5), joiden deadline on {{site.dl5_m}}.  
+
 
 Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 

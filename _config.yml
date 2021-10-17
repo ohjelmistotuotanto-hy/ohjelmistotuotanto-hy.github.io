@@ -9,34 +9,40 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Ohjelmistotuotanto 2020
+
+title: Ohjelmistotuotanto 2021
 email: matti.luukkainen@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ohjelmistotuotanto-hy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" 
+url: "https://ohjelmistotuotanto-hy.github.io" 
 github_username:  mluukkai
 repo_url: "https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io"
 repo_branch: "master"
-stats_url: "https://study.cs.helsinki.fi/stats/courses/ohtu2020"
+stats_url: "https://study.cs.helsinki.fi/stats/courses/ohtu2021"
+
+dl1_m: "sunnuntai 7.11. klo 23:59:00"
+dl1_l: "maanantai 8.11. klo 23:59"
+
+dl2_m: "sunnuntai 14.11. klo 23:59:00"
+dl2_l: "maanantai 15.11. klo 23:59"
+
+dl3_m: "sunnuntai 21.11. klo 23:59:00"
+dl3_l: "maanantai 22.11. klo 23:59"
+
+dl4_m: "sunnuntai 28.11. klo 23:59:00"
+dl4_l: "maanantai 29.11. klo 23:59"
+
+dl5_m: "sunnuntai 5.12. klo 23:59:00"
+dl5_l: "maanantai 6.12. klo 23:59"
+
+dl6_m: "sunnuntai 12.12. klo 23:59:00"
+dl6_l: "maanantai 13.12. klo 23:59"
+
+dl7_m: "sunnuntai 19.12. klo 23:59:00"
+dl7_l: "maanantai 20.12. klo 23:59"
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

@@ -7,14 +7,11 @@ permalink: /python/tehtavat3/
 
 ## Viikko 3
 
-_Alla olevien tehtävien deadline on maanantaina 18.11. klo 23:59_
+*Allaolevien tehtävien deadline on {{site.dl3_l}}*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
+{% include paja.md path="/tehtavat3.md" %}
 
-- ma 14-16 B221
-- ke 14-16 B221
-
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/3), joiden deadline on sunnuntaina 17.11. klo 23:59:00.
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/3), joiden deadline on {{site.dl3_m}}.  
 
 Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen.
 

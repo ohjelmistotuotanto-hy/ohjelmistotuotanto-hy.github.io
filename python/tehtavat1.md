@@ -7,14 +7,11 @@ permalink: /python/tehtavat1
 
 ## Viikko 1
 
-_Allaolevien tehtävien deadline on maanantaina 2.11. klo 23:59_
+*Allaolevien tehtävien deadline on {{site.dl1_l}}*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoomissa:
+{% include paja.md path="/tehtavat1.md" %}
 
-- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09) alkaen 2.11
-- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
-
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/1), joiden deadline on sunnuntaina 1.11. klo 23:59:00.
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/1), joiden deadline on {{site.dl1_m}}.  
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 

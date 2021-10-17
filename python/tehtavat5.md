@@ -7,14 +7,11 @@ permalink: /python/tehtavat5/
 
 ## Viikko 5
 
-_Alla olevien tehtävien deadline on maanantaina 2.12. klo 23:59_
+*Allaolevien tehtävien deadline on {{site.dl5_l}}*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä pajassa
+{% include paja.md path="/tehtavat5.md" %}
 
-- ma 14-16 B221
-- ke 14-16 B221
-
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/5), joiden deadline on sunnuntaina 1.12. klo 23:59:00.
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/5), joiden deadline on {{site.dl5_m}}.
 
 Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 

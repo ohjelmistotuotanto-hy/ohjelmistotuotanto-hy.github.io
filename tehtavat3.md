@@ -2,21 +2,19 @@
 layout: page
 title: Viikko 3
 inheader: no
-permalink: /tehtavat3/
+permalink: /tehtavat3a/
 ---
 
 ## Viikko 3
 
 **HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 
-*Alla olevien tehtävien deadline on maanantaina 16.11. klo 23:59*
+*Allaolevien tehtävien deadline on {{site.dl3_l}}*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
+{% include paja.md path="/tehtavat3.md" %}
 
-- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
-- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/3), joiden deadline on {{site.dl3_m}}.  
 
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/3), joiden deadline on sunnuntaina 15.11. klo 23:59:00.  
 
 Tehtävissä 1-3 tutustutaan siihen miten gradle-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi, sekä miten riippuvuuksia sisältävästä koodista saadaan generoitua jar-paketti. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Cucumberin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen. 
 

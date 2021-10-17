@@ -7,14 +7,11 @@ permalink: /python/tehtavat2/
 
 ## Viikko 2
 
-_Alla olevien tehtävien deadline on maanantaina 9.11. klo 23:59_
+*Allaolevien tehtävien deadline on {{site.dl2_l}}*
 
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoom-pajassa:
+{% include paja.md path="/tehtavat2.md" %}
 
-- Maanantai 14-16 [zoom](https://helsinki.zoom.us/j/63962392550?pwd=RzluTjZWYmNLb0g4bjRxb0ZlckRkUT09)
-- Perjantai 10-12 [zoom](https://helsinki.zoom.us/j/64396759243)
-
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/2), joiden deadline on sunnuntaina 8.11. klo 23:59:00.
+Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/2), joiden deadline on {{site.dl2_m}}.  
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 3-7. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa.
 
