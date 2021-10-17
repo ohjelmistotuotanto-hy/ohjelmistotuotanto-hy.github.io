@@ -10,6 +10,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 ## Ajankohtaista
 
+- Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa. Kurssilla saatetaan pitää myös normaalia pajaa. 
 - Tehtävien palautussovellus [{{ site.lecture }}]({{ site.lecture }})
 - Kurssiin liittyvää keskustelua [Telegramissa](https://telegram.me/ohjelmistotuotanto), tule mukaan!
   - Telegram on whatsappin/messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä. 
