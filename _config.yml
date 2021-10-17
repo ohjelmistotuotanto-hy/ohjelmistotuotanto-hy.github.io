@@ -42,6 +42,19 @@ lask-dl:
   - "maanantai 13.12. klo 23:59"
   - "maanantai 20.12. klo 23:59"
 
+luennot:
+  - "FAIL"
+  - "maanantai 1.11. klo 12-14"
+  - "tiistai 2.11. klo 12-14"
+  - "maanantai 8.11. klo 12-14"
+  - "tiistai 9.11. klo 12-14"
+  - "maanantai 15.11. klo 12-14"
+  - "tiistai 16.11. klo 12-14"  
+  - "maanantai 22.11. klo 12-14"
+  - "tiistai 23.11. klo 12-14"
+  - "maanantai 29.11. klo 12-14"
+  - "tiistai 30.11. klo 12-14"  
+
 # Build settings
 markdown: kramdown
 theme: minima

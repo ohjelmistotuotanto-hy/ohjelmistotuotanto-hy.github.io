@@ -1,11 +1,11 @@
 ### Viikko 1
 
-- Luento 1: maanantai 26.10. klo 12-14 zoom
+- Luento 1: {{site.luennot[1]}} zoom
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
 
-- Luento 2: tiistai 27.10. klo 12-14 zoom
+- Luento 2: {{site.luennot[2]}} zoom
   - [Scrum](/osa1#scrum)
 
 - Laskarit
@@ -15,11 +15,11 @@
 
 ### Viikko 2
 
-- Luento 3: maanantai 2.11. klo 12-14  zoom
+- Luento 3: {{site.luennot[3]}} zoom
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 
-- Luento 4: tiistai 4.11. klo 12-14 zoom
+- Luento 4: {{site.luennot[4]}} zoom
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 
@@ -29,9 +29,9 @@
 
 ### Viikko 3
 
-- Luento 5: maanantai 8.11. klo 12-14  <a href="https://youtu.be/uo4-NnaPriM">tallenne</a>
+- Luento 5: {{site.luennot[5]}} <a href="https://youtu.be/uo4-NnaPriM">tallenne</a>
   - [Laadunhallinnan perusteet](/osa3)
-- Luento 6: tiistai 10.11. klo 12-14 <a href="https://youtu.be/yW4MONAW2ZA">tallenne</a>  
+- Luento 6: {{site.luennot[6]}} <a href="https://youtu.be/yW4MONAW2ZA">tallenne</a>  
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
@@ -39,10 +39,10 @@
   
 ### Viikko 4
 
-- Luento 7: maanantai 16.11. klo 12-14  <a href="https://youtu.be/YBo7xH0mhrk">tallenne</a>
+- Luento 7: {{site.luennot[7]}} <a href="https://youtu.be/YBo7xH0mhrk">tallenne</a>
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops) 
-- Luento 8: tiistai 17.11. klo 12-14 <a href="https://youtu.be/HqhhAtnGwFo">tallenne</a>
+- Luento 8: {{site.luennot[8]}} <a href="https://youtu.be/HqhhAtnGwFo">tallenne</a>
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
@@ -55,9 +55,9 @@
   - Aloitustilaisuudet
 ### Viikko 5
 
-- Luento 9: maanantai 23.11. klo 12-14 zoom
+- Luento 9: {{site.luennot[9]}} zoom
     - [Lean](/osa5#lean)  
-- Luento 10: tiistai 24.11. klo 12-14 zoom
+- Luento 10:{{site.luennot[10]}} zoom
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
     

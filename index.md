@@ -13,7 +13,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Tehtävien palautussovellus [{{ site.lecture }}]({{ site.lecture }})
 - Kurssiin liittyvää keskustelua [Telegramissa](https://telegram.me/ohjelmistotuotanto), tule mukaan!
   - Telegram on whatsappin/messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä. 
-  - :**Huom:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
+  - **Huom:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 
 ## Aikataulu
 
