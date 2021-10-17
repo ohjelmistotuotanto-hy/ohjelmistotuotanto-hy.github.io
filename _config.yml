@@ -20,26 +20,27 @@ repo_url: "https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github
 repo_branch: "master"
 stats_url: "https://study.cs.helsinki.fi/stats/courses/ohtu2021"
 
-dl1_m: "sunnuntai 7.11. klo 23:59:00"
-dl1_l: "maanantai 8.11. klo 23:59"
+python_exercise_repo_url: "https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021"
 
-dl2_m: "sunnuntai 14.11. klo 23:59:00"
-dl2_l: "maanantai 15.11. klo 23:59"
+moniv-dl:
+  - "FAIL"
+  - "sunnuntai 7.11. klo 23:59:00"
+  - "sunnuntai 14.11. klo 23:59:00"
+  - "sunnuntai 21.11. klo 23:59:00"
+  - "sunnuntai 28.11. klo 23:59:00"
+  - "sunnuntai 5.12. klo 23:59:00"
+  - "sunnuntai 12.12. klo 23:59:00"
+  - "sunnuntai 19.12. klo 23:59:00"
 
-dl3_m: "sunnuntai 21.11. klo 23:59:00"
-dl3_l: "maanantai 22.11. klo 23:59"
-
-dl4_m: "sunnuntai 28.11. klo 23:59:00"
-dl4_l: "maanantai 29.11. klo 23:59"
-
-dl5_m: "sunnuntai 5.12. klo 23:59:00"
-dl5_l: "maanantai 6.12. klo 23:59"
-
-dl6_m: "sunnuntai 12.12. klo 23:59:00"
-dl6_l: "maanantai 13.12. klo 23:59"
-
-dl7_m: "sunnuntai 19.12. klo 23:59:00"
-dl7_l: "maanantai 20.12. klo 23:59"
+lask-dl:
+  - "FAIL"
+  - "maanantai 8.11. klo 23:59"
+  - "maanantai 15.11. klo 23:59" 
+  - "maanantai 22.11. klo 23:59"
+  - "maanantai 29.11. klo 23:59"
+  - "maanantai 6.12. klo 23:59"
+  - "maanantai 13.12. klo 23:59"
+  - "maanantai 20.12. klo 23:59"
 
 # Build settings
 markdown: kramdown

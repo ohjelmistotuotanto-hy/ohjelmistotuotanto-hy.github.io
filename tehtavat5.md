@@ -2,35 +2,25 @@
 layout: page
 title: Viikko 5
 inheader: no
-permalink: /tehtavat5a/
+permalink: /tehtavat5/
 ---
 
-## Viikko 5
-
-*Alla olevien tehtävien deadline on maanantaina 30.11. klo 23:59*
-
-*Allaolevien tehtävien deadline on {{site.dl5_l}}*
-
-{% include paja.md path="/tehtavat5.md" %}
-
-Muista myös tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/5), joiden deadline on {{site.dl5_m}}.  
-
-
+{% include laskari_info.md part=5 %}
 Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 
-Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
+Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/python/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
 
 Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
-{% include typo_instructions.md path="/tehtavat5.md" %}
+{% include typo_instructions.md %}
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/python/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. git: tägit [versionhallinta]
 
@@ -38,30 +28,28 @@ Tutustutaan tässä tehtävässä Gitin tageihin:
 
 > Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
 
-Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit skipata kohdat 'signed tags' ja 'verifying tags')
+Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags')
 
 Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 
-* tee tägi nimellä tagi1 (lightweight tag riittää)
-* tee kolme committia (eli 3 kertaa muutos + add + commit)
-* tee tägi nimellä tagi2
-* katso <code>gitk</code>-komennolla miltä historiasi näyttää
-* palaa tagi1:n aikaan, eli anna komento <code>git checkout tagi1</code>
-  * varmista, että tagin jälkeisiä muutoksia ei näy
-* palaa nykyaikaan
-  * tämä onnistuu komennolla <code>git checkout main</code>
-* lisää tägi _edelliseen_ committiin
-  * operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
-  * joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
-  * tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
-* kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
-* katso komennolla <code>gitk</code> miltä historia näyttää
+- Tee tägi nimellä tagi1 (lightweight tag riittää)
+- Tee kolme committia (eli 3 kertaa muutos + add + commit)
+- Tee tägi nimellä tagi2
+- Katso `gitk`-komennolla miltä historiasi näyttää
+- Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
+  - Varmista, että tagin jälkeisiä muutoksia ei näy
+- Palaa nykyaikaan
+  - Tämä onnistuu komennolla `git checkout main`
+- Lisää tägi _edelliseen_ committiin
+  - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
+  - Joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
+  - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
+- Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
+- Katso komennolla <code>gitk</code> miltä historia näyttää
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-Varmista, että tagit siirtyvät GitHubiin:
-
-![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
+Varmista, että tagit siirtyvät GitHubiin.
 
 ### 2. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
@@ -69,133 +57,131 @@ Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä 
 
 Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
 
-* tee jokin tiedosto, esim. nimeltään _xxx_, lisää ja committaa se
-* poista tiedosto ja committaa
-* tee jotain muutoksia johonkin tiedostoon ja committaa
-* historiasi näyttää seuraavalta
+- Tee jokin tiedosto, esim. nimeltään _xxx_, lisää ja committaa se
+- Poista tiedosto ja committaa
+- Tee jotain muutoksia johonkin tiedostoon ja committaa
+- Historiasi näyttää seuraavalta
 
-<pre>
+```
 (1) - (2) - (3)
-</pre>
-    
-* Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa nykyhetkellä ja (2):ssa xxx:ää ei ole.
-  * huom: komennolla <code>gitk</code> voit tutkia historiaa
-* haluamme palauttaa tiedoston
-* selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
-* anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- xxx</code> missä pitkä merkkijono on siis kyseisen commitin id
-  * varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
-* tee commit
-* _xxx_ on palannut!
-* HUOM: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa
-  * "Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters." [7.1 Git Tools - Revision Selection
-](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
+```
 
-* Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
+- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa nykyhetkellä ja (2):ssa xxx:ää ei ole.
+  - Huom: komennolla <code>gitk</code> voit tutkia historiaa
+- Haluamme palauttaa tiedoston
+- Selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
+- Anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- xxx</code> missä pitkä merkkijono on siis kyseisen commitin id
+  - varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
+- Tee commit
+- _xxx_ on palannut!
+- Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa
 
-### 3. git: commitin muutosten kumoaminen [versionhallinta]
+  - "Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters." [7.1 Git Tools - Revision Selection
+    ](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
 
-* huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
-  * HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
-* syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
-  * ilman optiota __no-edit__ pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä 
-  * huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
-* vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
+- Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
+
+### 3. Git: commitin muutosten kumoaminen [versionhallinta]
+
+- Huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
+  - HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
+- Syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
+  - Ilman optiota **no-edit** pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä
+  - Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
+- Vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
-
-Koodista on kolme eri versiota, _LaskinFX8_, jonka pitäisi toimia Java8:llä (myös cubbli-linuxeilla, ks. README), _LaskinFX11_, jonka pitäisi toimia Java11:lla ja _LaskinSwing_, jonka pitäisi toimia kaikilla versiolla.
-
-Valitse sellainen versio, joka toimii koneellasi (komennolla _gradle run_).
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/laskin_, löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. Jos tarvitte, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/tkinter.md) oleva tkinter-tutoriaali.
 
 
-Sovellusta on laajennettu lisäämällä siihen painike _undo_-toiminnallisuutta varten, undoa ei kuitenkaan ole vielä toteutettu.
+Asenna projektin riippuvuudet komenolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 
-Sovelluksen varsinainen toimintalogiikka on luokassa <code>Tapahtumankuuntelija</code>. Koodissa on tällä hetkellä hieman ikävä if-hässäkkä:
+Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
 
-``` java
-@Override
-public void handle(Event event) {
-    int arvo = 0;
+```python
+def _suorita_komento(self, komento):
+    arvo = 0
 
-    try {
-        arvo = Integer.parseInt(syotekentta.getText());
-    } catch (Exception e) {
-    }
+    try:
+        arvo = int(self._syote_kentta.get())
+    except Exception:
+        pass
 
-    if (event.getTarget() == plus) {
-        sovellus.plus(arvo);
-    } else if (event.getTarget() == miinus) {
-        sovellus.miinus(arvo);
-    } else if (event.getTarget() == nollaa) {
-        sovellus.nollaa();
-    } else {
-        System.out.println("undo pressed");
-    }
-    
-    int laskunTulos = sovellus.tulos();
-    
-    syotekentta.setText("");
-    tuloskentta.setText("" + laskunTulos);
-    
-    if ( laskunTulos==0) {
-        nollaa.disableProperty().set(true);
-    } else {
-        nollaa.disableProperty().set(false);
-    }
-    undo.disableProperty().set(false);
-}
+    if komento == Komento.SUMMA:
+        self._sovelluslogiikka.plus(arvo)
+    elif komento == Komento.EROTUS:
+        self._sovelluslogiikka.miinus(arvo)
+    elif komento == Komento.NOLLAUS:
+        self._sovelluslogiikka.nollaa()
+    elif komento == Komento.KUMOA:
+        pass
+
+    self._kumoa_painike["state"] = constants.NORMAL
+
+    if self._sovelluslogiikka.tulos == 0:
+        self._nollaus_painike["state"] = constants.DISABLED
+    else:
+        self._nollaus_painike["state"] = constants.NORMAL
+
+    self._syote_kentta.delete(0, constants.END)
+    self._tulos_var.set(self._sovelluslogiikka.tulos)
 ```
 
-Versiossa _LaskinSwing_ metodi näyttää hieman erilaiselta, sillä se käyttää FX:n sijaan _Swing_-käyttöliittymäkirjastoa.
+Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/python/osa4#laskin-ja-komento-olio-viikko-5).
 
-Refaktoroi koodi iffittömäksi kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](https://ohjelmistotuotanto-hy.github.io/osa4#laskin-ja-komento-olio-viikko-5) käyttäen.
+Tässä tehtävässä ei tarvitse vielä toteuttaa kumoa-komennon toiminnallisuutta!
 
-Tässä tehtävässä ei tarvitse vielä toteuttaa undo-komennon toiminnallisuutta!
+Luokka `Kayttoliittyma` voi näyttää refaktoroituna esimerkiksi seuraavalta:
 
-Luokka <code>Tapahtumankuuntelija</code> (Java FX-versioissa) voi näyttää refaktoroituna esim. seuraavalta:
+```python
+class Komento(Enum):
+    SUMMA = 1
+    EROTUS = 2
+    NOLLAUS = 3
+    KUMOA = 4
 
-``` java
-public class Tapahtumankuuntelija implements EventHandler {
-    private Button undo;
-    private Sovelluslogiikka sovellus;
+
+class Kayttoliittyma:
+    def __init__(self, sovelluslogiikka, root):
+        self._sovelluslogiikka = sovelluslogiikka
+        self._root = root
+
+        self._kommenot = {
+            Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
+            Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
+            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
+            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
+        }
     
-    private Map<Button, Komento> komennot;
-    private Komento edellinen = null;
- 
+    # ...
 
-    public Tapahtumankuuntelija(TextField tuloskentta, TextField syotekentta, Button plus, Button miinus, Button nollaa, Button undo) {
-        this.undo = undo;
-        this.sovellus = new Sovelluslogiikka();
-        this.komennot = new HashMap<>();
-        this.komennot.put(plus, new Summa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
-        this.komennot.put(miinus, new Erotus(tuloskentta, syotekentta, nollaa, undo, sovellus) );
-        this.komennot.put(nollaa, new Nollaa(tuloskentta, syotekentta,  nollaa, undo, sovellus) );
-    }
-    
-    @Override
-    public void handle(Event event) {
-        if ( event.getTarget() != undo ) {
-            Komento komento = this.komennot.get((Button)event.getTarget());
-            komento.suorita();
-            this.edellinen = komento;
-        } else {
-            this.edellinen.peru();
-            this.edellinen = null;
-        }                  
-    }
+    def _lue_syote(self):
+        return self._syote_kentta.get()
 
-}
+    def _suorita_komento(self, komento):
+        komento_olio = self._komennot[komento]
+        komento_olio.suorita()
+        self._kumoa_painike["state"] = constants.NORMAL
+
+        if self._sovelluslogiikka.tulos == 0:
+            self._nollaus_painike["state"] = constants.DISABLED
+        else:
+            self._nollaus_painike["state"] = constants.NORMAL
+
+        self._syote_kentta.delete(0, constants.END)
+        self._tulos_var.set(self._sovelluslogiikka.tulos)
 ```
 
-Komennoilla on nyt siis kaksi julkista metodia <code>void suorita()</code> ja <code>void peru()</code>.
+Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
 
-### 5. Undo
+### 5. Komentojen kumoaminen
 
-Toteuta laskimeen myös _undo_-toiminnallisuus. Periaatteena on siis tallettaa jokaiseen komentoon sen verran dataa, että kutsuttaessa metodia <code>peru</code> komento osaa palauttaa tilanteen, joka oli voimassa (eli käytännössä laskimen arvon) ennen komennon suoritusta.
+Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
-Riittää että ohjelma muistaa edelliseksi suoritetun komennon, eli undo-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin komento-suunnittelumallin avulla olisi melko helppo toteuttaa myös useamman undo- tai redo-toiminnallisuuden hallitseva sovellus.
+Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
+
+Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
 
 ### 6. Retrospektiivitekniikat
 
@@ -203,8 +189,8 @@ Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the en
 
 Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad)
 
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
+Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_
 
-Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_. Tiivistelmän aihe on melko vapaa. Voit kertoa joko parista retrospektiivitekniikasta tai ehkä vielä mielummin kirjoittaa siitä miten piditte miniprojektin retrospektiivin, ja mitä havaintoja siellä syntyi.
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
 {% include submission_instructions.md %}

@@ -9,8 +9,8 @@
   - [Scrum](/osa1#scrum)
 
 - Laskarit
-- <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.dl1_m}}
-- <a href="/tehtavat1">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl1_l}}
+- <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
+- <a href="/tehtavat1">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[1]}}
 
 
 ### Viikko 2
@@ -24,8 +24,8 @@
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.dl2_m}}
-  - <a href="/tehtavat2">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl2_l}}
+  - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{moniv-dl[2]}}
+  - <a href="/tehtavat2">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[2]}}
 
 ### Viikko 3
 
@@ -34,8 +34,8 @@
 - Luento 6: tiistai 10.11. klo 12-14 <a href="https://youtu.be/yW4MONAW2ZA">tallenne</a>  
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.dl3_m}}
-  - <a href="/tehtavat3">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl3_l}}
+  - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
+  - <a href="/tehtavat3">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[3]}}
   
 ### Viikko 4
 
@@ -48,8 +48,8 @@
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
    
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.dl4_m}}
-  - <a href="/tehtavat4">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl4_l}}
+  - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{moniv-dl[4]}}
+  - <a href="/tehtavat4">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[4]}}
 
 - Miniprojekti
   - Aloitustilaisuudet
@@ -62,8 +62,8 @@
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
     
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.dl5_m}}
-  - <a href="/tehtavat5">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl5_l}}
+  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{moniv-dl[5]}}
+  - <a href="/tehtavat5">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[5]}}
 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
@@ -75,8 +75,8 @@
   - Vierailuluento Niko Laitinen Nitor <a href="https://www.youtube.com/watch?v=dhDusAPpjos&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/nitor.pdf">kalvot</a>
       
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.dl6_m}}
-  - <a href="/tehtavat6">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl6_l}}
+  - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{moniv-dl[6]}}
+  - <a href="/tehtavat6">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
@@ -89,8 +89,8 @@
   - Vierailuluento Hannu Kokko Elisa <a href="https://www.youtube.com/watch?v=kpBlLR10oVs&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/elisa.pdf">kalvot</a>
     
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.dl7_m}}
-  - <a href="/tehtavat7">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.dl7_l}}
+  - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{moniv-dl[7]}}
+  - <a href="/tehtavat7">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[7]}}
 
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
