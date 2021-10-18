@@ -20,7 +20,8 @@ repo_url: "https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github
 repo_branch: "master"
 stats_url: "https://study.cs.helsinki.fi/stats/courses/ohtu2021"
 
-python_exercise_repo_url: "https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021"
+python_exercise_repo_url: "https://github.com/ohjelmistotuotanto-hy/syksy-2021-python"
+java_exercise_repo_url: "https://github.com/ohjelmistotuotanto-hy/syksy-2021-java"
 
 moniv-dl:
   - "FAIL"

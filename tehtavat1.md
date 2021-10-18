@@ -6,6 +6,7 @@ permalink: /tehtavat1
 ---
 
 {% include laskari_info.md part=1 %}
+
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
@@ -103,14 +104,14 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
 
 ```bash
-git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
+git clone git@github.com:omatunnustahan/ohtu-2021-viikko1.git
 ```
 
 missä komennon `git clone`parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
 ![]({{ "/images/lh1-2.png" | absolute_url }})
 
-Nyt paikalliselle koneellesi syntynyt hakemisto _ohtu-2019-viikko1_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
+Nyt paikalliselle koneellesi syntynyt hakemisto _ohtu-2021-viikko1_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
 
 ### 3. Gitin alkeet [versionhallinta]
 
@@ -343,7 +344,7 @@ Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 
 - Uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän koneelle
 - Lisäykset ja niitä testaavat testit tehdään paikalliseen kopioon
-- Testit ajetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
+- Testit suoritetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
 - Jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
 - Build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, hakee ja kääntää build-palvelin muuttuneen koodin ja suorittaa sille testit
 - Build-palvelin raportoi havaituista virheistä
@@ -540,7 +541,7 @@ Tee nyt jokin muutos koneellasi repositorioon ja yritä pushata koodi GitHubiin.
 ```
 To github.com:mluukkai/ohtu-viikko1-s2020.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2019-viikko1.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2021-viikko1.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -658,7 +659,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
-- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
+- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.

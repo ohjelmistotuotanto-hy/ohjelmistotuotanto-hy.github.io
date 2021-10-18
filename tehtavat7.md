@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 7
 inheader: no
-permalink: /tehtavat7/
+permalink: /tehtavat7a/
 ---
 
 {% include laskari_info.md part=7 %}

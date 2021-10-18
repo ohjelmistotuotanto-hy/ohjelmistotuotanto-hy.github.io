@@ -5,6 +5,8 @@ inheader: no
 permalink: /java/tehtavat1
 ---
 
+{% include java.md %}
+
 {% include laskari_info.md part=1 %}
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, buildin hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
@@ -62,7 +64,7 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtu-2020-viikko1 
+Luo githubiin repositorio nimellä ohtu-2021-viikko1 
 
 * klikkaa yläpalkin oikeassa reunassa olevaa  "Create a new repo"-ikonia 
 * **laita rasti** kohtaan Initialize this repository with a README 
@@ -96,13 +98,13 @@ Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
 Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento
 
-    git clone git@github.com:omatunnustahan/ohtu-2019-viikko1.git
+    git clone git@github.com:omatunnustahan/ohtu-2021-viikko1.git
 
 missä komennon <code>git clone</code> parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
 ![]({{ "/images/lh1-2.png" | absolute_url }})
 
-Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-2019-viikko1</code> (hakemiston nimi on sama kuin repositoriosi), joka on on githubissa olevan repositorion klooni.
+Nyt paikalliselle koneellesi syntynyt hakemisto <code>ohtu-2021-viikko1</code> (hakemiston nimi on sama kuin repositoriosi), joka on on githubissa olevan repositorion klooni.
 
 ### 3. Gitin alkeet [versionhallinta]
 
@@ -201,7 +203,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
-* hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
+* hae osoitteesta <{{site.java_exercise_repo_url}}/blob/main/ohtuvarasto.zip?raw=true> löytyvä zipattu paketti
 * pura paketti sopivaan paikkaan 
 * siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 
@@ -220,7 +222,9 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi
 
 ### 7. Gradle
 
-Tämän kurssin ohjelmointitehtävissä käytetään Javaa. Jos koneellasi ei ole vielä Javaa asennettuna, pääset helpoimmalla seuraamalla [ohjelmointikurssien](https://www.mooc.fi/fi/installation/netbeans) ohjeita Javan ja Netbeansin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten se TMCbeans ei ole välttämätön kurssin suorittamiselle, myös muut editorit käyvät.
+Jos haluat käyttää kurssin ohjelmointi- ja testaustehtävissä Javaa ja et ole vielä asentanut sitä koneellasi, pääset helpoimmalla seuraamalla [ohjelmointikurssien](https://www.mooc.fi/fi/installation/netbeans) ohjeita Javan ja Netbeansin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten se TMCbeans ei ole välttämätön kurssin suorittamiselle, myös muut editorit käyvät.
+
+{% include java.md %}
 
 Ohjelmoinnin peruskursseilla koodi suoritettiin painamalla NetBeansin "vihreää nuolta", ja testit painamalla "mustaa silmää". Ammattimaisessa ohjelmistokehityksessä koodin suorituskelpoiseksi tekemisen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahasa koneella, _skriptatusti_ komentoriviltä, eli riippumatta NetBeansin kaltaisista kehitysympäristöistä.
 
@@ -256,9 +260,9 @@ Suorita projektin juuressa (eli samassa hakemistossa missä tiedosto _build.grad
 
 Jos edelliset komennot eivät toimi, asenna gradle koneellesi ja käytä suoraan komentoa <code>gradle build</code>. 
 
-Huomaa, että gradlen version tulee olla vähintään 5.6. Esim. laitoksen koneilla valmiina oleva versio on liian vanha. Versio selviää komennolla _gradle -v_, ja tuloksen pitäisi näyttää suunilleen seuraavalta:
+Huomaa, että gradlen version tulee olla vähintään 6.7. Esim. laitoksen koneilla valmiina oleva versio on liian vanha. Versio selviää komennolla _gradle -v_, ja tuloksen pitäisi näyttää suunilleen seuraavalta:
 
-````
+```
 $ gradle -v
 
 ------------------------------------------------------------
@@ -277,7 +281,9 @@ OS:           Mac OS X 10.14.6 x86_64
 ➜  repo git:(main)
 ```
 
-* **HUOM** macOS:llä automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli macOS-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew), ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
+* **HUOM1** tehtävät on testattu toimivaksi Gradlen versiolla 6.7. Muiden versioden käyttö omalla vastuulla!
+
+* **HUOM2** macOS:llä automaattinen asentuminen ei ole ainakaan kaikilla toiminut. Eli macOS-käyttäjien kannattaa aloittaa asentamalla _gradle_ [homebrew:illa](https://gradle.org/install#with-homebrew), ja suorittaa komento muodossa <code>gradle build</code>. Jos et jo käytä [homebrewia](https://brew.sh), kannattaa aloittaa nyt.
 
 Jos mikään yo. komennoista ei päädy ilmoitukseen _BUILD SUCCESSFUL_ on todennäköisesti Javan konfiguraatiossa jotain häikkää. Koneellasi tulee olla _Java Development Kit_ (eli JDK) asennettuna ja ympäristömuuttuja *JAVA_HOME* tulee olla asetettu siten, että sen arvona on JDK:n sijainti, ks. esim. <http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/>. JAVA_PATH:in asettamisen jälkeen komentorivi tulee käynnistää uudelleen. 
 
@@ -340,6 +346,7 @@ Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen
 
 Java-maailmassa automatisoidun testaamisen johtava työkalu on JUnit, johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. 
   * Jos JUnit on vieras tai pääsyt unohtumaan kertaa perusteet kurssin Ohjelmistotekniikka [JUnit-ohjeesta](https://github.com/mluukkai/Ohjelmistotekniikka-syksy-2020/blob/main/web/junit.md) 
+  * **Huom:** kurssin tehtävissä on käytössä JUnitin versio 4.13. JUnitista on ilmestynyt myös versio 5 mutta sen käyttö on omalla vastuulla, tehtäväpohjien toimivuudesta JUnitin versiolla 5 ei ole varmuutta.
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran JUnit-testejä, **laajennetaan nyt testejä**.
 
@@ -368,7 +375,7 @@ ja suorittamalla komento <code>gradle test jacocoTestReport</code>
 **HUOM** tehtävässä käytettävä _jacoco_-plugin edellyttää toimiakseen riittävän uuden gradlen version Voit tarkistaa käyttämäsi version komennolla _gradle -v_. Cubbli-Linuxien oletusarvoinen versio on 4.4.1. ja sitä käyttäessä (eli komennolla _gradle_) jacoco ei toimi:
 
 ```
-mluukkai@melkki:~/ohtu-2019-viikko1$ gradle test jacocoTestReport
+mluukkai@melkki:~/ohtu-2021-viikko1$ gradle test jacocoTestReport
 Starting a Gradle Daemon (subsequent builds will be faster)
 
 > Task :test
@@ -379,7 +386,7 @@ Exception in thread "main" java.lang.reflect.InvocationTargetException
 Komennolla _./gradlew_ on käytössä projektin lokaali versio 6.7.0. ja sillä projekti toimii.
 
 ```
-mluukkai@melkki:~/ohtu-2019-viikko1$ ./gradlew test jacocoTestReport
+mluukkai@melkki:~/ohtu-2021-viikko1$ ./gradlew test jacocoTestReport
 
 ...
 
@@ -393,7 +400,7 @@ Gradlen avulla ohjelmiston käännös ja testien suorittaminen on mahdollista te
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 - uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän koneelle
 - lisäykset ja niitä testaavat testit tehdään paikalliseen kopioon
-- käännös ja testit ajetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
+- käännös ja testit suoritetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
 - jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
 - build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, hakee ja kääntää build-palvelin muuttuneen koodin ja suorittaa sille testit
 - build-palvelin raportoi havaituista virheistä
@@ -406,11 +413,11 @@ Kurssilla käytetään GitHubiin 15.11.2019 julkaistua ja sen jälkeen nopeasti 
 
 Konfiguroidaan seuraavaksi GitHub Actions huolehtimaan projektistamme. 
 
-Valitse GitHub-repositoriostasi välilehti _Actions_ ja _Java with Gradle_:
+Valitse GitHub-repositoriostasi välilehti _Actions_ ja _set up a workflow yourself_:
 
-![]({{ "/images/lh1-20.png" | absolute_url }})
+![]({{ "/images/lh1-20a.png" | absolute_url }})
 
-Valinta avaa actionien konfiguraatiotiedoston. Muuta se seuraavaan muotoon:
+Valinta avaa actionien konfiguraatiotiedoston. Anna sille sopiva nimi ja muuta se seuraavaan muotoon:
 
 ```
 name: Java CI with Gradle
@@ -438,9 +445,9 @@ jobs:
 
 Paina vihreää _Start commit_ -nappia, ja anna sopiva commit-viesti.
 
-Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _gradle.yml_) tallettuu repositorioosi hakemiston `.github/workflows` alle:
+Konfiguraatiotiedosto (jonka on nimetty mielikuvituksettomasti _gradle.yml_) tallettuu repositorioosi hakemiston `.github/workflows` alle:
 
-![]({{ "/images/lh1-21.png" | absolute_url }})
+![]({{ "/images/lh1-21a.png" | absolute_url }})
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
@@ -568,7 +575,7 @@ Olemme käyttäneet oletusarvoista nimeä _Java CI with Gradle_, nimi voi kuiten
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtu-viikko1-s2020/workflows/Java%20CI%20with%20Gradle/badge.svg
+https://github.com/mluukkai/ohtu-2020-viikko1/actions/workflows/gradle.yml/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa README.md suoraan GitHubissa:
@@ -585,9 +592,9 @@ Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien p
 Tee nyt jokin muutos koneellasi repositorioon ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 <pre>
-To github.com:mluukkai/ohtu-viikko1-s2020.git
+To github.com:mluukkai/ohtu-viikko1-s2021.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2019-viikko1.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2021-viikko1.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -605,12 +612,12 @@ Pullauksen yhteydessä syntyy ns. merge commit ja git avaa oletuseditorisi ja ha
 
 Tehtävässä 8 määrittelimme projektin testauskattavuuden _JaCoCo:n_ avulla. <https://codecov.io> -palvelu mahdollistaa projektien koodikattavuuden julkaisemisen verkossa.
 
-* kirjaudu [Codecoviin](https://codecov.io) (GitHub sign up)
+* kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
 * lisää repositorio Codecoviin alaisuuteen: 
 
-![]({{ "/images/lh1-12.png" | absolute_url }})
+![]({{ "/images/lh1-12a.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtu-viikko1-s2020>
+Saatat joutua odottamaan hetken, ennen kuin codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtu-s2020-viikko1>
 
 Saat Codecov:in tarkkailemaan projektisi koodikattavuutta lisäämällä tiedoston _build.gradle_ loppuun seuraava:
 
@@ -721,7 +728,7 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla. 
 
 * Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-* hae esimerkkiprojekti kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
+* hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.java_exercise_repo_url}}) hakemistosta [koodi/viikko1/RiippuvuuksienInjektointi1]({{site.java_exercise_repo_url}}/tree/main/koodi/viikko1/RiippuvuuksienInjektointi1) ja kokeile että se toimii
   * järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
   * **tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
 
@@ -729,7 +736,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-* Kurssin [tehtävärepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa [koodi/viikko1/NHLStatistics1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koronan takia NHL:ää ei juuri tällä hetkellä pelata, ja tilastot ovat viime vuodelta)
+* Kurssin [tehtävärepositorion]({{site.java_exercise_repo_url}}) hakemistossa [koodi/viikko1/NHLStatistics1](({{site.java_exercise_repo_url}}/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
   * Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 * Ohjelma koostuu kolmesta luokasta.
   * <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen

@@ -1,0 +1,1 @@
+**HUOM:** tehtävien Java-versioiden kirjastoja ei ole päivitetty vuoteen. Tehtävät on todettu toimivaksi Javan versiolla 11, Gradlen versiolla 6.7 ja JUnitin versiolla 4.13. Muiden versioiden käyttö omalla vastuulla.

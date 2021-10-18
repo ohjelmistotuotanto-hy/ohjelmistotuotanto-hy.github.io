@@ -2,12 +2,13 @@
 layout: page
 title: Viikko 2
 inheader: no
-permalink: /tehtavat2/
+permalink: /tehtavat2a/
 ---
 
 **HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 
 {% include laskari_info.md part=2 %}
+
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 3-7. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
