@@ -9,9 +9,8 @@
   - [Scrum](/osa1#scrum)
 
 - Laskarit
-- <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
-- <a href="/tehtavat1">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[1]}}
-
+  - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
+  - <a href="/tehtavat1">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[1]}}
 
 ### Viikko 2
 
