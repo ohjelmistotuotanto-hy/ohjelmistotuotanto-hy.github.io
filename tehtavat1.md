@@ -559,10 +559,10 @@ Pullauksen yhteydessä syntyy ns. merge commit ja git avaa oletuseditorisi ja ha
 
 Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <https://codecov.io> -palvelu mahdollistaa projektien koodikattavuuden julkaisemisen verkossa.
 
-- Kirjaudu [Codecoviin](https://codecov.io) (GitHub sign up)
+- Kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
 - Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/py-lh1-12.png" | absolute_url }})
+![]({{ "/images/lh1-12a.png" | absolute_url }})
 
 Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtu-2021-viikko1>
 

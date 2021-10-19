@@ -9,7 +9,7 @@ permalink: /riippuvuuksien_injektointi_python/
 
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
 
-Alla oleva koodi löytyy poetry-muotoisena projektina kurssin [tehtävärepositoriosta](https://github.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021) hakemistosta koodi/viikko1/riippuvuuksien-injektointi-1
+Alla oleva koodi löytyy poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi-1
 
 Seuraavassa yksinkertainen laskin:
 
@@ -141,7 +141,7 @@ Jos ajatellaan vaikkapa tietokonepelejä, joiden toiminta riippuu usein satunnai
 ```python
 class Peli: 
     def liikuva_pelaajaa(self):
-      suunta = random.randint(0,8)
+      suunta = random.randint(0, 8)
 ```
 
 Jos taas satunnaislukugeneraattori _injektoidaan_ pelille seuraavasti
