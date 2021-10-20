@@ -1,3 +1,4 @@
-Apua tehtävien tekoon kurssin [Telegram](https://telegram.me/ohjelmistotuotanto)-kanavalla sekä zoomissa:
+Apua tehtävien tekoon kurssin [Discord](https://study.cs.helsinki.fi/discord/join/ohtu)-kanavalla, kampuksella ja Zoomissa:
 
-- tbd
+- Maanantaisin (8.11. alkaen) klo 14-16 kampuksella BK107-luokassa
+- Torstaisin (4.11. alkaen) klo 14-16 [Zoomissa](https://helsinki.zoom.us/j/62712498644?pwd=bWkrTGwxN3FPYjBKWUs2N0d6RkpQdz09)
