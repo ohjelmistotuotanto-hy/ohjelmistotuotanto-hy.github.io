@@ -1,11 +1,11 @@
 ### Viikko 1
 
-- Luento 1: {{site.luennot[1]}} zoom
+- Luento 1: {{site.luennot[1]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
 
-- Luento 2: {{site.luennot[2]}} zoom
+- Luento 2: {{site.luennot[2]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Scrum](/osa1#scrum)
 
 - Laskarit
@@ -14,11 +14,11 @@
 
 ### Viikko 2
 
-- Luento 3: {{site.luennot[3]}} zoom
+- Luento 3: {{site.luennot[3]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 
-- Luento 4: {{site.luennot[4]}} zoom
+- Luento 4: {{site.luennot[4]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 
@@ -28,9 +28,8 @@
 
 ### Viikko 3
 
-- Luento 5: {{site.luennot[5]}} <a href="https://youtu.be/uo4-NnaPriM">tallenne</a>
-  - [Laadunhallinnan perusteet](/osa3)
-- Luento 6: {{site.luennot[6]}} <a href="https://youtu.be/yW4MONAW2ZA">tallenne</a>  
+- Luento 5: {{site.luennot[5]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 6: {{site.luennot[6]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09) 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
@@ -38,10 +37,10 @@
   
 ### Viikko 4
 
-- Luento 7: {{site.luennot[7]}} <a href="https://youtu.be/YBo7xH0mhrk">tallenne</a>
+- Luento 7: {{site.luennot[7]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops) 
-- Luento 8: {{site.luennot[8]}} <a href="https://youtu.be/HqhhAtnGwFo">tallenne</a>
+- Luento 8: {{site.luennot[8]}}[zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
@@ -54,9 +53,9 @@
   - Aloitustilaisuudet
 ### Viikko 5
 
-- Luento 9: {{site.luennot[9]}} zoom
+- Luento 9: {{site.luennot[9]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
     - [Lean](/osa5#lean)  
-- Luento 10:{{site.luennot[10]}} zoom
+- Luento 10:{{site.luennot[10]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)  
     

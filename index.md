@@ -11,6 +11,9 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 ## Ajankohtaista
 
 - Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa. Kurssilla saatetaan pitää myös normaalia pajaa.
+  - maanantain luentojen [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+  - tiistain luentojen [zoom-linkki]()
+  - linkit luentojen tallenteisiin löytyvät aikataulusta
 - Tehtävien palautussovellus [{{ site.lecture }}]({{ site.lecture }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
