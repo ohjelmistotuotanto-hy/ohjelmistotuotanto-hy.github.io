@@ -51,6 +51,7 @@
 
 - Miniprojekti
   - Aloitustilaisuudet
+
 ### Viikko 5
 
 - Luento 9: {{site.luennot[9]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
