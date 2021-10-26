@@ -1,6 +1,6 @@
 ### Viikko 1
 
-- Luento 1: {{site.luennot[1]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 1: {{site.luennot[1]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
@@ -14,7 +14,7 @@
 
 ### Viikko 2
 
-- Luento 3: {{site.luennot[3]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 3: {{site.luennot[3]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 
@@ -28,7 +28,7 @@
 
 ### Viikko 3
 
-- Luento 5: {{site.luennot[5]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 5: {{site.luennot[5]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
 - Luento 6: {{site.luennot[6]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09) 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
@@ -37,7 +37,7 @@
   
 ### Viikko 4
 
-- Luento 7: {{site.luennot[7]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 7: {{site.luennot[7]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops) 
 - Luento 8: {{site.luennot[8]}}[zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
@@ -53,7 +53,7 @@
   - Aloitustilaisuudet
 ### Viikko 5
 
-- Luento 9: {{site.luennot[9]}} [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 9: {{site.luennot[9]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
     - [Lean](/osa5#lean)  
 - Luento 10:{{site.luennot[10]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
