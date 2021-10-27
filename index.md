@@ -11,7 +11,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 ## Ajankohtaista
 
 - Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa. Kurssilla saatetaan pitää myös normaalia pajaa.
-  - maanantain luentojen [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+  - maanantain luentojen [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - tiistain luentojen [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - linkit luentojen tallenteisiin löytyvät aikataulusta
 - Tehtävien palautussovellus [{{ site.lecture }}]({{ site.lecture }})
