@@ -10,11 +10,14 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 ## Ajankohtaista
 
-- Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa. Kurssilla saatetaan pitää myös normaalia pajaa.
-  - maanantain luentojen [zoom-linkki]](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa:
+  - maanantain luentojen [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
   - tiistain luentojen [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - linkit luentojen tallenteisiin löytyvät aikataulusta
-- Tehtävien palautussovellus [{{ site.lecture }}]({{ site.lecture }})
+- Paja
+  - Maanantaisin (8.11. alkaen) klo 14-16 kampuksella BK107-luokassa
+  - Torstaisin (4.11. alkaen) klo 14-16 [Zoomissa]( https://helsinki.zoom.us/j/61671791492?pwd=aW9pczlJZ2RjNXhJVDdjbUU3akd1UT09)
+- Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
