@@ -27,7 +27,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/python/tehtavat1
 
 ### 1. Poetryn harjoittelua
 
-Tässä tehtävässä harjoittelemme lisää Poetryn käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/poetry.md) ja [Poetryn dokumentaatiosta](https://python-poetry.org/docs/).
+Tässä tehtävässä harjoittelemme lisää Poetryn käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/poetry) ja [Poetryn dokumentaatiosta](https://python-poetry.org/docs/).
 
 Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimissä, joka on alkamassa kehittämään web-sovellusta. Olette päätyneet kehittämään sovelluksen Pythonilla ja käyttämään Poetrya riippuvuuksien hallinnassa.
 
@@ -81,7 +81,7 @@ Development dependencies: robotframework, robotframework-seleniumlibrary, reques
 
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
-Tutustutaan nyt staattisen analyysin työkaluun [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://github.com/ohjelmistotekniikka-hy/python-kevat-2021/blob/master/materiaali/pylint.md).
+Tutustutaan nyt staattisen analyysin työkaluun [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://ohjelmistotekniikka-hy.github.io/python/pylint).
 
 Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi. Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 

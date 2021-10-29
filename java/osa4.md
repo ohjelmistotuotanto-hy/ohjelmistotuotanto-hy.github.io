@@ -119,13 +119,13 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
          
 ### Todo-sovelluksen arkkitehtuuri
 
-Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/mluukkai/OtmTodoApp).
+Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app).
 
 Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pakkauksiin 
 
 ![]({{ "/images/4-2.png" | absolute_url }}){:height="250px" }
 
-Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/main/web/materiaali.md#pakkauskaavio):
+Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/materiaali#pakkauskaavio):
 
 ![]({{ "/images/4-1b.png" | absolute_url }}){:height="200px" }
 
