@@ -209,7 +209,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
-- Hae osoitteesta <{{site.python_exercise_repo_url}}/blob/main/koodi/viikko1/varasto.zip?raw=true> löytyvä zipattu paketti
+- Hae osoitteesta <{{site.python_exercise_repo_url}}/blob/master/koodi/viikko1/varasto.zip?raw=true> löytyvä zipattu paketti
 - Pura paketti sopivaan paikkaan
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 - Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
