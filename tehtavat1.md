@@ -205,7 +205,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 - Committaa muutokset
   - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
   - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen gitistä tapahtuu
-- Pushaa muutokset githubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositiossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
+- Pushaa muutokset githubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
