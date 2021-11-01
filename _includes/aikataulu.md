@@ -1,6 +1,6 @@
 ### Viikko 1
 
-- Luento 1: {{site.luennot[1]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 1: {{site.luennot[1]}} [tallenne](https://youtu.be/v8wUaq4qa9M)
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
