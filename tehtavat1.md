@@ -235,7 +235,7 @@ python3 --version
 
 Jos Python on asennettu, komennon suorittaminen tulostaa asennetun Pythonin version. Varmista, että käytössä oleva versio on _vähintään 3.8.0_. Jos `python3`-komentoa ei löydy, kokeile komentoa `python`. Varmista kuitenkin, että `python`-komento suorittaa tarpeeksi uutta versiota. Jos asennusta ei löydy, tai käytössä on vanhempi versio, seuraa [ohjelmointikurssien](https://www.mooc.fi/fi/installation/vscode) ohjeita Pythonin asentamiselle.
 
-Asennusohjeista löytyy myös ohjeet Visual Studio Code -editorin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liittäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
+Asennusohjeista löytyy myös ohjeet Visual Studio Code -editorin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liitännäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
 
 Ohjelmoinnin peruskursseilla olet saattanut suorittaa koodia painamalla VS Coden nuoli-painiketta, ja testejä painamalla silmä-painiketta. Ammattimaisessa ohjelmistokehityksessä koodin suorittaminen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahansa koneella, _skriptatusti_ komentoriviltä, eli riippumatta VS Coden kaltaisista kehitysympäristöistä.
 
