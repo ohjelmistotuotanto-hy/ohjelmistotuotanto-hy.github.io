@@ -5,7 +5,7 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet) 
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
 
-- Luento 2: {{site.luennot[2]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
+- Luento 2: {{site.luennot[2]}} [tallenne](https://youtu.be/Bejr8KO_0fY)
   - [Scrum](/osa1#scrum)
 
 - Laskarit

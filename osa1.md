@@ -451,11 +451,11 @@ Suunnittelukokouksen toisena aiheena on selvittää _miten_ sprintin tavoitteet 
 
 Tämä yleensä tarkoittaa, että tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla. Suunnittelukokouksen toisen osan tuotoksena on usein lista tehtävistä (engl. task), jotka sprintin aikana on toteutettava, jotta sprinttiin valitut vaatimukset saadaan toteutettua. Suunnittelun aikana identifioidut tehtävät kirjataan sprintin backlogiin eli sprintin tehtävälistaan. 
 
-Toisin kuin "asiakkaan kielellä" kirjoitettu product backlog, sprintin backlogilla olevat asiat ovat usein ilmaistu sovelluskehittäjien kielellä, ja sisältävät monia teknisen tason asioita, jotka eivät vielä itsessään ole asiakkaan kannalta kiinnostavia. Sprint backlog onkin ennenkaikkia scrum tiimin sovelluskehittäjien työnteon organisoinnin väline.  
+Toisin kuin "asiakkaan kielellä" kirjoitettu product backlog, sprintin backlogilla olevat asiat ovat usein ilmaistu sovelluskehittäjien kielellä, ja sisältävät monia teknisen tason asioita, jotka eivät vielä itsessään ole asiakkaan kannalta kiinnostavia. Sprint backlog onkin ennenkaikkia scrum-tiimin sovelluskehittäjien työnteon organisoinnin väline.
 
 Sprint planningin maksimikesto on 8 tuntia jos sprinttien pituus on 4 viikkoa ja muuten 4 tuntia.
 
-Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa [osassa 2](/osa2/#sprintin-suunnittelu)
+Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa [osassa 2](/osa2/#sprintin-suunnittelu).
 
 ### Daily scrum – päiväpalaveri
 
