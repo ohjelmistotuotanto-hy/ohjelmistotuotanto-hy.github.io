@@ -77,7 +77,7 @@ Execution failed for task ':checkstyleMain'.
 
 Eli kuten [manuaali kertoo](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout), Gradle olettaa että projektista löytyy checkstylen toiminnan määrittelevä konfiguraatiotiedosto _checkstyle.xml_ joka tulee sijoittaa projektin juuren alle tehtävään hakemistoon _config/checkstyle_.
 
-Luo tiedosto, ja hae tiedostolle sisältö [täältä](https://github.com/ohjelmistotuotanto-hy/syksy2020/blob/main/koodi/viikko2/checkstyle.xml).
+Luo tiedosto, ja hae tiedostolle sisältö [täältä]({{site.java_exercise_repo_url}}/blob/main/koodi/viikko2/checkstyle.xml).
 
 
 Huomaa, että tiedoston tulee olla oikeassa paikassa. Virheilmoitus ja [manuaali](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#sec:checkstyle_project_layout) kertovat oikean sijainnin!
@@ -87,7 +87,7 @@ Kun nyt suoritat komennon `gradle checkstyleMain`, tulee jälleen virhe, mutta n
 <pre>
 * What went wrong:
 Execution failed for task ':checkstyleMain'.
-> Checkstyle rule violations were found. See the report at: file:///Users/mluukkai/opetus/ohtu2020/ohtu-2020-viikko1/build/reports/checkstyle/main.html
+> Checkstyle rule violations were found. See the report at: file:///Users/mluukkai/opetus/ohtu2020/ohtu-2021-viikko1/build/reports/checkstyle/main.html
 </pre>
 
 Avaa raportti selaimella. Huomaat, että tuloksena on suuri määrä virheitä. Valitettavasti virheraportti kertoo ainoastaan sen koodirivin, mistä virhe löytyy. Joudut katsomaan vastaavan kohdan koodistasi esim. NetBeansista.
@@ -303,8 +303,8 @@ Palaa vielä alkuperäiseen lokaaliin repositorioon
 
 ```
 * remote origin
-  Fetch URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
-  Push  URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
+  Fetch URL: git@github.com:mluukkai/ohtu-2021-viikko1.git
+  Push  URL: git@github.com:mluukkai/ohtu-2021-viikko1.git
   HEAD branch: main
   Remote branches:
     haara1 tracked
@@ -378,7 +378,7 @@ Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injek
 
 Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi/).
 
-Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1](https://github.com/ohjelmistotuotanto-hy/syksy2020/tree/main/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
+Kurssirepositorion hakemistossa [koodi/viikko2/Verkkokauppa1]({{site.java_exercise_repo_url}}/tree/main/koodi/viikko2/Verkkokauppa1) on yksinkertaisen verkkokaupan ohjelmakoodi
 
 * Hae projekti kurssirepositoriosta
   * järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle
@@ -467,7 +467,38 @@ public static void main(String[] args) {
 }
 ```
 
-* Muuta seuraavaksi muutkin luokat käyttämään Springin riippuvuuksien injektointia, jolloin pääohjelman alku muuttuu muotoon: 
+* etene seuraavaan luokkaan:
+
+``` java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+ 
+    Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class);
+    Kirjanpito kirjanpito      = ctx.getBean(Kirjanpito.class);
+    Varasto varasto            = new Varasto(kirjanpito);
+    Pankki pankki              = new Pankki(kirjanpito);
+    Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
+
+    //...
+}
+```
+
+* ja seuraavaan:
+
+``` java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+ 
+    Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class);
+    Kirjanpito kirjanpito      = ctx.getBean(Kirjanpito.class);
+    Varasto varasto            = ctx.getBean(Varasto.class);
+    Pankki pankki              = new Pankki(kirjanpito);
+    Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
+
+    //...
+}
+
+* Muuta sitten loputkin luokat käyttämään Springin riippuvuuksien injektointia, jolloin pääohjelman alku muuttuu muotoon: 
 
 ``` java
 public static void main(String[] args) {
