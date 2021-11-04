@@ -195,7 +195,8 @@ def erotus(x, y):
 - Siirry takaisin **master**-branchiin
 - Tarkasta että **laskut**-branchiin lisätyt muutokset eivät ole masterissa
 - Tarkastele komennolla `gitk --all` miltä repositorio ja branchit näyttävät (`gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.)
-  - `gitk`-komento ei toimi maceissa, hyvä korvaaja sille on [sourcetree](https://www.sourcetreeapp.com)
+  - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
+    - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
 - Mergeä branchin **laskut** sisältö **masteriin**  (tämä tapahtuu komennolla`git merge laskut`)
   - Mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
