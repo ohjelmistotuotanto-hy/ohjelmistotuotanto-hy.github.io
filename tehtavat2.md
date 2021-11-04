@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 2
 inheader: no
-permalink: /tehtavat2a/
+permalink: /tehtavat2/
 ---
 
 **HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
@@ -81,9 +81,9 @@ Development dependencies: robotframework, robotframework-seleniumlibrary, reques
 
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
-Tutustutaan nyt staattisen analyysin työkaluun [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://ohjelmistotekniikka-hy.github.io/python/pylint).
+Tutustutaan nyt staattisen analyysin työkaluun nimeltään [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://ohjelmistotekniikka-hy.github.io/python/pylint).
 
-Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi. Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
+Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi. Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/master/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
 Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[MASTER]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/2.6/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään kahdeksaan, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
@@ -93,21 +93,21 @@ Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden o
 max-args=8
 ```
 
-Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta _Design checker_-osion alta).
+Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta _Design checker_ -osion alta).
 
 **Toimi nyt seuraavasti:**
 
 - Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
 - Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä pylintin [dokumentaatiosta](http://pylint.pycqa.org/en/2.6/technical_reference/features.html)):
   - Rivin pituus on maksimissaan 110 merkkiä
-    - Vinkki: sääntö löytyy [Format checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#format-checker)-osiosta ja tulee määrittää `[FORMAT]`-osion alle
+    - Vinkki: sääntö löytyy [Format checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#format-checker) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
     - Vinkki: sääntö löytyy [Refactoring checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#refactoring-checker) ja tulee määrittää `[REFACTORING]`-osion alle)
   - Funktiossa tai metodissa on enintään 20 lausetta
-    - Vinkki: sääntö löytyy [Design checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#design-checker)-osiosta
+    - Vinkki: sääntö löytyy [Design checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#design-checker) -osiosta
   - [Syklomaattinen koodikompleksisuus](https://en.wikipedia.org/wiki/Cyclomatic_complexity) korkeintaan 3
     - Selvitä mitä syklomaattisella kompleksisuudella tarkoitetaan
-    - Vinkki: sääntö löytyy _Design checker_-osiosta [tämän](http://pylint.pycqa.org/en/latest/technical_reference/extensions.html#design-checker-documentation) lisäosan avulla. Saat sen käyttöön lisäämällä `[MASTER]`-osioon `load-plugins=pylint.extensions.mccabe`-rivin
+    - Vinkki: sääntö löytyy _Design checker_ -osiosta [tämän](http://pylint.pycqa.org/en/latest/technical_reference/extensions.html#design-checker-documentation) lisäosan avulla. Saat sen käyttöön lisäämällä `[MASTER]`-osioon `load-plugins=pylint.extensions.mccabe`-rivin
 - Muuta koodiasi siten, että saat jokaisen määritellyistä pylint-säännöistä rikkoutumaan
 - Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
   - `Varasto`-luokan konstruktori luultavasti rikkoo `too-complex`-sääntöä. Voit esimerkiksi miettiä, miten voisit esittää `tilavuus`-attribuutin arvon if-lauseen sijaan jotenkin muuten.
