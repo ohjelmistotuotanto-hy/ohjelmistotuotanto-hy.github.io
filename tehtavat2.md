@@ -131,8 +131,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 Lue brancheja käsittelevät osuudet seuraavasta <hhttps://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
-- Jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <http://git-scm.com/book>:n luku kolme
-- Tee samalla kaikki tekstien esimerkit
+* jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <https://git-scm.com/book/en/v2:n luku kolme kokonaisuudessaan
 
 Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <https://learngitbranching.js.org/>
 
