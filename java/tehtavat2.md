@@ -150,11 +150,11 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 4. git: branchit [versionhallinta]
 
-lue brancheja käsittelevät osuudet seuraavasta <http://www.ralfebert.de/tutorials/git/>
+lue brancheja käsittelevät osuudet seuraavasta <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 * jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <http://git-scm.com/book>:n luku kolme
 * tee samalla kaikki tekstien esimerkit
 
-Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <http://pcottle.github.com/learnGitBranching/>
+Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <https://learngitbranching.js.org/>
 
 Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/using-branches>
 

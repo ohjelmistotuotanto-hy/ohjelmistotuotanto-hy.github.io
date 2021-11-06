@@ -129,12 +129,12 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 5. Git: branchit [versionhallinta]
 
-Lue brancheja käsittelevät osuudet seuraavasta <http://www.ralfebert.de/tutorials/git/>
+Lue brancheja käsittelevät osuudet seuraavasta <hhttps://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
 - Jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <http://git-scm.com/book>:n luku kolme
 - Tee samalla kaikki tekstien esimerkit
 
-Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <http://pcottle.github.com/learnGitBranching/>
+Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <https://learngitbranching.js.org/>
 
 Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/using-branches>
 
@@ -356,14 +356,13 @@ print(f"{summa(x, y)}")
 print(f"{erotus(x, y)}")
 
 logger("lopetetaan ohjelma")
-print("goodbye!")
 ```
 
 - Mergeä branchin **bugikorjaus** sisältö **masteriin**
   - Katso tiedoston **index.py**-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
 
-- Muuta tiedostoa seuraavasti
+- Muuta tiedostoa print-komentojen osalta seuraavasti
 
 ```py
 # tehdään alussa importit
@@ -386,7 +385,7 @@ print("goodbye!")
 - Committoi muutokset
 
 - Siirry branchiin **bugikorjaus**
-- Muuta nyt tiedostoa seuraavasti ja committaa
+- Muuta nyt tiedostoa (jälleen print-komentojen osalta) seuraavasti ja committaa
 
 ```py
 # tehdään alussa importit
