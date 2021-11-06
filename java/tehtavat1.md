@@ -694,7 +694,7 @@ Muutoksen jälkeen pakkausrakenteen pitäisi näyttää NetBeansissa seuraavalta
 ![]({{ "/images/lh1-31.png" | absolute_url }})
 
 Muuta myös tiedoston _build.gradle_  muut viitteet pääohjelmaan oikeaan muotoon ja varmista, että 
-[tehtävässä 7](/tehtavat1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
+[tehtävässä 7](/java/tehtavat1#7-gradle) mainitut ohjelman suoritus komennolla _gradle run_ ja generoidun jar-tiedoston suorittaminen edelleen toimivat.
 
 Pushaa koodi Githubiin ja varmista, että Codecov generoi raportin siten, että _Main_ jätetään huomioimatta.
 
