@@ -759,7 +759,7 @@ Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforoht
 ### 16. NHLStatistics-ohjelman yksikkötestaus
 
 * tee yksikkötestit luokalle Statistics
-  * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/tehtavat1#8-junit))
+  * testien kattavuuden (sekä instructions että branches) tulee Statistics-luokan osalta olla 100% (mittaa kattavuus JaCoCo:lla, ks. [tehtävä 8](/java/tehtavat1#8-junit))
     * huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   * testit eivät saa käyttää verkkoyhteyttä
   * verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten rajapinnan Reader-toteuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
