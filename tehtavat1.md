@@ -597,7 +597,7 @@ GitHub actionien loki näyttää miten askelten suoritus etenee:
 
 Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen Codecovin settings-valikosta.
 
-Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta (poislukien liian alhainen testauskattvuus):
+Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta:
 
 ![]({{ "/images/py-lh1-30.png" | absolute_url }})
 
@@ -640,7 +640,7 @@ viikko3
 
 Lisää tehtäviin 2-13 käyttämäsi repositorion _README.md_-tiedostoon linkki tehtävien 14-16 palautusrepositorioosi.
 
-Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunnilleen tältä
+Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunnilleen tältä (poislukien liian alhainen testikattavuus):
 
 ![]({{ "/images/py-lh1-32.png" | absolute_url }})
 
