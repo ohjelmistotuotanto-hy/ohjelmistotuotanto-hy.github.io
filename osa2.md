@@ -221,7 +221,7 @@ Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvauksia (_writte
  
 User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimukset; user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja lupaus siitä, että toiminnallisuuden vaatimukset tullaan selvittämään riittävällä tasolla ennen kuin user story toteutetaan.
 
-Määritelmän kolmas alikohta sanoo, että Storyyn kuuluu _Tests that convey and document details and that will be used to determine that the story is complete_. Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, minkä perusteella voidaan katsoa että story on toteutettu.
+Määritelmän kolmas alikohta sanoo, että Storyyn kuuluu _Tests that convey and document details and that will be used to determine that the story is complete_. Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, joiden perusteella voidaan katsoa että story on toteutettu.
 
 Se, miten user storyihin liittyvät hyväksymäkriteerit ilmaistaan, vaihtelee hyvin paljon. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin, että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunhallinnasta vastaava taho hyväksyy storyn valmiiksi testaamalla manuaalisesti vastaavaa toiminnallisuutta järjestelmästä.
 
@@ -362,7 +362,7 @@ Esimerkkejä tällaisestä suhteellisesta estimoinnista ovat
 - user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ vie yhtä kauan kuin user storyn _tuotteen poistaminen ostoskorista toteuttaminen_
 - user storyn _ostoskorissa olevien tuotteiden maksaminen luottokortilla_ toteuttaminen taas vie noin kolme kertaa kauemmin kun edelliset
   
-Ketterissä menetelmissä käytetäänkin yleisesti suhteelliseen kokoon perustuvaa estimointia, joissa usein arvioinnin yksikkönä käytetään abstraktia aikamäärettä _story point_, joka ei välttämättä vastaa mitään todellista aikamäärettä.
+Ketterissä menetelmissä käytetäänkin yleisesti _suhteelliseen kokoon_ perustuvaa estimointia, joissa usein arvioinnin yksikkönä käytetään abstraktia aikamäärettä _story point_, joka ei välttämättä vastaa mitään todellista aikamäärettä.
 
 Verkkokaupan tapauksessa voitaisiinkin määrittää, että user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ työmääräarvio on yksi story point. Tällöin _tuotteen poistaminen ostoskorista toteuttaminen_ olisi myös suhteelliselta estimaatiltaan yksi story point ja _ostoskorissa olevien tuotteiden maksaminen luottokortilla_ kolme story pointia.
 
@@ -376,7 +376,7 @@ Estimoinnissa tuleekin arvioida user storyn viemä aika definition of donen tark
 
 Usein estimointia auttaa user storyn pilkkominen teknisiin työvaiheisiin. Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voisi sisältää toteutuksen kannalta seuraavat tekniset tehtävät (task):
 - tarvitaan sessio, joka muistaa asiakkaan 
-- domain-olio ostoskorin ja ostoksen esittämiseen 
+- oliot ja tietorakenteet ostoskorin ja ostoksen esittämiseen 
 - laajennus tietokantaskeemaan 
 - html-näkymää päivitettävä tarvittavilla painikkeilla
 - kontrolleri painikkeiden käsittelyyn

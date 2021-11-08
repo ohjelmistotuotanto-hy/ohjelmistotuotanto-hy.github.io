@@ -12,7 +12,7 @@
 
 ### Viikko 2
 
-- Luento 3: {{site.luennot[3]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 3: {{site.luennot[3]}} [tallenne](https://youtu.be/T5dOFks48ZY)
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
 - Luento 4: {{site.luennot[4]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
