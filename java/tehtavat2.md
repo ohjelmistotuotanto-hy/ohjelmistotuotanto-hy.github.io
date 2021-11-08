@@ -5,8 +5,6 @@ inheader: no
 permalink: /java/tehtavat2/
 ---
 
-**HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
-
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja kolmas tehtävä käsittelevät koodin _staattisen analyysin_ työkalua checkstyleä. Gitiin tutustuminen jatkuu tehtävissä 4-8. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. 
