@@ -23,7 +23,7 @@ Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/python/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Git: rebase [versionhallinta]
 

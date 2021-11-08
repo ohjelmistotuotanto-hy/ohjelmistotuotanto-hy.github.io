@@ -19,7 +19,7 @@ Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoi
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/python/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Pelaajalista
 

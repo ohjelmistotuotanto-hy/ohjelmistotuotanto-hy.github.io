@@ -17,7 +17,7 @@ Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. 
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/python/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
