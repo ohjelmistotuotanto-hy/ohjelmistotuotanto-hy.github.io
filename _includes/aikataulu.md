@@ -8,20 +8,22 @@
   - [Scrum](/osa1#scrum)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
-  - <a href="/tehtavat1">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[1]}}
-
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[1]}}
+    - [python](/tehtavat1) 
+    - [java](/java/tehtavat1)
 ### Viikko 2
 
 - Luento 3: {{site.luennot[3]}} [tallenne](https://youtu.be/T5dOFks48ZY)
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
-- Luento 4: {{site.luennot[4]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
+- Luento 4: {{site.luennot[4]}} [tallenne](https://youtu.be/_V6jCiKuH-0)
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{moniv-dl[2]}}
-  - <a href="/tehtavat2">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[2]}}
-
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[2]}}
+    - [python](/tehtavat2) 
+    - [java](/java/tehtavat2)
 ### Viikko 3
 
 - Luento 5: {{site.luennot[5]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
@@ -29,7 +31,9 @@
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
-  - <a href="/tehtavat3">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[3]}}
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[3]}}
+    - [python](/tehtavat3) 
+    - [java](/java/tehtavat3)
 
 ### Viikko 4
 
@@ -42,7 +46,9 @@
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{moniv-dl[4]}}
-  - <a href="/tehtavat4">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[4]}}
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[4]}}
+    - [python](/tehtavat4) 
+    - [java](/java/tehtavat4)
 - Miniprojekti
   - Aloitustilaisuudet
 
@@ -55,7 +61,9 @@
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{moniv-dl[5]}}
-  - <a href="/tehtavat5">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[5]}}
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[5]}}
+    - [python](/tehtavat5) 
+    - [java](/java/tehtavat5)
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
@@ -66,7 +74,9 @@
   - Vierailuluento Niko Laitinen Nitor <a href="https://www.youtube.com/watch?v=dhDusAPpjos&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/nitor.pdf">kalvot</a>
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{moniv-dl[6]}}
-  - <a href="/tehtavat6">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[6]}}
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
+    - [python](/tehtavat6) 
+    - [java](/java/tehtavat6)
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
@@ -77,10 +87,15 @@
   - Vierailuluento Hannu Kokko Elisa <a href="https://www.youtube.com/watch?v=kpBlLR10oVs&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/elisa.pdf">kalvot</a>
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{moniv-dl[7]}}
-  - <a href="/tehtavat7">ohjelmointi/versionhallinta/konfigurointitehtävät</a> deadline {{site.lask-dl[7]}}
+  - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
+    - [python](/tehtavat7) 
+    - [java](/java/tehtavat7)
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
 
+### Viikko 8
+
+- Koe ke 22.12. klo 9-12 moodlessa
 ### Ohjauskalenteri
 
 {% include paja_calendar.md %}
