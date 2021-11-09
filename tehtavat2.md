@@ -126,7 +126,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 5. Git: branchit [versionhallinta]
 
-Lue brancheja käsittelevät osuudet seuraavasta <hhttps://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
+Lue brancheja käsittelevät osuudet seuraavasta <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
 * jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <https://git-scm.com/book/en/v2:n luku kolme kokonaisuudessaan
 
