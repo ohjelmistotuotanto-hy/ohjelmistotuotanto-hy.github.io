@@ -738,11 +738,11 @@ Suunnittelun yhteydessä on usein tapana pilkkoa kukin user story teknisen tason
 
 Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voitaisiin pilkkoa seuraaviin teknisen tason taskeihin:
 - tarvitaan sessio, joka muistaa asiakkaan 
-- domain-olio ostoskorin ja ostoksen esittämiseen 
+- oliot ja tietorakenteet ostoskorin ja ostoksen esittämiseen 
 - laajennus tietokantaskeemaan 
 - html-näkymää päivitettävä tarvittavilla painikkeilla
 - kontrolleri painikkeiden käsittelyyn
-- yksikkötestit kontrollerille ja domain-olioille 
+- yksikkötestit kontrollerille ja ostoskorin logiikalle
 - hyväksymätestien automatisointi
 
 ## Sprint backlog
