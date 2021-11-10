@@ -402,7 +402,7 @@ Kehittäjätiimi koostuu noin 3-9:stä henkilöstä, joista kaikista käytetää
 
 Scrum-tiimien tulee olla _cross-functional_, eli tiimin tulisi pitää sisällään kaikki tarvittava osaaminen järjestelmän suunnitteluun, toteuttamiseen, testaamiseen ja jopa tuotantoympäristössä operoimiseen.
 
-Tiimit ovat autonomisia, eli periaatteena on että kehitystiimiä ei johdeta ulkopuolelta vaan tiimi päättää mihin tavoitteisiin se kussakin sprintissä sitoutuu, eli miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös tiettyjen reunaehtojen puitteissa itse miten se sprintin tavoitteen toteuttaa. Tiimi on siis _itseorganisoituva_ (self organizing).
+Tiimit ovat autonomisia, eli periaatteena on että kehitystiimiä ei johdeta ulkopuolelta vaan tiimi päättää miten moneen tuotteen backlogin priorisoidun vaatimuksen toteuttamiseen se kussakin sprintissä sitoutuu, eli miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös tiettyjen reunaehtojen puitteissa itse miten se sprintin tavoitteen toteuttaa. Tiimi on siis _itseorganisoituva_ (self organizing).
 
 Scrumin mukaan tiimin tulee oletusarvoisesti työskennellä samassa paikassa, mieluiten yhteisessä tiimille varatussa avokonttorissa ja oletuksena on että tiimin jäsenet työskentelevät tiimissä 100%:lla työajalla.
 
