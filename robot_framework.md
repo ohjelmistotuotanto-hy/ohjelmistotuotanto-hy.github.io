@@ -2,7 +2,7 @@
 layout: page
 title: Robot Framework
 inheader: no
-permalink: /python/robot_framework/
+permalink: /robot_framework/
 ---
 
 ## Typoja materiaalissa
