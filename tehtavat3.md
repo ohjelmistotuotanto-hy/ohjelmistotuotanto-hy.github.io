@@ -2,10 +2,8 @@
 layout: page
 title: Viikko 3
 inheader: no
-permalink: /tehtavat3a/
+permalink: /tehtavat3/
 ---
-
-**HUOM** ilmoittautuminen [miniprojektiin](/miniprojekti) alkanut. Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea). Deadline ilmoittautumiselle perjantai 13.11. klo 23:59
 
 {% include laskari_info.md part=3 %}
 
