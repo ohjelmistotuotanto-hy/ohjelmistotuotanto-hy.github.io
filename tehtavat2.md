@@ -52,7 +52,9 @@ Ohjelmistokehittäjälle tulee usein vastaan tilanne, jossa pitäisi löytää t
 
 [TOML](https://toml.io/en/) on eräs helppolukuinen datan esitysformaatti, jota käytetään usein konfiguraatiotiedostoissa, kuten Poetryn _pyproject.toml_-tiedostossa. [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko2/project-reader_ on pohja ohjelmalle, jonka tarkoituksena on lukea projektin tietoja annetusta osoitteesta löytyvästä _pyproject.toml_-tiedostosta. **Kopioi aluksi projekti tehtävien palautukseen käyttämäsi repositorion sisälle.**
 
-Tehtävänäsi on ensin löytää sopiva kirjasto, jonka avulla TOML-muotoisista merkkijonoista voi muodostaa Pythonin tietorakenteita. Voit hyödyntää tässä esimerkiksi [PyPI](https://pypi.org/)-sivuston hakua tai Googlea. PyPI:ssä eräs hyvä hakusana voisi olla esimerkiksi "toml". Tutustu kirjastojen kuvauksiin ja päättele sen perusteella, sopiiko kirjasto käyttötarkoitukseen. Kun löydät sopivan kirjaston, asenna se projektiin Poetryn avulla. **HUOM:** PyPI:n asennusohjeista löytyy usein pip-asennuksen ohje `pip install <kirjasto>`. Kaikki kirjastot pystyy kuitenkin asentamaan yhtä lailla Poetryn avulla komennolla `poetry add <kirjasto>`.
+Tehtävänäsi on ensin löytää sopiva kirjasto, jonka avulla TOML-muotoisista merkkijonoista voi muodostaa Pythonin tietorakenteita. Voit hyödyntää tässä esimerkiksi [PyPI](https://pypi.org/)-sivuston hakua tai Googlea. PyPI:ssä eräs hyvä hakusana voisi olla esimerkiksi "toml". Tutustu kirjastojen kuvauksiin ja päättele sen perusteella, sopiiko kirjasto käyttötarkoitukseen. Kun löydät sopivan kirjaston, asenna se projektiin Poetryn avulla.
+
+**HUOM:** PyPI:n asennusohjeista löytyy usein pip-asennuksen ohje `pip install <kirjasto>`. Kaikki kirjastot pystyy kuitenkin asentamaan yhtä lailla Poetryn avulla komennolla `poetry add <kirjasto>`.
 
 Ota sen jälkeen kirjasto käyttöön projektin <i>src/project_reader.py</i>-tiedoston `ProjectReader`-luokan metodissa `get_project`. Metodin `content`-muuttujaan on tallennettu tiedoston sisältö:
 
