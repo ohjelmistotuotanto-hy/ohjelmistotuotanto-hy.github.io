@@ -39,11 +39,11 @@ Jos ohjelma lukee syötteitä käyttäjältä, kannattaa se suorittaa komennolla
 
 ### 1. lisää gradlea: riippuvuuksien lisääminen
 
-Hae kurssirepositorion <https://github.com/ohjelmistotuotanto-hy/syksy2020> hakemistossa viikko3/nhlreader lähes tyhjä gradle-projektin runko.
+Hae kurssirepositorion <{{site.java_exercise_repo_url}}> hakemistossa viikko3/nhlreader lähes tyhjä gradle-projektin runko.
 
 * mukana on kohta tarvitsemasi luokka _Player_ 
 
-Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta kuluvan kauden NHL-liigan tilastotietoja.  Jos tarkkoja ollaan, niin tilastot haetaan tämän kurssin tarpeisiin rakennetulta palvelimelta, joka hakee todelliset tilastot NHL:n sivulta kerran vuorokaudessa. *Pandemian takia kautta ei ole aloitettu ja tilastot ovat viime vuodelta.*
+Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta edellisen kauden NHL-liigan tilastotietoja.
 
 Näet tilastojen [json](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://nhlstatisticsforohtu.herokuapp.com/players>
 
@@ -197,7 +197,7 @@ Lue [täällä](/cucumber/) oleva Cucumber-johdanto ja tee siihen liittyvät teh
 
 ### 5. Kirjautumisen testit
 
-Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/LoginCucumber_ oleva projekti. 
+Hae [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _viikko3/LoginCucumber_ oleva projekti. 
 
 Tutustu ohjelman rakenteeseen. Piirrä ohjelman rakenteesta UML-kaavio.
 
@@ -332,7 +332,7 @@ public void systemWillRespondWith(String expectedOutput) {
 
 ### 7. WebLogin
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _viikko3/WebLogin_ oleva projekti. 
+Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _viikko3/WebLogin_ oleva projekti. 
 
 Sovellus on toteutettu [Spark](http://sparkjava.com)-nimisellä minimalistisella Web-sovelluskehyksellä. Spark on osalle kenties tuttu kurssilta [Tietokantojen perusteet](https://tietokantojen-perusteet.github.io).
 
