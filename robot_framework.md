@@ -52,7 +52,7 @@ Laskurin haluttua toiminnallisuutta kuvaavat seuraavat user storyt
 
 Robot Framework testaamisen ytimessä on niin kutsutut _avainsanat_ (keywords). Avainsana on selkokielinen selitys tehtävästä asiasta. Esimerkiksi laskurin testaamisen kannalta yksi erittäin oleellinen avainsana on `Increase Counter`, jonka avulla laskurin arvoa voidaan kasvattaa. Avainsanoilla voi olla myös _argumentteja_ (arguments), jotka tekevät niistä uudelleenkäytettäviä. Argumenteilla varustettu avainsana voisi olla esimerkiksi `Counter Value Should Be`, joka tarkistaa, että laskurin arvo vastaa argumentin arvoa.
 
-Avainsanoja hyödyntää niin kutsutut _testitapaukset_ (test cases), jotka ovat itse testejä. Testitapauksilla on nimi (kuten avainsanoilla) ja ne suorittavat avainsanoja tietyssä järjestyksessä. Esimerkiksi testitapaus laskurin kasvattamiselle voisi olla seuraava:
+Avainsanoja hyödyntävät niin kutsutut _testitapaukset_ (test cases), jotka ovat itse testejä. Testitapauksilla on nimi (kuten avainsanoilla) ja ne suorittavat avainsanoja tietyssä järjestyksessä. Esimerkiksi testitapaus laskurin kasvattamiselle voisi olla seuraava:
 
 ```
 *** Test Cases ***
@@ -62,7 +62,7 @@ Increase Counter Once
     Counter Value Should Be  1
 ```
 
-Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimkerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense)-lisäosa:
+Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimkerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense) -lisäosa:
 
 ![]({{ "/images/py-robot-1.png" | absolute_url }})
 
@@ -192,6 +192,7 @@ Reset Counter After Several Increments
     Counter Value Should Be  0
     Increment Counter By  5
     Counter Value Should Be  5
+    Reset Counter
     Counter Value Should Be  0
 ```
 
