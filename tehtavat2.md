@@ -33,7 +33,7 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 
 Tee seuraavat toimenpiteet:
 
-- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion sisälle**. Kun Poetry kysyy projektin tietoja varmista, että **yhteensopiva Python-versio asetaan oikein**. Jos Poetry ehdottaa kohdassaa _Compatible Python versions_ jotain Python 2 -versiota, aseta versioksi `^3.8`. Muilla projektin tiedoilla ei ole tämän tehtävän kannalta väliä.
+- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python ^3.8`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenne Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
