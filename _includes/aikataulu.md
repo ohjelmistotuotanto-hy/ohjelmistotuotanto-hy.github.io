@@ -11,6 +11,7 @@
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[1]}}
     - [python](/tehtavat1) 
     - [java](/java/tehtavat1)
+    
 ### Viikko 2
 
 - Luento 3: {{site.luennot[3]}} [tallenne](https://youtu.be/T5dOFks48ZY)
@@ -24,6 +25,7 @@
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[2]}}
     - [python](/tehtavat2) 
     - [java](/java/tehtavat2)
+
 ### Viikko 3
 
 - Luento 5: {{site.luennot[5]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
