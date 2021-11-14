@@ -5,17 +5,12 @@ inheader: no
 permalink: /miniprojekti/
 ---
 
-## Miniprojekti
-
 ### Ajankohtaista
 
-- [Lopputoimet ja arvosteluperusteet](https://ohjelmistotuotanto-hy.github.io/miniprojektin_arvosteluperusteet/)
-- loppudemojen ajankohdat:
-  - tiistai 8.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/66777704189)
-  - torstai 10.12. klo 14-16 [zoom](https://helsinki.zoom.us/j/66777704189)
-  - perjantai 11.12. klo 14-16  [zoom](https://helsinki.zoom.us/j/66777704189)
-- jokainen ryhmä osallistuu yhteen loppudemoon
-- varaa aika [täällä](https://docs.google.com/document/d/1534y8QXwYWRYRXWyFlHMOWBHmkQPGcadN5xLbs_Mrjc/edit?usp=sharing)
+- Ilmoittautuminen on alkanut ja päättyy pe 19.11. klo 23:59. Ilmoittaudu jompaan kumpaan toteutustapaan
+  - [asiakastapaamiset zoomissa](https://study.cs.helsinki.fi/assembler/course/4cb09d94-f4e0-41e0-b379-26eb961b725f)
+  - [asiakastapaamiset kampuksella](https://study.cs.helsinki.fi/assembler/course/ed87d854-e84d-4fde-8ac3-e5fc06f1376d)
+- Koska kyse on pienryhmätyöskentelystä, oletetaan että zoomissa tapahtuvissa asiakastapaamisissa kaikki pitävät kameraa päällä, viimeistään siinä vaiheessa kun ryhmät on jaettu omiin breakout-huoneisiin
 
 ### Johdanto
 
@@ -31,7 +26,7 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-* Ryhmät muodostetaan lauantaina 14.11. "algoritmisesti", pääasiassa noudattaen [ilmoittautumisessa](https://study.cs.helsinki.fi/assembler/course/283df2a6-51e7-434f-a4b6-08514579a9ea) kerrottuja sopivia työskentelyaikoja
+* Ryhmät muodostetaan lauantaina 20.11. "algoritmisesti", pääasiassa noudattaen ilmoittautumisessa (ks. linkit ylempää) kerrottuja sopivia työskentelyaikoja
 * Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 * Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat: 
   * scrum
@@ -48,13 +43,11 @@ permalink: /miniprojekti/
     * ja jakaa muille ryhmäläisille luodun projektin id:n
   * **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
-
 ### Työn eteneminen
 
-Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. 
-Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) viimeistään sunnuntaina 22.11.
+Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) viimeistään perjantaina 26.11.
 
-#### viikko 4 (16-20.11.)
+#### viikko 4 (22-28.11.)
 
 * Ryhmä muodostuvat/muodostetaan
 * Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
@@ -64,29 +57,27 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url
   * backlogien sisällöstä enemmän [täällä](/miniprojekti#tekniset-ja-prosessiin-liittyvät-vaatimukset)
 * Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet) kannattaa lukea huolellisesti
 
-#### viikko 5 (23-29.11.)
+#### viikko 5 (29-5.12.)
 
 * Sprintin 1 katselmointi ja sprintin 2 suunnittelu
   * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 6 (30.11-6.12.)
+#### viikko 6 (6.11-12.12.)
 
 * Sprintin 2 katselmointi ja sprintin 3 suunnittelu 
   * asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 7 (7-13.12.)
+#### viikko 7 (13-13.92.)
 
 * Sprintin 3 katselmointi (eli loppudemot)
-  - tiistai 8.12. klo 12-14
-  - torstai 10.12. klo 14-16
-  - perjantai 11.12. klo 14-16 
-- jokainen ryhmä osallistuu yhteen loppudemoon
-- varaa aika [täällä](https://docs.google.com/document/d/1534y8QXwYWRYRXWyFlHMOWBHmkQPGcadN5xLbs_Mrjc/edit?usp=sharing)
-
+  - tiistai 14.12. klo 12-14
+  - keskiviikkona 15.12. klo 12-14
+  - perjantai 17.12. klo 14-16 
+- jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa
 
 ### Toteutettava ohjelmisto
 
-* [aiheen kuvaus](/speksi)
+* paljastuu ensimmäisessä asiakastapaamisessa
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -129,14 +120,14 @@ Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url
 
 Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
-* User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan [Cucumberin](/cucumber/) featureiksi
+* User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan [Cucumberin](/cucumber/) tai [Robot-frameworkin](/robot_framework/) syntaksilla
   * hyvänä käytänteenä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
 * Toteutetun koodin testikattavuuden tulee olla kohtuullinen (esim. noin 70% muiden paitsi triviaalin koodin, kuten gettereiden/settereiden osalta) 
 * Asiakas pääsee näkemään koko ajan koodin ja testien tilanteen CI-palvelusta
 * Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä
   * järkevä nimeäminen
   * järkevä/selkeä ja perusteltu arkkitehtuuri
-  * yhtenäinen koodityyli
+  * yhtenäinen koodityyli (noudattaa pylintin tai checkstylen avulla määriteltyjä sääntöjä)
 
 #### Repositorio ja README
 
@@ -150,16 +141,18 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 ### Teknologisia vihjeitä
 
 - Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
+- **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
-- Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa
 - Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _sqlite_ hyvä vaihtoehto  
   - Tikapen laskareissa käytetyn todo-sovelluksen gradle-versio osoitteessa <https://github.com/ohjelmistotuotanto-hy/tikape-todo>
-- Viikon 3 laskareista kannattaa ottaa mallia Cucumberilla tapahtuvaan storyjen testaamiseen 
+  - Sqliten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikan](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
+- Viikon 3 laskareista kannattaa ottaa mallia Robotilla/Cucumberilla tapahtuvaan storyjen testaamiseen 
 - JavaFX:llä tehtyjen sovellusten automatisoitu testaaminen on mahdollista [TestFX](https://github.com/TestFX/TestFX)-kirjaston avulla. Kirjaston dokumentaatio ei ole parhaasta päästä
   - yksinkertainen gradle+javaFX+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/fx-testing>
   - Java Swing-sovellusten Cucumberilla tapahtuva käyttöliittymätason testaus on täysi mysteeri
-- Edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja CircleCI:n kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
+- Edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja GitHub Actionsin kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
   - yksinkertainen gradle+spring+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/spring-cucumber>
+- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaa ehkä välttää kirjaston käyttöä
 
 ### Työn arvostelu
 

@@ -5,12 +5,6 @@ inheader: no
 permalink: /robot_framework/
 ---
 
-## Typoja materiaalissa
-
-{% include typo_instructions.md path="/python/robot_framework.md" %}
-
-## Robot Framework
-
 [Robot Framework](https://robotframework.org/) on user storyjen hyväksymistestauksen automatisointiin hyvin soveltuva sovelluskehys. Robot Frameworkin avulla user storyjen testit voidaan kirjoittaa asiakkaan ymmärtämässä muodossa, luonnollisella kielellä, mutta tehdä niistä kuitenkin automaattisesti suoritettavia.
 
 Vaikka Robot Framework on perinteisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Robot Frameworkin toimintaperiaatteita testaamalla yksittäistä luokkaa. Hae [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _koodi/viikko3/hello-robot_ oleva projekti.
@@ -205,3 +199,7 @@ No keyword with name 'Reset Counter' found.
 Robot Framework siis ilmoittaa, ettei avainsanalle `Reset Counter` ole toteutusta.
 
 **Toteuta seuraavaksi `CounterLibrary`-luokkaan sopiva metodi, jotta testit menevät läpi.**
+
+## Typoja materiaalissa
+
+{% include typo_instructions.md path="/python/robot_framework.md" %}

@@ -3,12 +3,16 @@ layout: home
 permalink: /
 ---
 
+{% include miniproj_ilmo.md %} 
+
 Kurssilla käsitellään ohjelmistotuotantoprojektien hallinnan, työvaiheiden ja työvälineiden perusteita. Erityinen
 painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
-## Ajankohtaista
+- [Miniprojekteihin](/miniprojekti) ilmoittautuminen on alkanut ja päättyy 19.11. klo 23:59. Ilmoittaudu jompaan kumpaan toteutustapaan
+  - [asiakastapaamiset zoomissa](https://study.cs.helsinki.fi/assembler/course/4cb09d94-f4e0-41e0-b379-26eb961b725f)
+  - [asiakastapaamiset kampuksella](https://study.cs.helsinki.fi/assembler/course/ed87d854-e84d-4fde-8ac3-e5fc06f1376d)
 
 - Kurssin pidetään keskiviikkona 22.12. klo 9-12 moodlessa
   - lisää tietoa kokeen luonteesta myöhemmin...

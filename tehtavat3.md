@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
+{% include miniproj_ilmo.md %} 
+
 {% include laskari_info.md part=3 %}
 
 Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoisia kirjastoja riippuvuudeksi. Loput tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen.

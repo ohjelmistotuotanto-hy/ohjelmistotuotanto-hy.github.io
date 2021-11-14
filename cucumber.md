@@ -5,8 +5,6 @@ inheader: no
 permalink: /cucumber/
 ---
 
-## Cucumber
-
 [Cucumber](https://cucumber.io) on user storyjen hyväksymistestauksen automatisointiin tarkoitettu kirjasto/työkalu. 
 
 Ideana on kirjoittaa storyjen testit asiakkaan ymmärtävässä muodossa, luonnollisella kielellä, mutta tehdä niistä kuitenkin automaattisesti suoritettavia. 
