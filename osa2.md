@@ -328,7 +328,7 @@ Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaa
 
 Product backlog on siis _priorisoitu lista user storyjä_. 
 
-Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1 #scrum) priorisoinnista vastaa _product owner_.  Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia. 
+Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1#scrum) priorisoinnista vastaa _product owner_.  Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia. 
 
 Priorisoinnin motivaationa on pyrkiä maksimoimaan asiakkaan kehitettävästä ohjelmistosta saama hyöty/arvo. Tärkeimmät asiat halutaan toteuttaa mahdollisimman nopeasti ja näin saada tuotteesta alustava versio markkinoille niin pian kuin mahdollista.
  
@@ -445,7 +445,7 @@ _Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/bl
 
 Backlog ei siis pysy muuttumattomana vaan elää koko ajan. Uusia storyjä tulee, olemassa olevia storyjä tarkennetaan ja pilkotaan, tarpeettomia storyjä poistetaan. Työmääräarvioita ja prioriteetteja uudelleenmääritellään.
 
-Tämä kaikki ei tietenkään tapahdu itsestään, vaan backlogia tulee aktiivisesti hoitaa (engl. backlog grooming tai backlog refinement) projektin edetessä. [Scrum guide](https://scrumguides.org/scrum-guide.html#artifacts-productbacklog) mainitsee että backlogin groomausta tulee tapahtua läpi sprintin yhteistyössä product ownerin ja kehitystiimin kesken. 
+Tämä kaikki ei tietenkään tapahdu itsestään, vaan backlogia tulee aktiivisesti hoitaa (engl. backlog grooming tai backlog refinement) projektin edetessä. [Scrum guide](https://scrumguides.org/scrum-guide.html#artifacts-productbacklog) mainitsee, että backlogin groomausta tulee tapahtua läpi sprintin yhteistyössä product ownerin ja kehitystiimin kesken. 
 
 Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleellisesti ennen jokaista uutta sprinttiä tehtävää sprintin suunnittelua. Jos backlog on huonossa kunnossa (prioriteetit miten sattuu, tärkeät storyt epämääräisessä tilassa, uusia tunnistettuja tarpeita vastaavia storyjä ei ole lisätty backlogille) sprintin suunnittelua tehtäessä, menee kaikkien aikaa hukkaan.  
 
@@ -453,7 +453,7 @@ Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleel
 
 ## User story ja epiikki
 
-Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlokin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä. 
+Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä. 
 
 Backlogin alaosissa olevat storyt taas voivat olla isoja, jopa sellaisia että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee ennen mahdollista toteuttamista jakaa pienempiin, rajatumpiin storyihin. Tämän kaltaisia isoja storyja nimitetään usein _epiikeiksi_ (engl. epic). 
 
@@ -677,7 +677,7 @@ voitaisiin jakaa kahtia, missä ensimmäisessä storyssa vasta hoidettaisiin yks
 
 #### Pattern 5: data entry methods
 
-Hyvä tapa storyen jakoon on myöskin muodostaa ensin versio, jossa on yksinkertainen käyttöliittymä ja laajentaa sitä omana storynaan. User story 
+Hyvä tapa storyjen jakoon on myöskin muodostaa ensin versio, jossa on yksinkertainen käyttöliittymä ja laajentaa sitä omana storynaan. User story 
 
 _As a user, I can search for flights between two destinations_
 
@@ -726,7 +726,7 @@ kannattaa eriyttää aikarajattu eksperimentti joka suoritetaan aiemmassa sprint
 - _Investigate credit card processing_
 - _Implement credit card processing_
 
-Aiemmin tässä osassa puhuimme [Lean-startup](http://localhost:4000/osa2#vaatimusma%CC%88a%CC%88rittely-2010-luvulla)-menetelmästä, jossa uusien ideoiden toimivuutta kokeillaan A/B-testauksella, eli ideasta toteutetaan minimal viable product (MVP) eli minimalistinen versio, joka annetaan käyttöön osalle järjestelmän käyttäjistä. Jos uusi idea vaikuttaa toimivalta, toteutetaan se kunnolla ja korvataan sillä alkuperäinen toiminnallisuus. A/B-testaus onkin idealtaan hyvin samankaltainen kuin _spike_-solution, eli A/B-testissä rakennettavan MVP-version avulla selvitetään jonkin idean toimivuus ja vasta sen jälkeen toteutetaan toiminnallisuus kokonaisessa laajuudessaan.
+Aiemmin tässä osassa puhuimme [Lean-startup](/osa2#vaatimusm%C3%A4%C3%A4rittely-2010-luvulla)-menetelmästä, jossa uusien ideoiden toimivuutta kokeillaan A/B-testauksella, eli ideasta toteutetaan minimal viable product (MVP) eli minimalistinen versio, joka annetaan käyttöön osalle järjestelmän käyttäjistä. Jos uusi idea vaikuttaa toimivalta, toteutetaan se kunnolla ja korvataan sillä alkuperäinen toiminnallisuus. A/B-testaus onkin idealtaan hyvin samankaltainen kuin _spike_-solution, eli A/B-testissä rakennettavan MVP-version avulla selvitetään jonkin idean toimivuus ja vasta sen jälkeen toteutetaan toiminnallisuus kokonaisessa laajuudessaan.
 
 User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan storyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
 
