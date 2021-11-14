@@ -64,7 +64,7 @@ Koodin katselmointi eli koodin lukeminen jonkun muun, kuin ohjelmoijan toimesta 
 
 Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, että koodista ei löydy erilaisissa "checklisteissä" lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
 
-Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/), johon tutustuttiin jo viikon 2 laskareissa.
+Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/) ja Pythonin [Pylint](https://pypi.org/project/pylint/), joihin tutustuttiin jo viikon 2 laskareissa.
 
 ### Staattinen analyysi pilvessä
 
@@ -133,7 +133,7 @@ Koodin _yhteisomistajuus_ (engl. collective code ownership) tarkoittaa periaatet
 
 Yhteisomistajuudessa on omat riskinsä: joku koodia kunnolla tuntematon voi saada huolimattomilla muutoksilla pahaa jälkeä aikaan. XP pyrkii eliminoimaan tästä aiheutuvia riskejä testaukseen liittyvillä käytänteillä, eli käytännössä automatisoiduilla regressiotesteillä.
 
-_Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrittelee koodityylin, johon kaikki ohjelmoijat sitoutuvat. Tyylillä tarkoitetaan nimeämiskäytäntöä, koodin muotoilua ja myös tiettyjä ohjelman rakenteeseen liittyviä seikkoja. Ohjelmointistandardin noudattamista voidaan kontrolloida osittain automaattisesti staattisen analyysin työkaluilla, esimerkiksi Javan Checkstyle sekä Javascript-maailman [eslint](https://eslint.org/) ja [prettier](https://prettier.io/) ovat työkaluja, joiden avulla voidaan seurata, että koodi seuraa määriteltyä ohjelmointistandardia. Eräs esimerkki suosituksi nousseesta ohjelmointistandardista on [AirBnB](https://airbnb.io/javascript/react/):n tyyliopas.  
+_Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrittelee koodityylin, johon kaikki ohjelmoijat sitoutuvat. Tyylillä tarkoitetaan nimeämiskäytäntöä, koodin muotoilua ja myös tiettyjä ohjelman rakenteeseen liittyviä seikkoja. Ohjelmointistandardin noudattamista voidaan kontrolloida osittain automaattisesti staattisen analyysin työkaluilla, esimerkiksi Javan Checkstyle, Pythonin Pylint sekä JavaScript-maailman [eslint](https://eslint.org/) ja [prettier](https://prettier.io/) ovat työkaluja, joiden avulla voidaan seurata, että koodi seuraa määriteltyä ohjelmointistandardia. Eräs esimerkki suosituksi nousseesta ohjelmointistandardista on [AirBnB](https://airbnb.io/javascript/react/):n tyyliopas.  
 
 ## Testaus
 
@@ -218,7 +218,7 @@ Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavi
 
 Tiedetään, että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
 
-Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu jUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. rspec, jest, jasmine. 
+Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu JUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. Rspec (ruby), Mocha ja Jest (JavaScript). Pythonin suosituin yksikkötestauskirjasto on ensimmäisistä laskareista tuttu unittest.
 
 Kurssilla [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
  
@@ -237,24 +237,31 @@ Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testien par
 
 Tarkastellaan esimerkkinä ensimmäisen viikon laskareista tutun _Ohtuvaraston_ metodia _otaVarastosta_. Mitä testitapauksia tulisi generoida, jotta testit olisivat kattavat?
 
-```java
-public class Varasto { 
-  private double tilavuus; 
-  private double saldo;
+```python
+class Varasto:
+    def __init__(self, tilavuus, alku_saldo = 0):
+        self.tilavuus = max(tilavuus, 10)
+        self.saldo = min(tilavuus, max(alku_saldo, 0))
 
-  public double otaVarastosta(double maara) { 
-    if (maara < 0) return 0.0;
+    def ota_varastosta(self, maara):
+        if maara < 0:
+            return 0.0
 
-    if(maara > saldo) {
-      double kaikkiMitaVoidaan = saldo; 
-      saldo = 0.0;
-      return kaikkiMitaVoidaan;
-    }
+        if maara > self.saldo:
+            kaikki_mita_voidaan = self.saldo
+            self.saldo = 0.0
 
-    saldo = saldo - maara;
-    return maara; 
-  }  
-}
+            return kaikki_mita_voidaan
+
+        if maara > self.saldo:
+            kaikki_mita_voidaan = self.saldo
+            self.saldo = 0.0
+
+            return kaikki_mita_voidaan
+            
+        self.saldo = self.saldo - maara
+
+        return maara
 ```
 
 Metodia _otaVarastosta_ testatessa testitapauksessa on huomioitava parametrin _maara_ lisäksi varaston tilanne. Varaston tilanteella on kolme "ekvivalenssiluokkaa":
@@ -276,7 +283,9 @@ _Rivikattavuudella_ (engl. line coverage) tarkoitetaan kuinka montaa prosenttia 
 
 _Haarautumakattavuudella_ (engl. branch coverage) tarkoitetaan kuinka montaa prosenttia testattavan metodin/luokan sisältävistä ehtolauseiden haaroista testit ovat käyneet läpi.
 
-Monet työkalut, esim. laskareissa käyttämämme JaCoCo mittaavat testien suorituksen yhteydessä testauskattavuuden. Muitakin kattavuuden tyyppejä on olemassa, mm. ehtokattavuus ja polkukattavuus, useat työkalut eivät niitä kuitenkaan tue.
+Monet työkalut, esim. laskareissa käyttämämme JaCoCo (Java) ja coverage (Python) mittaavat testien suorituksen yhteydessä testauskattavuuden. Muitakin kattavuuden tyyppejä on olemassa, mm. ehtokattavuus ja polkukattavuus, useat työkalut eivät niitä kuitenkaan tue.
+
+Seuraavassa esimerkki JaCoColla mitatusta rivi- ja haarautumakattavuudesta:
 
 ![]({{ "/images/3-5.png" | absolute_url }}){:height="350px" }
 
