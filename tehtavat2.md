@@ -602,7 +602,7 @@ Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla
 
 ### Yksinkertaistettu singeleton
 
-Pythonin tapauksessa periteisen singleton-suunnittelumallin mukaiset luokat tuottavat turhan monimutkaista koodia, joka on yksi syy niiden vähäiseen käyttöön. Esimerkiksi `Viitegeneraattori`-luokasta voisi yksinkertaisesti luoda olion, jota muut moduulit voivat käyttää:
+Pythonin tapauksessa perinteisen singleton-suunnittelumallin mukaiset luokat tuottavat turhan monimutkaista koodia, joka on yksi syy niiden vähäiseen käyttöön. Esimerkiksi `Viitegeneraattori`-luokasta voisi yksinkertaisesti luoda olion, jota muut moduulit voivat käyttää:
 
 ```python
 class Viitegeneraattori:
@@ -618,7 +618,7 @@ class Viitegeneraattori:
 viitegeneraattori = Viitegeneraattori()
 ```
 
-Nyt muut moduulit voivat käyttää `viitegeneraattori`-muuttujan tallennettua oliota. Tässä tilanteessa luokan tarpeen voisi ylipäätään kyseenalaistaa, koska yksinkertainen funktio ajaisi saman asian:
+Nyt muut moduulit voivat käyttää `viitegeneraattori`-muuttujaan tallennettua oliota. Tässä tilanteessa luokan tarpeen voisi ylipäätään kyseenalaistaa, koska yksinkertainen funktio ajaisi saman asian:
 
 ```python
 seuraava = 1
