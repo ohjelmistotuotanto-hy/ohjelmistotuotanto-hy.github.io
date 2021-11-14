@@ -328,7 +328,7 @@ Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaa
 
 Product backlog on siis _priorisoitu lista user storyjä_. 
 
-Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1 #scrum) priorisoinnista vastaa _product owner_.  Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia. 
+Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1#scrum) priorisoinnista vastaa _product owner_.  Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia. 
 
 Priorisoinnin motivaationa on pyrkiä maksimoimaan asiakkaan kehitettävästä ohjelmistosta saama hyöty/arvo. Tärkeimmät asiat halutaan toteuttaa mahdollisimman nopeasti ja näin saada tuotteesta alustava versio markkinoille niin pian kuin mahdollista.
  
@@ -726,7 +726,7 @@ kannattaa eriyttää aikarajattu eksperimentti joka suoritetaan aiemmassa sprint
 - _Investigate credit card processing_
 - _Implement credit card processing_
 
-Aiemmin tässä osassa puhuimme [Lean-startup](http://localhost:4000/osa2#vaatimusma%CC%88a%CC%88rittely-2010-luvulla)-menetelmästä, jossa uusien ideoiden toimivuutta kokeillaan A/B-testauksella, eli ideasta toteutetaan minimal viable product (MVP) eli minimalistinen versio, joka annetaan käyttöön osalle järjestelmän käyttäjistä. Jos uusi idea vaikuttaa toimivalta, toteutetaan se kunnolla ja korvataan sillä alkuperäinen toiminnallisuus. A/B-testaus onkin idealtaan hyvin samankaltainen kuin _spike_-solution, eli A/B-testissä rakennettavan MVP-version avulla selvitetään jonkin idean toimivuus ja vasta sen jälkeen toteutetaan toiminnallisuus kokonaisessa laajuudessaan.
+Aiemmin tässä osassa puhuimme [Lean-startup](/osa2#vaatimusm%C3%A4%C3%A4rittely-2010-luvulla)-menetelmästä, jossa uusien ideoiden toimivuutta kokeillaan A/B-testauksella, eli ideasta toteutetaan minimal viable product (MVP) eli minimalistinen versio, joka annetaan käyttöön osalle järjestelmän käyttäjistä. Jos uusi idea vaikuttaa toimivalta, toteutetaan se kunnolla ja korvataan sillä alkuperäinen toiminnallisuus. A/B-testaus onkin idealtaan hyvin samankaltainen kuin _spike_-solution, eli A/B-testissä rakennettavan MVP-version avulla selvitetään jonkin idean toimivuus ja vasta sen jälkeen toteutetaan toiminnallisuus kokonaisessa laajuudessaan.
 
 User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan storyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
 
