@@ -356,7 +356,7 @@ Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testau
 
 Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
-Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tämän takia testaajat on ideaalitilanteessa sijoitettu erillisen laatua valvovan QA-organisaation sijaan kehittäjätiimeihin, ja myös ohjelmoijat kirjoittavat testejä.
+Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tämän takia testaajat ovat ideaalitilanteessa sijoitettu erillisen laatua valvovan QA-organisaation sijaan kehittäjätiimeihin, ja myös ohjelmoijat kirjoittavat testejä.
 
 Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [build quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa. 
 
@@ -372,7 +372,7 @@ Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisia (e
 
 Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Tuotantokäytössä tapahtuva testaus on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
 
-Voimakkaasta automatisointitrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. Tutkiva testaus (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
+Voimakkaasta automatisointitrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. _Tutkiva testaus_ (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
 
 ## Test driven development 
 
@@ -419,31 +419,58 @@ Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkompone
 
 Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä", ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
 
-On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa Javalle tarkoitettuun [Mockito](https://site.mockito.org/)-kirjastoon.
+On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareiden Java-versiossa [Mockito](https://site.mockito.org/)-kirjastoon ja Python-versiossa [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirastoon.
  
-Tarkastellaan hieman Mockiton toimintalogiikkaa viikon 2 [laskareiden](/tehtavat2/) verkkokauppatehtävää esimerkkinä käyttäen.
+Tarkastellaan hieman unittest-mock:in toimintalogiikkaa viikon 2 [laskareiden](/tehtavat2/) verkkokauppatehtävää esimerkkinä käyttäen.
 
 Ostotapahtuman yhteydessä verkkokaupan tulisi veloittaa asiakkaan tililtä ostosten hinta _kutsumalla luokan pankki metodia tilisiirto_. 
 
-![]({{ "/images/3-7.png" | absolute_url }}){:height="220px" } 
+```python
+my_net_bank = Pankki()
+viitteet = Viitegeneraattori()
+kauppa = Kauppa(my_net_bank, viitteet)
 
-Tästä koodista pitäisi siis testata, että metodikutsu _kauppa.maksa("1111")_ tekee ostosten summaa vastaavan tilisiirron pankkitililtä _"1111"_ kaupan tilille. 
+kauppa.aloita_ostokset()
+kauppa.lisaa_ostos(5)
+kauppa.lisaa_ostos(7)
+
+# maksetaan ostokset, samalla pitäisi tapahtua tilisiirto
+kauppa.maksa("1111")
+```
+
+Tästä koodista pitäisi siis testata, että metodikutsu `kauppa.maksa("1111")` tekee ostosten summaa vastaavan tilisiirron pankkitililtä _"1111"_ kaupan tilille. 
 
 Miten varmistamme, että tilisiirron suorittavaa luokan _Pankki_ olion metodia on kutsuttu oikeilla parametreilla? 
 
-Mockito-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kaupan riippuvuuksista mock-oliot:
+unittest-mock-kirjastoa käyttäen tämä onnistuu seuraavasti. Luodaan testissä kaupan riippuvuuksista mock-oliot:
 
-![]({{ "/images/3-8.png" | absolute_url }}){:height="350px" } 
+```python 
+def test_kutsutaan_pankkia_oikealla_tilinumerolla_ja_summalla(self):
+    # luodaan mock-oliot
+    pankki_mock = Mock()
+    viitegeneraattori_mock = Mock(wraps=Viitegeneraattori())
 
-Pankkia edustavalle mock-oliolle on asetettu _ekspektaatio_, eli vaatimus, joka varmistaa että metodia _tilisiirto_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
+    # injektoidaan mockit kaupalle
+    kauppa = Kauppa(pankki_mock, viitegeneraattori_mock)
 
-Pääset harjoittelemaan Mockiton käyttöä viikon 4 [laskareissa](/tehtavat4/).
+    kauppa.aloita_ostokset()
+    kauppa.lisaa_ostos(5)
+    kauppa.lisaa_ostos(5)
+    kauppa.maksa("1111")
+
+    # katsotaan, että ensimmäisen ja toisen parametrin arvo on oikea
+    pankki_mock.maksa.assert_called_with("1111", 10, ANY)
+```
+
+Pankkia edustavalle mock-oliolle on asetettu metodikutsulla `assert_called_with` vaatimus, joka varmistaa että metodia _tilisiirto_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
+
+Pääset harjoittelemaan mock-kirjastojen käyttöä viikon 4 [laskareissa](/tehtavat4/).
 
 ## User storyjen testaaminen 
 
 User storyn [määritelmän](/osa2#user-story) yhteydessä mainittiin, että user storyn käsite pitää sisällään _hyväksymiskriteerit_, Mike Cohnin sanoin:
 
-_tests that convey and document details and that will be used to determine that the story is complete_
+> _tests that convey and document details and that will be used to determine that the story is complete_
 
 Esimerkiksi user storyn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksymiskriteerejä voisivat olla
 - ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
@@ -457,13 +484,13 @@ Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteu
 
 Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti suoritettavia. 
 
-Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen python-pohjainen [Robot framework](https://robotframework.org/). Käytämme kurssilla kuitenkin useita eri kieliä tukevaa [Cucumberia](https://cucumber.io/). 
+Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/), joka on käytössä kurssin Python-versossa. Kurssin Java-versiossa on käytössä [Cucumber](https://cucumber.io/)-niminen kirjasto. 
 
 Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
-ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomiota käytettävään terminologiaan, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sen sijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla. Kurssilla käytämme pääosin BDD:n nimeämiskäytäntöjä, sillä käyttämämme [Cucumber](https://cucumber.io/) on nimenomaan BDD-piirien kehittämä työkalu. 
+ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomiota käytettävään terminologiaan, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sen sijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla. Kurssin Java-versiossa käytämme pääosin BDD:n nimeämiskäytäntöjä, sillä käyttämämme [Cucumber](https://cucumber.io/) on nimenomaan BDD-piirien kehittämä työkalu. 
 
-Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin tapaan toimivia BDD-henkisiä kirjastoja, kuten Javascript-maailman [mocha](https://mochajs.org/) ja [jest](https://jestjs.io/). Seuraavaksi käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline, yksikkötestaamiseen sitä ei kannata käyttää.
+Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [Rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin tapaan toimivia BDD-henkisiä kirjastoja, kuten JavaScript-maailman [Mocha](https://mochajs.org/) ja [Jest](https://jestjs.io/). Kohta käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline, yksikkötestaamiseen sitä ei kannata käyttää.
 
 ### Cucumber
 
@@ -502,7 +529,126 @@ Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehti
 
 ![]({{ "/images/3-11a.png" | absolute_url }}){:height="500px" }
 
-Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareissa.
+Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laskareiden [Java-versiossa](/java/tehtavat3).
+
+### Robot framework
+
+Robot on toimintaperiaatteiltaan hyvin samankaltainen kuin Cucumber. Myös Robot-testit kirjoitetaan asiakkaan kielellä.
+
+User storyä _user can log in with a valid username/password-combination_ vastaavat hyväksymärkiteerit ilmaistaisiin Robotissa seuraavasti (sovelluksen komentoriviversiolle):
+
+```
+Login With Correct Credentials
+    Input Login Command
+    Input Credentials  kalle  kalle123
+    Output Should Contain  Logged in
+
+Login With Incorrect Password
+    Input Login Command
+    Input Credentials  kalle  wrong
+    Output Should Contain  Invalid username or password
+
+Login With Nonexistent Username
+    Input Login Command
+    Input Credentials  ville  wrong
+    Output Should Contain  Invalid username or password
+```
+
+Testitapausten askeleet koostuvat _avainsanoista_ sekä niille annettavista parametreistä. Esimerkissä _Input Login Command_, _Input Credentials_ ja _Output Should Contain_ ovat avainsanoja. Avainsanojen merkitys tulee määritellä, joko "yksinkertaisempien" avainsanojen avulla tai koodina. Seuraavassa avainsanojen _Input Login Command_ ja _Input Credentials_ määrittelyt:
+
+```
+Input Login Command
+    Input  login
+
+Input Credentials
+    [Arguments]  ${username}  ${password}
+    Input  ${username}
+    Input  ${password}
+    Run Application
+```
+
+Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (detaljit eivät ole nyt tärkeissä, pääset tutustumaan niihin laskareissa):
+
+```python
+class AppLibrary:
+    def __init__(self):
+        self._io = StubIO()
+        self._user_repository = UserRepository()
+        self._user_service = UserService(self._user_repository)
+
+        self._app = App(
+            self._user_service,
+            self._io
+        )
+
+    def input(self, value):
+        self._io.add_input(value)
+
+    def output_should_contain(self, value):
+        outputs = self._io.outputs
+
+        if not value in outputs:
+            raise AssertionError(
+                f"Output \"{value}\" is not in {str(outputs)}"
+            )
+
+    def run_application(self):
+        self._app.run()
+```
+
+Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten Web-sovelluksia testatessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.  
+
+Edellä olleen esimerkin Web-version hyväksymäkriteerit Robotilla määriteltynä näyttäisivät seuraavalta:
+
+```
+Login With Correct Credentials
+    Go To Login Page
+    Set Username  kalle
+    Set Password  kalle123
+    Submit Credentials
+    Login Should Succeed
+
+Login With Incorrect Password
+    Go To Login Page
+    Set Username  kalle
+    Set Password  kalle456
+    Submit Credentials
+    Login Should Fail With Message  Invalid username or password
+
+Login With Nonexistent Username
+    Go To Login Page
+    Set Username  palle
+    Set Password  kalle456
+    Submit Credentials
+    Login Should Fail With Message  Invalid username or password
+```
+
+Testien käyttämät avainsanat on määritelty seuraavasti Robotin valmiiksi määriteltyjen avainsanojen avulla:
+
+```
+Go To Login Page
+    Go To  ${LOGIN URL}
+
+Set Username
+    [Arguments]  ${username}
+    Input Text  username  ${username}
+
+Set Password
+    [Arguments]  ${password}
+    Input Password  password  ${password}
+
+Submit Credentials
+    Click Button  Login
+
+Login Should Fail With Message
+    [Arguments]  ${message}
+    Login Page Should Be Open
+    Page Should Contain  ${message}
+```
+
+Koska testien käyttämät avainsanat on määritelty käyttämällä ainoastaan Robotin valmiiksi määriteltyjä avainsanoja kuten _Input Text_, _Click Button_ ja _Page Should Contain_, ei testien testien toimintaan saattaminen edellytä muuta kuin muutaman rivin konfiguraatiota.
+
+Robot-frameworkia pääset käyttämään viikon 3 laskarien [Python-versiossa](/tehtavat3).
 
 ## Ohjelmiston integraatio
 
@@ -526,7 +672,7 @@ Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio tehdä
  
 Kerran päivässä tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Extreme programming -yhteisö kehitti 90-luvun loppupuolella ideaa vielä pidemmälle ja päätyi edelleen tihentämään integraatiosykliä. Näin syntyi _jatkuva integraatio_ eli [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) (CI).
 
-Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat "build skriptit" (kuten _build.gradle_-tiedosto) pidetään keskitetyssä versionhallintarepositoriossa. 
+Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat "build skriptit" (kuten _build.gradle_- tai _pyproject.toml_-tiedosto) pidetään keskitetyssä versionhallintarepositoriossa. 
 
 Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia,  CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa sille testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua **välittömästi**. 
 
@@ -540,7 +686,7 @@ Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä inte
 
 Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta täysin vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
 
-Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat hyväksymistestit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat end to end -testit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_. 
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. suuren kuormituksen sietoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa. 
 

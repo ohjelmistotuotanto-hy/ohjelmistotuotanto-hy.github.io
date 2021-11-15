@@ -97,7 +97,7 @@ Kaupan toimintaperiaate on yksinkertainen:
 ```python
 my_net_bank = Pankki()
 viitteet = Viitegeneraattori()
-kauppa = Kauppa(my_net_nank, viitteet)
+kauppa = Kauppa(my_net_bank, viitteet)
 
 kauppa.aloita_ostokset()
 kauppa.lisaa_ostos(5)
