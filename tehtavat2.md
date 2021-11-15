@@ -35,7 +35,7 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 
 Tee seuraavat toimenpiteet:
 
-- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python ^3.8`, jotta projektin Python-version vaatimus asetetaan oikein.
+- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.8"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenne Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
@@ -602,7 +602,7 @@ Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla
 
 ### Yksinkertaistettu singeleton
 
-Pythonin tapauksessa periteisen singleton-suunnittelumallin mukaiset luokat tuottavat turhan monimutkaista koodia, joka on yksi syy niiden vähäiseen käyttöön. Esimerkiksi `Viitegeneraattori`-luokasta voisi yksinkertaisesti luoda olion, jota muut moduulit voivat käyttää:
+Pythonin tapauksessa perinteisen singleton-suunnittelumallin mukaiset luokat tuottavat turhan monimutkaista koodia, joka on yksi syy niiden vähäiseen käyttöön. Esimerkiksi `Viitegeneraattori`-luokasta voisi yksinkertaisesti luoda olion, jota muut moduulit voivat käyttää:
 
 ```python
 class Viitegeneraattori:
@@ -618,7 +618,7 @@ class Viitegeneraattori:
 viitegeneraattori = Viitegeneraattori()
 ```
 
-Nyt muut moduulit voivat käyttää `viitegeneraattori`-muuttujan tallennettua oliota. Tässä tilanteessa luokan tarpeen voisi ylipäätään kyseenalaistaa, koska yksinkertainen funktio ajaisi saman asian:
+Nyt muut moduulit voivat käyttää `viitegeneraattori`-muuttujaan tallennettua oliota. Tässä tilanteessa luokan tarpeen voisi ylipäätään kyseenalaistaa, koska yksinkertainen funktio ajaisi saman asian:
 
 ```python
 seuraava = 1
