@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat7a/
 ---
 
+{% include poetry_fix.md %}
+
 {% include laskari_info.md part=7 %}
 
 ### Typoja tai epäselvyyksiä tehtävissä?

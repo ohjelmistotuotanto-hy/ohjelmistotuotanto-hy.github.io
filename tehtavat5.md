@@ -5,7 +5,10 @@ inheader: no
 permalink: /tehtavat5a/
 ---
 
+{% include poetry_fix.md %}
+
 {% include laskari_info.md part=5 %}
+
 Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 
 Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/python/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
