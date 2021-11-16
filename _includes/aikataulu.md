@@ -29,7 +29,7 @@
 ### Viikko 3
 
 - Luento 5: {{site.luennot[5]}} [tallenne](https://youtu.be/XY7BtG-i4ms)
-- Luento 6: {{site.luennot[6]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
+- Luento 6: {{site.luennot[6]}} [tallenne](https://youtu.be/4CN0cLfz2Ds)
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
