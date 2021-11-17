@@ -325,7 +325,7 @@ public class Tuote  {
 }
 ```
 
-Tuote siis kuvaa yhden tuotteen esim. _Valion plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
+Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
 **Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
 
@@ -486,7 +486,7 @@ Lisää ja commitoi muutokset.
 
 Lisää ja commitoi muutokset.
 
-#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun tuotteiden hintojen summa
+#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa
 
 Lisää ja commitoi muutokset.
 
@@ -494,7 +494,7 @@ Lisää ja commitoi muutokset.
 
 Lisää ja commitoi muutokset.
 
-#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun 2 kertaa tuotteen hinta
+#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta
 
 Lisää ja commitoi muutokset.
 
@@ -549,7 +549,7 @@ Lisää ja commitoi muutokset.
 
 Lisää ja commitoi muutokset.
 
-#### 13. jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
+#### 13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
 
 Lisää ja commitoi muutokset.
 #### 14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä
