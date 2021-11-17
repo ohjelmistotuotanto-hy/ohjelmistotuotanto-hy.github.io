@@ -9,9 +9,9 @@ permalink: /tehtavat5a/
 
 {% include laskari_info.md part=5 %}
 
-Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
+Tehtävissä 1-2 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
 
-Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/python/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
+Tehtävät 3-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/python/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
 
 Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
@@ -25,36 +25,7 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. git: tägit [versionhallinta]
-
-Tutustutaan tässä tehtävässä Gitin tageihin:
-
-> Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
-
-Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags')
-
-Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
-
-- Tee tägi nimellä tagi1 (lightweight tag riittää)
-- Tee kolme committia (eli 3 kertaa muutos + add + commit)
-- Tee tägi nimellä tagi2
-- Katso `gitk`-komennolla miltä historiasi näyttää
-- Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
-  - Varmista, että tagin jälkeisiä muutoksia ei näy
-- Palaa nykyaikaan
-  - Tämä onnistuu komennolla `git checkout main`
-- Lisää tägi _edelliseen_ committiin
-  - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
-  - Joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
-  - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
-- Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
-- Katso komennolla <code>gitk</code> miltä historia näyttää
-
-Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
-
-Varmista, että tagit siirtyvät GitHubiin.
-
-### 2. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
+### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
 Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
@@ -84,7 +55,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 
 - Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
 
-### 3. Git: commitin muutosten kumoaminen [versionhallinta]
+### 2. Git: commitin muutosten kumoaminen [versionhallinta]
 
 - Huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
   - HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
@@ -93,6 +64,59 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
   - Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
 - Vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
+### 3. Tenniksen pisteenlaskun refaktorointi
+
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+
+Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
+
+Esim. käytettäessä pisteenlaskentaa seuraavasti:
+
+```python
+game = TennisGame("player1", "player2")
+
+print(game.get_score())
+
+game.won_point("player1")
+print(game.get_score())
+
+game.won_point("player1")
+print(game.get_score())
+
+game.won_point("player2")
+print(game.get_score())
+
+game.won_point("player1")
+print(game.get_score())
+
+game.won_point("player1")
+print(game.get_score())
+```
+
+tulostuu
+
+```
+Love-All
+Fifteen-Love
+Thirty-Love
+Thirty-Fifteen
+Forty-Fifteen
+Win for player1
+```
+
+Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _player1_ voittaa ensimmäiset 2 palloa, _player2_ kolmannen pallon ja _player1_ loput 2 palloa.
+
+Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
+
+Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää ["taikanumeroita"](https://en.wikipedia.org/wiki/Magic_number_(programming)) ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
+
+Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
+
+Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
+
+Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
+
+Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 ### 4. Laskin ja komento-oliot
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/laskin_, löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. Jos tarvitte, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva tkinter-tutoriaali.

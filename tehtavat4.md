@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 4
 inheader: no
-permalink: /tehtavat4a/
+permalink: /tehtavat4/
 ---
 
 {% include poetry_fix.md %}
@@ -10,7 +10,6 @@ permalink: /tehtavat4a/
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. Tehtävissä 5 ja 6 refaktoroidaan sisäiseltä laadultaan heikossa kunnossa olevaa koodia.
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -23,12 +22,12 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
-Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](/python/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka `Kauppa` riippui `Pankki`-, `Varasto`- ja `Viitegeneraattori`-luokista. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
+Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka `Kauppa` riippui `Pankki`-, `Varasto`- ja `Viitegeneraattori`-luokista. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
 
 Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `Kauppa` tulisi testata? Tuleeko kaupan testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
 
 
-Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/python/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
+Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
 
 Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien avulla voi myös varmistaa, että testattava metodi tai funktio kutsuu olioiden metodeja asiaankuuluvalla tavalla.
 
@@ -41,7 +40,7 @@ Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unitte
 <Mock id='4568521696'>
 ```
 
-Anna syötteet terminaaliin yksi kerrallaan. Enter-painikkeen painallus suorittaa annetun syötteen. Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niillä kaikki mahdolliset toteutukset. Mitä tällä tarkoitetaan? Kokeillaan:
+Anna syötteet terminaaliin yksi kerrallaan. Enter-painikkeen painallus suorittaa annetun syötteen. Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niiden kaikki mahdolliset attribuutit ja metodit on toteutettu. Mitä tällä tarkoitetaan? Kokeillaan:
 
 ```python
 >>> mock.foo
@@ -74,7 +73,7 @@ Attribuutin `side_effect` arvo pitää olla kutsuttavissa, kuten funktio, metodi
 'Matti'
 ```
 
-Kuten edellä jo mainittiin, mockeille voi määritellä toteutuksien lisäksi oletuksia. Voimme esimerkiksi olettaa, että `Mock`-oliota on kutsuttu:
+Mockeille voidaan määritellä toteutuksien lisäksi oletuksia. Voimme esimerkiksi olettaa, että `Mock`-oliota on kutsuttu:
 
 ```python
 >>> mock.foo.bar.assert_called()
@@ -90,7 +89,7 @@ Voimme siis kutsua tarkasteltavalle metodille [assert_called](https://docs.pytho
 
 Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
 
-Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/mock-demo_ oleva projekti. Kyseessä on yksinkertaistettu versio verkkokauppaesimerkistä.
+**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/mock-demo_ oleva projekti.** Kyseessä on yksinkertaistettu versio verkkokauppaesimerkistä.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -140,7 +139,7 @@ kauppa = Kauppa(pankki_mock, viitegeneraattori_mock)
 
 `Mock`-luokan [konstruktorin](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock) `wraps`-parametrin avulla voimme määritellä, minkä olion `Mock`-olio toteuttaa. Tämä mahdollistaa sen, ettei esimerkiksi `uusi`-metodille tarvitse määritellä toteutusta, vaan voimme käyttää sen oikeaa toteutusta.
 
-Eli nyt viitegeneraattori on olio, jonka metodi `uusi` palauttaa aina arvon 1. 
+Eli nyt viitegeneraattori on olio, jonka metodi `uusi` palauttaa arvot 1, 2, 3... 
 
 Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin `Mock`-olion metodia `maksa` on kutsuttu oikeilla parametreilla. Kolmanteen parametriin, eli viitenumeroon ei kiinnitetä huomiota:
 
@@ -185,7 +184,7 @@ Voit tutusta aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](http
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/maksukortti-mock_ oleva projekti.
 
-Tässä tehtävässä on tarkoitus testata ja täydennetään luokkaa `Kassapaate`. **`Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
+Tässä tehtävässä on tarkoitus testata ja täydennetään luokkaa `Kassapaate`. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
 Projektissa on valmiina kaksi testiä:
 
@@ -234,7 +233,7 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
-Testataan [viikolla 2](/python/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
+Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
 
 - Jos et tehnyt tehtävää, sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/verkkokauppa_.
 
@@ -319,7 +318,254 @@ Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosen
 
 Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esimerkiksi verkkokauppaesimerkissä luokka `Pankki`, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
 
-### 5. IntJoukon testaus ja siistiminen
+### 5. Ostoskori TDD-tekniikalla
+
+Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemämme verkkokauppa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava: 
+
+![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+
+Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
+
+```python
+class Tuote:
+  def __init__(self, nimi: str, hinta: int):
+      self._nimi = nimi
+      self._hinta = hinta
+      self._saldo = 0
+
+  def hinta(self):
+    return self._hinta
+
+  def nimi(self):
+    return self._nimi
+
+  def __repr__(self):
+      return f"{self._nimi} hinta {self._hinta} euroa"
+```
+Tuote siis kuvaa yhden tuotteen esim. _Valion plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
+
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+
+```python
+from tuote import Tuote
+
+class Ostos:
+    def __init__(self, tuote: Tuote):
+        self.tuote = tuote
+        self._lukumaara = 1
+
+    def tuotteen_nimi(self):
+        return self.tuote.nimi()
+
+    def muuta_lukumaaraa(self, muutos: int):
+        self._lukumaara += muutos
+        if self._lukumaara<0:
+            self._lukumaara = 0
+
+    def lukumaara(self):
+        return self._lukumaara
+
+    def hinta(self):
+        return self._lukumaara * self.tuote.hinta()
+```
+
+Tehtävänäsi on ohjelmoida luokka ostoskori. 
+
+Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
+
+```python
+from tuote import Tuote
+from ostos import Ostos
+
+class Ostoskori:
+    def __init__(self):
+        pass
+        # ostoskori tallettaa Ostos-oliota, yhden per korissa oleva Tuote
+
+    def tavaroita_korissa(self):
+        pass
+        # kertoo korissa olevien tavaroiden lukumäärän
+        # eli jos koriin lisätty 2 kpl tuotetta "maito", 
+        #   tulee metodin palauttaa 2 
+        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", 
+        #   tulee metodin palauttaa 2 
+
+    def hinta(self):
+        return 0
+        # kertoo korissa olevien ostosten yhteenlasketun hinnan
+
+    def lisaa_tuote(self, lisattava: Tuote):
+        # lisää tuotteen
+        pass
+
+    def poista_tuote(self, poistettava: Tuote):
+        # poistaa tuotteen
+        pass
+
+    def tyhjenna(self):
+        pass
+        # tyhjentää ostoskorin
+
+    def ostokset(self):
+        pass
+        # palauttaa listan jossa on korissa olevat ostos-oliot
+        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse 
+        #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
+```
+
+**Kerrataan vielä** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
+
+![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+
+Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
+
+Hae koodipohja [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tdd-ostoskori_
+
+**Ohjelmoi nyt ostoskori käyttäen [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikkaa.** Oikeaoppinen TDD etenee seuraavasti:
+
+- Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
+- Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
+- Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
+- Jatketaan askeleesta 1
+
+**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä *kaikki* testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
+
+Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
+
+*Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti*
+
+#### 1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.
+
+Tehtäväpohjassa on yksi valmis testi
+
+```python
+class TestOstoskori(unittest.TestCase):
+    def setUp(self):
+        self.kori = Ostoskori()
+
+    # step 1
+    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
+        self.assertEqual(self.kori.hinta(), 0)
+```
+
+Laajenna testiä siten että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
+
+Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
+
+#### 2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.
+
+**Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
+
+```python
+class TestOstoskori(unittest.TestCase):
+    def setUp(self):
+        self.kori = Ostoskori()
+
+    # step 1
+    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
+        self.assertEqual(self.kori.hinta(), 0)
+        # ...
+
+    # step 2
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_tavara(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+
+        # ...
+```
+
+**Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
+
+Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
+
+#### 3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.
+
+Lisää ja commitoi muutokset.
+
+#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
+
+Lisää ja commitoi muutokset.
+
+#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun tuotteiden hintojen summa
+
+Lisää ja commitoi muutokset.
+
+#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
+
+Lisää ja commitoi muutokset.
+
+#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun 2 kertaa tuotteen hinta
+
+Lisää ja commitoi muutokset.
+
+#### 8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+
+tässä testataan ostoskorin metodia `ostokset`:
+
+```python
+    # step 8
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
+        maito = new Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+ 
+        ostokset = self.kori.ostokset()
+ 
+        # testaa että metodin palauttamin listan pituus 1
+```
+
+Lisää ja commitoi muutokset.
+
+#### 9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1
+
+Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
+
+```python
+    # step 9
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+ 
+        ostos = self.kori.ostokset()[0]
+ 
+        # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
+```
+
+Lisää ja commitoi muutokset.
+
+#### 10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta
+
+Lisää ja commitoi muutokset.
+
+#### 11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+
+Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
+
+Lisää ja commitoi muutokset.
+
+#### 12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen jolla sama nimi kuin tuotteella ja lukumäärä 2
+
+Lisää ja commitoi muutokset.
+
+
+#### 13. jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
+
+Lisää ja commitoi muutokset.
+
+#### 14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä
+
+tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
+
+Lisää ja commitoi muutokset.
+
+
+#### 15. Metodi tyhjenna tyhjentää korin
+
+Lisää ja commitoi muutokset.
+
+Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu. Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
+
+Lisää ja commitoi mahdolliset muutokset.
+### 6. IntJoukon testaus ja siistiminen
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
 
@@ -334,58 +580,33 @@ Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 
 **HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
 
-### 6. Tenniksen pisteenlaskun refaktorointi
+### 7. git: tägit [versionhallinta]
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+Tutustutaan tässä tehtävässä Gitin tageihin:
 
-Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
+> Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
 
-Esim. käytettäessä pisteenlaskentaa seuraavasti:
+Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags')
 
-```python
-game = TennisGame("player1", "player2")
+Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 
-print(game.get_score())
+- Tee tägi nimellä tagi1 (lightweight tag riittää)
+- Tee kolme committia (eli 3 kertaa muutos + add + commit)
+- Tee tägi nimellä tagi2
+- Katso `gitk`-komennolla miltä historiasi näyttää
+- Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
+  - Varmista, että tagin jälkeisiä muutoksia ei näy
+- Palaa nykyaikaan
+  - Tämä onnistuu komennolla `git checkout main`
+- Lisää tägi _edelliseen_ committiin
+  - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
+  - Joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
+  - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
+- Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
+- Katso komennolla <code>gitk</code> miltä historia näyttää
 
-game.won_point("player1")
-print(game.get_score())
+Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-game.won_point("player1")
-print(game.get_score())
-
-game.won_point("player2")
-print(game.get_score())
-
-game.won_point("player1")
-print(game.get_score())
-
-game.won_point("player1")
-print(game.get_score())
-```
-
-tulostuu
-
-```
-Love-All
-Fifteen-Love
-Thirty-Love
-Thirty-Fifteen
-Forty-Fifteen
-Win for player1
-```
-
-Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _player1_ voittaa ensimmäiset 2 palloa, _player2_ kolmannen pallon ja _player1_ loput 2 palloa.
-
-Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
-
-Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää ["taikanumeroita"](https://en.wikipedia.org/wiki/Magic_number_(programming)) ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
-
-Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
-
-Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
-
-Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
-
-Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
+Varmista, että tagit siirtyvät GitHubiin.
 
 {% include submission_instructions.md %}

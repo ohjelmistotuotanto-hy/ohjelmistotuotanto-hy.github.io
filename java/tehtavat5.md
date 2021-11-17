@@ -7,9 +7,9 @@ permalink: /java/tehtavat5/
 
 {% include laskari_info.md part=5 %}
 
-Tehtävissä 1-3 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
+Tehtävissä 1 ja 2 jatketaan gitin harjoittelua. Tehtävä 2 ei näy palautuksissa mitenkään.
 
-Tehtävät 4 ja 5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
+Tehtävät 3-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
 
 Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
@@ -54,7 +54,7 @@ Varmista, että tagit siirtyvät GitHubiin:
 
 ![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
 
-### 2. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
+### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
 Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
@@ -83,7 +83,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 
 * Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
 
-### 3. git: commitin muutosten kumoaminen [versionhallinta]
+### 2. git: commitin muutosten kumoaminen [versionhallinta]
 
 * huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
   * HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
@@ -92,6 +92,61 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
   * huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
 * vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
+### 3. Tenniksen pisteenlaskun refaktorointi
+
+[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+
+Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code>, jossa parametrina on pallon voittanut pelaaja.
+
+Esim. käytettäessä pisteenlaskentaa seuraavasti: 
+
+``` java
+public static void main(String[] args) {
+    TennisGame game = new TennisGame("player1", "player2");
+
+    System.out.println(game.getScore());
+
+    game.wonPoint("player1");
+    System.out.println(game.getScore());
+
+    game.wonPoint("player1");
+    System.out.println(game.getScore());
+
+    game.wonPoint("player2");
+    System.out.println(game.getScore());
+
+    game.wonPoint("player1");
+    System.out.println(game.getScore());
+
+    game.wonPoint("player1");
+    System.out.println(game.getScore());
+}
+```
+
+tulostuu
+
+``` java
+Love-All
+Fifteen-Love
+Thirty-Love
+Thirty-Fifteen
+Forty-Fifteen
+Win for player1
+```
+
+Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _player1_ voittaa ensimmäiset 2 palloa, _player2_ kolmannen pallon ja _player1_ loput 2 palloa. 
+
+Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta. 
+
+Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää "taikanumeroita" ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
+
+Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
+
+Jos haluat käyttää jotain muuta kieltä kuin Javaa, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
+
+Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
+
+Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 ### 4. Laskin ja komento-oliot
 
 [Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
