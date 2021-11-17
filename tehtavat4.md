@@ -320,7 +320,7 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 5. Ostoskori TDD-tekniikalla
 
-Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemämme verkkokauppa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava: 
+Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava: 
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -344,7 +344,7 @@ class Tuote:
 ```
 Tuote siis kuvaa yhden tuotteen esim. _Valion plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
 
 ```python
 from tuote import Tuote
@@ -369,7 +369,7 @@ class Ostos:
         return self._lukumaara * self.tuote.hinta()
 ```
 
-Tehtävänäsi on ohjelmoida luokka ostoskori. 
+Tehtävänäsi on ohjelmoida luokka `Ostoskori`. 
 
 Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
 
@@ -385,7 +385,7 @@ class Ostoskori:
     def tavaroita_korissa(self):
         pass
         # kertoo korissa olevien tavaroiden lukumäärän
-        # eli jos koriin lisätty 2 kpl tuotetta "maito", 
+        # jos koriin lisätty 2 kpl tuotetta "maito", 
         #   tulee metodin palauttaa 2 
         # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", 
         #   tulee metodin palauttaa 2 
@@ -413,7 +413,7 @@ class Ostoskori:
         #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
 ```
 
-**Kerrataan vielä** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
+**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -432,7 +432,7 @@ Hae koodipohja [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemisto
 
 Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
 
-*Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti*
+*Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti.*
 
 #### 1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.
 

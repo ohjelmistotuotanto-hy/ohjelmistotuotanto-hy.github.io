@@ -280,7 +280,7 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 ### 5. Ostoskori TDD-tekniikalla
 
 
-Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemämme verkkokauppa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
+Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -327,7 +327,7 @@ public class Tuote  {
 
 Tuote siis kuvaa yhden tuotteen esim. _Valion plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
 
 ``` java
 public class Ostos {
@@ -376,14 +376,16 @@ public class Ostos {
     }
 }
 ```
-Tehtävänäsi on siis ohjelmoida luokka ostoskori. Ostoskorin API:n eli metodien rajapinnan tulee näyttää seuraavalta (metodeille on lisätty returnit jotta kääntäjä ei valittaisi koodista):
+Tehtävänäsi on ohjelmoida luokka `Ostoskori`. 
+
+Ostoskorin API:n eli metodien rajapinnan tulee näyttää seuraavalta (metodeille on lisätty returnit jotta kääntäjä ei valittaisi koodista):
 
 ``` java
 public class Ostoskori {
  
     public int tavaroitaKorissa() {
         // kertoo korissa olevien tavaroiden lukumäärän
-        // eli jos koriin lisätty 2 kpl tuotetta "maito", 
+        // jos koriin lisätty 2 kpl tuotetta "maito", 
         //   tulee metodin palauttaa 2 
         // jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", 
         //   tulee metodin palauttaa 2   
@@ -417,7 +419,7 @@ public class Ostoskori {
 }
 ```
 
-**Kerrataan vielä** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
+**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaaTuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -436,13 +438,9 @@ Hae koodipohja [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistoss
 
 Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
 
-**Tee koodin sisältävästä hakemistosta git-repositorio**
-
-Gitignoroi hakemisto target
-
 **Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi** 
 
-**Lisää ja commitoi muutokset jokaisen vaiheen jälkeen, anna kuvaava commit-viesti**
+Lisää ja commitoi muutokset jokaisen vaiheen jälkeen GitHubiin, anna kuvaava commit-viesti.
 
 #### 1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.
 
@@ -468,15 +466,15 @@ Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
     // step 2
     @Test
     public void yhdenTuotteenLisaamisenJalkeenKorissaYksiTuote() {
-        Tuote karjala = new Tuote("Karjala", 3);
+        Tuote maito = new Tuote("maito", 3);
  
-        kori.lisaaTuote(karjala);
+        kori.lisaaTuote(maito);
  
         // ...
     }
 ```
 
-**Täsmennys:** Vaikka metodin lisaaTuote parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion joka "tietää" mistä tuotteesta on kysymys.
+**Täsmennys:** Vaikka metodin lisaaTuote parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
 
 Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
 
@@ -484,7 +482,7 @@ Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
 
 Lisää ja commitoi muutokset.
 
-#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tuotetta
+#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
 
 Lisää ja commitoi muutokset.
 
@@ -492,7 +490,7 @@ Lisää ja commitoi muutokset.
 
 Lisää ja commitoi muutokset.
 
-#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tuotetta
+#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
 
 Lisää ja commitoi muutokset.
 
@@ -510,7 +508,7 @@ tässä testataan ostoskorin metodia ostokset():
     public void yhdenTuotteenLisaamisenJalkeenKorissaYksiOstosOlio() {
         kori.lisaaTuote(tuote1);
  
-        ArrayList<Ostos> ostokset = kori.ostokset();
+        List<Ostos> ostokset = kori.ostokset();
  
         // testaa että metodin palauttamin listan pituus 1
     }
@@ -526,7 +524,8 @@ Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
     // step 9
     @Test
     public void yhdenTuotteenLisaamisenKorissaYksiOstosOlioJollaOikeaTuotteenNimiJaMaara() {
-        kori.lisaaTuote(karhu);
+        Tuote maito = new Tuote("maito", 3)
+        kori.lisaaTuote(maito);
  
         Ostos ostos = kori.ostokset().get(0);
  
@@ -542,7 +541,7 @@ Lisää ja commitoi muutokset.
 
 #### 11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
 
-eli jos korissa on jo ostos "karhu" ja koriin lisätään sama tuote uudelleen, tulee tämän jälkeen korissa olla edelleen vain yksi ostos "karhu", lukumäärän tulee kuitenkin kasvaa kahteen.
+eli jos korissa on jo ostos "maito" ja koriin lisätään sama tuote uudelleen, tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
 
 Lisää ja commitoi muutokset.
 
