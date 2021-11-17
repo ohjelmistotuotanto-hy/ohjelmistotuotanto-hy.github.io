@@ -535,7 +535,7 @@ Cucumberiin ja web-sovellusten testaamiseen tutustutaan tarkemmin viikon 3 laska
 
 Robot on toimintaperiaatteiltaan hyvin samankaltainen kuin Cucumber. Myös Robot-testit kirjoitetaan asiakkaan kielellä.
 
-User storyä _user can log in with a valid username/password-combination_ vastaavat hyväksymärkiteerit ilmaistaisiin Robotissa seuraavasti (sovelluksen komentoriviversiolle):
+User storya _user can log in with a valid username/password-combination_ vastaavat hyväksymäkriteerit ilmaistaisiin Robotissa seuraavasti (sovelluksen komentoriviversiolle):
 
 ```
 Login With Correct Credentials
@@ -567,7 +567,7 @@ Input Credentials
     Run Application
 ```
 
-Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (detaljit eivät ole nyt tärkeissä, pääset tutustumaan niihin laskareissa):
+Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (detaljit eivät ole nyt tärkeitä, pääset tutustumaan niihin laskareissa):
 
 ```python
 class AppLibrary:
@@ -596,7 +596,7 @@ class AppLibrary:
         self._app.run()
 ```
 
-Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten Web-sovelluksia testatessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.  
+Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten Web-sovelluksia testattaessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.  
 
 Edellä olleen esimerkin Web-version hyväksymäkriteerit Robotilla määriteltynä näyttäisivät seuraavalta:
 
@@ -662,7 +662,7 @@ Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä ku
 
 ### Daily build ja smoke test
 
-90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostumaan päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolessa välissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel ja Windows 95 -tiimien menestysten ansiosta.
+90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolivälissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel ja Windows 95 -tiimien menestysten ansiosta.
 
 Smoke testillä tarkoitetaan kohtuullisen yksinkertaista järjestelmätason testiä, joka kuitenkin testaa järjestelmän kaikkia arkkitehtuurillisia tasoja (käyttöliittymää, sovelluslogiikkaa, tietokantaa), ja havaitsee jos jotain on pahasti pielessä. Smoke test ei siis kata kovin paljoa sovelluksen toiminnallisuudesta, mutta kuitenkin riittävästi havaitakseen jos sovellus hajoaa perustavanlaatuisella tavalla, esimerkiksi jos sovelluslogiikan ja tietokannan välille syntyy epäyhteensopivuus, joka estää kokonaan tietokantayhteyksien muodostamisen.
 
@@ -692,7 +692,7 @@ Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaihees
 
 Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä kovimmassa nosteessa oleva SaaS-palveluna eli pilvessä toimiva CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaithtoehtoja ovat  [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
 
-GitHub Actionsia, CirclCI:tä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin.
+GitHub Actionsia, CirclCI:tä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa, on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin.
 
 ### Jatkuvan integraation määritelmä
 
