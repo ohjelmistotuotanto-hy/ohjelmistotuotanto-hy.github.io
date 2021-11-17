@@ -93,7 +93,10 @@
     - [python](/tehtavat7) 
     - [java](/java/tehtavat7)
 - Miniprojekti
-  - Loppudemot (jokainen ryhmä osallistuu toiseen demoista)
+  - Loppudemot zoomissa
+    - ti 14.12. klo 12-14
+    - ke 15.12. klo 12-14
+    - pe 17.12. klo 12-14
 
 ### Viikko 8
 

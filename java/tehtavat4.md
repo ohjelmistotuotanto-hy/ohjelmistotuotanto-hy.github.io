@@ -279,9 +279,295 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 5. Ostoskori TDD-tekniikalla
 
-_tehtävän määrittely ei valmis..._
 
-### 5. IntJoukon testaus ja siistiminen
+Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemämme verkkokauppa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
+
+![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+
+Luokka Tuote on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo:
+
+``` java
+public class Tuote  {
+ 
+    private String nimi;
+    private int hinta;
+    private int saldo;
+ 
+    public Tuote(String nimi, int hinta) {
+        this.nimi = nimi;
+        this.hinta = hinta;
+    }
+ 
+    public void setHinta(int hinta) {
+        this.hinta = hinta;
+    }
+ 
+    public int getHinta() {
+        return hinta;
+    }
+ 
+    public String getNimi() {
+        return nimi;
+    }
+ 
+    public int getSaldo() {
+        return saldo;
+    }
+ 
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+ 
+    @Override
+    public String toString() {
+        return nimi + " " + hinta + " euroa";
+    }
+}
+```
+
+Tuote siis kuvaa yhden tuotteen esim. _Valion plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
+
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+
+``` java
+public class Ostos {
+ 
+    private int lkm;
+    private Tuote tuote;
+ 
+    public Ostos(Tuote tuote) {
+        this.lkm = 1;
+        this.tuote = tuote;
+    }
+ 
+    public int hinta() {
+        return lkm * tuote.getHinta();
+    }
+ 
+    public int lukumaara() {
+        return lkm;
+    }
+ 
+    public String tuotteenNimi() {
+        return tuote.getNimi();
+    }
+ 
+    public void muutaLukumaaraa(int muutos) {
+        lkm += muutos;
+        if ( lkm<0 ) {
+            lkm = 0;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return this.tuote.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+    
+        Ostos other = (Ostos) obj;
+
+        return this.tuote.equals(other.tuote);
+    }
+}
+```
+Tehtävänäsi on siis ohjelmoida luokka ostoskori. Ostoskorin API:n eli metodien rajapinnan tulee näyttää seuraavalta (metodeille on lisätty returnit jotta kääntäjä ei valittaisi koodista):
+
+``` java
+public class Ostoskori {
+ 
+    public int tavaroitaKorissa() {
+        // kertoo korissa olevien tavaroiden lukumäärän
+        // eli jos koriin lisätty 2 kpl tuotetta "maito", 
+        //   tulee metodin palauttaa 2 
+        // jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", 
+        //   tulee metodin palauttaa 2   
+
+        return -1;
+    }
+ 
+    public int hinta() {
+        // kertoo korissa olevien tuotteiden yhteenlasketun hinnan
+ 
+        return -1;
+    }
+ 
+    public void lisaaTuote(Tuote lisattava) {
+        // lisää tuotteen
+    }
+ 
+    public void poista(Tuote poistettava) {
+        // poistaa tuotteen
+    }
+ 
+    public List<Ostos> ostokset() {
+        // palauttaa listan jossa on korissa olevat ostokset
+ 
+        return null;
+    }
+ 
+    public void tyhjenna() {
+        // tyhjentää korin
+    }
+}
+```
+
+**Kerrataan vielä** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
+
+![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+
+Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
+
+Hae koodipohja [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _koodi/viikko4/TddOstoskori_
+
+**Ohjelmoi nyt ostoskori käyttäen [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikkaa.** Oikeaoppinen TDD etenee seuraavasti:
+
+- Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
+- Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
+- Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
+- Jatketaan askeleesta 1
+
+**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä *kaikki* testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
+
+Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
+
+**Tee koodin sisältävästä hakemistosta git-repositorio**
+
+Gitignoroi hakemisto target
+
+**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi** 
+
+**Lisää ja commitoi muutokset jokaisen vaiheen jälkeen, anna kuvaava commit-viesti**
+
+#### 1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.
+
+``` java
+    // step 1
+    @Test
+    public void ostoskorinHintaJaTavaroidenMaaraAlussa() { 
+        assertEquals(0, kori.hinta());
+ 
+        // ...
+    }
+```
+
+Laajenna testiä siten että se testaa myös tavaroiden määrän (metodin `tavaroitaKorissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
+
+Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
+
+#### 2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.
+
+**Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
+
+``` java
+    // step 2
+    @Test
+    public void yhdenTuotteenLisaamisenJalkeenKorissaYksiTuote() {
+        Tuote karjala = new Tuote("Karjala", 3);
+ 
+        kori.lisaaTuote(karjala);
+ 
+        // ...
+    }
+```
+
+**Täsmennys:** Vaikka metodin lisaaTuote parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion joka "tietää" mistä tuotteesta on kysymys.
+
+Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
+
+#### 3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.
+
+Lisää ja commitoi muutokset.
+
+#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tuotetta
+
+Lisää ja commitoi muutokset.
+
+#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun tuotteiden hintojen summa
+
+Lisää ja commitoi muutokset.
+
+#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tuotetta
+
+Lisää ja commitoi muutokset.
+
+#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kun 2 kertaa tuotteen hinta
+
+Lisää ja commitoi muutokset.
+
+#### 8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+
+tässä testataan ostoskorin metodia ostokset():
+
+``` java
+    // step 8
+    @Test
+    public void yhdenTuotteenLisaamisenJalkeenKorissaYksiOstosOlio() {
+        kori.lisaaTuote(tuote1);
+ 
+        ArrayList<Ostos> ostokset = kori.ostokset();
+ 
+        // testaa että metodin palauttamin listan pituus 1
+    }
+```
+
+Lisää ja commitoi muutokset.
+
+#### 9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1
+
+Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
+
+``` java
+    // step 9
+    @Test
+    public void yhdenTuotteenLisaamisenKorissaYksiOstosOlioJollaOikeaTuotteenNimiJaMaara() {
+        kori.lisaaTuote(karhu);
+ 
+        Ostos ostos = kori.ostokset().get(0);
+ 
+        // testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
+    } 
+```
+
+Lisää ja commitoi muutokset.
+
+#### 10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta
+
+Lisää ja commitoi muutokset.
+
+#### 11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+
+eli jos korissa on jo ostos "karhu" ja koriin lisätään sama tuote uudelleen, tulee tämän jälkeen korissa olla edelleen vain yksi ostos "karhu", lukumäärän tulee kuitenkin kasvaa kahteen.
+
+Lisää ja commitoi muutokset.
+
+#### 12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen jolla sama nimi kuin tuotteella ja lukumäärä 2
+
+Lisää ja commitoi muutokset.
+
+#### 13. jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
+
+Lisää ja commitoi muutokset.
+#### 14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä
+
+tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
+
+Lisää ja commitoi muutokset.
+
+#### 15. Metodi tyhjenna tyhjentää korin
+
+Lisää ja commitoi muutokset.
+
+Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu. Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän. Jos luokassasi on ylimääräisiä oliomuuttujia, poista ne. Varmista koko ajan testien avulla ettet riko mitään. 
+
+Lisää ja commitoi mahdolliset muutokset.
+
+### 6. IntJoukon testaus ja siistiminen
 
 [Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
 
@@ -296,5 +582,35 @@ Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 
 *HUOM* suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen! 
 
+### 7. git: tägit [versionhallinta]
+
+Tutustutaan tässä tehtävässä Gitin tageihin:
+
+> Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
+
+Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit skipata kohdat 'signed tags' ja 'verifying tags')
+
+Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
+
+* tee tägi nimellä tagi1 (lightweight tag riittää)
+* tee kolme committia (eli 3 kertaa muutos + add + commit)
+* tee tägi nimellä tagi2
+* katso <code>gitk</code>-komennolla miltä historiasi näyttää
+* palaa tagi1:n aikaan, eli anna komento <code>git checkout tagi1</code>
+  * varmista, että tagin jälkeisiä muutoksia ei näy
+* palaa nykyaikaan
+  * tämä onnistuu komennolla <code>git checkout main</code>
+* lisää tägi _edelliseen_ committiin
+  * operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
+  * joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
+  * tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
+* kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
+* katso komennolla <code>gitk</code> miltä historia näyttää
+
+Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
+
+Varmista, että tagit siirtyvät GitHubiin:
+
+![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
 
 {% include submission_instructions.md %}

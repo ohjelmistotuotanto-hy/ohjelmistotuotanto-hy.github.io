@@ -71,8 +71,8 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 * Sprintin 3 katselmointi (eli loppudemot)
   - tiistai 14.12. klo 12-14
-  - keskiviikkona 15.12. klo 12-14
-  - perjantai 17.12. klo 14-16 
+  - keskiviikko 15.12. klo 12-14
+  - perjantai 17.12. klo 12-14 
 - jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa
 
 ### Toteutettava ohjelmisto

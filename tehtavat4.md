@@ -444,7 +444,7 @@ class TestOstoskori(unittest.TestCase):
         self.kori = Ostoskori()
 
     # step 1
-    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
+    def test_ostoskorin_hinta_ja_tavaroiden_maara_alussa(self):
         self.assertEqual(self.kori.hinta(), 0)
 ```
 

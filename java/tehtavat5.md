@@ -23,37 +23,6 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. git: tägit [versionhallinta]
-
-Tutustutaan tässä tehtävässä Gitin tageihin:
-
-> Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
-
-Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit skipata kohdat 'signed tags' ja 'verifying tags')
-
-Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
-
-* tee tägi nimellä tagi1 (lightweight tag riittää)
-* tee kolme committia (eli 3 kertaa muutos + add + commit)
-* tee tägi nimellä tagi2
-* katso <code>gitk</code>-komennolla miltä historiasi näyttää
-* palaa tagi1:n aikaan, eli anna komento <code>git checkout tagi1</code>
-  * varmista, että tagin jälkeisiä muutoksia ei näy
-* palaa nykyaikaan
-  * tämä onnistuu komennolla <code>git checkout main</code>
-* lisää tägi _edelliseen_ committiin
-  * operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
-  * joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
-  * tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
-* kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
-* katso komennolla <code>gitk</code> miltä historia näyttää
-
-Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
-
-Varmista, että tagit siirtyvät GitHubiin:
-
-![](https://github.com/mluukkai/ohjelmistotuotanto2018/raw/main/images/viikko4-1.png)
-
 ### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
 Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
