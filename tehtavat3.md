@@ -375,6 +375,9 @@ Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäks
 
 Kun Chrome-ajuri on asennettu onnistuneesti, suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
+Joillain Windows 10 / WSL2 -käyttäjillä on ollut ongelmia Seleniumin ja Chromiumin kanssa. Seuraava ohje on tuonut ratkaisun https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/
+
+
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
 
 ```
