@@ -574,7 +574,7 @@ Register With Nonmatching Password And Password Confirmation
 # ...
 ```
 
-**HUOM** tee yksi testitapaus kerrallaan. Testitapausta koodatessa kannattaa suorittaa ainoastaan työn alla olevaa testitapausta [täällä](/tehtavat3/#robot-framework--testien-debuggaaminen) olevan ohjeen mukaan, ja kannattanee asettaa `headlesschrome`:n sijaan `chrome` muuttujan `BROWSER` arvkosi jotta näet miten testitapaus etenee.
+**HUOM** tee yksi testitapaus kerrallaan. Testitapausta koodatessa kannattaa suorittaa ainoastaan työn alla olevaa testitapausta [täällä](/tehtavat3/#robot-framework--testien-debuggaaminen) olevan ohjeen mukaan, ja kannattanee asettaa `headlesschrome`:n sijaan `chrome` muuttujan `BROWSER` arvoksi jotta näet miten testitapaus etenee.
 
 Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 5_, eli:
 
