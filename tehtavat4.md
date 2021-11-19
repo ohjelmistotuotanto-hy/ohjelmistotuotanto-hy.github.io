@@ -322,6 +322,8 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava: 
 
+**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tdd-ostoskori oleva projekti.**
+
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
 Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
