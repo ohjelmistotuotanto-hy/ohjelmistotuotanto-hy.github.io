@@ -818,10 +818,18 @@ Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtola
 
 Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytettävien uutisten listaan asettaa feature toggle, jonka avulla tietyin perustein valituille käyttäjille näytettäisiinkin uuden algoritmin perusteella generoitu lista uutisia:
 
-![]({{ "/images/3-17.png" | absolute_url }}){:height="180px" }
+```python
+def recommended_news_generator(user): 
+    if is_in_canary_release(user):
+        return experimental_recommendation_algorithm(user)
+    else:
+        return recommendation_algoritm(user)
+```
 
-Canary releaset eivät ole feature togglejen ainoa sovellus, niitä käytetään
-yleisesti myös eliminoimaan tarve pitkäikäisille feature brancheille. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
+Osassa 2 [Lean-startup](osa2/#vaatimusmäärittely-2010-luvulla)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature-togglejen avulla.
+
+Canary releaset ja A/B-testaus eivät ole feature togglejen ainoa sovellus, niitä käytetään
+yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
 
 Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, on ominaisuus mahdollista julkaista feature togglen avulla esim. kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
 
@@ -933,7 +941,7 @@ Oma näkemykseni testaukseen on hieman poikkeava ja jopa jossain määrin vastak
 
 Cohenin pyramidi-idea on jo aika vanha, ja läheskään kaikki eivät ole siitä samaa mieltä. Mielipiteitä löytyy [laidasta laitaan](https://laredoute.io/blog/the-traditional-test-pyramid-pitfalls-and-anti-patterns/) ja varmasti onkin niin, että yhtä totuutta asiasta ei ole. Kuten jo aiemminkin totesin, väärälle "tasolle" väärään aikaan tehdyt automatisoidut testit ovat suuri riski, ja koska järjestelmätason testien tekeminen on todella työlästä, piilee niissä aina hukkainvestoinnin vaara.
 
-Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahdollisimman usein tapahtuva tuotantoonvienti. Se taas edellyttää hyvin rakennettua deployment pipelineä, kohtuullista testauksen automatisointia ja helpottuu oleellisesti jos feature branchien sijaan käytetään trunk based development -periaatetta. Suosittelen lämpimästi että tuotantoonvienti tapahtuu niin usein kuin mahdollista, jopa useita kertoja päivässä. Tämä takaa yleensä sen, että pahoja integrointiongelmia ei synny, ja sovellukseen syntyvät regressiot havaitaan ja pystytään korjaamaan mahdollisimman nopeasti.
+Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahdollisimman usein tapahtuva tuotantoonvienti. Se taas edellyttää hyvin rakennettua deployment pipelineä, riittävän kattavaa testauksen automatisointia ja helpottuu oleellisesti jos feature branchien sijaan käytetään trunk based development -periaatetta. Suosittelen lämpimästi että tuotantoonvienti tapahtuu niin usein kuin mahdollista, jopa useita kertoja päivässä. Tämä takaa yleensä sen, että pahoja integrointiongelmia ei synny, ja sovellukseen syntyvät regressiot havaitaan ja pystytään korjaamaan mahdollisimman nopeasti.
 
 ## Tieteellinen evidenssi
 
