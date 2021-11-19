@@ -21,7 +21,7 @@
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{moniv-dl[2]}}
+  - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[2]}}
     - [python](/tehtavat2) 
     - [java](/java/tehtavat2)
@@ -32,7 +32,7 @@
 - Luento 6: {{site.luennot[6]}} [tallenne](https://youtu.be/4CN0cLfz2Ds)
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{moniv-dl[3]}}
+  - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[3]}}
     - [python](/tehtavat3) 
     - [java](/java/tehtavat3)
@@ -47,7 +47,7 @@
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{moniv-dl[4]}}
+  - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[4]}}
     - [python](/tehtavat4) 
     - [java](/java/tehtavat4)
@@ -62,7 +62,7 @@
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{moniv-dl[5]}}
+  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[5]}}
     - [python](/tehtavat5) 
     - [java](/java/tehtavat5)
@@ -75,7 +75,7 @@
   - Vierailuluento Juha Viljanen Smartly <a href="https://www.youtube.com/watch?v=3ZRPtoU_nKQ&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/smartly.pdf">kalvot</a>
   - Vierailuluento Niko Laitinen Nitor <a href="https://www.youtube.com/watch?v=dhDusAPpjos&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/nitor.pdf">kalvot</a>
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{moniv-dl[6]}}
+  - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.moniv-dl[6]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
     - [python](/tehtavat6) 
     - [java](/java/tehtavat6)
@@ -88,7 +88,7 @@
   - Vierailuluento Marko Klemetti Eficode <a href="https://www.youtube.com/watch?v=FipoHtP2IJo&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/eficode.pdf">kalvot</a>
   - Vierailuluento Hannu Kokko Elisa <a href="https://www.youtube.com/watch?v=kpBlLR10oVs&ab_channel=moocfi">video</a> <a href="https://github.com/ohjelmistotuotanto-hy/slides/blob/master/vierailuluennot/elisa.pdf">kalvot</a>
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{moniv-dl[7]}}
+  - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.moniv-dl[7]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
     - [python](/tehtavat7) 
     - [java](/java/tehtavat7)
@@ -101,6 +101,7 @@
 ### Viikko 8
 
 - Koe ke 22.12. klo 9-12 moodlessa
+
 ### Ohjauskalenteri
 
 {% include paja_calendar.md %}
