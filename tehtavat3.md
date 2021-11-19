@@ -375,7 +375,7 @@ Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäks
 
 Kun Chrome-ajuri on asennettu onnistuneesti, **avaa uusi komentorivi-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Huomaa, että web-sovelluksen tulee olla käynnissä toisessa komentorivi-ikkunassa. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
-**HUOM** Windows 10 / WSL2 -käyttäjänä saatat törmätä seuraavaan virheilmoitukseen:
+**HUOM:** Windows 10 / WSL2 -käyttäjänä saatat törmätä seuraavaan virheilmoitukseen:
 ```
 Suite setup failed:
 WebDriverException: Message: unknown error: Chrome failed to start: crashed.
@@ -383,7 +383,7 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
   (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
 ```
 
-Seuraava ohje saattaa tuoda ratkaisun https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/
+[Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
 
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
 
