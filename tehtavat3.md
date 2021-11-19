@@ -376,6 +376,7 @@ Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäks
 Kun Chrome-ajuri on asennettu onnistuneesti, **avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Huomaa, että web-sovelluksen tulee olla käynnissä toisessa terminaali-ikkunassa. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
 **HUOM:** Windows 10 / WSL2 -käyttäjänä saatat törmätä seuraavaan virheilmoitukseen:
+
 ```
 Suite setup failed:
 WebDriverException: Message: unknown error: Chrome failed to start: crashed.
@@ -384,6 +385,14 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
 ```
 
 [Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
+
+**HUOM2:** seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
+
+```
+[ ERROR ] Error in file '/home/mluukkai/2021_Ohtu/ohtu_tehtavat/viikko3/web-login-robot/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f459e7c4280>: Failed to establish a new connection: [Errno 111] Connection refused'))
+```
+
+Testit siis olettavat, että sovellus on käynnissä. Käynnistä siis sovellus yhteen terminaaliin, avaa uusi ja suorita testit siellä.
 
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
 
