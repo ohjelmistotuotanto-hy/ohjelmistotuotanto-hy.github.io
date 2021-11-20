@@ -1,8 +1,5 @@
 <div style="color:red; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #E8E8E8;">
 
-<h2> Ilmoittautuminen miniprojekteihin</h2>
-
-Ilmoittautuminen miniprojekteihin on alkanut ja päätty pe 19.11. klo 23:59, ilmoittaudu heti 
-<a href='/miniprojekti'> täällä</a>
+Ilmoittautuminen miniprojekteihin on päättynyt. Löydät tiedon aloitustilaisuudestasi ilmoittautumisjärjestelmästä <a href='https://study.cs.helsinki.fi/assembler/user'>https://study.cs.helsinki.fi/assembler/user</a>, joka toisin bugaa pahasti ja ei toimi kaikilla. Kaikille on lähtenyt myös email tapaamisajasta.
 
 </div>

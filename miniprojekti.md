@@ -7,10 +7,9 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ilmoittautuminen on alkanut ja päättyy pe 19.11. klo 23:59. Ilmoittaudu jompaan kumpaan toteutustapaan
-  - [asiakastapaamiset zoomissa](https://study.cs.helsinki.fi/assembler/course/4cb09d94-f4e0-41e0-b379-26eb961b725f)
-  - [asiakastapaamiset kampuksella](https://study.cs.helsinki.fi/assembler/course/ed87d854-e84d-4fde-8ac3-e5fc06f1376d)
+- Ilmoittautuminen on päättynyt. Löydät tiedon aloitustilaisuudestasi ilmoittautumisjärjestelmästä <a href='https://study.cs.helsinki.fi/assembler/user'>https://study.cs.helsinki.fi/assembler/user</a>, joka toisin bugaa pahasti ja ei toimi kaikilla. Kaikille on lähtenyt myös email tapaamisajasta.
 - Koska kyse on pienryhmätyöskentelystä, oletetaan että zoomissa tapahtuvissa asiakastapaamisissa kaikki pitävät kameraa päällä, viimeistään siinä vaiheessa kun ryhmät on jaettu omiin breakout-huoneisiin
+- Jos ilmoittautuminen unohtui, ota yhteyttä ASAP
 
 ### Johdanto
 
