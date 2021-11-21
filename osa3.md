@@ -54,7 +54,7 @@ Ketterässä ohjelmistotuotannossa vaatimusten validointi tapahtuu iteraation p�
 
 Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata, vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
 
-Jos asiakas havaitsee, että sovellus ei ole etenemässä haluttuun suuntaan, eli kirjatut vaatimukset eivät vastannet todellista tarvetta, tarve on muuttunut tai vaatimuksia on tulkittu väärin, on seuraavassa iteraatiossa mahdollista ottaa korjausliike.
+Jos asiakas havaitsee, että sovellus ei ole etenemässä haluttuun suuntaan, eli kirjatut vaatimukset eivät vastanneet todellista tarvetta, tarve on muuttunut tai vaatimuksia on tulkittu väärin, on seuraavassa iteraatiossa mahdollista ottaa korjausliike.
 
 On ilmeistä, että ketterän mallin käyttämä vaatimusten validointitapa toimii paremmin tuotekehitystä muistuttavissa tilanteissa, joissa ollaan tekemässä tuotetta, joka on vaikea määritellä tarkkaan etukäteen.
 
@@ -419,7 +419,7 @@ Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkompone
 
 Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä", ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
 
-On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareiden Java-versiossa [Mockito](https://site.mockito.org/)-kirjastoon ja Python-versiossa [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirastoon.
+On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareiden Java-versiossa [Mockito](https://site.mockito.org/)-kirjastoon ja Python-versiossa [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon.
  
 Tarkastellaan hieman unittest-mock:in toimintalogiikkaa viikon 2 [laskareiden](/tehtavat2/) verkkokauppatehtävää esimerkkinä käyttäen.
 
