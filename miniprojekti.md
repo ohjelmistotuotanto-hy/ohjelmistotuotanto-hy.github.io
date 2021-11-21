@@ -20,7 +20,7 @@ permalink: /miniprojekti/
   - to 25.11. klo 10.00 B119
   - to 25.11. klo 14.00 C129
   - pe 26.11. klo 12.00 https://helsinki.zoom.us/j/64333550857?pwd=WUJsSm8zTDdiS2x1TDZqN1ptNFR2dz09
-  - pe 26.11. klo 16:00 https://helsinki.zoom.us/j/65757592693?pwd=dGN2alhYTm9rNEJOREo5VEd4Y3N1UT09
+  - pe 26.11. klo 14:00 https://helsinki.zoom.us/j/65757592693?pwd=dGN2alhYTm9rNEJOREo5VEd4Y3N1UT09
 
 ### Johdanto
 
