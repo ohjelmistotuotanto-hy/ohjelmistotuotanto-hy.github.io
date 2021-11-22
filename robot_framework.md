@@ -105,8 +105,8 @@ class CounterLibrary:
     def __init__(self):
         self._counter = Counter()
 
-    _some_helper_method(self):
-      pass
+    def _some_helper_method(self):
+        pass
 
     # ...
 ```
@@ -153,7 +153,7 @@ Increase Counter Three Times
 
 Testihakemiston <i>increase_counter.robot</i>-tiedoston `*** Settings ***`-osiosta löytyy rivi `Resource resource.robot`. Mistä on kyse?
 
-Useammissa testeissä udelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssi-tiedostot voi tuoda muihin tiedostoihin `Resource`-asetuksen kautta:
+Useammissa testeissä uudelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssitiedostot voi tuoda muihin tiedostoihin `Resource`-asetuksen kautta:
 
 ```
 *** Settings ***
