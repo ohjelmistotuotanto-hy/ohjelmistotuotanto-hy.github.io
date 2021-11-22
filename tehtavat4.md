@@ -512,7 +512,7 @@ tässä testataan ostoskorin metodia `ostokset`:
  
         ostokset = self.kori.ostokset()
  
-        # testaa että metodin palauttamin listan pituus 1
+        # testaa että metodin palauttaman listan pituus 1
 ```
 
 Lisää ja commitoi muutokset.
