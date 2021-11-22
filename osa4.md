@@ -520,7 +520,7 @@ class StubIO:
 
 Parannellun laskimen rakenne luokkakaaviona:
 
-![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/main/images/os-1.png)
+![](https://github.com/mluukkai/ohjelmistotuotanto2017/raw/master/images/os-1.png)
 
 Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaamme asiaan hetken kuluttua.
 
