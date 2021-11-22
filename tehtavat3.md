@@ -203,8 +203,19 @@ Register With Valid Username And Long Enough Password Containing Only Letters
 # ...
 ```
 
-- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja <a href="https://regexr.com/5fslc">^[a-z]+$</a>
-- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista. Vinkki: [säännölliset lausekkeet](https://docs.python.org/3/library/re.html#module-re) ja <a href="https://regexr.com/5fsll">[^a-z]</a>
+- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä. Vinkki: [säännölliset lausekkeet](https://www.tutorialspoint.com/python/python_reg_expressions.htm) ja <a href="https://regexr.com/5fslc">^[a-z]+$</a>
+- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista. Vinkki: [säännölliset lausekkeet](https://www.tutorialspoint.com/python/python_reg_expressions.htm) ja <a href="https://regexr.com/5fsll">[^a-z]</a>
+
+Säännöllisissä lausekkeissa voi hyödyntää Pythonin _re_-moduulia seuraavasti:
+
+```python
+import re
+
+if re.match("^[a-z]+$", "kalle"):
+  print("Ok")
+else:
+  print("Virheellinen")
+```
 
 Tee testitapauksista suoritettavia ja **täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
