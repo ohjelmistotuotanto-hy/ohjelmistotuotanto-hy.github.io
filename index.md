@@ -19,8 +19,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - tiistain luentojen [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - linkit luentojen tallenteisiin löytyvät aikataulusta
 - Paja
-  - Maanantaisin (8.11. alkaen) klo 14-16 kampuksella BK107-luokassa
-  - Torstaisin (4.11. alkaen) klo 14-16 [Zoomissa]( https://helsinki.zoom.us/j/61671791492?pwd=aW9pczlJZ2RjNXhJVDdjbUU3akd1UT09)
+  - Maanantaisin klo 14-16 kampuksella BK107-luokassa
+  - Torstaisin klo 14-16 [Zoomissa]( https://helsinki.zoom.us/j/61671791492?pwd=aW9pczlJZ2RjNXhJVDdjbUU3akd1UT09)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
