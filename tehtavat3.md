@@ -606,6 +606,8 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 
 **Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
+**Muista käynnistää web-palvelin uudestaan, kun teet muutoksia koodiin!** Sammuta palvelin näppäilemällä `Ctrl+C` terminaali-ikkunaan, jossa web-pavelinta suoritetaan. Käynnistä tämän jälkeen palvelin uudelleen komennolla `python3 src/index.py`.
+
 ### 11. Web-sovelluksen testaaminen osa 4
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset _register.robot_-tiedostoon:
