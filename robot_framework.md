@@ -105,8 +105,8 @@ class CounterLibrary:
     def __init__(self):
         self._counter = Counter()
 
-    _some_helper_method(self):
-      pass
+    def _some_helper_method(self):
+        pass
 
     # ...
 ```
