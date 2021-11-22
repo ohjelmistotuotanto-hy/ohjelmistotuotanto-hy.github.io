@@ -507,7 +507,7 @@ tässä testataan ostoskorin metodia `ostokset`:
 ```python
     # step 8
     def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
-        maito = new Tuote("Maito", 3)
+        maito = Tuote("Maito", 3)
         self.kori.lisaa_tuote(maito)
  
         ostokset = self.kori.ostokset()
