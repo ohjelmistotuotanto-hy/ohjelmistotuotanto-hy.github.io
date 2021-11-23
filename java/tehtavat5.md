@@ -63,7 +63,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 
 ### 3. Tenniksen pisteenlaskun refaktorointi
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+[Kurssirepositorion]({{{site.java_exercise_repo_url}}) hakemistossa _koodi/viikko5/Tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi <code>void getScore()</code> kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia  <code>void wonPoint(String player)</code>, jossa parametrina on pallon voittanut pelaaja.
 
@@ -118,7 +118,7 @@ Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävä�
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
+[Kurssirepositorion]({{{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/LaskinFXNN_, löytyy hieman modifioitu versio syksyn 2016 Ohjelmoinnin jatkokurssin viikon 5 [tehtävästä](https://www.cs.helsinki.fi/group/java/s16-materiaali/viikko12/#193laskin).
 
 Koodista on kolme eri versiota, _LaskinFX8_, jonka pitäisi toimia Java8:llä (myös cubbli-linuxeilla, ks. README), _LaskinFX11_, jonka pitäisi toimia Java11:lla ja _LaskinSwing_, jonka pitäisi toimia kaikilla versiolla.
 
@@ -165,7 +165,7 @@ public void handle(Event event) {
 
 Versiossa _LaskinSwing_ metodi näyttää hieman erilaiselta, sillä se käyttää FX:n sijaan _Swing_-käyttöliittymäkirjastoa.
 
-Refaktoroi koodi iffittömäksi kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](https://ohjelmistotuotanto-hy.github.io/osa4#laskin-ja-komento-olio-viikko-5) käyttäen.
+Refaktoroi koodi iffittömäksi kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](https://ohjelmistotuotanto-hy.github.io/java/osa4#laskin-ja-komento-olio-viikko-5) käyttäen.
 
 Tässä tehtävässä ei tarvitse vielä toteuttaa undo-komennon toiminnallisuutta!
 

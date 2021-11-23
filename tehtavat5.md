@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 5
 inheader: no
-permalink: /tehtavat5a/
+permalink: /tehtavat5/
 ---
 
 {% include poetry_fix.md %}
@@ -66,7 +66,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 
 ### 3. Tenniksen pisteenlaskun refaktorointi
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko5/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
 
