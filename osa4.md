@@ -106,7 +106,7 @@ Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien pii
 
 Arkkitehtuurityyleistä varmasti tunnetuin ja eniten käytetty on _kerrosarkkitehtuuri_ (engl. layered architecture), jossa pyrkimyksenä on jakaa sovellus käsitteellisiin kerroksiin, joissa kukin kerros suorittaa oman "abstraktiotason" tehtäväänsä käyttäen ainoastaan sen alapuolella olevan kerroksen palveluja.
 
-Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä ja tämän alapuolella sovelluslogiikasta vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen tai verkon yli tapahtuvaan kommunikaatioon.
+Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä (kuvassa presentation layer) ja tämän alapuolella sovelluslogiikasta (kuvassa business layer) vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen (kuvassa presentation layer ja database layer) tai verkon yli tapahtuvaan kommunikaatioon.
 
 ![]({{ "/images/4-1.png" | absolute_url }}){:height="350px" }
 
@@ -122,17 +122,19 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
 
 Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app).
 
-Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu pakkauksiin:
+Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
-![]({{ "/images/4-2.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/4-15.png" | absolute_url }}){:height="390px" }
 
 Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/materiaali#pakkauskaavio):
 
-![]({{ "/images/4-1b.png" | absolute_url }}){:height="200px" }
+![]({{ "/images/4-16.png" | absolute_url }}){:height="400px" }
 
-Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_.
+Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_. 
 
 Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
+
+Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entities_-olioita. Vaikka kyseinen pakkaus kuuluu loogisesti ajatelleen tallennuspalveluita ylempään "bisneslogiikkakerrokseen", ohjelmakoodin tasolla alempana oleva tallennuskerros on riippuvainen pakkauksesta sillä se käsittelee pakkauksen luokkien koodia.
 
 ### Arkkitehtuurin kuvaamisesta
 
@@ -143,6 +145,10 @@ Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hi
 ![]({{ "/images/4-4.png" | absolute_url }}){:height="450px" }
 
 UML:n sijaan arkkitehtuurin kuvaamiseen käytetään kuitenkin useimmiten epäformaaleja laatikko/nuoli-kaavioita.
+
+Seuraavassa esimerkki oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämästä arkkitehtuurikuvauksesta:
+
+![]({{ "/images/arkkit3.png" | absolute_url }}){:height="450px" }
 
 Riippumatta arkkitehtuurin dokumentointitavasta, arkkitehtuurikuvaus kannattaa tehdä useasta _eri näkökulmasta_, sillä eri näkökulmat palvelevat erilaisia tarpeita. Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn aikana käytäviä keskusteluja eri sidosryhmien kanssa. Detaljoidummat kuvaukset taas toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa.
 
@@ -206,7 +212,7 @@ Kaikki viestien välitys tapahtuu siis viestinvälityspalvelun kautta, eli palve
 
 Viestien lähetys on lähettäjän kannalta _asynkronista_ eli palvelu lähettää viestin, jatkaa se heti koodissaan eteenpäin siitä huolimatta onko viesti välitetty sen tilanneille palveluille.
 
-Asynkronisten viestien (joita kutsutaan usein myös _eventeiksi_) välitykseen perustuvaa arkkitehtuureja kutsutaan myös _event-driven_-arkkitehtuureiksi. Kaikki event-driven-arkkitehtuurit eivät suinkaan ole mikropalveluarkkitehtuureja, esim. Tkinter-kirjaston avulla toteutettu käyttöliittymä kommunikoi sovelluksen kanssa eventtien avulla.
+Asynkronisten viestien (joita kutsutaan usein myös _eventeiksi_) välitykseen perustuvaa arkkitehtuureja kutsutaan myös _event-driven_-arkkitehtuureiksi. Kaikki event-driven-arkkitehtuurit eivät suinkaan ole mikropalveluarkkitehtuureja, esim. Pythonin Tkinter-kirjaston avulla toteutettu käyttöliittymä kommunikoi sovelluksen kanssa eventtien avulla.
 
 #### Mikropalveluiden haasteita
 
@@ -260,7 +266,7 @@ Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luuran
 >
 > A walking skeleton, is permanent code, built with production coding habits, regression tests, and is intended to grow with the system.
 
-Eli heti projektin alussa, mielellään jo ensimmäisessä sprintissä on tarkoitus toteuttaa suunnitellun arkkitehtuurin rungon sisältävä _walking skeleton_, joka sisältää jo kaikkia arkkitehtuurin peruskomponentteja ja kerroksia vastaavat tynkäkomponentit sekä niiden välisen kommunikaation.
+Eli heti projektin alussa, mielellään jo ensimmäisessä sprintissä on tarkoitus toteuttaa suunnitellun arkkitehtuurin rungon sisältävä _walking skeleton_, joka sisältää jo rungon kaikista arkkitehtuurin peruskomponentteista ja kerroksia vastaavat tynkäkomponentit sekä niiden välisen kommunikaation.
 
 Tätä luurankoa sitten kasvatetaan pikkuhiljaa projektin edetessä, kun sovelluksen toiminnallisuus kasvaa.
 
@@ -331,7 +337,7 @@ Ohjelmoinnin peruskurssilla _kapselointi_ (engl. encapsulation) määriteltiin m
 
 > Tapaa ohjelmoida olion toteutuksen yksityiskohdat luokkamäärittelyn sisään – piiloon olion käyttäjältä – kutsutaan kapseloinniksi. Olion käyttäjän ei tarvitse tietää mitään olioiden sisäisestä toiminnasta.
 
-Määritelmä ei ole nykyisellä kurssilla sanatarkkaan sama, mutta aloitteleva ohjelmoija assosioi kapseloinnin nykyäänkin seuraavaan periaatteeseen: _oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit_
+Määritelmä ei ole nykyisellä kurssilla sanatarkkaan sama, mutta aloitteleva ohjelmoija assosioi kapseloinnin nykyäänkin seuraavaan periaatteeseen: _oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit_. Javalla ohjelmonnissa periaate oli hyvin korostuneesti käytössä, Pythonissa vähemmän, vaikkakin asiaa käsitellään myös [Ohjelmoinnin jatkokurssin nykyisessä versiossa](https://ohjelmointi-21.mooc.fi/osa-9/3-kapselointi).
 
 Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
@@ -416,7 +422,7 @@ Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja kuvaa
 
 #### Koheesio luokkatasolla
 
-Luokkatason koheesiossa pyrkimyksenä on, että luokan _vastuulla_ on vain yksi asia, tämä tunnetaan myös nimellä [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle)-periaate (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_.
+Luokkatason koheesiossa pyrkimyksenä on, että luokan _vastuulla_ on vain yksi asia, tämä tunnetaan myös nimellä [single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle) -periaate (SRP). Robert Martin määrittelee, että luokalla on yksi vastuu _jos sillä on vain yksi syy muuttua_.
 
 Kurssin ensimmäisissä laskareissa tarkasteltiin yksinkertaista laskinta:
 
@@ -542,6 +548,8 @@ Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli joko rajap
 
 - Program to an interface, not to an implementation
 - Depend on abstractions, not on concrete implementation
+
+Toisin kuin Javassa ja monessa muussa stattisesti tyypitetyssä kielessä, ei Pythonissa ole selkeää rajapinnan tai abstraktin luokan käsitettä. Sama ajattelu voidaan laajentaa myös Pythoniin, olettamalla että rajapinnalla tarkoitetaan ainoastaan tietoa siitä minkälaisia metodeja riippuvuutena käytettävällä luokalla on.
 
 Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien toteutukset esimerkiksi konstruktorin, tai metodikutsun kautta. Olemme tehneet näin kurssilla usein, mm. Verkkokaupan konkreettiset riippuvuudet Varastoon, Pankkiin ja Viitegeneraattoriin korvattiin luokan konstruktorin kautta annetuilla olioilla. Riippuvuuksien injektointi -suunnittelumalli toimi usein apuvälineenä konkreettisen riippuvuuksien eliminoinnissa.
 
