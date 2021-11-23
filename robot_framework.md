@@ -56,7 +56,7 @@ Increase Counter Once
     Counter Value Should Be  1
 ```
 
-Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimkerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense) -lisäosa:
+Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [Robot Framework Intellisense](https://marketplace.visualstudio.com/items?itemName=TomiTurtiainen.rf-intellisense) -lisäosa:
 
 ![]({{ "/images/py-robot-1.png" | absolute_url }})
 
