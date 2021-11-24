@@ -11,7 +11,6 @@ permalink: /miniprojekti/
 - Koska kyse on pienryhmätyöskentelystä, oletetaan että zoomissa tapahtuvissa asiakastapaamisissa kaikki pitävät kameraa päällä, viimeistään siinä vaiheessa kun ryhmät on jaettu omiin breakout-huoneisiin
 - Jos ilmoittautuminen unohtui, ota yhteyttä ASAP
 - Aloitustilaisuudet 
-  - ke 24.11. klo 16.00 https://helsinki.zoom.us/j/64011094275?pwd=UURUaHlmV0s1bkEwQkxrbHBRdGE1Zz09
   - to 25.11. klo 10.00 B119
   - to 25.11. klo 14.00 C129
   - pe 26.11. klo 12.00 https://helsinki.zoom.us/j/64333550857?pwd=WUJsSm8zTDdiS2x1TDZqN1ptNFR2dz09
