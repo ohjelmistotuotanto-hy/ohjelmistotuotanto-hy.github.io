@@ -235,7 +235,7 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 
 Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
 
-- Jos et tehnyt tehtävää, sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/verkkokauppa_.
+- Sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/verkkokauppa_.
 
 Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri` ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 

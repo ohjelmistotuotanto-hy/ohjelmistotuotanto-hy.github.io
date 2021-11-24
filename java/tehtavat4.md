@@ -185,7 +185,7 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 
 Testataan [viikolta 2](/tehtavat2#9-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutun Verkkokaupan luokkaa <code>Kauppa</code>.
 
-- Jos et tehnyt tehtävää, sovellus löytyy [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/Verkkokauppa_.
+- Sovellus löytyy [kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistossa _koodi/viikko4/Verkkokauppa_.
 
 Kaupalle injektoidaan konstruktorissa Pankki, Viitelaskuri ja Varasto. Tehdään näistä testeissä Mockitolla mockatut versiot.
 
