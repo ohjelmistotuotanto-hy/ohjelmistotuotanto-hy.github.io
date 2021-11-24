@@ -82,7 +82,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 ### Toteutettava ohjelmisto
 
-* paljastuu ensimmäisessä asiakastapaamisessa
+[täällä](/speksi)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
