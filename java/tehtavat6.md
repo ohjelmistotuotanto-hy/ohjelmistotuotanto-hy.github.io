@@ -59,7 +59,7 @@ Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 2. Kyselykieli NHLStatistics-ohjelmaan, osa 1
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta  ohjelmasta.
+[Kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta  ohjelmasta.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
@@ -315,7 +315,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia. 
 
-* Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2020/projects/repositories) joukosta
+* Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2021/projects/repositories) joukosta
     - mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia. 
     - ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 * [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio

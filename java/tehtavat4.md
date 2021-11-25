@@ -31,7 +31,7 @@ Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien av
 
 Tutustumme nyt [Mockito-nimiseen](https://site.mockito.org/) mock-kirjastoon. 
 
-Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/MockitoDemo_ oleva projekti. Kyseessä on yksinkertaistettu versio Verkkokauppaesimerkistä.
+Hae [kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistossa _koodi/viikko4/MockitoDemo_ oleva projekti. Kyseessä on yksinkertaistettu versio Verkkokauppaesimerkistä.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -127,7 +127,7 @@ Mockiton dokumentaatio löytyy osoitteesta <http://site.mockito.org>
 
 ### 2. Yksikkötestaus ja riippuvuudet: Mockito, osa 2
 
-Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/MaksukorttiMockito_ oleva projekti.
+Hae [kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistossa _koodi/viikko4/MaksukorttiMockito_ oleva projekti.
 
 Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa <code>Kassapaate</code>. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mockitolla.**
 
@@ -568,7 +568,7 @@ Lisää ja commitoi mahdolliset muutokset.
 
 ### 6. IntJoukon testaus ja siistiminen
 
-[Kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/syksy2020) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
+[Kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistossa _koodi/viikko4/IntJoukkoSovellus_ on aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/).
 
 
 Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan _IntJoukko_ koodi mahdollisimman siistiksi
