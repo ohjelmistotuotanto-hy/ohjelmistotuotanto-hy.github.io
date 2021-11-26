@@ -3,8 +3,6 @@ layout: home
 permalink: /
 ---
 
-{% include miniproj_ilmo.md %} 
-
 Kurssilla käsitellään ohjelmistotuotantoprojektien hallinnan, työvaiheiden ja työvälineiden perusteita. Erityinen
 painotus ketterissä ohjelmistotuotantomenetelmissä.
 

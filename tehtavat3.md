@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
-{% include miniproj_ilmo.md %} 
-
 {% include poetry_fix.md %}
 
 {% include laskari_info.md part=3 %}

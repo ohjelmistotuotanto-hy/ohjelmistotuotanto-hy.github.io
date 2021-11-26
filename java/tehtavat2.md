@@ -5,8 +5,6 @@ inheader: no
 permalink: /java/tehtavat2/
 ---
 
-{% include miniproj_ilmo.md %} 
-
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä tehtävässä tutustutaan tarkemmin gradleen. Toinen ja kolmas tehtävä käsittelevät koodin _staattisen analyysin_ työkalua checkstyleä. Gitiin tutustuminen jatkuu tehtävissä 4-8. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. 
