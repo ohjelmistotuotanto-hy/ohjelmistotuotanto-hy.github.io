@@ -91,7 +91,7 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit
 - (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
-- (0.25p) projektille määritelty järkevät Pylint- tai checksytlesäännöt jotka tarkisteaan CI:n toimesta
+- (0.25p) projektille määritelty järkevät Pylint- tai checksytlesäännöt jotka tarkistetaan CI:n toimesta
 - (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
 - (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
   - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
