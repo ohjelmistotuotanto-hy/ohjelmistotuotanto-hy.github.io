@@ -31,7 +31,7 @@ Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien av
 
 Tutustumme nyt [Mockito-nimiseen](https://site.mockito.org/) mock-kirjastoon. 
 
-Hae [kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistossa _koodi/viikko4/MockitoDemo_ oleva projekti. Kyseessä on yksinkertaistettu versio Verkkokauppaesimerkistä.
+Hae [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _koodi/viikko4/MockitoDemo_ oleva projekti. Kyseessä on yksinkertaistettu versio Verkkokauppaesimerkistä.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
