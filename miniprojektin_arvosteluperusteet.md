@@ -5,8 +5,6 @@ inheader: no
 permalink: /miniprojektin_arvosteluperusteet/
 ---
 
-## Miniprojektin arvosteluperusteet
-
 * [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
 * [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 * [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
@@ -76,6 +74,41 @@ Pisteitä kertyy seuraavista asioista:
   - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
 
 Sprintin maksimi on 2.5 pistettä.
+
+### Toisen sprintin arvosteluperusteet
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.25p) sprintin 2 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
+  - Burndown-käyrä olemassa
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
+- (0.25p) kattavahko testaus yksikkö- ja storytasolla
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+- (0.25p) projektille määritelty järkevät Pylint- tai checksytlesäännöt jotka tarkisteaan CI:n toimesta
+- (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+
+Sprintin maksimi on 2.5 pistettä.
+
+### Kolmannen sprintin arvosteluperusteet
+
+ilmestyy myöhemmin...
+
+### Lopputoimenpiteet
+
+ilmestyy myöhemmin...
 ### Varmista, että commitisi näkyvät githubissa oikein
 
 Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1/#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.

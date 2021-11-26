@@ -10,8 +10,7 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
-- [Miniprojekteihin](/miniprojekti) ilmoittautuminen on päättynyt
-  - Löydät tiedon aloitustilaisuudestasi ilmoittautumisjärjestelmästä <a href='https://study.cs.helsinki.fi/assembler/user'>https://study.cs.helsinki.fi/assembler/user</a>, joka toisin bugaa pahasti ja ei toimi kaikilla. Kaikille on lähtenyt myös email tapaamisajasta.
+- [Miniprojektit](/miniprojekti) käynnissä...
 - Kurssin koe pidetään keskiviikkona 22.12. klo 9-12 moodlessa
   - lisää tietoa kokeen luonteesta myöhemmin...
 - Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa:

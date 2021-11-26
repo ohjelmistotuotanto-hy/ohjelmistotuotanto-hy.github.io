@@ -7,14 +7,13 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ilmoittautuminen on päättynyt. Löydät tiedon aloitustilaisuudestasi ilmoittautumisjärjestelmästä <a href='https://study.cs.helsinki.fi/assembler/user'>https://study.cs.helsinki.fi/assembler/user</a>, joka toisin bugaa pahasti ja ei toimi kaikilla. Kaikille on lähtenyt myös email tapaamisajasta.
-- Koska kyse on pienryhmätyöskentelystä, oletetaan että zoomissa tapahtuvissa asiakastapaamisissa kaikki pitävät kameraa päällä, viimeistään siinä vaiheessa kun ryhmät on jaettu omiin breakout-huoneisiin
-- Jos ilmoittautuminen unohtui, ota yhteyttä ASAP
-- Aloitustilaisuudet 
-  - to 25.11. klo 10.00 B119
-  - to 25.11. klo 14.00 C129
-  - pe 26.11. klo 12.00 https://helsinki.zoom.us/j/64333550857?pwd=WUJsSm8zTDdiS2x1TDZqN1ptNFR2dz09
-  - pe 26.11. klo 14:00 https://helsinki.zoom.us/j/65757592693?pwd=dGN2alhYTm9rNEJOREo5VEd4Y3N1UT09
+- Näet ryhmäsi asiakastapaamisajan [palautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2021) välikehdeltä _miniproject_
+- Loppudemot
+    - ti 14.12. klo 12-14
+    - ke 15.12. klo 12-14
+    - pe 17.12. klo 12-14
+- Jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa    
+  - varatkaa ryhmän loppudemoaika [täältä](https://docs.google.com/document/d/1vUr7_Y9oA6Cb3qHUjxnT6YXv7H7Ea98mweQ51KpXa7s/edit?usp=sharing)
 
 ### Johdanto
 
@@ -78,7 +77,8 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - keskiviikko 15.12. klo 12-14
   - perjantai 17.12. klo 12-14 
 - jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa
-
+  - varatkaa ryhmän loppudemoaika [täältä](https://docs.google.com/document/d/1vUr7_Y9oA6Cb3qHUjxnT6YXv7H7Ea98mweQ51KpXa7s/edit?usp=sharing)
+  
 ### Toteutettava ohjelmisto
 
 [täällä](/speksi)
