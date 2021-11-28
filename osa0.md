@@ -88,7 +88,7 @@ Viikoittaisista monivalintateht채vist채 on siis tarjolla *3 kurssipistett채*. T�
 
 Pisteet tulevat seuraavan kaavan mukaan:
 
-|monivalnintapisteit채  |kurssipisteit채| 
+|monivalintapisteit채  |kurssipisteit채| 
 | ------------- |:-------------:| 
 | 6.3	| 3   | 
 | 5.8	| 2.5 | 
