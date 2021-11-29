@@ -360,7 +360,7 @@ Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean
 
 Scaled Agile Framework eli SAFe on tämän hetken suosituin laajan mittakaavan ketterä menetelmä, [erään tutkimuksen](https://www.cprime.com/resource/white-papers/scaling-agile-survey-2017/) mukaan 45 % laajan mittakaavan ketterää kehitystä tekevistä organisaatiota hyödyntää SAFe:a, joka on tällä hetkellä käytössä myös Helsingin Yliopiston opetushallinnon tietojärjestelmien ja web-palveluiden kehityksessä.
 
-SAFe:n pääasiallinen kehittäjä on David Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011, tällä hetkellä on menossa versio 5.0.
+SAFe:n pääasiallinen kehittäjä on David Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011, tällä hetkellä on menossa versio 5.1.
 
 Kärjistetysti sanoen SAFe yhdistää kaikki viimeisen 20 vuoden aikana kehitetyt ketterän ja leanin ohjelmistokehityksen parhaat käytänteet sekä joukon yrityksien tuotteiden hallinnointiin suunnattuja käytänteitä.
 
@@ -617,17 +617,17 @@ Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyviss
 
 ### State of Agile -raportti
  
-Jo 14 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin mukaan Scrum dominoi ketterien menetelmien kenttää.
+Jo 15 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin mukaan Scrum dominoi ketterien menetelmien kenttää.
 
-![]({{ "/images/5-11-2020.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-11-2021.png" | absolute_url }}){:height="300px" }
 
-Scrumia ja sen johdannaisia käyttää siis 76 % vastaajista. Extreme programmingin (eli XP) osuus on enää marginaalinen 1%. 
+Scrumia ja sen johdannaisia käyttää siis 82 % vastaajista. Extreme programmingin (eli XP) osuus on enää marginaalinen 1%. 
 
 Ketterien projektinhallintakäytänteiden osuus näytti seuraavalta:
 
-![]({{ "/images/5-12-2020.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-12-2021.png" | absolute_url }}){:height="400px" }
 
-_Daily standup_ -palaverit on edellisten vuosien tapaan kärjessä. Vastanneista 64 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys, ja jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia).
+_Daily standup_ -palaverit on edellisten vuosien tapaan kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys, ja jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia).
 
 Ketterien teknisten käytänteiden osalta tilanne näyttää seuraavalta:
 
@@ -637,7 +637,7 @@ Tämäkin lista on osin hieman yllättävä, voisi esimerkiksi olettaa että jat
 
 Tämän kyselyn tietojen valossa teknisten käytänteiden suhteen todella monella näyttäisi olevan skarppaamisen paikka. Osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu laaja tutkimushan osoitti hyvin selkeästi sen miten tekniset käytenteet (mm. automatisoidut testit, jatkuva integraatio ja jatkuva tuotantoonvienti) vaikuttavat positiivisesti sekä työhyvinvointiin että organisaatioiden tehokkuuteen.
 
-Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi organisaatioiden tehokkuutta parantaa mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process). State of Agilen tutkimuksessa mukana olleista kuitenkaan 36 % _ei käytä_ lyhyitä iteraatioita ja 52 % _ei julkaise_ sovelluksesta uusia versiota usein (frequent releases), eli ketteryyden potentiaalisia hyötyjä ei selvästikkään ulosmitata täydessä mitassaan läheskään kaikissa organisaatioissa.
+Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi organisaatioiden tehokkuutta parantaa mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process). State of Agilen tutkimuksessa mukana olleista kuitenkaan 37 % _ei käytä_ lyhyitä iteraatioita ja 49 % _ei julkaise_ sovelluksesta uusia versiota usein (frequent releases), eli ketteryyden potentiaalisia hyötyjä ei selvästikkään ulosmitata täydessä mitassaan läheskään kaikissa organisaatioissa.
 
 ### Toimiiko ketterä ohjelmistokehitys
 
