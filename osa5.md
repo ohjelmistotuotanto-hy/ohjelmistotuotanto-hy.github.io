@@ -562,11 +562,13 @@ Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, jois
 Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta hieman eri dimensioilla. Product owner vastaa kysymykseen _what to build next_, eli ohjaa tuotteen kehityssuuntaa. Jaosto, erityisesti jaoston _lead_ (termi jolle en keksi hyvää suomenkielistä vastinetta) taas pyrkii tarjoamaan tukea kysymykseen "how to build it well". Jaosto myös tukee jäsentensä ammatillista kehittymistä.  
 
 ![]({{ "/images/5-23.png" | absolute_url }}){:height="280px" }
+
 #### Guild eli kilta
 
 Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompetenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen mutta yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden ryhmä. Esimekiksi testaajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
 
 ![]({{ "/images/5-22.png" | absolute_url }}){:height="360px" }
+
 #### Spotifyn mallin soveltaminen ja kritiikki
 
 Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Spotifyn skaalaamisen tavan dokumentoineen ja maailmalle esitelleen Henrik Knibergin 
@@ -575,7 +577,6 @@ Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Spo
 Spotify on sittemmin lisännyt malliinsa muutaman uuden organisatoorisen komponentin (trio ja allianssi) joiden avulla pystytään hallitsemaan kehityksen suuntaa isossa kuvassa. Spotifyllä on myös muutamia yli kaikkien heimojen toimivia henkilörooleja, mm. _chief architect_ eli henkilö, joka vastaa koko tuotteen arkkitehtuurista. 
 
 Spotifyn mallille on annettu internetissä [rajuakin](https://www.linkedin.com/pulse/spotify-sucks-erwin-verweij/) [kritiikkiä](https://www.jeremiahlee.com/posts/failed-squad-goals/). Onkin ilmeistä että Spotifyn toiminta on kohdannut monia vaikeuksia firman kasvettua nopeasti ja tämä on johtanut Spotifyn mallin (mikäli mitään mallia siis voi edes sanoa olevan olemassa) muutoksiin ja mitä ilmeisemmin muokannut firman toimintaa kohti [perinteisempää jäykempää korporaatiota](https://www.youtube.com/watch?v=ar4lq1l8pAc&t=2462s&ab_channel=QAgileQualityinAgile).
-
 
 Spotifyn mallia sovellettaessa on siis hyvä pitää mielessä että sen ei todellakaan ole tarkoitettu olevan staattinen rakennelma, jonka voi kopioida kirjaimellisesti toiseen kontekstiin. Moni asia Spotifyn mallissa onkin ainoastaan uusi nimi jollekin vanhalle tutulle asialle, joitka löytyvät suoraan esim. Scrumista, Leanista, SAFesta tai LeSSistä, ja voikin olla viisaampi kääntyä suoraan näiden menetelmien kirjallisuuden pariin.
 

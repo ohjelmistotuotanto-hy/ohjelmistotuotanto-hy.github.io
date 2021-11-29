@@ -56,7 +56,7 @@
 
 ### Viikko 5
 
-- Luento 9: {{site.luennot[9]}} [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
+- Luento 9: {{site.luennot[9]}} [tallenne](https://youtu.be/aS8-10a3Mkw)
   - [Lean](/osa5#lean)
 - Luento 10:{{site.luennot[10]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
