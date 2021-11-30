@@ -14,6 +14,7 @@ permalink: /miniprojekti/
     - pe 17.12. klo 12-14
 - Jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa    
   - varatkaa ryhmän loppudemoaika [täältä](https://docs.google.com/document/d/1vUr7_Y9oA6Cb3qHUjxnT6YXv7H7Ea98mweQ51KpXa7s/edit?usp=sharing)
+- [sprinttien arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
 ### Johdanto
 

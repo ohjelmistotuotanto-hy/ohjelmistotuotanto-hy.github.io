@@ -11,10 +11,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - [Miniprojektit](/miniprojekti) käynnissä...
 - Kurssin koe pidetään keskiviikkona 22.12. klo 9-12 moodlessa
   - lisää tietoa kokeen luonteesta myöhemmin...
-- Kurssi pidetään suurimmaksi osaksi etänä, luennot ja miniprojektit (ainakin suurin osa ryhmistä) zoomissa:
-  - maanantain luentojen [zoom-linkki](https://helsinki.zoom.us/j/64993611370?pwd=d3p5djRzWmRvTStKNVV2N25LYzhLdz09)
-  - tiistain luentojen [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
-  - linkit luentojen tallenteisiin löytyvät aikataulusta
+- linkit luentojen tallenteisiin löytyvät aikataulusta
 - Paja
   - Maanantaisin klo 14-16 kampuksella BK107-luokassa
   - Torstaisin klo 14-16 [Zoomissa]( https://helsinki.zoom.us/j/61671791492?pwd=aW9pczlJZ2RjNXhJVDdjbUU3akd1UT09)
