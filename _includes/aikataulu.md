@@ -58,7 +58,7 @@
 
 - Luento 9: {{site.luennot[9]}} [tallenne](https://youtu.be/aS8-10a3Mkw)
   - [Lean](/osa5#lean)
-- Luento 10:{{site.luennot[10]}} [zoom-linkki](https://helsinki.zoom.us/j/65511242341?pwd=dVduR0puZXdjYzV0UDdEOElIUDIxQT09)
+- Luento 10:{{site.luennot[10]}} [tallenne](https://youtu.be/1gxfA58DLQ8)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Laskarit
