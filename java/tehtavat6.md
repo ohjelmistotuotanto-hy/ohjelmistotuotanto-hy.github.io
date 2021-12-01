@@ -7,7 +7,7 @@ permalink: /java/tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
-Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
+Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/java/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
 Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6), deadline on poikkeuksellisesti vasta perjantaina 13.12. klo 23:59:00.  
 
@@ -59,7 +59,7 @@ Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
 
 ### 2. Kyselykieli NHLStatistics-ohjelmaan, osa 1
 
-[Kurssirepositorion]({{site.java_exercise_repo_url}}}) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta  ohjelmasta.
+[Kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistosta _koodi/viikko6/QueryLanguage_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta  ohjelmasta.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
@@ -107,14 +107,14 @@ Matcher m = new And(
 vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
 
 <pre>
-Steven Fogarty       NYR           0 +  0 = 0
-Boo Nieves           NYR           0 +  0 = 0
-Libor Hajek          NYR           0 +  5 = 5
-Tim Gettinger        NYR           0 +  1 = 1
-Lias Andersson       NYR           0 +  1 = 1
-Henrik Lundqvist     NYR           0 +  0 = 0
-Igor Shesterkin      NYR           0 +  0 = 0
-Alexandar Georgiev   NYR           0 +  0 = 0
+Tony DeAngelo        NYR          0  + 1  = 1
+Tim Gettinger        NYR          0  + 0  = 0
+Tarmo Reunanen       NYR          0  + 1  = 1
+Zac Jones            NYR          0  + 4  = 4
+Justin Richards      NYR          0  + 1  = 1
+Keith Kinkaid        NYR          0  + 0  = 0
+Igor Shesterkin      NYR          0  + 0  = 0
+Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
 
 Kyselyn
@@ -145,29 +145,27 @@ Ehto `All` ei ole yksistään kovin hyödyllinen, mutta tulemme tarvitseman sit�
 Kyselyn
 
 ```java       
-Matcher m = new Or( new HasAtLeast(40, "goals"),
-                    new HasAtLeast(60, "assists")
+Matcher m = new Or( new HasAtLeast(30, "goals"),
+                    new HasAtLeast(50, "assists")
 );  
 ```
 
-tulee palauttaa ne, joilla on vähintään 20 maalia tai syöttöä, eli seuraava lista
+tulee palauttaa ne, joilla on vähintään 30 maalia tai 50 syöttöä, eli seuraava lista
 
 ```
-Mika Zibanejad       NYR          41 + 34 = 75
-Artemi Panarin       NYR          32 + 63 = 95
-David Pastrnak       BOS          48 + 47 = 95
-Auston Matthews      TOR          47 + 33 = 80
-Alex Ovechkin        WSH          48 + 19 = 67
-John Carlson         WSH          15 + 60 = 75
-Leon Draisaitl       EDM          43 + 67 = 110
-Connor McDavid       EDM          34 + 63 = 97
+Auston Matthews      TOR          41 + 25 = 66
+Patrick Kane         CHI          15 + 51 = 66
+Alex DeBrincat       CHI          32 + 24 = 56
+Mikko Rantanen       COL          30 + 36 = 66
+Leon Draisaitl       EDM          31 + 53 = 84
+Connor McDavid       EDM          33 + 72 = 105
 ```
 
 Kyselyn 
 
 ```java
 Matcher m = new And(
-    new HasAtLeast(50, "points"),
+    new HasAtLeast(40, "points"),
     new Or( 
         new PlaysIn("NYR"),
         new PlaysIn("NYI"),
@@ -176,27 +174,28 @@ Matcher m = new And(
 ); 
 ```
 
-tulee palauttaa kaikki yli 50 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _NJD_. Lista näyttää seuraavalta: 
+Tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Brock Nelson         NYI          26 + 28 = 54
-Mathew Barzal        NYI          19 + 41 = 60
-Ryan Strome          NYR          18 + 41 = 59
-Mika Zibanejad       NYR          41 + 34 = 75
-Tony DeAngelo        NYR          15 + 38 = 53
-Artemi Panarin       NYR          32 + 63 = 95
-Patrice Bergeron     BOS          31 + 25 = 56
-Brad Marchand        BOS          28 + 59 = 87
-David Pastrnak       BOS          48 + 47 = 95
+Mathew Barzal        NYI          17 + 28 = 45
+Ryan Strome          NYR          14 + 35 = 49
+Mika Zibanejad       NYR          24 + 26 = 50
+Pavel Buchnevich     NYR          20 + 28 = 48
+Artemi Panarin       NYR          17 + 41 = 58
+Adam Fox             NYR          5  + 42 = 47
+Patrice Bergeron     BOS          23 + 25 = 48
+David Krejci         BOS          8  + 36 = 44
+Brad Marchand        BOS          29 + 40 = 69
+David Pastrnak       BOS          20 + 28 = 48
 ```
 
-Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/java/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 4. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio. 
 
-Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
+Tee materiaalin osassa 4 esitellyn [pinorakentajan](/java/osa4#pinorakentaja-viikko-6) hengessä *kyselyrakentaja*, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
@@ -254,11 +253,12 @@ public static void main(String[] args) {
 Pelaajien lista on seuraava
 
 ```
-Greg McKegg          NYR           5 +  4 = 9
-Jacob Trouba         NYR           7 + 20 = 27
-Brendan Lemieux      NYR           6 + 12 = 18
-Adam Fox             NYR           8 + 34 = 42
-Brett Howden         NYR           9 + 10 = 19
+Brendan Smith        NYR          5  + 5  = 10
+Kevin Rooney         NYR          8  + 6  = 14
+Adam Fox             NYR          5  + 42 = 47
+Filip Chytil         NYR          8  + 14 = 22
+K'Andre Miller       NYR          5  + 7  = 12
+Kaapo Kakko          NYR          9  + 8  = 17
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella. 
@@ -284,12 +284,11 @@ Matcher m = query.oneOf(m1, m2).build();
 Pelaajalistan tulisi olla:
 
 <pre>
-Justin Braun         PHI           3 + 16 = 19
-Robert Hagg          PHI           3 + 10 = 13
-Philippe Myers       PHI           4 + 12 = 16
-Ryan Nugent-Hopkins  EDM          22 + 39 = 61
-Leon Draisaitl       EDM          43 + 67 = 110
-Connor McDavid       EDM          34 + 63 = 97
+Travis Sanheim       PHI          3  + 12 = 15
+Philippe Myers       PHI          1  + 10 = 11
+Tyson Barrie         EDM          8  + 40 = 48
+Leon Draisaitl       EDM          31 + 53 = 84
+Connor McDavid       EDM          33 + 72 = 105
 </pre>
 
 Tai sama ilman apumuuttujia:
@@ -304,6 +303,8 @@ Matcher m = query.oneOf(
         .hasAtLeast(40, "points").build()
 ).build();
 ```
+
+On mahdollista ja jopa todennäköistä että ensimmäinen ratkaisusi ei toimi jos apumuuttujia ei käytetä. Mieti tarkkaan missä vika ja yritä korjata tilanne. Vaadittava muutos ei ole iso.
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 

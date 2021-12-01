@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 6
 inheader: no
-permalink: /tehtavat6a/
+permalink: /tehtavat6/
 ---
 
 {% include poetry_fix.md %}
@@ -11,9 +11,7 @@ permalink: /tehtavat6a/
 
 Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
-Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6), deadline on poikkeuksellisesti vasta perjantaina 13.12. klo 23:59:00.  
-
-Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/python/osa4) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
+Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
 Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 
@@ -113,14 +111,14 @@ matcher = And(
 Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yhtä maalia, eli _0 maalia tehneet_:
 
 <pre>
-Steven Fogarty       NYR           0 +  0 = 0
-Boo Nieves           NYR           0 +  0 = 0
-Libor Hajek          NYR           0 +  5 = 5
-Tim Gettinger        NYR           0 +  1 = 1
-Lias Andersson       NYR           0 +  1 = 1
-Henrik Lundqvist     NYR           0 +  0 = 0
-Igor Shesterkin      NYR           0 +  0 = 0
-Alexandar Georgiev   NYR           0 +  0 = 0
+Tony DeAngelo        NYR          0  + 1  = 1
+Tim Gettinger        NYR          0  + 0  = 0
+Tarmo Reunanen       NYR          0  + 1  = 1
+Zac Jones            NYR          0  + 4  = 4
+Justin Richards      NYR          0  + 1  = 1
+Keith Kinkaid        NYR          0  + 0  = 0
+Igor Shesterkin      NYR          0  + 0  = 0
+Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
 
 Kyselyn:
@@ -142,29 +140,27 @@ Kyselyn:
 
 ```python
 matcher = Or(
-    HasAtLeast(40, "goals"),
-    HasAtLeast(60, "assists")
+    HasAtLeast(30, "goals"),
+    HasAtLeast(50, "assists")
 )
 ```
 
-Tulee palauttaa ne, joilla on vähintään 40 maalia tai 60 syöttöä, eli seuraava lista:
+tulee palauttaa ne, joilla on vähintään 30 maalia tai 50 syöttöä, eli seuraava lista
 
 ```
-Mika Zibanejad       NYR          41 + 34 = 75
-Artemi Panarin       NYR          32 + 63 = 95
-David Pastrnak       BOS          48 + 47 = 95
-Auston Matthews      TOR          47 + 33 = 80
-Alex Ovechkin        WSH          48 + 19 = 67
-John Carlson         WSH          15 + 60 = 75
-Leon Draisaitl       EDM          43 + 67 = 110
-Connor McDavid       EDM          34 + 63 = 97
+Auston Matthews      TOR          41 + 25 = 66
+Patrick Kane         CHI          15 + 51 = 66
+Alex DeBrincat       CHI          32 + 24 = 56
+Mikko Rantanen       COL          30 + 36 = 66
+Leon Draisaitl       EDM          31 + 53 = 84
+Connor McDavid       EDM          33 + 72 = 105
 ```
 
 Kyselyn:
 
 ```java
 matcher = And(
-    HasAtLeast(50, "points"),
+    HasAtLeast(40, "points"),
     Or(
         PlaysIn("NYR"),
         PlaysIn("NYI"),
@@ -173,27 +169,28 @@ matcher = And(
 )
 ```
 
-Tulee palauttaa kaikki yli 50 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
+Tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Brock Nelson         NYI          26 + 28 = 54
-Mathew Barzal        NYI          19 + 41 = 60
-Ryan Strome          NYR          18 + 41 = 59
-Mika Zibanejad       NYR          41 + 34 = 75
-Tony DeAngelo        NYR          15 + 38 = 53
-Artemi Panarin       NYR          32 + 63 = 95
-Patrice Bergeron     BOS          31 + 25 = 56
-Brad Marchand        BOS          28 + 59 = 87
-David Pastrnak       BOS          48 + 47 = 95
+Mathew Barzal        NYI          17 + 28 = 45
+Ryan Strome          NYR          14 + 35 = 49
+Mika Zibanejad       NYR          24 + 26 = 50
+Pavel Buchnevich     NYR          20 + 28 = 48
+Artemi Panarin       NYR          17 + 41 = 58
+Adam Fox             NYR          5  + 42 = 47
+Patrice Bergeron     BOS          23 + 25 = 48
+David Krejci         BOS          8  + 36 = 44
+Brad Marchand        BOS          29 + 40 = 69
+David Pastrnak       BOS          20 + 28 = 48
 ```
 
-Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/python/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 4. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio.
 
-Tee materiaalin osassa 4 esitellyn [pinorakentajan](/python/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
+Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
@@ -250,11 +247,12 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Greg McKegg          NYR           5 +  4 = 9
-Jacob Trouba         NYR           7 + 20 = 27
-Brendan Lemieux      NYR           6 + 12 = 18
-Adam Fox             NYR           8 + 34 = 42
-Brett Howden         NYR           9 + 10 = 19
+Brendan Smith        NYR          5  + 5  = 10
+Kevin Rooney         NYR          8  + 6  = 14
+Adam Fox             NYR          5  + 42 = 47
+Filip Chytil         NYR          8  + 14 = 22
+K'Andre Miller       NYR          5  + 7  = 12
+Kaapo Kakko          NYR          9  + 8  = 17
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
@@ -301,20 +299,17 @@ m2 = (
     .build()
 )
 
-matcher = query
-    .oneOf(m1, m2)
-    .build()
+matcher = query.oneOf(m1, m2).build()
 ```
 
 Pelaajalistan tulisi olla:
 
 ```
-Justin Braun         PHI           3 + 16 = 19
-Robert Hagg          PHI           3 + 10 = 13
-Philippe Myers       PHI           4 + 12 = 16
-Ryan Nugent-Hopkins  EDM          22 + 39 = 61
-Leon Draisaitl       EDM          43 + 67 = 110
-Connor McDavid       EDM          34 + 63 = 97
+Travis Sanheim       PHI          3  + 12 = 15
+Philippe Myers       PHI          1  + 10 = 11
+Tyson Barrie         EDM          8  + 40 = 48
+Leon Draisaitl       EDM          31 + 53 = 84
+Connor McDavid       EDM          33 + 72 = 105
 ```
 
 Tai sama ilman apumuuttujia:
@@ -335,6 +330,8 @@ matcher = (
 )
 ```
 
+On mahdollista ja jopa todennäköistä että ensimmäinen ratkaisusi ei toimi jos apumuuttujia ei käytetä. 
+
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
@@ -345,7 +342,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
 
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2019/projects/repositories) joukosta
+- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2021/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
   - Ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
