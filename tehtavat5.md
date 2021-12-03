@@ -174,7 +174,7 @@ class Kayttoliittyma:
         self._sovelluslogiikka = sovelluslogiikka
         self._root = root
 
-        self._kommennot = {
+        self._komennot = {
             Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
             Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
             Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
