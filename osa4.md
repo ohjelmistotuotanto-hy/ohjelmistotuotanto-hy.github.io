@@ -977,7 +977,7 @@ class Komentotehdas:
         self.komennot = {
             "summa": Summa(self.io),
             "tulo": Tulo(self.io),
-            "nelio": Nelio(self.nelio),
+            "nelio": Nelio(self.io),
             "lopeta": Lopeta(self.io)
         }
 
