@@ -64,7 +64,7 @@ Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaal
 
 Jotta tavoite olisi mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkän tähtäimen hyötyihin tähtäävä lean-toimintatapa, mitä johtajat soveltavat ja opettavat alaisille. Tätä nimitetään _leanin perustaksi_.
 
-Leanin kaksi peruspilaria ovat _jatkuvan parantaminen_ (engl. continuous improvement) ja _ihmisten kunnioittaminen_ (engl. respect for people).
+Leanin kaksi peruspilaria ovat _jatkuva parantaminen_ (engl. continuous improvement) ja _ihmisten kunnioittaminen_ (engl. respect for people).
 
 _Jatkuva parantaminen_ määrittelee pohjimmiltaan koko Toyotan toimintakulttuurin, jonka ytimessä on halukkuus oppia ja kannustava ilmapiiri muutosten tekemiselle:
 
