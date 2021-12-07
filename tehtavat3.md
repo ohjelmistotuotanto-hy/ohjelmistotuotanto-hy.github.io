@@ -650,7 +650,7 @@ Jotta sovelluksen testit pystyisi suorittamaan CI-palvelimella, tulee nämä vai
 ```bash
 #!/bin/bash
 
-# käynnistetään flask-palvelin taustalle
+# käynnistetään Flask-palvelin taustalle
 poetry run python3 src/index.py &
 
 # odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
