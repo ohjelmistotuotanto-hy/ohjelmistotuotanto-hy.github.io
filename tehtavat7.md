@@ -2,7 +2,7 @@
 layout: page
 title: Viikko 7
 inheader: no
-permalink: /tehtavat7a/
+permalink: /tehtavat7/
 ---
 
 {% include poetry_fix.md %}
@@ -151,8 +151,6 @@ lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta [täällä](https://study.cs.helsinki.fi/palaute/targets/3/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. 
-
-Huom: kurssipalautejärjestlmä on tällä hetkellä koekäytössä, jos havaitset sen toiminnassa puutteita, lähetä sähköpostia.
+Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/4589434/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. Palautetta voi antaa välillä 15.12.2021 - 29.12.2021
 
 {% include submission_instructions.md %}
