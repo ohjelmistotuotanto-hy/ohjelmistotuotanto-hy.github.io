@@ -650,25 +650,23 @@ Jotta sovelluksen testit pystyisi suorittamaan CI-palvelimella, tulee nämä vai
 ```bash
 #!/bin/bash
 
-# käynnistetään Flask-palvelin taustalle (huomaa & komennon lopussa)
+# käynnistetään flask-palvelin taustalle
 poetry run python3 src/index.py &
 
-# odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä,
-# jolloin localhost:5000/ping antaa vastauksen statuskoodilla 200
+# odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
 while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]]; 
   do sleep 1; 
 done
 
 # suoritetaan testit
-poetry run robot src/tests
+poetry run robot src/e2e
+
+status=$?
 
 # pysäytetään Flask-palvelin portissa 5000
-function clean_up {
-  kill $(lsof -t -i:5000)
-}
+kill $(lsof -t -i:5000)
 
-# suoritetaan clean_up-funktio, kun prosessi lopettaa suorituksen
-trap clean_up EXIT
+exit $status
 ```
 
 Skriptin voi lisätä esimerkiksi projektin juurihakemiston <i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttäjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
