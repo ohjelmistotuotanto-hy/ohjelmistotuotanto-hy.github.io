@@ -694,6 +694,12 @@ jobs:
           python-version: 3.8
       - name: Install Poetry
         run: pip install poetry
+      - name: Setup chromedriver
+        uses: nanasess/setup-chromedriver@master
+      - run: |
+            export DISPLAY=:99
+            chromedriver --url-base=/wd/hub &
+            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
       - name: Install dependencies
         run: poetry install
       - name: Run robot tests
