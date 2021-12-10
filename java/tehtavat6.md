@@ -90,7 +90,7 @@ Tutustu ohjelman rakenteeseen
 **Tee rajapinnan _Matcher_ toteuttavat luokat, joiden avulla voit tehdä operaatiot**
 
 * All (tosi kaikille pelaajille)
-* Not (parameetrina olevan ehdon negaatio)
+* Not (parametrina olevan ehdon negaatio)
 * HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
 
 Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
