@@ -79,8 +79,8 @@ __/
 
 * ohjelmassa on kolme pelimoodia: ihminen vs. ihminen, ihminen vs. yksinkertainen tekoäly ja ihminen vs. monimutkainen tekoäly
 * koodi sisältää runsaat määrät copy pastea, muutenkaan oliosuunnittelun periaatteet eivät ole vielä alkuperäisellä ohjelmoijalla olleet hallussa
-* poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti materiaalin [osan 4](/osa4) hengessä oikeaoppinen
-  * pelaa-metodi tulee toteuttaa [template-metodina](/osa4#suunnittelumalli-template-method-viikko-5)
+* poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti materiaalin [osan 4](/java/osa4) hengessä oikeaoppinen
+  * pelaa-metodi tulee toteuttaa [template-metodina](/java/osa4#suunnittelumalli-template-method-viikko-5)
   * sopivan peliolion (kaksinpeli, helppo yksinpeli, vaikea yksinpeli) luominen tulee toteuttaa staattisen tehdasmetodin avulla
   * pääohjelmalla ei saa olla riippuvuuksia konkreettisiin pelin toteuttaviin luokkiin
 
