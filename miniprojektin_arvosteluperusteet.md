@@ -132,7 +132,25 @@ Pisteitä kertyy seuraavista asioista:
 Sprintin maksimi on 2.5 pistettä.
 ### Lopputoimenpiteet
 
-ilmestyy myöhemmin...
+#### Vertaispalaute
+
+- Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään torstaina 23.12. klo 23:59**
+  - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
+- Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
+  - Ryhmäläiset eivät näe toistensa vertaispalautteita
+
+#### Raportti
+
+Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
+
+- Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
+- Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
+- Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
+- Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
+- Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
+- Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
+- **raportin deadline torstaina 23.12. klo 23:59**
 ### Varmista, että commitisi näkyvät githubissa oikein
 
 Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1/#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
