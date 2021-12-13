@@ -9,6 +9,10 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - [Miniprojektit](/miniprojekti) käynnissä...
+- Miniprojektien loppudemot
+    - ti 14.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
+    - ke 15.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
+    - pe 17.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
 - Kurssin koe pidetään keskiviikkona 22.12. klo 9-12 moodlessa
   - lisää tietoa kokeen luonteesta myöhemmin...
 - linkit luentojen tallenteisiin löytyvät aikataulusta

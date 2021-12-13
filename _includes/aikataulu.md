@@ -93,10 +93,10 @@
     - [python](/tehtavat7) 
     - [java](/java/tehtavat7)
 - Miniprojekti
-  - Loppudemot zoomissa
-    - ti 14.12. klo 12-14
-    - ke 15.12. klo 12-14
-    - pe 17.12. klo 12-14
+  - Loppudemot
+      - ti 14.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
+      - ke 15.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
+      - pe 17.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
 
 ### Viikko 8
 
