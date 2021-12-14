@@ -1801,7 +1801,7 @@ Huomaa, että rakentajan metodi-kutsuvat luovat aina uuden rakentajan, joten ede
 ```python
 rakentaja = Pinorakentaja()
 
-kryptattu_rakentaja = rakenta.kryptattu()
+kryptattu_rakentaja = rakentaja.kryptattu()
 kryptatty_loki_rakentaja = kryptattu_rakentaja.loggaava(loki)
 
 kryptattu_pino = kryptatty_rakentaja.pino()
