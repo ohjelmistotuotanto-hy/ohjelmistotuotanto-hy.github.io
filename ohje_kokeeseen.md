@@ -24,14 +24,12 @@ Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja **vähintään puolia kokeen pisteistä**.
 
 Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
-
 - Git
-- Gradle 
+- poetry/Gradle
 - GitHub Actions
-- JUnit 
-- Mockito 
-- Cucumber 
-- Selenium
+- unittest/JUnit
+- Mock/Mockito
+- Robot/Cucumber/Selenium
 
 Vierailuluennot eivät kuulu koealueeseen.
 
