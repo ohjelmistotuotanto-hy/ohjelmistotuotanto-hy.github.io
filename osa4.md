@@ -1628,7 +1628,7 @@ class LokiPino:
         return onko_tyhja
 ```
 
-Periaate on sama, pinodekoraattorit `LokiPino` ja `KryptattuPino` delegoivat kaikki operaationsa sisältämilleen `Pino`-olioille. `LokiPino` kirjoittaa merkinnän jokaisesta pinoon kohdistuvasta operaatiosta. _KryptattuPino_ taas kryptaa alkeellista algoritmia käyttäen jokaisen pinnon laitettavan merkkijonon ja dekryptaa pinosta otettavat merkkijonot takaisin selkokielisiksi.
+Periaate on sama, pinodekoraattorit `LokiPino` ja `KryptattuPino` delegoivat kaikki operaationsa sisältämilleen `Pino`-olioille. `LokiPino` kirjoittaa merkinnän jokaisesta pinoon kohdistuvasta operaatiosta. _KryptattuPino_ taas kryptaa alkeellista algoritmia käyttäen jokaisen pinoon laitettavan merkkijonon ja dekryptaa pinosta otettavat merkkijonot takaisin selkokielisiksi.
 
 Voimme muodostaa pinon, joka kirjoittaa merkinnän pinon operaatioista sekä kryptaa pinon alkiot seuraavasti:
 
@@ -1645,11 +1645,11 @@ Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle pa
 
 Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerran oliosuunnitteun periaate "favour composition over inheritance" on näyttänyt voimansa.
 
-Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/ jadesign_patterns/decorator
+Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/design_patterns/decorator
 
 #### Pinotehdas <span style="color:blue">[viikko 6]</span>
 
-Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehtaan:
+Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehdas:
 
 ```python
 class Pinotehdas:
@@ -1696,7 +1696,7 @@ rakenna = Pinorakentaja()
 pino = rakenna.prepaid(10).kryptattu().pino()
 ```
 
-Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiinoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (enhl. domain specific language) pinojen luomiseen.
+Rakentajan metodinimet ja rakentajan muuttujan nimi on valittu mielenkiintoisella tavalla. On pyritty mahdollisimman luonnollista kieltä muistuttavaan ilmaisuun pinon luonnissa. Kyseessä onkin oikeastaan [DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html) (engl. domain specific language) pinojen luomiseen.
 
 Luodaan ensin rakentajasta perusversio, joka soveltuu vasta normaalien pinojen luomiseen:
 
@@ -1796,12 +1796,12 @@ pino1 = rakentaja.pino();  # luo normaalin pinon
 pino2 = rakentaja.kryptattu().loggaava(loki).prepaid.pino()  # luo sen mitä odottaa saattaa!
 ```
 
-Huomaa, että rakentajan metodi-kutsuvat luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:
+Huomaa, että rakentajan metodi-kutsut luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:
 
 ```python
 rakentaja = Pinorakentaja()
 
-kryptattu_rakentaja = rakenta.kryptattu()
+kryptattu_rakentaja = rakentaja.kryptattu()
 kryptatty_loki_rakentaja = kryptattu_rakentaja.loggaava(loki)
 
 kryptattu_pino = kryptatty_rakentaja.pino()
@@ -1810,4 +1810,4 @@ kryptattu_loki_pino = kryptatty_loki_rakentaja.pino()
 
 Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin loggaavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
 
-Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit jotka ovat muuten luonteeltaan void:eja onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
+Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit, jotka ovat muuten luonteeltaan void:eja, onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
