@@ -7,14 +7,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Näet ryhmäsi asiakastapaamisajan [palautussovelluksen](https://study.cs.helsinki.fi/stats/courses/ohtu2021) välikehdeltä _miniproject_
-- Loppudemot
-    - ti 14.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
-    - ke 15.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
-    - pe 17.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
-- Jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa    
-  - varatkaa ryhmän loppudemoaika [täältä](https://docs.google.com/document/d/1vUr7_Y9oA6Cb3qHUjxnT6YXv7H7Ea98mweQ51KpXa7s/edit?usp=sharing)
-- [sprinttien arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
+- Muista miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
 ### Johdanto
 

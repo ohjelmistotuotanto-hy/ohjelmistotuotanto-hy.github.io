@@ -8,17 +8,11 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
-- [Miniprojektit](/miniprojekti) käynnissä...
-- Miniprojektien loppudemot
-    - ti 14.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
-    - ke 15.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
-    - pe 17.12. klo 12-14 [zoom](https://helsinki.zoom.us/j/62619100983?pwd=OFVjdjYxUWZya1dHVk1KR0Q4Z2hXUT09)
+- Muista miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 - Kurssin koe pidetään keskiviikkona 22.12. klo 9-12 moodlessa
-  - lisää tietoa kokeen luonteesta myöhemmin...
+  - [Ohjeita kokeeseen](/ohje_kokeeseen)
 - linkit luentojen tallenteisiin löytyvät aikataulusta
-- Paja
-  - Maanantaisin klo 14-16 kampuksella BK107-luokassa
-  - Torstaisin klo 14-16 [Zoomissa]( https://helsinki.zoom.us/j/61671791492?pwd=aW9pczlJZ2RjNXhJVDdjbUU3akd1UT09)
+- Pajat ovat päättyneet tämän kurssin osalta
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.

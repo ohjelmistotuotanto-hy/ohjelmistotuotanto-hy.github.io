@@ -5,7 +5,7 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-Kurssikoe pidetään torstaina 17.12. klo 17-21 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=42876), ja internet on kokeessa vapaasti käytettävissä.
+Kurssikoe pidetään keskiviikkona 22.12. klo 9-12 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=49156), ja internet on kokeessa vapaasti käytettävissä.
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun koe on verkossa. 
 
@@ -36,6 +36,7 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 Vierailuluennot eivät kuulu koealueeseen.
 
 Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
+- [syksy 2020](/koe2020)
 - [syksy 2019](/koe2019)
 - [syksy 2018](https://github.com/mluukkai/Ohjelmistotuotanto2018)
 - [syksy 2018](https://github.com/mluukkai/ohjelmistotuotanto2017)
