@@ -31,7 +31,7 @@ _Tätä tehtävää ei palauteta mihinkään!_
 
 Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja <https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase>
 
-Aikaansaa seuraavankaltainen tilanne
+Aikaansaa seuraavankaltainen tilanne:
 
 ```
 ------- master
@@ -58,15 +58,15 @@ Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
 Lopputuloksena pitäisi siis olla lineaarinen historia ja master sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
 
-Poista branch haara. Etsi googlaamalla komento jolla saat tuhottua branchin.
+Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
 
 ### 2. Kyselykieli NHL-tilastoihin, osa 1
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _koodi/viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
 
-Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
+Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
-Koodin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä olevan kyselyn voi suorittaa seuraavasti:
+Koodin onkin luotu hieman valmista kalustoa, josta pääset liikkeelle. Yllä olevan kyselyn voi suorittaa seuraavasti:
 
 ```python
 def main():
@@ -94,8 +94,8 @@ Tutustu ohjelman rakenteeseen.
 **Toteuta `matches`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:**
 
 - All (tosi kaikille pelaajille)
-- Not (parameetrina olevan ehdon negaatio)
-- HasFewerThan (HasAtLeast-komennon negaatio eli, esim. on vähemmän kuin 10 maalia)
+- Not (parametrina olevan ehdon negaatio)
+- HasFewerThan (HasAtLeast-komennon negaatio eli esim. on vähemmän kuin 10 maalia)
 
 Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
 
@@ -121,7 +121,7 @@ Igor Shesterkin      NYR          0  + 0  = 0
 Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
 
-Kyselyn:
+Kyselyn
 
 ```python
 matcher = And(
@@ -130,13 +130,13 @@ matcher = And(
 )
 ```
 
-Tulisi palauttaa täsmälleen sama lista.
+tulisi palauttaa täsmälleen sama lista.
 
 ### 3. Kyselykieli NHL-tilastoihin, osa 2
 
 **Toteuta** `matches`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
 
-Kyselyn:
+Kyselyn
 
 ```python
 matcher = Or(
@@ -156,7 +156,7 @@ Leon Draisaitl       EDM          31 + 53 = 84
 Connor McDavid       EDM          33 + 72 = 105
 ```
 
-Kyselyn:
+Kyselyn
 
 ```java
 matcher = And(
@@ -169,7 +169,7 @@ matcher = And(
 )
 ```
 
-Tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
+tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
 Mathew Barzal        NYI          17 + 28 = 45
@@ -330,11 +330,11 @@ matcher = (
 )
 ```
 
-On mahdollista ja jopa todennäköistä että ensimmäinen ratkaisusi ei toimi jos apumuuttujia ei käytetä. Mieti tarkkaan missä vika ja yritä korjata tilanne. Vaadittava muutos ei ole iso.
+On mahdollista ja jopa todennäköistä, että ensimmäinen ratkaisusi ei toimi jos apumuuttujia ei käytetä. Mieti tarkkaan missä vika ja yritä korjata tilanne. Vaadittava muutos ei ole iso.
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä ja niihin on siksi vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
+Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä jolloin niihin on vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
 
 Ehkäpä et edes ajatellut asiaa, mutta joku silti näyttää, että binäärihakupuu onkin tilanteessa tehokkaampi ratkaisu, koodaa korjaukset puolestasi lähdekoodiin sekä tekee muutoksista _pull requestin_. Onneksi julkaisit projektisi Open Sourcena!
 
@@ -344,7 +344,7 @@ Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projekti
 
 - Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2021/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
-  - Ja luonnollisesti sellinen, jonka koodiin haluat tehdä jotain muutoksia
+  - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
 - Tee forkattuun repositorioon uusi branch nimellä "muutoksia"
 - Tee luomaasi branchiin "tyhjä" [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request): lisää esimerkiksi yksi tyhjä rivi README.md:hen, pushaa uusi branch GitHubiin ja tee branchista pull request.
