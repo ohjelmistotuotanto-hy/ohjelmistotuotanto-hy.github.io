@@ -943,7 +943,7 @@ Sovelluksen rakenne näyttää seuraavalta:
 
 Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan `Operaatiotehdas` olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
 
-Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _command_-suunnittelumallia. Komennon toteuttavat luokat ovat äärimmäisen yksinkertaisia. Niille annetaan konstrutokrin kautta `IO`-olio, ja ne toteuttavat metodin `suorita`. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
+Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _command_-suunnittelumallia. Komennon toteuttavat luokat ovat äärimmäisen yksinkertaisia. Niille annetaan konstruktorin kautta `IO`-olio, ja ne toteuttavat metodin `suorita`. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
 
 Erillisten komento-olioiden luominen siirretään uudelle luokalle `Komentotehdas`:
 
