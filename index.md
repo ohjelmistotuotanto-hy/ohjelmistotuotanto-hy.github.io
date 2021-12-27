@@ -8,11 +8,11 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
-- Muista miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
-- Kurssin koe pidetään keskiviikkona 22.12. klo 9-12 moodlessa
+- Kurssin koe pidettiin keskiviikkona 22.12. klo 9-12 moodlessa
   - [Ohjeita kokeeseen](/ohje_kokeeseen)
+  - Samat ohjeet toimivat myös erilliskokeeseen valmistautuessa, ensimmäin koe on 27.1.2022
+  - Kokeen arvosteluperusteet ja mallivastaukset tulossa [tänne](/koe2021)
 - linkit luentojen tallenteisiin löytyvät aikataulusta
-- Pajat ovat päättyneet tämän kurssin osalta
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
