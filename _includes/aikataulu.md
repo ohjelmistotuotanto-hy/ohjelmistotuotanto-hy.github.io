@@ -29,6 +29,7 @@
 ### Viikko 3
 
 - Luento 5: {{site.luennot[5]}} [tallenne](https://youtu.be/XY7BtG-i4ms)
+  - [Laadunhallinnan perusteet](/osa3)
 - Luento 6: {{site.luennot[6]}} [tallenne](https://youtu.be/4CN0cLfz2Ds)
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
