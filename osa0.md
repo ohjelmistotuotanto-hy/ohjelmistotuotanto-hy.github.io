@@ -118,7 +118,9 @@ Pisteet tulevat seuraavan kaavan mukaan:
 | 8	| 1 | 
 | 5	| 0.5 | 
 
-Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versiohallintatehtävät ja suorittamalla hyväksytysti miniprojektin
+## Versionhallinta 1 op
+ 
+Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versiohallintatehtävät (merkattu tehtävän yhteyteen) ja suorittamalla hyväksytysti miniprojektin (tai hyväksilukemalla sen).
 
 ### Luennot - laskuharjoitukset - miniprojekti
 
