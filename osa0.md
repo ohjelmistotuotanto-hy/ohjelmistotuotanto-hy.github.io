@@ -82,6 +82,8 @@ Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 
 Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä.
 
+Jos hyväksiluet miniprojektin, kokeen ja laskarien pistemääräsi skaalataan kertomalla 40/31:llä.
+
 #### Laskarien pisteytysperusteet
 
 Viikoittaisista monivalintatehtävistä on siis tarjolla *3 kurssipistettä*. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_. 
