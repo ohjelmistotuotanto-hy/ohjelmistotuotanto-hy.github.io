@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
-{% include poetry_fix.md %}
-
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-2 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.

@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include poetry_fix.md %}
-
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. Tehtävissä 5 ja 6 refaktoroidaan sisäiseltä laadultaan heikossa kunnossa olevaa koodia.

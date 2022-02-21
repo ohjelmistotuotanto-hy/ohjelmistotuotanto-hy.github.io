@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
-{% include poetry_fix.md %}
-
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 3-7. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa.
