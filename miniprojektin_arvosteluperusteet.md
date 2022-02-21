@@ -130,6 +130,7 @@ Pisteitä kertyy seuraavista asioista:
     - tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
 
 Sprintin maksimi on 2.5 pistettä.
+
 ### Lopputoimenpiteet
 
 #### Vertaispalaute
@@ -150,9 +151,9 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **raportin deadline torstaina 23.12. klo 23:59**
+- **Raportin deadline torstaina 23.12. klo 23:59**
 
-### Varmista, että commitisi näkyvät githubissa oikein
+### Varmista, että commitisi näkyvät GitHubissa oikein
 
 Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1/#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
 
