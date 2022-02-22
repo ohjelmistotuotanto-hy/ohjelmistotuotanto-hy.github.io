@@ -141,15 +141,16 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
 - **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
-- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _sqlite_ hyvä vaihtoehto  
-  - Tikapen laskareissa käytetyn todo-sovelluksen gradle-versio osoitteessa <https://github.com/ohjelmistotuotanto-hy/tikape-todo>
-  - Sqliten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikan](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
-- Viikon 3 laskareista kannattaa ottaa mallia Robotilla/Cucumberilla tapahtuvaan storyjen testaamiseen 
+- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
+  - Tikapen laskareissa käytetty [todo-sovellus](https://github.com/ohjelmistotuotanto-hy/tikape-todo) on esimerkkisovellus SQLite tietokannan käytöstä Gradle-pohjaisessa Java-projektissa
+  - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
+  - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
+- Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla, tai Cucumberilla tapahtuvaan storyjen testaamiseen
 - JavaFX:llä tehtyjen sovellusten automatisoitu testaaminen on mahdollista [TestFX](https://github.com/TestFX/TestFX)-kirjaston avulla. Kirjaston dokumentaatio ei ole parhaasta päästä
-  - yksinkertainen gradle+javaFX+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/fx-testing>
+  - yksinkertainen Gradle+JavaFX+Cucumber+Circle esimerkkikonfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/fx-testing)
   - Java Swing-sovellusten Cucumberilla tapahtuva käyttöliittymätason testaus on täysi mysteeri
 - Edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja GitHub Actionsin kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
-  - yksinkertainen gradle+spring+cucumber+circle esimerkkikonfiguraatio osoitteessa <https://github.com/ohjelmistotuotanto-hy/spring-cucumber>
+  - yksinkertainen Gradle+Spring+Cucumber+Circle esimerkkikonfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/spring-cucumber)
 - Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaa ehkä välttää kirjaston käyttöä
 
 ### Työn arvostelu
