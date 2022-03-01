@@ -145,6 +145,7 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
   - Tikapen laskareissa käytetty [todo-sovellus](https://github.com/ohjelmistotuotanto-hy/tikape-todo) on esimerkkisovellus SQLite tietokannan käytöstä Gradle-pohjaisessa Java-projektissa
   - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
   - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
+  - Huomaa, että jos tarkoituksena on julkaista sovellus esimerkiksi _Heroku_-palveluun, SQLiteä parempi vaihtoehto on _PostgreSQL_. Hyviä käytäntöjä noudattaessa vaihdon ei pitäisi olla kovin vaikea, ja ohjeita PostgreSQL:n käyttämiseen löytyy internetin syövereistä runsaasti.
 - Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla, tai Cucumberilla tapahtuvaan storyjen testaamiseen
 - JavaFX:llä tehtyjen sovellusten automatisoitu testaaminen on mahdollista [TestFX](https://github.com/TestFX/TestFX)-kirjaston avulla. Kirjaston dokumentaatio ei ole parhaasta päästä
   - yksinkertainen Gradle+JavaFX+Cucumber+Circle esimerkkikonfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/fx-testing)
