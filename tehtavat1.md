@@ -72,7 +72,7 @@ Luo githubiin repositorio nimellä ohtu-2021-viikko1
 
 **Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
-- Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#julkinen-avain)-materiaalista
+- Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#teht%C3%A4v%C3%A4-13-julkinen-avain)-materiaalista
 
 Lisää julkinen avain githubiin:
 
@@ -124,7 +124,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 - `git reset HEAD`
 
 - Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka
-  [Git-tutoriaali](https://ohjelmistotekniikka-hy.github.io/python/viikko1#gitin-alkeet). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+  [Git-tutoriaali](https://ohjelmistotekniikka-hy.github.io/python/viikko1#versionhallinta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
 
 Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 
@@ -256,7 +256,7 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 - Tarkastele juurihakemistossa olevan _poetry.lock_-tiedoston sisältöä
   - Tiedoston sisällön ei ole tarkoitus olla ihmisluettava, _eikä sitä pitäisikään missään nimessä muokata_. Tiedosto on täysin Poetryn ylläpitämä. Poetry tallentaa tiedostoon projektiin asennettujen riippuvuuksien versiot, jotta jokaisen asennuksen yhteydessä riippuvuuksista voidaan asentaa juuri oikeat versiot
 
-Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://ohjelmistotekniikka-hy.github.io/python/poetry).
+Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta).
 
 **Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa Poetry-komennot on annettu muodossa `poetry <komento>`. Jos et ole asentanut Poetrya globaalisti, joudut antamaan komennot muodossa `python3 -m poetry <komento>`.
 
@@ -302,7 +302,7 @@ Oikea polku kannattaa varmistaa komennolla `which python3`.
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet kurssin Ohjelmistotekniikka [unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/unittest).
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet kurssin Ohjelmistotekniikka [unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen).
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
@@ -311,7 +311,7 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
   - Edellinenkään ei vielä riitä
-- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla Ohjelmistotekniikka-kurssin [Coverage-ohje](https://ohjelmistotekniikka-hy.github.io/python/coverage)
+- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla Ohjelmistotekniikka-kurssin [Coverage-ohje](https://ohjelmistotekniikka-hy.github.io/python/viikko2#coverage-ja-testikattavuus)
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
@@ -683,7 +683,7 @@ stats = Statistics(
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
 
 - Tee yksikkötestit luokalle `Statistics`
-  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://ohjelmistotekniikka-hy.github.io/python/unittest) mukaisesti. Muuten pytest ei löydä suoritettavia testejä
+  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) mukaisesti. Muuten pytest ei löydä suoritettavia testejä
   - Testien haarautumakattavuuden tulee `Statistics`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
     - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Testit eivät saa käyttää verkkoyhteyttä
