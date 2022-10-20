@@ -5,7 +5,10 @@ inheader: no
 permalink: /java/tehtavat7/
 ---
 
+{% include java.md %}
+
 {% include laskari_info.md part=7 %}
+
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md path="/tehtavat7.md" %}
