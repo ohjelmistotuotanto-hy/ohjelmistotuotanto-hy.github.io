@@ -5,6 +5,8 @@ inheader: no
 permalink: /java/tehtavat5/
 ---
 
+{% include java.md %}
+
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1 ja 2 jatketaan gitin harjoittelua. Tehtävä 2 ei näy palautuksissa mitenkään.
