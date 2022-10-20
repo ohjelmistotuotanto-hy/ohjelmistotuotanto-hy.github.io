@@ -8,15 +8,6 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
-- Kurssin koe pidettiin keskiviikkona 22.12. klo 9-12 moodlessa
-  - Kurssin [tulokset](ohtu-s2021.pdf)
-    - Ensimmäisellä rivillä opiskelijanumeron neljä viimeistä numeroa
-    - Laskareiden pisterajat [osassa 0](/osa0#laskarien-pisteytysperusteet)
-  - Arvosteluperusteet ja mallivastaukset [täällä](/koe2021)
-    - Jos kokeen arvostelusta on kysyttävää, ota suoraan yhteyttä tehtävän korjanneeseen henkilöön
-- [Seuraava erilliskoe/uusinta](https://studies.helsinki.fi/opintotarjonta/cur/otm-14c0c6f0-5b98-4066-b7bc-bfa518a511f6) pidetään 27.1.2022, [kurssikokeen ohjeet](/ohje_kokeeseen) pätevät myös uusintaan
-  - Kokeessa otetaan huomioon syksyn kurssin tehtävä- ja miniprojektipisteet
-- Linkit luentojen tallenteisiin löytyvät aikataulusta
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
