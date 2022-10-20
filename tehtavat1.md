@@ -17,7 +17,16 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simp
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>. Käytännössä tällä viikolla tehdään palautusta varten kaksi erillistä GitHub-repositoria, ensimmäinen tehtäviä 2-13 varten ja toinen tehtäviä 14-16 varten. Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
+
+Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
+
+- ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
+- toinen tehtäviä 14-16 varten
+
+Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona
+
+Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
 Tehtävää 1 ei varsinaisesti palauteta minnekään.
 
@@ -63,7 +72,7 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtu-2021-viikko1
+Luo githubiin repositorio nimellä ohtuvarasto
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan Initialize this repository with a README
@@ -74,7 +83,7 @@ Luo githubiin repositorio nimellä ohtu-2021-viikko1
 
 - Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#teht%C3%A4v%C3%A4-13-julkinen-avain)-materiaalista
 
-Lisää julkinen avain githubiin:
+Lisää julkinen avain GitHubiin:
 
 - <https://github.com/settings/ssh>
 
@@ -101,17 +110,17 @@ git config --global core.editor notepad
 
 Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
-Kloonaa nyt githubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
+Kloonaa nyt GitHubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
 
 ```bash
-git clone git@github.com:omatunnustahan/ohtu-2021-viikko1.git
+git clone git@github.com:omatunnustahan/ohtuvarasto.git
 ```
 
 missä komennon `git clone`parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
 ![]({{ "/images/lh1-2.png" | absolute_url }})
 
-Nyt paikalliselle koneellesi syntynyt hakemisto _ohtu-2021-viikko1_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
+Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
 
 ### 3. Gitin alkeet [versionhallinta]
 
@@ -539,9 +548,9 @@ Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien p
 Tee nyt jokin muutos koneellasi repositorioon ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 ```
-To github.com:mluukkai/ohtu-viikko1-s2020.git
+To github.com:mluukkai/ohtuvarasto.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-2021-viikko1.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtuvarasto.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -564,7 +573,7 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 
 ![]({{ "/images/lh1-12a.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtu-2021-viikko1>
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtuvarasto>
 
 Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään konfiguraatiomme loppuun kaksi uutta askelta:
 
@@ -621,7 +630,16 @@ Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että 
 
 ### Tehtävien palautusrepositoriot
 
-Tehtävät 14-16 kannattaa tehdä _eri repositorioon_ kuin mihin teit tehtävät 2-13. Voit käyttää tehtävien 14-16 repositoriota myös seuraavien viikkojen tehtävien palauttamiseen. Nyt luotavan repositorion rakenne voi tällöin olla esimerkiksi seuraava:
+Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
+
+- ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
+- toinen tehtäviä 14-16 varten
+
+Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
+
+Luo siis nyt **uusi palauturepositorio**.
+
+Nyt luotavan repositorion rakenne voi tällöin olla esimerkiksi seuraava:
 
 ```
 viikko1
@@ -637,12 +655,6 @@ viikko3
   web-login-robot
 ...
 ```
-
-Lisää tehtäviin 2-13 käyttämäsi repositorion _README.md_-tiedostoon linkki tehtävien 14-16 palautusrepositorioosi.
-
-Tehtävien 2-13 repositorion _README.md_-tiedoston tulisi siis näyttää suunnilleen tältä (poislukien liian alhainen testikattavuus):
-
-![]({{ "/images/py-lh1-32.png" | absolute_url }})
 
 ### 14. Riippuvuuksien injektointi osa 1
 
@@ -715,5 +727,15 @@ class TestStatistics(unittest.TestCase):
 ```
 
 Kun injektoit `PlayerReaderStub`-olion testissä `Statistics`-oliolle, palauttaa se aina saman pelaajalistan.
+
+### Tehtävien palautus
+
+Lisää tehtävät 14-16 sisältävään repositorioosi tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
+
+Repositorion pitäisi näyttää nyt suunilleen seuraavalta
+
+KUVA
+
+Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>. Kerro palautussovelluksessa tehtävät 14-16 sisältävä repositoriosi. (Jos et tehnyt tehtäviä 14-16, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.)
 
 {% include submission_instructions.md %}
