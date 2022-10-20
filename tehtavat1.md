@@ -22,9 +22,9 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
-- toinen tehtäviä 14-16 varten
+- toinen tehtäviä 14-16 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
-Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona
+Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
 Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
@@ -72,7 +72,9 @@ Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaa
 
 Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo githubiin repositorio nimellä ohtuvarasto
+Luo GitHubiin repositorio nimellä _ohtuvarasto_
+
+**Tämän tehtävän lisäksi tehtävät 3-13 tehdään nyt luotuun ohtuvarasto-repositorioon.**
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan Initialize this repository with a README
@@ -633,13 +635,13 @@ Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että 
 Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
-- toinen tehtäviä 14-16 varten
+- toinen tehtäviä 14-16 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
 Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
-Luo siis nyt **uusi palauturepositorio**.
+Luo siis nyt **uusi repositorio**.
 
-Nyt luotavan repositorion rakenne voi tällöin olla esimerkiksi seuraava:
+Nyt luotavan palautusrepositorion rakenne voi olla esimerkiksi seuraava:
 
 ```
 viikko1
@@ -730,12 +732,13 @@ Kun injektoit `PlayerReaderStub`-olion testissä `Statistics`-oliolle, palauttaa
 
 ### Tehtävien palautus
 
-Lisää tehtävät 14-16 sisältävään repositorioosi tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
+Lisää tehtävät 14-16 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
 
-Repositorion pitäisi näyttää nyt suunilleen seuraavalta
+Palautusrepositorion pitäisi näyttää nyt suunilleen seuraavalta
 
 KUVA
 
-Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>. Kerro palautussovelluksessa tehtävät 14-16 sisältävä repositoriosi. (Jos et tehnyt tehtäviä 14-16, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.)
+Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-{% include submission_instructions.md %}
+- Kerro palautussovelluksessa tehtävät 14-16 sisältävä repositoriosi.
+- Jos et tehnyt tehtäviä 14-16, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
