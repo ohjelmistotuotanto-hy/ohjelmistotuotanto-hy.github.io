@@ -10,7 +10,7 @@
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[1]}}
     - [python](/tehtavat1)
-    - [java](/java/tehtavat1)
+    - [java](/java/tehtavat1) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 
 ### Viikko 2
 
@@ -24,7 +24,7 @@
   - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[2]}}
     - [python](/tehtavat2)
-    - [java](/java/tehtavat2)
+    - [java](/java/tehtavat2) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 
 ### Viikko 3
 
@@ -36,7 +36,7 @@
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[3]}}
     - [python](/tehtavat3)
-    - [java](/java/tehtavat3)
+    - [java](/java/tehtavat3) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 
 ### Viikko 4
 
@@ -51,7 +51,7 @@
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[4]}}
     - [python](/tehtavat4)
-    - [java](/java/tehtavat4)
+    - [java](/java/tehtavat4) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
   - Aloitustilaisuudet
 
@@ -66,7 +66,7 @@
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[5]}}
     - [python](/tehtavat5)
-    - [java](/java/tehtavat5)
+    - [java](/java/tehtavat5) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
@@ -77,7 +77,7 @@
   - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.moniv-dl[6]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
     - [python](/tehtavat6)
-    - [java](/java/tehtavat6)
+    - [java](/java/tehtavat6) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
@@ -90,7 +90,7 @@
   - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.moniv-dl[7]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
     - [python](/tehtavat7)
-    - [java](/java/tehtavat7)
+    - [java](/java/tehtavat7) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
   - Loppudemot
     - ajankohdat selviävät myöhemmin

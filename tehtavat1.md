@@ -17,20 +17,26 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simp
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>. Viikon tehtävät palautetaan yhdellä kertaa, eli tee merkintä palautussovellukseen vasta kun olet valmis viikon tehtävien osalta.
 
 Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
 - toinen tehtäviä 14-16 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
-Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
+Repositorioista jälkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
 Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
-Tehtävää 1 ei varsinaisesti palauteta minnekään.
+Tehtäviä 0 ja 1 ei varsinaisesti palauteta minnekään. Tehtävää 0 ei myöskään lasketa varsinaiseksi tehtäväksi, sen tekeminen ei vaikuta laskaripisteisiin.
+
+### 0. Orientaatio
+
+Lue nyt vielä kerran mitä tehtävien palauttamisesta sanotaan. Tällä viikolla siis tehtävät palautetaan kahteen repositorioon...
 
 ### 1. Komentorivi
+
+**Tätä tehtävää ei palauteta mihinkään**
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa.
 
@@ -41,7 +47,7 @@ Jos osaamisessasi on puutteita (ks. alla oleva lista) kertaa haluamastasi resurs
 - <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
 - <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa: _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
 
-Myös kurssin Tietokone työvälineenä tämän syksyn [komentorivimateriaali](https://tkt-lapio.github.io/command-line/) käsittelee myös suurta osaa tehtävän komennoista.
+Myös kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
 
 _HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla olemassa, jotta pääsee kirjautumaan._
 
@@ -77,9 +83,9 @@ Luo GitHubiin repositorio nimellä _ohtuvarasto_
 **Tämän tehtävän lisäksi tehtävät 3-13 tehdään nyt luotuun ohtuvarasto-repositorioon.**
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
-- **Laita rasti** kohtaan Initialize this repository with a README
+- **Laita rasti** kohtaan "Add a README file"
 
-![]({{ "/images/lh1-1.png" | absolute_url }})
+![]({{ "/images/lh1-1-22.png" | absolute_url }})
 
 **Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
@@ -120,7 +126,7 @@ git clone git@github.com:omatunnustahan/ohtuvarasto.git
 
 missä komennon `git clone`parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
-![]({{ "/images/lh1-2.png" | absolute_url }})
+![]({{ "/images/lh1-2-22.png" | absolute_url }})
 
 Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
 
@@ -151,17 +157,18 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 - Lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
   - Muista hyödyllinen komento `git status`
 - Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
-- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
+- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ,ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
   - Toinen ignorattava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
   - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
 - Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
   - Saat asian tarkastettua komennolla `git status`
 - Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
 - Lisää ja commitoi _.gitignore_-tiedosto repositorioosi
+- Seuraavat kohdat puhuvat gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
 - Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
   - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
-- Tee muutos ja lisää tiedosto "staging"-alueelle
-  - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
+- Tee muutos ja lisää tiedosto "staging"-alueelle, varmista että muutosta ei enää näy tiedostossa
+  - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu), varmista että muutosta ei enää näy tiedostossa
 
 **git add -p**
 
@@ -174,20 +181,20 @@ komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen s
 
 ### 4. Tiedostojen lisääminen GitHubiin [versionhallinta]
 
-Tehtävässä 2 tehtiin GitHubiin repositorio, joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja githubin tilanne:
+Tehtävässä 2 tehtiin GitHubiin repositorio "ohtuvarasto", joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja GitHubin tilanne:
 
 - "Pushaa" nämä GitHubissa olevaan etärepositorioon antamalla komento `git push`
 - Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
 GitHubissa pitäisi näyttää suunilleen seuraavalta
 
-![]({{ "/images/lh1-3.png" | absolute_url }})
+![]({{ "/images/lh1-3-22.png" | absolute_url }})
 
 ### 5. Monta kloonia samasta repositoriosta [versionhallinta]
 
 Yleensä on tapana pitää GitHubissa olevaa repositorioa tiedostojen "keskitettynä" sijoituspaikkana ja liittää paikallisella koneella oleva repositorio GitHubissa olevan repositorion etärepositorioksi, kuten teimme tehtävässä 1.
 
-Jos työskennellään useammalta koneelta, on githubissa olevasta repositoriosta monta kloonia ja kloonien tila on pidettävä ajantasalla.
+Jos työskennellään useammalta koneelta, on GitHubissa olevasta repositoriosta monta kloonia ja kloonien tila on pidettävä ajantasalla.
 
 Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klooni:
 
@@ -199,7 +206,7 @@ Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klo
 - "Pushaa" muutokset GitHubiin
 - Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
-**Mene nyt tehtävässä 1 tehtyyn GitHub-repositorion klooniin.**
+**Mene nyt tehtävässä 2 tehtyyn GitHub-repositorion klooniin.**
 
 - Alkuperäinen paikallinen klooni ei ole enää ajantasalla, "pullaa" sinne muutokset komennolla `git pull`
 - Varmista että molempien paikallisten repositorioiden sisältö on nyt sama
@@ -216,7 +223,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 - Committaa muutokset
   - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
   - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen gitistä tapahtuu
-- Pushaa muutokset githubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
+- Pushaa muutokset GitHubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
@@ -225,7 +232,7 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 - Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
 
-![]({{ "/images/py-lh1-4.png" | absolute_url }})
+![]({{ "/images/py-lh1-4-22.png" | absolute_url }})
 
 - Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
 - Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
@@ -339,7 +346,7 @@ source = src
 - Siirry virtuaaliympäristöön komennolla `poetry shell`
   - Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
   - Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
-- Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa _htmlcov_ hakemiston _index.html_-tiedoston
+- Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa hakemiston _htmlcov_ tiedoston _index.html_
   - Klikkaamalla raportista yksittäisen tiedoston nimeä näet, mitkä koodin suorituksen haarat on vielä testaamatta
 - Lisää projektin _.gitignore_-tiedostoon tiedosto _.coverage_ ja hakemisto _htmlcov_
 - Kun luokan `Varasto` (tiedoston _src/varasto.py_) testien haarautumakattavuus (branch coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
@@ -349,13 +356,13 @@ source = src
 
 ### 9. GitHub Actions, osa 1
 
-Poetryn avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli komentoriviltä helposti suoritettavaksi. Seuraava askel on suorittaa buildausprosessi, eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
+Poetryn avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli helposti komentoriviltä yhdellä komennolla suoritettavaksi. Seuraava askel on suorittaa buildausprosessi, eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
 
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 
 - Uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän koneelle
 - Lisäykset ja niitä testaavat testit tehdään paikalliseen kopioon
-- Testit suoritetaan paikalliseen kopioon ohjelmistokehittäjän työasemalla
+- Testit suoritetaan paikalliseen kopioon ohjelmistokehittäjän koneella
 - Jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
 - Build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, hakee ja kääntää build-palvelin muuttuneen koodin ja suorittaa sille testit
 - Build-palvelin raportoi havaituista virheistä
@@ -405,17 +412,17 @@ Paina vihreää _Start commit_ -nappia, ja anna sopiva commit-viesti.
 
 Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repositorioosi hakemiston _.github/workflows_ alle:
 
-![]({{ "/images/py-lh1-21.png" | absolute_url }})
+![]({{ "/images/py-lh1-21-22.png" | absolute_url }})
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
 Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/py-lh1-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-22-23.png" | absolute_url }})
 
 Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
-![]({{ "/images/py-lh1-23.png" | absolute_url }})
+![]({{ "/images/py-lh1-23-23.png" | absolute_url }})
 
 ### 10. GitHub Actions, osa 2
 
@@ -454,7 +461,7 @@ jobs:
 
 Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia (sekä silloin jos päähaaraan tehdään ns. pull request).
 
-Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä kertaa vain yhden työn, jolle annoimme nimen _build_. Jos töitä olisi useita, suorittaisi GitHub actions ne yhtä aikaa.
+Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä kertaa vain yhden työn, jolle annoimme nimen _build_. Jos töitä olisi useita, suorittaisi GitHub actions ne rinnakkain.
 
 Yksittäinen työ koostuu useista askelista, jotka on määritelty työn alla kohdassa [steps](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
 
@@ -496,13 +503,13 @@ Viides askel on kaikkein tärkein, se suorittaa poetryn avulla projektin testit 
 
 Tee nyt koodiin muutos, joka hajottaa testit ja committaa muutos GitHubiin.
 
-Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi (kuvassa niitä on vahingossa kolme), ja että viimeisin on tilaltaan "punainen":
+Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi, ja että viimeisin on tilaltaan "punainen":
 
-![]({{ "/images/py-lh1-24.png" | absolute_url }})
+![]({{ "/images/py-lh1-24-22.png" | absolute_url }})
 
 Klikkaamalla rikki mennyttä committia, päästään tarkastelemaan hieman tarkemmin actionin suorituksen etenemistä:
 
-![]({{ "/images/py-lh1-25.png" | absolute_url }})
+![]({{ "/images/py-lh1-25-22.png" | absolute_url }})
 
 Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista.
 
@@ -534,24 +541,24 @@ Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan.
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/Kaltsoon/ohtu-2021-viikko1/workflows/CI/badge.svg
+https://github.com/mluukkai/ohtuvarasto/workflows/CI/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
-![]({{ "/images/py-lh1-27.png" | absolute_url }})
+![]({{ "/images/py-lh1-27-22.png" | absolute_url }})
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/py-lh1-28.png" | absolute_url }})
+![]({{ "/images/py-lh1-28-22.png" | absolute_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
-Tee nyt jokin muutos koneellasi repositorioon ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
+Tee nyt jokin muutos koneellasi repositorioon johonkin muuhun tiedostoon kuin README.md ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 ```
 To github.com:mluukkai/ohtuvarasto.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'git@github.com:mluukkai/ohtuvarasto.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -565,6 +572,8 @@ Tulet todennäköisesti törmäämään vastaavaan virheeseen usein. Syynä virh
 Ongelma ratkeaa, kun teet ensin komennon `git pull` ja pushaat koodin vasta sen jälkeen.
 
 Pullauksen yhteydessä syntyy ns. merge commit ja git avaa oletuseditorisi ja haluaa että määrittelet commit messagen. Jos et ole muuttanut gitin käyttämää oletuseditoria, on käytössä _vim_ joka toimii hieman erilaisilla periaatteilla kuin monet muut editorit. Joudut ehkä googlaamaan että pääset vimistä ulos...
+
+Jos muutit paikallisesti tiedostoa README.md saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
 ### 12. Codecov
 
@@ -660,6 +669,8 @@ viikko3
 
 ### 14. Riippuvuuksien injektointi osa 1
 
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+
 Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
@@ -672,6 +683,8 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
 Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`.
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
+
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
 - Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
@@ -695,6 +708,8 @@ stats = Statistics(
 ```
 
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
+
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
 - Tee yksikkötestit luokalle `Statistics`
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) mukaisesti. Muuten pytest ei löydä suoritettavia testejä
