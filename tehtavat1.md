@@ -573,7 +573,7 @@ Ongelma ratkeaa, kun teet ensin komennon `git pull` ja pushaat koodin vasta sen 
 
 Pullauksen yhteydessä syntyy ns. merge commit ja git avaa oletuseditorisi ja haluaa että määrittelet commit messagen. Jos et ole muuttanut gitin käyttämää oletuseditoria, on käytössä _vim_ joka toimii hieman erilaisilla periaatteilla kuin monet muut editorit. Joudut ehkä googlaamaan että pääset vimistä ulos...
 
-Jos muutit paikallisesti tiedostoa README.md saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
+Jos muutit paikallisesti tiedostoa README.md, saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
 ### 12. Codecov
 
@@ -582,11 +582,13 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 - Kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
 - Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/lh1-12a.png" | absolute_url }})
+![]({{ "/images/lh1-12-22.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta, voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/Kaltsoon/ohtuvarasto>
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta (kuten omassa tapauksessani), voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtuvarasto>. Saat lisättyä repositorion Codecoviin alaisuuteen settingsien kautta:
 
-Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään konfiguraatiomme loppuun kaksi uutta askelta:
+![]({{ "/images/py-lh1-30-22.png" | absolute_url }})
+
+Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
 
 ```yml
 - name: Coverage report
@@ -597,31 +599,31 @@ Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämäll�
 
 **HUOM1** rivit on sisennettävä samalle tasolle kuin muut stepit.
 
-**HUOM2** et tarvitse Codecovin tarjoamaa _upload tokenia_ mihinkään:
+**HUOM2** käyttäessäsi julkista repositorioa, et tarvitse Reposity upload tokenia mihinkään
 
-![]({{ "/images/lh1-13.png" | absolute_url }})
+![]({{ "/images/lh1-codecov-token.png" | absolute_url }})
 
-Kun seuraavan kerran pushaamme koodin GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
+Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/py-lh1-14.png" | absolute_url }})
+![]({{ "/images/py-lh1-14-22.png" | absolute_url }})
 
-Klikkaailemalla sivun alalaidassa olevasta kohdasta _Files_ tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
+Klikkaailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
-![]({{ "/images/py-lh1-15.png" | absolute_url }})
+![]({{ "/images/py-lh1-15-22.png" | absolute_url }})
 
 Käytännössä pyydämme nyt GitHub actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub actionien loki näyttää miten askelten suoritus etenee:
 
-![]({{ "/images/py-lh1-29.png" | absolute_url }})
+![]({{ "/images/py-lh1-29-22.png" | absolute_url }})
 
-Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen Codecovin settings-valikosta.
+Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen repositorion Codecov-sivun Settings-valikosta
 
 Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta:
 
-![]({{ "/images/py-lh1-30.png" | absolute_url }})
+![]({{ "/images/py-lh1-30-22.png" | absolute_url }})
 
-Huomaa, että GitHub actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
+Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
 ### 13. Parempi testikattavuus
 
