@@ -691,7 +691,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
-- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
+- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
   - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
     - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositorioa!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
@@ -700,7 +700,6 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
   - `Player` on luokka, jonka olioina `Statistics`-luokka käsittelee yksittäisen pelaajan tietoja
   - `PlayerReader` on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 - Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
-  - **HUOM:** kun suoritat koodin ensimmäisen kerran (virtuaaliympäristössä komennolla `python3 src/index.py`), saattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
 
 **Itse tehtävä:**
 
@@ -709,7 +708,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ```python
 stats = Statistics(
-  PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players.txt")
+  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
 )
 ```
 
@@ -762,7 +761,7 @@ Metodin toiminnallisuus selviää seuraavasta:
 ```python
 def main():
     stats = Statistics(
-      PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players.txt")
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
     )
 
     # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella

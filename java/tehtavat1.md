@@ -741,14 +741,14 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 
 ### 15. riippuvuuksien injektointi osa 2: NHL-tilastot
 
-- Kurssin [tehtävärepositorion]({{site.java_exercise_repo_url}}) hakemistossa [koodi/viikko1/NHLStatistics1](({{site.java_exercise_repo_url}}/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
+- Kurssin [tehtävärepositorion]({{site.java_exercise_repo_url}}) hakemistossa [koodi/viikko1/NHLStatistics1](({{site.java_exercise_repo_url}}/tree/main/koodi/viikko1/NhlStatistics1) on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja
+  - **HUOM:** muuta koodissa oleva URL muotoon https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt
   - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
 - Ohjelma koostuu kolmesta luokasta.
   - <code>Statistics</code> on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   - <code>Player</code> on luokka, jonka olioina Statistics käsittelee yksittäisen pelaajan tietoja
   - <code>PlayerReader</code> on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 - Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
-- **HUOM:** kun suoritat koodin ensimmäisen kerran (komennolla _gradle run_), saattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia.
 
 **Itse tehtävä:**
 
@@ -758,7 +758,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Saat suoritettua koodin k
 - Muokkaa pääohjelma siten, että se injektoi Statistics-oliolle PlayerReaderin ja kokeile että ohjelma toimii edelleen:
 
 ```java
-Statistics stats = new Statistics( new PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players.txt") );
+Statistics stats = new Statistics( new PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt") );
 ```
 
 ### 16. NHLStatistics-ohjelman yksikkötestaus
@@ -799,5 +799,55 @@ public class StatisticsTest {
 ```
 
 Kun injektoit readerStub-olion testissä Statistics-oliolle, palauttaa se aina saman pelaajalistan.
+
+### 17. NHL-tilastot-ohjelman laajennus
+
+Muuta luokan `Statistics` metodia `topScorers` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperustella" metodi palauttaa pelaajat.
+
+Metodin toiminnallisuus selviää seuraavasta:
+
+```java
+public static void main(String[] args) {
+    Statistics stats = new Statistics( new PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt") );
+
+    System.out.println("Top scorers by points");
+    for (Player player : stats.topScorers(10) ) {
+        System.out.println( player );
+    }
+
+    System.out.println("");
+
+    System.out.println("Top scorers by points, with parameter");
+    for (Player player : stats.topScorers(10, SortBy.POINTS) ) {
+        System.out.println( player );
+    }
+
+    System.out.println("");
+
+    System.out.println("Top scorers by goals");
+    for (Player player : stats.topScorers(10, SortBy.GOALS) ) {
+        System.out.println( player );
+    }
+
+    System.out.println("");
+
+    System.out.println("Top scorers by assists");
+    for (Player player : stats.topScorers(10, SortBy.ASSISTS) ) {
+        System.out.println( player );
+    }
+}
+```
+
+Järjestämiskriteeri määritellään [Enum](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)-arvona:
+
+```java
+enum SortBy {
+  POINTS,
+  GOALS,
+  ASSISTS
+}
+```
+
+Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden.
 
 {% include submission_instructions.md %}
