@@ -19,7 +19,7 @@ Osa git-tehtävistä (tehtävät 5-7) tehdään ainoastaan paikalliseen reposito
 
 Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin varasto-projekti. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-16.
+Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin varasto-projekti. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-17.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -132,7 +132,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 Lue brancheja käsittelevät osuudet seuraavasta <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
-* jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <https://git-scm.com/book/en/v2:n luku kolme kokonaisuudessaan
+- jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <https://git-scm.com/book/en/v2:n luku kolme kokonaisuudessaan
 
 Kannattaa huomioida myös erittäin hyvä brancheja käsittelevä visuaalinen materiaali osoitteessa <https://learngitbranching.js.org/>
 
@@ -141,7 +141,8 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 **Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging -alue tyhjinä!
 
 Tee seuraavat paikalliseen git-repositorioosi (kyseessä ei siis tarvitse olla tehtävien palautusrepositorio)
-  - Huom: seuraavassa käytetään versionhallinnan päähaarasta gitin oletusarvoista nimeä _master_. GitHubissa päähaarasta käytetään nykyään nimeä _main_, ja jos teet tehtävän palautusrepositorioosi, on päähaarasi nimi todennäköisesti _main_
+
+- Huom: seuraavassa käytetään versionhallinnan päähaarasta gitin oletusarvoista nimeä _master_. GitHubissa päähaarasta käytetään nykyään nimeä _main_, ja jos teet tehtävän palautusrepositorioosi, on päähaarasi nimi todennäköisesti _main_
 
 - Luo repositorio ja committaa masteriin tiedosto **index.py** jonka sisältö on seuraava
 
@@ -169,7 +170,7 @@ def logger(viesti):
   print(f"{datetime.now()}: {viesti}")
 ```
 
-- Muuta myös tiedostoa  **index.py** seuraavasti:
+- Muuta myös tiedostoa **index.py** seuraavasti:
 
 ```python
 from logger import logger
@@ -197,7 +198,7 @@ def erotus(x, y):
 - Tarkastele komennolla `gitk --all` miltä repositorio ja branchit näyttävät (`gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.)
   - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
     - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
-- Mergeä branchin **laskut** sisältö **masteriin**  (tämä tapahtuu komennolla`git merge laskut`)
+- Mergeä branchin **laskut** sisältö **masteriin** (tämä tapahtuu komennolla`git merge laskut`)
   - Mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, google auttaa tarvittaessa
@@ -359,6 +360,7 @@ logger("lopetetaan ohjelma")
 ```
 
 - Mergeä branchin **bugikorjaus** sisältö **masteriin**
+
   - Katso tiedoston **index.py**-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
 
@@ -423,6 +425,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisältävät sisäänrakennetusti niin sanotun _merge toolin_, joka osaa jossain määrin helpottaa konfliktien ratkaisua:
 
 ![]({{ "/images/lh2-merge.png" | absolute_url }}){:height="350px" }
+
 ### 8. Git: branchit ja GitHub [versionhallinta]
 
 Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
@@ -541,7 +544,7 @@ Virheen syynä on se, että githubissa oleva **master**-haara oli edellä paikal
 
 ### 10. Riippuvuuksien injektointi osa 3: Verkkokauppa
 
-Tutustuimme viime viikon [tehtävissä 14-16](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä yksikkötestauksen helpottamiseen.
+Tutustuimme viime viikon [tehtävissä 14-17](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä yksikkötestauksen helpottamiseen.
 
 Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi_python/).
 

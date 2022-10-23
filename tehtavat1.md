@@ -22,9 +22,9 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
-- toinen tehtäviä 14-16 varten (käytetään tästä nimitystä **palautusrepositorio**)
+- toinen tehtäviä 14-17 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
-Repositorioista jälkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
+Repositorioista jälkimmäistä (johon tehtävät 14-17 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
 Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
@@ -646,9 +646,9 @@ Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että 
 Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
-- toinen tehtäviä 14-16 varten (käytetään tästä nimitystä **palautusrepositorio**)
+- toinen tehtäviä 14-17 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
-Repositorioista jäkimmäistä (johon tehtävät 14-16 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
+Repositorioista jäkimmäistä (johon tehtävät 14-17 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
 Luo siis nyt **uusi repositorio**.
 
@@ -673,6 +673,8 @@ viikko3
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
+- tehtävässä ei tosin tehdä itse mitään koodia...
+
 Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
@@ -680,23 +682,25 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
 - Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi_python/)
 - Hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistosta _koodi/viikko1/riippuvuuksien-injektointi-1_ ja kokeile että se toimii
   - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
-  - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-16 palautukseen käyttämäsi repositorion sisälle**
+  - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
+  - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
 
-Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`.
+Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`. Jos unohtui miten virtuaaliympäristön sisälle päästään, kertaa asia tehtävästä 7...
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
 - Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (koska uusi kausi on vasta juuri alkanut tilastot ovat edellisen kauden lopusta)
-  - Kopioi projekti edellisen tehtävän repositorion alle omaksi hakemistoksi
+  - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
+    - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositorioa!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
   - `Statistics` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   - `Player` on luokka, jonka olioina `Statistics`-luokka käsittelee yksittäisen pelaajan tietoja
   - `PlayerReader` on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 - Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
-- **HUOM:** kun suoritat koodin ensimmäisen kerran (virtuaaliympäristössä komennolla `python3 src/index.py`), saattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
+  - **HUOM:** kun suoritat koodin ensimmäisen kerran (virtuaaliympäristössä komennolla `python3 src/index.py`), saattaa kestää hetken ennen kuin ohjelman käyttämä palvelin herää. Seuraavat suorituskerrat ovat nopeampia
 
 **Itse tehtävä:**
 
@@ -747,15 +751,62 @@ class TestStatistics(unittest.TestCase):
 
 Kun injektoit `PlayerReaderStub`-olion testissä `Statistics`-oliolle, palauttaa se aina saman pelaajalistan.
 
+### 17. NHL-tilastot-ohjelman laajennus
+
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+
+Muuta luokan `Statistics` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperustella" metodi palauttaa pelaajat.
+
+Metodin toiminnallisuus selviää seuraavasta:
+
+```python
+def main():
+    stats = Statistics(
+      PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players.txt")
+    )
+
+    # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella
+    print("Top point getters:")
+    for player in stats.top(10, SortBy.POINTS):
+        print(player)
+
+    # metodi toimii samalla tavalla kuin yo. kutsu myös ilman toista parametria
+    for player in stats.top(10):
+        print(player)
+
+    # järjestetään maalien perusteella
+    print("Top point goal scorers:")
+    for player in stats.top(10, SortBy.GOALS):
+        print(player)
+
+    # järjestetään syöttöjen perusteella
+    print("Top by assists:")
+    for player in stats.top(10, SortBy.ASSISTS):
+        print(player)
+```
+
+Järjestämiskriteeri määritellään [Enum](https://docs.python.org/3/library/enum.html)-arvona:
+
+```python
+from enum import Enum
+
+class SortBy(Enum):
+    POINTS = 1
+    GOALS = 2
+    ASSISTS = 3
+```
+
+Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos Statistics-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
+
 ### Tehtävien palautus
 
-Lisää tehtävät 14-16 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
+Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
 
 Palautusrepositorion pitäisi näyttää nyt suunilleen seuraavalta
 
-KUVA
+![]({{ "/images/lh1-31-22.png" | absolute_url }})
 
 Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-- Kerro palautussovelluksessa tehtävät 14-16 sisältävä repositoriosi.
-- Jos et tehnyt tehtäviä 14-16, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
+- Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
+- Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
