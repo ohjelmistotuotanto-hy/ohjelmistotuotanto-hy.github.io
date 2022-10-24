@@ -39,11 +39,13 @@ Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä harjoituksissa on ka
 
 Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59.
 
-Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Tehtävistä on tarjolla sekä Python- että Java-versiot.
+Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Oletusarvoisesti tehtävissä käytetään Pythonia. Myös Javaa on mahdollista käyttää, mutta omalla vastuulla.
 
 {% include java.md %}
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
+
+Python- ja Java-versiot löytyvät omilta sivuiltaan.
 
 ### Miniprojekti
 
@@ -57,7 +59,7 @@ Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viik
 
 _Kurssin läpäisyn edellytyksenä_ on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
 
-Miniprojektit järjestetään pääosin virtuaalisesti/zoomissa.
+Miniprojektit tapaavat asiakasta kampuksella.
 
 #### Miniprojektin hyväksilukeminen
 
@@ -77,7 +79,8 @@ Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien k
   - luentoihin liittyvät monivalintatehtävät 3 pistettä
   - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 8 pistettä
 - miniprojekti 9 pistettä
-- koe 20 pistettä
+- koe 19 pistettä
+- osallistuminen paikan päällä vierailuluennoille 1 piste (0.5 pistettä yhdestä vierailuluentoläsnäolosta)
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 
