@@ -98,7 +98,3 @@
 ### Viikko 8
 
 - Koe ti 20.12. klo 9-12 moodlessa
-
-### Ohjauskalenteri
-
-{% include paja_calendar.md %}
