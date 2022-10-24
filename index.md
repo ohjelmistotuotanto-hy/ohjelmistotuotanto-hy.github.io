@@ -9,6 +9,10 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
+- Apua tehtävien tekoon
+  - ti 14-16 BK107
+  - pe 12-14 BK107
+  - tulosswa myös yksi zoom-aika
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
