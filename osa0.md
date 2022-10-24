@@ -29,7 +29,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa (Anniina Sallinen Oura, HAnnu Kokko Elisa, Jami Kousa Unity ja Mikko Tiainen Meru health). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä neljä vierailuluentoa (Anniina Sallinen Oura, Hannu Kokko Elisa, Jami Kousa Unity ja Mikko Tiainen Meru health). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
 Kurssin luennot pidetään salissa BK107 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitekin syksyn 2021 Zoom-tallenteet johin linkit löytyvät kurssimateriaalin etusivulta.
 
