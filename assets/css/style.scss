@@ -1,5 +1,33 @@
-@import "{{ site.theme }}";
+---
+---
+
+@import '{{ site.theme }}';
 
 .important {
   border: 1px solid black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+
+  &:hover, .heading-anchor:hover {
+    .heading-anchor {
+      opacity: 1;
+    }
+  }
+}
+
+.heading-anchor {
+  position: absolute;
+  margin-left: -1em;
+  color: #828282 !important;
+  text-decoration: none !important;
+  opacity: 0;
+  padding-right: 0.5em;
+  transition: opacity 0.25s;
 }
