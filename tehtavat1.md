@@ -15,6 +15,8 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simp
 
 {% include typo_instructions.md %}
 
+{% include norppa.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>. Viikon tehtävät palautetaan yhdellä kertaa, eli tee merkintä palautussovellukseen vasta kun olet valmis viikon tehtävien osalta.

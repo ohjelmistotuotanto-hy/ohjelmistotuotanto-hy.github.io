@@ -17,6 +17,8 @@ Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 
 {% include typo_instructions.md %}
 
+{% include norppa.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
@@ -207,7 +209,6 @@ def main():
         print(player)
 ```
 
-
 Tässä kyselyssä voi ja kannattaa hyödyntää edellisen tehtävän `All`-matcheria.
 
 Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
@@ -257,7 +258,7 @@ Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
 
 Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
 
-Pitkät metodikutsuketjut, esim. 
+Pitkät metodikutsuketjut, esim.
 
 ```python
 matcher = query.playsIn("NYR").hasAtLeast(5, "goals").hasFewerThan(10, "goals") .build()
@@ -267,10 +268,10 @@ ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usei
 
 ```python
     matcher = (
-      query  
-        .playsIn("NYR")  
-        .hasAtLeast(5, "goals")  
-        .hasFewerThan(10, "goals")  
+      query
+        .playsIn("NYR")
+        .hasAtLeast(5, "goals")
+        .hasFewerThan(10, "goals")
         .build()
     )
 ```

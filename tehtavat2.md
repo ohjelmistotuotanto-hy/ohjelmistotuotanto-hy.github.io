@@ -13,6 +13,8 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 {% include typo_instructions.md %}
 
+{% include norppa.md %}
+
 ### Tehtävien palauttaminen
 
 Osa git-tehtävistä (tehtävät 5-7) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.

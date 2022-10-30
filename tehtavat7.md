@@ -11,6 +11,8 @@ permalink: /tehtavat7/
 
 {% include typo_instructions.md %}
 
+{% include norppa.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.

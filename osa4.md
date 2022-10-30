@@ -21,6 +21,8 @@ Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]
 
 {% include typo_instructions.md path="/osa6.md" %}
 
+{% include norppa.md %}
+
 ## Ohjelmiston suunnittelu
 
 Ohjelmiston suunnittelun ajatellaan jakautuvan kahteen vaiheeseen: arkkitehtuurisuunnitteluun ja olio- tai komponenttisuunnitteluun.
@@ -130,7 +132,7 @@ Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaavioll
 
 ![]({{ "/images/4-16.png" | absolute_url }}){:height="400px" }
 
-Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_. 
+Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_.
 
 Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
 
@@ -1712,7 +1714,7 @@ Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
 class Pinorakentaja:
     def __init__(self):
         self.pino_olio = Pino()
-    
+
     def pino(self):
         return self.pino_olio
 ```
@@ -1733,7 +1735,7 @@ Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metod
 class Pinorakentaja:
     def __init__(self, pino = Pino()):
         self.pino_olio = pino
-    
+
     def prepaid(self, krediitit):
         # ???
 
@@ -1747,7 +1749,7 @@ Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme r
 class Pinorakentaja:
     def __init__(self, pino = Pino()):
         self.pino_olio = pino
-    
+
     def prepaid(self, krediitit):
         return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
 
@@ -1761,7 +1763,7 @@ Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla
 class Pinorakentaja:
     def __init__(self, pino = Pino()):
         self.pino_olio = pino
-    
+
     def prepaid(self, krediitit):
         return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
 

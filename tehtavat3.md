@@ -13,6 +13,8 @@ Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoi
 
 {% include typo_instructions.md %}
 
+{% include norppa.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
@@ -329,9 +331,8 @@ Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _sr
 Sivupohja näyttää seuraavalta:
 
 ```html
-{% raw %}{% extends "layout.html" %}
-{% block title %} Ohtu Application {% endblock %}
-{% block body %}
+{% raw %}{% extends "layout.html" %} {% block title %} Ohtu Application {%
+endblock %} {% block body %}
 <h1>Ohtu Application</h1>
 
 <ul>
@@ -396,10 +397,10 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
 **HUOM2:** seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
 
 ```
-[ ERROR ] Error in file '/.../viikko3/web-login-robot/src/tests/resource.robot' 
-on line 3: Initializing library 'AppLibrary' with no arguments failed: 
-ConnectionError: HTTPConnectionPool(host='localhost', port=5000): 
-Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f459e7c4280>: 
+[ ERROR ] Error in file '/.../viikko3/web-login-robot/src/tests/resource.robot'
+on line 3: Initializing library 'AppLibrary' with no arguments failed:
+ConnectionError: HTTPConnectionPool(host='localhost', port=5000):
+Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f459e7c4280>:
 Failed to establish a new connection: [Errno 111] Connection refused'))
 ```
 
@@ -652,8 +653,8 @@ Jotta sovelluksen testit pystyisi suorittamaan CI-palvelimella, tulee nämä vai
 poetry run python3 src/index.py &
 
 # odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]]; 
-  do sleep 1; 
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]];
+  do sleep 1;
 done
 
 # suoritetaan testit
@@ -695,9 +696,9 @@ jobs:
       - name: Setup chromedriver
         uses: nanasess/setup-chromedriver@master
       - run: |
-            export DISPLAY=:99
-            chromedriver --url-base=/wd/hub &
-            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
       - name: Install dependencies
         run: poetry install
       - name: Run robot tests

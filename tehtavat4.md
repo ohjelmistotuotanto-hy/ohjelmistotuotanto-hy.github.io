@@ -8,9 +8,12 @@ permalink: /tehtavat4/
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. Tehtävissä 5 ja 6 refaktoroidaan sisäiseltä laadultaan heikossa kunnossa olevaa koodia.
+
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
+
+{% include norppa.md %}
 
 ### Tehtävien palauttaminen
 
@@ -23,7 +26,6 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka `Kauppa` riippui `Pankki`-, `Varasto`- ja `Viitegeneraattori`-luokista. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
 
 Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `Kauppa` tulisi testata? Tuleeko kaupan testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
-
 
 Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
 
@@ -137,7 +139,7 @@ kauppa = Kauppa(pankki_mock, viitegeneraattori_mock)
 
 `Mock`-luokan [konstruktorin](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock) `wraps`-parametrin avulla voimme määritellä, minkä olion `Mock`-olio toteuttaa. Tämä mahdollistaa sen, ettei esimerkiksi `uusi`-metodille tarvitse määritellä toteutusta, vaan voimme käyttää sen oikeaa toteutusta.
 
-Eli nyt viitegeneraattori on olio, jonka metodi `uusi` palauttaa arvot 1, 2, 3... 
+Eli nyt viitegeneraattori on olio, jonka metodi `uusi` palauttaa arvot 1, 2, 3...
 
 Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että pankin `Mock`-olion metodia `maksa` on kutsuttu oikeilla parametreilla. Kolmanteen parametriin, eli viitenumeroon ei kiinnitetä huomiota:
 
@@ -318,9 +320,9 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 5. Ostoskori TDD-tekniikalla
 
-Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava: 
+Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
 
-**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tdd-ostoskori oleva projekti.**
+**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa \_koodi/viikko4/tdd-ostoskori oleva projekti.**
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -342,6 +344,7 @@ class Tuote:
   def __repr__(self):
       return f"{self._nimi} hinta {self._hinta} euroa"
 ```
+
 Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
 **Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
@@ -369,7 +372,7 @@ class Ostos:
         return self._lukumaara * self.tuote.hinta()
 ```
 
-Tehtävänäsi on ohjelmoida luokka `Ostoskori`. 
+Tehtävänäsi on ohjelmoida luokka `Ostoskori`.
 
 Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
 
@@ -385,10 +388,10 @@ class Ostoskori:
     def tavaroita_korissa(self):
         pass
         # kertoo korissa olevien tavaroiden lukumäärän
-        # jos koriin lisätty 2 kpl tuotetta "maito", 
-        #   tulee metodin palauttaa 2 
-        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", 
-        #   tulee metodin palauttaa 2 
+        # jos koriin lisätty 2 kpl tuotetta "maito",
+        #   tulee metodin palauttaa 2
+        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto",
+        #   tulee metodin palauttaa 2
 
     def hinta(self):
         return 0
@@ -409,7 +412,7 @@ class Ostoskori:
     def ostokset(self):
         pass
         # palauttaa listan jossa on korissa olevat ostos-oliot
-        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse 
+        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse
         #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
 ```
 
@@ -428,11 +431,11 @@ Hae koodipohja [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemisto
 - Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
 - Jatketaan askeleesta 1
 
-**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä *kaikki* testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
+**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä _kaikki_ testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
 
 Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
 
-*Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti.*
+_Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti._
 
 #### 1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.
 
@@ -507,9 +510,9 @@ tässä testataan ostoskorin metodia `ostokset`:
     def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
         maito = Tuote("Maito", 3)
         self.kori.lisaa_tuote(maito)
- 
+
         ostokset = self.kori.ostokset()
- 
+
         # testaa että metodin palauttaman listan pituus 1
 ```
 
@@ -524,9 +527,9 @@ Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
     def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
         maito = Tuote("Maito", 3)
         self.kori.lisaa_tuote(maito)
- 
+
         ostos = self.kori.ostokset()[0]
- 
+
         # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
 ```
 
@@ -546,7 +549,6 @@ Lisää ja commitoi muutokset.
 
 Lisää ja commitoi muutokset.
 
-
 #### 13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
 
 Lisää ja commitoi muutokset.
@@ -557,7 +559,6 @@ Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksi
 
 Lisää ja commitoi muutokset.
 
-
 #### 15. Metodi tyhjenna tyhjentää korin
 
 Lisää ja commitoi muutokset.
@@ -565,6 +566,7 @@ Lisää ja commitoi muutokset.
 Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu. Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
 
 Lisää ja commitoi mahdolliset muutokset.
+
 ### 6. IntJoukon testaus ja siistiminen
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.

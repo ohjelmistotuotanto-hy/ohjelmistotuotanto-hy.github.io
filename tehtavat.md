@@ -14,6 +14,8 @@ Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvos
 
 {% include paja.md %}
 
+{% include norppa.md %}
+
 ### Viikko 1
 
 - [monivalintatehtävät]({{site.stats_url}}/quiz/1) deadline {{site.moniv-dl[1]}}
