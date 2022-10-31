@@ -19,6 +19,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://coursefeedback.helsinki.fi/targets/37221267/feedback>
   - Kurssipalautejärjestelmän "jatkuvan palautteen" toiminnallisuus on vasta koekäytössä, ja sitä kehitetään mm. tämän kurssin kokemusten myötä.
+- Salin CK112 [Unitube-linkki](https://video.helsinki.fi/unitube/live-stream.html?room=l16)
+  - Luennot striimataan jos Unitube toimii (pe 21.10. ei toiminut).
 
 ## Aikataulu
 
