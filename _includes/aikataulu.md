@@ -1,9 +1,12 @@
 ### Viikko 1
 
-- Luento 1: {{site.luennot[1]}} [(syksyn 21 tallenne)](https://youtu.be/v8wUaq4qa9M)
+- Luento 1: {{site.luennot[1]}}
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
+  - tallenteet:
+    - pelkän äänen sisältävä [Unitube-streami](https://www2.helsinki.fi/fi/unitube/video/a81f809b-399e-4fb7-b15b-d9a02ac01efe)
+    - [syksyn 21 tallenne](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}} [(syksyn 21 tallenne)](https://youtu.be/Bejr8KO_0fY)
   - [Scrum](/osa1#scrum)
 - Laskarit
