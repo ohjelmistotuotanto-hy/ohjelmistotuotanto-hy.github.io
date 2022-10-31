@@ -69,7 +69,7 @@ Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/k
 
 Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _neljän kuukauden työkokemus_.
 
-Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet ensimmäisen viikon tehtävät.
+Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
 
 ### Kurssin arvostelu
 
