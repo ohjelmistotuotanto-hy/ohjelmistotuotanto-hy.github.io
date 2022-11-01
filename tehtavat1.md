@@ -710,9 +710,11 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ```python
 stats = Statistics(
-  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
+  PlayerReader()
 )
 ```
+
+**HUOM:** jos törmäät virheeseen `URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, mahdollinen ratkaisu ongelmaan löytyy [täältä](https://stackoverflow.com/a/42334357).
 
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
 
