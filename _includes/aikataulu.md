@@ -7,8 +7,11 @@
   - tallenteet:
     - pelkän äänen sisältävä [Unitube-streami](https://www2.helsinki.fi/fi/unitube/video/a81f809b-399e-4fb7-b15b-d9a02ac01efe)
     - [syksyn 21 tallenne](https://youtu.be/v8wUaq4qa9M)
-- Luento 2: {{site.luennot[2]}} [(syksyn 21 tallenne)](https://youtu.be/Bejr8KO_0fY)
+- Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
+  - tallenteet:
+    - [syksy 2022](https://youtu.be/5QMrHkXaEzQ)
+    - [syksy 2021](https://youtu.be/Bejr8KO_0fY)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[1]}}
