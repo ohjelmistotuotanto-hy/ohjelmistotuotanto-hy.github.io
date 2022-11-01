@@ -16,7 +16,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Luennot
   - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
-  - Luennot striimataan jos Unitube toimii (pe 21.10. ei toiminut)
+  - Luennoista on myös tallenteet, ks. aikataulu
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Discord on Whatsappin ja Messengerin tyylinen keskustelufoorumisovellus, jota on mahdollista käyttää selaimella, mobiililaitteilla ja Windows/Linux/macOS-clienteillä.
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
