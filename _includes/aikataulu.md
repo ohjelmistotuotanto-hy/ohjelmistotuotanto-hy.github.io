@@ -6,7 +6,7 @@
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
     - pelkän äänen sisältävä [Unitube-streami](https://www2.helsinki.fi/fi/unitube/video/a81f809b-399e-4fb7-b15b-d9a02ac01efe)
-    - [syksyn 21 tallenne](https://youtu.be/v8wUaq4qa9M)
+    - [syksy 21](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
