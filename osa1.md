@@ -131,7 +131,7 @@ Roycen versio kuvasta näyttää seuraavalta:
 
 ![]({{ "/images/1-1.png" | absolute_url }})
 
-Suoraviivainen lineaarinen malli, jota ruvettiin kutsumaan vesiputousmalliksi, saavutti nopeasti suosiota. Malli on monella tapaan järkeenkäypä; ensin kannattaa selvittää mitä ollaan tekemässä ja suunnittelu hoitaa vasta tämän jälkeen. Kun suunnitelma on valmis, voidaan tuote valmistaa ja sen jälkeen testata että se toimii kuten haluttiin, näinhän toimitaan monella muullakin tuotannon alalla.
+Suoraviivainen lineaarinen malli, jota ruvettiin kutsumaan vesiputousmalliksi, saavutti nopeasti suosiota. Malli on monella tapaa järkeenkäypä; ensin kannattaa selvittää mitä ollaan tekemässä ja suunnittelu hoitaa vasta tämän jälkeen. Kun suunnitelma on valmis, voidaan tuote valmistaa ja sen jälkeen testata että se toimii kuten haluttiin, näinhän toimitaan monella muullakin tuotannon alalla.
 
 Vesiputousmallin suosion taustalla oli osittain se, että Yhdysvaltojen puolustusministeriö (Department of Defence, DoD) joka oli tuohon aikaan eräs maailman suurimmista ohjelmistojen tilaajista, rupesi vaatimaan kaikilta alihankkijoiltaan prosessin noudattamista (Standardi DoD STD 2167). Muutkin ohjelmistoja tuottaneet tahot ajattelivat, että koska DoD vaatii vesiputousmallia, on se hyvä asia ja tapa kannattaa omaksua itselleen.
 
@@ -177,7 +177,7 @@ Roycen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta siitä saatu
 
 ![]({{ "/images/1-3.png" | absolute_url }})
 
-Vesiputousmalli tai ainakin Roycen nimeäminen vesiputousmallin isäksi on siis suuri väärinymmärrys, onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
+Vesiputousmalli tai ainakin Roycen nimeäminen vesiputousmallin isäksi on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
 
 ### Iteratiivinen ja inkrementaalinen ohjelmistokehitys
 
