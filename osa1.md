@@ -33,7 +33,7 @@ IEEE:n mukaan ohjelmistotuotannolla tarkoitetaan systemaattista, kurinalaista, m
 
 Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesti määritellyt sen, mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan. SWEBOK:in uusin versio 3.0 on vuodelta 2014 eli jo jossain määrin ikääntynyt.
 
-> Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono, jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin eri henkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä development, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen.
+> Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono. Jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin eri henkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä development, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen.
 
 ### Ohjelmistotuotannon osa-alueet
 
@@ -76,7 +76,7 @@ Aloittelevalle ohjelmistoalan opiskelijalle on tässä vaiheessa olennaisinta sa
 
 ## Ohjelmiston vaiheet ja elinkaari
 
-Edellisessä luvussa mainituttujen ohjelmistotuotannon osa-alueiden
+Edellisessä luvussa mainittujen ohjelmistotuotannon osa-alueiden
 
 - Software requirements, vaatimusten määrittely
 - Software design, suunnittelu
@@ -437,7 +437,7 @@ Eli kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan sill�
 
 Jos sprintin aikana osoittautuu että tiimi ei ehdi toteuttamaan kaikkea mihin se sitoutui, ei ole hyväksyttävää tinkiä laadusta, vaan osa vaatimuksista jätetään seuraavaan sprinttiin.
 
-Definition of done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ketterässä ohjelmistokehityksessä tärkein edistymisen mittari on valmiina oleva ohjelmisto, on erittäin tärkeää, että kaikilla on sama näkemys mitä "valmis" tarkoittaa. Asia ei nimittäin ole ollenkaan itsestäänselvä, jos sitä ei tarkkaan määritellä. On melko yleistä, että kun ohjelmistokehittäjä ilmaise jonkun ominaisuuden olevan kahden päivän ohjelmoinnin jälkeen "melkein valmis", kestää lopulta parikin viikkoa ennen kun asia on kokonaan valmis siinä mielessä että sovelluksen asiakkaat pääsevät käyttämään uutta ominaisuutta.
+Definition of done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ketterässä ohjelmistokehityksessä tärkein edistymisen mittari on valmiina oleva ohjelmisto, on erittäin tärkeää, että kaikilla on sama näkemys mitä "valmis" tarkoittaa. Asia ei nimittäin ole ollenkaan itsestäänselvä, jos sitä ei tarkkaan määritellä. On melko yleistä, että kun ohjelmistokehittäjä ilmaisee jonkun ominaisuuden olevan kahden päivän ohjelmoinnin jälkeen "melkein valmis", kestää lopulta parikin viikkoa ennen kun asia on kokonaan valmis siinä mielessä että sovelluksen asiakkaat pääsevät käyttämään uutta ominaisuutta.
 
 ### Sprintin suunnittelu
 
@@ -485,7 +485,7 @@ Eli siinä missä scrum guide antaa päiväpalaverille vaatimattoman läpinäkyv
 
 Sprintin päätteeksi järjestetään sprint review eli katselmointi. Katselmointi on informaali tilaisuus, jonka aikana kehitystiimi esittelee sprintin aikaansaannoksia kaikille kehitettävästä tuotteesta kiinnostuneille sidosryhmille.
 
-Katselmoinnissa on tarkoituksena tarkastella, demota ja kokeilla toteutettua, toimivaa ohjelmistoa. Powerpoint-kalvojen näyttäminen katselmoinnissa on suorastaan kiellettyä.
+Katselmoinnissa on tarkoituksena tarkastella, demota ja kokeilla toteutettua, toimivaa ohjelmistoa. PowerPoint-kalvojen näyttäminen katselmoinnissa on suorastaan kiellettyä.
 
 Scrum master huolehtii, että katselmoinnissa demonstroidaan ainoastaan niitä ominaisuuksia, jotka on toteutettu kokonaan eli definition of donen tasolla. Näin pyritään antamaan mahdollisimman realistinen kuva siitä miten sovelluksen kehitys etenee.
 
@@ -527,7 +527,7 @@ Scrum guide nostaa esiin myös joukon _arvoja_ (engl. values) oleellisena seikka
 
 Tiimin tulee olla _sitoutunut_ (commitment) yhteisen tavoitteen saavuttamiseksi ja _fokusoitua_ oikeiden asioiden tekemiseen. Tulee olla myös _rohkeutta_ tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin _kunnioittaen_ koko ajan kaikkia kehitystiimin jäseniä sekä ohjelmiston sidosryhmiä.
 
-Syksyllä 2019 [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil_, eli hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa.
+Syksyllä 2019 julkaistu [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil_, eli hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa.
 
 Scrumin ei siis pidä missään tapauksessa olla Scrum Guiden ohjeiden orjallista noudattamista. Jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. Scrumin inspect-and-adapt luonne jopa ohjaa siihen, että tiimien kannattaa jossain vaiheessa toimia joidenkin Scrumin ohjeiden vastaisesti, jos tiimin optimaalinen toiminta sitä vaatii.
 
