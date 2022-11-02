@@ -335,7 +335,7 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
-poetry add coverage --dev
+poetry add coverage --group dev
 ```
 
 - Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
