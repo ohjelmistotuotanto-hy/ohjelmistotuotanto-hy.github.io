@@ -9,7 +9,7 @@ permalink: /tehtavat1
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
 
-Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
+Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -126,7 +126,7 @@ Kloonaa nyt GitHubiin tehty repositorio **paikalliselle koneelle**. Tämä tapah
 git clone git@github.com:omatunnustahan/ohtuvarasto.git
 ```
 
-missä komennon `git clone`parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
+missä komennon `git clone` parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
 ![]({{ "/images/lh1-2-22.png" | absolute_url }})
 
@@ -159,12 +159,12 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 - Lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
   - Muista hyödyllinen komento `git status`
 - Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
-- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_ ,ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
+- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
   - Toinen ignorattava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
   - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
 - Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
   - Saat asian tarkastettua komennolla `git status`
-- Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
+- Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista, että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
 - Lisää ja commitoi _.gitignore_-tiedosto repositorioosi
 - Seuraavat kohdat puhuvat gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
 - Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
@@ -179,7 +179,7 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 - Jos lisäät projektiin uusia tiedostoja, ei `git add -p` huomaa niitä, eli ne on lisättävä staging-alueelle erikseen
 - _Käytä jatkossa komentoa `git add -p` aina kun se on suinkin mahdollista!_
 
-komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset.
+Komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset.
 
 ### 4. Tiedostojen lisääminen GitHubiin [versionhallinta]
 
@@ -188,7 +188,7 @@ Tehtävässä 2 tehtiin GitHubiin repositorio "ohtuvarasto", joka liitettiin pai
 - "Pushaa" nämä GitHubissa olevaan etärepositorioon antamalla komento `git push`
 - Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
-GitHubissa pitäisi näyttää suunilleen seuraavalta
+GitHubissa pitäisi näyttää suunnilleen seuraavalta
 
 ![]({{ "/images/lh1-3-22.png" | absolute_url }})
 
@@ -805,7 +805,7 @@ Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos
 
 Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
 
-Palautusrepositorion pitäisi näyttää nyt suunilleen seuraavalta
+Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 
 ![]({{ "/images/lh1-31-22.png" | absolute_url }})
 
