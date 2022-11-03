@@ -61,7 +61,7 @@ class KonsoliIO:
         print(teksti)
 ```
 
-Muokataan luokkaa  <code>Laskin</code> siten, että se saa konstruktorin parametrina olion, jonka kautta se hoitaa käyttäjän kanssa tapahtuvan kommunkioinnin:
+Muokataan luokkaa <code>Laskin</code> siten, että se saa konstruktorin parametrina olion, jonka kautta se hoitaa käyttäjän kanssa tapahtuvan kommunikoinnin:
 
 ```python
 class Laskin:
