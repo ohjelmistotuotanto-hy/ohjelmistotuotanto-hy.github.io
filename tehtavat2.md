@@ -21,11 +21,16 @@ Osa git-tehtävistä (tehtävät 5-7) tehdään ainoastaan paikalliseen reposito
 
 Muut tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan samaan repositorioon kuin varasto-projekti. Muut tehtävät voit palauttaa samaan repositorioon mihin palautit ensimmäisen viikon tehtävät 14-17.
+Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan **ohtuvarasto**-repositorioon, siis samaan mitä käytettiin viikon 1 tehtävissä 2-13. Muut tehtävät palautetaan **palautusrepositorioon**, eli samaan mihin palautit ensimmäisen viikon tehtävät 14-17.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Poetryn harjoittelua
+
+**Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin viikon 1 tehtävät 14-17
+
+- Tee palautusrepositorioon hakemisto _viikko2_ ja sen sisälle hakemisto _poetry-web_ tätä tehtävää varten
+- Lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
 
 **HUOM**: Kurssilla käytetään riippuvuuksien hallinnassa ainoastaan Poetrya, eli pip:iä ei tule käyttää riippuvuuksien asennuksessa. Tämä tarkoittaa käytännössä sitä, että riippuvuudet asennetaan komennolla `poetry add <kirjasto>` komennon `pip install <kirjasto>` sijaan.
 
@@ -35,7 +40,7 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 
 Tee seuraavat toimenpiteet:
 
-- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.8"`, jotta projektin Python-version vaatimus asetetaan oikein.
+- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.8"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenne Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
@@ -50,9 +55,13 @@ Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja 
 
 ### 2. Riippuvuuksien hyödyntäminen
 
+**Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin teit edellisen tehtävän
+
 Ohjelmistokehittäjälle tulee usein vastaan tilanne, jossa pitäisi löytää tiettyyn käyttötarkoitukseen sopiva kirjasto. Harjoittelemme kyseistä tilannetta tässä tehtävässä.
 
-[TOML](https://toml.io/en/) on eräs helppolukuinen datan esitysformaatti, jota käytetään usein konfiguraatiotiedostoissa, kuten Poetryn _pyproject.toml_-tiedostossa. [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko2/project-reader_ on pohja ohjelmalle, jonka tarkoituksena on lukea projektin tietoja annetusta osoitteesta löytyvästä _pyproject.toml_-tiedostosta. **Kopioi aluksi projekti tehtävien palautukseen käyttämäsi repositorion sisälle.**
+[TOML](https://toml.io/en/) on eräs helppolukuinen datan esitysformaatti, jota käytetään usein konfiguraatiotiedostoissa, kuten Poetryn _pyproject.toml_-tiedostossa. [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko2/project-reader_ on pohja ohjelmalle, jonka tarkoituksena on lukea projektin tietoja annetusta osoitteesta löytyvästä _pyproject.toml_-tiedostosta.
+
+- **Kopioi aluksi projekti palautusrepositorioon hakemiston viikko2 sisälle.**
 
 Tehtävänäsi on ensin löytää sopiva kirjasto, jonka avulla TOML-muotoisista merkkijonoista voi muodostaa Pythonin tietorakenteita. Voit hyödyntää tässä esimerkiksi [PyPI](https://pypi.org/)-sivuston hakua tai Googlea. PyPI:ssä eräs hyvä hakusana voisi olla esimerkiksi "toml". Tutustu kirjastojen kuvauksiin ja päättele sen perusteella, sopiiko kirjasto käyttötarkoitukseen. Kun löydät sopivan kirjaston, asenna se projektiin Poetryn avulla.
 
@@ -83,18 +92,22 @@ Development dependencies: robotframework, robotframework-seleniumlibrary, reques
 
 ### 3. Pylint ja koodin staattinen analyysi
 
+**Tämä ja seuraava tehtävä tehdään viime viikon tehtävissä 2-13 käytettyyn ohtuvarasto-repositorioon**
+
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
 Tutustutaan nyt staattisen analyysin työkaluun nimeltään [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://ohjelmistotekniikka-hy.github.io/python/viikko4#pylint-ja-koodin-laaduun-staattinen-analyysi).
 
-Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi. Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
+**Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi.**
 
-Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[MASTER]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/2.6/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään kahdeksaan, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
+Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
+
+Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[MASTER]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/2.6/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään neljään, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
 ```
 [DESIGN]
 
-max-args=8
+max-args=4
 ```
 
 Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta _Design checker_ -osion alta).
@@ -103,24 +116,27 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
 - Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
 - Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä pylintin [dokumentaatiosta](http://pylint.pycqa.org/en/2.6/technical_reference/features.html)):
-  - Rivin pituus on maksimissaan 110 merkkiä
+
+  - Rivin pituus on maksimissaan 80 merkkiä
     - Vinkki: sääntö löytyy [Format checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#format-checker) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
     - Vinkki: sääntö löytyy [Refactoring checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#refactoring-checker) ja tulee määrittää `[REFACTORING]`-osion alle)
-  - Funktiossa tai metodissa on enintään 20 lausetta
-    - Vinkki: sääntö löytyy [Design checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#design-checker) -osiosta
+  - Funktiossa tai metodissa on enintään 15 lausetta (statements), etsi sääntö dokumentaatiosta
   - [Syklomaattinen koodikompleksisuus](https://en.wikipedia.org/wiki/Cyclomatic_complexity) korkeintaan 3
     - Selvitä mitä syklomaattisella kompleksisuudella tarkoitetaan
-    - Vinkki: sääntö löytyy _Design checker_ -osiosta [tämän](http://pylint.pycqa.org/en/latest/technical_reference/extensions.html#design-checker-documentation) lisäosan avulla. Saat sen käyttöön lisäämällä `[MASTER]`-osioon `load-plugins=pylint.extensions.mccabe`-rivin
+    - Vinkki: sääntö löytyy _Design checker_ -osiosta [tämän](https://pylint.pycqa.org/en/latest/user_guide/checkers/extensions.html#design-checker) lisäosan avulla. Saat sen käyttöön lisäämällä `[MASTER]`-osioon `load-plugins=pylint.extensions.mccabe`-rivin
+
 - Muuta koodiasi siten, että saat jokaisen määritellyistä pylint-säännöistä rikkoutumaan
 - Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
-  - `Varasto`-luokan konstruktori luultavasti rikkoo `too-complex`-sääntöä. Voit esimerkiksi miettiä, miten voisit esittää `tilavuus`-attribuutin arvon if-lauseen sijaan jotenkin muuten.
+  - `Varasto`-luokan konstruktori luultavasti rikkoo `max-complexity`-sääntöä. Voit esimerkiksi miettiä, miten voisit esittää `tilavuus`-attribuutin arvon if-lauseen sijaan jotenkin muuten.
 
 Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana pylintin suosittelemaa konfiguraatiota. Suoitellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
 
 ### 4. Koodin staattinen analyysi ja GitHub Actionit
 
-Laajenna projektisi GitHub Actionien määritelmää siten, että myös pylint-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin.
+**Tämä tehtävä tehdään viime viikon tehtävissä 2-13 käytettyyn ohtuvarasto-repositorioon**
+
+Laajenna ohtuvarastosi GitHub Actionien määritelmää siten, että myös pylint-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin.
 
 Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin pylint-sääntöjä:
 
@@ -132,6 +148,8 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 5. Git: branchit [versionhallinta]
 
+**Tätä tehtävää ei palauteta mihinkään**
+
 Lue brancheja käsittelevät osuudet seuraavasta <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
 - jos haluat lukea hieman perusteellisemman selityksen asiasta, lue <https://git-scm.com/book/en/v2:n luku kolme kokonaisuudessaan
@@ -142,7 +160,7 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 
 **Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging -alue tyhjinä!
 
-Tee seuraavat paikalliseen git-repositorioosi (kyseessä ei siis tarvitse olla tehtävien palautusrepositorio)
+Tee seuraavat paikalliseen git-repositorioosi (tehtävää ei palauteta, eli kyseessä **ei** siis tarvitse olla tehtävien palautusrepositorio)
 
 - Huom: seuraavassa käytetään versionhallinnan päähaarasta gitin oletusarvoista nimeä _master_. GitHubissa päähaarasta käytetään nykyään nimeä _main_, ja jos teet tehtävän palautusrepositorioosi, on päähaarasi nimi todennäköisesti _main_
 
@@ -225,6 +243,8 @@ logger("lopetetaan")
 
 ### 6. Git: branchit ja staging-alue [versionhallinta]
 
+**Tätä tehtävää ei palauteta mihinkään**
+
 - Olet nyt repositoriosi master-haarassa
 - Luo uusi tiedosto _README.md_, **älä** kuitenkaan lisää ja commitoi tiedostoa versionhallintaan
 - Tiedoston sisällöllä ei ole merkitystä, se voi olla esim. seuraava
@@ -293,10 +313,13 @@ nothing to commit, working tree clean
 - Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
 - Mergeä **master** branchiin **laskut**
 - Siirry nyt masteriin ja tuhoa branchi **laskut**
+  - Tuohoaminen ei onnistu suoraan jos branchin sisältö ei ole kokonaisuudessan mergetty masteriin. Jos näin on, tee ensin merge
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
 ### 7. Git: konflikti! [versionhallinta]
+
+**Tätä tehtävää ei palauteta mihinkään**
 
 Tee paikalliseen git-repoon seuraavat
 
@@ -339,7 +362,7 @@ print(f"{summa(x, y)}")
 print(f"{erotus(x, y)}")
 
 logger("lopetetaan ohjelma")
-print("goodbye!")
+print("goodbye!") # lisäys bugikorjaus-branchissa
 ```
 
 - Mene takaisin **master**-branchiin, editoi tiedoston **index.py** alkupuolta esim.seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
@@ -351,7 +374,7 @@ from logger import logger
 from summa import summa
 from erotus import erotus
 
-logger("aloitetaan ohjelma")
+logger("aloitetaan ohjelma") # muutos masterissa
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
@@ -379,8 +402,8 @@ logger("aloitetaan ohjelma")
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
-print(f"{x} + {y} = {summa(x, y)}")
-print(f"{x} - {y} = {erotus(x, y)}")
+print(f"{x} + {y} = {summa(x, y)}") # muutos masterissa
+print(f"{x} - {y} = {erotus(x, y)}") # muutos masterissa
 
 logger("lopetetaan ohjelma")
 print("goodbye!")
@@ -402,8 +425,8 @@ logger("aloitetaan ohjelma")
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
-print(f"Lukujen {x} ja {y} summa on {summa(x, y)}")
-print(f"Lukujen {x} ja {y} erotus on {erotus(x, y)}")
+print(f"Lukujen {x} ja {y} summa on {summa(x, y)}")  # muutos bugikorjaus-branchissa
+print(f"Lukujen {x} ja {y} erotus on {erotus(x, y)}")  # muutos bugikorjaus-branchissa
 
 logger("lopetetaan ohjelma")
 print("goodbye!")
@@ -430,37 +453,67 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 ### 8. Git: branchit ja GitHub [versionhallinta]
 
+**Tämä tehtävä tehdään palautusrepositorioon**
+
 Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
 
 Lisätään seuraavaksi branch GitHubiin:
 
-- Lisää tehtävien palauttamiseen käyttämäsi GitHub-repositorion paikalliseen kopioon branchit **haara1** ja **haara2**
-- Mene branchiin **haara1**, lisää sinne tiedosto **haara1.txt** ja committaa
-- Mene branchiin **haara2**, lisää sinne tiedosto **haara2.txt** ja committaa
+- Luo palautusrepositorion paikalliseen kopioon branchit **haara1** ja **haara2**
+- Mene branchiin **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
+- Mene branchiin **haara2**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
 - Pushaa uudet branchit GitHubiin
-- Tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö
+- Tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö:
+
+![]({{ "/images/lh2-branch1.png" | absolute_url }}){:height="350px" }
 
 Kloonaa GitHub-repositoriosta koneellesi toinen kopio:
 
 - Kuten huomaat, eivät branchit tule kloonattuun kopioon
 - Tee paikalliseen kopioon branch joka "träkkää" GitHub:issa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
-- Lisää "träkkäävään" branchiin joku tiedosto, committaa ja pushaa branchi GitHubiin
+- Lisää "träkkäävään" branchiin joku tiedosto (hakemiston viikko2), committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Mene GitHub-repon alkuperäiseen paikalliseen kopioon:
 
 - Mene branchiin **haara1** ja pullaa muutokset GitHub:in vastaavasta branchista
   - huom: koska kyseessä ei ole "träkkäävä" branchi, joudut pullaamaan komennolla `git pull origin haara1`
-  - git antaa myös vihjeen miten branchista saa träkäävän
 - Mene branchiin **haara2**, lisää sitten tiedosto, committaa ja pushaa branchi GitHubiin
   - Koska kyseessä ei ole "träkkäävä" branchi, ei komento `git push` riitä vaan joudut määrittelemään branchin jonne push kohdistuu eli antamaan komennon `git push origin haara2`
-  - git antaa jälleen vihjeen miten branchista saa träkäävän
+- Komennon `git push` tuloste antaa ohjeen, miten saat komennon toimimaan haaran sisältä ilman lisäparametreja:
+
+```
+$ git push
+fatal: The current branch haara2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin haara2
+```
 
 Mene jälleen toiseen kopioon:
 
 - Suorita komento `git remote show origin`
-  - komento kertoo "origin":issa eli githubissa olevien branchien ja paikallisten branchien suhteen
-- Tee sinne GitHub:issa olevan projektisi branchia **haara2** träkkäävä branch
+- Komento kertoo "origin":issa eli GitHubissa olevien branchien ja paikallisten branchien suhteen
+
+```
+* remote origin
+  Fetch URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
+  Push  URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
+  HEAD branch: main
+  Remote branches:
+    haara1 tracked
+    haara2 tracked
+    main   tracked
+  Local branches configured for 'git pull':
+    haara1 merges with remote haara1
+    main   merges with remote main
+  Local refs configured for 'git push':
+    haara1 pushes to haara1 (up to date)
+    main   pushes to main   (up to date)
+```
+
+- Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
+- Tee lokaaliin kopioon GitHub:issa olevan projektisi branchia **haara2** träkkäävä branch
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
 - Tee branchiin muutoksia ja pushaa ne githubiin
   - Huom: koska kyseessä on träkkäävä branch, riittää git push
@@ -469,12 +522,12 @@ Mene jälleen toiseen kopioon:
 Palaa vielä alkuperäiseen lokaaliin repositorioon:
 
 - Suorita komento `git remote show origin`
-- Tulostus kertoo, että lokaaleista haaroista ainoastaan _master_ on konfiguroitu komennon `git pull` osalta, eli on träkkäävä branchi:
+- Tulostus kertoo, että lokaaleista haaroista ainoastaan _master_ on konfiguroitu komennon `git pull` osalta:
 
 ```
 * remote origin
-  Fetch URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
-  Push  URL: git@github.com:mluukkai/ohtu-2020-viikko1.git
+  Fetch URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
+  Push  URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
   HEAD branch: master
   Remote branches:
     haara1 tracked
@@ -489,7 +542,7 @@ Palaa vielä alkuperäiseen lokaaliin repositorioon:
 ```
 
 - Suorita `git pull` branchissä _haara1_
-- Komennon tuloste antaa ohjeen, miten saat konfiguroitua _haara1_:n träkkäämään githubissa olevaa haaraa:
+- Komennon tuloste antaa ohjeen, miten saat konfiguroitua `git pull` komennon toimimaan _haara1_:n sisällä ilman lisäparametreja:
 
 ```
 There is no tracking information for the current branch.
@@ -519,34 +572,36 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 ### 9. Git: epäajantasaisen kopion pushaaminen [versionhallinta]
 
-Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen githubissa olevaan etärepositorioon epäonnistuu.
+Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
-- Mene alkuperäisen repositorion paikallisen kopion **master** -haaraan, tee joku muutos, commitoi ja pushaa se githubiin
-- Mene toisen kopion **master**-haaraan ja tee sinne joku muutos
-- commitoi ja pushaa muutos githubiin
+- Mene alkuperäisen repositorion paikallisen kopion **main**-haaraan, tee joku muutos, commitoi ja pushaa se GitHubiin
+- Mene toisen kopion **main**-haaraan ja tee sinne joku muutos
+- commitoi ja pushaa muutos GitHubiin
 - Kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
 
 ```
 $ git push
-To git@github.com:mluukkai/ohtu-viikko1-20120git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-viikko1-2020.git'
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-s22-palautukset.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first merge the remote changes (e.g.,
-hint: 'git pull') before pushing again.
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-$
 ```
 
-Virheen syynä on se, että githubissa oleva **master**-haara oli edellä paikallisen repositorion **master**-haaraa. Ongelma korjaantuu tekemällä ensin `git pull`, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen.
+Virheen syynä on se, että githubissa oleva **main**-haara oli edellä paikallisen repositorion **main\***-haaraa. Ongelma korjaantuu tekemällä ensin `git pull`, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen.
 
 - Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
 
 ### 10. Riippuvuuksien injektointi osa 3: Verkkokauppa
 
-Tutustuimme viime viikon [tehtävissä 14-17](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme sitä yksikkötestauksen helpottamiseen.
+**Tämä ja seuraavat kaksi tehtävää tehdään palautusrepositorioon**
+
+- lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
+
+Tutustuimme viime viikon [tehtävissä 14-17](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme periaatetta yksikkötestauksen helpottamiseen.
 
 Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi_python/).
 
@@ -554,7 +609,7 @@ Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippu
 
 - Hae projekti kurssirepositoriosta
   - Järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle
-  - **Tämän jälkeen kannattaa kopioida projekti tehtävien palautukseen käyttämäsi repositorion sisälle**
+  - **Tämän jälkeen kannattaa kopioida projekti palautusrepositorioon, hakemiston viikko2 sisälle**
 - Tutustu koodiin, piirrä luokkakaavio ohjelman rakenteesta
   - Luokkakaavioita ei tarvitse palauttaa
 - Ohjelman luokista `Pankki`, `Varasto`, `Viitegeneraattori` ja `Kirjanpito` ovat sellaisia, että niistä on tarkoitus olla olemassa ainoastaan yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla", eli piilottamalla konstruktori ja käyttämällä staattista muuttujaa ja metodia säilömään ja palauttamaan luokan ainoa olio
