@@ -20,9 +20,12 @@
 
 ### Viikko 2
 
-- Luento 3: {{site.luennot[3]}} [(syksyn 21 tallenne)](https://youtu.be/T5dOFks48ZY)
+- Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
+  - tallenteet:
+    - [syksy 2022](https://youtu.be/0MbS7-32svA)
+    - [syksyn 2021](https://youtu.be/T5dOFks48ZY)
 - Luento 4: {{site.luennot[4]}} [(syksyn 21 tallenne)](https://youtu.be/_V6jCiKuH-0)
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)

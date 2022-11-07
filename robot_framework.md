@@ -9,6 +9,8 @@ permalink: /robot_framework/
 
 Vaikka Robot Framework on perinteisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Robot Frameworkin toimintaperiaatteita testaamalla yksittäistä luokkaa. Hae [kurssirepositorion]({{site.java_exercise_repo_url}}) hakemistossa _koodi/viikko3/hello-robot_ oleva projekti.
 
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
+
 Testattavana on yksinkertainen laskuri:
 
 ```python
