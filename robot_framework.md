@@ -113,7 +113,7 @@ class CounterLibrary:
     # ...
 ```
 
-Jotta kirjaston tarjoamia avainsanoja voi käyttää testitiedostossa, se täytyy erikseen tuoda. Tämä onnistuu `Settings`-osiossa:
+Jotta kirjaston tarjoamia avainsanoja voi käyttää testitiedostossa, se täytyy erikseen tuoda käyttöön. Tämä onnistuu `Settings`-osiossa:
 
 ```
 *** Settings ***
@@ -133,7 +133,7 @@ Tiedostoon voi tuoda myös useamman kirjaston lisäämällä monta `Library`-riv
 ```
 *** Settings ***
 Library  ../CounterLibrary.py
-Library  SomeUsefulLibrary
+Library  ../SomeUsefulLibrary.py
 ```
 
 ### Avainsanojen yhdistely
@@ -155,7 +155,7 @@ Increase Counter Three Times
 
 Testihakemiston <i>increase_counter.robot</i>-tiedoston `*** Settings ***`-osiosta löytyy rivi `Resource resource.robot`. Mistä on kyse?
 
-Useammissa testeissä uudelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssitiedostot voi tuoda muihin tiedostoihin `Resource`-asetuksen kautta:
+Useammissa testeissä uudelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssitiedostot voi tuoda muiden tiedostojen käyttöön `Resource`-asetuksen kautta:
 
 ```
 *** Settings ***

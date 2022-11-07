@@ -19,7 +19,7 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_ joka on melko simp
 
 ### Tehtävien palauttaminen
 
-Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>. Käytännössä tällä viikolla tehdään palautusta varten kaksi erillistä GitHub-repositoria, ensimmäinen tehtäviä 2-13 varten ja toinen tehtäviä 14-17 varten. Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission". Käytännössä tällä viikolla tehdään palautusta varten kaksi erillistä GitHub-repositoria, ensimmäinen tehtäviä 2-13 varten ja toinen tehtäviä 14-17 varten. Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
 Tehtävää 1 ei varsinaisesti palauteta minnekään.
 
