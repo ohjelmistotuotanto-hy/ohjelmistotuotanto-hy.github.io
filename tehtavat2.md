@@ -41,7 +41,7 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 Tee seuraavat toimenpiteet:
 
 - Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.8"`, jotta projektin Python-version vaatimus asetetaan oikein.
-- Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenne Flask projektin riippuvuudeksi Poetryn avulla**
+- Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Huom: jos käytössäsi on tätä syksyä aiemmin asennettu Poetry (versio 1.1.x) niin komennon `poetry add pylint —-group dev` sijaan tulee käyttää komentoa `poetry add pylint —-dev` kehitysaikaisten riippuvuuksien asentamisessa
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
