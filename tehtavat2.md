@@ -456,6 +456,8 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 **Tämä tehtävä tehdään palautusrepositorioon**
 
+**HUOM** tässä tehtävässä on tunnetusti välillä haastava seurata jokaista askelta siten, että päätyy aina samaan tilaan mitä tehtävä odottaa. Ei kannata stressata tästä liikaa. Pääasia tehtävässä on oppia miten branchit saadaan toimimaan lokaalisti ja GitHubissa siten, että _git push_ ja _git pull_ toimivat kaikille brancheille.
+
 Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
 
 Lisätään seuraavaksi branch GitHubiin:
