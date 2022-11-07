@@ -9,6 +9,7 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
+  - tehtävät palautetaan "my submissions"-välilehdellä
 - Apua tehtävien tekoon
   - ti 14-16 BK107
   - pe 12-14 BK107
