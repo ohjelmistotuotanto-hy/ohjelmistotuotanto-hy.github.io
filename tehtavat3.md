@@ -19,19 +19,23 @@ Tehtävissä 1-2 tutustutaan siihen, miten Poetry-sovelluksiin lisätään ulkoi
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}>.
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+**Kaikki tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko3_ sisälle.
+
+Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Pelaajalista
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
 
-Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta edellisen kauden NHL-liigan tilastotietoja.
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
-Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://nhlstatisticsforohtu.herokuapp.com/players>
+Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
+
+Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2021-22/players>
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
-Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen requests-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 
@@ -40,7 +44,7 @@ import requests
 from player import Player
 
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
     response = requests.get(url).json()
 
     print("JSON-muotoinen vastaus:")
@@ -105,7 +109,7 @@ Joel Armia           MTL 16 + 14 = 30
 ```
 
 - Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
-- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee? Numeroarvot tulee muuttaa merkkijonomuotoisiksi, jotta lopputulos on oikea. Esimerkiksi `f"{str(self.goals):2}"`.
+- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee?
 
 ### 3. Pelaajalistan refaktorointi
 
@@ -117,7 +121,7 @@ Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraav
 
 ```python
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
     reader = PlayerReader(url)
     stats = PlayerStats(reader)
     players = stats.top_scorers_by_nationality("FIN")
@@ -135,6 +139,8 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 ### 5. Kirjautumisen testit
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/login-robot_ oleva projekti.
+
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
 Tutustu ohjelman rakenteeseen. Huomaa, että ohjelman `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
 
@@ -310,7 +316,9 @@ Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_tra
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/web-login-robot_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
 
-Hae projekti, asenna sen riippuvuudet komennollla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
+Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
+
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
 
 ![]({{ "/images/py-lh3-2.png" | absolute_url }}){:height="200px" }
 
