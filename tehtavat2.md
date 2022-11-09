@@ -222,7 +222,7 @@ def erotus(x, y):
 - Mergeä branchin **laskut** sisältö **masteriin** (tämä tapahtuu komennolla`git merge laskut`)
   - Mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
-    - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, google auttaa tarvittaessa
+    - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
 - Muuta tiedostoa **index.py** seuraavasti ja commitoi muutos:
 
 ```python
@@ -458,7 +458,7 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 **HUOM** tässä tehtävässä on tunnetusti välillä haastava seurata jokaista askelta siten, että päätyy aina samaan tilaan mitä tehtävä odottaa. Ei kannata stressata tästä liikaa. Pääasia tehtävässä on oppia miten branchit saadaan toimimaan lokaalisti ja GitHubissa siten, että _git push_ ja _git pull_ toimivat kaikille brancheille.
 
-Aloita lukemalla ProGit kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
+Aloita lukemalla ProGit-kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
 
 Lisätään seuraavaksi branch GitHubiin:
 
@@ -473,13 +473,13 @@ Lisätään seuraavaksi branch GitHubiin:
 Kloonaa GitHub-repositoriosta koneellesi toinen kopio:
 
 - Kuten huomaat, eivät branchit tule kloonattuun kopioon
-- Tee paikalliseen kopioon branch joka "träkkää" GitHub:issa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
-- Lisää "träkkäävään" branchiin joku tiedosto (hakemiston viikko2), committaa ja pushaa branchi GitHubiin
+- Tee paikalliseen kopioon branch joka "träkkää" GitHubissa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
+- Lisää "träkkäävään" branchiin jokin tiedosto (hakemistoon viikko2), committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Mene GitHub-repon alkuperäiseen paikalliseen kopioon:
 
-- Mene branchiin **haara1** ja pullaa muutokset GitHub:in vastaavasta branchista
+- Mene branchiin **haara1** ja pullaa muutokset GitHubiin vastaavasta branchista
   - huom: koska kyseessä ei ole "träkkäävä" branchi, joudut pullaamaan komennolla `git pull origin haara1`
 - Mene branchiin **haara2**, lisää sitten tiedosto, committaa ja pushaa branchi GitHubiin
   - Koska kyseessä ei ole "träkkäävä" branchi, ei komento `git push` riitä vaan joudut määrittelemään branchin jonne push kohdistuu eli antamaan komennon `git push origin haara2`
@@ -496,7 +496,7 @@ To push the current branch and set the remote as upstream, use
 Mene jälleen toiseen kopioon:
 
 - Suorita komento `git remote show origin`
-- Komento kertoo "origin":issa eli GitHubissa olevien branchien ja paikallisten branchien suhteen
+- Komento kertoo "originissa" eli GitHubissa olevien branchien ja paikallisten branchien suhteen
 
 ```
 * remote origin
@@ -516,7 +516,7 @@ Mene jälleen toiseen kopioon:
 ```
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
-- Tee lokaaliin kopioon GitHub:issa olevan projektisi branchia **haara2** träkkäävä branch
+- Tee lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
 - Tee branchiin muutoksia ja pushaa ne githubiin
   - Huom: koska kyseessä on träkkäävä branch, riittää git push
@@ -560,14 +560,14 @@ If you wish to set tracking information for this branch you can do so with:
 
 ```
 
-- Kun annat komennon, sen jälkeen haara träkkää githubissa olevaa haaraa ja komento `git pull` voidaan antaa ilman parametreja
+- Kun annat komennon, sen jälkeen haara träkkää GitHubissa olevaa haaraa ja komento `git pull` voidaan antaa ilman parametreja
 
-Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHub:issa on myös useita brancheja.
+Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHubissa on myös useita brancheja.
 
 ### Mihin brancheja käytetään?
 
 Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
-<https://www.atlassian.com/git/tutorials/comparing-workflows> esittele tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
+<https://www.atlassian.com/git/tutorials/comparing-workflows> esittelee tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
 
 > The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.
 
@@ -577,8 +577,8 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
-- Mene alkuperäisen repositorion paikallisen kopion **main**-haaraan, tee joku muutos, commitoi ja pushaa se GitHubiin
-- Mene toisen kopion **main**-haaraan ja tee sinne joku muutos
+- Mene alkuperäisen repositorion paikallisen kopion **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
+- Mene toisen kopion **main**-haaraan ja tee sinne jokin muutos
 - commitoi ja pushaa muutos GitHubiin
 - Kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
 
@@ -593,7 +593,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Virheen syynä on se, että githubissa oleva **main**-haara oli edellä paikallisen repositorion **main\***-haaraa. Ongelma korjaantuu tekemällä ensin `git pull`, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen.
+Virheen syynä on se, että GitHubissa oleva **main**-haara oli edellä paikallisen repositorion **main\***-haaraa. Ongelma korjaantuu tekemällä ensin `git pull`, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen.
 
 - Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
