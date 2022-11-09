@@ -201,7 +201,7 @@ Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon 
 
 Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunnitteluun ketterässä ohjelmistotuotantoprojektissa.
 
-Tapa pohjautuu Scrumin ja eXtreme Programingin eli XP:n eräiden käytänteiden soveltamiseen.
+Tapa pohjautuu Scrumin ja eXtreme Programming:n eli XP:n eräiden käytänteiden soveltamiseen.
 Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/), [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) ja [Jeff Sutherland ym.:A Scrum book](http://scrumbook.org/) sekä [Mike Cohnin](https://www.mountaingoatsoftware.com/blog) loistavat kirjat _Agile Estimation and Planning_ ja _User stories applied_.
 
 ## User story
@@ -330,7 +330,7 @@ Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset
 - brainstormaus
 - workshopit
 
-Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän. User storyjen luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee niistä hyvän työkalun projektin aloitukseen. Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
+Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän. User storyn luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee siitä hyvän työkalun projektin aloitukseen. Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
 
 Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaatima _työmäärä arvioidaan_ projektille tarkoituksenmukaisella tasolla. Näin muodostuu alustava product backlog, eli priorisoitu lista vaatimuksista.
 
@@ -815,7 +815,7 @@ Fyysistä taskboardia käytettäessä sprintin työmäärän estimoinnin ja burn
 
 ## Yhtäaikaa tehtävän työn rajoittaminen
 
-Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa tekemisen alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
+Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
 
 WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä task boardin vaiheessa olevien töiden määrää:
 
