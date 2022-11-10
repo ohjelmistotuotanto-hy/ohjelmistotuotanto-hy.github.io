@@ -106,7 +106,7 @@ jakautuu kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoit
 _Laatuvaatimukset_ (engl. quality attributes) ovat koko järjestelmän toiminnallisuutta ohjaavia ja rajoittavia tekijöitä, esim.
 
 - käytettävyys: minkälainen sovelluksen käyttökokemus on
-- saavutettavuus: onko sovellus helppokäyttöinen kaikille ihmisille, esim. näkövaimmaisille
+- saavutettavuus: onko sovellus helppokäyttöinen kaikille ihmisille, esim. näkövammaisille
 - tietoturva: kenellä on pääsy järjestelmään ja siinä käsiteltävään dataan
 - suorituskyky: miten nopeasti sovellus reagoi erilaisiin käyttäjän syötteisiin
 - skaalautuvuus: pysyykö sovellus responsiivisena, eli riittävän nopeasti toimivana käyttäjäkuorman tai käsiteltävän datan määrän kasvaessa
@@ -430,7 +430,7 @@ Hyvänä periaatteena pidetään että kaikki kehitystiimin jäsenet osallistuva
 
 Planning pokerissa käydään läpi backlogilla olevia user storyja yksi kerrallaan. Product owner esittelee user storyn sisällön ja selittää tarkemmin storyn luonnetta ja vaatimuksia.
 
-Tiimi keskustelee storystä, miettii kenties storyn jakautumista teknisiin työvaiheisiin
+Tiimi keskustelee storystä, miettii kenties storyn jakautumista teknisiin työvaiheisiin.
 Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis story point). Usein tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa.
 
 Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti user storylle ja siirrytään seuraavaan.
@@ -666,7 +666,7 @@ kannattaa jakaa siten että jokainen näistä ehdoista eritellään omaksi story
 
 #### Pattern 3: simple/complex
 
-Hieman samanlainen kuin edellinen tapa on jakaa monimutkainen user story siten, että siitä erotetaan yksinkertainen, mutta jo itsessään hyödyllinen story, eräänlainen "minimal viable product" , ja muodostetaan joukko storeja, jotka lisäävät sen määrittelemää perustoiminnallisuutta.
+Hieman samanlainen kuin edellinen tapa on jakaa monimutkainen user story siten, että siitä erotetaan yksinkertainen, mutta jo itsessään hyödyllinen story, eräänlainen "minimal viable product", ja muodostetaan joukko storeja, jotka lisäävät sen määrittelemää perustoiminnallisuutta.
 
 Esimerkiksi joustavaa lentojen hakua kuvaava story
 
@@ -795,7 +795,7 @@ Yleinen konsensus on, että ainakin Sprintin hallintaan manuaalinen postit-lappu
 
 Usein toki käytetään elektronisia versioita taskboardista, joskus siihen pakottavat yritysten käytänteet, joskus taas tiimiläisten työskentelytapa ja paikka, esimerkiksi etätiimin kannalta elektroninen taskboard voi olla ainoa toimiva ratkaisu.
 
-Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi exceliä tai google driveä. Github projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän Githubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon JIRA, Asana, Trello, Pivotal Tracker, trac ja bugzilla.
+Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi Exceliä tai Google Driveä. GitHub Projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän GitHubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon JIRA, Asana, Trello, Pivotal Tracker, Trac ja Bugzilla.
 
 Taulukkolaskentaohjelmat toimivat kohtuullisen hyvin elektronisena taskboardina. Taulukkolaskentaa käyttäessä sprintin jokaiselle päivälle on oma sarake, johon merkitään kunkin päivän alussa estimaatti taskien jäljellä olevasta työmäärästä (tunteina):
 
