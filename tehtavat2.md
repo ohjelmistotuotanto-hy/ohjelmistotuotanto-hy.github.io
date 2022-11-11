@@ -676,19 +676,10 @@ class Viitegeneraattori:
         return self._seuraava
 
 
-viitegeneraattori = Viitegeneraattori()
+the_viitegeneraattori_olio = Viitegeneraattori()
 ```
 
-Nyt muut moduulit voivat käyttää `viitegeneraattori`-muuttujaan tallennettua oliota. Tässä tilanteessa luokan tarpeen voisi ylipäätään kyseenalaistaa, koska yksinkertainen funktio ajaisi saman asian:
-
-```python
-seuraava = 1
-
-def generoi_viite():
-    seuraava = seuraava + 1
-
-    return seuraava
-```
+Nyt muut moduulit voivat käyttää `the_viitegeneraattori_olio`-muuttujaan tallennettua oliota.
 
 ### 12. Riippuvuuksien injektointi osa 5: Verkkokauppa siistiksi
 
@@ -706,23 +697,23 @@ Korjataan tilanne antamalla riippuvuuksille oletusarvot.
 
 **Tee seuraavat toimenpiteet:**
 
-- Tallenna _viitegeneraattori.py_-tiedostossa muuttujaan `viitegeneraattori` luokan `Viitegeneraattori` olio edellisen esimerkin tavoin
-- Tallenna _kirjanpito.py_-tiedostossa muuttujaan `kirjanpito` luokan `Kirjanpito` olio
-- Muokkaa `Varasto`-luokkaa siten, että sen konstruktorin `kirjanpito`-parametrin arvo on oletusarvoisesti _kirjanpito.py_-tiedostossa määritelty `kirjanpito`-muuttujan arvo. Parametrien oletuarvojen antaminen onnistuu seuraavasti:
+- Tallenna _viitegeneraattori.py_-tiedostossa muuttujaan `the_viitegeneraattori_olio` luokan `Viitegeneraattori` olio edellisen esimerkin tavoin
+- Tallenna _kirjanpito.py_-tiedostossa muuttujaan `the_kirjanpito_olio` luokan `Kirjanpito` olio
+- Muokkaa `Varasto`-luokkaa siten, että sen konstruktorin `kirjanpito`-parametrin arvo on oletusarvoisesti _kirjanpito.py_-tiedostossa määritelty `the_kirjanpito_olio`-muuttujan arvo. Parametrien oletuarvojen antaminen onnistuu seuraavasti:
 
 ```python
-from kirjanpito import kirjanpito as default_kirjanpito
+from kirjanpito import the_kirjanpito_olio
 
 class Varasto:
-    def __init__(self, kirjanpito=default_kirjanpito):
+    def __init__(self, kirjanpito=the_kirjanpito_olio):
             self._kirjanpito = kirjanpito
             # ...
 
     # ...
 ```
 
-- Tallenna _varasto.py_-tiedostossa muuttujaan `varasto` luokan `Varasto` olio. Huomaa, että olion voi alustaa ilman argumentteja (muodossa `Varasto()`), koska `kirjanpito`-parametrille on annettu oletusarvo.
-- Tee sama `Pankki`-luokan konstruktorille ja tallenna `Pankki`-luokan olio muuttujaan `pankki`
+- Tallenna _varasto.py_-tiedostossa muuttujaan `the_varasto_olio` luokan `Varasto` olio. Huomaa, että olion voi alustaa ilman argumentteja (muodossa `Varasto()`), koska `kirjanpito`-parametrille on annettu oletusarvo.
+- Tee sama `Pankki`-luokan konstruktorille ja tallenna `Pankki`-luokan olio muuttujaan `the_pankki_olio`
 - Käytä `Kauppa`-luokan konstruktorissa `varasto`-, `pankki`- ja `viitegeneraattori`-parametrien oletusarvoina edellisissä askelissa määrittelemiäsi muuttujia
 - **Muokkaa _index.py_-tiedoston `main`-funktiota** siten, että `Kauppa`-olion alustaminen ei käytä argumentteja:
 
