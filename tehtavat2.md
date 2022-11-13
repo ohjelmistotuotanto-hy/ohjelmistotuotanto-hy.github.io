@@ -123,7 +123,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
   - Rivin pituus on maksimissaan 80 merkkiä
     - Vinkki: sääntö löytyy [Format checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#format-checker) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
-    - Vinkki: sääntö löytyy [Refactoring checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#refactoring-checker) ja tulee määrittää `[REFACTORING]`-osion alle)
+    - Vinkki: sääntö löytyy [Refactoring checker](http://pylint.pycqa.org/en/2.6/technical_reference/features.html#refactoring-checker) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
   - Funktiossa tai metodissa on enintään 15 lausetta (statements), etsi sääntö dokumentaatiosta
   - [Syklomaattinen koodikompleksisuus](https://en.wikipedia.org/wiki/Cyclomatic_complexity) korkeintaan 3
     - Selvitä mitä syklomaattisella kompleksisuudella tarkoitetaan
@@ -316,7 +316,7 @@ nothing to commit, working tree clean
 - Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
 - Mergeä **master** branchiin **laskut**
 - Siirry nyt masteriin ja tuhoa branchi **laskut**
-  - Tuohoaminen ei onnistu suoraan jos branchin sisältö ei ole kokonaisuudessan mergetty masteriin. Jos näin on, tee ensin merge
+  - Tuhoaminen ei onnistu suoraan komennon `git branch` branchin poistavalla flagilla `-d`, jos branchin sisältö ei ole kokonaisuudessan mergetty masteriin. Jos näin on, tee ensin merge masteriin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
@@ -345,7 +345,7 @@ print(f"{erotus(x, y)}")
 logger("lopetetaan")
 ```
 
-- alkuun in siis lisätty kommentti ja tyhjä rivi
+- alkuun on siis lisätty kommentti ja tyhjä rivi
 - committaa muutos
 
 - Tee uusi branchi **bugikorjaus**, mene branchiin ja editoi tiedoston **index.py** loppua (esim. seuraavasti ) ja committaa
@@ -466,7 +466,7 @@ Lisätään seuraavaksi branch GitHubiin:
 
 - Luo palautusrepositorion paikalliseen kopioon branchit **haara1** ja **haara2**
 - Mene branchiin **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
-- Mene branchiin **haara2**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
+- Mene branchiin **haara2**, lisää sinnekin jokin (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
 - Pushaa uudet branchit GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö:
 
@@ -518,9 +518,9 @@ Mene jälleen toiseen kopioon:
 ```
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
-- Tee lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
+- Tee toiseen lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
-- Tee branchiin muutoksia ja pushaa ne githubiin
+- Tee branchiin **haara2** muutoksia ja pushaa ne githubiin
   - Huom: koska kyseessä on träkkäävä branch, riittää git push
 - tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
