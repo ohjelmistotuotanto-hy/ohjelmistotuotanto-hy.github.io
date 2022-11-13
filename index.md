@@ -8,6 +8,8 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
+{% include miniproj_ilmo.md %}
+
 - Miniprojekti käynnistyy 22.11. alkavalla viikolla
   - Lue lisää [täältä](/miniprojekti)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
