@@ -709,7 +709,7 @@ Palataan vielä siihen mitä jatkuva integraatio menetelmän [pioneerien](https:
 
 Nykyään monin paikoin käytössä oleva tapa käyttää useiden päivien tai jopa viikkojen ikäisiä [feature branchejä](https://martinfowler.com/bliki/FeatureBranch.html), eli jokaiselle uudelle toiminnallisuudelle tarkoitettuja omia versionhallinnan haaroja tarkoittaa oikeastaan jo lähtökohtaisesti sitä, että tiimi [ei harjoita jatkuvaa integraatiota](https://www.innoq.com/en/blog/continuous-integration-contradicts-feature-branches/). Palaamme asiaan [myöhemmin](/osa3/#feature-branchit-ja-merge-hell) tässä osassa.
 
-## Jatkuva käyttöönotto ja toimitusvalmius
+## Jatkuva toimittaminen ja toimitusvalmius
 
 Viime aikoina nousseen trendin mukaan jatkuvaa integraatiota on ruvettu viemään vielä muutama askel pidemmälle ja integraatioprosessiin on enenevissä määrin ruvettu lisäämään myös automaattinen "deployaus", eli käännetty ja testattu koodi siirretään automatisoidusti suoritettavaksi ns. _staging_- eli testipalvelimelle.
 
@@ -728,7 +728,7 @@ Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteell
 
 ![]({{ "/images/3-12.png" | absolute_url }}){:height="280px" }
 
-Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi käyttöönotoksi_ (engl. continuous deployment).
+Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi toimittamiseksi_ (engl. continuous deployment).
 
 On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta "nappia painamalla", puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery).
 
@@ -868,7 +868,7 @@ Trunk-pohjaista kehitysmallia noudattavat monet maailman suurimmista internetpal
 
 ## DevOps
 
-Jatkuvan toimitusvalmiuden (Continuous delivery), jatkuvan käyttöönoton (Continuous deployment) ja tuotannossa testaamisen soveltaminen ei useimmiten ole ollenkaan suoraviivaista.
+Jatkuvan toimitusvalmiuden (Continuous delivery), jatkuvan toimittamisen (Continuous deployment) ja tuotannossa testaamisen soveltaminen ei useimmiten ole ollenkaan suoraviivaista.
 
 Perinteisesti yrityksissä on ollut tarkka erottelu sovelluskehittäjien (developers, dev) ja palvelinympäristöistä vastaavien järjestelmäylläpitäjien (operations, ops) välillä. On erittäin tavallista, että sovelluskehittäjät eivät pääse edes kirjautumaan tuotantopalvelimille ja sovellusten tuotantoon vieminen sekä esim. tuotantotietokantaan tehtävät skeeman päivitykset tapahtuvat ainoastaan ylläpitäjien toimesta.
 
