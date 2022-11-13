@@ -2,5 +2,5 @@
 
 <h3>Ilmoittautuminen miniprojekteihin</h3>
 
-Ilmoittautuminen on alkanut ja päättyy 19.11. klo 23.59. Lue lisää <a href='miniprojekti'>täältä</a>
+Ilmoittautuminen on alkanut ja päättyy 19.11. klo 23.59. Lue lisää <a href='https://ohjelmistotuotanto-hy.github.io/miniprojekti/'>täältä</a>
 </div>
