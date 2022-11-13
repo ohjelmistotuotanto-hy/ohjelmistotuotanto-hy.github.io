@@ -9,9 +9,9 @@ permalink: /miniprojekti/
 
 - Ilmoittautu miniprojektiin VIIMEISTÄÄN lauantaina 19.11. klo 23:50
   - ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/38c24c3c-ea5e-4e40-89f9-3fbec8557c05) kampusversioon
-  - ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/38c24c3c-ea5e-4e40-89f9-3fbec8557c05) etäversioon
+  - ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/95a9103d-0bbf-4ff2-b52b-fd3a4a06745b) etäversioon
     - Etäversio tapaa asiakkaan zoomissa ma 22.11. klo 16-18
-    - Etäversio on tarkoitettu ainoastaan sellaisille joilla on välttämätön syy (esim. asuu pääkaupunkiseudun ulkopuolella, kuuluu COVID19-riskiryhmään) suorittaa kurssi etänä
+    - Etäversio on tarkoitettu ainoastaan sellaisille joilla on välttämätön syy (esim. asuu pääkaupunkiseudun ulkopuolella, kuuluu COVID19-riskiryhmään) suorittaa miniprojekti etänä
     - Jos etäversioon on tulossa enemmän kuin mitä tilaa on, karsiutuvat vähemmän välttämättömästä syystä ilmoittautuneet pois
 
 ### Johdanto
@@ -79,7 +79,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 ### Toteutettava ohjelmisto
 
-[täällä](/speksi)
+Sovelluksen osittainen kuvaus [täällä](/speksi)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -147,7 +147,8 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
 - Web-pohjaiselle Python-sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
+  - **Herokun maksuton palvelu poistuu käytöstä marraskuun viimeisellä viikolla.
+- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto** tämän takia Web-sovelluksen tekeminen voi olla riskialtista jos vaihtoehtoista sijoituspaikkaa ei ole tiedossa
   - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
   - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
   - Huomaa, että jos tarkoituksena on julkaista sovellus esimerkiksi _Heroku_-palveluun, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
