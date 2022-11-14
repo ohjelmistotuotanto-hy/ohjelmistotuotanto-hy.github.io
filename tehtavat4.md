@@ -9,7 +9,7 @@ permalink: /tehtavat4/
 
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. Tehtävissä 5 ja 6 refaktoroidaan sisäiseltä laadultaan heikossa kunnossa olevaa koodia.
+Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamisen" yksikkötesteissä. Tehtävässä 5 tutustutaan TDD-tekniikkaan. Tehtävässä 6 tutustutaan retrospektiivitekniikoihin ja tehtävä 7 johdataa Gitin tägien maailmaan.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -21,7 +21,10 @@ Tehtävissä 1-4 tutustutaan yksikkötestausta helpottavaan Mockito-kirjastoon. 
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+**Kaikki tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko3_ sisälle. Teknisesti ottaen tehtävän 7 palautus ei tosin luo repositorioon uutta sisältöä tiedostojen muodossa.
+
+Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
@@ -92,6 +95,7 @@ Voimme siis kutsua tarkasteltavalle metodille [assert_called](https://docs.pytho
 Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
 
 **Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/mock-demo_ oleva projekti.** Kyseessä on yksinkertaistettu versio verkkokauppaesimerkistä.
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -185,6 +189,7 @@ Voit tutusta aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](http
 ### 2. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 2
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/maksukortti-mock_ oleva projekti.
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 Tässä tehtävässä on tarkoitus testata ja täydennetään luokkaa `Kassapaate`. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
@@ -238,6 +243,7 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
 
 - Sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/verkkokauppa_.
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri` ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
@@ -324,7 +330,8 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
 
-**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa \_koodi/viikko4/tdd-ostoskori oleva projekti.**
+**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa koodi/viikko4/tdd-ostoskori oleva projekti.**
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
@@ -569,20 +576,15 @@ Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin e
 
 Lisää ja commitoi mahdolliset muutokset.
 
-### 6. IntJoukon testaus ja siistiminen
+### 6. Retrospektiivitekniikat
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
+Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
 
-Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
+Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad)
 
-- Poista copypaste
-- Vähennä monitkaisuutta
-- Anna muuttujille selkeät nimet
-- Tee metodeista pienempiä ja hyvän koheesion omaavia
+Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_
 
-Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
-
-**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
 ### 7. git: tägit [versionhallinta]
 

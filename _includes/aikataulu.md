@@ -40,8 +40,11 @@
 
 ### Viikko 3
 
-- Luento 5: {{site.luennot[5]}} [(syksyn 21 tallenne)](https://youtu.be/XY7BtG-i4ms)
+- Luento 5: {{site.luennot[5]}} 
   - [Laadunhallinnan perusteet](/osa3)
+  - tallenteet:
+    - [syksy 2022](https://youtu.be/Vwb7WlYmXi0)
+    - [syksy 2021](https://youtu.be/XY7BtG-i4ms)
 - Luento 6: {{site.luennot[6]}} [(syksyn 21 tallenne)](https://youtu.be/4CN0cLfz2Ds)
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauska%CC%88yta%CC%88nteet)
 - Laskarit
