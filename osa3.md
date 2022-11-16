@@ -488,7 +488,7 @@ Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteu
 
 Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti suoritettavia.
 
-Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/), joka on käytössä kurssin Python-versossa. Kurssin Java-versiossa on käytössä [Cucumber](https://cucumber.io/)-niminen kirjasto.
+Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/), joka on käytössä kurssin Python-versiossa. Kurssin Java-versiossa on käytössä [Cucumber](https://cucumber.io/)-niminen kirjasto.
 
 Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
@@ -775,7 +775,7 @@ Kun järjestelmään toteutetaan uusi ominaisuus, deployataan se ensin passiivis
 
 Passiiviselle, uuden ominaisuuden sisältämälle ympäristölle voidaan sitten tehdä erilaisia testejä, esim. osa käyttäjien liikenteestä voidaan ohjata aktiivisen lisäksi passiiviseen ympäristöön ja varmistaa, että se toimii odotetulla tavalla.
 
-Kun uuden ominaisuuden sisältävän passiivinen ympäristön todetaan toimivan ongelmattomasti, voidaan palvelinten rooli vaihtaa ja uuden ominaisuuden sisältämästä palvelimesta tulee uusi aktiivinen tuotantoympäristö. Aktiivisen tuotantoympäristön vaihto tapahtuu määrittelemällä reverse proxyna web-palvelin ohjaamaan liikenne uudelle palvelimelle.
+Kun uuden ominaisuuden sisältävän passiivinen ympäristön todetaan toimivan ongelmattomasti, voidaan palvelinten rooli vaihtaa ja uuden ominaisuuden sisältämästä palvelimesta tulee uusi aktiivinen tuotantoympäristö. Aktiivisen tuotantoympäristön vaihto tapahtuu määrittelemällä reverse proxyna toimiva web-palvelin ohjaamaan liikenne uudelle palvelimelle.
 
 Jos uuden ominaisuuden sisältävässä versiossa havaitaan aktivoinnin jälkeen jotain ongelmia, on mahdollista suorittaa erittäin nopeasti _rollback-operaatio_, eli vaihtaa vanha versio jälleen aktiiviseksi.
 
@@ -963,7 +963,7 @@ Tutkimuksen tuloksia summaa seuraava kaavio:
 
 ![]({{ "/images/3-24.png" | absolute_url }}){:height="400px" }
 
-Tutkimuksen ytimessä on selvittää mitkä tekijät vaikuttavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrtyksen tehokkuutta on mitattu seuraavilla kysymyksillä:
+Tutkimuksen ytimessä on selvittää mitkä tekijät vaikuttavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrityksen tehokkuutta on mitattu seuraavilla kysymyksillä:
 
 _Select the number that best indicates degree of conformance to your organization's goals over the past year. (1=Performed well below, 7 = Performed well above)_
 
