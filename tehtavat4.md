@@ -54,7 +54,7 @@ Anna syötteet terminaaliin yksi kerrallaan. Enter-painikkeen painallus suoritta
 <Mock name='mock.foo.bar()' id='4570560112'>
 ```
 
-Kaikki annetut operaatiot palauttavat siis uuden `Mock`-olion. Voimme antaa olion metodeille haluttuja palautusarvoja [return_value](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.return_value)-attribuutin avulla:
+Kaikki annetut operaatiot palauttavat siis uuden `Mock`-olion. Voimme antaa olion metodeille haluttuja paluuarvoja [return_value](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.return_value)-attribuutin avulla:
 
 ```python
 >>> mock.foo.bar.return_value = "Foobar"
@@ -95,7 +95,8 @@ Voimme siis kutsua tarkasteltavalle metodille [assert_called](https://docs.pytho
 Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
 
 **Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/mock-demo_ oleva projekti.** Kyseessä on yksinkertaistettu versio verkkokauppaesimerkistä.
-- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
+- Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa 
+- Voit halutessasi kopioida projetin palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -328,12 +329,16 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 5. Ostoskori TDD-tekniikalla
 
-Jatketaan verkkokaupan parissa. Toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
+Jatketaan verkkokaupan parissa. 
 
 **Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa koodi/viikko4/tdd-ostoskori oleva projekti.**
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
+Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
+
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+
+Ostoskori siis sisältää _ostoksia_, joista jokainen vastaa yhtä tiettyä tuotetta.
 
 Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
 
@@ -356,7 +361,7 @@ class Tuote:
 
 Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia, ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
 
 ```python
 from tuote import Tuote
@@ -430,8 +435,6 @@ class Ostoskori:
 ![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
 Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
-
-Hae koodipohja [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/tdd-ostoskori_
 
 **Ohjelmoi nyt ostoskori käyttäen [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikkaa.** Oikeaoppinen TDD etenee seuraavasti:
 
