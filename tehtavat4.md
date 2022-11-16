@@ -614,8 +614,10 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
 - Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
 - Katso komennolla <code>gitk</code> miltä historia näyttää
 
-Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi githubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
+Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
 
-Varmista, että tagit siirtyvät GitHubiin.
+Varmista, että tagit siirtyvät GitHubiin:
+
+![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
 
 {% include submission_instructions.md %}
