@@ -250,7 +250,7 @@ Komennolle `robot` annetaan siis `-t`-optionin kautta suoritettavan testitapauks
 
 #### Ohjelman suorituksen seuraaminen
 
-Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa alkaa tutkimaan miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Jos esimerkiksi `Login With Correct Credentials`-testitapaus epäonnistuu, on ongelma luultavasti `UserSerivce`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville hyödyntämällä [pdb](https://docs.python.org/3/library/pdb.html)-moduulia:
+Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa alkaa tutkimaan miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Jos esimerkiksi `Login With Correct Credentials`-testitapaus epäonnistuu, on ongelma luultavasti `UserService`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville hyödyntämällä [pdb](https://docs.python.org/3/library/pdb.html)-moduulia:
 
 ```python
 # ...
@@ -377,7 +377,7 @@ username = request.form.get("username")
 password = request.form.get("password")
 ```
 
-Koodi tarkistaa käyttäjätunnuksen ja salasan oikeellisuuden kutsumalla `UserService`-luokan metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi nostaa virheen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
+Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `UserService`-luokan metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi nostaa virheen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
 
 Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
@@ -469,16 +469,16 @@ Test Setup  Create User And Go To Login Page
 
 Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- ja `Test Setup`-asetukset. Niiden merkitykset ovat seuraavat:
 
-- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston esimmäistä testitapausta (`Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta)
+- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta (`Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta)
 - `Suite Teardown`-asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen (`Test Teardown` sen sijaan suoritetaan _jokaisen_ testitapauksen jälkeen)
 
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 - `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
 - `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain)-avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
-- `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button)-avainsanaa
+- `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) -avainsanaa
 - `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text)- ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password)-avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
-- `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumis-sivun
+- `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumissivun
 
 Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi <code>Click Button &nbsp;foo</code> löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
 
@@ -597,7 +597,7 @@ Login With Nonexistent Username
 
 Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen. Suorita testit Headless Chromen avulla asettamalla `BROWSER`-muuttujan arvoksi `headlesschrome`.
 
-**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit muutta debuggaamista varten `DELAY`- ja `BROWSER`-muuttujien arvoja.
+**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit muuttaa debuggaamista varten `DELAY`- ja `BROWSER`-muuttujien arvoja.
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset _register.robot_-tiedostoon:
 
@@ -678,7 +678,7 @@ kill $(lsof -t -i:5000)
 exit $status
 ```
 
-Skriptin voi lisätä esimerkiksi projektin juurihakemiston <i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttäjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
+Skriptin voi lisätä esimerkiksi projektin juurihakemiston <i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttöjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
 
 Skriptiä voi hyödyntää CI-palvelimella GitHub Actionsin avulla määrittelemällä sen suorittaminen omana askeleena konfiguraatiossa:
 
