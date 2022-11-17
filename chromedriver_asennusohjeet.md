@@ -37,9 +37,11 @@ chromedriver --version
 
 ### Windows
 
-Jotta `chromedriver`-komento toimisi tulee _chromedriver_-binääri siirtää hakemistoon, jonka polku on käyttöjärjestelmän `PATH`-ympäristömuuttujassa. Siirrä ensin ladattu _chromedriver_-binääri haluamaasi hakemistoon (esimerkiks _C:\Program Files_ on yksi potentiaalinen vaihtoehto). Lisää tämän jälkeen hakemiston polku (lisää siis _pelkkä_ hakemistom polku, eli ei tiedoston nimeä polun perään) `PATH`-ympäristömuuttujaan seuraamalla [tätä](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) ohjetta.
+Jotta `chromedriver`-komento toimisi tulee _chromedriver_-binääri siirtää hakemistoon, jonka polku on käyttöjärjestelmän `PATH`-ympäristömuuttujassa. Siirrä ensin ladattu _chromedriver_-binääri haluamaasi hakemistoon (esimerkiks _C:\Program Files_ on yksi potentiaalinen vaihtoehto). Lisää tämän jälkeen hakemiston polku (lisää siis _pelkkä_ hakemiston polku, eli ei tiedoston nimeä polun perään) `PATH`-ympäristömuuttujaan seuraamalla [tätä](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) ohjetta.
 
-Käynnistä terminaali (PowerShell) uudestaan ja varmista asennuksen onnistuminen suorittamalla komento:
+Järjestelmä tulee todennäköisesti käynnistää uudelleen, jotta `PATH`-ympäristömuuttuja päivittyy. Voit tarkistaa `PATH`-ympäristömuuttujan tilan Powershell-terminaalista suorittamalla komennon `$env:PATH`, tai Command Prompt-terminaalista komennolla `echo %PATH%`, ja tarkistamalla löytyykö juuri lisäämäsi polku puolipiste erotellusta luettelosta. Jos polkuasi ei löydy, on uudellenkäynnistys tarpeellinen.
+
+Käynnistä siis tarvittaessa koko järjestelmä tai pelkkä terminaali (PowerShell) uudestaan ja varmista asennuksen onnistuminen suorittamalla komento:
 
 ```bash
 chromedriver --version
