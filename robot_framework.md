@@ -86,7 +86,7 @@ class CounterLibrary:
             raise AssertionError(f"{self._counter.value} != {int_expected}")
 ```
 
-Kyseinen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa, vaan se korvaantuu välilyönnillä). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
+Kyseisen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa, vaan se korvaantuu välilyönnillä). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
 
 Robot Framework alustaa kirjastot ennen jokaista testitapausta, joten jokaisella testitapauksella on käytössään kirjastosta oma instanssi. Tämä mahdollistaa mm. sen, että jokaista projektin testitapausta varten alustetaan `CounterLibrary`-luokan konstruktorin kautta uusi `Counter`-olio.
 
