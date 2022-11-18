@@ -404,6 +404,21 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
 
 [Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
 
+Yksi lisävaihtoehto WSL käyttäjille on ajaa Web-sovelluksemme serveriä poetryssa WSL:n puolella, ja ajaa selenium/robot-testit poetryssa Windowsin PowerShellin puolella: 
+
+  - Asenna Python windowsille jos se ei ole jo asennettu
+  - Asenna poetry windowsille ajamalla PowerShellissä
+  
+  ```
+  (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+  ```
+  
+  - Lisää asennuksen päätteksi kerrottu polku esim.`C:\Users\<user>\AppData\Roaming\Python\Scripts` järjestelmän PATH-muuttujaan äskeisessä [ChromeDriver-ohjeessa](../chromedriver_asennusohjeet) kerrotulla tavalla
+  - Kloonaa projekti windowsin tiedostojärjestelmän puolelle (löytyy WSL-järjestelmästä /mnt hakemiston alta aivan tiedostojärjestelmän juuresta) esim. työpöydälle `/mnt/c/Users/<user>/Desktop`
+  - Asenna riippuvuudet tavallisesti poetryssa ajamalla `poetry install` juuri kloonatun web-login-robot-hakemiston juuressa
+  - Asenna ChromeDriver windowsille äskeisen [ohjeen](../chromedriver_asennusohjeet) mukaan
+  - Aja Selenium/Robot testit web-login-robot-hakemiston juuresta komennolla `poetry run robot .\src\tests\`
+
 **HUOM2:** seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
 
 ```
