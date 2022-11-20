@@ -1,13 +1,11 @@
 ---
 layout: page
-title: Miniprojektin speksi
+title: Miniprojektin aiheen kuvaus
 inheader: no
 permalink: /speksi/
 ---
 
-## Miniprojektin speksi
-
-Kandiohjaaja Kalle Ilves tarvitsee järjestelmän, joka auttaisi Kallen ohjaamia opiskelijoita pitämään kanditöiden kirjottamisessa käytetyt lähdeviitteet järjestyksessä. Kuten kaikki TKT:n opiskelijat, myös kaikki Kallen ohjattavat kirjoittavat kandin LaTeXilla.
+Kandiohjaaja Kalle Ilves tarvitsee järjestelmän, joka auttaisi Kallen ohjaamia opiskelijoita pitämään kanditöiden kirjottamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa kandia varten. Kuten kaikki TKT:n opiskelijat, myös kaikki Kallen ohjattavat kirjoittavat kandin [LaTeX](https://www.latex-project.org/):illa.
 
 LaTeX:ia käytettäessä teksti näyttää seuraavalta:
 
@@ -25,7 +23,10 @@ LaTeX:ia käytettäessä teksti näyttää seuraavalta:
 
 \section{Johdanto}
 
-Tehostettu kisällioppiminen \cite{VPL11} (Engl. eXtreme Apprenticeship, XA) on alunperin ohjelmoinnin alkeisopetukseen kehitetty kisällioppimisen \cite{CBH91} johdannainen. XA-menetelmä pyrkii ohjelmointitaidon lisäksi kiinnittämään panostamaan myös laadukkaan koodin \cite{Martin09} luomiseen. 
+Tehostettu kisällioppiminen \cite{VPL11} (Engl. eXtreme Apprenticeship, XA) on
+alunperin ohjelmoinnin alkeisopetukseen kehitetty kisällioppimisen \cite{CBH91}
+johdannainen. XA-menetelmä pyrkii ohjelmointitaidon lisäksi kiinnittämään 
+panostamaan myös laadukkaan koodin \cite{Martin09} luomiseen. 
 
 \bibliographystyle{plain} 
 \bibliography{references}
@@ -33,9 +34,9 @@ Tehostettu kisällioppiminen \cite{VPL11} (Engl. eXtreme Apprenticeship, XA) on 
 \end{document}
 ```
 
-Tekstissä on siis mukana muotoiluun vaikuttavia vinoviivalla alkavia LaTeX-komentoja. Tämän työn kannalta kriittinen komento on _\cite{viiteavain}_ jonka avulla lähdeviiteet merkataan. 
+Tekstissä on siis mukana muotoiluun vaikuttavia vinoviivalla alkavia LaTeX-komentoja. Miniprojektissa tehtävän softan kriittinen komento on _\cite{viiteavain}_ jonka avulla lähdeviiteet merkataan. 
 
-LaTeX-dokumenteissa lähdeviitteet kirjoitetaan ns. BibTex-muodossa. Ylläolevan dokumentin lähdeviitteet näyttävät seuraavalta:
+LaTeX-dokumenteissa lähdeviitteet kirjoitetaan ns. BibTeX-muodossa. Ylläolevan dokumentin lähdeviitteet näyttävät seuraavalta:
 
 
 ```
@@ -46,7 +47,7 @@ LaTeX-dokumenteissa lähdeviitteet kirjoitetaan ns. BibTex-muodossa. Ylläolevan
     booktitle = {SIGCSE '11: Proceedings of the 42nd SIGCSE technical symposium on Computer science education},
 }
 
-@ARTICLE{CBH91,
+@article{CBH91,
     author = {Allan Collins and John Seely Brown and Ann Holum},
     title = {Cognitive apprenticeship: making thinking visible},
     journal = {American Educator},
@@ -63,6 +64,10 @@ LaTeX-dokumenteissa lähdeviitteet kirjoitetaan ns. BibTex-muodossa. Ylläolevan
 }
 ```
 
+Jokaisen lähdeviitteen ensimmäinen "kenttä" on avain (esim ylimmässä _VPL11_), jota käyttämällä LaTeX-tiedostosta muodostetaan lähdeviite.
+
+Latex tukee useita eri tyyppisiä viitteitä, kuten esimerkin _inproceedings, article_ ja _book_. Jokaisen tyyppisellä viitteellä on joukko erilaisia mahdollisia kenttiä, kuten _author, title_ ja _year_
+
 LaTeX:illa "käännetty" loipputulos näyttää seuraavalta:
 
 ![]({{ "/images/latex.png" | absolute_url }})
@@ -73,10 +78,12 @@ LaTeX:ia voi kirjoittaa tekstieditorilla ja dokumentin voi kääntää Pdf-muoto
 
 Yo. dokumentti on nähtävillä [tässä](https://www.overleaf.com/read/pxspwqwfzgrj) olevassa Overleaf-projektissa.
 
-Lisää bibtexistä esim. seuraavassa:
+Lisää BibTeXistä esim. seuraavassa:
 
 - <https://en.wikipedia.org/wiki/BibTeX>
 - <https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex>
+
+Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex)
 
 Kalle haluaa järjestelmän, jonka avulla hänen opiskelijat voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
@@ -88,8 +95,9 @@ Kalle haluaa järjestelmän, jonka avulla hänen opiskelijat voivat hallinnoida 
   - olisi kyllä hyvä, jos jokaiseen viitteeseen voisi liittää joukon kategorioita tai tägejä, jotka mahdollistaisivat tarkemmat haut
 -  ihan jees jos kyseessä on yhdellä koneella toimiva sovellus, parempi olisi kuitenkin jos se olisi verkossa ja joka paikassa käytettävissä
 - jos toimii vaan paikallisella koneella, pitää eri koneiden välillä pystyä jotenkin synkronoimaan talletetut viitteet
-sellanen olisi loistavaa, että jos antaa linkin 
-- ACM:n digitaaliseen kirjastoon, esim. [näin](https://dl.acm.org/doi/10.1145/2380552.2380613), niin softa crawlaa sieltä kaikki viitteet
-- vielä parempi feature olisi datan haku doi-viitteen perusteella
+- sellanen olisi loistavaa, että jos antaa linkin esim ACM:n digitaaliseen kirjastoon, esim. [näin](https://dl.acm.org/doi/10.1145/2380552.2380613), niin softa crawlaa sieltä viitteen tiedot
+  - myös muita tiedokantoja kuten google scholaria voi tukea
+- jopa vielä parempi feature olisi datan haku [doi](https://www.doi.org/)-tunnisteen perusteella
+- kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin kandin tekijöille ihan turhia
 
 vaatimuksia tarkennetaan asiakkaan kanssa viikoittaisissa palavereissa
