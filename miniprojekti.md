@@ -7,12 +7,9 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ilmoittautu miniprojektiin VIIMEISTÄÄN lauantaina 19.11. klo 23:50
-  - ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/38c24c3c-ea5e-4e40-89f9-3fbec8557c05) kampusversioon
-  - ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/95a9103d-0bbf-4ff2-b52b-fd3a4a06745b) etäversioon
-    - Etäversio tapaa asiakkaan zoomissa ma 22.11. klo 16-18
-    - Etäversio on tarkoitettu ainoastaan sellaisille joilla on välttämätön syy (esim. asuu pääkaupunkiseudun ulkopuolella, kuuluu COVID19-riskiryhmään) suorittaa miniprojekti etänä
-    - Jos etäversioon on tulossa enemmän kuin mitä tilaa on, karsiutuvat vähemmän välttämättömästä syystä ilmoittautuneet pois
+- Ryhmäjako valmiina
+  - Näet ryhmäsi, sekä ryhmän aloitustilaisuuden ajan ja paikan miniprojektien [ilmoittautumissovelluksesta](https://study.cs.helsinki.fi/assembler/courses)
+
 
 ### Johdanto
 
