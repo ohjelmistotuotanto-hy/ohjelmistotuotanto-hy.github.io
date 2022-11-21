@@ -5,6 +5,8 @@ inheader: no
 permalink: /speksi/
 ---
 
+## Taustaa
+
 Kandiohjaaja Kalle Ilves tarvitsee järjestelmän, joka auttaisi Kallen ohjaamia opiskelijoita pitämään kanditöiden kirjottamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa kandia varten. Kuten kaikki TKT:n opiskelijat, myös kaikki Kallen ohjattavat kirjoittavat kandin [LaTeX](https://www.latex-project.org/):illa.
 
 LaTeX:ia käytettäessä teksti näyttää seuraavalta:
@@ -84,6 +86,8 @@ Lisää BibTeXistä esim. seuraavassa:
 - <https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex>
 
 Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex)
+
+## Järjestelmän kuvaus
 
 Kalle haluaa järjestelmän, jonka avulla hänen opiskelijat voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
