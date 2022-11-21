@@ -1422,7 +1422,7 @@ Nimellä [shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery)
 Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 - <https://sourcemaking.com/refactoring/bad-smells-in-code>
-- <https://www.codinghorror.com/blog/2006/05/code-smells.html>
+- <https://blog.codinghorror.com/code-smells/>
 
 ### Refaktorointi
 
