@@ -35,7 +35,7 @@ class Counter:
 
 Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hakemiston <i>increase_counter.robot</i>-tiedostoon. Tutustu tiedoston sisältöön ja pohdi, vaatiiko testattavien skenaarioiden ymmärtäminen lukijalta erityistä teknistä osaamista esimerkiksi unittest-testeihin verrattuna.
 
-Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
+Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry add`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
 
 Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti.
 
