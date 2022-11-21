@@ -93,6 +93,11 @@ Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohta
 
 On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden testicommitin ja tarkastaa, että Git on konfiguroitu oikein.
 
+### Pariohjelmointi ja commitit
+
+Jos pariohjelmoit (se kannattaa!) saat commitit näkyviin molemmille
+[tämän ohjeen](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) mukaan.
+
 ### Commitit kadoksissa
 
 Jos committisi yhteydessä näkyy (Gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi

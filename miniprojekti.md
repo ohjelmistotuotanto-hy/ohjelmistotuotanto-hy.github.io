@@ -9,6 +9,8 @@ permalink: /miniprojekti/
 
 - Ryhmäjako valmiina
   - Näet ryhmäsi, sekä ryhmän aloitustilaisuuden ajan ja paikan miniprojektien [ilmoittautumissovelluksesta](https://study.cs.helsinki.fi/assembler/courses)
+- Ensimmäisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet)
+  - varmista että [committisi](http://localhost:4000/miniprojektin_arvosteluperusteet/#varmista-ett%C3%A4-commitisi-n%C3%A4kyv%C3%A4t-githubissa-oikein) näkyvät GitHubissa!
 
 
 ### Johdanto
@@ -85,7 +87,7 @@ Sovelluksen osittainen kuvaus [täällä](/speksi)
 - Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
-  - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
+  - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttahttps://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authorsmaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   - Kannattaa huomata, että storyihin sitoutuminen ei tarkoita sitä, että ne on pakko tehdä valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on otava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
