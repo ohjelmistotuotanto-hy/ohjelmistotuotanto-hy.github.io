@@ -55,9 +55,12 @@
 
 ### Viikko 4
 
-- Luento 7: {{site.luennot[7]}} [(syksyn 21 tallenne)](https://youtu.be/WC6q8KRHKII)
+- Luento 7: {{site.luennot[7]}}
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops)
+  - tallenteet:
+    -  [syksy 2022](https://youtu.be/hi8wtxI7ST8)
+    -  [syksy 2021](https://youtu.be/WC6q8KRHKII)
 - Luento 8: {{site.luennot[8]}} [(syksyn 21 tallenne)](https://youtu.be/5pjrcTLdUpU)
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
