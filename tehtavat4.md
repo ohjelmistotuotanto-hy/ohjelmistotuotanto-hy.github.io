@@ -9,7 +9,7 @@ permalink: /tehtavat4/
 
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamisen" yksikkötesteissä. Tehtävässä 5 tutustutaan TDD-tekniikkaan. Tehtävässä 6 tutustutaan retrospektiivitekniikoihin ja tehtävä 7 johdataa Gitin tägien maailmaan.
+Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan TDD-tekniikkaan. Tehtävässä 6 tutustutaan retrospektiivitekniikoihin ja tehtävä 7 johdattaa Gitin tägien maailmaan.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -32,11 +32,11 @@ Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](/tehtava
 
 Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `Kauppa` tulisi testata? Tuleeko kaupan testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
 
-Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
+Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot)) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
 
 Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien avulla voi myös varmistaa, että testattava metodi tai funktio kutsuu olioiden metodeja asiaankuuluvalla tavalla.
 
-Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon. Kirjastosta voidaan tuoda luokka [Mock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock). Kasotaan mitä luokalla voi tehdä käynnistämällä interaktiivinen Python-terminaali komennolla `python3` (virtuaaliympäristölle ei ole tarvetta, koska emme käytä ulkoisia riippuvuuksia):
+Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon. Kirjastosta voidaan tuoda luokka [Mock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock). Katsotaan mitä luokalla voi tehdä käynnistämällä interaktiivinen Python-terminaali komennolla `python3` (virtuaaliympäristölle ei ole tarvetta, koska emme käytä ulkoisia riippuvuuksia):
 
 ```python
 >>> from unittest.mock import Mock
@@ -111,7 +111,7 @@ kauppa.lisaa_ostos(7)
 kauppa.maksa("1111")
 ```
 
-Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron miltä summa veloitetaan.
+Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron jolta summa veloitetaan.
 
 Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa.
 
@@ -177,22 +177,22 @@ def test_kaytetaan_maksussa_palautettua_viitetta(self):
 
 Testin lopussa varmistetaan, että pankin `Mock`-oliota on kutsuttu oikeilla parametrinarvoilla, eli kolmantena parametrina tulee olla viitegeneraattorin palauttama arvo.
 
-Tutustu projektiin ja sen kaikkiin testeihin. Asenne projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`. Riko joku testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota:
+Tutustu projektiin ja sen kaikkiin testeihin. Asenne projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`. Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota:
 
 ```python
 pankki_mock.maksa.assert_called_with(ANY, ANY, 1000)
 ```
 
-Ja varmista että testi eivät mene läpi. Katso miltä virheilmoitus näyttää.
+Ja varmista, että testit eivät mene läpi. Katso miltä virheilmoitus näyttää.
 
-Voit tutusta aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](https://docs.python.org/3/library/unittest.mock.html).
+Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](https://docs.python.org/3/library/unittest.mock.html).
 
 ### 2. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 2
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/maksukortti-mock_ oleva projekti.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
-Tässä tehtävässä on tarkoitus testata ja täydennetään luokkaa `Kassapaate`. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
+Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
 Projektissa on valmiina kaksi testiä:
 
@@ -224,7 +224,7 @@ class TestKassapaate(unittest.TestCase):
         maksukortti_mock.osta.assert_not_called()
 ```
 
-Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen velottaa summan kortilta.
+Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen veloittaa summan kortilta.
 
 Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. Maksukortin saldoa ei erikseen tarkasteta, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
 
@@ -246,7 +246,7 @@ Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokaup
 - Sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/verkkokauppa_.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
-Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri` ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
+Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
 Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
 
@@ -463,7 +463,7 @@ class TestOstoskori(unittest.TestCase):
         self.assertEqual(self.kori.hinta(), 0)
 ```
 
-Laajenna testiä siten että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
+Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
 
 Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
 
@@ -583,9 +583,9 @@ Lisää ja commitoi mahdolliset muutokset.
 
 Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
 
-Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad)
+Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
 
-Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_
+Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä repositorion juureen sijoitettavaan tiedostoon _retro.md_.
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
@@ -595,9 +595,9 @@ Tutustutaan tässä tehtävässä Gitin tageihin:
 
 > Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
 
-Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags')
+Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags').
 
-Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
+Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
 
 - Tee tägi nimellä tagi1 (lightweight tag riittää)
 - Tee kolme committia (eli 3 kertaa muutos + add + commit)
@@ -609,12 +609,12 @@ Tee seuraavat samaan repositorioon, mihin palautat tehtäväsi:
   - Tämä onnistuu komennolla `git checkout main`
 - Lisää tägi _edelliseen_ committiin
   - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
-  - Joissain windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
+  - Joissain Windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
   - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
 - Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
 - Katso komennolla <code>gitk</code> miltä historia näyttää
 
-Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags)
+Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags).
 
 Varmista, että tagit siirtyvät GitHubiin:
 
