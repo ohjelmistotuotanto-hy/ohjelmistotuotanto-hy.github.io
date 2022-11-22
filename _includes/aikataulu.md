@@ -24,7 +24,7 @@
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
-    - [syksy 2022](https://youtu.be/0MbS7-32svA)
+    - [syksy 2022](https://youtu.be/kte9QEh60OE)
     - [syksy 2021](https://youtu.be/T5dOFks48ZY)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
@@ -61,10 +61,13 @@
   - tallenteet:
     -  [syksy 2022](https://youtu.be/hi8wtxI7ST8)
     -  [syksy 2021](https://youtu.be/WC6q8KRHKII)
-- Luento 8: {{site.luennot[8]}} [(syksyn 21 tallenne)](https://youtu.be/5pjrcTLdUpU)
+- Luento 8: {{site.luennot[8]}} 
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
+  - tallenteet:
+    - [syksy 2022](https://youtu.be/izbkzVxboBY)
+    - [syksy 2021](https://youtu.be/5pjrcTLdUpU)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[4]}}

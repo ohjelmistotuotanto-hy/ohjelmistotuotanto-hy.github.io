@@ -7,11 +7,9 @@ permalink: /tehtavat5/
 
 {% include laskari_info.md part=5 %}
 
-Tehtävissä 1-2 jatketaan gitin harjoittelua. Tehtävät 2 ja 3 eivät näy palautuksissa mitenkään.
+Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2eivät näy palautuksissa mitenkään.
 
-Tehtävät 3-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
-
-Tehtävä 6 käsittelee retrospektiivitekniikoita.
+Tehtävät 3-6 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -23,7 +21,10 @@ Tehtävä 6 käsittelee retrospektiivitekniikoita.
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+**Tämän viikon tehtävät 3-6 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko5_ sisälle.
+
+Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+
 
 ### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
@@ -67,6 +68,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 ### 3. Tenniksen pisteenlaskun refaktorointi
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko5/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
 
@@ -120,7 +122,10 @@ Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](
 
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/laskin_, löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. Jos tarvitte, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva tkinter-tutoriaali.
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
+
+Jos tarvitte, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva tkinter-tutoriaali.
 
 Asenna projektin riippuvuudet komenolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 
@@ -212,7 +217,10 @@ Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarv
 
 ### 6. IntJoukon testaus ja siistiminen
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko4/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
+
+Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
 
 Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
 
