@@ -322,6 +322,15 @@ Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
 Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
 
+**HUOM:** macOS Monterey käyttöjärjestelmällä Chrome saattaa antaa [virheilmoituksen 403](https://stackoverflow.com/questions/72795799/how-to-solve-403-error-with-flask-in-python). Tällöin muokkaa tiedoston `index.py` sisältö seuraavanlaiseksi
+```python
+from app import app
+
+if __name__ == "__main__":
+    app.run(port=8000, debug=True)
+```
+Tämän lisäksi muuta tiedostossa `tests/resource.robot` muuttujan `${SERVER}` arvoksi `localhost:8000`.
+
 ![]({{ "/images/py-lh3-2.png" | absolute_url }}){:height="200px" }
 
 Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5000.
