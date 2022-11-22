@@ -64,7 +64,7 @@ Vaikka arkkitehtuurin määritelmät hieman vaihtelevat, löytyy määritelmist
 
 Arkkitehtuuri keskittyy järjestelmän rakenteen tärkeisiin tai keskeisiin periaatteisiin. Se ei siis kuvaa järjestelmää tarkalla detaljitasolla, vaan on isoihin linjoihin keskittyvä _abstraktio_.
 
-Artikkelissa [Who needs architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa.
+Artikkelissa [Who needs an architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa.
 
 Melkein sama hieman toisin ilmaistuna oli Krutchtenin määritelmässä mainittu
 _set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintoja kautta.
@@ -108,7 +108,7 @@ Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien pii
 
 Arkkitehtuurityyleistä varmasti tunnetuin ja eniten käytetty on _kerrosarkkitehtuuri_ (engl. layered architecture), jossa pyrkimyksenä on jakaa sovellus käsitteellisiin kerroksiin, joissa kukin kerros suorittaa oman "abstraktiotason" tehtäväänsä käyttäen ainoastaan sen alapuolella olevan kerroksen palveluja.
 
-Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä (kuvassa presentation layer) ja tämän alapuolella sovelluslogiikasta (kuvassa business layer) vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen (kuvassa presentation layer ja database layer) tai verkon yli tapahtuvaan kommunikaatioon.
+Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä (kuvassa presentation layer) ja tämän alapuolella sovelluslogiikasta (kuvassa business layer) vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen (kuvassa persistence layer ja database layer) tai verkon yli tapahtuvaan kommunikaatioon.
 
 ![]({{ "/images/4-1.png" | absolute_url }}){:height="350px" }
 
@@ -583,7 +583,7 @@ class Tili:
         return True
 
     def maksa_korko(self):
-        self.saldo = self.saldo + self.saldo * (1 + self.korkoprosentti)
+        self.saldo = self.saldo * (1 + self.korkoprosentti)
 ```
 
 Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan `EuriborTili` perimällä luokan `Tili` ja ylikirjoittamalla metodin `maksaKorko` siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
@@ -716,7 +716,7 @@ class Tili:
         return True
 
     def maksa_korko(self):
-        self.saldo = self.saldo + self.saldo * (1 + self.korko.get_korko())
+        self.saldo = self.saldo * (1 + self.korko.get_korko())
 ```
 
 Erilaisia tilejä luodaan seuraavasti:
@@ -816,13 +816,13 @@ class Pankki:
     def kayttotili(self, omistaja, korko):
         return Tili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
 
-    def maaraaikaistili(self, omista, korko):
+    def maaraaikaistili(self, omistaja, korko):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
 
     def euribortili(self, omistaja, kuukauden):
         return Tili(self.generoi_tilinumero(), omistaja, EriborKorko(kuukauden))
 
-    def maaraaikais_euribortili(self, omista, kuukauden):
+    def maaraaikais_euribortili(self, omistaja, kuukauden):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, EuriborKorko(kuukauden))
 ```
 
@@ -874,7 +874,7 @@ class Laskin:
     def laske_summa(self, luku1, luku2):
         return luku1 + luku2
 
-    def laske_tulos(self, luku1, luku2):
+    def laske_tulo(self, luku1, luku2):
         return luku1 * luku2
 
     def laske_erotus(self, luku1, luku2):
@@ -1161,7 +1161,7 @@ Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin metodeja
 
 Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.
 
-Lisää template method -suunnittelumallista [täällä](http://www.oodesign.com/template-method-pattern.html) ja [täällä](http://www.netobjectives.com/PatternRepository/index.php?title=TheTemplateMethodPattern).
+Lisää template method -suunnittelumallista [täällä](http://www.oodesign.com/template-method-pattern.html).
 
 ### Koodin laatuattribuutti: toisteettomuus
 
@@ -1173,7 +1173,7 @@ Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yoursel
 
 Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi fuktioiden tai metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan `BinaariOperaatio` motivaationa oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa `Summa` ja `Tulo`.
 
-DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toistoa eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
+DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toiston eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
 
 Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
@@ -1334,7 +1334,7 @@ Huomaa, kuinka kyseissä esimerkissä funktio `rakenna_sisaltaa_sanan` muistutta
 
 Refaktoroidaan vielä `GutenbergLukija` luokkaa hyödyntämällä Pythonin funktionaalisen ohjelmoinnin työkalupakkia. Koska luokan metodeissa käsitellään paljon listoja, voimme hyödyntää funktiota [map](https://docs.python.org/3/library/functions.html#map) ja [filter](https://docs.python.org/3/library/functions.html#filter).
 
-Funktiota `map` voi hyödyntää listan (tai minkä tahansa muun iteraattorin) alkioiden muokkaamiseen. Funktiolla on kaksi parametria. Ensimmäinen parametri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa alkion uuden arvon. Toinen parametri on iteraattori, jonka alkioista muodostetaan lambdan avulla uusi iteraattori. `map`-funktio ei siis muuta parametrina saatua iteraattoris, vaan palauttaa uuden iteraattorin, johon on tehty halutut muokkaukset.
+Funktiota `map` voi hyödyntää listan (tai minkä tahansa muun iteraattorin) alkioiden muokkaamiseen. Funktiolla on kaksi parametria. Ensimmäinen parametri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa alkion uuden arvon. Toinen parametri on iteraattori, jonka alkioista muodostetaan lambdan avulla uusi iteraattori. `map`-funktio ei siis muuta parametrina saatua iteraattoria, vaan palauttaa uuden iteraattorin, johon on tehty halutut muokkaukset.
 
 Voimme hyödyntää `map`-funktiota esimerkiksi `GutenbergLukija`-luokan konstruktorissa:
 
@@ -1450,7 +1450,7 @@ Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaiset automaattise
 
 Refaktoroinnissa kannattaa ehdottomasti edetä pienin askelin eli yksi hallittu muutos kerrallaan. Testit on syytä suorittaa jokaisen refaktorointioperaation jälkeen, jotta mahdollinen regressio, eli aiemmin toimineen koodin hajoaminen huomataan mahdollisimman nopeasti.
 
-Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu säilyy siistinä, on koodin laajentaminen miellyttävää ja pienien refaktorointioperaatioiden tekeminen suhteellisen vaivatonta. Jos koodin sisäinen laatu pääsee rapistumaan, muuttuu sen laajentaminen hitaaksi ja myös refaktoroinnin suorittaminen muuttuu koko ajan työläämmäksi. Monilla ohjelmistokehitystiimeillä onkin _definition of doneen_ kirjattu, että valmiin määritelmä sisältää sen, että koodi on refaktoroitu riittävän siistiksi. Siisteyttä saatetaan valvoa esim. [pull requesteina tehtävänä katselmointina](osa3#koodin-katselmointi-github-ja-pull-requestit).
+Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu säilyy siistinä, on koodin laajentaminen miellyttävää ja pienien refaktorointioperaatioiden tekeminen suhteellisen vaivatonta. Jos koodin sisäinen laatu pääsee rapistumaan, muuttuu sen laajentaminen hitaaksi ja myös refaktoroinnin suorittaminen muuttuu koko ajan työläämmäksi. Monilla ohjelmistokehitystiimeillä onkin _definition of doneen_ kirjattu, että valmiin määritelmä sisältää sen, että koodi on refaktoroitu riittävän siistiksi. Siisteyttä saatetaan valvoa esim. [pull requesteina tehtävänä katselmointina](https://ohjelmistotuotanto-hy.github.io/osa3/#koodin-katselmointi-github-ja-pull-requestit).
 
 Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitkien metodien jakaminen pienemmiksi on helppoa. Aina ei näin kuitenkaan ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja, joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tällaiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
 
@@ -1647,7 +1647,7 @@ Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle pa
 
 Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerran oliosuunnitteun periaate "favour composition over inheritance" on näyttänyt voimansa.
 
-Lisää dekoraattori-suunnittelumallista esim. osoitteessa https://sourcemaking.com/design_patterns/decorator
+Lisää dekoraattori-suunnittelumallista esim. [täällä](https://sourcemaking.com/design_patterns/decorator)
 
 #### Pinotehdas <span style="color:blue">[viikko 6]</span>
 
@@ -1782,7 +1782,7 @@ Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.
 Rakentajaa siis käytetään seuraavasti:
 
 ```python
-Pinorakentaja()
+rakenna = Pinorakentaja()
 
 pino = rakenna.kryptattu().prepaid(10).pino()
 ```
