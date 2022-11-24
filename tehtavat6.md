@@ -7,9 +7,12 @@ permalink: /tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
+
+Tehtävässä 1 jatketaan Gitin harjoittelua, tehtävä ei näy palautuksissa mitenkään.
+
 Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
-Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
+Tehtävässä 6 tutustutaan GitHubin pull request -mekanismiin ja tehdään sen avulla pull request johonkin miniprojektiin. Tehtävä tehdään suoraan GitHubiin.
 
 Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 
@@ -22,6 +25,8 @@ Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
+
+**Tämän viikon tehtävät 2-5 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston viikko6 sisälle.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -63,6 +68,8 @@ Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
 ### 2. Kyselykieli NHL-tilastoihin, osa 1
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _koodi/viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko6 sisälle.
+- Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](https://ohjelmistotuotanto-hy.github.io/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5) voi olla eräs inspiraation lähde.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
 
@@ -84,20 +91,20 @@ def main():
         print(player)
 ```
 
-Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `matches` palauttaa `True`.
+Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `test` palauttaa `True`.
 
 Tutustu ohjelman rakenteeseen.
 
-- Huomioi miten `HasAtLeast`-luokan metodi `matches` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
+- Huomioi miten `HasAtLeast`-luokan metodi `test` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
 - Toinen huomioinarvoinen piirre on `And`-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, jonka tunnista `*`-etuliitteestä. Syntaksin avulla `*matchers` sisältää listan konstruktorille annetuista argumenteista
 
-**Toteuta `matches`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:**
+**Toteuta `test`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:**
 
 - All (tosi kaikille pelaajille)
 - Not (parametrina olevan ehdon negaatio)
 - HasFewerThan (HasAtLeast-komennon negaatio eli esim. on vähemmän kuin 10 maalia)
 
-Kaikille pelaajille tosi ehto _all_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
+Kaikille pelaajille tosi ehto _All_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
 
 Voit tarkistaa toteutuksesi toimivuuden tekemällä kyselyn:
 
@@ -111,15 +118,18 @@ matcher = And(
 Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yhtä maalia, eli _0 maalia tehneet_:
 
 <pre>
-Tony DeAngelo        NYR          0  + 1  = 1
+Sammy Blais          NYR          0  + 4  = 4
+Libor Hajek          NYR          0  + 1  = 1
 Tim Gettinger        NYR          0  + 0  = 0
-Tarmo Reunanen       NYR          0  + 1  = 1
-Zac Jones            NYR          0  + 4  = 4
-Justin Richards      NYR          0  + 1  = 1
+Anthony Greco        NYR          0  + 0  = 0
+Zac Jones            NYR          0  + 2  = 2
 Keith Kinkaid        NYR          0  + 0  = 0
 Igor Shesterkin      NYR          0  + 0  = 0
+Adam Huska           NYR          0  + 0  = 0
 Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
+
+- Kaikissa esimerkitulostuksissa on käytetty vuoden 2021-22 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt>
 
 Kyselyn
 
@@ -132,56 +142,67 @@ matcher = And(
 
 tulisi palauttaa täsmälleen sama lista.
 
+Ehdon All pitäisi palauttaa kaikki pelaajat. Seuraavan koodin
+
+```python
+filtered_with_all = stats.matches(All())
+print(len(filtered_with_all))
+```
+
 ### 3. Kyselykieli NHL-tilastoihin, osa 2
 
-**Toteuta** `matches`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
+**Toteuta** `test`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
 
 Kyselyn
 
 ```python
 matcher = Or(
-    HasAtLeast(30, "goals"),
-    HasAtLeast(50, "assists")
+    HasAtLeast(45, "goals"),
+    HasAtLeast(70, "assists")
 )
 ```
 
-tulee palauttaa ne, joilla on vähintään 30 maalia tai 50 syöttöä, eli seuraava lista
+tulee palauttaa ne, joilla on vähintään 45 maalia tai 70 syöttöä, eli seuraava lista
 
 ```
-Auston Matthews      TOR          41 + 25 = 66
-Patrick Kane         CHI          15 + 51 = 66
-Alex DeBrincat       CHI          32 + 24 = 56
-Mikko Rantanen       COL          30 + 36 = 66
-Leon Draisaitl       EDM          31 + 53 = 84
-Connor McDavid       EDM          33 + 72 = 105
+Chris Kreider        NYR          52 + 25 = 77
+Artemi Panarin       NYR          22 + 74 = 96
+Auston Matthews      TOR          60 + 46 = 106
+Jonathan Huberdeau   FLA          30 + 85 = 115
+Alex Ovechkin        WSH          50 + 40 = 90
+Roman Josi           NSH          23 + 73 = 96
+Johnny Gaudreau      CGY          40 + 75 = 115
+Leon Draisaitl       EDM          55 + 55 = 110
+Connor McDavid       EDM          44 + 79 = 123
+Kirill Kaprizov      MIN          47 + 61 = 108
+Kyle Connor          WPG          47 + 46 = 93
 ```
 
 Kyselyn
 
 ```java
 matcher = And(
-    HasAtLeast(40, "points"),
+    HasAtLeast(70, "points"),
     Or(
         PlaysIn("NYR"),
-        PlaysIn("NYI"),
+        PlaysIn("FLA"),
         PlaysIn("BOS")
     )
 )
 ```
 
-tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
+tulee palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYR_, _FLA_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Mathew Barzal        NYI          17 + 28 = 45
-Ryan Strome          NYR          14 + 35 = 49
-Mika Zibanejad       NYR          24 + 26 = 50
-Pavel Buchnevich     NYR          20 + 28 = 48
-Artemi Panarin       NYR          17 + 41 = 58
-Adam Fox             NYR          5  + 42 = 47
-Patrice Bergeron     BOS          23 + 25 = 48
-David Krejci         BOS          8  + 36 = 44
-Brad Marchand        BOS          29 + 40 = 69
-David Pastrnak       BOS          20 + 28 = 48
+Chris Kreider        NYR          52 + 25 = 77
+Mika Zibanejad       NYR          29 + 52 = 81
+Artemi Panarin       NYR          22 + 74 = 96
+Adam Fox             NYR          11 + 63 = 74
+Brad Marchand        BOS          32 + 48 = 80
+David Pastrnak       BOS          40 + 37 = 77
+Jonathan Huberdeau   FLA          30 + 85 = 115
+Aleksander Barkov    FLA          39 + 49 = 88
+Sam Reinhart         FLA          33 + 49 = 82
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
@@ -198,7 +219,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -215,7 +236,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -227,17 +248,17 @@ def main():
         print(player)
 ```
 
-Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla on vähintään 5 ja vähemmän kuin 10 maalia:
+Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla on vähintään 10 mutta kuitenkin vähemmän kuin 20 maalia:
 
 ```python
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
     query = QueryBuilder()
 
-    matcher = query.playsIn("NYR").hasAtLeast(5, "goals").hasFewerThan(10, "goals") .build()
+    matcher = query.playsIn("NYR").hasAtLeast(10, "goals").hasFewerThan(20, "goals") .build()
 
     for player in stats.matches(matcher):
         print(player)
@@ -246,12 +267,10 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Brendan Smith        NYR          5  + 5  = 10
-Kevin Rooney         NYR          8  + 6  = 14
-Adam Fox             NYR          5  + 42 = 47
-Filip Chytil         NYR          8  + 14 = 22
-K'Andre Miller       NYR          5  + 7  = 12
-Kaapo Kakko          NYR          9  + 8  = 17
+Barclay Goodrow      NYR          13 + 20 = 33
+Jacob Trouba         NYR          11 + 28 = 39
+Adam Fox             NYR          11 + 63 = 74
+Alexis Lafrenière    NYR          19 + 12 = 31
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
@@ -261,18 +280,18 @@ Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-peri
 Pitkät metodikutsuketjut, esim.
 
 ```python
-matcher = query.playsIn("NYR").hasAtLeast(5, "goals").hasFewerThan(10, "goals") .build()
+matcher = query.playsIn("NYR").hasAtLeast(10, "goals").hasFewerThan(20, "goals") .build()
 ```
 
 ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usein ne onkin tapana jakaa "kutsu per rivi"-periaatteella:
 
 ```python
-    matcher = (
+   matcher = (
       query
-        .playsIn("NYR")
-        .hasAtLeast(5, "goals")
-        .hasFewerThan(10, "goals")
-        .build()
+      .playsIn("NYR")
+      .hasAtLeast(10, "goals")
+      .hasFewerThan(20, "goals")
+      .build()
     )
 ```
 
@@ -294,7 +313,7 @@ m1 = (
 m2 = (
   query
     .playsIn("EDM")
-    .hasAtLeast(40, "points")
+    .hasAtLeast(50, "points")
     .build()
 )
 
@@ -304,11 +323,12 @@ matcher = query.oneOf(m1, m2).build()
 Pelaajalistan tulisi olla:
 
 ```
-Travis Sanheim       PHI          3  + 12 = 15
-Philippe Myers       PHI          1  + 10 = 11
-Tyson Barrie         EDM          8  + 40 = 48
-Leon Draisaitl       EDM          31 + 53 = 84
-Connor McDavid       EDM          33 + 72 = 105
+Keith Yandle         PHI          1  + 18 = 19
+Rasmus Ristolainen   PHI          2  + 14 = 16
+Zach Hyman           EDM          27 + 27 = 54
+Ryan Nugent-Hopkins  EDM          11 + 39 = 50
+Leon Draisaitl       EDM          55 + 55 = 110
+Connor McDavid       EDM          44 + 79 = 123
 ```
 
 Tai sama ilman apumuuttujia:
@@ -322,7 +342,7 @@ matcher = (
           .hasFewerThan(5, "goals")
           .build(),
       query.playsIn("EDM")
-          .hasAtLeast(40, "points")
+          .hasAtLeast(50, "points")
           .build()
     )
     .build()
@@ -341,7 +361,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
 
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2021/projects/repositories) joukosta
+- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2022/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
   - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio

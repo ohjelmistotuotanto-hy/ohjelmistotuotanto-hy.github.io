@@ -7,7 +7,7 @@ permalink: /tehtavat5/
 
 {% include laskari_info.md part=5 %}
 
-Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2eivät näy palautuksissa mitenkään.
+Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2 eivät näy palautuksissa mitenkään.
 
 Tehtävät 3-6 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
 
@@ -25,8 +25,7 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-
-### 1. git: vahingossa tuhotun tiedoston palautus [versionhallinta]
+### 1. Git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
 Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
@@ -41,7 +40,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 (1) - (2) - (3)
 ```
 
-- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa nykyhetkellä ja (2):ssa xxx:ää ei ole.
+- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa ja (2):ssa xxx:ää ei ole.
   - Huom: komennolla <code>gitk</code> voit tutkia historiaa
 - Haluamme palauttaa tiedoston
 - Selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
@@ -63,7 +62,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 - Syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
   - Ilman optiota **no-edit** pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä
   - Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
-- Vastaavalla tavalla voidaan revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
+- Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
 ### 3. Tenniksen pisteenlaskun refaktorointi
 
