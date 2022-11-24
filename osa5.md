@@ -29,12 +29,12 @@ Lean on kotoisin Toyotan tuotannon ja tuotekehityksen menetelmistä, ja sen synt
 
 Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennuksen buumi, mutta pääomaa ja raaka-aineita oli saatavissa niukalti. Havaittiin, että laadun parantaminen nostaa tuottavuutta: mitä vähemmän tuotteissa ja tuotantoprosesseissa on virheitä ja ongelmia, sitä enemmän tuottavuus kasvaa, ja se taas johtaa markkinaosuuden kasvuun ja sitä kautta uusiin työmahdollisuuksiin. Japanilaisiin yrityksiin muodostui vahva laatua korostava kulttuuri.
 
-Resurssien niukkuus johti siihen, että Toyota kehitti ns. _Just In Time (JIT)_ -tuotantomallin, missä ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Vastakohtana tälle on perinteinen massatuotanto, missä tuotteita valmistetaan etukäteen suuret määrät varastoon. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt _sykliaika_ (engl. cycle time) tilauksesta toimitukseen.
+Resurssien niukkuus johti siihen, että Toyota kehitti ns. _Just In Time (JIT)_ -tuotantomallin, missä ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Vastakohtana tälle on perinteinen massatuotanto, missä tuotteita valmistetaan etukäteen suuret määrät varastoon. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt _läpimenoaika_ (engl. lead time) tilauksesta toimitukseen.
 
-JIT-tuotantomallista oli monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen sykliaika tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
+JIT-tuotantomallista oli monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen läpimenoaika tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
 toisin kuin mahdollisesti kuukausia varastossa olevilla tuotteilla.
 
-Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen sykliaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
+Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen läpimenoaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
 
 Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä kunnioittavan, kuuntelevan ja _vastuuttavan_ (engl. empowering) tuotannon optimoimisen kulttuurin. Tärkeäksi periaatteeksi tuli koko henkilöstön tasolla tapahtuva toiminta- ja työskentelytapojen jatkuva parantaminen. Käytännössä jokainen työntekijä oli oikeutettu ja jopa velvollinen vaikka pysäyttämään koko tuotantolinjan heti havaitessaan ongelmia.
 
@@ -221,7 +221,7 @@ Kanban-kortteja on käytössä vain rajallinen määrä, tällä kontrolloidaan
 Kuten on jo mainittu välivarastoon tehdyt komponentit on eräs leanin hukan muoto. Varastoidut komponentit sitovat pääomaa, ja jos tilauksia ei tulisi tarpeeksi, niitä
 ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa: jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret määrät.
 
-Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan sykliajan optimoitua.
+Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan läpimenoaikaa optimoitua.
 
 #### Kanban ohjelmistotuotannossa
 
@@ -237,7 +237,7 @@ Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analys
 
 Kuvan kanban-taulu salli maksimissaan, että sille on sijoitettu kaksikymmentä user storya. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_.
 
-Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storya. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanbantaululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _sykliaikaa_, eli sitä aikaa, joka kuluu kun user story tulee "tilauksesta" siihen kun sen määrittelemä ominaisuus on valmis.
+Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storya. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanbantaululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _läpimenoaikaa_, eli sitä aikaa, joka kuluu kun user story "tilataan", siihen kun sen määrittelemä ominaisuus on valmis.
 
 Leanin ideaalin mukaista olisi toteuttaa ns. _one piece flow_, eli toimia siten että user storyt tehtäisiin kokonaisuudessaan valmiiksi ennen seuraavan user storyn aloittamista. Monissa paikoissa sovelletaankin tätä periaatetta, mutta jos työ on organisoitu huonosti, periaate saattaa johtaa liian alhaiseen _utilisaatioon_, eli käytännössä siihen että softatiimin sisällä useat henkilöt joutuvat odottamaan toisten tekemisiä ennen kun he pystyvät jatkamaan omaa työtään. Tämän takia yhden storyn sijaan useimmissa tapauksissa tiimi työstä yhtä aikaa useampaa storyä. Eli sopivien WIP-rajoitteiden hakeminen vaatii aina tiimikohtaista harkintaa ja soveltamista.
 
