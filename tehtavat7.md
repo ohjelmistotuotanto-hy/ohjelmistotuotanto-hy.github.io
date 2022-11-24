@@ -13,6 +13,8 @@ permalink: /tehtavat7/
 
 {% include norppa.md %}
 
+{% include poetry_ongelma.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".

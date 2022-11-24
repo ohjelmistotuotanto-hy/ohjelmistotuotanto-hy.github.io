@@ -17,6 +17,8 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 {% include norppa.md %}
 
+{% include poetry_ongelma.md %}
+
 ### Tehtävien palauttaminen
 
 Osa git-tehtävistä (tehtävät 5-7) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.

@@ -17,6 +17,8 @@ Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. T
 
 {% include norppa.md %}
 
+{% include poetry_ongelma.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
@@ -24,7 +26,6 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 **Kaikki tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko4_ sisälle. Teknisesti ottaen tehtävän 7 palautus ei tosin luo repositorioon uutta sisältöä tiedostojen muodossa.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
-
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 

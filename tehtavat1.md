@@ -19,6 +19,8 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko sim
 
 {% include norppa.md %}
 
+{% include poetry_ongelma.md %}
+
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission". Viikon tehtävät palautetaan yhdellä kertaa, eli tee merkintä palautussovellukseen vasta kun olet valmis viikon tehtävien osalta.
