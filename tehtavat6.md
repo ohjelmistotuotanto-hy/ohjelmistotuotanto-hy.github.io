@@ -34,7 +34,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 _Tätä tehtävää ei palauteta mihinkään!_
 
-Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja <https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase>
+Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja/tai <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase>
 
 Aikaansaa seuraavankaltainen tilanne:
 
@@ -64,6 +64,10 @@ Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 Lopputuloksena pitäisi siis olla lineaarinen historia ja master sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
 
 Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
+
+Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) perustelee asiaa näin
+
+> The primary reason for rebasing is to maintain a linear project history. For example, consider a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch's history clean so it appears as if you've been working off the latest main branch. This gives the later benefit of a clean merge of your feature branch back into the main branch. Why do we want to maintain a "clean history"? The benefits of having a clean history become tangible when performing Git operations to investigate the introduction of a regression.
 
 ### 2. Kyselykieli NHL-tilastoihin, osa 1
 
