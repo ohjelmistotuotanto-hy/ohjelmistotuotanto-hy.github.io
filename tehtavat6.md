@@ -357,7 +357,7 @@ On mahdollista ja jopa todennäköistä, että ensimmäinen ratkaisusi ei toimi 
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-Tee tämä tehtävä mielellään aikaisintaan vasta perjantaina 1.12. 
+**Tee tämä tehtävä mielellään aikaisintaan vasta perjantaina 1.12.** 
 
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä jolloin niihin on vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
 
