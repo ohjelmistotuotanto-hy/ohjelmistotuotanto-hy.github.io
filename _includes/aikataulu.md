@@ -113,8 +113,9 @@
     - [python](/tehtavat7)
     - [java](/java/tehtavat7) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
-  - Loppudemot
-    - ajankohdat selviävät myöhemmin
+  - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
+    - ke 14.12. klo 12-14 B123
+    - to 15.12. klo 14-17 A111
 
 ### Viikko 8
 

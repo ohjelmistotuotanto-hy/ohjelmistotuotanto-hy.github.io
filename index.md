@@ -12,6 +12,9 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 - Miniprojekti käynnistyy maanantaina 21.11. alkavalla viikolla
   - Lue lisää [täältä](/miniprojekti)
+  - Miniprojektien loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
+    - ke 14.12. klo 12-14 B123
+    - to 15.12. klo 14-17 A111
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
   - tehtävät palautetaan "my submissions"-välilehdellä
 - Apua tehtävien tekoon
