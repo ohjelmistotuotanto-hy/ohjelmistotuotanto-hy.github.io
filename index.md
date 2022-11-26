@@ -10,7 +10,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Miniprojekti käynnistyy maanantaina 21.11. alkavalla viikolla
+- Miniprojektit käynnissä
   - Lue lisää [täältä](/miniprojekti)
   - Miniprojektien loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
     - ke 14.12. klo 12-14 B123

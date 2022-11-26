@@ -1,1 +1,0 @@
-{% include miniprojekti_ilmo.md %}
