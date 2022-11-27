@@ -79,8 +79,10 @@
 ### Viikko 5
 
 - Luento 9: {{site.luennot[9]}} [(syksyn 21 tallenne)](https://youtu.be/aS8-10a3Mkw)
+  - luento pidetään [zoomissa](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
   - [Lean](/osa5#lean)
 - Luento 10: {{site.luennot[10]}} [(syksyn 21 tallenne)](https://youtu.be/1gxfA58DLQ8)
+  - luento pidetään [zoomissa](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Laskarit

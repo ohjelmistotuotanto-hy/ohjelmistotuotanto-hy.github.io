@@ -10,6 +10,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
+- Maanantain 28.11. ja tiistain 29.11. luennot [zoomiin](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
 - Miniprojektit käynnissä
   - Lue lisää [täältä](/miniprojekti)
   - Miniprojektien loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
@@ -22,6 +23,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - pe 12-14 BK107
   - ma 15-17 [zoom](https://helsinki.zoom.us/j/66434455403?pwd=UWQ2NnZUZHF0Z1RyanFjTFRMU0I5dz09) (ma 22.11. zoom-pajaa ainoastaan 15-16)
 - Luennot 
+  - ma 28.11. ja ti 29.11 luennont [zoomissa](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
   - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
   - Luennoista on myös tallenteet, ks. aikataulu
