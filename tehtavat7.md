@@ -21,6 +21,8 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+**HUOM: tehtävät eivät vielä ole julkaistu lopulliseen muotoon:** tekeminen omalla vastuulla
+
 ### 1. Git: stash [versionhallinta]
 
 _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_

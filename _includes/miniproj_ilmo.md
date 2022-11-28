@@ -5,5 +5,3 @@
 Luennot pidetään <a href='https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09'>tässä</a> zoomissa
 
 </div>
-
-
