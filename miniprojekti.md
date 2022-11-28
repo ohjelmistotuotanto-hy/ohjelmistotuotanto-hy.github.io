@@ -14,7 +14,7 @@ permalink: /miniprojekti/
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
   - ke 14.12. klo 12-14 B123
   - to 15.12. klo 14-17 A111
-
+  - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
 
 ### Johdanto
 
