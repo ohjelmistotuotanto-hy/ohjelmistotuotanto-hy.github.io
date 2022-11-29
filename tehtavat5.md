@@ -60,7 +60,7 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 ### 2. Git: commitin muutosten kumoaminen [versionhallinta]
 
 - Huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
-  - HEAD siis viittaa siihen committiin minkä kohdalla nyt ollaan
+  - HEAD siis viittaa siihen committiin, jonka kohdalla nyt ollaan
 - Syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
   - Ilman optiota **no-edit** pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä
   - Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
@@ -115,7 +115,7 @@ Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäv
 
 Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
 
-Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata)
+Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata).
 
 Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
 
@@ -123,12 +123,12 @@ Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](
 
 ### 4. Laskin ja komento-oliot
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistoissa _koodi/viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
 
-Jos tarvitte, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva tkinter-tutoriaali.
+Jos tarvitsee, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva tkinter-tutoriaali.
 
-Asenna projektin riippuvuudet komenolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 
 Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
 
@@ -226,7 +226,7 @@ Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Go
 Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
 
 - Poista copypaste
-- Vähennä monitkaisuutta
+- Vähennä monimutkaisuutta
 - Anna muuttujille selkeät nimet
 - Tee metodeista pienempiä ja hyvän koheesion omaavia
 
