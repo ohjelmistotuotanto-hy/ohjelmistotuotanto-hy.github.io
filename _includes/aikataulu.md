@@ -96,7 +96,7 @@
 ### Viikko 6
 
 - Vierailuluennot
-  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa Unity, Mikko Tiainen Meru Health
+  - Luento 11: {{site.luennot[11]}} Vierailuluento Hannu Kokko Elisa
   - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.moniv-dl[6]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
     - [python](/tehtavat6)
@@ -107,8 +107,8 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 12: {{site.luennot[12]}} Vierailuluento Anniina Sallinen Oura
-  - Luento 13: {{site.luennot[13]}} Vierailuluento Hannu Kokko Elisa
+  - Luento 12: {{site.luennot[12]}} Vierailuluento Jami Kousa Unity, Mikko Tiainen Meru Health
+  - Luento 13: {{site.luennot[13]}} Vierailuluento Anniina Sallinen Oura
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.moniv-dl[7]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
