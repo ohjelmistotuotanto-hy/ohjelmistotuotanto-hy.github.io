@@ -647,7 +647,7 @@ Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi o
 
 ### Toimiiko ketterä ohjelmistokehitys
 
-Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaissut vuodesta 1995 alkaen ohjelmistoprojektien onnistumisen astetta kartoittavaa _Chaos Raportia_.
+Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaissut vuodesta 1995 alkaen ohjelmistoprojektien onnistumisen astetta kartoittavaa _Chaos Reportia_.
 
 Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
 
