@@ -82,7 +82,7 @@
   - [Lean](/osa5#lean)
   - Syksyn 2022 [tallenne](https://youtu.be/hDyuQqf0td0)
 - Luento 10: {{site.luennot[10]}} [(syksyn 21 tallenne)](https://youtu.be/1gxfA58DLQ8)
-  - luento pidetään [zoomissa](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
+  - Syksyn 2022 [tallemme](https://youtu.be/VvOGx8KqDf8)
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
 - Laskarit
