@@ -613,7 +613,7 @@ Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa-Seelannissa teh
 - Lean 39.7%
 - vesiputous 35.3%
 
-Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita2) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät eivät ole yrityksessä ollenkaan käytössä.
+Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät eivät ole yrityksessä ollenkaan käytössä:
 
 ![]({{ "/images/5-9a.png" | absolute_url }}){:height="300px" }
 
