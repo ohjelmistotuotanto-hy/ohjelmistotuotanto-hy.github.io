@@ -75,9 +75,33 @@ Pisteitä kertyy seuraavista asioista:
 
 Sprintin maksimi on 2.5 pistettä.
 
+
 ### Toisen sprintin arvosteluperusteet
 
-Tulossa...
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.25p) sprintin 2 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
+  - Burndown-käyrä olemassa
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
+- (0.25p) kattavahko testaus yksikkö- ja storytasolla
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+- (0.25p) projektille määritelty järkevät Pylint- tai checkstylesäännöt jotka tarkistetaan CI:n toimesta
+- (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
