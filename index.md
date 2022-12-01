@@ -10,7 +10,6 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Maanantain 28.11. ja tiistain 29.11. luennot [zoomiin](https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09)
 - Miniprojektit käynnissä
   - Lue lisää [täältä](/miniprojekti)
   - Miniprojektien loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
