@@ -10,7 +10,7 @@
 
 Luennot striimataan Unitubessa ja tallenteet tulevat Youtubeen. 
 
-Osallistumisesta paikan päällä vierailuluennolle on jaossa 1 kurssipiste (0.5 pistettä per osallistumiskerta). Ainoa tapa saada piste on tulla paikan päälle, ks.
+Osallistumisesta paikan päällä vierailuluennoille on jaossa 1 kurssipiste (0.5 pistettä per osallistumiskerta). Ainoa tapa saada piste on tulla paikan päälle, ks.
 <a href='https://ohjelmistotuotanto-hy.github.io/osa0/#kurssin-arvostelu'>arvosteluperusteet</a>. Jos osallistut kaikkiin vierailuluentoihin, saat ylimääräisen 0.5p
 
 </div>
