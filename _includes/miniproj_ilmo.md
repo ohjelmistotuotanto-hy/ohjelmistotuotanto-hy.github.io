@@ -1,7 +1,16 @@
-<div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #7CFC00;">
+<div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #00FFFF;">
 
-<h3>Maantantain 28.11. ja tiistain 29.11. luennot zoomissa</h3>
+<h3>Vierailuluennot ma 5.12., ma 12.12. ja ti 13.12</h3>
 
-Luennot pidetään <a href='https://helsinki.zoom.us/j/64885868461?pwd=elM0YjBURXM0UFNKTVRaVCs5ZU51UT09'>tässä</a> zoomissa
+<ul>
+  <li>ma 5.12. 12-14 Jami Kousa Unity, Mikko Tiainen Meru Health</li>
+  <li>ma 12.12. 12-14 Vierailuluento Hannu Kokko Elisa</li>
+  <li>ti 13.12. 12-14 Vierailuluento Anniina Sallinen Oura</li>
+</ul>
+
+Luennot striimataan Unitubessa ja tallenteet tulevat Youtubeen. 
+
+Osallistumisesta paikan päällä vierailuluennolle on jaossa 1 kurssipiste (0.5 pistettä per osallistumiskerta). Ainoa tapa saada piste on tulla paikan päälle, ks.
+<a href='https://ohjelmistotuotanto-hy.github.io/osa0/#kurssin-arvostelu'>arvosteluperusteet</a>. Jos osallistut kaikkiin vierailuluentoihin, saat ylimääräisen 0.5p
 
 </div>
