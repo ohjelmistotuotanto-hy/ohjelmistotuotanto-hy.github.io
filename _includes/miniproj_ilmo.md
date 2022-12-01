@@ -4,8 +4,8 @@
 
 <ul>
   <li>ma 5.12. 12-14 Jami Kousa Unity, Mikko Tiainen Meru Health</li>
-  <li>ma 12.12. 12-14 Vierailuluento Hannu Kokko Elisa</li>
-  <li>ti 13.12. 12-14 Vierailuluento Anniina Sallinen Oura</li>
+  <li>ma 12.12. 12-14 Hannu Kokko Elisa</li>
+  <li>ti 13.12. 12-14 Anniina Sallinen Oura</li>
 </ul>
 
 Luennot striimataan Unitubessa ja tallenteet tulevat Youtubeen. 
