@@ -11,13 +11,13 @@ permalink: /tehtavat7/
 
 {% include typo_instructions.md %}
 
-{% include norppa.md %}
-
 {% include poetry_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
+
+**Tämän viikon tehtävät 3-5 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston viikko7 sisälle. Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -83,6 +83,7 @@ __/
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _koodi/viikko7/kivi-paperi-sakset_ löytyy tutun pelin tietokoneversio.
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko7 sisälle.
 
 - Ohjelmassa on kolme pelimoodia: ihminen vs. ihminen, ihminen vs. yksinkertainen tekoäly ja ihminen vs. monimutkainen tekoäly
 - Koodi sisältää runsaat määrät copy pastea, muutenkaan oliosuunnittelun periaatteet eivät ole vielä alkuperäisellä ohjelmoijalla olleet hallussa
@@ -96,7 +97,7 @@ Jos teet tehtävän mielestäsi kaikkien tyylisääntöjen mukaan, merkkaa 2 ras
 **Vinkki:** eräs tapa lähteä liikkeelle on muodostaa yliluokka `KiviPaperiSakset`, joka sisältää kaikille kolmelle pelityypille yhteisen koodin:
 
 ```python
-class KPS:
+class KiviPaperiSakset:
     def pelaa(self):
         tuomari = Tuomari()
 
@@ -124,8 +125,8 @@ class KPS:
 Erilliset pelit sitten perivät luokan ja erikoistavat sitä tarpeidensa mukaan:
 
 ```python
-# luokka perii luokan KPS
-class KPSPelaajaVsPelaaja(KPS):
+# luokka perii luokan KiviPaperiSakset
+class KPSPelaajaVsPelaaja(KiviPaperiSakset):
     # toteutetaan metodi pelityypin mukaisesti
     def _toisen_siirto(self, ensimmaisen_siirto):
         tokan_siirto = input("Toisen pelaajan siirto: ")
@@ -137,7 +138,7 @@ class KPSPelaajaVsPelaaja(KPS):
 
 Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi.
 
-Laita palautusrepositorioosi tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin.
+Laita palautusrepositoriosi hakemistoon viikko7 tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin.
 
 **Vaihtoehtoinen tehtävä:**
 
@@ -153,8 +154,12 @@ lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 - Esa Kortelaisen kandidaattityö [Jatkuva eksperimentointi ohjelmistokehityksen tukena](https://www.cs.helsinki.fi/u/mluukkai/ohtu/kortelainen-kandi.pdf)
 - Kalle Ilveksen kandidaattityö [Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf)
 
+Referaatti kirjoitetaan palautusrepositorion hakemistoon viikko7 tiedostoon _referaatti.md_
+
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/4589434/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. Palautetta voi antaa välillä 15.12.2021 - 29.12.2021
+Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/37221267/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. Palautetta voi antaa välillä 14.12.2022 - 28.12.2022
+
+**HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 14.12. aukeavaa normaalia loppupalautetta.
 
 {% include submission_instructions.md %}
