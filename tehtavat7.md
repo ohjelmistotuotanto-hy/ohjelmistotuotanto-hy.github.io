@@ -21,8 +21,6 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-**HUOM: tehtävät eivät vielä ole julkaistu lopulliseen muotoon:** tekeminen omalla vastuulla
-
 ### 1. Git: stash [versionhallinta]
 
 _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
@@ -134,6 +132,48 @@ class KPSPelaajaVsPelaaja(KiviPaperiSakset):
         return tokan_siirto
 ```
 
+**HUOM** riippuen siitä miten tehtävän teet, on mahdollista että törmäät seuraavaan virheeseen:
+
+```
+ImportError: cannot import name 'KiviPaperiSakset' from partially initialized module 'kivi_paperi_sakset' (most likely due to a circular import) (/Users/mluukkai/opetus/ohtu2022/ohtu-s22-palautukset/viikko7/kivi-paperi-sakset/src/kivi_paperi
+```
+
+Syynä itselläni oli se, että importtasin seuraavasti 
+
+Tiedostossa _kivi_paperi_sakset.py_:
+
+```python
+from kps_pelaaja_vs_pelaaja import KPSPelaajaVsPelaaja
+
+# ...
+
+class KiviPaperiSakset:
+    # ...
+
+# tehdasfunktio, tarvitsee importteja
+def luo_peli(tyyppi):
+    if tyyppi == 'a':
+        return KPSPelaajaVsPelaaja()
+    if tyyppi == 'b':
+        return KPSTekoaly()
+    if tyyppi == 'c':
+        return KPSParempiTekoaly()
+
+    return None
+```
+
+ja tiedostossa _kps_pelaaja_vs_pelaaja.py_:
+
+```python
+from kivi_paperi_sakset import KiviPaperiSakset
+
+
+class KPSPelaajaVsPelaaja(KiviPaperiSakset):
+    # ...
+```
+
+Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</i>, jota Python ei osaa hanskata. Itse ratkaisin ongelman määrittelemällä tehdasfunktion _luo_peli_ omassa tiedostossaan.
+
 ### 5. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi.
@@ -158,7 +198,7 @@ Referaatti kirjoitetaan palautusrepositorion hakemistoon viikko7 tiedostoon _ref
 
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/37221267/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. Palautetta voi antaa välillä 14.12.2022 - 28.12.2022
+Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/37221267/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 14.12.2022 - 28.12.2022**
 
 **HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 14.12. aukeavaa normaalia loppupalautetta.
 
