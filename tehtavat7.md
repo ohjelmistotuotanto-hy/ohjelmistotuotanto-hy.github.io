@@ -38,13 +38,13 @@ Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
 	new file:   README.md
-    modified:   src/main/java/Main.java
+    modified:   src/olutvarasto.py
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   src/main/java/Olutvarasto.java
+	modified:   src/testi.py
 ```
 
 - Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **toinen**. Et kuitenkaan halua vielä comittoida masterissa olevia muutoksia
