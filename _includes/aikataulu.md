@@ -100,8 +100,8 @@
 - Vierailuluennot
   - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa Unity, Mikko Tiainen Meru Health
   - Tallenteet:
-    - [Jami](https://youtu.be/t4kdM-VwG4I)
-    - [Mikko](https://youtu.be/iEBkQqRd9TU)
+    - [Jami](https://youtu.be/nVs0Ker3cPk)
+    - [Mikko](https://youtu.be/77-d-LbT2FI)
   - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.moniv-dl[6]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
     - [python](/tehtavat6)
