@@ -9,8 +9,8 @@ permalink: /miniprojekti/
 
 - Ryhmäjako valmiina
   - Näet ryhmäsi, sekä ryhmän aloitustilaisuuden ajan ja paikan miniprojektien [ilmoittautumissovelluksesta](https://study.cs.helsinki.fi/assembler/courses)
-- Ensimmäisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet)
 - Toisen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet)
+- Kolmannen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet)
   - varmista että [committisi](/miniprojektin_arvosteluperusteet/#varmista-ett%C3%A4-commitisi-n%C3%A4kyv%C3%A4t-githubissa-oikein) näkyvät GitHubissa!
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen, kaikki tulevat paikalle)
   - ke 14.12. klo 12-14 B123

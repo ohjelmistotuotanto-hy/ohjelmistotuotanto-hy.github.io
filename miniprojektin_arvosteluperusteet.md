@@ -105,7 +105,34 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
-Tulossa...
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
+- (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Cucumber- tai Robot Framework -tiedostoihin
+  - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
+- (0.25p) sprintin 3 backlog
+  - Vaatimukset kuten edellisissä sprinteissä
+- (0.5p) kattavahko testaus yksikkö- ja storytasolla
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+  - Master-branch ei ole hajonnut
+- (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+- (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
+  - Sovittu etukäteen kuka tekee mitäkin
+  - Mietitty mitä esitetään
+    - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
+  - Testidata on järkevää
+    - tietokanta ei saa olla etukäteen tyhjä
+    - tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+
+Sprintin maksimi on 2.5 pistettä.
+
 
 ### Lopputoimenpiteet
 
