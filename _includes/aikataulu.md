@@ -123,4 +123,4 @@
 
 ### Viikko 8
 
-- Koe ti 20.12. klo 9-12 moodlessa
+- Koe ti 20.12. klo 9-13 moodlessa (koeaika siis 4 tuntia)
