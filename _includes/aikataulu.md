@@ -126,4 +126,4 @@
 
 ### Viikko 8
 
-- Koe ti 20.12. klo 9-13 moodlessa (koeaika siis 4 tuntia)
+- Koe ti 20.12. klo 9-13 [moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) (koeaika siis 4 tuntia)
