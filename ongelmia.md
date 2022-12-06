@@ -7,7 +7,7 @@ permalink: /ongelmia/
 
 ## urllib3 or chardet doesn't match a supported 
 
-Joissain tilanteissa poetry hajoaa kokonaan ja jokainen komento aihuttaa seruaavan virheen:
+Joissain tilanteissa poetry hajoaa kokonaan ja jokainen komento aiheuttaa seuraavan virheen:
 
 ```
 /usr/lib/python3/dist-packages/requests/init.py:89: RequestsDependencyWarning: urllib3 (1.26.12) or chardet (3.0.4) doesn't match a supported version!
