@@ -31,8 +31,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Luennoista on myös tallenteet, ks. [aikataulu](/#aikataulu)
 - Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
 - Vierailuluentojen tallenteet:
-    - [Jami Kousa](https://youtu.be/nVs0Ker3cPk)
-    - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI)
+    - [Jami Kousa](https://youtu.be/nVs0Ker3cPk) ([kalvot](/vierailuluennot/jami.pdf))
+    - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI) ([kalvot](/vierailuluennot/mikko.pdf))
     - Vierailuluentojen sisältö ei kuulu kurssin koealueeseen
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
