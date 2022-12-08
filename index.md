@@ -10,7 +10,9 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
+- Kurssin koe pidetään tiistaina 20.12. klo 8-13 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) 
+  - Koeaika on 4 tuntia siitä hetkestä kun kokeen aloitat, eli kokeen aloittamisajankohdassa on tunnin jousto
+  - Ohjeita kokeeseen [täällä](/ohje_kokeeseen)
 - Miniprojektit käynnissä
   - Lue lisää [täältä](/miniprojekti)
   - Miniprojektien loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
@@ -27,9 +29,11 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
   - Luennoista on myös tallenteet, ks. [aikataulu](/#aikataulu)
+- Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
 - Vierailuluentojen tallenteet:
     - [Jami Kousa](https://youtu.be/nVs0Ker3cPk)
     - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI)
+    - Vierailuluentojen sisältö ei kuulu kurssin koealueeseen
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
