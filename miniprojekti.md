@@ -15,6 +15,9 @@ permalink: /miniprojekti/
   - ke 14.12. klo 12-14 B123
   - to 15.12. klo 14-17 A111
   - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
+- Viimeiseen sprinttiin päätteeksi tiimi ei enää tapaa ohjaaja-asiakasta
+  - Projekteja ei tarkasteta ennen perjantai-iltaa, viimeistely on siis vielä mahdollista pe 16.12. klo 16 asti
+  - Viimeisessäkään sprintissä ei kuitenkaan tule käyttää yli kuutta tuntia työaikaa
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 
 ### Johdanto
