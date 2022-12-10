@@ -76,13 +76,13 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
   - asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 7 (13-18.12.)
+#### viikko 7 (12-19.12.)
 
-- Sprintin 3 katselmointi (eli loppudemot)
-  - ajankohdat päätetään pian
-
-* jokainen ryhmä osallistuu yhteen loppudemoon, kaikki loppudemot pidetään zoomissa
-  - varatkaa ryhmän loppudemoaika [täältä]()
+- Loppudemot
+  - ke 14.12. klo 12-14 B123
+  - to 15.12. klo 14-17 A111
+  - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
+- Ryhmä ei tapaa enää asiakasta kolmannen sprintin päätteeksi
 
 ### Toteutettava ohjelmisto
 
