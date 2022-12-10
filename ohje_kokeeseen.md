@@ -41,9 +41,9 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [syksy 2020](/koe2020)
 - [syksy 2019](/koe2019)
 - [syksy 2018](https://github.com/mluukkai/Ohjelmistotuotanto2018)
-- [syksy 2018](https://github.com/mluukkai/ohjelmistotuotanto2017)
+- [syksy 2017](https://github.com/mluukkai/ohjelmistotuotanto2017)
 - [kevät 2017](https://github.com/mluukkai/ohtu2017)
-- [kevät 2017](https://github.com/mluukkai/ohtu2016)
+- [kevät 2016](https://github.com/mluukkai/ohtu2016)
 
 Kysymyksien luonne tulee nyt olemaan hieman erilainen kuin aiempina vuosina. 
 
