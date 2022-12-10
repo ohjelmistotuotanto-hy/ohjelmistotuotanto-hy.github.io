@@ -47,7 +47,7 @@ Hae kurssirepositorion <{{site.java_exercise_repo_url}}> hakemistossa viikko3/nh
 
 Tehdään ohjelma, jonka avulla voi hakea <https://nhl.com>-sivulta edellisen kauden NHL-liigan tilastotietoja.
 
-Näet tilastojen [json](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://nhlstatisticsforohtu.herokuapp.com/players>
+Näet tilastojen [json](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta < https://studies.cs.helsinki.fi//nhlstats/2021-22/players>
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot.
 
@@ -76,7 +76,7 @@ import org.apache.http.client.fluent.Request;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String url = "https://nhlstatisticsforohtu.herokuapp.com/players";
+        String url = " https://studies.cs.helsinki.fi//nhlstats/2021-22/players";
         
         String bodyText = Request.Get(url).execute().returnContent().asString();
                 

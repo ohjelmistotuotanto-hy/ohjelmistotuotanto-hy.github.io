@@ -69,7 +69,7 @@ Koodiin onkin luotu hieman valmista kalustoa josta pääset liikkeelle. Yllä ol
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl(" https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"));
  
     Matcher m = new And( new HasAtLeast(5, "goals"),
                          new HasAtLeast(5, "assists"),
@@ -81,6 +81,8 @@ public static void main(String[] args) {
     }
 }
 ```
+
+HUOM: jossain tehtäväpohjassa saattaa olla vielä käytössä vanha osoite datan hakuun (heroku...) eli jos törmäät ongelmaan, varmista että käytät yo urlia.
 
 Luokalle _Statistics_ on tehty metodi _matches_, joka palauttaa listan niistä pelaajista, joille parametrina annettu _Matcher_-rajapinnan toteuttava olio palauttaa _true_
 
@@ -109,13 +111,14 @@ Matcher m = new And(
 vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yht maalia, eli *0 maalia tehneet*:
 
 <pre>
-Tony DeAngelo        NYR          0  + 1  = 1
+Sammy Blais          NYR          0  + 4  = 4
+Libor Hajek          NYR          0  + 1  = 1
 Tim Gettinger        NYR          0  + 0  = 0
-Tarmo Reunanen       NYR          0  + 1  = 1
-Zac Jones            NYR          0  + 4  = 4
-Justin Richards      NYR          0  + 1  = 1
+Anthony Greco        NYR          0  + 0  = 0
+Zac Jones            NYR          0  + 2  = 2
 Keith Kinkaid        NYR          0  + 0  = 0
 Igor Shesterkin      NYR          0  + 0  = 0
+Adam Huska           NYR          0  + 0  = 0
 Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
 
@@ -147,48 +150,52 @@ Ehto `All` ei ole yksistään kovin hyödyllinen, mutta tulemme tarvitseman sit�
 Kyselyn
 
 ```java       
-Matcher m = new Or( new HasAtLeast(30, "goals"),
-                    new HasAtLeast(50, "assists")
+Matcher m = new Or( new HasAtLeast(45, "goals"),
+                    new HasAtLeast(70, "assists")
 );  
 ```
 
 tulee palauttaa ne, joilla on vähintään 30 maalia tai 50 syöttöä, eli seuraava lista
 
 ```
-Auston Matthews      TOR          41 + 25 = 66
-Patrick Kane         CHI          15 + 51 = 66
-Alex DeBrincat       CHI          32 + 24 = 56
-Mikko Rantanen       COL          30 + 36 = 66
-Leon Draisaitl       EDM          31 + 53 = 84
-Connor McDavid       EDM          33 + 72 = 105
+Chris Kreider        NYR          52 + 25 = 77
+Artemi Panarin       NYR          22 + 74 = 96
+Auston Matthews      TOR          60 + 46 = 106
+Jonathan Huberdeau   FLA          30 + 85 = 115
+Alex Ovechkin        WSH          50 + 40 = 90
+Roman Josi           NSH          23 + 73 = 96
+Johnny Gaudreau      CGY          40 + 75 = 115
+Leon Draisaitl       EDM          55 + 55 = 110
+Connor McDavid       EDM          44 + 79 = 123
+Kirill Kaprizov      MIN          47 + 61 = 108
+Kyle Connor          WPG          47 + 46 = 93
 ```
 
 Kyselyn 
 
 ```java
 Matcher m = new And(
-    new HasAtLeast(40, "points"),
+    new HasAtLeast(70, "points"),
     new Or( 
         new PlaysIn("NYR"),
-        new PlaysIn("NYI"),
+        new PlaysIn("FLA"),
         new PlaysIn("BOS")
     )
 ); 
 ```
 
-Tulee palauttaa kaikki vähintään 40 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYI_, _NYR_ tai _BOS_. Lista näyttää seuraavalta:
+tulee palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYR_, _FLA_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Mathew Barzal        NYI          17 + 28 = 45
-Ryan Strome          NYR          14 + 35 = 49
-Mika Zibanejad       NYR          24 + 26 = 50
-Pavel Buchnevich     NYR          20 + 28 = 48
-Artemi Panarin       NYR          17 + 41 = 58
-Adam Fox             NYR          5  + 42 = 47
-Patrice Bergeron     BOS          23 + 25 = 48
-David Krejci         BOS          8  + 36 = 44
-Brad Marchand        BOS          29 + 40 = 69
-David Pastrnak       BOS          20 + 28 = 48
+Chris Kreider        NYR          52 + 25 = 77
+Mika Zibanejad       NYR          29 + 52 = 81
+Artemi Panarin       NYR          22 + 74 = 96
+Adam Fox             NYR          11 + 63 = 74
+Brad Marchand        BOS          32 + 48 = 80
+David Pastrnak       BOS          40 + 37 = 77
+Jonathan Huberdeau   FLA          30 + 85 = 115
+Aleksander Barkov    FLA          39 + 49 = 88
+Sam Reinhart         FLA          33 + 49 = 82
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/java/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyseltyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
@@ -205,7 +212,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl(" https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"));
     
     QueryBuilder query = new QueryBuilder();
     Matcher m = query.build();
@@ -222,7 +229,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on NYR
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl(" https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
@@ -238,13 +245,13 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on NYR, joilla on
 
 ``` java
 public static void main(String[] args) {
-    Statistics stats = new Statistics(new PlayerReaderImpl("https://nhlstatisticsforohtu.herokuapp.com/players.txt"));
+    Statistics stats = new Statistics(new PlayerReaderImpl(" https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"));
  
     QueryBuilder query = new QueryBuilder();
  
     Matcher m = query.playsIn("NYR")
-                     .hasAtLeast(5, "goals")
-                     .hasFewerThan(10, "goals").build();
+                     .hasAtLeast(10, "goals")
+                     .hasFewerThan(20, "goals").build();
  
     for (Player player : stats.matches(m)) {
         System.out.println( player );
@@ -255,12 +262,10 @@ public static void main(String[] args) {
 Pelaajien lista on seuraava
 
 ```
-Brendan Smith        NYR          5  + 5  = 10
-Kevin Rooney         NYR          8  + 6  = 14
-Adam Fox             NYR          5  + 42 = 47
-Filip Chytil         NYR          8  + 14 = 22
-K'Andre Miller       NYR          5  + 7  = 12
-Kaapo Kakko          NYR          9  + 8  = 17
+Barclay Goodrow      NYR          13 + 20 = 33
+Jacob Trouba         NYR          11 + 28 = 39
+Adam Fox             NYR          11 + 63 = 74
+Alexis Lafrenière    NYR          19 + 12 = 31
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella. 
@@ -278,7 +283,7 @@ Matcher m1 = query.playsIn("PHI")
           .hasFewerThan(5, "goals").build();
 
 Matcher m2 = query.playsIn("EDM")
-          .hasAtLeast(40, "points").build();
+          .hasAtLeast(50, "points").build();
 
 Matcher m = query.oneOf(m1, m2).build();
 ```
@@ -286,11 +291,12 @@ Matcher m = query.oneOf(m1, m2).build();
 Pelaajalistan tulisi olla:
 
 <pre>
-Travis Sanheim       PHI          3  + 12 = 15
-Philippe Myers       PHI          1  + 10 = 11
-Tyson Barrie         EDM          8  + 40 = 48
-Leon Draisaitl       EDM          31 + 53 = 84
-Connor McDavid       EDM          33 + 72 = 105
+Keith Yandle         PHI          1  + 18 = 19
+Rasmus Ristolainen   PHI          2  + 14 = 16
+Zach Hyman           EDM          27 + 27 = 54
+Ryan Nugent-Hopkins  EDM          11 + 39 = 50
+Leon Draisaitl       EDM          55 + 55 = 110
+Connor McDavid       EDM          44 + 79 = 123
 </pre>
 
 Tai sama ilman apumuuttujia:
@@ -302,7 +308,7 @@ Matcher m = query.oneOf(
         .hasFewerThan(5, "goals").build(),
 
     query.playsIn("EDM")
-        .hasAtLeast(40, "points").build()
+        .hasAtLeast(50, "points").build()
 ).build();
 ```
 

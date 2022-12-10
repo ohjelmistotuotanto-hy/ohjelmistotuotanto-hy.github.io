@@ -83,7 +83,7 @@ Koodin onkin luotu hieman valmista kalustoa, josta pääset liikkeelle. Yllä ol
 
 ```python
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -96,6 +96,8 @@ def main():
     for player in stats.matches(matcher):
         print(player)
 ```
+
+HUOM: jossain tehtäväpohjassa saattaa olla vielä käytössä vanha osoite datan hakuun (heroku...) eli jos törmäät ongelmaan, varmista että käytät yo urlia.
 
 Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `test` palauttaa `True`.
 

@@ -129,14 +129,35 @@ Pisteitä kertyy seuraavista asioista:
     - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
   - Testidata on järkevää
     - tietokanta ei saa olla etukäteen tyhjä
-    - tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+    - tietokannassa oleva data ja demottaessa käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+  - **Lue viimeinen bullet uudelleen** jostain syystä se jää 25% huomaamatta...
+    - jos tuollainen syöte nähdään niin pisteitä tulee heti nolla
 
 Sprintin maksimi on 2.5 pistettä.
 
 
 ### Lopputoimenpiteet
 
-Tulossa...
+#### Vertaispalaute
+
+- Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään perjantaina 23.12. klo 23:59**
+  - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
+- Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
+  - Ryhmäläiset eivät näe toistensa vertaispalautteita
+
+#### Raportti
+
+Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
+
+- Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
+- Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
+- Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
+- Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
+- Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
+- Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
+- **Raportin deadline perjantaina 23.12. klo 23:59**
+
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
