@@ -47,7 +47,7 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 
 Kysymyksien luonne tulee nyt olemaan hieman erilainen kuin aiempina vuosina. 
 
-### uusinta- ja erilliskokeet
+### Uusinta- ja erilliskokeet
 
 Uusintakoe on suoritettavissa examinariumissa 26.12.-30.1. Ilmoittautuminen uusinaan [täällä](https://examinarium.helsinki.fi/enroll/exam/68512?code=TKT20006_hy-opt-cur-2223-cf7ab8df-fa0c-482e-9584-388e0429f5cb). Uusintakokeessa oteaan huomioon syksyn kurssin aikana kertyneet pisteet.
 

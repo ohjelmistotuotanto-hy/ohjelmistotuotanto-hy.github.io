@@ -15,9 +15,9 @@ permalink: /miniprojekti/
   - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
   - demoaikaa noin 7 min per ryhmä
     - demotkaa sovelluksen päätöiminnallisuus (ks [sprintint 3. arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet))
-    - kertokaa mikä ryhmällä meni hyvin, ja mikä huonosti sekä se miten ryhmä kehittyi sprinttien aikana (jos ja kun kehitystä tapahtui...)
+    - kertokaa mikä ryhmällä meni hyvin, ja mikä huonosti sekä se miten ryhmä kehittyi sprinttien aikana 
 - Viimeiseen sprinttiin päätteeksi tiimi ei enää tapaa ohjaaja-asiakasta
-  - Projekteja ei tarkasteta ennen perjantai-iltaa, viimeistely on siis vielä mahdollista pe 16.12. klo 16 asti
+  - Kolmatta sprinttiä ei arvostella ennen perjantai-iltaa, viimeistely on siis vielä mahdollista pe 16.12. klo 16 asti
   - Viimeisessäkään sprintissä ei kuitenkaan tule käyttää yli kuutta tuntia työaikaa
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 
