@@ -7,8 +7,6 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Ryhmäjako valmiina
-  - Näet ryhmäsi, sekä ryhmän aloitustilaisuuden ajan ja paikan miniprojektien [ilmoittautumissovelluksesta](https://study.cs.helsinki.fi/assembler/courses)
 - Kolmannen sprintin [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet)
   - varmista että [committisi](/miniprojektin_arvosteluperusteet/#varmista-ett%C3%A4-commitisi-n%C3%A4kyv%C3%A4t-githubissa-oikein) näkyvät GitHubissa!
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen, kaikki tulevat paikalle)
