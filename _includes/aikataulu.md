@@ -114,6 +114,8 @@
 - Vierailuluennot
   - Luento 12: {{site.luennot[12]}} Vierailuluento Hannu Kokko Elisa
   - Luento 13: {{site.luennot[13]}} Vierailuluento Anniina Sallinen Oura
+  - Tallenteet:
+    - [Hannu Kokko](https://youtu.be/gKCKFs2zUu4)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.moniv-dl[7]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
