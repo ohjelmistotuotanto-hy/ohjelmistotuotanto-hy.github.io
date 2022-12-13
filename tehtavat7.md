@@ -27,9 +27,9 @@ _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtäv
 
 Lue <https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning> kohtaan _Creative stashing_ asti.
 
-Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja joku toinen (kutsutaan sitä tässä nimellä **toinen**).
+Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja jokin toinen (kutsutaan sitä tässä nimellä **toinen**).
 
-- Ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunilleen seuraavalta
+- Ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunnilleen seuraavalta
 
 ```
 $ git status
@@ -47,11 +47,11 @@ Changes not staged for commit:
 	modified:   src/testi.py
 ```
 
-- Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **toinen**. Et kuitenkaan halua vielä comittoida masterissa olevia muutoksia
-- Jos siirryt branchiin **toinen** tekemättä comittia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
+- Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **toinen**. Et kuitenkaan halua vielä commitoida masterissa olevia muutoksia
+- Jos siirryt branchiin **toinen** tekemättä committia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
 - **git stash** pelastaa tästä tilanteesta, eli stashaa masterissa olevat muutoset
   - Kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
-- Siirry branchiin toinen, tee sinne joku muutos jonka committaat
+- Siirry branchiin toinen, tee sinne jokin muutos jonka committaat
 - Palaa jälleen masteriin
 - Palauta stashatyt muutokset komennolla <code>git stash apply</code>
   - Varmista että muutokset palasivat
@@ -72,7 +72,7 @@ __/
 
 - Eli sekä master että haara ovat edenneet muutamien commitien verran haarautumisen tapahduttua
   - Huom: komennolla <code>gitk --all</code> näet kaikki haarat, kokeile!
-- Yhtäkkiä huomaat, että master:iin tekemäsi asiat eivät olekaan kovin hyviä ja haara:ssa on paljon parempaa tavaraa, haluaisitkin että haara:sta tulisi uusi master
+- Yhtäkkiä huomaat, että masteriin tekemäsi asiat eivät olekaan kovin hyviä ja haarassa on paljon parempaa tavaraa, haluaisitkin että haarasta tulisi uusi master
 - Tämä onnistuu kun menet masteriin ja annat komennon <code>git reset --hard haara</code>
   - Varmista että komento toimii oikein
   - Vanhan master-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata
@@ -178,11 +178,11 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 
 Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi.
 
-Laita palautusrepositoriosi hakemistoon viikko7 tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pullrequestiin.
+Laita palautusrepositoriosi hakemistoon viikko7 tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pull requestiin.
 
 **Vaihtoehtoinen tehtävä:**
 
-lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
+Lue jokin alla olevista ja tee siitä noin 0.25 sivun referaatti.
 
 - <http://www.leanprimer.com/downloads/lean_primer.pdf>
   - Aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
@@ -194,11 +194,11 @@ lue joku alla olevista ja tee siitä noin 0.25 sivun referaatti
 - Esa Kortelaisen kandidaattityö [Jatkuva eksperimentointi ohjelmistokehityksen tukena](https://www.cs.helsinki.fi/u/mluukkai/ohtu/kortelainen-kandi.pdf)
 - Kalle Ilveksen kandidaattityö [Scrumban-menetelmän käyttö ketterässä ohjelmistokehityksessä](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf)
 
-Referaatti kirjoitetaan palautusrepositorion hakemistoon viikko7 tiedostoon _referaatti.md_
+Referaatti kirjoitetaan palautusrepositorion hakemistoon viikko7 tiedostoon _referaatti.md_.
 
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/37221267/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 14.12.2022 - 28.12.2022**
+Anna kurssipalautetta [täällä](https://coursefeedback.helsinki.fi/targets/37221267/feedback). Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 14.12.2022 - 28.12.2022**.
 
 **HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 14.12. aukeavaa normaalia loppupalautetta.
 
