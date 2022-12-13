@@ -34,6 +34,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
     - [Jami Kousa](https://youtu.be/nVs0Ker3cPk) ([kalvot](/vierailuluennot/jami.pdf))
     - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI) ([kalvot](/vierailuluennot/mikko.pdf))
     - [Hannu Kokko](https://youtu.be/gKCKFs2zUu4)
+    - [Anniina Sallinen](https://youtu.be/WWy-G353UEo)
     - Vierailuluentojen sisältö ei kuulu kurssin koealueeseen
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
