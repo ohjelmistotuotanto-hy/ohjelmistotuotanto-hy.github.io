@@ -589,7 +589,7 @@ class Tili:
 Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan `EuriborTili` perimällä luokan `Tili` ja ylikirjoittamalla metodin `maksaKorko` siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
 
 ```python
-class EuribolTili(Tili):
+class EuriborTili(Tili):
     def __init__(self, tilinumero, omistaja, kuukauden):
         super().__init__(tilinumero, omistaja, 0)
         self.kuukauden = kuukauden
@@ -643,7 +643,7 @@ class EuriborLukija:
 
         return float(sarake_match.group(0).replace("%", "").strip())
 
-class EuribolTili(Tili):
+class EuriborTili(Tili):
     def __init__(self, tilinumero, omistaja, kuukauden):
         super().__init__(tilinumero, omistaja, 0)
         self.euribor = EuriborLukija(kuukauden)
