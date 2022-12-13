@@ -5,7 +5,7 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-Kurssikoe pidetään tiistaina 20.12. klo 8-13 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. 
+Kurssikoe pidetään tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. 
 
 Internet on kokeessa vapaasti käytettävissä kokeessa.
 

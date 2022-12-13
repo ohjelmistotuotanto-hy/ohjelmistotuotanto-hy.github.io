@@ -10,7 +10,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Kurssin koe pidetään tiistaina 20.12. klo 8-13 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) 
+- Kurssin koe pidetään tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) 
   - Koeaika on 4 tuntia siitä hetkestä kun kokeen aloitat, eli kokeen aloittamisajankohdassa on tunnin jousto
   - Ohjeita kokeeseen [täällä](/ohje_kokeeseen)
 - Miniprojektit käynnissä
