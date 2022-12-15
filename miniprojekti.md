@@ -14,9 +14,9 @@ permalink: /miniprojekti/
   - to 15.12. klo 14-17 A111
   - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
   - demoaikaa noin 7 min per ryhmä
-    - demotkaa sovelluksen päätöiminnallisuus (ks [sprintint 3. arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet))
+    - demotkaa sovelluksen päätoiminnallisuus (ks [sprintint 3. arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet))
     - kertokaa mikä ryhmällä meni hyvin, ja mikä huonosti sekä se miten ryhmä kehittyi sprinttien aikana 
-- Viimeiseen sprinttiin päätteeksi tiimi ei enää tapaa ohjaaja-asiakasta
+- Viimeisen sprintin päätteeksi tiimi ei enää tapaa ohjaaja-asiakasta
   - Kolmatta sprinttiä ei arvostella ennen perjantai-iltaa, viimeistely on siis vielä mahdollista pe 16.12. klo 16 asti
   - Viimeisessäkään sprintissä ei kuitenkaan tule käyttää yli kuutta tuntia työaikaa
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
@@ -46,7 +46,7 @@ permalink: /miniprojekti/
   - hyväksymäkriteeri
   - definition of done
 - Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
-- Ryhmä keksii itselleen nimen, luo Github-repositorion ja rekisteröi itsensä palautussovellukseen <{{site.stats_url}}>
+- Ryhmä keksii itselleen nimen, luo GitHub-repositorion ja rekisteröi itsensä palautussovellukseen <{{site.stats_url}}>
   - **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
     - luo projektin _create project_ -napista avautuvasta lomakkeesta
     - ja jakaa muille ryhmäläisille luodun projektin id:n
@@ -95,7 +95,7 @@ Sovelluksen osittainen kuvaus [täällä](/speksi)
 - Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
-  - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttahttps://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authorsmaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
+  - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   - Kannattaa huomata, että storyihin sitoutuminen ei tarkoita sitä, että ne on pakko tehdä valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on otava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
@@ -106,8 +106,8 @@ Sovelluksen osittainen kuvaus [täällä](/speksi)
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration)
-  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua Github Actionsia, muita vaihtoehtoja esim. CircleCI
-- Koodi on talletettu GitHub:iin
+  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua GitHub Actionsia, muita vaihtoehtoja esim. CircleCI
+- Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
 #### Product ja sprint backlog
@@ -154,7 +154,7 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
 - Web-pohjaiselle Python-sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-  - **Herokun maksuton palvelu poistuu käytöstä marraskuun viimeisellä viikolla.
+  - **Herokun maksuton palvelu poistui käytöstä marraskuun viimeisellä viikolla.
 - Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto** tämän takia Web-sovelluksen tekeminen voi olla riskialtista jos vaihtoehtoista sijoituspaikkaa ei ole tiedossa
   - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
   - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
