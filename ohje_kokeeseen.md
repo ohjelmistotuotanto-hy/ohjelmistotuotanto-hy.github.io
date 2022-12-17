@@ -7,11 +7,15 @@ permalink: /ohje_kokeeseen/
 
 Kurssikoe pidetään tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. 
 
-Internet on vapaasti käytettävissä kokeessa.
+Internet on melko vapaasti käytettävissä kokeessa.
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun koe on verkossa. 
 
 Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesi hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
+
+Kannattaa huomata, että myös ChatGPT/OpenAI:n tuottaman tekstin käyttäminen katsotaan näin modernilla aikakaudella plagioinniksi. Kokeen tarkastajat ovatkin oikein hyvin varautuneet siihen että kokeen suorittamista tekoälyn voimin yritetään. Eli: do not try it.
+
+Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
