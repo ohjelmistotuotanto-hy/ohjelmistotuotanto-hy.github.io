@@ -17,9 +17,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
   - tehtävät palautetaan "my submissions"-välilehdellä
 - Apua tehtävien tekoon
-  - ti 14-16 BK107
-  - pe 12-14 BK107
   - ma 15-17 [zoom](https://helsinki.zoom.us/j/66434455403?pwd=UWQ2NnZUZHF0Z1RyanFjTFRMU0I5dz09)
+  - Koeviikolla pidetään ainoastaan maanantain zoom-paja
 - Luennot 
   - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
