@@ -10,9 +10,9 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Kurssin koe pidetään tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) 
-  - Koeaika on 4 tuntia siitä hetkestä kun kokeen aloitat, eli kokeen aloittamisajankohdassa on tunnin jousto
-  - Ohjeita kokeeseen [täällä](/ohje_kokeeseen)
+- Kurssin koe pidettiin tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570)
+  - mallivastaukset ja arvosteluperusteet tulossa [tänne](/koe2022.md)
+- Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
 - Muistakaa miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
   - tehtävät palautetaan "my submissions"-välilehdellä
@@ -20,17 +20,17 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - ti 14-16 BK107
   - pe 12-14 BK107
   - ma 15-17 [zoom](https://helsinki.zoom.us/j/66434455403?pwd=UWQ2NnZUZHF0Z1RyanFjTFRMU0I5dz09)
-- Luennot 
+- Luennot
   - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
   - Luennoista on myös tallenteet, ks. [aikataulu](/#aikataulu)
 - Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
 - Vierailuluentojen tallenteet:
-    - [Jami Kousa](https://youtu.be/nVs0Ker3cPk) ([kalvot](/vierailuluennot/jami.pdf))
-    - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI) ([kalvot](/vierailuluennot/mikko.pdf))
-    - [Hannu Kokko](https://youtu.be/gKCKFs2zUu4)
-    - [Anniina Sallinen](https://youtu.be/WWy-G353UEo)
-    - Vierailuluentojen sisältö ei kuulu kurssin koealueeseen
+  - [Jami Kousa](https://youtu.be/nVs0Ker3cPk) ([kalvot](/vierailuluennot/jami.pdf))
+  - [Mikko Tiainen](https://youtu.be/77-d-LbT2FI) ([kalvot](/vierailuluennot/mikko.pdf))
+  - [Hannu Kokko](https://youtu.be/gKCKFs2zUu4)
+  - [Anniina Sallinen](https://youtu.be/WWy-G353UEo)
+  - Vierailuluentojen sisältö ei kuulu kurssin koealueeseen
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
