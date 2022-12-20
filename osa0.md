@@ -31,11 +31,11 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 Kurssilla on 10 luentoa sekä neljä vierailuluentoa (Anniina Sallinen Oura, Hannu Kokko Elisa, Jami Kousa Unity ja Mikko Tiainen Meru health). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa BK107 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitekin syksyn 2021 Zoom-tallenteet johin linkit löytyvät kurssimateriaalin etusivulta.
+Kurssin luennot pidetään salissa BK107 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitenkin syksyn 2021 Zoom-tallenteet joihin linkit löytyvät kurssimateriaalin etusivulta.
 
 ### Laskuharjoitukset
 
-Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä harjoituksissa on kahden tyyppisiä.
+Kurssiin liittyy viikoittaiset laskuharjoitukset. Tehtäviä harjoituksissa on kahden tyyppisiä.
 
 Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59.
 
@@ -49,7 +49,7 @@ Python- ja Java-versiot löytyvät omilta sivuiltaan.
 
 ### Miniprojekti
 
-Kurssin loppupuolella, viikoilla 4-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikkoiden harjoittelu.
+Kurssin loppupuolella, viikoilla 4-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
 
 Kukin miniprojektiryhmä koostuu 4-6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, jälkimmäisillä 30 minuuttia.
 
