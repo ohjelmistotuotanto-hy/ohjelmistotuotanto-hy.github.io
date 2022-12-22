@@ -12,6 +12,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 - Kurssin koe pidettiin tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570)
   - mallivastaukset ja arvosteluperusteet tulossa [tänne](/koe2022.md)
+  - korjaustilanne: tehtävä 5 korjattu, alustavat pisteet moodlessa
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
 - Muistakaa miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
