@@ -14,7 +14,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - mallivastaukset ja arvosteluperusteet tulossa [tänne](/koe2022.md)
   - korjaustilanne: tehtävä 5 korjattu, alustavat pisteet moodlessa
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
-  - Uusintakoe pidetään 26.12.-30.1. examinariumissa
+  - Uusintakoe pidetään 26.12.-30.1. examinariumissa. Perustelluista syistä uusinnan voi tehdä myös myöhemmin
+  - Erilliskoe on tehtävissä 1.2.- examinariumissa
 - Muistakaa miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
   - tehtävät palautetaan "my submissions"-välilehdellä
