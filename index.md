@@ -15,6 +15,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - korjaustilanne: tehtävä 5 korjattu, alustavat pisteet moodlessa
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
   - Uusintakoe pidetään 26.12.-30.1. examinariumissa. Perustelluista syistä uusinnan voi tehdä myös myöhemmin
+    - ilmoittautuminen uusintaan [täällä](https://examinarium.helsinki.fi/enroll/exam/68512?code=TKT20006_hy-opt-cur-2223-cf7ab8df-fa0c-482e-9584-388e0429f5cb)
   - Erilliskoe on tehtävissä 1.2.- examinariumissa
 - Muistakaa miniprojektien [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 - Tehtävien palautussovellus [{{ site.stats_url }}]({{ site.stats_url }})
