@@ -12,7 +12,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 - Kurssin koe pidettiin tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570)
   - korjaustilanne: tehtävät 3-5 korjattu, alustavat pisteet [täällä](/koe345.pdf)
-    - rivin alussa opiskelijanumero mistä ensimmäiset viisi sekä viimeinen merkki poistettu
+    - rivin alussa opiskelijanumero mistä ensimmäiset neljä sekä viimeinen merkki poistettu, eli esim. opnro 012345678 olisi merkitty 4567
   - mallivastaukset ja arvosteluperusteet tahtävien 4 ja 5 osalta [täällä](/koe2022)    
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
   - Uusintakoe pidetään 26.12.-30.1. examinariumissa. Perustelluista syistä uusinnan voi tehdä myös myöhemmin
