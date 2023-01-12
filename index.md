@@ -12,8 +12,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 - Kurssin alustavat tulokset [täällä](/tulos.pdf)
   - rivin alussa opiskelijanumero mistä ensimmäiset neljä sekä viimeinen merkki poistettu, eli esim. opnro 012345678 olisi merkitty 4567
-  - mallivastaukset ja arvosteluperusteet [täällä](/koe2022)
-    - jos haluat kysyä arvostelusta, ota yhteys kunkin tehtävän korjaajaan!
+  - [kokeen](https://moodle.helsinki.fi/course/view.php?id=55570)  mallivastaukset ja arvosteluperusteet [täällä](/koe2022)
+    - jos haluat kysyä kokeen arvostelusta, ota yhteys kunkin tehtävän korjaajaan!
   - koeleikkuri on 8 pistettä eli sen alle jääneillä koepisteillä kurssin arvosana on hylätty
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
   - Uusintakoe pidetään 26.12.-30.1. examinariumissa. Perustelluista syistä uusinnan voi tehdä myös myöhemmin
