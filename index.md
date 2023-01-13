@@ -10,13 +10,12 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include miniproj_ilmo.md %}
 
-- Kurssin alustavat tulokset [täällä](/tulos.pdf)
+- Kurssin alustavat tulokset [täällä](/tulos-update.pdf)
   - rivin alussa opiskelijanumero mistä ensimmäiset neljä sekä viimeinen merkki poistettu, eli esim. opnro 012345678 olisi merkitty 4567
   - [kokeen](https://moodle.helsinki.fi/course/view.php?id=55570) mallivastaukset ja arvosteluperusteet [täällä](/koe2022)
     - jos haluat kysyä kokeen arvostelusta, ota yhteys kunkin tehtävän korjaajaan!
   - koeleikkuri on 8 pistettä eli sen alle jääneillä koepisteillä kurssin arvosana on hylätty
   - jos hyväksiluit miniprojektin, pisteesi on skaalattu arvostelua varten kertomalla ne 40/31:ssä
-  - tuloksissa on vahingossa jätetty ottamatta huomioon se, että kaikilla vierailuluennoilla käyneille on luvattu 1.5 pistettä, ongelma on korjattu viralliseen tulostiedostoon ja otettu huomioon Sisuun menneessä arvostelussa
 - Ohjeita kokeeseen [täällä](/ohje_kokeeseen), myös uusinta- ja erilliskokeet menevät samalla ohjeella
   - Uusintakoe pidetään 26.12.-30.1. examinariumissa. Perustelluista syistä uusinnan voi tehdä myös myöhemmin
     - Elmoittautuminen uusintaan [täällä](https://examinarium.helsinki.fi/enroll/exam/68512?code=TKT20006_hy-opt-cur-2223-cf7ab8df-fa0c-482e-9584-388e0429f5cb)
