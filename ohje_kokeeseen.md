@@ -5,6 +5,14 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
+### Uusinta- ja erilliskokeet
+
+Uusintakoe on suoritettavissa Examinariumissa 26.12.-30.1. Ilmoittautuminen uusintaan [täällä](https://examinarium.helsinki.fi/enroll/exam/68512?code=TKT20006_hy-opt-cur-2223-cf7ab8df-fa0c-482e-9584-388e0429f5cb). Uusintakokeessa oteaan huomioon syksyn kurssin aikana kertyneet pisteet.
+
+Erilliskoe on suoritettavissa Examinariumissa 1.2.-31.7. Ilmoittautuminen erilliskokeeseen [tääällä](https://examinarium.helsinki.fi/enroll/exam/70214?code=TKT20006_otm-6333687a-b301-4e6d-be4e-8f5dcc38eb95)
+
+**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet mitä kurssikoetta** (ks. alla) poislukien se, että uusinnassa ja erilliskokeissa ei ole mikään lisämateriaali käytettävissä.
+
 ### Kurssikoe
 
 Kurssikoe pidetään tiistaina 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen.
@@ -56,11 +64,3 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [kevät 2016](https://github.com/mluukkai/ohtu2016)
 
 Kysymyksien luonne tulee nyt olemaan hieman erilainen kuin aiempina vuosina.
-
-### Uusinta- ja erilliskokeet
-
-Uusintakoe on suoritettavissa examinariumissa 26.12.-30.1. Ilmoittautuminen uusintaan [täällä](https://examinarium.helsinki.fi/enroll/exam/68512?code=TKT20006_hy-opt-cur-2223-cf7ab8df-fa0c-482e-9584-388e0429f5cb). Uusintakokeessa oteaan huomioon syksyn kurssin aikana kertyneet pisteet.
-
-Erilliskoe on suoritettavissa examinariumissa 1.1.-31.7.
-
-**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet mitä kurssikoetta** poislukien se, että uusinnassa ja erilliskokeissa ei ole mikään lisämateriaali käytettävissä.
