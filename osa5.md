@@ -118,7 +118,7 @@ Kaikki ylimääräiset työvaiheet, mitkä eivät ole välttämättömiä riitt�
 
 Tällaisia ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti, jota kukaan ei lopulta tarvitse. Vastaavanlainen haitallinen asia voi olla vaatimus siitä että testien rivikattavuuden kattavuuden on pakko olla 100%, sillä tämä voi johtaa lähes hyödyttömien, pelkästään kattavuutta lisäävien testien tekemiseen.
 
-Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyösi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#vaatimusmäärittely-2010-luvulla)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
+Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#vaatimusmäärittely-2010-luvulla)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
 
 #### Tarpeeton materiaalin siirtely (engl. transportation)
 
