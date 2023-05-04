@@ -1365,7 +1365,7 @@ Voimme antaa `filter`-funktiolle suoraan parametrina saaduun ehdon.
 
 #### Hyvä vs. paha copypaste <span style="color:blue">[viikko 5]</span>
 
-Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
+Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
 
 Monissa tilanteissa nimittäin copypasten poistamisella on pieni hintansa, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
 
