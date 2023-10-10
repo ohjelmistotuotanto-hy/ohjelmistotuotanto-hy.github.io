@@ -39,13 +39,10 @@ Kurssiin liittyy viikoittaiset laskuharjoitukset. Tehtäviä harjoituksissa on k
 
 Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59.
 
-Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Oletusarvoisesti tehtävissä käytetään Pythonia. Myös Javaa on mahdollista käyttää, mutta omalla vastuulla.
-
-{% include java.md %}
+Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Oletusarvoisesti tehtävissä käytetään Pythonia.
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
-Python- ja Java-versiot löytyvät omilta sivuiltaan.
 
 ### Miniprojekti
 

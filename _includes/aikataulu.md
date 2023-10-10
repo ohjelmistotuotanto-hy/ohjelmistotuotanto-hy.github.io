@@ -5,7 +5,6 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
-    - pelkän äänen sisältävä [Unitube-streami](https://www2.helsinki.fi/fi/unitube/video/a81f809b-399e-4fb7-b15b-d9a02ac01efe)
     - [syksy 21](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
@@ -98,11 +97,8 @@
 ### Viikko 6
 
 - Vierailuluennot
-  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa Unity, Mikko Tiainen Meru Health
-  - Tallenteet:
-    - [Jami](https://youtu.be/nVs0Ker3cPk) ([kalvot](/vierailuluennot/jami.pdf))
-    - [Mikko](https://youtu.be/77-d-LbT2FI) ([kalvot](/vierailuluennot/mikko.pdf))
-  - <a href="{{site.stats_url}}/quiz/6">monivalintatehtävät</a> deadline {{site.moniv-dl[6]}}
+  - Luento 11: {{site.luennot[11]}} Vierailuluento NN
+  - Luento 12: {{site.luennot[12]}} Vierailuluento NN
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[6]}}
     - [python](/tehtavat6)
     - [java](/java/tehtavat6) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
@@ -112,20 +108,16 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 12: {{site.luennot[12]}} Vierailuluento Hannu Kokko Elisa
-  - Luento 13: {{site.luennot[13]}} Vierailuluento Anniina Sallinen Oura
-  - Tallenteet:
-    - [Hannu Kokko](https://youtu.be/gKCKFs2zUu4)
-    - [Anniina Sallinen](https://youtu.be/WWy-G353UEo)
+  - Luento 13: {{site.luennot[12]}} Vierailuluento NN
+  - Luento 14: {{site.luennot[13]}} Vierailuluento NN
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/7">monivalintatehtävät</a> deadline {{site.moniv-dl[7]}}
   - ohjelmointi/versionhallinta/konfigurointitehtävät, deadline {{site.lask-dl[7]}}
     - [python](/tehtavat7)
     - [java](/java/tehtavat7) (tehtäviä ei enää ylläpidetä, tekeminen omalla vastuulla)
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - ke 14.12. klo 12-14 B123
-    - to 15.12. klo 14-17 A111
+    - tdb1
+    - tdb2
 
 ### Viikko 8
 
