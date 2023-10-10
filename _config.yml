@@ -10,7 +10,7 @@
 
 # Site settings
 
-title: Ohjelmistotuotanto 2022
+title: Ohjelmistotuotanto 2023
 email: matti.luukkainen@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ''
@@ -18,46 +18,47 @@ url: 'https://ohjelmistotuotanto-hy.github.io'
 github_username: mluukkai
 repo_url: 'https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io'
 repo_branch: 'master'
-stats_url: 'https://study.cs.helsinki.fi/stats/courses/ohtu2022'
+stats_url: 'https://study.cs.helsinki.fi/stats/courses/ohtu2023'
 
 python_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/tehtavat'
 java_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/syksy2021-java'
 
 moniv-dl:
   - 'FAIL'
-  - 'sunnuntai 6.11. klo 23:59:00'
-  - 'sunnuntai 13.11. klo 23:59:00'
-  - 'sunnuntai 20.11. klo 23:59:00'
-  - 'sunnuntai 27.11. klo 23:59:00'
-  - 'sunnuntai 4.12. klo 23:59:00'
-  - 'perjantai 23.12. klo 23:59:00'
-  - 'perjantai 23.12. klo 23:59:00'
+  - 'sunnuntai 5.11. klo 23:59:00'
+  - 'sunnuntai 12.11. klo 23:59:00'
+  - 'sunnuntai 19.11. klo 23:59:00'
+  - 'sunnuntai 26.11. klo 23:59:00'
+  - 'sunnuntai 3.12. klo 23:59:00'
+  - 'ei tehtäviä'
+  - 'ei tehtäviä'
 
 lask-dl:
   - 'FAIL'
-  - 'maanantai 7.11. klo 23:59'
-  - 'maanantai 14.11. klo 23:59'
-  - 'maanantai 21.11. klo 23:59'
-  - 'maanantai 28.11. klo 23:59'
-  - 'tiistai 6.12. klo 23:59'
-  - 'maanantai 12.12. klo 23:59'
-  - 'perjantai 23.12. klo 23:59'
+  - 'maanantai 6.11. klo 23:59'
+  - 'maanantai 13.11. klo 23:59'
+  - 'maanantai 20.11. klo 23:59'
+  - 'maanantai 27.11. klo 23:59'
+  - 'maanantai 4.12. klo 23:59'
+  - 'maanantai 11.12. klo 23:59'
+  - 'keskiviikko 20.12. klo 23:59'
 
 luennot:
   - 'FAIL'
-  - 'maanantai 31.10. klo 12-14'
-  - 'tiistai 1.11. klo 12-14'
-  - 'maanantai 7.11. klo 12-14'
-  - 'tiistai 8.11. klo 12-14'
-  - 'maanantai 14.11. klo 12-14'
-  - 'tiistai 15.11. klo 12-14'
-  - 'maanantai 21.11. klo 12-14'
-  - 'tiistai 22.11. klo 12-14'
-  - 'maanantai 28.11. klo 12-14'
-  - 'tiistai 29.11. klo 12-14'
-  - 'maanantai 5.12. klo 12-14'
-  - 'maanantai 12.12. klo 12-14'
-  - 'tiistai 13.12. klo 12-14'
+  - 'maanantai 30.10. klo 12-14'
+  - 'tiistai 31.10. klo 12-14'
+  - 'maanantai 6.11. klo 12-14'
+  - 'tiistai 7.11. klo 12-14'
+  - 'maanantai 13.11. klo 12-14'
+  - 'tiistai 14.11. klo 12-14'
+  - 'maanantai 20.11. klo 12-14'
+  - 'tiistai 21.11. klo 12-14'
+  - 'maanantai 27.11. klo 12-14'
+  - 'tiistai 28.11. klo 12-14'
+  - 'maanantai 4.12. klo 12-14'
+  - 'tiistai 5.12. klo 12-14'
+  - 'maanantai 11.12. klo 12-14'
+  - 'tiistai 12.12. klo 12-14'
 
 # Build settings
 markdown: kramdown
