@@ -29,7 +29,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa (Anniina Sallinen Oura, Hannu Kokko Elisa, Jami Kousa Unity ja Mikko Tiainen Meru health). Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
 Kurssin luennot pidetään salissa BK107 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitenkin syksyn 2021 Zoom-tallenteet joihin linkit löytyvät kurssimateriaalin etusivulta.
 
@@ -39,7 +39,7 @@ Kurssiin liittyy viikoittaiset laskuharjoitukset. Tehtäviä harjoituksissa on k
 
 Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59.
 
-Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Oletusarvoisesti tehtävissä käytetään Pythonia.
+Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
@@ -64,7 +64,7 @@ Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkoke
 
 Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/koulutusohjelmasi-harjoitteluohjeet) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
 
-Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _neljän kuukauden työkokemus_.
+Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _kolmen kuukauden työkokemus_.
 
 Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
 

@@ -6,19 +6,19 @@ permalink: /
 Kurssilla käsitellään ohjelmistotuotantoprojektien hallinnan, työvaiheiden ja työvälineiden perusteita. Erityinen
 painotus ketterissä ohjelmistotuotantomenetelmissä.
 
-Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!!
+Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - Luennot
-  - ma 12-14 A111 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l9)
+  - ma 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
-  - Luennoista on myös tallenteet, ks. [aikataulu](/#aikataulu)
+  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu)
 - Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
 - Apua tehtävien tekoon
   - pajassa, tbd
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
-  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://coursefeedback.helsinki.fi/targets/37221267/feedback>
+  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/72482660/feedback>
   - Kurssipalautejärjestelmän "jatkuvan palautteen" toiminnallisuus on vasta koekäytössä, ja sitä kehitetään mm. tämän kurssin kokemusten myötä.
 
 ## Aikataulu
