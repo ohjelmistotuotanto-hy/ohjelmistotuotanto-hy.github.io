@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=2 %}

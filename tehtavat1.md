@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat1
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=1 %}
@@ -18,8 +20,6 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko sim
 {% include typo_instructions.md %}
 
 {% include norppa.md %}
-
-{% include poetry_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
@@ -95,7 +95,7 @@ Luo GitHubiin repositorio nimellä _ohtuvarasto_
 
 **Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
 
-- Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#teht%C3%A4v%C3%A4-13-julkinen-avain)-materiaalista
+- Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai noudatat kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#teht%C3%A4v%C3%A4-13-julkinen-avain)-materiaalin ohjeta
 
 Lisää julkinen avain GitHubiin:
 
@@ -216,8 +216,8 @@ Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klo
 
 - Alkuperäinen paikallinen klooni ei ole enää ajantasalla, "pullaa" sinne muutokset komennolla `git pull`
 - Varmista että molempien paikallisten repositorioiden sisältö on nyt sama
-- Lisää alkuperäiseen kopioon joitain tiedostoja ja pushaa ne GitHubiin
-- Mene jälleen kloonattuun kopioon ja pullaa
+- Lisää alkuperäiseen klooniin joitain tiedostoja ja pushaa ne GitHubiin
+- Mene jälleen tässä tehtävässä tehtyyn klooniin ja pullaa
 
 ### 6. Repositorion siivous [versionhallinta]
 
@@ -280,7 +280,9 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 - Tarkastele juurihakemistossa olevan _poetry.lock_-tiedoston sisältöä
   - Tiedoston sisällön ei ole tarkoitus olla ihmisluettava, _eikä sitä pitäisikään missään nimessä muokata_. Tiedosto on täysin Poetryn ylläpitämä. Poetry tallentaa tiedostoon projektiin asennettujen riippuvuuksien versiot, jotta jokaisen asennuksen yhteydessä riippuvuuksista voidaan asentaa juuri oikeat versiot
 
-Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. Ennen siirtymistä tehtävien pariin, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla Ohjelmistotekniikka-kurssin [Poetry-ohje](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta).
+Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. 
+
+Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta).
 
 **Tee nyt seuraavat toimenpiteet**. Ohjeen kaikissa kohdissa Poetry-komennot on annettu muodossa `poetry <komento>`. Jos et ole asentanut Poetrya globaalisti, joudut antamaan komennot muodossa `python3 -m poetry <komento>`.
 
@@ -291,7 +293,7 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 - Suorita komento `python3 src/index.py`
   - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
   - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
-- Lähde virtuaaliympäristöstä komennolla `exit`
+- Poistu virtuaaliympäristöstä komennolla `exit`
 - Suorita testit komennolla `poetry run pytest`
   - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
@@ -326,7 +328,7 @@ Oikea polku kannattaa varmistaa komennolla `which python3`.
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet kurssin Ohjelmistotekniikka [unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen).
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen).
 
 Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 

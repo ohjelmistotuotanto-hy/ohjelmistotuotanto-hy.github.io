@@ -5,8 +5,9 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include laskari_info.md part=6 %}
+{% include paivitys_kesken.md %}
 
+{% include laskari_info.md part=6 %}
 
 Tehtävässä 1 jatketaan Gitin harjoittelua, tehtävä ei näy palautuksissa mitenkään.
 

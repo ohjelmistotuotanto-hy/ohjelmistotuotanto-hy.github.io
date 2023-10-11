@@ -23,6 +23,8 @@ stats_url: 'https://study.cs.helsinki.fi/stats/courses/ohtu2023'
 python_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/tehtavat'
 java_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/syksy2021-java'
 
+norppa: https://coursefeedback.helsinki.fi/targets/72482660/feedback
+
 moniv-dl:
   - 'FAIL'
   - 'sunnuntai 5.11. klo 23:59:00'
