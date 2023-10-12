@@ -15,7 +15,6 @@ Käytetään esimerkkinä luokkaa `Maksukortti`, joka sisältää metodeja arvon
 EDULLINEN = 250
 MAUKAS = 400
 
-
 class Maksukortti:
     def __init__(self, saldo):
         # saldo on senteissä
@@ -76,7 +75,6 @@ maksukortti/
 
 Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan koodi.
 
-### Tehtävä 2: Aloitetaan testien kirjoittaminen
 
 Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `poetry shell`, jonka jälkeen suoritetaan komento `pytest src`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
