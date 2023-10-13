@@ -11,15 +11,14 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Luennot
   - ma 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
   - ti 12-14 B123 [Unitube](https://video.helsinki.fi/unitube/live-stream.html?room=l10)
-  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu)
-- Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-22)
+  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2021 zoom-luentojen tallenteet ovat myös käytössä
+- Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-23)
 - Apua tehtävien tekoon
   - pajassa, tbd
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/72482660/feedback>
-  - Kurssipalautejärjestelmän "jatkuvan palautteen" toiminnallisuus on vasta koekäytössä, ja sitä kehitetään mm. tämän kurssin kokemusten myötä.
 
 ## Aikataulu
 

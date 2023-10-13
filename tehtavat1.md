@@ -623,9 +623,9 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 
 ![]({{ "/images/lh1-12-22.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. Jos pieni odottelukaan ei auta (kuten omassa tapauksessani), voit mennä suoraan repositoriosi Codecov-osoitteeseen, joka on muotoa https://codecov.io/gh/githubtunnus/repositorio, omassa tapauksessani siis <https://codecov.io/gh/mluukkai/ohtuvarasto>. Saat lisättyä repositorion Codecoviin alaisuuteen settingsien kautta:
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta. Voit antaa luvan joko kaikkiin julkisiin repositorioihin tai valitsemiisi repositorioihin:
 
-![]({{ "/images/py-lh1-30-22.png" | absolute_url }})
+![]({{ "/images/lh1-codecov.png" | absolute_url }})
 
 Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
 
@@ -640,11 +640,11 @@ Samme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämäll�
 
 **HUOM2** käyttäessäsi julkista repositorioa, et tarvitse Reposity upload tokenia mihinkään
 
-![]({{ "/images/lh1-codecov-token.png" | absolute_url }})
+![]({{ "/images/lh1-codecov2.png" | absolute_url }})
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/py-lh1-14-22.png" | absolute_url }})
+![]({{ "/images/lh1-codecov3.png" | absolute_url }})
 
 Klikkaailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
@@ -735,18 +735,18 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
     - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositorioa!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
-  - `Statistics` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
-  - `Player` on luokka, jonka olioina `Statistics`-luokka käsittelee yksittäisen pelaajan tietoja
+  - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
+  - `Player` on luokka, jonka olioina `StatisticsService`-luokka käsittelee yksittäisen pelaajan tietoja
   - `PlayerReader` on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 - Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
 
 **Itse tehtävä:**
 
-- Muokkaa ohjelman rakennetta siten, että `Statistics`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion.
-- Muokkaa pääohjelma siten, että se injektoi `Statistics`-oliolle `PlayerReader`-luokan olion ja kokeile että ohjelma toimii edelleen:
+- Muokkaa ohjelman rakennetta siten, että `StatisticsService`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion.
+- Muokkaa pääohjelma siten, että se injektoi `StatisticsService`-oliolle `PlayerReader`-luokan olion ja kokeile että ohjelma toimii edelleen:
 
 ```python
-stats = Statistics(
+stats = StatisticsService(
   PlayerReader()
 )
 ```
@@ -757,16 +757,16 @@ stats = Statistics(
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
-- Tee yksikkötestit luokalle `Statistics`
+- Tee yksikkötestit luokalle `StatisticsService`
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) mukaisesti. Muuten pytest ei löydä suoritettavia testejä
-  - Testien haarautumakattavuuden tulee `Statistics`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
+  - Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
     - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Testit eivät saa käyttää verkkoyhteyttä
   - Verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten `PlayerReader`-luokkaa muistuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
 
 ```python
 import unittest
-from statistics import Statistics
+from statistics_service import StatisticsService
 from player import Player
 
 class PlayerReaderStub:
@@ -779,29 +779,29 @@ class PlayerReaderStub:
             Player("Gretzky", "EDM", 35, 89)
         ]
 
-class TestStatistics(unittest.TestCase):
+class TestStatisticsService(unittest.TestCase):
     def setUp(self):
         # annetaan Statistics-luokan oliolle "stub"-luokan olio
-        self.statistics = Statistics(
+        self.stats = StatisticsService(
             PlayerReaderStub()
         )
 
     # ...
 ```
 
-Kun injektoit `PlayerReaderStub`-olion testissä `Statistics`-oliolle, palauttaa se aina saman pelaajalistan.
+Kun injektoit `PlayerReaderStub`-olion testissä `StatisticsService`-oliolle, palauttaa se aina saman pelaajalistan.
 
 ### 17. NHL-tilastot-ohjelman laajennus
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
-Muuta luokan `Statistics` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperustella" metodi palauttaa pelaajat.
+Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperustella" metodi palauttaa pelaajat.
 
 Metodin toiminnallisuus selviää seuraavasta:
 
 ```python
 def main():
-    stats = Statistics(
+    stats = StatisticsService(
       PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
     )
 
