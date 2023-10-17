@@ -43,6 +43,8 @@
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
+- Miniprojekti
+  - Aloitustilaisuudet  
 
 ### Viikko 4
 
@@ -61,7 +63,7 @@
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4), deadline {{site.lask-dl[4]}}
 - Miniprojekti
-  - Aloitustilaisuudet
+  - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
 ### Viikko 5
 
@@ -78,7 +80,7 @@
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
 - Miniprojekti
-  - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
+  - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
 ### Viikko 6
 
@@ -88,7 +90,7 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6)t, deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
-  - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
+  - Asiakastapaamiset (sprintin 3 review, sprintin 4 suunnittelu)
 
 ### Viikko 7
 

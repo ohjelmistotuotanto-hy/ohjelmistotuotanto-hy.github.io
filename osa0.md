@@ -31,7 +31,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa BK107 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitenkin syksyn 2021 Zoom-tallenteet joihin linkit löytyvät kurssimateriaalin etusivulta.
+Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitenkin syksyn 2021 Zoom-tallenteet joihin linkit löytyvät kurssimateriaalin etusivulta.
 
 ### Laskuharjoitukset
 
@@ -46,7 +46,7 @@ Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen vi
 
 ### Miniprojekti
 
-Kurssin loppupuolella, viikoilla 4-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
+Kurssin loppupuolella, viikoilla 3-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
 
 Kukin miniprojektiryhmä koostuu 4-6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, jälkimmäisillä 30 minuuttia.
 
@@ -72,34 +72,32 @@ Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
-- laskarit 11 pistettä
-  - luentoihin liittyvät monivalintatehtävät 3 pistettä
+- laskarit 10 pistettä
+  - luentoihin liittyvät monivalintatehtävät 2 pistettä
   - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 8 pistettä
-- miniprojekti 9 pistettä
-- koe 19 pistettä
-- osallistuminen paikan päällä vierailuluennoille 1 piste (0.5 pistettä yhdestä vierailuluentoläsnäolosta)
+- miniprojekti 11 pistettä
+- koe 18 pistettä
+- osallistuminen paikan päällä vierailuluennoille 1 piste (0.33 pistettä yhdestä vierailuluentokertaläsnäolosta)
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 
 Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä.
 
-Jos hyväksiluet miniprojektin, kokeen ja laskarien pistemääräsi skaalataan kertomalla 40/31:llä ja arvosana määritellään skaalatun pistemäärän perusteella.
+Jos hyväksiluet miniprojektin, kokeen ja laskarien pistemääräsi skaalataan kertomalla 40/29:llä ja arvosana määritellään skaalatun pistemäärän perusteella.
 
 #### Laskarien pisteytysperusteet
 
-Viikoittaisista monivalintatehtävistä on siis tarjolla _3 kurssipistettä_. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_.
+Viikoittaisista monivalintatehtävistä on siis tarjolla _2 kurssipistettä_. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_.
 
 Pisteet tulevat seuraavan kaavan mukaan:
 
 | monivalintapisteitä | kurssipisteitä |
 | ------------------- | :------------: |
-| 6.3                 |       3        |
-| 5.8                 |      2.5       |
-| 5.3                 |       2        |
-| 4.8                 |      1.5       |
-| 4.3                 |       1        |
-| 3.8                 |      0.5       |
-| 3.3                 |       0        |
+| 4.5                 |       2        |
+| 4.0                 |      1.5       |
+| 3.5                 |       1        |
+| 3.0                 |      0.5       |
+| 2.5                 |       0        |
 
 Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan:
 
@@ -107,19 +105,6 @@ Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi oll
 - jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikki kohdat oikein tuo yhden mvp:n.
 
 Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
-
-Pisteet tulevat seuraavan kaavan mukaan:
-
-| tehtäviä | kurssipisteitä |
-| -------- | :------------: |
-| 57       |       8        |
-| 54       |      7.5       |
-| 50       |       7        |
-| 47       |      6.5       |
-| 43       |       6        |
-| ...      |      ...       |
-| 8        |       1        |
-| 5        |      0.5       |
 
 ## Versionhallinta 1 op
 
