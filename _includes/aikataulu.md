@@ -85,8 +85,8 @@
 ### Viikko 6
 
 - Vierailuluennot
-  - Luento 11: {{site.luennot[11]}} Vierailuluento NN
-  - Luento 12: {{site.luennot[12]}} Vierailuluento NN
+  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa ja Kasper Hirvikoski Unity
+  - Luento 12: {{site.luennot[12]}} Vierailuluento Anniina Sallinen Oura
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6)t, deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
@@ -95,8 +95,8 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 13: {{site.luennot[12]}} Vierailuluento NN
-  - Luento 14: {{site.luennot[13]}} Vierailuluento NN
+  - Luento 13: {{site.luennot[12]}} Vierailuluento Hannu Kokko Elisa
+  - Luento 14: {{site.luennot[13]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - Miniprojekti
@@ -106,4 +106,4 @@
 
 ### Viikko 8
 
-- Koe ti 20.12. klo 8.00-13.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) (koeaika on 4 tuntia siitä hetkestä kun kokeen aloitat)
+- Koe ti 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) (koeaika on 4 tuntia siitä hetkestä kun aloitat kokeen)

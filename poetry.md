@@ -80,6 +80,10 @@ Asennuksen jälkeen Poetry-binäärin polku tulee asettaa `PATH`-muuttujaan. Lis
 
 Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamalla komento `poetry --version`. Komennon pitäisi tulostaa asennettu versio.
 
+#### Poetry ja Docker
+
+tbd
+
 ### Projektin alustaminen
 
 Harjoitellaan Poetryn käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _poetry-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto terminaalissa ja suorita siellä komento:
@@ -222,9 +226,7 @@ pytest = "^7.4.2"
 
 Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se vähentää asennettavien riippuvuuksien määrää tapauksessa, jossa haluamme vain suorittaa sovelluksen. Tässä tilanteessa riippuvuuksien asentamisen voi tehdä komennolla `poetry install --without dev`.
 
-### Poetry ja Docker
-
-tbd
+{% include no_pip.md %}
 
 ### Ratkaisuja yleisiin ongelmiin
 
@@ -257,4 +259,3 @@ Kun kaikki toimenpiteet on suoritettu, yritä suorittaa epäonnistunut Poetry-ko
 ### Keyring-ongelma
 
 Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
-

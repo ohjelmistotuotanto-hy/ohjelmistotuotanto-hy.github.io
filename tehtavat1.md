@@ -322,6 +322,8 @@ Polku tulee Macilla muuttaa (todennäköisesti) muotoon
 
 Oikea polku kannattaa varmistaa komennolla `which python3`.
 
+{% include no_pip.md %}
+
 ### 8. Unittest
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
@@ -360,7 +362,7 @@ source = src
 - Kun luokan `Varasto` (tiedoston _src/varasto.py_) testien haarautumakattavuus (branch coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
   - Raportissa on luultavasti mukana myös muita tiedostoja, mutta ainoastaan _src/varasto.py_-tiedoston haarautumakattavuus tarvitsee olla 100%. Opimme myöhemmin, kuinka ylimääräiset tiedostot pystyy jättämään raportin ulkopuolelle
   - Kun muokkaat testejä, muista suorittaa komennot `coverage run --branch -m pytest` ja `coverage html` uudelleen, jotta raportti päivittyy
-  - Saat suoritettua molemmat komnnot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
+  - Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
 
 ### 9. GitHub Actions, osa 1
 
@@ -740,14 +742,15 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 **Itse tehtävä:**
 
-- Muokkaa ohjelman rakennetta siten, että `StatisticsService`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion.
-- Muokkaa pääohjelma siten, että se injektoi `StatisticsService`-oliolle `PlayerReader`-luokan olion ja kokeile että ohjelma toimii edelleen:
+- Muokkaa ohjelman rakennetta siten, että `StatisticsService`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion, ja että `PlayerReader` saa konstruktoriparametrina osoitteen mistä se hakee pelaajien tiedot
+- Muokkaa pääohjelma siten, että se injektoi `StatisticsService`-oliolle `PlayerReader`-luokan olion (jolle on annettu konstruktoriparametrina haluttu osoite) ja kokeile että ohjelma toimii edelleen:
 
 ```python
 stats = StatisticsService(
-  PlayerReader()
+  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
 )
 ```
+
 
 **HUOM:** jos törmäät virheeseen `URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, mahdollinen ratkaisu ongelmaan löytyy [täältä](https://stackoverflow.com/a/42334357).
 
@@ -756,7 +759,7 @@ stats = StatisticsService(
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
 - Tee yksikkötestit luokalle `StatisticsService`
-  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) mukaisesti. Muuten pytest ei löydä suoritettavia testejä
+  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
   - Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
     - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Testit eivät saa käyttää verkkoyhteyttä
@@ -779,7 +782,7 @@ class PlayerReaderStub:
 
 class TestStatisticsService(unittest.TestCase):
     def setUp(self):
-        # annetaan Statistics-luokan oliolle "stub"-luokan olio
+        # annetaan StatisticsService-luokan oliolle "stub"-luokan olio
         self.stats = StatisticsService(
             PlayerReaderStub()
         )
@@ -834,7 +837,7 @@ class SortBy(Enum):
     ASSISTS = 3
 ```
 
-Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos Statistics-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
+Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
 
 ### Tehtävien palautus
 

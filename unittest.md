@@ -4,7 +4,7 @@ permalink: /unittest
 title: Unittest ja testaaminen
 ---
 
-_Tämä ohje on kopio kurssin ohjelmistotekniikka [Unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) ohjeesta muutamin lisäyksin_
+_Tämä ohje on kopio kurssin ohjelmistotekniikka [Unittest-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) muutamin lisäyksin_
 
 Tutustutaan yksikkötestien tekemiseen [unittest](https://docs.python.org/3/library/unittest.html)-sovelluskehyksen avulla. Yksikkötesteissä testauksen kohteena ovat ohjelman pienimmät rakenneosaset eli yksittäiset funktiot sekä luokkien oliot ja niiden metodit.
 
@@ -50,7 +50,7 @@ class Maksukortti:
 Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita terminaalissa hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
 
 ```bash
-poetry init --python "^3.8"
+poetry init --python "^3.10"
 ```
 
 Poetryn kysymillä projektin tiedoilla ei ole väliä, joten voit hyvin käyttää Poetryn ehdottamia tietoja.
@@ -343,7 +343,7 @@ Tulostuksesta huomaamme, että raportissa on suuri määrä projektin kannalta t
 source = src
 ```
 
-**HUOM:** _src_-hakemiston **alahakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. [Referenssisovelluksessa]({{site.python_reference_app_url}}) tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
+**HUOM:** _src_-hakemiston **alihakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. [Referenssisovelluksessa]({{site.python_reference_app_url}}) tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
 
 ```
 src/
