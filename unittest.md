@@ -372,6 +372,20 @@ Komennon `--branch` flagillä pystymme keräämään testien [haarautumakattavuu
 coverage report -m
 ```
 
+Tulos näyttää seuraavalta:
+
+```
+Name                            Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------------
+src/maksukortti.py                 22      1      8      2    90%   15->exit, 20
+src/tests/__init__.py               0      0      0      0   100%
+src/tests/maksukortti_test.py      23      0      0      0   100%
+---------------------------------------------------------------------------
+TOTAL                              45      1      8      2    94%
+```
+
+### Tiedostojen jättäminen raportin ulkopuolelle
+
 Tulostuksesta huomaamme, että raportissa on suuri määrä projektin kannalta turhia tiedostoja. Voimme konfiguroida, mistä tiedostoista testikattavuutta kerätään projektin juurihakemiston _.coveragerc_-tiedostossa. Jos haluamme sisällyttää testikattavuuteen vain projektin _src_-hakemiston, on konfiguraatio seuraava:
 
 ```
@@ -379,7 +393,53 @@ Tulostuksesta huomaamme, että raportissa on suuri määrä projektin kannalta t
 source = src
 ```
 
-**HUOM:** _src_-hakemiston **alihakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. [Referenssisovelluksessa]({{site.python_reference_app_url}}) tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
+Voimme jättää testikattavuuden ulkopuolelle tiedostoja ja hakemistoja. Järkevää voisi olla esimerkiksi jättää testihakemisto, käyttöliittymän koodin hakemisto ja _src/index.py_-tiedosto testikattavuuden ulkopuolelle. Tämä onnistuu seuraavalla muutoksella _.coveragerc_-tiedostoon:
+
+```
+[run]
+source = src
+omit = src/**/__init__.py,src/tests/**,src/ui/**,src/index.py
+```
+
+Nyt komentojen `coverage run --branch -m pytest src` ja `coverage report -m` suorittaminen sisällyttää vain haluamamme _src_-hakemiston tiedostot:
+
+```
+Name                 Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------
+src/maksukortti.py      22      1      8      2    90%   15->exit, 20
+----------------------------------------------------------------
+TOTAL                   22      1      8      2    90%
+```
+
+### Visuaalisempi testikattavuusraportti
+
+Komentoriviltä luettavaa raporttia selkeämmän esitysmuodon voi generoida komennolla:
+
+```bash
+coverage html
+```
+
+Komennon suorittaminen luo projektin juurihakemistoon hakemiston _htmlcov_. Raporttia voi katsoa selaimessa avaamalla hakemiston tiedoston _index.html_ selaimen kautta. Selaimessa aukeava raportti näyttää kutakuinkin seuraavalta:
+
+![]({{ "/images/unittest0.png" | absolute_url }})
+
+Raportista näemme, että koko koodin haaraumakattavuus on 95%. Yksittäisen tiedoston haaraumakattavuuden näemme taulukon "coverage"-sarakkeesta. Jos klikkaamme taulukosta yksittäisen tiedoston nimeä aukeaa tiedoston koodi ja testien siinä kattamat haarat. Katetut haarat näkyvät vihreinä palkkeina rivinumeron vieressä. Haarat, joita ei ole katettu ollenkaan, on korostettu punaisella värillä. Sen sijaan, jos haara on osittain katettu, se on korostettu keltaisella värillä. Viemällä hiiri rivin päälle, nähdään tarkempi selitys, miksi haaraa ei ole täysin katettu:
+
+![]({{ "/images/unittest.png" | absolute_url }})
+
+![](/assets/images/python/coverage-tiedosto.png)
+
+Kuvan tilanteessa kaksi if-ehtoa eivät koskaan saaneet arvoa `True`, joten kyseisiä haaroja ei testeissä käsitelty.
+
+Koodin muutosten jälkeen tulee uuden testauskattavuuden selvityksessä suorittaa kaksi komentoa. Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna
+
+```bash
+coverage run --branch -m pytest src; coverage html
+```
+
+### Huomio isompien projektien testaamisesta
+
+Kannattaa huomata, että _src_-hakemiston **alihakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. Esim. kurssin Ohjelmistotekniikka [referenssisovelluksessa]({{site.python_reference_app_url}}) tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
 
 ```
 src/
@@ -396,33 +456,3 @@ src/
     todo_service.py
   ...
 ```
-
-### Tiedostojen jättäminen raportin ulkopuolelle
-
-Voimme jättää testikattavuuden ulkopuolelle tiedostoja ja hakemistoja. Järkevää voisi olla esimerkiksi jättää testihakemisto, käyttöliittymän koodin hakemisto ja _src/index.py_-tiedosto testikattavuuden ulkopuolelle. Tämä onnistuu seuraavalla muutoksella _.coveragerc_-tiedostoon:
-
-```
-[run]
-source = src
-omit = src/**/__init__.py,src/tests/**,src/ui/**,src/index.py
-```
-
-Nyt komentojen `coverage run --branch -m pytest src` ja `coverage report -m` suorittaminen sisällyttää vain haluamamme _src_-hakemiston tiedostot.
-
-### Visuaalisempi testikattavuusraportti
-
-Komentoriviltä luettavaa raporttia selkeämmän esitysmuodon voi generoida komennolla:
-
-```bash
-coverage html
-```
-
-Komennon suorittaminen luo projektin juurihakemistoon hakemiston _htmlcov_. Raporttia voi katsoa selaimessa avaamalla hakemiston tiedoston _index.html_ selaimen kautta. Selaimessa aukeava raportti näyttää kutakuinkin seuraavalta:
-
-![](/assets/images/python/coverage-raportti.png)
-
-Raportista näemme, että koko koodin haaraumakattavuus on 95%. Yksittäisen tiedoston haaraumakattavuuden näemme taulukon "coverage"-sarakkeesta. Jos klikkaamme taulukosta yksittäisen tiedoston nimeä aukeaa tiedoston koodi ja testien siinä kattamat haarat. Katetut haarat näkyvät vihreinä palkkeina rivinumeron vieressä. Haarat, joita ei ole katettu ollenkaan, on korostettu punaisella värillä. Sen sijaan, jos haara on osittain katettu, se on korostettu keltaisella värillä. Viemällä hiiri rivin päälle, nähdään tarkempi selitys, miksi haaraa ei ole täysin katettu:
-
-![](/assets/images/python/coverage-tiedosto.png)
-
-Kuvan tilanteessa if-ehto ei koskaan saanut arvoa `True`, joten kyseistä haaraa ei testeissä käsitelty.
