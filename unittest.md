@@ -155,7 +155,8 @@ def test_konstruktori_asettaa_saldon_oikein(self):
 Testien suorittaminen antaa ymmärtää, ettei testiä suoritettu onnistuneesti. Jokaisesta virheellisestä testistä löytyy yksityiskohtainen selitys ongelman syystä. Lisäksi lopussa listataan kompaktimmassa muodossa virheelliset tiedostot ja metodit:
 
 ```
-FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_konstruktori_asettaa_saldon_oikein - AssertionError: 'Kortilla on rahaa 9.00 euroa' != 'Kortilla on rahaa 10.00 euroa'
+FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_konstruktori_asettaa_saldon_oikein -
+AssertionError: 'Kortilla on rahaa 9.00 euroa' != 'Kortilla on rahaa 10.00 euroa'
 ```
 
 Tehdään seuraavaksi testi, joka varmistaa, että kortin saldo pienee kutsuttaessa metodia `syo_edullisesti`:
@@ -174,6 +175,41 @@ Jälleen testi alkaa kortin luomisella. Seuraavaksi kutsutaan kortin testattavaa
 
 Molemmat testit ovat yksinkertaisia ja testaavat vain yhtä asiaa, tämä on suositeltava käytäntö vaikka on mahdollista laittaa yhteen testiin useitakin `assertEqual`-metodin kutsuja. Testit on nimetty siten, että nimi kertoo selvästi sen mitä testi testaa. Lisäksi tulee aina muistaa käyttää metodin nimessä <i>test\_</i>-etuliitettä. Kaikki testit ovat toisistaan riippumattomia, esim. kortilla maksaminen ei vaikuta kortin saldoon kuin siinä testissä missä korttimaksu tapahtuu. Testien järjestyksellä testikoodissa ei ole merkitystä. Testit kannattaa ajaa mahdollisimman usein, eli aina kun teet testin (tai muutat normaalia koodia) aja testit!
 
+Testimme ovat siinä mielessä hieman ikäviä, että ne testaavat maksukortin tilan muutosta maksukortin merkkijonoesityksen kautta. Voisimme myös muotoilla testin siten, että se varmistaa suoraan maksukortin oliomuuttujasta `saldo` että sen arvo on oikea maksetun ruokailun jälkeen:
+
+```python
+def test_syo_edullisesti_vahentaa_saldoa_oikein_2(self):
+    kortti = Maksukortti(1000)
+    kortti.syo_edullisesti()
+
+    # varmistetaan että saldoa jäljellä 7.5 euroa eli 750 senttiä
+    self.assertEqual(kortti.saldo, 750)
+```
+
+Tämä on hieman ikävää sillä voidaan ajatella, että kortin tapa toteuttaa saldon säilytys sentteinä on kortin sisäinen asia, jota kortin toteuttanut koodari saattaa jopa myöhemmin muuttaa.
+
+Tehdäänkin kortille uusi metodi `saldo_euroina`, jonka avulla on mahdollista kysyä kortin saldoa euroina:
+
+```python
+class Maksukortti:
+    # ...
+
+    def saldo_euroina(self):
+        return self.saldo / 100
+```     
+
+Muutetaan testi käyttämään uutta metodia:
+
+```python
+def test_syo_edullisesti_vahentaa_saldoa_oikein_2(self):
+    kortti = Maksukortti(1000)
+    kortti.syo_edullisesti()
+
+    self.assertEqual(kortti.saldo_euroina(), 7.5)
+```
+
+### Lisää testejä
+
 Tehdään kaksi testiä lisää:
 
 ```python
@@ -181,13 +217,13 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein(self):
     kortti = Maksukortti(1000)
     kortti.syo_maukkaasti()
 
-    self.assertEqual(str(kortti), "Kortilla on rahaa 6.00 euroa")
+    self.assertEqual(kortti.saldo_euroina(), 6.0)
 
 def test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi(self):
     kortti = Maksukortti(200)
     kortti.syo_edullisesti()
 
-    self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+    self.assertEqual(kortti.saldo_euroina(), 2.0)
 ```
 
 Ensimmäinen testeistä tarkastaa, että maukkaasti syöminen vähentää saldoa oikein. Toinen testi varmistaa, että edullista lounasta ei voi ostaa jos kortin saldo on liian pieni.
@@ -206,21 +242,21 @@ class TestMaksukortti(unittest.TestCase):
     def test_konstruktori_asettaa_saldon_oikein(self):
         self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
 
+
     def test_syo_edullisesti_vahentaa_saldoa_oikein(self):
         self.kortti.syo_edullisesti()
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 7.50 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 7.5)
 
     def test_syo_maukkaasti_vahentaa_saldoa_oikein(self):
         self.kortti.syo_maukkaasti()
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 6.00 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 6.0)
 
     def test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi(self):
-        kortti = Maksukortti(200)
-        kortti.syo_edullisesti()
+        self.kortti.syo_edullisesti()
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 2.0)
 ```
 
 `setUp`-metodi suoritetaan **ennen jokaista testitapausta** (eli testimetodia). Jokainen testitapaus saa siis käyttöönsä `Maksukortti`-olion, jonka saldo on 10 euroa. Huomaa, että testien kohteena oleva maksukortti talletetaan testiluokan oliomuuttujaan `self.kortti = Maksukortti(1000)`-rivillä. Näin testimetodit pystyvät näkemään metodin `setUp` luoman maksukortin.
@@ -243,7 +279,7 @@ def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
     self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
 ```
 
-### Tehtävä 3: Lisää testejä
+### Vapaaehtoinen tehtävä: lisää testejä
 
 Lisää lopuksi maksukortille seuraavat testit:
 
@@ -254,11 +290,11 @@ Lisää lopuksi maksukortille seuraavat testit:
 
 **HUOM:** On suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
 
-**HUOM:** Kirjoita `assertEqual`-komennot aina siten, että ensimmäisenä parametrina saatu tulos
+**HUOM2:** Kirjoita `assertEqual`-komennot aina siten, että ensimmäisenä parametrina saatu tulos
 ja toisena parametrina on odotettu tulos. Esimerkiksi:
 
 ```python
-self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+self.assertEqual(self.kortti.saldo_euroina(), 150.0)
 ```
 
 ### Testit ovat toisistaan riippumattomia
@@ -275,7 +311,6 @@ Jokainen testi siis alkaa tilanteesta jossa kortti on juuri luotu. Tämän jälk
 import unittest
 from maksukortti import Maksukortti
 
-
 class TestMaksukortti(unittest.TestCase):
     def setUp(self):
         self.kortti = Maksukortti(1000)
@@ -283,31 +318,32 @@ class TestMaksukortti(unittest.TestCase):
     def test_konstruktori_asettaa_saldon_oikein(self):
         self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
 
+
     def test_syo_edullisesti_vahentaa_saldoa_oikein(self):
         self.kortti.syo_edullisesti()
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 7.50 euroa",)
+        self.assertEqual(self.kortti.saldo_euroina(), 7.5)
 
     def test_syo_maukkaasti_vahentaa_saldoa_oikein(self):
         self.kortti.syo_maukkaasti()
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 6.00 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 6.0)
 
     def test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi(self):
         kortti = Maksukortti(200)
         kortti.syo_edullisesti()
 
-        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+        self.assertEqual(kortti.saldo_euroina(), 2.0)
 
     def test_kortille_voi_ladata_rahaa(self):
         self.kortti.lataa_rahaa(2500)
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 35.00 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 35.0)
 
     def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
         self.kortti.lataa_rahaa(20000)
 
-        self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
+        self.assertEqual(self.kortti.saldo_euroina(), 150.0)
 ```
 
 ### Onko jo testattu tarpeeksi: testauskattavuus

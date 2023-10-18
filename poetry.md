@@ -82,7 +82,29 @@ Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamal
 
 #### Poetry ja Docker
 
-tbd
+Ehkä paras tapa Poetryllä tapahtuvaan sovelluskehitykeen on [Dockerin](https://www.docker.com/) käyttö. Tällöin et tarvitse koneellesi muuta kuin Dockerin, mitään varsinaista asennusta ei tarvita sillä voit käyttää kurssia varten konfiguroitua Docker imagea [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry/general), ks myös [GitHub-repositorio](https://github.com/mluukkai/docker-poetry).
+
+Poetryn käyttö tapahtuu seuraavasti. Mene hakemistoon, missä haluat suorittaa Poetry-komentoja. Joudut (todennäköisesti) antamaan hakemiston sisältöön kirjoitus- lukuoikeudet Dockerille komennolla:
+
+```
+chmod  o=rw .
+```
+
+Anna komento
+
+```
+docker run -it --volume="$PWD:/mydir" mluukkai/poetry:intel
+```
+
+Jos koneesi on M1 mac, komennon muoto on seuraava:
+
+```
+docker run -it --volume="$PWD:/mydir" mluukkai/poetry:m1
+```
+
+Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim. `poetry init`, `poetry add`, `poetry shell` ym. ovat käytettävissä. Kontti näkee kaikki käynnistyshakemistossa olevat tiedostot. Voit editoida tiedostoja normaaliin tapaan tekstieditorilla kontin ulkopuolella. Docker-kontissa oleva komentotulkki sulkeutuu komennolla exit.
+
+Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
 
 ### Projektin alustaminen
 
