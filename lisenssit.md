@@ -1,4 +1,11 @@
-## Ohjelmistolisenssit
+---
+layout: page
+title: Ohjelmistolisenssit
+inheader: no
+permalink: /lisenssit/
+---
+
+## Ohjelmistolisenssit (15min read, vierasluento aiheesta)
 
 Tässä osassa ollaan käsitelty ohjelmiston suunnittelua ja toteutusta. Seuraavaksi katsotaan, missä kohtaan ohjelmiston suunnittelua lisenssöinti on merkittävässä osassa.
 
@@ -12,7 +19,7 @@ Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käytt�
 ### Lisenssin valinta
 https://choosealicense.com/
 
-#### Vapaa vai avoin
+#### Vapaa vai avoin?
 
 ### Harjoitus
 Seuraavaksi harjoitellaan lisenssin valintaa ohtun miniprojektia varten. Käytä tähän <detail> ja <summary> blokkeja.
