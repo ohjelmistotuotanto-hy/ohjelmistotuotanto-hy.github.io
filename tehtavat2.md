@@ -127,11 +127,11 @@ Development dependencies:
 
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
-Tutustutaan nyt staattisen analyysin työkaluun nimeltään [pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla Ohjelmistotekniikka-kurssin [Pylint-ohje](https://ohjelmistotekniikka-hy.github.io/python/viikko4#pylint-ja-koodin-laaduun-staattinen-analyysi).
+Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://www.pylint.org/). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla kurssilta Ohjelmistotekniikka lainattu [Pylint-ohje](/pylint).
 
 **Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi.**
 
-Ota varasto-projektissa käyttöön pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/koodi/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
+Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
 Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[MASTER]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/2.6/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään neljään, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
@@ -628,136 +628,114 @@ Virheen syynä on se, että GitHubissa oleva **main**-haara oli edellä paikalli
 - Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
 
-### 10. Riippuvuuksien injektointi osa 3: Verkkokauppa
-
-**Tämä ja seuraavat kaksi tehtävää tehdään palautusrepositorioon**
-
-- lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
-
-Tutustuimme viime viikon [tehtävissä 14-17](/tehtavat1#14-riippuvuuksien-injektointi-osa-1) riippuvuuksien injektointiin ja sovelsimme periaatetta yksikkötestauksen helpottamiseen.
-
-Jos asia on päässyt unohtumaan, voit kerrata asian lukemalla [tämän](/riippuvuuksien_injektointi_python/).
-
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko2/verkkokauppa-1_ on yksinkertaisen verkkokaupan ohjelmakoodi
-
-- Hae projekti kurssirepositoriosta
-  - Järkevintä lienee että kloonaat kurssirepositorion paikalliselle koneellesi jos et ole sitä jo tehnyt, jos olet, niin pullaa repositorio ajantasalle
-  - **Tämän jälkeen kannattaa kopioida projekti palautusrepositorioon, hakemiston viikko2 sisälle**
-- Tutustu koodiin, piirrä luokkakaavio ohjelman rakenteesta
-  - Luokkakaavioita ei tarvitse palauttaa
-- Ohjelman luokista `Pankki`, `Varasto`, `Viitegeneraattori` ja `Kirjanpito` ovat sellaisia, että niistä on tarkoitus olla olemassa ainoastaan yksi olio. Tälläisiä ainutkertaisia olioita sanotaan **singletoneiksi**. Koodissa singletonit ovat toteutettu "klassisella tavalla", eli piilottamalla konstruktori ja käyttämällä staattista muuttujaa ja metodia säilömään ja palauttamaan luokan ainoa olio
-  - Singleton on ns. [GoF-kirjan](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) yksi alkuperäisistä suunnittelumalleista, lue lisää singletoneista esim. [täältä](https://sourcemaking.com/design_patterns/singleton)
-  - Singleton ei ole erinäisistä syistä enää oikein muodissa, ja korvaamme sen seuraavassa tehtävässä
-- Kuten huomaamme, on koodissa toivottoman paljon konkreettisia riippuvuuksia:
-  - Varasto --> Kirjanpito
-  - Pankki --> Kirjanpito
-  - Kauppa --> Pankki
-  - Kauppa --> Viitegeneraatori
-  - Kauppa --> Varasto
-- **Poista luokan `Kauppa` konkreettiset riippuvuudet** yllä mainittuihin luokkiin
-  - Määrittele luokalle `Kauppa` sopiva konstruktori, jotta voit injektoida riippuvuudet
-  - Riippuvuus luokkaan `Ostoskori` voi jäädä, sillä se on ainoastaan luokan Kauppa sisäisesti käyttämä luokka ja täten varsin harmiton
-  - Muut riippuvuudet jätetään vielä
-- Älä käytä luokan `Kauppa` sisällä enää konkreettisia luokkia `Varasto`, `Viitegeneraattori` ja `Pankki` vaan ainoastaan niitä vastaavia konstruktorin kautta saatuja olioita!
-- **Muokkaa _index.py_-tiedoston `main`-funktiota**, siten että se luo kaupan seuraavasti:
-
-```python
-kauppa = Kauppa(
-  Varasto.get_instance(),
-  Pankki.get_instance(),
-  Viitegeneraattori.get_instance()
-)
-```
-
-- Asenna projektin riippuvuudet komennolla `poetry install`
-- Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla `python3 src/index.py`
-
-### 11. Riippuvuuksien injektointi osa 4: ei enää singletoneja verkkokaupassa
-
-- Singleton-suunnittelumallia pidetään [osittain ongelmallisena](http://rcardin.github.io/design/programming/2015/07/03/the-good-the-bad-and-the-singleton.html), poistammekin edellisestä tehtävästä singletonit
-- **Poista** kaikista luokista `get_instance`-metodit ja staattinen `__instanssi`-muuttuja
-- **Poista** rajapintojen ja riippuvuuksien injektoinnin avulla edellisen tehtävän jäljiltä jääneet riippuvuudet, eli
-  - Varasto --> Kirjanpito
-  - Pankki --> Kirjanpito
-- **Muokkaa _index.py_-tiedoston `main`-funktiota** vastaamaan uutta tilannetta, eli suunnilleen muotoon:
-
-```python
-viitegeneraattori = Viitegeneraattori()
-kirjanpito = Kirjanpito()
-varasto = Varasto(kirjanpito)
-pankki = Pankki(kirjanpito)
-kauppa = Kauppa(varasto, pankki, viitegeneraattori)
-```
-
-Varmista ohjelman toimivuus suorittamalla se virtuaaliympäristössä komennolla `python3 src/index.py`.
-
-### Yksinkertaistettu singeleton
-
-Pythonin tapauksessa perinteisen singleton-suunnittelumallin mukaiset luokat tuottavat turhan monimutkaista koodia, joka on yksi syy niiden vähäiseen käyttöön. Esimerkiksi `Viitegeneraattori`-luokasta voisi yksinkertaisesti luoda olion, jota muut moduulit voivat käyttää:
-
-```python
-class Viitegeneraattori:
-    def __init__(self):
-        self._seuraava = 1
-
-    def uusi(self):
-        self._seuraava = self._seuraava + 1
-
-        return self._seuraava
-
-
-the_viitegeneraattori_olio = Viitegeneraattori()
-```
-
-Nyt muut moduulit voivat käyttää `the_viitegeneraattori_olio`-muuttujaan tallennettua oliota.
-
-### 12. Riippuvuuksien injektointi osa 5: Verkkokauppa siistiksi
-
-Edellisen tehtävän päätteeksi huomasimme, että `Kauppa`-luokan olion alustaminen vaatii melko paljon toimenpiteitä:
-
-```python
-viitegeneraattori = Viitegeneraattori()
-kirjanpito = Kirjanpito()
-varasto = Varasto(kirjanpito)
-pankki = Pankki(kirjanpito)
-kauppa = Kauppa(varasto, pankki, viitegeneraattori)
-```
-
-Korjataan tilanne antamalla riippuvuuksille oletusarvot.
-
-**Tee seuraavat toimenpiteet:**
-
-- Tallenna _viitegeneraattori.py_-tiedostossa muuttujaan `the_viitegeneraattori_olio` luokan `Viitegeneraattori` olio edellisen esimerkin tavoin
-- Tallenna _kirjanpito.py_-tiedostossa muuttujaan `the_kirjanpito_olio` luokan `Kirjanpito` olio
-- Muokkaa `Varasto`-luokkaa siten, että sen konstruktorin `kirjanpito`-parametrin arvo on oletusarvoisesti _kirjanpito.py_-tiedostossa määritelty `the_kirjanpito_olio`-muuttujan arvo. Parametrien oletuarvojen antaminen onnistuu seuraavasti:
-
-```python
-from kirjanpito import the_kirjanpito_olio
-
-class Varasto:
-    def __init__(self, kirjanpito=the_kirjanpito_olio):
-            self._kirjanpito = kirjanpito
-            # ...
-
-    # ...
-```
-
-- Tallenna _varasto.py_-tiedostossa muuttujaan `the_varasto_olio` luokan `Varasto` olio. Huomaa, että olion voi alustaa ilman argumentteja (muodossa `Varasto()`), koska `kirjanpito`-parametrille on annettu oletusarvo.
-- Tee sama `Pankki`-luokan konstruktorille ja tallenna `Pankki`-luokan olio muuttujaan `the_pankki_olio`
-- Käytä `Kauppa`-luokan konstruktorissa `varasto`-, `pankki`- ja `viitegeneraattori`-parametrien oletusarvoina edellisissä askelissa määrittelemiäsi muuttujia
-- **Muokkaa _index.py_-tiedoston `main`-funktiota** siten, että `Kauppa`-olion alustaminen ei käytä argumentteja:
-
-```python
-kauppa = Kauppa()
-```
-
-Huomaa, että luokalle voi silti halutessaan määritellä riippuvuudet argumentteina. Tämä on kätevää esimerkiksi testeissä:
-
-```python
-class PankkiStub:
-    # ...
-
-kauppa = Kauppa(pankki=PankkiStub())
-```
-
 {% include submission_instructions.md %}
+
+
+### 10. Pelaajalista
+
+Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
+
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
+
+Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
+
+Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2021-22/players>
+
+Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
+
+Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+
+Voit ottaa projektisi pohjaksi seuraavan tiedoston:
+
+```python
+import requests
+from player import Player
+
+def main():
+    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
+    response = requests.get(url).json()
+
+    print("JSON-muotoinen vastaus:")
+    print(response)
+
+    players = []
+
+    for player_dict in response:
+        player = Player(
+            player_dict['name']
+        )
+
+        players.append(player)
+
+    print("Oliot:")
+
+    for player in players:
+        print(player)
+```
+
+Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
+
+Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee. Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
+
+```
+Players from FIN 2021-01-04 19:15:32.858661
+
+Sami Vatanen team CAR  goals 5 assists 18
+Janne Kuokkanen team NJD  goals 0 assists 0
+Leo Komarov team NYI  goals 4 assists 10
+Otto Koivula team NYI  goals 0 assists 0
+Kaapo Kakko team NYR  goals 10 assists 13
+Juuso Riikola team PIT  goals 1 assists 6
+Urho Vaakanainen team BOS  goals 0 assists 0
+Tuukka Rask team BOS  goals 0 assists 0
+Rasmus Ristolainen team BUF  goals 6 assists 27
+...
+```
+
+Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
+
+### 11. Siistimpi pelaajalista
+
+Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
+
+```
+Players from FIN 2021-01-04 19:19:40.026464
+
+Sebastian Aho        CAR 38 + 28 = 66
+Patrik Laine         WPG 28 + 35 = 63
+Teuvo Teravainen     CAR 15 + 48 = 63
+Aleksander Barkov    FLA 20 + 42 = 62
+Mikko Rantanen       COL 19 + 22 = 41
+Kasperi Kapanen      TOR 13 + 23 = 36
+Miro Heiskanen       DAL  8 + 27 = 35
+Roope Hintz          DAL 19 + 14 = 33
+Joonas Donskoi       COL 16 + 17 = 33
+Rasmus Ristolainen   BUF  6 + 27 = 33
+Mikael Granlund      NSH 17 + 13 = 30
+Joel Armia           MTL 16 + 14 = 30
+...
+```
+
+- Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
+- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee?
+
+### 12. Pelaajalistan refaktorointi
+
+Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
+
+Jaa toiminallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`. `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annettetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
+
+Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraavalta:
+
+```python
+def main():
+    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players"
+    reader = PlayerReader(url)
+    stats = PlayerStats(reader)
+    players = stats.top_scorers_by_nationality("FIN")
+
+    for player in players:
+        print(player)
+```
+
+Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.

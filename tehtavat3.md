@@ -29,120 +29,11 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. Pelaajalista
-
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
-
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
-
-Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
-
-Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2021-22/players>
-
-Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
-
-Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
-
-Voit ottaa projektisi pohjaksi seuraavan tiedoston:
-
-```python
-import requests
-from player import Player
-
-def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
-    response = requests.get(url).json()
-
-    print("JSON-muotoinen vastaus:")
-    print(response)
-
-    players = []
-
-    for player_dict in response:
-        player = Player(
-            player_dict['name']
-        )
-
-        players.append(player)
-
-    print("Oliot:")
-
-    for player in players:
-        print(player)
-```
-
-Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
-
-Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee. Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
-
-```
-Players from FIN 2021-01-04 19:15:32.858661
-
-Sami Vatanen team CAR  goals 5 assists 18
-Janne Kuokkanen team NJD  goals 0 assists 0
-Leo Komarov team NYI  goals 4 assists 10
-Otto Koivula team NYI  goals 0 assists 0
-Kaapo Kakko team NYR  goals 10 assists 13
-Juuso Riikola team PIT  goals 1 assists 6
-Urho Vaakanainen team BOS  goals 0 assists 0
-Tuukka Rask team BOS  goals 0 assists 0
-Rasmus Ristolainen team BUF  goals 6 assists 27
-...
-```
-
-Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
-
-### 2. Siistimpi pelaajalista
-
-Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
-
-```
-Players from FIN 2021-01-04 19:19:40.026464
-
-Sebastian Aho        CAR 38 + 28 = 66
-Patrik Laine         WPG 28 + 35 = 63
-Teuvo Teravainen     CAR 15 + 48 = 63
-Aleksander Barkov    FLA 20 + 42 = 62
-Mikko Rantanen       COL 19 + 22 = 41
-Kasperi Kapanen      TOR 13 + 23 = 36
-Miro Heiskanen       DAL  8 + 27 = 35
-Roope Hintz          DAL 19 + 14 = 33
-Joonas Donskoi       COL 16 + 17 = 33
-Rasmus Ristolainen   BUF  6 + 27 = 33
-Mikael Granlund      NSH 17 + 13 = 30
-Joel Armia           MTL 16 + 14 = 30
-...
-```
-
-- Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
-- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee?
-
-### 3. Pelaajalistan refaktorointi
-
-Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
-
-Jaa toiminallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`. `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annettetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
-
-Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraavalta:
-
-```python
-def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
-    reader = PlayerReader(url)
-    stats = PlayerStats(reader)
-    players = stats.top_scorers_by_nationality("FIN")
-
-    for player in players:
-        print(player)
-```
-
-Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.
-
-### 4. Tutustuminen Robot Frameworkkiin
+### 1. Tutustuminen Robot Frameworkkiin
 
 Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
 
-### 5. Kirjautumisen testit
+### 2. Kirjautumisen testit
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/login-robot_ oleva projekti.
 
@@ -191,7 +82,7 @@ Login With Nonexistent Username
 
 Suorita testitapauksissa sopivat avainsanat, jotta haluttu tapaus tulee testattua.
 
-### 6. Uuden käyttäjän rekisteröitymisen testit
+### 3. Uuden käyttäjän rekisteröitymisen testit
 
 Lisää testihakemistoon uusi testitiedosto _register.robot_. Toteuta tiedostoon user storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset:
 
@@ -318,7 +209,7 @@ Suoritetaan rivi syöttämällä uudestaan `next()` ja tulostetaan `user`-muuttu
 
 Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_trace`-metodin kutsu.
 
-### 7. WebLogin
+### 4. WebLogin
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/web-login-robot_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
 
@@ -394,7 +285,7 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
-### 8. Web-sovelluksen testaaminen osa 1
+### 5. Web-sovelluksen testaaminen osa 1
 
 Jatketaan saman sovelluksen parissa.
 
@@ -557,7 +448,7 @@ Setup failed:
 No keyword with name 'Go To Main Page' found.
 ```
 
-### 9. Web-sovelluksen testaaminen osa 2
+### 6. Web-sovelluksen testaaminen osa 2
 
 Jatketaan kirjautumiseen liittyvien hyväksymistestien toteuttamista. Katsotaan sitä ennen pikaisesti, miltä AppLibrary-kirjaston toteutus näyttää. Kirjaston määrittelevä luokka `AppLibrary` löytyy tiedostosta _src/AppLibrary.py_, jonka sisältö on seuraava:
 
@@ -621,7 +512,7 @@ Login With Nonexistent Username
 # ...
 ```
 
-### 10. Web-sovelluksen testaaminen osa 3
+### 7. Web-sovelluksen testaaminen osa 3
 
 Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen. Suorita testit Headless Chromen avulla asettamalla `BROWSER`-muuttujan arvoksi `headlesschrome`.
 
