@@ -38,9 +38,9 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 - Tee palautusrepositorioon hakemisto _viikko2_ ja sen sisälle hakemisto _poetry-web_ tätä tehtävää varten
 - Lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
 
-**HUOM**: Kurssilla käytetään riippuvuuksien hallinnassa ainoastaan Poetrya, eli pip:iä ei tule käyttää riippuvuuksien asennuksessa. Tämä tarkoittaa käytännössä sitä, että riippuvuudet asennetaan komennolla `poetry add <kirjasto>` komennon `pip install <kirjasto>` sijaan.
+{% include no_pip2.md %}
 
-Tässä tehtävässä harjoittelemme lisää Poetryn käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta) ja [Poetryn dokumentaatiosta](https://python-poetry.org/docs/).
+Tässä tehtävässä harjoittelemme lisää Poetryn käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. Ohjelmistotekniikka-kurssilta lainatusta [Poetry-ohjeesta](/poetry) ja [Poetryn dokumentaatiosta](https://python-poetry.org/docs/).
 
 Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimissä, joka on alkamassa kehittämään web-sovellusta. Olette päätyneet kehittämään sovelluksen Pythonilla ja käyttämään Poetrya riippuvuuksien hallinnassa.
 
@@ -49,7 +49,6 @@ Tee seuraavat toimenpiteet:
 - Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.10"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
-  - Huom: jos käytössäsi on tätä syksyä aiemmin asennettu Poetry (versio 1.1.x) niin komennon `poetry add pylint --group dev` sijaan tulee käyttää komentoa `poetry add pylint --dev` kehitysaikaisten riippuvuuksien asentamisessa
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
 - Sovelluksessa käsitellään paljon JSON-muotoista dataa, joten päädyt etsimään sen serialisointiin ja deserialisointiin sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [jsonpickle](https://pypi.org/project/jsonpickle/). **Asenna jsonpickle projektin riippuvuudeksi**
 - Huomaat bugin jsonpickle-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/jsonpickle/jsonpickle/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.3.0`. **Asenna jsonpickle-kirjastosta versio `1.3.0`**.
@@ -91,10 +90,35 @@ Tulosta jokainen välivaihe (tiedoston sisältö ja kirjaston avulla deserialiso
 Ohjelman voi käynnistää virtuaaliympäristössä komennolla `python3 src/index.py`. Esimerkkinä käytetyn _pyproject.toml_-tiedoston tapauksessa ohjelman tulostuksen tulisi olla seuraava:
 
 ```
-Name: web-login-robot
-Description: -
-Dependencies: python, Flask
-Development dependencies: robotframework, robotframework-seleniumlibrary, requests
+Name: Ohtutesting app
+Description: Sovellus joka toimii testisyötteenä ohtun viikon 2 laskareihin
+Dependencies: python, Flask, editdistance
+Development dependencies: coverage, robotframework, robotframework-seleniumlibrary, requests
+```
+
+*HUOM* ohjelma ei saa sisältää kuin ainoastaan tiedostossa index.py olevan print-komennon, joka tuostaa `Project`-olion merkkijonoesityksen!
+
+Laajenna ja hio vielä ratkaisua siten, että esimerkkiprojektin osalta lopputulos näyttää suunilleen seuraavalta
+
+```
+Name: Ohtutesting app
+Description: Sovellus joka toimii testisyötteenä ohtun viikon 2 laskareihin
+License: MIT
+
+Authors:
+- Matti Luukkainen
+- Kalle Ilves
+
+Dependencies:
+- python
+- Flask
+- editdistance
+
+Development dependencies:
+- coverage
+- robotframework
+- robotframework-seleniumlibrary
+- requests
 ```
 
 ### 3. Pylint ja koodin staattinen analyysi
