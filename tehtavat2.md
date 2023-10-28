@@ -133,7 +133,7 @@ Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://www
 
 Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
-Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[MASTER]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/v3.0.2/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään neljään, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
+Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/v3.0.2/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään neljään, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
 ```
 [DESIGN]
@@ -188,11 +188,9 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 
 **Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging -alue tyhjinä!
 
-Tee seuraavat paikalliseen git-repositorioosi (tehtävää ei palauteta, eli kyseessä **ei** siis tarvitse olla tehtävien palautusrepositorio)
+Tee seuraavat paikalliseen Git-repositorioosi (tehtävää ei palauteta, eli kyseessä **ei** siis tarvitse olla tehtävien palautusrepositorio)
 
-- Huom: seuraavassa käytetään versionhallinnan päähaarasta gitin oletusarvoista nimeä _master_. GitHubissa päähaarasta käytetään nykyään nimeä _main_, ja jos teet tehtävän palautusrepositorioosi, on päähaarasi nimi todennäköisesti _main_
-
-- Luo repositorio ja committaa masteriin tiedosto **index.py** jonka sisältö on seuraava
+- Luo repositorio ja committaa mainiin tiedosto **index.py** jonka sisältö on seuraava
 
 ```python
 x = int(input("luku 1: "))
@@ -208,12 +206,13 @@ def summa(x, y):
 
 - lisää ja committaa tiedosto versionhallintaan
 
-- Siirry takaisin **master**-branchiin (komennolla`git checkout master`), tiedoston **summa.py** ei pitäisi nyt näkyä
+- Siirry takaisin **main**-branchiin (komennolla`git checkout main`), tiedoston **summa.py** ei pitäisi nyt näkyä
   - **huom:** muistutus vielä siitä, että kun siirryt branchista toiseen varmista **aina** komennolla `git status` että kaikki muutokset on committoitu
 - Luo tiedosto **logger.py**, jolla on seuraava sisältä
 
 ```python
 from datetime import datetime
+
 def logger(viesti):
   print(f"{datetime.now()}: {viesti}")
 ```
@@ -231,9 +230,9 @@ y = int(input("luku 2: "))
 logger("lopetetaan")
 ```
 
-- Committaa nämä muutokset **master**-haaraan
+- Committaa nämä muutokset **main**-haaraan
 
-- Mene branchiin **laskut** ja tarkasta, että **masteriin** lisätty tiedosto ei ole branchissa ja että tiedostoon **index.py** tehty muutos ei näy
+- Mene branchiin **laskut** ja tarkasta, että **mainiin** lisätty tiedosto ei ole branchissa ja että tiedostoon **index.py** tehty muutos ei näy
 - Lisää ja committaa branchiin tiedosto **erotus.py** jolla on seuraava sisältö
 
 ```python
@@ -241,12 +240,12 @@ def erotus(x, y):
     return x-y
 ```
 
-- Siirry takaisin **master**-branchiin
-- Tarkasta että **laskut**-branchiin lisätyt muutokset eivät ole masterissa
+- Siirry takaisin **main**-branchiin
+- Tarkasta että **laskut**-branchiin lisätyt muutokset eivät ole mainissa
 - Tarkastele komennolla `gitk --all` miltä repositorio ja branchit näyttävät (`gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.)
   - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
     - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
-- Mergeä branchin **laskut** sisältö **masteriin** (tämä tapahtuu komennolla`git merge laskut`)
+- Mergeä branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
   - Mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
@@ -273,7 +272,7 @@ logger("lopetetaan")
 
 **Tätä tehtävää ei palauteta mihinkään**
 
-- Olet nyt repositoriosi master-haarassa
+- Olet nyt repositoriosi main-haarassa
 - Luo uusi tiedosto _README.md_, **älä** kuitenkaan lisää ja commitoi tiedostoa versionhallintaan
 - Tiedoston sisällöllä ei ole merkitystä, se voi olla esim. seuraava
 
@@ -286,7 +285,7 @@ Harjoitellaan branchien käyttöä
 - Komennon `git status` tulostuksen pitäisi olla seuraava
 
 ```
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -298,9 +297,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 - Siirry nyt branchiin **laskut**
 - Suorita uudelleen komento `git status`
 - Huomaat, että tulostus on edelleen sama, tiedosto ei edelleenkään ole versionhallinnan alla
-- Eli vaikka olit master-haarassa kun loit tiedoston, ei master-haara eikä koko git tiedä tiedostosta vielä mitään ennen kuin lisäät sen versionhallinnan alaisuuteen komennolla `git add`
+- Eli vaikka olit main-haarassa kun loit tiedoston, ei main-haara eikä koko git tiedä tiedostosta vielä mitään ennen kuin lisäät sen versionhallinnan alaisuuteen komennolla `git add`
 - Lisää tiedosto nyt versionhallinnan alaisuuteen ja commitoi se
-- Tiedosto menee nykyiseen branchiisi, eli branchiin _laskut_, master ei edelleenkään tiedä tiedostosta mitään
+- Tiedosto menee nykyiseen branchiisi, eli branchiin _laskut_, main ei edelleenkään tiedä tiedostosta mitään
 - Luo uusi tiedosto _LICENSE_ ja lisää se versionhallintaan (komennolla add), älä kuitenkaan commitoi
 - Tiedoston sisällöllä ei ole merkitystä, se voi olla esim. seuraava
 
@@ -320,38 +319,38 @@ For more information, please refer to <https://unlicense.org>
 ```
 On branch laskut
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+   (use "git restore --staged <file>..." to unstage)
 
 	new file:   LICENCE
 ```
 
 - Olet siis branchissa _laskut_ ja _LICENSE_ on lisätty staging-alueelle, sitä ei kuitenkaan ole vielä committoitu
-- Siirry nyt branchiin **master**
+- Siirry nyt branchiin **main**
 - Komennon `git status`tulos on edelleen sama, _LICENSE_ on edelleen staging-alueella mutta committoimattomana
 - Staging-alue **ei kuulu** mihinkään branchiin, eli jos staging-alueella on committoimattomia muutoksia ja vaihdat branchia, säilyvät samat asiat stagingissa
 - Muutokset siirtyvät stagingista branchiin ainoastaan komennolla `git commit`
-- Committoi nyt staging-alueen muutokset eli _LICENSE_ masteriin
+- Committoi nyt staging-alueen muutokset eli _LICENSE_ mainiin
 - Komennon `git status` tulos kertoo nyt että staging-alue on tyhjä:
 
 ```
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
 - Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
-- Mergeä **master** branchiin **laskut**
-- Siirry nyt masteriin ja tuhoa branchi **laskut**
-  - Tuhoaminen ei onnistu suoraan komennon `git branch` branchin poistavalla flagilla `-d`, jos branchin sisältö ei ole kokonaisuudessan mergetty masteriin. Jos näin on, tee ensin merge masteriin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
-- Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
+- Mergeä **main** branchiin **laskut**
+- Siirry nyt mainiin ja tuhoa branchi **laskut**
+  - Tuhoaminen ei onnistu suoraan komennolla `git branch -d`, jos branchin sisältö ei ole kokonaisuudessan mergetty mainiin. Jos näin on, tee ensin merge mainiin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
+- Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista Git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
 ### 7. Git: konflikti! [versionhallinta]
 
 **Tätä tehtävää ei palauteta mihinkään**
 
-Tee paikalliseen git-repoon seuraavat
+Tee paikalliseen Git-repositorioon seuraavat
 
-- Muuta **master**-branchin tiedostoa **index.py** seuraavasti:
+- Muuta **main**-branchin tiedostoa **index.py** seuraavasti:
 
 ```py
 # tehdään alussa importit
@@ -393,7 +392,7 @@ logger("lopetetaan ohjelma")
 print("goodbye!") # lisäys bugikorjaus-branchissa
 ```
 
-- Mene takaisin **master**-branchiin, editoi tiedoston **index.py** alkupuolta esim.seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
+- Mene takaisin **main**-branchiin, editoi tiedoston **index.py** alkupuolta esim.seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
 
 ```py
 # tehdään alussa importit
@@ -402,7 +401,7 @@ from logger import logger
 from summa import summa
 from erotus import erotus
 
-logger("aloitetaan ohjelma") # muutos masterissa
+logger("aloitetaan ohjelma") # muutos mainissa
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
@@ -412,12 +411,12 @@ print(f"{erotus(x, y)}")
 logger("lopetetaan ohjelma")
 ```
 
-- Mergeä branchin **bugikorjaus** sisältö **masteriin**
+- Mergeä branchin **bugikorjaus** sisältö **mainiin**
 
   - Katso tiedoston **index.py**-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
 
-- Muuta tiedostoa print-komentojen osalta seuraavasti
+- Olet edelleen branchissa **main**. Muuta tiedostoa print-komentojen osalta seuraavasti
 
 ```py
 # tehdään alussa importit
@@ -430,8 +429,8 @@ logger("aloitetaan ohjelma")
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
-print(f"{x} + {y} = {summa(x, y)}") # muutos masterissa
-print(f"{x} - {y} = {erotus(x, y)}") # muutos masterissa
+print(f"{x} + {y} = {summa(x, y)}") # muutos mainissa
+print(f"{x} - {y} = {erotus(x, y)}") # muutos mainissa
 
 logger("lopetetaan ohjelma")
 print("goodbye!")
@@ -460,7 +459,7 @@ logger("lopetetaan ohjelma")
 print("goodbye!")
 ```
 
-- Mergeä branchin **master** sisältö branchiin **bugikorjaus**
+- Mergeä branchin **main** sisältö branchiin **bugikorjaus**
   - Nyt pitäisi aiheutua konflikti, komento aiheuttaa tulostuksen
 
 ```
@@ -489,38 +488,32 @@ Aloita lukemalla ProGit-kirjasta luku [Remote Branches](http://git-scm.com/book/
 
 Lisätään seuraavaksi branch GitHubiin:
 
-- Luo palautusrepositorion paikalliseen kopioon branchit **haara1** ja **haara2**
-- Mene branchiin **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
-- Mene branchiin **haara2**, lisää sinnekin jokin (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
+- Luo palautusrepositorion paikalliseen kopioon branch **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
+- Palaa haaraan **main**
+- Luo toinen branch **haara2**, lisää sinnekin jokin (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
 - Pushaa uudet branchit GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö:
 
 ![]({{ "/images/lh2-branch1.png" | absolute_url }}){:height="350px" }
 
-Kloonaa GitHub-repositoriosta koneellesi toinen kopio:
+Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 
-- Kuten huomaat, eivät branchit tule kloonattuun kopioon
+- Kuten huomaat, eivät branchit tule klooniin
 - Tee paikalliseen kopioon branch joka "träkkää" GitHubissa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
 - Lisää "träkkäävään" branchiin jokin tiedosto (hakemistoon viikko2), committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
-Mene GitHub-repon alkuperäiseen paikalliseen kopioon:
+Mene GitHub-repositorion **alkuperäiseen** paikalliseen klooniin:
 
 - Mene branchiin **haara1** ja pullaa muutokset GitHubiin vastaavasta branchista
   - huom: koska kyseessä ei ole "träkkäävä" branchi, joudut pullaamaan komennolla `git pull origin haara1`
+    - Pelkän komennon `git pull` tuloste antaa ohjeen, miten saat halutessasi komennon toimimaan haaran sisältä ilman lisäparametreja
 - Mene branchiin **haara2**, lisää sitten tiedosto, committaa ja pushaa branchi GitHubiin
   - Koska kyseessä ei ole "träkkäävä" branchi, ei komento `git push` riitä vaan joudut määrittelemään branchin jonne push kohdistuu eli antamaan komennon `git push origin haara2`
-- Komennon `git push` tuloste antaa ohjeen, miten saat komennon toimimaan haaran sisältä ilman lisäparametreja:
+    - Pelkän komennon `git push` tuloste antaa ohjeen, miten saat halutessasi komennon toimimaan haaran sisältä ilman lisäparametreja
 
-```
-$ git push
-fatal: The current branch haara2 has no upstream branch.
-To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin haara2
-```
-
-Mene jälleen toiseen kopioon:
+Mene jälleen **toiseen klooniin**:
 
 - Suorita komento `git remote show origin`
 - Komento kertoo "originissa" eli GitHubissa olevien branchien ja paikallisten branchien suhteen
@@ -544,31 +537,32 @@ Mene jälleen toiseen kopioon:
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
 - Tee toiseen lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
+  - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
-- Tee branchiin **haara2** muutoksia ja pushaa ne githubiin
-  - Huom: koska kyseessä on träkkäävä branch, riittää git push
-- tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
+- Tee branchiin **haara2** muutoksia ja pushaa ne GitHubiin
+  - Koska kyseessä on träkkäävä branch, riittää git push
+- Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
 Palaa vielä alkuperäiseen lokaaliin repositorioon:
 
 - Suorita komento `git remote show origin`
-- Tulostus kertoo, että lokaaleista haaroista ainoastaan _master_ on konfiguroitu komennon `git pull` osalta:
+- Tulostus kertoo, että lokaaleista haaroista ainoastaan _main_ on konfiguroitu komennon `git pull` osalta:
 
 ```
 * remote origin
   Fetch URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
   Push  URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
-  HEAD branch: master
+  HEAD branch: main
   Remote branches:
     haara1 tracked
     haara2 tracked
-    master tracked
+    main tracked
   Local branch configured for 'git pull':
-    master merges with remote master
+    main merges with remote main
   Local refs configured for 'git push':
     haara1 pushes to haara1 (up to date)
     haara2 pushes to haara2 (up to date)
-    master pushes to master (up to date)
+    main pushes to main (up to date)
 ```
 
 - Suorita `git pull` branchissä _haara1_
@@ -596,7 +590,7 @@ Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHubis
 Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
 <https://www.atlassian.com/git/tutorials/comparing-workflows> esittelee tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
 
-> The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.
+> The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the main branch will never contain broken code, which is a huge advantage for continuous integration environments.
 
 Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
@@ -638,7 +632,7 @@ Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.c
 
 Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2021-22/players>
 
-Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/master/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
+Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/main/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
 Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
