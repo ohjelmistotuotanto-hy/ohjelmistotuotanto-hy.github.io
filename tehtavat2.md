@@ -537,7 +537,7 @@ Mene jälleen **toiseen klooniin**:
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
 - Tee toiseen lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
-  - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion
+  - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion, eli vanhentunut koska haaraan on pushattu uutta sisältöä
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
 - Tee branchiin **haara2** muutoksia ja pushaa ne GitHubiin
   - Koska kyseessä on träkkäävä branch, riittää git push
@@ -565,29 +565,16 @@ Palaa vielä alkuperäiseen lokaaliin repositorioon:
     main pushes to main (up to date)
 ```
 
-- Suorita `git pull` branchissä _haara1_
-- Komennon tuloste antaa ohjeen, miten saat konfiguroitua `git pull` komennon toimimaan _haara1_:n sisällä ilman lisäparametreja:
-
-```
-There is no tracking information for the current branch.
-Please specify which branch you want to merge with.
-See git-pull(1) for details.
-
-    git pull <remote> <branch>
-
-If you wish to set tracking information for this branch you can do so with:
-
-    git branch --set-upstream-to=origin/<branch> haara1
-
-```
-
+- Suorita `git pull` branchissä _haara2_
+- Komennon tuloste antaa ohjeen, miten saat konfiguroitua `git pull` komennon toimimaan _haara2_:n sisällä ilman lisäparametreja
 - Kun annat komennon, sen jälkeen haara träkkää GitHubissa olevaa haaraa ja komento `git pull` voidaan antaa ilman parametreja
+  - Huom: komennossa oleva _&lt;branch&gt;_ tulee korvata branchin nimellä
 
 Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHubissa on myös useita brancheja.
 
 ### Mihin brancheja käytetään?
 
-Ohjelmistotiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
+Ohjelmistokehitystiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylillä. Artikkeli
 <https://www.atlassian.com/git/tutorials/comparing-workflows> esittelee tähän muutamia vaihtoehtoja. Eräs yleinen tapa branchien käyttöön ovat ns. _featurebranchit_:
 
 > The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the main branch will never contain broken code, which is a huge advantage for continuous integration environments.
@@ -596,7 +583,7 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 ### 9. Git: epäajantasaisen kopion pushaaminen [versionhallinta]
 
-Demonstroidaan usein esiintyvää tilannetta, jossa epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
+Demonstroidaan vielä (viime viikon [tehtävässä 11](tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
 - Mene alkuperäisen repositorion paikallisen kopion **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
 - Mene toisen kopion **main**-haaraan ja tee sinne jokin muutos
@@ -618,9 +605,6 @@ Virheen syynä on se, että GitHubissa oleva **main**-haara oli edellä paikalli
 
 - Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
-
-{% include submission_instructions.md %}
-
 
 ### 10. Pelaajalista
 
@@ -730,3 +714,5 @@ def main():
 ```
 
 Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.
+
+{% include submission_instructions.md %}
