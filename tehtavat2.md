@@ -585,8 +585,8 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 Demonstroidaan vielä (viime viikon [tehtävässä 11](tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
-- Mene alkuperäisen repositorion paikallisen kopion **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
-- Mene toisen kopion **main**-haaraan ja tee sinne jokin muutos
+- Mene alkuperäisen repositorion paikallisen kloonin **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
+- Mene toisen kloonin **main**-haaraan ja tee sinne jokin muutos
 - commitoi ja pushaa muutos GitHubiin
 - Kaikki ei kuitenkaan mene hyvin, seurauksena on seuraavantyylinen virheilmoitus:
 
@@ -601,9 +601,36 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Virheen syynä on se, että GitHubissa oleva **main**-haara oli edellä paikallisen repositorion **main\***-haaraa. Ongelma korjaantuu tekemällä ensin `git pull`, ratkaisemalla mahdolliset konfliktit ja pushaamalla sitten uudelleen.
+Virheen syynä on se, että GitHubissa oleva **main**-haara oli edellä paikallisen repositorion **main**-haaraa.
 
-- Komennon `git pull` yhteydessä syntyy merge-commit, ja avautuu tekstieditori mihin joudut kirjoittamaan commit-viestin
+Ongelma ratkeaa seuraavasti. Tee ensin komento `git pull`. Saat gitiltä pitkän valitusviestin:
+
+```
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+```
+
+Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
+
+```
+git config pull.rebase true 
+```
+
+Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet lokaalit commitit etärepositoriossa olevien committien perään.
+
+Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
+
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
 
 ### 10. Pelaajalista

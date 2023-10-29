@@ -101,7 +101,7 @@ Lisää julkinen avain GitHubiin:
 
 Näin pystyt käyttämään GitHubia ilman salasanan syöttämistä koneelta, josta juuri luodun avaimen salainen pari löytyy
 
-Jos et ole jo aiemmin niin tehnyt, konfiguroi nimesi ja email-osoitteesi paikallisen koneesi git:iin antamalla komennot:
+Jos et ole jo aiemmin niin tehnyt, konfiguroi nimesi ja email-osoitteesi paikallisen koneesi Git:iin antamalla komennot:
 
 ```bash
 git config --global user.name "Your Name"
@@ -145,9 +145,9 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 - `git reset HEAD`
 
 - Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka
-  [Git-tutoriaali](https://ohjelmistotekniikka-hy.github.io/python/viikko1#versionhallinta-tee-n%C3%A4m%C3%A4-harjoitukset-jos-ei-tunnu-tutulta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin git-operaatiot.
+  [Git-tutoriaali](https://ohjelmistotekniikka-hy.github.io/python/viikko1#versionhallinta-tee-n%C3%A4m%C3%A4-harjoitukset-jos-ei-tunnu-tutulta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin Git-operaatiot.
 
-Lisää git-ohjeita löytyy runsaasti internetistä, esim:
+Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 - [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
 - [Githubin helpit](https://help.github.com/articles/)
@@ -164,11 +164,11 @@ Lisää git-ohjeita löytyy runsaasti internetistä, esim:
 - Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
   - Toinen ignorattava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
   - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
-- Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että git jättää ne huomioimatta
+- Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että Git jättää ne huomioimatta
   - Saat asian tarkastettua komennolla `git status`
 - Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista, että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
 - Lisää ja commitoi _.gitignore_-tiedosto repositorioosi
-- Seuraavat kohdat puhuvat gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
+- Seuraavat kohdat puhuvat Gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
 - Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
   - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
 - Tee muutos ja lisää tiedosto "staging"-alueelle, varmista että muutosta ei enää näy tiedostossa
@@ -202,7 +202,7 @@ Jos työskennellään useammalta koneelta, on GitHubissa olevasta repositoriosta
 
 Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klooni:
 
-- Mene komentoriville ja esim. kotihakemistoosi (tai johonkin paikkaan, joka ei ole git-repositorio)
+- Mene komentoriville ja esim. kotihakemistoosi (tai johonkin paikkaan, joka ei ole Git-repositorio)
 - Anna komento `git clone git@github.com:githubtunnus/repositorionNimi.git nimiKloonille`
   - _githubtunnus_ ja _repositorionNimi_ selviävät GitHubista repositoriosi tehtävän 2 toisen kuvan osoittamasta paikasta
   - _nimiKloonille_ tulee olemaan kloonatun repositorion nimi, varmista että annat nimen, jonka nimistä tiedostoa tai hakemistoa ei jo ole kansiossa
@@ -225,8 +225,8 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
   - Voit poistaa tehtävää 5 varten tekemäsi harjoituskloonin
 - Poista repositorioistasi kaikki hakemistot sekä muut tiedostot paitsi _.gitignore_ ja _README.md_
 - Committaa muutokset
-  - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
-  - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen gitistä tapahtuu
+  - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että Git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
+  - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen Gitistä tapahtuu
 - Pushaa muutokset GitHubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
@@ -579,7 +579,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Tulet todennäköisesti törmäämään vastaavaan virheeseen usein. Syynä virheelle on se, että yrität pushata muutoksia GitHubiin vaikka GitHub on "edellä" paikallista repositorioasi (ts. sinne lisättiin tiedosto _README.md_).
 
-Ongelma ratkeaa seuraavasti. Tee ensin komento `git pull`. Saat gitiltä pitkän valitusviestin:
+Ongelma ratkeaa seuraavasti. Tee ensin komento `git pull`. Saat Gitiltä pitkän valitusviestin:
 
 ```
 remote: Enumerating objects: 5, done.
@@ -602,13 +602,13 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
-Käytännössä git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
+Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
 
 ```
 git config pull.rebase true 
 ```
 
-Käytännössä valittu vaihtoehto tarkoittaa sitä, että git suorittaa uudet lokaalit commitit etärepositoriossa olevien committien perään.
+Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet lokaalit commitit etärepositoriossa olevien committien perään.
 
 Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento  `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
 
