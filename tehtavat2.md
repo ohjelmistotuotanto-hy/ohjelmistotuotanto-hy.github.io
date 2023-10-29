@@ -5,13 +5,11 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=2 %}
 
-Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan.
+Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -488,7 +486,7 @@ Aloita lukemalla ProGit-kirjasta luku [Remote Branches](http://git-scm.com/book/
 
 Lisätään seuraavaksi branch GitHubiin:
 
-- Luo palautusrepositorion paikalliseen kopioon branch **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
+- Luo palautusrepositorion paikalliseen klooniin branch **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
 - Palaa haaraan **main**
 - Luo toinen branch **haara2**, lisää sinnekin jokin (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
 - Pushaa uudet branchit GitHubiin
@@ -499,7 +497,7 @@ Lisätään seuraavaksi branch GitHubiin:
 Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 
 - Kuten huomaat, eivät branchit tule klooniin
-- Tee paikalliseen kopioon branch joka "träkkää" GitHubissa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
+- Tee paikalliseen klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
 - Lisää "träkkäävään" branchiin jokin tiedosto (hakemistoon viikko2), committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
 
@@ -536,7 +534,7 @@ Mene jälleen **toiseen klooniin**:
 ```
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
-- Tee toiseen lokaaliin kopioon GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
+- Tee toiseen lokaaliin klooniin GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
   - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion, eli vanhentunut koska haaraan on pushattu uutta sisältöä
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
 - Tee branchiin **haara2** muutoksia ja pushaa ne GitHubiin
@@ -581,7 +579,7 @@ Ohjelmistokehitystiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylill
 
 Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
-### 9. Git: epäajantasaisen kopion pushaaminen [versionhallinta]
+### 9. Git: epäajantasaisen kloonin pushaaminen [versionhallinta]
 
 Demonstroidaan vielä (viime viikon [tehtävässä 11](tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
@@ -635,7 +633,7 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onni
 
 ### 10. Pelaajalista
 
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko3/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
+Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _koodi/viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
 
 - Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
@@ -645,7 +643,7 @@ Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://requests.readthedocs.io/en/main/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduleeja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
-Kertaa nopeasti Ohjelmistotekniikka-kurssin [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta), miten Poetrylla asennetaan riippuvuuksia. Asenna sen jälkeen _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+Asenna siis _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 
@@ -654,7 +652,7 @@ import requests
 from player import Player
 
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players"
     response = requests.get(url).json()
 
     print("JSON-muotoinen vastaus:")
@@ -663,10 +661,7 @@ def main():
     players = []
 
     for player_dict in response:
-        player = Player(
-            player_dict['name']
-        )
-
+        player = Player(player_dict)
         players.append(player)
 
     print("Oliot:")
@@ -680,17 +675,21 @@ Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä 
 Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee. Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
 
 ```
-Players from FIN 2021-01-04 19:15:32.858661
+Players from FIN
 
-Sami Vatanen team CAR  goals 5 assists 18
-Janne Kuokkanen team NJD  goals 0 assists 0
-Leo Komarov team NYI  goals 4 assists 10
-Otto Koivula team NYI  goals 0 assists 0
-Kaapo Kakko team NYR  goals 10 assists 13
-Juuso Riikola team PIT  goals 1 assists 6
-Urho Vaakanainen team BOS  goals 0 assists 0
-Tuukka Rask team BOS  goals 0 assists 0
-Rasmus Ristolainen team BUF  goals 6 assists 27
+Erik Haula team NJD  goals 14 assists 27
+Otto Koivula team NYI  goals 0 assists 2
+Robin Salo team NYI  goals 2 assists 2
+Aatu Raty team VAN  goals 2 assists 1
+Niko Mikkola team STL  goals 1 assists 5
+Kaapo Kakko team NYR  goals 18 assists 22
+Rasmus Ristolainen team PHI  goals 3 assists 17
+Mikael Granlund team NSH  goals 10 assists 31
+Kasperi Kapanen team STL  goals 15 assists 19
+Joona Koppanen team BOS  goals 0 assists 1
+Henri Jokiharju team BUF  goals 3 assists 10
+Ukko-Pekka Luukkonen team BUF  goals 0 assists 0
+Joel Armia team MTL  goals 7 assists 7
 ...
 ```
 
@@ -701,25 +700,24 @@ Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaaji
 Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
 
 ```
-Players from FIN 2021-01-04 19:19:40.026464
+Players from FIN
 
-Sebastian Aho        CAR 38 + 28 = 66
-Patrik Laine         WPG 28 + 35 = 63
-Teuvo Teravainen     CAR 15 + 48 = 63
-Aleksander Barkov    FLA 20 + 42 = 62
-Mikko Rantanen       COL 19 + 22 = 41
-Kasperi Kapanen      TOR 13 + 23 = 36
-Miro Heiskanen       DAL  8 + 27 = 35
-Roope Hintz          DAL 19 + 14 = 33
-Joonas Donskoi       COL 16 + 17 = 33
-Rasmus Ristolainen   BUF  6 + 27 = 33
-Mikael Granlund      NSH 17 + 13 = 30
-Joel Armia           MTL 16 + 14 = 30
+Mikko Rantanen       COL  55 + 50 = 105
+Aleksander Barkov    FLA  23 + 55 = 78
+Roope Hintz          DAL  37 + 38 = 75
+Miro Heiskanen       DAL  11 + 62 = 73
+Sebastian Aho        CAR  36 + 31 = 67
+Patrik Laine         CBJ  22 + 30 = 52
+Artturi Lehkonen     COL  21 + 30 = 51
+Matias Maccelli      ARI  11 + 38 = 49
+Jesperi Kotkaniemi   CAR  18 + 25 = 43
+Eetu Luostarinen     FLA  17 + 26 = 43
+Erik Haula           NJD  14 + 27 = 41
 ...
 ```
 
 - Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
-- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa. Mitä `:20` koodissa tekee?
+- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa.
 
 ### 12. Pelaajalistan refaktorointi
 

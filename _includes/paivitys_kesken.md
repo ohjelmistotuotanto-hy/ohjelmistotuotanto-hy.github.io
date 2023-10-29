@@ -2,6 +2,4 @@
 
 Kaikkia ei ole vielä päivitetty, tekeminen omalla vastuulla!
 
-Viikon 2 tehtävistä valmiina 1-9
-
 </div>
