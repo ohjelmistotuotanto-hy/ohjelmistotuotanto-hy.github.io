@@ -106,6 +106,10 @@ Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim.
 
 Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
 
+### Onneglmia Poetryn asennuksessA?
+
+Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
+
 ### Projektin alustaminen
 
 Harjoitellaan Poetryn käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _poetry-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto terminaalissa ja suorita siellä komento:
