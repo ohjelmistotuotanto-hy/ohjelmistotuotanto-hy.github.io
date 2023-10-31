@@ -10,7 +10,7 @@
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
-    - syksy 2023: [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
+    - syksy 2023: [youtube](https://youtu.be/1DDna_ASaTw), [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
     - [syksy 2021](https://youtu.be/Bejr8KO_0fY)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
