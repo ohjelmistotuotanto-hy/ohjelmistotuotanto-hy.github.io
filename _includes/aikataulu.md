@@ -5,7 +5,7 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
-    - [unitube](https://youtu.be/iOb4FiHMYzQ)
+    - [syksy 23](https://youtu.be/iOb4FiHMYzQ)
     - [syksy 21](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
