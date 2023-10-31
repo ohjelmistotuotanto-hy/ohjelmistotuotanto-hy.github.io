@@ -337,7 +337,7 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
   - Edellinenkään ei vielä riitä
-- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla [Coverage-ohje](http://localhost:4000/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus)
+- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla [Coverage-ohje](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus)
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
