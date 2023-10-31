@@ -223,7 +223,7 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 - Mene repositoriosi alkuperäiseen, tehtävässä 2 tekemääsi klooniin
   - Voit poistaa tehtävää 5 varten tekemäsi harjoituskloonin
-- Poista repositorioistasi kaikki hakemistot sekä muut tiedostot paitsi _.gitignore_ ja _README.md_
+- Poista repositorioistasi kaikki hakemistot sekä muut tiedostot paitsi _.git_, _.gitignore_ ja _README.md_
 - Committaa muutokset
   - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että Git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
   - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen Gitistä tapahtuu
