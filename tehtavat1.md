@@ -243,7 +243,7 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/lh1-gh-korjattu.png" | absolute_url }})
+![]({{ "/images/py-lh1-5.png" | absolute_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
