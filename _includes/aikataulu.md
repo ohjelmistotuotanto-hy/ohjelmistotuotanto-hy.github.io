@@ -5,11 +5,12 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
-    - [syksy 23](https://youtu.be/iOb4FiHMYzQ)
+    - syksy 23: [youtube](https://youtu.be/iOb4FiHMYzQ), [unitube](https://www.helsinki.fi/fi/unitube/video/09dad5ca-ca5d-4dad-b394-0becd95a0bfb)
     - [syksy 21](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
+    - syksy 2023: [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
     - [syksy 2021](https://youtu.be/Bejr8KO_0fY)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
