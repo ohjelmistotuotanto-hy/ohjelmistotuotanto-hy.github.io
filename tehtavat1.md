@@ -796,7 +796,7 @@ Kun injektoit `PlayerReaderStub`-olion testissä `StatisticsService`-oliolle, pa
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
 
-Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperustella" metodi palauttaa pelaajat.
+Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperusteella" metodi palauttaa pelaajat.
 
 Metodin toiminnallisuus selviää seuraavasta:
 
