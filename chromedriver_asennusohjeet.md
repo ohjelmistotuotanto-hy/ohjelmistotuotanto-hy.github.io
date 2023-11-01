@@ -11,13 +11,17 @@ permalink: /chromedriver_asennusohjeet/
 
 ## ChromeDriver-asennusohjeet
 
-Jos tietokoneellesi ei ole asennettu Chrome- tai Chromium-selainta, aloita asentamalla sen viimeisin versio [täältä](https://www.google.com/chrome/). ChromeDriverin käyttöön soveltuu myös [Chromium](https://www.chromium.org/chromium-projects/), joka on avoimen lähdekoodin selain, johon Google Chrome pohjautuu. Lataa sen jälkeen käyttöjärjestelmällesi ja Chrome-versiollesi sopiva _chromedriver_-binääri [täältä](https://chromedriver.chromium.org/downloads). Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
+Jos tietokoneellesi ei ole asennettu Chrome- tai Chromium-selainta, aloita asentamalla sen viimeisin versio [täältä](https://www.google.com/chrome/). ChromeDriverin käyttöön soveltuu myös [Chromium](https://www.chromium.org/chromium-projects/), joka on avoimen lähdekoodin selain, johon Google Chrome pohjautuu. Lataa sen jälkeen käyttöjärjestelmällesi ja Chrome-versiollesi sopiva _chromedriver_-binääri [täältä](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json). Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
 
-_Huom:_ valitse Chrome driverista versio joka on yhteensopiva käyttämäsi Chromen version mukaan!
+_Huom:_ valitse ChromeDriverista versio joka on yhteensopiva käyttämäsi Chromen version mukaan!
+
+Linkin takana oleva lista on hieman kryptinen. Esim. omassa tapauksessani Chromen versio on _Version 118.0.5993.117 (Official Build) (arm64)_, joten oikea latauslinkki on
+
+![]({{ "/images/lh3-chromedriver2.png" | absolute_url }}){:height="400px" }
 
 ### macOS ja Linux
 
-Jotta `chromedriver`-komento toimisi tulee _chromedriver_-binääri siirtää hakemistoon, jonka polku on käyttöjärjestelmän `PATH`-ympäristömuuttujassa. Helpoin tapa on siirtää binääri _/usr/local/bin_-hakemistoon. Tämä onnistuu siirtymällä komentorivillä hakemistoon, johon _chromedriver_-binääri on ladattu ja suorittamalla komento `mv chromedriver /usr/local/bin/`. Anna tämän jälkeen binäärille suoritusoikeudet komennolla `chmod +x /usr/local/bin/chromedriver`.
+Jotta `chromedriver`-komento toimisi tulee _ChromeDriver_-binääri siirtää hakemistoon, jonka polku on käyttöjärjestelmän `PATH`-ympäristömuuttujassa. Helpoin tapa on siirtää binääri _/usr/local/bin_-hakemistoon. Tämä onnistuu siirtymällä komentorivillä hakemistoon, johon _chromedriver_-binääri on ladattu ja suorittamalla komento `mv chromedriver /usr/local/bin/`. Anna tämän jälkeen binäärille suoritusoikeudet komennolla `chmod +x /usr/local/bin/chromedriver`.
 
 **HUOM:** Jos binäärin siirtämiselle _/usr/local/bin_-hakemistoon ei ole oikeuksia, siirry kotihakemistoosi komennolla `cd` ja luo sinne hakemisto _bin_ (jos sitä ei ole vielä olemassa) komennolla `mkdir bin`. Siirry nyt hakemistoon, johon _chromedriver_-binääri on ladattu ja siirrä se luotuun hakemistoon komennolla `mv chromedriver $HOME/bin/`. Anna tämän jälkeen binäärille suoritusoikeudet komennolla `chmod +x $HOME/bin/chromedriver`. Lisää lopuksi _\$HOME/bin_-hakemisto `PATH`-ympäristömuuttujaan komennolla `touch $HOME/.bashrc && echo "export PATH=\"\$HOME/bin:\$PATH\"" >> $HOME/.bashrc`. 
 
@@ -29,7 +33,7 @@ Käynnistä terminaali uudestaan ja varmista asennuksen onnistuminen suorittamal
 chromedriver --version
 ```
 
-**HUOM:** Mac-käyttäjänä saatat törmätä tilanteeseen, jossa chromedriverin käynnistys epäonnistuu koska kone ei tiedä että chromedriver on luotettavan tahon tekemä ohjelma. Ongelma korjautuu [tämän ohjeen](https://timonweb.com/misc/fixing-error-chromedriver-cannot-be-opened-because-the-developer-cannot-be-verified-unable-to-launch-the-chrome-browser-on-mac-os/) avulla.
+**HUOM:** Mac-käyttäjänä saatat törmätä tilanteeseen, jossa ChromeDriverin käynnistys epäonnistuu koska kone ei tiedä että ChromeDriver on luotettavan tahon tekemä ohjelma. Ongelma korjautuu [tämän ohjeen](https://timonweb.com/misc/fixing-error-chromedriver-cannot-be-opened-because-the-developer-cannot-be-verified-unable-to-launch-the-chrome-browser-on-mac-os/) avulla.
 
 #### ArchLinux
 
@@ -46,3 +50,31 @@ Käynnistä siis tarvittaessa koko järjestelmä tai pelkkä terminaali (PowerSh
 ```bash
 chromedriver --version
 ```
+
+### Mahdollisia ongelmia
+
+**Windows 10 / WSL2 -käyttäjänä** saatat törmätä seuraavaan virheilmoitukseen:
+
+```
+Suite setup failed:
+WebDriverException: Message: unknown error: Chrome failed to start: crashed.
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+```
+
+[Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
+
+Yksi lisävaihtoehto WSL käyttäjille on ajaa Web-sovelluksemme serveriä poetryssa WSL:n puolella, ja ajaa selenium/robot-testit poetryssa Windowsin PowerShellin puolella: 
+
+  - Asenna Python Windowsille jos se ei ole jo asennettu
+  - Asenna Poetry Windowsille suorittamalla PowerShellissä
+  
+  ```
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+  ```
+  
+  - Lisää asennuksen päätteksi kerrottu polku esim.`C:\Users\<user>\AppData\Roaming\Python\Scripts` järjestelmän PATH-muuttujaan äskeisessä [ChromeDriver-ohjeessa](../chromedriver_asennusohjeet) kerrotulla tavalla
+  - Kloonaa projekti Windowsin tiedostojärjestelmän puolelle (löytyy WSL-järjestelmästä /mnt hakemiston alta aivan tiedostojärjestelmän juuresta) esim. työpöydälle `/mnt/c/Users/<user>/Desktop`
+  - Asenna riippuvuudet tavallisesti Poetryssa suorittamalla `poetry install` juuri kloonatun web-login-hakemiston juuressa
+  - Asenna ChromeDriver windowsille äskeisen [ohjeen](../chromedriver_asennusohjeet) mukaan
+  - Aja Selenium/Robot testit web-login-hakemiston juuresta komennolla `poetry run robot .\src\tests\`

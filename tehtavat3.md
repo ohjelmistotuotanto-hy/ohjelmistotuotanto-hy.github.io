@@ -220,28 +220,19 @@ Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_tra
 
 ### 4. WebLogin
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login-robot_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
+Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
 
 Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5000>
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
-**HUOM:** macOS Monterey käyttöjärjestelmällä Chrome saattaa antaa [virheilmoituksen 403](https://stackoverflow.com/questions/72795799/how-to-solve-403-error-with-flask-in-python). Tällöin muokkaa tiedoston `index.py` sisältö seuraavanlaiseksi
-```python
-from app import app
+![]({{ "/images/lh3-web1.png" | absolute_url }}){:height="200px" }
 
-if __name__ == "__main__":
-    app.run(port=8000, debug=True)
-```
-Tämän lisäksi muuta tiedostossa `tests/resource.robot` muuttujan `${SERVER}` arvoksi `localhost:8000`.
+Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
-![]({{ "/images/py-lh3-2.png" | absolute_url }}){:height="200px" }
+Sovelluksen rakenne on suunnilleen sama kuin tehtävien 2 ja 3 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemien HTTP-pyynntöjä käsittelevän koodin. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
 
-Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5000.
-
-Sovelluksen rakenne on suunnilleen sama kuin tehtävien 4-5 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemät HTTP-pyynnöt. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
-
-Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5000> tulevat pyynnöt käsittelee mainista seuraava koodinpätkä:
+Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5001> tulevat pyynnöt käsittelee  seuraava koodinpätkä:
 
 ```python
 @app.route("/")
@@ -292,11 +283,11 @@ password = request.form.get("password")
 
 Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `UserService`-luokan metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi nostaa virheen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
 
-Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen. Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
+**Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.** Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
 ### 5. Web-sovelluksen testaaminen osa 1
 
-Jatketaan saman sovelluksen parissa.
+Jatketaan siis saman sovelluksen parissa.
 
 **Käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä.
 
@@ -304,9 +295,23 @@ Jatketaan saman sovelluksen parissa.
 
 Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria. Ennen kuin siirrymme testien pariin, asenna ChromeDriver seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta.
 
-Kun Chrome-ajuri on asennettu onnistuneesti, **avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Huomaa, että web-sovelluksen tulee olla käynnissä toisessa terminaali-ikkunassa. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
+Kun ChromeDriver on asennettu onnistuneesti, **avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`. Huomaa, että web-sovelluksen tulee olla käynnissä toisessa terminaali-ikkunassa. Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `Login With Correct Credentials` ja `Login With Incorrect Password`. Testitapausten suoritusta voi seurata aukeavasta Chrome-selaimen ikkunasta.
 
-**HUOM:** Windows 10 / WSL2 -käyttäjänä saatat törmätä seuraavaan virheilmoitukseen:
+#### Ongelmia?
+
+Seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
+
+```
+[ ERROR ] Error in file '/.../viikko3/web-login-robot/src/tests/resource.robot'
+on line 3: Initializing library 'AppLibrary' with no arguments failed:
+ConnectionError: HTTPConnectionPool(host='localhost', port=5001):
+Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f459e7c4280>:
+Failed to establish a new connection: [Errno 111] Connection refused'))
+```
+
+Testit siis olettavat, että sovellus on käynnissä. Käynnistä siis sovellus yhteen terminaaliin, avaa uusi ja suorita testit siellä.
+
+**Windows 10 / WSL2 -käyttäjänä** saatat törmätä seuraavaan virheilmoitukseen:
 
 ```
 Suite setup failed:
@@ -315,34 +320,9 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
   (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
 ```
 
-[Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
+[Tämä ohje](/chromedriver_asennusohjeet/#mahdollisia-ongelmia) saattaa auttaa.
 
-Yksi lisävaihtoehto WSL käyttäjille on ajaa Web-sovelluksemme serveriä poetryssa WSL:n puolella, ja ajaa selenium/robot-testit poetryssa Windowsin PowerShellin puolella: 
-
-  - Asenna Python windowsille jos se ei ole jo asennettu
-  - Asenna poetry windowsille ajamalla PowerShellissä
-  
-  ```
-  (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
-  ```
-  
-  - Lisää asennuksen päätteksi kerrottu polku esim.`C:\Users\<user>\AppData\Roaming\Python\Scripts` järjestelmän PATH-muuttujaan äskeisessä [ChromeDriver-ohjeessa](../chromedriver_asennusohjeet) kerrotulla tavalla
-  - Kloonaa projekti windowsin tiedostojärjestelmän puolelle (löytyy WSL-järjestelmästä /mnt hakemiston alta aivan tiedostojärjestelmän juuresta) esim. työpöydälle `/mnt/c/Users/<user>/Desktop`
-  - Asenna riippuvuudet tavallisesti poetryssa ajamalla `poetry install` juuri kloonatun web-login-robot-hakemiston juuressa
-  - Asenna ChromeDriver windowsille äskeisen [ohjeen](../chromedriver_asennusohjeet) mukaan
-  - Aja Selenium/Robot testit web-login-robot-hakemiston juuresta komennolla `poetry run robot .\src\tests\`
-
-**HUOM2:** seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
-
-```
-[ ERROR ] Error in file '/.../viikko3/web-login-robot/src/tests/resource.robot'
-on line 3: Initializing library 'AppLibrary' with no arguments failed:
-ConnectionError: HTTPConnectionPool(host='localhost', port=5000):
-Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f459e7c4280>:
-Failed to establish a new connection: [Errno 111] Connection refused'))
-```
-
-Testit siis olettavat, että sovellus on käynnissä. Käynnistä siis sovellus yhteen terminaaliin, avaa uusi ja suorita testit siellä.
+#### Tutustuminen testeihin
 
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
 
@@ -352,17 +332,18 @@ Library  SeleniumLibrary
 Library  ../AppLibrary.py
 
 *** Variables ***
-${SERVER}  localhost:5000
-${BROWSER}  chrome
+${SERVER}  localhost:5001
 ${DELAY}  0.5 seconds
-${HOME URL}  http://${SERVER}
-${LOGIN URL}  http://${SERVER}/login
-${REGISTER URL}  http://${SERVER}/register
+${HOME_URL}  http://${SERVER}
+${LOGIN_URL}  http://${SERVER}/login
+${REGISTER_URL}  http://${SERVER}/register
 
 *** Keywords ***
 Open And Configure Browser
-    Open Browser  browser=${BROWSER}
-    Maximize Browser Window
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    # seuraava rivi on kommentoitu pois tässä vaiheessa
+    # Call Method  ${options}  add_argument  --headless
+    Open Browser  browser=chrome  options=${options}
     Set Selenium Speed  ${DELAY}
 
 Login Page Should Be Open
@@ -372,18 +353,21 @@ Main Page Should Be Open
     Title Should Be  Ohtu Application main page
 
 Go To Login Page
-    Go To  ${LOGIN URL}
+    Go To  ${LOGIN_URL}
 ```
 
 `*** Settings ***` osiossa on käytössä projektin oma `AppLibrary.py`-kirjasto sekä edellä mainittu SeleniumLibrary-kirjasto. SeleniumLibrary-kirjasto tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
 
-Tiedostossa on myös ennestään tuntematon `*** Variables ***`-osio. Kuten osion nimi kertoo, voimme määritellä osion sisällä muuttujia, jotka ovat kaikkien avainsanojen käytössä. Huomaa, että osion alla määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
+Tiedostossa on myös ennestään tuntematon osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
 
 `*** Keywords ***`-osiossa on määritelty yleiskäyttöisiä avainsanoja:
 
-- `Open And Configure Browser` -avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi `BROWSER`-muuttujan arvon, joka on `chrome`. Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. [Maximize Browser Window](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Maximize%20Browser%20Window) toimii kuten olettaa saattaa, itse poistin komennon sillä en tykkää että Robotin avaama selainikkuna peittää koko ruudun. Ikkunan koon voi asettaa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size)
-- `Login Page Should Be Open` - ja `Main Page Should Be Open` -avainsanojen tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
-- `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN URL`-muuttujaan
+- `Open And Configure Browser` -avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetty selain eli _Chrome_, jolle annetaan myös toimintaa määrittelevä _options_ parametri, joka ei itseasiassa aluksi tee mitään.
+
+Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista.  Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
+
+Avainsanojen `Login Page Should Be Open` - ja `Main Page Should Be Open` tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
+- `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
 
 Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto _src/tests/login.robot_. Tiedoston `*** Settings ***`-osio on seuraava:
 
@@ -397,22 +381,22 @@ Test Setup  Create User And Go To Login Page
 
 Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- ja `Test Setup`-asetukset. Niiden merkitykset ovat seuraavat:
 
-- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta (`Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta)
-- `Suite Teardown`-asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen (`Test Teardown` sen sijaan suoritetaan _jokaisen_ testitapauksen jälkeen)
+- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta. `Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta
+- `Suite Teardown`-asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen. On myös olemassa asetus `Test Teardown` joka suoritetaan _jokaisen_ testitapauksen jälkeen.
 
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 - `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
-- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain)-avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
+- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
 - `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) -avainsanaa
-- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text)- ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password)-avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
+- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
 - `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumissivun
 
 Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi <code>Click Button &nbsp;foo</code> löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
 
 ```html
-<button id="foo">Click</button>
-<button name="foo">Click</button>
+<button id="foo">Nappi</button>
+<button name="foo">Nappi</button>
 <button>foo</button>
 ```
 
@@ -449,7 +433,7 @@ Click Register Link
 
 Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link) -avainsanaa.
 
-Toteuta testin käyttämät avainsanat tiedostoon `resource.robot`. Kun suoritat testit, virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
+**Toteuta testin käyttämät avainsanat** tiedostoon `resource.robot`. Kun suoritat testit, virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
 
 ```
 Click Register Link                                                   | FAIL |
@@ -467,7 +451,7 @@ import requests
 
 class AppLibrary:
     def __init__(self):
-        self._base_url = "http://localhost:5000"
+        self._base_url = "http://localhost:5001"
 
         self.reset_application()
 
@@ -523,9 +507,22 @@ Login With Nonexistent Username
 
 ### 7. Web-sovelluksen testaaminen osa 3
 
-Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen. Suorita testit Headless Chromen avulla asettamalla `BROWSER`-muuttujan arvoksi `headlesschrome`.
+Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen.
 
-**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit muuttaa debuggaamista varten `DELAY`- ja `BROWSER`-muuttujien arvoja.
+Headless Chrome saadaan käyttöön poistamalla avainsanan _Open And Configure Browser_ määrittelystä rivin _Call Method_ -rivin alussa oleva kommenttimerkki pois, eli muuttamalla määrittely seuraavaan muotoon:
+
+```
+*** Keywords ***
+Open And Configure Browser
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    Call Method  ${options}  add_argument  --headless
+    Open Browser  browser=chrome  options=${options}
+    Set Selenium Speed  ${DELAY}
+```
+
+**Tee muutokset ja suosita testit.**
+
+**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit palata debuggauksen ajaksi "normaaliin" Chromeen (kommentoimalla Call Method -rivin), ja muuttamalla `DELAY`-muuttujan arvoa.
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset _register.robot_-tiedostoon:
 
@@ -543,7 +540,7 @@ Register With Nonmatching Password And Password Confirmation
 # ...
 ```
 
-**HUOM** tee yksi testitapaus kerrallaan. Testitapausta koodatessa kannattaa suorittaa ainoastaan työn alla olevaa testitapausta [täällä](/tehtavat3/#robot-framework--testien-debuggaaminen) olevan ohjeen mukaan, ja kannattanee asettaa `headlesschrome`:n sijaan `chrome` muuttujan `BROWSER` arvoksi jotta näet miten testitapaus etenee.
+**HUOM** tee yksi testitapaus kerrallaan. Testitapausta koodatessa kannattaa suorittaa ainoastaan työn alla olevaa testitapausta [täällä](/tehtavat3/#robot-framework--testien-debuggaaminen) olevan ohjeen mukaan, ja kannattanee käyttää aluksi normaalia Chromea headlessin sijaan jotta näet miten testitapaus etenee.
 
 Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 5_, eli:
 
@@ -591,7 +588,7 @@ Jotta sovelluksen testit pystyisi suorittamaan CI-palvelimella, tulee nämä vai
 poetry run python3 src/index.py &
 
 # odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]];
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5001/ping)" != "200" ]];
   do sleep 1;
 done
 
@@ -600,8 +597,8 @@ poetry run robot src/e2e
 
 status=$?
 
-# pysäytetään Flask-palvelin portissa 5000
-kill $(lsof -t -i:5000)
+# pysäytetään Flask-palvelin portissa 5001
+kill $(lsof -t -i:5001)
 
 exit $status
 ```
