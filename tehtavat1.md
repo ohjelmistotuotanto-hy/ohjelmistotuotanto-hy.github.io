@@ -747,7 +747,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ```python
 stats = StatisticsService(
-  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
+  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt")
 )
 ```
 
