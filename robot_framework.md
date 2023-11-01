@@ -37,7 +37,9 @@ Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hake
 
 Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
 
-Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti.
+Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia, avautuu mukava testien suorituksen statusta kuvaava näkymä:
+
+![]({{ "/images/lh3-robot.png" | absolute_url }})
 
 ### Vaatimuksien ilmaiseminen
 
@@ -58,9 +60,11 @@ Increase Counter Once
     Counter Value Should Be  1
 ```
 
-Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode) -lisäosa:
+Testitapaus koostuu nyt kolmesta avainsanasta. Ensin tarkistetaan että laskurin arvo on aluksi nolla, tämän jälkeen kasvatetaan laskuria ja lopuksi vielä varmistetaan että laskurin arvo on yksi.
 
-![]({{ "/images/py-robot-1.png" | absolute_url }})
+Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa sopiva lisäosa, esim. [Robot Framework Language Server](https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp) tai [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode):
+
+![]({{ "/images/lh3-robot2.png" | absolute_url }})
 
 ### Testien suorituskelpoiseksi tekeminen
 
@@ -126,7 +130,7 @@ Increase Counter Once
     Counter Value Should Be  1
 ```
 
-Huomaa, että kirjaston polku on relatiivinen tiedostoon nähden.
+Huomaa, että kirjaston polku on suhteellinen tiedostoon nähden.
 
 Tiedostoon voi tuoda myös useamman kirjaston lisäämällä monta `Library`-riviä:
 
