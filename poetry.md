@@ -106,7 +106,7 @@ Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim.
 
 Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
 
-### Onneglmia Poetryn asennuksessA?
+### Ongelmia Poetryn asennuksessa?
 
 Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
 
