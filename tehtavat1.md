@@ -633,7 +633,7 @@ Samme muodostettua Codecovin ymm채rt채m채n testikattavuusraportin k채ytt채m채ll�
 - name: Coverage report
   run: poetry run coverage xml
 - name: Coverage report to Codecov
-  run: bash <(curl -s https://codecov.io/bash)
+  run: bash <(curl -s https://codecov.io/bash) -Z
 ```
 
 **HUOM1** rivit on sisennett채v채 samalle tasolle kuin muut stepit.
