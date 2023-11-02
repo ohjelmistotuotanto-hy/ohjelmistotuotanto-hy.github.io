@@ -801,6 +801,9 @@ Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa 
 Metodin toiminnallisuus selviää seuraavasta:
 
 ```python
+from statistics_service import StatisticsService, SortBy
+from player_reader import PlayerReader
+
 def main():
     stats = StatisticsService(
       PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
