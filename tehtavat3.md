@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=3 %}
@@ -533,7 +531,8 @@ Register With Valid Username And Password
 Register With Too Short Username And Valid Password
 # ...
 
-Register With Valid Username And Too Short Password
+Register With Valid Username And Invalid Password
+# salasana ei sisällä halutunlaisia merkkejä
 # ...
 
 Register With Nonmatching Password And Password Confirmation
@@ -553,7 +552,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 
 ### 8. Web-sovelluksen testaaminen osa 4
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset _register.robot_-tiedostoon:
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon _register.robot_:
 
 ```
 Login After Successful Registration

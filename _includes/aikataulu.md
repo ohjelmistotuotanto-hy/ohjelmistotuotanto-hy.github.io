@@ -97,8 +97,8 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 13: {{site.luennot[12]}} Vierailuluento Hannu Kokko Elisa
-  - Luento 14: {{site.luennot[13]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
+  - Luento 13: {{site.luennot[13]}} Vierailuluento Hannu Kokko Elisa
+  - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - Miniprojekti
