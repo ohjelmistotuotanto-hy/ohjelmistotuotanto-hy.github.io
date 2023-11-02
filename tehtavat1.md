@@ -842,6 +842,29 @@ class SortBy(Enum):
 
 Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
 
+#### Miksi Enum?
+
+Miksi tehtävässä 17 halutaan että järjestämisen periaate ilmaistaan enumien avulla? Eikö ihan yhtä hyvin voitaisi ilmaista vaikkapa numeron avulla mikä haluttu järjestys on, eli kirjoittaa koodi seuraavasti:
+
+```python
+def main():
+    stats = StatisticsService(
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
+    )
+
+
+    # järjestetään pisteiden perusteella, parametrina oleva 1 määrää järjestyksen
+    for player in stats.top(10, 1):
+        print(player)
+
+    # järjestetään syöttöjen perusteella, parametrina oleva 3 määrää järjestyksen
+    print("Top by assists:")
+    for player in stats.top(10, 3):
+        print(player)
+```
+
+Periaatteessa tämä kyllä toimisi. Tälläistä tapaa kutsutaan [taikanumeroiden](https://stackoverflow.com/questions/47882/what-are-magic-numbers-and-why-do-some-consider-them-bad) käytöksi. Tapaa pidetään ohjelmoijien keskuudessa erittäin paheksuttavana. Alun perin koodin kirjoittanut muistaa ehkä hetken mitä taikanumerot ilmaisevat. Kun aikaa kuluu ja koodarit vaihtuvat alkaa asia kuitenkin hämärtymään ja on omiaan aiheuttamaan ikäviä bugeja. Tämän takia taikanumeroita tulee välttää, ja käyttää niiden sijaan esim. enumeita tai vaikkapa vakioita (eli muuttujia joiden arvoa ei muuteta).
+
 ### Tehtävien palautus
 
 Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
