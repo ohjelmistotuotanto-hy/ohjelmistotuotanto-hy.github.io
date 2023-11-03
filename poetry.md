@@ -151,6 +151,8 @@ Komennon suorittamisen jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.
 
 ### Riippuvuuksien asentaminen
 
+{% include no_pip.md %}
+
 Asennetaan seuraavaksi projektiimme ensimmäisen riippuvuus. Riippuvuuksien löytäminen onnistuu helpoiten Googlettamalla ja etsimällä hakutuloksista sopivia GitHub-repositorioita, tai PyPI-sivuja. Asennetaan esimerkkinä projektiimme [cowsay](https://pypi.org/project/cowsay/)-kirjasto. Tämä onnistu projektin juurihakemistossa (samassa hakemistossa, missä _pyproject.toml_-tiedosto sijaitsee) komennolla:
 
 ```bash

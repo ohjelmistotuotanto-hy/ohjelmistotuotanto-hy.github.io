@@ -280,6 +280,8 @@ Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi risti
 
 Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. 
 
+{% include no_pip.md %}
+
 Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](https://ohjelmistotuotanto-hy.github.io/poetry). Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää.
 
 **Tee nyt seuraavat toimenpiteet**.
@@ -321,8 +323,6 @@ Polku tulee Macilla muuttaa (todennäköisesti) muotoon
 ```
 
 Oikea polku kannattaa varmistaa komennolla `which python3`.
-
-{% include no_pip.md %}
 
 ### 8. Unittest
 
