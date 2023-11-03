@@ -103,8 +103,8 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - tdb1
-    - tdb2
+    - tiistaina 12.12. klo 14-16 B123
+    - torstaina 14.12. klo 12-14 B123
 
 ### Viikko 8
 
