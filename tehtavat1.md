@@ -875,7 +875,11 @@ Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 
 ![]({{ "/images/lh1-31-22.png" | absolute_url }})
 
-Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>.
+Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>, välilehdelle _my submissions_.
 
 - Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
 - Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
+
+Palautuslomakkeen löydät painamalla sinistä nappia
+
+![]({{ "/images/lh1-palautus.png" | absolute_url }})
