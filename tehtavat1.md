@@ -511,7 +511,7 @@ Viides askel on kaikkein tärkein, se suorittaa poetryn avulla projektin testit 
   run: poetry run coverage run --branch -m pytest
 ```
 
-Tee nyt koodiin muutos, joka hajottaa testit ja committaa muutos GitHubiin.
+Tee nyt koodiin muutos, joka hajottaa testit ja committaa ja pushaa muutos GitHubiin.
 
 Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi, ja että viimeisin on tilaltaan "punainen":
 
