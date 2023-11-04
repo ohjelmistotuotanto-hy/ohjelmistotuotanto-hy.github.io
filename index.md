@@ -21,6 +21,10 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/72482660/feedback>
 
+## Ajankohtaista
+
+{% include ajankohtaista.md path="/index.md" %}
+
 ## Aikataulu
 
 {% include aikataulu.md path="/index.md" %}

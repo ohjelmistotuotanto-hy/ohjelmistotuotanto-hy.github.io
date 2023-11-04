@@ -840,6 +840,8 @@ class SortBy(Enum):
     ASSISTS = 3
 ```
 
+Määrittele Enum tiedostossa statistics_service.py esim. ennen luokan StatisticsService määrittelyä.
+
 Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
 
 #### Miksi Enum?
