@@ -58,6 +58,8 @@ _Kurssin läpäisyn edellytyksenä_ on hyväksytysti suoritettu tai hyväksiluet
 
 Miniprojektit tapaavat asiakasta kampuksella.
 
+Miniprojektista lisää [täällä](/miniprojekti).
+
 #### Miniprojektin hyväksilukeminen
 
 Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
