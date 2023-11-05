@@ -17,7 +17,8 @@ permalink: /miniprojekti/
 - Loppudemot
   - ti 12.12 klo 14-16
   - to 14.12 klo 12-14
-- Ilmoittautuminen miniprojektiin alkaa tiistaina 7.11. ja päättyy lauantaina 11.11.
+- **Ilmoittautuminen miniprojektiin käynnissä ja päättyy lauantaina 11.11. klo 23.59**
+- Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/4f142151-b6e2-4120-b677-d1ae259ef6a8)
 
 ### Johdanto
 

@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    Miniprojekti käynnistyy 13.11. alkavalla viikolla, lue lisää <a href="/miniprojekti">täältä</a>
+    Miniprojekti käynnistyy 13.11. alkavalla viikolla. Ilmoittautumisen deadline lauantaina 11.11. klo 23.59. <br><br>Lue lisää <a href="/miniprojekti">täältä</a>.
   </li>
 </ul>
 
