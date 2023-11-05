@@ -724,7 +724,7 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
   - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
   - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
 
-Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`. Jos unohtui miten virtuaaliympäristön sisälle päästään, kertaa asia tehtävästä 7...
+Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa (eli hakemistossa missä tiedosto _pyproject.toml_ sijaitsee) komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`. Jos unohtui miten virtuaaliympäristön sisälle päästään, kertaa asia tehtävästä 7...
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
