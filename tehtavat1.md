@@ -418,7 +418,7 @@ jobs:
         run: poetry run coverage run --branch -m pytest
 ```
 
-Paina vihreää _Start commit_ -nappia, ja anna sopiva commit-viesti.
+Paina vihreää _Commit changes_ -nappia, ja anna sopiva commit-viesti.
 
 Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repositorioosi hakemiston _.github/workflows_ alle:
 
