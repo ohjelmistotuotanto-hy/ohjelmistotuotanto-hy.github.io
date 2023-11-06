@@ -345,6 +345,7 @@ ${REGISTER_URL}  http://${SERVER}/register
 *** Keywords ***
 Open And Configure Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    Call Method    ${options}    add_argument    --no-sandbox
     # seuraava rivi on kommentoitu pois tässä vaiheessa
     # Call Method  ${options}  add_argument  --headless
     Open Browser  browser=chrome  options=${options}
@@ -519,6 +520,7 @@ Headless Chrome saadaan käyttöön poistamalla avainsanan _Open And Configure B
 *** Keywords ***
 Open And Configure Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    Call Method    ${options}    add_argument    --no-sandbox
     Call Method  ${options}  add_argument  --headless
     Open Browser  browser=chrome  options=${options}
     Set Selenium Speed  ${DELAY}
