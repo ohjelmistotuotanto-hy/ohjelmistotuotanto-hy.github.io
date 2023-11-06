@@ -27,6 +27,10 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+### VS Coden konfigurointi
+
+Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](http://localhost:4000/tehtavat2/#bonus-vs-coden-konfigurointi)!
+
 ### 1. Tutustuminen Robot Frameworkkiin
 
 Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
