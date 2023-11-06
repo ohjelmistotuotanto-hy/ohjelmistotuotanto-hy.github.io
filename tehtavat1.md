@@ -700,9 +700,8 @@ viikko1
 viikko2
   poetry-web
   project-reader
-  verkkokauppa-1
-viikko3
   nhl-reader
+viikko3
   login-robot
   web-login-robot
 ...
