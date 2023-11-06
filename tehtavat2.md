@@ -635,7 +635,7 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onni
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
 
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko2_ sisälle.
 
 Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
 
