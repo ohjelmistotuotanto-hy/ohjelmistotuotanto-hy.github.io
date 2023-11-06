@@ -15,7 +15,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2021 zoom-luentojen tallenteet ovat myös käytössä
 - Yleisön pyynnöstä [linkki luentokalvoihin](https://github.com/ohjelmistotuotanto-hy/slides-23)
 - Apua tehtävien tekoon
-  - pajassa BK107 ma 14-16 ja pe 12-14 
+  - pajassa BK107 ma 10-12, ma 14-16 ja pe 12-14 
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
