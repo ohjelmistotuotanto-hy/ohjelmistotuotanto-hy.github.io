@@ -367,7 +367,7 @@ Jatketaan edellisen tehtävän koodin testaamista
 
 Tarkasta viikoilla 1 ja 2 käytetyn coveragen avulla mikä on luokan `Kauppa` testauskattavuus.
 
-Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin!
+Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin! Jos bugeja ilmenee, korjaa ne.
 
 ### Mock-olioiden käytöstä
 
