@@ -28,10 +28,14 @@
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/VmURlloAvt4), [unitube](https://www.helsinki.fi/fi/unitube/video/0d5b1a96-f4b3-4ff3-bc7c-f2ffa560caf8)  
     - [syksy 2021](https://youtu.be/_V6jCiKuH-0)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline {{site.lask-dl[2]}}
+
+
+
 
 ### Viikko 3
 

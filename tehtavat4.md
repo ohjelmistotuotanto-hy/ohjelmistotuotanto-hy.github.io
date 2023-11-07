@@ -11,7 +11,7 @@ permalink: /tehtavat4/
 
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan TDD-tekniikkaan. Tehtävässä 6 tutustutaan retrospektiivitekniikoihin ja tehtävä 7 johdattaa Gitin tägien maailmaan.
+Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan retrospektiivitekniikoihin ja tehtävä 6 johdattaa Gitin tägien maailmaan.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -29,13 +29,44 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+### VS Coden konfigurointi
+
+Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](http://localhost:4000/tehtavat2/#bonus-vs-coden-konfigurointi)!
+
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
-Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) laskarien verkkokaupan luokka `Kauppa` riippui `Pankki`-, `Varasto`- ja `Viitegeneraattori`-luokista. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
+Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) laskarien NHL-tilastot-tehtävässä luokka `StatisticsService` riippuu luokasta `PlayerReader`. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
 
-Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `Kauppa` tulisi testata? Tuleeko kaupan testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
+Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `StatisticsService` tulisi testata? Tuleeko testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
 
-Olemme jo muutamaan otteeseen (esim. NHL-tilastot-tehtävässä [viikolla 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot)) ratkaisseet asian ohjelmoimalla riippuvuuden korvaavan "tynkäkomponentin". Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
+NHL-tilastot-tehtävässä ongelma ratkaistiin ohjelmoimalla riippuvuuden korvaava "tynkäkomponentti" `PlayerReaderStub`:
+
+```python
+import unittest
+from statistics_service import StatisticsService
+from player import Player
+
+class PlayerReaderStub:
+    def get_players(self):
+        return [
+            Player("Semenko", "EDM", 4, 12),
+            Player("Lemieux", "PIT", 45, 54),
+            Player("Kurri",   "EDM", 37, 53),
+            Player("Yzerman", "DET", 42, 56),
+            Player("Gretzky", "EDM", 35, 89)
+        ]
+
+class TestStatisticsService(unittest.TestCase):
+    def setUp(self):
+        # annetaan StatisticsService-luokan oliolle "stub"-luokan olio
+        self.stats = StatisticsService(
+            PlayerReaderStub()
+        )
+
+    # ...
+```
+
+Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjastoja tynkäkomponenttien, toiselta nimeltään _mock-olioiden_ luomiseen.
 
 Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien avulla voi myös varmistaa, että testattava metodi tai funktio kutsuu olioiden metodeja asiaankuuluvalla tavalla.
 
@@ -97,9 +128,11 @@ Voimme siis kutsua tarkasteltavalle metodille [assert_called](https://docs.pytho
 
 Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
 
-**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.** Kyseessä on yksinkertaistettu versio verkkokauppaesimerkistä.
+**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.**
 - Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa 
 - Voit halutessasi kopioida projetin palatusrepositorioosi, hakemiston viikko4 sisälle.
+
+Projekti on yksinkertainen verkkokauppa, jonka sovelluslogiikan totutettaa luokka `Kauppa`. Luokalla on riippuvuus `Pankki`- ja `Viitegeneraattori`-olioihin.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -118,7 +151,7 @@ Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen 
 
 Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa.
 
-Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit testaavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu olion pankki tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
+Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit testaavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
 
 Seuraavassa testi, joka testaa, että kauppa kutsuu pankin metodia oikealla tilinumerolla ja summalla:
 
@@ -180,7 +213,7 @@ def test_kaytetaan_maksussa_palautettua_viitetta(self):
 
 Testin lopussa varmistetaan, että pankin `Mock`-oliota on kutsuttu oikeilla parametrinarvoilla, eli kolmantena parametrina tulee olla viitegeneraattorin palauttama arvo.
 
-Tutustu projektiin ja sen kaikkiin testeihin. Asenne projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`. Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota:
+Tutustu projektiin ja sen kaikkiin testeihin. Asenne projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`. Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota esim. seuraavasti:
 
 ```python
 pankki_mock.maksa.assert_called_with(ANY, ANY, 1000)
@@ -195,7 +228,9 @@ Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](htt
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/maksukortti-mock_ oleva projekti.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
-Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`. **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
+Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin osalle [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-23.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate) tuttu.
+
+**Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
 Projektissa on valmiina kaksi testiä:
 
@@ -204,7 +239,6 @@ import unittest
 from unittest.mock import Mock, ANY
 from kassapaate import Kassapaate, HINTA
 from maksukortti import Maksukortti
-
 
 class TestKassapaate(unittest.TestCase):
     def setUp(self):
@@ -234,6 +268,8 @@ Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin 
 Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa.
 
 **Testit eivät mene läpi. Korjaa kassapäätteen metodi `osta_lounas`.**
+
+**Muistutus** Maksukortin koodiin ei tehtävässä saa koskea ollenkaan!
 
 **Tee tämän jälkeen samaa periaatetta noudattaen seuraavat testit:**
 
@@ -330,259 +366,7 @@ Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosen
 
 Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esimerkiksi verkkokauppaesimerkissä luokka `Pankki`, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
 
-### 5. Ostoskori TDD-tekniikalla
-
-Jatketaan verkkokaupan parissa. 
-
-**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa viikko4/tdd-ostoskori oleva projekti.**
-- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
-
-Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
-
-![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
-
-Ostoskori siis sisältää _ostoksia_, joista jokainen vastaa yhtä tiettyä tuotetta.
-
-Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
-
-```python
-class Tuote:
-  def __init__(self, nimi: str, hinta: int):
-      self._nimi = nimi
-      self._hinta = hinta
-      self._saldo = 0
-
-  def hinta(self):
-    return self._hinta
-
-  def nimi(self):
-    return self._nimi
-
-  def __repr__(self):
-      return f"{self._nimi} hinta {self._hinta} euroa"
-```
-
-Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
-
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
-
-```python
-from tuote import Tuote
-
-class Ostos:
-    def __init__(self, tuote: Tuote):
-        self.tuote = tuote
-        self._lukumaara = 1
-
-    def tuotteen_nimi(self):
-        return self.tuote.nimi()
-
-    def muuta_lukumaaraa(self, muutos: int):
-        self._lukumaara += muutos
-        if self._lukumaara<0:
-            self._lukumaara = 0
-
-    def lukumaara(self):
-        return self._lukumaara
-
-    def hinta(self):
-        return self._lukumaara * self.tuote.hinta()
-```
-
-Tehtävänäsi on ohjelmoida luokka `Ostoskori`.
-
-Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
-
-```python
-from tuote import Tuote
-from ostos import Ostos
-
-class Ostoskori:
-    def __init__(self):
-        pass
-        # ostoskori tallettaa Ostos-oliota, yhden per korissa oleva Tuote
-
-    def tavaroita_korissa(self):
-        pass
-        # kertoo korissa olevien tavaroiden lukumäärän
-        # jos koriin lisätty 2 kpl tuotetta "maito",
-        #   tulee metodin palauttaa 2
-        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto",
-        #   tulee metodin palauttaa 2
-
-    def hinta(self):
-        return 0
-        # kertoo korissa olevien ostosten yhteenlasketun hinnan
-
-    def lisaa_tuote(self, lisattava: Tuote):
-        # lisää tuotteen
-        pass
-
-    def poista_tuote(self, poistettava: Tuote):
-        # poistaa tuotteen
-        pass
-
-    def tyhjenna(self):
-        pass
-        # tyhjentää ostoskorin
-
-    def ostokset(self):
-        pass
-        # palauttaa listan jossa on korissa olevat ostos-oliot
-        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse
-        #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
-```
-
-**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
-
-![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
-
-Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
-
-**Ohjelmoi nyt ostoskori käyttäen [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikkaa.** Oikeaoppinen TDD etenee seuraavasti:
-
-- Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
-- Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
-- Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
-- Jatketaan askeleesta 1
-
-**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä _kaikki_ testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
-
-Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
-
-_Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti._
-
-#### 1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.
-
-Tehtäväpohjassa on yksi valmis testi
-
-```python
-class TestOstoskori(unittest.TestCase):
-    def setUp(self):
-        self.kori = Ostoskori()
-
-    # step 1
-    def test_ostoskorin_hinta_ja_tavaroiden_maara_alussa(self):
-        self.assertEqual(self.kori.hinta(), 0)
-```
-
-Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
-
-Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
-
-#### 2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.
-
-**Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
-
-```python
-class TestOstoskori(unittest.TestCase):
-    def setUp(self):
-        self.kori = Ostoskori()
-
-    # step 1
-    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
-        self.assertEqual(self.kori.hinta(), 0)
-        # ...
-
-    # step 2
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_tavara(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        # ...
-```
-
-**Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
-
-Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
-
-#### 3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.
-
-Lisää ja commitoi muutokset.
-
-#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
-
-Lisää ja commitoi muutokset.
-
-#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa
-
-Lisää ja commitoi muutokset.
-
-#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
-
-Lisää ja commitoi muutokset.
-
-#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta
-
-Lisää ja commitoi muutokset.
-
-#### 8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
-
-tässä testataan ostoskorin metodia `ostokset`:
-
-```python
-    # step 8
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostokset = self.kori.ostokset()
-
-        # testaa että metodin palauttaman listan pituus 1
-```
-
-Lisää ja commitoi muutokset.
-
-#### 9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1
-
-Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
-
-```python
-    # step 9
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostos = self.kori.ostokset()[0]
-
-        # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
-```
-
-Lisää ja commitoi muutokset.
-
-#### 10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta
-
-Lisää ja commitoi muutokset.
-
-#### 11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
-
-Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
-
-Lisää ja commitoi muutokset.
-
-#### 12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen jolla sama nimi kuin tuotteella ja lukumäärä 2
-
-Lisää ja commitoi muutokset.
-
-#### 13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
-
-Lisää ja commitoi muutokset.
-
-#### 14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä
-
-Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
-
-Lisää ja commitoi muutokset.
-
-#### 15. Metodi tyhjenna tyhjentää korin
-
-Lisää ja commitoi muutokset.
-
-Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu. Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
-
-Lisää ja commitoi mahdolliset muutokset.
-
-### 6. Retrospektiivitekniikat
+### 5. Retrospektiivitekniikat
 
 Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
 
@@ -592,7 +376,7 @@ Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitor
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
-### 7. git: tägit [versionhallinta]
+### 6. git: tägit [versionhallinta]
 
 Tutustutaan tässä tehtävässä Gitin tageihin:
 
