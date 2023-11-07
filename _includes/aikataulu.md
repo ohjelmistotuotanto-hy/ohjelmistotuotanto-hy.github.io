@@ -22,6 +22,7 @@
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
+    - syksy 2023: [youtube tulossa](), [unitube](https://www.helsinki.fi/fi/unitube/video/09ce38ed-2074-4d07-8669-ac55051a04c1)
     - [syksy 2021](https://youtu.be/T5dOFks48ZY)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
