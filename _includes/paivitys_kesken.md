@@ -2,4 +2,6 @@
 
 Kaikkia viikkojen 4-7 tehtäviä ei ole vielä päivitetty, tekeminen omalla vastuulla!
 
+Viikolta 4 päivitetty jo tehtävät 1 ja 2.
+
 </div>

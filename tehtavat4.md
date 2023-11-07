@@ -276,16 +276,23 @@ Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapä�
 - Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa` jos ladattava summa on positiivinen
 - Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään jos ladattava summa on negatiivinen
 
+**Muistutus**  Testeissä ei ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.
+
 Korjaa kassapäätettä siten, että testit menevät läpi.
 
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
 Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
 
-- Sovellus löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/verkkokauppa_.
+
+
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/verkkokauppa_ löytyy hieman laajennettu versio tehtävän 1 verkkokaupasta.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
-Kaupalle injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
+Tutustu koodiin. Piirrä luokkakaavio ohjelman rakenteesta sekä sekvenssikaavio joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran).
+- Kaavioita ei tarvitse palauttaa
+
+Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
 Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
 

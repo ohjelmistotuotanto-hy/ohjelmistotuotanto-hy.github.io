@@ -220,8 +220,6 @@ Suoritetaan rivi syöttämällä uudestaan `next()` ja tulostetaan `user`-muuttu
 
 Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_trace`-metodin kutsu.
 
-Voit myös käyttää VS Codeen sisäänrakennettua [debuggeria](https://ohjelmointi-23.mooc.fi/osa-4/1-vscode#debuggeri) jos olet [konfiguroinut](/tehtavat2/#bonus-vs-coden-konfigurointi) VS Coden oikein.
-
 ### 4. WebLogin
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.

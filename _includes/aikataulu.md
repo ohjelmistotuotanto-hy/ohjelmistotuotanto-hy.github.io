@@ -34,9 +34,6 @@
   - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline {{site.lask-dl[2]}}
 
-
-
-
 ### Viikko 3
 
 - Luento 5: {{site.luennot[5]}} 
