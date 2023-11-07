@@ -204,7 +204,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 - Muuta koodiasi siten, että saat jokaisen määritellyistä pylint-säännöistä rikkoutumaan
 - Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
 
-Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana pylintin suosittelemaa konfiguraatiota. Suoitellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
+Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana pylintin suosittelemaa konfiguraatiota. Suositellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
 
 ### 4. Koodin staattinen analyysi ja GitHub Actionit
 
