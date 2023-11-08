@@ -6,9 +6,6 @@ permalink: /miniprojektin_arvosteluperusteet/
 ---
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
-- [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
-- [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
-- [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
 Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
@@ -50,13 +47,12 @@ Pisteitä kertyy seuraavista asioista:
 - (0.5p) sprintin 1 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
   - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
-  - Burndown-käyrä olemassa
+  - Sprintin burndown-käyrä olemassa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
   - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
-  - Ainakin jossain storyssa hyväksymiskriteerien testausta (Cucumber tai Robot Framework)
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
   - GitHub Actions (tai jokin muu CI-palvelu) suorittaa ainakin yksikkötestit ja ne menevät läpi
@@ -74,90 +70,6 @@ Pisteitä kertyy seuraavista asioista:
   - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
 
 Sprintin maksimi on 2.5 pistettä.
-
-
-### Toisen sprintin arvosteluperusteet
-
-Pisteitä kertyy seuraavista asioista:
-
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
-- (0.25p) sprintin 2 backlog
-  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
-  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
-  - Burndown-käyrä olemassa
-  - Jokaiseen taskiin on merkitty sen tekijä(t)
-- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
-- (0.25p) kattavahko testaus yksikkö- ja storytasolla
-- (0.25p) jatkuva integraatio
-  - CI-palvelu suorittaa testit
-- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
-- (0.25p) projektille määritelty järkevät Pylint- tai checkstylesäännöt jotka tarkistetaan CI:n toimesta
-- (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
-- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
-  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
-  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
-  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
-
-Sprintin maksimi on 2.5 pistettä.
-
-### Kolmannen sprintin arvosteluperusteet
-
-
-Pisteitä kertyy seuraavista asioista:
-
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
-  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
-- (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Cucumber- tai Robot Framework -tiedostoihin
-  - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
-- (0.25p) sprintin 3 backlog
-  - Vaatimukset kuten edellisissä sprinteissä
-- (0.5p) kattavahko testaus yksikkö- ja storytasolla
-- (0.25p) jatkuva integraatio
-  - CI-palvelu suorittaa testit
-  - Master-branch ei ole hajonnut
-- (0.25p) GitHubin README:stä linkki testikattavuusraporttiin
-- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
-- (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
-  - Sovittu etukäteen kuka tekee mitäkin
-  - Mietitty mitä esitetään
-    - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
-  - Testidata on järkevää
-    - tietokanta ei saa olla etukäteen tyhjä
-    - tietokannassa oleva data ja demottaessa käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
-  - **Lue viimeinen bullet uudelleen** jostain syystä se jää 25% huomaamatta...
-    - jos tuollainen syöte nähdään niin pisteitä tulee heti nolla
-
-Sprintin maksimi on 2.5 pistettä.
-
-
-### Lopputoimenpiteet
-
-#### Vertaispalaute
-
-- Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään perjantaina 23.12. klo 23:59**
-  - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
-- Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
-  - Ryhmäläiset eivät näe toistensa vertaispalautteita
-
-#### Raportti
-
-Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
-
-- Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
-- Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
-- Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
-- Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
-- Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
-- Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline perjantaina 23.12. klo 23:59**
-
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
