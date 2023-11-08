@@ -11,9 +11,9 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
 
 - Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
   - Ensisijainen arvostelukriteeri on prosessin seuraaminen, tasainen eteneminen ja ohjelmaan toteutettujen ominaisuuksien laatu
-  - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pienempi
+  - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pieni mutta ei toki nolla, eli jotain koodiakin tulee tehdä
   - Tarkemmat sprinttikohtaiset arvosteluperusteet alla
-- Henkilökohtainen suoriutumisesta on jaossa -1.5p ... 1.5p, poikkeustapauksissa -2p tai 2p on mahdollinen
+- Henkilökohtainen suoriutumisesta on jaossa -1p ... 1, poikkeustapauksissa -2p tai 2p on mahdollinen
   - Henkilökohtaisen suoriutumisen pisteet perustuvat lopussa tehtävään vertaisarvioon sekä ryhmän repositoriosta ja backlogeilta näkyvään "digitaaliseen jalanjälkeen"
   - Henkilökohtaista suoriutumista arvioidessa arvostetaan seuraavia asioita:
     - Fyysistä ja henkistä läsnäoloa
@@ -23,7 +23,8 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
     - Työskentelyn tasaisuutta
     - Kontribuutiota ryhmän tuotoksiin (koodi, testit, deployment pipeline, backlogit)
       - [varmista, että committisi näkyvät githubissa oikein](/miniprojektin_arvosteluperusteet#varmista-että-commitisi-näkyvät-githubissa-oikein)
-  - Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä
+  - **Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä**
+  - Kannattaa myös ottaa tosissaan noin 6 tunnin sprinteittäinen työaika. Työajan reilu ylitys ei tuo "lisäpisteitä" vaan pikemminkin päinvastoin.
 
 Perusteeton osallistumattomuus johonkin sprinttiin johtaa miniprojektisuorituksen hylkäämiseen.
 
@@ -37,6 +38,7 @@ Projekti tulee olla rekisteröity osoitteeseen <{{site.stats_url}}>.
 - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
 **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+- Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
 
 Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja GitHub Actionsiin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin GitHub-repositorion README:hen!
 
@@ -50,30 +52,30 @@ Pisteitä kertyy seuraavista asioista:
   - Sprintin burndown-käyrä olemassa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
-- (0.25p) sprintiin 1 valittujen storyjen hyväksymiskriteerit kirjattu
+- (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
   - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa ainakin yksikkötestit ja ne menevät läpi
+  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHub README:
-  - README:sta löytyy linkki backlogeihin
+  - README:sta löytyy linkki backlogeihin (ja niihin on _kaikilla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
   - Linkki sovellukseen jos kyse web-sovelluksesta
   - Jos kyse työpöytäsovelluksesta: ohjelman asennus- ja käyttöohje
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
-  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+  - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
 
 Sprintin maksimi on 2.5 pistettä.
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
-Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
+Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi Gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
 
 On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden testicommitin ja tarkastaa, että Git on konfiguroitu oikein.
 
@@ -88,7 +90,7 @@ Jos committisi yhteydessä näkyy (Gitin email-osoitteen konfiguroinnista huolim
 
 ![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit1.png)
 
-Klikkaa harmaan commitin nimeä katso mikä on email-osoite, joka commitiin liittyy mutta mitä github ei tunnista osoitteeksesi.
+Klikkaa harmaan commitin nimeä katso mikä on email-osoite, joka commitiin liittyy mutta mitä GitHub ei tunnista osoitteeksesi.
 
 ![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit2.png)
 
