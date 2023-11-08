@@ -140,6 +140,16 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Jos kyse työpöytäsovelluksesta, tulee ohjelmalle olla asennus- ja käyttöohje
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
 
+### Viheitä ryhmätyöskentelyyn
+
+Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikanpäällä tai jos se ei onnistu niin esim. Discordin voice chatissa. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
+
+Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storyä työstää aina kaksi henkilöä.
+
+Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä on hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asia itse, vaan varmistaa että se tulee tehdyksi.
+
+Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
+
 ### Teknologisia vihjeitä
 
 - Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
