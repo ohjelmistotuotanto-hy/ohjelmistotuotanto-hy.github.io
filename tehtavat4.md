@@ -393,19 +393,18 @@ Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/boo
 
 Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
 
-- Tee tägi nimellä tagi1 (lightweight tag riittää)
+- Tee tägi nimellä v1.0.0 (lightweight tag riittää)
 - Tee kolme committia (eli 3 kertaa muutos + add + commit)
-- Tee tägi nimellä tagi2
+- Tee tägi nimellä v1.1.0
 - Katso `gitk`-komennolla miltä historiasi näyttää
 - Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
   - Varmista, että tagin jälkeisiä muutoksia ei näy
 - Palaa nykyaikaan
   - Tämä onnistuu komennolla `git checkout main`
 - Lisää tägi _edelliseen_ committiin
-  - Operaatio onnistuu komennolla <code>git tag tagi1b HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
+  - Operaatio onnistuu komennolla <code>git tag v1.0.1 HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
   - Joissain Windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
   - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
-- Kokeile molempia tapoja, tee niiden avulla kahteen edelliseen committiin tagit (tagi1a ja tagi1b)
 - Katso komennolla <code>gitk</code> miltä historia näyttää
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags).
@@ -413,5 +412,37 @@ Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin 
 Varmista, että tagit siirtyvät GitHubiin:
 
 ![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
+
+**Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git commit`, huomaamme, että Git yksilöi commitit ihmisen hankalien tunnisteiden tunnisteden avulla:
+
+
+```bash
+commit 26c50e603aca79f02d478ca36a3d307f7ea10e14
+Author: Matti Luukkainen <mluukkai@iki.fi>
+Date:   Mon Oct 30 16:35:04 2023 +0200
+
+    do not destroy answers if dl extended
+
+commit 8026bd3ac416a7b1e6957d54d9296156e97571e6
+Author: iPegii <51372604+iPegii@users.noreply.github.com>
+Date:   Sun Oct 29 14:25:31 2023 +0200
+
+    Show "Evaluation TDK" -special group in admin view
+
+commit 0834035d0c113c7c46161c6fe8d655a9a90b2548
+Merge: e5c09ae6 4dfcbf54
+Author: iPegii <51372604+iPegii@users.noreply.github.com>
+Date:   Sun Oct 29 14:03:13 2023 +0200
+
+    Merge branch 'master' of github.com:UniversityOfHelsinkiCS/lomake
+
+commit e5c09ae692ebf46cd0acfa15552ca3e85d7348fa
+Author: iPegii <51372604+iPegii@users.noreply.github.com>
+Date:   Sun Oct 29 14:02:52 2023 +0200
+
+    update eslintignore to stop eslint hanging
+```
+
+Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista päästä helposti koodissa ajassa taaksepäin debuggaamaan juuri kyseisen julkaisun versiota.
 
 {% include submission_instructions.md %}
