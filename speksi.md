@@ -91,7 +91,6 @@ Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex)
 
 Kalle haluaa järjestelmän, jonka avulla hänen opiskelijat voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
-  - esim. ääkköset pitää toimia kunnolla, ei saa joutua lisäämään hankalassa muodossa kuten yllä, samoin kirjainlyhenteet
 - järjestelmässä olevista viitteistä pitää saada generoitua LaTeX-dokumenttiin sopiva BibTeX-muotoinen tiedosto
 - myös viitteiden listaaminen ihmiselle sopivammassa formaatissa pitää onnistua
 - viitelistoja pitäisi pystyä jotenkin rajoittamaan

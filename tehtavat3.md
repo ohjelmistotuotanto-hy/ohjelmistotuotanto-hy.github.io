@@ -287,6 +287,30 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 **Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.** Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
+#### Huomio Dockerin käyttäjille
+
+Jos olet käyttänyt [kontainerisoitua Poetryä](http://localhost:4000/poetry#poetry-ja-docker) joudut tekemään tässä osassa muutaman ekstratempun.
+
+Käytä imagen [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry) sijaan imagea [mluukkai/poetry-robot](https://hub.docker.com/repository/docker/mluukkai/poetry-robot/). Image toimii ainoastaan intelin prosessoriarkkitehtuurilla varustetuilla koneilla, eli M1 käyttäjät joutuvat etsimään jonkun muun ratkaisun...
+
+Jotta kontissa suoritettu web-sovellus näkyisi isäntäkoneelle, tulee konttia käynnistettäessä julkaista kontin portti 5001 (missä sovellus toimii) isäntäkoneen porttiin. Tämä tapahtuu seuraavasti:
+
+```bash
+docker run -it -p 5001:5001 --volume="$PWD:/mydir" mluukkai/poetry-robot
+```
+
+Robot-testit suoritetaan menemällä komennolla `docker exec` samaan kontiin, missä sovellus on jo päällä: 
+
+```bash
+docker exec -it kontainerintunnistetahan bash
+```
+
+Kontainerin tunniste selviää komennolla `docker ps`.
+
+Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat päälle [tehtävän 7](http://localhost:4000/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
+
+Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
+
 ### 5. Web-sovelluksen testaaminen osa 1
 
 Jatketaan siis saman sovelluksen parissa.
