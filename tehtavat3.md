@@ -624,7 +624,7 @@ while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5001/ping)" != "2
 done
 
 # suoritetaan testit
-poetry run robot src/e2e
+poetry run robot src/tests
 
 status=$?
 
