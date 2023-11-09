@@ -634,12 +634,12 @@ kill $(lsof -t -i:5001)
 exit $status
 ```
 
-Skriptin voi lisätä esimerkiksi projektin juurihakemiston <i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttöjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
+Skriptin voi lisätä esimerkiksi projektin juurihakemiston, eli `/viikko3/web-login/`<i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttöjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
 
-Skriptiä voi hyödyntää CI-palvelimella GitHub Actionsin avulla määrittelemällä sen suorittaminen omana askeleena konfiguraatiossa:
+Skriptiä voi hyödyntää CI-palvelimella GitHub Actionsin avulla määrittelemällä sen suorittaminen omana askeleena konfiguraatiossa (polulla `/.github/workflows/main.yml`):
 
 ```yaml
-name: CI
+name: web-login robot tests
 
 on:
   push:
@@ -666,8 +666,10 @@ jobs:
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
       - name: Install dependencies
+        working-directory: viikko3/web-login
         run: poetry install
       - name: Run robot tests
+        working-directory: viikko3/web-login
         run: bash run_robot_tests.sh
 ```
 
