@@ -40,4 +40,4 @@ Kyseisen rivin voi laittaa .bashrc (tai vastaavaan) tiedostoon, jotta sitä ei o
 
 ## Lisää ohjeita
 
-Muutama lisäohje löytyy [Poetry-ohjeesta](http://localhost:4000/poetry#ratkaisuja-yleisiin-ongelmiin)
+Muutama lisäohje löytyy [Poetry-ohjeesta](/poetry#ratkaisuja-yleisiin-ongelmiin)

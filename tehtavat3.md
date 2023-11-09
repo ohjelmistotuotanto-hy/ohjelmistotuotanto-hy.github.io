@@ -289,7 +289,7 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 #### Huomio Dockerin käyttäjille
 
-Jos olet käyttänyt [kontainerisoitua Poetryä](http://localhost:4000/poetry#poetry-ja-docker) joudut tekemään tässä osassa muutaman ekstratempun.
+Jos olet käyttänyt [kontainerisoitua Poetryä](/poetry#poetry-ja-docker) joudut tekemään tässä osassa muutaman ekstratempun.
 
 Käytä imagen [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry) sijaan imagea [mluukkai/poetry-robot](https://hub.docker.com/repository/docker/mluukkai/poetry-robot/). Image toimii ainoastaan intelin prosessoriarkkitehtuurilla varustetuilla koneilla, eli M1 käyttäjät joutuvat etsimään jonkun muun ratkaisun...
 
@@ -307,7 +307,7 @@ docker exec -it kontainerintunnistetahan bash
 
 Kontainerin tunniste selviää komennolla `docker ps`.
 
-Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat päälle [tehtävän 7](http://localhost:4000/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
+Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat päälle [tehtävän 7](/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
 
 Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
 

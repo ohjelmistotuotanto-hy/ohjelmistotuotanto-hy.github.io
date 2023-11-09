@@ -31,7 +31,7 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 ### VS Coden konfigurointi
 
-Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](http://localhost:4000/tehtavat2/#bonus-vs-coden-konfigurointi)!
+Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](/tehtavat2/#bonus-vs-coden-konfigurointi)!
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 

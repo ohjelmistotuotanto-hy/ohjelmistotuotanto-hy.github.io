@@ -155,7 +155,7 @@ Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa
 - Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
 - **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
 - Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto
-  - **HUOM:** Komentoriviltä toimivat sovellukset on syytä tehdä siten, että niiden IO-operaatiot eli tulostaminen ja syötteen lukeminen on eriytetty omaan injektoitavaan luokkaan viikon 1 laskareissa käsitellyn [riippuvuuksien injektointi](http://localhost:4000/riippuvuuksien_injektointi_python/) -esimerkin tapaan. Jos näin ei toimita tulee sprintistä 2 alkaen tehtävä käyttöliittymän läpi tapahtuva testaus olemaan erittäin haastavaa
+  - **HUOM:** Komentoriviltä toimivat sovellukset on syytä tehdä siten, että niiden IO-operaatiot eli tulostaminen ja syötteen lukeminen on eriytetty omaan injektoitavaan luokkaan viikon 1 laskareissa käsitellyn [riippuvuuksien injektointi](/riippuvuuksien_injektointi_python/) -esimerkin tapaan. Jos näin ei toimita tulee sprintistä 2 alkaen tehtävä käyttöliittymän läpi tapahtuva testaus olemaan erittäin haastavaa
 - Web-pohjaiselle sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
 - Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
   - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
