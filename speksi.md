@@ -7,7 +7,7 @@ permalink: /speksi/
 
 ## Taustaa
 
-Kandiopiskelijat Riku ja Ville  tarvitsevat järjestelmän, joka auttaa heitä pitämään kanditöiden kirjottamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa kandia varten. Kuten kaikki TKT:n opiskelijat, myös kaikki Riku ja Ville kirjoittavat kandin [LaTeX](https://www.latex-project.org/):illa.
+Kandiopiskelijat Riku ja Ville tarvitsevat järjestelmän, joka auttaa heitä pitämään kanditöiden kirjottamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa kandia varten. Kuten kaikki TKT:n opiskelijat, myös kaikki Riku ja Ville kirjoittavat kandin [LaTeX](https://www.latex-project.org/):illa.
 
 LaTeX:ia käytettäessä teksti näyttää seuraavalta:
 
@@ -89,7 +89,7 @@ Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex)
 
 ## Järjestelmän kuvaus
 
-Riku ja Ville siis haluaa järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
+Riku ja Ville siis haluavat järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
 - järjestelmässä olevista viitteistä pitää saada generoitua LaTeX-dokumenttiin sopiva BibTeX-muotoinen tiedosto
 - myös viitteiden listaaminen ihmiselle sopivammassa formaatissa pitää onnistua
