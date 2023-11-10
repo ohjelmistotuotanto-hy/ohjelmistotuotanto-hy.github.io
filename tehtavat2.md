@@ -629,7 +629,7 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 ### 9. Git: epäajantasaisen kloonin pushaaminen [versionhallinta]
 
-Demonstroidaan vielä (viime viikon [tehtävässä 11](tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
+Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
 - Mene alkuperäisen repositorion paikallisen kloonin **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
 - Mene toisen kloonin **main**-haaraan ja tee sinne jokin muutos
