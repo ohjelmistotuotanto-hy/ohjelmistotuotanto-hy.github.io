@@ -16,6 +16,17 @@ Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käytt�
 
 Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry esimerkki).
 
+Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.com/appendix/](https://choosealicense.com/appendix/)) antaakin hyvin vertailtavaksi lisenssejä, käydään silti nyt läpi muutama käytympi lisenssi karkeasti läpi:
+
+| Lisenssi | Ehdot | Tyyppi |
+|-------|--------|---------|
+| MIT-lisenssi | Lisenssin tekstin pitää säilyä lähdekoodissa | Suvaitseva |
+| GNU General Public License, eli GPL | Lähdekoodi pitää julkaista samalla lisenssillä | Suojeleva
+| Mozilla Public-lisenssi 2.0 | GPL, paitsi mikäli projekti kasvaa merkittävän suureksi, voidaan lisenssi vaihtaa, esim. Chromium -> Chrome | Suvaitseva |
+| The Unlicense | Tee mitä haluat | Avoin |
+| - (Ei lisenssiä) | Omistat kaikki oikeudet | Yksityisomisteinen |
+| CC BY | Lisenssin tekstin pitää säilyä teoksessa. Voidaan antaa ei-ohjelmistoille, esim. Kurssimateriaalille | Suvaitseva |
+
 ### Harjoitus
 Katsotaan ensin, mitä lisenssejä muut ohjelmistot käyttävät.
 
@@ -32,12 +43,12 @@ Mitä lisenssiä Visual Studio Code käyttää: <a>https://github.com/microsoft/
 	<summary>
 		Vastaus
 	</summary>
-		MIT License
+		MIT-lisenssi
 </details>
 
 Seuraavaksi harjoitellaan lisenssin valintaa ohtun miniprojektia varten.
 
-Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoilla. Valitsen a) MIT License b) The Unlicense
+Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoilla. Valitsen a) MIT-lisenssi b) The Unlicense
 <details>
 	<summary>
 		Vastaus
@@ -45,12 +56,12 @@ Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoill
 	b) The Unlicense
 </details>
 
-Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suurempi projekti saa halutessaan käyttää eri lisenssiä, kuin miniprojektin alkuperäinen lisenssi. Valitsen a) MIT License b) Mozilla Public License 2.0
+Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suurempi projekti saa halutessaan käyttää eri lisenssiä, kuin miniprojektin alkuperäinen lisenssi. Valitsen a) MIT-lisenssi b) Mozilla Public-lisenssi 2.0
 <details>
 	<summary>
 		Vastaus
 	</summary>
-	b) Mozilla Public License 2.0
+	b) Mozilla Public-lisenssi 2.0
 </details>
 
 Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
@@ -65,4 +76,4 @@ Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video 
 </video>
 
 
-Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/c8suyXeWCg](https://discord.gg/c8suyXeWCg9)!
+Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa yliopiston Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/c8suyXeWCg](https://discord.gg/c8suyXeWCg9)!
