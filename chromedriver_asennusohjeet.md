@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ChromeDriver-asennusohjeet
+title: ChromeDriverin ja Geckodriverin-asennusohjeet
 inheader: no
 permalink: /chromedriver_asennusohjeet/
 ---
@@ -78,3 +78,26 @@ Yksi lisävaihtoehto WSL käyttäjille on ajaa Web-sovelluksemme serveriä poetr
   - Asenna riippuvuudet tavallisesti Poetryssa suorittamalla `poetry install` juuri kloonatun web-login-hakemiston juuressa
   - Asenna ChromeDriver windowsille äskeisen [ohjeen](../chromedriver_asennusohjeet) mukaan
   - Aja Selenium/Robot testit web-login-hakemiston juuresta komennolla `poetry run robot .\src\tests\`
+
+## Geckodriver-asennusohjeet
+
+Lataa käyttöjärjestelmällesi  sopiva _geckodriver_-binääri [täältä](https://github.com/mozilla/geckodriver/releases/) kohdasta _assets_. Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
+
+
+### Linux
+
+Jotta `geckodriver`-komento toimisi tulee binääritiedosto siirtää hakemistoon, jonka polku on käyttöjärjestelmän `PATH`-ympäristömuuttujassa. Helpoin tapa on siirtää binääri _/usr/local/bin_-hakemistoon. Tämä onnistuu siirtymällä komentorivillä hakemistoon, johon _geckodriver_-binääri on ladattu ja suorittamalla komento `mv geckodriver /usr/local/bin/`. Anna tämän jälkeen binäärille suoritusoikeudet komennolla `chmod +x /usr/local/bin/geckodriver`.
+
+**HUOM:** Jos binäärin siirtämiselle _/usr/local/bin_-hakemistoon ei ole oikeuksia, siirry kotihakemistoosi komennolla `cd` ja luo sinne hakemisto _bin_ (jos sitä ei ole vielä olemassa) komennolla `mkdir bin`. Siirry nyt hakemistoon, johon _cgeckodriver_-binääri on ladattu ja siirrä se luotuun hakemistoon komennolla `mv geckodriver $HOME/bin/`. Anna tämän jälkeen binäärille suoritusoikeudet komennolla `chmod +x $HOME/bin/geckodriver`. Lisää lopuksi _\$HOME/bin_-hakemisto `PATH`-ympäristömuuttujaan komennolla `touch $HOME/.bashrc && echo "export PATH=\"\$HOME/bin:\$PATH\"" >> $HOME/.bashrc`. 
+
+**HUOM:** Macilla voi olla oletuksena käytössä Zsh-komentotulkki, jolloin yllä olevat muutokset tulee tehdä .zshrc-tiedostoon .bashrc-tiedoston sijaan.
+
+Käynnistä terminaali uudestaan ja varmista asennuksen onnistuminen suorittamalla komento:
+
+```bash
+geckodriver --version
+```
+
+### Windows
+
+Noudata ChromeDriverin ohjetta soveltuvin osin.
