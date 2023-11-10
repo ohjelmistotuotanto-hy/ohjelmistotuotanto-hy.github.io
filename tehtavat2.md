@@ -582,7 +582,7 @@ Mene jälleen **toiseen klooniin**:
 ```
 
 - Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
-- Tee toiseen lokaaliin klooniin GitHubissa olevan projektisi branchia **haara2** träkkäävä branch
+- Tee nyt kyseiseen klooniin (jossa siis olet nyt) myös branchia **haara2** träkkäävä branch
   - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion, eli vanhentunut koska haaraan on pushattu uutta sisältöä
 - Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
 - Tee branchiin **haara2** muutoksia ja pushaa ne GitHubiin
