@@ -9,6 +9,8 @@ permalink: /chromedriver_asennusohjeet/
 
 {% include typo_instructions.md path="/python/chromedriver_asennusohjeet.md" %}
 
+**Huom:** myöhemmin tällä sivulla oleva [Geckodriver](/chromedriver_asennusohjeet/#geckodriver-asennusohjeet) saattaa olla helpompi asentaa kuin ensin esiteltävä ChromeDriver. Esittelyjärjestys on kuitenkin vielä nykyisenlainen, sillä Geckodriver-ohje lisättiin vasta pe 10.11. ja sen toimivuudesta Windowsilla ei ole vielä havaintoa.
+
 ## ChromeDriver-asennusohjeet
 
 Jos tietokoneellesi ei ole asennettu Chrome- tai Chromium-selainta, aloita asentamalla sen viimeisin versio [täältä](https://www.google.com/chrome/). ChromeDriverin käyttöön soveltuu myös [Chromium](https://www.chromium.org/chromium-projects/), joka on avoimen lähdekoodin selain, johon Google Chrome pohjautuu. Lataa sen jälkeen käyttöjärjestelmällesi ja Chrome-versiollesi sopiva _chromedriver_-binääri [täältä](https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json). Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
@@ -81,8 +83,9 @@ Yksi lisävaihtoehto WSL käyttäjille on ajaa Web-sovelluksemme serveriä poetr
 
 ## Geckodriver-asennusohjeet
 
-Lataa käyttöjärjestelmällesi  sopiva _geckodriver_-binääri [täältä](https://github.com/mozilla/geckodriver/releases/) kohdasta _assets_. Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
+Geckodriverin käyttö edellyttää että koneellesi on asennettuna [Firefox](https://www.mozilla.org/firefox/).
 
+Lataa käyttöjärjestelmällesi  sopiva _geckodriver_-binääri [täältä](https://github.com/mozilla/geckodriver/releases/) kohdasta _assets_. Pura ladattu paketti ja noudata sen jälkeen käyttöjärjestelmäkohtaisia ohjeita.
 
 ### Linux
 
