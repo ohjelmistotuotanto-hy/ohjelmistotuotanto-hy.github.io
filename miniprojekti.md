@@ -5,6 +5,8 @@ inheader: no
 permalink: /miniprojekti/
 ---
 
+{% include miniprojekti_ilmo.md %}
+
 ### Ajankohtaista
 
 - Miniprojektien aloitustilaisuudet
