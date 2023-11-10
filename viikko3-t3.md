@@ -5,9 +5,9 @@ inheader: no
 permalink: /viikko3-t2/
 ---
 
-Tiedostossa `AppLibrary.py` kaikki metodit ovat Robotin avainsanojen toteutuksia. Koska kyseessä on komentorivisovellus, joutuu AppLibrary myös luomaan konstruktorissaan testattavaa sovellusta vastaavan olion App. Esim. web-sovellusta testatessa tätä tarvetta ei ole, ja AppLibraryn rooli voi olla ainoastaan avainsanojen toteuttaminen.
+Tiedostossa `AppLibrary.py` kaikki metodit ovat Robotin avainsanojen toteutuksia. Koska kyseessä on komentorivisovellus, joutuu AppLibrary myös luomaan konstruktorissaan testattavaa sovellusta vastaavan olion App. Esim. web-sovellusta testatessa tätä tarvetta ei (välttämättä) ole, ja AppLibraryn rooli voi olla ainoastaan avainsanojen toteuttaminen.
 
-Konstruktiri luo testattavan sovelluksen, ja injektoi sille StubIO-olion, jonka kautta testi pääsee komminikoimaan sovelluksen kanssa, sekä UserServicen:
+Konstruktori luo testattavan sovelluksen, ja injektoi sille StubIO-olion, jonka kautta testi pääsee kommunikoimaan sovelluksen kanssa, sekä UserServicen:
 
 ```py
 class AppLibrary:
@@ -34,7 +34,7 @@ def main():
     app.run()
 ```
 
-AppLibraryn konstruktori ei kuitenkaan vielä käynnistä ohjelmaa sen metodilla run.
+AppLibraryn konstruktori ei kuitenkaan vielä käynnistä ohjelmaa sen metodilla `run`.
 
 
 Testien käyttämiä _avainsaoja_ ovat
@@ -58,7 +58,7 @@ class AppLibrary:
 
 Eli kysessä on sovelluksen käynnistys.
 
-Ennen sovelluksen käynnistämistä, sille annetaan käyttäjän simuloidut syötteet avainsanan Input avulla. Avainsana on toteutettu seuraavasti luokassa AppLibraryssä:
+Ennen sovelluksen käynnistämistä, sille annetaan käyttäjän simuloidut syötteet parametrillisen avainsanan `Input` avulla. Avainsana on toteutettu seuraavasti luokassa AppLibraryssä:
 
 ```py
 class AppLibrary:
