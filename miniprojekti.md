@@ -19,6 +19,7 @@ permalink: /miniprojekti/
   - to 14.12 klo 12-14
 - **Ilmoittautuminen miniprojektiin käynnissä ja päättyy lauantaina 11.11. klo 23.59**
 - Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/4f142151-b6e2-4120-b677-d1ae259ef6a8)
+- **Ryhmäjako tehdään sunnuntaina 12.11. Ja näet aloitustilaisuutesi ajankohdan ilmoittautumissovelluksesta (eli yo linkistä) viimeistään sunnuntai-iltana.**
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
 ### Johdanto

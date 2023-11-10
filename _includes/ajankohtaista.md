@@ -2,7 +2,10 @@
 
 <ul>
   <li>
-    Miniprojekti käynnistyy 13.11. alkavalla viikolla. Ilmoittautumisen deadline lauantaina 11.11. klo 23.59. <br><br>Lue lisää <a href="/miniprojekti">täältä</a>.
+    Miniprojekti käynnistyy 13.11. alkavalla viikolla. Ilmoittautumisen deadline lauantaina 11.11. klo 23.59. Lue lisää <a href="/miniprojekti">täältä</a>.
+  </li>
+  <li>
+  Miniprojektien ryhmäjako tehdään sunnuntaina 12.11. Ja näet aloitustilaisuutesi ajankohdan ilmoittautumissovelluksesta (minne linkin löydät <a href="/miniprojekti">täältä</a>) viimeistään sunnuntai-iltana.
   </li>
 </ul>
 
