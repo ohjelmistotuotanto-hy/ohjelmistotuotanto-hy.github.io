@@ -59,6 +59,8 @@ Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja 
 
 ### Bonus: VS coden konfigurointi
 
+**HUOM:** VS coden konfigurointi on täysin vapaaehtoista, selviät aivan hyvin ilman konfigurointeja. Kaikilla konfigurointi ei mene täysin alla kuvatun kaltaisesti. Eli jos konfigurointi ei onnistu, siirry eteenpäin.
+ 
 Palaa vielä edellisen tehtävän projektiin, ja asenna projektiin kirjasto `cowsay`.
 
 Luo projektiin hakemisto _src_ ja sen sisälle tiedosto _index.py_, jolla on seuraava sisältö
