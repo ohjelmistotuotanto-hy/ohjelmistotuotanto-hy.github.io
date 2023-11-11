@@ -386,8 +386,8 @@ nothing to commit, working tree clean
 ```
 
 - Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
-- Mergeä **main** branchiin **laskut**
-- Siirry nyt mainiin ja tuhoa branchi **laskut**
+- Mergeä **main**-branch branchiin **laskut**
+- Siirry nyt takaisin branchiin **main** ja tuhoa branchi **laskut**
   - Tuhoaminen ei onnistu suoraan komennolla `git branch -d`, jos branchin sisältö ei ole kokonaisuudessan mergetty mainiin. Jos näin on, tee ensin merge mainiin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista Git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
