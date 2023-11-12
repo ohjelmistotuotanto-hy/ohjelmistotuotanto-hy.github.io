@@ -74,7 +74,7 @@ Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.a
 
 ### 2. Kyselykieli NHL-tilastoihin, osa 1
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _koodi/viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko6 sisälle.
 - Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](https://ohjelmistotuotanto-hy.github.io/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5) voi olla eräs inspiraation lähde.
 
