@@ -36,8 +36,7 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan sunnuntaina 12.11. "algoritmisesti", pääasiassa noudattaen ilmoittautumisessa kerrottuja sopivia työskentelyaikoja
-- Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
+- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -79,7 +78,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 ### Toteutettava ohjelmisto
 
-Selviää aloitustilaisuudessa...
+Ohjelman alustava [kuvaus](/speksi), tarkemmat yksityiskohdat kuulet asiakkaalta.
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
