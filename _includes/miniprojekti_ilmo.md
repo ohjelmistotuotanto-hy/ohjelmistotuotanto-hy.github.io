@@ -1,6 +1,5 @@
-<div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #7CFC00;">
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
 
-<h3>Miniprojektien ryhmäjako ja aloitustilaisuudet</h3>
+Miniprojektien ryhmäjako tehdään sunnuntaina 12.11. Ja näet aloitustilaisuutesi ajankohdan ilmoittautumissovelluksesta (ks linkki alempaa) viimeistään sunnuntai-iltana.
 
-Ryhmäjako on suoritettu, näet ryhmäsi ja sen aloitustilaisuuden ajankohdan ja paikan miniprojektien <a href='https://study.cs.helsinki.fi/assembler/courses'>ilmoittautumissovellusesta</a>. Lue lisää <a href='https://ohjelmistotuotanto-hy.github.io/miniprojekti/'>täältä</a>
 </div>

@@ -4,7 +4,7 @@ permalink: /poetry
 title: Poetry ja riippuvuuksien hallinta
 ---
 
-_Tämä ohje on kopio kurssin ohjelmistotekniikka [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta) ohjeesta muutamin lisäyksin_
+_Tämä ohje on kopio kurssin Ohjelmistotekniikka [Poetry-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko2#poetry-ja-riippuvuuksien-hallinta) ohjeesta muutamin lisäyksin_
 
 Laajoissa ja monimutkaisissa ohjelmistoprojekteissa kaiken koodin tuottaminen itse ei ole enää käytännöllistä. Ei ole esimerkiksi järkevää, että jokaisessa ohjelmistoprojektissa toteutetaan oma ohjelmointirajapinta tietokantaoperaatioille, tai sovelluskehys koodin testaamiseen. Jotta pyörää ei tarvitsisi aina keksiä uudelleen, ovat ohjelmistokehittäjät kehittäneet valtavan määrän avoimen lähdekoodin _kirjastoja_, joita jokainen voi hyödyntää projekteissaan.
 
@@ -32,7 +32,7 @@ _Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versi
 
 ### Asennus
 
-Ennen kuin pääsemme tutustumaan Poetryn käyttöön tarkemmin, tulee se ensin asentaa. Seuraa alla olevista ohjeista tietokoneesi käyttöjärjestelmälle sopivaa asennusohjetta.
+Ennen kuin pääsemme tutustumaan Poetryn käyttöön tarkemmin, tulee se ensin asentaa. Seuraa alla olevista ohjeista tietokoneesi käyttöjärjestelmälle sopivaa asennusohjetta, kannattaa toki vilkaista myös Poetryn [virallinen](https://python-poetry.org/docs/) asennusohje.
 
 **HUOM:** kaikki asennustavat saattavat vaatia terminaali-ikkunan sulkemisen ja uudelleen avaamisen, jotta Poetryn komennot alkavat toimia. Joissain tapauksissa on vaadittu jopa tietokoneen uudelleenkäynnistys.
 
@@ -73,7 +73,7 @@ Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamal
 Asenna Poetry suorittamalla terminaalissa seuraava komento:
 
 ```bash
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
 Asennuksen jälkeen Poetry-binäärin polku tulee asettaa `PATH`-muuttujaan. Lisää [tämän](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) ohjeen mukaisesti `PATH`-muuttujaan polku `%APPDATA%\Python\Scripts`.
@@ -82,7 +82,33 @@ Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamal
 
 #### Poetry ja Docker
 
-tbd
+Ehkä paras tapa Poetryllä tapahtuvaan sovelluskehitykeen on [Dockerin](https://www.docker.com/) käyttö. Tällöin et tarvitse koneellesi muuta kuin Dockerin, mitään varsinaista asennusta ei tarvita sillä voit käyttää kurssia varten konfiguroitua Docker imagea [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry/general), ks myös [GitHub-repositorio](https://github.com/mluukkai/docker-poetry).
+
+Poetryn käyttö tapahtuu seuraavasti. Mene hakemistoon, missä haluat suorittaa Poetry-komentoja. Joudut (todennäköisesti) antamaan hakemiston sisältöön kirjoitus- lukuoikeudet Dockerille komennolla:
+
+```
+chmod  o=rw .
+```
+
+Anna komento
+
+```
+docker run -it --volume="$PWD:/mydir" mluukkai/poetry:intel
+```
+
+Jos koneesi on M1 mac, komennon muoto on seuraava:
+
+```
+docker run -it --volume="$PWD:/mydir" mluukkai/poetry:m1
+```
+
+Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim. `poetry init`, `poetry add`, `poetry shell` ym. ovat käytettävissä. Kontti näkee kaikki käynnistyshakemistossa olevat tiedostot. Voit editoida tiedostoja normaaliin tapaan tekstieditorilla kontin ulkopuolella. Docker-kontissa oleva komentotulkki sulkeutuu komennolla exit.
+
+Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
+
+### Ongelmia Poetryn asennuksessa?
+
+Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
 
 ### Projektin alustaminen
 
@@ -124,6 +150,8 @@ Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten 
 Komennon suorittamisen jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install`-komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
 
 ### Riippuvuuksien asentaminen
+
+{% include no_pip.md %}
 
 Asennetaan seuraavaksi projektiimme ensimmäisen riippuvuus. Riippuvuuksien löytäminen onnistuu helpoiten Googlettamalla ja etsimällä hakutuloksista sopivia GitHub-repositorioita, tai PyPI-sivuja. Asennetaan esimerkkinä projektiimme [cowsay](https://pypi.org/project/cowsay/)-kirjasto. Tämä onnistu projektin juurihakemistossa (samassa hakemistossa, missä _pyproject.toml_-tiedosto sijaitsee) komennolla:
 

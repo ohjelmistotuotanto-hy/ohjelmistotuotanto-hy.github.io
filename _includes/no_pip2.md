@@ -8,4 +8,6 @@ Olet saattanut asentaa Pythonin tarvitsemia riippuvuuksia pip-komennolla. Älä 
 
 <p>Tällä kurssilla riippuvuudet asennetaan <a href="/poetry">poetryllä</a>.</p>
 
+<p>Tämä tarkoittaa käytännössä sitä, että riippuvuudet asennetaan komennolla <tt>poetry add kirjasto</tt> komennon <tt>pip install kirjasto</tt> sijaan.</p>
+
 </div>

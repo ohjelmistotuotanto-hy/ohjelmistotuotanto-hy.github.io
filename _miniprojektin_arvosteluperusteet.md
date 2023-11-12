@@ -2,7 +2,6 @@
 layout: page
 title: Miniprojektin arvosteluperusteet
 inheader: no
-permalink: /deprecated
 ---
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
@@ -75,6 +74,7 @@ Pisteitä kertyy seuraavista asioista:
 
 Sprintin maksimi on 2.5 pistettä.
 
+
 ### Toisen sprintin arvosteluperusteet
 
 Pisteitä kertyy seuraavista asioista:
@@ -104,6 +104,7 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
+
 Pisteitä kertyy seuraavista asioista:
 
 - (0.25p) product backlog
@@ -127,16 +128,19 @@ Pisteitä kertyy seuraavista asioista:
     - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
   - Testidata on järkevää
     - tietokanta ei saa olla etukäteen tyhjä
-    - tietokannassa oleva data ja testeissä käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+    - tietokannassa oleva data ja demottaessa käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+  - **Lue viimeinen bullet uudelleen** jostain syystä se jää 25% huomaamatta...
+    - jos tuollainen syöte nähdään niin pisteitä tulee heti nolla
 
 Sprintin maksimi on 2.5 pistettä.
+
 
 ### Lopputoimenpiteet
 
 #### Vertaispalaute
 
 - Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään torstaina 23.12. klo 23:59**
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään perjantaina 23.12. klo 23:59**
   - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
 - Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   - Ryhmäläiset eivät näe toistensa vertaispalautteita
@@ -151,17 +155,23 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline torstaina 23.12. klo 23:59**
+- **Raportin deadline perjantaina 23.12. klo 23:59**
+
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
-Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1/#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
+Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
 
 On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden testicommitin ja tarkastaa, että Git on konfiguroitu oikein.
 
+### Pariohjelmointi ja commitit
+
+Jos pariohjelmoit (se kannattaa!) saat commitit näkyviin molemmille
+[tämän ohjeen](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) mukaan.
+
 ### Commitit kadoksissa
 
-Jos committisi yhteydessä näkyy (gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi
+Jos committisi yhteydessä näkyy (Gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi
 
 ![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit1.png)
 

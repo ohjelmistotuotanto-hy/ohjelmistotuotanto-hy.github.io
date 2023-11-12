@@ -5,10 +5,12 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
+    - syksy 23: [youtube](https://youtu.be/iOb4FiHMYzQ), [unitube](https://www.helsinki.fi/fi/unitube/video/09dad5ca-ca5d-4dad-b394-0becd95a0bfb)
     - [syksy 21](https://youtu.be/v8wUaq4qa9M)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/1DDna_ASaTw), [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
     - [syksy 2021](https://youtu.be/Bejr8KO_0fY)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
@@ -20,11 +22,13 @@
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/LoTkLUn-5c8), [unitube](https://www.helsinki.fi/fi/unitube/video/09ce38ed-2074-4d07-8669-ac55051a04c1)
     - [syksy 2021](https://youtu.be/T5dOFks48ZY)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/VmURlloAvt4), [unitube](https://www.helsinki.fi/fi/unitube/video/0d5b1a96-f4b3-4ff3-bc7c-f2ffa560caf8)  
     - [syksy 2021](https://youtu.be/_V6jCiKuH-0)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
@@ -95,14 +99,14 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 13: {{site.luennot[12]}} Vierailuluento Hannu Kokko Elisa
-  - Luento 14: {{site.luennot[13]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
+  - Luento 13: {{site.luennot[13]}} Vierailuluento Hannu Kokko Elisa
+  - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - Miniprojekti
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - tdb1
-    - tdb2
+    - tiistaina 12.12. klo 14-16 B123
+    - torstaina 14.12. klo 12-14 B123
 
 ### Viikko 8
 
