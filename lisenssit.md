@@ -20,12 +20,15 @@ Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.co
 
 | Lisenssi | Ehdot | Tyyppi |
 |-------|--------|---------|
-| MIT-lisenssi | Lisenssin tekstin pitää säilyä lähdekoodissa | Suvaitseva |
-| GNU General Public License, eli GPL | Lähdekoodi pitää julkaista samalla lisenssillä | Suojeleva
-| Mozilla Public-lisenssi 2.0 | GPL, paitsi mikäli projekti kasvaa merkittävän suureksi, voidaan lisenssi vaihtaa, esim. Chromium -> Chrome | Suvaitseva |
+| MIT-lisenssi | Lisenssin tekstin pitää säilyä lähdekoodissa ja mm. suljettuja versioita saa tehdä | Suvaitseva |
+| GNU General Public License, eli GPL | Lähdekoodi pitää julkaista samalla lisenssillä eikä suljettuja versioita saa tehdä | Suojeleva
+| GPL 2.0 | Sama kuin GPL, mutta painotus ettei suljettuja versioita saa tehdä, edes muiden lakivelvotteiden vuoksi | Suojeleva
+| GPL 3.0 | Sama kuin GPLv2, mutta painotus ettei suorittava rautakaan saa rajoittaa GPL-lisenssin velvoitteita | Suojeleva
+| Mozilla Public-lisenssi 2.0 | Sama kuin GPL, paitsi mikäli projekti kasvaa merkittävän suureksi, voidaan lisenssi vaihtaa, esim. Chromium -> Chrome | Suvaitseva |
 | The Unlicense | Tee mitä haluat | Avoin |
 | - (Ei lisenssiä) | Omistat kaikki oikeudet | Yksityisomisteinen |
 | CC BY | Lisenssin tekstin pitää säilyä teoksessa. Voidaan antaa ei-ohjelmistoille, esim. Kurssimateriaalille | Suvaitseva |
+| CC BY NC | Sama kuin CC BY, mutta kaupallinen käyttö on kielletty (NC, No-Commercial) | Suvaitseva
 
 ### Harjoitus
 Katsotaan ensin, mitä lisenssejä muut ohjelmistot käyttävät.
