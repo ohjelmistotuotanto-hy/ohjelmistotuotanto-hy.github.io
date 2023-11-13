@@ -5,8 +5,6 @@ inheader: no
 permalink: /miniprojekti/
 ---
 
-{% include miniprojekti_ilmo.md %}
-
 ### Ajankohtaista
 
 - Miniprojektien aloitustilaisuudet
@@ -19,9 +17,9 @@ permalink: /miniprojekti/
 - Loppudemot
   - ti 12.12 klo 14-16
   - to 14.12 klo 12-14
-- **Ilmoittautuminen miniprojektiin käynnissä ja päättyy lauantaina 11.11. klo 23.59**
+- Ilmoittautuminen miniprojektiin päättynyt
 - Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/4f142151-b6e2-4120-b677-d1ae259ef6a8)
-- **Ryhmäjako tehdään sunnuntaina 12.11. Ja näet aloitustilaisuutesi ajankohdan ilmoittautumissovelluksesta (eli yo linkistä) viimeistään sunnuntai-iltana.**
+- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
 ### Johdanto
@@ -38,8 +36,7 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan sunnuntaina 12.11. "algoritmisesti", pääasiassa noudattaen ilmoittautumisessa kerrottuja sopivia työskentelyaikoja
-- Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
+- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -81,7 +78,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 ### Toteutettava ohjelmisto
 
-Selviää aloitustilaisuudessa...
+Ohjelman alustava [kuvaus](/speksi), tarkemmat yksityiskohdat kuulet asiakkaalta.
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
