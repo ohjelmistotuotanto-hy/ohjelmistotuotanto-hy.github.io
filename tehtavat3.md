@@ -608,6 +608,8 @@ Resource  resource.robot
 Resource  login_resource.robot
 ```
 
+**Heads up:** muista että sama käyttäjätunnus voidaan luoda vain kertaalleen. Saatat törmätä tässä tehtävässä tilanteeseen, missä käyttäjätunnuksen luominen epäonnistuu jos yrität luoda saman nimisen käyttäjätunnuksen minkä jokin edellinen testi on jo luonut. Paras ratkaisu tilanteeseen olisi nollata tietokanta ennen jokaista testiä. Ratkaisuksi toki tässä tehtävässä kelpaa myös eri nimisen käyttäjätunnuksen luominen.
+
 ### Web-sovelluksen testien suorittamien CI-palvelimella
 
 **HUOM:** Seuraava osio ei kuulu tehtäviin, eli siinä esitettyjä esimerkkejä ei tarvitse tehdä mihinkään. Ohjeista saattaa kuitenkin olla hyötyä esimerkiksi kurssin [miniprojektissa](/miniprojekti).
