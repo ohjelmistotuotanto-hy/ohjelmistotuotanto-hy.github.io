@@ -37,7 +37,7 @@ def main():
 AppLibraryn konstruktori ei kuitenkaan vielä käynnistä ohjelmaa sen metodilla `run`.
 
 
-Testien käyttämiä _avainsaoja_ ovat
+Testien käyttämiä _avainsanoja_ ovat
 
 ```
 Run Application
