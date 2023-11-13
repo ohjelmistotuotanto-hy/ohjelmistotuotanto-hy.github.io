@@ -30,7 +30,7 @@ Perusteeton osallistumattomuus johonkin sprinttiin johtaa miniprojektisuoritukse
 
 ### Ensimmäisen sprintin arvosteluperusteet
 
-Projekti tulee olla rekisteröity osoitteeseen <{{site.stats_url}}>.
+Projekti tulee olla rekisteröity palautussovellukseen <{{site.stats_url}}>.
 
 - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
   - Luo projektin _create project_ -napista avautuvasta lomakkeesta
