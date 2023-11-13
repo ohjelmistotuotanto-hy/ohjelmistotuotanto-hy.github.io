@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    Miniprojekti käynnistyy 13.11. alkavalla viikolla. Ilmoittautuminen on päättynyt.
+    <a href='/miniprojekti'>Miniprojekti</a> käynnistyy 13.11. alkavalla viikolla. Ilmoittautuminen on päättynyt.
   Oman aloitustilaisuutesi näet <a href='/ryhmajako'>täältä</a>, ryhmäjako tehdään aloitustilaisuudessa.
   </li>
   <li>

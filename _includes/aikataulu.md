@@ -48,7 +48,7 @@
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
-- Miniprojekti
+- - [Miniprojekti](/miniprojekti)
   - Aloitustilaisuudet  
 
 ### Viikko 4
@@ -67,7 +67,7 @@
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4), deadline {{site.lask-dl[4]}}
-- Miniprojekti
+- [Miniprojekti](/miniprojekti)
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
 ### Viikko 5
@@ -84,7 +84,7 @@
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
-- Miniprojekti
+- [Miniprojekti](/miniprojekti)
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
 ### Viikko 6
@@ -104,7 +104,7 @@
   - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
-- Miniprojekti
+- [Miniprojekti](/miniprojekti)
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
     - tiistaina 12.12. klo 14-16 B123
     - torstaina 14.12. klo 12-14 B123
