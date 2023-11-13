@@ -105,7 +105,7 @@ Register With Already Taken Username And Valid Password
 Register With Too Short Username And Valid Password
 # ...
 
-Register With Enough Long But Invald Username And Valid Password
+Register With Enough Long But Invalid Username And Valid Password
 # ...
 
 Register With Valid Username And Too Short Password

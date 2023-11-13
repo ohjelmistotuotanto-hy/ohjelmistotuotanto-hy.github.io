@@ -37,7 +37,7 @@ def main():
 AppLibraryn konstruktori ei kuitenkaan vielä käynnistä ohjelmaa sen metodilla `run`.
 
 
-Testien käyttämiä _avainsaoja_ ovat
+Testien käyttämiä _avainsanoja_ ovat
 
 ```
 Run Application
@@ -56,7 +56,7 @@ class AppLibrary:
         self._app.run()
 ```
 
-Eli kysessä on sovelluksen käynnistys.
+Eli kyseessä on sovelluksen käynnistys.
 
 Ennen sovelluksen käynnistämistä, sille annetaan käyttäjän simuloidut syötteet parametrillisen avainsanan `Input` avulla. Avainsana on toteutettu seuraavasti luokassa AppLibraryssä:
 
