@@ -55,6 +55,13 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 - Ryhmä muodostuvat/muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
+- Projekti tulee rekisteröidä palautussovellukseen <{{site.stats_url}}>.
+  - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
+    - Luo projektin _create project_ -napista avautuvasta lomakkeesta
+    - Ja jakaa muille ryhmäläisille luodun projektin id:n
+  - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
+  - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+    - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
 
 #### viikko 4 (20-24.11.)
 
