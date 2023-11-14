@@ -117,8 +117,6 @@ Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäv
 
 Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa.
 
-HUOM: tehtävässä on tällä hetkellä pieni "logiikkavirhe". Tehtävä kutsuu 40-40 tasatilannetta virheellisesti _Fourty-All_, tennisessä tätä ja kaikkia sen jälkeisiä tasapelejä tulisi oikeasti kutsua nimellä _Deuce_. 
-
 Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata).
 
 Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
