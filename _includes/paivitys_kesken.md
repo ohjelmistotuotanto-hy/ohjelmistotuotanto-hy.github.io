@@ -2,6 +2,6 @@
 
 Kaikkia viikkojen 5-7 tehtäviä ei ole vielä päivitetty, tekeminen omalla vastuulla!
 
-Viikon 5 laskareista valmiina seuraavat tehtävät: 3
+Viikon 5 laskareista valmiina seuraavat tehtävät: 3, 4, 5
 
 </div>

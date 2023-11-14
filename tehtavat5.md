@@ -188,7 +188,7 @@ class Kayttoliittyma:
             Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
             Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
             Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
-            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
+            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote) # ei ehkä tarvita täällä...
         }
 
     # ...
@@ -219,6 +219,12 @@ Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jo
 Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
 
 Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
+
+### Vapaaehtoinen bonus-tehtävä
+
+Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia. Eli jos olet esim. laskenut summan 1+2+3+4+5 (jonka tulos 16), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
+
+Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
 
 ### 6. IntJoukon testaus ja siistiminen
 
