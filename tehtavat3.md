@@ -456,7 +456,7 @@ Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytä�
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
-Test Setup  Go To Main Page
+Test Setup  Go To Starting Page
 
 *** Test Cases ***
 Click Login Link
@@ -475,8 +475,10 @@ Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkie
 ```
 Click Register Link                                                   | FAIL |
 Setup failed:
-No keyword with name 'Go To Main Page' found.
+No keyword with name 'Go To Starting Page' found.
 ```
+
+**HUOM** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
 
 ### 6. Web-sovelluksen testaaminen osa 2
 
