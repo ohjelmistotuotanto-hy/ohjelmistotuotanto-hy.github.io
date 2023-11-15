@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2 eivät näy palautuksissa mitenkään.
@@ -233,12 +231,41 @@ Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oike
 
 Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
 
+Koodi simuloi vanhanaikaista ohjelmointikieltä kuten C:tä missä ei ole Pythonin listan tapaista valmista tietorakennetta, vaan ainoastaan listoja, joiden koko on kiinteä, ja joka määritellään listan luomishetkellä. Koodissa listan luominen tapahtuu metodilla `_luo_lista`:
+
+```python
+class IntJoukko:
+    # tämä metodi on ainoa tapa luoda listoja
+    def _luo_lista(self, koko):
+        return [0] * koko
+
+    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
+        # ...
+        
+        # luodaan lista, jolla haluttu kapasiteetti
+        self.ljono = self._luo_lista(self.kapasiteetti)
+        self.alkioiden_lkm = 0
+```
+
+Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, että joukon sisäistä listaa on kasvatettava. Tämä tapahtuu luomalla uusi lista metodilla `_luo_lista`:
+
+```python
+    def lisaa(self, n):
+        # ...
+                
+        # ei enää tilaa, luodaan uusi lista lukujen säilyttämiseen
+        self.ljono = self._luo_lista(self.alkioiden_lkm + self.kasvatuskoko)
+
+```
+
 Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
 
 - Poista copypaste
 - Vähennä monimutkaisuutta
 - Anna muuttujille selkeät nimet
 - Tee metodeista pienempiä ja hyvän koheesion omaavia
+
+Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
 
 Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
 
