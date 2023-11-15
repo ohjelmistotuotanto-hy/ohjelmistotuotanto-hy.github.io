@@ -31,11 +31,11 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 ### 1. Git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
-Edellisessä tehtävässä palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
+Viikon 4 [tehtävässä 6](#6-git-tägit-versionhallinta) palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
 Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
 
-- Tee jokin tiedosto, esim. nimeltään _xxx_, lisää ja committaa se
+- Tee jokin tiedosto, esim. nimeltään _important.txt_, lisää ja committaa se
 - Poista tiedosto ja committaa
 - Tee jotain muutoksia johonkin tiedostoon ja committaa
 - Historiasi näyttää seuraavalta
@@ -44,14 +44,14 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
 (1) - (2) - (3)
 ```
 
-- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _xxx_ on olemassa ja (2):ssa xxx:ää ei ole.
+- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _important.txt_ on olemassa ja (2):ssa important.txt:ää ei ole.
   - Huom: komennolla <code>gitk</code> voit tutkia historiaa
 - Haluamme palauttaa tiedoston
 - Selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
-- Anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- xxx</code> missä pitkä merkkijono on siis kyseisen commitin id
+- Anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- important.txt</code> missä pitkä merkkijono on siis kyseisen commitin id
   - varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
 - Tee commit
-- _xxx_ on palannut!
+- _important.txt_ on palannut!
 - Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa
 
   - "Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters." [7.1 Git Tools - Revision Selection
