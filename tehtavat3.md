@@ -554,7 +554,7 @@ Open And Configure Browser
     Set Selenium Speed  ${DELAY}
 ```
 
-**Tee muutokset ja suosita testit.**
+**Tee muutokset ja suorita testit.**
 
 **HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit palata debuggauksen ajaksi "normaaliin" Chromeen (kommentoimalla Call Method -rivin), ja muuttamalla `DELAY`-muuttujan arvoa.
 
