@@ -371,6 +371,8 @@ ${REGISTER_URL}  http://${SERVER}/register
 
 *** Keywords ***
 Open And Configure Browser
+    # jos käytät Firefoxia ja Geckodriveriä käytä seuraavaa riviä sitä alemman sijaan
+    # ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
     Call Method    ${options}    add_argument    --no-sandbox
     # seuraava rivi on kommentoitu pois tässä vaiheessa
@@ -391,6 +393,8 @@ Go To Login Page
 `*** Settings ***` osiossa on käytössä projektin oma `AppLibrary.py`-kirjasto sekä edellä mainittu SeleniumLibrary-kirjasto. SeleniumLibrary-kirjasto tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
 
 Tiedostossa on myös ennestään tuntematon osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
+
+**HUOM** Firefoxin/Geckodriverien pitää tehdä tiedostoon pieni muutos, ks. kommentit!
 
 `*** Keywords ***`-osiossa on määritelty yleiskäyttöisiä avainsanoja:
 

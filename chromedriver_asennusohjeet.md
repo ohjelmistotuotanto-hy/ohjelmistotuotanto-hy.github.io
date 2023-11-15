@@ -104,3 +104,23 @@ geckodriver --version
 ### Windows
 
 Noudata ChromeDriverin ohjetta soveltuvin osin.
+
+### HUOM
+
+Geckodriveriä käytettäessä tiedoston `resource.robot` sisältöä tulee hieman muuttaa:
+
+```
+*** Keywords ***
+Open And Configure Browser
+    # seuraava rivi on poistettu kommenteista
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+    # seuraava rivi on kommentoitu
+    # ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys 
+    Call Method    ${options}    add_argument    --no-sandbox
+    # seuraava rivi on kommentoitu toistaiseksi pois
+    # Call Method  ${options}  add_argument  --headless
+    Open Browser  browser=chrome  options=${options}
+    Set Selenium Speed  ${DELAY}
+```
+
+Eli rivi missä on _FirefoxOptions_ on otettu pois kommenteista ja rivi _ChromeOptions_ on kommentoitu.
