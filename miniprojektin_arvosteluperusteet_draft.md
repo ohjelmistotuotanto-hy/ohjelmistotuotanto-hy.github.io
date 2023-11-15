@@ -2,6 +2,7 @@
 layout: page
 title: Miniprojektin arvosteluperusteet
 inheader: no
+permalink: /miniprojektin_arvosteluperusteet_draft/
 ---
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
@@ -9,13 +10,13 @@ inheader: no
 - [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
-Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
+Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
-- Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan kolmesta sprintistä ryhmä voi saada 7.5 pistettä
+- Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
   - Ensisijainen arvostelukriteeri on prosessin seuraaminen, tasainen eteneminen ja ohjelmaan toteutettujen ominaisuuksien laatu
-  - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pienempi
+  - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pieni mutta ei toki nolla, eli jotain koodiakin tulee tehdä
   - Tarkemmat sprinttikohtaiset arvosteluperusteet alla
-- Henkilökohtainen suoriutumisesta on jaossa -1.5p ... 1.5p, poikkeustapauksissa -2p tai 2p on mahdollinen
+- Henkilökohtainen suoriutumisesta on jaossa -1p ... 1, poikkeustapauksissa -2p tai 2p on mahdollinen
   - Henkilökohtaisen suoriutumisen pisteet perustuvat lopussa tehtävään vertaisarvioon sekä ryhmän repositoriosta ja backlogeilta näkyvään "digitaaliseen jalanjälkeen"
   - Henkilökohtaista suoriutumista arvioidessa arvostetaan seuraavia asioita:
     - Fyysistä ja henkistä läsnäoloa
@@ -25,13 +26,14 @@ Miniprojektista saa maksimissaan 9 kurssipistettä seuraavien kriteereiden ja pe
     - Työskentelyn tasaisuutta
     - Kontribuutiota ryhmän tuotoksiin (koodi, testit, deployment pipeline, backlogit)
       - [varmista, että committisi näkyvät githubissa oikein](/miniprojektin_arvosteluperusteet#varmista-että-commitisi-näkyvät-githubissa-oikein)
-  - Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä
+  - **Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä**
+  - Kannattaa myös ottaa tosissaan noin 6 tunnin sprinteittäinen työaika. Työajan reilu ylitys ei tuo "lisäpisteitä" vaan pikemminkin päinvastoin.
 
 Perusteeton osallistumattomuus johonkin sprinttiin johtaa miniprojektisuorituksen hylkäämiseen.
 
 ### Ensimmäisen sprintin arvosteluperusteet
 
-Projekti tulee olla rekisteröity osoitteeseen <{{site.stats_url}}>.
+Projekti tulee olla rekisteröity palautussovellukseen <{{site.stats_url}}>.
 
 - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
   - Luo projektin _create project_ -napista avautuvasta lomakkeesta
@@ -39,6 +41,7 @@ Projekti tulee olla rekisteröity osoitteeseen <{{site.stats_url}}>.
 - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
 **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+- Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
 
 Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja GitHub Actionsiin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin GitHub-repositorion README:hen!
 
@@ -49,31 +52,29 @@ Pisteitä kertyy seuraavista asioista:
 - (0.5p) sprintin 1 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
   - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
-  - Burndown-käyrä olemassa
+  - Sprintin burndown-käyrä olemassa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
-- (0.25p) sprintiin 1 valittujen storyjen hyväksymiskriteerit kirjattu
+- (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
   - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
-  - Ainakin jossain storyssa hyväksymiskriteerien testausta (Cucumber tai Robot Framework)
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa ainakin yksikkötestit ja ne menevät läpi
+  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHub README:
-  - README:sta löytyy linkki backlogeihin
+  - README:sta löytyy linkki backlogeihin (ja niihin on _kaikilla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
   - Linkki sovellukseen jos kyse web-sovelluksesta
   - Jos kyse työpöytäsovelluksesta: ohjelman asennus- ja käyttöohje
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
-  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+  - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
 
 Sprintin maksimi on 2.5 pistettä.
-
 
 ### Toisen sprintin arvosteluperusteet
 
@@ -87,14 +88,15 @@ Pisteitä kertyy seuraavista asioista:
   - Burndown-käyrä olemassa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
 - (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
-- (0.25p) kattavahko testaus yksikkö- ja storytasolla
+- (0.25p) kattavahko automatisoitu testaus yksikkötasolla
+- (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit
 - (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
-- (0.25p) projektille määritelty järkevät Pylint- tai checkstylesäännöt jotka tarkistetaan CI:n toimesta
-- (0.5p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.25p) projektille määritelty järkevät Pylint-säännöt jotka tarkistetaan CI:n toimesta
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
 - (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  - Jos kyseessä on konsolisovellus, releaseen liitetään projektin ajettava jar-tiedosto
+  - Jos kyseessä on konsolisovellus
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
