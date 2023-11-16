@@ -381,7 +381,7 @@ Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_P
 
 Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko4_ sijoitettavaan tiedostoon _retro.md_.
 
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen tai toisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
 
 ### 6. git: tägit [versionhallinta]
 
