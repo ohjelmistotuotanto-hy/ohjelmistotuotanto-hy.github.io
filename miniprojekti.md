@@ -7,19 +7,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- Miniprojektien aloitustilaisuudet
-  - ma 14-16
-  - ti 14-16
-  - to 14-16
-  - to 16-18
-  - pe 12-14
-- Seuraavat viikot: sprinttien katselmus ja suunnittelu samassa aikaikkunassa
-- Loppudemot
-  - ti 12.12 klo 14-16
-  - to 14.12 klo 12-14
-- Ilmoittautuminen miniprojektiin päättynyt
-- Ilmoittaudu [täällä](https://study.cs.helsinki.fi/assembler/course/4f142151-b6e2-4120-b677-d1ae259ef6a8)
-- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa
+- Asiakastapaamisten (30 min) ajankohta palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
 ### Johdanto
@@ -49,7 +37,7 @@ permalink: /miniprojekti/
 
 ### Työn eteneminen
 
-Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) viimeistään perjantaina 17.11.
+Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
 #### viikko 3 (13-17.11.)
 
