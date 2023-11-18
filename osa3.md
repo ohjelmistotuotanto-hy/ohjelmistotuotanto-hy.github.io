@@ -693,7 +693,7 @@ Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen ta
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. suuren kuormituksen sietoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa.
 
-Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä kovimmassa nosteessa oleva SaaS-palveluna eli pilvessä toimiva CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaithtoehtoja ovat [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
+Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä kovimmassa nosteessa oleva SaaS-palveluna eli pilvessä toimiva CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaihtoehtoja ovat [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
 
 GitHub Actionsia, CircleCI:tä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa, on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin.
 
@@ -740,7 +740,7 @@ Käsitteen kehittäjä [Cam Kaner](http://www.satisfice.com/articles/what_is_et.
 
 > _exploratory testing is simultaneous learning, test design and test execution_
 
-Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmassa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sensijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien ja kokeilujen perusteella löytämään järjestelmästä virheitä.
+Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmassa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sen sijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien ja kokeilujen perusteella löytämään järjestelmästä virheitä.
 
 Tutkiva testaus ei kuitenkaan etene täysin sattumanvaraisesti, kullekin testisessiolle asetetaan jonkinlainen tavoite, eli mitä osaa tai toiminnallisuuksia sovelluksesta on tarkoitus tutkia ja minkälaisia virheitä tarkoitus etsiä.
 
