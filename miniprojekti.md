@@ -161,4 +161,4 @@ Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa
 
 ### Työn arvostelu
 
-Arvosteluperusteet löytyvät [täältä](/miniprojektin_arvosteluperusteet/)[.](https://docs.google.com/presentation/d/1ncfS-FzYUq7sCnV_S_oBHF1FX8xMD18O1OFY2-XD4EU/edit?usp=sharing)
+Arvosteluperusteet löytyvät [täältä](/miniprojektin_arvosteluperusteet/)
