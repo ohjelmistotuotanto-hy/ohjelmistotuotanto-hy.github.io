@@ -92,7 +92,7 @@
 ### Viikko 6
 
 - Vierailuluennot
-  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa ja Kasper Hirvikoski Unity
+  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa Unity ja Mikko Tiainen Hogrefe 
   - Luento 12: {{site.luennot[12]}} Vierailuluento Anniina Sallinen Oura
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6)t, deadline {{site.lask-dl[6]}}
 
@@ -103,7 +103,7 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}} Vierailuluento Hannu Kokko Elisa
-  - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers, Mikko Tiainen Hogrefe
+  - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers ja Kasper Hirvikoski Unity
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
