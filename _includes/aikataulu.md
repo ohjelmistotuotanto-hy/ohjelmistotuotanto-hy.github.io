@@ -58,13 +58,14 @@
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/SIT74TRZVhg), [unitube](https://www.helsinki.fi/fi/unitube/video//fcefce04-872f-4650-b501-1799b7bd1a7d)
+    - syksy 2023: [youtube](https://youtu.be/SIT74TRZVhg), [unitube](https://www.helsinki.fi/fi/unitube/video/fcefce04-872f-4650-b501-1799b7bd1a7d)
     - [syksy 2021](https://youtu.be/WC6q8KRHKII)
 - Luento 8: {{site.luennot[8]}} 
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/34CKdOxwmac), [unitube](https://www.helsinki.fi/fi/unitube/video/680c1fe8-a709-4eb0-81f2-ec64919680ac)
     - [syksy 2021](https://youtu.be/5pjrcTLdUpU)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
