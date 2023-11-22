@@ -358,8 +358,6 @@ matcher = (
 )
 ```
 
-On mahdollista ja jopa todennäköistä, että ensimmäinen ratkaisusi ei toimi jos apumuuttujia ei käytetä. Mieti tarkkaan missä vika ja yritä korjata tilanne. Vaadittava muutos ei ole iso.
-
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 **HUOM tee tämä tehtävä aikaisintaan perjantaina 1.12.**
