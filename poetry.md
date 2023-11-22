@@ -72,7 +72,7 @@ Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamal
 
 Asenna Poetry suorittamalla terminaalissa seuraava komento:
 
-```bash
+```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
@@ -102,7 +102,7 @@ Jos koneesi on M1 mac, komennon muoto on seuraava:
 docker run -it --volume="$PWD:/mydir" mluukkai/poetry:m1
 ```
 
-Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim. `poetry init`, `poetry add`, `poetry shell` ym. ovat käytettävissä. Kontti näkee kaikki käynnistyshakemistossa olevat tiedostot. Voit editoida tiedostoja normaaliin tapaan tekstieditorilla kontin ulkopuolella. Docker-kontissa oleva komentotulkki sulkeutuu komennolla exit.
+Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim. `poetry init`, `poetry add`, `poetry shell` ym. ovat käytettävissä. Kontti näkee kaikki käynnistyshakemistossa olevat tiedostot. Voit editoida tiedostoja normaaliin tapaan tekstieditorilla kontin ulkopuolella. Docker-kontissa oleva komentotulkki sulkeutuu komennolla `exit`.
 
 Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
 
@@ -128,6 +128,7 @@ name = "poetry-testi"
 version = "0.1.0"
 description = ""
 authors = ["Matti Luukkainen <matti.luukkainen@helsinki.fi>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -145,7 +146,23 @@ Kun _pyproject.toml_-tiedosto on tullut tutuksi, viimeistellään projektin alus
 poetry install
 ```
 
-Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen. Jos projektille olisi määritelty riippuvuuksia, komennon suorittaminen asentaisi myös ne. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projektia aletaan käyttämään.
+Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen ja riippuvuuksien asentamisen. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projektia aletaan käyttämään.
+
+Komennon suorittaminen johtaa todennäköisesti seuraavaan ilmoitukseen:
+
+```
+Installing the current project: poetry-testi (0.1.0)
+The current project could not be installed: [Errno 2] No such file or directory: '~/poetry-testi/README.md'
+If you do not want to install the current project use --no-root
+```
+
+Tämä johtuu siitä, että Poetry yrittää asentaa myös nykyistä projektia, eikä projektissa ole _poetry-testi_-nimistä moduulia. Kyseessä [ei ole](https://github.com/python-poetry/poetry/pull/8369) tekstin ulkonäöstä huolimatta virhe vaan pikemminkin varoitus. Projektin alustaminen on kyllä mennyt läpi, mutta jos et halua varoitusta, voit käyttää komennosta muotoa:
+
+```bash
+poetry install --no-root
+```
+
+Virtuaaliympäristön alustamisen lisäksi tämä komento asentaa ainoastaan projektin riippuvuudet, ei projektia itseään.
 
 Komennon suorittamisen jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install`-komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
 
