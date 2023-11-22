@@ -341,7 +341,7 @@ class TestKauppa(unittest.TestCase):
         # toistaiseksi ei välitetä kutsuun liittyvistä argumenteista
 ```
 
-Aloita siten, että saat esimerkkitestin toimimaan. Tee sen jälkeen seuraavat testit:
+Aloita siten, että saat esimerkkitestin suoritettua. Tee sen jälkeen seuraavat testit:
 
 - Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
   - Tämä siis on muuten copypaste esimerkistä, mutta `assert_called_with`-metodia käytettävä, jotta voidaan tarkastaa, että parametreilla on oikeat arvot
