@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=6 %}
 
 Tehtävässä 1 jatketaan Gitin harjoittelua, tehtävä ei näy palautuksissa mitenkään.
@@ -37,34 +35,36 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 _Tätä tehtävää ei palauteta mihinkään!_
 
-Lue <http://git-scm.com/book/en/Git-Branching-Rebasing> ja/tai <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase>
+Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](http://localhost:4000/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 9](http://localhost:4000/tehtavat2/#9-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
+
+Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
 
 Aikaansaa seuraavankaltainen tilanne:
 
 ```
-------- master
+------- main
 \
  \--- haara
 ```
 
-"Rebeissaa" haara masteriin, eli aikaansaa seuraava tilanne:
+"Rebeissaa" haara mainiin, eli aikaansaa seuraava tilanne:
 
 ```
-------- master
+------- main
        \
         \--- haara
 ```
 
 Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
-"Mergeä" master vielä haaraan:
+"Mergeä" main vielä haaraan:
 
 ```
-       \     master
+       \     main
         \--- haara
 ```
 
-Lopputuloksena pitäisi siis olla lineaarinen historia ja master sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
 
 Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
 
@@ -78,27 +78,25 @@ Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.a
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko6 sisälle.
 - Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](https://ohjelmistotuotanto-hy.github.io/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5) voi olla eräs inspiraation lähde.
 
-Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 5 syöttöä_.
+Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 20 syöttöä_.
 
 Koodin onkin luotu hieman valmista kalustoa, josta pääset liikkeelle. Yllä olevan kyselyn voi suorittaa seuraavasti:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
     matcher = And(
         HasAtLeast(5, "goals"),
-        HasAtLeast(5, "assists"),
+        HasAtLeast(20, "assists"),
         PlaysIn("PHI")
     )
 
     for player in stats.matches(matcher):
         print(player)
 ```
-
-HUOM: jossain tehtäväpohjassa saattaa olla vielä käytössä vanha osoite datan hakuun (heroku...) eli jos törmäät ongelmaan, varmista että käytät yo urlia.
 
 Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `test` palauttaa `True`.
 
@@ -119,32 +117,32 @@ Voit tarkistaa toteutuksesi toimivuuden tekemällä kyselyn:
 
 ```python
 matcher = And(
-    Not(HasAtLeast(1, "goals")),
+    Not(HasAtLeast(2, "goals")),
     PlaysIn("NYR")
 )
 ```
 
-Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään yhtä maalia, eli _0 maalia tehneet_:
+Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään kahta maalia, eli _0 tai 1 maalia tehneet_:
 
 <pre>
-Sammy Blais          NYR          0  + 4  = 4
-Libor Hajek          NYR          0  + 1  = 1
-Tim Gettinger        NYR          0  + 0  = 0
-Anthony Greco        NYR          0  + 0  = 0
-Zac Jones            NYR          0  + 2  = 2
-Keith Kinkaid        NYR          0  + 0  = 0
+Jonny Brodzinski     NYR          1  + 1  = 2
+Ben Harpur           NYR          1  + 5  = 6
+Ryan Carpenter       NYR          1  + 2  = 3
+Ryan Lindgren        NYR          1  + 17 = 18
+Libor Hajek          NYR          1  + 0  = 1
+Zac Jones            NYR          1  + 1  = 2
+Will Cuylle          NYR          0  + 0  = 0
+Jaroslav Halak       NYR          0  + 0  = 0
 Igor Shesterkin      NYR          0  + 0  = 0
-Adam Huska           NYR          0  + 0  = 0
-Alexandar Georgiev   NYR          0  + 0  = 0
 </pre>
 
-- Kaikissa esimerkitulostuksissa on käytetty vuoden 2021-22 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt>
+- Kaikissa esimerkitulostuksissa on käytetty vuoden 2022-23 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2023-23/players.txt>
 
 Kyselyn
 
 ```python
 matcher = And(
-    HasFewerThan(1, "goals"),
+    HasFewerThan(2, "goals"),
     PlaysIn("NYR")
 )
 ```
@@ -157,6 +155,8 @@ Ehdon All pitäisi palauttaa kaikki pelaajat. Seuraavan koodin
 filtered_with_all = stats.matches(All())
 print(len(filtered_with_all))
 ```
+
+pitäisi tulostaa 1058
 
 ### 3. Kyselykieli NHL-tilastoihin, osa 2
 
@@ -174,17 +174,15 @@ matcher = Or(
 tulee palauttaa ne, joilla on vähintään 45 maalia tai 70 syöttöä, eli seuraava lista
 
 ```
-Chris Kreider        NYR          52 + 25 = 77
-Artemi Panarin       NYR          22 + 74 = 96
-Auston Matthews      TOR          60 + 46 = 106
-Jonathan Huberdeau   FLA          30 + 85 = 115
-Alex Ovechkin        WSH          50 + 40 = 90
-Roman Josi           NSH          23 + 73 = 96
-Johnny Gaudreau      CGY          40 + 75 = 115
-Leon Draisaitl       EDM          55 + 55 = 110
-Connor McDavid       EDM          44 + 79 = 123
-Kirill Kaprizov      MIN          47 + 61 = 108
-Kyle Connor          WPG          47 + 46 = 93
+David Pastrnak       BOS          61 + 52 = 113
+Tage Thompson        BUF          47 + 47 = 94
+Nikita Kucherov      TBL          30 + 83 = 113
+Brayden Point        TBL          51 + 44 = 95
+Mikko Rantanen       COL          55 + 50 = 105
+Leon Draisaitl       EDM          52 + 76 = 128
+Connor McDavid       EDM          64 + 89 = 153
+Jason Robertson      DAL          46 + 63 = 109
+Erik Karlsson        SJS          25 + 76 = 101
 ```
 
 Kyselyn
@@ -203,22 +201,21 @@ matcher = And(
 tulee palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYR_, _FLA_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Chris Kreider        NYR          52 + 25 = 77
-Mika Zibanejad       NYR          29 + 52 = 81
-Artemi Panarin       NYR          22 + 74 = 96
-Adam Fox             NYR          11 + 63 = 74
-Brad Marchand        BOS          32 + 48 = 80
-David Pastrnak       BOS          40 + 37 = 77
-Jonathan Huberdeau   FLA          30 + 85 = 115
-Aleksander Barkov    FLA          39 + 49 = 88
-Sam Reinhart         FLA          33 + 49 = 82
+Mika Zibanejad       NYR          39 + 52 = 91
+Artemi Panarin       NYR          29 + 63 = 92
+Adam Fox             NYR          12 + 60 = 72
+David Pastrnak       BOS          61 + 52 = 113
+Carter Verhaeghe     FLA          42 + 31 = 73
+Aleksander Barkov    FLA          23 + 55 = 78
+Brandon Montour      FLA          16 + 57 = 73
+Matthew Tkachuk      FLA          40 + 69 = 109
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 4. Parannettu kyselykieli, osa 1
 
-Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava new-komennolla uusi olio.
+Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava uusi olio. Toinen ikävä puoli on se, että kyselyjä käyttävällä koodilla on suora riippuvuus sen käyttämiin Matcher-olioihin.
 
 Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
 
@@ -228,7 +225,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -245,7 +242,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -261,7 +258,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla 
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2021-22/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -276,10 +273,11 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Barclay Goodrow      NYR          13 + 20 = 33
-Jacob Trouba         NYR          11 + 28 = 39
-Adam Fox             NYR          11 + 63 = 74
-Alexis Lafrenière    NYR          19 + 12 = 31
+Barclay Goodrow      NYR          11 + 20 = 31
+Jimmy Vesey          NYR          11 + 14 = 25
+Adam Fox             NYR          12 + 60 = 72
+Kaapo Kakko          NYR          18 + 22 = 40
+Alexis Lafrenière    NYR          16 + 23 = 39
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
@@ -332,12 +330,14 @@ matcher = query.oneOf(m1, m2).build()
 Pelaajalistan tulisi olla:
 
 ```
-Keith Yandle         PHI          1  + 18 = 19
-Rasmus Ristolainen   PHI          2  + 14 = 16
-Zach Hyman           EDM          27 + 27 = 54
-Ryan Nugent-Hopkins  EDM          11 + 39 = 50
-Leon Draisaitl       EDM          55 + 55 = 110
-Connor McDavid       EDM          44 + 79 = 123
+Nick Seeler          PHI          4  + 10 = 14
+Rasmus Ristolainen   PHI          3  + 17 = 20
+Cam York             PHI          2  + 18 = 20
+Tyson Barrie         EDM          13 + 42 = 55
+Zach Hyman           EDM          36 + 47 = 83
+Ryan Nugent-Hopkins  EDM          37 + 67 = 104
+Leon Draisaitl       EDM          52 + 76 = 128
+Connor McDavid       EDM          64 + 89 = 153
 ```
 
 Tai sama ilman apumuuttujia:
@@ -362,8 +362,6 @@ On mahdollista ja jopa todennäköistä, että ensimmäinen ratkaisusi ei toimi 
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-**Tee tämä tehtävä mielellään aikaisintaan vasta perjantaina 2.12.** 
-
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä jolloin niihin on vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
 
 Ehkäpä et edes ajatellut asiaa, mutta joku silti näyttää, että binäärihakupuu onkin tilanteessa tehokkaampi ratkaisu, koodaa korjaukset puolestasi lähdekoodiin sekä tekee muutoksista _pull requestin_. Onneksi julkaisit projektisi Open Sourcena!
@@ -372,7 +370,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
 
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2022/projects/repositories) joukosta
+- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2023/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
   - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
@@ -383,7 +381,7 @@ Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projekti
   - Kyseessä ei tarvitse olla iso muutos, esimerkiksi muuttujan/metodin uudelleennimeäminenkin riittää
 - Refaktoroi ja committaa
 - Käy katsomassa tekemääsi tyhjää pull requestia. Mitä tapahtui?
-- Rebeissaa (ks. tämän viikon ensimmäinen tehtävä) luomasi branch paikalliseen master branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
+- Rebeissaa (ks. tämän viikon ensimmäinen tehtävä) luomasi branch paikalliseen main-branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
 - Otsikoi tekemäsi pull request niin, että se kuvaa tekemiäsi muutoksia. Tarkenna otsikon alle mitä teit ja miksi.
 - Jos ryhmä pyytää sinua tekemään muutoksia pull requestiisi, tee halutessasi tarvittavat muutokset ja committaa. Päivittyikö pull request?
 - Kun ryhmä on hyväksynyt muutoksesi, voit poistaa luomasi branchin
