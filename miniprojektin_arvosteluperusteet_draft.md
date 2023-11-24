@@ -125,7 +125,7 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) sprintin 3 backlog
   - Vaatimukset kuten edellisissä sprinteissä
 - (0.25p) kattavahko testaus yksikkötasolla
-- (0.25p) kattavahko testaus storytasolla käyttöliittymän läpi
+- (0.25p) kattavahko testaus storytasolla 
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit ja PyLintin
   - main-branch ei ole hajonnut

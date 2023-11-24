@@ -5,9 +5,9 @@ inheader: no
 permalink: /lisenssit/
 ---
 
-## Ohjelmistolisenssit (15min read)
-
 Tässä osassa ollaan käsitelty ohjelmiston suunnittelua ja toteutusta. Seuraavaksi katsotaan, missä kohtaa ohjelmiston suunnittelua lisenssöinti on merkittävässä osassa.
+
+Osan on kirjoittanut [Akira Taguchi](https://github.com/akirataguchi115).
 
 Kuvitellaan, että teet ohtun miniprojektiksi graafisen laskimen. Julkaiset koodisi GitHubiin, ja joku ottaa sinuun yhteyttä. Yhteydenottaja kehuu teosta ja haluaisi ottaa tämän käyttöön oletuslaskimena kehittämässään käyttöjärjestelmäjakelussaan, Cubblissa. Yhteydenottaja kuitenkin kertoo, ettei tämä onnistu ennen kuin olet lisensöinyt ohjelmasi sopivalla lisenssillä. Mitä teet?
 
@@ -31,9 +31,11 @@ Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.co
 | CC BY NC | Sama kuin CC BY, mutta kaupallinen käyttö on kielletty (NC, No-Commercial) | Suvaitseva
 
 ### Harjoitus
+
 Katsotaan ensin, mitä lisenssejä muut ohjelmistot käyttävät.
 
 Mitä lisenssiä Code Climate käyttää: <a>https://github.com/codeclimate/codeclimate/</a>?
+
 <details>
 	<summary>
 		Vastaus
@@ -42,6 +44,7 @@ Mitä lisenssiä Code Climate käyttää: <a>https://github.com/codeclimate/code
 </details>
 
 Mitä lisenssiä Visual Studio Code käyttää: <a>https://github.com/microsoft/vscode/</a>?
+
 <details>
 	<summary>
 		Vastaus
@@ -51,20 +54,32 @@ Mitä lisenssiä Visual Studio Code käyttää: <a>https://github.com/microsoft/
 
 Seuraavaksi harjoitellaan lisenssin valintaa ohtun miniprojektia varten.
 
-Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoilla. Valitsen a) MIT-lisenssi b) The Unlicense
+Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoilla. Valitsen 
+
+<ol type="a">
+  <li>MIT-lisenssi</li>
+  <li>The Unlicense</li>
+</ol>
+
 <details>
 	<summary>
 		Vastaus
 	</summary>
-	b) The Unlicense
+	b. The Unlicense
 </details>
 
-Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suurempi projekti saa halutessaan käyttää eri lisenssiä, kuin miniprojektin alkuperäinen lisenssi. Valitsen a) MIT-lisenssi b) Mozilla Public-lisenssi 2.0
+Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suurempi projekti saa halutessaan käyttää eri lisenssiä, kuin miniprojektin alkuperäinen lisenssi. Valitsen 
+
+<ol type="a">
+  <li>MIT-lisenssi</li>
+  <li>Mozilla Public-lisenssi 2.0</li>
+</ol>
+
 <details>
 	<summary>
 		Vastaus
 	</summary>
-	b) Mozilla Public-lisenssi 2.0
+	b. Mozilla Public-lisenssi 2.0
 </details>
 
 Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
