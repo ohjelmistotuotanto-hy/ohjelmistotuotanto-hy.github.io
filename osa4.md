@@ -94,7 +94,6 @@ Arkkitehtuurityylejä on [suuri määrä](https://en.wikipedia.org/wiki/Architec
 - Kerrosarkkitehtuuri
 - Model-view-controller
 - Pipes-and-filters
-- Repository
 - Client-server
 - Publish-subscribe
 - Event driven
