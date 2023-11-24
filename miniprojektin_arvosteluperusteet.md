@@ -95,7 +95,6 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) projektille määritelty järkevät Pylint-säännöt jotka tarkistetaan CI:n toimesta
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
 - (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  - Jos kyseessä on konsolisovellus
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
