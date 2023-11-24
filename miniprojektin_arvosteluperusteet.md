@@ -7,6 +7,7 @@ permalink: /miniprojektin_arvosteluperusteet/
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
 - [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
+- [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
 
 Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
@@ -110,6 +111,31 @@ Sprintin maksimi on 2.5 pistettä.
 - Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
+
+### Kolmannen sprintin arvosteluperusteet
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
+- (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
+  - Hyväksymisehtoja **ei kirjoteta erikseen backlogiin**, vaan backlogista on linkki hyväksymistestin tiedostoon
+- (0.25p) sprintin 3 backlog
+  - Vaatimukset kuten edellisissä sprinteissä
+- (0.5p) kattavahko testaus yksikkötasolla
+- (0.5p) kattavahko testaus storytasolla ()
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+  - Master-branch ei ole hajonnut
+- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+- (0.25p) [Retrospektiivi]() on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+- (0.125p) Ohjelmalle on valittu sopiva lisenssi, ja määritely se [repositorioon](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+  - Lue [täältä]() enemmän ohjelmistolisensseistä
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
