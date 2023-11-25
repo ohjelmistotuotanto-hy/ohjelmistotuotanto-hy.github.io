@@ -16,7 +16,7 @@ Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käytt�
 
 Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry esimerkki).
 
-Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.com/appendix/](https://choosealicense.com/appendix/)) antaakin hyvin vertailtavaksi lisenssejä, käydään silti nyt läpi muutama käytympi lisenssi karkeasti läpi:
+Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.com/appendix/](https://choosealicense.com/appendix/)) antaakin hyvin vertailtavaksi lisenssejä, käydään silti nyt läpi muutama käytetympi lisenssi karkeasti läpi:
 
 | Lisenssi | Ehdot | Tyyppi |
 |-------|--------|---------|
