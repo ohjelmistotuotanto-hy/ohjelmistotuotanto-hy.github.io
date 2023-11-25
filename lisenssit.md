@@ -34,7 +34,7 @@ Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.co
 
 Katsotaan ensin, mitä lisenssejä muut ohjelmistot käyttävät.
 
-Mitä lisenssiä Code Climate käyttää: <a>https://github.com/codeclimate/codeclimate/</a>?
+Mitä lisenssiä Code Climate käyttää: [https://github.com/codeclimate/codeclimate/](https://github.com/codeclimate/codeclimate/)?
 
 <details>
 	<summary>
@@ -43,7 +43,7 @@ Mitä lisenssiä Code Climate käyttää: <a>https://github.com/codeclimate/code
 	GNU Affero General Public License v3.0
 </details>
 
-Mitä lisenssiä Visual Studio Code käyttää: <a>https://github.com/microsoft/vscode/</a>?
+Mitä lisenssiä Visual Studio Code käyttää: [https://github.com/microsoft/vscode/](https://github.com/microsoft/vscode/)?
 
 <details>
 	<summary>
@@ -94,4 +94,4 @@ Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video 
 </video>
 
 
-Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa yliopiston Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/c8suyXeWCg](https://discord.gg/c8suyXeWCg9)!
+Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa yliopiston Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/FhhynjaZtc](https://discord.gg/FhhynjaZtc)!
