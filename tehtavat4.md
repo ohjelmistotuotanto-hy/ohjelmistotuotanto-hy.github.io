@@ -263,20 +263,22 @@ class TestKassapaate(unittest.TestCase):
 
 Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen veloittaa summan kortilta.
 
-Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. Maksukortin saldoa ei erikseen tarkasteta, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
+Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. **Maksukortin saldoa ei erikseen tarkasteta**, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
 
 Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa.
 
 **Testit eivät mene läpi. Korjaa kassapäätteen metodi `osta_lounas`.**
 
-**Muistutus** Maksukortin koodiin ei tehtävässä saa koskea ollenkaan!
+**Muistutus** Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Maksukortin tilaa ei myöskään ole tarkoitus tutkia suoraan, koska Maksukortti on mock ei attribuuttien arvojen katsominen edes ole mahdollista/mielekästä.
 
 **Tee tämän jälkeen samaa periaatetta noudattaen seuraavat testit:**
 
 - Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa` jos ladattava summa on positiivinen
 - Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään jos ladattava summa on negatiivinen
 
-**Muistutus**  Testeissä ei ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.
+**Huomio:** 
+- Testeissä ei ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla. 
+- Testit eivät myöskään testaa suoraan maksukortin tilaa, ainoastaan sitä onko maksukortin metodeja kutsuttu oikein.
 
 Korjaa kassapäätettä siten, että testit menevät läpi.
 
