@@ -94,10 +94,10 @@
 
 - Vierailuluennot
   - Luento 11: {{site.luennot[11]}} 
-    - Jami Kousa Unity: Kommunikaatio, yhteistyö ja monitorointi ohjelmistokehityksessä
-    - Mikko Tiainen Hogrefe: Ensimmäisen ohjelmistoalan työpaikan hakeminen
-  - Luento 12: {{site.luennot[12]}} Vierailuluento 
-    - Anniina Sallinen Oura: MLOPS, eli miten datatiedettä tuetaan ohjelmistokehityksen toimesta
+    - Jami Kousa Unity: _Metrics, Tracing and bugs in production_
+    - Mikko Tiainen Hogrefe: _Ensimmäisen ohjelmistoalan työpaikan hakeminen_
+  - Luento 12: {{site.luennot[12]}} 
+    - Anniina Sallinen Oura: _MLOPS, eli miten datatiedettä tuetaan ohjelmistokehityksen toimesta_
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
@@ -107,10 +107,10 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Hannu Kokko Elisa: Laajan mittakaavan ketterä kehitys
+    - Hannu Kokko Elisa: _Global product development_
   - Luento 14: {{site.luennot[14]}}
-    - Ville Nordberg Trail openers: Vihreä IT
-    - Kasper Hirvikoski Unity: Ohjelmistokehitysprojektien johtajuus
+    - Ville Nordberg Trail openers: _Vihreä IT_
+    - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)

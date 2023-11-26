@@ -5,7 +5,7 @@ inheader: yes
 permalink: /tehtavat/
 ---
 
-{% include miniproj_ilmo.md %}
+{% include miniprojekti_ilmo.md %}
 
 Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä on _kahden tyyppisiä_
 

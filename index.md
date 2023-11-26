@@ -26,6 +26,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 
 {% include ajankohtaista.md path="/index.md" %}
 
+{% include miniprojekti_ilmo.md path="/index.md" %}
+
 ## Aikataulu
 
 {% include aikataulu.md path="/index.md" %}

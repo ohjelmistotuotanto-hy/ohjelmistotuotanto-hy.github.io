@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    <a href='/miniprojekti'>Miniprojekti</a> käynnissä! Näet ryhmäsi sprinttidemon ajankohdan ja paikan <a href='https://study.cs.helsinki.fi/stats/courses/ohtu2023'>palautussovelluksesta</a>.
+    <a href='/miniprojekti'>Miniprojekti</a> käynnissä!
   </li>
   <li>
     Kurssille on lisätty kaksi paja-aikaa: ma 10-12 ja ke 10-12, molemmat salissa BK107.
