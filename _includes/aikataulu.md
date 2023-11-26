@@ -97,7 +97,7 @@
     - Jami Kousa Unity: _Metrics, Tracing and bugs in production_
     - Mikko Tiainen Hogrefe: _Ensimmäisen ohjelmistoalan työpaikan hakeminen_
   - Luento 12: {{site.luennot[12]}} 
-    - Anniina Sallinen Oura: _MLOPS, eli miten datatiedettä tuetaan ohjelmistokehityksen toimesta_
+    - Anniina Sallinen Oura: _Koneoppimismallien kehityksen ja operoinnin automatisointi_
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
