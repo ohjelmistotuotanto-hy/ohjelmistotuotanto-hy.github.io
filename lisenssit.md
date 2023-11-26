@@ -14,7 +14,7 @@ Kuvitellaan, että teet ohtun miniprojektiksi graafisen laskimen. Julkaiset kood
 ### Ohjelmistolisenssien perusteet
 Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käyttöä ja edelleenjakelua. Ohjelmistokehittäjillä tämä usein ilmenee LICENSE-tiedoston julkaisemista lähdekoodin mukana. Tämän LICENSE-tiedoston sisältö määrää valitun ohjelmistolisenssin. Esimerkki Poetryn ohjelmistolisenssistä: [https://github.com/python-poetry/poetry/blob/master/LICENSE](https://github.com/python-poetry/poetry/blob/master/LICENSE).
 
-Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry esimerkki).
+Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry-esimerkki).
 
 Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.com/appendix/](https://choosealicense.com/appendix/)) antaakin hyvin vertailtavaksi lisenssejä, käydään silti nyt läpi muutama käytetympi lisenssi karkeasti läpi:
 
@@ -43,7 +43,10 @@ Mitä lisenssiä Code Climate käyttää: [https://github.com/codeclimate/codecl
 	GNU Affero General Public License v3.0
 </details>
 
+<br>
+
 Mitä lisenssiä Visual Studio Code käyttää: [https://github.com/microsoft/vscode/](https://github.com/microsoft/vscode/)?
+<br>
 
 <details>
 	<summary>
@@ -51,6 +54,8 @@ Mitä lisenssiä Visual Studio Code käyttää: [https://github.com/microsoft/vs
 	</summary>
 		MIT-lisenssi
 </details>
+
+<br>
 
 Seuraavaksi harjoitellaan lisenssin valintaa ohtun miniprojektia varten.
 
@@ -68,6 +73,8 @@ Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoill
 	b. The Unlicense
 </details>
 
+<br>
+
 Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suurempi projekti saa halutessaan käyttää eri lisenssiä, kuin miniprojektin alkuperäinen lisenssi. Valitsen 
 
 <ol type="a">
@@ -82,8 +89,9 @@ Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suu
 	b. Mozilla Public-lisenssi 2.0
 </details>
 
-Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
+<br>
 
+Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
 
 ### Vapaa vai avoin - Yliopiston Copyleft-kerho
 
@@ -92,6 +100,5 @@ Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video 
 <video width="640" height="480" controls onloadstart="this.volume=0.5">
 	<source src="https://de4df61deef78e687eb1-7fe654f62734b2c8c91ba6b5edb21b0b.ssl.cf5.rackcdn.com/sfc-introduction_1080p.mp4" type="video/mp4">
 </video>
-
 
 Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa yliopiston Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/FhhynjaZtc](https://discord.gg/FhhynjaZtc)!

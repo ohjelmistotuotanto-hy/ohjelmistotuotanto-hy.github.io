@@ -93,9 +93,12 @@
 ### Viikko 6
 
 - Vierailuluennot
-  - Luento 11: {{site.luennot[11]}} Vierailuluento Jami Kousa Unity ja Mikko Tiainen Hogrefe 
-  - Luento 12: {{site.luennot[12]}} Vierailuluento Anniina Sallinen Oura
-  -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6)t, deadline {{site.lask-dl[6]}}
+  - Luento 11: {{site.luennot[11]}} 
+    - Jami Kousa Unity: Kommunikaatio, yhteistyö ja monitorointi ohjelmistokehityksessä
+    - Mikko Tiainen Hogrefe: Ensimmäisen ohjelmistoalan työpaikan hakeminen
+  - Luento 12: {{site.luennot[12]}} Vierailuluento 
+    - Anniina Sallinen Oura: MLOPS, eli miten datatiedettä tuetaan ohjelmistokehityksen toimesta
+  -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 3 review, sprintin 4 suunnittelu)
@@ -103,8 +106,11 @@
 ### Viikko 7
 
 - Vierailuluennot
-  - Luento 13: {{site.luennot[13]}} Vierailuluento Hannu Kokko Elisa
-  - Luento 14: {{site.luennot[14]}} Vierailuluento Ville Nordberg Trail openers ja Kasper Hirvikoski Unity
+  - Luento 13: {{site.luennot[13]}}
+    - Hannu Kokko Elisa: Laajan mittakaavan ketterä kehitys
+  - Luento 14: {{site.luennot[14]}}
+    - Ville Nordberg Trail openers: Vihreä IT
+    - Kasper Hirvikoski Unity: Ohjelmistokehitysprojektien johtajuus
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
