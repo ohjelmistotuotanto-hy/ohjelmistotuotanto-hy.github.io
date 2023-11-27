@@ -78,6 +78,7 @@
 - Luento 9: {{site.luennot[9]}}
   - [Lean](/osa5#lean)
   - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/d-P8wLmk2w8), [unitube](https://www.helsinki.fi/fi/unitube/video/bd42dcd5-406d-4df0-9a95-beb3661ee71b)
     - [syksy 2022](https://youtu.be/hDyuQqf0td0)
 - Luento 10: {{site.luennot[10]}}
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
