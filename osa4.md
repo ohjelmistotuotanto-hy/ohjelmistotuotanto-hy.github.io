@@ -1288,7 +1288,7 @@ for rivi in kirja.rivit_jotka_tayttavat_ehdon(SisaltaaSanan("beer")):
 
 Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia luokkia, jotka toteuttavat `test`-metodin.
 
-Ehdot voidaan esittää luokkien sijaan myös yksinkeritasemma muodossa, esimerkiksi funktioina tai lambdoina. Tutustutaan seuraavaksi hieman _funktionaaliseen ohjelmointiin_, jonka kulmakivenä on juuri funktioiden hyödyntäminen. Muokataan `rivit_jotka_tayttavat_ehdon`-metodia niin, että parametrina saatu `ehto` on kutsuttava arvo:
+Ehdot voidaan esittää luokkien sijaan myös yksinkertaisemmassa muodossa, esimerkiksi funktioina tai lambdoina. Tutustutaan seuraavaksi hieman _funktionaaliseen ohjelmointiin_, jonka kulmakivenä on juuri funktioiden hyödyntäminen. Muokataan `rivit_jotka_tayttavat_ehdon`-metodia niin, että parametrina saatu `ehto` on kutsuttava arvo:
 
 ```python
 def rivit_jotka_tayttavat_ehdon(self, ehto):
