@@ -22,9 +22,9 @@
     Osallistumisesta paikan päällä vierailuluennoille on jaossa <strong>1
     kurssipiste</strong> (0.33 pistettä per osallistumiskerta). Ainoa tapa saada
     piste on tulla paikan päälle, ks.
-    <a href="https://ohjelmistotuotanto-hy.github.io/osa0/#kurssin-arvostelu">
-      arvosteluperusteet.
-    </a>
+    <a href="https://ohjelmistotuotanto-hy.github.io/osa0/#kurssin-arvostelu">arvosteluperusteet.</a> 
+    <br><br>  
+    Hyvästä syystä (esim. samaan aikaan oleva muu pakollinen luento) on myös mahdollista katsoa tallenne ja korvata osallistuminen luentopäiväkirjalla. Tähän vaihtoehtoon pitää pyytää lupa etukäteen.
   </p>
   <p>
     Jos osallistut kaikkiin vierailuluentoihin, saat myös ylimääräisen
