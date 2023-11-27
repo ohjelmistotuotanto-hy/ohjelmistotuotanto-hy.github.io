@@ -415,7 +415,7 @@ Varmista, että tagit siirtyvät GitHubiin:
 
 ![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
 
-**Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmisen hankalien tunnisteiden tunnisteden avulla:
+**Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmiselle hankalien tunnisteiden avulla:
 
 
 ```bash
