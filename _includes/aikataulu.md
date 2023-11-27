@@ -80,7 +80,7 @@
   - tallenteet:
     - [syksy 2022](https://youtu.be/hDyuQqf0td0)
 - Luento 10: {{site.luennot[10]}}
-  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-kettera%CC%88-ohjelmistokehitys)
+  - [Laajan skaalan ketterä ohjelmistokehitys](osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
     - tallenteet:
     - [syksy 2022](https://youtu.be/1gxfA58DLQ8)
