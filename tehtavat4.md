@@ -399,7 +399,7 @@ Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
 - Tee kolme committia (eli 3 kertaa muutos + add + commit)
 - Tee tägi nimellä v1.1.0
 - Katso `gitk`-komennolla miltä historiasi näyttää
-- Palaa tagi1:n aikaan, eli anna komento `git checkout tagi1`
+- Palaa tagin v.1.0.0 aikaan, eli anna komento `git checkout v1.0.0`
   - Varmista, että tagin jälkeisiä muutoksia ei näy
 - Palaa nykyaikaan
   - Tämä onnistuu komennolla `git checkout main`
@@ -415,7 +415,7 @@ Varmista, että tagit siirtyvät GitHubiin:
 
 ![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
 
-**Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmisen hankalien tunnisteiden tunnisteden avulla:
+**Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmiselle hankalien tunnisteiden avulla:
 
 
 ```bash
