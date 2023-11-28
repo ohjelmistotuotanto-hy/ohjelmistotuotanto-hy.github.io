@@ -146,17 +146,17 @@ def _suorita_komento(self, komento):
         pass
 
     if komento == Komento.SUMMA:
-        self._sovelluslogiikka.plus(arvo)
+        self._sovellus.plus(arvo)
     elif komento == Komento.EROTUS:
-        self._sovelluslogiikka.miinus(arvo)
+        self._sovellus.miinus(arvo)
     elif komento == Komento.NOLLAUS:
-        self._sovelluslogiikka.nollaa()
+        self._sovellus.nollaa()
     elif komento == Komento.KUMOA:
         pass
 
     self._kumoa_painike["state"] = constants.NORMAL
 
-    if self._sovelluslogiikka.tulos == 0:
+    if self._sovellus.tulos == 0:
         self._nollaus_painike["state"] = constants.DISABLED
     else:
         self._nollaus_painike["state"] = constants.NORMAL
@@ -180,15 +180,15 @@ class Komento(Enum):
 
 
 class Kayttoliittyma:
-    def __init__(self, sovelluslogiikka, root):
-        self._sovelluslogiikka = sovelluslogiikka
+    def __init__(self, sovellus, root):
+        self._sovellus = sovellus
         self._root = root
 
         self._komennot = {
-            Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
-            Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
-            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
-            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote) # ei ehkä tarvita täällä...
+            Komento.SUMMA: Summa(sovellus, self._lue_syote),
+            Komento.EROTUS: Erotus(sovellus, self._lue_syote),
+            Komento.NOLLAUS: Nollaus(sovellus, self._lue_syote),
+            Komento.KUMOA: Kumoa(sovellus, self._lue_syote) # ei ehkä tarvita täällä...
         }
 
     # ...
@@ -201,13 +201,13 @@ class Kayttoliittyma:
         komento_olio.suorita()
         self._kumoa_painike["state"] = constants.NORMAL
 
-        if self._sovelluslogiikka.tulos == 0:
+        if self._sovellus.tulos == 0:
             self._nollaus_painike["state"] = constants.DISABLED
         else:
             self._nollaus_painike["state"] = constants.NORMAL
 
         self._syote_kentta.delete(0, constants.END)
-        self._tulos_var.set(self._sovelluslogiikka.tulos)
+        self._tulos_var.set(self._sovellus.tulos)
 ```
 
 Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
