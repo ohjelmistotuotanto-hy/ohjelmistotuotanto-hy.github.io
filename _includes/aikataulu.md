@@ -84,6 +84,7 @@
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
     - tallenteet:
+      - syksy 2023: [youtube](https://youtu.be/AgTV3pNoZ6Y), [unitube](https://www.helsinki.fi/fi/unitube/video/f8a923cc-5b4d-4dc1-b9cd-c7214276e6db)
     - [syksy 2022](https://youtu.be/1gxfA58DLQ8)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
