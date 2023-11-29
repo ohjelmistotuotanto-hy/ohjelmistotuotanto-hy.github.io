@@ -29,32 +29,31 @@ _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtäv
 
 Lue <https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning> kohtaan _Creative stashing_ asti.
 
-Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: master ja jokin toinen (kutsutaan sitä tässä nimellä **toinen**).
+Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: main ja jokin toinen (kutsutaan sitä tässä nimellä **toinen**).
 
-- Ollessasi master-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunnilleen seuraavalta
+- Ollessasi main-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä "äddää", komennon _git status_ tuloksen tulee näyttää siis suunnilleen seuraavalta
 
 ```
 $ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   README.md
-    modified:   src/olutvarasto.py
-
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/index.py
 
-	modified:   src/testi.py
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	READEME.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-- Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **toinen**. Et kuitenkaan halua vielä commitoida masterissa olevia muutoksia
+- Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **toinen**. Et kuitenkaan halua vielä commitoida mainissa olevia muutoksia
 - Jos siirryt branchiin **toinen** tekemättä committia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa
-- **git stash** pelastaa tästä tilanteesta, eli stashaa masterissa olevat muutoset
+- **git stash** pelastaa tästä tilanteesta, eli stashaa mainissa olevat muutoset
   - Kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
 - Siirry branchiin toinen, tee sinne jokin muutos jonka committaat
-- Palaa jälleen masteriin
+- Palaa jälleen mainiin
 - Palauta stashatyt muutokset komennolla <code>git stash apply</code>
   - Varmista että muutokset palasivat
   - Kuten huomaat, staging-alueelle jo lisätty muutos ei palaa staging-alueelle, vaan joudut lisäämään sen uudelleen
@@ -64,20 +63,20 @@ Changes not staged for commit:
 
 _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät_
 
-- Tee repoosi branchi nimeltä haara ja tee masteriin ja haaraan committeja siten että saat aikaan seuraavankaltaisen tilanteen:
+- Tee repoosi branchi nimeltä haara ja tee mainiin ja haaraan committeja siten että saat aikaan seuraavankaltaisen tilanteen:
 
 ```
-    ____master
+    main
 __/
   \_____haara
 ```
 
-- Eli sekä master että haara ovat edenneet muutamien commitien verran haarautumisen tapahduttua
+- Eli sekä main että haara ovat edenneet muutamien commitien verran haarautumisen tapahduttua
   - Huom: komennolla <code>gitk --all</code> näet kaikki haarat, kokeile!
-- Yhtäkkiä huomaat, että masteriin tekemäsi asiat eivät olekaan kovin hyviä ja haarassa on paljon parempaa tavaraa, haluaisitkin että haarasta tulisi uusi master
-- Tämä onnistuu kun menet masteriin ja annat komennon <code>git reset --hard haara</code>
+- Yhtäkkiä huomaat, että mainiin tekemäsi asiat eivät olekaan kovin hyviä ja haarassa on paljon parempaa tavaraa, haluaisitkin että haarasta tulisi uusi main
+- Tämä onnistuu kun menet mainiin ja annat komennon <code>git reset --hard haara</code>
   - Varmista että komento toimii oikein
-  - Vanhan master-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata
+  - Vanhan main-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata
   - Vanhaan committiin palaaminen onnistuu, jos commitin id on tiedossa -- jos ei, on olemassa [muutamia keinoja](http://stackoverflow.com/questions/4786972/list-of-all-git-commits) sen selvittämiseksi
 
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
@@ -188,7 +187,6 @@ Lue jokin alla olevista ja tee siitä noin 0.25 sivun referaatti.
 
 - <http://www.leanprimer.com/downloads/lean_primer.pdf>
   - Aika pitkä, mutta kuuluu kokeen reading-listalle, joten erittäin hyödyllinen
-- Lauri Suomalaisen kandidaattityö [Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään](https://www.cs.helsinki.fi/u/mluukkai/ohtu/suomalainen-kandi.pdf)
 - Tero Huomon kandidaattityö [Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin](https://www.cs.helsinki.fi/u/mluukkai/ohtu/huomo-kandi.pdf)
 - Kasper Hirvikosken kandidaattityö [Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa](https://www.cs.helsinki.fi/u/mluukkai/ohtu/hirvikoski-kandi.pdf)
 - Kenny Heinosen kandidaattityö [Ohjelmistoala ja ryhmätyöskentely](https://www.cs.helsinki.fi/u/mluukkai/ohtu/heinononen-kandi.pdf)
