@@ -156,13 +156,13 @@ def _suorita_komento(self, komento):
 
     self._kumoa_painike["state"] = constants.NORMAL
 
-    if self._sovelluslogiikka.tulos == 0:
+    if self._sovelluslogiikka.arvo() == 0:
         self._nollaus_painike["state"] = constants.DISABLED
     else:
         self._nollaus_painike["state"] = constants.NORMAL
 
     self._syote_kentta.delete(0, constants.END)
-    self._tulos_var.set(self._sovelluslogiikka.tulos)
+    self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
 
 Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-5).
@@ -201,13 +201,13 @@ class Kayttoliittyma:
         komento_olio.suorita()
         self._kumoa_painike["state"] = constants.NORMAL
 
-        if self._sovelluslogiikka.tulos == 0:
+        if self._sovelluslogiikka.arvo() == 0:
             self._nollaus_painike["state"] = constants.DISABLED
         else:
             self._nollaus_painike["state"] = constants.NORMAL
 
         self._syote_kentta.delete(0, constants.END)
-        self._tulos_var.set(self._sovelluslogiikka.tulos)
+        self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
 
 Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
