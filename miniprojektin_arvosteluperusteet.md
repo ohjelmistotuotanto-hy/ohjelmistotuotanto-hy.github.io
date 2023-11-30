@@ -128,7 +128,7 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) kattavahko testaus storytasolla
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit ja PyLintin
-  - main-branch ei ole hajonnut
+  - main-branch ei ole hajonnut kuin korkeintaan 25% sprintin commiteista 
 - (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
 - (0.25p) [Retrospektiivi]() on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla

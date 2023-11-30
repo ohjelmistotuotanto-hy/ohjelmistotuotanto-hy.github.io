@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Miniprojekti
-inheader: no
 permalink: /miniprojekti/
 ---
 
