@@ -6,6 +6,11 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
+- Loppudemot
+  - ti 12.12. klo 14-16 B123
+  - to 14.12. klo 12-14 B123
+  - Jokainen ryhmä osallistuu yhteen loppudemoon (demoviikolla ei enää pidetä asiakaspalaveria)
+- Varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1Go-f33LQC1SSZG-CI-04UyTVE84ytfN9HSAHEad3OC0/edit?usp=sharing)
 - Asiakastapaamisten (30 min) ajankohta palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
