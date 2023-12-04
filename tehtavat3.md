@@ -685,4 +685,6 @@ jobs:
         run: bash run_robot_tests.sh
 ```
 
+**Huomaa**, että Selenium tulee konfiguroida toimimaan **headless-moodissa** kun testejä suoritetaan GitHub Actionsissa!
+
 {% include submission_instructions.md %}
