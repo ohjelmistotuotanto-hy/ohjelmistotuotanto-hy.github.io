@@ -104,6 +104,8 @@
   - Luento 12: {{site.luennot[12]}} 
     - Anniina Sallinen Oura: _Koneoppimismallien kehityksen ja operoinnin automatisointi_
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
+    - tallenteet:
+      - syksy 2023: [youtube](https://youtu.be/L58Xaeou-sE), [unitube](https://www.helsinki.fi/fi/unitube/video/b0ca753c-1656-47d7-96e4-f91123d5a149)
 
 - Miniprojekti
   - Asiakastapaamiset (sprintin 3 review, sprintin 4 suunnittelu)
