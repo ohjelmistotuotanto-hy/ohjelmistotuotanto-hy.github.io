@@ -98,6 +98,9 @@
   - Luento 11: {{site.luennot[11]}} 
     - Jami Kousa Unity: _Metrics, Tracing and bugs in production_
     - Mikko Tiainen Hogrefe: _Ensimmäisen ohjelmistoalan työpaikan hakeminen_
+    - tallenteet:
+      - syksy 2023: [youtube](https://youtu.be/fwLSIBp4WEQ), [unitube](https://www.helsinki.fi/fi/unitube/video/c91c80f0-784a-4709-9ee0-1ab9f86780b7)
+
   - Luento 12: {{site.luennot[12]}} 
     - Anniina Sallinen Oura: _Koneoppimismallien kehityksen ja operoinnin automatisointi_
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
