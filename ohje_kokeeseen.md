@@ -15,11 +15,11 @@ Kannattaa huomata, että koe ja sen "oikeat vastaukset" perustuvat kurssimateria
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
-- laskarit 11 pistettä
-  - luentoihin liittyvät monivalintatehtävät 3 pistettä
+- laskarit 10 pistettä
+  - luentoihin liittyvät monivalintatehtävät 2 pistettä
   - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 8 pistettä
-- miniprojekti 9 pistettä
-- koe 19 pistettä
+- miniprojekti 11 pistettä
+- koe 18 pistettä
 - vierailulennoille osallistuminen 1 piste
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
@@ -34,7 +34,6 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 - poetry
 - GitHub Actions
 - unittest
-- Mocks
 - Robot/Selenium
 
 Vierailuluennot eivät kuulu koealueeseen.
