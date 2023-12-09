@@ -57,10 +57,9 @@ Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/
 
 Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesi hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
 
-Laajoja kielimallieja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen tekstiasun muokkaamiseen, vastausten generointi kielimalleilla ei kuitenkaan ole sallittua.
+Laajoja kielimalleja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen tekstiasun muokkaamiseen, vastausten generointi kielimalleilla ei kuitenkaan ole sallittua.
 
 Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
-
 
 ### Uusinta- ja erilliskokeet
 

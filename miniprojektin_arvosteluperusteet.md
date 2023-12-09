@@ -190,9 +190,13 @@ Sprintin maksimi on 2.5 pistettä.
 
 #### Loppudemo ja sprintin 4 päättyminen
 
-Kuten tunnettua, loppudemot tiistaina 12.12. klo 14-16 B123 ja torstaina 14.12. klo 12-14 B123. Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Lue _tarkasti_ neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit.
+Kuten tunnettua, loppudemot pidetään tiistaina 12.12. klo 14-16 B123 ja torstaina 14.12. klo 12-14 B123. Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Lue _tarkasti_ neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit.
 
 Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
+
+Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 15.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
+
+Sprintin 4 päätteeksi ei erillistä asiakapalaveria enää järjestetä.
 
 #### Vertaispalaute
 

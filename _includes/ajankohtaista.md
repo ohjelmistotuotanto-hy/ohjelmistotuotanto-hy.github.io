@@ -14,6 +14,9 @@
     Varaa ryhmällesi aika 
      <a href='https://docs.google.com/document/d/1Go-f33LQC1SSZG-CI-04UyTVE84ytfN9HSAHEad3OC0/edit?usp=sharingi'>täältä</a>
    </li>
+   <li>
+    Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
+   </li>
   </li>
 </ul>
 
