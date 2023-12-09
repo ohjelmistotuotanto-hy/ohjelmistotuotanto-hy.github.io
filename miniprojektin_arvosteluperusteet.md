@@ -196,7 +196,7 @@ Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mik�
 
 Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 15.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
 
-Sprintin 4 päätteeksi ei erillistä asiakapalaveria enää järjestetä.
+Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
 
 #### Vertaispalaute
 
