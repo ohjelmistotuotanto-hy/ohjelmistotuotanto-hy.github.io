@@ -83,7 +83,7 @@ Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien k
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 
-Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä.
+Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä. **Lisäaikaa** kokeeseen haetaan sähköpostilla opettajalta (matti.luukkainen@helsinki.fi).
 
 Jos hyväksiluet miniprojektin, kokeen ja laskarien pistemääräsi skaalataan kertomalla 40/29:llä ja arvosana määritellään skaalatun pistemäärän perusteella.
 
