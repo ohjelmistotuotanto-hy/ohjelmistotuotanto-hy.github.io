@@ -138,7 +138,7 @@ Jaroslav Halak       NYR          0  + 0  = 0
 Igor Shesterkin      NYR          0  + 0  = 0
 </pre>
 
-- Kaikissa esimerkitulostuksissa on käytetty vuoden 2022-23 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2023-23/players.txt>
+- Kaikissa esimerkitulostuksissa on käytetty vuoden 2022-23 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt>
 
 Kyselyn
 
