@@ -4,9 +4,8 @@
   <li>
     <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
   </li>
-   <li>
+  <li>
     Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
-   </li>
   </li>
 </ul>
 
