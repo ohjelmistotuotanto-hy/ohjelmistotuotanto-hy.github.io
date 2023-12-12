@@ -117,6 +117,8 @@
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
     - Hannu Kokko Elisa: _Global product development_
+    - tallenteet:
+      - [youtube](https://youtu.be/_2i6qQWysaM), [unitube](https://www.helsinki.fi/fi/unitube/video/e0f52abc-6ac3-41d7-8c21-095c678cd843)    
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg Trail openers: _Vihreä IT_
     - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_
