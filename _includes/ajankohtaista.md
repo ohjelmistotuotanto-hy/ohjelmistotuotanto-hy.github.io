@@ -8,7 +8,7 @@
     <a href='/miniprojekti'>Miniprojektin</a> loppudemot:
     <ul>
       <li>ti 12.12. klo 14-16 B123</li>
-      <li>to 14.12. klo 12-14 B123</li>
+      <li>to 14.12. klo 12.00-14 <a href='https://helsinki.zoom.us/j/65778062404?pwd=WXc4NU9kL1JDMXV5QlhCNzJ6RnM2dz09'>zoom</a></li>
     </ul>
    <li>
     Varaa ryhmällesi aika 

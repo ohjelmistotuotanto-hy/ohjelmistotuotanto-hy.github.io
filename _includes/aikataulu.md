@@ -127,7 +127,7 @@
 - [Miniprojekti](/miniprojekti)
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
     - tiistaina 12.12. klo 14-16 B123
-    - torstaina 14.12. klo 12-14 B123
+    - torstaina 14.12. klo 12.00-14 [zoom](https://helsinki.zoom.us/j/65778062404?pwd=WXc4NU9kL1JDMXV5QlhCNzJ6RnM2dz09)
 
 ### Viikko 8
 
