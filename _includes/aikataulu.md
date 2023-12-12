@@ -122,6 +122,8 @@
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg Trail openers: _Vihreä IT_
     - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_
+    - tallenteet:
+      - [youtube](https://youtu.be/SkQDKNyMdzo), [unitube](https://www.helsinki.fi/fi/unitube/video/95b5a265-032b-42f8-9243-0caaa6d8219e)    
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
