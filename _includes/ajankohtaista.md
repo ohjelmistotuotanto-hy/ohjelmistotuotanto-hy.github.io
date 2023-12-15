@@ -4,16 +4,6 @@
   <li>
     <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
   </li>
-  <li>
-    <a href='/miniprojekti'>Miniprojektin</a> loppudemot:
-    <ul>
-      <li>ti 12.12. klo 14-16 B123</li>
-      <li>to 14.12. klo 12.00-14 <a href='https://helsinki.zoom.us/j/65778062404?pwd=WXc4NU9kL1JDMXV5QlhCNzJ6RnM2dz09'>zoom</a></li>
-    </ul>
-   <li>
-    Varaa ryhmällesi aika 
-     <a href='https://docs.google.com/document/d/1Go-f33LQC1SSZG-CI-04UyTVE84ytfN9HSAHEad3OC0/edit?usp=sharingi'>täältä</a>
-   </li>
    <li>
     Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
    </li>

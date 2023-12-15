@@ -5,8 +5,6 @@ inheader: yes
 permalink: /tehtavat/
 ---
 
-{% include miniprojekti_ilmo.md %}
-
 Kurssiin liittyy viikottaiset laskuharjoitukset. Tehtäviä on _kahden tyyppisiä_
 
 - luennoilla ja kurssimateriaalissa läpikäytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, joiden deadline on sunnuntaina klo 23:59:00
