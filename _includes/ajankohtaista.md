@@ -7,7 +7,6 @@
    <li>
     Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
    </li>
-  </li>
 </ul>
 
 </div>

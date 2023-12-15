@@ -16,7 +16,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-23)
 - [Miniprojekti](/miniprojekti)
 - Kurssikoe tiistaina 19.12. klo 07-14, ohjeita kokeeseen [täällä](/ohje_kokeeseen)
-  - Huomaa, että koeaikaa on aloitushetkestä 4 tuntia
+  - Koeaikaa on aloitushetkestä 4 tuntia
+  - Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
 - Apua tehtävien tekoon
   - pajassa BK107 ma 10-12, ma 14-16, ke 10-12 ja pe 12-14 
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!

@@ -133,4 +133,6 @@
 
 ### Viikko 8
 
-- Koe ti 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570) (koeaika on 4 tuntia siitä hetkestä kun aloitat kokeen)
+- Koe ti 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570)
+  - Koeaika on 4 tuntia siitä hetkestä kun aloitat kokeen
+  - Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
