@@ -30,7 +30,7 @@ Ohjelmistojen vaatimusten ajatellaan jakaantuvat kahteen luokkaan. _Toiminnallis
 Vaatimusten selvittämistä, dokumentoimista ja hallinnointia kutsutaan
 _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä prosessimallista riippumatta vaatimusmäärittelyn tulee ainakin alkaa ennen ohjelmiston suunnittelua ja toteuttamista.
 
-Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelyä taas tapahtuu vähän kerrassaan ohjelmiston toiminnallisuuden kasvamisen myötä.
+Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelyä taas tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvamisen myötä.
 
 ## Vaatimusmäärittelyn vaiheet
 
@@ -63,7 +63,7 @@ Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä
 
 Jos uuden sovelluksen on tarkoitus korvata olemassa oleva työskentelyprosessi, esimerkiksi tilanvarausjärjestelmä, on usein hyödyllistä tarkastella myös itse työskentelyprosessia ja koittaa miettiä sen suoraviivaistamista. Ei nimittäin ole useinkaan mielekästä toisintaa vanhaa, ehkä kankeaakin työskentelyprosessia sellaisenaan uuteen sovellukseen.
 
-### Vaatimusten analysointi, dokumentointi ja validointi
+### Vaatimusten analysointi, dokumentointi, validointi ja hallinnointi
 
 Vaatimusten keräämisen lisäksi vaatimuksia täytyy _analysoida_. Onko vaatimuksissa keskinäisiä ristiriitoja ja ovatko ne riittävän kattavat, eli ottavatko ne huomioon kaikki mahdolliset käyttöskenaariot. On myös oleellista varmistaa, että vaatimusten toteutuminen on ylipäätään mahdollista ja taloudellisesti järkevää.
 
@@ -173,7 +173,7 @@ Kattavana teemana ketterässä ohjelmistotuotannossa ja siihen liittyvässä vaa
 
 Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartup.com/) kuvaa/formalisoi systemaattisen tavan kartoittaa vaatimuksia erityisen epävarmoissa konteksteissa, kuten startup-yrityksissä.
 
-Malli perustuu kolmiosaisen build-measure-learn-syklin toistamiseen:
+Malli perustuu kolmiosaisen build-measure-learn -syklin toistamiseen:
 
 ![]({{ "/images/2-3.png" | absolute_url }}){:height="300px" }
 
@@ -193,7 +193,7 @@ Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetä
 
 Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään _oppimaan_, olivatko toteutetut vaatimukset järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne käyttäjiä enemmän sovelluksen käyttöön, saavatko ne käyttäjän tuhlaamaan enemmän rahaa ym...
 
-Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP:n sijaan robustimpi toteutus kyseisestä toiminnallisuudesta. Jos taas toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn-sykliä tekemällä hypoteesi jostain muusta ideasta.
+Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP:n sijaan robustimpi toteutus kyseisestä toiminnallisuudesta. Jos taas toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn -sykliä tekemällä hypoteesi jostain muusta ideasta.
 
 Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat.
 
