@@ -2,11 +2,14 @@
 
 <ul>
   <li>
+    <a href='/koe2023'>Kokeen</a> arvostelu on käynnissä, tällä hetkellä arvosteluna tehtävä 2. Linkin takaa näet arvosteluperusteet.
+  </li>
+  <li>
+    Alustavia pisteitä saattaa näkyä Moodlessa. Pisteet ovat <i>alustavia</i> niin kauan kunnes kurssin arvostelu valmistuu, eli ne voivat muuttua mihin tahansa suuntaan, pisteiden katsominen omalla vastuulla.
+  </li>
+  <li>
     <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
   </li>
-   <li>
-    Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
-   </li>
 </ul>
 
 </div>
