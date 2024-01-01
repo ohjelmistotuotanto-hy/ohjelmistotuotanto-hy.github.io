@@ -7,7 +7,7 @@ permalink: /ohje_kokeeseen/
 
 ### Uusinta- ja erilliskokeet
 
-Erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3024. Ilmoittautuminen erilliskokeeseen [tääällä](https://studies.helsinki.fi/kurssit/toteutus/otm-833dd332-9441-4f13-8c46-40261bc0d5d0/TKT20006).
+Erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3024. Ilmoittautuminen erilliskokeeseen [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-833dd332-9441-4f13-8c46-40261bc0d5d0/TKT20006).
 
 Myös uusintakoe suoritetaan Examinariumissa (teknisesti suoritus tapahtuu samassa opetustapahtumassa kuin erilliskoe). Uusinnan voi suorittaa 2.1.-30.5.2024. Uusintakokeessa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Ilmoittautuminen uusintaan [tääällä](https://studies.helsinki.fi/kurssit/toteutus/otm-833dd332-9441-4f13-8c46-40261bc0d5d0/TKT20006). Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi
 
@@ -48,6 +48,7 @@ Vierailuluennot eivät kuulu koealueeseen.
 
 Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 
+- [syksy 2023](/koe2023)
 - [syksy 2022](/koe2022)
 - [syksy 2021](/koe2021)
 - [syksy 2020](/koe2020)
