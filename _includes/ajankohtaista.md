@@ -5,7 +5,7 @@
     <a href='/koe2023'>Kokeen</a> arvostelu on käynnissä, tällä hetkellä arvosteluna tehtävä 2. Linkin takaa näet arvosteluperusteet.
   </li>
   <li>
-    Tehtävän 2 pisteet näkyvät Moodlessa.
+    Tehtävän 2 pisteet näkyvät Moodlessa. Huomaa, että Moodlessa tehtävän n pisteet näkyvät tehtävän n+1 kohdalla.
   </li>
   <ul>
     <li>
