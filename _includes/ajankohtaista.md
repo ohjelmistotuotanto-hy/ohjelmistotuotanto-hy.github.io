@@ -13,7 +13,7 @@
     </li>
   </ul>
   <li>
-    <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
+    Oletko tulossa uusinta- tai erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
   </li>
 </ul>
 
