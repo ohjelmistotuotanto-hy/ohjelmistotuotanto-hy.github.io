@@ -2,14 +2,14 @@
 
 <ul>
   <li>
-    <a href='/koe2023'>Kokeen</a> arvostelu on käynnissä, tällä hetkellä arvosteluna tehtävä 2. Linkin takaa näet arvosteluperusteet.
+    <a href='/koe2023'>Kokeen</a> arvostelu on käynnissä, tällä hetkellä arvosteluna ovat tehtävät 2 ja 5. Linkin takaa näet arvosteluperusteet.
   </li>
   <li>
-    Tehtävän 2 pisteet näkyvät Moodlessa. Huomaa, että Moodlessa tehtävän n pisteet näkyvät tehtävän n+1 kohdalla.
+    Arvosteltuhen tehtävien pisteet näkyvät Moodlessa. Huomaa, että Moodlessa tehtävän n pisteet näkyvät tehtävän n+1 kohdalla.
   </li>
   <ul>
     <li>
-      Muidenkin tehvävien alustavia pisteitä saattaa näkyä Moodlessa. Pisteet ovat <i>alustavia</i> niin kauan kunnes toisin sanotaan, eli ne voivat muuttua mihin tahansa suuntaan, pisteiden katsominen omalla vastuulla.
+      Muidenkin tehtävien alustavia pisteitä saattaa näkyä Moodlessa. Pisteet ovat <i>alustavia</i> niin kauan kunnes toisin sanotaan, eli ne voivat muuttua mihin tahansa suuntaan, pisteiden katsominen omalla vastuulla.
     </li>
   </ul>
   <li>
