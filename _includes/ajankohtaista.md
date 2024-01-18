@@ -2,15 +2,13 @@
 
 <ul>
   <li>
-    <a href='/koe2023'>Kokeen</a> arvostelu on käynnissä, tällä hetkellä arvosteluna ovat tehtävät 2 ja 5. Linkin takaa näet arvosteluperusteet.
+    <a href='/koe2023'>Koe</a> arvostelu. Linkin takaa näet arvosteluperusteet.
   </li>
   <li>
-    Arvosteltuhen tehtävien pisteet näkyvät Moodlessa. Huomaa, että Moodlessa tehtävän n pisteet näkyvät tehtävän n+1 kohdalla.
+    Arvosteltuhen tehtävien pisteet näkyvät Moodlessa. Huomaa, että Moodlessa tehtävän n pisteet näkyvät tehtävän n+1 kohdalla.  Omasta arvioinnista voi tarvittaessa kysyä suoraan kunkin tehtävän korjaajalta, ks arvosteluperusteet.
   </li>
   <ul>
-    <li>
-      Muidenkin tehtävien alustavia pisteitä saattaa näkyä Moodlessa. Pisteet ovat <i>alustavia</i> niin kauan kunnes toisin sanotaan, eli ne voivat muuttua mihin tahansa suuntaan, pisteiden katsominen omalla vastuulla.
-    </li>
+    Myös kurssin arvostelu on valmis. Arvostelun "tarkastuslista", on lähetetty emailitse.
   </ul>
   <li>
     Oletko tulossa uusinta- tai erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
