@@ -93,7 +93,7 @@ Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suu
 
 Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
 
-### Vapaa vai avoin - Yliopiston Copyleft-kerho
+### Vapaa vai avoin
 
 Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video kertoo ohjelmistovapaudesta sekä tämän puolesta taistelevan Software Freedom Conservancysta:
 
@@ -101,4 +101,4 @@ Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video 
 	<source src="https://de4df61deef78e687eb1-7fe654f62734b2c8c91ba6b5edb21b0b.ssl.cf5.rackcdn.com/sfc-introduction_1080p.mp4" type="video/mp4">
 </video>
 
-Jos kiinnostuit ohjelmistovapaudesta, tule juttelemaan kanssapohtijoiden kanssa yliopiston Copyleft-kerhon Discord-palvelimelle: [https://discord.gg/FhhynjaZtc](https://discord.gg/FhhynjaZtc)!
+Jos kiinnostuit ohjelmistovapaudesta, pistä rohkeasti viestiä Akiralle!
