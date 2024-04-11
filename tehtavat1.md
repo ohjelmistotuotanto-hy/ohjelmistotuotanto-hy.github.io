@@ -630,17 +630,27 @@ Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
 
 ```yml
+{% raw %}
 - name: Coverage report
   run: poetry run coverage xml
 - name: Coverage report to Codecov
-  run: bash <(curl -s https://codecov.io/bash)
+  uses: codecov/codecov-action@v3
+  env:
+    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+{% endraw %}
 ```
 
-**HUOM1** rivit on sisennettävä samalle tasolle kuin muut stepit.
 
-**HUOM2** käyttäessäsi julkista repositorioa, et tarvitse Reposity upload tokenia mihinkään
+**HUOM** rivit on sisennettävä samalle tasolle kuin muut stepit.
 
-![]({{ "/images/lh1-codecov2.png" | absolute_url }})
+Aiemmin codevoc ei vaatinut julkisten repositorioiden osalta upload tokenin käyttöä, mutta nykyisin tällainen tarvitaan. Käytännössä Codecovin upload token on avain, jonka avulla palvelu tunnistaa sinut. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. Avaimen luominen ja lisääminen Github Actioneiden käyttöön on selitetty [Codecovin dokumentaatiossa](https://docs.codecov.com/docs/adding-the-codecov-token). Laajemmin sailaisuuksien sisällyttämisestä Githubiin on kuvattu
+[Githubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+
+Kertauksena:
+
+1. Luo avain codecovin ohjeiden mukaan
+1. Siirrä avain Githubin secretiksi (Githubin repossa settings -> secrets and variables / actions -> New repository secret -> nimeksi CODECOV_TOKEN ja arvoksi avain)
+1. Lisää yllä olevat vaiheet GitHub Action -konfiguraatiosio 
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
