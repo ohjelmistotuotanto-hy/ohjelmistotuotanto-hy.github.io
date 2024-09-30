@@ -468,7 +468,7 @@ Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleel
 
 ## User story ja epiikki
 
-Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudataa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä.
+Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudattaa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä.
 
 Backlogin alaosissa olevat storyt taas voivat olla isoja, jopa sellaisia että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee ennen mahdollista toteuttamista jakaa pienempiin, rajatumpiin storyihin. Tämän kaltaisia isoja storyja nimitetään usein _epiikeiksi_ (engl. epic).
 
