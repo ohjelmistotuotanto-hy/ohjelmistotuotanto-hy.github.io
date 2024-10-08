@@ -1,13 +1,19 @@
 ---
 layout: page
 title: Miniprojekti
-inheader: no
-permalink: /miniprojektix
+permalink: /miniprojekti/
 ---
 
 ### Ajankohtaista
 
-- [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
+- Loppudemot
+  - ti 12.12. klo 14-16 B123
+  - to 14.12. klo 12-14 B123
+  - Jokainen ryhmä osallistuu yhteen loppudemoon (demoviikolla ei enää pidetä asiakaspalaveria)
+- Varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1Go-f33LQC1SSZG-CI-04UyTVE84ytfN9HSAHEad3OC0/edit?usp=sharing)
+- Miniprojektin [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
+- Asiakastapaamisten (30 min) ajankohta palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
+- [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
 
 ### Johdanto
 
@@ -23,10 +29,9 @@ permalink: /miniprojektix
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan sunnuntaina 20.11. "algoritmisesti", pääasiassa noudattaen ilmoittautumisessa (ks. linkit ylempää) kerrottuja sopivia työskentelyaikoja
-- Ryhmäsi aloitustilaisuuden ajankohta selviää ilmoittautumissovelluksesta. Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
+- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
-  - scrum
+  - Scrum
   - sprintti
   - user story
   - product backlog
@@ -34,52 +39,51 @@ permalink: /miniprojektix
   - hyväksymäkriteeri
   - definition of done
 - Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
-- Ryhmä keksii itselleen nimen, luo GitHub-repositorion ja rekisteröi itsensä palautussovellukseen <{{site.stats_url}}>
-  - **yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
-    - luo projektin _create project_ -napista avautuvasta lomakkeesta
-    - ja jakaa muille ryhmäläisille luodun projektin id:n
-  - **muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
 
 ### Työn eteneminen
 
-Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) viimeistään perjantaina 26.11.
+Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 4 (21-27.11.)
+#### viikko 3 (13-17.11.)
 
 - Ryhmä muodostuvat/muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
-- Aloitustilaisuudessa pidettävän asiakastapaamisen pohjalta ryhmä tekee alustavan product backlogin ja sopii asiakkaan kanssa ensimmäisen sprintin tavoitteesta
-- Ryhmä suunnittelee ensimmäisen sprintin ja aloittaa työskentelyn
-  - sprintin suunnittelun tuloksena ryhmä tekee sprint backlogin
-  - backlogien sisällöstä enemmän [täällä](/miniprojekti#tekniset-ja-prosessiin-liittyvät-vaatimukset)
-- Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet) kannattaa lukea huolellisesti
+- Projekti tulee rekisteröidä palautussovellukseen <{{site.stats_url}}>.
+  - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
+    - Luo projektin _create project_ -napista avautuvasta lomakkeesta
+    - Ja jakaa muille ryhmäläisille luodun projektin id:n
+  - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
+  - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+    - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
 
-#### viikko 5 (28.11-4.12.)
+#### viikko 4 (20-24.11.)
 
 - Sprintin 1 katselmointi ja sprintin 2 suunnittelu
-  - asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 6 (5.11-11.12.)
+#### viikko 5 (27.11-1.12.)
 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
-  - asiakastapaamisen aikataulu selviää palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 7 (12-19.12.)
+#### viikko 6 (4-8.12.)
+
+- Sprintin 3 katselmointi ja sprintin 4 suunnittelu
+
+#### viikko 7 (11-15.12.)
 
 - Loppudemot
-  - ke 14.12. klo 12-14 B123
-  - to 15.12. klo 14-17 A111
-  - varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1VyWKgiD13JLX17W3qoCNvZbggMsh0FBffBC2EeG9Czc/edit?usp=sharing)
-- Ryhmä ei tapaa enää asiakasta kolmannen sprintin päätteeksi
+  - ti 12.12. klo 14-16 B123
+  - to 14.12. klo 12-14 B123
+- Jokainen ryhmä osallistuu yhteen loppudemoon
+- Ei erillistä asiakaspalaveria
 
 ### Toteutettava ohjelmisto
 
-Sovelluksen osittainen kuvaus [täällä](/speksi)
+Ohjelman alustava [kuvaus](/speksi), tarkemmat yksityiskohdat kuulet asiakkaalta.
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
-  - Vaatimukset kirjataan backlogiin user story:inä
+  - Vaatimukset kirjataan backlogiin user storyinä
 - Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
@@ -94,7 +98,7 @@ Sovelluksen osittainen kuvaus [täällä](/speksi)
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration)
-  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua GitHub Actionsia, muita vaihtoehtoja esim. CircleCI
+  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua GitHub Actionsia
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
@@ -117,14 +121,14 @@ Sovelluksen osittainen kuvaus [täällä](/speksi)
 
 Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
-- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan [Cucumberin](/cucumber/) tai [Robot-frameworkin](/robot_framework/) syntaksilla
+- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot-frameworkin](/robot_framework/) syntaksilla
   - hyvänä käytänteenä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
-- Toteutetun koodin testikattavuuden tulee olla kohtuullinen (esim. noin 70% muiden paitsi triviaalin koodin, kuten gettereiden/settereiden osalta)
+- Toteutetun koodin testikattavuuden tulee olla kohtuullinen
 - Asiakas pääsee näkemään koko ajan koodin ja testien tilanteen CI-palvelusta
 - Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
-  - yhtenäinen koodityyli (noudattaa pylintin tai checkstylen avulla määriteltyjä sääntöjä)
+  - yhtenäinen koodityyli (noudattaa pylintin avulla määriteltyjä sääntöjä)
 
 #### Repositorio ja README
 
@@ -136,25 +140,29 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Jos kyse työpöytäsovelluksesta, tulee ohjelmalle olla asennus- ja käyttöohje
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
 
+### Vihjeitä ryhmätyöskentelyyn
+
+Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikanpäällä tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
+
+Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storyä työstää aina kaksi henkilöä.
+
+Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
+
+Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
+
 ### Teknologisia vihjeitä
 
 - Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
 - **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
-- Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto ainakin Javaa käytettäessä
-- Web-pohjaiselle Python-sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-  - **Herokun maksuton palvelu poistui käytöstä marraskuun viimeisellä viikolla.
-- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto** tämän takia Web-sovelluksen tekeminen voi olla riskialtista jos vaihtoehtoista sijoituspaikkaa ei ole tiedossa
+- Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto
+  - **HUOM:** Komentoriviltä toimivat sovellukset on syytä tehdä siten, että niiden IO-operaatiot eli tulostaminen ja syötteen lukeminen on eriytetty omaan injektoitavaan luokkaan viikon 1 laskareissa käsitellyn [riippuvuuksien injektointi](/riippuvuuksien_injektointi_python/) -esimerkin tapaan. Jos näin ei toimita tulee sprintistä 2 alkaen tehtävä käyttöliittymän läpi tapahtuva testaus olemaan erittäin haastavaa
+- Web-pohjaiselle sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
+- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
   - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
   - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
-  - Huomaa, että jos tarkoituksena on julkaista sovellus esimerkiksi _Heroku_-palveluun, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-  - Tikapen laskareissa käytetty [todo-sovellus](https://github.com/ohjelmistotuotanto-hy/tikape-todo) on esimerkkisovellus SQLite tietokannan käytöstä Gradle-pohjaisessa Java-projektissa
-- Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla, tai Cucumberilla tapahtuvaan storyjen testaamiseen
-- JavaFX:llä tehtyjen sovellusten automatisoitu testaaminen on mahdollista [TestFX](https://github.com/TestFX/TestFX)-kirjaston avulla. Kirjaston dokumentaatio ei ole parhaasta päästä
-  - yksinkertainen Gradle+JavaFX+Cucumber+Circle esimerkkikonfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/fx-testing)
-  - Java Swing-sovellusten Cucumberilla tapahtuva käyttöliittymätason testaus on täysi mysteeri
-- Edellisinä vuosina on huomattu, että Java Springin konfigurointi (toimimaan yhdessä gradlen, cucumberin ja GitHub Actionsin kanssa) miniprojektille varatun ajan puitteissa on osoittautunut haastavaksi. Käyttäkää siis springiä omalla vastuulla
-  - yksinkertainen Gradle+Spring+Cucumber+Circle esimerkkikonfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/spring-cucumber)
-- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaa ehkä välttää kirjaston käyttöä
+  - Huomaa, että jos tarkoituksena on julkaista sovellus jossain pilvipalvelussa, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi seuraavasta tälle kurssille tehdystä [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
+- Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla tapahtuvaan storyjen testaamiseen (vaaditaan sprintistä 2 alkaen)
+- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaanee välttää kirjaston käyttöä
 
 ### Työn arvostelu
 

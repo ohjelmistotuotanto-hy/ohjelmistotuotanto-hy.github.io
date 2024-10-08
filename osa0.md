@@ -13,6 +13,13 @@ permalink: /osa0/
 
 Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä.
 
+Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat tiedot) 
+- [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-24.mooc.fi/)
+- [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2024/)
+- [Tietokannat ja Internet](https://hy-tsoha.github.io/) (aiemmalta nimeltään Tietokantasovellus)
+
+Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
+
 Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
 Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
@@ -29,15 +36,16 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoista ensimmäinen tosin korvautuu tänä vuonna etukäteen tehdyllä tallenteella.
+Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Kotona katsottavaksi Unitubea parempia lienevät kuitenkin syksyn 2021 Zoom-tallenteet joihin linkit löytyvät kurssimateriaalin etusivulta.
+Kurssin luennot pidetään salissa B123 (poislukien yksi toisen viikon luennoista) ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2023 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
 
 ### Laskuharjoitukset
 
 Kurssiin liittyy viikoittaiset laskuharjoitukset. Tehtäviä harjoituksissa on kahden tyyppisiä.
 
-Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59.
+Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59. Poikkeuksena tähän on ensimmäistä kahta luentoa kertaavat viikon 1 monivalinnat joiden deadline on vasta toisen viikon sunnuntaina.
 
 Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
 
@@ -62,7 +70,7 @@ Miniprojektista lisää [täällä](/miniprojekti).
 
 #### Miniprojektin hyväksilukeminen
 
-Miniprojektiin osallistuminen ei ole välttämätöntä, jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
+Miniprojektiin osallistuminen ei ole välttämätöntä jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
 
 Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/koulutusohjelmasi-harjoitteluohjeet) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
 
@@ -116,7 +124,7 @@ Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon asi
 
 Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. ChatGPT:llä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
 
-Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu emailitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
+Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59** (poislukien viikko 1 jonka deadline on vasta toisen viikon sunnuntai), palautus tapahtuu emailitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
 
 *HUOM* ainakaan tässä kurssiversiossa ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
 
