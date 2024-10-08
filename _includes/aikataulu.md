@@ -6,32 +6,28 @@
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - tallenteet:
     - syksy 23: [youtube](https://youtu.be/iOb4FiHMYzQ), [unitube](https://www.helsinki.fi/fi/unitube/video/09dad5ca-ca5d-4dad-b394-0becd95a0bfb)
-    - [syksy 21](https://youtu.be/v8wUaq4qa9M)
-- Luento 2: {{site.luennot[2]}}
-  - [Scrum](/osa1#scrum)
-  - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/1DDna_ASaTw), [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
-    - [syksy 2021](https://youtu.be/Bejr8KO_0fY)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
 ### Viikko 2
 
+- Luento 2: {{site.luennot[2]}}
+  - [Scrum](/osa1#scrum)
+  - tallenteet:
+    - syksy 2023: [youtube](https://youtu.be/1DDna_ASaTw), [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
 - Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/LoTkLUn-5c8), [unitube](https://www.helsinki.fi/fi/unitube/video/09ce38ed-2074-4d07-8669-ac55051a04c1)
-    - [syksy 2021](https://youtu.be/T5dOFks48ZY)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/VmURlloAvt4), [unitube](https://www.helsinki.fi/fi/unitube/video/0d5b1a96-f4b3-4ff3-bc7c-f2ffa560caf8)  
-    - [syksy 2021](https://youtu.be/_V6jCiKuH-0)
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
+  - Kahden ensimmäisen luennon <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
+  - Luentojen 3 ja 4 <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline {{site.lask-dl[2]}}
 
 ### Viikko 3
@@ -40,16 +36,14 @@
   - [Laadunhallinnan perusteet](/osa3)
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/LrMxzaBZRCs), [unitube](https://www.helsinki.fi/fi/unitube/video/174b1a35-5450-4c64-b43c-fca36461f689)
-    - [syksy 2021](https://youtu.be/XY7BtG-i4ms)
 - Luento 6: {{site.luennot[6]}} 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauskäytänteitä)
   - tallenteet
     - syksy 2023: [youtube](https://youtu.be/q8Yu00Mypcw), [unitube](https://www.helsinki.fi/fi/unitube/video/5a68c46e-13bf-425d-88c9-73c580a2cb77)
-    - [syksy 2021](https://youtu.be/4CN0cLfz2Ds)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
-- [Miniprojekti](/miniprojekti)
+- [Miniprojekti](/miniprojektix)
   - Aloitustilaisuudet  
 
 ### Viikko 4
@@ -59,18 +53,16 @@
   - [DevOps](/osa3#devops)
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/SIT74TRZVhg), [unitube](https://www.helsinki.fi/fi/unitube/video/fcefce04-872f-4650-b501-1799b7bd1a7d)
-    - [syksy 2021](https://youtu.be/WC6q8KRHKII)
 - Luento 8: {{site.luennot[8]}} 
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/34CKdOxwmac), [unitube](https://www.helsinki.fi/fi/unitube/video/680c1fe8-a709-4eb0-81f2-ec64919680ac)
-    - [syksy 2021](https://youtu.be/5pjrcTLdUpU)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4), deadline {{site.lask-dl[4]}}
-- [Miniprojekti](/miniprojekti)
+- [Miniprojekti](/miniprojektix)
   - Asiakastapaamiset (sprintin 1 review, sprintin 2 suunnittelu)
 
 ### Viikko 5
@@ -89,24 +81,17 @@
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
-- [Miniprojekti](/miniprojekti)
+- [Miniprojekti](/miniprojektix)
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
 
 ### Viikko 6
 
 - Vierailuluennot
   - Luento 11: {{site.luennot[11]}} 
-    - Jami Kousa Unity: _Metrics, Tracing and bugs in production_
-    - Mikko Tiainen Hogrefe: _Ensimmäisen ohjelmistoalan työpaikan hakeminen_
-    - tallenteet:
-      - syksy 2023: [youtube](https://youtu.be/fwLSIBp4WEQ), [unitube](https://www.helsinki.fi/fi/unitube/video/c91c80f0-784a-4709-9ee0-1ab9f86780b7)
-      - syksy 2022: [Jami Kousa](https://youtu.be/t4kdM-VwG4I) aihe on hieman eri kuin tänä vuonna, kannattaa katsoa!
-
+    - Jami Kousa ja Aleksander Tereschenko Unity: _Metrics, Tracing and bugs in production_
   - Luento 12: {{site.luennot[12]}} 
-    - Anniina Sallinen Oura: _Koneoppimismallien kehityksen ja operoinnin automatisointi_
-    - tallenteet:
-      - syksy 2023: [youtube](https://youtu.be/L58Xaeou-sE), [unitube](https://www.helsinki.fi/fi/unitube/video/b0ca753c-1656-47d7-96e4-f91123d5a149)
-      - syksy 2022: [Anniina Sallisen vierailyluento aiheesta Data Engineering](https://www.youtube.com/watch?v=WWy-G353UEo),  aihe on eri kuin tänä vuonna, kannattaa katsoa!
+    - Ville Nordberg Trail openers: _Vihreä IT_
+    - Kristiina Vainio: _Houston Inc_
 - Laskarit
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 - Miniprojekti
@@ -116,23 +101,17 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Hannu Kokko Elisa: _Global product development_
-    - tallenteet:
-      - [youtube](https://youtu.be/_2i6qQWysaM), [unitube](https://www.helsinki.fi/fi/unitube/video/e0f52abc-6ac3-41d7-8c21-095c678cd843)    
+    - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_ 
   - Luento 14: {{site.luennot[14]}}
-    - Ville Nordberg Trail openers: _Vihreä IT_
-    - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_
-    - tallenteet:
-      - [youtube](https://youtu.be/SkQDKNyMdzo), [unitube](https://www.helsinki.fi/fi/unitube/video/95b5a265-032b-42f8-9243-0caaa6d8219e)    
+    - Hannu Kokko Elisa: _Global product development_
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
-- [Miniprojekti](/miniprojekti)
+- [Miniprojekti](/miniprojektix)
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - tiistaina 12.12. klo 14-16 B123
-    - torstaina 14.12. klo 12.00-14 [zoom](https://helsinki.zoom.us/j/65778062404?pwd=WXc4NU9kL1JDMXV5QlhCNzJ6RnM2dz09)
-
+    - nn
+    
 ### Viikko 8
 
-- Koe ti 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=55570)
+- Koe xxx. klo nnn [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=67825)
   - Koeaika on 4 tuntia siitä hetkestä kun aloitat kokeen
   - Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.

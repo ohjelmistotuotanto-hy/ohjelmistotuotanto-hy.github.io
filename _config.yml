@@ -1,16 +1,5 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-
-title: Ohjelmistotuotanto 2023
+title: Ohjelmistotuotanto 2024
 email: matti.luukkainen@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ''
@@ -18,49 +7,49 @@ url: 'https://ohjelmistotuotanto-hy.github.io'
 github_username: mluukkai
 repo_url: 'https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io'
 repo_branch: 'master'
-stats_url: 'https://study.cs.helsinki.fi/stats/courses/ohtu2023'
+stats_url: 'https://study.cs.helsinki.fi/stats/courses/ohtu2024'
 
 python_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/tehtavat'
 java_exercise_repo_url: 'https://github.com/ohjelmistotuotanto-hy/syksy2021-java'
 
-norppa: https://norppa.helsinki.fi/targets/72482660/feedback
+norppa: https://norppa.helsinki.fi/targets/83083419/feedback
 
 moniv-dl:
   - 'FAIL'
-  - 'sunnuntai 5.11. klo 23:59:00'
-  - 'sunnuntai 12.11. klo 23:59:00'
-  - 'sunnuntai 19.11. klo 23:59:00'
-  - 'sunnuntai 26.11. klo 23:59:00'
-  - 'sunnuntai 3.12. klo 23:59:00'
+  - 'sunnuntai 10.11. klo 23:59:00'
+  - 'sunnuntai 10.11. klo 23:59:00'
+  - 'sunnuntai 17.11. klo 23:59:00'
+  - 'sunnuntai 24.11. klo 23:59:00'
+  - 'sunnuntai 1.12. klo 23:59:00'
   - 'ei tehtäviä'
   - 'ei tehtäviä'
 
 lask-dl:
   - 'FAIL'
-  - 'maanantai 6.11. klo 23:59'
-  - 'maanantai 13.11. klo 23:59'
-  - 'maanantai 20.11. klo 23:59'
-  - 'maanantai 27.11. klo 23:59'
-  - 'maanantai 4.12. klo 23:59'
-  - 'maanantai 11.12. klo 23:59'
+  - 'maanantai 4.11. klo 23:59'
+  - 'maanantai 11.11. klo 23:59'
+  - 'maanantai 18.11. klo 23:59'
+  - 'maanantai 25.11. klo 23:59'
+  - 'maanantai 2.12. klo 23:59'
+  - 'maanantai 9.12. klo 23:59'
   - 'keskiviikko 20.12. klo 23:59'
 
 luennot:
   - 'FAIL'
-  - 'maanantai 30.10. klo 12-14'
-  - 'tiistai 31.10. klo 12-14'
-  - 'maanantai 6.11. klo 12-14'
-  - 'tiistai 7.11. klo 12-14'
-  - 'maanantai 13.11. klo 12-14'
-  - 'tiistai 14.11. klo 12-14'
-  - 'maanantai 20.11. klo 12-14'
-  - 'tiistai 21.11. klo 12-14'
-  - 'maanantai 27.11. klo 12-14'
-  - 'tiistai 28.11. klo 12-14'
-  - 'maanantai 4.12. klo 12-14'
-  - 'tiistai 5.12. klo 12-14'
-  - 'maanantai 11.12. klo 12-14'
-  - 'tiistai 12.12. klo 12-14'
+  - 'maanantai 28.10. tallenne'
+  - 'tiistai 5.11. klo 12-14 B123'
+  - 'torstaina 7.11. klo 12-14 CK112'
+  - 'perjantaina 8.11. klo 12-14 B123'
+  - 'maanantai 11.11. klo 12-14 B123'
+  - 'tiistai 12.11. klo 12-14 B123'
+  - 'maanantai 18.11. klo 12-14 B123'
+  - 'tiistai 19.11. klo 12-14 B123'
+  - 'maanantai 25.11. klo 12-14 B123'
+  - 'tiistai 26.11. klo 12-14 B123'
+  - 'maanantai 2.12. klo 12-14 B123'
+  - 'tiistai 3.12. klo 12-14 B123'
+  - 'maanantai 9.12. klo 12-14 B123'
+  - 'tiistai 10.12. klo 12-14 B123'
 
 # Build settings
 markdown: kramdown

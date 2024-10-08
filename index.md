@@ -9,21 +9,21 @@ painotus ketterissä ohjelmistotuotantomenetelmissä.
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - Luennot
-  - ma 12-14 B123
-  - ti 12-14 B123
+  - Ensimmäisellä viikolla omatoimisesti katsottava ensimmäisen luennon korvaava tallenne
+  - Toisella viikolla
+    - ti 5.11. klo 12-14 B123
+    - to 7.11. klo 12-14 CK112
+    - pe 8.11. klo 12-14 B123
+  - 11.11. alkaen ma ja ti klo 12-14 B123
   - Luennot ovat nähtävissä livenä [Unitubessa](https://video.helsinki.fi/unitube/live-stream.html?room=l10) 
-  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2021 zoom-luentojen tallenteet ovat myös käytössä
-  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-23)
-- [Miniprojekti](/miniprojekti)
-- Kurssikoe tiistaina 19.12. klo 07-14, ohjeita kokeeseen [täällä](/ohje_kokeeseen)
-  - Koeaikaa on aloitushetkestä 4 tuntia
-  - Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
+  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2023 luentojen tallenteet ovat myös käytössä
+  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon
-  - pajassa BK107 ma 10-12, ma 14-16, ke 10-12 ja pe 12-14 
+  - pajassa BK107 xxx 
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Kurssipalaute
-  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/72482660/feedback>
+  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/83083419/feedback>
 
 ## Ajankohtaista
 
