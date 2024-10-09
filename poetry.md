@@ -110,6 +110,43 @@ Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/)
 
 Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
 
+### Asetukset
+
+Ennen kuin aloitamme Poetryn käytön, tehdään pieni muutos konfiguraatioihin. 
+
+Näemme käytössä olevat konfiguraatiot komennolla `poetry config --list`, jonka tulostus näyttää seuraavalta
+
+```bash
+cache-dir = "/Users/mluukkai/Library/Caches/pypoetry"
+experimental.system-git-client = false
+installer.max-workers = null
+installer.modern-installation = true
+installer.no-binary = null
+installer.parallel = true
+virtualenvs.create = true
+virtualenvs.in-project = false
+virtualenvs.options.always-copy = false
+virtualenvs.options.no-pip = false
+virtualenvs.options.no-setuptools = false
+virtualenvs.options.system-site-packages = false
+virtualenvs.path = "{cache-dir}/virtualenvs"  # /Users/mluukkai/Library/Caches/pypoetry/virtualenvs
+virtualenvs.prefer-active-python = false
+virtualenvs.prompt = "{project_name}-py{python_version}"
+```
+
+Konfiguraatioissa on pari meitä kiinnostava kohtaa. _cache-dir_ ja _virtualenvs.path_ kertovat yhdessä, että jokaisen projektin virtuaaliympäristo, eli talletetaan oletusarvoisesti kansion _/Users/mluukkai/Library/Caches/pypoetry_ alle. Tämä voi olla ok ratkaisu, mutta ainakin omaan makuun parempi on jos kunkin projektin virtuaaliympäristö talletetaan projektin hakemistoon. Tämä on yleinen käytäntö esimerkiksi JavaScritp-ekosysteemissä. Konfiguraatio tapahtuu seuraavasti
+
+```bash
+poetry config virtualenvs.in-project true
+```
+
+Komennon `poetry config --list` tulostuksessa pitäisi nyt olla seuraava rivi:
+
+```bash
+virtualenvs.in-project = true
+```
+
+
 ### Projektin alustaminen
 
 Harjoitellaan Poetryn käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _poetry-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto terminaalissa ja suorita siellä komento:
@@ -148,7 +185,7 @@ poetry install
 
 Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen ja riippuvuuksien asentamisen. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projektia aletaan käyttämään.
 
-Komennon suorittaminen johtaa todennäköisesti seuraavaan ilmoitukseen:
+Komennon suorittaminen saattaa johtaa seuraavaan ilmoitukseen:
 
 ```
 Installing the current project: poetry-testi (0.1.0)
@@ -164,7 +201,15 @@ poetry install --no-root
 
 Virtuaaliympäristön alustamisen lisäksi tämä komento asentaa ainoastaan projektin riippuvuudet, ei projektia itseään.
 
-Komennon suorittamisen jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install`-komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
+Komennon suorittamisen  `poetry install` jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install` -komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
+
+Tekemiemme [asetusten muutosten](/poetry#asetukset) takia hakemistoon tulee myös tiedosto _.venv_ johon Poetry tallentaa projektin virtuaaliympäristön riippuvuuksineen. Tätä tiedostoa _ei tule tallentaa_ versionhallintaan, eli se on syytä lisätä heti tiedostoon _.gitignore_.
+
+Kannattaa huomata, että hakemistoa _.venv_  ei oletusarvoisesti näe komennolla _ls_, sillä Unix-tyyppisissä käyttöjärjestelmissä pisteellä alkavat ovat [piilotiedostoja](https://help.ubuntu.com/stable/ubuntu-help/files-hidden.html.en). Komento _ls -a_ tuo näkyviin myös piilotiedostot/hakemistot. Vielä parempi muoto voi olla, _ls -la_, joka tulostaa tiedot hieman laajemmassa muodossa:
+
+![]({{ "/images/lh1-venv.png" | absolute_url }}){:height="350px" }
+
+
 
 ### Riippuvuuksien asentaminen
 

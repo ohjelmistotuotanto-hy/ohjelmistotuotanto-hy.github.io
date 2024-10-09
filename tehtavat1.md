@@ -263,7 +263,9 @@ Ohjelmoinnin peruskursseilla olet saattanut suorittaa koodia painamalla VS Coden
 
 Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kovin hankalaa. Ongelmia alkaa syntyä vasta, kun projekti tarvitsee ulkoisia _riippuvuuksia_ erilaisten asennettavien kirjastojen muodossa. Kirjastojen asennukseen ja hallintaan tarvitaan erilisiä työkaluja. Pythonin kohdalla suosituin komentorivityökaluja tähän tarkoitukseen on [pip](https://pypi.org/project/pip/).
 
-Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta. Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut, voimme käyttää [Poetry](https://python-poetry.org/)-komentorivityökalua. Poetryn dokumentaation antama kuvaus on seuraava:
+Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta.
+
+Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut, voimme käyttää [Poetry](https://python-poetry.org/)-komentorivityökalua. Poetryn dokumentaation antama kuvaus on seuraava:
 
 > Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 
@@ -282,7 +284,9 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 {% include no_pip.md %}
 
-Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](https://ohjelmistotuotanto-hy.github.io/poetry). Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää.
+Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry). Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää.
+
+On suositeltavaa, että teet [tämän](/poetry#asetukset) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
 
 **Tee nyt seuraavat toimenpiteet**.
 
