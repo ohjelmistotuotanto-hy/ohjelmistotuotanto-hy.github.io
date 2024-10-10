@@ -468,9 +468,9 @@ Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmesty
 
 ### 10. GitHub Actions, osa 2
 
-Katsotaan hieman tarkemmin mitä GitHub actionien konepellin alla tapahtuu.
+Katsotaan hieman tarkemmin mitä GitHub Actionien konepellin alla tapahtuu.
 
-GitHub actionit ovat sarjoja erilaisia "toimenpiteitä", joita GitHub voi suorittaa repositoriossa olevalle koodille. Actionin toiminta määritellään hakemiston _.github/workflows_ sijoitettavissa _.yml_-päätteisissä tiedostoissa.
+GitHub Actionit ovat sarjoja erilaisia "toimenpiteitä", joita GitHub voi suorittaa repositoriossa olevalle koodille. Actionin toiminta määritellään hakemiston _.github/workflows_ sijoitettavissa _.yml_-päätteisissä tiedostoissa.
 
 Tarkastellaan äsken määrittelemäämme tiedostoa:
 
@@ -500,7 +500,7 @@ jobs:
 
 Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia.
 
-Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä ketaa vain yhden työn, jolle annoimme nimen _run_tests_. Jos töitä olisi useita, suorittaisi GitHub actions ne yhtä aikaa.
+Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä ketaa vain yhden työn, jolle annoimme nimen _run_tests_. Jos töitä olisi useita, suorittaisi GitHub Actions ne yhtä aikaa.
 
 Yksittäinen työ koostuu useista askelista, jotka on määritelty työn alla kohdassa [steps](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
 
@@ -635,7 +635,7 @@ jacocoTestReport {
 }
 ```
 
-Sekä lisäämällä tiedoston GitHub actionit konfiguroivan tiedoston loppuun seuraavat rivit:
+Sekä lisäämällä tiedoston GitHub Actionit konfiguroivan tiedoston loppuun seuraavat rivit:
 
 ```yml
 - name: Code coverage rapost
@@ -658,9 +658,9 @@ Klikkaailemalla sivun alalaidassa olevasta kohdasta _Files_ tiedostojen nimiä, 
 
 ![]({{ "/images/lh1-15.png" | absolute_url }})
 
-Käytännössä pyydämme nyt GitHub actioneja suorittamaan onnistuneen testien suorituksen (eli komennon <code>gradle test</code>) jälkeen gradle-komennon, joka ensin suorittaa testien kattavuusanalyysin JaCoCo:lla ja sen jälkeen lähettää tiedot Codecoviin.
+Käytännössä pyydämme nyt GitHub Actioneja suorittamaan onnistuneen testien suorituksen (eli komennon <code>gradle test</code>) jälkeen gradle-komennon, joka ensin suorittaa testien kattavuusanalyysin JaCoCo:lla ja sen jälkeen lähettää tiedot Codecoviin.
 
-GitHub actionien loki näyttää miten askelten suoritus etenee:
+GitHub Actionien loki näyttää miten askelten suoritus etenee:
 
 ![]({{ "/images/lh1-29.png" | absolute_url }})
 
@@ -670,7 +670,7 @@ Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta (poisl
 
 ![]({{ "/images/lh1-30.png" | absolute_url }})
 
-Huomaa, että GitHub actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
+Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
 ### 13. Parempi testauskattavuus
 

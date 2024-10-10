@@ -286,7 +286,7 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry). Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää.
 
-On suositeltavaa, että teet [tämän](/poetry#asetukset) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
+On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
 
 **Tee nyt seuraavat toimenpiteet**.
 
@@ -332,9 +332,9 @@ Oikea polku kannattaa varmistaa komennolla `which python3`.
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet todennäköisesti jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 
-Edellisen tehtävän esimerkkisovelluksessa on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
+Edellisen tehtävän _ohtuvarastoss_a on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
 Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla sen jälkeen komennon `pytest`.
 
@@ -347,8 +347,6 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 ```bash
 poetry add coverage --group dev
 ```
-
-Komennon muoto riippuu siitä kuinka uusi Poetryn versio käytössäsi on.
 
 - Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
 
@@ -370,22 +368,22 @@ source = src
 
 ### 9. GitHub Actions, osa 1
 
-Poetryn avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli helposti komentoriviltä yhdellä komennolla suoritettavaksi. Seuraava askel on suorittaa buildausprosessi, eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
+Poetryn avulla testien suorittaminen  on mahdollista tehdä skriptattavaksi, eli helposti komentoriviltä yhdellä komennolla suoritettavaksi. Seuraava askel on suorittaa [buildausprosessi](https://en.wikipedia.org/wiki/Software_build), eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
 
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 
 - Uusin versio koodista haetaan versionhallinnan keskitetystä repositoriosta ohjelmistokehittäjän koneelle
 - Lisäykset ja niitä testaavat testit tehdään paikalliseen kopioon
-- Testit suoritetaan paikalliseen kopioon ohjelmistokehittäjän koneella
+- Testit suoritetaan ohjelmistokehittäjän koneella
 - Jos kaikki on kunnossa, paikalliset muutokset lähetetään keskitettyyn repositorioon
 - Build-palvelin seuraa keskitettyä repositoriota ja kun siellä huomataan muutoksia, hakee ja kääntää build-palvelin muuttuneen koodin ja suorittaa sille testit
 - Build-palvelin raportoi havaituista virheistä
 
 Erillisen build-palvelimen avulla varmistetaan, että ohjelmisto toimii muuallakin kuin muutokset tehneen ohjelmistokehittäjän koneella. Tätä käytännettä kutsutaan _jatkuvaksi integraatioksi_ (engl. continuous integration). Palaamme asiaan tarkemmin kurssin [kolmannessa osassa](/osa3#jatkuva-integraatio).
 
-Nykyään alkaa olla yleistä, että erillisen build-palvelimen sijaan käytetään jotain verkossa olevaa "build-ohjelmistoa", jolloin softakehittäjien ei tarvitse huolehtia ollenkaan buildaukseen käytettävän palvelimen ja sen ohjelmistojen asentamisesta.
+Nykyään alkaa olla yleistä, että erillisen build-palvelimen sijaan käytetään jotain verkossa olevaa build-palvelua (engl. build service), jolloin softakehittäjien ei tarvitse huolehtia ollenkaan buildaukseen käytettävän palvelimen ja sen ohjelmistojen asentamisesta.
 
-Kurssilla käytetään GitHubiin 15.11.2019 julkaistua ja sen jälkeen nopeasti suuren suosion saavuttanutta [Actions](https://github.com/features/actions)-ominaisuutta hoitamaan automatisoitu buildaus.
+Kurssilla käytetään GitHubiin sisäänrakennettua [Actions](https://github.com/features/actions)-ominaisuutta hoitamaan automatisoitu buildaus.
 
 Konfiguroidaan seuraavaksi GitHub Actions huolehtimaan projektistamme.
 
@@ -411,7 +409,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Install Poetry
@@ -440,9 +438,9 @@ Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmesty
 
 ### 10. GitHub Actions, osa 2
 
-Katsotaan hieman tarkemmin mitä GitHub actionien konepellin alla tapahtuu.
+Katsotaan hieman tarkemmin mitä GitHub Actionien konepellin alla tapahtuu.
 
-GitHub actionit ovat sarjoja erilaisia "toimenpiteitä", joita GitHub voi suorittaa repositoriossa olevalle koodille. Actionin toiminta määritellään hakemiston _.github/workflows_ sijoitettavissa _.yml_-päätteisissä tiedostoissa.
+GitHub Actionit ovat sarjoja erilaisia "toimenpiteitä", joita GitHub voi suorittaa repositoriossa olevalle koodille. Actionin toiminta määritellään hakemiston _.github/workflows_ sijoitettavissa _.yml_-päätteisissä tiedostoissa.
 
 Tarkastellaan äsken määrittelemäämme tiedostoa:
 
@@ -462,7 +460,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Install Poetry
@@ -475,7 +473,7 @@ jobs:
 
 Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia (sekä silloin jos päähaaraan tehdään ns. pull request).
 
-Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä kertaa vain yhden työn, jolle annoimme nimen _build_. Jos töitä olisi useita, suorittaisi GitHub actions ne rinnakkain.
+Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä kertaa vain yhden työn, jolle annoimme nimen _build_. Jos töitä olisi useita, suorittaisi GitHub Actions ne rinnakkain.
 
 Yksittäinen työ koostuu useista askelista, jotka on määritelty työn alla kohdassa [steps](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps).
 
@@ -508,7 +506,7 @@ Se suorittaa komentorivillä komennon, joka asentaa Poetryn.
 
 Neljäs askel asentaa projektin riippuvuudet `poetry install`-komennolla.
 
-Viides askel on kaikkein tärkein, se suorittaa poetryn avulla projektin testit ja kerää testikattavuuden:
+Viides askel on kaikkein tärkein, se suorittaa Poetryn avulla projektin testit ja kerää testikattavuuden:
 
 ```yml
 - name: Run tests
@@ -618,6 +616,8 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento  `git push` onn
 
 Jos muutit paikallisesti tiedostoa README.md, saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
+**Tee vielä** lopuksi badgestasi linkki Actions-välilehdelle. Eli kun badgea painetaan, tulee selaimen ohjautua repositorion Actions-välilehdelle, esim. omassa tapauksessani osoitteeseen <https://github.com/mluukkai/ohtuvarasto/actions>
+
 ### 12. Codecov
 
 Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <https://codecov.io> -palvelu mahdollistaa projektien koodikattavuuden julkaisemisen verkossa.
@@ -664,9 +664,9 @@ Klikkaailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien te
 
 ![]({{ "/images/py-lh1-15-22.png" | absolute_url }})
 
-Käytännössä pyydämme nyt GitHub actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
+Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
-GitHub actionien loki näyttää miten askelten suoritus etenee:
+GitHub Actionien loki näyttää miten askelten suoritus etenee:
 
 ![]({{ "/images/py-lh1-29-22.png" | absolute_url }})
 

@@ -110,7 +110,7 @@ Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/)
 
 Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
 
-### Asetukset
+### Asetusten hienosäätö
 
 Ennen kuin aloitamme Poetryn käytön, tehdään pieni muutos konfiguraatioihin. 
 
@@ -134,7 +134,7 @@ virtualenvs.prefer-active-python = false
 virtualenvs.prompt = "{project_name}-py{python_version}"
 ```
 
-Konfiguraatioissa on pari meitä kiinnostava kohtaa. _cache-dir_ ja _virtualenvs.path_ kertovat yhdessä, että jokaisen projektin virtuaaliympäristo, eli talletetaan oletusarvoisesti kansion _/Users/mluukkai/Library/Caches/pypoetry_ alle. Tämä voi olla ok ratkaisu, mutta ainakin omaan makuun parempi on jos kunkin projektin virtuaaliympäristö talletetaan projektin hakemistoon. Tämä on yleinen käytäntö esimerkiksi JavaScritp-ekosysteemissä. Konfiguraatio tapahtuu seuraavasti
+Konfiguraatioissa on pari meitä kiinnostava kohtaa. _cache-dir_ ja _virtualenvs.path_ kertovat yhdessä, että jokaisen projektin virtuaaliympäristo, eli talletetaan oletusarvoisesti kansion _/Users/mluukkai/Library/Caches/pypoetry_ alle. Tämä voi olla ok ratkaisu, mutta ainakin omaan makuun parempi on jos kunkin projektin virtuaaliympäristö talletetaan projektin hakemistoon. Tämä on yleinen käytäntö esimerkiksi JavaScritp-ekosysteemissä. Konfiguraatio tapahtuu [seuraavasti](https://python-poetry.org/docs/configuration/#virtualenvsin-project)
 
 ```bash
 poetry config virtualenvs.in-project true
@@ -203,13 +203,11 @@ Virtuaaliympäristön alustamisen lisäksi tämä komento asentaa ainoastaan pro
 
 Komennon suorittamisen  `poetry install` jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install` -komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
 
-Tekemiemme [asetusten muutosten](/poetry#asetukset) takia hakemistoon tulee myös tiedosto _.venv_ johon Poetry tallentaa projektin virtuaaliympäristön riippuvuuksineen. Tätä tiedostoa _ei tule tallentaa_ versionhallintaan, eli se on syytä lisätä heti tiedostoon _.gitignore_.
+Tekemiemme [asetusten muutosten](/poetry#asetusten-hienosäätö) takia hakemistoon tulee myös tiedosto _.venv_ johon Poetry tallentaa projektin virtuaaliympäristön riippuvuuksineen. Tätä tiedostoa _ei tule tallentaa_ versionhallintaan, eli se on syytä lisätä heti tiedostoon _.gitignore_.
 
 Kannattaa huomata, että hakemistoa _.venv_  ei oletusarvoisesti näe komennolla _ls_, sillä Unix-tyyppisissä käyttöjärjestelmissä pisteellä alkavat ovat [piilotiedostoja](https://help.ubuntu.com/stable/ubuntu-help/files-hidden.html.en). Komento _ls -a_ tuo näkyviin myös piilotiedostot/hakemistot. Vielä parempi muoto voi olla, _ls -la_, joka tulostaa tiedot hieman laajemmassa muodossa:
 
 ![]({{ "/images/lh1-venv.png" | absolute_url }}){:height="350px" }
-
-
 
 ### Riippuvuuksien asentaminen
 
