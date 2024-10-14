@@ -66,8 +66,8 @@ Luodaan hakemistosta paikallinen _git-repositorio_ antamalla komento `git init`
 Git ilmoittaa alustaneensa repositorion:
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git init
-Initialised empty Git repository in /home/ad/fshome4/u4/m/mluukkai/Linux/ohtu-git-warmup/.git/
+$ git init
+Initialized empty Git repository in /Users/mluukkai/opetus/ohtu24/koodi/viikot/lh1/ohtu-git-warmup/.git/
 ```
 
 Jos katsot hakemiston sisältöä komennolla `ls -la` huomaat, että hakemiston sisälle on ilmestynyt hakemisto `.git`. Git käyttää luotua hakemistoa pitääkseen kirjaa repositorioon talletetuista tiedostoista.
@@ -79,9 +79,9 @@ Pysy edelleen repositorion sisältävässä hakemistossasi _ohtu-git-warmup_.
 Luo hakemistoon tiedosto nimeltään _tiedosto.txt_, esim. komennolla `touch`. Luotuasi tiedoston, suorita komento `git status`:
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ touch tiedosto.txt
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ touch tiedosto.txt
+$ git status
+On branch main
 
 No commits yet
 
@@ -91,7 +91,7 @@ Untracked files:
 	tiedosto.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-mluukkai@melkinpaasi:~/ohtu-git-warmup$
+$
 ```
 
 Git ilmoittaa, että on olemassa tiedosto, joka on tilassa _untracked_, eli tiedostoa ei ole lisätty versionhallinnan pariin.
@@ -101,9 +101,9 @@ Kuten komennon tuloste kertoo, tiedoston lisääminen gitin alaisuuteen (...to i
 Suorita lisäys ja sen jälkeen komento `git status`:
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git add tiedosto.txt
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git add tiedosto.txt
+$ git status
+On branch main
 
 No commits yet
 
@@ -122,8 +122,8 @@ Commitoimisella tarkoitetaan tiedostojen ja hakemistojen sekä niihin liittyvien
 Suoritetaan commitointi antamalla komento `git commit -m "tiedosto.txt luotu"`
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git commit -m "tiedosto.txt luotu"
-[master (root-commit) 0e12cfa] tiedosto.txt luotu
+$ git commit -m "tiedosto.txt luotu"
+[main (root-commit) 0e12cfa] tiedosto.txt luotu
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 tiedosto.txt
 ```
@@ -131,8 +131,8 @@ mluukkai@melkinpaasi:~/ohtu-git-warmup$ git commit -m "tiedosto.txt luotu"
 Suorita jälleen komento `git status`
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 nothing to commit, working tree clean
 ```
 
@@ -140,21 +140,16 @@ Git ilmoittaa, että _working tree clean_, eli hakemistosi on samassa tilassa ku
 
 ### Working directory, index ja staging
 
-**Muista käyttää tab-completea tehtäviä tehdessäsi!**
-
 Kun teet muutoksia hakemistosi alla oleviin tiedostoihin (tai hakemistoihin), kohdistuvat muutokset _working directoryyn_ eli työhakemistoon.
 
 - Tee jokin muutos tiedostoon tiedosto.txt
-  - Käytä tiedostojen editointiin _nano_-editoria. Editori käynnistyy komentoriviltä komennolla _nano tiedosto.txt_
-  - Saat tallennettua nanossa tiedoston painamalla yhtä aikaa _ctrl_ ja _o_
-  - Editori sulkeutuu painamalla _ctrl_ ja _x_
 - Luo hakemistoon uusi tiedosto, nimeltään _toinen.txt_
 
 Suorita jälleen `git status`
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -175,8 +170,8 @@ Toimitaan ohjeen mukaan eli lisätään muutokset ja uusi tiedosto commitoitavie
 Tarkistetaan taas tilanne komennolla `git status`
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 	modified:   tiedosto.txt
@@ -201,7 +196,7 @@ Tiedostot ja niihin tehdyt muutokset voivat siis olla gitin suhteen _kolmessa er
 
 Seuraava kuva havainnollistaa sitä, miten tiedoston _tila_ vaihtuu git-komentoja tekemällä.
 
-![](https://github.com/mluukkai/otm2016/raw/master/img/lh3-2.png)
+![](/images/gitstates.png)
 
 Kun tiedosto luodaan, menee se gitin _working directoryyn_. Komennolla _git add_ tiedosto siirtyy _staging_-alueelle, eli valmiiksi committointia varten. Stagingissa oleva tiedosto viedään (eli "commitoidaan") repositorioon komennolla _git commit_. Kun committoitua tiedostoa taas editoidaan, menevät muutokset jälleen _working directoryyn_.
 
@@ -210,19 +205,19 @@ Kun tiedosto luodaan, menee se gitin _working directoryyn_. Komennolla _git add_
 Jokainen komennon _git commit_ suorittaminen siis synnyttää repositorioon uuden commitin, eli uuden "tilan". Komennolla `git log` on mahdollista nähdä, mitä committeja repositorio sisältää:
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git log
-commit 6aff75ab51d14d7cb9a72867ba13d9782d06c7ff (HEAD -> master)
+$ git log
+commit cb3a2401ba8bd50a891c883a6666c9cd76459115 (HEAD -> main)
 Author: Matti Luukkainen <mluukkai@iki.fi>
-Date:   Sun Oct 7 19:33:32 2024 +0300
+Date:   Mon Oct 14 11:54:22 2024 +0300
 
     muutos ja lisäys
 
-commit 9e6a83d058c9564e8a390f8766845d45b365f360
+commit a6acd9eb3f83d34255ff66cc55ff757036f65ea2
 Author: Matti Luukkainen <mluukkai@iki.fi>
-Date:   Sun Oct 7 19:32:12 2024 +0300
+Date:   Mon Oct 14 11:51:55 2024 +0300
 
     tiedosto.txt luotu
-mluukkai@melkinpaasi:~/ohtu-git-warmup$
+$
 ```
 
 Gitin logi kertoo jokaisen commitin ajan, tekijän, viestin ja _tunnisteen_. Tunnisteita käytetään, jos on esim. tarvetta palata johonkin vanhan commitin tilaan.
@@ -247,17 +242,13 @@ Gitin committeja voi tarkastella myös graafisella _gitk_-komennolla.
 
 - `gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.
 - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
-- Jos `gitk` ei jostain syystä toimi, voit asentaa [Sourcetree](https://www.sourcetreeapp.com)-työkalun
+  - Jos `gitk` ei jostain syystä toimi, voit asentaa [Sourcetree](https://www.sourcetreeapp.com)-työkalun
 
 Suorita komento repositoriossa:
 
-![]({{ "/assets/images/lh3-1.png" | absolute_url }})
+![]({{ "/images/gitk1.png" | absolute_url }})
 
-Vasemmalla yläkulmassa näet kaikki commitit. Uusin tilanne ylimpänä. Uusimman commitin nimi on _master_. Klikkaamalla commitia, näet muissa ikkunoissa commitiin liittyviä tietoja. Oikealla alakulmassa näet ne tiedostot, jotka ovat muuttuneet commitissa (jos valinta on _patch_) tai ne tiedostot, joita repositoriossa oli olemassa commitin aikana (jos valinta on _tree_). Vasemmassa alakulmassa pystyt tarkastelemaan commitin tiedostoihin tekemiä muutoksia tai tiedostojen tilaa commitin aikana. Valinnat ovat hieman hämäävät, sillä ne toimivat eri tavoin riippuen oikean puolen moodista.
-
-Vastaava näkymä OSX:n [Sourcetree](https://www.sourcetreeapp.com)-ohjelmalla tarkasteltaessa:
-
-![]({{ "/assets/images/lh1-1a.png" | absolute_url }})
+Vasemmalla yläkulmassa näet kaikki commitit. Nykyhetken tilanne on ylimpänä. Klikkaamalla commitia, näet muissa ikkunoissa commitiin liittyviä tietoja. Oikealla alakulmassa näet ne tiedostot, jotka ovat muuttuneet commitissa (jos valinta on _patch_) tai ne tiedostot, joita repositoriossa oli olemassa commitin aikana (jos valinta on _tree_). Vasemmassa alakulmassa pystyt tarkastelemaan commitin tiedostoihin tekemiä muutoksia tai tiedostojen tilaa commitin aikana. Valinnat ovat hieman hämäävät, sillä ne toimivat eri tavoin riippuen oikean puolen moodista.
 
 Seuraavaa tehtävää tehdessäsi kannattaa terminaaliin avata uusi välilehti, jotta voit pitää gitk:ta käynnissä.
 
@@ -292,7 +283,7 @@ Seuraavaa tehtävää tehdessäsi kannattaa terminaaliin avata uusi välilehti, 
   - Hyväksy painamalla _y_ ja enter
 - Commitoi muutokset
 - Tee tiedostoihin tehtyjen muutosten commitoitavaksi lisääminen _aina_ komennolla `git add -p`, näin pääset tarkastamaan, että muutokset ovat juuri ne mitä oletat olevasi lisäämässä
-- Huomaa, että kokonaan uudet tiedostot eivät siirry committoitavaksi komennolla `git add -p`
+  - Huomaa, että kokonaan **uudet tiedostot eivät siirry committoitavaksi** komennolla `git add -p`
 
 ### Muutosten peruminen
 
@@ -302,8 +293,8 @@ Joskus tiedostoihin tulee tehtyä muutoksia, jotka on tarpeen perua
 - Suorita komento `git status`
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -318,9 +309,9 @@ Kuten oletettua, git kertoo että olemme tehneet muutoksia, jotka eivät ole "st
 - Kun suoritat uudelleen komennon `git status` huomaat, että working directory ei enää sisällä muutoksia:
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git restore eka.txt
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git restore eka.txt
+$ git status
+On branch main
 nothing to commit, working trean clean
 ```
 
@@ -332,14 +323,13 @@ Myös stagingiin viety eli valmiina committoitavaksi oleva muutos voidaan perua.
 - Git statuksen pitäisi näyttää seuraavalta
 
 ```
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 
 	modified:   kolmas.txt
 
-mluukkai@melkinpaasi:~/ohtu-git-warmup$
 ```
 
 Ohje muutoksen perumiseen löytyy git statuksen tulosteesta.
@@ -348,8 +338,8 @@ Ohje muutoksen perumiseen löytyy git statuksen tulosteesta.
 - Katsotaan jälleen `git status`
 
 ```pre
-mluukkai@melkinpaasi:~/ohtu-git-warmup$ git status
-On branch master
+$ git status
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -366,7 +356,7 @@ Tiedosto ei siis enää ole _staged_-tilassa, muutokset ovat kuitenkin _working 
 
 Seuraavassa tiedoston tilaa kuvaava kaavio täydennettynä, eli jos tiedosto on lisätty committoitavaksi, eli se on _staged_, voidaan muutos perua komennolla `git restore --staged`. Tällöin muutokset kuitenkin vielä jäävät tiedostoon, eli ovat _working directoryssä_. Tiedosto saadaan palautettua repositoriossa olevaan edellisen commitin tilaan komennolla `git restore`.
 
-![]({{ "/assets/images/v1-RestoreGit.png" | absolute_url }})
+![]({{ "/images/gitrestore.png" | absolute_url }})
 
 ### Harjoittelua
 

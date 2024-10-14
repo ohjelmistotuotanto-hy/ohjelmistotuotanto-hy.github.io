@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat1
 ---
 
-{% include paivitys_kesken.md current=true %}
-
 {% include laskari_info.md part=1 %}
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
@@ -53,7 +51,7 @@ Jos osaamisessasi on puutteita (ks. alla oleva lista) kertaa haluamastasi resurs
 
 Myös kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
 
-_HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla olemassa, jotta pääsee kirjautumaan._
+_HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla._
 
 Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 
@@ -91,13 +89,9 @@ Luo GitHubiin repositorio nimellä _ohtuvarasto_
 
 ![]({{ "/images/lh1-1-22.png" | absolute_url }})
 
-**Jos et ole vielä luonut** koneellesi _ssh-avainta_, tee se nyt
+**Jos et ole vielä luonut** koneellesi _ssh-avainta_ ja lisännyt sitä GitHubiin tee se nyt
 
-- Ohje avaimen luomiseen esim. [täällä](https://www.howtoforge.com/linux-basics-how-to-install-ssh-keys-on-the-shell). Riittää että teet stepit 1 ja 2 tai noudatat kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/python/viikko1#teht%C3%A4v%C3%A4-13-julkinen-avain)-materiaalin ohjeta
-
-Lisää julkinen avain GitHubiin:
-
-- <https://github.com/settings/ssh>
+- Ohje [täällä](/avain)
 
 Näin pystyt käyttämään GitHubia ilman salasanan syöttämistä koneelta, josta juuri luodun avaimen salainen pari löytyy
 
@@ -144,7 +138,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 - `git checkout -- file`
 - `git reset HEAD`
 
-- Jos et vielä hallitse komentoja, käy läpi kurssin Ohjelmistotekniikka
+**Jos et vielä hallitse komentoja**, käy läpi kurssin Ohjelmistotekniikka
   [Git-tutoriaali](/versionhallinta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin Git-operaatiot.
 
 Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
@@ -826,7 +820,7 @@ from player_reader import PlayerReader
 
 def main():
     stats = StatisticsService(
-      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
     )
 
     # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella

@@ -45,10 +45,9 @@ if __name__ == "__main__":
 
 Ohjelman ikävä puoli on se, että <code>Laskin</code>-luokalla on *konkreettinen riippuvuus* tulostuksen ja syötteen luvun hoitaviin funktioihin <code>print</code> <code>input</code>.
 
-
 Konkreettiset riippuvuudet vaikeuttavat testaamista ja tekevät ohjelman laajentamisen vaikeaksi.
 
-### Suoran riippuvuuden eliminointi
+### Riippuvuuden eliminointi
 
 Eristetään tulostuksen ja syötteen lukeminen omaan, luokan `KonsoliIO` olioon:
 
