@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include laskari_info.md part=7 %}
 
 ### Typoja tai epäselvyyksiä tehtävissä?

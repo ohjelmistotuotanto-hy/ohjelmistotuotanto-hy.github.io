@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include miniprojekti_ilmo.md %}
+{% include paivitys_kesken.md %}
 
 {% include laskari_info.md part=4 %}
 
