@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
+{% include paivitys_kesken.md current=true %}
+
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
@@ -808,5 +810,9 @@ def main():
 ```
 
 Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.
+
+### 13. Graafinen pelaajalista 
+
+tbd
 
 {% include submission_instructions.md %}

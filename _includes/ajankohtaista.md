@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    Viikkojen 1 ja 2 laskarit valmiina!
+    Viikon 1 laskarit valmiina!
   </li>
   <li>
     Oletko tulossa uusinta- tai erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
