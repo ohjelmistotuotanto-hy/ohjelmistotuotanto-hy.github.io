@@ -4,7 +4,7 @@
 
 {% if current==true %}
 
-Tehtävistä päivitetty 1 ja 2, muut päivittämättä. Päivittämättömien tekeminen omalla vastuulla!
+Tehtävistä päivitetty 1-9, muut päivittämättä. Päivittämättömien tekeminen omalla vastuulla!
 
 {% else %}
 

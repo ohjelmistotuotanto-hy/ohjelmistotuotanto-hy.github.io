@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
-{% include paivitys_kesken.md current=true %}
-
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
@@ -21,9 +19,7 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 ### Tehtävien palauttaminen
 
-Osa git-tehtävistä (tehtävät 5-7) tehdään ainoastaan paikalliseen repositorioon, eli ne eivät näy palautuksessa mitenkään.
-
-Muut Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
+Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
 Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan **ohtuvarasto**-repositorioon, siis samaan mitä käytettiin viikon 1 tehtävissä 2-13. Muut tehtävät palautetaan **palautusrepositorioon**, eli samaan mihin palautit ensimmäisen viikon tehtävät 14-17.
 
@@ -181,7 +177,9 @@ Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://pyl
 
 Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
-Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu pylintin [dokumentaatiossa](http://pylint.pycqa.org/en/v3.0.2/technical_reference/features.html). Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien maksimilukumäärään neljään, voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
+Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu Pylintin [dokumentaatiossa](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html).
+
+Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien [maksimilukumäärään neljään](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args), voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
 ```
 [DESIGN]
@@ -189,24 +187,30 @@ Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden o
 max-args=4
 ```
 
-Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta [Design checker](https://pylint.pycqa.org/en/v3.0.2/user_guide/configuration/all-options.html#design-options) -osion alta).
+Sääntö _max-args_ on määritelty dokumentaatiossa [seuraavasti](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args):
+
+![]({{ "/images/pylint-1.png" | absolute_url }})
+
+Säännön nimen alussa olevaa kahta viivaa ei siis tule kirjoittaa tiedostoon _.pylintrc_
+
+Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta [Design checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#design-checker) -osion alta).
 
 **Toimi nyt seuraavasti:**
 
 - Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
-- Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä pylintin [dokumentaatiosta](http://pylint.pycqa.org/en/v3.0.2/technical_reference/features.html)):
+- Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#standard-checkers)):
 
   - Rivin pituus on maksimissaan 80 merkkiä
-    - Vinkki: sääntö löytyy [Format checker](https://pylint.pycqa.org/en/v3.0.2/user_guide/configuration/all-options.html#format-options) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
+    - Vinkki: sääntö löytyy [Format checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#format-options) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
-    - Vinkki: sääntö löytyy [Refactoring checker](https://pylint.pycqa.org/en/v3.0.2/user_guide/configuration/all-options.html#refactoring-options) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
+    - Vinkki: sääntö löytyy [Refactoring checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#refactoring-checker) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
   - Funktiossa tai metodissa on enintään 15 lausetta (statements), etsi sääntö dokumentaatiosta
   - Määrittele myös jokin itse valitsemasi, mielenkiintoiselta/hyödylliseltä kuulostava sääntö
 
-- Muuta koodiasi siten, että saat jokaisen määritellyistä pylint-säännöistä rikkoutumaan
+- Muuta koodiasi siten, että saat jokaisen määritellyistä Pylint-säännöistä rikkoutumaan
 - Korjaa koodisi ja varmista, että se noudattaa kaikkia sääntöjä
 
-Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana pylintin suosittelemaa konfiguraatiota. Suositellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
+Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana Pylintin suosittelemaa konfiguraatiota. Suositellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
 
 ### 4. Koodin staattinen analyysi ja GitHub Actionit
 
@@ -224,7 +228,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 5. Git: branchit [versionhallinta]
 
-**Tätä tehtävää ei palauteta mihinkään**
+**Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin tehtävät 1 ja 2
 
 Lue brancheja käsittelevät osuudet seuraavasta <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
@@ -236,9 +240,19 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 
 **Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging -alue tyhjinä!
 
-Tee seuraavat paikalliseen Git-repositorioosi (tehtävää ei palauteta, eli kyseessä **ei** siis tarvitse olla tehtävien palautusrepositorio)
+Tee palautusrepositorion viikon 2 tehtävien hakemistoon alihakemisto _git-branch-harjoitus_ tämän ja muutaman seuraavan tehtävän koodia varten.
 
-- Luo repositorio ja committaa mainiin tiedosto **index.py** jonka sisältö on seuraava
+- Mene luomaasi hakemistoon
+
+- Varmista että olet haarassa _main_, ja että kaikki muutokset on committoitu:
+
+```bash
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
+
+- Luo ja committaa hakemistoon tiedosto **index.py** jonka sisältö on seuraava
 
 ```python
 x = int(input("luku 1: "))
@@ -318,9 +332,7 @@ logger("lopetetaan")
 
 ### 6. Git: branchit ja staging-alue [versionhallinta]
 
-**Tätä tehtävää ei palauteta mihinkään**
-
-- Olet nyt repositoriosi main-haarassa
+- Olet nyt repositoriosi **main**-haarassa
 - Luo uusi tiedosto _README.md_, **älä** kuitenkaan lisää ja commitoi tiedostoa versionhallintaan
 - Tiedoston sisällöllä ei ole merkitystä, se voi olla esim. seuraava
 
@@ -393,8 +405,6 @@ nothing to commit, working tree clean
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
 ### 7. Git: konflikti! [versionhallinta]
-
-**Tätä tehtävää ei palauteta mihinkään**
 
 Tee paikalliseen Git-repositorioon seuraavat
 
@@ -528,95 +538,104 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 ### 8. Git: branchit ja GitHub [versionhallinta]
 
-**Tämä tehtävä tehdään palautusrepositorioon**
+Aloita lukemalla ProGit-kirjasta luku [Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches).
 
-**HUOM** tässä tehtävässä on tunnetusti välillä haastava seurata jokaista askelta siten, että päätyy aina samaan tilaan mitä tehtävä odottaa. Ei kannata stressata tästä liikaa. Pääasia tehtävässä on oppia miten branchit saadaan toimimaan lokaalisti ja GitHubissa siten, että _git push_ ja _git pull_ toimivat kaikille brancheille.
+- Palaa branchiin *main* ja pushaa se GitHubiin. Jos päädyt seuraavaan virheilmoitukseen, toimi se ohjeen mukaan ja pushaa uudelleen:
 
-Aloita lukemalla ProGit-kirjasta luku [Remote Branches](http://git-scm.com/book/en/Git-Branching-Remote-Branches).
+´´´
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
 
-Lisätään seuraavaksi branch GitHubiin:
+    git push --set-upstream origin main
 
-- Luo palautusrepositorion paikalliseen klooniin branch **haara1**, lisää sinne (hakemiston viikko2 juureen) tiedosto **haara1.txt** ja committaa
-- Palaa haaraan **main**
-- Luo toinen branch **haara2**, lisää sinnekin jokin (hakemiston viikko2 juureen) tiedosto **haara2.txt** ja committaa
-- Pushaa uudet branchit GitHubiin
-- Tarkastele GitHub-repositoriota selaimella, varmista että branchit syntyvät ja niillä on haluttu sisältö:
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+´´´
 
-![]({{ "/images/lh2-branch1.png" | absolute_url }}){:height="350px" }
+- Mene branchiin **bugikorjaus** ja pushaa se GitHubiin.
+
+- Varmista, että näet GitHubissa molemmat brachit
+
+![]({{ "/images/github1.png" | absolute_url }})
 
 Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 
-- Kuten huomaat, eivät branchit tule klooniin
-- Tee paikalliseen klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **haara1** (ks. <http://git-scm.com/book/en/Git-Branching-Remote-Branches> kohta Tracking Branches)
-- Lisää "träkkäävään" branchiin jokin tiedosto (hakemistoon viikko2), committaa ja pushaa branchi GitHubiin
+- Kuten huomaat (komennolla `git branches`) ainoastaan haara *main* tulee  mukana oletusarvoisesti kloonatessa 
+- Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta Tracking Branches)
+- Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
+- Tee klooniin uusi branchi **tulo** ja sinne kahden luvun tulon laskeva funktio tiedostoon `tulo.py`
+- Muuta ohjelmaa seuraavasti
 
-Mene GitHub-repositorion **alkuperäiseen** paikalliseen klooniin:
+```py
+from logger import logger
+from summa import summa
+from erotus import erotus
+from tulo import tulo
 
-- Mene branchiin **haara1** ja pullaa muutokset GitHubiin vastaavasta branchista
-  - huom: koska kyseessä ei ole "träkkäävä" branchi, joudut pullaamaan komennolla `git pull origin haara1`
-    - Pelkän komennon `git pull` tuloste antaa ohjeen, miten saat halutessasi komennon toimimaan haaran sisältä ilman lisäparametreja
-- Mene branchiin **haara2**, lisää sitten tiedosto, committaa ja pushaa branchi GitHubiin
-  - Koska kyseessä ei ole "träkkäävä" branchi, ei komento `git push` riitä vaan joudut määrittelemään branchin jonne push kohdistuu eli antamaan komennon `git push origin haara2`
-    - Pelkän komennon `git push` tuloste antaa ohjeen, miten saat halutessasi komennon toimimaan haaran sisältä ilman lisäparametreja
+logger("aloitetaan ohjelma")
 
+x = int(input("luku 1: "))
+y = int(input("luku 2: "))
+print(f"{x} + {y} = {summa(x, y)}") 
+print(f"{x} - {y} = {erotus(x, y)}") 
+print(f"{x} * {y} = {tulo(x, y)}") 
 
-Mene jälleen **toiseen klooniin**:
-
-- Suorita komento `git remote show origin`
-- Komento kertoo "originissa" eli GitHubissa olevien branchien ja paikallisten branchien suhteen
-
+logger("lopetetaan")
+print("goodbye!")
 ```
+- Committaa ja pushaa kloonin branchin **tulo** muutokset GitHubiin ja varmista, että ne näkyvät siellä
+
+Mene GitHub-repositorion **alkuperäiseen** paikalliseen kopioon:
+
+- Äsken luotu branchi ei ole vielä alkuperäisessä kopiossa
+- Tee alkuperäiseen kopioon branchia **tulo** träkkäävä branchi
+- Mergeä branchi **tulo** mainiin ja tuhoa branchi **tulo** sekä paikallisesti että GitHubista
+- Tee nyt uusi branchi, nimeltaan **osamaara**, lisää branchiin tiedosto `osamaara.py` ja pushaa se GitHubiin
+
+Mene jälleen hetki sitten luotuun repositorion klooniin
+- Anna komento `git remote show origin`. Komennon tulostuksen pitäisi näyttää seuraavalta:
+
+```bash
 * remote origin
-  Fetch URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
-  Push  URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
+  Fetch URL: git@github.com:mluukkai/ohtu-palautukset.git
+  Push  URL: git@github.com:mluukkai/ohtu-palautukset.git
   HEAD branch: main
   Remote branches:
-    haara1 tracked
-    haara2 tracked
-    main   tracked
+    bugikorjaus              tracked
+    main                     tracked
+    osamaara                 new (next fetch will store in remotes/origin)
+    refs/remotes/origin/tulo stale (use 'git remote prune' to remove)
   Local branches configured for 'git pull':
-    haara1 merges with remote haara1
-    main   merges with remote main
+    bugikorjaus merges with remote bugikorjaus
+    main        merges with remote main
+    tulo        merges with remote tulo
   Local refs configured for 'git push':
-    haara1 pushes to haara1 (up to date)
-    main   pushes to main   (up to date)
+    bugikorjaus pushes to bugikorjaus (up to date)
+    main        pushes to main        (up to date)
 ```
 
-- Komennon tulosteesta selviää, että main ja haara1 ovat konfiguroitu toimimaan suoraan `git pull` ja `git push` -komennoilla
-- Tee nyt kyseiseen klooniin (jossa siis olet nyt) myös branchia **haara2** träkkäävä branch
-  - **Huom:** haaralle kannattaa myös tehdä heti `git pull`, sillä muuten lokaalin haaran tila on sama kuin sillä etärepositorion haaran tila sillä hetkellä kun kloonasit repositorion, eli vanhentunut koska haaraan on pushattu uutta sisältöä
-- Suorita jälleen `git remote show origin`, mitä muutoksia huomaat?
-- Tee branchiin **haara2** muutoksia ja pushaa ne GitHubiin
-  - Koska kyseessä on träkkäävä branch, riittää git push
-- Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
+- Komento kertoo, että Remote (eli GitHub) ja Local (eli paikallinen klooni) eivät ole branchien suhteen samassa tilassa. Jo tuhottu branchi **tulo** löytyy vielä paikallisesti, kun taas uutta branchia **osamaara** ei paikallisesti vielä ole.
+- Korjaa tilanne siten, että `git remote show origin` tulostaa
 
-Palaa vielä alkuperäiseen lokaaliin repositorioon:
-
-- Suorita komento `git remote show origin`
-- Tulostus kertoo, että lokaaleista haaroista ainoastaan _main_ on konfiguroitu komennon `git pull` osalta:
-
-```
+```bash
 * remote origin
-  Fetch URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
-  Push  URL: git@github.com:mluukkai/ohtu-s22-palautukset.git
+  Fetch URL: git@github.com:mluukkai/ohtu-palautukset.git
+  Push  URL: git@github.com:mluukkai/ohtu-palautukset.git
   HEAD branch: main
   Remote branches:
-    haara1 tracked
-    haara2 tracked
-    main tracked
-  Local branch configured for 'git pull':
-    main merges with remote main
+    bugikorjaus tracked
+    main        tracked
+    osamaara    tracked
+  Local branches configured for 'git pull':
+    bugikorjaus merges with remote bugikorjaus
+    main        merges with remote main
+    osamaara    merges with remote osamaara
   Local refs configured for 'git push':
-    haara1 pushes to haara1 (up to date)
-    haara2 pushes to haara2 (up to date)
-    main pushes to main (up to date)
+    bugikorjaus pushes to bugikorjaus (up to date)
+    main        pushes to main        (up to date)
+    osamaara    pushes to osamaara    (up to date)
 ```
-
-- Suorita `git pull` branchissä _haara2_
-- Komennon tuloste antaa ohjeen, miten saat konfiguroitua `git pull` komennon toimimaan _haara2_:n sisällä ilman lisäparametreja
-- Kun annat komennon, sen jälkeen haara träkkää GitHubissa olevaa haaraa ja komento `git pull` voidaan antaa ilman parametreja
-  - Huom: komennossa oleva _&lt;branch&gt;_ tulee korvata branchin nimellä
 
 Branchien kanssa työskentely voi aluksi tuntua sekavalta varsinkin jos GitHubissa on myös useita brancheja.
 
@@ -641,7 +660,7 @@ Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-acti
 ```
 $ git push
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtu-s22-palautukset.git'
+error: failed to push some refs to 'git@github.com:mluukkai/ohtu-palautukset.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -689,7 +708,7 @@ Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko
 
 Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
 
-Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2022-23/players>
+Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2023-24/players>
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
@@ -702,7 +721,7 @@ import requests
 from player import Player
 
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players"
     response = requests.get(url).json()
 
     print("JSON-muotoinen vastaus:")
@@ -779,7 +798,7 @@ Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraav
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players"
     reader = PlayerReader(url)
     stats = PlayerStats(reader)
     players = stats.top_scorers_by_nationality("FIN")
