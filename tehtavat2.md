@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
-{% include paivitys_kesken.md current=true %}
-
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
@@ -813,6 +811,12 @@ Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellise
 
 ### 13. Graafinen pelaajalista 
 
-tbd
+Laajenna sovellustasi lisäämällä siihen toiminnallisuutta ja muotoilemalla tulostus kirjaston [Rich](https://github.com/Textualize/rich) avulla. Ohjeita kirjaston käyttöön löytyy sen [dokumentaatiosta](https://rich.readthedocs.io/en/stable/introduction.html) ja googlaamalla.
+
+Sovelluksella tulee pystyä näyttämään käyttäjän haluaman maan pelaajien tilastot käyttäjän määrittelemältä kaudelta.  
+
+Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
+
+![]({{ "/images/rich.png" | absolute_url }})
 
 {% include submission_instructions.md %}
