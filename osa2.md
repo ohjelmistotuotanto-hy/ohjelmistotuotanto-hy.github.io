@@ -785,11 +785,13 @@ Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka ku
 
 Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa.
 
-Jäljellä olevaa työmäärää (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
+Jäljellä olevan ryön määrä (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
 
 ![]({{ "/images/2-22.png" | absolute_url }})
 
-Työmääräarvio voi myös nousta kesken sprintin jos kesken sprintin identifioidaan uusia taskeja tai jokin task huomataan monimutkaisemmaksi kuin alunperin ajateltiin. Oleellista on, että taskien työmääräarviot ovat _arvioita niihin vielä tarvittavasta työmäärästä_. Scrumissa ei seurata millään tavalla taskeihin _käytettyä_ työmäärää, eli vaikka johonkin taskiin olisi käytetty 5 tuntia, sitä ei merkata mihinkään eikä sitä suoraan vähennetä työmääräarviosta vaan tehdään _uusi työmääräarvio_ siitä, paljonko vielä ajatellaan tarvittavan aikaa, jotta story saadaan valmiiksi.
+Työmääräarvio voi myös nousta kesken sprintin jos kesken sprintin identifioidaan uusia taskeja tai jokin task huomataan monimutkaisemmaksi kuin alunperin ajateltiin. Oleellista on, että taskien työmääräarviot ovat _arvioita niihin vielä tarvittavasta työmäärästä_.
+
+Scrumissa ei seurata millään tavalla taskeihin _käytettyä_ työmäärää, eli vaikka johonkin taskiin olisi käytetty 5 tuntia, sitä ei merkata mihinkään eikä sitä suoraan vähennetä työmääräarviosta vaan tehdään _uusi työmääräarvio_ siitä, paljonko vielä ajatellaan tarvittavan aikaa, jotta story saadaan valmiiksi.
 
 ### Sprintin taskboardin formaatti
 

@@ -37,7 +37,7 @@ Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hake
 
 Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla siellä komento `robot src/tests`.
 
-Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston _report.html_-tiedostoon ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia, avautuu mukava testien suorituksen statusta kuvaava näkymä:
+Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston tiedostoon _report.html_ ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia, avautuu mukava testien suorituksen statusta kuvaava näkymä:
 
 ![]({{ "/images/lh3-robot.png" | absolute_url }})
 
@@ -155,20 +155,6 @@ Increase Counter Three Times
     Increase Counter
 ```
 
-### Resurssit
-
-Testihakemiston <i>increase_counter.robot</i>-tiedoston `*** Settings ***`-osiosta löytyy rivi `Resource resource.robot`. Mistä on kyse?
-
-Useammissa testeissä uudelleenkäytettävät avainsanat ja asetukset kannattaa siirtää omiin tiedostoihinsa, joita kutsutaan _resursseiksi_ (resource). Resurssitiedostot voi tuoda muiden tiedostojen käyttöön `Resource`-asetuksen kautta:
-
-```
-*** Settings ***
-Resource  resource.robot
-```
-
-Huomaa, että resurssin polku on relatiivinen tiedostoon nähden.
-
-Tiedostoon voi tuoda useamman resurssin lisäämällä monta `Resource`-riviä.
 
 ### Nollaamisen skenaariot
 
@@ -178,7 +164,7 @@ Lisää _src/tests_-hakemistoon tiedosto <i>reset_counter.robot</i>, joka sisäl
 
 ```
 *** Settings ***
-Resource  resource.robot
+Library  ../CounterLibrary.py
 
 *** Test Cases ***
 Reset Counter After One Increment

@@ -55,6 +55,24 @@ chromedriver --version
 
 ### Mahdollisia ongelmia
 
+Seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
+
+```
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome-headless-shell=126.0.6478.127)
+Stacktrace:
+0   chromedriver                        0x00000001048c6a0c chromedriver + 4385292
+1   chromedriver                        0x00000001048bf318 chromedriver + 4354840
+2   chromedriver                        0x00000001044dcb0c chromedriver + 281356
+3   chromedriver                        0x00000001044d5e9c chromedriver + 253596
+4   chromedriver                        0x00000001044c7a5c chromedriver + 195164
+5   chromedriver                        0x00000001044c8e18 chromedriver + 200216
+6   chromedriver                        0x00000001044c7d78 chromedriver + 195960
+7   chromedriver                        0x00000001044c740c chromedriver + 193548
+```
+
+Testit siis olettavat, että sovellus on käynnissä. Käynnistä siis sovellus yhteen terminaaliin, avaa uusi ja suorita testit siellä.
+
 **Windows 10 / WSL2 -käyttäjänä** saatat törmätä seuraavaan virheilmoitukseen:
 
 ```
@@ -107,20 +125,25 @@ Noudata ChromeDriverin ohjetta soveltuvin osin.
 
 ### HUOM
 
-Geckodriveriä käytettäessä tiedoston `resource.robot` sisältöä tulee hieman muuttaa:
+Geckodriveriä käytettäessä testit suoritetaan komennolla
 
 ```
-*** Keywords ***
-Open And Configure Browser
-    # seuraava rivi on poistettu kommenteista
-    ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-    # seuraava rivi on kommentoitu
-    # ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys 
-    Call Method    ${options}    add_argument    --no-sandbox
-    # seuraava rivi on kommentoitu toistaiseksi pois
-    # Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=chrome  options=${options}
-    Set Selenium Speed  ${DELAY}
+robot --variable BROWSER:firefox src/tests 
 ```
 
-Eli rivi missä on _FirefoxOptions_ on otettu pois kommenteista ja rivi _ChromeOptions_ on kommentoitu.
+### HUOM2:
+
+Seuraava virheilmoitus kertoo siitä, että suoritat testejä ilman että sovellus on päällä:
+
+```
+WebDriverException: Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A5001/&c=UTF-8&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A5001.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:832:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:330:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:148:20
+```
+
+Testit siis olettavat, että sovellus on käynnissä. Käynnistä siis sovellus yhteen terminaaliin, avaa uusi ja suorita testit siellä.
