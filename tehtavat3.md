@@ -123,22 +123,14 @@ Tiedoston sisältö on seuraava:
 Library  SeleniumLibrary
 
 *** Variables ***
-${SERVER}    localhost:5001
 ${DELAY}     0.5 seconds
-${HOME_URL}  http://${SERVER}
+${HOME_URL}  http://localhost:5001
 ${BROWSER}   chrome
 
 *** Keywords ***
 Open And Configure Browser
-    IF         $BROWSER == 'chrome'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    ELSE IF    $BROWSER == 'firefox'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-    END
-    # seuraava rivi on kommentoitu toistaiseksi pois
-    # Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=${BROWSER}  options=${options}
     Set Selenium Speed  ${DELAY}
+    Open Browser  browser=${BROWSER}  options=${options}
 ```
 
 `*** Settings ***` osiossa otetaan käyttöön edellä mainittu SeleniumLibrary-kirjasto, joka siis tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
@@ -147,7 +139,7 @@ Tiedostossa on myös ennestään tuntematon osio `*** Variables ***` missä on m
 
 `*** Keywords ***`-osiossa on määritellään avainsana `Open And Configure Browser` joka alustaa selaimen testejä varten.
 
-- avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen eli _Chrome_, ja sen toimintaa määrittelevän _options_ parametrin, joka ei itseasiassa aluksi tee mitään.
+- avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen eli _chrome_.
 
 Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
 
@@ -165,7 +157,7 @@ Suite Teardown  Close Browser
 
 Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- -asetukset. Niiden merkitykset ovat seuraavat:
 
-- `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _ Open And Configure Browser_ joka määriteltiin tiedostossa resource.robot
+- `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa resource.robot
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 - On myös olemassa asetus `Test Setup` joka suoritetaan ennen _jokaista_ testitapausta sekä `Test Teardown` joka suoritetaan _jokaisen_ testitapauksen jälkeen.
 
@@ -175,7 +167,7 @@ Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa
 
 Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
 
-Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testiä tiedostoon __reset.robot_, testin näyttää suunilleen seuraavalta
+Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon _reset.robot_, testin näyttää suunilleen seuraavalta
 
 ```
 *** Settings ***
@@ -188,16 +180,82 @@ When counter has a nonzero value and it is reset the value becomes zero
    ...
 ```
 
-### 4. GHA
+### 4. Web-sovelluksen testien suorittamien GitHub Actioneissa
 
+Selenium Webdriveria käyttätät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
-### Web-sovelluksen testien suorittamien CI-palvelimella
+Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa _resource.robot_ seuraavasti:
 
-**HUOM:** Seuraava osio ei kuulu tehtäviin, eli siinä esitettyjä esimerkkejä ei tarvitse tehdä mihinkään. Ohjeista saattaa kuitenkin olla hyötyä esimerkiksi kurssin [miniprojektissa](/miniprojekti).
+```
+*** Settings ***
+Library  SeleniumLibrary
 
-Edellisissä tehtävissä luultavasti käynnistit ensin Flask-palvelimen yhdessä terminaali-ikkunassa, jonka jälkeen suoritit testit toisessa terminaali-ikkunassa. Lopuksi, kun testit oli suoritettu, saatoit sammuttaa palvelimen.
+*** Variables ***
+${SERVER}    localhost:5001
+${DELAY}     0.5 seconds
+${HOME_URL}  http://${SERVER}
+${BROWSER}   chrome
+${HEADLESS}  false
 
-Jotta sovelluksen testit pystyisi suorittamaan CI-palvelimella, tulee nämä vaiheet ilmaista komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää esimerkiksi seuraavaa bash-skriptiä:
+*** Keywords ***
+Open And Configure Browser
+    IF         $BROWSER == 'chrome'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    ELSE IF    $BROWSER == 'firefox'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+    END
+    IF  $BROWSER == 'true'
+        Set Selenium Speed  0
+        Call Method  ${options}  add_argument  --headless
+    ELSE IF  $BROWSER == 'false'
+        Set Selenium Speed  ${DELAY}
+    END
+    Open Browser  browser=${BROWSER}  options=${options}
+```
+
+Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0 jotta testit eivät hidastu tarpeettomasti. Headless-suoritus tapahtuu seuraavasti:
+
+```
+robot --variable HEADLESS:true src/tests
+```
+
+GitHub actionien konfiguraatio näyttää seuraavalta;
+
+```
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Setup chromedriver
+        uses: nanasess/setup-chromedriver@master
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+      - name: Install dependencies
+        run: poetry install
+      - name: Run robot tests
+        run: bash run_robot_tests.sh
+```
+
+Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa chromedriverin GitHub Actionin käyttöön.
+
+Jotta sovelluksen testit pystyisi suorittamaan GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää esimerkiksi seuraavaa bash-skriptiä:
 
 ```bash
 #!/bin/bash
@@ -217,7 +275,7 @@ done
 echo "Flask server is ready"
 
 # suoritetaan testit
-poetry run robot src/tests
+poetry run robot --variable HEADLESS:true src/tests
 
 status=$?
 
@@ -227,51 +285,16 @@ kill $(lsof -t -i:5001)
 exit $status
 ```
 
-Skriptin voi lisätä esimerkiksi projektin juurihakemiston <i>run_robot_tests.sh</i>-tiedostoon. Tämän jälkeen sen voi suorittaa projektin juurihakemistossa komennolla `bash run_robot_tests.sh`. Huomaa, että komento käyttää Unix-komentoja, joten sen suorittaminen ei onnistu esimerkiksi Windows-käyttöjärjestelmän tietokoneella ilman asiaan kuuluvaa komentoriviä. CI-palvelimella tämä ei kuitenkaan koidu ongelmaksi, jos valitsemme virtuaalikoneen käyttöjärjestelmäksi esimerkiksi Ubuntun.
+Pushaa tehtävän repositorio GitHubiin ja varmista, että testit menevät läpi.
 
-Skriptiä voi hyödyntää CI-palvelimella GitHub Actionsin avulla määrittelemällä sen suorittaminen omana askeleena konfiguraatiossa:
+Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon. Sovellus voi näyttää laajennuksen jälkeen seuraavalta
 
-```yaml
-name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.10
-      - name: Install Poetry
-        run: pip install poetry
-      - name: Setup chromedriver
-        uses: nanasess/setup-chromedriver@master
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-      - name: Install dependencies
-        run: poetry install
-      - name: Run robot tests
-        run: bash run_robot_tests.sh
-```
-
-**Huomaa**, että Selenium tulee konfiguroida toimimaan **headless-moodissa** kun testejä suoritetaan GitHub Actionsissa!
-
-{% include submission_instructions.md %}
+Tee ominaisuudelle Robot-testit.
 
 
 # OLD STUFF
 
-### 5. WebLogin
+### 5. WebLogin, osa 1
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
 
@@ -362,7 +385,6 @@ Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat pää
 
 Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
 
-### 6. Web-sovelluksen testaaminen osa 1
 
 Jatketaan siis saman sovelluksen parissa.
 
@@ -492,7 +514,7 @@ No keyword with name 'Go To Starting Page' found.
 
 **HUOM** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
 
-### 7. Web-sovelluksen testaaminen osa 2
+### 6. WebLogin, osa 2
 
 Jatketaan kirjautumiseen liittyvien hyväksymistestien toteuttamista. Katsotaan sitä ennen pikaisesti, miltä AppLibrary-kirjaston toteutus näyttää. Kirjaston määrittelevä luokka `AppLibrary` löytyy tiedostosta _src/AppLibrary.py_, jonka sisältö on seuraava:
 
@@ -556,7 +578,7 @@ Login With Nonexistent Username
 # ...
 ```
 
-### 8. Web-sovelluksen testaaminen osa 3
+### 7. WebLogin, osa 3
 
 Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen.
 
@@ -604,7 +626,7 @@ Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtäväss�
 
 **Muista käynnistää web-palvelin uudestaan, kun teet muutoksia koodiin!** Sammuta palvelin näppäilemällä `Ctrl+C` terminaali-ikkunaan, jossa web-pavelinta suoritetaan. Käynnistä tämän jälkeen palvelin uudelleen komennolla `python3 src/index.py`.
 
-### 9. Web-sovelluksen testaaminen osa 4
+### 8. WebLogin, osa 4
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon _register.robot_:
 
