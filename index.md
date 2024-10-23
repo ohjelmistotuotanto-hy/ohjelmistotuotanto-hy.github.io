@@ -20,7 +20,8 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon pajassa BK107
   - ma 14-16
-  - pe 12-14 (paitsi 8.11. 14-16)
+  - ke 13-15
+  - pe 12-14 (8.11. poikkeuksellisesti klo 14-16)
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - [CurreChat](https://curre.helsinki.fi/chat/hy-opt-cur-2425-7a893cd5-d161-4815-ac8e-422dd8953ff9)
