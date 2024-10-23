@@ -7,7 +7,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- miniprojekti alkaa pian...
+- miniprojekti alkaa 11.11 alkavalla viikolla
 
 ### Johdanto
 
@@ -23,8 +23,15 @@ permalink: /miniprojekti/
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa, aloitustilaisuuksia tulee olemaan ainakin useita, ajankohdat kerrotaan lähiaikoina
+- Ryhmät muodostetaan 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
+- Aloitustilaisuuksien alustava aikataulu
+  - ti 14-16
+  - ke 14-16
+  - ke 16-18
+  - to 10-12
+  - to 14-16
+- Ilmoittautuminen miniprojektiin (eli sopivaan aloitustilaisuuteen) alkaa noin 5.11.  
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
