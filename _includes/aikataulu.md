@@ -4,8 +4,7 @@
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
-  - tallenteet:
-    - syksy 23: [youtube](https://youtu.be/iOb4FiHMYzQ), [unitube](https://www.helsinki.fi/fi/unitube/video/09dad5ca-ca5d-4dad-b394-0becd95a0bfb)
+  - [tallenne](https://youtu.be/9UaFvaRtTM0)
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
@@ -108,7 +107,8 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
   - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - nn
+    - ke 11.12. klo 12-14 B123
+    - to 12.12. klo 12-14 CK112
     
 ### Viikko 8
 

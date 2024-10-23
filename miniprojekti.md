@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Miniprojekti
+title_long: 'Miniprojekti'
 permalink: /miniprojekti/
 ---
 
@@ -64,8 +65,9 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 #### viikko 7 (9-13.12.)
 
-- Loppudemot
-  - xx
+- Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
+  - ke 11.12. klo 12-14 B123
+  - to 12.12. klo 12-14 CK112
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
 

@@ -78,6 +78,8 @@ Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilu
 
 Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
 
+**HUOM:** miniprojektin hyväksiluku tapahtuu lähtettämällä email osoitteeseen matti.luukkainen@helsinki.fi, eli **ÄLÄ LÄHETÄ MAILIA** osoitteeseen kumpula-student@helsinki.fi.
+
 ### Kurssin arvostelu
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti

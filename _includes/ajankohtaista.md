@@ -2,6 +2,9 @@
 
 <ul>
   <li>
+    Ensimmäisen viikon luento katsottavissa <a href='https://youtu.be/9UaFvaRtTM0'>täällä</a>
+  </li>
+  <li>
     Viikon 1 ja 2 laskarit valmiina!
   </li>
   <li>
