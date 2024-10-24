@@ -37,10 +37,11 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 
 ### 2. Web-laskuri
 
+** HUOM: jos käytät Dockeria, lue [tämä](http://localhost:4000/poetry#docker-ja-robot-testit)! 
+
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion hakemistossa viikko3/web-login oleva projekti.
-
 
 **Tee tätä ja kahta seruaavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esim._webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
@@ -112,7 +113,29 @@ When button pressed twice the counter is two
     Page Should Contain  nappia painettu 2 kertaa
 ```
 
-Jos unohdetaan alun osio _Settings_, on testien toiminnallisuus aika ilmeinen. Käytössä olevat avainsanat [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To), [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) ja [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) ovat SeleniumLibraryn tarjoamia valmiita avainsanoja. 
+Jos unohdetaan alun osio _Settings_, on testien toiminnallisuus aika ilmeinen. Käytössä olevat avainsanat [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To), [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) ja [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) ovat SeleniumLibraryn tarjoamia valmiita avainsanoja.
+
+#### Miten Selenium löytää sivun elementit?
+
+Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi <code>Click Button &nbsp;foo</code> löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
+
+```html
+<button id="foo">Nappi</button>
+<button name="foo">Nappi</button>
+<button>foo</button>
+```
+
+Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu <code>Click Button &nbsp;Login</code> löytää siis seuraavan _src/templates/login.html_-tiedostossa määritellyn painikkeen:
+
+```html
+<button>Login</button>
+```
+
+Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytää `id`-attribuutin avulla seuraavan `input`-elementin:
+
+```html
+<input type="text" name="username" id="username" />
+```
 
 Osassa _Settings_ on useita huomionarvoisia seikkoja. _Resource  resource.robot_ kertoo, että testin tulee ottaa käyttöön tiedostossa _resource.robot_ tehdyt määritelmät (eli resurssit).
 
@@ -159,7 +182,6 @@ Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown
 
 - `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa resource.robot
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
-- On myös olemassa asetus `Test Setup` joka suoritetaan ennen _jokaista_ testitapausta sekä `Test Teardown` joka suoritetaan _jokaisen_ testitapauksen jälkeen.
 
 Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamiasta!
 
@@ -289,24 +311,39 @@ Pushaa tehtävän repositorio GitHubiin ja varmista, että testit menevät läpi
 
 Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon. Sovellus voi näyttää laajennuksen jälkeen seuraavalta
 
+**TODO: KUVA**
+
 Tee ominaisuudelle Robot-testit.
 
-
-# OLD STUFF
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Senenium löytää sivun elementit.
 
 ### 5. WebLogin, osa 1
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_ oleva projekti. Sovellus on toteutettu [Flask](https://flask.palletsprojects.com/)-nimisellä minimalistisella web-sovelluskehyksellä.
+Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login. 
 
 Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
-![]({{ "/images/lh3-web1.png" | absolute_url }}){:height="200px" }
+Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi ominaisuutta:
+- käyttäjä voi rekisteröityä, eli luoda uuden käyttäjätunnuksen
+- rekisteröitynyt käyttäjä voi kirjautua järjestelmään
 
-Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
+![]({{ "/images/weblogin1.png" | absolute_url }}){:height="300px" }
 
-Sovelluksen rakenne on suunnilleen sama kuin tehtävien 2 ja 3 ohjelmassa. Poikkeuksen muodostaa pääohjelma, joka sisältää selaimen tekemien HTTP-pyynntöjä käsittelevän koodin. Tässä vaiheessa ei ole tarpeen tuntea HTTP-pyyntöjä käsittelevää koodia kovin tarkasti. Katsotaan kuitenkin pintapuolisesti mistä on kysymys.
+Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
+
+Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien tapaan reitinkäsittelijät määrittelevään tiedoston _app.py_ sekä hakemistossa _templates_ sijaitsevien sivupohjien avulla. Sovelluslogiikka on sijoitettu omaan luokkaansa `UserService`.
+
+Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
+
+Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
+
+Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien kautta, kuten `find_all`, `create` ja `delete`. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
+
+Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi PostgreSQL-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
+
+Seuraavassa vielä lyhyt katsaus sovelluksen käyttöliittymän, eli reitin käsittelijöiden sekä näkymien generoinnin toiminnasta.
 
 Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5001> tulevat pyynnöt käsittelee seuraava koodinpätkä:
 
@@ -361,33 +398,6 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 **Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.** Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
-#### Huomio Dockerin käyttäjille
-
-Jos olet käyttänyt [kontainerisoitua Poetryä](/poetry#poetry-ja-docker) joudut tekemään tässä osassa muutaman ekstratempun.
-
-Käytä imagen [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry) sijaan imagea [mluukkai/poetry-robot](https://hub.docker.com/repository/docker/mluukkai/poetry-robot/). Image toimii ainoastaan intelin prosessoriarkkitehtuurilla varustetuilla koneilla, eli M1 käyttäjät joutuvat etsimään jonkun muun ratkaisun...
-
-Jotta kontissa suoritettu web-sovellus näkyisi isäntäkoneelle, tulee konttia käynnistettäessä julkaista kontin portti 5001 (missä sovellus toimii) isäntäkoneen porttiin. Tämä tapahtuu seuraavasti:
-
-```bash
-docker run -it -p 5001:5001 --volume="$PWD:/mydir" mluukkai/poetry-robot
-```
-
-Robot-testit suoritetaan menemällä komennolla `docker exec` samaan kontiin, missä sovellus on jo päällä: 
-
-```bash
-docker exec -it kontainerintunnistetahan bash
-```
-
-Kontainerin tunniste selviää komennolla `docker ps`.
-
-Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat päälle [tehtävän 7](/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
-
-Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
-
-
-Jatketaan siis saman sovelluksen parissa.
-
 #### Tutustuminen testeihin
 
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
@@ -403,17 +413,23 @@ ${DELAY}  0.5 seconds
 ${HOME_URL}  http://${SERVER}
 ${LOGIN_URL}  http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
+${BROWSER}   chrome
+${HEADLESS}  false
 
 *** Keywords ***
 Open And Configure Browser
-    # jos käytät Firefoxia ja Geckodriveriä käytä seuraavaa riviä sitä alemman sijaan
-    # ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    Call Method    ${options}    add_argument    --no-sandbox
-    # seuraava rivi on kommentoitu pois tässä vaiheessa
-    # Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=chrome  options=${options}
-    Set Selenium Speed  ${DELAY}
+    IF         $BROWSER == 'chrome'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    ELSE IF    $BROWSER == 'firefox'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+    END
+    IF  $HEADLESS == 'true'
+        Set Selenium Speed  0
+        Call Method  ${options}  add_argument  --headless
+    ELSE
+        Set Selenium Speed  ${DELAY}
+    END
+    Open Browser  browser=${BROWSER}  options=${options}
 
 Login Page Should Be Open
     Title Should Be  Login
@@ -423,21 +439,15 @@ Main Page Should Be Open
 
 Go To Login Page
     Go To  ${LOGIN_URL}
+
 ```
 
-`*** Settings ***` osiossa on käytössä projektin oma `AppLibrary.py`-kirjasto sekä edellä mainittu SeleniumLibrary-kirjasto. SeleniumLibrary-kirjasto tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
+Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaaa
+`*** Settings ***` osiossa on otetty SeleniumLibrary-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee pari projektissa tarvittavaa avainsanaa.
 
-Tiedostossa on myös ennestään tuntematon osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
 
-
-`*** Keywords ***`-osiossa on määritelty yleiskäyttöisiä avainsanoja:
-
-- `Open And Configure Browser` -avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetty selain eli _Chrome_, jolle annetaan myös toimintaa määrittelevä _options_ parametri, joka ei itseasiassa aluksi tee mitään.
-
-Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
-
-Avainsanojen `Login Page Should Be Open` - ja `Main Page Should Be Open` tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
-
+`*** Keywords ***`-osiossa on määritelty myös muutama yleiskäyttöinen avainsana:
+- `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
 - `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
 
 Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto _src/tests/login.robot_. Tiedoston `*** Settings ***`-osio on seuraava:
@@ -450,10 +460,7 @@ Suite Teardown  Close Browser
 Test Setup  Create User And Go To Login Page
 ```
 
-Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- ja `Test Setup`-asetukset. Niiden merkitykset ovat seuraavat:
-
-- `Suite Setup`-asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta. `Test Setup` sen sijaan suoritetaan ennen _jokaista_ testitapausta
-- `Suite Teardown`-asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen. On myös olemassa asetus `Test Teardown` joka suoritetaan _jokaisen_ testitapauksen jälkeen.
+Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan _Create User And Go To Login Page_ ennen jokaista testiä.
 
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
@@ -463,25 +470,7 @@ Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 - `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
 - `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumissivun
 
-Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi <code>Click Button &nbsp;foo</code> löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
-
-```html
-<button id="foo">Nappi</button>
-<button name="foo">Nappi</button>
-<button>foo</button>
-```
-
-Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu <code>Click Button &nbsp;Login</code> löytää siis seuraavan _src/templates/login.html_-tiedostossa määritellyn painikkeen:
-
-```html
-<button>Login</button>
-```
-
-Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytää `id`-attribuutin avulla seuraavan `input`-elementin:
-
-```html
-<input type="text" name="username" id="username" />
-```
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Senenium löytää sivun elementit.
 
 **Tee nyt uusi tiedosto _home.robot_ ja lisää sinne seuraavat testitapaukset:**
 
@@ -541,9 +530,9 @@ class AppLibrary:
         requests.post(f"{self._base_url}/register", data=data)
 ```
 
-Kirjaston toteutus eroaa jonkin verran edellisestä, komentoriviä hyödyntävän projektin kirjaston toteutuksesta. Erona on, että tässä projektissa testit ja itse sovellus suoritetaan eri prosesseissa, joten testit eivät voi suoraan muuttaa sovelluksen tilaa. Voimme kuitenkin muuttaa sovelluksen tilaa HTTP-kutsujen avulla jo tutuksi tulleen requests-kirjaston avulla.
+On oleellista, että testit alkavat aina samasta tilasta, erityisesti, että sovelluksen tietokannan tila on testien alussa hyvin tunnettu. 
 
-Metodi `reset_application` lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
+Metodin `reset_application` määrittelemä avainsana _Reset Application_ lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
 
 ```python
 @app.route("/tests/reset", methods=["POST"])
@@ -552,7 +541,7 @@ def reset_tests():
     return "Reset"
 ```
 
-Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan.
+Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan. Kyseessä on siis ainoastaan testien käyttöön toteutettu tapa nollata tietokanta.
 
 Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
 
@@ -571,6 +560,7 @@ def handle_register():
         return redirect_to_register()
 ```
 
+
 **Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus _login.robot_-tiedostoon:
 
 ```
@@ -579,24 +569,6 @@ Login With Nonexistent Username
 ```
 
 ### 7. WebLogin, osa 3
-
-Tehdään seuraavaksi pari muutosta testien suorituksen nopeuttamiseksi. Ensiksi, aseta _resource.robot_-tiedostossa olevan `DELAY`-muuttujan arvoksi `0`. Sen jälkeen, otetaan käyttöön Chrome-selaimen [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) -variaatio. "Headless"-selainten käyttö on kätevää esimerkiksi automatisoiduissa testeissä, joissa selaimen käyttöliittymä ei ole tarpeellinen.
-
-Headless Chrome saadaan käyttöön poistamalla avainsanan _Open And Configure Browser_ määrittelystä rivin _Call Method_ -rivin alussa oleva kommenttimerkki pois, eli muuttamalla määrittely seuraavaan muotoon:
-
-```
-*** Keywords ***
-Open And Configure Browser
-    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    Call Method    ${options}    add_argument    --no-sandbox
-    Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=chrome  options=${options}
-    Set Selenium Speed  ${DELAY}
-```
-
-**Tee muutokset ja suorita testit.**
-
-**HUOM:** Headless Chrome vaikeuttaa testien debuggaamista, koska selaimen käyttöliittymä ei ole näkyvissä. Jos testitapauksen suorittaminen epäonnistuu, projektin juurihakemistoon ilmestyy tiedosto _selenium-screenshot-\*.png_, josta on nähtävissä selainikkunan sisältö virhetilanteen hetkellä. Jos tämä tieto ei riitä, voit palata debuggauksen ajaksi "normaaliin" Chromeen (kommentoimalla Call Method -rivin), ja muuttamalla `DELAY`-muuttujan arvoa.
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset _register.robot_-tiedostoon:
 
@@ -615,16 +587,12 @@ Register With Nonmatching Password And Password Confirmation
 # ...
 ```
 
-**HUOM** tee yksi testitapaus kerrallaan. Testitapausta koodatessa kannattaa suorittaa ainoastaan työn alla olevaa testitapausta [täällä](/tehtavat3/#robot-framework--testien-debuggaaminen) olevan ohjeen mukaan, ja kannattanee käyttää aluksi normaalia Chromea headlessin sijaan jotta näet miten testitapaus etenee.
-
-Käyttäjätunnus ja salasana noudattavat samoja sääntöjä kuin _tehtävässä 5_, eli:
+Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
 - Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
 **Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
-
-**Muista käynnistää web-palvelin uudestaan, kun teet muutoksia koodiin!** Sammuta palvelin näppäilemällä `Ctrl+C` terminaali-ikkunaan, jossa web-pavelinta suoritetaan. Käynnistä tämän jälkeen palvelin uudelleen komennolla `python3 src/index.py`.
 
 ### 8. WebLogin, osa 4
 
@@ -652,111 +620,6 @@ Resource  login_resource.robot
 
 **Heads up:** muista että sama käyttäjätunnus voidaan luoda vain kertaalleen. Saatat törmätä tässä tehtävässä tilanteeseen, missä käyttäjätunnuksen luominen epäonnistuu jos yrität luoda saman nimisen käyttäjätunnuksen minkä jokin edellinen testi on jo luonut. Paras ratkaisu tilanteeseen olisi nollata tietokanta ennen jokaista testiä. Ratkaisuksi toki tässä tehtävässä kelpaa myös eri nimisen käyttäjätunnuksen luominen.
 
-# OLD STUFF
-
-
-### 2. Kirjautumisen testit
-
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/login-robot_ oleva projekti.
-
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
-
-Tutustu ohjelman rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md). Sovelluksen käyttöliittymä on toteutettu luokkaan `App`, ja sovelluslogiikka luokkaan `UserService`.
-Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
-
-Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
-
-Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien kautta, kuten `find_all`, `create` ja `delete`. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
-
-Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi SQLite-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
-
-**Asenna projektin riippuvuudet ja kokeile suorittaa `index.py`-tiedosto.** Ohjelman tuntemat komennot ovat _login_ ja _new_.
-
-**Suorita myös projektiin siihen liittyvät Robot Framework -testit** virtuaaliympäristössä komennolla `robot src/tests`.
-
-Tutki miten Robot Framework -testit on toteutettu hakemistossa _src/tests_. Tutki myös, miten avainsanat on määritelty _src_-hakemiston _AppLibrary.py_-tiedoston `AppLibrary`-luokassa. Huomioi erityisesti, miten testit käyttävät testaamisen mahdollistavaa `StubIO`-oliota käyttäjän syötteen ja ohjelman tulosteen käsittelyyn. Periaate on täsmälleen sama kuin viikon 1 tehtävien [riippuvuuksien injektointiin](/riippuvuuksien_injektointi/) liittyvässä esimerkissä.
-
-Saatat löytää _.robot_-tiedostoista ennestään tuntemattomia ominaisuuksia. _resource.robot_-tiedossa on määritelty avainsana `Input Credentials`, jolla on argumentit `username` ja `password`:
-
-```
-Input Credentials
-    [Arguments]  ${username}  ${password}
-    Input  ${username}
-    Input  ${password}
-    Run Application
-```
-
-Kyseinen avainsana on käytössä _login.robot_-tiedostossa seuraavasti:
-
-```
-Input Credentials  kalle  kalle123
-```
-
-Lisäksi _login.robot_-tiedoston `*** Settings ***`-osiossa on uusi asetus, `Test Setup`. Kyseisen asetuksen avulla voimme määritellä avainsanan, joka suoritetaan _ennen jokaista testitapausta_. Tässä tapauksessa ennen jokaista testiä halutaan suorittaa avainsana `Create User And Input Login Command`, joka luo uuden käyttäjän ja antaa sovellukselle _login_-komennon.
-
-[Täällä](/viikko3-t2) on vielä avattu hieman lisää testien toimintaperiaatetta.
-
-
-**Toteuta** user storylle _User can log in with valid username/password-combination_ seuraavat testitapaukset _login.robot_-tiedostoon:
-
-```
-*** Test Cases ***
-Login With Incorrect Password
-# ...
-
-Login With Nonexistent Username
-# ...
-```
-
-Suorita testitapauksissa sopivat avainsanat, jotta haluttu tapaus tulee testattua.
-
-### 3. Uuden käyttäjän rekisteröitymisen testit
-
-Lisää testihakemistoon uusi testitiedosto _register.robot_. Toteuta tiedostoon user storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset:
-
-```
-*** Test Cases ***
-Register With Valid Username And Password
-# ...
-
-Register With Already Taken Username And Valid Password
-# ...
-
-Register With Too Short Username And Valid Password
-# ...
-
-Register With Enough Long But Invalid Username And Valid Password
-# ...
-
-Register With Valid Username And Too Short Password
-# ...
-
-Register With Valid Username And Long Enough Password Containing Only Letters
-# ...
-```
-
-- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä. Vinkki: [säännölliset lausekkeet](https://www.tutorialspoint.com/python/python_reg_expressions.htm) ja <a href="https://regexr.com/5fslc">^[a-z]+$</a>.
-- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se _ei saa_ koostua pelkästään kirjaimista.
-- Säännöllisten lausekkeiden kokeilu ja testaaminen onnistuu hyvin esim. seuraavassa palvelussa <https://rubular.com/>
-
-Säännöllisissä lausekkeissa voi hyödyntää Pythonin _re_-moduulia seuraavasti:
-
-```python
-import re
-
-if re.match("^[a-z]+$", "kalle"):
-  print("Ok")
-else:
-  print("Virheellinen")
-```
-
-**Tee testitapauksista suoritettavia ja täydennä ohjelmaa siten että testit menevät läpi**. Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
-
-**Vinkki 2**: et välttämättä tarvitse säännöllisiä lausekkeita mihinkään...
-
-**HUOM 1:** Testitapaukset kannattaa toteuttaa yksi kerrallaan, laittaen samalla vastaava ominaisuus ohjelmasta kuntoon. Eli **ÄLÄ** copypastea ylläolevaa kerrallaan tiedostoon, vaan etene pienin askelin. Jos yksi testitapaus ei mene läpi, älä aloita uuden tekemistä ennen kuin kaikki ongelmat on selvitetty. Seuraava luku antaa muutaman vihjeen testien debuggaamiseen.
-
-**HUOM 2:** Saattaa olla hyödyllistä toteuttaa _resource.robot_-tiedostoon avainsana `Input New Command` ja _register.robot_-tiedostoon avainsana `Input New Command And Create User`, joka antaa sovellukselle _new_-komennon ja luo käyttäjän testejä varten. Avainsana kannattaa suorittaa ennen jokaista testitapausta hyödyntämällä `Test Setup`-asetusta.
 
 ### Robot Framework -testien debuggaaminen
 
