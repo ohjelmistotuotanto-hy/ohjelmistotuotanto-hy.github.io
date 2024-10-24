@@ -43,9 +43,9 @@ Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallits
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion hakemistossa viikko3/web-login oleva projekti.
 
-**Tee tätä ja kahta seruaavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
+**Tee tätä ja kahta seuraavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
 ![]({{ "/images/laskuri1.png" | absolute_url }}){:height="350px" }
 
@@ -145,7 +145,7 @@ Osassa `*** Settings ***` on useita huomionarvoisia seikkoja, rivi
 Resource  resource.robot
 ```
 
-lertoo, että testin tulee ottaa käyttöön tiedostossa `resource.robot` tehdyt määritelmät (eli resurssit).
+kertoo, että testin tulee ottaa käyttöön tiedostossa `resource.robot` tehdyt määritelmät (eli resurssit).
 
 Tiedoston  `resource.robot` sisältö on seuraava:
 
@@ -191,9 +191,9 @@ Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown
 - `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa `resource.robot`
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 
-Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamiasta!
+Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
 
-Kun olet suorittanut tehstit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
+Kun olet suorittanut testit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
 
 ### 3. Weblaskurin nollaus
 
@@ -212,7 +212,7 @@ When counter has a nonzero value and it is reset the value becomes zero
    ...
 ```
 
-**Muista**, että toimiakseen valmiina olevat testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamiasta!
+**Muista**, että toimiakseen valmiina olevat testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
 
 ### 4. Web-sovelluksen testien suorittamien GitHub Actioneissa
 
@@ -327,7 +327,7 @@ Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskur
 
 Tee ominaisuudelle Robot-testit.
 
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
 Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tsoha.github.io/materiaali/osa-1/#lomakkeiden-k%C3%A4sittely) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
@@ -337,7 +337,7 @@ Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka lö
 
 Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
 Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi ominaisuutta:
 - käyttäjä voi rekisteröityä, eli luoda uuden käyttäjätunnuksen
@@ -484,7 +484,7 @@ Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 - `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
 - `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumissivun
 
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Senenium löytää sivun elementit.
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
 **Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
 
