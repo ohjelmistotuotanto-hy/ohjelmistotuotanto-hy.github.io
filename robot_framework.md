@@ -30,7 +30,6 @@ class Counter:
 
     def reset(self):
         self.value = self.initial_value
-
 ```
 
 Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hakemiston <i>increase_counter.robot</i>-tiedostoon. Tutustu tiedoston sisältöön ja pohdi, vaatiiko testattavien skenaarioiden ymmärtäminen lukijalta erityistä teknistä osaamista esimerkiksi unittest-testeihin verrattuna.
@@ -52,7 +51,7 @@ Robot Framework testaamisen ytimessä on niin kutsutut _avainsanat_ (keywords). 
 
 Avainsanoja hyödyntävät niin kutsutut _testitapaukset_ (test cases), jotka ovat itse testejä. Testitapauksilla on nimi (kuten avainsanoilla) ja ne suorittavat avainsanoja tietyssä järjestyksessä. Esimerkiksi testitapaus laskurin kasvattamiselle voisi olla seuraava:
 
-```
+```robot
 *** Test Cases ***
 Increase Counter Once
     Counter Value Should Be  0
@@ -119,7 +118,7 @@ class CounterLibrary:
 
 Jotta kirjaston tarjoamia avainsanoja voi käyttää testitiedostossa, se täytyy erikseen tuoda käyttöön. Tämä onnistuu `Settings`-osiossa:
 
-```
+```robot
 *** Settings ***
 Library  ../CounterLibrary.py
 
@@ -134,7 +133,7 @@ Huomaa, että kirjaston polku on suhteellinen tiedostoon nähden.
 
 Tiedostoon voi tuoda myös useamman kirjaston lisäämällä monta `Library`-riviä:
 
-```
+```robot
 *** Settings ***
 Library  ../CounterLibrary.py
 Library  ../SomeUsefulLibrary.py
@@ -144,7 +143,7 @@ Library  ../SomeUsefulLibrary.py
 
 Kirjastojen lisäksi avainsanoja voi määritellä myös _.robot_-tiedostoissa. Tämä onnistuu määrittelemällä uusi avainsana `*** Keywords ***`-osion alle. Voimme esimerkiksi hyödyntää avainsanaa `Increase Counter` ja toteuttaa avainsanan `Increase Counter Three Times`, joka kasvattaa laskurin arvoa kolmesti:
 
-```
+```robot
 *** Settings ***
 Library  ../CounterLibrary.py
 
@@ -155,14 +154,13 @@ Increase Counter Three Times
     Increase Counter
 ```
 
-
 ### Nollaamisen skenaariot
 
 Lisää _src/tests_-hakemistoon tiedosto <i>reset_counter.robot</i>, joka sisältää laskimen nollaamiseen liittyvät hyväksymistestit.
 
 **Lisää tiedostoon seuraavat testitapaukset:**
 
-```
+```robot
 *** Settings ***
 Library  ../CounterLibrary.py
 
