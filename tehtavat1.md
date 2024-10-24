@@ -21,7 +21,7 @@ Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko sim
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission". Viikon tehtävät palautetaan yhdellä kertaa, eli tee merkintä palautussovellukseen vasta kun olet valmis viikon tehtävien osalta.
 
-Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
+Käytännössä tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoriota:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
 - toinen tehtäviä 14-17 varten (käytetään tästä nimitystä **palautusrepositorio**)
@@ -126,7 +126,7 @@ missä komennon `git clone` parametrina on repositoriosi sivulla näkyvä merkki
 
 ![]({{ "/images/lh1-2-22.png" | absolute_url }})
 
-Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on on GitHubissa olevan repositorion klooni.
+Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on GitHubissa olevan repositorion klooni.
 
 ### 3. Gitin alkeet [versionhallinta]
 
@@ -144,7 +144,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 - [Pro Git -opas](http://git-scm.com/book), kannattaa lukea näin alkuun luku 2
-- [Githubin helpit](https://help.github.com/articles/)
+- [GitHubin helpit](https://help.github.com/articles/)
 - <https://www.atlassian.com/git/tutorials>
 - <https://we.riseup.net/debian/git-development-howto>
 - <http://www.ralfebert.de/tutorials/git/>
@@ -190,7 +190,7 @@ GitHubissa pitäisi näyttää suunnilleen seuraavalta
 
 ### 5. Monta kloonia samasta repositoriosta [versionhallinta]
 
-Yleensä on tapana pitää GitHubissa olevaa repositorioa tiedostojen "keskitettynä" sijoituspaikkana ja liittää paikallisella koneella oleva repositorio GitHubissa olevan repositorion etärepositorioksi, kuten teimme tehtävässä 1.
+Yleensä on tapana pitää GitHubissa olevaa repositoriota tiedostojen "keskitettynä" sijoituspaikkana ja liittää paikallisella koneella oleva repositorio GitHubissa olevan repositorion etärepositorioksi, kuten teimme tehtävässä 1.
 
 Jos työskennellään useammalta koneelta, on GitHubissa olevasta repositoriosta monta kloonia ja kloonien tila on pidettävä ajantasalla.
 
@@ -308,7 +308,7 @@ The currently activated Python version 2.7.16 is not supported by the project (^
 Trying to find and use a compatible version.
 ```
 
-eräs tapa korjata tilanne Macilla ja ehkä myös Linuxilla on editoida tiedoston `~/.poetry.bin/poetry` ensimmäisellä rivillä mainittu pythonin polku. Oletusarvoinen polku on todennäköisesti seuraava
+eräs tapa korjata tilanne Macilla ja ehkä myös Linuxilla on editoida tiedoston `~/.poetry.bin/poetry` ensimmäisellä rivillä mainittu Pythonin polku. Oletusarvoinen polku on todennäköisesti seuraava
 
 ```
 #!/usr/bin/python
@@ -328,7 +328,7 @@ Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen
 
 Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 
-Edellisen tehtävän _ohtuvarastoss_a on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
+Edellisen tehtävän _ohtuvarastossa_ on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
 Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla sen jälkeen komennon `pytest`.
 
@@ -485,7 +485,7 @@ suorittaa valmiiksi määritellyn actionin [checkout](https://github.com/marketp
 
 Eli _checkout_ action siis hakee repositorion koodin askeleet suorittavalle virtuaalikoneelle.
 
-Toinen askel on action [setup-python](https://github.com/marketplace/actions/setup-python), joka asentaan työn suorittavalle virtuaalikoneelle haluamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.10', jos hipsuja ei ole, yrtää GitHub Actions asettaa Pythonista version 3.1
+Toinen askel on action [setup-python](https://github.com/marketplace/actions/setup-python), joka asentaan työn suorittavalle virtuaalikoneelle haluamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.10'. Jos hipsuja ei ole, yrittää GitHub Actions asentaa Pythonista version 3.1
 
 Molemmat näistä actioneista olivat GitHubin [marketplacesta](https://github.com/marketplace?type=actions) löytyviä valmiita actioneja. Esim. Pythonin asentaminen työn suorittavalle virtuaalikoneelle on itsessään aika monimutkainen toimenpide, mutta valmiiksi määritelty action tekee sen helpoksi.
 
@@ -523,7 +523,7 @@ Korjaa testi ja pushaa muutokset uudelleen GitHubiin. Tarkkaile jälleen Actions
 
 ### 11. GitHub Actions, osa 3
 
-Laita repositiossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Status Badge_.
+Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Status Badge_.
 
 [Tämän](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge) ohjeen mukaan badgen osoite on muotoa
 
@@ -573,7 +573,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Tulet todennäköisesti törmäämään vastaavaan virheeseen usein. Syynä virheelle on se, että yrität pushata muutoksia GitHubiin vaikka GitHub on "edellä" paikallista repositorioasi (ts. sinne lisättiin tiedosto _README.md_).
+Tulet todennäköisesti törmäämään vastaavaan virheeseen usein. Syynä virheelle on se, että yrität pushata muutoksia GitHubiin vaikka GitHub on "edellä" paikallista repositoriotasi (ts. sinne lisättiin tiedosto _README.md_).
 
 Ongelma ratkeaa seuraavasti. Tee ensin komento `git pull`. Saat Gitiltä pitkän valitusviestin:
 
@@ -625,13 +625,13 @@ Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On 
 
 ![]({{ "/images/lh1-codecov.png" | absolute_url }})
 
-Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 2_ sisältää olleellisen tärkeän asian, eli repository tokenin_:
+Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 2_ sisältää oleellisen tärkeän asian, eli _repository tokenin_:
 
 ![]({{ "/images/codecov2.png" | absolute_url }})
 
 Käytännössä Codecovin repository token on _avain_, jonka avulla palvelu tunnistaa sinut. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. 
 
-Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin sailaisuuksien sisällyttämisestä GitHubiin on kuvattu [Githubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin sailaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. 
@@ -661,7 +661,7 @@ Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testi
 
 ![]({{ "/images/codecov3.png" | absolute_url }})
 
-Klikkaailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
+Klikkailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
 
 ![]({{ "/images/py-lh1-15-22.png" | absolute_url }})
 
@@ -697,12 +697,12 @@ Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että 
 
 ### Tehtävien palautusrepositoriot
 
-Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoria:
+Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi erillistä** GitHub-repositoriota:
 
 - ensimmäinen (nimeltään ohtuvarasto) tehtäviä 2-13 varten ja
 - toinen tehtäviä 14-17 varten (käytetään tästä nimitystä **palautusrepositorio**)
 
-Repositorioista jäkimmäistä (johon tehtävät 14-17 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
+Repositorioista jälkimmäistä (johon tehtävät 14-17 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
 Luo siis nyt **uusi repositorio**.
 
@@ -723,7 +723,7 @@ viikko3
 
 ### 14. Riippuvuuksien injektointi osa 1
 
-**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
 - tehtävässä ei tosin tehdä itse mitään koodia...
 
@@ -741,11 +741,11 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
-**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
 - Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
   - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
-    - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositorioa!
+    - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
   - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
@@ -769,7 +769,7 @@ stats = StatisticsService(
 
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
 
-**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
 - Tee yksikkötestit luokalle `StatisticsService`
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
@@ -807,7 +807,7 @@ Kun injektoit `PlayerReaderStub`-olion testissä `StatisticsService`-oliolle, pa
 
 ### 17. NHL-tilastot-ohjelman laajennus
 
-**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositorioa mihin teit tehtävät 2-13**
+**Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
 Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperusteella" metodi palauttaa pelaajat.
 
