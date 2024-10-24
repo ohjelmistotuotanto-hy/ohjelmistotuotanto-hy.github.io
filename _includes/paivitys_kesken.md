@@ -4,7 +4,7 @@
 
 {% if current==true %}
 
-Tehtävistä päivitetty 1-4, muut hieman kesken.
+Tehtävistä päivitetty 1-3, muut hieman kesken.
 
 {% else %}
 
