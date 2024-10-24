@@ -43,7 +43,12 @@
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
 - [Miniprojekti](/miniprojekti)
-  - Aloitustilaisuudet  
+  - Aloitustilaisuudet (jokainen osallistuu yhteen)
+    - ti 14-16
+    - ke 14-16
+    - ke 16-18
+    - to 10-12
+    - to 14-16
 
 ### Viikko 4
 
