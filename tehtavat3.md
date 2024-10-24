@@ -94,7 +94,7 @@ Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the cou
 
 Tiedostossa `increment.robot` olevat testit näyttävät seuraavalta:
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
@@ -141,7 +141,7 @@ Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytä�
 
 Osassa `*** Settings ***` on useita huomionarvoisia seikkoja, rivi
 
-```
+```robot
 Resource  resource.robot
 ```
 
@@ -149,7 +149,7 @@ kertoo, että testin tulee ottaa käyttöön tiedostossa `resource.robot` tehdyt
 
 Tiedoston  `resource.robot` sisältö on seuraava:
 
-```
+```robot
 *** Settings ***
 Library  SeleniumLibrary
 
@@ -176,7 +176,7 @@ Tiedostossa on myös osio `*** Variables ***` missä on mahdollista määritell�
 
 Palataan vielä tiedostoon `increment.robot`, jonka alun osio `*** Settings ***` on seuraava
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
@@ -201,7 +201,7 @@ Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
 
 Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon `reset.robot`, testin näyttää suunilleen seuraavalta
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
@@ -220,7 +220,7 @@ Selenium Webdriveria käyttävät Robot-testit on melko helppo suorittaa myös G
 
 Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa `resource.robot` seuraavasti:
 
-```
+```robot
 *** Settings ***
 Library  SeleniumLibrary
 
@@ -249,13 +249,13 @@ Open And Configure Browser
 
 Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0 jotta testit eivät hidastu tarpeettomasti. Headless-suoritus tapahtuu seuraavasti:
 
-```
+```bash
 robot --variable HEADLESS:true src/tests
 ```
 
 GitHub actionien konfiguraatio näyttää seuraavalta:
 
-```
+```yml
 name: CI
 
 on:
@@ -416,7 +416,7 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät `src/tests/resource.robot`-tiedostosta. Tiedoston sisältö on seuraava:
 
-```
+```robot
 *** Settings ***
 Library  SeleniumLibrary
 Library  ../AppLibrary.py
@@ -466,7 +466,7 @@ Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä ke
 
 Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto `src/tests/login.robot`. Tiedoston `*** Settings ***`-osio on seuraava:
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
@@ -488,7 +488,7 @@ Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4
 
 **Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
@@ -577,7 +577,7 @@ def handle_register():
 
 **Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
 
-```
+```robot
 Login With Nonexistent Username
 # ...
 ```
@@ -586,7 +586,7 @@ Login With Nonexistent Username
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset `register.robot`-tiedostoon:
 
-```
+```robot
 Register With Valid Username And Password
 # ...
 
@@ -612,7 +612,7 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
 Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon `register.robot`:
 
-```
+```robot
 Login After Successful Registration
 # ...
 
@@ -626,7 +626,7 @@ Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautu
 
 Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot`>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
 
-```
+```robot
 *** Settings ***
 Resource  resource.robot
 Resource  login_resource.robot
@@ -648,7 +648,7 @@ Tutustutaan seuraavaksi tekniikoihin, jotka helpottavat ja nopeuttavat virheiden
 
 Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials`, voimme suorittaa ainoastaan sen seuraavalla komennolla:
 
-```
+```bash
 robot -t "Login With Correct Credentials" src/tests/login.robot
 ```
 
