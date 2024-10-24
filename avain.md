@@ -11,9 +11,9 @@ title: Julkinen avain
 - Mene hakemistoon ja anna komentoriviltä komento `ssh-add`
 - Katso hakemiston sisältöä
 - Tiedosto *id_rsa.pub* sisältää julkisen avaimen, se on tarkoitus kopioida GitHubiin jotta avaimeen perustuva kirjautuminen onnistuisi
-- Näet tiedoston sisällön komennolla cat `id_rsa.pub`
-- Mene GitHubin asetussivulle klikkaamalla oikean yläkulman symbolista ja valitsemalla settings
-- Valitse settingseistä SSH and GPG keys
+- Näet tiedoston sisällön komennolla `cat id_rsa.pub`
+- Mene GitHubin asetussivulle klikkaamalla oikean yläkulman symbolista ja valitsemalla Settings
+- Valitse asetuksista SSH and GPG keys
 
 ![]({{ "/images/ssh0.png" | absolute_url }})
 
