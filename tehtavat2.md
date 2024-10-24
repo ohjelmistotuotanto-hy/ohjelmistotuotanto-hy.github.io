@@ -53,9 +53,9 @@ Tee seuraavat toimenpiteet:
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 
-### Bonus: VS coden konfigurointi
+### Bonus: VS Coden konfigurointi
 
-**HUOM:** VS coden konfigurointi on täysin vapaaehtoista, selviät aivan hyvin ilman konfigurointeja. Kaikilla konfigurointi ei mene täysin alla kuvatun kaltaisesti. Eli jos konfigurointi ei onnistu, siirry eteenpäin.
+**HUOM:** VS Coden konfigurointi on täysin vapaaehtoista, selviät aivan hyvin ilman konfigurointeja. Kaikilla konfigurointi ei mene täysin alla kuvatun kaltaisesti. Eli jos konfigurointi ei onnistu, siirry eteenpäin.
  
 Palaa vielä edellisen tehtävän projektiin, ja asenna projektiin kirjasto `cowsay`.
 
@@ -140,9 +140,9 @@ Dependencies: python, Flask, editdistance
 Development dependencies: coverage, robotframework, robotframework-seleniumlibrary, requests
 ```
 
-*HUOM* ohjelma ei saa sisältää kuin ainoastaan tiedostossa index.py olevan print-komennon, joka tuostaa `Project`-olion merkkijonoesityksen!
+*HUOM* ohjelma ei saa sisältää kuin ainoastaan tiedostossa index.py olevan print-komennon, joka tulostaa `Project`-olion merkkijonoesityksen!
 
-Laajenna ja hio vielä ratkaisua siten, että esimerkkiprojektin osalta lopputulos näyttää suunilleen seuraavalta
+Laajenna ja hio vielä ratkaisua siten, että esimerkkiprojektin osalta lopputulos näyttää suunnilleen seuraavalta
 
 ```
 Name: Ohtutesting app
@@ -308,7 +308,7 @@ def erotus(x, y):
   - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
     - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
 - Mergeä branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
-  - Mergeäminen aiheuttaa ns merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
+  - Mergeäminen aiheuttaa ns. merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
 - Muuta tiedostoa **index.py** seuraavasti ja commitoi muutos:
@@ -400,7 +400,7 @@ nothing to commit, working tree clean
 - Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
 - Mergeä **main**-branch branchiin **laskut**
 - Siirry nyt takaisin branchiin **main** ja tuhoa branchi **laskut**
-  - Tuhoaminen ei onnistu suoraan komennolla `git branch -d`, jos branchin sisältö ei ole kokonaisuudessan mergetty mainiin. Jos näin on, tee ensin merge mainiin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
+  - Tuhoaminen ei onnistu suoraan komennolla `git branch -d`, jos branchin sisältö ei ole kokonaisuudessaan mergetty mainiin. Jos näin on, tee ensin merge mainiin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista Git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
@@ -688,7 +688,7 @@ hint: invocation.
 fatal: Need to specify how to reconcile divergent branches.
 ```
 
-Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
+Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimmäinen, eli anna komentorivillä komento
 
 ```
 git config pull.rebase true 
@@ -792,7 +792,7 @@ Erik Haula           NJD  14 + 27 = 41
 
 Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
 
-Jaa toiminallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`. `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annettetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
+Jaa toiminallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`. `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
 
 Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraavalta:
 
