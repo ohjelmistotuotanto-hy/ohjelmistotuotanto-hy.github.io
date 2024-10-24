@@ -7,7 +7,7 @@ permalink: /miniprojekti/
 
 ### Ajankohtaista
 
-- miniprojekti alkaa 11.11 alkavalla viikolla
+- miniprojekti alkaa 11.11. alkavalla viikolla
 
 ### Johdanto
 
@@ -164,7 +164,7 @@ Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa
   - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
   - Huomaa, että jos tarkoituksena on julkaista sovellus jossain pilvipalvelussa, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi seuraavasta tälle kurssille tehdystä [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
 - Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla tapahtuvaan storyjen testaamiseen (vaaditaan sprintistä 2 alkaen)
-- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaanee välttää kirjaston käyttöä
+- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattanee välttää kirjaston käyttöä
 
 ### Työn arvostelu
 
