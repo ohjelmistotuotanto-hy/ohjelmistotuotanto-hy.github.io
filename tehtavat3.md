@@ -357,7 +357,13 @@ On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvit
 - Onko vika testissä, eli toimiiko sovellus kuten pitääkin? Voit esimerkiksi testata sovelluksen toimivuuden manuaalisesti. Jos näin on, keskity testin korjaamiseen
 - Onko vika sovelluksessa, eli eikö manuaalisesti testattu sovellus toimi kuten pitäisi? Jos näin on, keskity tarkastelemaan ohjelman suoritusta epäonnistuneessa testitapauksessa
 
-Tutustutaan seuraavaksi tekniikoihin, jotka helpottavat ja nopeuttavat virheiden metsästystä.
+Jos testit eivät mene läpi, generoi Selenium hakemistoon kuvakaappauksen tilanteesta, siitä tilanteesta missä testi havaitsee ongelman. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
+
+![]({{ "/images/seleniumerror.png" | absolute_url }}){:height="350px" }
+
+Tässä tapauksessa ongelma oli erittäin helppo korjata.
+
+Tutustutaan seuraavaksi muihin tekniikoihin, jotka helpottavat ja nopeuttavat virheiden metsästystä.
 
 #### Suoritettavien testien lukumäärän rajoittaminen
 
@@ -596,7 +602,6 @@ Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4
 ```robot
 ```
 *** Settings ***
-*** Settings ***
 Resource  resource.robot
 Suite Setup     Open And Configure Browser
 Suite Teardown  Close Browser
@@ -714,6 +719,9 @@ Register With Valid Username And Password
 Register With Too Short Username And Valid Password
 # ...
 
+Register With Valid Username And Too Short Password
+# ...
+
 Register With Valid Username And Invalid Password
 # salasana ei sisällä halutunlaisia merkkejä
 # ...
@@ -721,6 +729,8 @@ Register With Valid Username And Invalid Password
 Register With Nonmatching Password And Password Confirmation
 # ...
 
+Register With Username That Is Already In Use
+#
 
 *** Keywords ***
 #...
@@ -734,12 +744,15 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 **Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
 **Pro tips**:
-- etene yksi testitapaus ja sen toteuttama koodi kerrallaan
-- muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen)
+- Etene yksi testitapaus ja sen toteuttama koodi kerrallaan
+- Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit
+- Ota mallia kirjautumisen testeistä!
+- Muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen
+)
 
 ### 8. WebLogin, osa 4
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon `register.robot`:
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraava testitapaus tiedostoon `register.robot`:
 
 ```robot
 Login After Successful Registration
@@ -751,9 +764,7 @@ Login After Failed Registration
 
 Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Koska käyttäjä kirjautuu automaattisesti kun se luodaan, testin tulee kirjautua ulos ja varmistaa sitten että uusi kirjautuminen onnistuu.
 
-Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
-
-Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot`>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot` -tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
 
 ```robot
 *** Settings ***
@@ -761,7 +772,6 @@ Resource  resource.robot
 Resource  login_resource.robot
 ```
 
-**Heads up:** muista että sama käyttäjätunnus voidaan luoda vain kertaalleen. Saatat törmätä tässä tehtävässä tilanteeseen, missä käyttäjätunnuksen luominen epäonnistuu jos yrität luoda saman nimisen käyttäjätunnuksen minkä jokin edellinen testi on jo luonut. Paras ratkaisu tilanteeseen olisi nollata tietokanta ennen jokaista testiä. Ratkaisuksi toki tässä tehtävässä kelpaa myös eri nimisen käyttäjätunnuksen luominen.
 
 ### Tehtävien palautus
 
