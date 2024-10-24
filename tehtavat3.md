@@ -253,7 +253,7 @@ Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimm
 robot --variable HEADLESS:true src/tests
 ```
 
-GitHub actionien konfiguraatio näyttää seuraavalta;
+GitHub actionien konfiguraatio näyttää seuraavalta:
 
 ```
 name: CI
@@ -289,7 +289,7 @@ jobs:
 
 Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa chromedriverin GitHub Actionin käyttöön.
 
-Jotta sovelluksen testit pystyisi suorittamaan GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää esimerkiksi seuraavaa bash-skriptiä:
+Jotta sovelluksen testit pystyisi suorittamaan GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tests.sh`, joka löytyy tehtäväpohjassa:
 
 ```bash
 #!/bin/bash
@@ -319,15 +319,17 @@ kill $(lsof -t -i:5001)
 exit $status
 ```
 
-Pushaa tehtävän repositorio GitHubiin ja varmista, että testit menevät läpi.
+Pushaa tehtävän repositorio GitHubiin ja varmista, että GitHub Actions suorittaa testit onnistuneesti.
 
-Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon. Sovellus voi näyttää laajennuksen jälkeen seuraavalta
+Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon. Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
 
-**TODO: KUVA**
+![]({{ "/images/webcounter2.png" | absolute_url }}){:height="240px" }
 
 Tee ominaisuudelle Robot-testit.
 
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Senenium löytää sivun elementit.
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
+
+Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tsoha.github.io/materiaali/osa-1/#lomakkeiden-k%C3%A4sittely) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
 ### 5. WebLogin, osa 1
 
