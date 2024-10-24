@@ -212,9 +212,11 @@ When counter has a nonzero value and it is reset the value becomes zero
    ...
 ```
 
+**Muista**, että toimiakseen valmiina olevat testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamiasta!
+
 ### 4. Web-sovelluksen testien suorittamien GitHub Actioneissa
 
-Selenium Webdriveria käyttätät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
+Selenium Webdriveria käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
 Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa `resource.robot` seuraavasti:
 
