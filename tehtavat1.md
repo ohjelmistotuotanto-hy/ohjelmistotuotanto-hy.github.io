@@ -717,8 +717,7 @@ viikko2
   project-reader
   nhl-reader
 viikko3
-  login-robot
-  web-login-robot
+  web-login
 ...
 ```
 

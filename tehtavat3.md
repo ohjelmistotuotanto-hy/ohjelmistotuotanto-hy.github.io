@@ -9,7 +9,7 @@ permalink: /tehtavat3/
 
 {% include laskari_info.md part=3 %}
 
-Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin, sekä selainsovellusten testaamiseen käytettävän Selenium-kirjaston soveltamiseen.
+Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -23,7 +23,7 @@ Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetu
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-Tehtävät 1 ja 5- palautetaan  jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**,  tehtävän hakemiston _viikko3_ sisälle. Tehtävät 2-4 palautetaan omaa, uuteen repositorioon.
+Tehtävät 1 ja 5-8 palautetaan  jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**,  tehtävän hakemiston _viikko3_ sisälle. Tehtävät 2-4 palautetaan omaan, uuteen repositorioon.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -37,13 +37,13 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 
 ### 2. Web-laskuri
 
-** HUOM: jos käytät Dockeria, lue [tämä](http://localhost:4000/poetry#docker-ja-robot-testit)! 
+**HUOM:** jos käytät Dockeria, lue [tämä](http://localhost:4000/poetry#docker-ja-robot-testit)! 
 
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion hakemistossa viikko3/web-login oleva projekti.
 
-**Tee tätä ja kahta seruaavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esim._webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
+**Tee tätä ja kahta seruaavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
 Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
@@ -74,7 +74,7 @@ Sovelluksen HTML-sivupohjat on määritelty hakemistossa _templates_. Sovellukse
 
 Sovellukselle on tehty pari testiä Robot-frameworkilla. Testit suoritetaan normaaliin tapaan komennolla _robot src/tests_ mutta ennen testien suorittamista joudumme tekemään muutaman ekstratempun.
 
-Testeissä on käytössä [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjasto, jonka avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä tapahtuu valmiin, [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
+Testeissä on käytössä [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjasto, jonka avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä tapahtuu [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
 
 Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria, tai Firefoxia jolloin testit voi suorittaa [Geckodriverillä](https://github.com/mozilla/geckodriver).
 
@@ -84,7 +84,7 @@ Kun ChromeDriver tai GeckoDriver on asennettu onnistuneesti **käynnistä web-so
 
 **Avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit Geckodriverin.
 
-Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the counter is zero ` ja `When button pressed twice the counter is two`. Testitapausten suoritusta voi seurata aukeavasta selaimen ikkunasta.
+Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the counter is zero` ja `When button pressed twice the counter is two`. Testitapausten suoritusta voi seurata aukeavasta selaimen ikkunasta.
 
 #### Ongelmia?
 
@@ -92,7 +92,7 @@ Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the cou
 
 #### Tutustuminen testeihin
 
-Tiedostossa __increment.robot_ olevat testit näyttävät seuraavalta:
+Tiedostossa `increment.robot` olevat testit näyttävät seuraavalta:
 
 ```
 *** Settings ***
@@ -137,9 +137,17 @@ Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytä�
 <input type="text" name="username" id="username" />
 ```
 
-Osassa _Settings_ on useita huomionarvoisia seikkoja. _Resource  resource.robot_ kertoo, että testin tulee ottaa käyttöön tiedostossa _resource.robot_ tehdyt määritelmät (eli resurssit).
+#### Tutustuminen testeihin jatkuu
 
-Tiedoston sisältö on seuraava:
+Osassa `*** Settings ***` on useita huomionarvoisia seikkoja, rivi
+
+```
+Resource  resource.robot
+```
+
+lertoo, että testin tulee ottaa käyttöön tiedostossa `resource.robot` tehdyt määritelmät (eli resurssit).
+
+Tiedoston  `resource.robot` sisältö on seuraava:
 
 ```
 *** Settings ***
@@ -158,15 +166,15 @@ Open And Configure Browser
 
 `*** Settings ***` osiossa otetaan käyttöön edellä mainittu SeleniumLibrary-kirjasto, joka siis tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
 
-Tiedostossa on myös ennestään tuntematon osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
+Tiedostossa on myös osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
 
-`*** Keywords ***`-osiossa on määritellään avainsana `Open And Configure Browser` joka alustaa selaimen testejä varten.
+`*** Keywords ***`-osiossa on määritellään avainsana `Open And Configure Browser` joka alustaa selaimen testejä varten:
 
-- avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen eli _chrome_.
+- Avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen, joka on oletusarvoisesti  _chrome_.
+- Tämän lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. 
+- Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
 
-Lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
-
-Palataan vielä tiedostoon __increment.robot_, jonka alun _Settings_ on seuraava
+Palataan vielä tiedostoon `increment.robot`, jonka alun osio `*** Settings ***` on seuraava
 
 ```
 *** Settings ***
@@ -180,16 +188,18 @@ Suite Teardown  Close Browser
 
 Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- -asetukset. Niiden merkitykset ovat seuraavat:
 
-- `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa resource.robot
+- `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa `resource.robot`
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 
 Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamiasta!
+
+Kun olet suorittanut tehstit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
 
 ### 3. Weblaskurin nollaus
 
 Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
 
-Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon _reset.robot_, testin näyttää suunilleen seuraavalta
+Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon `reset.robot`, testin näyttää suunilleen seuraavalta
 
 ```
 *** Settings ***
@@ -206,7 +216,7 @@ When counter has a nonzero value and it is reset the value becomes zero
 
 Selenium Webdriveria käyttätät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
-Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa _resource.robot_ seuraavasti:
+Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa `resource.robot` seuraavasti:
 
 ```
 *** Settings ***
@@ -400,7 +410,7 @@ Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `Use
 
 #### Tutustuminen testeihin
 
-Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät _src/tests/resource.robot_-tiedostosta. Tiedoston sisältö on seuraava:
+Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät `src/tests/resource.robot`-tiedostosta. Tiedoston sisältö on seuraava:
 
 ```
 *** Settings ***
@@ -450,7 +460,7 @@ Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä ke
 - `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
 - `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
 
-Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto _src/tests/login.robot_. Tiedoston `*** Settings ***`-osio on seuraava:
+Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto `src/tests/login.robot`. Tiedoston `*** Settings ***`-osio on seuraava:
 
 ```
 *** Settings ***
@@ -472,7 +482,7 @@ Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-senenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Senenium löytää sivun elementit.
 
-**Tee nyt uusi tiedosto _home.robot_ ja lisää sinne seuraavat testitapaukset:**
+**Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
 
 ```
 *** Settings ***
@@ -561,7 +571,7 @@ def handle_register():
 ```
 
 
-**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus _login.robot_-tiedostoon:
+**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
 
 ```
 Login With Nonexistent Username
@@ -570,7 +580,7 @@ Login With Nonexistent Username
 
 ### 7. WebLogin, osa 3
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset _register.robot_-tiedostoon:
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset `register.robot`-tiedostoon:
 
 ```
 Register With Valid Username And Password
@@ -596,7 +606,7 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
 ### 8. WebLogin, osa 4
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon _register.robot_:
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon `register.robot`:
 
 ```
 Login After Successful Registration
@@ -610,7 +620,7 @@ Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua
 
 Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
 
-Vinkki: voit halutessasi toteuttaa <i>login_resource.robot</i>-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä <i>login.robot</i>-, että <i>register.robot</i>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot`>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
 
 ```
 *** Settings ***
