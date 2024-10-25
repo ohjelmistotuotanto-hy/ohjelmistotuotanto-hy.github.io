@@ -92,10 +92,10 @@
 
 - Vierailuluennot
   - Luento 11: {{site.luennot[11]}} 
-    - Kasper Hirvikoski Unity: _Ohjelmistokehitysprojektien johtajuus_
+    - Kasper Hirvikoski (Unity): _Ohjelmistokehitysprojektien johtajuus_
   - Luento 12: {{site.luennot[12]}} 
-    - Ville Nordberg Trail openers: _Vihreä IT_
-    - Kristiina Vainio Houston Inc: _Juniorin kasvu senioriksi konsulttitalossa_
+    - Ville Nordberg (Trail openers): _Vihreä IT_
+    - Kristiina Vainio (Houston Inc): _Juniorin kasvu senioriksi konsulttitalossa_
 - Laskarit
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 - Miniprojekti
@@ -105,9 +105,9 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Jami Kousa ja Aleksander Tereschenko Unity: _Metrics, Tracing and bugs in production_
+    - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
   - Luento 14: {{site.luennot[14]}}
-    - Hannu Kokko Elisa: _Global product development_
+    - Hannu Kokko (Elisa): _Global product development_
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
