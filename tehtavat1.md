@@ -5,6 +5,7 @@ inheader: no
 permalink: /tehtavat1
 ---
 
+This part doesn't show correctly!
 {% include laskari_info.md part=1 %}
 
 Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokehityksen työkalun (_komentorivi, versionhallinta, riippuvuuksien hallinta, automatisoitu testaus, jatkuva integraatio_) käyttöä.
