@@ -136,7 +136,7 @@ Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemäl
 
 ### Luennot - laskuharjoitukset - miniprojekti
 
-Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoituset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
+Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoitukset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
 
 Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin.
 
