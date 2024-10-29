@@ -49,6 +49,9 @@ Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virt
 
 ![]({{ "/images/laskuri1.png" | absolute_url }}){:height="350px" }
 
+Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
+Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
+
 Sovelluksen rakenne on pääosin sama mitä kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) esimerkkisovelluksissa.
 
 Tiedostossa _app.py_ määritellään sivupyyntöjen käsittelijäfunktiot:
@@ -131,7 +134,7 @@ Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attr
 <button>Login</button>
 ```
 
-Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytää `id`-attribuutin avulla seuraavan `input`-elementin:
+Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytää `id`-attribuutin avulla seuraavan `input`-elementin, ja kirjoittaa siihen toisena parametrina olevan merkkijonon _kalle_:
 
 ```html
 <input type="text" name="username" id="username" />
@@ -233,15 +236,15 @@ ${HEADLESS}  false
 
 *** Keywords ***
 Open And Configure Browser
-    IF         $BROWSER == 'chrome'
+    IF $BROWSER == 'chrome'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    ELSE IF    $BROWSER == 'firefox'
+    ELSE IF $BROWSER == 'firefox'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
     END
-    IF  $BROWSER == 'true'
+    IF $BROWSER == 'true'
         Set Selenium Speed  0
         Call Method  ${options}  add_argument  --headless
-    ELSE IF  $BROWSER == 'false'
+    ELSE
         Set Selenium Speed  ${DELAY}
     END
     Open Browser  browser=${BROWSER}  options=${options}
@@ -331,311 +334,23 @@ Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4
 
 Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tsoha.github.io/materiaali/osa-1/#lomakkeiden-k%C3%A4sittely) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
-### 5. WebLogin, osa 1
+Tee ominaisuudelle Robot-testit.
 
-Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login. 
-
-Hae projekti ja kopioi se palatusrepositorioosi, hakemiston _viikko3_ sisälle.
-
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
-
-Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi ominaisuutta:
-- käyttäjä voi rekisteröityä, eli luoda uuden käyttäjätunnuksen
-- rekisteröitynyt käyttäjä voi kirjautua järjestelmään
-
-![]({{ "/images/weblogin1.png" | absolute_url }}){:height="300px" }
-
-Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
-
-Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien tapaan reitinkäsittelijät määrittelevään tiedoston _app.py_ sekä hakemistossa _templates_ sijaitsevien sivupohjien avulla. Sovelluslogiikka on sijoitettu omaan luokkaansa `UserService`.
-
-Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
-
-Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
-
-Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien kautta, kuten `find_all`, `create` ja `delete`. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
-
-Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi PostgreSQL-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
-
-Seuraavassa vielä lyhyt katsaus sovelluksen käyttöliittymän, eli reitin käsittelijöiden sekä näkymien generoinnin toiminnasta.
-
-Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5001> tulevat pyynnöt käsittelee seuraava koodinpätkä:
-
-```python
-@app.route("/")
-def render_home():
-    return render_template("index.html")
-```
-
-Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _src/templates/index.html_-tiedostosta löytyvästä sivupohjasta HTML-muotoisen sivun ja palauttaa sen käyttäjän selaimelle.
-
-Sivupohja näyttää seuraavalta:
+Jos lomakkeessa on käytössä syötekenttä, jonka attribuutti _name_ on arvoltaan _value_:
 
 ```html
-{% raw %}{% extends "layout.html" %} {% block title %} Ohtu Application {%
-endblock %} {% block body %}
-<h1>Ohtu Application</h1>
-
-<ul>
-  <li><a href="/login">Login</a></li>
-  <li><a href="/register">Register new user</a></li>
-</ul>
-{% endblock %}{% endraw %}
+<input type="text" name="value" />
 ```
 
-Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
-
-_POST_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esimerkiksi käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
-
-```python
-@app.route("/login", methods=["POST"])
-def handle_login():
-    username = request.form.get("username")
-    password = request.form.get("password")
-
-    try:
-        user_service.check_credentials(username, password)
-        return redirect_to_ohtu()
-    except Exception as error:
-        flash(str(error))
-        return redirect_to_login()
-```
-
-Koodi pääsee käsiksi käyttäjän _lomakkeen_ avulla lähettämiin tietoihin _request_-olion kautta:
-
-```python
-username = request.form.get("username")
-password = request.form.get("password")
-```
-
-Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `UserService`-luokan metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi nostaa virheen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
-
-**Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.** Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
-
-#### Tutustuminen testeihin
-
-Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät `src/tests/resource.robot`-tiedostosta. Tiedoston sisältö on seuraava:
-
-```robot
-*** Settings ***
-Library  SeleniumLibrary
-Library  ../AppLibrary.py
-
-*** Variables ***
-${SERVER}  localhost:5001
-${DELAY}  0.5 seconds
-${HOME_URL}  http://${SERVER}
-${LOGIN_URL}  http://${SERVER}/login
-${REGISTER_URL}  http://${SERVER}/register
-${BROWSER}   chrome
-${HEADLESS}  false
-
-*** Keywords ***
-Open And Configure Browser
-    IF         $BROWSER == 'chrome'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    ELSE IF    $BROWSER == 'firefox'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-    END
-    IF  $HEADLESS == 'true'
-        Set Selenium Speed  0
-        Call Method  ${options}  add_argument  --headless
-    ELSE
-        Set Selenium Speed  ${DELAY}
-    END
-    Open Browser  browser=${BROWSER}  options=${options}
-
-Login Page Should Be Open
-    Title Should Be  Login
-
-Main Page Should Be Open
-    Title Should Be  Ohtu Application main page
-
-Go To Login Page
-    Go To  ${LOGIN_URL}
+Robot-testi voi kirjoittaa kenttään arvon 10 [seuraavasti]([Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text)):
 
 ```
-
-Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaaa
-`*** Settings ***` osiossa on otetty SeleniumLibrary-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee pari projektissa tarvittavaa avainsanaa.
-
-
-`*** Keywords ***`-osiossa on määritelty myös muutama yleiskäyttöinen avainsana:
-- `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
-- `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
-
-Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto `src/tests/login.robot`. Tiedoston `*** Settings ***`-osio on seuraava:
-
-```robot
-*** Settings ***
-Resource  resource.robot
-Suite Setup  Open And Configure Browser
-Suite Teardown  Close Browser
-Test Setup  Create User And Go To Login Page
+Input Text  value  10
 ```
-
-Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan _Create User And Go To Login Page_ ennen jokaista testiä.
-
-Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
-
-- `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
-- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
-- `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) -avainsanaa
-- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
-- `Create User And Go To Login Page` -avainsana luo sovellukseen käyttäjän ja avaa kirjautumissivun
-
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
-
-**Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
-
-```robot
-*** Settings ***
-Resource  resource.robot
-Suite Setup  Open And Configure Browser
-Suite Teardown  Close Browser
-Test Setup  Go To Starting Page
-
-*** Test Cases ***
-Click Login Link
-    Click Link  Login
-    Login Page Should Be Open
-
-Click Register Link
-    Click Link  Register new user
-    Register Page Should Be Open
-```
-
-Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link) -avainsanaa.
-
-**Toteuta testin käyttämät avainsanat** tiedostoon `resource.robot`. Kun suoritat testit, virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
-
-```
-Click Register Link                                                   | FAIL |
-Setup failed:
-No keyword with name 'Go To Starting Page' found.
-```
-
-**HUOM** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
-
-### 6. WebLogin, osa 2
-
-Jatketaan kirjautumiseen liittyvien hyväksymistestien toteuttamista. Katsotaan sitä ennen pikaisesti, miltä AppLibrary-kirjaston toteutus näyttää. Kirjaston määrittelevä luokka `AppLibrary` löytyy tiedostosta _src/AppLibrary.py_, jonka sisältö on seuraava:
-
-```python
-import requests
-
-
-class AppLibrary:
-    def __init__(self):
-        self._base_url = "http://localhost:5001"
-
-        self.reset_application()
-
-    def reset_application(self):
-        requests.post(f"{self._base_url}/tests/reset")
-
-    def create_user(self, username, password):
-        data = {
-            "username": username,
-            "password": password,
-            "password_confirmation": password
-        }
-
-        requests.post(f"{self._base_url}/register", data=data)
-```
-
-On oleellista, että testit alkavat aina samasta tilasta, erityisesti, että sovelluksen tietokannan tila on testien alussa hyvin tunnettu. 
-
-Metodin `reset_application` määrittelemä avainsana _Reset Application_ lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
-
-```python
-@app.route("/tests/reset", methods=["POST"])
-def reset_tests():
-    user_repository.delete_all()
-    return "Reset"
-```
-
-Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan. Kyseessä on siis ainoastaan testien käyttöön toteutettu tapa nollata tietokanta.
-
-Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
-
-```python
-@app.route("/register", methods=["POST"])
-def handle_register():
-    username = request.form.get("username")
-    password = request.form.get("password")
-    password_confirmation = request.form.get("password_confirmation")
-
-    try:
-        user_service.create_user(username, password, password_confirmation)
-        return redirect_to_welcome()
-    except Exception as error:
-        flash(str(error))
-        return redirect_to_register()
-```
-
-
-**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
-
-```robot
-Login With Nonexistent Username
-# ...
-```
-
-### 7. WebLogin, osa 3
-
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset `register.robot`-tiedostoon:
-
-```robot
-Register With Valid Username And Password
-# ...
-
-Register With Too Short Username And Valid Password
-# ...
-
-Register With Valid Username And Invalid Password
-# salasana ei sisällä halutunlaisia merkkejä
-# ...
-
-Register With Nonmatching Password And Password Confirmation
-# ...
-```
-
-Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
-
-- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
-
-**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
-
-### 8. WebLogin, osa 4
-
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon `register.robot`:
-
-```robot
-Login After Successful Registration
-# ...
-
-Login After Failed Registration
-# ...
-```
-
-Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Koska käyttäjä kirjautuu automaattisesti kun se luodaan, testin tulee kirjautua ulos ja varmistaa sitten että uusi kirjautuminen onnistuu.
-
-Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
-
-Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot`>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
-
-```robot
-*** Settings ***
-Resource  resource.robot
-Resource  login_resource.robot
-```
-
-**Heads up:** muista että sama käyttäjätunnus voidaan luoda vain kertaalleen. Saatat törmätä tässä tehtävässä tilanteeseen, missä käyttäjätunnuksen luominen epäonnistuu jos yrität luoda saman nimisen käyttäjätunnuksen minkä jokin edellinen testi on jo luonut. Paras ratkaisu tilanteeseen olisi nollata tietokanta ennen jokaista testiä. Ratkaisuksi toki tässä tehtävässä kelpaa myös eri nimisen käyttäjätunnuksen luominen.
-
 
 ### Robot Framework -testien debuggaaminen
+
+Ennen kuin edetään seuraavaan tehtäväsarjaan, nostetaan esiin tärkeä teema.
 
 On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia. Epäonnistuneen testitapauksen kohdalla kannattaa miettiä mahdollisia syitä:
 
@@ -648,7 +363,7 @@ Tutustutaan seuraavaksi tekniikoihin, jotka helpottavat ja nopeuttavat virheiden
 
 Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials`, voimme suorittaa ainoastaan sen seuraavalla komennolla:
 
-```bash
+```
 robot -t "Login With Correct Credentials" src/tests/login.robot
 ```
 
@@ -719,6 +434,334 @@ Suoritetaan rivi syöttämällä uudestaan `next()` ja tulostetaan `user`-muuttu
 ```
 
 Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_trace`-metodin kutsu.
+
+
+### 5. WebLogin, osa 1
+
+Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_. 
+
+Hae projekti ja kopioi se **palatusrepositorioosi**, hakemiston _viikko3_ sisälle.
+
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. 
+
+Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
+- käyttäjä voi rekisteröityä, eli luoda järjestelmään käyttäjätunnuksen
+- rekisteröitynyt käyttäjä voi kirjautua järjestelmään
+
+![]({{ "/images/weblogin1.png" | absolute_url }}){:height="300px" }
+
+Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
+
+Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien sovelluksen tapaan tiedostoon `app.py` sekä hakemistoon `templates`. Ohjelman _sovelluslogiikka_ on sijoitettu omaan luokkaansa `UserService`.
+
+Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
+
+Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
+
+Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien, kuten `find_all`, `create` ja `delete` kautta. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
+
+Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi PostgreSQL-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
+
+Seuraavassa vielä lyhyt katsaus sovelluksen käyttöliittymän, eli reitin käsittelijöiden sekä näkymien generoinnin toiminnasta.
+
+Polulle "/" eli sovelluksen juureen, osoitteeseen <http://localhost:5001> tulevat pyynnöt käsittelee seuraava koodinpätkä:
+
+```python
+@app.route("/")
+def render_home():
+    return render_template("index.html")
+```
+
+Koodi muodostaa [Jinja](https://jinja.palletsprojects.com/)-kirjaston avulla _src/templates/index.html_-tiedostosta löytyvästä sivupohjasta HTML-muotoisen sivun ja palauttaa sen käyttäjän selaimelle.
+
+Sivupohja näyttää seuraavalta:
+
+```html
+{% raw %}{% extends "layout.html" %} {% block title %} Ohtu Application {%
+endblock %} {% block body %}
+<h1>Ohtu Application</h1>
+
+<ul>
+  <li><a href="/login">Login</a></li>
+  <li><a href="/register">Register new user</a></li>
+</ul>
+{% endblock %}{% endraw %}
+```
+
+Kaikki _GET_-alkuiset määrittelyt ovat samanlaisia, ne ainoastaan muodostavat HTML-sivun (joiden sisällön määrittelevät sivupohjat sijaitsevat hakemistossa _src/templates_) ja palauttavat sivun selaimelle.
+
+_POST_-alkuiset määrittelyt ovat monimutkaisempia, ne käsittelevät lomakkeiden avulla lähetettyä tietoa. Esimerkiksi käyttäjän kirjautumisyrityksen käsittelee seuraava koodi:
+
+```python
+@app.route("/login", methods=["POST"])
+def handle_login():
+    username = request.form.get("username")
+    password = request.form.get("password")
+
+    try:
+        user_service.check_credentials(username, password)
+        return redirect_to_ohtu()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_login()
+```
+
+Koodi pääsee käsiksi käyttäjän _lomakkeen_ avulla lähettämiin tietoihin _request_-olion kautta:
+
+```python
+username = request.form.get("username")
+password = request.form.get("password")
+```
+
+Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `UserService`-olion metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi aiheuttaa poikkeuksen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
+
+**Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.**
+
+#### Tutustuminen testeihin
+
+Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka löytyvät `src/tests/resource.robot`-tiedostosta. Tiedoston sisältö on seuraava:
+
+```robot
+*** Settings ***
+Library  SeleniumLibrary
+Library  ../AppLibrary.py
+
+*** Variables ***
+${SERVER}        localhost:5001
+${DELAY}         0.5 seconds
+${HOME_URL}      http://${SERVER}
+${LOGIN_URL}     http://${SERVER}/login
+${REGISTER_URL}  http://${SERVER}/register
+${BROWSER}       chrome
+${HEADLESS}      false
+
+*** Keywords ***
+Open And Configure Browser
+    IF $BROWSER == 'chrome'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    ELSE IF $BROWSER == 'firefox'
+        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+    END
+    IF $HEADLESS == 'true'
+        Set Selenium Speed  0
+        Call Method  ${options}  add_argument  --headless
+    ELSE
+        Set Selenium Speed  ${DELAY}
+    END
+    Open Browser  browser=${BROWSER}  options=${options}
+
+Login Page Should Be Open
+    Title Should Be  Login
+
+Main Page Should Be Open
+    Title Should Be  Ohtu Application main page
+
+Go To Login Page
+    Go To  ${LOGIN_URL}
+
+```
+
+Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaaa
+`*** Settings ***` osiossa on otettu SeleniumLibrary-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee kaksi projektissa tarvittavaa avainsanaa, `Reset Application` ja `Create User`.
+
+`*** Keywords ***`-osiossa on määritelty myös muutama yleiskäyttöinen avainsana:
+- `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
+- `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
+
+Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto `src/tests/login.robot`. Tiedoston `*** Settings ***`-osio on seuraava:
+
+```robot
+*** Settings ***
+Resource  resource.robot
+Suite Setup     Open And Configure Browser
+Suite Teardown  Close Browser
+Test Setup      Reset Application Create User And Go To Login Page
+```
+
+Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan ` Reset Application Create User And Go To Login Page` ennen jokaista testiä.
+
+Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
+
+- `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
+- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
+- `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) -avainsanaa
+- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
+- ` Reset Application Create User And Go To Login Page` -avainsana tyhjentää sovelluksen "tietokannan" eli sinne luodut käyttäjät, luo sovellukseen uuden käyttäjän ja avaa kirjautumissivun
+
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
+
+**Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
+
+```robot
+```
+*** Settings ***
+*** Settings ***
+Resource  resource.robot
+Suite Setup     Open And Configure Browser
+Suite Teardown  Close Browser
+Test Setup      Reset Application And Go To Starting Page
+
+*** Test Cases ***
+Click Login Link
+    Click Link  Login
+    Login Page Should Be Open
+
+Click Register Link
+    Click Link  Register new user
+    Register Page Should Be Open
+
+*** Keywords ***
+
+Reset Application And Go To Starting Page
+  Reset Application
+  Go To Starting Page
+```
+
+Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link) -avainsanaa. 
+
+Kun suoritat testit, virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
+
+```
+Click Register Link                                                   | FAIL |
+Setup failed:
+No keyword with name 'Go To Starting Page' found.
+```
+
+**Toteuta testin käyttämät määrittelemättömät avainsanat**.
+
+**HUOM** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
+
+### 6. WebLogin, osa 2
+
+Jatketaan kirjautumiseen liittyvien hyväksymistestien toteuttamista. Katsotaan sitä ennen pikaisesti, miltä AppLibrary-kirjaston toteutus näyttää. Kirjaston määrittelevä luokka `AppLibrary` löytyy tiedostosta _src/AppLibrary.py_, jonka sisältö on seuraava:
+
+```python
+import requests
+
+
+class AppLibrary:
+    def __init__(self):
+        self._base_url = "http://localhost:5001"
+
+    def reset_application(self):
+        requests.post(f"{self._base_url}/tests/reset")
+
+    def create_user(self, username, password):
+        data = {
+            "username": username,
+            "password": password,
+            "password_confirmation": password
+        }
+
+        requests.post(f"{self._base_url}/register", data=data)
+```
+
+On oleellista, että testit alkavat aina samasta tilasta, erityisesti, että sovelluksen tietokannan tila on testien alussa hyvin tunnettu. 
+
+Metodin `reset_application` määrittelemä avainsana `Reset Application` lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
+
+```python
+@app.route("/tests/reset", methods=["POST"])
+def reset_tests():
+    user_repository.delete_all()
+    return "Reset"
+```
+
+Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan. Kyseessä on siis ainoastaan testien käyttöön toteutettu tapa nollata tietokanta.
+
+Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
+
+```python
+@app.route("/register", methods=["POST"])
+def handle_register():
+    username = request.form.get("username")
+    password = request.form.get("password")
+    password_confirmation = request.form.get("password_confirmation")
+
+    try:
+        user_service.create_user(username, password, password_confirmation)
+        return redirect_to_welcome()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_register()
+```
+
+
+**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
+
+```robot
+Login With Nonexistent Username
+# ...
+```
+
+### 7. WebLogin, osa 3
+
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset uuteen tiedostoon `register.robot`:
+
+```robot
+*** Settings ***
+Resource  resource.robot
+Suite Setup     Open And Configure Browser
+Suite Teardown  Close Browser
+Test Setup      Reset Application Create User And Go To Register Page
+
+*** Test Cases ***
+
+Register With Valid Username And Password
+# ...
+
+Register With Too Short Username And Valid Password
+# ...
+
+Register With Valid Username And Invalid Password
+# salasana ei sisällä halutunlaisia merkkejä
+# ...
+
+Register With Nonmatching Password And Password Confirmation
+# ...
+
+
+*** Keywords ***
+#...
+```
+
+Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
+
+- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
+- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
+
+**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
+
+**Pro tips**:
+- etene yksi testitapaus ja sen toteuttama koodi kerrallaan
+- muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen)
+
+### 8. WebLogin, osa 4
+
+Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraavat testitapaukset tiedostoon `register.robot`:
+
+```robot
+Login After Successful Registration
+# ...
+
+Login After Failed Registration
+# ...
+```
+
+Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Koska käyttäjä kirjautuu automaattisesti kun se luodaan, testin tulee kirjautua ulos ja varmistaa sitten että uusi kirjautuminen onnistuu.
+
+Toisessa testitapauksessa taas tulee testata, että käyttäjä _ei voi kirjautua sisään_ epäonnistumiseen rekisteröitymisen jälkeen.
+
+Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot`>-tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
+
+```robot
+*** Settings ***
+Resource  resource.robot
+Resource  login_resource.robot
+```
+
+**Heads up:** muista että sama käyttäjätunnus voidaan luoda vain kertaalleen. Saatat törmätä tässä tehtävässä tilanteeseen, missä käyttäjätunnuksen luominen epäonnistuu jos yrität luoda saman nimisen käyttäjätunnuksen minkä jokin edellinen testi on jo luonut. Paras ratkaisu tilanteeseen olisi nollata tietokanta ennen jokaista testiä. Ratkaisuksi toki tässä tehtävässä kelpaa myös eri nimisen käyttäjätunnuksen luominen.
 
 ### Tehtävien palautus
 
