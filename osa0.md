@@ -16,7 +16,7 @@ Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotanto
 Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat tiedot) 
 - [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-24.mooc.fi/)
 - [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2024/)
-- [Tietokannat ja Internet](https://hy-tsoha.github.io/) (aiemmalta nimeltään Tietokantasovellus)
+- [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (aiemmalta nimeltään Tietokantasovellus)
 
 Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
 
