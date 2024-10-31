@@ -2,10 +2,7 @@
 
 <ul>
   <li>
-    <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
-  </li>
-  <li>
-    Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a>
+    Miniprojektin ilmoittautuminen käynnyssä deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
   </li>
 </ul>
 

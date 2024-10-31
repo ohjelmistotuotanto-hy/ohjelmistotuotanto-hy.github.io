@@ -2,10 +2,13 @@
 
 <ul>
   <li>
+    Ilmoittautuminen miniprojektiin on käynnissä, deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
+  </li>
+  <li>
     Ensimmäisen viikon luento katsottavissa <a href='https://youtu.be/9UaFvaRtTM0'>täällä</a>
   </li>
   <li>
-    Viikon 1 ja 2 laskarit valmiina!
+    Viikon 1-3 laskarit valmiina!
   </li>
   <li>
     Oletko tulossa uusinta- tai erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>

@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
+{% include miniproj_ilmo.md %}
+
 {% include paivitys_kesken.md current=true %}
 
 {% include laskari_info.md part=3 %}

@@ -3,11 +3,34 @@ layout: page
 title: Miniprojekti
 title_long: 'Miniprojekti'
 permalink: /miniprojekti/
+inheader: yes
 ---
 
 ### Ajankohtaista
 
-- miniprojekti alkaa 11.11. alkavalla viikolla
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
+
+  <ul>
+    <li>
+      Miniprojektilla on 5 aloitustilaisuutta, ja jokaisen on tarkoitus osallistua niistä yhteen
+      <ul>
+        <li>ti 14-16</li>
+        <li>ke 14-16</li>
+        <li>ke 16-18</li>
+        <li>to 10-12</li>
+        <li>to 14-16</li>
+      </ul>
+    </li>
+    <li>
+      Ilmoittaudu (eli kerro aikatoiveesi) viimeistään sunnuntaina 10.11. klo 23:59 osoitteessa
+  <a href="https://study.cs.helsinki.fi/assembler/course/c7e5da85-981e-4145-b444-4bc28d8e3da9">https://study.cs.helsinki.fi/assembler/course/c7e5da85-981e-4145-b444-4bc28d8e3da9</a>
+      <ul>
+        <li>Valitse ajat jotka sopivat sinulle myös kolmen seuraavan viikon asiakastapaamisiin</li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
 
 ### Johdanto
 

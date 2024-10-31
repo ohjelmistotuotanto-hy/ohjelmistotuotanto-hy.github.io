@@ -6,6 +6,12 @@ permalink: /
 Kurssilla käsitellään ohjelmistotuotantoprojektien hallinnan, työvaiheiden ja työvälineiden perusteita. Erityinen
 painotus ketterissä ohjelmistotuotantomenetelmissä.
 
+## Ajankohtaista
+
+{% include ajankohtaista.md path="/index.md" %}
+
+## Tärkeät linkit
+
 Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), lue ne tarkasti heti kurssin alussa!
 
 - Luennot
@@ -28,10 +34,6 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - CurreChat tarjoaa kurssilaisten käyttöön ilmaisen GPT-4o-chatin, joka siis käytännössä sama kuin OpenAI:n ChatGPT. Chat on Azuressa oleva HY:n oma instanssi, johon syötettyä materiaalia *ei käytetä kielimallien kouluttamiseen*
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/83083419/feedback>
-
-## Ajankohtaista
-
-{% include ajankohtaista.md path="/index.md" %}
 
 ## Aikataulu
 

@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
+{% include miniproj_ilmo.md %}
+
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
@@ -12,6 +14,8 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
+
+{% include miniproj_ilmo.md %}
 
 {% include norppa.md %}
 
