@@ -82,6 +82,8 @@ Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamal
 
 #### Poetry ja Docker
 
+**HUOM:** Poetrya ei ole pakko asentaa Dockerilla. Jos käytät fuksiläppäriä, Poetry on todennäköisesti jo asennettu koneellesi.
+
 Ehkä paras tapa Poetryllä tapahtuvaan sovelluskehitykeen on [Dockerin](https://www.docker.com/) käyttö. Tällöin et tarvitse koneellesi muuta kuin Dockerin, mitään varsinaista asennusta ei tarvita sillä voit käyttää kurssia varten konfiguroitua Docker imagea [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry/general), ks myös [GitHub-repositorio](https://github.com/mluukkai/docker-poetry).
 
 Poetryn käyttö tapahtuu seuraavasti. Mene hakemistoon, missä haluat suorittaa Poetry-komentoja. Joudut (todennäköisesti) antamaan hakemiston sisältöön kirjoitus- lukuoikeudet Dockerille komennolla:
