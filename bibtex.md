@@ -5,7 +5,7 @@ inheader: no
 permalink: /bibtex/
 ---
 
-```
+```bibtex
 @article{zimmerman2002becoming,
   title={Becoming a self-regulated learner: An overview},
   author={Zimmerman, Barry J},
