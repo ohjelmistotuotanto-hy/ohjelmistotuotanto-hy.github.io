@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    Miniprojektin ilmoittautuminen käynnyssä deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
+    Miniprojektin ilmoittautuminen käynnissä, deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
   </li>
 </ul>
 
