@@ -8,6 +8,11 @@
     Ensimmäisen viikon luento katsottavissa <a href='https://youtu.be/9UaFvaRtTM0'>täällä</a>
   </li>
   <li>
+   Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>. Torstain 7.11. luennon Unitube-stream
+<a href='https://video.helsinki.fi/unitube/live-stream.html?room=l16'>täällä</a>
+
+  </li>
+  <li>
     Viikon 1-3 laskarit valmiina!
   </li>
   <li>

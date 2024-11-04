@@ -22,6 +22,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
     - pe 8.11. klo 12-14 B123
   - 11.11. alkaen ma ja ti klo 12-14 B123
   - Luennot ovat nähtävissä livenä [Unitubessa](https://video.helsinki.fi/unitube/live-stream.html?room=l10) 
+    - torstain 7.11. luennon Unitube-stream [täällä](https://video.helsinki.fi/unitube/live-stream.html?room=l16)
   - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2023 luentojen tallenteet ovat myös käytössä
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon pajassa BK107
