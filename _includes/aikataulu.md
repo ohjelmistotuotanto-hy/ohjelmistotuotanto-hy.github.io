@@ -13,7 +13,7 @@
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/1DDna_ASaTw), [unitube](https://www.helsinki.fi/fi/unitube/video/2376cfac-6f8a-45ad-aaaf-86ded7a4b1a4)
+    - syksy 2024: [youtube](https://youtu.be/YA7RjcjMTkU), [unitube](https://lataamo.helsinki.fi/records?record=89ccc897-d9bc-4cc3-982d-83b19bf062cd)
 - Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
