@@ -241,7 +241,7 @@ Open And Configure Browser
     ELSE IF  $BROWSER == 'firefox'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
     END
-    IF  $BROWSER == 'true'
+    IF  $HEADLESS == 'true'
         Set Selenium Speed  0
         Call Method  ${options}  add_argument  --headless
     ELSE
