@@ -14,11 +14,11 @@ inheader: yes
     <li>
       Miniprojektilla on 5 aloitustilaisuutta, ja jokaisen on tarkoitus osallistua niistä yhteen
       <ul>
-        <li>ti 14-16</li>
-        <li>ke 14-16</li>
-        <li>ke 16-18</li>
-        <li>to 10-12</li>
-        <li>to 14-16</li>
+        <li>ti 14-16 C221</li>
+        <li>ke 14-16 C221</li>
+        <li>ke 16-18 C222</li>
+        <li>to 10-12 C124</li>
+        <li>to 14-16 C124</li>
       </ul>
     </li>
     <li>
@@ -49,11 +49,11 @@ inheader: yes
 - Ryhmät muodostetaan 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuuksien alustava aikataulu
-  - ti 14-16
-  - ke 14-16
-  - ke 16-18
-  - to 10-12
-  - to 14-16
+  - ti 14-16 C221
+  - ke 14-16 C221
+  - ke 16-18 C222
+  - to 10-12 C124 
+  - to 14-16 C124
 - Ilmoittautuminen miniprojektiin (eli sopivaan aloitustilaisuuteen) alkaa noin 5.11.  
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum

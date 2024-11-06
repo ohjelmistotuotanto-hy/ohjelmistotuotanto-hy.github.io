@@ -7,7 +7,7 @@ permalink: /speksi/
 
 ## Taustaa
 
-Kandiopiskelijat Riku ja Ville tarvitsevat järjestelmän, joka auttaa heitä pitämään kanditöiden kirjoittamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa kandia varten. Kuten kaikki TKT:n opiskelijat, myös Riku ja Ville kirjoittavat kandin [LaTeX](https://www.latex-project.org/):illa.
+Graduaan tekevät Riku ja Sini tarvitsevat järjestelmän, joka auttaa heitä pitämään tutkielman kirjoittamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa gradua varten. Kuten kaikki TKT:n opiskelijat, myös Riku ja Sini kirjoittavat gradun [LaTeX](https://www.latex-project.org/):illa.
 
 LaTeX:ia käytettäessä teksti näyttää seuraavalta:
 
@@ -89,18 +89,21 @@ Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex).
 
 ## Järjestelmän kuvaus
 
-Riku ja Ville siis haluavat järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
+Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
 - järjestelmässä olevista viitteistä pitää saada generoitua LaTeX-dokumenttiin sopiva BibTeX-muotoinen tiedosto
 - myös viitteiden listaaminen ihmiselle sopivammassa formaatissa pitää onnistua
 - viitelistoja pitäisi pystyä jotenkin rajoittamaan
   - esim. kirjoittajan, vuoden, julkaisun mukaan
   - olisi kyllä hyvä, jos jokaiseen viitteeseen voisi liittää joukon kategorioita tai tägejä, jotka mahdollistaisivat tarkemmat haut
--  ihan jees jos kyseessä on yhdellä koneella toimiva sovellus, parempi olisi kuitenkin jos se olisi verkossa ja joka paikassa käytettävissä
-- jos toimii vaan paikallisella koneella, pitää eri koneiden välillä pystyä jotenkin synkronoimaan talletetut viitteet
 - sellainen olisi loistavaa, että jos antaa linkin esim. ACM:n digitaaliseen kirjastoon, esim. [näin](https://dl.acm.org/doi/10.1145/2380552.2380613), niin softa crawlaa sieltä viitteen tiedot
   - myös muita tiedokantoja kuten [Google Scholaria](https://scholar.google.com/) voi tukea
 - jopa vielä parempi feature olisi datan haku [DOI](https://www.doi.org/)-tunnisteen perusteella
-- kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin kandin tekijöille ihan turhia
+- kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin gradun tekijöille ihan turhia
+- sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+  - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Riku ja Sini vievät sovelluksen itse internettiin
+  - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Riku ja Sini asentavat itselleen omat sovellusinstanssit
+  - lue lisää Flaskin käytöstä [täältä](/flask)
+
 
 Vaatimuksia tarkennetaan asiakkaan kanssa viikoittaisissa palavereissa.
