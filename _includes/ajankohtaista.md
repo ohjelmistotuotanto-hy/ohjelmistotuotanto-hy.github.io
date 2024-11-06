@@ -16,7 +16,7 @@
     Viikon 1-3 laskarit valmiina!
   </li>
   <li>
-    Oletko tulossa uusinta- tai erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
+    Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
   </li>
 </ul>
 
