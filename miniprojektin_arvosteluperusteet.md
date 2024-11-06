@@ -34,6 +34,48 @@ Perusteeton osallistumattomuus johonkin sprinttiin johtaa miniprojektisuoritukse
 
 ### Ensimmäisen sprintin arvosteluperusteet
 
+Projekti tulee olla rekisteröity palautussovellukseen <{{site.stats_url}}>.
+
+- **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
+  - Luo projektin _create project_ -napista avautuvasta lomakkeesta
+  - Ja jakaa muille ryhmäläisille luodun projektin id:n
+- **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
+
+**Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+- Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
+
+Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja GitHub Actionsiin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin GitHub-repositorion README:hen!
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.5p) sprintin 1 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
+  - Sprintin burndown-käyrä olemassa
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+  - Taskin status on näkyvissä (esim. todo, doing, done)
+- (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
+- (0.25p) testaus
+  - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
+- (0.25p) jatkuva integraatio
+  - Koodi GitHubissa
+  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
+- (0.25p) toteutus
+  - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
+- (0.25p) työtä tehty tasaisesti
+  - Kaikki työ ei saa olla yhtenä päivänä tehty
+- (0.25p) GitHub README:
+  - README:sta löytyy linkki backlogeihin (ja niihin on _kaikilla_ lukuoikeudet)
+  - Definition of done kirjattu eksplisiittisesti
+  - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
+- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
+
+Sprintin maksimi on 2.5 pistettä.
+
 ### Toisen sprintin arvosteluperusteet
 
 ### Kolmannen sprintin arvosteluperusteet
