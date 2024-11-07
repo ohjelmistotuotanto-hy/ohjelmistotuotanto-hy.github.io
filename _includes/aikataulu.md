@@ -18,7 +18,7 @@
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/LoTkLUn-5c8), [unitube](https://www.helsinki.fi/fi/unitube/video/09ce38ed-2074-4d07-8669-ac55051a04c1)
+    - syksy 2023: [youtube](https://youtu.be/lINfFEyKX_4), [unitube](https://www.helsinki.fi/fi/unitube/video/5782eba4-5b8a-4915-9715-ac7f43a40a2c)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
