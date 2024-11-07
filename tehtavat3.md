@@ -600,7 +600,6 @@ Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4
 **Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
 
 ```robot
-```
 *** Settings ***
 Resource  resource.robot
 Suite Setup     Open And Configure Browser
