@@ -2,7 +2,8 @@
 
 <ul>
   <li>
-   Luentojen tallenteet <a href="https://youtu.be/9UaFvaRtTM0">1</a>  <a href="https://youtu.be/sg6O6jTGrzk">2</a>
+   Luentojen tallenteet <a href="https://youtu.be/9UaFvaRtTM0">1</a> <a href="https://youtu.be/sg6O6jTGrzk">2</a>
+   <a href="https://youtu.be/lINfFEyKX_4">3</a>
   </li>
   <li>
     Ilmoittautuminen miniprojektiin on käynnissä, deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
