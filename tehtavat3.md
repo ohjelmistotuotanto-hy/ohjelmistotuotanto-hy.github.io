@@ -41,7 +41,7 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
-Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion hakemistossa viikko3/web-login oleva projekti.
+Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion alihakemistosta viikko3/webcounter.
 
 **Tee tätä ja kahta seuraavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
