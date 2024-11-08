@@ -260,7 +260,18 @@ Tämä asetus on syytä tehdä kun sovellus viedään todelliseen tuotantoympär
 
 ### Testeistä
 
-Robot  vs unittest
+Sovelluksen automatisoitu testaus on tehty suurimmaksi osaksi Robotilla. Robot-testien lisäksi sovelluksessa on muutama unittest-kirjastolla toteutettu yksikkötesti, joiden avulla testataan apufunktiota, joka tarkistaa onko luotavan Todo:n sisältö oikean kokoinen (5-100 merkkiä pitkä). Sovellukseen olisi voitu periaatteessa tehdä...
+
+
+
+´´´
+The XPath //li[div[contains(text(), 'Specific Todo Content')]]/form/button is used to locate the button within the form for the specific todo item that is not done. Adjust the XPath as necessary to match the actual structure of your HTML.
+
+Here is a more detailed breakdown of the XPath:
+
+//li[div[contains(text(), 'Specific Todo Content')]]: Selects the <li> element that contains a <div> with the specified text.
+/form/button: Selects the <button> element within the <form> inside the selected <li>.
+´´´
 
 ### Protips
 
