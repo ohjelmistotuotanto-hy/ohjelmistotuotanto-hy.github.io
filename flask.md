@@ -6,7 +6,7 @@ permalink: /flask/
 inheader: no
 ---
 
-Miniprojektin sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan.
+Miniprojektin sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
 
 Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapahtuva automatisoitu testaus on mahdollista on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
 
@@ -100,7 +100,7 @@ Rakenteeltaan sovellus on samankaltainen kuin [viikon 3 laskareiden](/tehtavat3/
 - `util.py` sisältää apufunktion, jonka avulla validoidaan lisättävät Todo:t
 - `db_helper.py` sisältää muutaman tietokantaoperaation, joita käytetään sovelluksen testiympäristön pystytyksessä
 - hakemisto `entities` sisältää sovelluksen tietosisältöä kuvaavat luokat
-- hakemisto `repositories` sisältää tietosisältön tietokantaan tallettamisesta vastaavat luokat
+- hakemisto `repositories` sisältää tietosisällön tietokantaan tallettamisesta vastaavat luokat
 - hakemisto `templates` sisältää näkymätemplatet
 - Robot-testit on sijoitettu tiedostoon `story_tests` ja unittestit tiedostoon `tests`
 
@@ -130,7 +130,7 @@ class Todo:
         return f"{self.content}, {is_done}"
 ```
 
-Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele tietokantariveja, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallentaa on samatekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
+Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele tietokantarivejä, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallentaa on samatekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
 
 Tiedosto `db_helpers.py` sisältää muutaman lähinnä testien tarvitseman apufunktion:
 
@@ -263,7 +263,7 @@ Robot  vs unittest
 
 ### Protips
 
-Miniprojekti kannattaa rakentaa joko copypasteamalla boilerplaten konfiguraatiot tai kopioimalla projekti itselleen ja muokkaamalla sitä soipivasti.
+Miniprojekti kannattaa rakentaa joko copypasteamalla boilerplaten konfiguraatiot tai kopioimalla projekti itselleen ja muokkaamalla sitä sopivasti.
 
 Kannattaa edetä todella pienin askelin ja pushata koodia useasti GitHubiin.
 
