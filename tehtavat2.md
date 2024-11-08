@@ -516,7 +516,7 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 
-- Kuten huomaat (komennolla `git branches`) ainoastaan haara *main* tulee  mukana oletusarvoisesti kloonatessa 
+- Kuten huomaat (komennolla `git branch`) ainoastaan haara *main* tulee  mukana oletusarvoisesti kloonatessa 
 - Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta Tracking Branches)
 - Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branchi GitHubiin
 - Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
