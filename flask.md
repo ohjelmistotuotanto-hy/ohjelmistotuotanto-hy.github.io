@@ -12,11 +12,21 @@ Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapah
 
 Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot PostgreSQL-tietokantaan, muutaman Robot- sekä unittestin sekä testit suorittavan GitHub Actions workflown.
 
-Jos haluatte välttyä konfiguraation aiheuttamasta tuskasta, suosittelen, että teette oman sovelluksenne pohjaa mukaillen.
+Jos haluatte välttyä konfiguraation aiheuttamasta tuskasta, on suositeltavaa, että teette oman sovelluksenne pohjaa mukaillen, lue myös [Protips](/flask/#protips)!
 
 [Viikon 3](/tehtavat3) laskarit on syytä tehdä ennen kuin aloitat miniprojektin koodaamisen!
 
-**PROTIP** pitäkää sovellus **KOKO AJAN** sellaisessa tilassa että kaikki testit menevät GitHub Actioneissa läpi. Jos GHA menee punaiselle, älkää missään tapauksessa lisätkö koodia ennen kuin ongelmat on korjattu.
+### Sovelluksen toiminnallisuus
+
+Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää tekemättömät Todot:
+
+![]({{ "/images/todo1.png" | absolute_url }}){:width="600px" }
+
+Käyttäjä voi myös luoda uusia Todoja:
+
+![]({{ "/images/todo2.png" | absolute_url }}){:width="550px" }
+
+Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
 ### Sovelluksen käynnistäminen
 
@@ -246,6 +256,10 @@ SECRET_KEY=satunnainen_merkkijono
 ```
 
 Tämä asetus on syytä tehdä kun sovellus viedään todelliseen tuotantoympäristöön.
+
+### Testeistä
+
+Robot  vs unittest
 
 ### Protips
 
