@@ -57,54 +57,6 @@ Tee seuraavat toimenpiteet:
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 
-### Bonus: VS Coden konfigurointi
-
-**HUOM:** VS Coden konfigurointi on täysin vapaaehtoista, selviät aivan hyvin ilman konfigurointeja. Kaikilla konfigurointi ei mene täysin alla kuvatun kaltaisesti. Eli jos konfigurointi ei onnistu, siirry eteenpäin.
- 
-Palaa vielä edellisen tehtävän projektiin, ja asenna projektiin kirjasto `cowsay`.
-
-Luo projektiin hakemisto _src_ ja sen sisälle tiedosto _index.py_, jolla on seuraava sisältö
-
-```py
-import cowsay
-
-cowsay.cow('Laitetaan VS Code toimimaan kunnolla!')
-```
-
-Koodi toimii komentoriviltä suoritettaessa mutta VS Codesta käsin suorittaminen ei onnistu:
-
-![]({{ "/images/lh2-vscode1.png" | absolute_url }})
-
-Kuten virheilmoitus kertoo, koodin suorittaminen VS Coden "play"-napilla ei onnistu sillä kirjastoa ei löydy. Komennon _import_ punainen alleviivaus kertoo myös mistä on kyse, VS Code ei löydä kirjastoa _cowsay_. Asia saadaan korjattua muutamalla toimenpiteellä:
-
-- Lisää projektin sisältävä hakemisto VS Coden "workspaceen" valikosta _file_ valitsemalla _Add Folder to Workspace_.
-- Tallenna workspace valikosta _Save workspace as_. Tee tallennus projektin hakemiston juureen (eli samaan paikkaan missä tiedosto pyproject.toml) on.
-- Valitse oikea Pythonin versio. Klikkaa editorin alareunasta:
-![]({{ "./images/lh2-vscode2.png" | absolute_url }})
-- ... ja tee valinta
-![]({{ "./images/lh2-vscode3.png" | absolute_url }})
-
-Näiden toimenpiteiden jälkeen voit suorittaa koodin VS Coden "play"-napilla:
-
-![]({{ "./images/lh2-vscode4.png" | absolute_url }})
-
-Oikein konfiguroitu VS Code mahdollistaa myös sen sisäänrakennetun debuggerin käytön. Jos debuggeri ei ole vielä tuttu, [täältä](https://ohjelmointi-23.mooc.fi/osa-4/1-vscode#debuggeri) ohje sen käyttöön.
-
-Workspacen konfigurointi luo tiedoston _poetry-web.code-workspace_ jonka sisältä seuraava
-
-```json
-{
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
-}
-```
-
-Konfiguroinnin voi tehdä myös luomalla kyseisen sisältöisen tiedoston suoraan projektin alle. Pythonin oikea versio on kuitenkin ehkä valittava itse. Komennon _poetry install_ tulee myös olla suoritettuna jotta kaikki toimisi.
-
 ### 2. Riippuvuuksien hyödyntäminen
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin teit edellisen tehtävän

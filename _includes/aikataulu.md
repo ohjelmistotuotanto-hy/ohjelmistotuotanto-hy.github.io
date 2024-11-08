@@ -18,12 +18,13 @@
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/lINfFEyKX_4), [unitube](https://www.helsinki.fi/fi/unitube/video/5782eba4-5b8a-4915-9715-ac7f43a40a2c)
+    - syksy 2024: [youtube](https://youtu.be/lINfFEyKX_4), [unitube](https://www.helsinki.fi/fi/unitube/video/5782eba4-5b8a-4915-9715-ac7f43a40a2c), tallenteen äänessä on ajoittain ongelmia 
+    - syksy 2023 [youtube](https://youtu.be/LoTkLUn-5c8)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/VmURlloAvt4), [unitube](https://www.helsinki.fi/fi/unitube/video/0d5b1a96-f4b3-4ff3-bc7c-f2ffa560caf8)  
+    - syksy 2024: [youtube](https://youtu.be/VmURlloAvt4), [unitube](https://www.helsinki.fi/fi/unitube/video/ee76d6f6-7f54-4e0b-8cd5-82893765ce94)  
 - Laskarit
   - Kahden ensimmäisen luennon <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - Luentojen 3 ja 4 <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}

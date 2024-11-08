@@ -18,9 +18,9 @@ Jos haluatte välttyä konfiguraation aiheuttamasta tuskasta, on suositeltavaa, 
 
 ### Sovelluksen toiminnallisuus
 
-Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää tekemättömät Todot:
+Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää Todot ja niiden tilan, sekä mahdollistaa tekemättömän töiden merkkaamisen tehdyksi:
 
-![]({{ "/images/todo1.png" | absolute_url }}){:width="600px" }
+![]({{ "/images/todo3.png" | absolute_url }}){:width="600px" }
 
 Käyttäjä voi myös luoda uusia Todoja:
 
@@ -112,16 +112,17 @@ Todo-olioihin liittyvät tietokantaoperaatiot on siis kapseloitu tiedostoon `rep
 from entities.todo import Todo
 
 def get_todos():
-    result = db.session.execute(text("SELECT content, done FROM todos"))
+    result = db.session.execute(text("SELECT id, content, done FROM todos"))
     todos = result.fetchall()
-    return [Todo(todo[0], todo[1]) for todo in todos] 
+    return [Todo(todo[0], todo[1], todo[2]) for todo in todos] 
 ```
 
 Funktio siis palauttaa SQL:stä hakemansa rivit luokan `Todo` olioina. Luokka on määritelty tiedostossa `entities/todo.py`
 
 ```py
 class Todo:
-    def __init__(self, content, done=False):
+    def __init__(self, id, content, done):
+        self.id = id
         self.content = content
         self.done = done
 
