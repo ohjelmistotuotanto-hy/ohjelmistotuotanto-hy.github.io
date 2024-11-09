@@ -58,7 +58,7 @@ Pisteitä kertyy seuraavista asioista:
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
-  - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
+  - Projektissa on ainakin yksi Robot-testi
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
   - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
@@ -67,7 +67,7 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHub README:
-  - README:sta löytyy linkki backlogeihin (ja niihin on _kaikilla_ lukuoikeudet)
+  - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
   - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti

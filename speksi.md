@@ -103,7 +103,7 @@ Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida vi
 - sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
   - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Riku ja Sini vievät sovelluksen itse internettiin
   - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Riku ja Sini asentavat itselleen omat sovellusinstanssit
-  - lue lisää Flaskin käytöstä [täältä](/flask)
+  - lue ohje Flaskin käytöstä [täältä](/flask)
 
 
 Vaatimuksia tarkennetaan asiakkaan kanssa viikoittaisissa palavereissa.

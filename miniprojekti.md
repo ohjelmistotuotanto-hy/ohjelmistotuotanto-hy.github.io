@@ -28,6 +28,13 @@ inheader: yes
         <li>Valitse ajat jotka sopivat sinulle myös kolmen seuraavan viikon asiakastapaamisiin</li>
       </ul>
     </li>
+    <li>
+      Sovellus tulee toteuttaa kurssilta <i>Tietokannat ja Web-ohjelmointi</i> tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+    </li>
+    <li>
+      <strong>Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu</strong>, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä 
+     <a href="/flask">täältä</a>
+    </li>
   </ul>
 
 </div>
@@ -43,6 +50,8 @@ inheader: yes
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
+- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+- ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
 
@@ -80,18 +89,22 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
   - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
     - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
+- Teknisiä ohjeita sovelluksen tekemiseen [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 #### viikko 4 (18-22.11.)
 
 - Sprintin 1 katselmointi ja sprintin 2 suunnittelu
+- Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet)
 
 #### viikko 5 (25-29.11.)
 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
+- Sprintin 2 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet)
 
 #### viikko 6 (2-5.12.)
 
 - Sprintin 3 katselmointi ja sprintin 4 suunnittelu
+- Sprintin 3 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet)
 
 #### viikko 7 (9-13.12.)
 
@@ -100,10 +113,19 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - to 12.12. klo 12-14 CK112
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
+- Sprintin 4 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljannen-sprintin-arvosteluperusteet)
+- Projektin [lopputoimentpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 
 ### Toteutettava ohjelmisto
 
-Paljastuu aloitustilaisuudessa...
+Asiakkaan alustavia ajatuksia [täällä](/speksi). Loput paljastuvat asiakastapaamisissa.
+
+### Toteutusteknologia
+
+Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella,
+
+Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -174,20 +196,6 @@ Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla 
 Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
-
-### Teknologisia vihjeitä
-
-- Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
-- **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
-- Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto
-  - **HUOM:** Komentoriviltä toimivat sovellukset on syytä tehdä siten, että niiden IO-operaatiot eli tulostaminen ja syötteen lukeminen on eriytetty omaan injektoitavaan luokkaan viikon 1 laskareissa käsitellyn [riippuvuuksien injektointi](/riippuvuuksien_injektointi_python/) -esimerkin tapaan. Jos näin ei toimita tulee sprintistä 2 alkaen tehtävä käyttöliittymän läpi tapahtuva testaus olemaan erittäin haastavaa
-- Web-pohjaiselle sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
-  - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
-  - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
-  - Huomaa, että jos tarkoituksena on julkaista sovellus jossain pilvipalvelussa, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi seuraavasta tälle kurssille tehdystä [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-- Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla tapahtuvaan storyjen testaamiseen (vaaditaan sprintistä 2 alkaen)
-- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattanee välttää kirjaston käyttöä
 
 ### Työn arvostelu
 
