@@ -449,7 +449,6 @@ Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka lö
 Hae projekti ja kopioi se **palatusrepositorioosi**, hakemiston _viikko3_ sisälle.
 
 Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeet pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. 
 
 Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
 - käyttäjä voi rekisteröityä, eli luoda järjestelmään käyttäjätunnuksen
