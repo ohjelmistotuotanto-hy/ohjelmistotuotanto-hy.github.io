@@ -18,7 +18,7 @@ Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa t
 
 ### Sovelluksen toiminnallisuus
 
-Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää Todot ja niiden tilan, sekä mahdollistaa tekemättömän töiden merkkaamisen tehdyksi:
+Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää Todot ja niiden tilan, sekä mahdollistaa tekemättömän työn merkkaamisen tehdyksi:
 
 ![]({{ "/images/todo3.png" | absolute_url }}){:width="600px" }
 
