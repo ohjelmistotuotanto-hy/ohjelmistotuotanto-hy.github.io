@@ -131,7 +131,7 @@ class Todo:
         return f"{self.content}, {is_done}"
 ```
 
-Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele suoraan tietokantarivejä, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallentaan on samatekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
+Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele suoraan tietokantarivejä, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallennetaan on samatekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
 
 Tiedosto `db_helpers.py` sisältää muutaman lähinnä testien tarvitseman apufunktion:
 
