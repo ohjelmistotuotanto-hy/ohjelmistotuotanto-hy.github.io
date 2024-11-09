@@ -763,15 +763,6 @@ Login After Failed Registration
 
 Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Koska käyttäjä kirjautuu automaattisesti kun se luodaan, testin tulee kirjautua ulos ja varmistaa sitten että uusi kirjautuminen onnistuu.
 
-Vinkki: voit halutessasi toteuttaa `login_resource.robot`-tiedoston, joka määrittelee kirjautumiseen käytettäviä avainsanoja. Voit hyödyntää tämän tiedoston avainsanoja sekä `login.robot`-, että `register.robot` -tiedostossa lisäämällä `*** Settings ***`-osioon uuden resurssin:
-
-```robot
-*** Settings ***
-Resource  resource.robot
-Resource  login_resource.robot
-```
-
-
 ### Tehtävien palautus
 
 Laita palautusrepositoriosi tiedostoon README.md linkki tehtäviä 2-4 varten tehtyyn webcounter-repositoroosi.
