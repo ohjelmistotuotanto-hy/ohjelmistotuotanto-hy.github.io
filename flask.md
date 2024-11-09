@@ -8,9 +8,9 @@ inheader: no
 
 Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
 
-Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapahtuva automatisoitu testaus on mahdollista on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
+Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapahtuva automatisoitu testaus on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
 
-Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot PostgreSQL-tietokantaan, muutaman Robot- sekä unittestin sekä testit suorittavan GitHub Actions workflown.
+Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot PostgreSQL-tietokantaan, muutaman Robot-testin, unittest-kirjastolla tehdyn yksikkötestin sekä testit suorittavan GitHub Actions workflown.
 
 **Jos haluatte välttyä konfiguraation aiheuttamasta tuskasta, on suositeltavaa, että teette oman sovelluksenne pohjaa mukaillen**, lue myös [Protips](/flask/#protips)!
 
