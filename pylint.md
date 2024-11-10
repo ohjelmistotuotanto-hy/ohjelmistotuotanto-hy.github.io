@@ -66,7 +66,7 @@ Monissa editoreissa on lisäosia, jotka huomauttavat laatuvirheistä suoraan koo
 
 ![Visual Studio Code Pylint lisäosa]({{ "/images/vscode-pylint.png" | absolute_url }})
 
-Tämän jälkeen Visual Studio Coden (joka pitää ehkä käynnistää uudelleen lisäosan asennuksen jälkeen) tulisi huomauttaa laatuvirheistä suoraan koodissa punaisella alleviivauksessa. Viemällä hiiren ongelmallisen koodin päälle pitäisi aueta tarkempaa tietoa virheestä:
+Tämän jälkeen Visual Studio Coden (joka pitää ehkä käynnistää uudelleen lisäosan asennuksen jälkeen) tulisi huomauttaa laatuvirheistä suoraan koodissa sinisellä alleviivauksessa. Viemällä hiiren ongelmallisen koodin päälle pitäisi aueta tarkempaa tietoa virheestä:
 
 ![Visual Studio Code Pylint virhe]({{ "/images/vscode-pylint-virhe.png" | absolute_url }})
 
