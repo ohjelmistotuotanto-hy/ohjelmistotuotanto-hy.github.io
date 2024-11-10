@@ -2,10 +2,10 @@
 
 <ul>
   <li>
-    Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
+    <a href="/miniprojekti">Miniprojekti</a> alkaa, aloitustilaisuutesi näet <a href="/ryhmajako">täältä</a>
   </li>
   <li>
-    Ilmoittautuminen miniprojektiin on käynnissä, deadline 10.11. Lue lisää <a href='/miniprojekti/#ajankohtaista'>täältä</a>
+    Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
   </li>
   <li>
    Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
