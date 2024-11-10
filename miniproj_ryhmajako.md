@@ -2,7 +2,7 @@
 layout: page
 title: Miniproj ryhmäjako
 inheader: no
-permalink: /ryhmajako/
+permalink: /ryhmajako_old/
 ---						
 
 <pre>
