@@ -785,7 +785,7 @@ Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka ku
 
 Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa.
 
-Jäljellä olevan ryön määrä (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
+Jäljellä olevan työn määrä (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
 
 ![]({{ "/images/2-22.png" | absolute_url }})
 
