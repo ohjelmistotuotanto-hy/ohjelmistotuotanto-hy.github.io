@@ -53,7 +53,7 @@ Tee seuraavat toimenpiteet:
   - Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
   - Pohdi itseksesi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `2.2.0` päivittäminen versioon `3.2.2` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole version `3.0.3` kanssa?
   - Versiovaatimuksissa on mukana usein `^`-, tai `~`-etuliite. Pohdi itseksesi, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
-- Päätät, että jsonpickle-kirjastosta on ollut vain harmia ja voit helposti toteuttaa sen tarjoaman toiminallisuuden itse. **Poista jsonpickle projektin riippuvuuksien joukosta**
+- Päätät, että jsonpickle-kirjastosta on ollut vain harmia ja voit helposti toteuttaa sen tarjoaman toiminnallisuuden itse. **Poista jsonpickle projektin riippuvuuksien joukosta**
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 
