@@ -16,7 +16,7 @@ inheader: yes
       <ul>
         <li>ti 14-16 C221 (sali saattaa muuttua)</li>
         <li>ke 14-16 Chemicum A128</li>
-        <li>ke 16-18 C222</li>
+        <li>ke 16-18 Chemicum A128</li>
         <li>to 10-12 C124</li>
         <li>to 14-16 C124</li>
       </ul>
@@ -55,8 +55,8 @@ inheader: yes
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuuksien aikataulu
   - ti 14-16 C221 (sali saattaa muuttua)
-  - ke 14-16 Chemicum A128 (sali saattaa muuttua)
-  - ke 16-18 C222
+  - ke 14-16 Chemicum A128
+  - ke 16-18 Chemicum A128
   - to 10-12 C124 
   - to 14-16 C124
 - Ryhmäsi selviää [täältä](/ryhmajako)

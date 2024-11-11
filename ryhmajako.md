@@ -9,7 +9,7 @@ inheader: no
 
 - ti 14-16 C221 (sali saattaa muuttua)
 - ke 14-16 Chemicum A128
-- ke 16-18 C222
+- ke 16-18 Chemicum A128
 - to 10-12 C124
 - to 14-16 C124
 
