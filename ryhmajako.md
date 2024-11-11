@@ -54,7 +54,8 @@ inheader: no
 																								
 0xxx0415x	keskiviikko 14-16																							
 0xxx0526x	keskiviikko 14-16																							
-0xxx0705x	keskiviikko 14-16																							
+0xxx0705x	keskiviikko 14-16
+0xxx0824x	keskiviikko 14-16																					
 0xxx1035x	keskiviikko 14-16																							
 0xxx1618x	keskiviikko 14-16																							
 0xxx1681x	keskiviikko 14-16																							
@@ -84,8 +85,8 @@ inheader: no
 0xxx8417x	keskiviikko 14-16																							
 0xxx8625x	keskiviikko 14-16																							
 0xxx8867x	keskiviikko 14-16																							
-0xxx8968x	keskiviikko 14-16																							
-																								
+0xxx8968x	keskiviikko 14-16
+																																											
 																								
 0xxx0296x	keskiviikko 16-18																							
 0xxx0525x	keskiviikko 16-18																							
@@ -168,8 +169,7 @@ inheader: no
 0xxx0299x	torstai 14-16																							
 0xxx0374x	torstai 14-16																							
 0xxx0634x	torstai 14-16																							
-0xxx0742x	torstai 14-16																							
-0xxx0824x	torstai 14-16																							
+0xxx0742x	torstai 14-16																																													
 0xxx2175x	torstai 14-16																							
 0xxx2879x	torstai 14-16																							
 0xxx2936x	torstai 14-16																							
