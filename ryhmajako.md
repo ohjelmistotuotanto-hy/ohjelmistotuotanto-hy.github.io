@@ -16,6 +16,8 @@ inheader: no
 
 ### Oma ryhmäsi selviää seuraavasta
 
+Rivillä opiskelijanumerosta 4 numeroa. Esim. jos opiskelijanumero on 012345678, on rivillä 0xxx4567x
+
 ```
 0xxx0196x	tiistai 14-16																							
 0xxx0503x	tiistai 14-16																							
