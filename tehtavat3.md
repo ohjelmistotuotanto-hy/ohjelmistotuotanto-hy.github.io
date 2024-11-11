@@ -27,17 +27,13 @@ Tehtävät 1 ja 5-8 palautetaan  jo edellisillä viikoilla käyttämääsi **pal
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### VS Coden konfigurointi
-
-Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](/tehtavat2/#bonus-vs-coden-konfigurointi)!
-
 ### 1. Tutustuminen Robot Frameworkkiin
 
 Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
 
 ### 2. Web-laskuri
 
-**HUOM:** jos käytät Dockeria, lue [tämä](http://localhost:4000/poetry#docker-ja-robot-testit)! 
+**HUOM:** jos käytät Dockeria, lue [tämä](/poetry#docker-ja-robot-testit)! 
 
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
