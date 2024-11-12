@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-    <a href="/miniprojekti">Miniprojekti</a> alkaa, aloitustilaisuutesi näet <a href="/ryhmajako">täältä</a>
+    <a href="/miniprojekti">Miniprojekti</a> käynnissä! Aloitustilaisuutesi näet <a href="/ryhmajako">täältä</a>
   </li>
   <li>
     Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
