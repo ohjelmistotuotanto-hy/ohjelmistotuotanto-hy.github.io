@@ -29,10 +29,6 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### VS Coden konfigurointi
-
-Osaatko konfiguroida VS Coden oikein? Jos ei, lue [tämä](/tehtavat2/#bonus-vs-coden-konfigurointi)!
-
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
 Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) laskarien NHL-tilastot-tehtävässä luokka `StatisticsService` riippuu luokasta `PlayerReader`. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
