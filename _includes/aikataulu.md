@@ -35,7 +35,7 @@
 - Luento 5: {{site.luennot[5]}} 
   - [Laadunhallinnan perusteet](/osa3)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/LrMxzaBZRCs), [unitube](https://www.helsinki.fi/fi/unitube/video/174b1a35-5450-4c64-b43c-fca36461f689)
+    - syksy 2024: [youtube](), [unitube](https://www.helsinki.fi/fi/unitube/video/f9b7304f-08fd-487d-b195-2f881a27483a)
 - Luento 6: {{site.luennot[6]}} 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauskäytänteitä)
   - tallenteet
