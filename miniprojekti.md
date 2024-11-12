@@ -14,7 +14,7 @@ inheader: yes
     <li>
       Miniprojektien aloitustilaisuudet
       <ul>
-        <li>ti 14-16 C221 (sali saattaa muuttua)</li>
+        <li>ti 14-16 C221</li>
         <li>ke 14-16 Chemicum A128</li>
         <li>ke 16-18 Chemicum A128</li>
         <li>to 10-12 C124</li>
@@ -30,6 +30,9 @@ inheader: yes
     <li>
       <strong>Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu</strong>, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä 
      <a href="/flask">täältä</a>
+    </li>
+    <li>
+      <a href="https://ohjelmistotuotanto-hy.github.io/miniprojektin_arvosteluperusteet/">Miniprojektin arvosteluperusteet</a>
     </li>
   </ul>
 
@@ -54,7 +57,7 @@ inheader: yes
 - Ryhmät muodostetaan 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuuksien aikataulu
-  - ti 14-16 C221 (sali saattaa muuttua)
+  - ti 14-16 C221
   - ke 14-16 Chemicum A128
   - ke 16-18 Chemicum A128
   - to 10-12 C124 

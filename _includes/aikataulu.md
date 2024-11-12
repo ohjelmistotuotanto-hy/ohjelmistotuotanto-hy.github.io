@@ -94,7 +94,7 @@
       - syksy 2023: [youtube](https://youtu.be/AgTV3pNoZ6Y), [unitube](https://www.helsinki.fi/fi/unitube/video/f8a923cc-5b4d-4dc1-b9cd-c7214276e6db)
     - [syksy 2022](https://youtu.be/1gxfA58DLQ8)
 - Luento 12: {{site.luennot[11]}} 
-  - Vierailija
+  - Vierailija nn
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}

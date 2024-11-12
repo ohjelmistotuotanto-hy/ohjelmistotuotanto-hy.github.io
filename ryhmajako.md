@@ -7,7 +7,7 @@ inheader: no
 
 ### Miniprojektien aloitustilaisuudet
 
-- ti 14-16 C221 (sali saattaa muuttua)
+- ti 14-16 C221
 - ke 14-16 Chemicum A128
 - ke 16-18 Chemicum A128
 - to 10-12 C124
