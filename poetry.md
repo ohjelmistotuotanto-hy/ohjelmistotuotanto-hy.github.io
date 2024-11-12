@@ -343,6 +343,30 @@ Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se v�
 
 ### Ratkaisuja yleisiin ongelmiin
 
+Muistithan, että ennen kuin voit suorittaa komennon, esim.
+
+```
+pytest src/tests
+```
+
+tulee aktivoida virtuaaliympäristö, eli antaa komento
+
+```
+poetry shell
+```
+
+Jos tästä huolimatta tulee valitus siitä, että ohjelman käyttämä kirjasto ei löydy (ja kirjasto on varmuudella asennettu), asenna riippuvuudet ja virtuaaliympäristö uudelleen, eli anna komennot:
+
+```
+rm -rf .venv
+rm poetry.lock
+poetry install
+```
+
+Yritä tämän jälkeen uudelleen!
+
+#### muita ongelmia
+
 Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
 1. Varmista, että Poetrysta on asennettu uusin versio suorittamalla komento `poetry self update`
@@ -369,6 +393,6 @@ Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
 Kun kaikki toimenpiteet on suoritettu, yritä suorittaa epäonnistunut Poetry-komento uudestaan.
 
-### Keyring-ongelma
+#### Keyring-ongelma
 
 Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
