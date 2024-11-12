@@ -361,7 +361,7 @@ Jos tästä huolimatta tulee valitus siitä, että ohjelman käyttämä kirjasto
 rm -rf .venv
 rm poetry.lock
 poetry install
-```
+``` 
 
 Yritä tämän jälkeen uudelleen!
 

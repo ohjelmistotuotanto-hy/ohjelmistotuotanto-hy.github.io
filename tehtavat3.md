@@ -338,7 +338,7 @@ Jos lomakkeessa on käytössä syötekenttä, jonka attribuutti _name_ on arvolt
 <input type="text" name="value" />
 ```
 
-Robot-testi voi kirjoittaa kenttään arvon 10 [seuraavasti]([Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text)):
+Robot-testi voi kirjoittaa kenttään arvon 10 avainsanan [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) avulla seuraavasti:
 
 ```
 Input Text  value  10
