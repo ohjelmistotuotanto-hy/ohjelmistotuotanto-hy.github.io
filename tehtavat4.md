@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include paivitys_kesken.md %}
+{% include paivitys_kesken.md current=true %}
 
 {% include laskari_info.md part=4 %}
 
