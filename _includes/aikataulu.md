@@ -39,7 +39,7 @@
 - Luento 6: {{site.luennot[6]}} 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauskäytänteitä)
   - tallenteet
-    - syksy 2023: [youtube](https://youtu.be/q8Yu00Mypcw), [unitube](https://www.helsinki.fi/fi/unitube/video/5a68c46e-13bf-425d-88c9-73c580a2cb77)
+    - syksy 2024: [youtube](https://youtu.be/aYWk6X3t_Rc), [unitube](https://www.helsinki.fi/fi/unitube/video/c9608ade-49e0-4cfd-b81a-88254bb2b78b)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
