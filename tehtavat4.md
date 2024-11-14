@@ -115,8 +115,7 @@ Mockeille voidaan määritellä toteutuksien lisäksi oletuksia. Voimme esimerki
 >>> mock.foo.doo.assert_called()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/Users/kalleilv/.pyenv/versions/3.9.0/lib/python3.9/unittest/mock.py", line 876, in assert_called
-    raise AssertionError(msg)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/unittest/mock.py", line 908, in assert_called
 AssertionError: Expected 'doo' to have been called.
 ```
 
@@ -145,7 +144,9 @@ kauppa.maksa("1111")
 
 Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron jolta summa veloitetaan.
 
-Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa.
+Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
+
+![]({{ "/images/kauppa.png" | absolute_url }}){:height="200px" }
 
 Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit testaavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
 
@@ -242,26 +243,26 @@ class TestKassapaate(unittest.TestCase):
 
     def test_kortilta_velotetaan_hinta_jos_rahaa_on(self):
         maksukortti_mock = Mock()
-        maksukortti_mock.saldo = 10
-
+        maksukortti_mock.saldo.return_value = 10
+        
         self.kassa.osta_lounas(maksukortti_mock)
 
         maksukortti_mock.osta.assert_called_with(HINTA)
 
     def test_kortilta_ei_veloteta_jos_raha_ei_riita(self):
         maksukortti_mock = Mock()
-        maksukortti_mock.saldo = 4
-
+        maksukortti_mock.saldo.return_value = 4
+        
         self.kassa.osta_lounas(maksukortti_mock)
 
         maksukortti_mock.osta.assert_not_called()
 ```
 
-Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen veloittaa summan kortilta.
+Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen veloittaa summan kortilta eli kutsuu kortin metodia `osta`.
 
 Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. **Maksukortin saldoa ei erikseen tarkasteta**, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
 
-Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa.
+Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa, eli että kortin metodia `osta` ei ole kutsuttu.
 
 **Testit eivät mene läpi. Korjaa kassapäätteen metodi `osta_lounas`.**
 
@@ -280,15 +281,19 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
-Testataan [viikolla 2](/tehtavat2/#8-riippuvuuksien-injektointi-osa-3-verkkokauppa) tutuksi tulleen verkkokaupan luokkaa `Kauppa`.
-
-
-
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/verkkokauppa_ löytyy hieman laajennettu versio tehtävän 1 verkkokaupasta.
 - Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
 
-Tutustu koodiin. Piirrä luokkakaavio ohjelman rakenteesta sekä sekvenssikaavio joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran).
+Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa 
+luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Rakenne luokkakaaviona:
+
+![]({{ "/images/kauppa2.png" | absolute_url }}){:height="350px" }
+
+Tutustu koodiin. 
+
+Piirrä sekvenssikaavio joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran).
 - Kaavioita ei tarvitse palauttaa
+
 
 Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
@@ -331,6 +336,7 @@ class TestKauppa(unittest.TestCase):
 
         # tehdään ostokset
         kauppa.aloita_asiointi()
+        # lisätään ostoskoriin tuote, jonka id on 1
         kauppa.lisaa_koriin(1)
         kauppa.tilimaksu("pekka", "12345")
 
