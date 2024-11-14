@@ -77,7 +77,7 @@
   - tallenteet:
     - syksy 2023: [youtube](https://youtu.be/d-P8wLmk2w8), [unitube](https://www.helsinki.fi/fi/unitube/video/bd42dcd5-406d-4df0-9a95-beb3661ee71b)
     - [syksy 2022](https://youtu.be/hDyuQqf0td0)
-- Luento 10: {{site.luennot[12]}} 
+- Luento 10: {{site.luennot[10]}} 
   - Ville Nordberg (Trail openers): _Vihreä IT_
   - Kristiina Vainio (Houston Inc): _Juniorin kasvu senioriksi konsulttitalossa_
 - Laskarit
@@ -87,13 +87,13 @@
 
 ### Viikko 6
 
-- Luento 11: {{site.luennot[10]}}
+- Luento 11: {{site.luennot[11]}}
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
     - tallenteet:
       - syksy 2023: [youtube](https://youtu.be/AgTV3pNoZ6Y), [unitube](https://www.helsinki.fi/fi/unitube/video/f8a923cc-5b4d-4dc1-b9cd-c7214276e6db)
     - [syksy 2022](https://youtu.be/1gxfA58DLQ8)
-- Luento 12: {{site.luennot[11]}} 
+- Luento 12: {{site.luennot[12]}} 
   - Vierailija nn
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
