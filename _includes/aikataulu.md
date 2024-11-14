@@ -88,13 +88,13 @@
 ### Viikko 6
 
 - Luento 11: {{site.luennot[11]}}
+  - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
+- Luento 12: {{site.luennot[12]}} 
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
     - tallenteet:
       - syksy 2023: [youtube](https://youtu.be/AgTV3pNoZ6Y), [unitube](https://www.helsinki.fi/fi/unitube/video/f8a923cc-5b4d-4dc1-b9cd-c7214276e6db)
-    - [syksy 2022](https://youtu.be/1gxfA58DLQ8)
-- Luento 12: {{site.luennot[12]}} 
-  - Vierailija nn
+    - [syksy 2022](https://youtu.be/1gxfA58DLQ8)  
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
@@ -105,7 +105,8 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
+    - NN
   - Luento 14: {{site.luennot[14]}}
     - Hannu Kokko (Elisa): _Global product development_
 - Laskarit
