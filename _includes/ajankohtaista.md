@@ -2,6 +2,9 @@
 
 <ul>
   <li>
+    Viikon 1-4 laskarit valmiina!
+  </li>
+  <li>
     <a href="/miniprojekti">Miniprojekti</a> käynnissä! Aloitustilaisuutesi näet <a href="/ryhmajako">täältä</a>
   </li>
   <li>
@@ -9,9 +12,6 @@
   </li>
   <li>
    Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
-  </li>
-  <li>
-    Viikon 1-3 laskarit valmiina!
   </li>
   <li>
     Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
