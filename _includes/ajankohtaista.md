@@ -8,7 +8,7 @@
       Viikon 1-4 laskarit valmiina!
     </li>
     <li>
-      <a href="/miniprojekti">Miniprojekti</a> käynnissä! Aloitustilaisuutesi näet <a href="/ryhmajako">täältä</a>
+      <a href="/miniprojekti">Miniprojekti</a> käynnissä!
     </li>
     <li>
       Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla

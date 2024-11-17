@@ -12,17 +12,7 @@ inheader: yes
 
   <ul>
     <li>
-      Miniprojektien aloitustilaisuudet
-      <ul>
-        <li>ti 14-16 C221</li>
-        <li>ke 14-16 Chemicum A128</li>
-        <li>ke 16-18 Chemicum A128</li>
-        <li>to 10-12 C124</li>
-        <li>to 14-16 C124</li>
-      </ul>
-    </li>
-    <li>
-      Oma aloitustilaisuutesi selviää <a href="/ryhmajako">täältä</a>
+      Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>
     </li>
     <li>
       Sovellus tulee toteuttaa kurssilta <i>Tietokannat ja Web-ohjelmointi</i> tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
@@ -30,9 +20,6 @@ inheader: yes
     <li>
       <strong>Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu</strong>, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä 
      <a href="/flask">täältä</a>
-    </li>
-    <li>
-      <a href="https://ohjelmistotuotanto-hy.github.io/miniprojektin_arvosteluperusteet/">Miniprojektin arvosteluperusteet</a>
     </li>
   </ul>
 
@@ -54,15 +41,8 @@ inheader: yes
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
+- Ryhmät muodosteettiin 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
-- Aloitustilaisuuksien aikataulu
-  - ti 14-16 C221
-  - ke 14-16 Chemicum A128
-  - ke 16-18 Chemicum A128
-  - to 10-12 C124 
-  - to 14-16 C124
-- Ryhmäsi selviää [täältä](/ryhmajako)
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti

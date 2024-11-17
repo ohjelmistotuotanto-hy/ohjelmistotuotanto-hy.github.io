@@ -44,7 +44,7 @@ Tietokannan osoitteen määrittelevä `DATABASE_URL` on aiven.io:sta löytyvä S
 
 ![]({{ "/images/aiven.png" | absolute_url }}){:height="350px" }
 
-**HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa.
+**HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa   .
 
 Sovellus käynnistetään Poetry-virtuaaliympäristössä komennolla
 
