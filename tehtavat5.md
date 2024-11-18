@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
+{% include miniproj_ilmo.md %}
+
 {% include paivitys_kesken.md %}
 
 {% include laskari_info.md part=5 %}
@@ -123,7 +125,55 @@ Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävä�
 
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
-### 4. Laskin ja komento-oliot
+### 4. IntJoukon testaus ja siistiminen
+
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
+- Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
+
+Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
+
+Koodi simuloi vanhanaikaista ohjelmointikieltä kuten C:tä missä ei ole Pythonin listan tapaista valmista tietorakennetta, vaan ainoastaan listoja, joiden koko on kiinteä, ja joka määritellään listan luomishetkellä. Koodissa listan luominen tapahtuu metodilla `_luo_lista`:
+
+```python
+class IntJoukko:
+    # tämä metodi on ainoa tapa luoda listoja
+    def _luo_lista(self, koko):
+        return [0] * koko
+
+    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
+        # ...
+        
+        # luodaan lista, jolla haluttu kapasiteetti
+        self.ljono = self._luo_lista(self.kapasiteetti)
+        self.alkioiden_lkm = 0
+```
+
+Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, että joukon sisäistä listaa on kasvatettava. Tämä tapahtuu luomalla uusi lista metodilla `_luo_lista`:
+
+```python
+    def lisaa(self, n):
+        # ...
+                
+        # ei enää tilaa, luodaan uusi lista lukujen säilyttämiseen
+        self.ljono = self._luo_lista(self.alkioiden_lkm + self.kasvatuskoko)
+
+```
+
+Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
+
+- Poista copypaste
+- Vähennä monimutkaisuutta
+- Anna muuttujille selkeät nimet
+- Tee metodeista pienempiä ja hyvän koheesion omaavia
+
+Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
+
+Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
+
+**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
+
+
+### 5. Laskin ja komento-oliot
 
 > **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. Toinen vaihtoehto on esim. pajaan meneminen...
 
@@ -212,7 +262,7 @@ class Kayttoliittyma:
 
 Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
 
-### 5. Komentojen kumoaminen
+### 6. Komentojen kumoaminen
 
 Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
@@ -225,52 +275,5 @@ Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarv
 Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia. Eli jos olet esim. laskenut summan 1+2+3+4+5 (jonka tulos 16), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
 
 Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
-
-### 6. IntJoukon testaus ja siistiminen
-
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
-- Kopioi projekti palatusrepositorioosi, hakemiston viikko5 sisälle.
-
-Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
-
-Koodi simuloi vanhanaikaista ohjelmointikieltä kuten C:tä missä ei ole Pythonin listan tapaista valmista tietorakennetta, vaan ainoastaan listoja, joiden koko on kiinteä, ja joka määritellään listan luomishetkellä. Koodissa listan luominen tapahtuu metodilla `_luo_lista`:
-
-```python
-class IntJoukko:
-    # tämä metodi on ainoa tapa luoda listoja
-    def _luo_lista(self, koko):
-        return [0] * koko
-
-    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
-        # ...
-        
-        # luodaan lista, jolla haluttu kapasiteetti
-        self.ljono = self._luo_lista(self.kapasiteetti)
-        self.alkioiden_lkm = 0
-```
-
-Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, että joukon sisäistä listaa on kasvatettava. Tämä tapahtuu luomalla uusi lista metodilla `_luo_lista`:
-
-```python
-    def lisaa(self, n):
-        # ...
-                
-        # ei enää tilaa, luodaan uusi lista lukujen säilyttämiseen
-        self.ljono = self._luo_lista(self.alkioiden_lkm + self.kasvatuskoko)
-
-```
-
-Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
-
-- Poista copypaste
-- Vähennä monimutkaisuutta
-- Anna muuttujille selkeät nimet
-- Tee metodeista pienempiä ja hyvän koheesion omaavia
-
-Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
-
-Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
-
-**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
 
 {% include submission_instructions.md %}
