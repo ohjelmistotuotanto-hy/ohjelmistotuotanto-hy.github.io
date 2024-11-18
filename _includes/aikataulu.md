@@ -57,7 +57,7 @@
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/SIT74TRZVhg), [unitube](https://www.helsinki.fi/fi/unitube/video/fcefce04-872f-4650-b501-1799b7bd1a7d)
+    - syksy 2024: [youtube](https://youtu.be/j3DrCW3DtUw), [unitube](https://www.helsinki.fi/fi/unitube/video/39d8477a-dc78-423d-98e6-3b613acd4898)
 - Luento 8: {{site.luennot[8]}} 
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
