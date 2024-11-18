@@ -4,7 +4,7 @@
 
 {% if current==true %}
 
-Tehtävistä päivitetty 1-3. Suurta muutosta päivittämättömiin tehtäviin ei ole odotettavissa joten voit jo aloittaa...
+Tehtävistä päivitetty 1-4. Suurta muutosta päivittämättömiin tehtäviin ei ole odotettavissa joten voit jo aloittaa...
 
 {% else %}
 
