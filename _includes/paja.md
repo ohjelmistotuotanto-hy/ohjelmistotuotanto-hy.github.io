@@ -2,4 +2,4 @@ Apua tehtävien tekoon kurssin [Discord](https://study.cs.helsinki.fi/discord/jo
 
 - ma 14-16
 - to 13-15
-- pe 12-14 (15.11. poikkeuksellisesti klo 13-15)
+- pe 12-14

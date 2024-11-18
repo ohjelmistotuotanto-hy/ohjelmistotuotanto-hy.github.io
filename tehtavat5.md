@@ -7,7 +7,7 @@ permalink: /tehtavat5/
 
 {% include miniproj_ilmo.md %}
 
-{% include paivitys_kesken.md %}
+{% include paivitys_kesken.md current=true %}
 
 {% include laskari_info.md part=5 %}
 
@@ -54,10 +54,9 @@ Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtäv
   - varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
 - Tee commit
 - _important.txt_ on palannut!
-- Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa
+- Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa:
 
-  - "Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters." [7.1 Git Tools - Revision Selection
-    ](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
+  - _"Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters."_ Ks. lisää [täältä](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
 
 - Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
 
@@ -112,6 +111,8 @@ Win for player1
 ```
 
 Tulostuksessa siis kerrotaan mikä on pelitilanne kunkin pallon jälkeen kun _player1_ voittaa ensimmäiset 2 palloa, _player2_ kolmannen pallon ja _player1_ loput 2 palloa.
+
+Tenniksen pisteenlaskennasta voit lukea enemmän esim. [Wikipediasta](https://en.wikipedia.org/wiki/Tennis_scoring_system#Description), mutta se ei ole välttämätöntä tämän tehtävän tekemisen kannalta.
 
 Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
 
