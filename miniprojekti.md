@@ -41,7 +41,7 @@ inheader: yes
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodosteettiin 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
+- Ryhmät muodostettiin 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
