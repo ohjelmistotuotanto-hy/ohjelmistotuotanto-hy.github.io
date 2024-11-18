@@ -2,8 +2,25 @@
 
   <ul>
     <li>
-      Vierailuluentojen aikataulussa muutos: ensimmäiset vierailijat jo tiistaina 26.11. Tiistaina 3.12 pidetään "normaali" luento.
+      Vierailuluennot alkavat pian:
+      <ul>
+        <li>
+          tiistai 26.11. 12-14 Ville Nordberg Trail openers ja Kristiina Vainio Houston Inc
+        </li>
+        <li>
+          maanantai 2.12. 12-14 Jami Kousa ja Aleksandr Tereshchenko Unity
+        </li>
+        <li>maanantai 9.12. 12-14 Kasper Hirvikoski Unity ja Luomus Fossil Database Team</li>
+        <li>tiistai 10.12. 12-14 Hannu Kokko Elisa</li>
+        <li>
+            Vierailut striimataan ja niistä tulee tallenteet
+          </li>
+        <li>
+          Osallistumisesta paikan päällä on jaossa <strong>1 kurssipiste</strong> (0.33 pistettä per kerta)
+        </li>
+      </ul>
     </li>
+
     <li>
       Viikon 1-4 laskarit valmiina!
     </li>
@@ -14,7 +31,7 @@
       Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
     </li>
     <li>
-    Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
+      Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
     </li>
     <li>
       Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>

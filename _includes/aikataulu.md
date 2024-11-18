@@ -106,7 +106,7 @@
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
-    - Luomus Mamman Database Team: _tarinoita juniorikehittäjien elämästä_
+    - Luomus Mammal Database Team: _tarinoita juniorikehittäjien elämästä_
   - Luento 14: {{site.luennot[14]}}
     - Hannu Kokko (Elisa): _Global product development_
 - Laskarit
