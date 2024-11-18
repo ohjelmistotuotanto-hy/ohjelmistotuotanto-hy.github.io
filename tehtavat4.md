@@ -391,7 +391,7 @@ Tutustutaan tässä tehtävässä Gitin tageihin:
 
 > Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
 
-Lue ensin [http://git-scm.com/book/en/Git-Basics-Tagging](http://git-scm.com/book/en/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags').
+Lue ensin [http://git-scm.com/book/en/v2/Git-Basics-Tagging](http://git-scm.com/book/en/v2/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags').
 
 Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
 
@@ -409,7 +409,7 @@ Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
   - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
 - Katso komennolla <code>gitk</code> miltä historia näyttää
 
-Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/Git-Basics-Tagging#Sharing-Tags).
+Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Sharing-Tags).
 
 Varmista, että tagit siirtyvät GitHubiin:
 
