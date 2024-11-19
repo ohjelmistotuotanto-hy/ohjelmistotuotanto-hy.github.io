@@ -7,8 +7,6 @@ permalink: /tehtavat5/
 
 {% include miniproj_ilmo.md %}
 
-{% include paivitys_kesken.md current=true %}
-
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2 eivät näy palautuksissa mitenkään.
