@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include paivitys_kesken.md %}
+{% include paivitys_kesken.md current=true %}
 
 {% include laskari_info.md part=6 %}
 
@@ -86,7 +86,7 @@ Koodiin onkin luotu hieman valmista kalustoa, josta pääset liikkeelle. Yllä o
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -127,18 +127,20 @@ matcher = And(
 Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään kahta maalia, eli _0 tai 1 maalia tehneet_:
 
 <pre>
-Jonny Brodzinski     NYR          1  + 1  = 2
-Ben Harpur           NYR          1  + 5  = 6
-Ryan Carpenter       NYR          1  + 2  = 3
-Ryan Lindgren        NYR          1  + 17 = 18
-Libor Hajek          NYR          1  + 0  = 1
-Zac Jones            NYR          1  + 1  = 2
-Will Cuylle          NYR          0  + 0  = 0
-Jaroslav Halak       NYR          0  + 0  = 0
-Igor Shesterkin      NYR          0  + 0  = 0
+Brandon Scanlin      NYR          0  + 0  = 0
+Nick Bonino          NYR          1  + 4  = 5
+Riley Nash           NYR          0  + 0  = 0
+Jake Leschyshyn      NYR          0  + 0  = 0
+Brennan Othmann      NYR          0  + 0  = 0
+Jake Leschyshyn      NYR          0  + 0  = 0
+Matt Rempe           NYR          1  + 1  = 2
+Connor Mackey        NYR          0  + 0  = 0
+Tyler Pitlick        NYR          1  + 3  = 4
+Filip Chytil         NYR          0  + 6  = 6
+Anton Blidh          NYR          0  + 0  = 0
 </pre>
 
-- Kaikissa esimerkitulostuksissa on käytetty vuoden 2022-23 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt>
+- Kaikissa esimerkitulostuksissa on käytetty vuoden 2023-24 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt>
 
 Kyselyn
 
@@ -158,7 +160,7 @@ filtered_with_all = stats.matches(All())
 print(len(filtered_with_all))
 ```
 
-pitäisi tulostaa 1058
+pitäisi tulostaa 958
 
 ### 3. Kyselykieli NHL-tilastoihin, osa 2
 
@@ -176,15 +178,18 @@ matcher = Or(
 tulee palauttaa ne, joilla on vähintään 45 maalia tai 70 syöttöä, eli seuraava lista
 
 ```
-David Pastrnak       BOS          61 + 52 = 113
-Tage Thompson        BUF          47 + 47 = 94
-Nikita Kucherov      TBL          30 + 83 = 113
-Brayden Point        TBL          51 + 44 = 95
-Mikko Rantanen       COL          55 + 50 = 105
-Leon Draisaitl       EDM          52 + 76 = 128
-Connor McDavid       EDM          64 + 89 = 153
-Jason Robertson      DAL          46 + 63 = 109
-Erik Karlsson        SJS          25 + 76 = 101
+Filip Forsberg       NSH          48 + 46 = 94
+Sam Reinhart         FLA          57 + 37 = 94
+Quinn Hughes         VAN          17 + 75 = 92
+Connor McDavid       EDM          32 + 100 = 132
+Auston Matthews      TOR          69 + 38 = 107
+David Pastrnak       BOS          47 + 63 = 110
+Nathan MacKinnon     COL          51 + 89 = 140
+Zach Hyman           EDM          54 + 23 = 77
+Artemi Panarin       NYR          49 + 71 = 120
+Brayden Point        TBL          46 + 44 = 90
+Nikita Kucherov      TBL          44 + 100 = 144
+Kirill Kaprizov      MIN          46 + 50 = 96
 ```
 
 Kyselyn
@@ -203,14 +208,16 @@ matcher = And(
 tulee palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYR_, _FLA_ tai _BOS_. Lista näyttää seuraavalta:
 
 ```
-Mika Zibanejad       NYR          39 + 52 = 91
-Artemi Panarin       NYR          29 + 63 = 92
-Adam Fox             NYR          12 + 60 = 72
-David Pastrnak       BOS          61 + 52 = 113
-Carter Verhaeghe     FLA          42 + 31 = 73
-Aleksander Barkov    FLA          23 + 55 = 78
-Brandon Montour      FLA          16 + 57 = 73
-Matthew Tkachuk      FLA          40 + 69 = 109
+Sam Reinhart         FLA          57 + 37 = 94
+Vincent Trocheck     NYR          25 + 52 = 77
+Matthew Tkachuk      FLA          26 + 62 = 88
+David Pastrnak       BOS          47 + 63 = 110
+Carter Verhaeghe     FLA          34 + 38 = 72
+Chris Kreider        NYR          39 + 36 = 75
+Adam Fox             NYR          17 + 56 = 73
+Artemi Panarin       NYR          49 + 71 = 120
+Aleksander Barkov    FLA          23 + 57 = 80
+Mika Zibanejad       NYR          26 + 46 = 72
 ```
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
@@ -227,7 +234,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -244,7 +251,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -260,7 +267,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla 
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2022-23/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -372,7 +379,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
 
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2024/projects/repositories) joukosta
+- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2024aika/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
   - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
