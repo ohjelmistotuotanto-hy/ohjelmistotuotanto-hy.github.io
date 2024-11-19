@@ -97,7 +97,7 @@ Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida vi
   - esim. kirjoittajan, vuoden, julkaisun mukaan
   - olisi kyllä hyvä, jos jokaiseen viitteeseen voisi liittää joukon kategorioita tai tägejä, jotka mahdollistaisivat tarkemmat haut
 - sellainen olisi loistavaa, että jos antaa linkin esim. ACM:n digitaaliseen kirjastoon, esim. [näin](https://dl.acm.org/doi/10.1145/2380552.2380613), niin softa crawlaa sieltä viitteen tiedot
-  - myös muita tiedokantoja kuten [Google Scholaria](https://scholar.google.com/) voi tukea
+  - myös muita tietokantoja kuten [Google Scholaria](https://scholar.google.com/) voi tukea
 - jopa vielä parempi feature olisi datan haku [DOI](https://www.doi.org/)-tunnisteen perusteella
 - kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin gradun tekijöille ihan turhia
 - sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
