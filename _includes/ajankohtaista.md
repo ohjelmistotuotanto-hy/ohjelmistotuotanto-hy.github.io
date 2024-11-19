@@ -22,7 +22,7 @@
     </li>
 
     <li>
-      Viikon 1-5 laskarit valmiina!
+      Viikon 1-6 laskarit valmiina!
     </li>
     <li>
       <a href="/miniprojekti">Miniprojekti</a> käynnissä!

@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include paivitys_kesken.md current=true %}
-
 {% include laskari_info.md part=6 %}
 
 Tehtävässä 1 jatketaan Gitin harjoittelua, tehtävä ei näy palautuksissa mitenkään.
@@ -257,7 +255,7 @@ def main():
 
     query = QueryBuilder()
 
-    matcher = query.playsIn("NYR").build()
+    matcher = query.plays_in("NYR").build()
 
     for player in stats.matches(matcher):
         print(player)
@@ -273,7 +271,7 @@ def main():
 
     query = QueryBuilder()
 
-    matcher = query.playsIn("NYR").hasAtLeast(10, "goals").hasFewerThan(20, "goals").build()
+    matcher = query.plays_in("NYR").has_at_least(10, "goals").has_fewer_than(20, "goals").build()
 
     for player in stats.matches(matcher):
         print(player)
@@ -282,11 +280,10 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Barclay Goodrow      NYR          11 + 20 = 31
-Jimmy Vesey          NYR          11 + 14 = 25
-Adam Fox             NYR          12 + 60 = 72
-Kaapo Kakko          NYR          18 + 22 = 40
-Alexis Lafrenière    NYR          16 + 23 = 39
+Will Cuylle          NYR          13 + 8  = 21
+Jimmy Vesey          NYR          13 + 13 = 26
+Kaapo Kakko          NYR          13 + 6  = 19
+Adam Fox             NYR          17 + 56 = 73
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
@@ -296,7 +293,7 @@ Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-peri
 Pitkät metodikutsuketjut, esim.
 
 ```python
-matcher = query.playsIn("NYR").hasAtLeast(10, "goals").hasFewerThan(20, "goals") .build()
+matcher = query.plays_in("NYR").has_at_least(10, "goals").has_fewer_than(20, "goals").build()
 ```
 
 ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usein ne onkin tapana jakaa "kutsu per rivi"-periaatteella:
@@ -304,9 +301,9 @@ ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usei
 ```python
    matcher = (
       query
-      .playsIn("NYR")
-      .hasAtLeast(10, "goals")
-      .hasFewerThan(20, "goals")
+      .plays_in("NYR")
+      .has_at_least(10, "goals")
+      .has_fewer_than(20, "goals")
       .build()
     )
 ```
@@ -320,33 +317,35 @@ Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-e
 ```python
 m1 = (
   query
-    .playsIn("PHI")
-    .hasAtLeast(10, "assists")
-    .hasFewerThan(5, "goals")
+    .plays_in("PHI")
+    .has_at_least(10, "assists")
+    .has_fewer_than(10, "goals")
     .build()
 )
 
 m2 = (
   query
-    .playsIn("EDM")
-    .hasAtLeast(50, "points")
+    .plays_in("EDM")
+    .has_at_least(50, "points")
     .build()
 )
 
-matcher = query.oneOf(m1, m2).build()
+matcher = query.one_of(m1, m2).build()
 ```
 
 Pelaajalistan tulisi olla:
 
 ```
-Nick Seeler          PHI          4  + 10 = 14
-Rasmus Ristolainen   PHI          3  + 17 = 20
-Cam York             PHI          2  + 18 = 20
-Tyson Barrie         EDM          13 + 42 = 55
-Zach Hyman           EDM          36 + 47 = 83
-Ryan Nugent-Hopkins  EDM          37 + 67 = 104
-Leon Draisaitl       EDM          52 + 76 = 128
-Connor McDavid       EDM          64 + 89 = 153
+Leon Draisaitl       EDM          41 + 65 = 106
+Connor McDavid       EDM          32 + 100 = 132
+Garnet Hathaway      PHI          7  + 10 = 17
+Zach Hyman           EDM          54 + 23 = 77
+Garnet Hathaway      PHI          7  + 10 = 17
+Noah Cates           PHI          6  + 12 = 18
+Nick Seeler          PHI          1  + 12 = 13
+Egor Zamula          PHI          5  + 16 = 21
+Evan Bouchard        EDM          18 + 64 = 82
+Ryan Nugent-Hopkins  EDM          18 + 49 = 67
 ```
 
 Tai sama ilman apumuuttujia:
@@ -354,13 +353,13 @@ Tai sama ilman apumuuttujia:
 ```python
 matcher = (
   query
-    .oneOf(
-      query.playsIn("PHI")
-          .hasAtLeast(10, "assists")
-          .hasFewerThan(5, "goals")
+    .one_of(
+      query.plays_in("PHI")
+          .has_at_least(10, "assists")
+          .has_fewer_than(10, "goals")
           .build(),
-      query.playsIn("EDM")
-          .hasAtLeast(50, "points")
+      query.plays_in("EDM")
+          .has_at_least(50, "points")
           .build()
     )
     .build()
@@ -369,7 +368,7 @@ matcher = (
 
 ### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
-**HUOM tee tämä tehtävä aikaisintaan perjantaina 1.12.**
+**HUOM tee tämä tehtävä aikaisintaan perjantaina 29.11.**
 
 Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä jolloin niihin on vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
 
@@ -379,7 +378,7 @@ GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs se
 
 Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
 
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2024aika/projects/repositories) joukosta
+- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2024/projects/repositories) joukosta
   - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
   - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
 - [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
