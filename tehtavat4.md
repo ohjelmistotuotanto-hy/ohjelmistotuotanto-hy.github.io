@@ -125,7 +125,7 @@ Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit(
 
 **Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.**
 - Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa 
-- Voit halutessasi kopioida projetin palatusrepositorioosi, hakemiston viikko4 sisälle.
+- Voit halutessasi kopioida projektin palatusrepositorioosi, hakemiston viikko4 sisälle.
 
 Projekti on yksinkertainen verkkokauppa, jonka sovelluslogiikan totutettaa luokka `Kauppa`. Luokalla on riippuvuus `Pankki`- ja `Viitegeneraattori`-olioihin.
 
