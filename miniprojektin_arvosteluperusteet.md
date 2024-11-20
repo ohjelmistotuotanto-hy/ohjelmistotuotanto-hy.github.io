@@ -61,7 +61,7 @@ Pisteitä kertyy seuraavista asioista:
   - Projektissa on ainakin yksi Robot-testi
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
+  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa testit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
