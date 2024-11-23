@@ -15,11 +15,19 @@ inheader: yes
       Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>, <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">sprintti 3</a>
     </li>
     <li>
-      Sovellus tulee toteuttaa kurssilta <i>Tietokannat ja Web-ohjelmointi</i> tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+      Loppudemot
+      <ul>
+        <li>
+          ke 11.12. klo 12-14 B123
+        </li>
+        <li>
+          to 12.12. klo 12-14 CK112
+        </li>
+      </ul>
+      Ilmoita ryhmäsi loppudemoon <a href="https://docs.google.com/document/d/1xudrKmSuvr0uQ_Scrny-mkJD713x50Qae-NFSJBSEPc/edit?usp=sharing">täällä</a>
     </li>
     <li>
-      <strong>Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu</strong>, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä 
-     <a href="/flask">täältä</a>
+      Ohje Flaskin käyttöön <a href="/flask">täältä</a>
     </li>
   </ul>
 
