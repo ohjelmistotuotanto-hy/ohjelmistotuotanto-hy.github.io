@@ -12,7 +12,7 @@ inheader: yes
 
   <ul>
     <li>
-      Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>
+      Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>, <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">sprintti 3</a>
     </li>
     <li>
       Sovellus tulee toteuttaa kurssilta <i>Tietokannat ja Web-ohjelmointi</i> tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan

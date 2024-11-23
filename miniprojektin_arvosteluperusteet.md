@@ -106,6 +106,7 @@ Pisteitä kertyy seuraavista asioista:
 
 Sprintin maksimi on 2.5 pistettä.
 
+
 #### Retrospektiivi
 
 - Sprintin 2 päätteeksi tulee pitää retrospektiivi
@@ -116,6 +117,38 @@ Sprintin maksimi on 2.5 pistettä.
 
 
 ### Kolmannen sprintin arvosteluperusteet
+
+0.125
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
+- (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
+  - Hyväksymisehtoja **ei kirjoteta erikseen backlogiin**, vaan backlogista on linkki hyväksymistestin tiedostoon
+- (0.25p) sprintin 3 backlog
+  - Vaatimukset kuten edellisissä sprinteissä
+- (0.25p) kattavahko testaus storytasolla
+- (0.25p) ohjelmalla on sopivissa määrin yksikkötestejä
+  - edeleen kannattaa huomioida [tämä](/flask/#testeistä) liittyen testaukseen
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa yksikkö- ja storytestit ja PyLintin
+  - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
+- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+  - raportti kattaa ainoastaan ne tiedostot joita on mielekästä yksikkötestata
+- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
+- (0.125p) Ohjelmalle on valittu sopiva lisenssi, ja määritely se repositorioon
+  - Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
+- (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+  - Katselmoinnissa sovellus näytetään videotykillä. Koneen kytkemistä videotykkiin **tulee harjoitella** etukäteen, esim. näyttö tulee olla valmiiksi konfiguroida oikein (display mirroring) tai konfiguraatio tulee osata tehdä maksimissaan viidessä sekunnissa
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Neljännen sprintin arvosteluperusteet
 
