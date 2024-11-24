@@ -368,6 +368,7 @@ Jatketaan edellisen tehtävän koodin testaamista
 - Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua [tehtävän 1](tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
 
 Tarkasta viikoilla 1 ja 2 käytetyn coveragen avulla mikä on luokan `Kauppa` testauskattavuus.
+- katso esim. viikon 1 tehtävä [8](/tehtavat1#8-unittest)
 
 Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin! Jos bugeja ilmenee, korjaa ne.
 
