@@ -76,7 +76,7 @@
 - Luento 9: {{site.luennot[9]}}
   - [Lean](/osa5#lean)
   - tallenteet:
-    - syksy 2023: [youtube](https://youtu.be/d-P8wLmk2w8), [unitube](https://www.helsinki.fi/fi/unitube/video/bd42dcd5-406d-4df0-9a95-beb3661ee71b)
+    - syksy 2024: [youtube](https://www.helsinki.fi/fi/unitube/video/b081990c-3090-4419-921f-eb01ba33c546), [unitube](https://www.helsinki.fi/fi/unitube/video/b081990c-3090-4419-921f-eb01ba33c546)
 - Luento 10: {{site.luennot[10]}} 
   - Ville Nordberg (Trail openers): _Vihreä IT_
   - Kristiina Vainio (Houston Inc): _Juniorin kasvu senioriksi konsulttitalossa_
