@@ -80,6 +80,8 @@
 - Luento 10: {{site.luennot[10]}} 
   - Ville Nordberg (Trail openers): _Vihreä IT_
   - Kristiina Vainio (Houston Inc): _Juniorin kasvu senioriksi konsulttitalossa_
+  - tallenteet: [youtube](https://youtu.be/p0ra1IOiEzY), [unitube](https://www.helsinki.fi/fi/unitube/video/66e4c63a-0858-4b21-8e5f-36ad2be4f237)
+  - Huom: monivalinnat luentopäiväkirjoilla korvaavien **ei tarvitse** tehdä luentopäiväkirjoja vierailuluennoista 
 - Laskarit
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
 - [Miniprojekti](/miniprojekti)

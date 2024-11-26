@@ -2,7 +2,7 @@
 
   <ul>
     <li>
-      Vierailuluennot alkavat pian:
+      Vierailuluennot käynnissä:
       <ul>
         <li>
           tiistai 26.11. 12-14 Ville Nordberg Trail openers ja Kristiina Vainio Houston Inc
