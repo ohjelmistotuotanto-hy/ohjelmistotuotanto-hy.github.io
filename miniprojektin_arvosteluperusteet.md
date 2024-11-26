@@ -118,8 +118,6 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
-0.125
-
 Pisteitä kertyy seuraavista asioista:
 
 - (0.25p) product backlog
