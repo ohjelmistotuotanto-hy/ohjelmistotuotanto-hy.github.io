@@ -161,7 +161,7 @@ _Integraatiotestaus_ (engl. integration testing) taas sisältää yksittäisist�
 
 _Järjestelmätestauksessa_ (engl. system testing) varmistetaan, että ohjelmisto kokonaisuudessaan toimii vaatimuksiin kirjatulla tavalla. Ohjelmistoa testataan saman rajapinnan kautta, jonka kautta käyttäjät sitä käyttävät. Järjestelmätestauksesta on useimmiten vastuussa ohjelmiston kehittäjäorganisaation laadunhallinnasta vastaavat ihmiset.
 
-Ohjelmiston tilaaja- tai käyttäjäorganisaation tekemää testausta kutsutaan _käyttäjän hyväksymistestaukseksi_ (engl. user acceptance testing), ja sen on tarkoitus varmistaa, että kehitetty ohjelmisto on varmasti odotuksien mukainen ja toimii oikeassa käytössä. Hyväksymistestaus tapahtuu monesti normaalissa tuotantokäytössä ohjelmiston tilanneen organisaation tai loppukäyttäjien toimesta, esim. betatestaamalla sovellusta pienen käyttäjäjoukon avulla. Hyväksymistestaus ei siis keskity siihen toimiiko ohjelmisto juuri niin kuin vaatimusmääritelmässä sanotaan, vaatimusmääritelmähän ei välttämättä kata täsmälleen sitä mikä käyttähän todellinen tarve.
+Ohjelmiston tilaaja- tai käyttäjäorganisaation tekemää testausta kutsutaan _käyttäjän hyväksymistestaukseksi_ (engl. user acceptance testing), ja sen on tarkoitus varmistaa, että kehitetty ohjelmisto on varmasti odotuksien mukainen ja toimii oikeassa käytössä. Hyväksymistestaus tapahtuu monesti normaalissa tuotantokäytössä ohjelmiston tilanneen organisaation tai loppukäyttäjien toimesta, esim. betatestaamalla sovellusta pienen käyttäjäjoukon avulla. Hyväksymistestaus ei siis keskity siihen toimiiko ohjelmisto juuri niin kuin vaatimusmääritelmässä sanotaan, vaatimusmääritelmähän ei välttämättä kata täsmälleen sitä mikä käyttäjän todellinen tarve on.
 
 ## Järjestelmätestaus
 
@@ -169,7 +169,7 @@ Järjestelmätestauksen tarkoitus on siis varmistaa, että ohjelmisto toimii vaa
 
 Järjestelmätestaus tapahtuu ilman tietoa järjestelmän sisäisestä rakenteesta, tälläistä testauksen tapaa nimitetään _black box_ -testaukseksi.
 
-Järjestelmätesteille on tyypillistä että ne tarkastelevat sovelluksen toiminnallisuutta sen kaikilla tasoilla käyttöliittymästä sovelluslogiikkaan ja tietokantaan. Tämän takia järjestelmätestejä kutsutaan usein _End to End -testeiksi_.
+Järjestelmätesteille on tyypillistä, että ne tarkastelevat sovelluksen toiminnallisuutta sen kaikilla tasoilla käyttöliittymästä sovelluslogiikkaan ja tietokantaan. Tämän takia järjestelmätestejä kutsutaan usein _End to End -testeiksi_.
 
 Yleensä järjestelmätestaus perustuu sovelluksen potentiaalisiin käyttöskenaarioihin. Jos vaatimukset on ilmaistu user storyina, on storyjen hyväksymiskriteereistä melko helppo muotoilla testejä, joiden avulla voidaan varmistaa, että ohjelmistolla on storyjen kuvaamat vaatimukset sekä tyypilliset virheskenaariot.
 
@@ -189,7 +189,7 @@ Yksittäinen _testitapaus_ (engl. test case) testaa järjestelmän toiminnallisu
 
 Testeissä kannattaakin pyrkiä jakamaan syötteet _ekvivalenssiluokkiin_, eli ryhmiin joihin kuuluvien syötteiden suhteen ohjelma toimii oleellisesti samalla tavalla. Testitapauksia kannattaa tehdä useimmiten ainoastaan yksi tai kaksi kutakin ekvivalenssiluokkaa tai syötteiden ekvivalenssiluokkien kombinaatiota kohti. Ekvivalenssiluokkien edustajiksi kannattaa erityisesti valita ekvivalenssiluokkien _raja-arvoja_, koodissa olevat bugit nimittäin liittyvät erittäin usein toisto- ja ehtolauseiden ehtojen äärimmäisiin arvoihin.
 
-Esimerkiksi henkilötietoja käsittelevässä järjestelmässä iän suhteen ekvivalenssiluokkia olisivat ehkä _alaikäinen_ 0-17 vuotta, _työikäinen_ 18-65 vuotta ja _eläkeläinen_ 66- vuotta. Ekvivalenssiluokkien raja-arvojen järkevä määrittely tosin edellyttää tietoa järjestelmän toiminnallisuudesta. Todennäköisesti työikäisten ja eläkeläisien suhteen ei olisi mahdollista tehdä selkeää jakoa iän perusteella. Jos oletetaan, että edelliset ekvivalenssiluokat olisivat järkeviä, sopivat iän _raja-arvot_ testitapauksia varten olisivat 17, 18, 65 ja 66 vuotta, eli näitä kaikkia kohti voitaisiin tehdä oma testitapauksensa.
+Esimerkiksi henkilötietoja käsittelevässä järjestelmässä iän suhteen ekvivalenssiluokkia olisivat ehkä _alaikäinen_ 0-17 vuotta, _työikäinen_ 18-65 vuotta ja _eläkeläinen_ 66- vuotta. Ekvivalenssiluokkien raja-arvojen järkevä määrittely tosin edellyttää tietoa järjestelmän toiminnallisuudesta. Todennäköisesti työikäisten ja eläkeläisten suhteen ei olisi mahdollista tehdä selkeää jakoa iän perusteella. Jos oletetaan, että edelliset ekvivalenssiluokat olisivat järkeviä, sopivat iän _raja-arvot_ testitapauksia varten olisivat 17, 18, 65 ja 66 vuotta, eli näitä kaikkia kohti voitaisiin tehdä oma testitapauksensa.
 
 Tarkastellaan toisena esimerkkinä tekstitv:n selainversiota.
 
@@ -204,7 +204,7 @@ Syötteen ekvivalenssiluokkia olisivat ainakin seuraavat:
 - olemassa olevaa sivua vastaavat luvut
 - validit luvut, jotka eivät vastaa mitään sivua
 - liian pienet ja liian suuret luvut
-- syötteet, jotka sisältävät kiellettyjä merkkejä esimerkiksi aakkosia
+- syötteet, jotka sisältävät kiellettyjä merkkejä (esimerkiksi aakkosia)
 - tyhjä syöte
 
 Jos testeistä halutaan kattavat, olisi jokaisesta ekvivalenssiluokasta hyvä valita ainakin yksi testattava syötearvo.
@@ -213,7 +213,7 @@ Olemassa olevaa sivua vastaavan ekvivalenssin rajatapaukset, eli luvut 100 ja 89
 
 ## Yksikkötestaus
 
-Yksikkötestauksen kohteena siis ovat yksittäiset metodit ja luokat. Yksikkötestauksen hoitavat ohjelmoijat, usein oletetaan että uuteen koodiin tehdään yksikkötestit jo samalla kuin koodi kirjoitetaan. Ohjelmoijien vastuulla olevasta testauksesta, eli yksikkö- ja integraatiotestauksesta käytetään usein nimitystä [developer testing](https://developertesting.rocks/).
+Yksikkötestauksen kohteena siis ovat yksittäiset metodit ja luokat. Yksikkötestauksen hoitavat ohjelmoijat. Usein oletetaan, että uuteen koodiin tehdään yksikkötestit jo samalla kuin koodi kirjoitetaan. Ohjelmoijien vastuulla olevasta testauksesta, eli yksikkö- ja integraatiotestauksesta käytetään usein nimitystä [developer testing](https://developertesting.rocks/).
 
 Yksikkötestejä laadittaessa saatetaan ottaa huomioon testattavan koodin rakenne, esimerkiksi minkälaisia ehtolauseita koodissa on käytetty. Jos testeissä huomioidaan testattavan järjestelmän sisäinen rakenne, puhutaan usein _lasilaatikkotestauksesta_ (engl. white box testing).
 
@@ -225,7 +225,7 @@ Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavi
 
 Tiedetään, että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmennyt virhe.
 
-Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu JUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. Rspec (ruby), Mocha ja Jest (JavaScript). Pythonin suosituin yksikkötestauskirjasto on ensimmäisistä laskareista tuttu unittest.
+Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu JUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. Rspec (Ruby), Mocha ja Jest (JavaScript). Pythonin suosituin yksikkötestauskirjasto on ensimmäisistä laskareista tuttu unittest.
 
 Kurssilla [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
 
@@ -236,9 +236,9 @@ Mitä kaikkea ohjelmistosta tulisi testata yksikkötesteillä? Vastaus ei ole he
 > "Do I have to write a test for everything?"
 > "No, just test everything that could reasonably break"
 
-Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin testata kaikkien metodien (ja loogisten metodikombinaatioden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
+Jos pyritään kattavaan yksikkötestaukseen, tulisi ainakin testata kaikkien metodien (ja loogisten metodikombinaatioiden) toiminta parametrien hyväksyttävillä arvoilla ja virheellisillä parametrien arvoilla.
 
-Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta kannattaa valita ainakin yksi arvo testisyötteeksi, erityisesti ekvivalenssiluokkien raja-arvot kannattaa valita mukaan testattaviin arvoihin.
+Parametrien mahdolliset arvot kannattaa jakaa ekvivalenssiluokkiin ja jokaisesta luokasta kannattaa valita ainakin yksi arvo testisyötteeksi. Erityisesti ekvivalenssiluokkien raja-arvot kannattaa valita mukaan testattaviin arvoihin.
 
 Koska yksikkötestejä tehtäessä ohjelmakoodi on nähtävillä, on testien parametrien ekvivalenssiluokat ja raja-arvot useimmiten pääteltävissä koodista.
 
@@ -320,7 +320,7 @@ Järjestelmän yksittäiset, erillään yksikkötestatut luokat tulee integroida
 
 Järjestelmän integrointi voi edetä joko järjestelmän rakenteeseen perustuen tai järjestelmän toteuttamien ominaisuuksien mukaan.
 
-_Rakenteeseen perustuvassa integraatiossa_ keskitytään kerrallaan sovelluksen yksittäisten rakenteellisten komponenttien integrointiin, esimerkiksi verkkokaupan toteutuksessa integroitaisiin ensin arkkitehtuurilliset komponentit tai kerrokset, eli sovelluslogiikan luokat, käyttöliittymän toteutus ja tietokantarajapinta omina kokonaisuuksinaan. Tämän jälkeen kerrokset integroitaisiin kokonaiseksi sovellukseksi.
+_Rakenteeseen perustuvassa integraatiossa_ keskitytään kerrallaan sovelluksen yksittäisten rakenteellisten komponenttien integrointiin. Esimerkiksi verkkokaupan toteutuksessa integroitaisiin ensin arkkitehtuurilliset komponentit tai kerrokset, eli sovelluslogiikan luokat, käyttöliittymän toteutus ja tietokantarajapinta omina kokonaisuuksinaan. Tämän jälkeen kerrokset integroitaisiin kokonaiseksi sovellukseksi.
 
 _Ominaisuuksiin perustuvassa integroinnissa_ taas liitetään yhteen alikomponentit, jotka toteuttavat järjestelmän loogisen toiminnallisuuden. Verkkokaupassa voitaisiin esimerkiksi integroida kerrallaan kaikki toiminnallisuuteen _lisää tuote ostoskoriin_ liittyvä koodi ja edetä toiminnallisuus kerralla kunnes koko sovellus on valmis.
 
@@ -388,7 +388,7 @@ Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän muk
 3. Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) _refaktoroidaan_ koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
 4. Jatketaan askeleesta 1.
 
-TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään testi joka on punaisella, kirjotetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
+TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään testi joka on punaisella, kirjoitetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
 ![]({{ "/images/3-6a.png" | absolute_url }}){:height="250px" }
 
@@ -404,7 +404,7 @@ Koodista on vaikea tehdä helposti testattavissa olevaa, jos se ei ole modulaari
 
 Muina TDD:n hyvinä puolina mainitaan, että se rohkaisee ottamaan pieniä askelia kerrallaan ja näin toimimaan fokusoidusti, ja että hyvin kirjoitetut testit toimivat toteutetun komponentin rajapinnan dokumentaationa.
 
-TDD:tä on tutkittu akateemisesti kohtuullisen paljon. Kovin suurta evidenssiä sen hyödyistä [ei ole](https://researchportal.helsinki.fi/fi/publications/effects-of-test-driven-development-a-comparative-analysis-of-empi) havaittu, tosin tutkimusasetelmat eivät ole olleet kovin vakuuttavia ja realistisia käyttötilanteita vastaavia, niissä ei ole juurikaan otettu kantaa mahdollisiin pitkän aikavälin hyötyihin, joita ylläpidettävyydeltään laadukas koodi mahdollisesti tuottaa.
+TDD:tä on tutkittu akateemisesti kohtuullisen paljon. Kovin suurta evidenssiä sen hyödyistä [ei ole](https://researchportal.helsinki.fi/fi/publications/effects-of-test-driven-development-a-comparative-analysis-of-empi) havaittu, tosin tutkimusasetelmat eivät ole olleet kovin vakuuttavia ja realistisia käyttötilanteita vastaavia. Niissä ei ole juurikaan otettu kantaa mahdollisiin pitkän aikavälin hyötyihin, joita ylläpidettävyydeltään laadukas koodi mahdollisesti tuottaa.
 
 ### TDD:llä on myös ikävät puolensa
 
@@ -420,7 +420,7 @@ Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunn
 
 Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, eli _stubeja_, näin tehtiin mm. [viikon 1 tehtävässä 16](/tehtavat1#16-nhlstatistics-ohjelman-yksikk%C3%B6testaus). Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
 
-Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä", ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
+Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä" ja ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
 
 On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareiden Java-versiossa [Mockito](https://site.mockito.org/)-kirjastoon ja Python-versiossa [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon.
 
@@ -494,7 +494,7 @@ Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Accepta
 
 ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomiota käytettävään terminologiaan, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sen sijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla.
 
-Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [Rspec](https://rspec.info/) sanoo olevansa BDD-kirjasto, rspec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin tapaan toimivia BDD-henkisiä kirjastoja, kuten JavaScript-maailman [Mocha](https://mochajs.org/) ja [Jest](https://jestjs.io/). Kohta käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline, yksikkötestaamiseen sitä ei kannata käyttää.
+Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [RSpec](https://rspec.info/) sanoo olevansa BDD-kirjasto, RSpec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin tapaan toimivia BDD-henkisiä kirjastoja, kuten JavaScript-maailman [Mocha](https://mochajs.org/) ja [Jest](https://jestjs.io/). Kohta käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline. Yksikkötestaamiseen sitä ei kannata käyttää.
 
 ### Cucumber
 
@@ -522,19 +522,19 @@ Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä varmistaen,
 
 ![]({{ "/images/3-10a.png" | absolute_url }}){:height="500px" }
 
-### Websovellusten testauksen automatisointi
+### Web-sovellusten testauksen automatisointi
 
 Olemme jo nähneet ensimmäisen ja toisen viikon laskareissa, miten riippuvuuksien injektoinnin avulla on helppo tehdä komentoriviltä toimivista ohjelmista automatisoidusti testattavia. Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web-selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista. Tutustumme laskareissa web-sovellusten testauksen automatisointiin käytettävään [Selenium 2.0 WebDriver](http://seleniumhq.org/docs/03_webdriver.html) -kirjastoon.
 
 Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testeistä käsin selaimen toimintaa, esim. linkkien klikkaamista ja tiedon syöttämistä lomakkeeseen. Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä.
 
-Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan unittest-kirrjastolla seuraavaksi esiteltävän Robot frameworkin avulla.
+Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan unittest-kirjastolla seuraavaksi esiteltävän Robot Frameworkin avulla.
 
 Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-version testien mäppäyksestä:
 
 ![]({{ "/images/3-11a.png" | absolute_url }}){:height="500px" }
 
-### Robot framework
+### Robot Framework
 
 Robot on toimintaperiaatteiltaan hyvin samankaltainen kuin Cucumber. Myös Robot-testit kirjoitetaan asiakkaan kielellä.
 
@@ -599,9 +599,9 @@ class AppLibrary:
         self._app.run()
 ```
 
-Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten Web-sovelluksia testattaessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.
+Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten web-sovelluksia testattaessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.
 
-Edellä olleen esimerkin Web-version hyväksymäkriteerit Robotilla määriteltynä näyttäisivät seuraavalta:
+Edellä olleen esimerkin web-version hyväksymäkriteerit Robotilla määriteltynä näyttäisivät seuraavalta:
 
 ```
 Login With Correct Credentials
@@ -651,7 +651,7 @@ Login Should Fail With Message
 
 Koska testien käyttämät avainsanat on määritelty käyttämällä ainoastaan Robotin valmiiksi määriteltyjä avainsanoja kuten _Input Text_, _Click Button_ ja _Page Should Contain_, ei testien toimintaan saattaminen edellytä muuta kuin muutaman rivin konfiguraatiota.
 
-Robot-frameworkia pääset käyttämään viikon 3 laskarien [Python-versiossa](/tehtavat3).
+Robot Frameworkia pääset käyttämään viikon 3 laskarien [Python-versiossa](/tehtavat3).
 
 ## Ohjelmiston integraatio
 
@@ -665,7 +665,7 @@ Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä ku
 
 ### Daily build ja smoke test
 
-90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolivälissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel ja Windows 95 -tiimien menestysten ansiosta.
+90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolivälissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel- ja Windows 95 -tiimien menestysten ansiosta.
 
 Smoke testillä tarkoitetaan kohtuullisen yksinkertaista järjestelmätason testiä, joka kuitenkin testaa järjestelmän kaikkia arkkitehtuurillisia tasoja (käyttöliittymää, sovelluslogiikkaa, tietokantaa), ja havaitsee jos jotain on pahasti pielessä. Smoke test ei siis kata kovin paljoa sovelluksen toiminnallisuudesta, mutta kuitenkin riittävästi havaitakseen jos sovellus hajoaa perustavanlaatuisella tavalla, esimerkiksi jos sovelluslogiikan ja tietokannan välille syntyy epäyhteensopivuus, joka estää kokonaan tietokantayhteyksien muodostamisen.
 
@@ -689,7 +689,7 @@ Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä inte
 
 Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta täysin vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
 
-Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti, maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat end to end -testit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_.
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti. Maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat end to end -testit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_.
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. suuren kuormituksen sietoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa.
 
@@ -830,7 +830,7 @@ def recommended_news_generator(user):
         return recommendation_algoritm(user)
 ```
 
-Osassa 2 [Lean-startup](osa2/#vaatimusmäärittely-2010-luvulla)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature-togglejen avulla.
+Osassa 2 [Lean-startup](osa2/#vaatimusmäärittely-2010-luvulla)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature togglejen avulla.
 
 Canary releaset ja A/B-testaus eivät ole feature togglejen ainoa sovellus, niitä käytetään
 yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
@@ -853,10 +853,10 @@ Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://
 
 Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla master tai joku erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
-Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin, näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
+Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin. Näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
 
 Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityisen suurta kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta.
-Feature togglejen holtiton käyttö voi johtaa feature toggle helvettiin, eli suunnittelua ja systemaattisuutta todellakin tarvitaan.
+Feature togglejen holtiton käyttö voi johtaa feature toggle -helvettiin, eli suunnittelua ja systemaattisuutta todellakin tarvitaan.
 
 Trunk-pohjaista kehitysmallia noudattavat monet maailman suurimmista internetpalveluista, esim. Google, Facebook ja Netflix.
 
@@ -980,7 +980,7 @@ Ylläoleva kuva on vuonna 2016 ilmestyneestä artikkelista. Tässä vaiheessa Fo
 
 Sittemmin tutkimuksen fokus on laajennettu myös firman johtamiskäytänteisiin, useimmat näistä liittyvät Lean-filosofiaan, joka on aiheenamme [osassa 5](/osa5/).
 
-On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänteitä, mm. trunk based -development ja tuotannossa olevan sovelluksen monitorointi.
+On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänteitä, mm. trunk based development ja tuotannossa olevan sovelluksen monitorointi.
 
 Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrityksen tehokkuutta:
 
