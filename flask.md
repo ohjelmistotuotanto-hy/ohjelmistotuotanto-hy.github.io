@@ -263,6 +263,13 @@ Sovelluksen automatisoitu testaus on tehty suurimmaksi osaksi Robotilla. Robot-t
 
 Miniprojekteissa saattaa tulla esiin hieman enemmän toiminnallisuutta (esim. BibTexin generointi) jonka testaaminen kannattaa hoitaa yksikkötesteillä.
 
+Kantavana ajatuksena on siis, että Robot Frameworkia ja yksikkötestejä käytetään kumpaakin siihen, mikä on mielekästä. Jotta tämänkaltaisessa sovelluksessa ylipäätään olisi järkevästi yksikkötestein testattavissa olevaa koodia, tulee toimia seuraavasti:
+
+- Eristä koodissa oman vastuun omaavat osat muista osista riippumattomiksi.
+- Erityisesti älä sotke tietokanta- ja käyttöliittymäoperaatioita muuhun koodiin.
+- Erilleen tietokannasta ja käyttöliittymästä kapseloidut osat kannattaa mahdollisesti testata yksikkötesteillä.
+- Esimerkiksi tietokannasta huolehtivia luokkia tuskin kannattaa tämän kokoluokan ohjelmistossa yksikkötestata, sillä Robot Framework -kattavuus hoitaa ne.
+
 Robot-testien toimintaperiaate on samankaltainen kuin viikon 3 [tehtävissä](/tehtavat3).
 
 Yksi testeistä on hieman mielenkiintoisempi. Testi luo kaksi Todoa ja klikkaa toiseen liittyvää nappia. Tilanne on siis seuraava:

@@ -159,8 +159,9 @@ Pisteitä kertyy seuraavista asioista:
   - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
 - (0.25p) sprintin 4 backlog
   - Vaatimukset kuten edellisissä sprinteissä
-- (0.125p) relevantit osat sovellusta testauttu  yksikkötestein
+- (0.125p) relevantit osat sovellusta testauttu yksikkötestein
   - kattavuusraportti README-tiedostossa
+  - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
 - (0.25p) kattavahko testaus storytasolla
   - testit toimivat vähintään lokaalisti suoritettaessa
 - (0.25p) jatkuva integraatio
