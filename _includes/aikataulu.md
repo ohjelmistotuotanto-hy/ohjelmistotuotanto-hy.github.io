@@ -91,12 +91,14 @@
 
 - Luento 11: {{site.luennot[11]}}
   - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
+    - tallenteet:
+    - syksy 2024: [youtube](https://youtu.be/opMS36bTVwI), [unitube](https://www.helsinki.fi/fi/unitube/video/af8a2a6f-6364-452c-8c88-7392703783e8) 
+    - Jamin edellisinä vuosina hieman eri aiheista pitämät luennot [syksy 2023](https://youtu.be/fwLSIBp4WEQ), [syksy 2022](https://youtu.be/t4kdM-VwG4I)
 - Luento 12: {{site.luennot[12]}} 
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
     - tallenteet:
-      - syksy 2023: [youtube](https://youtu.be/AgTV3pNoZ6Y), [unitube](https://www.helsinki.fi/fi/unitube/video/f8a923cc-5b4d-4dc1-b9cd-c7214276e6db)
-    - [syksy 2022](https://youtu.be/1gxfA58DLQ8)  
+      - syksy 2024: [youtube](https://youtu.be/S-9XmDN94zI), [unitube](https://www.helsinki.fi/fi/unitube/video/665cf928-dc6d-4e78-9c92-e1e22569d12d)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
