@@ -176,7 +176,7 @@ Pisteitä kertyy seuraavista asioista:
   - koodissa käytetään järkevää nimentää 
   - koodissa ei ole liikaa ilmeistä copypastea
   - koodissa ei ole sinne kuulumatonta roskaa, esim. pois kommentoitua koodia
-- (0.125p) Commitit ja commit-viestit on muodostettu järjevästi (suurimmassa osassa sprintin commiteista), katso ohjeita [täältä](/commit) 
+- (0.125p) Commitit ja commit-viestit on muodostettu järkevästi (suurimmassa osassa sprintin commiteista), katso ohjeita [täältä](/commit) 
 - (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
   - Kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein
   - Sovittu etukäteen kuka tekee mitäkin
