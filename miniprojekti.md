@@ -27,6 +27,9 @@ inheader: yes
       Ilmoita ryhmäsi loppudemoon <a href="https://docs.google.com/document/d/1xudrKmSuvr0uQ_Scrny-mkJD713x50Qae-NFSJBSEPc/edit?usp=sharing">täällä</a>
     </li>
     <li>
+      Miniprojektin <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">lopputoimenpiteet</a>
+    </li>
+    <li>
       Ohje Flaskin käyttöön <a href="/flask">täältä</a>
     </li>
   </ul>

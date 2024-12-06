@@ -2,6 +2,12 @@
 
   <ul>
     <li>
+      <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
+    </li>
+    <li>
+      <a href="/miniprojekti">Miniprojektin</a> viimeinen viikko käynnistyy. Lopputoimenpiteet on kerrattu <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täällä</a>.
+    </li>
+    <li>
       Vierailuluennot käynnissä:
       <ul>
         <li>
@@ -25,17 +31,12 @@
       Viikon 1-6 laskarit valmiina!
     </li>
     <li>
-      <a href="/miniprojekti">Miniprojekti</a> käynnissä!
-    </li>
-    <li>
       Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
     </li>
     <li>
       Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
     </li>
-    <li>
-      Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
-    </li>
+
   </ul>
 
 </div>

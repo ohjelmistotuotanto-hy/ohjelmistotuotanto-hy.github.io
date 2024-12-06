@@ -194,10 +194,19 @@ Sprintin maksimi on 2.5 pistettä.
 
 #### Loppudemo ja sprintin 4 päättyminen
 
+Kuten tunnettua, loppudemot pidetään keskiviikkona 11.12. klo 12-14 B123 ja torstaina 12.12. klo 12-14 CK112. Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Lue tarkasti neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit. Aika on lyhyt, joten kannattaa erityisesti huomioida seuraava arvostelukriteeri
+- _kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein_
+
+Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
+
+Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 13.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
+
+Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
+
 #### Vertaispalaute
 
 - Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään xx klo 23:59**
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään pe 20.12. klo 23:59**
   - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
 - Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   - Ryhmäläiset eivät näe toistensa vertaispalautteita

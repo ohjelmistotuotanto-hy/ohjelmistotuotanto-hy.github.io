@@ -5,16 +5,12 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-### Erilliskokeet
-
-Erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3024. Ilmoittautuminen erilliskokeeseen [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-833dd332-9441-4f13-8c46-40261bc0d5d0/TKT20006).
-
-
-**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että uusinnassa ja erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia. 
 
 ### Kurssikoe
 
 Kurssikoe pidetään torstaina 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=67825). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
+
+Kokeeseen _ei tarvitse ilmoittautua erikseen_, kurssi-ilmoittautuminen riittää. Varmista ennen koeaamua, että pääset Moodleen! Olen kokeen aikana ilmassa, joten mahdollinen käyttöoikeuden lisääminen ei kokeen aikana enää onnistu.
 
 Internet on melko vapaasti käytettävissä kokeessa. 
 
@@ -68,3 +64,11 @@ Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä 
 Laajoja kielimalleja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen tekstiasun muokkaamiseen, vastausten generointi kielimalleilla ei kuitenkaan ole sallittua.
 
 Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
+
+### Uusinta- ja erilliskokeet
+
+Uusinta- ja erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025. Ilmoittautuminen erilliskokeeseen [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-2be11716-4a0b-427f-a734-dfcfe7bfc19f/TKT20006).
+
+Uusintakoe siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
+
+**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että uusinnassa ja erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia. 
