@@ -5,7 +5,7 @@
       <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
     </li>
     <li>
-      <a href="/miniprojekti">Miniprojektin</a> viimeinen viikko käynnistyy. Lopputoimenpiteet on kerrattu <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täällä</a>.
+      <a href="/miniprojekti">Miniprojektin</a> viimeinen viikko käynnistyy. Lue lopputoimenpiteet <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täältä</a>.
     </li>
     <li>
       Vierailuluennot käynnissä:
