@@ -7,8 +7,6 @@ permalink: /tehtavat7/
 
 {% include paivitys_kesken.md current=true %}
 
-{% include laskari_info.md part=7 %}
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}

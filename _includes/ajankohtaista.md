@@ -28,7 +28,7 @@
     </li>
 
     <li>
-      Viikon 1-6 laskarit valmiina!
+      Viikon 1-7 laskarit valmiina!
     </li>
     <li>
       Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
