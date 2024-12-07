@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
-{% include paivitys_kesken.md %}
+{% include paivitys_kesken.md current=true %}
 
 {% include laskari_info.md part=7 %}
 
@@ -198,8 +198,8 @@ Referaatti kirjoitetaan palautusrepositorion hakemistoon viikko7 tiedostoon _ref
 
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 13-27.12.2023**. 
+Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 11-28.12.2024**. 
 
-**HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 13.12. aukeavaa normaalia loppupalautetta.
+**HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 11.12. aukeavaa normaalia loppupalautetta.
 
 {% include submission_instructions.md %}
