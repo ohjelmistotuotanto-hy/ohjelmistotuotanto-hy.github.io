@@ -10,9 +10,9 @@ permalink: /ohje_kokeeseen/
 
 Kurssikoe pidetään torstaina 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=67825). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
 
-Kokeeseen _ei tarvitse ilmoittautua erikseen_, kurssi-ilmoittautuminen riittää. Varmista ennen koeaamua, että pääset Moodleen! Olen kokeen aikana ilmassa, joten mahdollinen käyttöoikeuden lisääminen ei kokeen aikana enää onnistu.
+Kokeeseen _ei tarvitse ilmoittautua erikseen_, kurssi-ilmoittautuminen riittää. Varmista hyvissä ajoin ennen koetta, että pääset kurssin Moodleen, eli [tänne](https://moodle.helsinki.fi/course/view.php?id=67825). Olen kokeen aikana ilmassa, joten mahdollinen käyttöoikeuden lisääminen ei kokeen aikana enää onnistu.
 
-Internet on melko vapaasti käytettävissä kokeessa. 
+Internet on melko vapaasti käytettävissä kokeen aikana. 
 
 Kannattaa huomata, että koe ja sen "oikeat vastaukset" perustuvat kurssimateriaaliin. Eli vaikka löytäisit googlaamalla satunnaiselta sivulta vastauksen johonkin kysymykseen, jos se käyttää eri terminologiaa kuin kurssi, tai muuten poikkeaa radikaalisti kurssilla esitetystä, voi olla että vastaus ei paljoa pisteitä tuo.
 
@@ -53,7 +53,7 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [kevät 2017](https://github.com/mluukkai/ohtu2017)
 - [kevät 2016](https://github.com/mluukkai/ohtu2016)
 
-Kysymyksien luonne tulee nyt olemaan hieman erilainen kuin aiempina vuosina.
+Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
 
 #### Plagiointi ja ChatGTP
 
