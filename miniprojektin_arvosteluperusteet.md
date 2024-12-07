@@ -226,7 +226,7 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline xx klo 23:59**
+- **Raportin deadline pe 20.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
