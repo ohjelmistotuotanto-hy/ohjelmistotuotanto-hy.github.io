@@ -114,8 +114,7 @@ class KiviPaperiSakset:
 
     # tämän metodin toteutus vaihtelee eri pelityypeissä
     def _toisen_siirto(self, ensimmaisen_siirto):
-        # metodin oletustoteutus
-        return "k"
+        raise Exception("Tämä metodi pitää korvata aliluokassa")
 
     def _onko_ok_siirto(self, siirto):
         return siirto == "k" or siirto == "p" or siirto == "s"
