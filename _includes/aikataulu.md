@@ -109,8 +109,8 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
-    - Luomus Mammal Database Team: _tarinoita juniorikehittäjien elämästä_
+    - Luomus Mammal Database Team: _tarinoita ohjelmistoprojektilaisen elämästä_ [youtube](https://youtu.be/yrxqB_y0lMs)
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_ peruuntui sairastumisen takia, [syksyn 2023](https://youtu.be/SkQDKNyMdzo?si=EqT4wErdkMxq4Hp1&t=3615) on edelleen katsottavissa!
   - Luento 14: {{site.luennot[14]}}
     - Hannu Kokko (Elisa): _Global product development_
 - Laskarit
