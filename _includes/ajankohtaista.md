@@ -2,6 +2,9 @@
 
   <ul>
     <li>
+      Viikon 6 laskarien deadline siirtyy vuorokaudella, tehtävien 2-5 käyttämän rajapinnan käyttökatkosten takia.
+    </li>
+    <li>
       <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
     </li>
     <li>
