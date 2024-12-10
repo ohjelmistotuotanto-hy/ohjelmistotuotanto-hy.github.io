@@ -2,34 +2,21 @@
 
   <ul>
     <li>
-      Viikon 6 laskarien deadline siirtyy vuorokaudella, tehtävien 2-5 käyttämän rajapinnan käyttökatkosten takia.
+        <a href="/miniprojekti">Miniprojektin</a>  loppudemot 
+        <ul>
+          <li>ke 11.12. klo 12-14 B123</li>
+          <li>to 12.12. klo 12-14 CK112</li>
+        </ul>
+    </li>
+    <li>
+      Viikon 6 laskarien deadline siirtyy vuorokaudella (eli on ti 10.12. klo 23:59), tehtävien 2-5 käyttämän rajapinnan käyttökatkosten takia.
     </li>
     <li>
       <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
     </li>
     <li>
-      <a href="/miniprojekti">Miniprojektin</a> viimeinen viikko käynnistyy. Lue lopputoimenpiteet <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täältä</a>.
+      <a href="/miniprojekti">Miniprojektin</a> lopputoimenpiteet kerrottu <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täällä</a>
     </li>
-    <li>
-      Vierailuluennot käynnissä:
-      <ul>
-        <li>
-          tiistai 26.11. 12-14 Ville Nordberg Trail openers ja Kristiina Vainio Houston Inc
-        </li>
-        <li>
-          maanantai 2.12. 12-14 Jami Kousa ja Aleksandr Tereshchenko Unity
-        </li>
-        <li>maanantai 9.12. 12-14 Kasper Hirvikoski Unity ja Luomus Fossil Database Team</li>
-        <li>tiistai 10.12. 12-14 Hannu Kokko Elisa</li>
-        <li>
-            Vierailut striimataan ja niistä tulee tallenteet
-          </li>
-        <li>
-          Osallistumisesta paikan päällä on jaossa <strong>1 kurssipiste</strong> (0.33 pistettä per kerta)
-        </li>
-      </ul>
-    </li>
-
     <li>
       Viikon 1-7 laskarit valmiina!
     </li>
@@ -39,7 +26,6 @@
     <li>
       Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
     </li>
-
   </ul>
 
 </div>

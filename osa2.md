@@ -11,8 +11,6 @@ permalink: /osa2/
   />
 </a>
 
-{% include miniproj_ilmo.md %}
-
 Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien menetelmien näkökulma vaatimusmäärittelyyn. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
 ## Typoja materiaalissa

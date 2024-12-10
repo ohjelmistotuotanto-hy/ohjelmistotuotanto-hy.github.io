@@ -5,7 +5,7 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
-{% include paivitys_kesken.md current=true %}
+{% include paivitys_kesken.md current=true %}  
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 

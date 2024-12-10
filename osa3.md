@@ -11,8 +11,6 @@ permalink: /osa3/
   />
 </a>
 
-{% include miniproj_ilmo.md %}
-
 Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterien menetelmien suosimiin testauksen ja laadunhallinnan menetelmiin.
 
 ## Typoja materiaalissa

@@ -11,8 +11,6 @@ permalink: /osa1/
   />
 </a>
 
-{% include miniproj_ilmo.md %}
-
 Ensimmäisessä osassa käydään aluksi katsaus _ohjelmistotuotantoon_, sen historiaan ja osa-alueisiin. Tämän jälkeen tutustutaan ensin ns. vesiputousmalliin, eli aiemmin suosittuun tapaan hallita ohjelmistoprojekteja ja sen jälkeen ketteriin menetelmiin, eli nykyään vallalla olevaan ohjelmistoprojektien kehitys- ja hallintatapaan.
 
 Tämän osan jälkipuolisko keskittyy suosituimpaan ketterään menetelmään _Scrumiin_, joka antaa erään konkreettisen ohjeiston sille miten ketteriä ohjelmistoprojekteja voi hallita.

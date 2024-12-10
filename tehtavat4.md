@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include miniproj_ilmo.md %}
-
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan retrospektiivitekniikoihin ja tehtävä 6 johdattaa Gitin tägien maailmaan.
