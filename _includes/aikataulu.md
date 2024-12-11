@@ -91,8 +91,7 @@
 
 - Luento 11: {{site.luennot[11]}}
   - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
-    - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/opMS36bTVwI), [unitube](https://www.helsinki.fi/fi/unitube/video/af8a2a6f-6364-452c-8c88-7392703783e8) 
+    - tallenteet: [youtube](https://youtu.be/opMS36bTVwI), [unitube](https://www.helsinki.fi/fi/unitube/video/af8a2a6f-6364-452c-8c88-7392703783e8) 
     - Jamin edellisinä vuosina hieman eri aiheista pitämät luennot [syksy 2023](https://youtu.be/fwLSIBp4WEQ), [syksy 2022](https://youtu.be/t4kdM-VwG4I)
 - Luento 12: {{site.luennot[12]}} 
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
@@ -113,6 +112,8 @@
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_ peruuntui sairastumisen takia, [syksyn 2023](https://youtu.be/SkQDKNyMdzo?si=EqT4wErdkMxq4Hp1&t=3615) on edelleen katsottavissa!
   - Luento 14: {{site.luennot[14]}}
     - Hannu Kokko (Elisa): _Global product development_
+    - tallenteet: [youtube](https://youtu.be/B-lvGLBe1WQ),  [unitube](https://www.helsinki.fi/fi/unitube/video/2bf26183-2417-401d-a73b-c4567da21ee9)
+
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
