@@ -2,16 +2,6 @@
 
   <ul>
     <li>
-        <a href="/miniprojekti">Miniprojektin</a>  loppudemot 
-        <ul>
-          <li>ke 11.12. klo 12-14 B123</li>
-          <li>to 12.12. klo 12-14 CK112</li>
-        </ul>
-    </li>
-    <li>
-      Viikon 6 laskarien deadline siirtyy vuorokaudella (eli on ti 10.12. klo 23:59), tehtävien 2-5 käyttämän rajapinnan käyttökatkosten takia.
-    </li>
-    <li>
       <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
     </li>
     <li>
