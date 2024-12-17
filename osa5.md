@@ -144,8 +144,6 @@ Jos tuotantolinjan aiheuttamaa systemaattista vikaa ei huomata ajoissa, ehditä�
 
 Ohjelmistokehityksessä tuotteeseen tulee lähes väistämättä vikoja, ja on kustannustehokasta suorittaa laadunhallinta niin aikaisessa vaiheessa kuin mahdollista.
 
-#### Ihmisten potentiaalin alihyödyntäminen
-
 Nämä alkuperäiset vuosikymmeniä sitten autonvalmistuksen kontekstiin sovitetut 7 muda-hukkaa on tulkittu uudelleen yhä uusiin konteksteihin, kuten ohjelmistokehitykseen.
 
 Vuosien varrella on ehdotettu myös uusia hukan muotoja, näistä eräs _ihmisten potentiaalin alihyödyntäminen_ on jossain määrin jo vakiintunut. Englanniksi tätä hukan muotoa kuvaillaan seuraavasti _Under-realizing people’s potential and varied skill, insight, ideas, suggestion._
