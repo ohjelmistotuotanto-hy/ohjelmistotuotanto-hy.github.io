@@ -7,7 +7,7 @@ permalink: /ohje_kokeeseen/
 
 ### Uusinta- ja erilliskokeet
 
-Uusinta- ja erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025. Ilmoittautuminen erilliskokeeseen onnstuu alkaen 29.12.
+Uusinta- ja erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025. Ilmoittautuminen erilliskokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/94641?code=TKT20006_otm-2be11716-4a0b-427f-a734-dfcfe7bfc19f). Tällä hetkellä on mahdollista ilmoittautua ainoastaan ennen 1.8. tehtävään tenttiin. Linkki syksyn ilmoittautumiselle ilmestyy kesällä.
 
 Uusintakoe siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
 
