@@ -1,20 +1,16 @@
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
 
   <ul>
-    <li>
-      <a href='/ohje_kokeeseen'>Ohjeita kokeeseen</a>
+    <li><a href="koe2024">Koe</a> on vihdoin korjattu. Linkin takaa näet arvosteluperusteet.
     </li>
     <li>
-      <a href="/miniprojekti">Miniprojektin</a> lopputoimenpiteet kerrottu <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">täällä</a>
+      Omasta arvioinnista voi tarvittaessa kysyä suoraan kunkin  tehtävän korjaajalta, ks. arvosteluperusteet
     </li>
     <li>
-      Viikon 1-7 laskarit valmiina!
+      Myös kurssin arvostelu on valmis. Arvostelun "tarkastuslista", on  lähetetty emailitse.
     </li>
     <li>
-      Luentojen tallenteet alempana sivulla <a href="/#aikataulu">aikataulun</a> kohdalla
-    </li>
-    <li>
-      Luennot ovat nähtävissä livenä <a href='https://video.helsinki.fi/unitube/live-stream.html?room=l10'>Unitubessa</a>
+      Jos olet tulossa uusintaan tai erilliskokeeseen, lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen</a>
     </li>
   </ul>
 
