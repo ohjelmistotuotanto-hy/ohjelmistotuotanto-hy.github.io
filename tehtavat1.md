@@ -287,7 +287,7 @@ On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutokse
 - Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Käynnistä sovellus komennolla `poetry run python3 src/index.py`
   - [Run](https://python-poetry.org/docs/cli/#run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
-- Siirry virtuaaliympäristöön komennolla `poetry shell`
+- Siirry virtuaaliympäristöön komennolla `poetry shell` (tai komennolla `eval $(poetry env activate)` mikäli versiosi on vähintään 2.0.0)
 - Suorita komento `python3 src/index.py`
   - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
   - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
