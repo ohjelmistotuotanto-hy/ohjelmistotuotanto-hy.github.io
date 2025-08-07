@@ -34,13 +34,13 @@ Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.co
 
 Katsotaan ensin, mitä lisenssejä muut ohjelmistot käyttävät.
 
-Mitä lisenssiä Code Climate käyttää: [https://github.com/codeclimate/codeclimate/](https://github.com/codeclimate/codeclimate/)?
+Mitä lisenssiä Robot Framework käyttää: [https://github.com/robotframework/robotframework](https://github.com/robotframework/robotframework)?
 
 <details>
 	<summary>
 		Vastaus
 	</summary>
-	GNU Affero General Public License v3.0
+	Apache 2.0-lisenssi
 </details>
 
 <br>
