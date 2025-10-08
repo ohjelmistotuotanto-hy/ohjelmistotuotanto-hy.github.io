@@ -78,10 +78,13 @@
   - tallenteet:
     - syksy 2024: [youtube](https://youtu.be/nQ_rHDazdXI), [unitube](https://www.helsinki.fi/fi/unitube/video/b081990c-3090-4419-921f-eb01ba33c546)
 - Luento 10: {{site.luennot[10]}} 
-  - Ville Nordberg (Trail openers): _Vihreä IT_
-  - Kristiina Vainio (Houston Inc): _Juniorin kasvu senioriksi konsulttitalossa_
-  - tallenteet: [youtube](https://youtu.be/p0ra1IOiEzY), [unitube](https://www.helsinki.fi/fi/unitube/video/66e4c63a-0858-4b21-8e5f-36ad2be4f237)
-  - Huom: monivalinnat luentopäiväkirjoilla korvaavien **ei tarvitse** tehdä luentopäiväkirjoja vierailuluennoista 
+  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
+  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
+    - tallenteet:
+      - syksy 2024: [youtube](https://youtu.be/S-9XmDN94zI), [unitube](https://www.helsinki.fi/fi/unitube/video/665cf928-dc6d-4e78-9c92-e1e22569d12d)
+- Laskarit
+  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 - Laskarit
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
 - [Miniprojekti](/miniprojekti)
@@ -90,14 +93,9 @@
 ### Viikko 6
 
 - Luento 11: {{site.luennot[11]}}
-  - Jami Kousa ja Aleksandr Tereshchenko (Unity): _Metrics, Tracing and bugs in production_
-    - tallenteet: [youtube](https://youtu.be/opMS36bTVwI), [unitube](https://www.helsinki.fi/fi/unitube/video/af8a2a6f-6364-452c-8c88-7392703783e8) 
-    - Jamin edellisinä vuosina hieman eri aiheista pitämät luennot [syksy 2023](https://youtu.be/fwLSIBp4WEQ), [syksy 2022](https://youtu.be/t4kdM-VwG4I)
+  - vierailuluento
 - Luento 12: {{site.luennot[12]}} 
-  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
-  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
-    - tallenteet:
-      - syksy 2024: [youtube](https://youtu.be/S-9XmDN94zI), [unitube](https://www.helsinki.fi/fi/unitube/video/665cf928-dc6d-4e78-9c92-e1e22569d12d)
+  - vierailuluento
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
@@ -108,21 +106,16 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - Luomus Mammal Database Team: _tarinoita ohjelmistoprojektilaisen elämästä_ [youtube](https://youtu.be/yrxqB_y0lMs)
-    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_ peruuntui sairastumisen takia, [syksyn 2023](https://youtu.be/SkQDKNyMdzo?si=EqT4wErdkMxq4Hp1&t=3615) on edelleen katsottavissa!
+    - vierailuluento
   - Luento 14: {{site.luennot[14]}}
-    - Hannu Kokko (Elisa): _Global product development_
-    - tallenteet: [youtube](https://youtu.be/B-lvGLBe1WQ),  [unitube](https://www.helsinki.fi/fi/unitube/video/2bf26183-2417-401d-a73b-c4567da21ee9)
+    - vierailuluento
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
-  - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-    - ke 11.12. klo 12-14 B123
-    - to 12.12. klo 12-14 CK112
+  - Loppudemot 
+
     
 ### Viikko 8
 
-- Koe [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=67825) torstaina 19.12. klo 7.00-14.00 
-  - Koeaika on 4 tuntia siitä hetkestä kun aloitat kokeen
-  - Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
+- Koe 

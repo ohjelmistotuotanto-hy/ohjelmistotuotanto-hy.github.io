@@ -17,18 +17,16 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 - Luennot
   - Maanantaisin ja tiistaisin klo 12-14 B123
   - Luennot ovat nähtävissä livenä [Unitubessa](https://video.helsinki.fi/unitube/live-stream.html?room=l10) 
-  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2023 luentojen tallenteet ovat myös käytössä
+  - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2024 luentojen tallenteet ovat myös käytössä
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon pajassa BK107
-  - ma 14-16
-  - to 13-15
-  - pe 12-14
+  - XXX
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
-- [CurreChat](https://curre.helsinki.fi/chat/hy-opt-cur-2425-7a893cd5-d161-4815-ac8e-422dd8953ff9)
+- [CurreChat](https://curre.helsinki.fi/chat/hy-opt-cur-2526-7a893cd5-d161-4815-ac8e-422dd8953ff9)
   - CurreChat tarjoaa kurssilaisten käyttöön ilmaisen GPT-4o-chatin, joka siis käytännössä sama kuin OpenAI:n ChatGPT. Chat on Azuressa oleva HY:n oma instanssi, johon syötettyä materiaalia *ei käytetä kielimallien kouluttamiseen*
 - Kurssipalaute
-  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/83083419/feedback>
+  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/95023982/feedback>
 
 ## Aikataulu
 

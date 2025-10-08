@@ -1,35 +1,59 @@
 ---
 layout: page
 title: Miniprojekti
+title_long: 'Miniprojekti'
 permalink: /miniprojekti/
+inheader: yes
 ---
 
 ### Ajankohtaista
 
-- Loppudemot
-  - ti 12.12. klo 14-16 B123
-  - to 14.12. klo 12-14 B123
-  - Jokainen ryhmä osallistuu yhteen loppudemoon (demoviikolla ei enää pidetä asiakaspalaveria)
-- Varaa ryhmällesi aika [täältä](https://docs.google.com/document/d/1Go-f33LQC1SSZG-CI-04UyTVE84ytfN9HSAHEad3OC0/edit?usp=sharing)
-- Miniprojektin [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
-- Asiakastapaamisten (30 min) ajankohta palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
-- [Arvosteluperusteet](/miniprojektin_arvosteluperusteet/)
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
+
+  <ul>
+    <li>
+      Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>, <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">sprintti 3</a>, <a href="/miniprojektin_arvosteluperusteet/#neljännen-sprintin-arvosteluperusteet">sprintti 4</a>
+    </li>
+    <li>
+      Loppudemot
+      <ul>
+        <li>
+          ke 11.12. klo 12-14 B123
+        </li>
+        <li>
+          to 12.12. klo 12-14 CK112
+        </li>
+      </ul>
+      Ilmoita ryhmäsi loppudemoon <a href="https://docs.google.com/document/d/1xudrKmSuvr0uQ_Scrny-mkJD713x50Qae-NFSJBSEPc/edit?usp=sharing">täällä</a>
+    </li>
+    <li>
+      Miniprojektin <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">lopputoimenpiteet</a>
+    </li>
+    <li>
+      Ohje Flaskin käyttöön <a href="/flask">täältä</a>
+    </li>
+  </ul>
+
+</div>
 
 ### Johdanto
 
 - Kurssin viikoilla 4-7 tehdään miniprojekti
 - **Kurssin läpipääsy edellyttää hyväksyttyä osallistumista miniprojektiin** tai sen [hyväksilukemista](/osa0#miniprojektin-hyv%C3%A4ksilukeminen)
 
-- Projekti tehdään noin 5-6 hengen ryhmissä
+- Projekti tehdään noin 4-6 hengen ryhmissä
 - Projektissa ohjelmoidaan jonkin verran, **pääpaino ei ole ohjelmoinnissa** vaan systemaattisen prosessin (tästä lisää myöhemmin) noudattamisessa.
 - **Jokaisen ryhmän jäsenen on tarkoitus tehdä kunkin sprintin aikana töitä noin 6 tuntia projektin eteen**
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
+- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+- ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
 
-- Aloitustilaisuutesi näet [täältä](/ryhmajako/), ryhmäjako tehdään aloitustilaisuudessa Kaikkien ryhmäläisten on **pakko osallistua** tilaisuuteen, jonka kesto on noin 2 tuntia
+- Ryhmät muodostettiin 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
+  - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -44,7 +68,7 @@ permalink: /miniprojekti/
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 3 (13-17.11.)
+#### viikko 3 (11-15.11.)
 
 - Ryhmä muodostuvat/muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
@@ -55,30 +79,43 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
   - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
     - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
+- Teknisiä ohjeita sovelluksen tekemiseen [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
-#### viikko 4 (20-24.11.)
+#### viikko 4 (18-22.11.)
 
 - Sprintin 1 katselmointi ja sprintin 2 suunnittelu
+- Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet)
 
-#### viikko 5 (27.11-1.12.)
+#### viikko 5 (25-29.11.)
 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
+- Sprintin 2 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet)
 
-#### viikko 6 (4-8.12.)
+#### viikko 6 (2-5.12.)
 
 - Sprintin 3 katselmointi ja sprintin 4 suunnittelu
+- Sprintin 3 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet)
 
-#### viikko 7 (11-15.12.)
+#### viikko 7 (9-13.12.)
 
-- Loppudemot
-  - ti 12.12. klo 14-16 B123
-  - to 14.12. klo 12-14 B123
+- Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
+  - ke 11.12. klo 12-14 B123
+  - to 12.12. klo 12-14 CK112
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
+- Sprintin 4 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljannen-sprintin-arvosteluperusteet)
+- Projektin [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 
 ### Toteutettava ohjelmisto
 
-Ohjelman alustava [kuvaus](/speksi), tarkemmat yksityiskohdat kuulet asiakkaalta.
+Asiakkaan alustavia ajatuksia [täällä](/speksi). Loput paljastuvat asiakastapaamisissa.
+
+### Toteutusteknologia
+
+Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella,
+
+Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -89,7 +126,7 @@ Ohjelman alustava [kuvaus](/speksi), tarkemmat yksityiskohdat kuulet asiakkaalta
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
   - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   - Kannattaa huomata, että storyihin sitoutuminen ei tarkoita sitä, että ne on pakko tehdä valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
-  - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on otava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
+  - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
   - Ryhmä tekee päivittäin jäljellä olevan työajan arviointia ja dokumentoi tämän sprintin burndown-käyränä
@@ -149,20 +186,6 @@ Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla 
 Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
-
-### Teknologisia vihjeitä
-
-- Kokonaan uusien teknologioiden opettelu miniprojektin yhteydessä ei ole järkevää
-- **Mahdollisten ulkoisten kirjastojen käyttöönotto, testien tekeminen ja CI:n konfigurointi tulee viemään ainakin alussa todella paljon aikaa**
-- Komentoriviltä toimiva sovellus on teknologioiden suhteen riskittömin vaihtoehto
-  - **HUOM:** Komentoriviltä toimivat sovellukset on syytä tehdä siten, että niiden IO-operaatiot eli tulostaminen ja syötteen lukeminen on eriytetty omaan injektoitavaan luokkaan viikon 1 laskareissa käsitellyn [riippuvuuksien injektointi](/riippuvuuksien_injektointi_python/) -esimerkin tapaan. Jos näin ei toimita tulee sprintistä 2 alkaen tehtävä käyttöliittymän läpi tapahtuva testaus olemaan erittäin haastavaa
-- Web-pohjaiselle sovellukselle voi ottaa mallia kurssin [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-- Jos haluatte käyttää tietokantaa, on Tikapestakin tuttu _SQLite_ hyvä vaihtoehto
-  - SQLiten käyttöön Pythonilla löytyy ohjeita ainakin [Ohjelmistotekniikka-kurssin](https://ohjelmistotekniikka-hy.github.io/python/toteutus#tietojen-tallennus) materiaalista
-  - Ohjelmistotekniikka-kurssin [todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app) on esimerkkisovellus SQLiten tietokannan käytöstä Python-projektissa
-  - Huomaa, että jos tarkoituksena on julkaista sovellus jossain pilvipalvelussa, SQLiteä parempi vaihtoehto on _PostgreSQL_. Mallia PostgreSQL:n käyttöön Python-sovelluksessa voi ottaa esimerkiksi seuraavasta tälle kurssille tehdystä [esimerkkisovelluksesta](https://github.com/ohjelmistotuotanto-hy/todo-web)
-- Viikon 3 laskareista kannattaa ottaa mallia Robot Frameworkilla tapahtuvaan storyjen testaamiseen (vaaditaan sprintistä 2 alkaen)
-- Pythonin Tkinter-kirjastolla tehtyjen käyttöliittymien automatisoitu testaaminen on täysi mysteeri, sen takia kannattaanee välttää kirjaston käyttöä
 
 ### Työn arvostelu
 
