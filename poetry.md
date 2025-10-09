@@ -26,9 +26,9 @@ Jos komentoa `python3` ei jostain syystä löydy, tarkista `python`-komennon kä
 python --version
 ```
 
-Jos molemmissa tapauksissa versio on alle 3.10, asenna tietokoneellesi [uusin Python-versio](https://www.python.org/downloads/). Muista varmistaa asennuksen jälkeen, että oikea versio on käytössä. Muussa tapauksessa käytä komentoa, jonka käyttämä versio on vähintään 3.10.
+Jos molemmissa tapauksissa versio on alle 3.12, asenna tietokoneellesi [uusin Python-versio](https://www.python.org/downloads/). Muista varmistaa asennuksen jälkeen, että oikea versio on käytössä. Muussa tapauksessa käytä komentoa, jonka käyttämä versio on vähintään 3.12.
 
-_Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää!_
+_Kurssilla käytetään Poetryn versiota 2.2.1. Jos koneellasi on vanhempi versio, se on syytä päivittää!_
 
 ### Asennus
 
@@ -46,7 +46,7 @@ curl -sSL https://install.python-poetry.org | POETRY_HOME=$HOME/.local python3 -
 
 **HUOM:** jos `python3`-komentoa ei löydy, käytä sen sijaan komennon lopussa `python`-komentoa. Varmista kuitenkin, että Python-versio on oikea edellisen ohjeen mukaisesti.
 
-**HUOM:** jos törmäät macOS-tietokoneella virheeseen `SSL: CERTIFICATE_VERIFY_FAILED`, avaa Python-asennuksen hakemisto komenolla `open /Applications/Python\ 3.9` (korvaa "3.9" käytössä olevalla Python-versiolla) ja klikkaa hakemistossa olevaa tiedostoa _Install Certificates.command_. Odota, että operaatio valmistuu ja suorita tämän jälkeen edellä mainittu asennus-komento uudestaan.
+**HUOM:** jos törmäät macOS-tietokoneella virheeseen `SSL: CERTIFICATE_VERIFY_FAILED`, avaa Python-asennuksen hakemisto komenolla `open /Applications/Python\ 3.12` (korvaa "3.12" käytössä olevalla Python-versiolla) ja klikkaa hakemistossa olevaa tiedostoa _Install Certificates.command_. Odota, että operaatio valmistuu ja suorita tämän jälkeen edellä mainittu asennus-komento uudestaan.
 
 Asennuksen jälkeen Poetry-binäärin polku tulee asettaa `PATH`-muuttujaan. Tämä onnistuu lisäämällä kotihakemiston _.bashrc_-tiedoston loppuun seuraava rivi:
 
@@ -177,10 +177,10 @@ virtualenvs.in-project = true
 Harjoitellaan Poetryn käyttöä tekemällä pieni esimerkkiprojekti. Luo hakemisto _poetry-testi_ haluamaasi hakemistoon. Hakemiston ei tarvitse löytyä Labtooliin rekisteröimästäsi repositoriosta. Avaa hakemisto terminaalissa ja suorita siellä komento:
 
 ```bash
-poetry init --python "^3.10"
+poetry init --python "^3.12"
 ```
 
-Komennon yhteydessä annettu `--python "^3.10"`-asetus asettaa projektin Python-version vaatimukseksi vähintään version 3.10. Komennon suorittaminen alkaa kysymään kysymyksiä. Voit vastata kysymyksiin haluamallasi tavalla ja kaikkien kohtien vastauksia voi myös muokata myöhemmin. Tämän vuoksi kysymysten ohittaminen Enter-painiketta painamalla on täysin hyvä vaihtoehto.
+Komennon yhteydessä annettu `--python "^3.12"`-asetus asettaa projektin Python-version vaatimukseksi vähintään version 3.12. Komennon suorittaminen alkaa kysymään kysymyksiä. Voit vastata kysymyksiin haluamallasi tavalla ja kaikkien kohtien vastauksia voi myös muokata myöhemmin. Tämän vuoksi kysymysten ohittaminen Enter-painiketta painamalla on täysin hyvä vaihtoehto.
 
 Kun viimeiseen kysymykseen on vastattu, katso hakemiston sisältöä. Hakemistoon pitäisi ilmestyä _pyproject.toml_-tiedosto, jonka sisältö on kutakuinkin seuraava:
 
@@ -193,14 +193,14 @@ authors = ["Matti Luukkainen <matti.luukkainen@helsinki.fi>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 ```
 
-Tiedoston `[tool.poetry]`-osio sisältää projektiin liittyviä yleistietoja, kuten sen nimen, kuvauksen ja ylläpitäjät. Osion alapuolella on osioita, jotka listaavat projektin riippuvuuksia. Osiossa `[tool.poetry.dependencies]` näemme `poetry init`-komennon suorituksen yhteydessä asettamamme Python-version vaatimuksen, joka on muotoa `python = "^3.10"`. `^3.10`-merkintä tarkoittaa, että projektin käyttö vaatii vähintään Python-version 3.10.
+Tiedoston `[tool.poetry]`-osio sisältää projektiin liittyviä yleistietoja, kuten sen nimen, kuvauksen ja ylläpitäjät. Osion alapuolella on osioita, jotka listaavat projektin riippuvuuksia. Osiossa `[tool.poetry.dependencies]` näemme `poetry init`-komennon suorituksen yhteydessä asettamamme Python-version vaatimuksen, joka on muotoa `python = "^3.12"`. `^3.12`-merkintä tarkoittaa, että projektin käyttö vaatii vähintään Python-version 3.12.
 
 Kun _pyproject.toml_-tiedosto on tullut tutuksi, viimeistellään projektin alustaminen suorittamalla komento:
 
@@ -248,7 +248,7 @@ Asennuksen komento on siis muotoa `poetry add <kirjasto>`. Komennon suorittamise
 
 ```
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
 cowsay = "^2.0.3"
 ```
 
@@ -305,7 +305,7 @@ poetry shell
 Kun olemme virtuaaliympäristössä, komentorivin syöterivin edessä on suluissa virtuaaliympäristön nimi:
 
 ```bash
-$ (poetry-testi-IhtScY6W-py3.9)
+$ (poetry-testi-IhtScY6W-py3.12)
 ```
 
 Virtuaaliympäristön sisällä voimme suorittaa komennon "normaalisti", eli ilman `run`-komentoa:
@@ -374,7 +374,7 @@ Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
    ```
    [tool.poetry.dependencies]
-   python = "^3.10"
+   python = "^3.12"
    ```
 
    **Jos versio on väärä**, muuta se oikeaksi ja suorita komento `poetry update`
@@ -385,9 +385,9 @@ Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
    ```bash
    $ poetry env list
-   unicafe-jLeQYxxf-py3.9 (Activated)
-   $ poetry env remove unicafe-jLeQYxxf-py3.9
-   Deleted virtualenv: /Users/kalleilv/Library/Caches/pypoetry/virtualenvs/unicafe-jLeQYxxf-py3.9
+   unicafe-jLeQYxxf-py3.12 (Activated)
+   $ poetry env remove unicafe-jLeQYxxf-py3.12
+   Deleted virtualenv: /Users/kalleilv/Library/Caches/pypoetry/virtualenvs/unicafe-jLeQYxxf-py3.12
    ```
    Kun virtuaaliympäristöt on poistettu, suorita komento `poetry install`
 

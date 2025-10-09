@@ -5,15 +5,15 @@
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
   - [tallenne](https://youtu.be/9UaFvaRtTM0)
+- Luento 2: {{site.luennot[2]}}
+  - [Scrum](/osa1#scrum)
+  - tallenteet:
+    - syksy 2024: [youtube](https://youtu.be/sg6O6jTGrzk), [unitube](https://www.helsinki.fi/fi/unitube/video/89ccc897-d9bc-4cc3-982d-83b19bf062cd)
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
 ### Viikko 2
 
-- Luento 2: {{site.luennot[2]}}
-  - [Scrum](/osa1#scrum)
-  - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/sg6O6jTGrzk), [unitube](https://www.helsinki.fi/fi/unitube/video/89ccc897-d9bc-4cc3-982d-83b19bf062cd)
 - Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)

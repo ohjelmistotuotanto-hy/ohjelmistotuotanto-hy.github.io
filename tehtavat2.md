@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include laskari_info.md part=2 %}
 
 Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
@@ -40,7 +42,7 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 
 Tee seuraavat toimenpiteet:
 
-- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.10"`, jotta projektin Python-version vaatimus asetetaan oikein.
+- Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi

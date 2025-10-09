@@ -46,14 +46,14 @@ Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edel
 
 Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista).
 
-Jos osaamisessasi on puutteita (ks. alla oleva lista) kertaa haluamastasi resurssista:
+Jos osaamisessasi on puutteita, kertaa haluamastasi resurssista. Muutama esimerkki:
 
 - <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
 - <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa: _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
 
 Myös kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
 
-_HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla._
+_HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla viimeistään seuraavan tehtävän jälkeen._
 
 Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 
@@ -251,7 +251,7 @@ Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Python asennuksen
 python3 --version
 ```
 
-Jos Python on asennettu, komennon suorittaminen tulostaa asennetun Pythonin version. Varmista, että käytössä oleva versio on _vähintään 3.10.0_. Jos `python3`-komentoa ei löydy, kokeile komentoa `python`. Varmista kuitenkin, että `python`-komento suorittaa tarpeeksi uutta versiota. Jos asennusta ei löydy, tai käytössä on vanhempi versio, seuraa [ohjelmointikurssien](https://www.mooc.fi/fi/installation/vscode) ohjeita Pythonin asentamiselle.
+Jos Python on asennettu, komennon suorittaminen tulostaa asennetun Pythonin version. Varmista, että käytössä oleva versio on _vähintään 3.12.0_. Jos `python3`-komentoa ei löydy, kokeile komentoa `python`. Varmista kuitenkin, että `python`-komento suorittaa tarpeeksi uutta versiota. Jos asennusta ei löydy, tai käytössä on vanhempi versio, seuraa [ohjelmointikurssien](https://www.mooc.fi/fi/installation/vscode) ohjeita Pythonin asentamiselle.
 
 Asennusohjeista löytyy myös ohjeet Visual Studio Code -editorin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liitännäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
 
@@ -280,7 +280,7 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 {% include no_pip.md %}
 
-Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry). Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää.
+Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry). Kurssilla käytetään Poetryn versiota 2.2.1 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää.
 
 On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
 
@@ -306,7 +306,7 @@ You should consider updating your Python version to a supported one.
 Note that you will still be able to manage Python 2.7 projects by using the env command.
 See https://python-poetry.org/docs/managing-environments/ for more information.
 
-The currently activated Python version 2.7.16 is not supported by the project (^3.10).
+The currently activated Python version 2.7.16 is not supported by the project (^3.12).
 Trying to find and use a compatible version.
 ```
 
@@ -404,10 +404,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.10
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
       - name: Install Poetry
         run: pip install poetry
       - name: Install dependencies
@@ -455,10 +455,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.10
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
       - name: Install Poetry
         run: pip install poetry
       - name: Install dependencies
@@ -487,7 +487,7 @@ suorittaa valmiiksi määritellyn actionin [checkout](https://github.com/marketp
 
 Eli _checkout_ action siis hakee repositorion koodin askeleet suorittavalle virtuaalikoneelle.
 
-Toinen askel on action [setup-python](https://github.com/marketplace/actions/setup-python), joka asentaan työn suorittavalle virtuaalikoneelle haluamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.10'. Jos hipsuja ei ole, yrittää GitHub Actions asentaa Pythonista version 3.1
+Toinen askel on action [setup-python](https://github.com/marketplace/actions/setup-python), joka asentaan työn suorittavalle virtuaalikoneelle haluamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.12'. Jos hipsuja ei ole, yrittää GitHub Actions asentaa Pythonista version 3.1
 
 Molemmat näistä actioneista olivat GitHubin [marketplacesta](https://github.com/marketplace?type=actions) löytyviä valmiita actioneja. Esim. Pythonin asentaminen työn suorittavalle virtuaalikoneelle on itsessään aika monimutkainen toimenpide, mutta valmiiksi määritelty action tekee sen helpoksi.
 

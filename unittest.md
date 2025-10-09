@@ -50,7 +50,7 @@ class Maksukortti:
 Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita terminaalissa hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
 
 ```bash
-poetry init --python "^3.10"
+poetry init --python "^3.12"
 ```
 
 Poetryn kysymillä projektin tiedoilla ei ole väliä, joten voit hyvin käyttää Poetryn ehdottamia tietoja.
