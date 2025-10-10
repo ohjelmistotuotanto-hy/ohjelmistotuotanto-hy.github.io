@@ -25,12 +25,34 @@ Eli koska ongelmien selvittely on kaksi kertaa vaikeampaa kuin ohjelmointi, ei k
 
 Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että ne eivät ole itseriittoisia, ja vaikeimmat ongelmat jäävät ihmisten selvitettäväksi. Tämän takia aloittelevienkin ohjelmistokehittäjien on kaiken varalta opeteltava ohjelmoimaan todella hyvin. Voi olla, että kielimallien kehityksestä huolimatta tarvitaankin entistä syvällisempää osaamista. Tekoäly tekee ne helpot asiat, mutta ihmistä tarvitaan kaikkein kiperimpien tekoälyn aiheuttamien sotkujen selvittelyyn. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni ja kantaa lopullisen vastuun.
 
+## CurreChat
+
+....
+
+[CurreChat](https://curre.helsinki.fi/chat/hy-opt-cur-2526-7a893cd5-d161-4815-ac8e-422dd8953ff9)
+
 ## Viikko 1 - Tehtävä 1
 
-koe
+[Tehtävässä](http://localhost:4000/tehtavat1#1-komentorivi) on iheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin, näiden läpikäymisen sijaan voi pyytää ChatGPT:tä sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
 
-![]({{ "/images/cc1.png" | absolute_url }})
+![]({{ "/images/cc1.png" | absolute_url }}){: width="70%"}
 
-toinen koe
+AI luo oppimateriaalin:
 
 ![]({{ "/images/cc2.png" | absolute_url }})
+
+AI:ta voi myös pyytää generoimaan tehtäviä aiheesta:
+
+![]({{ "/images/cc3.png" | absolute_url }})
+
+Kysymysten yhteyteen tulleet vihjeet spoilaavat ehkä liikaa. AI:ta voi toki pyytää poistamaan vihjeet. 
+
+Omat vastaukset voi tietysti antaa AI:n tarkastettavaksi. Kuten aina, myös oppimateriaalia ja tehtäviä generoitaessa on mahdollista, että AI hallusinoi ja kertoo mitä sattuu. Linuxin komentorivin kaltaisesta aihepiiristä kysyttäessä hallusinoinnin todennäköisyys ei ole kovin korkea, ja esim. hallusinoidut komentojen virheelliset muodot selviävät nopeasti kokeillessa. 
+
+## Viikko 1 - Tehtävä 3
+
+Kuten olettaa saattaa, AI osaa Gitiä varsin hyvin. Esim. sopivan .gitignore-tiedoston saa helposti:
+
+![]({{ "/images/cc4.png" | absolute_url }})
+
+Voi olla hyödyllisempää ja/tai opettavaisempaa opetella asia pidemmän kaavan kautta ja syvällisemmin [dokumentaatiosta](https://git-scm.com/docs/gitignore). Tai sitten ei. Oleellista lienee ymmärtää .gitignore:n käytön periaatteet mutta ehkä tarkka syntaksi on sellainen asia, että sen opettelu lähinnä kuormittaa, ja detaljien ulkoistaminen AI:lle on järkevää. Toki tässäkin tapauksessa on varmistettava, että tiedosto on oikein konfiguroitu, ja että vääriä tiedostoja ei pääse lipsahtamaan versionhallinnan alaisuuteen.

@@ -50,6 +50,7 @@ Jos osaamisessasi on puutteita, kertaa haluamastasi resurssista. Muutama esimerk
 
 - <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
 - <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa: _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
+- Generoi materiaalia [tekoälyn avulla](/genai/#viikko-1---tehtävä-1)
 
 Myös kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
 
@@ -63,7 +64,7 @@ Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
   - Parent directory
   - Child directory
   - Working directory
-  - `..` ja `\*`
+  - `..`, `~` ja `*`
 - Ja osata käyttää komentoja
   - `pwd`
   - `cd`
@@ -77,6 +78,8 @@ Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 Tulet tarvitsemaan komentorivin käyttötaitoja tällä kurssilla ja muutenkin opinnoissasi.
 
 Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaat yllä luetellut asiat.
+
+Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-1)!
 
 ### 2. GitHubiin [versionhallinta]
 
@@ -179,6 +182,8 @@ Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 Komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset.
 
+Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-3)
+
 ### 4. Tiedostojen lisääminen GitHubiin [versionhallinta]
 
 Tehtävässä 2 tehtiin GitHubiin repositorio "ohtuvarasto", joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja GitHubin tilanne:
@@ -219,10 +224,10 @@ Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimäär�
 
 - Mene repositoriosi alkuperäiseen, tehtävässä 2 tekemääsi klooniin
   - Voit poistaa tehtävää 5 varten tekemäsi harjoituskloonin
-- Poista repositorioistasi kaikki hakemistot sekä muut tiedostot paitsi _.git_, _.gitignore_ ja _README.md_
+- **Poista repositorioistasi** kaikki hakemistot sekä muut tiedostot paitsi _.git_, _.gitignore_ ja _README.md_
 - Committaa muutokset
   - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että Git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
-  - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista sitä miten tiedostojen poistaminen Gitistä tapahtuu
+  - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista tai kysymään AI:ta miten tiedostojen poistaminen Gitistä tapahtuu
 - Pushaa muutokset GitHubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
@@ -232,14 +237,14 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 - Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
 - Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
 
-![]({{ "/images/py-lh1-4-22.png" | absolute_url }})
+![]({{ "/images/lh1-1-25.png" | absolute_url }})
 
 - Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
 - Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/py-lh1-5.png" | absolute_url }})
+![]({{ "/images/lh1-2-25.png" | absolute_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 

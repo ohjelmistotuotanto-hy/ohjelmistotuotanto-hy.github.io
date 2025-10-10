@@ -93,7 +93,8 @@
 ### Viikko 6
 
 - Luento 11: {{site.luennot[11]}}
-  - vierailuluento
+  - Kasper Hirvikoski (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
+  - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
 - Luento 12: {{site.luennot[12]}} 
   - vierailuluento
 - Laskarit
@@ -108,7 +109,7 @@
   - Luento 13: {{site.luennot[13]}}
     - vierailuluento
   - Luento 14: {{site.luennot[14]}}
-    - vierailuluento
+    - Ville Nordberg (Trail openers): _Vihreä IT_
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
