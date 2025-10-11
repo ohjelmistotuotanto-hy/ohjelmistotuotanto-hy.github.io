@@ -301,7 +301,6 @@ Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tu
 - Suorita testit komennolla `poetry run pytest`
   - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
-
 ### 8. Unittest
 
 Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
@@ -340,6 +339,9 @@ source = src
   - Kun muokkaat testejä, muista suorittaa komennot `coverage run --branch -m pytest` ja `coverage html` uudelleen, jotta raportti päivittyy
   - Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
 
+Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-8)
+
+
 ### Bonustehtävä: alias
 
 Poetryä käyttäessä voit suorittaa komentoja joko pitkässä muodossa, eli 
@@ -359,8 +361,6 @@ Virtuaaliympäristö on siis varsin kätevä, komento joka avaa virtuaaliympäri
 Voit helpottaa tekemällä komennolle helpommin muistettavan _aliaksen_. Tee halutessasi alias virtuaaliympäristön käynnistämiseen. Etsi ohjeet internetistä tai kysy [CurreChatiltä](<{{site.curre}}>) esim. promptilla
 
 _miten teen Ubuntuun aliaksen joka suorittaa komennon eval $(poetry env activate)_
-
-
 
 ### 9. GitHub Actions, osa 1
 

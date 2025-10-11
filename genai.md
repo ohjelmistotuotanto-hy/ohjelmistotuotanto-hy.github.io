@@ -56,3 +56,29 @@ Kuten olettaa saattaa, AI osaa Gitiä varsin hyvin. Esim. sopivan .gitignore-tie
 ![]({{ "/images/cc4.png" | absolute_url }})
 
 Voi olla hyödyllisempää ja/tai opettavaisempaa opetella asia pidemmän kaavan kautta ja syvällisemmin [dokumentaatiosta](https://git-scm.com/docs/gitignore). Tai sitten ei. Oleellista lienee ymmärtää .gitignore:n käytön periaatteet mutta ehkä tarkka syntaksi on sellainen asia, että sen opettelu lähinnä kuormittaa, ja detaljien ulkoistaminen AI:lle on järkevää. Toki tässäkin tapauksessa on varmistettava, että tiedosto on oikein konfiguroitu, ja että vääriä tiedostoja ei pääse lipsahtamaan versionhallinnan alaisuuteen.
+
+## Viikko 1 - Tehtävä 8
+
+AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä. Chat-käyttöliittymän sijaan koodin ja erityisesti testien generointiin on parempi käyttää kehittyneimpiä välineitä, esim. VS Codeen sisäänrakennettua [Copilot agenttimoodia](https://code.visualstudio.com/docs/copilot/copilot-coding-agent). Agenttimoodissa tekoäly voi koodin kirjoittamisen lisäksi luoda tiedostoja, ja suorittaa koodia. Agenttimoodia käyttämällä tekoäly voikin yrittää korjailla ja parannella omia tekemisiään, ja koodarin ei tarvitse kopioida esim. koodin aiheuttamia virheilmoituksia tekoälylle.
+
+Kokeillaan miten agenttimoodi selviää viikon 1 tehtävästä 8. Konfiguraatiden jälkeen agentti saadaan auki yläreunan kuvakkeesta:
+
+![]({{ "/images/cc5.png" | absolute_url }}){: width="90%"}
+
+Valittavana on iso kasa erilaisia kielimalleja, itse olen viime aikoina tykästynyt Claude Sonet 4:n.
+
+Annetaan agentille ohje:
+
+_generate tests for varasto.py so that branch coverage is 100%_
+
+![]({{ "/images/cc-6.png" | absolute_url }}){: width="90%"}
+
+Agentti kertoo mitä on tekemässä, eli ensin se haluaa suorittaa komennon, joka selvittää testikattavuuden. Komento näyttää hieman oudolta, ja suoritusluvan antamisen jälkeen selviää, että se ei toimi. Agentti ehdottaakin uutta komentoa:
+
+![]({{ "/images/cc-7.png" | absolute_url }}){: width="90%"}
+
+Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus saadaan sataan prosenttiin:
+
+![]({{ "/images/cc-8.png" | absolute_url }})
+
+Vastuumme tuntevina koodareina käydään testit läpi. Agentti on laittanut testeihin ehkä turhan runsaasti kommentteja sillä testien tarkoitusperä käy ilmi jo testin nimestä. Poistetaan turhat kommentit (tai pyydetään agenttia poistamaan ne) ja commitoidaan muutokset GitHubiin.
