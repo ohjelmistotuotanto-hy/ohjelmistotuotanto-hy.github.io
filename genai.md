@@ -29,7 +29,7 @@ Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että
 
 ....
 
-[CurreChat](https://curre.helsinki.fi/chat/hy-opt-cur-2526-7a893cd5-d161-4815-ac8e-422dd8953ff9)
+[CurreChat](<{{site.curre}}>)
 
 ## Viikko 1 - Tehtävä 1
 

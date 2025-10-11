@@ -250,7 +250,7 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
 ### 7. Poetry
 
-Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Python asennuksen löytymisen koneeltasi voit tarkistaa komennolla:
+Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Python-asennuksen löytymisen koneeltasi voit tarkistaa komennolla:
 
 ```bash
 python3 --version
@@ -278,56 +278,29 @@ Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut
   - Myöskään kaikissa Linuxeissa ei komento `tree` ole oletusarvoisesti asennettu. Debian-pohjaisissa Linuxeissa (esim Ubuntussa) saat asennettua `tree`-komennon komennolla `sudo apt-get install tree`
 - Tarkastele projektin määrittelevän tiedoston _pyproject.toml_ sisältöä
   - Tiedosto määrittelee mm. projektin käyttämät riippuvuudet
-- Tarkastele juurihakemistossa olevan _poetry.lock_-tiedoston sisältöä
-  - Tiedoston sisällön ei ole tarkoitus olla ihmisluettava, _eikä sitä pitäisikään missään nimessä muokata_. Tiedosto on täysin Poetryn ylläpitämä. Poetry tallentaa tiedostoon projektiin asennettujen riippuvuuksien versiot, jotta jokaisen asennuksen yhteydessä riippuvuuksista voidaan asentaa juuri oikeat versiot
 
 Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. 
 
 {% include no_pip.md %}
 
-Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry). Kurssilla käytetään Poetryn versiota 2.2.1 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää.
-
-On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
+Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry).
+- Kurssilla käytetään Poetryn versiota 2.2.1 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää.
+- On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
+- Jos kohtaat ongelmia, katso [täältä](http://localhost:4000/poetry#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin.
 
 **Tee nyt seuraavat toimenpiteet**.
 
 - Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Käynnistä sovellus komennolla `poetry run python3 src/index.py`
   - [Run](https://python-poetry.org/docs/cli/#run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
-- Siirry virtuaaliympäristöön komennolla `poetry shell` (tai komennolla `eval $(poetry env activate)` mikäli versiosi on vähintään 2.0.0)
+- Siirry _virtuaaliympäristöön_ komennolla `eval $(poetry env activate)`
 - Suorita komento `python3 src/index.py`
   - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
   - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
-- Poistu virtuaaliympäristöstä komennolla `exit`
+- Poistu virtuaaliympäristöstä komennolla `deactivate`
 - Suorita testit komennolla `poetry run pytest`
   - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
-**HUOM** jos törmäät seuraavaan virheilmoitukseen
-
-```
-Python 2.7 will no longer be supported in the next feature release of Poetry (1.2).
-You should consider updating your Python version to a supported one.
-
-Note that you will still be able to manage Python 2.7 projects by using the env command.
-See https://python-poetry.org/docs/managing-environments/ for more information.
-
-The currently activated Python version 2.7.16 is not supported by the project (^3.12).
-Trying to find and use a compatible version.
-```
-
-eräs tapa korjata tilanne Macilla ja ehkä myös Linuxilla on editoida tiedoston `~/.poetry.bin/poetry` ensimmäisellä rivillä mainittu Pythonin polku. Oletusarvoinen polku on todennäköisesti seuraava
-
-```
-#!/usr/bin/python
-```
-
-Polku tulee Macilla muuttaa (todennäköisesti) muotoon
-
-```
-#!/usr/local/bin/python3
-```
-
-Oikea polku kannattaa varmistaa komennolla `which python3`.
 
 ### 8. Unittest
 
@@ -337,7 +310,7 @@ Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](http
 
 Edellisen tehtävän _ohtuvarastossa_ on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
-Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `poetry shell` ja suorittamalla sen jälkeen komennon `pytest`.
+Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorittamalla sen jälkeen komennon `pytest`.
 
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
@@ -356,7 +329,7 @@ poetry add coverage --group dev
 source = src
 ```
 
-- Siirry virtuaaliympäristöön komennolla `poetry shell`
+- Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)`
   - Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
   - Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
 - Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa hakemiston _htmlcov_ tiedoston _index.html_
@@ -366,6 +339,28 @@ source = src
   - Raportissa on luultavasti mukana myös muita tiedostoja, mutta ainoastaan _src/varasto.py_-tiedoston haarautumakattavuus tarvitsee olla 100%. Opimme myöhemmin, kuinka ylimääräiset tiedostot pystyy jättämään raportin ulkopuolelle
   - Kun muokkaat testejä, muista suorittaa komennot `coverage run --branch -m pytest` ja `coverage html` uudelleen, jotta raportti päivittyy
   - Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
+
+### Bonustehtävä: alias
+
+Poetryä käyttäessä voit suorittaa komentoja joko pitkässä muodossa, eli 
+
+```bash
+poetry run pytest
+```
+
+tai siirtyä virtuaaliympäristöön komennolla `eval $(poetry env activate)`, jolloin komennon alkuosaa ei tarvita:
+
+```bash
+pytest
+```
+
+Virtuaaliympäristö on siis varsin kätevä, komento joka avaa virtuaaliympäristön, on kuitenkin aika ikävä ja vaikea muistaa. 
+
+Voit helpottaa tekemällä komennolle helpommin muistettavan _aliaksen_. Tee halutessasi alias virtuaaliympäristön käynnistämiseen. Etsi ohjeet internetistä tai kysy [CurreChatiltä](<{{site.curre}}>) esim. promptilla
+
+_miten teen Ubuntuun aliaksen joka suorittaa komennon eval $(poetry env activate)_
+
+
 
 ### 9. GitHub Actions, osa 1
 

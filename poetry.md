@@ -343,17 +343,38 @@ Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se v�
 
 ### Ratkaisuja yleisiin ongelmiin
 
-Muistithan, että ennen kuin voit suorittaa komennon, esim.
+#### Virtuaaliympäristö ei ole päällä
+
+Yrität suorittaa testejä, ja käy seuraavasti:
+
+```bash
+$ pytest src/tests
+pytest: command not found
+```
+
+Syynä on se, että komento toimii ainoastaan kun virtuaaliympäristö on aktivoituna, eli antaa komento
+
+```
+eval $(poetry env activate)
+```
+
+Nyt komento (todennäköisesti) toimii:
 
 ```
 pytest src/tests
 ```
 
-tulee aktivoida virtuaaliympäristö, eli antaa komento
+Sama tilanne ohjelmaa suoritettaessa voi antaa hieman erinäköisen virheilmoituksen:
 
+```bash
+$ python src/index.py
+Traceback (most recent call last):
+  File "/Users/mluukkai/opetus/ohtu25/cow/index.py", line 1, in <module>
+    import cowsay
+ModuleNotFoundError: No module named 'cowsay'
 ```
-poetry shell
-```
+
+Syynä jälleen se, että ei olla virtuaaliynmpäristössä. Voi olla, että komento aiheuttaa saman virheen vaikka virtuaaliympäristö on jo käynnistetty. Tämä johtuu siitä, että kirjastoa ei ole vielä asennettu. Eli tulee varmistaa, että kirjasto on mainittu tiedostossa _pyproject.toml_ ja että komento `poetry install` on suoritettu.
 
 Jos tästä huolimatta tulee valitus siitä, että ohjelman käyttämä kirjasto ei löydy (ja kirjasto on varmuudella asennettu), asenna riippuvuudet ja virtuaaliympäristö uudelleen, eli anna komennot:
 
@@ -365,7 +386,42 @@ poetry install
 
 Yritä tämän jälkeen uudelleen!
 
-#### muita ongelmia
+#### Poetry ei löydä oikeaa pythonia
+
+Jos törmäät seuraavaan virheilmoitukseen
+
+```
+Python 2.7 will no longer be supported in the next feature release of Poetry (1.2).
+You should consider updating your Python version to a supported one.
+
+Note that you will still be able to manage Python 2.7 projects by using the env command.
+See https://python-poetry.org/docs/managing-environments/ for more information.
+
+The currently activated Python version 2.7.16 is not supported by the project (^3.12).
+Trying to find and use a compatible version.
+```
+
+eräs tapa korjata tilanne Macilla ja ehkä myös Linuxilla on editoida tiedoston `~/.poetry.bin/poetry` ensimmäisellä rivillä mainittu Pythonin polku. Oletusarvoinen polku on todennäköisesti seuraava
+
+```
+#!/usr/bin/python
+```
+
+Polku tulee Macilla muuttaa (todennäköisesti) muotoon
+
+```
+#!/usr/local/bin/python3
+```
+
+Oikea polku kannattaa varmistaa komennolla `which python3`.
+
+
+#### Keyring-ongelma
+
+Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
+
+
+#### Muita ongelmia
 
 Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
@@ -392,7 +448,3 @@ Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
    Kun virtuaaliympäristöt on poistettu, suorita komento `poetry install`
 
 Kun kaikki toimenpiteet on suoritettu, yritä suorittaa epäonnistunut Poetry-komento uudestaan.
-
-#### Keyring-ongelma
-
-Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
