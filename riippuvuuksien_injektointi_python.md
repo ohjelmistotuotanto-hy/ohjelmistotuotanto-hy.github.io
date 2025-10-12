@@ -9,7 +9,11 @@ permalink: /riippuvuuksien_injektointi_python/
 
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
 
-Alla oleva koodi löytyy poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi-1
+Riippuvuuksien injektointi (engl. dependency injection) on suunnittelumalli, jossa olioiden tarvitsemat riippuvuudet, kuten muut oliot tai palvelut, asetetaan niille ulkopuolelta esimerkiksi konstruktorin tai metodikutsun kautta. Tämä malli parantaa luokkien testattavuutta ja vähentää niiden välisiä tarpeettomia riippuvuuksia.
+
+Käytännössä riippuvuuksien injektointi mahdollistaa esimerkiksi testitilanteissa riippuvuuksien korvaamisen tynkäkomponenteilla (stubeilla), mikä helpottaa yksikkötestausta.
+
+Alla oleva koodi löytyy Poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi
 
 Seuraavassa yksinkertainen laskin:
 

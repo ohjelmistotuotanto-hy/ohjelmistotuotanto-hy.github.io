@@ -5,7 +5,6 @@ inheader: no
 permalink: /tehtavat1
 ---
 
-{% include paivitys_kesken.md %}
 
 {% include laskari_info.md part=1 %}
 
@@ -395,17 +394,15 @@ name: CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install Poetry
@@ -426,7 +423,7 @@ GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
 Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/py-lh1-22-23-acual.png" | absolute_url }})
+![]({{ "/images/lh1-3-25.png" | absolute_url }})
 
 Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
@@ -446,17 +443,15 @@ name: CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install Poetry
@@ -467,7 +462,7 @@ jobs:
         run: poetry run coverage run --branch -m pytest
 ```
 
-Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia (sekä silloin jos päähaaraan tehdään ns. pull request).
+Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia.
 
 Osiossa [jobs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) voidaan määritellä yksi tai useampi "työ", eli useasta askeleesta koostuva tehtäväsarja. Määrittelimme tällä kertaa vain yhden työn, jolle annoimme nimen _build_. Jos töitä olisi useita, suorittaisi GitHub Actions ne rinnakkain.
 
@@ -478,7 +473,7 @@ GitHub varaa työn askelien suorittamista varten virtuaalikoneen. Kohta [runs-on
 Esimerkkimme tapauksessa työ koostuu viidestä askeleesta. Ensimmäinen askel
 
 ```yml
-- uses: actions/checkout@v4
+- uses: actions/checkout@v5
 ```
 
 suorittaa valmiiksi määritellyn actionin [checkout](https://github.com/marketplace/actions/checkout), joka dokumentaationsa mukaan tekee seuraavaa
@@ -621,20 +616,18 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 - Kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
 - Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/lh1-12-22.png" | absolute_url }})
+![]({{ "/images/lh1-4-25.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta. Voit antaa luvan joko kaikkiin julkisiin repositorioihin tai valitsemiisi repositorioihin:
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta. 
 
-![]({{ "/images/lh1-codecov.png" | absolute_url }})
 
-Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 2_ sisältää oleellisen tärkeän asian, eli _repository tokenin_:
+Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 3_ sisältää oleellisen tärkeän asian, eli Codecovin _tokenin_:
 
-![]({{ "/images/codecov2.png" | absolute_url }})
+![]({{ "/images/lh1-5-25.png" | absolute_url }})
 
-Käytännössä Codecovin repository token on _avain_, jonka avulla palvelu tunnistaa sinut. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. 
+Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. 
 
 Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin sailaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
-
 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. 
 
@@ -645,7 +638,7 @@ Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
 - name: Coverage report
   run: poetry run coverage xml
 - name: Coverage report to Codecov
-  uses: codecov/codecov-action@v4
+  uses: codecov/codecov-action@v5
   env:
     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 {% endraw %}
@@ -661,11 +654,7 @@ Kertauksena:
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/codecov3.png" | absolute_url }})
-
-Klikkailemalla tiedostojen nimiä, pääset katsomaan yksittäisten luokkien testauksen kattamat rivit:
-
-![]({{ "/images/py-lh1-15-22.png" | absolute_url }})
+![]({{ "/images/lh1-6-25.png" | absolute_url }})
 
 Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
@@ -683,19 +672,19 @@ Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaali
 
 ### 13. Parempi testikattavuus
 
-Projektin testauskattavuutta häiritsee nyt se, että myös _src/tests_-hakemiston testit ja _src/index.py_-tiedosto lasketaan testikattavuuteen. Voimme määritellä, että joitain tiedostoja tai kokonaisia hakemistoja jätetään huomioimatta kattavuusraportin generoinnissa.
+Projektin testauskattavuutta häiritsee nyt se, että myös tiedosto _src/index.py_-tiedosto lasketaan testikattavuuteen. Voimme määritellä, että joitain tiedostoja tai kokonaisia hakemistoja jätetään huomioimatta kattavuusraportin generoinnissa.
 
 Lisää juurihakemiston _.coveragerc_-tiedostoon, `omit`-konfiguraatio ja määrittele siinä huomioimatta jätettävät tiedostot:
 
 ```
 [run]
 source = src
-omit = src/tests/**,src/index.py
+omit = src/index.py
 ```
 
 Konfiguraatiossa määritellä pilkulla eroteltuna niin kutsuttaja [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)-polkuja. Voimme jättää huomioimatta esimerkiksi yksittäisen tiedoston polun (_src/index.py_), tai kaikki tietyn hakemiston alla olevat polut (_src/tests/\*\*_).
 
-Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että _src/index.py_-tiedosto ja _src/tests_-hakemiston tiedostot jätetään huomioimatta.
+Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että _src/index.py_-tiedosto jätetään huomioimatta.
 
 ### Tehtävien palautusrepositoriot
 
@@ -712,7 +701,7 @@ Nyt luotavan palautusrepositorion rakenne voi olla esimerkiksi seuraava:
 
 ```
 viikko1
-  riippuvuuksien-injektointi-1
+  riippuvuuksien-injektoint
   nhl-statistics-1
 viikko2
   poetry-web
@@ -727,25 +716,24 @@ viikko3
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-- tehtävässä ei tosin tehdä itse mitään koodia...
-
 Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
 
-- Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi_python/)
-- Hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko1/riippuvuuksien-injektointi-1_ ja kokeile että se toimii
-  - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
-  - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
-  - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
-
-Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvuudet sen juurihakemistossa (eli hakemistossa missä tiedosto _pyproject.toml_ sijaitsee) komennolla `poetry install`. Tämän jälkeen saat suoritettua koodin virtuaaliympäristön sisällä komennolla `python3 src/index.py`. Voit myös halutessasi suorittaa testit virtuaaliympäristön sisällä komennolla `pytest`. Jos unohtui miten virtuaaliympäristön sisälle päästään, kertaa asia tehtävästä 7...
+- Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
+  - Hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko1/riippuvuuksien-injektointi_
+    - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
+    - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
+    - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
+  - Varmista että koodi, sekä sen testit toimiva
+    - Jos unohdit jo miten Poetry-projektit toimivat, kertaa [tehtävästä 7](/tehtavat1#7-poetry)
+- Tee sovellukseen uusi testi, joka varmistaa, että laskin osaa laskea oikein kaksi peräkkäistä laskutoimitusta
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics-1_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
+- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
   - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
     - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
@@ -762,7 +750,7 @@ Tutustu riippuvuuksien injektointiin esimerkin avulla. Asenna projektin riippuvu
 
 ```python
 stats = StatisticsService(
-  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt")
+  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
 )
 ```
 
@@ -772,6 +760,8 @@ stats = StatisticsService(
 ### 16. NHL-tilastot-ohjelman yksikkötestaus
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
+
+_Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle (AI käyttää todennäköisesti erästä tekniikkaa johon tutustumme vasta kurssin viikolla 4...). Oppimisen kannalta on kuitenkin parempi, että teet tehtävän suurimmaksi osaksi itse, ongelmiin ja yksityiskohtiin voit toki pyytää apua. Esim. sopivien assert-lauseiden generoinnissa tekoäly on hyvä apu._
 
 - Tee yksikkötestit luokalle `StatisticsService`
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
@@ -788,11 +778,11 @@ from player import Player
 class PlayerReaderStub:
     def get_players(self):
         return [
-            Player("Semenko", "EDM", 4, 12),
-            Player("Lemieux", "PIT", 45, 54),
-            Player("Kurri",   "EDM", 37, 53),
-            Player("Yzerman", "DET", 42, 56),
-            Player("Gretzky", "EDM", 35, 89)
+            Player("Semenko", "EDM", 4, 12),  #  4+12 = 16
+            Player("Lemieux", "PIT", 45, 54), # 45+54 = 99
+            Player("Kurri",   "EDM", 37, 53), # 37+53 = 90
+            Player("Yzerman", "DET", 42, 56), # 42+56 = 98
+            Player("Gretzky", "EDM", 35, 89)  # 35+89 = 124
         ]
 
 class TestStatisticsService(unittest.TestCase):
@@ -826,21 +816,24 @@ def main():
 
     # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella
     print("Top point getters:")
-    for player in stats.top(10, SortBy.POINTS):
+    for player in stats.top(5, SortBy.POINTS):
         print(player)
 
+    print()
     # metodi toimii samalla tavalla kuin yo. kutsu myös ilman toista parametria
-    for player in stats.top(10):
+    for player in stats.top(5):
         print(player)
 
+    print()
     # järjestetään maalien perusteella
     print("Top point goal scorers:")
-    for player in stats.top(10, SortBy.GOALS):
+    for player in stats.top(5, SortBy.GOALS):
         print(player)
 
+    print()
     # järjestetään syöttöjen perusteella
     print("Top by assists:")
-    for player in stats.top(10, SortBy.ASSISTS):
+    for player in stats.top(5, SortBy.ASSISTS):
         print(player)
 ```
 
@@ -857,7 +850,7 @@ class SortBy(Enum):
 
 Määrittele Enum tiedostossa statistics_service.py esim. ennen luokan StatisticsService määrittelyä.
 
-Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-22.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
+Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-25.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
 
 #### Miksi Enum?
 
@@ -866,7 +859,7 @@ Miksi tehtävässä 17 halutaan että järjestämisen periaate ilmaistaan enumie
 ```python
 def main():
     stats = StatisticsService(
-      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2021-22/players.txt")
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
     )
 
 

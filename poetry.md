@@ -196,13 +196,23 @@ readme = "README.md"
 python = "^3.12"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 ```
 
 Tiedoston `[tool.poetry]`-osio sisältää projektiin liittyviä yleistietoja, kuten sen nimen, kuvauksen ja ylläpitäjät. Osion alapuolella on osioita, jotka listaavat projektin riippuvuuksia. Osiossa `[tool.poetry.dependencies]` näemme `poetry init`-komennon suorituksen yhteydessä asettamamme Python-version vaatimuksen, joka on muotoa `python = "^3.12"`. `^3.12`-merkintä tarkoittaa, että projektin käyttö vaatii vähintään Python-version 3.12.
 
-Kun _pyproject.toml_-tiedosto on tullut tutuksi, viimeistellään projektin alustaminen suorittamalla komento:
+Tehdään pari pientä muutosta tiedostoon. Ensinnäkin mainita _readme_-tiedostosta pitää poistaa, sillä sellaista ei projektissa ole. Lisätään tiedostoon myös seuraava:
+
+```
+[tool.poetry]
+package-mode = false
+```
+
+Syy tälle on selitetty [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes).
+
+
+Kun _pyproject.toml_-tiedosto on tullut tutuksi ja yllämainitut muutokset on tehty, viimeistellään projektin alustaminen suorittamalla komento:
 
 ```bash
 poetry install
@@ -342,6 +352,21 @@ Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se v�
 {% include no_pip.md %}
 
 ### Ratkaisuja yleisiin ongelmiin
+
+#### Punainen valitus komennon poetry install suorituksessa
+
+Kymmenet kurssin opiskelijat ovat törmänneet seuraavaan ongelmaan suorittaessaan komentoa `poetry install`:
+
+![]({{ "/images/lh1-7-25.png" | absolute_url }})
+
+Kuten valitus sanoo, syitä on kaksi. Ensimmäinen näistä johtuu siitä, että projektissa ei ole readme-tiedostoa. Vika on helppo korjata poistamalla määrittely tiedostosta  _pyproject.yaml_
+
+Toisen ongelman syy kerrotaan [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes). Ongelmasta pääsee eroon lisäämällä tiedostoon _pyproject.yaml_
+
+```
+[tool.poetry]
+package-mode = false
+```
 
 #### Virtuaaliympäristö ei ole päällä
 

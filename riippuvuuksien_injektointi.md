@@ -5,211 +5,166 @@ inheader: no
 permalink: /riippuvuuksien_injektointi/
 ---
 
-Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
+Riippuvuuksien injektointi (engl. dependency injection) on suunnittelumalli, jossa olioiden tarvitsemat riippuvuudet, kuten muut oliot tai palvelut, asetetaan niille ulkopuolelta esimerkiksi konstruktorin tai metodikutsun kautta. Tämä malli parantaa luokkien testattavuutta ja vähentää niiden välisiä tarpeettomia riippuvuuksia.
 
-Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtävärepositoriosta]({{site.java_exercise_repo_url}}) hakemistosta koodi/viikko1/RiippuvuuksienInjektointi1
+Alla oleva koodi löytyy Poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi
 
-Seuraavassa yksinkertainen laskin:
+Tarkastellaan erittäin yksinkertaista laskinta:
 
-``` java
-public class Main {
-    public static void main(String[] args) {
-        Laskin laskin = new Laskin();
-        laskin.suorita();
-    }
-}
+```py
+class Laskin:
+    def suorita(self):
+        while True:
+            luku1 = int(input("Luku 1:"))
 
-public class Laskin {
+            if luku1 == -9999:
+                return
 
-    private Scanner lukija;
+            luku2 = int(input("Luku 2:"))
 
-    public Laskin() {
-        lukija = new Scanner(System.in);
-    }
+            if luku2 == -9999:
+                return
 
-    public void suorita() {
-        while( true ) {
-            System.out.println("luku 1: ");
-            int luku1 = lukija.nextInt();
-            if ( luku1==-9999  ) return;
+            vastaus = self._laske_summa(luku1, luku2)
 
-            System.out.println("luku 2: ");
-            int luku2 = lukija.nextInt();
-            if ( luku2==-9999  ) return;
+            print(f"Summa: {vastaus}")
 
-            int vastaus = laskeSumma(luku1, luku2);
-            System.out.println("summa: "+ vastaus);
-        }
-    }
+    def _laske_summa(self, luku1, luku2):
+        return luku1 + luku2
 
-    private int laskeSumma(int luku1, int luku2) {
-        return luku1+luku2;
-    }
+def main():
+    laskin = Laskin()
 
-}
+    laskin.suorita()
+
+if __name__ == "__main__":
+    main()
 ```
 
-Ohjelman ikävä puoli on se, että <code>Laskin</code>-luokalla on *konkreettinen riippuvuus* <code>Scanner</code>-olioon ja ruudulle tulostamisen hoitavaan <code>System.out</code>-olioon.
+Ohjelman ikävä puoli on se, että <code>Laskin</code>-luokalla on *konkreettinen riippuvuus* tulostuksen ja syötteen luvun hoitaviin funktioihin <code>print</code> <code>input</code>.
 
 Konkreettiset riippuvuudet vaikeuttavat testaamista ja tekevät ohjelman laajentamisen vaikeaksi.
 
-### Riippuvuus rajapintaan
+### Riippuvuuden eliminointi
 
-Määritellään rajapinta, jonka taakse konkreettiset riippuvuudet voidaan piilottaa:
+Eristetään tulostuksen ja syötteen lukeminen omaan, luokan `KonsoliIO` olioon:
 
-``` java
-public interface IO {
-    int nextInt();
-    void print(String m);
-}
+```python
+class KonsoliIO:
+    def lue(self, teksti):
+        return input(teksti)
+
+    def kirjoita(self, teksti):
+        print(teksti)
 ```
 
-Tehdään rajapinnalle toteutus:
+Muokataan luokkaa <code>Laskin</code> siten, että se saa konstruktorin parametrina olion, jonka kautta se hoitaa käyttäjän kanssa tapahtuvan kommunikoinnin:
 
-``` java
-public class KonsoliIO implements IO {
-    private Scanner lukija;
+```python
+class Laskin:
+    def __init__(self, io):
+        self._io = io
 
-    public KonsoliIO() {
-        lukija = new Scanner(System.in);
-    }
+    def suorita(self):
+        while True:
+            luku1 = int(self._io.lue("Luku 1:"))
 
-    public int nextInt() {
-        return lukija.nextInt();
-    }
+            if luku1 == -9999:
+                return
 
-    public void print(String m) {
-        System.out.println(m);
-    }
+            luku2 = int(self._io.lue("Luku 2:"))
 
-}
+            if luku2 == -9999:
+                return
+
+            vastaus = self._laske_summa(luku1, luku2)
+
+            self._io.kirjoita(f"Summa: {vastaus}")
+
+    def _laske_summa(self, luku1, luku2):
+        return luku1 + luku2
+
 ```
 
-Muokatussa <code>Laskin</code>-luokan versiossa määritellään <code>IO</code>-rajapinnan toteuttava oliomuuttuja, joka annetaan laskin-oliolle konstruktorin parametrina:
+Sovellus käynnistetään nyt siten, että sille _injektoidaan_ kommunikaation hoitava olio konstruktorin parametrina:
 
-``` java
-public class Laskin {
-    private IO io;
+```python
+def main():
+    io = KonsoliIO()     # luodaan riippuvuus luokan ulkopuolella
+    laskin = Laskin(io). # annetaan riippuvuus luokalle
 
-    public Laskin(IO io) {
-        this.io = io;
-    }
+    laskin.suorita()
 
-    public void suorita(){
-        while( true ) {
-            io.print("luku 1: ");
-            int luku1 = io.nextInt();
-            if ( luku1==-9999  ) return;
-
-            io.print("luku 2: ");
-            int luku2 = io.nextInt();
-            if ( luku2==-9999 ) return;
-
-            int vastaus = laskeSumma(luku1, luku2);
-            io.print("summa: "+vastaus+"\n");
-        }
-    }
-
-    private int laskeSumma(int luku1, int luku2) {
-        return luku1+luku2;
-    }
-
-}
+main()
 ```
 
-Ja laskimelle voidaan antaa IO-luokasta sopiva toteutus _injektoimalla_ eli antamalla se konstruktorin parametrina:
-
-``` java
-public class Main {
-    public static void main(String[] args) {
-        Laskin laskin = new Laskin( new KonsoliIO() );
-        laskin.suorita();
-    }
-}
-```
+Riippuvuuksien injektoinnilla on hieno nimi, mutta se on lopulta todella simppeli asia: ei luoda riippuvuuksia luokan sisällä, vaan annetaan ne ulkopuolelta.
 
 ### Testaus
 
-Ohjelmalle on nyt helppo tehdä yksikkötestit. Testejä varten toteutetaan IO-rajapinnan toteuttava "stubi":
+Eräs riippuvuuksien injektoinnin eduista se, että testaus muuttuu todella paljon helpommaksi.
 
-``` java
-class IOStub implements IO {
+Laskimelle on nyt helppo tehdä yksikkötestit. Testejä varten toteutetaan valeluokka eli "stubi", joka toimii ulkoisesti samalla tavalla kuin luokan `KonsoliIO` oliot:
 
-    int[] inputs;
-    int mones;
-    ArrayList<String> outputs;
+```python
+class StubIO:
+    def __init__(self, inputs):
+        self.inputs = inputs
+        self.outputs = []
 
-    public IOStub(int... inputs) {
-        this.inputs = inputs;
-        this.outputs = new ArrayList<String>();
-    }
+    def lue(self, teksti):
+        return self.inputs.pop(0)
 
-    public int nextInt() {
-        return inputs[mones++];
-    }
-
-    public void print(String m) {
-        outputs.add(m);
-    }
-}
+    def kirjoita(self, teksti):
+        self.outputs.append(teksti)
 ```
 
 Stubille voidaan siis antaa "käyttäjän syötteet" konstruktorin parametrina. Ohjelman tulosteet saadaan suorituksen jälkeen kysyttyä stubilta.
 
 Testi seuraavassa:
 
-```java
-public class LaskinTest {
+```python
+class TestLaskin(unittest.TestCase):
+    def test_yksi_summa_oikein(self):
+        # testissä kovakoodataan ohjelman syötteiksi 1, 3 ja -9999
+        io = StubIO(["1", "3", "-9999"]).  
 
-    @Test
-    public void yksiSummaOikein() {
-        IOStub io = new IOStub(1, 3, -9999);
-        new Laskin(io).suorita();
+        laskin = Laskin(io)
+        laskin.suorita()
 
-        assertEquals("summa: 4\n", io.outputs.get(2));
-    }
-}
+        # varmistetaan, että ohjelma tulosti oikean summan
+        self.assertEqual(io.outputs[0], "Summa: 4")
 ```
 
 ### Yhteenveto
 
-Riippuvuuksien injektointi on siis oikeastaan äärimmäisen simppeli tekniikka, moni on varmaan sitä käyttänytkin jo ohjelmoinnin peruskursseilla. 
+Riippuvuuksien injektointi on siis oikeastaan äärimmäisen simppeli tekniikka, moni on varmaan sitä käyttänytkin jo ohjelmoinnin peruskursseilla.
 
-Jos ajatellaan vaikkapa tietokonepelejä, joiden toiminta riippuu usein satunnaisluvuista. Jos peli on koodattu seuraavasti, on automatisoitu testaus erittäin vaikeaa:
+Tarkastellaan toisena esimerkkinä tietokonepeliä. Pelien toiminta riippuu usein satunnaisluvuista. Jos peli on koodattu seuraavasti, on automatisoitu testaus erittäin vaikeaa:
 
-``` java
-public class Peli {
-  private Random arpa;
-
-  public Peli() {
-    arpa = new Random();
-  }
-
-  // ...
-}
+```python
+class Peli: 
+    def liikuva_pelaajaa(self):
+      suunta = random.randint(0, 8)
 ```
 
-Jos taas satunnaislukugeneraattori _injektoidaan_ pelille seuraavasti
+Luokalla Peli on siis suora riippuvuus satunnaislukugeneraattoriin _random_, jonka metodia _randint_ kutsumalla se luo pelaajan liikesuunnan määräävän luvun. 
 
-```java
-public class Peli {
-  private Random arpa;
+Tilanne helpottuu testaamisen kannalta käyttämällä riippuvuuksien injektointia. Jos satunnaislukugeneraattori _injektoidaan_ pelille seuraavasti
 
-  public Peli(Random arpa) {
-    this.arpa = arpa;
-  }
+```python
+class Peli: 
+    def __init__(self, arpa):
+        self._arpa = arpa
 
-  // ...
-}
-``` 
+  def liikuva_pelaajaa(self):
+    suunta = self._arpa.randint(0, 8)
+```
 
-voidaan testatessa injektoida pelille versio satunnaisgeneraattorista, jonka arpomia lukuja voidaan kontrolloida testeistä käsin. Esimerkiksi seuraavassa sellainen versio satunnaislukugeneraattorista, joka palauttaa aina luvun 1 kutsuttaessa metodia _nextInt_:
+voidaan testatessa injektoida pelille versio satunnaisgeneraattorista, jonka arpomia lukuja voidaan kontrolloida testeistä käsin. Esimerkiksi seuraavassa sellainen versio satunnaislukugeneraattorista, joka palauttaa aina luvun 1 kutsuttaessa metodia _randint_:
 
-```java
-public class FakeRandom extends Random {
-    @Override
-    public int nextInt() {
-        return 1;
-    }
-}
-``` 
+```python
+class Arpa:
+    def randint(self, a, b):
+        return 1
+```
