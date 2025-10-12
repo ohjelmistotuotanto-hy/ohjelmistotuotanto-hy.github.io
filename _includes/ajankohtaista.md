@@ -2,7 +2,7 @@
 
   <ul>
     <li>
-     [Viikon 1](/tehtavat1) laskarit valmiina
+      <a href='/tehtavat1'>Viikon 1</a> laskarit valmiina
     </li>
     <li>
       Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen!</a>
