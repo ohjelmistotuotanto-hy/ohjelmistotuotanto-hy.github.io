@@ -7,7 +7,7 @@ permalink: /ohje_kokeeseen/
 
 ### Uusinta- ja erilliskokeet
 
-Uusinta- ja erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025. Ilmoittautuminen erilliskokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/104542?code=TKT20006_otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
+Erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025 ja taas 1.1.2026-. Ilmoittautuminen erilliskokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/104542?code=TKT20006_otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
 
 Tällä hetkellä on mahdollista ilmoittautua ainoastaan ennen 1.8. tehtävään tenttiin. Linkki syksyn ilmoittautumiselle ilmestyy kesällä.
 
