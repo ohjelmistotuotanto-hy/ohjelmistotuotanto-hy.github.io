@@ -32,6 +32,12 @@ _Kurssilla käytetään Poetryn versiota 2.2.1. Jos koneellasi on vanhempi versi
 
 ### Asennus
 
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
+
+Jos olet Dockerin käyttäjä, ei Poetryä ole välttämätöntä asentaa koneelle ollenkaan, katso <a href='/docker'>täältä</a> lisää!
+
+</div>
+
 Ennen kuin pääsemme tutustumaan Poetryn käyttöön tarkemmin, tulee se ensin asentaa. Seuraa alla olevista ohjeista tietokoneesi käyttöjärjestelmälle sopivaa asennusohjetta, kannattaa toki vilkaista myös Poetryn [virallinen](https://python-poetry.org/docs/) asennusohje.
 
 **HUOM:** kaikki asennustavat saattavat vaatia terminaali-ikkunan sulkemisen ja uudelleen avaamisen, jotta Poetryn komennot alkavat toimia. Joissain tapauksissa on vaadittu jopa tietokoneen uudelleenkäynnistys.
@@ -79,56 +85,6 @@ Asenna Poetry suorittamalla terminaalissa seuraava komento:
 Asennuksen jälkeen Poetry-binäärin polku tulee asettaa `PATH`-muuttujaan. Lisää [tämän](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) ohjeen mukaisesti `PATH`-muuttujaan polku `%APPDATA%\Python\Scripts`.
 
 Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamalla komento `poetry --version`. Komennon pitäisi tulostaa asennettu versio.
-
-#### Poetry ja Docker
-
-**HUOM:** Poetrya ei ole pakko asentaa Dockerilla. Jos käytät fuksiläppäriä, Poetry on todennäköisesti jo asennettu koneellesi.
-
-Ehkä paras tapa Poetryllä tapahtuvaan sovelluskehitykeen on [Dockerin](https://www.docker.com/) käyttö. Tällöin et tarvitse koneellesi muuta kuin Dockerin, mitään varsinaista asennusta ei tarvita sillä voit käyttää kurssia varten konfiguroitua Docker imagea [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry/general), ks myös [GitHub-repositorio](https://github.com/mluukkai/docker-poetry).
-
-Poetryn käyttö tapahtuu seuraavasti. Mene hakemistoon, missä haluat suorittaa Poetry-komentoja. Joudut (todennäköisesti) antamaan hakemiston sisältöön kirjoitus- lukuoikeudet Dockerille komennolla:
-
-```
-chmod  o=rw .
-```
-
-Anna komento
-
-```
-docker run -it --volume="$PWD:/mydir" mluukkai/poetry:intel
-```
-
-Jos koneesi on M1 mac, komennon muoto on seuraava:
-
-```
-docker run -it --volume="$PWD:/mydir" mluukkai/poetry:m1
-```
-
-Komento avaa komentotulkin Docker-konttiin, missä kaikki Poetry-komennot, esim. `poetry init`, `poetry add`, `poetry shell` ym. ovat käytettävissä. Kontti näkee kaikki käynnistyshakemistossa olevat tiedostot. Voit editoida tiedostoja normaaliin tapaan tekstieditorilla kontin ulkopuolella. Docker-kontissa oleva komentotulkki sulkeutuu komennolla `exit`.
-
-Lisää Dockerista kurssilla [Devops with Docker](https://devopswithdocker.com/).
-
-#### Docker ja Robot-testit
-
-Web-sovelluksia testatessa käytä imagen [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry) sijaan imagea [mluukkai/poetry-robot](https://hub.docker.com/repository/docker/mluukkai/poetry-robot/). Image toimii ainoastaan intelin prosessoriarkkitehtuurilla varustetuilla koneilla, eli M1 käyttäjät joutuvat etsimään jonkun muun ratkaisun...
-
-Jotta kontissa suoritettu web-sovellus näkyisi isäntäkoneelle, tulee konttia käynnistettäessä julkaista kontin portti 5001 (missä sovellus toimii) isäntäkoneen porttiin. Tämä tapahtuu seuraavasti:
-
-```bash
-docker run -it -p 5001:5001 --volume="$PWD:/mydir" mluukkai/poetry-robot
-```
-
-Robot-testit suoritetaan menemällä komennolla `docker exec` samaan kontiin, missä sovellus on jo päällä: 
-
-```bash
-docker exec -it kontainerintunnistetahan bash
-```
-
-Kontainerin tunniste selviää komennolla `docker ps`.
-
-Testit toimivat valitettavasti ainoastaan ns. headless modessa, jonka saat päälle [tehtävän 7](/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
-
-Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
 
 
 ### Ongelmia Poetryn asennuksessa?
@@ -220,23 +176,9 @@ poetry install
 
 Komennon suorittaminen tekee projektille vaadittavat alustustoimenpiteet, kuten virtuaaliympäristön alustamisen ja riippuvuuksien asentamisen. Tämän vuoksi komento tulee suorittaa aina ennen kuin uutta projektia aletaan käyttämään.
 
-Komennon suorittaminen saattaa johtaa seuraavaan ilmoitukseen:
-
-```
-Installing the current project: poetry-testi (0.1.0)
-The current project could not be installed: [Errno 2] No such file or directory: '~/poetry-testi/README.md'
-If you do not want to install the current project use --no-root
-```
-
-Tämä johtuu siitä, että Poetry yrittää asentaa myös nykyistä projektia, eikä projektissa ole _poetry-testi_-nimistä moduulia. Kyseessä [ei ole](https://github.com/python-poetry/poetry/pull/8369) tekstin ulkonäöstä huolimatta virhe vaan pikemminkin varoitus. Projektin alustaminen on kyllä mennyt läpi, mutta jos et halua varoitusta, voit käyttää komennosta muotoa:
-
-```bash
-poetry install --no-root
-```
-
 Virtuaaliympäristön alustamisen lisäksi tämä komento asentaa ainoastaan projektin riippuvuudet, ei projektia itseään.
 
-Komennon suorittamisen  `poetry install` jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install` -komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
+Komennon suorittamisen `poetry install` jälkeen hakemistoon pitäisi ilmestyä tiedosto _poetry.lock_. Tiedosto sisältää kaikkien asennettujen riippuvuuksien versiotiedot. Sen tietojen avulla Poetry pystyy aina asentamaan `poetry install` -komennolla riippuvuuksista täsmälleen oikeat versiot. Tästä syystä tiedosto tulee lisätä versionhallintaan.
 
 Tekemiemme [asetusten muutosten](/poetry#asetusten-hienosäätö) takia hakemistoon tulee myös tiedosto _.venv_ johon Poetry tallentaa projektin virtuaaliympäristön riippuvuuksineen. Tätä tiedostoa _ei tule tallentaa_ versionhallintaan, eli se on syytä lisätä heti tiedostoon _.gitignore_.
 

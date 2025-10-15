@@ -159,8 +159,8 @@ Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 - Lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
   - Muista hyödyllinen komento `git status`
 - Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
-- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, ja hakemistot joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
-  - Toinen ignorattava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
+- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, sekä hakemistot, joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
+  - Toinen ignoroitava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
   - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
 - Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että Git jättää ne huomioimatta
   - Saat asian tarkastettua komennolla `git status`
@@ -261,16 +261,16 @@ Asennusohjeista löytyy myös ohjeet Visual Studio Code -editorin asentamiselle.
 
 Ohjelmoinnin peruskursseilla olet saattanut suorittaa koodia painamalla VS Coden nuoli-painiketta, ja testejä painamalla silmä-painiketta. Ammattimaisessa ohjelmistokehityksessä koodin suorittaminen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahansa koneella, _skriptatusti_ komentoriviltä, eli riippumatta VS Coden kaltaisista kehitysympäristöistä.
 
-Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kovin hankalaa. Ongelmia alkaa syntyä vasta, kun projekti tarvitsee ulkoisia _riippuvuuksia_ erilaisten asennettavien kirjastojen muodossa. Kirjastojen asennukseen ja hallintaan tarvitaan erilisiä työkaluja. Pythonin kohdalla suosituin komentorivityökaluja tähän tarkoitukseen on [pip](https://pypi.org/project/pip/).
+Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kovin hankalaa. Ongelmia alkaa syntyä vasta, kun projekti tarvitsee ulkoisia _riippuvuuksia_ erilaisten asennettavien kirjastojen muodossa. Kirjastojen asennukseen ja hallintaan tarvitaan erilisiä työkaluja. Pythonin kohdalla suosituin komentorivityökalu tähän tarkoitukseen on [pip](https://pypi.org/project/pip/).
 
-Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Näitä virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta.
+Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta.
 
 Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut, voimme käyttää [Poetry](https://python-poetry.org/)-komentorivityökalua. Poetryn dokumentaation antama kuvaus on seuraava:
 
 > Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 
 - Edellisessä tehtävässä lisättiin repositorioon Poetry-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`
-- Tutki Poetry-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektin sisältävän hakemiston juuressa (`tree` ei ole Poetryyn liittyvä käsky vaan normaali shell-komento)
+- Tutki Poetry-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole Poetryyn liittyvä käsky vaan normaali shell-komento)
   - Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
   - **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
   - Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
@@ -355,7 +355,7 @@ tai siirtyä virtuaaliympäristöön komennolla `eval $(poetry env activate)`, j
 pytest
 ```
 
-Virtuaaliympäristö on siis varsin kätevä, komento joka avaa virtuaaliympäristön, on kuitenkin aika ikävä ja vaikea muistaa. 
+Virtuaaliympäristö on siis varsin kätevä, mutta virtuaaliympäristön avaava komento, on aika ikävä ja vaikea muistaa. 
 
 Voit helpottaa tekemällä komennolle helpommin muistettavan _aliaksen_. Tee halutessasi alias virtuaaliympäristön käynnistämiseen. Etsi ohjeet internetistä tai kysy [CurreChatiltä](<{{site.curre}}>) esim. promptilla
 
@@ -873,11 +873,11 @@ def main():
         print(player)
 ```
 
-Periaatteessa tämä kyllä toimisi. Tälläistä tapaa kutsutaan [taikanumeroiden](https://stackoverflow.com/questions/47882/what-are-magic-numbers-and-why-do-some-consider-them-bad) käytöksi. Tapaa pidetään ohjelmoijien keskuudessa erittäin paheksuttavana. Alun perin koodin kirjoittanut muistaa ehkä hetken mitä taikanumerot ilmaisevat. Kun aikaa kuluu ja koodarit vaihtuvat alkaa asia kuitenkin hämärtymään ja on omiaan aiheuttamaan ikäviä bugeja. Tämän takia taikanumeroita tulee välttää, ja käyttää niiden sijaan esim. enumeita tai vaikkapa vakioita (eli muuttujia joiden arvoa ei muuteta).
+Periaatteessa tämä kyllä toimisi. Tälläistä tapaa kutsutaan [taikanumeroiden](https://stackoverflow.com/questions/47882/what-are-magic-numbers-and-why-do-some-consider-them-bad) käytöksi. Tapaa pidetään ohjelmoijien keskuudessa erittäin paheksuttavana. Alun perin koodin kirjoittanut muistaa ehkä hetken mitä taikanumerot ilmaisevat. Kun aikaa kuluu ja koodarit vaihtuvat alkaa asia kuitenkin hämärtymään ja on omiaan aiheuttamaan ikäviä bugeja. Tämän takia taikanumeroita tulee välttää, ja käyttää niiden sijaan esim. enumeita tai vaikkapa vakioita (eli muuttujia, joiden arvoa ei muuteta).
 
 ### Tehtävien palautus
 
-Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositoroosi.
+Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioosi.
 
 Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 
