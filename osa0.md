@@ -112,26 +112,26 @@ Pisteet tulevat seuraavan kaavan mukaan:
 
 Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan:
 
-- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, on tuloksena 0 mvp:tä.
-- jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikki kohdat oikein tuo yhden mvp:n.
+- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, on tuloksena on 0 mvp:tä.
+- jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikkien kohtien ollessa oikein saa yhden mvp:n.
 
 Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
-Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, kokeet menevät nykyään paremmin kuin monivalintoja edeltävänä aikana. Monivalinnoille nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
+Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Monivalinnoille nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
 
-Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen asioista. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
+Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen aihepiireistä. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
 
 Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. ChatGPT:llä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
 
-Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59** (poislukien viikko 1 jonka deadline on vasta toisen viikon sunnuntai), palautus tapahtuu emailitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
+Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu sähköpostitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
 
 *HUOM* ainakaan tässä kurssiversiossa ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
 
 ## Versionhallinta 1 op
 
-Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versionhallintatehtävät (merkattu tehtävän yhteyteen) ja suorittamalla hyväksytysti miniprojektin (tai hyväksilukemalla sen).
+Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versionhallintatehtävät (merkitty tehtävän yhteyteen) ja suorittamalla hyväksytysti miniprojektin (tai hyväksilukemalla sen).
 
 ### Luennot - laskuharjoitukset - miniprojekti
 
@@ -145,7 +145,7 @@ Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitel
 
 Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
 
-Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on erihenkisiä komponentteja, näistä yksikään ei ole muita tärkeämpi, kullakin on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
+Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on erihenkisiä komponentteja, jotka kaikki ovat yhtä tärkeitä, ja jokaisella on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
 
 ## Aikataulu
 
