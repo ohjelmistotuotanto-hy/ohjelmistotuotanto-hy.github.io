@@ -1,17 +1,33 @@
 ---
 layout: page
-title: Generatiivinen AI koodarin apuna
+title: Generatiivinen AI kurssilla
 inheader: no
 permalink: /genai/
 ---
 
-Suuret kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.
+### Kurssin GPT
 
-Itse käytän pääasiassa Copilottia, joka on nykyään natiivisti integroitu VS Codeen. Lisäksi yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Student Developer Packin](https://education.github.com/pack) kautta.
+Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen.
+
+Chatia on mahdollisuus käyttää "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. Hakuindeksi otetaan käyttöön valitsemalla alustukseksi _Materiaali_:
+
+![]({{ "/images/chat0.png" | absolute_url }}){: width="70%"}
+
+Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan materiaaliin pohjautuen:
+
+![]({{ "/images/chat2.png" | absolute_url }}){: width="70%"}
+
+Hakuindeksiä käyttäessä mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
+
+### Kielimallit koodarin apuna
+
+Suuret kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.  
+
+Itse käytän koodatessa pääasiassa GitHub Copilottia, joka on nykyään natiivisti integroitu VS Codeen.  Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Student Developer Packin](https://education.github.com/pack) kautta.
 
 Copilotin ja muiden kielimallien antamien vihjeiden hyödyllisyyden aste vaihtelee. Kielimallien ehkä suurin ongelma on hallusinointi, ne generoivat välillä täysin vakuuttavan näköisiä vastauksia mitkä kuitenkin ovat täysin päättömiä. Ohjelmoidessa toki hallusinoitu koodi jää usein nopeasti kiinni jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä kielimallin generoima koodi näyttää toimivan, mutta se sisältää vaikeammin havaittavia bugeja tai esim. tietoturvahaavoittuvuuksia.
 
-Toinen ongelma kielimallien soveltamisessa ohjelmistokehitykseen on se, että kielimallien on vaikea "hahmottaa" isompia projekteja, ja esim. generoida toiminnallisuutta, joka edellyttäisi muutoksia useisiin tiedostoihin. Kielimallit eivät myöskään nykyisellään osaa yleistää koodia, eli jos koodissa on esim. olemassaolevia funktioita tai komponentteja, joita kielimalli pystyisi pienin muutoksin hyödyntämään siltä pyydettyyn toiminnallisuuteen, ei kielimalli tähän taivu. Tästä voi olla seurauksena se, että koodikanta rapistuu sillä kielimallit generoivat koodiin paljon toisteisuutta, ks. lisää esim. täältä.
+Toinen ongelma kielimallien soveltamisessa ohjelmistokehitykseen on se, että kielimallien on vaikea hahmottaa isompia projekteja, ja esim. generoida toiminnallisuutta, joka edellyttäisi muutoksia useisiin tiedostoihin. Kielimallit eivät myöskään nykyisellään osaa yleistää koodia, eli jos koodissa on esim. olemassaolevia funktioita tai komponentteja, joita kielimalli pystyisi pienin muutoksin hyödyntämään siltä pyydettyyn toiminnallisuuteen, ei kielimalli tähän aina taivu. Tästä voi olla seurauksena se, että koodikanta rapistuu sillä kielimallit generoivat koodiin paljon toisteisuutta (ks. lisää esim. [täältä](https://visualstudiomagazine.com/articles/2024/01/25/copilot-research.aspx)).
 
 Kielimalleja käytettäessä vastuu siis jää aina ohjelmoijalle.
 
@@ -23,17 +39,17 @@ Tässä kohtaa kannattaa muistaa C-kielen kehittäjän Brian Kerninghamin vanha 
 
 Eli koska ongelmien selvittely on kaksi kertaa vaikeampaa kuin ohjelmointi, ei kannata ohjelmoida sellaista koodia minkä vain juuri ja juuri itse ymmärtää. Miten debuggaus mahtaakaan onnistua tilanteessa missä ohjelmointi on ulkoistettu kielimallille ja ohjelmistokehittäjä ei ymmärrä debugattavaa koodia ollenkaan?
 
-Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että ne eivät ole itseriittoisia, ja vaikeimmat ongelmat jäävät ihmisten selvitettäväksi. Tämän takia aloittelevienkin ohjelmistokehittäjien on kaiken varalta opeteltava ohjelmoimaan todella hyvin. Voi olla, että kielimallien kehityksestä huolimatta tarvitaankin entistä syvällisempää osaamista. Tekoäly tekee ne helpot asiat, mutta ihmistä tarvitaan kaikkein kiperimpien tekoälyn aiheuttamien sotkujen selvittelyyn. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni ja kantaa lopullisen vastuun.
+Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että ne eivät ole itseriittoisia, ja vaikeimmat ongelmat jäävät ihmisten selvitettäväksi. Tämän takia aloittelevien ohjelmistokehittäjien on kaiken varalta opeteltava ohjelmoimaan sujuvasti. Voi olla, että kielimallien kehityksestä huolimatta tarvitaankin entistä syvällisempää osaamista. Tekoäly tekee ne helpot asiat, mutta ihmistä tarvitaan kaikkein kiperimpien tekoälyn aiheuttamien sotkujen selvittelyyn. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni ja kantaa lopullisen vastuun.
 
-## CurreChat
+Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan siis on edelleen oleellista hankkia syvällinen tekninen osaaminen. Syynä tälle on myös se, että AI on yhtä hyvä kuin sille annettu prompti. Promptaaminen taas on haastavaa, jos syvällinen tekninen osaaminen puuttuu. Generatiivista tekoälyä kannattaa mielestäni ehdottomasti hyödyntää, kunhan muistaa että käyttö on riittävissä määrin produktiivista. 
 
-....
+Kielimallit kehittyvät koko ajan. Erityisen suuren avun ohjelmistokehityksen kannalta ovat tuoneet [agentit](https://cloud.google.com/discover/what-are-ai-agents), jotka osaavat tehdä suurempia kokonaisuuksia käyttäjän kehoitteista. Visual Studio Code -editoriin on ollut jo jonkin aikaa integroituna [agenttimoodi](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode), joka on nostanut AI:n kyvykkyyttä huomattavasti. Agenttimoodissa tekoäly osaa koodin generoinnin lisäksi mm. luoda tiedostoja, suorittaa koodia, ja korjata generoimaansa koodia koodin suorituksessa tapahtuneiden virheiden perusteella.
 
-[CurreChat](<{{site.curre}}>)
+Osaan kurssin tehtäviä liittyy tekoälyn käyttöön liittyviä viheitä. Vihjeet löytyvät tästä tiedostosta, mutta ne on tarkoitettu luettavaksi tehtäviä tehdessä. Tehtävien kohdalta on linkki tehtävään liittyvään vihjeeseen.
 
 ## Viikko 1 - Tehtävä 1
 
-[Tehtävässä](http://localhost:4000/tehtavat1#1-komentorivi) on iheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin, näiden läpikäymisen sijaan voi pyytää ChatGPT:tä sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
+[Tehtävässä](http://localhost:4000/tehtavat1#1-komentorivi) on aiheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin, näiden läpikäymisen sijaan voi pyytää ChatGPT:tä sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
 
 ![]({{ "/images/cc1.png" | absolute_url }}){: width="70%"}
 
@@ -61,7 +77,7 @@ Voi olla hyödyllisempää ja/tai opettavaisempaa opetella asia pidemmän kaavan
 
 AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä. Chat-käyttöliittymän sijaan koodin ja erityisesti testien generointiin on parempi käyttää kehittyneimpiä välineitä, esim. VS Codeen sisäänrakennettua [Copilot agenttimoodia](https://code.visualstudio.com/docs/copilot/copilot-coding-agent). Agenttimoodissa tekoäly voi koodin kirjoittamisen lisäksi luoda tiedostoja, ja suorittaa koodia. Agenttimoodia käyttämällä tekoäly voikin yrittää korjailla ja parannella omia tekemisiään, ja koodarin ei tarvitse kopioida esim. koodin aiheuttamia virheilmoituksia tekoälylle.
 
-Kokeillaan miten agenttimoodi selviää viikon 1 tehtävästä 8. Konfiguraatiden jälkeen agentti saadaan auki yläreunan kuvakkeesta:
+Kokeillaan miten agenttimoodi selviää viikon 1 tehtävästä 8. Konfiguraation jälkeen agentti saadaan auki yläreunan kuvakkeesta:
 
 ![]({{ "/images/cc5.png" | absolute_url }}){: width="90%"}
 
@@ -77,7 +93,7 @@ Agentti kertoo mitä on tekemässä, eli ensin se haluaa suorittaa komennon, jok
 
 ![]({{ "/images/cc-7.png" | absolute_url }}){: width="90%"}
 
-Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus saadaan sataan prosenttiin:
+Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus nousee sataan prosenttiin:
 
 ![]({{ "/images/cc-8.png" | absolute_url }})
 

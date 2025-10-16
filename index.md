@@ -23,8 +23,10 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - XXX
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
-- [CurreChat](<{{site.curre}}>)
-  - CurreChat tarjoaa kurssilaisten käyttöön ilmaisen GPT-4o-chatin, joka siis käytännössä sama kuin OpenAI:n ChatGPT. Chat on Azuressa oleva HY:n oma instanssi, johon syötettyä materiaalia *ei käytetä kielimallien kouluttamiseen*
+- Generatiivinen tekoäly
+  - Käyttö on kurssilla sallittua (paitsi kokeessa), osittain jopa suositeltavaa, lue lisää [täältä](/genai)
+  - [CurreChat](<{{site.curre}}>)
+  - [KurssimateriaaliChat](<{{site.curre_material}}>)
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/95023982/feedback>
 
