@@ -31,48 +31,58 @@ IEEE (Institute of Electrical and Electronics Engineers), yksi alamme keskeisist
 
 IEEE:n mukaan ohjelmistotuotannolla tarkoitetaan systemaattista, kurinalaista, mitattavissa olevaa tapaa ohjelmistojen kehittämiseen, operointiin ja ylläpitoon. Määritelmän loppukaneetti sanoo, että kyseessä on "insinöörimäinen" tapa ohjelmistojen kehittämiseen.
 
-Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesti määritellyt sen, mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan. SWEBOK:in uusin versio 3.0 on vuodelta 2014 eli jo jossain määrin ikääntynyt.
+Lähde määritelmälle on [SWEBOK](https://www.computer.org/education/bodies-of-knowledge/software-engineering), eli _Software Engineering Body of Knowledge_, missä IEEE on komiteavetoisesti määritellyt sen, mitä se tarkoittaa ohjelmistotuotannolla ja mitä osa-alueita se katsoo ohjelmistotuotantoon kuuluvan.
 
-> Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono. Jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. Ohjelmistojen tekeminen on aktiviteettina hyvin eri henkinen kuin esim. tuolin. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä development, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen.
+> Sivuhuomio: termi ohjelmistotuotanto on englanniksi _software engineering_. Suomenkielinen vastine _ohjelmistotuotanto_ onkin terminä aika huono. Jos suomenkielinen termi käännettäisiin takaisin englantiin, olisi tuloksena _software production_, eli ohjelmien valmistaminen. Termiä production käytetään yleensä suoraviivaisesta tuotteiden rakentamisesta, esim. jos tehdas valmistaa tuoleja, voidaan sanoa että sen ala on _chair production_. 
+Ohjelmistojen tekeminen on aktiviteettina hyvin erilainen kuin esimerkiksi tuolin valmistaminen. Ohjelmistojen "rakentamisesta" käytetään englanninkielistä termiä development, eli voidaan sanoa että _company develops software for accounting_, joka taas suomeksi kuuluisi _yritys kehittää ohjelmistoja laskutukseen_. Kehittäminen (development) on aktiviteetti, joka sisältää muutakin kuin pelkkää suoraviivaista valmistamista (production), kehittäminen sisältää mm. suunnittelun ja kysymyksenasettelun sen suhteen mitä ja miksi ylipäätään on tarve jonkinlaiselle tuotteelle. Ohjelmistotuotanto eli software engineering tarkoittaakin "insinöörimäisen" lähestymistavan soveltamista ohjelmistokehitykseen.
 
 ### Ohjelmistotuotannon osa-alueet
 
 SWEBOK:in mukaan ohjelmistotuotanto jakautuu seuraaviin osa-alueisiin:
 
 - Software requirements
+- Software architecture
 - Software design
 - Software construction
 - Software testing
 - Software maintenance
+- Software engineering operations
 - Software configuration management
 - Software engineering management
 - Software engineering process
 - Software engineering models and methods
+- Software engineering economics
+- Software security
 - Software quality
+
 
 _Software requirements_ tarkoittaa ohjelmistolle asetettuja vaatimuksia, eli sitä miten rakennettavan ohjelmiston tulisi loppukäyttäjän tai tilaajan mielestä toimia.
 
-_Software design_ taas tarkoittaa halutun kaltaisen toiminnallisuuden omaavan ohjelmiston sisäisen rakenteen suunnittelua.
+_Software design_ taas tarkoittaa halutun kaltaisen toiminnallisuuden omaavan ohjelmiston sisäisen rakenteen suunnittelua. Suunnittelun keskeinen osa on _Software architecture_, eli ohjelman korkean tason rakenne.
 
 _Software construction_ viittaa aktiviteetteihin, joiden avulla suunniteltu ohjelmisto saadaan toimivaksi tuotteeksi eli käytännössä ohjelmointia ja debuggausta.
 
-Kuten arvata saattaa, _software testing_ tarkoittaa niitä menetelmiä, joilla varmistutaan siitä, että ohjelmisto toimii kuten halutaan ja että se on riittävän bugiton käytettäväksi.
+Kuten arvata saattaa, _software testing_ tarkoittaa niitä menetelmiä, joilla varmistutaan siitä, että ohjelmisto toimii kuten halutaan ja että se on riittävän virheetön käytettäväksi.
 
 Suurin osa ohjelmistoista ei valmistu lopullisesti koskaan. Kun ensimmäinen versio otetaan käyttöön, alkaa ylläpito, _software maintenance_ eli bugeja korjaillaan ja ohjelmistoa laajennetaan uusilla toiminnoilla.
 
+Osa ohjelmiston ylläpitoa on _Software engineering operations_, eli kaikki ne toimet, millä varmistetaan että ohjelmisto ja sen uudet versiot saadaan loppukäyttäjän käytettäväksi. 
+
 _Software configuration management_ viittaa ohjelmiston käyttöönsaattamiseen liittyviin kirjastojen, laitteistojen ja käännösprosessin konfigurointiin sekä ohjelmiston versiointiin.
 
-Ohjelmistojen tekemiseen liittyy paljon suunnittelua, koordinointia, hallinnointia ja raportointia eli "managementtiä", tähän viittaa _software engineering management_.
+Ohjelmistojen tekemiseen liittyy paljon suunnittelua, koordinointia, hallinnointia ja raportointia eli "managementtia", tähän viittaa _software engineering management_.
 
-_Software engineering process_ eli ohjelmistotuotantoprosessi kuvaa tapoja tai menetelmiä miten ohjelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin seuraavassa luvussa.
+_Software engineering process_ eli ohjelmistotuotantoprosessi kuvaa tapoja tai menetelmiä miten ohjelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin materiaalin [osassa 2](/osa2).
 
 _Software engineering models and methods_ kuvaa yksityiskohtaisempia menetelmiä, joita ohjelmistokehityksessä käytetään, kuten mallinnusta ja erilaisia suunnittelumenetelmiä.
 
-Ohjelmistojen laatu eli _software quality_ on vielä testaustakin avarampi näkemys siihen onko ohjelmisto hyvä. Bugittomuutta ja oikein toimimista keskeisempi kysymys onkin se, sopiiko ohjelmisto ylipäätään käyttäjien tarpeeseen, eli onko se sopiva käyttötarkoitukseensa.
+Ohjelmistojen laatu eli _software quality_ on vielä testaustakin laajempi näkökulma siihen, onko ohjelmisto riittävän hyvä. Bugittomuutta ja oikein toimimista keskeisempi kysymys onkin se, sopiiko ohjelmisto ylipäätään käyttäjien tarpeeseen, eli onko se sopiva käyttötarkoitukseensa. Eräs laadun keskeinen elementti on ohjelmistojen tietoturva, eli _Software security_.
 
-Ohjelmistotuotanto pitää siis sisällään suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käydään ainakin jossain määrin läpi näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Lähes jokaisesta aihepiiristä on kuitenkin tarjolla syventäviä kursseja maisteriopinnoissa.
+Ohjelmistot elävät harvoin tyhjiössä, useimmiten niiden avulla halutaan automatisoida ja tehostaa jotain toimintaa, eli niillä on kaupallinen motivaatio, toisaalta ohjelmistojen kehittäminen on kallista, eli ohjelmistojen kehittäisen ja ylläpitämisen hintalappu on iso. Ohjelmistoihin liittyvien taloudellisten vaikuttimien ja realiteetin tarkastelua kuvaa _Software engineering economics_.
 
-Aloittelevalle ohjelmistoalan opiskelijalle on tässä vaiheessa olennaisinta saada kokonaiskuva koko ohjelmistotuotannon kentästä ja sen jälkeen soveltaa sekä reflektoida oppimaansa "teoriaa" käytännön ohjelmistotyössä, esim. Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti) tai oikeassa työelämässä. Aihepiiriä syventävät kurssit ovat todennäköisesti huomattavasti antoisampia kokemuksia siinä vaiheessa kun opiskelija omaa jo jonkin verran käytännön työkokemusta alalta.
+Ohjelmistotuotanto pitää siis sisällään suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käsitellään ainakin jossain määrin näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Lähes jokaisesta aihepiiristä on kuitenkin tarjolla syventäviä kursseja maisteriopinnoissa.
+
+Aloittelevalle ohjelmistoalan opiskelijalle on tässä vaiheessa olennaisinta saada kokonaiskuva koko ohjelmistotuotannon kentästä ja sen jälkeen soveltaa sekä reflektoida oppimaansa teoriaa käytännön ohjelmistotyössä, esim. Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti) tai oikeassa työelämässä. Aihepiiriä syventävät kurssit ovat todennäköisesti huomattavasti antoisampia kokemuksia siinä vaiheessa kun opiskelija omaa jo jonkin verran käytännön työkokemusta alalta.
 
 ## Ohjelmiston vaiheet ja elinkaari
 
