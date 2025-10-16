@@ -100,7 +100,7 @@ voidaan ajatella muodostavan _vaiheet_ (engl. phases) joiden kautta ohjelmisto k
 
 Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot olivat laitteistoihin nähden "triviaaleja". Ohjelmointi tapahtui alussa kaapeleita yhdistelemällä ja hieman myöhemmin konekielellä. Sovellusten käyttäjät, kuten ammusten lentoratoja laskeneet fyysikot, yleensä ohjelmoivat itse tarvitsemansa sovellukset.
 
-Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisen halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
+Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisen halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä, kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
 
 Vähitellen ohjelmistot alkoivat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin sotateollisuuteen. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
 
@@ -125,7 +125,7 @@ Eli kun tietokoneita ei ollut, ohjelmointi ei muodostanut ongelmaa. Ensimmäiset
 
 ### Ohjelmistokehitys insinööritieteenä: software engineering
 
-Termi _software engineering_ eli ohjelmistotuotanto määriteltiin ensimmäistä kertaa 1968:
+Termi _software engineering_ eli ohjelmistotuotanto määriteltiin ensimmäistä kertaa 1968. Eräs termin varhainen [määritelmä](https://www.jstor.org/stable/2028680) kuuluu seuraavasti
 
 > The establishment and use of sound engineering principles in order to obtain economically software that is reliable and works efficiently on real machines
 
@@ -149,7 +149,7 @@ Vesiputousmalli perustuu vahvasti siihen, että eri vaiheet ovat erillisten tuot
 
 Jotta tieto kulkee ohjelmistokehityksen eri vaiheiden välillä, tulee kunkin vaiheen tulokset dokumentoida huolellisesti. Erityisesti asiakkaan kanssa tehtävän vaatimusmäärittelyn on oltava huolellisesti tehty ja hyvin dokumentoitu, sillä kaikki myöhemmät vaiheet olettavat että vaatimukset on kattavasti ja virheettömästi kirjattu.
 
-Vesiputousmallin mukaisesta toiminnasta käytetään joskus luonnehdintaa _Big Design Up Front_ lyhenteenä BDUF, kuvaamaan sitä faktaa, että koko ohjelmisto määritellään ja suunnitellaan tyhjentävästi ennen ohjelmointivaiheen aloittamista. Termiä BDUF käytetään yleensä negatiivisessa merkityksessä kuvaamaan vesiputousmallin raskautta.
+Vesiputousmallin mukaisesta toiminnasta käytetään joskus luonnehdintaa [Big Design Up Front](https://en.wikipedia.org/wiki/Big_design_up_front) lyhenteenä BDUF, kuvaamaan sitä faktaa, että koko ohjelmisto määritellään ja suunnitellaan tyhjentävästi ennen ohjelmointivaiheen aloittamista. Termiä BDUF käytetään yleensä negatiivisessa merkityksessä kuvaamaan vesiputousmallin raskautta.
 
 Vesiputousmallin mukainen ohjelmistoprosessi on yleensä tarkkaan etukäteen suunniteltu, resursoitu ja aikataulutettu, tästä johtuu joskus siitä käytetty nimike _plan based process_, eli suunnitelmavetoinen prosessi.
 
@@ -161,9 +161,9 @@ Vesiputousmalli olettaa, että ohjelmistotuotannon vaiheet tapahtuvat peräkkäi
 
 Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellisesti tahansa, tulevat vaatimukset kuitenkin melkein varmasti muuttumaan matkan varrella. On osoittautunut, että asiakkaat eivät ohjelmistoja tilatessaan tiedä tai osaa sanoa mitä haluavat tai tarvitsevat. Asiakkaan tarpeet nimittäin saattavat muuttua projektin kuluessa. Bisnesympäristö saattaa vaihtua, tulee uusia lainsäädäntöjä, firmat fuusioituvat, maailman taloussuhdanteet vaihtuvat, tulee globaali pandemia... Mitä pidempi ohjelmiston kehitysprosessi on, sitä varmempaa on, että vaatimukset elävät.
 
-On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, joilla ei välttämättä ole aiempia esikuvia, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon kuten vesiputousmalli olettaa.
+On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti, kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, joilla ei välttämättä ole aiempia esikuvia, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon, kuten vesiputousmalli olettaa.
 
-Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
+Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset ovat jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
 
 Vesiputousmallin mukaisen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järkevin resurssein.
 
@@ -183,11 +183,11 @@ Jos haluat lukea lisää vesiputousmallin ongelmista, kannattaa tutustua Martin 
 
 Paradoksaalista kyllä vesiputousmallin isänä pidetty Royce _ei suosittele_ artikkelissaan suoraviivaisen lineaarisen mallin käyttöä. Royce kyllä esittelee lineaarisen vesiputousmallin artikkelin sivulla 2, mutta toteaa että se _ei sovellu_ monimutkaisten ohjelmistoprojektien tekotavaksi.
 
-Roycen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta siitä saatujen kokemusten valossa kannattaa suunnitella ja toteuttaa lopullinen ohjelmisto. Royce esitteleekin artikkelin loppupuolella mallin, missä ohjelmisto tehdään kahdessa iteraatiossa, kuva Roycen artikkelista
+Roycen suosituksen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta siitä saatujen kokemusten valossa kannattaa suunnitella ja toteuttaa lopullinen ohjelmisto. Royce esitteleekin artikkelin loppupuolella mallin, jossa ohjelmisto tehdään kahdessa iteraatiossa, kuva Roycen artikkelista:
 
 ![]({{ "/images/1-3.png" | absolute_url }})
 
-Vesiputousmalli tai ainakin Roycen nimeäminen vesiputousmallin isäksi on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
+Vesiputousmalli, tai ainakin Roycen nimeäminen vesiputousmallin isäksi, on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
 
 ### Iteratiivinen ja inkrementaalinen ohjelmistokehitys
 
