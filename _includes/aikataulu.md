@@ -93,10 +93,10 @@
 ### Viikko 6
 
 - Luento 11: {{site.luennot[11]}}
-  - Kasper Hirvikoski (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
+  - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
   - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
 - Luento 12: {{site.luennot[12]}} 
-  - vierailuluento
+  - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}

@@ -14,13 +14,13 @@ permalink: /osa0/
 Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä.
 
 Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat tiedot) 
-- [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-24.mooc.fi/)
-- [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2024/)
-- [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (aiemmalta nimeltään Tietokantasovellus)
+- [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-25.mooc.fi/)
+- [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2025/)
+- [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (aiemmalta nimeltään Tietokantasovellus)
 
 Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
 
-Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [ohjelmistotuotantoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
+Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
 Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 
@@ -36,18 +36,17 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoista ensimmäinen tosin korvautuu tänä vuonna etukäteen tehdyllä tallenteella.
-Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä neljä vierailuluentoa.  Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa B123 (poislukien yksi toisen viikon luennoista) ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2023 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
+Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2024 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
 
 ### Laskuharjoitukset
 
-Kurssiin liittyy viikoittaiset laskuharjoitukset. Tehtäviä harjoituksissa on kahden tyyppisiä.
+Kurssiin liittyy viikoittaiset laskuharjoitukset. **Tehtäviä laskareissa on kahden tyyppisiä**.
 
-Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat _viikoittaiset monivalintatehtävät_, monivalintatehtävien deadline on sunnuntaina klo 23.59. Poikkeuksena tähän on ensimmäistä kahta luentoa kertaavat viikon 1 monivalinnat joiden deadline on vasta toisen viikon sunnuntaina.
+Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_. Poikkeuksena tähän on ensimmäistä kahta luentoa kertaavat viikon 1 monivalinnat joiden deadline on vasta toisen viikon sunnuntaina.
 
-Toinen osa tehtävistä käsittelee ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
+Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
@@ -70,11 +69,11 @@ Miniprojektista lisää [täällä](/miniprojekti).
 
 #### Miniprojektin hyväksilukeminen
 
-Miniprojektiin osallistuminen ei ole välttämätöntä jos täytät työkokemuksen perusteella tapahtuvan ohjelmistotuotantoprojektin hyväksiluvun edellyttävät kriteerit.
+Miniprojektiin osallistuminen ei ole välttämätöntä jos täytät työkokemuksen perusteella tapahtuvan _Ohjelmistoprojektin (10 op)_ hyväksiluvun edellyttävät kriteerit.
 
-Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/koulutusohjelmasi-harjoitteluohjeet) kohdasta _Laaja suoritus: Ohjelmistotuotantoprojekti_
+Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/koulutusohjelmasi-harjoitteluohjeet) kohdasta _Laaja suoritus: Ohjelmistoprojekti_
 
-Toisin kuin Ohjelmistotuotantoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _kolmen kuukauden työkokemus_.
+Toisin kuin Ohjelmistoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _kolmen kuukauden työkokemus_.
 
 Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
 
@@ -122,7 +121,7 @@ Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteis
 
 Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, kokeet menevät nykyään paremmin kuin monivalintoja edeltävänä aikana. Monivalinnoille nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
 
-Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon asioista. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
+Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen asioista. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
 
 Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. ChatGPT:llä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
 
