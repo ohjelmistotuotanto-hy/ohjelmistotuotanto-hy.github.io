@@ -107,7 +107,7 @@
 
 - Vierailuluennot
   - Luento 13: {{site.luennot[13]}}
-    - vierailuluento
+    - Sari Leppänen ja Michael Forsström (DNA): AI ja ohjelmistokehitys
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
 
