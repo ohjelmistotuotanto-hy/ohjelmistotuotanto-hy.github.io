@@ -50,6 +50,7 @@ permalink: /sisallys/
     - [Scrumin periaatteet: transparency - inspection - adaptation](/osa1/#scrumin-periaatteet-transparency---inspection---adaptation)  
     - [Scrumin arvot](/osa1/#scrumin-arvot)  
 - [Scrumin ongelmia](/osa1/#scrumin-ongelmia)  
+- [Laajat kielimallit ohjelmistokehityksessä](/osa1/#laajat-kielimallit-ohjelmistokehityksessä)
 
 ### [Osa 2: Vaatimustenhallinta](/osa2)
 - tulossa   

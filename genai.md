@@ -21,7 +21,7 @@ Hakuindeksiä käyttäessä mahdollisuus AI:n hallusinoinnille on paljon pienemp
 
 ### Kielimallit koodarin apuna
 
-Suuret kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.  
+Laajat kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.  
 
 Itse käytän koodatessa pääasiassa GitHub Copilottia, joka on nykyään natiivisti integroitu VS Codeen.  Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Student Developer Packin](https://education.github.com/pack) kautta.
 

@@ -582,3 +582,30 @@ Scrum kuten muutkin ketterät kehitystavat ovat syntyneet pitkälti ohjelmistoke
 
 Päätetään alustava Scrumiin tutustumisemme menetelmän kehittäjien sanoihin
 _Scrum is easy to understand but extremely difficult to master_.
+
+## Laajat kielimallit ohjelmistokehityksessä
+
+Laajat kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.  
+
+Itse käytän koodatessa pääasiassa GitHub Copilottia, joka on nykyään natiivisti integroitu VS Codeen.  Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Student Developer Packin](https://education.github.com/pack) kautta.
+
+Copilotin ja muiden kielimallien antamien vihjeiden hyödyllisyyden aste vaihtelee. Kielimallien ehkä suurin ongelma on hallusinointi, ne generoivat välillä täysin vakuuttavan näköisiä vastauksia mitkä kuitenkin ovat täysin päättömiä. Ohjelmoidessa toki hallusinoitu koodi jää usein nopeasti kiinni jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä kielimallin generoima koodi näyttää toimivan, mutta se sisältää vaikeammin havaittavia bugeja tai esim. tietoturvahaavoittuvuuksia.
+
+Toinen ongelma kielimallien soveltamisessa ohjelmistokehitykseen on se, että kielimallien on vaikea hahmottaa isompia projekteja, ja esim. generoida toiminnallisuutta, joka edellyttäisi muutoksia useisiin tiedostoihin. Kielimallit eivät myöskään nykyisellään osaa yleistää koodia, eli jos koodissa on esim. olemassaolevia funktioita tai komponentteja, joita kielimalli pystyisi pienin muutoksin hyödyntämään siltä pyydettyyn toiminnallisuuteen, ei kielimalli tähän aina taivu. Tästä voi olla seurauksena se, että koodikanta rapistuu sillä kielimallit generoivat koodiin paljon toisteisuutta (ks. lisää esim. [täältä](https://visualstudiomagazine.com/articles/2024/01/25/copilot-research.aspx)).
+
+Kielimalleja käytettäessä vastuu siis jää aina ohjelmoijalle.
+
+Kielimallien nopea kehitys asettaa ohjelmointia opiskelevan haastavaan asemaan: kannattaako ja tarvitseeko enää ylipäätään opetella ohjelmointia vanhan liiton tyyliin, kun lähes kaiken saa kielimalleilta valmiina?
+
+Tässä kohtaa kannattaa muistaa C-kielen kehittäjän Brian Kerninghamin vanha viisaus
+
+![]({{ "/images/kerningham.png" | absolute_url }})
+
+Eli koska ongelmien selvittely on kaksi kertaa vaikeampaa kuin ohjelmointi, ei kannata ohjelmoida sellaista koodia minkä vain juuri ja juuri itse ymmärtää. Miten debuggaus mahtaakaan onnistua tilanteessa missä ohjelmointi on ulkoistettu kielimallille ja ohjelmistokehittäjä ei ymmärrä debugattavaa koodia ollenkaan?
+
+Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että ne eivät ole itseriittoisia, ja vaikeimmat ongelmat jäävät ihmisten selvitettäväksi. Tämän takia aloittelevien ohjelmistokehittäjien on kaiken varalta opeteltava ohjelmoimaan sujuvasti. Voi olla, että kielimallien kehityksestä huolimatta tarvitaankin entistä syvällisempää osaamista. Tekoäly tekee ne helpot asiat, mutta ihmistä tarvitaan kaikkein kiperimpien tekoälyn aiheuttamien sotkujen selvittelyyn. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni ja kantaa lopullisen vastuun.
+
+Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan siis on edelleen oleellista hankkia syvällinen tekninen osaaminen. Syynä tälle on myös se, että AI on yhtä hyvä kuin sille annettu prompti. Promptaaminen taas on haastavaa, jos syvällinen tekninen osaaminen puuttuu. Generatiivista tekoälyä kannattaa mielestäni ehdottomasti hyödyntää, kunhan muistaa että käyttö on riittävissä määrin produktiivista. 
+
+Kielimallit kehittyvät koko ajan. Erityisen suuren avun ohjelmistokehityksen kannalta ovat tuoneet [agentit](https://cloud.google.com/discover/what-are-ai-agents), jotka osaavat tehdä suurempia kokonaisuuksia käyttäjän kehoitteista. Visual Studio Code -editoriin on ollut jo jonkin aikaa integroituna [agenttimoodi](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode), joka on nostanut AI:n kyvykkyyttä huomattavasti. Agenttimoodissa tekoäly osaa koodin generoinnin lisäksi mm. luoda tiedostoja, suorittaa koodia, ja korjata generoimaansa koodia koodin suorituksessa tapahtuneiden virheiden perusteella.
+
