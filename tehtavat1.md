@@ -750,7 +750,7 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
 
 ```python
 stats = StatisticsService(
-  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
+  PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt")
 )
 ```
 
@@ -811,7 +811,7 @@ from player_reader import PlayerReader
 
 def main():
     stats = StatisticsService(
-      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
+      PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt")
     )
 
     # järjestetään kaikkien tehopisteiden eli maalit+syötöt perusteella
