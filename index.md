@@ -21,6 +21,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon pajassa BK107
   - XXX
+- Kurssimateriaalin ([sisällysluettelo](http://localhost:4000/sisallys/#osa-0-johdanto))
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Generatiivinen tekoäly
