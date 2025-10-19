@@ -98,3 +98,21 @@ Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehny
 ![]({{ "/images/cc-8.png" | absolute_url }})
 
 Vastuumme tuntevina koodareina käydään testit läpi. Agentti on laittanut testeihin ehkä turhan runsaasti kommentteja sillä testien tarkoitusperä käy ilmi jo testin nimestä. Poistetaan turhat kommentit (tai pyydetään agenttia poistamaan ne) ja commitoidaan muutokset GitHubiin.
+
+## Viikko 2 - Tehtävä 3
+
+Vihje 2 kehotti tutustumaan Pythonin _filter_-funktioon. [Dokumentaatio](https://docs.python.org/3/library/functions.html#filter) on kehnoa, kuten aika monesti Pythonin tapauksessa on. 
+
+Tekoäly antaa varsin hyvät ohjeet promptilla _miten pythonin funktio filter toimii_
+
+![]({{ "/images/cc2-1.png" | absolute_url }}){: width="90%"}
+
+Esimerkeissä esiintyy _lambda_ jonka toimintaperiaate on päässyt unohtumaan, kysytään AI:ltä seuraavalla promptilla
+_kerro miten pyytonin lambda toimii_.
+
+Idea toivon mukaan selkiytyy ja tehtävä ratkeaa.
+
+Myös vihjeessä 3 mainittujen f-merkkijonojen toiminnasta saa tekoälyltä hyviä vastauksia, promti voi olla esim _kertaa pythonin f-merkkijonojen toimintaperiaatteet_
+
+Perusteiden jälkeen voi kokeilla hieman tarkemmin tehtävään soveltuvaa promptia:
+_miten f-merkkijonoilla saa sarakkeisteun tulostuksen_ 

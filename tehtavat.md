@@ -18,7 +18,7 @@ Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvos
 
 ### Viikko 1
 
-- [monivalintatehtävät]({{site.stats_url}}/quiz/1) deadline {{site.moniv-dl[1]}} **HUOMAA** deadline!
+- [monivalintatehtävät]({{site.stats_url}}/quiz/1) deadline {{site.moniv-dl[1]}}
 - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
 ### Viikko 2

@@ -23,7 +23,15 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-Tehtävät 3 ja 4 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan **ohtuvarasto**-repositorioon, siis samaan mitä käytettiin viikon 1 tehtävissä 2-13. Muut tehtävät palautetaan **palautusrepositorioon**, eli samaan mihin palautit ensimmäisen viikon tehtävät 14-17.
+<div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #AFFAFA;">
+
+<h2>
+TODO: UPDATE allaoleva
+</h2>
+
+</div>
+
+Tehtävät 6 ja 7 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan **ohtuvarasto**-repositorioon, siis samaan mitä käytettiin viikon 1 tehtävissä 2-13. Muut tehtävät palautetaan **palautusrepositorioon**, eli samaan mihin palautit ensimmäisen viikon tehtävät 14-17.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -44,82 +52,143 @@ Tee seuraavat toimenpiteet:
 
 - Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
-- Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-viitekehystä. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
+- Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
-- Sovelluksessa käsitellään paljon JSON-muotoista dataa, joten päädyt etsimään sen serialisointiin ja deserialisointiin sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [jsonpickle](https://pypi.org/project/jsonpickle/). **Asenna jsonpickle projektin riippuvuudeksi**
-- Huomaat bugin jsonpickle-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/jsonpickle/jsonpickle/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `2.2.0`. **Asenna jsonpickle-kirjastosta versio `2.2.0`**.
+- Sovellus käyttää relaatiotietokantaa joten päädyt etsimään tarkoitukseen sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [SQLAlchemy](https://pypi.org/project/SQLAlchemy/). **Asenna SQLAlchemy projektin riippuvuudeksi**
+- Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. **Asenna jsonpickle-kirjastosta versio `1.4.54`**.
   - Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
-  - Pohdi itseksesi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `2.2.0` päivittäminen versioon `3.2.2` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole version `3.0.3` kanssa?
-  - Versiovaatimuksissa on mukana usein `^`-, tai `~`-etuliite. Pohdi itseksesi, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
-- Päätät, että jsonpickle-kirjastosta on ollut vain harmia ja voit helposti toteuttaa sen tarjoaman toiminnallisuuden itse. **Poista jsonpickle projektin riippuvuuksien joukosta**
+  - Pohdi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `1.4.54` päivittäminen versioon `2.0.44` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole versiosta `2.0.5` versioon `2.0.44`?
+  - Versiovaatimuksissa on mukana usein `^`-, tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
+- Kuulet kaveriltasi, että Flaskin sijaan kannattaisi käyttää [FastAPI](https://pypi.org/project/fastapi/)-kirjastoa. 
+**Poista Flask projektin riippuvuuksien joukosta ja asenna FastAPI**
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 
-### 2. Riippuvuuksien hyödyntäminen
+
+### 2. Riippuvuuksien hyödyntäminen: Pelaajalista
+
+Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
+
+- Kopioi projekti palatusrepositorioosi, hakemiston _viikko2_ sisälle.
+
+Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
+
+Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2024-25/players>
+
+Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
+
+Asenna siis _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+
+Voit ottaa projektisi pohjaksi seuraavan tiedoston:
+
+```python
+import requests
+from player import Player
+
+def main():
+    url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players"
+    response = requests.get(url).json()
+
+    print("JSON-muotoinen vastaus:")
+    print(response)
+
+    players = []
+
+    for player_dict in response:
+        player = Player(player_dict)
+        players.append(player)
+
+    print("Oliot:")
+
+    for player in players:
+        print(player)
+```
+
+Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
+
+**Tässä tehtävässä on tarkoituksena toteuttaa toiminnallisuus, jonka avulla on mahdollista tulostaa tietyn kansalaisuuden, esim. suomen omaavat pelaajat**.
+- Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee.
+- Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
+
+```
+Players from FIN:
+
+Juuso Välimäki team UTA  goals 2 assists 3
+Anton Lundell team FLA  goals 17 assists 28
+Ville Ottavainen team SEA  goals 0 assists 1
+Roope Hintz team DAL  goals 28 assists 39
+Rasmus Ristolainen team PHI  goals 4 assists 15
+Ville Koivunen team PIT  goals 0 assists 7
+Mikael Pyyhtia team CBJ  goals 4 assists 3
+Mikko Rantanen team COL, CAR, DAL  goals 32 assists 56
+...
+```
+
+Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
+
+### 3. Siistimpi pelaajalista
+
+Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
+
+```
+Players from FIN
+
+Mikko Rantanen        COL, CAR, DAL   32 + 56 = 88
+Sebastian Aho         CAR             29 + 45 = 74
+Aleksander Barkov     FLA             20 + 51 = 71
+Roope Hintz           DAL             28 + 39 = 67
+Mikael Granlund       SJS, DAL        22 + 44 = 66
+Teuvo Teravainen      CHI             15 + 43 = 58
+Anton Lundell         FLA             17 + 28 = 45
+Artturi Lehkonen      COL             27 + 18 = 45
+Kaapo Kakko           NYR, SEA        14 + 30 = 44
+Eeli Tolvanen         SEA             23 + 12 = 35
+...
+```
+
+- Vihje 1: [Täällä](https://docs.python.org/3/howto/sorting.html) on kerrottu miten järjestäminen Pythonilla tapahtuu
+- Vihje 2: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
+- Vihje 3: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa.
+- Erityisesti vihje 2 on heikko, katso miten saat [apua tekoälyltä](/genai/#viikko-2---tehtävä-3)
+- Myös Ohjelmoinnin MOOC:in [osa11](https://ohjelmointi-25.mooc.fi/osa-11) ja [osa12](https://ohjelmointi-25.mooc.fi/osa-12) käsittelevät tehtävän kannalta hyödyllisiä asioita
+
+### 4. Pelaajalistan refaktorointi
+
+Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminnallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
+
+Jaa toiminnallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`.
+- `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. 
+- `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
+
+Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraavalta:
+
+```python
+def main():
+    url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players"
+    reader = PlayerReader(url)
+    stats = PlayerStats(reader)
+    players = stats.top_scorers_by_nationality("FIN")
+
+    for player in players:
+        print(player)
+```
+
+Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.
+
+### 5. Graafinen pelaajalista 
+
+Laajenna sovellustasi lisäämällä siihen toiminnallisuutta ja muotoilemalla tulostus kirjaston [Rich](https://github.com/Textualize/rich) avulla. Ohjeita kirjaston käyttöön löytyy sen [dokumentaatiosta](https://rich.readthedocs.io/en/stable/introduction.html) ja googlaamalla tai tekoälyltä.
+
+Sovelluksella tulee pystyä näyttämään käyttäjän haluaman maan pelaajien tilastot käyttäjän määrittelemältä kaudelta.  
+
+Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
+
+![]({{ "/images/lh2-1-2025.png" | absolute_url }})
+
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin teit edellisen tehtävän
 
-Ohjelmistokehittäjälle tulee usein vastaan tilanne, jossa pitäisi löytää tiettyyn käyttötarkoitukseen sopiva kirjasto. Harjoittelemme kyseistä tilannetta tässä tehtävässä.
-
-[TOML](https://toml.io/en/) on eräs helppolukuinen datan esitysformaatti, jota käytetään usein konfiguraatiotiedostoissa, kuten Poetryn _pyproject.toml_-tiedostossa. [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko2/project-reader_ on pohja ohjelmalle, jonka tarkoituksena on lukea projektin tietoja annetusta osoitteesta löytyvästä _pyproject.toml_-tiedostosta.
-
-- **Kopioi aluksi projekti palautusrepositorioon hakemiston viikko2 sisälle.**
-
-Tehtävänäsi on ensin löytää sopiva kirjasto, jonka avulla TOML-muotoisista merkkijonoista voi muodostaa Pythonin tietorakenteita. Voit hyödyntää tässä esimerkiksi [PyPI](https://pypi.org/)-sivuston hakua tai Googlea. PyPI:ssä eräs hyvä hakusana voisi olla esimerkiksi "toml". Tutustu kirjastojen kuvauksiin ja päättele sen perusteella, sopiiko kirjasto käyttötarkoitukseen. Kun löydät sopivan kirjaston, asenna se projektiin Poetryn avulla.
-
-**HUOM:** PyPI:n asennusohjeista löytyy usein pip-asennuksen ohje `pip install <kirjasto>`. Kaikki kirjastot pystyy kuitenkin asentamaan yhtä lailla Poetryn avulla komennolla `poetry add <kirjasto>`.
-
-Ota sen jälkeen kirjasto käyttöön projektin <i>src/project_reader.py</i>-tiedoston `ProjectReader`-luokan metodissa `get_project`. Metodin `content`-muuttujaan on tallennettu tiedoston sisältö:
-
-```python
-def get_project(self):
-    # tiedoston merkkijonomuotoinen sisältö
-    content = request.urlopen(self._url).read().decode("utf-8")
-    print(content)
-
-    # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-    return Project("Test name", "Test description", [], [])
-```
-
-Tulosta jokainen välivaihe (tiedoston sisältö ja kirjaston avulla deserialisoitu sisältö) `print`-funktion avulla, jotta tiedät, minkä muotoista data on. Toki voit käyttää samaan tarkoitukseen myös VS Coden [debuggeria](https://ohjelmointi-23.mooc.fi/osa-4/1-vscode#debuggeri).
-
-Muodosta tämän jälkeen tiedoista `Project`-olio antamalla sille konstruktorin kautta projektin nimi, kuvaus, lista riippuvuuksista ja lista kehityksen aikaisista riippuvuuksista. Kun ohjelma toimii halutulla tavalla, voit poistaa debuggauksessa käytetyt tulostukset.
-
-Ohjelman voi käynnistää virtuaaliympäristössä komennolla `python3 src/index.py`. Esimerkkinä käytetyn _pyproject.toml_-tiedoston tapauksessa ohjelman tulostuksen tulisi olla seuraava:
-
-```
-Name: Ohtutesting app
-Description: Sovellus joka toimii testisyötteenä ohtun viikon 2 laskareihin
-Dependencies: python, Flask, editdistance
-Development dependencies: coverage, robotframework, robotframework-seleniumlibrary, requests
-```
-
-*HUOM* ohjelma ei saa sisältää kuin ainoastaan tiedostossa index.py olevan print-komennon, joka tulostaa `Project`-olion merkkijonoesityksen!
-
-Laajenna ja hio vielä ratkaisua siten, että esimerkkiprojektin osalta lopputulos näyttää suunnilleen seuraavalta
-
-```
-Name: Ohtutesting app
-Description: Sovellus joka toimii testisyötteenä ohtun viikon 2 laskareihin
-License: MIT
-
-Authors:
-- Matti Luukkainen
-- Kalle Ilves
-
-Dependencies:
-- python
-- Flask
-- editdistance
-
-Development dependencies:
-- coverage
-- robotframework
-- robotframework-seleniumlibrary
-- requests
-```
-
-### 3. Pylint ja koodin staattinen analyysi
+### 6. Pylint ja koodin staattinen analyysi
 
 **Tämä ja seuraava tehtävä tehdään viime viikon tehtävissä 2-13 käytettyyn ohtuvarasto-repositorioon**
 
@@ -166,7 +235,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
 Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsin, vaan käytetään lähtökohtana Pylintin suosittelemaa konfiguraatiota. Suositellun konfiguraation voi tulostaa komentoriville komennolla `pylint --generate-rcfile`.
 
-### 4. Koodin staattinen analyysi ja GitHub Actionit
+### 7. Koodin staattinen analyysi ja GitHub Actionit
 
 **Tämä tehtävä tehdään viime viikon tehtävissä 2-13 käytettyyn ohtuvarasto-repositorioon**
 
@@ -180,7 +249,10 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ![]({{ "/images/py-lh2-12.png" | absolute_url }})
 
-### 5. Git: branchit [versionhallinta]
+
+### 8. Precommit hook
+
+### 9. Git: branchit [versionhallinta]
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin tehtävät 1 ja 2
 
@@ -284,7 +356,7 @@ logger("lopetetaan")
 
 - Katso jälleen miltä näyttää `gitk --all`-komennolla
 
-### 6. Git: branchit ja staging-alue [versionhallinta]
+### 10. Git: branchit ja staging-alue [versionhallinta]
 
 - Olet nyt repositoriosi **main**-haarassa
 - Luo uusi tiedosto _README.md_, **älä** kuitenkaan lisää ja commitoi tiedostoa versionhallintaan
@@ -358,7 +430,7 @@ nothing to commit, working tree clean
 - Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutokset joista Git ei ole tietoinen) ja staging (gitiin lisättyihin tiedostoihin tehdyt committoimattomat muutokset)
   **eivät liity** mihinkään branchiin, muutokset siirtyvät staging-alueelta branchiin ainoastaan komennon `git commit` suorituksen seurauksena
 
-### 7. Git: konflikti! [versionhallinta]
+### 11. Git: konflikti! [versionhallinta]
 
 Tee paikalliseen Git-repositorioon seuraavat
 
@@ -490,7 +562,7 @@ Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisäl
 
 ![]({{ "/images/lh2-merge.png" | absolute_url }}){:height="350px" }
 
-### 8. Git: branchit ja GitHub [versionhallinta]
+### 12. Git: branchit ja GitHub [versionhallinta]
 
 Aloita lukemalla ProGit-kirjasta luku [Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches).
 
@@ -602,7 +674,7 @@ Ohjelmistokehitystiimi voi soveltaa Gitin branchaystä hyvin monella eri tyylill
 
 Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
-### 9. Git: epäajantasaisen kloonin pushaaminen [versionhallinta]
+### 13. Git: epäajantasaisen kloonin pushaaminen [versionhallinta]
 
 Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
@@ -654,123 +726,5 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onni
 
 - Eli toimi näin ja varmista, että tekemäsi muutokset menevät GitHubiin
 
-### 10. Pelaajalista
-
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
-
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko2_ sisälle.
-
-Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
-
-Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2023-24/players>
-
-Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
-
-Asenna siis _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
-
-Voit ottaa projektisi pohjaksi seuraavan tiedoston:
-
-```python
-import requests
-from player import Player
-
-def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players"
-    response = requests.get(url).json()
-
-    print("JSON-muotoinen vastaus:")
-    print(response)
-
-    players = []
-
-    for player_dict in response:
-        player = Player(player_dict)
-        players.append(player)
-
-    print("Oliot:")
-
-    for player in players:
-        print(player)
-```
-
-Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
-
-Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee. Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
-
-```
-Players from FIN
-
-Erik Haula team NJD  goals 14 assists 27
-Otto Koivula team NYI  goals 0 assists 2
-Robin Salo team NYI  goals 2 assists 2
-Aatu Raty team VAN  goals 2 assists 1
-Niko Mikkola team STL  goals 1 assists 5
-Kaapo Kakko team NYR  goals 18 assists 22
-Rasmus Ristolainen team PHI  goals 3 assists 17
-Mikael Granlund team NSH  goals 10 assists 31
-Kasperi Kapanen team STL  goals 15 assists 19
-Joona Koppanen team BOS  goals 0 assists 1
-Henri Jokiharju team BUF  goals 3 assists 10
-Ukko-Pekka Luukkonen team BUF  goals 0 assists 0
-Joel Armia team MTL  goals 7 assists 7
-...
-```
-
-Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
-
-### 11. Siistimpi pelaajalista
-
-Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
-
-```
-Players from FIN
-
-Mikko Rantanen       COL  55 + 50 = 105
-Aleksander Barkov    FLA  23 + 55 = 78
-Roope Hintz          DAL  37 + 38 = 75
-Miro Heiskanen       DAL  11 + 62 = 73
-Sebastian Aho        CAR  36 + 31 = 67
-Patrik Laine         CBJ  22 + 30 = 52
-Artturi Lehkonen     COL  21 + 30 = 51
-Matias Maccelli      ARI  11 + 38 = 49
-Jesperi Kotkaniemi   CAR  18 + 25 = 43
-Eetu Luostarinen     FLA  17 + 26 = 43
-Erik Haula           NJD  14 + 27 = 41
-...
-```
-
-- Vinkki 1: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
-- Vinkki 2: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa.
-
-### 12. Pelaajalistan refaktorointi
-
-Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminnallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
-
-Jaa toiminnallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`. `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
-
-Refaktoroinnin jälkeen `main`-funktion tulee näyttää suurin piirtein seuraavalta:
-
-```python
-def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players"
-    reader = PlayerReader(url)
-    stats = PlayerStats(reader)
-    players = stats.top_scorers_by_nationality("FIN")
-
-    for player in players:
-        print(player)
-```
-
-Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellisessä tehtävässä.
-
-### 13. Graafinen pelaajalista 
-
-Laajenna sovellustasi lisäämällä siihen toiminnallisuutta ja muotoilemalla tulostus kirjaston [Rich](https://github.com/Textualize/rich) avulla. Ohjeita kirjaston käyttöön löytyy sen [dokumentaatiosta](https://rich.readthedocs.io/en/stable/introduction.html) ja googlaamalla.
-
-Sovelluksella tulee pystyä näyttämään käyttäjän haluaman maan pelaajien tilastot käyttäjän määrittelemältä kaudelta.  
-
-Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
-
-![]({{ "/images/rich.png" | absolute_url }})
 
 {% include submission_instructions.md %}
