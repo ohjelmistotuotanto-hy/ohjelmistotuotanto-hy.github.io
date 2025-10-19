@@ -22,7 +22,7 @@ poetry add pylint --group dev
 
 Pylintille tulee määritellä joukko tarkistettavia [sääntöjä](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#standard-checkers). Säännöt määritellään projektin juurihakemiston _.pylintrc_-tiedostossa. Luo kyseinen tiedosto ja kopioi sinne [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisältö. Tiedosto sisältää hieman muunnellun version Pylintin suosittelemasta konfiguraatiosta, jota voi katsella komennolla `pylint --generate-rcfile`.
 
-Pylintin laatutarkistukset voi suorittaa komentoriviltä siirtymällä ensin virtuaaliympäristöön komennolla `poetry shell` ja sen jälkeen suorittamalla komennon `pylint src`. Komento tulee suorittaa projektin juurihakemistossa, eli samassa hakemistossa missä _pyproject.toml_-tiedosto sijaitsee. Kyseinen komento suorittaa laatutarkistukset _src_ hakemistossa. Pylint antaa koodille "arvosanan" sen laadun mukaan, joka löytyy tulosteen lopusta:
+Pylintin laatutarkistukset voi suorittaa komentoriviltä siirtymällä ensin virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja sen jälkeen suorittamalla komennon `pylint src`. Komento tulee suorittaa projektin juurihakemistossa, eli samassa hakemistossa missä _pyproject.toml_-tiedosto sijaitsee. Kyseinen komento suorittaa laatutarkistukset _src_ hakemistossa. Pylint antaa koodille "arvosanan" sen laadun mukaan, joka löytyy tulosteen lopusta:
 
 ```
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
@@ -35,29 +35,29 @@ Lähtökohtaisesti Pylintin huomauttamat laatuvirheet kannattaa yrittää kaikin
 Otetaan esimerkiksi seuraava _src/index.py_-tiedosto:
 
 ```python
-x = 3
+X = 3
 print(x)
 ```
 
 Komennon `pylint src` suorittaminen paljastaa, että Pylint löytää tiedostosta seuraavan virheen:
 
 ```
-src/index.py:1:0: C0103: Constant name "x" doesn't conform to UPPER_CASE naming style (invalid-name)
+src/index.py:1:0: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name) (invalid-name)
 ```
 
 Eli tiedoston _src/index.py_-riviltä yksi löytyy väärin nimetty muuttuja. Rikottavan säännön nimi on tässä tilanteessa `invalid-name`. Järkevintä olisi vain antaa muuttujalle nimeksi `X`, mutta havainnollistetaan, kuinka säännön tarkistuksen voi ottaa riviltä pois päältä. Lisätään riville seuraava kommentti:
 
 ```python
-x = 3 # pylint: disable=invalid-name
+X = 3 # pylint: disable=invalid-name
 print(x)
 ```
 
 Nyt `pylint src`-komennon suorittaminen pitäisi kertoa, ettei virheitä enää löydy.
 
-Voimme myös jättää tarkistuksien ulkopuolelle kokonaisia hakemistoja ja tiedostoja. Muokkaamalla [tätä]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc#L13) riviä _.pylintrc_ tiedossa. Voimme esimerkiksi jättää käyttöliittymästä vastaavan koodin hakemistossa _src/ui_ ja testit hakemistossa _src/tests_ tarkistuksien ulkopuolle:
+Voimme myös jättää tarkistuksien ulkopuolelle kokonaisia hakemistoja ja tiedostoja. Muokkaamalla [tätä]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc#L3) riviä _.pylintrc_ tiedossa. Voimme esimerkiksi jättää käyttöliittymästä vastaavan koodin hakemistossa _src/ui_ ja testit hakemistossa _src/tests_ tarkistuksien ulkopuolle:
 
 ```
-ignore=CVS,ui,tests
+ignore-paths=src/ui,src/tests
 ```
 
 ### Integrointi editoriin

@@ -194,13 +194,13 @@ Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
 
 Kurssin [kolmannessa osassa](/osa3) teemana on ohjelmien laadun varmistaminen. Eräs ohjelman laatua useimmiten edistävä tekijä on järkevän _koodityylin_ noudattaminen. Koodin tyyliä voidaan tarkkailla automatisoidusti niin sanottujen staattisen analyysin työkaluilla.
 
-Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://pylint.pycqa.org/en/latest/index.html). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu pylintin käyttöön lukemalla kurssilta Ohjelmistotekniikka lainattu [Pylint-ohje](/pylint).
+Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://pylint.pycqa.org/en/latest/index.html). Pylint on jo ehkä tullut tutuksi kurssilta Ohjelmistotekniikka. Ennen kuin syvennymme aiheeseen, tutustu Pylintin käyttöön lukemalla kurssilta Ohjelmistotekniikka lainattu [Pylint-ohje](/pylint).
 
 **Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi.**
 
 Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
-Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleistä konfiguraatio, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu Pylintin [dokumentaatiossa](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html).
+Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleisiä konfiguraatioita, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu Pylintin [dokumentaatiossa](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html).
 
 Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien [maksimilukumäärään neljään](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args), voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
@@ -212,22 +212,24 @@ max-args=4
 
 Sääntö _max-args_ on määritelty dokumentaatiossa [seuraavasti](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args):
 
-![]({{ "/images/pylint-1.png" | absolute_url }})
+![]({{ "/images/lh2-2-2025.png" | absolute_url }})
 
 Säännön nimen alussa olevaa kahta viivaa ei siis tule kirjoittaa tiedostoon _.pylintrc_
 
-Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta tai Googlettamalla. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta [Design checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#design-checker) -osion alta).
+Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä dokumentaatiosta, Googlettamalla tai kysymällä tekoälyltä. Oikean osion löytää dokumentaatiosta (esimerkiksi `max-args`-sääntö löytyy dokumentaatiosta [Design checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#design-checker) -osion alta).
 
 **Toimi nyt seuraavasti:**
 
-- Siirry virtuaaliympäristöön komennolla `poetry shell` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
+- Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
 - Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#standard-checkers)):
 
   - Rivin pituus on maksimissaan 80 merkkiä
     - Vinkki: sääntö löytyy [Format checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#format-options) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
+  - Yksi sisennystaso on 4 merkkiä
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
     - Vinkki: sääntö löytyy [Refactoring checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#refactoring-checker) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
-  - Funktiossa tai metodissa on enintään 15 lausetta (statements), etsi sääntö dokumentaatiosta
+  - Funktiossa tai metodissa on enintään 10 lausetta (statements). Etsi sääntö dokumentaatiosta
+    - voit lyhentää index.py:ssä olevaa funktiota _main_ siten, ett se täyttää ehdon
   - Määrittele myös jokin itse valitsemasi, mielenkiintoiselta/hyödylliseltä kuulostava sääntö
 
 - Muuta koodiasi siten, että saat jokaisen määritellyistä Pylint-säännöistä rikkoutumaan

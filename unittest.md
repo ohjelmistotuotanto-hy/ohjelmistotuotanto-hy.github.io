@@ -75,7 +75,7 @@ maksukortti/
 
 Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan koodi.
 
-Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `poetry shell`, jonka jälkeen suoritetaan komento `pytest src`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
+Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `eval $(poetry env activate)`, jonka jälkeen suoritetaan komento `pytest src`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
 Toteutetaan <i>src/tests/maksukortti_test.py</i>-tiedostoon projektimme ensimmäinen testi. Tiedoston sisältö tulee olla seuraava:
 

@@ -268,7 +268,7 @@ python3 src/index.py
 
 Voimme lähteä virtuaaliympäristöstä komennolla `exit`.
 
-Poetry:n tuodut riippuvuudet ovat vain virtuaalisessa ympäristössä saatavilla, VS Code:in sisäänrakennettu "debugging mode" (F5 oletuksena) ei välttämättä toimi. Koita ensin `poetry shell` ja vasta sen jälkeen käynnistä VS Code `code /path/to/projekt` komennolla.
+Poetry:n tuodut riippuvuudet ovat vain virtuaalisessa ympäristössä saatavilla, VS Code:in sisäänrakennettu "debugging mode" (F5 oletuksena) ei välttämättä toimi. Koita ensin ``eval $(poetry env activate)` ja vasta sen jälkeen käynnistä VS Code `code /path/to/projekt` komennolla.
 
 ### Kehityksen aikaiset riippuvuudet
 
