@@ -55,7 +55,7 @@ Tee seuraavat toimenpiteet:
 - Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
 - Sovellus käyttää relaatiotietokantaa joten päädyt etsimään tarkoitukseen sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [SQLAlchemy](https://pypi.org/project/SQLAlchemy/). **Asenna SQLAlchemy projektin riippuvuudeksi**
-- Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. **Asenna jsonpickle-kirjastosta versio `1.4.54`**.
+- Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. **Asenna SQLAlchemy-kirjastosta versio `1.4.54`**.
   - Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
   - Pohdi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `1.4.54` päivittäminen versioon `2.0.44` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole versiosta `2.0.5` versioon `2.0.44`?
   - Versiovaatimuksissa on mukana usein `^`-, tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
@@ -106,7 +106,7 @@ def main():
 
 Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä koodissa `requests.get(url)` tekee HTTP-pyynnön, jonka jälkeen `json`-metodin kutsu muuttaa JSON-muotoisen vastauksen Python-tietorakenteiksi. Tässä tilanteessa `response` sisältää listan dictionaryja. Tästä listasta muodostetaan lista `Player`-olioita for-silmukan avulla.
 
-**Tässä tehtävässä on tarkoituksena toteuttaa toiminnallisuus, jonka avulla on mahdollista tulostaa tietyn kansalaisuuden, esim. suomen omaavat pelaajat**.
+**Tässä tehtävässä on tarkoituksena toteuttaa toiminnallisuus, jonka avulla on mahdollista tulostaa tietyn kansalaisuuden pelaajat, esim. suomalaiset**.
 - Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee.
 - Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
 
@@ -229,7 +229,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
     - Vinkki: sääntö löytyy [Refactoring checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#refactoring-checker) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
   - Funktiossa tai metodissa on enintään 10 lausetta (statements). Etsi sääntö dokumentaatiosta
-    - voit lyhentää index.py:ssä olevaa funktiota _main_ siten, ett se täyttää ehdon
+    - voit lyhentää index.py:ssä olevaa funktiota _main_ siten, että se täyttää ehdon
   - Määrittele myös jokin itse valitsemasi, mielenkiintoiselta/hyödylliseltä kuulostava sääntö
 
 - Muuta koodiasi siten, että saat jokaisen määritellyistä Pylint-säännöistä rikkoutumaan
@@ -276,7 +276,7 @@ repos:
       require_serial: true
 ```
 
-Määrittelyn jälkeen precpmmithook tulee vielä asentaa suorittamalla seuraava komento projektin virtuaaliympäristössä
+Määrittelyn jälkeen precommit hook tulee vielä asentaa suorittamalla seuraava komento projektin virtuaaliympäristössä
 
 ```
 pre-commit install
@@ -288,7 +288,7 @@ Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen commi
 
 Tee koodiin Pylint-virhe, ja varmista, että precommit hook havaitsee virheen.
 
-Lisää Pylint tehtävien tehtävien 2-5 projektiin *nhl-reader*, ja korja mahdolliset virheet. Käytä samanlaista konfiguraatiota. minkä teit tehtävässä 6.
+**Lisää Pylint** myös tehtävien tehtävien 2-5 projektiin *nhl-reader*, ja korjaa mahdolliset virheet. Käytä samanlaista konfiguraatiota, jonka teit tehtävässä 6.
 
 ### Bonus: palautusrepositorio ja precommit hook
 
