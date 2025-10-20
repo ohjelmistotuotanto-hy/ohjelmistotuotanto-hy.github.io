@@ -712,6 +712,15 @@ viikko3
 ...
 ```
 
+Jotta palautusrepositorioon ei pääsisi sinne kuulumatonta roskaa, kannattaa sen juureen tehdä tiedosto _.gitgnore_, joka sisältää ainakin seuraavat rivit
+
+```
+__pycache__/
+.venv/
+.pytest_cache/
+htmlcov/
+```
+
 ### 14. Riippuvuuksien injektointi osa 1
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**

@@ -254,6 +254,43 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 8. Precommit hook
 
+GitHub Action siis pitää huolen siitä, että repositorioon päätyneet Pylint-virheet huomataan. Parempi olisi toki, että sovelluskehittäjä suorittaisi Pylintin aina omalla koneellaan ja korjaisi virheet ennen kuin niitä pääsee livahtamaan GitHubin puolelle. Sovelluskehittäjät ovat kuitenkin välillä laiskoja ja huonomuistisia, Pylint jää suorittamatta paikallisesti. Git tarjoaa kätevän ominaisuuden [hookit](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks), jonka avulla voimme automatisoida erilaisia esim. ennen committia suoritettavia toimenpiteitä.
+
+Python-projekteissa hookien konfigurointi on helppoa [precommit](https://pre-commit.com/)-työkalun avulla. Asenna pre-commit seuraavalla komennolla
+
+```
+poetry add pre-commit --group dev
+```
+
+
+_.pre-commit-config.yaml_
+
+```yml
+repos:
+- repo: local
+  hooks:
+    - id: pylint
+      name: pylint
+      entry: pylint
+      language: system
+      types: [python]
+      require_serial: true
+```
+
+Lopuksi hookit tulee vielä asentaa suorittamalla seuraava komento projektin virtuaaliympäristössä
+
+```
+pre-commit install
+```
+
+Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen committia, ja jos koodissa on virheitä, ei commit onnistu.
+
+Tee koodiin Pylint-virhe, ja varmista, että precommit hook havaitsee virheen.
+
+Lisää Pylint tehtävien tehtävien 2-5 projektiin, ja lisää myös hookki....
+
+- sama konffi tehtävien 2- koodiin
+
 ### 9. Git: branchit [versionhallinta]
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin tehtävät 1 ja 2
