@@ -110,6 +110,7 @@
     - Sari Leppänen ja Michael Forsström (DNA): AI ja ohjelmistokehitys
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
+    - Tero Tapio (Funidata): _Softakehittäjän pehmeät taidot_
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}

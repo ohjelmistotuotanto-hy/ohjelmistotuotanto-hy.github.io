@@ -254,7 +254,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
 ### 8. Precommit hook ja Pylint
 
-GitHub Action siis pitää huolen siitä, että repositorioon päätyneet Pylint-virheet huomataan. Parempi olisi toki, että sovelluskehittäjä suorittaisi Pylintin aina omalla koneellaan ja korjaisi virheet ennen kuin niitä pääsee livahtamaan GitHubin puolelle. Sovelluskehittäjät ovat kuitenkin välillä laiskoja ja huonomuistisia, Pylint jää suorittamatta paikallisesti. Git tarjoaa kätevän ominaisuuden [hookit](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks), jonka avulla voimme automatisoida erilaisia esim. ennen committia suoritettavia toimenpiteitä.
+GitHub Action siis pitää huolen, että repositorioon päätyneet Pylint-virheet huomataan. Parempi olisi toki, että sovelluskehittäjä suorittaisi Pylintin aina omalla koneellaan ja korjaisi virheet ennen kuin niitä pääsee livahtamaan GitHubin puolelle. Sovelluskehittäjät ovat kuitenkin usein laiskoja ja huonomuistisia, näinpä Pylint herkäsi jää suorittamatta paikallisesti. Git tarjoaa kätevän ominaisuuden [hookit](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks), jonka avulla voimme automatisoida erilaisia esim. ennen committia suoritettavia toimenpiteitä.
 
 Python-projekteissa hookien konfigurointi on helppoa [precommit](https://pre-commit.com/)-työkalun avulla. Asenna pre-commit seuraavalla komennolla
 
@@ -262,8 +262,7 @@ Python-projekteissa hookien konfigurointi on helppoa [precommit](https://pre-com
 poetry add pre-commit --group dev
 ```
 
-
-_.pre-commit-config.yaml_
+Lisää projektin juureen tiedosto _.pre-commit-config.yaml_ ja sille seuraava sisältö
 
 ```yml
 repos:
@@ -277,11 +276,13 @@ repos:
       require_serial: true
 ```
 
-Lopuksi hookit tulee vielä asentaa suorittamalla seuraava komento projektin virtuaaliympäristössä
+Määrittelyn jälkeen precpmmithook tulee vielä asentaa suorittamalla seuraava komento projektin virtuaaliympäristössä
 
 ```
 pre-commit install
 ```
+
+Huomaa, että komento on suoritettava aina kun tiedostoa _.pre-commit-config.yaml_ muutetaan!
 
 Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen committia, ja jos koodissa on virheitä, ei commit onnistu.
 
