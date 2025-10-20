@@ -252,7 +252,7 @@ Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 ![]({{ "/images/py-lh2-12.png" | absolute_url }})
 
 
-### 8. Precommit hook
+### 8. Precommit hook ja Pylint
 
 GitHub Action siis pitää huolen siitä, että repositorioon päätyneet Pylint-virheet huomataan. Parempi olisi toki, että sovelluskehittäjä suorittaisi Pylintin aina omalla koneellaan ja korjaisi virheet ennen kuin niitä pääsee livahtamaan GitHubin puolelle. Sovelluskehittäjät ovat kuitenkin välillä laiskoja ja huonomuistisia, Pylint jää suorittamatta paikallisesti. Git tarjoaa kätevän ominaisuuden [hookit](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks), jonka avulla voimme automatisoida erilaisia esim. ennen committia suoritettavia toimenpiteitä.
 
@@ -287,9 +287,15 @@ Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen commi
 
 Tee koodiin Pylint-virhe, ja varmista, että precommit hook havaitsee virheen.
 
-Lisää Pylint tehtävien tehtävien 2-5 projektiin, ja lisää myös hookki....
+Lisää Pylint tehtävien tehtävien 2-5 projektiin *nhl-reader*, ja korja mahdolliset virheet. Käytä samanlaista konfiguraatiota. minkä teit tehtävässä 6.
 
-- sama konffi tehtävien 2- koodiin
+### Bonus: palautusrepositorio ja precommit hook
+
+Konfiguroi palautusrepositioriosi siten, että se suorittaa Pylintin precommit hookissa tehtävien 2-5 projektille *nhl-reader*. Tämä tehtävä on hieman haasteellisempi, sillä Poetry-ympäristöä ei ole määritelty repositorion juuressa.
+
+[precommit](https://pre-commit.com/)-työkalun sijaan tässä tehtävässä saattaa olla helpompaa tehdä precommit hook "käsin" projektin juuressa olevaan tiedostoon _.git/hooks/precommit_.
+
+Apuna kannattaa käyttää kaikkea mahdollista aina googlesta tekoälyyn.
 
 ### 9. Git: branchit [versionhallinta]
 
