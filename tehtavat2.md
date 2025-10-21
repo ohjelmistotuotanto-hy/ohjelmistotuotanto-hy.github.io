@@ -320,7 +320,7 @@ Tee palautusrepositorion viikon 2 tehtävien hakemistoon alihakemisto _git-branc
 
 <input type="checkbox"> Mene luomaasi hakemistoon
 
-<input type="checkbox"> Varmista että olet haarassa _main_, ja että kaikki muutokset on committoitu:
+<input type="checkbox"> Varmista että olet haarassa **main**, ja että kaikki muutokset on committoitu:
 
 ```bash
 $ git status
