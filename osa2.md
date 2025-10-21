@@ -32,7 +32,7 @@ _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä pr
 
 Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelyä taas tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvamisen myötä.
 
-## Vaatimusmäärittelyn vaiheet
+### Vaatimusmäärittelyn vaiheet
 
 Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä prosessimallista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
 
@@ -130,7 +130,7 @@ Toimintaympäristön rajoitteita (constraints) ovat muun muassa
 
 Toisin kuin toiminnalliset vaatimukset, jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten koko järjestelmää, ja vaikuttavat siihen miten järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa.
 
-## Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
+### Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
 
 Vesiputousmallin hengen mukaista oli, että vaatimusmäärittelyä pidettiin erillisenä tuotantoprosessin vaiheena, joka on tehtävä kokonaisuudessaan ennen suunnittelun aloittamista. Ideana oli että suunnittelun ei pidä vaikuttaa vaatimuksiin ja vastaavasti vaatimukset eivät saa rajoittaa tarpeettomasti suunnittelua.
 
@@ -139,7 +139,7 @@ Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumento
 
 Tiedetään nimittäin että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
 
-## Vaatimusmäärittely 1900-luvulla – ei toimi
+### Vaatimusmäärittely 1900-luvulla – ei toimi
 
 Kuten [osassa 1](/osa1#vesiputousmallin-ongelmia) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi, on osoittautunut utopiaksi.
 
@@ -155,7 +155,7 @@ Jos suunnittelu ja toteutustason asiat otetaan huomioon vaatimusmäärittelyssä
 
 Ilman suunnittelun ja toteutuksen huomioimista riskinä on, että asiakas haluaa vaatimuksen sellaisessa muodossa, joka moninkertaistaa toteutuksen hinnan verrattuna periaatteessa asiakkaan kannalta yhtä hyvään, mutta hieman eri tavalla muotoiltuun vaatimukseen.
 
-## Vaatimusmäärittely 2000-luvulla
+### Vaatimusmäärittely 2000-luvulla
 
 2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan edelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmäärittely on vasta suuntaa antava ja sitä on tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeiden verran.
 
@@ -169,7 +169,7 @@ Tällä on monia etuja. Sovellus voi ruveta tuottamaan rahallista arvoa jo ennen
 
 Kattavana teemana ketterässä ohjelmistotuotannossa ja siihen liittyvässä vaatimusmäärittelyssä onkin kaikin mahdollisin tavoin tuottaa asiakkaalle maksimaalisesti arvoa.
 
-## Vaatimusmäärittely 2010-luvulla
+### Vaatimusmäärittely 2010-luvulla: Lean startup
 
 Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartup.com/) kuvaa/formalisoi systemaattisen tavan kartoittaa vaatimuksia erityisen epävarmoissa konteksteissa, kuten startup-yrityksissä.
 
@@ -206,7 +206,7 @@ Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunn
 Tapa pohjautuu Scrumin ja eXtreme Programming:n eli XP:n eräiden käytänteiden soveltamiseen.
 Lähteenä on monia kirjoja ja blogikirjoituksia, mm. verkosta löytyvät [Henrik Kniberg: Scrum and XP from the trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/), [James Shore: Art of Agile development](https://www.jamesshore.com/Agile-Book/) ja [Jeff Sutherland ym.:A Scrum book](http://scrumbook.org/) sekä [Mike Cohnin](https://www.mountaingoatsoftware.com/blog) loistavat kirjat _Agile Estimation and Planning_ ja _User stories applied_.
 
-## User story
+### User story
 
 Ketterän vaatimusmäärittelyn tärkein työväline on _user story_. Samasta asiasta käytetään joskus suomenkielistä termiä _käyttäjätarina_. Käännös ei kuitenkaan ole täysin vakiintunut, joten käytämme jatkossa englanninkielistä termiä.
 
@@ -241,7 +241,7 @@ Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen 
 - conversation: jotta storyn voi toteuttaa tarvitaan paljon keskustelua sovelluskehittäjien ja product ownerin, asiakkaiden, loppukäyttäjien ym. välillä, jotta saadaan selville mistä storysta todella on kysymys
 - confirmation: kriteerit minkä perusteella voidaan todeta storyn olevan toteutettu valmiiksi
 
-### Esimerkki user storysta
+#### Esimerkki user storysta
 
 Usein on tapana kirjoittaa user storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle. [Scott Amblerilta](http://www.agilemodeling.com/artifacts/userStory.htm) lainattu esimerkki
 
@@ -320,7 +320,7 @@ _käyttäjän vasteaika saa olla korkeintaan 0.5 sekuntia 99% tapauksissa jos yh
 
 Kuten tulemme myöhemmin [tässä osassa](/osa2#user-story-ja-epiikki) toteamaan, user storyjen ei kannata olla koko aikaa _hyvän storyn_ INVEST-kriteerien mukaista. Kriteeristö koskeekin kokonaisuudessa oikeastaan vain korkean prioriteetin user storyjä eli sellaisia, jotka tullaan toteuttamaan lähitulevaisuudessa. Matalamman prioriteetin storyt voivat aivan hyvin olla vielä isompia ja testattavuudeltaan sekä työmääräarvioiltaan epämääräisempiä. Storyt tulee jakaa ja saattaa INVEST-kriteerien mukaiseksi viimeistään siinä vaiheessa kun story nousee lähemmäs prioriteettijärjestyksen huippua.
 
-## Alustava product backlog
+### Alustava product backlog
 
 Edellisellä viikolla Scrumin yhteydessä puhuttiin _product backlogista_, joka on siis priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista. Nykyään käytäntönä on, että product backlog koostuu nimenomaan user storyistä.
 
@@ -336,7 +336,7 @@ Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää k
 
 Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaatima _työmäärä arvioidaan_ projektille tarkoituksenmukaisella tasolla. Näin muodostuu alustava product backlog, eli priorisoitu lista vaatimuksista.
 
-## Backlogin priorisointi
+### Backlogin priorisointi
 
 Product backlog on siis _priorisoitu lista user storyjä_.
 
@@ -350,7 +350,7 @@ Ei ole siis kokonaistaloudellisesti edullista tehdä priorisointia välttämätt
 
 Myös projektiin liittyvät tekniset riskit kannattaa ottaa priorisoinnissa huomioon. Tekninen riski voi olla esim. se, onko jokin ohjelmiston kannalta kriittinen ominaisuus ylipäätään mahdollista toteuttaa tehokkaasti ja taloudellisesti järkevin resurssein. Tällainen riskitekijä kannattaa selvittää mielummin heti kuin vasta siinä vaiheessa, kun projektiin on jo sijoitettu suuri määrä resursseja.
 
-## Estimointi eli työmäärän arviointi
+### Estimointi eli työmäärän arviointi
 
 User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota:
 
@@ -365,7 +365,7 @@ Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
 Eli mitä kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
 
-## Suhteelliseen kokoon perustuva estimointi
+### Suhteelliseen kokoon perustuva estimointi
 
 Ketterät ohjelmistotuotantomenetelmät ottavat itsestäänselvyytenä sen, että estimointi on epävarmaa ja tarkentuu vasta projektin kuluessa. Koska näin on, pyritään vahvoja estimointiin perustuvia lupauksia ohjelmiston valmistumisaikatauluista välttämään.
 
@@ -380,7 +380,7 @@ Ketterissä menetelmissä käytetäänkin yleisesti _suhteelliseen kokoon_ perus
 
 Verkkokaupan tapauksessa voitaisiinkin määrittää, että user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ työmääräarvio on yksi story point. Tällöin _tuotteen poistaminen ostoskorista toteuttaminen_ olisi myös suhteelliselta estimaatiltaan yksi story point ja _ostoskorissa olevien tuotteiden maksaminen luottokortilla_ kolme story pointia.
 
-## Estimoinnin suorittaminen
+### Estimoinnin suorittaminen
 
 Estimointi tehdään yhteistyössä kehitystiimin ja product ownerin kanssa. Product ownerin roolina on tarkentaa estimoitaviin user storeihin liittyviä vaatimuksia siinä määrin että kehitystiimi ymmärtää tarkasti mistä on kyse. Varsinaisen estimoinnin eli _työmääräarvion tekee kuitenkin aina ohjelmistokehitystiimi_. Tämä on tärkeää, sillä ainoastaan sovelluskehittäjillä on edes jossain määrin realistisia edellytyksiä arvion tekemiseen.
 
@@ -412,7 +412,7 @@ Kuten äsken mainittiin, suhteellisessa estimoinnissa käytetty yksikkö _story 
 
 [Monet](https://www.atlassian.com/agile/project-management/estimation) [tahot](https://medium.com/serious-scrum/12-common-mistakes-made-when-using-story-points-f0bb9212d2f7) suosittelevat olemaan sotkematta story pointeja tunteihin tai päiviin. Eräs argumenteista story pointin ja tarkkojen aikamääreiden sitomattomuuden puolesta on se, että jos tiimi määrittelisi story pointin olevan esimerkiksi 8 tuntia työtä, niin tiimin estimaatit saatettaisiin esim. yrityksen johdossa ajatella sitoumukseksi kunkin työvaiheen tarvitsemasta ajasta. Tämän taas ketterät menetelmät haluavat ehdottomasti välttää estimaattien perimmäisen epävarmuuden takia.
 
-## Estimoinnin menetelmiä
+### Estimoinnin menetelmiä
 
 Eräs melko suosittu tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
 
@@ -443,7 +443,7 @@ Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja riittävä
 
 ![]({{ "/images/2-8.png" | absolute_url }}){:height="350px" }
 
-## Hyvä product backlog on DEEP
+### Hyvä product backlog on DEEP
 
 Mike Cohn ja Roman Pichler ovat lanseeranneet lyhenteen
 [DEEP](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) kuvaamaan hyvän backlogin ominaisuuksia. Lyhenne tulee sanoista _detailed appropriately, estimated, emergent_ ja _prioritized_.
@@ -466,7 +466,7 @@ Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleel
 
 ![]({{ "/images/2-9.png" | absolute_url }}){:height="250px" }
 
-## User story ja epiikki
+### User story ja epiikki
 
 Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudattaa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, estimable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä.
 
@@ -476,7 +476,7 @@ Joissain yhteydessä sanotaan että user storyt ovat [ready](http://scrumbook.or
 
 User story on siis elinaikanaan todennäköisesti ensin _epic_. Kun aikaa kuluu, story ehkä pilkotaan ja joistain sen osista tulee _ready_ kun niitä tarkennetaan prioriteetin noustessa. Kun story on valittu sprinttiin ja se toteutetaan, muuttuu sen tilaksi _done_. Kaikki backlogille lisättävät storyt eivät toki ole niin isoja että niiden voisi ajatella olevan kokoluokkaa _epic_, uusi story voi olla pienehkö mutta vaatimuksiltaan selkiytymätön, eli ei vielä _ready_.
 
-## Velositeetti
+### Velositeetti
 
 User storyjen estimoinnin toinen tarkoitus on, että se mahdollistaa koko projektin tai jonkin sen suuremman kokonaisuuden viemän aikamäärän summittaisen arvioinnin.
 
@@ -500,11 +500,11 @@ Ketterissä menetelmissä on oleellista kuvata mahdollisimman realistisesti proj
 
 ![]({{ "/images/2-12.png" | absolute_url }}){:height="250px" }
 
-### Eri tiimien velositeettien vertailu
+#### Eri tiimien velositeettien vertailu
 
 Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään, tiimi voi esim. määritellä että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
 
-## Burndown- ja burnup-kaaviot
+### Burndown- ja burnup-kaaviot
 
 Ketterän projektin etenemistä kuvataan joskus _release burndown_ -kaavion avulla.
 Aika etenee kaavion x-akselilla sprintti kerrallaan, y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna:
@@ -515,7 +515,7 @@ Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siks
 
 ![]({{ "/images/2-14.png" | absolute_url }}){:height="350px" }
 
-## Julkaisun suunnittelu ja tuotteen roadmap
+### Julkaisun suunnittelu ja tuotteen roadmap
 
 Product backlog siis listaa järjestelmän vaatimuksia kuvaavat user storyt prioriteettijärjestyksessä. Prioriteetin määrittelee useimmiten storyjen asiakkaalle tuova arvo. Kehitystiimi toteuttaa storyja sprintti kerrallaan, valiten kuhunkin sprinttiin joukon sillä hetkellä korkeimman prioriteetin omaavia storyjä.
 
@@ -540,7 +540,7 @@ Näin ohjelmiston isojen linjojen suunniteltu eteneminen on huomattavasti helpom
 
 Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä kauempana olevasta tulevaisuudesta on kyse, sitä spekulatiivisempi julkaisusuunnitelman sisältö on. Julkaisusuunnitelmaa nimitetään usein myös tuotteen [roadmapiksi](https://www.romanpichler.com/blog/product-roadmap-vs-release-plan/).
 
-## User story mapping
+### User story mapping
 
 Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille. [User story mapping](https://www.jpattonassociates.com/user-story-mapping/) on viime aikoina huomiota saanut tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun.
 
@@ -550,7 +550,7 @@ Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle
 
 Story mapin rivit ovat taas loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
 
-## Kannattaako estimointi?
+### Kannattaako estimointi?
 
 User storyjen viemän työmäärän arvioimiseen on siis kaksi motivaatiota:
 
@@ -572,7 +572,7 @@ Sprintin suunnittelun lähtökohtana on sopivassa tilassa oleva, eli DEEP produc
 
 Sprintin suunnittelussa product owner varmistaa, että kehitystiimi ymmärtää hyvin product backlogin kärkipäässä olevat user storyt. Tiimi valitsee tehtäväksi niin monta backlogin storyistä kuin se arvioi kykenevänsä sprintin aikana toteuttamaan definition of donen määrittelemällä laatutasolla.
 
-## Sprintin tavoite
+### Sprintin tavoite
 
 Scrum guide kehottaa että suunnittelun yhteydessä määritellään _sprintin tavoite_ (engl. sprint goal), jolla tarkoitetaan lyhyttä, yhden tai kahden lauseen kuvausta siitä, mitä tiimi on aikeissa sprintin aikana tehdä.
 
@@ -587,7 +587,7 @@ Sprintin tavoite toimii tiimin ulkopuoliselle nopeana kuvauksena siitä, mitä t
 
 Sprintin onnistumista tarkastellaan yleensä suhteessa sprintin tavoitteeseen, eli vaikka sprintissä jäisikin yksittäisiä user storyjä toteuttamatta, voidaan sprintti todeta onnistuneeksi jos toteutettu toiminnallisuus kattaa sprintin tavoitteiden oleelliset osat.
 
-## Sprintissä toteutettavien user storyjen määrä
+### Sprintissä toteutettavien user storyjen määrä
 
 Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi. Pääperiaate on valita "sopiva määrä" backlogin korkeimmalle priorisoituja user storyjä ja siirtää ne _sprint backlogiin_.
 
@@ -601,7 +601,7 @@ Tapoja päättää sprinttiin otettavien storyjen määrä on [useita](https://w
 
 Käytetään mitä valintaperiaatetta tahansa, on joka tapauksessa oleellista että toteutettavaksi valitaan vain sellainen määrä storyjä, jotka tiimi kokee voivansa toteuttaa kunnolla, eli definition of donen määrittelemällä laatutasolla.
 
-## Sprintissä toteutettavien user storyjen valinta
+### Sprintissä toteutettavien user storyjen valinta
 
 Oletusarvoisesti sprinttiin siis otetaan joukko backlogin kärjessä olevia user storyjä:
 
@@ -622,7 +622,7 @@ Ratkaisu tähän on jakaa user story A kahteen pienempään osaan A1:n ja A2:n. 
 
 ![]({{ "/images/2-20.png" | absolute_url }}){:height="250px" }
 
-## User storyjen jakaminen
+### User storyjen jakaminen
 
 User storyjen jakaminen pienemmiksi ei ole aloittelijalle, eikä aina ammattilaisellekaan helppoa.
 
@@ -747,7 +747,7 @@ Aiemmin tässä osassa puhuimme [Lean-startup](/osa2#vaatimusm%C3%A4%C3%A4rittel
 
 User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan storyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
 
-## Sprintin suunnittelun toinen tavoite
+### Sprintin suunnittelun toinen tavoite
 
 Sprintin suunnittelun yhteydessä sprinttiin valituille user storyille tehdään yleensä myös riittävä määrä teknistä suunnittelua, eli hahmotellaan, _miten_ storyt saadaan toteutettua. Suunnitellaan komponentteja ja rajapintoja karkealla tasolla sekä huomioidaan user storyjen aiheuttamat muutokset olemassa olevaan osaan sovelluksesta.
 
@@ -763,7 +763,7 @@ Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voitaisiin pilkkoa seuraav
 - yksikkötestit kontrollerille ja ostoskorin logiikalle
 - hyväksymätestien automatisointi
 
-## Sprint backlog
+### Sprint backlog
 
 Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista ja niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehitystiimin työväline ja tiimi päättää scrum masterin avustuksella sen miten se backloginsa organisoi.
 
@@ -779,7 +779,7 @@ Nykyinen paras käytäntö on käyttää fyysisiä taskboardeja, user storyt ova
 
 Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka kuvaa niitä taskeja, joiden toteuttaminen on syystä tai toisesta keskeytynyt jonkin esteen takia. Task board voikin sisältää mitä tahansa sarakkeita. Scrum ei anna mitään ohjeistoa sprint backlogin muodostamiseen, pääasia onkin että tiimi muokkaa taskboardinsa omia tavoitteitaan tukevaksi. On myös melko tyypillistä että tiimi muokkaa taskboardia projektin kuluessa huomatessaan että olemassa olevan taskboardin rakenne ei ole enää optimaalinen tiimin työskentelylle.
 
-## Sprintin työmääräarviot ja burndown
+### Sprintin työmääräarviot ja burndown
 
 [Scrum guiden](https://scrumguides.org/scrum-guide.html#artifacts-sprintbacklog) mukaan tiimin tulee seurata sprintin aikana kuinka paljon sprintissä on vielä töitä jäljellä. Eräs tapa toteuttaa sprintinaikainen työmäärän seuranta on estimoida sprintissä olevien taskien työmäärää. Useiden [asiantuntijoiden](https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels) mukaan sprinttiin kuuluvat taskit tulisi estimoida niiden vaatiman _työtuntimäärän_ mukaan, toisin kuin user storyt, jotka estimoidaan abstraktin aikamääreen eli story pointin tarkkuudella.
 
@@ -817,7 +817,7 @@ Neuvo onkin varsin viisas: on nimittäin mahdollista, että tiimi saa sprintiss�
 
 Fyysistä taskboardia käytettäessä sprintin työmäärän estimoinnin ja burndown-käyrän piirtämisen sijaan erittäin simppeli tapa sprintin etenemisen seurantaan on laskea, tai jopa ainoastaan visuaalisesti katsoa taskboardilta, mikä on jo valmiiden ja vielä valmistumattomien sprinttiin kuuluvien taskien lukumäärä.
 
-## Yhtä aikaa tehtävän työn rajoittaminen
+### Yhtä aikaa tehtävän työn rajoittaminen
 
 Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
 
@@ -827,7 +827,7 @@ WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä tas
 
 Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskiksi määräksi kaksi.
 
-## Lean waste ja Scrumban
+### Lean waste ja Scrumban
 
 Yhtäaikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä. Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista.
 
@@ -846,7 +846,7 @@ Ehkä paras tapa soveltaa WIP-rajoitteita on rajoittaa kerrallaan työn alla ole
 
 WIP-rajoitteita säädetään usein retrospektiivien yhteydessä jos kehitystyössä havaitaan ongelmia.
 
-## Ennen seuraavaa sprintin alkua
+### Ennen seuraavaa sprintin alkua
 
 Kuten edellisessä osassa [mainittiin](/osa1#sprintin-katselmointi), pidetään sprintin lopussa sprint review eli katselmointi sekä sprintin retrospektiivi. Katselmoinnissa arvioidaan kehitystiimin tekemää työtä. Kesken jääneet tai epäkelvosti toteutetut user storyt siirretään takaisin backlogiin.
 
