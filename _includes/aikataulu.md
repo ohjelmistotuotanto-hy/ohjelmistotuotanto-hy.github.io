@@ -120,4 +120,4 @@
     
 ### Viikko 8
 
-- Koe tiistaina 16.12. klo 13-16 A111 ja CHE (sähköinen salitentti)
+- Koe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
