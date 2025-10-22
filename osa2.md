@@ -25,12 +25,13 @@ Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien mene
 
 Ehkä keskeisin ongelma ohjelmistotuotantoprosessissa on määritellä _asiakkaan vaatimukset_ (engl. requirements) rakennettavalle ohjelmistolle.
 
-Ohjelmistojen vaatimusten ajatellaan jakaantuvat kahteen luokkaan. _Toiminnallisilla vaatimuksilla_ (engl. functional requirements) tarkoitetaan kaikkia niitä asioita mitä ohjelmistolla voi tehdä, eli ohjelmiston tarjoamia toimintoja. Toinen luokka ovat _ei-toiminnalliset vaatimukset_ (non-functional requirements), näitä ovat koko ohjelmistoa koskevat "laatuvaatimukset" (kuten käytettävyys ja tietoturva) ja ohjelmiston toimintaympäristön sille asettamat rajoitteet.
+Ohjelmistojen vaatimusten ajatellaan jakaantuvan kahteen luokkaan. _Toiminnallisilla vaatimuksilla_ (engl. functional requirements) tarkoitetaan kaikkia niitä asioita mitä ohjelmistolla voi tehdä, eli ohjelmiston tarjoamia toimintoja. Toinen luokka ovat _ei-toiminnalliset vaatimukset_ (non-functional requirements), näitä ovat koko ohjelmistoa koskevat "laatuvaatimukset" (kuten käytettävyys ja tietoturva) ja ohjelmiston toimintaympäristön asettamat rajoitteet.
 
 Vaatimusten selvittämistä, dokumentoimista ja hallinnointia kutsutaan
 _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä prosessimallista riippumatta vaatimusmäärittelyn tulee ainakin alkaa ennen ohjelmiston suunnittelua ja toteuttamista.
 
-Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittelyä taas tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvamisen myötä.
+Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittely tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvaessa.
+
 
 ### Vaatimusmäärittelyn vaiheet
 
@@ -48,18 +49,18 @@ Useimmiten nämä työvaiheet limittyvät ja vaatimusmäärittely etenee spiraal
 
 ### Vaatimusten kartoituksen menetelmiä
 
-Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
+Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat, sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
 
 Kun eri sidosryhmät on kartoitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
 
 - haastatellaan sidosryhmien edustajia
-- pidetään brainstormaussessioita asiakkaan ja sovelluskehitystiimin kesken
+- pidetään ideointisessioita asiakkaan ja sovelluskehitystiimin kesken
 
 Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edustajien kesken strukturoida vaatimusten kartoitusta. Usein mietitään, mitä erilaisia _käyttäjärooleja_ sovelluksella on, ja keksitään eri käyttäjärooleille tyypillisiä sovelluksen käyttöskenaarioita.
 
 Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
 
-Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä, voidaan vaatimuksia selvittää myös havainnoimalla loppukäyttäjän työskentelyä, tästä menetelmästä käytetään nimitystä _etnografia_.
+Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä, vaatimuksia voidaan selvittää myös havainnoimalla loppukäyttäjän työskentelyä, tästä menetelmästä käytetään nimitystä _etnografia_.
 
 Jos uuden sovelluksen on tarkoitus korvata olemassa oleva työskentelyprosessi, esimerkiksi tilanvarausjärjestelmä, on usein hyödyllistä tarkastella myös itse työskentelyprosessia ja koittaa miettiä sen suoraviivaistamista. Ei nimittäin ole useinkaan mielekästä toisintaa vanhaa, ehkä kankeaakin työskentelyprosessia sellaisenaan uuteen sovellukseen.
 
@@ -69,11 +70,11 @@ Vaatimusten keräämisen lisäksi vaatimuksia täytyy _analysoida_. Onko vaatimu
 
 Usein on myös hyvä varmistaa, että vaatimus on _todennettavissa_, eli että valmiista järjestelmästä pystytään ylipäätään toteamaan noudattaako järjestelmä tätä vaatimusta. Esim. vaatimus _järjestelmä on helppokäyttöinen_ ei ole sikäli hyvä, että helppokäyttöisyyden testaaminen on vaikeaa. Käytettävyyteenkin liittyviä vaatimuksia on mahdollista määritellä [todennettavalla tavalla](http://www.pcuf.fi/sytyke/lehti/kirj/st20093/ST093-18A.pdf).
 
-Kartoitetut vaatimukset on myös pakko _dokumentoida_ muodossa tai toisessa. Ennen koodaamaan ryhtymistä sovelluskehittäjä tarvitsee "speksin", eli kuvauksen siitä miten sovelluksen tai sen osan tulee toimia. Myös testaamista varten tarvitaan kuvaus sille, miten testattavan ohjelman halutaan toimivan.
+Kartoitetut vaatimukset on myös _dokumentoitava_ muodossa tai toisessa. Ennen koodaamaan ryhtymistä sovelluskehittäjä tarvitsee "speksin", eli kuvauksen siitä miten sovelluksen tai sen osan tulee toimia. Myös testaamista varten tarvitaan kuvaus sille, miten testattavan ohjelman halutaan toimivan.
 
-Erityisesti vesiputousmallia käyttäessä vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmiston kehittäjien välisessä sopimuksessa. Sovelluksen hinta perustuu vaatimusmäärittelyssä kuvattuun toiminnallisuuteen, ja jos asiakas muuttaakin mieltään, saattaa siitä tulla lisäkustannuksia.
+Erityisesti vesiputousmallia käytettäessä vaatimusdokumentti toimii oleellisena osana asiakkaan ja ohjelmiston kehittäjien välistä sopimusta. Sovelluksen hinta perustuu vaatimusmäärittelyssä kuvattuun toiminnallisuuteen, ja jos asiakas muuttaakin mieltään, saattaa siitä tulla lisäkustannuksia.
 
-Vaatimukset on myös oleellista _validoida_, eli tulee varmistaa, että kerätyt ja dokumentoidut vaatimukset todellakin vastaavat asiakkaan mielipidettä, että ne kuvaavat sellaiset järjestelmät mitä asiakas kokee tarvitsevansa.
+Vaatimukset on myös oleellista _validoida_, eli tulee varmistaa, että kerätyt ja dokumentoidut vaatimukset todellakin vastaavat asiakkaan mielipidettä, ja että ne kuvaavat sellaisen järjestelmän, jonka asiakas kokee tarvitsevansa.
 
 Vaatimuksia on myös tavalla tai toisella _hallinnoitava_, erityisesti jos vaatimukset muuttuvat kesken sovelluskehitysprosessin. Hallinnoinnilla siis tarkoitetaan esimerkiksi uusien asiakkaalle mieleen tulevien vaatimusten kirjaamista, jo kirjattujen vaatimusten muokkaamista, vaatimusten priorisointia ym...
 
@@ -83,7 +84,7 @@ Vaatimusmäärittelyprosessin luonne, eli miten vaatimukset kerätään, analyso
 
 Kuten mainittiin, vaatimukset jakaantuvat kahteen kategoriaan, _toiminnallisiin_ ja _ei-toiminnallisiin_ vaatimuksiin.
 
-Toiminnalliset vaatimukset (engl. functional requirements) kuvaavat mitä järjestelmällä voi tehdä, eli mitä toimintoja siinä on.
+Toiminnalliset vaatimukset (engl. functional requirements) kuvaavat mitä järjestelmällä voi tehdä, eli mitä toimintoja se käyttäjän (tai muiden järjestelmien) näkökulmasta tarjoaa.
 
 Esimerkiksi verkkokaupan toiminnallisia vaatimuksia voisivat olla seuraavat:
 
@@ -93,8 +94,9 @@ Esimerkiksi verkkokaupan toiminnallisia vaatimuksia voisivat olla seuraavat:
 - järjestelmään kirjautunut asiakas näkee oman ostoshistoriansa
 - ylläpitäjä voi lisätä valikoimaan uusia tuotteita kaupan inventaarioon
 - tavarantoimittaja voi päivittää järjestelmässä olevien tuotteiden hintatietoja
+- päivän ostotapahtumat synkronoidaan analytiikkajärjestelmään
 
-Toiminnallisten vaatimusten dokumentointi voi tapahtua esim. "feature-listoina" kuten kurssilla Ohjelmistotekniikka on tehty jo parin vuoden ajan tai UML-käyttötapauksina, joita kurssi Ohjelmistotekniikka käytti noin vuoteen 2017 asti. Ketterissä menetelmissä vaatimukset dokumentoidaan usein _user storyina_, joihin tutustumme kohta tarkemmin.
+Toiminnallisten vaatimusten dokumentointi voi tapahtua esim. "feature-listoina" kuten kurssilla Ohjelmistotekniikka on viime aikoina tehty. Aikoinaan muodissa olivat [UML-käyttötapaukset](https://en.wikipedia.org/wiki/Use_case) (engl. Use case), joita käytettiin kurssin myös Ohjelmistotekniikka historiallisissa versiossa. Ketterissä menetelmissä vaatimukset dokumentoidaan usein _user storyina_, joihin tutustumme kohta tarkemmin.
 
 Riippumatta toiminnallisten vaatimusten dokumentointitavasta on melko yleistä, että vaatimukset ilmaistaan muodossa, jossa kerrotaan jonkin käyttäjäroolin yksittäinen järjestelmän käyttöskenaario.
 
@@ -108,7 +110,7 @@ jakautuu kahteen osa-alueeseen: laatuvaatimuksiin ja toimintaympäristön rajoit
 _Laatuvaatimukset_ (engl. quality attributes) ovat koko järjestelmän toiminnallisuutta ohjaavia ja rajoittavia tekijöitä, esim.
 
 - käytettävyys: minkälainen sovelluksen käyttökokemus on
-- saavutettavuus: onko sovellus helppokäyttöinen kaikille ihmisille, esim. näkövammaisille
+- saavutettavuus: onko sovelluksen toiminnallisuus käyttökelpoista kaikille, esim. näkövammaisille tai fyysisiä rajoitteita omaaville ihmisille
 - tietoturva: kenellä on pääsy järjestelmään ja siinä käsiteltävään dataan
 - suorituskyky: miten nopeasti sovellus reagoi erilaisiin käyttäjän syötteisiin
 - skaalautuvuus: pysyykö sovellus responsiivisena, eli riittävän nopeasti toimivana käyttäjäkuorman tai käsiteltävän datan määrän kasvaessa
@@ -121,7 +123,7 @@ Kaikki laatuvaatimukset eivät ole suoraan järjestelmän käyttäjän havaittav
 
 On olemassa suuri määrä erilaisia kategorioita laatuvaatimuksille, esim. [Wikipedia](http://en.wikipedia.org/wiki/List_of_system_quality_attributes) listaa niitä suuret määrät.
 
-Toimintaympäristön rajoitteita (constraints) ovat muun muassa
+Toimintaympäristön rajoitteita (engl. constraints) ovat muun muassa
 
 - toteutusteknologia: millä ohjelmointikielillä ja kirjastoilla sovellus toteutetaan, mitä tietokantoja käytetään
 - käyttöympäristö: käytetäänkö sovellusta selaimella vai onko se desktop- tai mobiilisovellus
@@ -130,22 +132,24 @@ Toimintaympäristön rajoitteita (constraints) ovat muun muassa
 
 Toisin kuin toiminnalliset vaatimukset, jotka kuvaavat usein järjestelmän "yksittäisiä featureita" (esim. tuotteen voi lisätä ostoskoriin), ei-toiminnalliset vaatimukset koskevat useimmiten koko järjestelmää, ja vaikuttavat siihen miten järjestelmän perusrakenne eli arkkitehtuuri tulee suunnitella. Esim. jos halutaan rakentaa verkkokauppa, joka skaalautuu miljoonille käyttäjille, tulee se perusteistaan asti rakentaa aivan erilaisella tavalla kuin verkkokauppa, jolla voi olla yhtä aikaa maksimissaan parikymmentä käyttäjää. Jos laatuvaatimukset muuttuvat ohjelmiston kehitystyön edetessä radikaalilla tavalla, muutosten tekeminen saattaa joskus olla vaikeaa ja vaatia isompaa remonttia koko sovelluksen rakennusperiaatteissa.
 
-### Vaatimusmäärittely 1900-luvulla eli vesiputousmallin valtakaudella
+### Vaatimusmäärittely vesiputousmallin valtakaudella
+
+Vaatimusmäärittelyn luonne on vaihdellut suuresti aikojen saatossa.
 
 Vesiputousmallin hengen mukaista oli, että vaatimusmäärittelyä pidettiin erillisenä tuotantoprosessin vaiheena, joka on tehtävä kokonaisuudessaan ennen suunnittelun aloittamista. Ideana oli että suunnittelun ei pidä vaikuttaa vaatimuksiin ja vastaavasti vaatimukset eivät saa rajoittaa tarpeettomasti suunnittelua.
 
 Asiantuntijat korostivat, että vaatimusten dokumentaation on oltava kattava ja ristiriidaton.
-Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumentoidaan kaikki asiakkaan vaatimukset. Oli jopa suuntauksia, joissa vaatimukset haluttiin luonnollisen kielen sijaan ilmaista formaalilla kielellä eli matemaattisesti jotta esim. ristiriidattomuuden osoittaminen olisi mahdollista.
+Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumentoidaan kaikki asiakkaan vaatimukset. Oli jopa suuntauksia, joissa vaatimukset haluttiin luonnollisen kielen sijaan ilmaista formaalilla kielellä eli matemaattisesti, jotta esim. ristiriidattomuuden osoittaminen olisi mahdollista.
 
-Tiedetään nimittäin että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
+On tunnettu tosiasia, että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen erittäin kallista. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
 
-### Vaatimusmäärittely 1900-luvulla – ei toimi
+#### Vesiputousmainen vaatimusmäärittely on hankalaa...
 
 Kuten [osassa 1](/osa1#vesiputousmallin-ongelmia) jo todettiin, ideaali jonka mukaan vaatimusmäärittely voidaan irrottaa kokonaan erilliseksi, huolellisesti tehtäväksi vaiheeksi, on osoittautunut utopiaksi.
 
-On useita syitä, jotka johtavat siihen että vaatimusten muuttuminen on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti, mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide suurella todennäköisyydellä muuttumaan, kun asiakas näkee lopputuloksen.
+On useita syitä, jotka johtavat siihen että vaatimusten muuttuminen on lähes väistämätöntä. Ohjelmistoja käyttävien organisaatioiden toimintaympäristö muuttuu nopeasti. Mikä on relevanttia tänään, ei ole välttämättä sitä enää 3 kuukauden päästä. Asiakkaiden on mahdotonta ilmaista tyhjentävästi tarpeitaan etukäteen, ja vaikka asiakas osaisikin määritellä kaiken etukäteen, tulee mielipide suurella todennäköisyydellä muuttumaan, kun asiakas näkee lopputuloksen.
 
-Ongelmia aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittelystä, ohjelmistokehittäjät eivät osaa tulkita kirjattuja vaatimuksia siten kuin vaatimukset kertonut asiakas tai loppukäyttäjä on tarkoittanut. Jos kehittäjien ja käyttäjien välillä ei ole suoraa kommunikaatiota, väärinymmärrysten syntyminen on erittäin todennäköistä.
+Ongelmia aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittelystä, ohjelmistokehittäjät eivät osaa tulkita kirjattuja vaatimuksia niin kuin vaatimukset kertonut asiakas tai loppukäyttäjä on tarkoittanut. Jos kehittäjien ja käyttäjien välillä ei ole suoraa kommunikaatiota, väärinymmärrysten syntyminen on erittäin todennäköistä.
 
 Vaatimusmäärittelyä ei myöskään ole mahdollista tai järkevää irrottaa kokonaan suunnittelusta. Suunnittelu auttaa ymmärtämään ongelma-aluetta syvällisemmin ja se taas generoi usein muutoksia vaatimuksiin.
 
@@ -155,9 +159,9 @@ Jos suunnittelu ja toteutustason asiat otetaan huomioon vaatimusmäärittelyssä
 
 Ilman suunnittelun ja toteutuksen huomioimista riskinä on, että asiakas haluaa vaatimuksen sellaisessa muodossa, joka moninkertaistaa toteutuksen hinnan verrattuna periaatteessa asiakkaan kannalta yhtä hyvään, mutta hieman eri tavalla muotoiltuun vaatimukseen.
 
-### Vaatimusmäärittely 2000-luvulla
+### Vaatimusmäärittely iteratiivisessa ja ketterässä ohjelmistokehityksessä
 
-2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan edelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmäärittely on vasta suuntaa antava ja sitä on tehty tarkemmin ainoastaan yhden tai muutaman ensimmäisen iteraation tarpeiden verran.
+2000-luvun iteratiivisen ja ketterän ohjelmistokehityksen tapa on integroida kaikki ohjelmistotuotannon vaiheet yhteen. Ohjelmistoprojektit toki aloitetaan edelleenkin vaatimusmäärittelyllä, mutta alustava vaatimusmäärittely on vasta suuntaa antava ja sitä ei välttämättä ole tehty tarkalla tasolla kuin muutaman ensimmäisen iteraation tarpeiden verran.
 
 Ketterän vaatimusmäärittelyn hengen mukaista on, että asiakas (Scrumia käytettäessä product owner) priorisoi vaatimukset siten, että kuhunkin iteraatioon valitaan toteutettavaksi ne vaatimukset, jotka tuovat asiakkaalle mahdollisimman paljon liiketoiminnallista arvoa. Ohjelmistokehittäjät arvioivat vaatimusten toteuttamiseen tarvittavaa työmäärää, ja päättävät sen kuinka paljon he voivat ottaa kuhunkin iteraatioon toteutettavia vaatimuksia.
 
@@ -165,15 +169,15 @@ Jokaisen iteraation aikana tehdään määrittelyä, suunnittelua, ohjelmointia 
 
 Ohjelmiston kasvaessa iteratiivisesti ja inkrementaalisesti pala palalta mahdollistaakin sen, että sovellus voidaan viedä tuotantokäyttöön eli todellisten käyttäjien käytettäväksi jo ennen sovelluksen valmistumista.
 
-Tällä on monia etuja. Sovellus voi ruveta tuottamaan rahallista arvoa jo ennen sovelluskehitysprojektin päättymistä, ja todellisilta käyttäjiltä saatavan palautteen avulla vaatimusmäärittelyn ja sovelluksen jatkokehityksen suuntaa on vielä mahdollista tarkentaa.
+Tällä on monia etuja: sovellus voi ruveta tuottamaan rahallista arvoa jo ennen sovelluskehitysprojektin päättymistä, ja todellisilta käyttäjiltä saatavan palautteen avulla vaatimusmäärittelyn ja sovelluksen jatkokehityksen suuntaa on vielä mahdollista tarkentaa.
 
 Kattavana teemana ketterässä ohjelmistotuotannossa ja siihen liittyvässä vaatimusmäärittelyssä onkin kaikin mahdollisin tavoin tuottaa asiakkaalle maksimaalisesti arvoa.
 
-### Vaatimusmäärittely 2010-luvulla: Lean startup
+### Uuden ajan vaatimusmäärittely: Lean startup
 
 Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartup.com/) kuvaa/formalisoi systemaattisen tavan kartoittaa vaatimuksia erityisen epävarmoissa konteksteissa, kuten startup-yrityksissä.
 
-Malli perustuu kolmiosaisen build-measure-learn -syklin toistamiseen:
+Malli perustuu kolmiosaisen _build-measure-learn_ -syklin toistamiseen:
 
 ![]({{ "/images/2-3.png" | absolute_url }}){:height="300px" }
 
@@ -195,9 +199,9 @@ Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan sii
 
 Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP:n sijaan robustimpi toteutus kyseisestä toiminnallisuudesta. Jos taas toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn -sykliä tekemällä hypoteesi jostain muusta ideasta.
 
-Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat.
+Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat, siispä menetelmän voidaan ajatella olevan eräänlainen vaatimusten analysointi- ja validointimentelmä.
 
-Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon isoissa internetpalveluita tuottavissa yhtiöissä, kuten Facebook, Google, Netflix ja Amazon. Myös tietokonepelialalla menetelmä on aktiivisessa käytössä, kun pelien koukuttavuutta yritetään maksimoida.
+Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon suurissa internetpalveluita tuottavissa yhtiöissä, kuten Facebook, Google, Netflix ja Amazon. Myös pelialalla menetelmä on aktiivisessa käytössä, kun pelien koukuttavuutta yritetään maksimoida.
 
 ## Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa
 
