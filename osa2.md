@@ -599,7 +599,7 @@ Sprintin tavoite toimii tiimin ulkopuoliselle nopeana kuvauksena siitä, mitä t
 
 Sprintin onnistumista tarkastellaan yleensä suhteessa sprintin tavoitteeseen, eli vaikka sprintissä jäisikin yksittäisiä user storyjä toteuttamatta, voidaan sprintti todeta onnistuneeksi jos toteutettu toiminnallisuus kattaa sprintin tavoitteiden oleelliset osat.
 
-### Sprintissä toteutettavien user storyjen määrä
+### Sprintissä toteutettavien user storyjen valinta
 
 Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi. Pääperiaate on valita "sopiva määrä" backlogin korkeimmalle priorisoituja user storyjä ja siirtää ne _sprint backlogiin_.
 
@@ -608,12 +608,12 @@ Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteu
 Tapoja päättää sprinttiin otettavien storyjen määrä on [useita](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/):
 
 - jos storyt ovat estimoituja ja tiimin velositeetti tunnetaan, otetaan sprinttiin velositeetin verran storyjä
-- jos estimaatteja ei ole ja/tai velositeettiä ei tunneta, otetaan niin monta korkeimman priotiteetin storyä, kuin mihin kaikki tiimiläiset tuntevat voivansa sitoutua
-- edellisten yhdistelmä, eli vaikka velositeetti ja estimaatit olisivat tiedossa, niin käytetään myös harkintaa sen suhteen onko velositeetin avulla valittu määrä tiimiläisistä sopivan tuntuinen
+- jos estimaatteja ei ole ja/tai velositeettiä ei tunneta, otetaan niin monta korkeimman prioriteetin storyä, kuin mihin kaikki tiimiläiset tuntevat voivansa sitoutua
+- edellisten yhdistelmä, eli vaikka velositeetti ja estimaatit olisivat tiedossa, niin käytetään myös harkintaa sen suhteen, onko velositeetin avulla valittu määrä tiimiläisistä sopivan tuntuinen
 
 Käytetään mitä valintaperiaatetta tahansa, on joka tapauksessa oleellista että toteutettavaksi valitaan vain sellainen määrä storyjä, jotka tiimi kokee voivansa toteuttaa kunnolla, eli definition of donen määrittelemällä laatutasolla.
 
-### Sprintissä toteutettavien user storyjen valinta
+#### Product ownerin vaikutusmahdollisuudet sprintin storyihin
 
 Oletusarvoisesti sprinttiin siis otetaan joukko backlogin kärjessä olevia user storyjä:
 
@@ -630,7 +630,7 @@ Entä jos product owner haluaa sprinttiin mukaan kaikki user storyt A-D? Jostain
 ![]({{ "/images/2-19.png" | absolute_url }}){:height="215px" }
 
 Entä jos A:n toiminnallisuutta ei saa karsia ja product owner silti haluaa A-D:n mukaan sprinttiin?
-Ratkaisu tähän on jakaa user story A kahteen pienempään osaan A1:n ja A2:n. A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin, A2 saa alemman prioriteetin, ja jää sprintin ulkopuolelle:
+Ratkaisu tähän on **jakaa user story A kahteen pienempään osaan** A1:n ja A2:n. A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin, A2 saa alemman prioriteetin, ja jää sprintin ulkopuolelle:
 
 ![]({{ "/images/2-20.png" | absolute_url }}){:height="250px" }
 
@@ -648,27 +648,10 @@ Tällainen jako ei kuitenkaan ole hyvä. Näin jaetut storyt eivät ole asiakkaa
 
 Seuraavassa muutamia erilaisia tapoja storyjen jakamiseen [Richard Lawrencen](http://www.richardlawrence.info/2009/10/28/patterns-for-splitting-user- stories/) inspiroimana.
 
-#### Pattern 1: workflow steps
 
-Tarkastellaan Flamman kaltaista sovellusta jonka avulla voi mm. julkaista artikkeleja yrityksen web-sivulle. Eräs sovelluksen user storyista on seuraava:
+#### Pattern 1: business rule variations
 
-_As a content manager, I can publish a news story to the corporate website._
-
-Artikkelien julkaisu sovellusta käyttävässä yrityksessä on monivaiheinen prosessi, kukin artikkeli kulkee usean työvaiheen (workflow) läpi, artikkelit mm. tarkastetaan kielellisesti (editor review) ja lainopillisesti (legal review), ja näitä varten artikkelit julkaistaan ensin ns. _staging_-ympäristöön.
-
-Eräs tapa pilkkoa alkuperäinen story onkin jakaa se useampaan osaan eri työvaiheiden mukaan:
-
-- _... I can publish a news story directly to the corporate website_
-- _... I can publish a news story with editor review on a staging site_
-- _... I can publish a news story with legal review on a staging site_
-- _... I can view a news story on a staging site_
-- _... I can publish a news story from the staging site to production_
-
-Vaikka ensimmäinen story ei vielä yksistään tarjoa tukea kaikille työvaiheille, riittää sen toteuttaminen jo ehkä ominaisuuden käyttöönottoon, muut työvaiheet (editointi ja lainopillisuuden tarkastus) voidaan aluksi hoitaa järjestelmän ulkopuolella esim. emailitse. Myöhemmissä sprinteissä voidaan sitten toiminnallisuutta tarpeen mukaan laajentaa toteuttamalla muut storyt.
-
-#### Pattern 2: business rule variations
-
-Story joka sisältää monenlaisia kompleksisia ehtoja (business rule), esim.
+Story, joka sisältää monenlaisia kompleksisia ehtoja (business rule), esim.
 
 _As a user, I can search for flights with flexible dates._
 
@@ -678,9 +661,9 @@ kannattaa jakaa siten että jokainen näistä ehdoista eritellään omaksi story
 - _... as "a weekend in December"_
 - _... as "± n days of dates x and y"_
 
-#### Pattern 3: simple/complex
+#### Pattern 2: simple/complex
 
-Hieman samanlainen kuin edellinen tapa on jakaa monimutkainen user story siten, että siitä erotetaan yksinkertainen, mutta jo itsessään hyödyllinen story, eräänlainen "minimal viable product", ja muodostetaan joukko storeja, jotka lisäävät sen määrittelemää perustoiminnallisuutta.
+Hieman samanlainen kuin edellinen tapa, on jakaa monimutkainen user story siten, että siitä erotetaan yksinkertainen, mutta jo itsessään hyödyllinen story, eräänlainen "minimal viable product", ja muodostetaan joukko storyja, jotka lisäävät sen määrittelemää perustoiminnallisuutta.
 
 Esimerkiksi joustavaa lentojen hakua kuvaava story
 
@@ -693,7 +676,7 @@ voidaan jakaa seuraavasti
 - _... including nearby airports_
 - _... using flexible dates_
 
-#### Pattern 4: major effort
+#### Pattern 3: major effort
 
 Joskus hyvä jakoperuste on toteuttaa story toimimaan ensin yhden esimerkkitapauksen kanssa ja yleistää se omana storynaan. Esimerkiksi luottokorttimaksamista koskeva story
 
@@ -704,7 +687,7 @@ voitaisiin jakaa kahtia, missä ensimmäisessä storyssa vasta hoidettaisiin yks
 - _... I can pay with VISA_
 - _... I can pay with all four credit card types (VISA, MC, DC, AMEX) (given one card type already implemented)_
 
-#### Pattern 5: data entry methods
+#### Pattern 4: data entry methods
 
 Hyvä tapa storyjen jakoon on myöskin muodostaa ensin versio, jossa on yksinkertainen käyttöliittymä ja laajentaa sitä omana storynaan. User story
 
@@ -715,7 +698,7 @@ jakaantuukin helposti kahteen esim. seuraavasti
 - _... using simple date input_
 - _... with a fancy calendar UI_
 
-#### Pattern 6: Defer Performance
+#### Pattern 5: Defer Performance
 
 Joissain tapauksissa vastaava jako voidaan tehdä suorituskyvyn suhteen, eli aluksi tehdään perusversio ja laajentava story optimoi suorituskykyä. User story
 
@@ -726,7 +709,7 @@ siis jakaantuu kahtia seuraavasti:
 - _... slow—just get it done, show a "searching" animation_
 - _... in under 5 seconds_
 
-#### Pattern 7: Operations
+#### Pattern 6: Operations
 
 Eräs yleisimpiä tapoja jakamiseen on eritellä storyyn sisältyvät toiminnot omiksi storyikseen.
 
@@ -740,7 +723,7 @@ jakaantuu mukavasti moneen osaan
 - _... I can edit my account settings_
 - _... I can cancel my account_
 
-#### Pattern 8: Break Out a Spike
+#### Pattern 7: Break Out a Spike
 
 On monia tilanteita, joissa storyn kokoa on todella vaikeaa arvioida etukäteen. Story voi joko olla vaatimuksiltaan epäselvä, eli ei oikein tiedetä vielä mitä halutaan, tai story saattaa sisältää jonkin toteutusteknisesti riskialttiin osan. Joskus storyn sisältämä epävarmuus ei poistu mitenkään muuten kuin tekemällä kokeellinen toteutus, jonka avulla tutkitaan teknisiä riskejä tai selvitellään käyttäjän tahtotilaa.
 
@@ -759,7 +742,7 @@ Aiemmin tässä osassa puhuimme [Lean-startup](/osa2#vaatimusm%C3%A4%C3%A4rittel
 
 User storyjen jakamisesta on monia etuja. Storyjä jaettaessa huomataan usein, että alkuperäinen iso story eli epiikki, kuvaa itse asiassa paljon laajemman toiminnallisuuden kuin mille on tarvetta, eli sovelluksesta saadaan storyjen jakamisen avulla mahdollisesti karsittua pois paljon turhaa toiminnallisuutta. Storyjen pienuus kasvattaa myös ohjelmistokehityksen ennustettavuutta. Mitä pienempiä storyt ovat, sitä helpompi ne on estimoida ja sitä varmemmin ne saadaan toteutettua yhden sprintin aikana, ja näin tiimin velositeetista tulee paremmin ennustettava.
 
-### Sprintin suunnittelun toinen tavoite
+### Sprintin tekninen suunnittelun
 
 Sprintin suunnittelun yhteydessä sprinttiin valituille user storyille tehdään yleensä myös riittävä määrä teknistä suunnittelua, eli hahmotellaan, _miten_ storyt saadaan toteutettua. Suunnitellaan komponentteja ja rajapintoja karkealla tasolla sekä huomioidaan user storyjen aiheuttamat muutokset olemassa olevaan osaan sovelluksesta.
 
@@ -773,11 +756,11 @@ Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voitaisiin pilkkoa seuraav
 - html-näkymää päivitettävä tarvittavilla painikkeilla
 - kontrolleri painikkeiden käsittelyyn
 - yksikkötestit kontrollerille ja ostoskorin logiikalle
-- hyväksymätestien automatisointi
+- hyväksymistestien automatisointi
 
 ### Sprint backlog
 
-Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista ja niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehitystiimin työväline ja tiimi päättää scrum masterin avustuksella sen miten se backloginsa organisoi.
+Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehitystiimin työväline ja tiimi päättää scrum masterin avustuksella sen miten se organisoi sprint backlogin.
 
 Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yksi rivi kutakin sprinttiin valittua user storya kohti. Storyyn liittyvät taskit kulkevat vasemmalta oikealle niiden statusta kuvaavien sarakkeiden _not started, in progress, done_ kautta:
 
@@ -785,15 +768,15 @@ Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yk
 
 Kaikkia storyyn liittyviä taskeja ei sprintin suunnittelun aikana yleensä löydetä ja uusia taskeja lisätään tarvittaessa sprintin edetessä.
 
-Nykyinen paras käytäntö on käyttää fyysisiä taskboardeja, user storyt ovat esimerkiksi pahvikortteja ja taskit kirjoitetaan post it -lapuille.
+Samassa tilassa työskentelevien tiimien paras käytäntö on käyttää fyysisiä taskboardeja, user storyt ovat esimerkiksi pahvikortteja ja taskit kirjoitetaan post it -lapuille.
 
 ![]({{ "/images/2-23.jpg" | absolute_url }})
 
 Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka kuvaa niitä taskeja, joiden toteuttaminen on syystä tai toisesta keskeytynyt jonkin esteen takia. Task board voikin sisältää mitä tahansa sarakkeita. Scrum ei anna mitään ohjeistoa sprint backlogin muodostamiseen, pääasia onkin että tiimi muokkaa taskboardinsa omia tavoitteitaan tukevaksi. On myös melko tyypillistä että tiimi muokkaa taskboardia projektin kuluessa huomatessaan että olemassa olevan taskboardin rakenne ei ole enää optimaalinen tiimin työskentelylle.
 
-### Sprintin työmääräarviot ja burndown
+#### Sprintin työmääräarviot ja burndown
 
-[Scrum guiden](https://scrumguides.org/scrum-guide.html#artifacts-sprintbacklog) mukaan tiimin tulee seurata sprintin aikana kuinka paljon sprintissä on vielä töitä jäljellä. Eräs tapa toteuttaa sprintinaikainen työmäärän seuranta on estimoida sprintissä olevien taskien työmäärää. Useiden [asiantuntijoiden](https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels) mukaan sprinttiin kuuluvat taskit tulisi estimoida niiden vaatiman _työtuntimäärän_ mukaan, toisin kuin user storyt, jotka estimoidaan abstraktin aikamääreen eli story pointin tarkkuudella.
+Scrum guiden ennen vuotta 2020 julkaistujen versioiden mukaan tiimin tulee seurata sprintin aikana kuinka paljon sprintissä on vielä töitä jäljellä. Eräs tapa toteuttaa sprintinaikainen työmäärän seuranta on estimoida sprintissä olevien taskien työmäärää. Useiden [asiantuntijoiden](https://www.mountaingoatsoftware.com/blog/why-agile-teams-should-estimate-at-two-different-levels) mukaan sprinttiin kuuluvat taskit tulisi estimoida niiden edellyttämän _työtuntimäärän_ mukaan, toisin kuin user storyt, jotka estimoidaan abstraktin aikamääreen eli story pointin tarkkuudella.
 
 Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä olevan työn määrä arvioidaan esim. päivittäisessä scrum-palaverissa eli daily scrumeissa.
 
@@ -801,15 +784,17 @@ Jäljellä olevan työn määrä (tunteina mitattuna) voidaan visualisoida sprin
 
 ![]({{ "/images/2-22.png" | absolute_url }})
 
+Kuva sisältää useitakin eri käyriä, tummemman sininen kuvaa sprintissä jäljellä olevaa työmäärää tunteina.
+
 Työmääräarvio voi myös nousta kesken sprintin jos kesken sprintin identifioidaan uusia taskeja tai jokin task huomataan monimutkaisemmaksi kuin alunperin ajateltiin. Oleellista on, että taskien työmääräarviot ovat _arvioita niihin vielä tarvittavasta työmäärästä_.
 
 Scrumissa ei seurata millään tavalla taskeihin _käytettyä_ työmäärää, eli vaikka johonkin taskiin olisi käytetty 5 tuntia, sitä ei merkata mihinkään eikä sitä suoraan vähennetä työmääräarviosta vaan tehdään _uusi työmääräarvio_ siitä, paljonko vielä ajatellaan tarvittavan aikaa, jotta story saadaan valmiiksi.
 
-### Sprintin taskboardin formaatti
+#### Sprintin taskboardin formaatti
 
 Yleinen konsensus on, että ainakin Sprintin hallintaan manuaalinen postit-lappuja hyödyntävä taskboard on käytettävyydeltään ja informatiivisuudeltaan ylivertainen.
 
-Usein toki käytetään elektronisia versioita taskboardista, joskus siihen pakottavat yritysten käytänteet, joskus taas tiimiläisten työskentelytapa ja paikka, esimerkiksi etätiimin kannalta elektroninen taskboard voi olla ainoa toimiva ratkaisu.
+Usein toki käytetään elektronisia versioita taskboardista, joskus siihen pakottavat yritysten käytänteet, joskus taas tiimiläisten työskentelytapa ja paikka, esimerkiksi hybriidi- tai etätiimille elektroninen taskboard voi olla ainoa toimiva ratkaisu.
 
 Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi Exceliä tai Google Driveä. GitHub Projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän GitHubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon JIRA, Asana, Trello, Pivotal Tracker, Trac ja Bugzilla.
 
@@ -817,31 +802,29 @@ Taulukkolaskentaohjelmat toimivat kohtuullisen hyvin elektronisena taskboardina.
 
 ![]({{ "/images/2-24.png" | absolute_url }}){:height="400px" }
 
-Näin sprintin burndown-kaavion piirto on helppo automatisoida. Erään ohjelmistotuotantoprojektin product- ja sprintbacklogit [täällä](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit?usp=sharing).
+Näin sprintin burndown-kaavion piirto on helppo automatisoida. Erään ohjelmistoprojektin product- ja sprintbacklogit [täällä](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit?usp=sharing).
 
 Taskboard ja mahdollisesti käytössä oleva burndown-käyrä tuovat selkeästi esille sprintin etenemisen asteen ja onkin suositeltavaa, että ne ovat kaikkien tiimiläisten ja projektin sidosryhmäläisten nähtävillä. Elektronisia taskboardeja käytettäessä on aina se riski, että ne eivät säteile informaatiota yhtä hyvin kuin seinällä oleva manuaalinen taskboard. Näin ketterän kehityksen kannalta elintärkeä läpinäkyvyyden periaate saattaa vaarantua.
 
 ### Kannattaako sprintin sisäinen työmäärän estimointi
 
-On hieman kiistanalaista, kannattaako storyihin liittyvien taskien työmäärää estimoida. Syksyllä 2019 julkaistu kirja [A Scrum book](http://scrumbook.org/value-stream/information-radiator/sprint-burndown-chart.html) ei suosittele taskien tasolla pidettävää työmääräarviota, vaan kehottaa seuraamaan sprinttienkin aikana ainoastaan sitä _kuinka monen story pointin verran user storyja on saatu valmiiksi_.
+On hieman kiistanalaista, kannattaako storyihin liittyvien taskien työmäärää estimoida. Uusin, eli vuonna 2020 julkaistu Scrum guide ei mainitse sprint backlogin estimoinnista mitään. Syksyllä 2019 julkaistu kirja [A Scrum book](http://scrumbook.org/value-stream/information-radiator/sprint-burndown-chart.html) ei suosittele taskien tasolla pidettävää työmääräarvioita, vaan kehottaa seuraamaan sprinttienkin aikana ainoastaan sitä _kuinka monen story pointin verran user storyja on saatu valmiiksi_.
 
-Neuvo onkin varsin viisas: on nimittäin mahdollista, että tiimi saa sprintissä valmiiksi lähes kaikki taskit saamatta kuitenkaan yhtäkään storya täysin valmiiksi, eli burn down voi näyttää melko hyvältä mutta asiakkaan saama arvo on lopulta nolla.
+Neuvo onkin varsin viisas: on nimittäin mahdollista, että tiimi saa sprintissä tehtyä lähes kaikki taskit saamatta kuitenkaan yhtäkään storya täysin valmiiksi, eli burndown voi näyttää melko hyvältä mutta asiakkaan saama arvo on lopulta nolla.
 
 Fyysistä taskboardia käytettäessä sprintin työmäärän estimoinnin ja burndown-käyrän piirtämisen sijaan erittäin simppeli tapa sprintin etenemisen seurantaan on laskea, tai jopa ainoastaan visuaalisesti katsoa taskboardilta, mikä on jo valmiiden ja vielä valmistumattomien sprinttiin kuuluvien taskien lukumäärä.
 
-### Yhtä aikaa tehtävän työn rajoittaminen
+### Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban
 
 Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
 
-WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä task boardin vaiheessa olevien töiden määrää:
+WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä taskboardin vaiheessa olevien töiden määrää:
 
 ![]({{ "/images/2-25.png" | absolute_url }}){:height="350px" }
 
-Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskiksi määräksi kaksi.
+Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskien määräksi kaksi.
 
-### Lean waste ja Scrumban
-
-Yhtäaikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä. Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista.
+Yhtä aikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä. Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista.
 
 Lean-ajattelun taustalla on idea hukan (engl. waste, jap. muda) eli arvoa tuottamattomien asioiden eliminointi organisaatioiden toiminnasta. Lean-ajattelu on peräisin jo kymmeniä vuosia vanhasta [Toyota Production Systemistä](https://global.toyota/en/company/vision-and-philosophy/production-system/).
 

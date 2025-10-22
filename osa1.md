@@ -363,7 +363,7 @@ Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana to
 
 ![]({{ "/images/2-1.png" | absolute_url }})
 
-### Scrum: roolit, artefaktit ja eventit
+#### Scrum: roolit, artefaktit ja eventit
 
 Käydään vielä läpi hieman seikkaperäisemmin Scrumin terminologiaa ennen kun mennään tarkempiin yksityiskohtiin.
 
@@ -550,7 +550,7 @@ Syksyllä 2019 julkaistu [A Scrum book](https://pragprog.com/book/jcscrum/a-scru
 
 Scrumin ei siis pidä missään tapauksessa olla Scrum Guiden ohjeiden orjallista noudattamista. Jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. Scrumin tarkkailuun ja mukauttamisee perustuva luonne jopa ohjaa siihen, että tiimien kannattaa jossain vaiheessa toimia joidenkin Scrumin ohjeiden vastaisesti, jos tiimin optimaalinen toiminta sitä vaatii.
 
-## Scrumin ongelmia
+### Scrumin ongelmia
 
 Scrum on osoittautunut monin paikoin paremmaksi tavaksi ohjelmistojen kehittämiseen kuin vesiputousmalli tai muut suunnitelmavetoiset mallit. Scrum ei kuitenkaan ole mikään [silver bullet](https://en.wikipedia.org/wiki/No_Silver_Bullet), eli yleispätevä resepti, joka ratkaisisi kaikki sovelluskehityksen ongelmat, ja Scrumin käytön yleistyessä myös epäonnistuneiden Scrum-projektien määrä kasvaa.
 
