@@ -233,13 +233,13 @@ Seuraavat voisivat olla verkkokauppasovelluksen user storyjen kuvauksia (_writte
 - asiakas voi poistaa ostoskorissa olevan tuotteen
 - asiakas voi maksaa luottokortilla ostoskorissa olevat tuotteet
 
-User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimukset; user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja lupaus siitä, että toiminnallisuuden vaatimukset tullaan selvittämään riittävällä tasolla ennen kuin user story toteutetaan.
+User story ei siis ole perinteinen vaatimusmääritelmä, joka ilmaisee tyhjentävästi toiminnallisuuksien vaatimukset; user story on pikemminkin "placeholder" vaatimukselle, eli muistilappu ja _lupaus siitä, että toiminnallisuuden vaatimukset tullaan selvittämään riittävällä tasolla_ ennen kuin user story toteutetaan.
 
 Määritelmän kolmas alikohta sanoo, että Storyyn kuuluu _Tests that convey and document details and that will be used to determine that the story is complete_. Storyyn siis pitäisi liittyä myös joukko testejä tai kriteereitä, joiden perusteella voidaan katsoa että story on toteutettu.
 
 Se, miten user storyihin liittyvät hyväksymäkriteerit ilmaistaan, vaihtelee hyvin paljon. Parhaassa tapauksessa ne ovat automaattisesti suoritettavissa olevia testejä. Kyseessä voi myös olla lista toimintaskenaarioita, jotka on jollain tavalla kirjattu storyn yhteyteen. Melko tavallista on kuitenkin, että niitä ei kirjata mitenkään, vaan product owner, asiakkaan edustaja tai joku laadunhallinnasta vastaava taho hyväksyy storyn valmiiksi testaamalla manuaalisesti vastaavaa toiminnallisuutta järjestelmästä.
 
-Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on antanut [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
+Mike Cohnin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen mutta hieman eri sanoin muotoillun määritelmän user storyille on antanut [Ron Jeffries](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/), jonka sanoin user story on _card, conversation, confirmation_ (CCC), eli
 
 - card: muistilappumainen usein jopa fyysinen pahvikortti, ei siis missään tapauksessa vesiputousmainen mappiin talletettava laaja vaatimusmäärittelydokumentti
 - conversation: jotta storyn voi toteuttaa tarvitaan paljon keskustelua sovelluskehittäjien ja product ownerin, asiakkaiden, loppukäyttäjien ym. välillä, jotta saadaan selville mistä storysta todella on kysymys
@@ -247,12 +247,12 @@ Mike Cohenin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen 
 
 #### Esimerkki user storysta
 
-Usein on tapana kirjoittaa user storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle. [Scott Amblerilta](http://www.agilemodeling.com/artifacts/userStory.htm) lainattu esimerkki
+Ennen kuin etätyöskentely yleistyi pandemian myötä oli tapana kirjoittaa user storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle. [Scott Amblerilta](http://www.agilemodeling.com/artifacts/userStory.htm) lainattu esimerkki
 
 ![]({{ "/images/2-4.jpg" | absolute_url }})
 
 Kortin etupuolelle on kirjoitettu lyhyt kuvaus storyn sisällöstä, prioriteetti ja estimaatti.
-_Estimaatilla_ tarkoitetaan kortin toiminnallisuuden toteuttamisen työmääräarviota. Palaamme estimointiin pian tarkemmin.
+_Estimaatilla_ tarkoitetaan kortin toiminnallisuuden toteuttamisen työmääräarviota. Palaamme estimointiin pian tarkemmin.
 
 Kortin takapuolella suhteellisen informaalilla kielellä kirjoitettu joukko storyn hyväksymiskriteerejä.
 
@@ -263,10 +263,12 @@ toiminnallisuuden tulee käyttäytyä eri tilanteissa. Esim. nyt storyn sisält�
 - parkkilupa myönnetään kuukaudeksi kerrallaan
 - on mahdollista ostaa vain yksi parkkilupa kuukaudessa
 
-Hyväksymäkriteerit ovat tuloksena niistä keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein ne nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen – miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
+Hyväksymäkriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein hyväksymäkriteerit nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen – miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
 
 - parkkilupa maksetaan käteisellä tai verkkopankissa
 - verkkomaksun tapauksessa on käytettävä opiskelijalle henkilökohtaisesti generoitua viitenumeroa
+
+Nykyään etänä tai hybridisti työskentelevät tiimit käyttävät postit-lappujen ja pahvikorttien sijaan jotain elektronista järjestelmää, esim. [Jiraa](https://www.atlassian.com/software/jira) tai [GitHub projectsia](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) user storyjen kirjaamiseen.
 
 ### Hyvän user storyn kriteerit
 
@@ -280,7 +282,7 @@ on formuloitu monin paikoin [suositussa muodossa](https://www.agilealliance.org/
 
 Näin muotoilemalla on ajateltu, että user story kiinnittää huomion siihen, kenelle kuvattava järjestelmän toiminto tuottaa arvoa. Muoto ei oikein taivu suomenkielisiin kuvauksiin, joten sitä ei tällä kurssilla käytetä.
 
-Viime aikoina tätä tapaa muotoilla user storyt on myös ruvettu kritisoimaan muun muassa siksi, että kiinnittää liikaa huomioita siihen miten story kirjataan, itse asian eli _mistä storyssa on kysymys_ sijaan. Formaatti onkin menettämässä suosiotaan.
+Tätä muotoa on myös ruvettu kritisoimaan muun muassa siksi, että kiinnittää liikaa huomioita siihen miten story kirjataan, itse asian eli _mistä storyssa on kysymys_ sijaan. Formaatin suosio onkin laskusuunnassa:
 
 ![]({{ "/images/2-5.png" | absolute_url }}){:height="200px" }
 
@@ -324,9 +326,11 @@ _käyttäjän vasteaika saa olla korkeintaan 0.5 sekuntia 99% tapauksissa jos yh
 
 Kuten tulemme myöhemmin [tässä osassa](/osa2#user-story-ja-epiikki) toteamaan, user storyjen ei kannata olla koko aikaa _hyvän storyn_ INVEST-kriteerien mukaista. Kriteeristö koskeekin kokonaisuudessa oikeastaan vain korkean prioriteetin user storyjä eli sellaisia, jotka tullaan toteuttamaan lähitulevaisuudessa. Matalamman prioriteetin storyt voivat aivan hyvin olla vielä isompia ja testattavuudeltaan sekä työmääräarvioiltaan epämääräisempiä. Storyt tulee jakaa ja saattaa INVEST-kriteerien mukaiseksi viimeistään siinä vaiheessa kun story nousee lähemmäs prioriteettijärjestyksen huippua.
 
-### Alustava product backlog
+### Product backlog
 
 Edellisellä viikolla Scrumin yhteydessä puhuttiin _product backlogista_, joka on siis priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista. Nykyään käytäntönä on, että product backlog koostuu nimenomaan user storyistä.
+
+#### Backlog projektin alussa
 
 Projektin aluksi kannattaa heti ruveta etsimään ja määrittelemään user storyja ja muodostaa näistä alustava product backlog. Scrumia sovellettaessa tämä tehdään useimmiten ennen ensimmäisen sprintin alkua. Joskus tästä vaiheesta käytetään nimitystä [nollasprintti](https://www.mountaingoatsoftware.com/blog/sprint-zero-a-good-idea-or-not).
 
@@ -336,17 +340,17 @@ Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset
 - brainstormaus
 - workshopit
 
-Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän. User storyn luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee siitä hyvän työkalun projektin aloitukseen. Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
+Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän (tähän on toki poikkeuksia riippuen kehitettävän ohjelmiston koosta ja kehittäjäorganisaatiosta). User storyn luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee siitä hyvän työkalun projektin aloitukseen. Turhiin detaljeihin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
 
 Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaatima _työmäärä arvioidaan_ projektille tarkoituksenmukaisella tasolla. Näin muodostuu alustava product backlog, eli priorisoitu lista vaatimuksista.
 
-### Backlogin priorisointi
+#### Backlogin priorisointi
 
 Product backlog on siis _priorisoitu lista user storyjä_.
 
-Kuten todettiin [Scrumin esittelyn yhteydessä](/osa1#scrum) priorisoinnista vastaa _product owner_. Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia.
+Kuten [Scrumin esittelyn yhteydessä](/osa1#scrum) todettiin, priorisoinnista vastaa _product owner_. Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia.
 
-Priorisoinnin motivaationa on pyrkiä maksimoimaan asiakkaan kehitettävästä ohjelmistosta saama hyöty/arvo. Tärkeimmät asiat halutaan toteuttaa mahdollisimman nopeasti ja näin saada tuotteesta alustava versio markkinoille niin pian kuin mahdollista.
+Priorisoinnin tavoitteena on maksimoida asiakkaan kehitettävästä ohjelmistosta saama hyöty ja arvo. Tärkeimmät asiat pyritään toteuttamaan mahdollisimman nopeasti, jotta tuotteesta saadaan alustava versio markkinoille mahdollisimman pian.
 
 User storyjen priorisointiin vaikuttaa storyn kuvaaman toiminnallisuuden asiakkaalle tuovan arvon lisäksi ainakin storyn toteuttamiseen kuluva _työmäärä_ sekä storyn kuvaamaan ominaisuuteen sisältyvä _tekninen riski_.
 
@@ -356,12 +360,12 @@ Myös projektiin liittyvät tekniset riskit kannattaa ottaa priorisoinnissa huom
 
 ### Estimointi eli työmäärän arviointi
 
-User storyjen viemän työmäärän arvioimiseen on oikeastaan kaksi motivaatiota:
+User storyjen vaatiman työmäärän arvioimiseen on kaksi motivaatiota:
 
 - auttaa asiakasta priorisoinnissa
-- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioiden viemän ajan summittainen arviointi
+- mahdollistaa koko projektin tai tiettyjä toiminnallisuuskokonaisuuksia sisältävien versioiden viemän ajan ja taloudellisen panostuksen summittainen arviointi
 
-Työmäärän arvioimiseen on kehitetty vuosien varrella useita erilaisia menetelmiä. Kaikille yhteistä on se, että ne eivät toimi kunnolla, eli tarkkoja työmääräarvioita on mahdoton antaa. Joskus työmäärän arvioinnista käytetäänkin leikillisesti termiä _guestimation_ koska työmääräarviointi on lopulta useimmiten lähinnä arvailua.
+Työmäärän arvioimiseen on kehitetty vuosien varrella useita erilaisia menetelmiä. Kaikille yhteistä on se, että ne eivät toimi kunnolla, eli tarkkoja työmääräarvioita on mahdoton antaa. Joskus työmäärän arvioinnista käytetäänkin leikillisesti termiä _guesstimation_ koska työmääräarviointi on lopulta useimmiten lähinnä arvailua.
 
 Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
@@ -369,7 +373,7 @@ Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
 Eli mitä kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
 
-### Suhteelliseen kokoon perustuva estimointi
+#### Suhteelliseen kokoon perustuva estimointi
 
 Ketterät ohjelmistotuotantomenetelmät ottavat itsestäänselvyytenä sen, että estimointi on epävarmaa ja tarkentuu vasta projektin kuluessa. Koska näin on, pyritään vahvoja estimointiin perustuvia lupauksia ohjelmiston valmistumisaikatauluista välttämään.
 
@@ -380,15 +384,15 @@ Esimerkkejä tällaisestä suhteellisesta estimoinnista ovat
 - user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ vie yhtä kauan kuin user storyn _tuotteen poistaminen ostoskorista toteuttaminen_
 - user storyn _ostoskorissa olevien tuotteiden maksaminen luottokortilla_ toteuttaminen taas vie noin kolme kertaa kauemmin kun edelliset
 
-Ketterissä menetelmissä käytetäänkin yleisesti _suhteelliseen kokoon_ perustuvaa estimointia, joissa usein arvioinnin yksikkönä käytetään abstraktia aikamäärettä _story point_, joka ei välttämättä vastaa mitään todellista aikamäärettä.
+Ketterissä menetelmissä käytetään usein (tai ainakin suositellaan käytettäväksi) _suhteelliseen kokoon_ perustuvaa estimointia, joissa usein arvioinnin yksikkönä käytetään abstraktia aikamäärettä _story point_, joka ei välttämättä vastaa mitään todellista aikamäärettä.
 
 Verkkokaupan tapauksessa voitaisiinkin määrittää, että user storyn _tuotteen lisääminen ostoskoriin toteuttaminen_ työmääräarvio on yksi story point. Tällöin _tuotteen poistaminen ostoskorista toteuttaminen_ olisi myös suhteelliselta estimaatiltaan yksi story point ja _ostoskorissa olevien tuotteiden maksaminen luottokortilla_ kolme story pointia.
 
-### Estimoinnin suorittaminen
+#### Estimoinnin suorittaminen
 
-Estimointi tehdään yhteistyössä kehitystiimin ja product ownerin kanssa. Product ownerin roolina on tarkentaa estimoitaviin user storeihin liittyviä vaatimuksia siinä määrin että kehitystiimi ymmärtää tarkasti mistä on kyse. Varsinaisen estimoinnin eli _työmääräarvion tekee kuitenkin aina ohjelmistokehitystiimi_. Tämä on tärkeää, sillä ainoastaan sovelluskehittäjillä on edes jossain määrin realistisia edellytyksiä arvion tekemiseen.
+Estimointi tehdään yhteistyössä kehitystiimin ja product ownerin kanssa. Product ownerin roolina on tarkentaa estimoitaviin user storeihin liittyviä vaatimuksia siinä määrin että kehitystiimi ymmärtää tarkasti mistä on kyse. Varsinaisen estimoinnin eli _työmääräarvion tekee kuitenkin aina ohjelmistokehitystiimi_. Tämä on tärkeää, sillä ainoastaan sovelluskehittäjillä on edes jossain määrin realistisia edellytyksiä arvioiden tekemiseen.
 
-Kuten edellisellä viikolla mainittiin, määritellään ketterissä projekteissa yleensä [definition of done](/osa1#definition-of-done), eli se yleinen taso mitä valmiilla tarkoitetaan. Useimmiten valmiin määritellään sisältävän user storyn määrittelyn, suunnittelun, toteutuksen, automatisoitujen testien tekemisen, integroinnin muuhun sovellukseen, dokumentoinnin ja joskus jopa tuotantoon viennin.
+Kuten edellisellä viikolla mainittiin, määritellään ketterissä projekteissa yleensä [definition of done](/osa1#definition-of-done), eli se yleinen taso mitä valmiilla tarkoitetaan. Useimmiten valmiin määritellään sisältävän user storyn määrittelyn, suunnittelun, toteutuksen, automatisoitujen testien tekemisen, integroinnin muuhun sovellukseen, dokumentoinnin ja joskus jopa tuotantoonviemisen.
 
 Estimoinnissa tuleekin arvioida user storyn viemä aika definition of donen tarkkuudella, eikä missään nimessä esim. ottaen huomioon pelkkä ohjelmointiin kuluva aika.
 
@@ -402,7 +406,7 @@ Usein estimointia auttaa user storyn pilkkominen teknisiin työvaiheisiin. Esime
 - yksikkötestit kontrollerille ja domain-olioille
 - hyväksymätestien automatisointi
 
-Työvaiheisiin pilkkominen saattaa vaatia myös hieman suunnittelua, esim. täytyy miettiä, miten ohjelman rakennetta on muokattava, jotta uusi toiminnallisuus saadaan järkevästi toteutettua.
+Työvaiheisiin pilkkominen saattaa vaatia myös teknistä suunnittelua, esim. täytyy miettiä, miten ohjelman rakennetta on muokattava, jotta uusi toiminnallisuus saadaan järkevästi toteutettua.
 
 Jos kyseessä on samantapainen toiminnallisuus kuin joku aiemmin toteutettu, voi estimointi tapahtua ilman user storyn vaatimien erillisten työvaiheiden miettimistä, suhteuttamalla estimoitava toiminnallisuus aiemmin toteutettuihin storyihin.
 
@@ -416,9 +420,9 @@ Kuten äsken mainittiin, suhteellisessa estimoinnissa käytetty yksikkö _story 
 
 [Monet](https://www.atlassian.com/agile/project-management/estimation) [tahot](https://medium.com/serious-scrum/12-common-mistakes-made-when-using-story-points-f0bb9212d2f7) suosittelevat olemaan sotkematta story pointeja tunteihin tai päiviin. Eräs argumenteista story pointin ja tarkkojen aikamääreiden sitomattomuuden puolesta on se, että jos tiimi määrittelisi story pointin olevan esimerkiksi 8 tuntia työtä, niin tiimin estimaatit saatettaisiin esim. yrityksen johdossa ajatella sitoumukseksi kunkin työvaiheen tarvitsemasta ajasta. Tämän taas ketterät menetelmät haluavat ehdottomasti välttää estimaattien perimmäisen epävarmuuden takia.
 
-### Estimoinnin menetelmiä
+#### Estimoinnin menetelmiä
 
-Eräs melko suosittu tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
+Eräs käyttökelpoinen tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
 
 ![]({{ "/images/2-7.png" | absolute_url }}){:height="300px" }
 
@@ -426,18 +430,18 @@ Koska estimointi on joka tapauksessa melko epätarkkaa, ei estimoinnissa ole tar
 
 Motivaationa yläpäästä harvenevalle skaalalle on se, että koska isojen storyjen estimointiin liittyy erityisen suuri epävarmuus, ei kannata edes teeskennellä että skaala olisi isojen storyjen suhteen kovin tarkka.
 
-Joskus estimoinnissa käytetään arvoa _epic_, jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä user storyä, että sitä ei ole toistaiseksi mieltä estimoida. Itse asiassa alan suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille storyille estimaatti epic.
+Joskus estimoinnissa käytetään arvoa _epic_, jolla tarkoitetaan niin isoa tai huonosti ymmärrettyä user storyä, että sitä ei ole toistaiseksi mieltä estimoida. Itse asiassa alan ehkä suurin auktoriteetti Mike Cohn suosittelee käyttämään skaalaa 1, 2, 3, 5, 8 tai 1, 2, 4, 8 ja antamaan sitä suuremmille storyille estimaatti epic.
 
 Jotta estimaatin _epic_ saaneet storyt tulisivat estimoitua, ne tulee pilkkoa pienempiin, paremmin hallittaviin storyihin. Käsitteellä epic on eräs toinenkin merkitys user storyjen parissa, mihin palaamme hieman myöhemmin.
 
 Hyvänä periaatteena pidetään että kaikki kehitystiimin jäsenet osallistuvat estimointiin. Näin tiimille syntyy yhtenäinen ymmärrys user storyn sisällöstä. Eräs suosittu tapa osallistaa koko tiimi estimointiin on [planning poker](https://www.crisp.se/bocker-och-produkter/planning-poker).
 
-### Planning poker
+#### Planning poker
 
 Planning pokerissa käydään läpi backlogilla olevia user storyja yksi kerrallaan. Product owner esittelee user storyn sisällön ja selittää tarkemmin storyn luonnetta ja vaatimuksia.
 
-Tiimi keskustelee storystä, miettii kenties storyn jakautumista teknisiin työvaiheisiin.
-Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis story point). Usein tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa.
+Tiimi keskustelee storystä ja miettii kenties storyn jakautumista teknisiin työvaiheisiin.
+Kun kaikki kokevat olevansa valmiina arvioimaan, jokainen kertoo arvionsa (yksikkönä siis story point). Joskus tämä vaihe toteutetaan siten, että käytössä on pelikortteja, joilla on estimaattien arvoja, esim 1, 2, 5, 10, ... ja kukin estimointiin osallistunut näyttää estimaattinsa yhtä aikaa.
 
 Jos estimaatit ovat suunnilleen samaa tasoa, merkataan estimaatti user storylle ja siirrytään seuraavaan.
 
@@ -446,6 +450,8 @@ Jos ehdotetuissa estimaateissa on paljon eroavaisuuksia, keskustelee tiimi eroav
 Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja riittävä konsensus todennäköisesti saavutetaan pian.
 
 ![]({{ "/images/2-8.png" | absolute_url }}){:height="350px" }
+
+Tiimin yhdessä tekemän estimoinnin sivutuotteena ymmärrys toteutettavana olevien user storyjen luonteesta leviää koko tiimin keskuuteen, ketterien menetelmien suuressa arvossa pitämä läpinäkyvyys (transparency) siis paranee estimoinnin sivutuotteena.
 
 ### Hyvä product backlog on DEEP
 
