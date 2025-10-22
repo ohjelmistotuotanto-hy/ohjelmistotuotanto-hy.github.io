@@ -460,27 +460,29 @@ Mike Cohn ja Roman Pichler ovat lanseeranneet lyhenteen
 
 Näistä ominaisuuksista _estimated_ ja _prioritized_ ovat meille tuttuja: storyillä on työmääräarviot ja storyt on priorisoitu eli asetettu tärkeysjärjestykseen.
 
-Hyvä backlog on myös _detailed appropriately_ eli sopivan detaljoitu. Backlogin prioriteeteiltaan korkeimpien eli pian toteutettavaksi tulevien user storyjen tulee olla suhteellisen pieniä, niiden hyväksymiskriteerit tulee olla suunnilleen selvillä ja vaaditusta työmäärästä pitäisi olla kohtuullisen hyvä kuva.
+Hyvä backlog on myös _detailed appropriately_ eli sopivan detaljoitu. Backlogin prioriteetiltaan korkeimpien eli lähiaikoina toteutettavaksi tulevien user storyjen tulee olla suhteellisen pieniä, niiden hyväksymiskriteerit tulee olla suunnilleen selvillä ja vaaditusta työmäärästä pitäisi olla kohtuullisen hyvä käsitys.
 
-Alemman prioriteetin user storyt voivat vielä olla isompia ja karkeammin estimoituja. Itse asiassa alemman prioriteetin storyjä ei edes kannata määritellä kovin tarkasti, sillä kestää vielä kauan ennen kuin ne otetaan toteutettavaksi johonkin sprinttiin. Usein käy vieläpä niin, että alemman prioriteetin storyjä ei lopulta toteuteta koskaan, sillä niiden määrittelemä toiminnallisuus havaitaankin tarpeettomaksi. Alhaisen prioriteetin storyihin ei siis todellakaan kannata investoida spekulatiivisesti liikaa aikaa.
-
-_Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/blog/make-the-product-backlog-deep/) :
-
-> The product backlog has an organic quality. It evolves, and its contents change frequently. New items emerge based on customer and user feedback, and they are added to the product backlog. Existing items are modified, reprioritized, refined, or removed on an ongoing basis.
-
-Backlog ei siis pysy muuttumattomana vaan elää koko ajan. Uusia storyjä tulee, olemassa olevia storyjä tarkennetaan ja pilkotaan, tarpeettomia storyjä poistetaan. Työmääräarvioita ja prioriteetteja uudelleenmääritellään.
-
-Tämä kaikki ei tietenkään tapahdu itsestään, vaan backlogia tulee aktiivisesti hoitaa (engl. backlog grooming tai backlog refinement) projektin edetessä. [Scrum guide](https://scrumguides.org/scrum-guide.html#artifacts-productbacklog) mainitsee, että backlogin groomausta tulee tapahtua läpi sprintin yhteistyössä product ownerin ja kehitystiimin kesken.
-
-Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleellisesti ennen jokaista uutta sprinttiä tehtävää sprintin suunnittelua. Jos backlog on huonossa kunnossa (prioriteetit miten sattuu, tärkeät storyt epämääräisessä tilassa, uusia tunnistettuja tarpeita vastaavia storyjä ei ole lisätty backlogille) sprintin suunnittelua tehtäessä, menee kaikkien aikaa hukkaan.
+Alemman prioriteetin user storyt voivat vielä olla isompia ja karkeammin estimoituja. Itse asiassa alemman prioriteetin storyjä ei edes kannata määritellä kovin tarkasti, sillä kestää vielä kauan ennen kuin ne otetaan toteutettavaksi johonkin sprinttiin. Usein käy vieläpä niin, että alemman prioriteetin storyjä ei lopulta toteuteta koskaan, sillä niiden määrittelemä toiminnallisuus havaitaankin tarpeettomaksi. Alhaisen prioriteetin storyihin ei siis kannata investoida spekulatiivisesti liikaa aikaa.
 
 ![]({{ "/images/2-9.png" | absolute_url }}){:height="250px" }
 
+_Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/blog/make-the-product-backlog-deep/):
+
+> The product backlog has an organic quality. It evolves, and its contents change frequently. New items emerge based on customer and user feedback, and they are added to the product backlog. Existing items are modified, reprioritized, refined, or removed on an ongoing basis.
+
+Backlog ei siis pysy muuttumattomana, vaan elää koko ajan. Uusia storyjä tulee, olemassa olevia storyjä tarkennetaan ja pilkotaan, tarpeettomia storyjä poistetaan. Työmääräarvioita ja prioriteetteja uudelleenmääritellään.
+
+Tämä kaikki ei tietenkään tapahdu itsestään, backlogia tulee aktiivisesti hoitaa (engl. backlog grooming tai backlog refinement) projektin edetessä. [Scrum guide](https://scrumguides.org/scrum-guide.html#artifacts-productbacklog) mainitsee, että backlogin hienontamista tulee tapahtua läpi sprintin yhteistyössä product ownerin ja kehitystiimin kesken.
+
+> Product Backlog refinement is the act of breaking down and further defining Product Backlog items into smaller more precise items. This is an ongoing activity to add details, such as a description, order, and size.
+
+Ideana on siis pitää backlog koko ajan DEEP-tilassa, joka taas helpottaa oleellisesti ennen jokaista uutta sprinttiä tehtävää sprintin suunnittelua. Jos backlog on huonossa kunnossa (prioriteetit miten sattuu, tärkeät storyt epämääräisessä tilassa, uusia tunnistettuja tarpeita vastaavia storyjä ei ole lisätty backlogille) sprintin suunnittelua tehtäessä, menee kaikkien aikaa hukkaan.
+
 ### User story ja epiikki
 
-Aiemmin mainitsimme, että hyvän user storyn tuntomerkki on, että se noudattaa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, estimable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, tulee sen olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä.
+[Aiemmin](osa2/#hyvän-user-storyn-kriteerit) mainittiin, että hyvä user story noudattaa INVEST-kriteeristöä, eli story on _independent, negotiable, valuable, estimable, small, testable_. Eräänä kriteerinä on siis storyn pienuus, user storyn tulee olla toteutettavissa yhdessä sprintissä. Backlogin DEEP-kriteeristö taas sanoo, että backlogin pitää olla _sopivan detaljoitu_, erityisesti alhaisen prioriteetin storyja ei kannata tehdä liian tarkasti. INVEST-kriteeristö päteekin nimenomaan korkean prioriteetin storyihin, eli ennen kuin story voidaan ottaa toteutettavaksi, sen tulee olla tarpeeksi pieni, hyvin estimoitu ja testattavissa, eli storyn hyväksymiskriteerien tulee olla selkeitä.
 
-Backlogin alaosissa olevat storyt taas voivat olla isoja, jopa sellaisia että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee ennen mahdollista toteuttamista jakaa pienempiin, rajatumpiin storyihin. Tämän kaltaisia isoja storyja nimitetään usein _epiikeiksi_ (engl. epic).
+Backlogin alaosissa olevat storyt voivat olla isoja, jopa sellaisia, että niitä ei missään nimessä lopulta pystytä edes toteuttamaan yhdessä sprintissä, vaan ne tulee ennen mahdollista toteuttamista jakaa pienempiin, rajatumpiin storyihin. Tämän kaltaisia isoja storyja nimitetään usein _epiikeiksi_ (engl. epic).
 
 Joissain yhteydessä sanotaan että user storyt ovat [ready](http://scrumbook.org/value-stream/product-backlog/definition-of-ready.html), jos ne noudattavat INVEST-kriteeristöä eli ovat _valmiita sprinttiin otettavaksi_.
 
@@ -488,9 +490,9 @@ User story on siis elinaikanaan todennäköisesti ensin _epic_. Kun aikaa kuluu,
 
 ### Velositeetti
 
-User storyjen estimoinnin toinen tarkoitus on, että se mahdollistaa koko projektin tai jonkin sen suuremman kokonaisuuden viemän aikamäärän summittaisen arvioinnin.
+User storyjen estimoinnin [toinen keskeinen motivaatio](/osa2/#estimointi-eli-työmäärän-arviointi) on, että se mahdollistaa koko projektin tai jonkin sen suuremman kokonaisuuden viemän aikamäärän summittaisen arvioinnin.
 
-Jos estimoinnin yksikkönä kuitenkin on abstrakti käsite _story point_, miten estimaattien avulla on mahdollista arvioida projektin viemää aikamäärää?
+Kuten [aiemmin](/osa2/#suhteelliseen-kokoon-perustuva-estimointi) mainittiin, yleinen ketterissä menetelmissä käytetty estimoinnin yksikkö on abstrakti käsite _story point_, joka ei suoranaisesti vastaa mitään aikamäärettä. Miten estimaattien avulla on tästä huolimatta mahdollista arvioida projektin viemää aikamäärää?
 
 Kehitystiimin _velositeetti_ (engl. velocity) tarjoaa tähän osittaisen ratkaisun. Velositeetilla tarkoitetaan sitä story pointtien määrää, minkä verran tiimi pystyy keskimäärin toteuttamaan yhden sprintin aikana.
 
@@ -504,17 +506,17 @@ Velositeetti vaihtelee tyypillisesti alussa melko paljon, erityisesti jos sovell
 
 ![]({{ "/images/2-11.png" | absolute_url }}){:height="350px" }
 
-Tiimin velositeetti ja siihen perustuva projektin tai sen osakokonaisuuden keston arvio alkaakin tarkentumaan pikkuhiljaa.
+Tiimin velositeetti ja siihen perustuva projektin tai sen osakokonaisuuden keston arvio alkaa tarkentumaan pikkuhiljaa.
 
-Ketterissä menetelmissä on oleellista kuvata mahdollisimman realistisesti projektin etenemistä. Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli [definition of donen](/osa1#definition-of-done) määrittelemällä laatutasolla) toteutettujen user storyjen story pointit. "Lähes valmiiksi" tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi.
+Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti projektin etenemistä. Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli [definition of donen](/osa1#definition-of-done) määrittelemällä laatutasolla) toteutettujen user storyjen story pointit. "Lähes valmiiksi" tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi.
 
 ![]({{ "/images/2-12.png" | absolute_url }}){:height="250px" }
 
 #### Eri tiimien velositeettien vertailu
 
-Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään, tiimi voi esim. määritellä että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
+Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään. Tiimi voi esimerkiksi määritellä, että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
 
-### Burndown- ja burnup-kaaviot
+#### Burndown- ja burnup-kaaviot
 
 Ketterän projektin etenemistä kuvataan joskus _release burndown_ -kaavion avulla.
 Aika etenee kaavion x-akselilla sprintti kerrallaan, y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna:
@@ -550,15 +552,15 @@ Näin ohjelmiston isojen linjojen suunniteltu eteneminen on huomattavasti helpom
 
 Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä kauempana olevasta tulevaisuudesta on kyse, sitä spekulatiivisempi julkaisusuunnitelman sisältö on. Julkaisusuunnitelmaa nimitetään usein myös tuotteen [roadmapiksi](https://www.romanpichler.com/blog/product-roadmap-vs-release-plan/).
 
-### User story mapping
+#### User story mapping
 
 Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille. [User story mapping](https://www.jpattonassociates.com/user-story-mapping/) on viime aikoina huomiota saanut tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun.
 
-Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, mikä jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
+Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, joka jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
 
 ![]({{ "/images/2-15.png" | absolute_url }}){:height="400px" }
 
-Story mapin rivit ovat taas loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
+Story mapin rivit ovat loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
 
 ### Kannattaako estimointi?
 
@@ -567,12 +569,12 @@ User storyjen viemän työmäärän arvioimiseen on siis kaksi motivaatiota:
 - auttaa asiakasta priorisoinnissa
 - mahdollistaa koko projektin tai tiettyjä milestonejen viemän ajan ja täten myös kustannuksen arviointi
 
-Story point -pohjainen suhteellinen estimointi on saavuttanut vankan aseman ketterän ohjelmistokehityksen kaanonissa. Scrum guide mainitsee että backlogilla olevat vaatimukset ovat estimoituja, samoin kuten monet parhaat käytänteet kuten DEEP.
+Story point -perustainen suhteellinen estimointi on saavuttanut vankan aseman ketterän ohjelmistokehityksen kaanonissa. Scrum guide mainitsee että backlogilla olevat vaatimukset ovat estimoituja, samoin kuten monet parhaat käytänteet kuten DEEP.
 
-Viime vuosina syntynyt [#NoEstimates](https://twitter.com/search?q=%23noestimates)-liike on kuitenkin ruvennut kyseenalaistamaan story point -perustaista estimointitapaa ja pitää siitä saavutettuja hyötyjä liian vähäisinä verrattuna estimointiin käytettyyn aikaan ja vaivaan.
-#NoEstimates-liike [ei missään tapauksessa kiistä](https://plan.io/blog/noestimates-6-software-experts-give-their-view/) etteikö työmääräarvioista olisi hyötyä, tarkoituksena onkin saada ihmiset ajattelemaan, missä tilanteissa estimointi on järkevää sekä nostaa esiin vaihtoehtoisista tapoja estimoinnin tekoon.
+Viimeisen vuosikymmenen aikana on syntynyt [#NoEstimates](https://ronjeffries.com/xprog/articles/the-noestimates-movement/)-liike, joka on ruvennut kyseenalaistamaan story point -perustaista estimointitapaa ja pitää siitä saavutettuja hyötyjä liian vähäisinä verrattuna estimointiin käytettyyn aikaan ja vaivaan.
+#NoEstimates-liike [ei missään tapauksessa kiistä](https://plan.io/blog/noestimates-6-software-experts-give-their-view/) etteikö työmääräarvioista olisi hyötyä, tarkoituksena onkin saada ihmiset ajattelemaan, missä tilanteissa estimointi on järkevää sekä nostaa esiin vaihtoehtoisia tapoja estimoinnin suorittamiseen.
 
-Eräs jo [vuosia käytössä](https://ronjeffries.com/xprog/articles/jatrtsmetric/) ollut menetelmä on story point -perustaisen estimoinnin sijaan arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen _lukumäärä_. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia.
+Eräs jo [vuosia käytetty](https://ronjeffries.com/xprog/articles/jatrtsmetric/)  menetelmä on arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen _lukumäärä_ sen sijaan, että käytetään story point -perustaista estimointia. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia.
 
 ## Sprintin suunnittelu
 
