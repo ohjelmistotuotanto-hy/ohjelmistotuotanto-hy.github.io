@@ -165,7 +165,7 @@ Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellises
 
 On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti, kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, joilla ei välttämättä ole aiempia esikuvia, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon, kuten vesiputousmalli olettaa.
 
-Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset ovat jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
+Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
 
 Vesiputousmallin mukaisen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järkevin resurssein.
 
