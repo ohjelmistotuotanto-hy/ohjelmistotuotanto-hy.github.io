@@ -20,7 +20,10 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2024 luentojen tallenteet ovat myös käytössä
   - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
 - Apua tehtävien tekoon pajassa BK107
-  - XXX
+  - ma 1430-1630
+  - ti 12-16
+  - to 12-16
+  - pe 12-14
 - Kurssimateriaalin ([sisällysluettelo](http://localhost:4000/sisallys/#osa-0-johdanto))
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta

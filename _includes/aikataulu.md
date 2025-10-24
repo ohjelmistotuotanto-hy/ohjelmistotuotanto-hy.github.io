@@ -45,11 +45,12 @@
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
 - [Miniprojekti](/miniprojekti)
   - Aloitustilaisuudet (jokainen osallistuu yhteen)
-    - ti 14-16 C221
-    - ke 14-16 Chemicum A128
-    - ke 16-18 Chemicum A128
-    - to 10-12 C124
-    - to 14-16 C124
+    - ma 14-16 C222
+    - ti 14-16 C321
+    - ke 10-12 C222
+    - ke 12-14 C222
+    - to 14-16 B222
+    - to 16-18 B222
 
 ### Viikko 4
 
@@ -115,7 +116,9 @@
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
-  - Loppudemot 
+  - Loppudemot
+    - ke 10.12. klo 10-12
+    - to 11.12. klo 10-12
 
     
 ### Viikko 8

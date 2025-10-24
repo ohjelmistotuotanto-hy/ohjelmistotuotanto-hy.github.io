@@ -27,3 +27,17 @@ inheader: yes
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
 - Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
+
+### Aikataulu
+
+- Aloitustilaisuudet (jokainen osallistuu yhteen)
+  - ma 10.11. 14-16 C222
+  - ti 11.11. 14-16 C321
+  - ke 12.11. 10-12 C222
+  - ke 12.11. 12-14 C222
+  - to 13.11. 14-16 B222
+  - to 13.11. 16-18 B222
+- Sprinttien 2 ja 3 asiakastapamiset 17.11., 24.11. ja 1.11. alkavilla viikoilla
+- Loppudemot
+  - ke 10.12. klo 10-12 B123
+  - to 11.12. klo 10-12 A111
