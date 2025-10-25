@@ -418,7 +418,7 @@ Testatessa on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien lu
 
 Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunnittelumalli parantaa luokkien testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin.
 
-Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, eli _stubeja_, näin tehtiin mm. [viikon 1 tehtävässä 16](/tehtavat1#16-nhlstatistics-ohjelman-yksikk%C3%B6testaus). Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
+Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, eli _stubeja_, näin tehtiin mm. [viikon 1 tehtävässä 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikk%C3%B6testaus). Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
 
 Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä" ja ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
 
@@ -830,7 +830,7 @@ def recommended_news_generator(user):
         return recommendation_algoritm(user)
 ```
 
-Osassa 2 [Lean-startup](osa2/#vaatimusmäärittely-2010-luvulla)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature togglejen avulla.
+Osassa 2 [Lean-startup](/osa2/#uuden-ajan-vaatimusmäärittely-lean-startup)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature togglejen avulla.
 
 Canary releaset ja A/B-testaus eivät ole feature togglejen ainoa sovellus, niitä käytetään
 yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
@@ -922,7 +922,7 @@ Ketterissä menetelmissä kantavana teemana on arvon tuottaminen asiakkaalle ja 
 
 Testauksen automatisointi ei ole halpaa eikä helppoa. Väärin, väärään aikaan tai väärälle "tasolle" tehdyt automatisoidut testit voivat tuottaa enemmän harmia ja kustannuksia kuin hyötyä, erityisen suuri riski on käyttöliittymän kautta tehtävillä testeillä.
 
-Jos ohjelmistossa on komponentteja, jotka tullaan ehkä poistamaan tai korvaamaan pian, on useimmiten järkevintä olla automatisoimatta niiden testejä. Esimerkiksi osassa 2 esitelty [MVP eli Minimal Viable Product](/osa2#vaatimusm%C3%A4%C3%A4rittely-2010-luvulla) on karsittu toteutus, jonka avulla halutaan nopeasti selvittää, onko jokin ominaisuus ylipäätään käyttäjien kannalta arvokas. Jos MVP:n toteuttama ominaisuus osoittautuu tarpeettomaksi, se poistetaan järjestelmästä. MVP-periaattella tehty ominaisuus on siis useimmiten viisasta tehdä ilman testien automatisointia.
+Jos ohjelmistossa on komponentteja, jotka tullaan ehkä poistamaan tai korvaamaan pian, on useimmiten järkevintä olla automatisoimatta niiden testejä. Esimerkiksi osassa 2 esitelty [MVP eli Minimal Viable Product](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup) on karsittu toteutus, jonka avulla halutaan nopeasti selvittää, onko jokin ominaisuus ylipäätään käyttäjien kannalta arvokas. Jos MVP:n toteuttama ominaisuus osoittautuu tarpeettomaksi, se poistetaan järjestelmästä. MVP-periaattella tehty ominaisuus on siis useimmiten viisasta tehdä ilman testien automatisointia.
 
 Ongelmallista kuitenkin usein on, että kertakäyttöiseksi tarkoitettu komponentti voi jäädä järjestelmään pitkäksikin aikaa, joskus jopa pysyvästi koska sitä "ei ole aikaa" toteuttaa kunnolla.
 

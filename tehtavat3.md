@@ -33,7 +33,7 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 
 ### 2. Web-laskuri
 
-**HUOM:** jos käytät Dockeria, lue [tämä](/poetry#docker-ja-robot-testit)! 
+**HUOM:** jos käytät Dockeria, lue [tämä](/docker#docker-ja-robot-testit)!
 
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
