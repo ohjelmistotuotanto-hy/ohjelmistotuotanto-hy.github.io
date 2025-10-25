@@ -26,7 +26,7 @@ permalink: /sisallys/
     - [Code'n'fix](/osa1/#codenfix)  
     - [Ohjelmistokriisi](/osa1/#ohjelmistokriisi)  
     - [Ohjelmistokehitys insinööritieteenä: software engineering](/osa1/#ohjelmistokehitys-insinööritieteenä-software-engineering)  
-    - [Vesiputousmalli](/osa1/#vesiputousmalli)  
+    - [Vesiputous- eli lineaarinen malli](/osa1/#vesiputous--eli-lineaarinen-malli)
     - [Vesiputousmallin ongelmat](/osa1/#vesiputousmallin-ongelmat)  
     - [Iteratiivinen ja inkrementaalinen ohjelmistokehitys](/osa1/#iteratiivinen-ja-inkrementaalinen-ohjelmistokehitys)  
 - [Ketterä ohjelmistokehitys](/osa1/#ketterä-ohjelmistokehitys)  
@@ -53,21 +53,21 @@ permalink: /sisallys/
 
 ### [Osa 2: Vaatimustenhallinta](/osa2)
 
-- [Vaatimusmäärittely](/osa2#vaatimusma%C3%A4rittely)
-   - [Vaatimusmäärittelyn vaiheet](/osa2#vaatimusma%C3%A4rittelyn-vaiheet)
+- [Vaatimusmäärittely](/osa2#vaatimusm%C3%A4%C3%A4rittely)
+   - [Vaatimusmäärittelyn vaiheet](/osa2#vaatimusm%C3%A4%C3%A4rittelyn-vaiheet)
    - [Vaatimusten kartoituksen menetelmiä](/osa2#vaatimusten-kartoituksen-menetelmi%C3%A4)
    - [Vaatimusten analysointi, dokumentointi, validointi ja hallinnointi](/osa2#vaatimusten-analysointi-dokumentointi-validointi-ja-hallinnointi)
    - [Toiminnalliset vaatimukset](/osa2#toiminnalliset-vaatimukset)
    - [Ei-toiminnalliset vaatimukset](/osa2#ei-toiminnalliset-vaatimukset)
    - [Vaatimusmäärittely vesiputousmallin valtakaudella](/osa2/#vaatimusmäärittely-vesiputousmallin-valtakaudella)
    - [Vaatimusmäärittely iteratiivisessa ja ketterässä ohjelmistokehityksessä](/osa2/#vaatimusmäärittely-iteratiivisessa-ja-ketterässä-ohjelmistokehityksessä)
-   - [Uuden ajan vaatimusmäärittely: Lean startup](/osa2/#uuden-ajan-vaatimusmäärittely-lean-startup)
-- [Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa](/osa2#vaatimusma%C3%A4rittely-ja-projektisuunnittelu-ketter%C3%A4ss%C3%A4-prosessimallissa)
+   - [Uuden ajan vaatimusmäärittely: Lean startup](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup)
+- [Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa](/osa2/#vaatimusm%C3%A4%C3%A4rittely-ja-projektisuunnittelu-ketter%C3%A4ss%C3%A4-prosessimallissa)
    - [User story](/osa2#user-story)
    - [Hyvän user storyn kriteerit](/osa2#hyv%C3%A4n-user-storyn-kriteerit)
    - [Product backlog](/osa2#product-backlog)
    - [Estimointi eli työmäärän arviointi](/osa2/#estimointi-eli-työmäärän-arviointi)
-   - [Hyvä product backlog on DEEP](/osa2#hyva%CC%88-product-backlog-on-deep)
+   - [Hyvä product backlog on DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep)
    - [User story ja epiikki](/osa2#user-story-ja-epiikki)
    - [Velositeetti](/osa2#velositeetti)
    - [Julkaisun suunnittelu ja tuotteen roadmap](/osa2#julkaisun-suunnittelu-ja-tuotteen-roadmap)
@@ -76,18 +76,18 @@ permalink: /sisallys/
    - [Sprintin tavoite](/osa2#sprintin-tavoite)
    - [Sprintissä toteutettavien user storyjen valinta](/osa2#sprintiss%C3%A4-toteutettavien-user-storyjen-valinta)
    - [User storyjen jakaminen](/osa2#user-storyjen-jakaminen)
-   - [Sprintin tekninen suunnittelun](/osa2#sprintin-tekninen-suunnittelu)
+   - [Sprintin tekninen suunnittelu](/osa2#sprintin-tekninen-suunnittelu)
    - [Sprint backlog](/osa2#sprint-backlog)
    - [Kannattaako sprintin sisäinen työmäärän estimointi](/osa2#kannattaako-sprintin-sis%C3%A4inen-ty%C3%B6m%C3%A4%C3%A4r%C3%A4n-estimointi)
-   - [Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban](/osa2/#lean-ja-scrumban-yhtä-aikaa-tehtävän-työn-rajoittaminen)
+   - [Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban)
    - [Ennen seuraavaa sprintin alkua](/osa2#ennen-seuraavaa-sprintin-alkua)   
 
 ### [Osa 3: Laadunhallinta](/osa3)
 - tulossa
 
-### [Osa 4: Ohjelmiston suunnittelu, DevOps](/osa3)
+### [Osa 4: Ohjelmiston suunnittelu, DevOps](/osa4)
 - tulossa
 
 
-### [Osa 5: Lean ja laajan skaalan ketterä](/osa3)
+### [Osa 5: Lean ja laajan skaalan ketterä](/osa5)
 - tulossa

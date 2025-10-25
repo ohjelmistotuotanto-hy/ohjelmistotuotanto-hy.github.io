@@ -11,7 +11,7 @@ permalink: /osa5/
   />
 </a>
 
-#### [Sisällysluettelo](http://localhost:4000/sisallys/#osa-5-lean-ja-laajan-skaalan-ketterä){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-5-lean-ja-laajan-skaalan-ketterä){:target="_blank"}
 
 
 Kurssin viidennellä viikolla käsitellään kolmea aihetta, viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoa ketterien menetelmien käytöstä ja hyödyistä.
@@ -121,7 +121,7 @@ Kaikki ylimääräiset työvaiheet, mitkä eivät ole välttämättömiä riitt�
 
 Tällaisia ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti, jota kukaan ei lopulta tarvitse. Vastaavanlainen haitallinen asia voi olla vaatimus siitä että testien rivikattavuuden kattavuuden on pakko olla 100%, sillä tämä voi johtaa lähes hyödyttömien, pelkästään kattavuutta lisäävien testien tekemiseen.
 
-Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#vaatimusmäärittely-2010-luvulla)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
+Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
 
 #### Tarpeeton materiaalin siirtely (engl. transportation)
 
@@ -227,7 +227,7 @@ Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieni�
 
 #### Kanban ohjelmistotuotannossa
 
-Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, [osassa 2](/osa2#yht%C3%A4aikaa-teht%C3%A4v%C3%A4n-ty%C3%B6n-rajoittaminen) sivuttiin jo asiaa. Ohjelmistotuotannon kanban on periaatteiltaan hieman erilainen kuin perinteisessä tuotannossa käytetty kanban.
+Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, [osassa 2](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban) sivuttiin jo asiaa. Ohjelmistotuotannon kanban on periaatteiltaan hieman erilainen kuin perinteisessä tuotannossa käytetty kanban.
 
 Toteutettavaa toiminnallisuutta, esim. user storyä tai jotain sen teknistä taskia vastaa kanban-kortti, joka kulkee eri työvaiheiden kautta.
 
@@ -280,11 +280,11 @@ Alhaisen prioriteetin user storyja ei ole määritelty kovin tarkkaan. Kun produ
 
 Scrum voidaankin nähdä leanin mukaisena _pull-systeeminä_, missä jokaiseen sprinttiin otetaan kerrallaan asiakkaan edustajan viime hetkellä (eli viimeistään sprint planningissa) määrittelemät tilaukset, jotka toteutetaan mahdollisimman nopeasti, eli sprintin aikana. Arvo, eli toimivaksi asti toteutetut uudet toiminnallisuudet, virtaa asiakkaalle sprinttien määrittelemässä rytmissä.
 
-Ketterässä ohjelmistotuotannossa on viime aikoina ruvettu tehostamaan arvon virtausta usein eri menetelmin. Alun perin ja osin vieläkin Scrumin pyrkimys on viedä uusia ominaisuuksia tuotantoon sprinteittäin, eli muutaman viikon välein. Viime aikojen trendinä on ollut tihentää sykliä, [jatkuva käyttöönotto](/osa3#jatkuva-k%C3%A4ytt%C3%B6%C3%B6notto-ja-toimitusvalmius) eli _continuous deployment_ voi tarkoittaa, että jopa jokainen commit johtaa ohjelman uuden version julkaisuun, eli ohjelmistosta voi ilmestyä uutta arvoa tuottavia ominaisuuksia jopa kymmeniä kertoja päivässä.
+Ketterässä ohjelmistotuotannossa on viime aikoina ruvettu tehostamaan arvon virtausta usein eri menetelmin. Alun perin ja osin vieläkin Scrumin pyrkimys on viedä uusia ominaisuuksia tuotantoon sprinteittäin, eli muutaman viikon välein. Viime aikojen trendinä on ollut tihentää sykliä, [jatkuva käyttöönotto](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) eli _continuous deployment_ voi tarkoittaa, että jopa jokainen commit johtaa ohjelman uuden version julkaisuun, eli ohjelmistosta voi ilmestyä uutta arvoa tuottavia ominaisuuksia jopa kymmeniä kertoja päivässä.
 
 Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs leanin hukka) siten, että sprinttiin otetaan vaan tiimin velositeetin verran user storyja. Kaikissa konteksteissa, esimerkiksi jatkuvaa käyttöönottoa sovellettaessa aikarajoitettu sprintti ei ole mielekäs.
 
-Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyja toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](/osa2#lean-waste-ja-scrumban) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
+Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyja toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](/osa2/#yht%C3%A4-aikaa-teht%C3%A4v%C3%A4n-ty%C3%B6n-rajoittaminen-lean-ja-scrumban) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
 
 ### Kasvattaminen leaniin ja johtajuuden periaatteet
 

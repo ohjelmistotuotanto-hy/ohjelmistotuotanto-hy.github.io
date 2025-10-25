@@ -11,7 +11,7 @@ permalink: /osa4/
   />
 </a>
 
-#### [Sisällysluettelo](http://localhost:4000/sisallys/#osa-4-ohjelmiston-suunnittelu-devops){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-4-ohjelmiston-suunnittelu-devops){:target="_blank"}
 
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
@@ -311,7 +311,7 @@ Sovelluksen arkkitehtuuri siis antaa raamit, jotka ohjaavat sovelluksen tarkempa
 
 Vesiputousmaisessa työskentelyssä komponenttisuunnittelu saattaa olla dokumentoitu hyvinkin tarkkaan esim. UML:n luokka- ja sekvenssikaavioita hyväksikäyttäen. Erityisesti ketterässä ohjelmistotuotannossa tarkka suunnittelu tapahtuu kuitenkin yleensä vasta ohjelmoitaessa.
 
-Ohjelmiston suunnittelussa pyritään ennen kaikkia maksimoimaan [koodin sisäinen laatu](/osa3#yksikkötestaus), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana.
+Ohjelmiston suunnittelussa pyritään ennen kaikkia maksimoimaan [koodin sisäinen laatu](/osa3#yksikk%C3%B6testaus), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana.
 
 Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja ovat mm. seuraavat
 
@@ -1465,7 +1465,7 @@ Oikoteitä ottamalla tehdyllä ohjelmoinnilla saadaan ehkä nopeasti aikaan jota
 
 Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen asiakkaan kannalta kannattava ratkaisu.
 
-[Osassa 2](/osa2/#vaatimusmäärittely-2010-luvulla) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimal viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuutta voidaan testata. Kuten nimikin jo antaa ymmärtää, MVP on luonteeltaan sellainen rakennelma, että sitä tehdessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutuksi, maksetaan tekninen velka pois tekemällä toiminnallisuudelle robustimpi toteutus.
+[Osassa 2](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimal viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuutta voidaan testata. Kuten nimikin jo antaa ymmärtää, MVP on luonteeltaan sellainen rakennelma, että sitä tehdessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutuksi, maksetaan tekninen velka pois tekemällä toiminnallisuudelle robustimpi toteutus.
 
 Lyhytaikaisen teknisen velan ottaminen voi joskus olla jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti tai muuten tilaisuus saattaa mennä kokonaan ohi. Startup-yrityksillä tilanne voi olla se, että firma joutuu valitsemaan teknisen velan ja varman rahojen loppumisen välillä, eli tekemällä jotain nopeasti huonolla sisäisellä laadulla, firma saattaa pystyä keräämään riittävästi rahoitusta jatkaakseen toimintaansa. Tämänkaltaisissa tilanteissa otetaan tietoisesti teknistä velkaa ja sovelluksen koodin huonosta laadusta ja testauksen puuttumisesta huolehditaan myöhemmin.
 
