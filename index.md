@@ -24,7 +24,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - ti 12-16
   - to 12-16
   - pe 12-14
-- Kurssimateriaalin ([sisällysluettelo](http://localhost:4000/sisallys/#osa-0-johdanto))
+- Kurssimateriaalin ([sisällysluettelo](/sisallys/#osa-0-johdanto))
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Generatiivinen tekoäly

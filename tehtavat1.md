@@ -285,7 +285,7 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry).
 - Kurssilla käytetään Poetryn versiota 2.2.1 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää.
 - On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
-- Jos kohtaat ongelmia, katso [täältä](http://localhost:4000/poetry#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin.
+- Jos kohtaat ongelmia, katso [täältä](/poetry#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin.
 
 **Tee nyt seuraavat toimenpiteet**.
 

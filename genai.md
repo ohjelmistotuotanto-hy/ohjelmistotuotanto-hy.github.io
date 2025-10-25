@@ -49,7 +49,7 @@ Osaan kurssin tehtäviä liittyy tekoälyn käyttöön liittyviä viheitä. Vihj
 
 ## Viikko 1 - Tehtävä 1
 
-[Tehtävässä](http://localhost:4000/tehtavat1#1-komentorivi) on aiheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin, näiden läpikäymisen sijaan voi pyytää ChatGPT:tä sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
+[Tehtävässä](/tehtavat1#1-komentorivi) on aiheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin, näiden läpikäymisen sijaan voi pyytää ChatGPT:tä sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
 
 ![]({{ "/images/cc1.png" | absolute_url }}){: width="70%"}
 

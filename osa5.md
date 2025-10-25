@@ -11,7 +11,7 @@ permalink: /osa5/
   />
 </a>
 
-#### [Sisällysluettelo](http://localhost:4000/sisallys/#osa-5-lean-ja-laajan-skaalan-ketterä){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-5-lean-ja-laajan-skaalan-ketterä){:target="_blank"}
 
 
 Kurssin viidennellä viikolla käsitellään kolmea aihetta, viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoa ketterien menetelmien käytöstä ja hyödyistä.
