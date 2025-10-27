@@ -141,15 +141,17 @@ Komennon yhteydessä annettu `--python "^3.12"`-asetus asettaa projektin Python-
 Kun viimeiseen kysymykseen on vastattu, katso hakemiston sisältöä. Hakemistoon pitäisi ilmestyä _pyproject.toml_-tiedosto, jonka sisältö on kutakuinkin seuraava:
 
 ```
-[tool.poetry]
-name = "poetry-testi"
+[project]
+name = "temp"
 version = "0.1.0"
 description = ""
-authors = ["Matti Luukkainen <matti.luukkainen@helsinki.fi>"]
+authors = [
+    {name = "Matti Luukkainen",email = "mluukkai@iki.fi"}
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
+requires-python = "^3.12"
+dependencies = [
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -165,8 +167,9 @@ Tehdään pari pientä muutosta tiedostoon. Ensinnäkin mainita _readme_-tiedost
 package-mode = false
 ```
 
-Syy tälle on selitetty [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes).
+Lisäystä ei voi tehdä mihinn kohtaan sattuu, sopiva paikka lisäykselle on esim. ennen määrittelyä _[build-system]_. 
 
+Syy lisäykselle on selitetty [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes).
 
 Kun _pyproject.toml_-tiedosto on tullut tutuksi ja yllämainitut muutokset on tehty, viimeistellään projektin alustaminen suorittamalla komento:
 
@@ -308,6 +311,17 @@ Toisen ongelman syy kerrotaan [dokumentaatiossa](https://python-poetry.org/docs/
 ```
 [tool.poetry]
 package-mode = false
+```
+
+Huomaa, että et voi lisätä tätä mihin tahansa kohtaan. Sopiva paikka on esim. loppuun, juuri ennen _[build-system]_ määrittelyä:
+
+```
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
 ```
 
 #### Virtuaaliympäristö ei ole päällä

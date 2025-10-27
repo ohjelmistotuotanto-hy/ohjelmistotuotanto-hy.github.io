@@ -570,7 +570,7 @@ Input Credentials
     Run Application
 ```
 
-Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (detaljit eivät ole nyt tärkeitä, pääset tutustumaan niihin laskareissa):
+Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (yksityiskohdat eivät ole nyt tärkeitä, pääset tutustumaan niihin laskareissa):
 
 ```python
 class AppLibrary:

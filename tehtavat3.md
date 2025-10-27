@@ -35,7 +35,7 @@ Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen 
 
 **HUOM:** jos käytät Dockeria, lue [tämä](/docker#docker-ja-robot-testit)!
 
-Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
+Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion alihakemistosta viikko3/webcounter.
 
@@ -48,7 +48,7 @@ Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virt
 Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
 
-Sovelluksen rakenne on pääosin sama mitä kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) esimerkkisovelluksissa.
+Sovelluksen rakenne on pääosin sama mitä kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) esimerkkisovelluksissa.
 
 Tiedostossa _app.py_ määritellään sivupyyntöjen käsittelijäfunktiot:
 
@@ -79,7 +79,7 @@ Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäks
 
 **Ennen kuin siirryt testien pariin, asenna ChromeDriver** tai **Geckodriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
 
-Kun ChromeDriver tai GeckoDriver on asennettu onnistuneesti **käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä.
+Kun ChromeDriver tai GeckoDriver on asennettu onnistuneesti **käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä. Varmista, että sovelluksen laskurin arvo on 0. Jos se on jotain muuta, uudelleenkäynnistä sovellus.
 
 **Avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit Geckodriverin.
 
@@ -124,16 +124,12 @@ Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstik
 <button>foo</button>
 ```
 
-Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu <code>Click Button &nbsp;Login</code> löytää siis seuraavan _src/templates/login.html_-tiedostossa määritellyn painikkeen:
+Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu <code>Click Button &nbsp;Paina</code> löytää siis seuraavan _src/templates/index.html_-tiedostossa määritellyn painikkeen:
 
 ```html
-<button>Login</button>
-```
-
-Samalla tavoin kutsu <code>Input Text &nbsp;username &nbsp;kalle</code> löytää `id`-attribuutin avulla seuraavan `input`-elementin, ja kirjoittaa siihen toisena parametrina olevan merkkijonon _kalle_:
-
-```html
-<input type="text" name="username" id="username" />
+<button type="submit">
+  Paina
+</button>
 ```
 
 #### Tutustuminen testeihin jatkuu

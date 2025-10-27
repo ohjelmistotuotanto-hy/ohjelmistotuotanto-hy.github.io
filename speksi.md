@@ -100,7 +100,7 @@ Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida vi
   - myös muita tietokantoja kuten [Google Scholaria](https://scholar.google.com/) voi tukea
 - jopa vielä parempi feature olisi datan haku [DOI](https://www.doi.org/)-tunnisteen perusteella
 - kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin gradun tekijöille ihan turhia
-- sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+- sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
   - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Riku ja Sini vievät sovelluksen itse internettiin
   - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Riku ja Sini asentavat itselleen omat sovellusinstanssit
   - lue ohje Flaskin käytöstä [täältä](/flask)

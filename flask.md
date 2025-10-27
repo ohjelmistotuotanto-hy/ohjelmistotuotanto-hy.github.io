@@ -6,7 +6,7 @@ permalink: /flask/
 inheader: no
 ---
 
-Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
+Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
 
 Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapahtuva automatisoitu testaus on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
 

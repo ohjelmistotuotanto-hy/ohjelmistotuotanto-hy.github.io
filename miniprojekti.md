@@ -25,7 +25,7 @@ inheader: yes
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
-- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tsoha.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Aikataulu
