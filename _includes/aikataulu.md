@@ -11,7 +11,8 @@
   - tallenteet:
     - syksy 2024: [youtube](https://youtu.be/sg6O6jTGrzk), [unitube](https://www.helsinki.fi/fi/unitube/video/89ccc897-d9bc-4cc3-982d-83b19bf062cd)
 - Laskarit
-  -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
+  - Luentojen 1 ja 2 <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
+  - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
 ### Viikko 2
 
@@ -27,7 +28,6 @@
   - tallenteet:
     - syksy 2024: [youtube](https://youtu.be/3vl5CPBdvEg), [unitube](https://www.helsinki.fi/fi/unitube/video/ee76d6f6-7f54-4e0b-8cd5-82893765ce94)  
 - Laskarit
-  - Kahden ensimmäisen luennon <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - Luentojen 3 ja 4 <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline {{site.lask-dl[2]}}
 
