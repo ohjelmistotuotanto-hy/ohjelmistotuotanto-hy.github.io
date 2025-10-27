@@ -37,7 +37,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 _Tätä tehtävää ei palauteta mihinkään!_
 
-Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](http://localhost:4000/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 9](http://localhost:4000/tehtavat2/#9-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
+Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 13](/tehtavat2/#13-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
 
 Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
 

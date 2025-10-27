@@ -11,7 +11,7 @@ permalink: /osa0/
   />
 </a>
 
-#### [Sisällysluettelo](http://localhost:4000/sisallys/#osa-0-johdanto){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-0-johdanto){:target="_blank"}
 
 Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä.
 

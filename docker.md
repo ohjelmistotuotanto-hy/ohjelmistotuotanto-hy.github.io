@@ -121,6 +121,6 @@ docker exec -it kontainerintunnistetahan bash
 
 Kontin tunniste selviää komennolla `docker ps`.
 
-Testit toimivat valitettavasti ainoastaan ns. headless-tilassa, jonka saat päälle [tehtävän 7](/tehtavat3/#7-web-sovelluksen-testaaminen-osa-3) alussa neuvotulla tavalla.
+Testit toimivat valitettavasti ainoastaan ns. headless-tilassa, jonka saat päälle [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittamien-github-actioneissa) alussa neuvotulla tavalla.
 
 Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).
