@@ -94,11 +94,12 @@
 
 ### Viikko 6
 
-- Luento 11: {{site.luennot[11]}}
-  - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
-  - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
-- Luento 12: {{site.luennot[12]}} 
-  - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_
+- Vierailuluennot
+  - Luento 11: {{site.luennot[11]}}
+    - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
+  - Luento 12: {{site.luennot[12]}} 
+    - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
@@ -123,5 +124,5 @@
 
 ### Viikko 8
 
-- Koe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
-  - Ilmoittaudu [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006)
+- Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
+  - Ilmoittaudu kokeesee [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006) 6.12. mennessä!

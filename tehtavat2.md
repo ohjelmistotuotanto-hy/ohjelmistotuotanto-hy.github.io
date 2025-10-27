@@ -21,14 +21,6 @@ Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-<div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #AFFAFA;">
-
-<h2>
-TODO: UPDATE allaoleva
-</h2>
-
-</div>
-
 Tehtävät 6 ja 7 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne palautetaan **ohtuvarasto**-repositorioon, siis samaan mitä käytettiin viikon 1 tehtävissä 2-13. Muut tehtävät palautetaan **palautusrepositorioon**, eli samaan mihin palautit ensimmäisen viikon tehtävät 14-17.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).

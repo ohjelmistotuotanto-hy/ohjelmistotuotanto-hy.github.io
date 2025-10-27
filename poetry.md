@@ -388,6 +388,22 @@ Oikea polku kannattaa varmistaa komennolla `which python3`.
 Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
 
 
+## urllib3 or chardet doesn't match a supported 
+
+Joissain tilanteissa poetry hajoaa kokonaan ja jokainen komento aiheuttaa seuraavan virheen:
+
+```
+/usr/lib/python3/dist-packages/requests/init.py:89: RequestsDependencyWarning: urllib3 (1.26.12) or chardet (3.0.4) doesn't match a supported version!
+warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+```
+
+Ongelma korjaantuu komennolla
+
+```
+pip install requests --upgrade
+```
+
+
 #### Muita ongelmia
 
 Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:

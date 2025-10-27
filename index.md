@@ -26,6 +26,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - pe 12-14
 - Kurssimateriaalin [sisällysluettelo](/sisallys/#osa-0-johdanto)
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
+  - Liittyminen kurssin kanavalle tapahtuu komennolla */join course TKT20006 - Ohjelmistotuotanto - ohtu*
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Generatiivinen tekoäly
   - Käyttö on kurssilla sallittua (paitsi kokeessa), osittain jopa suositeltavaa, lue lisää [täältä](/genai)
