@@ -8,7 +8,7 @@
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
-    - [youtube](https://youtu.be/sg6O6jTGrzk)(2024), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
+    - [youtube](https://youtu.be/OH27cBF8xP4), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
@@ -123,3 +123,4 @@
 ### Viikko 8
 
 - Koe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
+  - Ilmoittaudu [täällä!](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006)
