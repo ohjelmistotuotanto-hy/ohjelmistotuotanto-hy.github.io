@@ -18,7 +18,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Maanantaisin ja tiistaisin klo 12-14 B123
   - Luennot ovat nähtävissä livenä [Unitubessa](https://video.helsinki.fi/unitube/live-stream.html?room=l10) 
   - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu), vuoden 2024 luentojen tallenteet ovat myös käytössä
-  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-24)
+  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-25)
 - Apua tehtävien tekoon pajassa BK107
   - ma 1430-1630
   - ti 12-16
