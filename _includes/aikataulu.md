@@ -8,7 +8,7 @@
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/sg6O6jTGrzk), [unitube](https://www.helsinki.fi/fi/unitube/video/89ccc897-d9bc-4cc3-982d-83b19bf062cd)
+    - [youtube](https://youtu.be/sg6O6jTGrzk)(2024), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
 
@@ -117,10 +117,9 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
   - Loppudemot
-    - ke 10.12. klo 10-12
-    - to 11.12. klo 10-12
-
-    
+    - ke 10.12. klo 10-12 B123
+    - to 11.12. klo 10-12 A111
+  
 ### Viikko 8
 
 - Koe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
