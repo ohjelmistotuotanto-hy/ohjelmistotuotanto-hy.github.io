@@ -138,42 +138,47 @@ Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele suoraan tietokantariv
 Tiedosto `db_helpers.py` sisältää muutaman lähinnä testien tarvitseman apufunktion:
 
 ```py
-table_name = "todos"
-
-def table_exists(name):
-  sql_table_existence = text(
-    "SELECT EXISTS ("
-    "  SELECT 1"
-    "  FROM information_schema.tables"
-    f" WHERE table_name = '{name}'"
-    ")"
-  )
-
-  result = db.session.execute(sql_table_existence)
-  return result.fetchall()[0][0]
+from config import db, app
+from sqlalchemy import text
+import os
 
 def reset_db():
-  print(f"Clearing contents from table {table_name}")
-  sql = text(f"DELETE FROM {table_name}")
+  print(f"Clearing contents from table todos")
+  sql = text(f"DELETE FROM todos")
   db.session.execute(sql)
   db.session.commit()
 
+def tables():
+  """Returns all table names from the database except those ending with _id_seq"""
+  sql = text(
+    "SELECT table_name FROM information_schema.tables "
+    "WHERE table_schema = 'public' AND table_name NOT LIKE '%_id_seq'"
+  )
+  
+  result = db.session.execute(sql)
+  return [row[0] for row in result.fetchall()]
+
 def setup_db():
-  if table_exists(table_name):
-    print(f"Table {table_name} exists, dropping")
-    sql = text(f"DROP TABLE {table_name}")
-    db.session.execute(sql)
+  """
+    Creating the database
+    If database tables already exist, those are dropped before the creation
+  """
+  tables_in_db = tables()
+  if len(tables_in_db) > 0:
+    print(f"Tables exist, dropping: {', '.join(tables_in_db)}")
+    for table in tables_in_db:
+      sql = text(f"DROP TABLE {table}")
+      db.session.execute(sql)
     db.session.commit()
 
-  print(f"Creating table {table_name}")
-  sql = text(
-    f"CREATE TABLE {table_name} ("
-    "  id SERIAL PRIMARY KEY, "
-    "  content TEXT NOT NULL,"
-    "  done BOOLEAN DEFAULT FALSE"
-    ")"
-  )
-
+  print("Creating database")
+  
+  # Read schema from schema.sql file
+  schema_path = os.path.join(os.path.dirname(__file__), 'schema.sql')
+  with open(schema_path, 'r') as f:
+    schema_sql = f.read().strip()
+  
+  sql = text(schema_sql)
   db.session.execute(sql)
   db.session.commit()
 
@@ -182,7 +187,7 @@ if __name__ == "__main__":
       setup_db()
 ```
 
-Funktio `setup_db`, alustaa tietokannan, eli luo sinne taulun ´todos´. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
+Funktio `setup_db`, luo tietokannan. Tietokannan luova koodi on määritelty tiedostossa _schema.sql_. Käytännössä tietokanta sisältää vain taulun ´todos´. Jos tietokanta on jo olemassa kun funktiota `setup_db` kutsutaan, poistetaan kannan taulut ja luodaan kanta uudelleen. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
 
 #### Testien alustus ja suorittaminen
 
