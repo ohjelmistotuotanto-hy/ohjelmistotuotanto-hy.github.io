@@ -9,7 +9,7 @@
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
   - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/sg6O6jTGrzk), [unitube](https://www.helsinki.fi/fi/unitube/video/89ccc897-d9bc-4cc3-982d-83b19bf062cd)
+    - [youtube](https://youtu.be/7lAj-idARFs), [unitube](https://www.helsinki.fi/fi/unitube/video/bc0e48bc-91ba-4964-9ff6-bf5055ac5d4c)
 - Laskarit
   - Luentojen 1 ja 2 <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
