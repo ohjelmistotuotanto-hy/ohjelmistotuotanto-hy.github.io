@@ -525,7 +525,7 @@ Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Stat
 [Tämän](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge) ohjeen mukaan badgen osoite on muotoa
 
 ```
-https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
+https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
 ```
 
 _WORKFLOW_NAME_ on määritelty konfiguraatiotiedostossa:
@@ -544,7 +544,7 @@ Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan.
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtuvarasto/workflows/CI/badge.svg
+https://github.com/mluukkai/ohtuvarasto/actions/workflows/CI/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
