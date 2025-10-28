@@ -776,6 +776,7 @@ _Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle (AI käyttää t
   - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
   - Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
     - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
+    - Muiden luokkien testikattavuudesta ei tarvitse välittää
   - Testit eivät saa käyttää verkkoyhteyttä
   - Verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten `PlayerReader`-luokkaa muistuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
 

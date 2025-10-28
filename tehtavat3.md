@@ -234,7 +234,7 @@ Open And Configure Browser
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
     END
     IF  $HEADLESS == 'true'
-        Set Selenium Speed  0
+        Set Selenium Speed  0.05 seconds
         Call Method  ${options}  add_argument  --headless
     ELSE
         Set Selenium Speed  ${DELAY}
@@ -242,7 +242,7 @@ Open And Configure Browser
     Open Browser  browser=${BROWSER}  options=${options}
 ```
 
-Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0 jotta testit eivät hidastu tarpeettomasti. Headless-suoritus tapahtuu seuraavasti:
+Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0.05 jotta testit eivät hidastu tarpeettomasti. Headless-suoritus tapahtuu seuraavasti:
 
 ```bash
 robot --variable HEADLESS:true src/tests
@@ -263,11 +263,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Install Poetry
         run: pip install poetry
       - name: Setup chromedriver
@@ -316,7 +316,7 @@ exit $status
 
 Pushaa tehtävän repositorio GitHubiin ja varmista, että GitHub Actions suorittaa testit onnistuneesti.
 
-Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon. Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
+**Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon.** Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
 
 ![]({{ "/images/webcounter2.png" | absolute_url }}){:height="240px" }
 
@@ -324,7 +324,7 @@ Tee ominaisuudelle Robot-testit.
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
-Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tsoha.github.io/materiaali/osa-1/#lomakkeiden-k%C3%A4sittely) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
+Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tikawe.github.io/materiaali/osa3/) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
 Tee ominaisuudelle Robot-testit.
 
@@ -339,6 +339,8 @@ Robot-testi voi kirjoittaa kenttään arvon 10 avainsanan [Input Text](https://r
 ```
 Input Text  value  10
 ```
+
+Korjaa vielä testejä siten, että jokainen testitiedosto aloitetaan tilanteesta, missä laskurin arvo on nolla.
 
 ### Robot Framework -testien debuggaaminen
 
@@ -541,7 +543,7 @@ Open And Configure Browser
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
     END
     IF  $HEADLESS == 'true'
-        Set Selenium Speed  0
+        Set Selenium Speed  0.05 seconds
         Call Method  ${options}  add_argument  --headless
     ELSE
         Set Selenium Speed  ${DELAY}
@@ -576,7 +578,7 @@ Suite Teardown  Close Browser
 Test Setup      Reset Application Create User And Go To Login Page
 ```
 
-Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan ` Reset Application Create User And Go To Login Page` ennen jokaista testiä.
+Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan `Reset Application Create User And Go To Login Page` ennen jokaista testiä.
 
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
