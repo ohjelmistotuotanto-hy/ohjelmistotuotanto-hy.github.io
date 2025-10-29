@@ -708,7 +708,8 @@ viikko2
   project-reader
   nhl-reader
 viikko3
-  web-login
+  webcounter
+  login
 ...
 ```
 

@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=3 %}
 
 Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin.
@@ -71,17 +69,17 @@ def increment():
 
 Sovelluksen HTML-sivupohjat on määritelty hakemistossa _templates_. Sovelluksen ainoa näkymä näyttää muuttujaan _cnt_ talletetun laskuriolion arvon. Näkymä sisältää myös kaksi nappia, joista "Paina" aiheuttaa POST-pyynnön reitille _increment_. Reitin käsittelijä kasvattaa laskurin arvoa, ja _uudelleenohjaa_ sovelluksen takaisin juuriosoitteeseen. Nappi "Nollaa" ei tee tällä hetkellä mitään.
 
-Sovellukselle on tehty pari testiä Robot-frameworkilla. Testit suoritetaan normaaliin tapaan komennolla _robot src/tests_ mutta ennen testien suorittamista joudumme tekemään muutaman ekstratempun.
+Sovellukselle on tehty pari testiä Robot Frameworkilla. Testit suoritetaan normaaliin tapaan komennolla _robot src/tests_ mutta ennen testien suorittamista joudumme tekemään muutaman ekstratempun.
 
 Testeissä on käytössä [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjasto, jonka avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä tapahtuu [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
 
-Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria, tai Firefoxia jolloin testit voi suorittaa [Geckodriverillä](https://github.com/mozilla/geckodriver).
+Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria, tai Firefoxia jolloin testit voi suorittaa [GeckoDriverillä](https://github.com/mozilla/geckodriver).
 
-**Ennen kuin siirryt testien pariin, asenna ChromeDriver** tai **Geckodriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
+**Ennen kuin siirryt testien pariin, asenna ChromeDriver** tai **GeckoDriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
 
 Kun ChromeDriver tai GeckoDriver on asennettu onnistuneesti **käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä. Varmista, että sovelluksen laskurin arvo on 0. Jos se on jotain muuta, uudelleenkäynnistä sovellus.
 
-**Avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit Geckodriverin.
+**Avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit GeckoDriverin.
 
 Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the counter is zero` ja `When button pressed twice the counter is two`. Testitapausten suoritusta voi seurata aukeavasta selaimen ikkunasta.
 
@@ -167,7 +165,7 @@ Tiedostossa on myös osio `*** Variables ***` missä on mahdollista määritell�
 
 - Avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen, joka on oletusarvoisesti  _chrome_.
 - Tämän lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. 
-- Selaimen ikkunan koon voi asettaa tarvittaessa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
+- Selaimen ikkunan koon voi tarvittaessa asettaa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
 
 Palataan vielä tiedostoon `increment.robot`, jonka alun osio `*** Settings ***` on seuraava
 
@@ -181,12 +179,12 @@ Suite Teardown  Close Browser
   ...
 ```
 
-Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`- -asetukset. Niiden merkitykset ovat seuraavat:
+Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`-asetukset. Niiden merkitykset ovat seuraavat:
 
 - `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa `resource.robot`
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 
-Huomaa, että toimiakseen testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
+Huomaa, että toimiakseen testit edellyttävät, että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
 
 Kun olet suorittanut testit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
 
@@ -194,7 +192,7 @@ Kun olet suorittanut testit onnistuneesti ja tutustunut sovellukseen sekä teste
 
 Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
 
-Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon `reset.robot`, testin näyttää suunilleen seuraavalta
+Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon `reset.robot`, testin näyttää suunnilleen seuraavalta
 
 ```robot
 *** Settings ***
@@ -209,9 +207,9 @@ When counter has a nonzero value and it is reset the value becomes zero
 
 **Muista**, että toimiakseen valmiina olevat testit edellyttävät että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
 
-### 4. Web-sovelluksen testien suorittamien GitHub Actioneissa
+### 4. Web-sovelluksen testien suorittaminen GitHub Actioneissa
 
-Selenium Webdriveria käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
+Selenium WebDriveria käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
 Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa `resource.robot` seuraavasti:
 
@@ -230,8 +228,10 @@ ${HEADLESS}  false
 Open And Configure Browser
     IF  $BROWSER == 'chrome'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+        Call Method  ${options}  add_argument  --incognito
     ELSE IF  $BROWSER == 'firefox'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+        Call Method  ${options}  add_argument  --private-window
     END
     IF  $HEADLESS == 'true'
         Set Selenium Speed  0.05 seconds
@@ -242,13 +242,15 @@ Open And Configure Browser
     Open Browser  browser=${BROWSER}  options=${options}
 ```
 
-Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0.05 jotta testit eivät hidastu tarpeettomasti. Headless-suoritus tapahtuu seuraavasti:
+Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0.05 jotta testit eivät hidastu tarpeettomasti. Joissain tilanteissa selaimelle asennetut liitännäiset haittaavat testien suorituksessa. Määrittelimmekin, että testatessa selaimet käyttävät incognito-tilaa, jolloin liitännäiset eivät ole käytössä. 
+
+Headless-suoritus tapahtuu seuraavasti:
 
 ```bash
 robot --variable HEADLESS:true src/tests
 ```
 
-GitHub actionien konfiguraatio näyttää seuraavalta:
+GitHub Actionien konfiguraatio näyttää seuraavalta:
 
 ```yml
 name: CI
@@ -282,9 +284,9 @@ jobs:
         run: bash run_robot_tests.sh
 ```
 
-Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa chromedriverin GitHub Actionin käyttöön.
+Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa ChromeDriverin GitHub Actionin käyttöön.
 
-Jotta sovelluksen testit pystyisi suorittamaan GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tests.sh`, joka löytyy tehtäväpohjassa:
+Jotta sovelluksen testit voidaan suorittaa GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tests.sh`, joka löytyy tehtäväpohjassa:
 
 ```bash
 #!/bin/bash
@@ -296,7 +298,7 @@ poetry run python3 src/index.py &
 
 echo "started Flask server"
 
-# odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
+# odotetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
 while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5001)" != "200" ]];
   do sleep 1;
 done
@@ -324,7 +326,7 @@ Tee ominaisuudelle Robot-testit.
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
-Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Webohjelmointi](https://hy-tikawe.github.io/materiaali/osa3/) materiaalissa. **HUOM** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect` samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
+Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/osa3/) materiaalissa. **HUOM:** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect`, samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
 Tee ominaisuudelle Robot-testit.
 
@@ -346,12 +348,12 @@ Korjaa vielä testejä siten, että jokainen testitiedosto aloitetaan tilanteest
 
 Ennen kuin edetään seuraavaan tehtäväsarjaan, nostetaan esiin tärkeä teema.
 
-On todennäköistä että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia. Epäonnistuneen testitapauksen kohdalla kannattaa miettiä mahdollisia syitä:
+On todennäköistä, että testien tekemisen aikana tulee ongelmia, joiden selvittäminen ei ole triviaalia. Epäonnistuneen testitapauksen kohdalla kannattaa miettiä mahdollisia syitä:
 
 - Onko vika testissä, eli toimiiko sovellus kuten pitääkin? Voit esimerkiksi testata sovelluksen toimivuuden manuaalisesti. Jos näin on, keskity testin korjaamiseen
 - Onko vika sovelluksessa, eli eikö manuaalisesti testattu sovellus toimi kuten pitäisi? Jos näin on, keskity tarkastelemaan ohjelman suoritusta epäonnistuneessa testitapauksessa
 
-Jos testit eivät mene läpi, generoi Selenium hakemistoon kuvakaappauksen tilanteesta, siitä tilanteesta missä testi havaitsee ongelman. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
+Jos testit eivät mene läpi, generoi Selenium hakemistoon kuvakaappauksen tilanteesta, siitä tilanteesta, joissa testi havaitsee ongelman. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
 
 ![]({{ "/images/seleniumerror.png" | absolute_url }}){:height="350px" }
 
@@ -361,17 +363,19 @@ Tutustutaan seuraavaksi muihin tekniikoihin, jotka helpottavat ja nopeuttavat vi
 
 #### Suoritettavien testien lukumäärän rajoittaminen
 
-Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials`, voimme suorittaa ainoastaan sen seuraavalla komennolla:
+Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials` epäonnistuu, voimme suorittaa ainoastaan sen seuraavalla komennolla:
 
 ```
 robot -t "Login With Correct Credentials" src/tests/login.robot
 ```
 
-Komennolle `robot` annetaan siis `-t`-optionin kautta suoritettavan testitapauksen nimi ja tiedosto, jossa testitapaus sijaitsee.
+Komennolle `robot` annetaan siis `-t`-valitsimen avulla suoritettavan testitapauksen nimi ja tiedosto, jossa testitapaus sijaitsee.
 
 #### Ohjelman suorituksen seuraaminen
 
-Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa alkaa tutkimaan miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Jos esimerkiksi `Login With Correct Credentials`-testitapaus epäonnistuu, on ongelma luultavasti `UserService`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville hyödyntämällä [pdb](https://docs.python.org/3/library/pdb.html)-moduulia:
+Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa tutkia miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Vanha hyvä kikka eli komennolla _print_ tehtävät aputulostukset vievät jo pitkälle. 
+
+Joissain tapauksissa saatetaan tarvita järeämpiä keinoja. Oletetaan, että  `Login With Correct Credentials`-testitapaus epäonnistuu. Ongelma on luultavasti `UserService`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville hyödyntämällä [pdb](https://docs.python.org/3/library/pdb.html)-moduulia:
 
 ```python
 # ...
@@ -438,9 +442,9 @@ Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_tra
 
 ### 5. WebLogin, osa 1
 
-Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/web-login_. 
+Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/login_. 
 
-Hae projekti ja kopioi se **palatusrepositorioosi**, hakemiston _viikko3_ sisälle.
+Hae projekti ja kopioi se **palautusrepositorioosi**, hakemiston _viikko3_ sisälle.
 
 Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
@@ -452,11 +456,16 @@ Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
 
 Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
 
-Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien sovelluksen tapaan tiedostoon `app.py` sekä hakemistoon `templates`. Ohjelman _sovelluslogiikka_ on sijoitettu omaan luokkaansa `UserService`.
+Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien sovelluksen tapaan tiedostoon `app.py` sekä hakemistoon `templates`. Ohjelman käyttäjien hallintaan liittyvä _sovelluslogiikka_ on sijoitettu omaan luokkaansa `UserService`.
 
-Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
+Sovelluksen käytössä oleva versio ei tallenna käyttäjien tietoja varsinaisesti mihinkän pysyvämpään paikkaan, kuten tietokantaan tai tiedostoon, käyttäjien tiedot pidetään ainoastaan keskusmuistissa.
 
-Sovelluksen käyttämään tietoon kohdistuvien operaatioiden abstrahointiin sovelluslogiikasta löytyy useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
+Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna muistiin suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
+`UserRepository`-luokka abstrahoi eli piilottaa käyttäjien hallinnointiin liittyvän logiikan sovelluksen muilta olista.
+
+#### Suunnittelumalli Repository
+
+Tietoon kohdistuvien operaatioiden eriyttämiseen sovelluslogiikasta on olemassa useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
 
 Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien, kuten `find_all`, `create` ja `delete` kautta. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
 
@@ -561,7 +570,7 @@ Go To Login Page
 
 ```
 
-Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaaa
+Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaa
 `*** Settings ***` osiossa on otettu SeleniumLibrary-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee kaksi projektissa tarvittavaa avainsanaa, `Reset Application` ja `Create User`.
 
 `*** Keywords ***`-osiossa on määritelty myös muutama yleiskäyttöinen avainsana:
@@ -578,13 +587,12 @@ Suite Teardown  Close Browser
 Test Setup      Reset Application Create User And Go To Login Page
 ```
 
-Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan `Reset Application Create User And Go To Login Page` ennen jokaista testiä.
+Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, joka suorittaa avainsanan `Reset Application Create User And Go To Login Page` ennen *jokaista* testiä.
 
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 - `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
 - `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
-- `Submit Credentials` -avainsana painaa "Login"-painiketta käyttämällä [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) -avainsanaa
 - `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
 - ` Reset Application Create User And Go To Login Page` -avainsana tyhjentää sovelluksen "tietokannan" eli sinne luodut käyttäjät, luo sovellukseen uuden käyttäjän ja avaa kirjautumissivun
 
@@ -627,7 +635,7 @@ No keyword with name 'Go To Starting Page' found.
 
 **Toteuta testin käyttämät määrittelemättömät avainsanat**.
 
-**HUOM** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
+**HUOM:** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
 
 ### 6. WebLogin, osa 2
 
@@ -654,7 +662,7 @@ class AppLibrary:
         requests.post(f"{self._base_url}/register", data=data)
 ```
 
-On oleellista, että testit alkavat aina samasta tilasta, erityisesti, että sovelluksen tietokannan tila on testien alussa hyvin tunnettu. 
+On oleellista, että testit alkavat aina samasta tilasta, erityisesti että sovelluksen tietokannan tila on testien alussa hyvin tunnettu. 
 
 Metodin `reset_application` määrittelemä avainsana `Reset Application` lähettää _POST_-tyyppisen pyynnön sovelluksen polkuun "/tests/reset". Pyynnön käsittelee seuraava funktio:
 
@@ -667,7 +675,7 @@ def reset_tests():
 
 Funktio poistaa kaikki sovelluksen käyttäjät ja näin nollaa sovelluksen tilan. Kyseessä on siis ainoastaan testien käyttöön toteutettu tapa nollata tietokanta.
 
-Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
+Metodi `create_user` lähettää samankaltaisesti _POST_-tyyppisen pyynnön sovelluksen polkuun "/register". Pyynnön käsittelevä funktio luo uuden käyttäjän, jos se on validi:
 
 ```python
 @app.route("/register", methods=["POST"])
@@ -730,7 +738,7 @@ Register With Username That Is Already In Use
 
 Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
-- Käyttäjätunnuksen on oltava merkeistä a-z koostuva vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
+- Käyttäjätunnuksen on oltava vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
 **Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.

@@ -125,7 +125,7 @@ Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit(
 
 **Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.**
 - Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa 
-- Voit halutessasi kopioida projektin palatusrepositorioosi, hakemiston viikko4 sisälle.
+- Voit halutessasi kopioida projektin palautusrepositorioosi, hakemiston viikko4 sisälle.
 
 Projekti on yksinkertainen verkkokauppa, jonka sovelluslogiikan totutettaa luokka `Kauppa`. Luokalla on riippuvuus `Pankki`- ja `Viitegeneraattori`-olioihin.
 
@@ -223,7 +223,7 @@ Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](htt
 ### 2. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 2
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/maksukortti-mock_ oleva projekti.
-- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
+- Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
 
 Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin osalle [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-23.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate) tuttu.
 
@@ -282,7 +282,7 @@ Korjaa kassapäätettä siten, että testit menevät läpi.
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/verkkokauppa_ löytyy hieman laajennettu versio tehtävän 1 verkkokaupasta.
-- Kopioi projekti palatusrepositorioosi, hakemiston viikko4 sisälle.
+- Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
 
 Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa 
 luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Ohjelman rakenne luokkakaaviona:

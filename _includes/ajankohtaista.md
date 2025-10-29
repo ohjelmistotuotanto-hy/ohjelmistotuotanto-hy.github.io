@@ -2,7 +2,7 @@
 
   <ul>
     <li>
-      Viikkojen <a href='/tehtavat1'>1</a> ja <a href='/tehtavat2'>2</a> laskarit valmiina
+      Viikkojen <a href='/tehtavat1'>1</a>,<a href='/tehtavat2'>2</a>  ja  <a href='/tehtavat3'>3</a> laskarit valmiina
     </li>
     <li>
        Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110, ilmoittaudu <a href='https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006'>täällä!</a>

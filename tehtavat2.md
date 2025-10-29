@@ -59,7 +59,7 @@ Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja 
 
 Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
 
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko2_ sisälle.
+- Kopioi projekti palautusrepositorioosi, hakemiston _viikko2_ sisälle.
 
 Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.com) eri kausien tilastotietoja.
 

@@ -9,7 +9,7 @@ permalink: /robot_framework/
 
 Vaikka Robot Framework on perinteisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Robot Frameworkin toimintaperiaatteita testaamalla yksittäistä luokkaa. Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/tehtavat/tree/main/viikko3/hello-robot) hakemistossa _koodi/viikko3/hello-robot_ oleva projekti.
 
-- Kopioi projekti palatusrepositorioosi, hakemiston _viikko3_ sisälle.
+- Kopioi projekti palautusrepositorioosi, hakemiston _viikko3_ sisälle.
 
 Testattavana on yksinkertainen laskuri:
 
@@ -36,20 +36,20 @@ Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hake
 
 Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorittamalla siellä komento `robot src/tests`.
 
-Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston tiedostoon _report.html_ ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia, avautuu mukava testien suorituksen statusta kuvaava näkymä:
+Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston tiedostoon _report.html_ ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia avautuu mukava testien suorituksen statusta kuvaava näkymä:
 
 ![]({{ "/images/lh3-robot.png" | absolute_url }})
 
-### Vaatimuksien ilmaiseminen
+### Vaatimusten ilmaiseminen
 
 Laskurin haluttua toiminnallisuutta kuvaavat seuraavat user storyt
 
 - As a user I want to be able to increase the counter value
 - As a user I want to be able to set the counter to value zero
 
-Robot Framework testaamisen ytimessä on niin kutsutut _avainsanat_ (keywords). Avainsana on selkokielinen selitys tehtävästä asiasta. Esimerkiksi laskurin testaamisen kannalta yksi erittäin oleellinen avainsana on `Increase Counter`, jonka avulla laskurin arvoa voidaan kasvattaa.
+Robot Frameworkin ytimessä ovat niin sanotut _avainsanat_ (keywords). Avainsana on selkokielinen selitys tehtävästä asiasta. Esimerkiksi laskurin testaamisen kannalta yksi erittäin oleellinen avainsana on `Increase Counter`, jonka avulla laskurin arvoa voidaan kasvattaa.
 
-> Termi _avainsana_ on sikäli hieman harhaanjohtava, että Robort Frameworkissa avainsanan nimet ovat usein moniosaisia, eli esim. `Increase Counter` on yksittäinen avainsana (vaikka se koostuukin useasta englannin kielen sanasta).
+> Termi _avainsana_ on sikäli hieman harhaanjohtava, että Robot Frameworkissa avainsanan nimet ovat usein moniosaisia, eli esim. `Increase Counter` on yksittäinen avainsana (vaikka se koostuukin useasta englannin kielen sanasta).
 
 Avainsanoilla voi olla myös _argumentteja_ (arguments), jotka tekevät niistä uudelleenkäytettäviä. Argumenteilla varustettu avainsana voisi olla esimerkiksi `Counter Value Should Be`, joka tarkistaa, että laskurin arvo vastaa argumentin arvoa.
 
@@ -93,11 +93,11 @@ class CounterLibrary:
             raise AssertionError(f"{self._counter.value} != {int_expected}")
 ```
 
-Kyseisen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa, vaan se korvaantuu välilyönnillä). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
+Kyseisen luokan metodit ovat avainsanojen toteutuksia. Esimerkiksi metodi `increase_counter` toteuttaa avainsanan `Increase Counter` (huomaa, ettei avainsanan väliin tule alaviivaa, vaan se korvautuu välilyönnillä). Luokan konstruktorissa alustetaan uusi `Counter`-luokan olio, jonka metodeja luokan metodit kutsuvat.
 
 Robot Framework alustaa kirjastot ennen jokaista testitapausta, joten jokaisella testitapauksella on käytössään kirjastosta oma instanssi. Tämä mahdollistaa mm. sen, että jokaista projektin testitapausta varten alustetaan `CounterLibrary`-luokan konstruktorin kautta uusi `Counter`-olio.
 
-Metodi `increment_counter_by` toteuttaa avainsana `Increment Counter By`, jolla on yksi argumentti, `amount`. **Argumenttien arvot ovat aina merkkijonoja**, joten ne täytyy tarvittaessa muuttaa oikean tyyppisiksi, kuten metodi tekee `int`-funktion avulla:
+Metodi `increment_counter_by` toteuttaa avainsanan `Increment Counter By`, jolla on yksi argumentti, `amount`. **Argumenttien arvot ovat aina merkkijonoja**, joten ne täytyy tarvittaessa muuttaa oikean tyyppisiksi, kuten metodi tekee `int`-funktion avulla:
 
 ```python
 def increment_counter_by(self, amount):
@@ -105,7 +105,7 @@ def increment_counter_by(self, amount):
     self._counter.increment(int_amount)
 ```
 
-Huomaa, että kaikki metodit, joiden nimessä ei ole <i>\_</i>-etuliitettä muodostavat avainsanan toteutuksen. Jos haluat tehdä kirjastoon metodin, josta et halua avainsanaa, nimeä se <i>\_</i>-etuliitteellä:
+Huomaa, että kaikki metodit, joiden nimessä ei ole <i>\_</i>-etuliitettä, muodostavat avainsanan toteutuksen. Jos haluat tehdä kirjastoon metodin, josta et halua avainsanaa, nimeä se <i>\_</i>-etuliitteellä:
 
 ```python
 from counter import Counter
