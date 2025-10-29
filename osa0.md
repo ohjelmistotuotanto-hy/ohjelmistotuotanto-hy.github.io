@@ -11,6 +11,8 @@ permalink: /osa0/
   />
 </a>
 
+{% include miniproj_ilmo.md %}
+
 #### [Sisällysluettelo](/sisallys/#osa-0-johdanto){:target="_blank"}
 
 Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä.

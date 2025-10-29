@@ -5,6 +5,7 @@ inheader: no
 permalink: /tehtavat1
 ---
 
+{% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=1 %}
 

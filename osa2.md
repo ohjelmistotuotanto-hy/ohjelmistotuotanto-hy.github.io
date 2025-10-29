@@ -11,6 +11,8 @@ permalink: /osa2/
   />
 </a>
 
+{% include miniproj_ilmo.md %}
+
 #### [Sisällysluettelo](/sisallys/#osa-2-vaatimustenhallinta){:target="_blank"}
 
 Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien menetelmien näkökulma vaatimusmäärittelyyn. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.

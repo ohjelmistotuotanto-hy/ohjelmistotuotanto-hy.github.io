@@ -6,10 +6,6 @@ permalink: /miniprojektin_arvosteluperusteet/
 ---
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
-- [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
-- [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
-- [Neljännen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljännen-sprintin-arvosteluperusteet)
-- [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
 Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
@@ -50,7 +46,7 @@ Pisteitä kertyy seuraavista asioista:
 
 - (0.25p) product backlog
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
-- (0.5p) sprintin 1 backlog
+- (0.25p) sprintin 1 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
   - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
   - Sprintin burndown-käyrä olemassa
@@ -60,12 +56,13 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) testaus
   - Projektissa on ainakin yksi Robot-testi
 - (0.25p) jatkuva integraatio
-  - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa testit ja ne menevät läpi
+  - Projektin koodi on GitHubissa
+  - GitHub Actions suorittaa testit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
+- (0.25p) GitHubissa on järjevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
 - (0.25p) GitHub README:
   - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
@@ -76,157 +73,15 @@ Pisteitä kertyy seuraavista asioista:
 
 Sprintin maksimi on 2.5 pistettä.
 
-### Toisen sprintin arvosteluperusteet
-
-Pisteitä kertyy seuraavista asioista:
-
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
-- (0.25p) sprintin 2 backlog
-  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
-  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
-  - Burndown-käyrä olemassa
-  - Jokaiseen taskiin on merkitty sen tekijä(t)
-- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
-- (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
-- (0.25p) sovellukseen on tehty ainakin yksi yksikkötesti (unittest-kirjastolla)
-  - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
-- (0.25p) jatkuva integraatio
-  - CI-palvelu suorittaa testit
-  - main-branch ei ole hajonnut sprintin lopussa
-- (0.25p) projektille määritelty järkevät Pylint-säännöt jotka tarkistetaan CI:n toimesta
-- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
-  - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
-- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
-  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
-  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
-  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
-- **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks ohje alta
-
-Sprintin maksimi on 2.5 pistettä.
-
-
 #### Retrospektiivi
 
-- Sprintin 2 päätteeksi tulee pitää retrospektiivi
-- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat4/#5-retrospektiivitekniikat)
+- Sprintin 1 päätteeksi tulee pitää retrospektiivi
+- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat3/#8-retrospektiivitekniikat)
 - Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
+- Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
 
-
-### Kolmannen sprintin arvosteluperusteet
-
-Pisteitä kertyy seuraavista asioista:
-
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
-  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
-- (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
-  - Hyväksymisehtoja **ei kirjoteta erikseen backlogiin**, vaan backlogista, kustakin storystä on linkki hyväksymistestin tiedostoon
-- (0.25p) sprintin 3 backlog
-  - Vaatimukset kuten edellisissä sprinteissä
-- (0.25p) kattavahko testaus storytasolla
-- (0.25p) ohjelmalla on sopivissa määrin yksikkötestejä
-  - edeleen kannattaa huomioida [tämä](/flask/#testeistä) liittyen testaukseen
-- (0.25p) jatkuva integraatio
-  - CI-palvelu suorittaa yksikkö- ja storytestit ja PyLintin
-  - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
-- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
-  - raportti kattaa ainoastaan ne tiedostot joita on mielekästä yksikkötestata
-- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
-- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
-- (0.125p) Ohjelmalle on valittu sopiva lisenssi, ja määritely se repositorioon
-  - Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
-- (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
-  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
-  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
-  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
-  - Katselmoinnissa sovellus näytetään videotykillä. Koneen kytkemistä videotykkiin **tulee harjoitella** etukäteen, esim. näyttö tulee olla valmiiksi konfiguroida oikein (display mirroring) tai konfiguraatio tulee osata tehdä maksimissaan viidessä sekunnissa
-
-Sprintin maksimi on 2.5 pistettä.
-
-### Neljännen sprintin arvosteluperusteet
-
-Pisteitä kertyy seuraavista asioista:
-
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
-  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
-- (0.25p) sprintiin 4 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
-  - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
-- (0.25p) sprintin 4 backlog
-  - Vaatimukset kuten edellisissä sprinteissä
-- (0.125p) relevantit osat sovellusta testauttu yksikkötestein
-  - kattavuusraportti README-tiedostossa
-  - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
-- (0.25p) kattavahko testaus storytasolla
-  - testit toimivat vähintään lokaalisti suoritettaessa
-- (0.25p) jatkuva integraatio
-  - CI-palvelu suorittaa yksikkö- ja storytestit sekä Pylintin
-  - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
-- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 3 lopussa, toimintaa kehitetty
-  - edellisestä retrospektiivistä on tehty asialliset muistiinpanot
-  - tiimi on kehittänyt toimintaansa, parantamalla edellisessä retrospektiivissa identifioituja ongelmakohtia 
-- (0.25p) Koodin sisäinen laatu on kohtuullisella tasolla
-  - koodi on jaoiteltu järkevästi tiedostoihin ja hakemistoihin
-  - koodissa käytetään järkevää nimentää 
-  - koodissa ei ole liikaa ilmeistä copypastea
-  - koodissa ei ole sinne kuulumatonta roskaa, esim. pois kommentoitua koodia
-- (0.125p) Commitit ja commit-viestit on muodostettu järkevästi (suurimmassa osassa sprintin commiteista), katso ohjeita [täältä](/commit) 
-- (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
-  - Kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein
-  - Sovittu etukäteen kuka tekee mitäkin
-  - Mietitty mitä esitetään
-    - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
-  - Testidata on järkevää
-    - tietokanta ei saa olla etukäteen tyhjä
-    - tietokannassa oleva data ja demottaessa käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
-  - **Lue viimeinen bullet uudelleen** jostain syystä se jää 25% huomaamatta...
-    - jos tuollainen syöte nähdään niin pisteitä tulee heti nolla
-
-Sprintin maksimi on 2.5 pistettä.
-
-### Lopputoimenpiteet
-
-#### Loppudemo ja sprintin 4 päättyminen
-
-Kuten tunnettua, loppudemot pidetään
-- keskiviikkona 11.12. klo 12-14 B123 ja
-- torstaina 12.12. klo 12-14 CK112.
-
-Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus.
-Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
-
-Lue tarkasti neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit. Aika on lyhyt, joten kannattaa erityisesti huomioida seuraava arvostelukriteeri
-- _kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein_
-
-Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 13.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
-
-Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
-
-#### Vertaispalaute
-
-- Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään pe 20.12. klo 23:59**
-  - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
-- Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
-  - Ryhmäläiset eivät näe toistensa vertaispalautteita
-
-#### Raportti
-
-Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
-
-- Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
-- Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
-- Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
-- Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
-- Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
-- Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline pe 20.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 

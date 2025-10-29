@@ -11,7 +11,6 @@ permalink: /miniprojektin_arvosteluperusteet/
 - [Neljännen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljännen-sprintin-arvosteluperusteet)
 - [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
-
 Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
 - Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
@@ -27,7 +26,7 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
     - Ryhmätyön sujuvuutta
     - Työskentelyn tasaisuutta
     - Kontribuutiota ryhmän tuotoksiin (koodi, testit, deployment pipeline, backlogit)
-      - [varmista, että committisi näkyvät githubissa oikein](/miniprojektin_arvosteluperusteet#varmista-että-commitisi-näkyvät-githubissa-oikein)
+      - [varmista, että committisi näkyvät GitHubissa oikein](/miniprojektin_arvosteluperusteet#varmista-että-commitisi-näkyvät-githubissa-oikein)
   - **Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä**
   - Kannattaa myös ottaa tosissaan noin 6 tunnin sprinteittäinen työaika. Työajan reilu ylitys ei tuo "lisäpisteitä" vaan pikemminkin päinvastoin.
 
@@ -59,19 +58,18 @@ Pisteitä kertyy seuraavista asioista:
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
-  - Toteutettua koodia on yksikkötestattu kohtuullisella tasolla
+  - Projektissa on ainakin yksi Robot-testi
 - (0.25p) jatkuva integraatio
   - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa yksikkötestit ja ne menevät läpi
+  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa testit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHub README:
-  - README:sta löytyy linkki backlogeihin (ja niihin on _kaikilla_ lukuoikeudet)
+  - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
-  - Linkki sovellukseen jos kyse web-sovelluksesta
-  - Jos kyse työpöytäsovelluksesta: ohjelman asennus- ja käyttöohje
+  - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
   - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
@@ -90,15 +88,17 @@ Pisteitä kertyy seuraavista asioista:
   - Burndown-käyrä olemassa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
 - (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
-- (0.25p) kattavahko automatisoitu testaus yksikkötasolla
 - (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
+- (0.25p) sovellukseen on tehty ainakin yksi yksikkötesti (unittest-kirjastolla)
+  - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit
-  - main-branch ei ole hajonnut
-- (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+  - main-branch ei ole hajonnut sprintin lopussa
 - (0.25p) projektille määritelty järkevät Pylint-säännöt jotka tarkistetaan CI:n toimesta
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
+- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa ja siitä on tehty asialliset muistiinpanot
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
@@ -106,6 +106,7 @@ Pisteitä kertyy seuraavista asioista:
 - **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks ohje alta
 
 Sprintin maksimi on 2.5 pistettä.
+
 
 #### Retrospektiivi
 
@@ -115,6 +116,7 @@ Sprintin maksimi on 2.5 pistettä.
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
 
+
 ### Kolmannen sprintin arvosteluperusteet
 
 Pisteitä kertyy seuraavista asioista:
@@ -123,19 +125,20 @@ Pisteitä kertyy seuraavista asioista:
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
   - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
 - (0.25p) sprintiin 3 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
-  - Hyväksymisehtoja **ei kirjoteta erikseen backlogiin**, vaan backlogista on linkki hyväksymistestin tiedostoon
+  - Hyväksymisehtoja **ei kirjoteta erikseen backlogiin**, vaan backlogista, kustakin storystä on linkki hyväksymistestin tiedostoon
 - (0.25p) sprintin 3 backlog
   - Vaatimukset kuten edellisissä sprinteissä
-- (0.25p) kattavahko testaus yksikkötasolla
 - (0.25p) kattavahko testaus storytasolla
-  - testit toimivat vähintään lokaalisti suoritettaessa
+- (0.25p) ohjelmalla on sopivissa määrin yksikkötestejä
+  - edeleen kannattaa huomioida [tämä](/flask/#testeistä) liittyen testaukseen
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa yksikkö- ja storytestit ja PyLintin
   - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
 - (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
+  - raportti kattaa ainoastaan ne tiedostot joita on mielekästä yksikkötestata
 - (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
 - (0.125p) Ohjelmalle on valittu sopiva lisenssi, ja määritely se repositorioon
   - Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
 - (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
@@ -157,8 +160,9 @@ Pisteitä kertyy seuraavista asioista:
   - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
 - (0.25p) sprintin 4 backlog
   - Vaatimukset kuten edellisissä sprinteissä
-- (0.25p) kattavahko testaus yksikkötasolla
+- (0.125p) relevantit osat sovellusta testauttu yksikkötestein
   - kattavuusraportti README-tiedostossa
+  - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
 - (0.25p) kattavahko testaus storytasolla
   - testit toimivat vähintään lokaalisti suoritettaessa
 - (0.25p) jatkuva integraatio
@@ -173,6 +177,7 @@ Pisteitä kertyy seuraavista asioista:
   - koodissa käytetään järkevää nimentää 
   - koodissa ei ole liikaa ilmeistä copypastea
   - koodissa ei ole sinne kuulumatonta roskaa, esim. pois kommentoitua koodia
+- (0.125p) Commitit ja commit-viestit on muodostettu järkevästi (suurimmassa osassa sprintin commiteista), katso ohjeita [täältä](/commit) 
 - (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
   - Kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein
   - Sovittu etukäteen kuka tekee mitäkin
@@ -190,9 +195,15 @@ Sprintin maksimi on 2.5 pistettä.
 
 #### Loppudemo ja sprintin 4 päättyminen
 
-Kuten tunnettua, loppudemot pidetään keskiviikkona 11.12. klo 12-14 B123 ja torstaina 12.12. 12-14 CK112. Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Lue _tarkasti_ neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit.
+Kuten tunnettua, loppudemot pidetään
+- keskiviikkona 11.12. klo 12-14 B123 ja
+- torstaina 12.12. klo 12-14 CK112.
 
+Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus.
 Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
+
+Lue tarkasti neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit. Aika on lyhyt, joten kannattaa erityisesti huomioida seuraava arvostelukriteeri
+- _kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein_
 
 Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 13.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
 
@@ -201,7 +212,7 @@ Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
 #### Vertaispalaute
 
 - Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään perjantaina 20.12. klo 23:59**
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään pe 20.12. klo 23:59**
   - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
 - Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   - Ryhmäläiset eivät näe toistensa vertaispalautteita
@@ -216,11 +227,11 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline perjantaina 20.12. klo 23:59**
+- **Raportin deadline pe 20.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
-Koska Githubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi Gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
+Koska GitHubiin tehtävien commitien määrä (ja laatu) vaikuttaa henkilökohtaisiin pisteisiin, varmista, että olet konfiguroinit email-osoitteesi Gitiin (ks. [viikon 1 laskareiden tehtävä 2](/tehtavat1#2-githubiin-versionhallinta)), ja että commitatessasi ryhmäsi repositorioon tunnuksesi näkyy oikein repositorion commit-listalla, ja että tunnuksesi tulee repositorion [contributors](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors)-listalle.
 
 On suositeltavaa, että jokainen tekee (omalta koneeltaan) heti alussa yhden testicommitin ja tarkastaa, että Git on konfiguroitu oikein.
 
@@ -231,7 +242,7 @@ Jos pariohjelmoit (se kannattaa!) saat commitit näkyviin molemmille
 
 ### Commitit kadoksissa
 
-Jos committisi yhteydessä näkyy (Gitin email-osoitteen konfiguroinnista huolimatta) harmaa symbooli kuten seuraavista alempi
+Jos committisi yhteydessä näkyy (Gitin email-osoitteen konfiguroinnista huolimatta) harmaa symboli kuten seuraavista alempi
 
 ![](https://raw.githubusercontent.com/mluukkai/ohtu2017/master/images/commit1.png)
 
