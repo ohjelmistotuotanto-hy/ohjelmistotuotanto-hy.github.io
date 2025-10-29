@@ -742,20 +742,6 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 - Muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen
 )
 
-### 8. WebLogin, osa 4
-
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ vielä seuraava testitapaus tiedostoon `register.robot`:
-
-```robot
-Login After Successful Registration
-# ...
-
-Login After Failed Registration
-# ...
-```
-
-Ensimmäisessä testitapauksessa tulee testata, että käyttäjä _voi kirjautua sisään_ onnistuneen rekisteröitymisen jälkeen. Koska käyttäjä kirjautuu automaattisesti kun se luodaan, testin tulee kirjautua ulos ja varmistaa sitten että uusi kirjautuminen onnistuu.
-
 ### Tehtävien palautus
 
 Laita palautusrepositoriosi tiedostoon README.md linkki tehtäviä 2-4 varten tehtyyn webcounter-repositoroosi.
