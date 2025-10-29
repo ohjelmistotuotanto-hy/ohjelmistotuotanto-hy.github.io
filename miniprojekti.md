@@ -111,9 +111,9 @@ Paljastuu aloitustilaisuudessa...
 ### Toteutusteknologia
 
 Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
-- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella,
+- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
 
-Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
+Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
@@ -185,6 +185,7 @@ Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
 
+Projektin alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
 
 ### Työn arvostelu
 
