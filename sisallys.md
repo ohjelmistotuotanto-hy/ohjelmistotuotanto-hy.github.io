@@ -1,9 +1,22 @@
 ---
 layout: page
-title: Sisällysluettelo
-inheader: no
+title: Sisällys
+inheader: yes
 permalink: /sisallys/
 ---
+
+### Linkit
+- [Laskarit](/tehtavat)
+  - [viikko 1](/tehtavat1) [viikko 2](/tehtavat1) [viikko 3](/tehtavat1)
+- [Miniprojekti](/miniprojekti)
+  - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
+  - [Flask-ohje](/flask)
+  - [miniprojekti boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate)
+- Ohjeet
+  - [Poetry](/poetry)
+  - [unittest](/unittest)
+  - [Gen AI](/genai)  
+  - [Robot Framework](/robot_framework)
 
 ### [Osa 0: Johdanto](/osa0)
 - [Esitiedot ja sisältö](/osa0/#esitiedot-ja-sisältö)
