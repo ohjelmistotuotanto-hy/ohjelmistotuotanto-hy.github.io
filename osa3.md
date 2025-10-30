@@ -29,7 +29,7 @@ _Verifioinnissa_ pyritään varmistamaan, että ohjelmisto toteuttaa vaatimusmä
 
 Validointi taas pyrkii varmistamaan, että ohjelmisto täyttää käyttäjän odotukset ja tarpeet. Vaatimusmäärittelyn aikana kirjatut ohjelmiston vaatimukset eivät ole aina se mitä käyttäjä todella tarvitsee. Validointiin liittyvä oleellinen kysymys onkin _are we building the right product_, eli ollaanko ylipäätään tekemässä oikeaa järjestelmää kulloiseenkin käyttötarkoitukseen.
 
-Verifioinnin ja validoinnin tavoitteena on varmistaa, että ohjelma on "riittävän hyvä" siihen käyttötarkoitukseen, mihin ohjelma on tarkoitettu. Hyvyys on suhteellista ja riippuu ohjelman käyttötarkoituksesta. Ohjelman ei tarvitse yleensä olla täysin virheetön ollakseen kuitenkin riittävän hyvä käyttötarkoitukseensa.
+Verifioinnin ja validoinnin tavoitteena on varmistaa, että ohjelma on _riittävän hyvä_ siihen käyttötarkoitukseen, mihin ohjelma on tarkoitettu. Hyvyys on suhteellista ja riippuu ohjelman käyttötarkoituksesta. Ohjelman ei tarvitse yleensä olla täysin virheetön ollakseen kuitenkin riittävän hyvä käyttötarkoitukseensa.
 
 Verifioinnin ja validoinnin suorittamista käytetään yleisesti nimitystä _laadunhallinta_ (engl. quality assurance, QA). Jos laadunhallinta on erillisen tiimin vastuulla, käytetään tästä usein nimitystä QA-tiimi.
 
@@ -39,24 +39,24 @@ Perinteisesti laadunhallinnassa on käytetty kahta erihenkistä tekniikkaa, kats
 
 _Katselmoinnissa_ (engl. review) käydään läpi ohjelmiston tuotantoprosessin aikana syntyneitä dokumentteja sekä ohjelmakoodia, ja etsitään näistä erilaisia ongelmia.
 
-Tarkastukset taas (engl. inspection) ovat katselmoinnin muodollisempi versio.
-Tarkastus suoritetaan järjestämällä formaali kokous, jolla on tarkkaan määritelty agenda ja kokouksen osallistujilla ennalta määritellyt roolit. Tarkastukset kuuluvat vesiputousmallin maailmaan ja eivät ole nykyään suosiossa lukuunottamatta turvallisuuskriittisten järjestelmien kehitystä.
+Tarkastukset (engl. inspection) taas ovat katselmoinnin muodollisempi versio.
+Tarkastus suoritetaan järjestämällä formaali kokous, jolla on tarkkaan määritelty agenda ja kokouksen osallistujilla ennalta määritellyt roolit. Tarkastukset kuuluvat vesiputousmallin maailmaan, eikä niitä nykyään juuri suosita lukuun ottamatta turvallisuuskriittisten järjestelmien kehitystä.
 
-Katselmointi on _staattinen tekniikka_, suorituskelpoista ohjelmakoodia ei välttämättä tarvita, ja jos katselmoinnin kohteena on ohjelmakoodi, ei ohjelmaa katselmoitaessa yleensä suoriteta.
-
-Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelmakoodin suorittamista. Testauksessa tarkkaillaan, miten ohjelma reagoi annettuihin testisyötteisiin.
+Katselmointi on _staattinen tekniikka_, suorituskelpoista ohjelmakoodia ei välttämättä tarvita. Jos kohteena on ohjelmakoodi, ohjelmaa ei yleensä suoriteta katselmoinnin yhteydessä.
+ 
+Testaus taas on _dynaaminen tekniikka_, joka edellyttää aina ohjelmakoodin suorittamista. Testauksessa tarkkaillaan, miten ohjelma reagoi annettuihin testisyötteisiin.
 
 ## Vaatimusten validointi
 
-Validointi siis vastaa kysymykseen, ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää.
+Validointi siis vastaa kysymykseen, _ollaanko tekemässä asiakkaan tarpeiden kannalta oikeanlaista järjestelmää_.
 
 Ohjelmistolle määritellyt vaatimukset onkin validoitava, eli on varmistettava, että määrittelydokumentti kuvaa sellaisen ohjelmiston, joka vastaa asiakkaan tarpeita.
 
-Vesiputousmallissa määrittelydokumenttiin kirjattujen vaatimusten validointi suoritetaan nimenomaan katselmoimalla. Vaatimusmäärittely päättyy siihen, että asiakas katselmoi määrittelydokumentin ja varmistaa näin, että kirjatut vaatimukset vastaavat asiakkaan mielikuvaa tilattavasta järjestelmästä. Vesiputousmallia sovellettaessa määrittelydokumentti jäädytetään katselmoinnin jälkeen ja sen muuttaminen vaatii yleensä monimutkaista prosessia, ja saattaa edellyttää uutta sopimusta asiakkaan ja sovelluksen toimittajan kesken.
+Vesiputousmallissa määrittelydokumenttiin kirjattujen vaatimusten validointi suoritetaan nimenomaan katselmoimalla. Vaatimusmäärittely päättyy siihen, että asiakas katselmoi määrittelydokumentin ja varmistaa, että kirjatut vaatimukset vastaavat asiakkaan mielikuvaa tilattavasta järjestelmästä. Vesiputousmallia sovellettaessa määrittelydokumentti jäädytetään katselmoinnin jälkeen ja sen muuttaminen vaatii yleensä monimutkaista prosessia, ja saattaa edellyttää uutta sopimusta asiakkaan ja sovelluksen toimittajan kesken.
 
 Ketterässä ohjelmistotuotannossa vaatimusten validointi tapahtuu iteraation päättävien demonstraatioiden (Scrumissa sprint reviewin) yhteydessä.
 
-Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata, vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
+Asiakkaalle näytetään toimivaa versiota ohjelmistosta ja asiakas voi itse verrata vastaako lopputulos sitä mitä asiakas lopulta haluaa. Asiakkaan tarvitsema toiminnallisuushan voi poiketa ennen iteraatiota määritellystä toiminnallisuudesta ja/tai ohjelmistokehittäjät saattavat tulkita väärin user storyjen kuvaamia vaatimuksia.
 
 Jos asiakas havaitsee, että sovellus ei ole etenemässä haluttuun suuntaan, eli kirjatut vaatimukset eivät vastanneet todellista tarvetta, tarve on muuttunut tai vaatimuksia on tulkittu väärin, on seuraavassa iteraatiossa mahdollista ottaa korjausliike.
 
@@ -68,33 +68,32 @@ Koodin katselmointi eli koodin lukeminen jonkun muun, kuin ohjelmoijan toimesta 
 
 Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, että koodista ei löydy erilaisissa "checklisteissä" lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
 
-Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi Javan [Checkstyle](http://checkstyle.sourceforge.net/) ja Pythonin [Pylint](https://pypi.org/project/pylint/), joihin tutustuttiin jo viikon 2 laskareissa.
+Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi JavaScript-ekosysteemissä [ESlint](https://eslint.org/) ja Pythonin [Pylint](https://pypi.org/project/pylint/), joihin tutustuttiin jo viikon 2 laskareissa.
 
 ### Staattinen analyysi pilvessä
 
 Pilvipalvelut ovat helpottaneet sovelluskehittäjien työtä monissa asioissa, esim. GitHubin ansiosta omaa versionhallintapalvelinta ei ole enää tarvinnut ylläpitää vuosiin.
 
-Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi [Codeclimate](https://codeclimate.com/), joka analysoi koodista mm. seuraavia asioita:
+Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi [Qlity](https://qlty.sh/), joka analysoi koodista mm. seuraavia asioita:
 
-- liian kompleksiset metodit ja luokat
+- koodissa oleva turha monimutkaisuus
+- koodissa olevat tietoturvariskit
 - copy paste -koodi
 - testaamaton koodi
 
-Codeclimate antaa parannusehdotuksia huomaamistaan epäkohdista ja antaa jopa aika-arvion sille, kuinka kauan kunkin ongelmakohdan korjaamiseen menisi.
+Minkä tahansa GitHubissa olevan projektin saa konfiguroitua Qltyn tarkastettavaksi nappia painamalla. Qlty suorittaa tarkastukset koodille aina kun uutta koodia pushataan GitHubiin.
 
-Codeclimate myös huomauttaa koodin laadun muutoksista, esim. jos koodin kompleksisuus kasvaa muutosten yhteydessä.
+HY:llä oppimisanalytiikkaan käytettävän [Oodikone](https://github.com/UniversityOfHelsinkiCS/oodikone)-sovelluksen yleisraportti näyttää seuraavalta:
 
-Minkä tahansa GitHubissa olevan projektin saa konfiguroitua Codeclimaten tarkastettavaksi nappia painamalla. Codeclimate suorittaa tarkastukset koodille aina kun uutta koodia pushataan GitHubiin.
+![]({{ "/images/qlty1.png" | absolute_url }})
 
-Laitoksen harjoitustyökursseilla käytettävän Labtoolin vanhan version [Codeclimate-raportti](https://codeclimate.com/github/mluukkai/labtool) kertoo, että koodista löytyy yhteensä 22 epäilyttävää kohtaa. Koodin laadun saama arvosana on _C_ ja arvio sen siistimiseen kuluvasta ajasta on viikko:
+Sovelluksen ylläpidettävyyden arvosana on B, eli toisiksi korkein, tietoturvaan liittyviä ongelmia ei ole havaittu. Qlty arvio sovelluksessa olevan teknisen velan takaisinmaksuajaksi vajaat 1000 tuntia. Oikealla oleva diagrammi näyttää sovelluksen koodin ylläpidolliset hotspotit, eli sovelluksen osat, jotka kaipaisivat eniten koodin huoltotoimia.
 
-![]({{ "/images/3-21.png" | absolute_url }}){:height="350px" }
+Qlty tarjoaa paljon erilaisia näkymiä. Koodin ylläpidettävyyttä voidaan tarkastella monella tasolla. Seruaava paljastaa, että hakemistoissa _faculty_ ja _studyProgramme_ oleva koodi kaipaa kenties parantelua:
 
-Codeclimate erittelee jokaisen ongelman, ja antaa aika-arvion sille kuinka kauan virheen korjaamiseen menisi aikaa:
+![]({{ "/images/qlt4.png" | absolute_url }})
 
-![]({{ "/images/3-22.png" | absolute_url }}){:height="350px" }
-
-Vastaavia palveluita on nykyään useita, mm. [Codebeat](https://codebeat.co/) ja [Codacy](https://www.codacy.com/).
+Vastaavia palveluita on olemassa useita, mm. [SonarCube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevissä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
 
 ### Koodin katselmointi: GitHub ja pull requestit
 
@@ -118,6 +117,14 @@ Pull requestin kommentissa [sovelluskehittäjä](https://github.com/kennyhei/) t
 TMC:n silloinen [pääkehittäjä](https://github.com/mpartel/) ei kuitenkaan hyväksy muutoksia vielä mergettäväksi, vaan antaa muutaman parannusehdotuksen sovelluskehittäjälle.
 
 Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requesteja ja on jopa kirjannut definition of doneen, että eräs valmiin kriteeri koodille on se, että joku muu kuin ohjelmoija on katselmoinut sen. Katselmoija voi olla joko toinen sovelluskehittäjä, tai aloittelevien koodareiden tapauksessa joku hieman seniorimpi tiimin jäsen.
+
+### AI:n hyödyntäminen koodin katselmoinnissa
+
+![]({{ "/images/vibe1.png" | absolute_url }}){:height="350px" }
+
+![]({{ "/images/vibe2.png" | absolute_url }}){:height="350px" }
+
+![]({{ "/images/vibe2.png" | absolute_url }}){:height="350px" }
 
 ## Koodin katselmointi ketterissä menetelmissä
 
