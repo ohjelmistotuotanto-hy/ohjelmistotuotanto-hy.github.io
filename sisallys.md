@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sisällys
+title: Sisällysluettelo
 inheader: yes
 permalink: /sisallys/
 ---
