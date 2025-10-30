@@ -749,7 +749,7 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
     - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
   - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
 - Ohjelma koostuu kolmesta luokasta.
-  - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
+  - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen !!! tämän luokan top-metodi palauttaa yhden pelaajan enemmän kuin mitä voisi olettaa. Esim top(5) palauttaa 6 pelaajaa. (korjaus esim. luokan i = 0 -> i = 1)
   - `Player` on luokka, jonka olioina `StatisticsService`-luokka käsittelee yksittäisen pelaajan tietoja
   - `PlayerReader` on luokka, jonka avulla ohjelma käy hakemassa pelaajien tiedot internetistä
 - Ohjelma on nyt ikävästi struktoroitu ja esim. yksikkötestaus on kovin hankalaa
