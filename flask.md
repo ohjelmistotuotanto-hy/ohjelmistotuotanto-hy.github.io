@@ -8,7 +8,7 @@ inheader: no
 
 Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
 
-Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionien avulla tapahtuva automatisoitu testaus on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
+Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionsien avulla tapahtuva automatisoitu testaus on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
 
 Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot PostgreSQL-tietokantaan, muutaman Robot-testin, unittest-kirjastolla tehdyn yksikkötestin sekä testit suorittavan GitHub Actions workflown.
 
@@ -30,7 +30,7 @@ Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
 ### Sovelluksen käynnistäminen
 
-Sovellus siis tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain internetpalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>. 
+Sovellus tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain pilvipalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>. 
 
 Sovelluksen juureen tulee luoda ympäristömuuttujat määrittelevä tiedosto nimeltään _.env_, jonka sisältö on seuraava
 
@@ -133,7 +133,7 @@ class Todo:
         return f"{self.content}, {is_done}"
 ```
 
-Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele suoraan tietokantarivejä, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallennetaan on samatekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
+Muut osat ohjelmaa (esim. `app.py`) eivät siis käsittele suoraan tietokantarivejä, vaan näistä muodostettuja olioita. Näin muun ohjelman kannalta se, mihin oliot lopulta tallennetaan, on samantekevää, ja tallennustapa voitaisiin myös tarvittaessa muuttaa.
 
 Tiedosto `db_helpers.py` sisältää muutaman lähinnä testien tarvitseman apufunktion:
 
@@ -187,11 +187,11 @@ if __name__ == "__main__":
       setup_db()
 ```
 
-Funktio `setup_db`, luo tietokannan. Tietokannan luova koodi on määritelty tiedostossa _schema.sql_. Käytännössä tietokanta sisältää vain taulun ´todos´. Jos tietokanta on jo olemassa kun funktiota `setup_db` kutsutaan, poistetaan kannan taulut ja luodaan kanta uudelleen. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
+Funktio `setup_db` luo tietokannan. Tietokannan luova koodi on määritelty tiedostossa _schema.sql_. Käytännössä tietokanta sisältää vain taulun ´todos´. Jos tietokanta on jo olemassa kun funktiota `setup_db` kutsutaan, poistetaan kannan taulut ja luodaan kanta uudelleen. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
 
 #### Testien alustus ja suorittaminen
 
-Robot-testit on konfiguroitu Viikon 3 [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittamien-github-actioneissa) tapaan, eli testit suoritetaan skriptin _run_robot_tests.sh_ avulla. Skriptissä on nyt pieni ero aiempaan
+Robot-testit on konfiguroitu Viikon 3 [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittamien-github-actioneissa) tapaan, eli testit suoritetaan skriptin _run_robot_tests.sh_ avulla. Skriptissä on nyt pieni ero aiempaan verrattuna
 
 ```sh
 #!/bin/bash
@@ -252,7 +252,7 @@ if test_env:
         return jsonify({ 'message': "db reset" })
 ```
 
-Kyseinen reitinkäsittelijä on tarkoitettu ainoastaan testien käyttöön. Reitinkäsittelijää ei luoda ollenkaan jos tiedostossa _.env_ määritellään ympäristömuuttujan *TEST_ENV* arvoksi _false_:
+Kyseinen reitinkäsittelijä on tarkoitettu ainoastaan testien käyttöön. Reitinkäsittelijää ei luoda ollenkaan, jos tiedostossa _.env_ määritellään ympäristömuuttujan *TEST_ENV* arvoksi _false_:
 
 ```.env
 DATABASE_URL=postgresql://xxx
@@ -260,11 +260,11 @@ TEST_ENV=false
 SECRET_KEY=satunnainen_merkkijono
 ```
 
-Tämä asetus on syytä tehdä kun sovellus viedään todelliseen tuotantoympäristöön.
+Tämä asetus on syytä tehdä, kun sovellus viedään todelliseen tuotantoympäristöön.
 
 ### Testeistä
 
-Sovelluksen automatisoitu testaus on tehty suurimmaksi osaksi Robotilla. Robot-testien lisäksi sovelluksessa on muutama unittest-kirjastolla toteutettu yksikkötesti, joiden avulla testataan tiedostossa _util.py_ määriteltyä apufunktiota `validate_todo`, joka tarkistaa onko luotavan Todon sisältö oikean kokoinen (5-100 merkkiä pitkä). Sovellukseen olisi voitu periaatteessa tehdä enemmänkin yksikkötestejä mutta koska suurin osa sovelluksen koodista on tietokannan tai HTTP-pyyntöjen käsittelyä, on testit kätevämpi tehdä käyttäjän toimintaa simuloivilla Robot-testeillä.
+Sovelluksen automatisoitu testaus on tehty suurimmaksi osaksi Robotilla. Robot-testien lisäksi sovelluksessa on muutama unittest-kirjastolla toteutettu yksikkötesti, joiden avulla testataan tiedostossa _util.py_ määriteltyä apufunktiota `validate_todo`, joka tarkistaa onko luotavan Todon sisältö oikean kokoinen (5-100 merkkiä pitkä). Sovellukseen olisi voitu periaatteessa tehdä enemmänkin yksikkötestejä, mutta koska suurin osa sovelluksen koodista on tietokannan tai HTTP-pyyntöjen käsittelyä, on testit kätevämpi tehdä käyttäjän toimintaa simuloivilla Robot-testeillä.
 
 Miniprojekteissa saattaa tulla esiin hieman enemmän toiminnallisuutta (esim. BibTexin generointi) jonka testaaminen kannattaa hoitaa yksikkötesteillä.
 
@@ -272,7 +272,7 @@ Kantavana ajatuksena on siis, että Robot Frameworkia ja yksikkötestejä käyte
 
 - Eristä koodissa oman vastuun omaavat osat muista osista riippumattomiksi.
 - Erityisesti älä sotke tietokanta- ja käyttöliittymäoperaatioita muuhun koodiin.
-- Erilleen tietokannasta ja käyttöliittymästä kapseloidut osat kannattaa mahdollisesti testata yksikkötesteillä.
+- Erillään tietokannasta ja käyttöliittymästä kapseloidut osat kannattaa mahdollisesti testata yksikkötesteillä.
 - Esimerkiksi tietokannasta huolehtivia luokkia tuskin kannattaa tämän kokoluokan ohjelmistossa yksikkötestata, sillä Robot Framework -kattavuus hoitaa ne.
 
 Robot-testien toimintaperiaate on samankaltainen kuin viikon 3 [tehtävissä](/tehtavat3).
@@ -281,7 +281,7 @@ Yksi testeistä on hieman mielenkiintoisempi. Testi luo kaksi Todoa ja klikkaa t
 
 ![]({{ "/images/todo4.png" | absolute_url }}){:height="250px" }
 
-Painettavan napin etsiminen ei nyt onnistu pelkästään napin tekstin perusteella sillä saman tekstin omaavia nappeja on kaksi. Testi näyttää seuraavalta
+Painettavan napin etsiminen ei nyt onnistu pelkästään napin tekstin perusteella, sillä saman tekstin omaavia nappeja on kaksi. Testi näyttää seuraavalta
 
 ```robot
 After adding two todos and marking one done, there is one unfinished
@@ -299,7 +299,7 @@ After adding two todos and marking one done, there is one unfinished
 
 Oikea nappi on nyt etsitty käyttäen [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath):a, joka on yksi Robotin tukemista tavoista etsiä elementtejä Web-sivuilta.
 
-Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyksen miten Robot-testissä painetaan _tiettyyn_ Todon liittyvää nappia. Tekoäly antoi ystävällisesti oikean vastauksen ja selityksen XPath-komennon toiminnosta:
+Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyksen miten Robot-testissä painetaan _tiettyyn_ Todon liittyvää nappia. Tekoäly antoi ystävällisesti oikean vastauksen ja selityksen XPath-komennon toiminnasta:
 
 >The XPath `//li[div[contains(text(), 'Specific Todo Content')]]/form/button` is used to locate the button within the form for the specific todo item that is not done. Adjust the XPath as necessary to match the actual structure of your HTML.
 >
@@ -312,7 +312,7 @@ Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyk
 >    Selects the <button> element within the <form> inside the selected <li>.
 >```
 
-Lisää tavoista elementtien etsimiseen testeissä voi lukea Robotin [dokumentaatiosta](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements).
+Lisää tavoista etsiä elementtejä testeissä voi lukea Robotin [dokumentaatiosta](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements).
 
 
 ### Protips
@@ -321,6 +321,6 @@ Miniprojekti kannattaa rakentaa joko copypasteamalla boilerplaten konfiguraatiot
 
 Kannattaa edetä **todella pienin askelin** ja pushata koodia useasti GitHubiin.
 
-Sovellus tulee pitää **KOKO AJAN** sellaisessa tilassa että kaikki testit menevät GitHub Actioneissa läpi. Jos GHA menee punaiselle, älkää missään tapauksessa lisätkö koodia ennen kuin ongelmat on korjattu.
+Sovellus tulee pitää **KOKO AJAN** sellaisessa tilassa että kaikki testit menevät GitHub Actioneissa läpi. Jos GitHub Actions menee punaiselle, älkää missään tapauksessa lisätkö koodia ennen kuin ongelmat on korjattu.
 
-Jos päädyt koodaamaan esim. 2 tuntia ja yrität sen jälkeen saada testit toimimaan, tulee todennäköisesti kulumaan vähintään 4 tuntia debuggaukseen. Jos taas koodaat vain 5 minuuttia, ja tarkistat sen jälkeen menevätkö testit läpi, debuggaukseen kuluva aika on ehkä vain minuutin. Eli pienet askeleet tarkoittaa suurta säästöä ajassa.
+Jos päädyt koodaamaan esim. 2 tuntia ja yrität sen jälkeen saada testit toimimaan, tulee todennäköisesti kulumaan vähintään 4 tuntia debuggaukseen. Jos taas koodaat vain 5 minuuttia, ja tarkistat sen jälkeen menevätkö testit läpi, debuggaukseen kuluva aika on ehkä vain minuutin. Eli pienet askeleet tarkoittavat suurta säästöä ajassa.

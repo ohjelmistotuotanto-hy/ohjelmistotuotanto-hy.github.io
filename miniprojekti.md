@@ -74,7 +74,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 #### viikko 3 (11-15.11.)
 
-- Ryhmä muodostuvat/muodostetaan
+- Ryhmä muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
 - Projekti tulee rekisteröidä palautussovellukseen <{{site.stats_url}}>.
   - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
@@ -110,15 +110,15 @@ Paljastuu aloitustilaisuudessa...
 
 ### Toteutusteknologia
 
-Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
-- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
+Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+- Riittää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
 
 Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
-  - Vaatimukset kirjataan backlogiin user storyinä
+  - Vaatimukset kirjataan backlogiin user storyina
 - Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
@@ -127,13 +127,12 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
-  - Ryhmä tekee päivittäin jäljellä olevan työajan arviointia ja dokumentoi tämän sprintin burndown-käyränä
+  - Ryhmä tekee päivittäin jäljellä olevan työajan arvioinnin ja dokumentoi tämän sprintin burndown-käyränä
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - jäljellä olevan työajan estimaatti
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
-- Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration)
-  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua GitHub Actionsia
+- Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
@@ -156,14 +155,14 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 
 Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
-- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot-frameworkin](/robot_framework/) syntaksilla
-  - hyvänä käytänteenä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
+- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot Frameworkin](/robot_framework/) syntaksilla
+  - hyvänä käytäntönä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
 - Toteutetun koodin testikattavuuden tulee olla kohtuullinen
 - Asiakas pääsee näkemään koko ajan koodin ja testien tilanteen CI-palvelusta
 - Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
-  - yhtenäinen koodityyli (noudattaa pylintin avulla määriteltyjä sääntöjä)
+  - yhtenäinen koodityyli (valvotaan Pylintin avulla)
 
 #### Repositorio ja README
 
@@ -172,20 +171,19 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Linkit backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä)
 - Linkki CI-palveluun
 - Linkki sovelluksen toimivaan versioon (jos sovellus on verkossa)
-- Jos kyse työpöytäsovelluksesta, tulee ohjelmalle olla asennus- ja käyttöohje
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
 
 ### Vihjeitä ryhmätyöskentelyyn
 
-Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikanpäällä tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
+Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikan päällä kampuksella tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
 
-Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storyä työstää aina kaksi henkilöä.
+Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storya työstää aina kaksi henkilöä.
 
-Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
+Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
 
-Projektin alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
+Katso myös [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md) projektin alkuun.
 
 ### Työn arvostelu
 
