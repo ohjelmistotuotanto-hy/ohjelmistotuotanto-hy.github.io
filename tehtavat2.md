@@ -44,15 +44,15 @@ Tee seuraavat toimenpiteet:
 
 - Aluksi Poetry-pohjainen projekti täytyy alustaa. **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
 - Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
-- Sovelluksessa ilmenee ensimmäinen bugi. Syynä oli luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. **Asenna pytest projektin _kehityksen aikaiseksi riippuvuudeksi_**
+- Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. **Asenna pytest projektin _kehitysaikaiseksi riippuvuudeksi_**
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
 - Sovellus käyttää relaatiotietokantaa joten päädyt etsimään tarkoitukseen sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [SQLAlchemy](https://pypi.org/project/SQLAlchemy/). **Asenna SQLAlchemy projektin riippuvuudeksi**
 - Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. **Asenna SQLAlchemy-kirjastosta versio `1.4.54`**.
   - Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
   - Pohdi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `1.4.54` päivittäminen versioon `2.0.44` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole versiosta `2.0.5` versioon `2.0.44`?
-  - Versiovaatimuksissa on mukana usein `^`-, tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
+  - Versiovaatimuksissa on mukana usein `^`- tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
 - Kuulet kaveriltasi, että Flaskin sijaan kannattaisi käyttää [FastAPI](https://pypi.org/project/fastapi/)-kirjastoa. 
-**Poista Flask projektin riippuvuuksien joukosta ja asenna FastAPI**
+**Poista Flask projektin riippuvuuksista ja asenna FastAPI.**
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 
@@ -69,7 +69,7 @@ Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan
 
 Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
-Asenna siis _requests_-kirjasto projektin riippuvuuksiksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+Asenna siis _requests_-kirjasto projektin riippuvuudeksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 
@@ -116,11 +116,11 @@ Mikko Rantanen team COL, CAR, DAL  goals 32 assists 56
 ...
 ```
 
-Tulostusasu ei tässä tehtävässä ole oleellista, eikä edes se mitä pelaajien tiedoista tulostetaan.
+Tulostusasu ei tässä tehtävässä ole oleellinen, eikä edes se, mitä pelaajien tiedoista tulostetaan.
 
 ### 3. Siistimpi pelaajalista
 
-Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei ole taaskaan oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
+Tulosta suomalaiset pelaajat pisteiden (goals + assists) mukaan järjestettynä. Tarkka tulostusasu ei taaskaan ole oleellinen, mutta se voi esimerkiksi näyttää seuraavalta:
 
 ```
 Players from FIN
@@ -142,13 +142,13 @@ Eeli Tolvanen         SEA             23 + 12 = 35
 - Vihje 2: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
 - Vihje 3: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa.
 - Erityisesti vihje 2 on heikko, katso miten saat [apua tekoälyltä](/genai/#viikko-2---tehtävä-3)
-- Myös Ohjelmoinnin MOOC:in [osa11](https://ohjelmointi-25.mooc.fi/osa-11) ja [osa12](https://ohjelmointi-25.mooc.fi/osa-12) käsittelevät tehtävän kannalta hyödyllisiä asioita
+- Myös Ohjelmoinnin MOOCin [osa 11](https://ohjelmointi-25.mooc.fi/osa-11) ja [osa 12](https://ohjelmointi-25.mooc.fi/osa-12) käsittelevät tehtävän kannalta hyödyllisiä asioita
 
 ### 4. Pelaajalistan refaktorointi
 
 Tällä hetkellä suurin osa pelaajatietoihin liittyvästä koodista on luultavasti `main`-funktiossa. Funktion _koheesion_ aste on melko matala, koska se keskittyy usean toiminnallisuuden toteuttamiseen. Koodi kaipaisi siis pientä refaktorointia.
 
-Jaa toiminnallisuuden vastuut kahdelle luokkalle: `PlayerReader` ja `PlayerStats`.
+Jaa toiminnallisuuden vastuut kahdelle luokalle: `PlayerReader` ja `PlayerStats`.
 - `PlayerReader`-luokan vastuulla on hakea JSON-muotoiset pelaajat konstruktorin parametrin kautta annetusta osoitteesta ja muodostaa niistä `Player`-olioita. Tämä voi tapahtua esimerkiksi luokan `get_players`-metodissa. 
 - `PlayerStats`-luokan vastuulla on muodostaa `PlayerReader`-luokan tarjoamien pelaajien perusteella erilaisia tilastoja. Tässä tehtävässä riittää, että luokalla on metodi `top_scorers_by_nationality`, joka palauttaa parametrina annetun kansalaisuuden pelaajat pisteiden mukaan laskevassa järjestyksessä (suurin pistemäärä ensin).
 
@@ -171,7 +171,7 @@ Funktion pitäisi tulostaa samat pelaajat samassa järjestyksessä kuin edellise
 
 Laajenna sovellustasi lisäämällä siihen toiminnallisuutta ja muotoilemalla tulostus kirjaston [Rich](https://github.com/Textualize/rich) avulla. Ohjeita kirjaston käyttöön löytyy sen [dokumentaatiosta](https://rich.readthedocs.io/en/stable/introduction.html) ja googlaamalla tai tekoälyltä.
 
-Sovelluksella tulee pystyä näyttämään käyttäjän haluaman maan pelaajien tilastot käyttäjän määrittelemältä kaudelta.  
+Sovelluksen tulee pystyä näyttämään käyttäjän haluaman maan pelaajien tilastot käyttäjän määrittelemältä kaudelta.
 
 Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
 
@@ -190,11 +190,11 @@ Tutustutaan nyt staattisen analyysin työkaluun nimeltään [Pylint](https://pyl
 
 **Mene nyt viikon 1 varasto-projektiin liittyvien tehtävien palautusrepositorioosi.**
 
-Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö tulee toistaiseksi olla [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
+Ota varasto-projektissa käyttöön Pylint noudattamalla lukemiasi ohjeita. Konfiguraationa käytettävän _.pylintrc_-tiedoston sisältö on toistaiseksi [tämän]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc) tiedoston sisällön mukainen.
 
 Pylintin tarkistamat säännöt konfiguroidaan _.pylintrc_-tiedostoon oikeiden osioiden alle. `[main]`-osio sisältää yleisiä konfiguraatioita, kuten mitkä hakemistot tai tiedostot pitäisi jättää tarkistuksien ulkopuolelle. `[MESSAGE CONTROL]`-osiossa taas voidaan määritellä esimerkiksi tarkistuksia, joista ei tarvitse huomauttaa. Loput osiot ovat eri sääntöjen konfigurointia varten, jotka on dokumentoitu Pylintin [dokumentaatiossa](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html).
 
-Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien [maksimilukumäärään neljään](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args), voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
+Jos haluamme esimerkiksi asettaa funktioiden ja metodien argumenttien [maksimilukumäärä neljään](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args), voimme lisätä sen `[DESIGN]`-osioon seuraavasti:
 
 ```
 [DESIGN]
@@ -217,7 +217,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
   - Rivin pituus on maksimissaan 80 merkkiä
     - Vinkki: sääntö löytyy [Format checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#format-options) -osiosta ja tulee määrittää `[FORMAT]`-osion alle
-  - Yksi sisennystaso on 4 merkkiä
+  - Yksi sisennystason leveys on 4 merkkiä
   - Ei yli kahta sisäkkäistä lohkoa (esimerkiksi if- tai for-lohkoa) funktion tai metodin sisällä
     - Vinkki: sääntö löytyy [Refactoring checker](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#refactoring-checker) -osiosta ja tulee määrittää `[REFACTORING]`-osion alle)
   - Funktiossa tai metodissa on enintään 10 lausetta (statements). Etsi sääntö dokumentaatiosta
@@ -233,7 +233,7 @@ Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsi
 
 **Tämä tehtävä tehdään viime viikon tehtävissä 2-13 käytettyyn ohtuvarasto-repositorioon**
 
-Laajenna ohtuvarastosi GitHub Actionien määritelmää siten, että myös Pylint-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin
+Laajenna ohtuvarastosi GitHub Actions -määritelmää siten, että myös Pylint-tarkastukset suoritetaan aina kun koodi pushataan GitHubiin
 
 Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin Pylint-sääntöjä:
 
@@ -274,7 +274,7 @@ Määrittelyn jälkeen precommit hook tulee vielä asentaa suorittamalla seuraav
 pre-commit install
 ```
 
-Huomaa, että komento on suoritettava aina kun tiedostoa _.pre-commit-config.yaml_ muutetaan!
+Huomaa, että komento on suoritettava aina, kun tiedostoa _.pre-commit-config.yaml_ muutetaan!
 
 Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen committia, ja jos koodissa on virheitä, ei commit onnistu.
 
@@ -304,11 +304,11 @@ Varsin selkeältä vaikuttaa myös <https://www.atlassian.com/git/tutorials/usin
 
 Gitinkin suhteen kielimallit ovat myös varsin osaavia, eli hätätapauksessa voit turvautua vaikkapa [CurreChatiin](<{{site.curre}}>).
 
-**Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging -alue tyhjinä!
+**Huom:** kun liikut branchien välillä kannattaa pitää working tree ja staging-alue tyhjinä!
 
 Tee palautusrepositorion viikon 2 tehtävien hakemistoon alihakemisto _git-branch-harjoitus_ tämän ja muutaman seuraavan tehtävän koodia varten.
 
-**Protip** Tehtävän eri askeleet on ranskalaisten viivojen sijaan merkattu checkboxeina. Voit käyttää niitä oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat jos uudeleenlataat sivun.
+**Protip:** Tehtävän eri askeleet on ranskalaisten viivojen sijaan merkattu checkboxeina. Voit käyttää niitä oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat jos uudeleenlataat sivun.
 
 <input type="checkbox"> Mene luomaasi hakemistoon
 
@@ -339,7 +339,7 @@ def summa(x, y):
 <input type="checkbox"> Siirry takaisin **main**-branchiin (komennolla`git checkout main`), tiedoston **summa.py** ei pitäisi nyt näkyä
   - **huom:** muistutus vielä siitä, että kun siirryt branchista toiseen varmista **aina** komennolla `git status` että kaikki muutokset on committoitu
 
-<input type="checkbox"> Luo tiedosto **logger.py**, jolla on seuraava sisältä
+<input type="checkbox"> Luo tiedosto **logger.py**, jolla on seuraava sisältö
 
 ```python
 from datetime import datetime
@@ -361,7 +361,7 @@ y = int(input("luku 2: "))
 logger("lopetetaan")
 ```
 
-<input type="checkbox"> Committaa nämä muutokset **main**-haaraan
+<input type="checkbox"> Commitoi nämä muutokset **main**-haaraan
 
 <input type="checkbox"> Mene branchiin **laskut** ja tarkasta, että **mainiin** lisätty tiedosto ei ole branchissa ja että tiedostoon **index.py** tehty muutos ei näy
 
@@ -380,8 +380,8 @@ def erotus(x, y):
   - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
     - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
 
-<input type="checkbox"> Mergeä branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
-  - Mergeäminen aiheuttaa ns. merge-commitin, ja avaa tekstieditorin mihin joudut kirjoittamaan commit-viestin
+<input type="checkbox"> Mergaa branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
+  - Mergaaminen aiheuttaa ns. merge-commitin, ja avaa tekstieditorin, johon joudut kirjoittamaan commit-viestin
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
 
@@ -461,7 +461,7 @@ On branch laskut
 Changes to be committed:
    (use "git restore --staged <file>..." to unstage)
 
-	new file:   LICENCE
+	new file:   LICENSE
 ```
 
 - Olet siis branchissa **laskut** ja _LICENSE_ on lisätty staging-alueelle, sitä ei kuitenkaan ole vielä committoitu
@@ -482,9 +482,9 @@ nothing to commit, working tree clean
 
 <input type="checkbox"> Siirry jälleen branchiin **laskut** ja huomaat, että _LICENSE_ ei ole olemassa
 
-<input type="checkbox"> Mergeä **main**-branch branchiin **laskut**
+<input type="checkbox"> Mergaa **main**-branch branchiin **laskut**
 
-<input type="checkbox"> Siirry nyt takaisin branchiin **main** ja tuhoa branchi **laskut**
+<input type="checkbox"> Siirry nyt takaisin branchiin **main** ja tuhoa branch **laskut**
   - Tuhoaminen ei onnistu suoraan komennolla `git branch -d`, jos branchin sisältö ei ole kokonaisuudessaan mergetty mainiin.
   - Jos näin on, tee ensin merge mainiin, tai jos tarkoituksena on poistaa branch silti vaikka siinä on vielä eriäviä muutoksia, käytä `git branch -D` poistaaksesi branch eriävine muutoksineen
 
@@ -517,7 +517,7 @@ Alkuun on siis lisätty kommentti ja tyhjä rivi
 
 <input type="checkbox">  committaa muutos
 
-<input type="checkbox">  Tee uusi branchi **bugikorjaus**, mene branchiin ja editoi tiedoston **index.py** loppua (esim. seuraavasti ) ja committaa
+<input type="checkbox">  Tee uusi branch **bugikorjaus**, mene branchiin ja editoi tiedoston **index.py** loppua (esim. seuraavasti ) ja committaa
 
 ```py
 # tehdään alussa importit
@@ -537,7 +537,7 @@ logger("lopetetaan ohjelma")
 print("goodbye!") # lisäys bugikorjaus-branchissa
 ```
 
-<input type="checkbox">  Mene takaisin **main**-branchiin, editoi tiedoston **index.py** alkupuolta esim.seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
+<input type="checkbox">  Mene takaisin **main**-branchiin, editoi tiedoston **index.py** alkupuolta esim. seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
 
 ```py
 # tehdään alussa importit
@@ -556,11 +556,11 @@ print(f"{erotus(x, y)}")
 logger("lopetetaan ohjelma")
 ```
 
-<input type="checkbox"> Mergeä branchin **bugikorjaus** sisältö **mainiin**
+<input type="checkbox"> Mergaa branchin **bugikorjaus** sisältö **mainiin**
 
   - Katso tiedoston **index.py**-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
   - Git osaa siis mergetä
-  - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
+  - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti, jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
 
 <input type="checkbox"> Olet edelleen branchissa **main**. Muuta tiedostoa print-komentojen osalta seuraavasti, ja committaa muutos
 
@@ -602,8 +602,8 @@ logger("lopetetaan ohjelma")
 print("goodbye!")
 ```
 
-<input type="checkbox"> Mergeä branchin **main** sisältö branchiin **bugikorjaus**
-  - Nyt pitäisi aiheutua konflikti, komento aiheuttaa tulostuksen
+<input type="checkbox"> Mergaa branchin **main** sisältö branchiin **bugikorjaus**
+  - Nyt pitäisi syntyä konflikti, komento aiheuttaa tulostuksen
 
 ```
 Auto-merging index.py
@@ -653,11 +653,11 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 <input type="checkbox"> Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta Tracking Branches)
 
-<input type="checkbox"> Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branchi GitHubiin
+<input type="checkbox"> Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branch GitHubiin
 
-<input type="checkbox"> Tarkastele GitHub-repositoriota selaimella, varmista että branchi päivittyy
+<input type="checkbox"> Tarkastele GitHub-repositoriota selaimella, varmista että branch päivittyy
 
-<input type="checkbox"> Tee klooniin uusi branchi **tulo** ja sinne kahden luvun tulon laskeva funktio tiedostoon `tulo.py`
+<input type="checkbox"> Tee klooniin uusi branch **tulo** ja sinne kahden luvun tulon laskeva funktio tiedostoon `tulo.py`
 
 <input type="checkbox"> Muuta ohjelmaa seuraavasti
 
@@ -678,21 +678,21 @@ print(f"{x} * {y} = {tulo(x, y)}")
 logger("lopetetaan")
 print("goodbye!")
 ```
-<input type="checkbox"> Committaa ja pushaa kloonin branchin **tulo** muutokset GitHubiin ja varmista, että ne näkyvät siellä
+<input type="checkbox"> Commitoi ja pushaa kloonin branchin **tulo** muutokset GitHubiin ja varmista, että ne näkyvät siellä
 
 - Pushatessa saatat saada virheilmoituksen, ilmoitus kertoo mitä tulee tehdä
 
 <input type="checkbox"> Mene GitHub-repositorion **alkuperäiseen** paikalliseen kopioon:
 
-- Äsken luotu branchi ei ole vielä alkuperäisessä kopiossa
+- Äsken luotu branch ei ole vielä alkuperäisessä kopiossa
 
-<input type="checkbox"> Tee alkuperäiseen kopioon branchia **tulo** träkkäävä branchi
+<input type="checkbox"> Tee alkuperäiseen kopioon branchia **tulo** träkkäävä branch
 
 - **Huom**: Joudut tekemään ensin komennon `git fetch`, jotta paikallinen kopio pääsee jyvälle siitä että GitHubiin on lisätty tavaraa
 
-<input type="checkbox"> Mergeä haara **tulo** haaraan **main** ja tuhoa haara **tulo** sekä paikallisesti että GitHubista
+<input type="checkbox"> Mergaa haara **tulo** haaraan **main** ja tuhoa haara **tulo** sekä paikallisesti että GitHubista
 
-<input type="checkbox"> Tee nyt uusi haara, nimeltaan **osamaara**, lisää branchiin tiedosto `osamaara.py` ja pushaa se GitHubiin
+<input type="checkbox"> Tee nyt uusi haara, nimeltään **osamaara**, lisää branchiin tiedosto `osamaara.py` ja pushaa se GitHubiin
 
 <input type="checkbox"> Mene jälleen hetki sitten luotuun repositorion klooniin ja haaraan **main**
 
@@ -718,7 +718,7 @@ print("goodbye!")
 ```
 
 - Komento kertoo, että Remote (eli GitHub) ja Local (eli paikallinen klooni) eivät ole branchien suhteen samassa tilassa.
-- Jo tuhottu branchi **tulo** löytyy vielä paikallisesti, kun taas uutta branchia **osamaara** ei paikallisesti vielä ole.
+- Jo tuhottu branch **tulo** löytyy vielä paikallisesti, kun taas uutta branchia **osamaara** ei paikallisesti vielä ole.
 
 <input type="checkbox"> Korjaa tilanne siten, että `git remote show origin` tulostaa
 
@@ -754,7 +754,7 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 ### 13. Git: epäajantasaisen kloonin pushaaminen [versionhallinta]
 
-Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, missä epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
+Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, jossa epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
 <input type="checkbox"> Mene alkuperäisen repositorion paikallisen kloonin **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
 
@@ -805,7 +805,7 @@ Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet l
 
 Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
 
-<input type="checkbox"> Eli yllä kuvatulla tavalla ja varmista, että tekemäsi muutokset menevät GitHubiin
+<input type="checkbox"> Toimi yllä kuvatulla tavalla ja varmista, että tekemäsi muutokset menevät GitHubiin
 
 
 {% include submission_instructions.md %}

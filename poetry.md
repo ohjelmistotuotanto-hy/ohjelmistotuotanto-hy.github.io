@@ -115,7 +115,7 @@ virtualenvs.prefer-active-python = false
 virtualenvs.prompt = "{project_name}-py{python_version}"
 ```
 
-Konfiguraatioissa on pari meitä kiinnostava kohtaa. _cache-dir_ ja _virtualenvs.path_ kertovat yhdessä, että jokaisen projektin virtuaaliympäristo, eli talletetaan oletusarvoisesti kansion _/Users/mluukkai/Library/Caches/pypoetry_ alle. Tämä voi olla ok ratkaisu, mutta ainakin omaan makuun parempi on jos kunkin projektin virtuaaliympäristö talletetaan projektin hakemistoon. Tämä on yleinen käytäntö esimerkiksi JavaScritp-ekosysteemissä. Konfiguraatio tapahtuu [seuraavasti](https://python-poetry.org/docs/configuration/#virtualenvsin-project)
+Konfiguraatioissa on pari meitä kiinnostava kohtaa. _cache-dir_ ja _virtualenvs.path_ kertovat yhdessä, että jokaisen projektin virtuaaliympäristo, eli talletetaan oletusarvoisesti kansion _/Users/mluukkai/Library/Caches/pypoetry_ alle. Tämä voi olla ok ratkaisu, mutta ainakin omaan makuun parempi on jos kunkin projektin virtuaaliympäristö talletetaan projektin hakemistoon. Tämä on yleinen käytäntö esimerkiksi JavaScript-ekosysteemissä. Konfiguraatio tapahtuu [seuraavasti](https://python-poetry.org/docs/configuration/#virtualenvsin-project)
 
 ```bash
 poetry config virtualenvs.in-project true
@@ -160,14 +160,14 @@ build-backend = "poetry.core.masonry.api"
 
 Tiedoston `[tool.poetry]`-osio sisältää projektiin liittyviä yleistietoja, kuten sen nimen, kuvauksen ja ylläpitäjät. Osion alapuolella on osioita, jotka listaavat projektin riippuvuuksia. Osiossa `[tool.poetry.dependencies]` näemme `poetry init`-komennon suorituksen yhteydessä asettamamme Python-version vaatimuksen, joka on muotoa `python = "^3.12"`. `^3.12`-merkintä tarkoittaa, että projektin käyttö vaatii vähintään Python-version 3.12.
 
-Tehdään pari pientä muutosta tiedostoon. Ensinnäkin mainita _readme_-tiedostosta pitää poistaa, sillä sellaista ei projektissa ole. Lisätään tiedostoon myös seuraava:
+Tehdään pari pientä muutosta tiedostoon. Ensinnäkin maininta _readme_-tiedostosta pitää poistaa, sillä sellaista ei projektissa ole. Lisätään tiedostoon myös seuraava:
 
 ```
 [tool.poetry]
 package-mode = false
 ```
 
-Lisäystä ei voi tehdä mihinn kohtaan sattuu, sopiva paikka lisäykselle on esim. ennen määrittelyä _[build-system]_. 
+Lisäystä ei voi tehdä mihin tahansa kohtaan, sopiva paikka lisäykselle on esim. ennen määrittelyä _[build-system]_. 
 
 Syy lisäykselle on selitetty [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes).
 
@@ -231,13 +231,13 @@ import cowsay
 cowsay.tux("Poetry is awesome!")
 ```
 
-Koodissa käyttämme `import`-lausetta saadaksemme cowsay-kirjaston käyttöömme. Jos suoritamme tiedoston terminaalissa komennolla:
+Koodissa käytämme `import`-lausetta saadaksemme cowsay-kirjaston käyttöömme. Jos suoritamme tiedoston terminaalissa komennolla:
 
 ```bash
 python3 src/index.py
 ```
 
-On lopputuloksena seuravaa virheilmoitus:
+On lopputuloksena seuraava virheilmoitus:
 
 ```
 ModuleNotFoundError: No module named 'cowsay'
@@ -251,7 +251,7 @@ poetry run python3 src/index.py
 
 `poetry run`-komento siis suorittaa annetun komennon virtuaaliympäristössä, jonka sisällä Python löytää riippuvuutemme.
 
-Kun projektia kehitetään aktiivisesti ja komentoja suoritetaan terminaalissa jatkuvasti, on kätevintä olla koko ajan virtuaaliympäristön sisällä. Voimme siirtyä virtuaaliympäristön sisään kommennolla [shell](https://python-poetry.org/docs/cli/#shell):
+Kun projektia kehitetään aktiivisesti ja komentoja suoritetaan terminaalissa jatkuvasti, on kätevintä olla koko ajan virtuaaliympäristön sisällä. Voimme siirtyä virtuaaliympäristön sisään komennolla [shell](https://python-poetry.org/docs/cli/#shell):
 
 ```bash
 poetry shell
@@ -271,15 +271,15 @@ python3 src/index.py
 
 Voimme lähteä virtuaaliympäristöstä komennolla `exit`.
 
-Poetry:n tuodut riippuvuudet ovat vain virtuaalisessa ympäristössä saatavilla, VS Code:in sisäänrakennettu "debugging mode" (F5 oletuksena) ei välttämättä toimi. Koita ensin ``eval $(poetry env activate)` ja vasta sen jälkeen käynnistä VS Code `code /path/to/projekt` komennolla.
+Poetryn tuodut riippuvuudet ovat vain virtuaalisessa ympäristössä saatavilla, VS Coden sisäänrakennettu "debugging mode" (F5 oletuksena) ei välttämättä toimi. Koita ensin `eval $(poetry env activate)` ja vasta sen jälkeen käynnistä VS Code `code /path/to/projekt` komennolla.
 
-### Kehityksen aikaiset riippuvuudet
+### Kehityksaikaiset riippuvuudet
 
-Poetryn avulla riippuvuuksia on mahdollista ryhmitellä niiden käyttötarkoituksen mukaan. Melko yleinen tapa ryhmitellä riippuuvuuksia on ryhmitellä ne _kehityksen_ ja _suorituksen_ aikaisiksi riippuvuuksiksi. Kehityksen aikaisia riippuvuuksia tarvitaan ohjelmiston kehityksen aikana, mutta ne eivät ole välttämättömiä ohjelman suorituksessa.
+Poetryn avulla riippuvuuksia on mahdollista ryhmitellä niiden käyttötarkoituksen mukaan. Melko yleinen tapa ryhmitellä riippuvuuksia on ryhmitellä ne _kehityksen_ ja _suorituksen_ aikaisiksi riippuvuuksiksi. Kehitysaikaisia riippuvuuksia tarvitaan ohjelmiston kehityksen aikana, mutta ne eivät ole välttämättömiä ohjelman suorituksessa.
 
 Komennon `poetry add` suorittaminen asentaa oletusarvoisesti riippuvuudet `[tool.poetry.dependencies]`-osion alle. Näiden riippuvuuksien lisäksi voimme asentaa projektiimme riippuvuuksia, joita tarvitsemme vain kehityksen aikana. Näitä riippuvuuksia ovat kaikki ne, joita itse sovelluksen käynnistäminen (esimerkiksi `python3 src/index.py`-komennon suorittaminen) ei tarvitse.
 
-Kehityksen aikaisten riippuvuuksien asentaminen onnistuu antamalla `poetry add`-komennolle `--group dev`-flagi. Esimerkiksi pian tutuksi tulevan [pytest](https://pytest.org/)-kirjaston voi asentaa kehityksen aikaiseksi riippuvuudeksi seuraavalla komennolla:
+Kehityksenaikaisten riippuvuuksien asentaminen onnistuu antamalla `poetry add`-komennolle `--group dev`-flagi. Esimerkiksi pian tutuksi tulevan [pytest](https://pytest.org/)-kirjaston voi asentaa kehityksaikaiseksi riippuvuudeksi seuraavalla komennolla:
 
 ```bash
 poetry add pytest --group dev
@@ -292,7 +292,7 @@ Komennon suorittaminen lisää pytest-kirjaston riippuvuudeksi `[tool.poetry.gro
 pytest = "^7.4.2"
 ```
 
-Kehityksen aikaisten riippuvuuksien määritteleminen on kätevää, koska se vähentää asennettavien riippuvuuksien määrää tapauksessa, jossa haluamme vain suorittaa sovelluksen. Tässä tilanteessa riippuvuuksien asentamisen voi tehdä komennolla `poetry install --without dev`.
+Kehityksenaikaisten riippuvuuksien määritteleminen on kätevää, koska se vähentää asennettavien riippuvuuksien määrää tapauksessa, jossa haluamme vain suorittaa sovelluksen. Tässä tilanteessa riippuvuuksien asentamisen voi tehdä komennolla `poetry install --without dev`.
 
 {% include no_pip.md %}
 
@@ -304,9 +304,9 @@ Kymmenet kurssin opiskelijat ovat törmänneet seuraavaan ongelmaan suorittaessa
 
 ![]({{ "/images/lh1-7-25.png" | absolute_url }})
 
-Kuten valitus sanoo, syitä on kaksi. Ensimmäinen näistä johtuu siitä, että projektissa ei ole readme-tiedostoa. Vika on helppo korjata poistamalla määrittely tiedostosta  _pyproject.yaml_
+Kuten valitus sanoo, syitä on kaksi. Ensimmäinen näistä johtuu siitä, että projektissa ei ole readme-tiedostoa. Vika on helppo korjata poistamalla määrittely tiedostosta  _pyproject.toml_
 
-Toisen ongelman syy kerrotaan [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes). Ongelmasta pääsee eroon lisäämällä tiedostoon _pyproject.yaml_
+Toisen ongelman syy kerrotaan [dokumentaatiossa](https://python-poetry.org/docs/basic-usage/#operating-modes). Ongelmasta pääsee eroon lisäämällä tiedostoon _pyproject.toml_
 
 ```
 [tool.poetry]
@@ -355,7 +355,7 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'cowsay'
 ```
 
-Syynä jälleen se, että ei olla virtuaaliynmpäristössä. Voi olla, että komento aiheuttaa saman virheen vaikka virtuaaliympäristö on jo käynnistetty. Tämä johtuu siitä, että kirjastoa ei ole vielä asennettu. Eli tulee varmistaa, että kirjasto on mainittu tiedostossa _pyproject.toml_ ja että komento `poetry install` on suoritettu.
+Syynä jälleen se, että ei olla virtuaaliympäristössä. Voi olla, että komento aiheuttaa saman virheen vaikka virtuaaliympäristö on jo käynnistetty. Tämä johtuu siitä, että kirjastoa ei ole vielä asennettu. Eli tulee varmistaa, että kirjasto on mainittu tiedostossa _pyproject.toml_ ja että komento `poetry install` on suoritettu.
 
 Jos tästä huolimatta tulee valitus siitä, että ohjelman käyttämä kirjasto ei löydy (ja kirjasto on varmuudella asennettu), asenna riippuvuudet ja virtuaaliympäristö uudelleen, eli anna komennot:
 
@@ -404,7 +404,7 @@ Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma 
 
 ## urllib3 or chardet doesn't match a supported 
 
-Joissain tilanteissa poetry hajoaa kokonaan ja jokainen komento aiheuttaa seuraavan virheen:
+Joissain tilanteissa Poetry hajoaa kokonaan ja jokainen komento aiheuttaa seuraavan virheen:
 
 ```
 /usr/lib/python3/dist-packages/requests/init.py:89: RequestsDependencyWarning: urllib3 (1.26.12) or chardet (3.0.4) doesn't match a supported version!
@@ -422,7 +422,7 @@ pip install requests --upgrade
 
 Usein Poetry-ongelmat ratkeavat seuraavilla toimenpiteillä:
 
-1. Varmista, että Poetrysta on asennettu uusin versio suorittamalla komento `poetry self update`
+1. Varmista, että Poetrystä on asennettu uusin versio suorittamalla komento `poetry self update`
 2. Varmista, että _pyproject.toml_-tiedostossa on oikea Python version vaatimus:
 
    ```
