@@ -529,7 +529,7 @@ Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Stat
 https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
 ```
 
-_WORKFLOW_NAME_ on määritelty konfiguraatiotiedostossa:
+_WORKFLOW-FILE_ on määritelty konfiguraatiotiedostossa:
 
 ```yml
 name: CI
