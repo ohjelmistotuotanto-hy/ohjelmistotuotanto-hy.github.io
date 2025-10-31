@@ -120,11 +120,15 @@ Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requeste
 
 ### AI:n hyödyntäminen koodin katselmoinnissa
 
-![]({{ "/images/vibe1.png" | absolute_url }}){:height="350px" }
+GitHubissa on mahdollista pyytää Copilotia tekemään pull requesteille koodikatselmointi. Vibe-koodasin ohtuvarastoon interaktiivisen käyttöliittymän, ja tein lisäyksestä [pull requestin](https://github.com/mluukkai/ohtuvarasto25/pull/1) jonka pyysin Copilotin katselmoimaan. Katselmoinnin yleiskatsaus näyttää seuraavalta
 
-![]({{ "/images/vibe2.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/vibe4.png" | absolute_url }}){:height="500px" }
 
-![]({{ "/images/vibe2.png" | absolute_url }}){:height="350px" }
+Copilot antaa myös detaljoidumpia kommentteja, sekä parannusehdotuksia
+
+![]({{ "/images/vibe3.png" | absolute_url }}){:height="500px" }
+
+Kommentti sekä korjausehdotus näyttää asialliselta, ja sen voi halutessaan commitoida, jolloin commit lisätään pull requestiin mukaan.
 
 ## Koodin katselmointi ketterissä menetelmissä
 
