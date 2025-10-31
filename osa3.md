@@ -64,17 +64,17 @@ On ilmeistä, että ketterän mallin käyttämä vaatimusten validointitapa toim
 
 ## Koodin katselmointi
 
-Koodin katselmointi eli koodin lukeminen jonkun muun, kuin ohjelmoijan toimesta on havaittu erittäin tehokkaaksi keinoksi koodin laadun parantamisessa. Katselmoinnin avulla voidaan havaita koodista ongelmia, joita on vaikea havaita testaamalla, esim. noudattaako koodi sovittua tyyliä ja onko koodi ylläpidettävää.
+Koodin katselmointi eli koodin lukeminen jonkun muun kuin ohjelmoijan toimesta on havaittu erittäin tehokkaaksi keinoksi koodin laadun parantamisessa. Katselmoinnin avulla voidaan havaita koodista ongelmia, joita on vaikea havaita testaamalla, esim. noudattaako koodi sovittua tyyliä ja onko se ylläpidettävää.
 
-Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, että koodista ei löydy erilaisissa "checklisteissä" lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
+Koodin katselmoinnissa on perinteisesti käyty koodia läpi varmistaen, ettei siitä löydy erilaisissa checklisteissä lueteltuja riskialttiita piirteitä. Esimerkiksi eräs c-kielisten ohjelmien katselmoinnin checklist löytyy [täältä](http://www.oualline.com/talks/ins/inspection/c_check.html). Joissakin kielissä, esim. Javassa, kääntäjän tekemät tarkastukset tekevät osan linkin takana olevan listan tarkistuksista turhaksi.
 
-Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi JavaScript-ekosysteemissä [ESlint](https://eslint.org/) ja Pythonin [Pylint](https://pypi.org/project/pylint/), joihin tutustuttiin jo viikon 2 laskareissa.
+Nykyään on useita paljon katselmointia automatisoivia _staattista analyysiä_ tekeviä työkaluja, esimerkiksi JavaScript-ekosysteemissä [ESlint](https://eslint.org/) ja Pythonin [Pylint](https://pypi.org/project/pylint/), johon tutustuttiin jo viikon 2 laskareissa.
 
 ### Staattinen analyysi pilvessä
 
-Pilvipalvelut ovat helpottaneet sovelluskehittäjien työtä monissa asioissa, esim. GitHubin ansiosta omaa versionhallintapalvelinta ei ole enää tarvinnut ylläpitää vuosiin.
+Pilvipalvelut ovat helpottaneet sovelluskehittäjien työtä monissa asioissa, esim. GitHubin ansiosta omaa versionhallintapalvelinta ei ole tarvinnut ylläpitää vuosiin.
 
-Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi [Qlity](https://qlty.sh/), joka analysoi koodista mm. seuraavia asioita:
+Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekeviä palveluita, esimerkiksi [Qlty](https://qlty.sh/), joka analysoi koodista mm. seuraavia asioita:
 
 - koodissa oleva turha monimutkaisuus
 - koodissa olevat tietoturvariskit
@@ -83,17 +83,17 @@ Pilveen on viime aikoina ilmestynyt myös koodille staattista analyysiä tekevi�
 
 Minkä tahansa GitHubissa olevan projektin saa konfiguroitua Qltyn tarkastettavaksi nappia painamalla. Qlty suorittaa tarkastukset koodille aina kun uutta koodia pushataan GitHubiin.
 
-HY:llä oppimisanalytiikkaan käytettävän [Oodikone](https://github.com/UniversityOfHelsinkiCS/oodikone)-sovelluksen yleisraportti näyttää seuraavalta:
+Helsingin yliopistossa oppimisanalytiikkaan käytettävän [Oodikone](https://github.com/UniversityOfHelsinkiCS/oodikone)-sovelluksen yleisraportti näyttää seuraavalta:
 
 ![]({{ "/images/qlty1.png" | absolute_url }})
 
-Sovelluksen ylläpidettävyyden arvosana on B, eli toisiksi korkein, tietoturvaan liittyviä ongelmia ei ole havaittu. Qlty arvio sovelluksessa olevan teknisen velan takaisinmaksuajaksi vajaat 1000 tuntia. Oikealla oleva diagrammi näyttää sovelluksen koodin ylläpidolliset hotspotit, eli sovelluksen osat, jotka kaipaisivat eniten koodin huoltotoimia.
+Sovelluksen ylläpidettävyyden arvosana on B, eli toisiksi korkein, tietoturvaan liittyviä ongelmia ei ole havaittu. Qlty arvioi sovelluksessa olevan teknisen velan takaisinmaksuajaksi vajaat 1000 tuntia. Oikealla oleva diagrammi näyttää sovelluksen koodin ylläpidettävyyden hotspotit, eli sovelluksen osat, jotka kaipaisivat eniten koodin huoltotoimia.
 
-Qlty tarjoaa paljon erilaisia näkymiä. Koodin ylläpidettävyyttä voidaan tarkastella monella tasolla. Seruaava paljastaa, että hakemistoissa _faculty_ ja _studyProgramme_ oleva koodi kaipaa kenties parantelua:
+Qlty tarjoaa paljon erilaisia näkymiä. Koodin ylläpidettävyyttä voidaan tarkastella monella tasolla. Seuraava paljastaa, että hakemistoissa _faculty_ ja _studyProgramme_ oleva koodi kaipaa kenties parantelua:
 
 ![]({{ "/images/qlt4.png" | absolute_url }})
 
-Vastaavia palveluita on olemassa useita, mm. [SonarCube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevissä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
+Vastaavia palveluita on olemassa useita, mm. [SonarQube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevissä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
 
 ### Koodin katselmointi: GitHub ja pull requestit
 
@@ -102,8 +102,8 @@ Yhä enenevä määrä ohjelmistokehitysprojekteista tallettaa sovelluksen lähd
 Pull requesteja käytettäessä työn kulku on seuraava:
 
 - Sovelluskehittäjä forkkaa repositorion itselleen, tekee muutokset omaan repositorioon ja tekee pull requestin projektia hallinnoivalle taholle.
-- Hallinnoija, esimerkiksi tiimin "senior developer", open source -projektin vastaava tai joku muu sovelluskehittäjä tekee katselmoinnin pull requestille.
-- Jos koodi ei ole vielä siinä kunnossa, että tehdyt muutokset voidaan liittää repositorioon, kirjoittaa hallinnoija pull requestin tekijälle joukon parannusehdotuksia.
+- Hallinnoija, esimerkiksi tiimin senior developer, open source -projektin vastaava tai joku muu sovelluskehittäjä tekee katselmoinnin pull requestille.
+- Jos koodi ei ole vielä siinä kunnossa, että tehdyt muutokset voidaan liittää repositorioon, hallinnoija kirjoittaa pull requestin tekijälle joukon parannusehdotuksia.
 - Muutosten ollessa hyväksyttävästi tehtyjä, pull request mergetään eli yhdistetään päärepositorioon.
 
 Seuraavassa esimerkki [TMC-projektiin](https://tmc.mooc.fi/) tehdystä pull requestista ja siihen liittyvistä kommenteista:
@@ -116,19 +116,19 @@ Pull requestin kommentissa [sovelluskehittäjä](https://github.com/kennyhei/) t
 
 TMC:n silloinen [pääkehittäjä](https://github.com/mpartel/) ei kuitenkaan hyväksy muutoksia vielä mergettäväksi, vaan antaa muutaman parannusehdotuksen sovelluskehittäjälle.
 
-Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requesteja ja on jopa kirjannut definition of doneen, että eräs valmiin kriteeri koodille on se, että joku muu kuin ohjelmoija on katselmoinut sen. Katselmoija voi olla joko toinen sovelluskehittäjä, tai aloittelevien koodareiden tapauksessa joku hieman seniorimpi tiimin jäsen.
+Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requesteja ja on jopa kirjannut definition of doneen, että yksi valmiin kriteereistä on, että joku muu kuin toteuttaja on katselmoinut koodin. Katselmoija voi olla joko toinen sovelluskehittäjä, tai aloittelevien koodareiden tapauksessa joku hieman seniorimpi tiimin jäsen.
 
 ### AI:n hyödyntäminen koodin katselmoinnissa
 
-GitHubissa on mahdollista pyytää Copilotia tekemään pull requesteille koodikatselmointi. Vibe-koodasin ohtuvarastoon interaktiivisen käyttöliittymän, ja tein lisäyksestä [pull requestin](https://github.com/mluukkai/ohtuvarasto25/pull/1) jonka pyysin Copilotin katselmoimaan. Katselmoinnin yleiskatsaus näyttää seuraavalta
+GitHubissa on mahdollista pyytää Copilotia tekemään koodikatselmointi pull requesteille. Vibe-koodasin ohtuvarastoon interaktiivisen käyttöliittymän, ja tein lisäyksestä [pull requestin](https://github.com/mluukkai/ohtuvarasto25/pull/1), jonka pyysin Copilotin katselmoimaan. Katselmoinnin yleiskatsaus näyttää seuraavalta
 
 ![]({{ "/images/vibe4.png" | absolute_url }}){:height="500px" }
 
-Copilot antaa myös detaljoidumpia kommentteja, sekä parannusehdotuksia
+Copilot antaa myös detaljoidumpia kommentteja sekä parannusehdotuksia
 
 ![]({{ "/images/vibe3.png" | absolute_url }}){:height="500px" }
 
-Kommentti sekä korjausehdotus näyttää asialliselta, ja sen voi halutessaan commitoida, jolloin commit lisätään pull requestiin mukaan.
+Kommentti sekä korjausehdotus näyttävät asialliselta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
 
 ## Koodin katselmointi ketterissä menetelmissä
 
