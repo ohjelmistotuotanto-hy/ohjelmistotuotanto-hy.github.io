@@ -25,6 +25,10 @@ Tehtävät 1 ja 5-8 palautetaan  jo edellisillä viikoilla käyttämääsi **pal
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+### GitHub Education
+
+Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+
 ### 1. Tutustuminen Robot Frameworkkiin
 
 Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.

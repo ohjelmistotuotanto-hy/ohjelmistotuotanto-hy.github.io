@@ -133,6 +133,10 @@ missä komennon `git clone` parametrina on repositoriosi sivulla näkyvä merkki
 
 Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on GitHubissa olevan repositorion klooni.
 
+### GitHub Education
+
+Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+
 ### 3. Gitin alkeet [versionhallinta]
 
 Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä tehtävässä harjoitellaan seuraavia komentoja:
@@ -529,23 +533,10 @@ Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Stat
 https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
 ```
 
-_WORKFLOW-FILE_ on määritelty konfiguraatiotiedostossa:
-
-```yml
-name: CI
-
-on:
-  push:
-    branches: [main]
-# ...
-```
-
-Olemme käyttäneet nimeä _CI_, nimi voi kuitenkin olla mikä vaan.
-
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtuvarasto/actions/workflows/CI/badge.svg
+https://github.com/mluukkai/ohtuvarasto/actions/workflows/main.yml/badge.svg
 ```
 
 Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:

@@ -27,6 +27,10 @@ Tehtävät 6 ja 7 laajentavat viime viikon ensimmäistä tehtäväsarjaa, eli ne
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+### GitHub Education
+
+Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+
 ### 1. Poetryn harjoittelua
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin viikon 1 tehtävät 14-17
