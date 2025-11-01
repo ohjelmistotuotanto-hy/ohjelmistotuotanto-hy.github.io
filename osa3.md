@@ -292,40 +292,40 @@ Huomaamme siis, että jo naurettavan pienen luokan yhden metodin kattava testaam
 
 ### Testauskattavuus
 
-Yksikkötestien (ja toki myös muunlaisten testien) hyvyyttä voidaan mitata _testauskattavuuden_ (engl. test coverage) käsitteellä. Testauskattavuutta on muutamaa eri tyyppiä.
+Yksikkötestien (ja toki myös muunlaisten testien) hyvyyttä voidaan jossain määrin mitata _testauskattavuuden_ (engl. test coverage) käsitteellä. Testauskattavuutta on muutamaa eri tyyppiä.
 
 _Rivikattavuudella_ (engl. line coverage) tarkoitetaan kuinka montaa prosenttia ohjelman koodiriveistä testitapausten suorittaminen käy läpi. Vaikka rivikattavuus olisi 100% ei tämä tietenkään tarkoita, että kaikki oleellinen toiminnallisuus olisi tutkittu.
 
 _Haarautumakattavuudella_ (engl. branch coverage) tarkoitetaan kuinka montaa prosenttia testattavan metodin/luokan sisältävistä ehtolauseiden haaroista testit ovat käyneet läpi.
 
-Monet työkalut, esim. laskareissa käyttämämme JaCoCo (Java) ja coverage (Python) mittaavat testien suorituksen yhteydessä testauskattavuuden. Muitakin kattavuuden tyyppejä on olemassa, mm. ehtokattavuus ja polkukattavuus, useat työkalut eivät niitä kuitenkaan tue.
+Monet työkalut, esim. laskareissa käyttämämme [Coverage](https://coverage.readthedocs.io/en/7.11.0/) mittaavat testien suorituksen yhteydessä testauskattavuuden. Muitakin kattavuuden tyyppejä on olemassa, mm. ehtokattavuus ja polkukattavuus, useat työkalut eivät niitä kuitenkaan tue.
 
-Seuraavassa esimerkki JaCoColla mitatusta rivi- ja haarautumakattavuudesta:
+Seuraavassa esimerkki Coveragella mitatusta rivi- ja haarautumakattavuudesta:
 
-![]({{ "/images/3-5.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/osa3-coverage.png" | absolute_url }}){:height="450px" }
 
-JaCoCo ilmoittaa sekä rivi- (instruction) että haarautumakattavuuden (branches). Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella.
+Coverage ilmoittaa haarautumakattavuuden (branches). Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella ja ne rivit mitä testit eivät kata ovat punaisia.
 
 Testauskattavuus toimii siis hyvänä apuvälineenä sen arvioimisessa testataanko sovellusta riittävästi.
 
 ### Mutaatiotestaus
 
-Pelkkä testikattavuus ei kuitenkaan vielä kerro oikeastaan mitään testien hyvyydestä. Hyvät testit ovat sellaisia, että jos ohjelmaan tulee bugi, huomaavat testit virheen. Testien hyvyys taas riippuu oleellisesti testien syötteiden lisäksi siitä, minkälaisia assert-lauseilla suoritettavia tarkistuksia testeissä on.
+Pelkkä testikattavuus ei vielä kerro oikeastaan mitään testien hyvyydestä. Hyvät testit ovat sellaisia, että jos ohjelmaan tulee bugi, huomaavat testit virheen. Testien hyvyys riippuu oleellisesti testien syötteiden lisäksi siitä, minkälaisia assert-lauseilla suoritettavia tarkistuksia testeissä on.
 
 _Mutaatiotestauksen_ (engl. mutation testing) idea on nimenomaan testata testitapausten hyvyyttä generoimalla koodiin systemaattisesti mutantteja eli pieniä "bugeja", ja katsoa havaitsevatko testit koodiin tulleet bugit.
 
 Erilaisia mutanttityyppejä, joita mutaatiotestauksessa generoidaan koodiin on paljon mm.
 
-- manipuloidaan ehtolausetta: <tt>if ( x<0 )</tt> muutetaan muotoon <tt>if (x <= 0)</tt> tai <tt>if ( true ) </tt>
+- manipuloidaan ehtolausetta: <tt>if ( x<0 )</tt> muutetaan muotoon <tt>if (x <= 0)</tt> tai <tt>if ( True ) </tt>
 - vaihdetaan operaattoria: <tt>x += 1</tt> muutetaan muotoon <tt>x -= 1</tt>
-- kovakoodataan paluuarvo: <tt>return x;</tt> muutetaan muotoon <tt>return true;</tt>
-- korvataan konstruktorikutsu: <tt>olio = new Olio()</tt> muutetaan muotoon <tt>olio = null;</tt>
+- kovakoodataan paluuarvo: <tt>return x</tt> muutetaan muotoon <tt>return True</tt>
+- korvataan konstruktorikutsu: <tt>olio = Olio()</tt> muutetaan muotoon <tt>olio = None</tt>
 
-Mutaatiotestauksen ongelmana on mutaatioiden suuri määrä ja ns. _ekvivalentit mutantit_, joiden takia mutaatiotestauksen tulos vaatii aina ihmisen tulkintaa.
+Mutaatiotestauksen haasteena on mutaatioiden suuri määrä ja ns. _ekvivalentit mutantit_, joiden takia mutaatiotestauksen tulos vaatii aina ihmisen tulkintaa.
 
-Ekvivalentti mutantti tarkoittaa sellaista koodiin tehtyä muutosta, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Eli tälläisen mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
+Ekvivalentti mutantti tarkoittaa sellaista koodiin tehtyä muutosta, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Tällaisen mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
 
-Lisätietoa mutaatiotestauksesta esim. [Wikipediassa](http://en.wikipedia.org/wiki/) ja [pit](http://pitest.org/)-työkalun sivulla.
+Lisätietoa mutaatiotestauksesta esim. [Wikipediassa](http://en.wikipedia.org/wiki/).
 
 ## Integraatiotestaus
 
@@ -337,32 +337,32 @@ _Rakenteeseen perustuvassa integraatiossa_ keskitytään kerrallaan sovelluksen 
 
 _Ominaisuuksiin perustuvassa integroinnissa_ taas liitetään yhteen alikomponentit, jotka toteuttavat järjestelmän loogisen toiminnallisuuden. Verkkokaupassa voitaisiin esimerkiksi integroida kerrallaan kaikki toiminnallisuuteen _lisää tuote ostoskoriin_ liittyvä koodi ja edetä toiminnallisuus kerralla kunnes koko sovellus on valmis.
 
-Vesiputousmallin kulta-aikoina "vanhan liiton" ohjelmistotuotannossa toimintatapa oli se, että kaikki ohjelman yksittäiset komponentit ohjelmoitiin ja yksikkötestattiin erikseen ja tämän jälkeen ne integroitiin (yleensä rakenteeseen perustuen) kerralla yhteen.
+Vesiputousmallin kulta-aikoina vanhan liiton ohjelmistotuotannossa toimintatapa oli se, että kaikki ohjelman yksittäiset komponentit ohjelmoitiin ja yksikkötestattiin erikseen. Lopuksi komponentit integroitiin (yleensä rakenteeseen perustuen) kerralla yhteen.
 
-Tällainen vesiputousmallin maailmassa yleinen, nimikkeellä _big bang_ -integraatio kulkeva tekniikka on osoittautunut todella riskialttiiksi (siitä on seurauksena usein ns. integraatiohelvetti) ja sitä ei enää kukaan täysijärkinen suosittele käytettäväksi.
+Tällainen vesiputousmallin maailmassa yleinen, nimellä _big bang_ -integraatio kulkeva tekniikka on osoittautunut todella riskialttiiksi (siitä on seurauksena usein ns. integraatiohelvetti) ja sitä ei enää kukaan täysijärkinen suosittele käytettäväksi.
 
-Moderni ohjelmistotuotanto suosii ns. _jatkuvaa integraatiota_ (engl. continuous integration), joka on hyvin tiheässä tahdissa tapahtuvaa ominaisuuksiin perustuvaa integrointia. Palaamme aiheeseen tarkemmin pian.
+Moderni ohjelmistotuotanto suosii _jatkuvaa integraatiota_ (engl. continuous integration), joka on hyvin tiheässä tahdissa tapahtuvaa ominaisuuksiin perustuvaa integrointia. Palaamme aiheeseen tarkemmin pian.
 
-Itseasiassa koko termi _integraatiotestaus_ on käsitteenä melko häilyvä, ja joskus on vaikea tehdä selkeää rajanvetoa yksikkö- ja integraatiotestauksen välillä. Useimmiten ajatellaan että yksikkötestien kohteena on yksittäinen metodi, luokka tai ohjelmamoduuli. Entä jos testauksen alla oleva luokka/moduuli pitää sisällään rajapinnan takana useita muitakin luokkia, onko kyseessä enää yksikkötesti vai onko kyseessä jo suurempaa kokonaisuutta kartoittava integraatiotesti?
+Itse asiassa koko termi _integraatiotestaus_ on käsitteenä melko häilyvä, ja joskus on vaikea tehdä selkeää rajanvetoa yksikkö- ja integraatiotestauksen välillä. Useimmiten ajatellaan, että yksikkötestien kohteena on yksittäinen metodi, luokka tai ohjelmamoduuli. Entä jos testauksen alla oleva luokka/moduuli pitää sisällään rajapinnan takana useita muitakin luokkia, onko kyseessä enää yksikkötesti vai onko kyseessä jo suurempaa kokonaisuutta kartoittava integraatiotesti?
 
 Integraatiotestaukseksi luokiteltavia testejä ovat ainakin seuraavanlaiset, selkeästi isompia osakokonaisuuksia testaavat testit
 
 - sovelluslogiikan ja tietokannan yhteistoiminnallisuuden varmistaminen
 - sovelluksen palvelimen eli backendin tarjoaman HTTP-rajapinnan oikean toiminnallisuuden varmistaminen
 
-Yksikkötestauksen tapaan, koodin integroinnin ja usein myös integraatiotestauksen katsotaan nykyään olevan sovelluskehittäjien vastuulla, eli integraatiotestaus kuuluu käsitteen [developer testing](https://developertesting.rocks/) alle.
+Yksikkötestauksen tapaan koodin integroinnin ja usein myös integraatiotestauksen katsotaan nykyään olevan sovelluskehittäjien vastuulla, eli integraatiotestaus kuuluu käsitteen [developer testing](https://developertesting.rocks/) alle.
 
 ## Regressiotestaus
 
-Iteratiivisessa ja ketterässä ohjelmistotuotannossa, jossa jokainen iteraatio tuottaa ohjelmistoon uusia ominaisuuksia, on oltava koko ajan valppaana sen suhteen, että lisäykset eivät hajota ohjelman jo toimivia osia.
+Iteratiivisessa ja ketterässä ohjelmistotuotannossa jokainen iteraatio tuottaa ohjelmistoon uusia ominaisuuksia. Samalla on varmistettava, etteivät lisäykset riko ohjelman jo toimivia osia.
 
-Testit on siis suoritettava uudelleen aina kun ohjelmistoon tehdään muutoksia. Tätä käytäntöä kutsutaan _regressiotestaukseksi_. Jotta varmuus ohjelmiston virheettömänä pysymisestä olisi mahdollisimman suuri, tulee regressiotestien joukon koostua sekä yksikkö-, integraatio- että järjestelmätesteistä.
+Testit on siis suoritettava uudelleen aina kun ohjelmistoon tehdään muutoksia. Tätä käytäntöä kutsutaan _regressiotestaukseksi_. Jotta varmuus ohjelmiston virheettömänä pysymisestä olisi mahdollisimman suuri, on regressiotestien joukon hyvä koostua sekä yksikkö-, integraatio- että järjestelmätesteistä.
 
-Usein regressiotesteinä käytetään kaikkia sovelluskehityksen aikana tehtyjä testejä. On myös tilanteita, joissa tämä ei ole mielekästä esimerkiksi testien suorituksen viemän ajan takia, ja sopiva osajoukko kaikista testeistä voi taata riittävän luottamuksen sovelluksen virheettömänä säilymisestä.
+Regressiotesteinä käytetään useimmiten kaikkia sovelluskehityksen aikana tehtyjä testejä. On myös tilanteita, joissa tämä ei ole mielekästä esimerkiksi testien suorituksen viemän ajan takia, ja sopiva osajoukko kaikista testeistä voi taata riittävän luottamuksen sovelluksen virheettömänä säilymisestä.
 
 Testaaminen on erittäin työlästä ja regressiotestauksen tarve tekee siitä entistä työläämpää. Tämän takia on erittäin tärkeää pyrkiä automatisoimaan testit mahdollisimman suurissa määrin.
 
-Automatisoitu yksikkötestaus on jo aiemmilta kursseilta tuttu aihe. Käsittelemme muutamia järjestelmätestauksen automatisoinnin menetelmiä seuraavissa luvuissa.
+Automatisoitu yksikkötestaus on osalle jo aiemmilta kursseilta tuttu aihe. Käsittelemme muutamia järjestelmätestauksen automatisoinnin menetelmiä seuraavissa luvuissa.
 
 ## Ketterien menetelmien testauskäytänteitä
 
