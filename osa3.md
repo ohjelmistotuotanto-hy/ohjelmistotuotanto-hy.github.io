@@ -128,29 +128,29 @@ Copilot antaa myös detaljoidumpia kommentteja sekä parannusehdotuksia
 
 ![]({{ "/images/vibe3.png" | absolute_url }}){:height="500px" }
 
-Kommentti sekä korjausehdotus näyttävät asialliselta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
+Kommentti sekä korjausehdotus näyttävät tällä kerttaa asialliselta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
 
-## Koodin katselmointi ketterissä menetelmissä
+## Extreme programmingin katselmoinnin menetelmiä
 
-Toisin kuin Scrum, erityisesti 2000-luvun alkuvuosina erittäin suosittu ketterä menetelmä [eXtreme Programming ](http://www.extremeprogramming.org/) eli XP määrittelee useita ohjelmiston kehittäjän työskentelyyn kantaa ottavia käytänteitä.
+Toisin kuin Scrum, [eXtreme Programming](http://www.extremeprogramming.org/) eli XP, joka oli erityisen suosittu 2000-luvun alkuvuosina, määrittelee useita ohjelmiston kehittäjän työskentelyyn kantaa ottavia käytänteitä.
 
-Suurin osa XP:n käytänteistä on jo vuosikymmeniä hyvin tunnettuja _parhaita käytänteitä_ (engl. best practices), mutta kuitenkin usein vietynä äärimmäiseen (extreme) muotoon. Osa XP:n käytänteistä tähtää ohjelmiston laadun maksimoimiseen, ja muutama palvelee samaa funktiota kuin koodin katselmointi.
+Suurin osa XP:n käytänteistä on jo vuosikymmeniä hyvin tunnettuja _parhaita käytänteitä_ (engl. best practices), mutta usein vietynä äärimmäiseen (extreme) muotoon. Osa XP:n käytänteistä tähtää ohjelmiston laadun maksimoimiseen ja muutama palvelee samaa funktiota kuin koodikatselmointi.
 
 _Pariohjelmoinnissa_ (engl. pair programming) kaksi ohjelmoijaa työskentelee yhdessä käyttäen ainoastaan yhtä konetta. Koodia kirjoittava osapuoli toimii _ohjaajana_ (engl. driver) ja toinen _navigoijana_ (engl. navigator), roolia vaihdetaan sopivin väliajoin. Navigoija tekee koodiin _jatkuvaa katselmointia_.
 
-Pariohjelmointi parantaa ohjelmoijien kuria ja työhön keskittymistä sekä on erinomainen oppimisen väline: parit oppivat toisiltaan, erityisesti noviisit kokeneemmilta. Jos pariohjelmointia sovelletaan systemaattisesti, ei koodiin jää osa-alueita, jotka ainoastaan yksi ohjelmoija tuntee.
+Pariohjelmointi parantaa ohjelmoijien kuria ja keskittymistä työhön sekä on erinomainen oppimisen väline: parit oppivat toisiltaan, erityisesti noviisit kokeneemmilta. Jos pariohjelmointia sovelletaan systemaattisesti, ei koodiin jää osa-alueita, jotka ainoastaan yksi ohjelmoija tuntee.
 
-Pariohjelmointia on tutkittu suhteellisen paljon. [Tutkimuksissa](https://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) sen on todettu vähentävän bugien määrää jossain määrin, kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. Tutkimukset korostavat pelkkien koodin tasolla näkyvien hyötyjen lisäksi myös pariohjelmoinnin myönteistä vaikutusta tiimidynamiikkaan ja jopa työtyytyväisyyteen.
+Pariohjelmointia on tutkittu suhteellisen paljon. [Tutkimuksissa](https://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) sen on todettu vähentävän bugien määrää jossain määrin, mutta kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. Tutkimukset korostavat pelkkien koodin tasolla näkyvien hyötyjen lisäksi myös pariohjelmoinnin myönteistä vaikutusta tiimidynamiikkaan ja jopa työtyytyväisyyteen.
 
-Vaikka pariohjelmointi tai jopa useamman ihmisen versio siitä, [mob-programming](https://en.wikipedia.org/wiki/Mob_programming) on melko suosittua, ei kovin monissa paikoissa kuitenkaan harrasteta systemaattisesti määritelmän mukaista pariohjelmointia ainakaan joka päivä. Hyvin yleistä on, että kehittäjät työskentelevät suurimman osan aikaa yksin, mutta tekevät sopivin paikoin spontaaneja pari- tai mob-ohjelmointisessioita, erityisesti kohdatessaan teknisiä haasteita.
+Vaikka pariohjelmointi tai jopa useamman ihmisen versio siitä, [mob-programming](https://en.wikipedia.org/wiki/Mob_programming) on melko suosittua, ei kovin monissa paikoissa kuitenkaan harrasteta systemaattisesti määritelmän mukaista pariohjelmointia ainakaan joka päivä. Hyvin yleistä on, että kehittäjät työskentelevät suurimman osan aikaa yksin, mutta tekevät tarpeen mukaan spontaaneja pari- tai mob-ohjelmointisessioita, erityisesti kohdatessaan teknisiä haasteita.
 
-Pariohjelmoinnin ohella katselmoinnin kaltaisia tavoitteita koodin laadun nostajana voidaan ajatella olevan XP:n yhteisomistajuuden ja ohjelmointistandardien periaatteilla.
+Koodin laatuun katselmoinnin kaltaisesti vaikuttavat myös XP:n periaatteet: yhteisomistajuus ja ohjelmointistandardit.
 
 Koodin _yhteisomistajuus_ (engl. collective code ownership) tarkoittaa periaatetta, jossa kukaan yksittäinen ohjelmoija ei hallitse yksin mitään kohtaa koodista, eli kaikilla on lupa tehdä muutoksia ja laajennuksia mihin tahansa kohtaan koodia. Pariohjelmointi tukee yhteisomistajuutta.
 
-Yhteisomistajuudessa on omat riskinsä: joku koodia kunnolla tuntematon voi saada huolimattomilla muutoksilla pahaa jälkeä aikaan. XP pyrkii eliminoimaan tästä aiheutuvia riskejä testaukseen liittyvillä käytänteillä, eli käytännössä automatisoiduilla regressiotesteillä.
+Yhteisomistajuudessa on omat riskinsä: joku koodia kunnolla tuntematon voi saada huolimattomilla muutoksilla pahaa jälkeä aikaan. XP pyrkii eliminoimaan tästä aiheutuvia riskejä testaukseen liittyvillä käytänteillä, käytännössä automatisoiduilla regressiotesteillä.
 
-_Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrittelee koodityylin, johon kaikki ohjelmoijat sitoutuvat. Tyylillä tarkoitetaan nimeämiskäytäntöä, koodin muotoilua ja myös tiettyjä ohjelman rakenteeseen liittyviä seikkoja. Ohjelmointistandardin noudattamista voidaan kontrolloida osittain automaattisesti staattisen analyysin työkaluilla, esimerkiksi Javan Checkstyle, Pythonin Pylint sekä JavaScript-maailman [eslint](https://eslint.org/) ja [prettier](https://prettier.io/) ovat työkaluja, joiden avulla voidaan seurata, että koodi seuraa määriteltyä ohjelmointistandardia. Eräs esimerkki suosituksi nousseesta ohjelmointistandardista on [AirBnB](https://airbnb.io/javascript/react/):n tyyliopas.
+_Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrittelee koodityylin, johon kaikki ohjelmoijat sitoutuvat. Tyylillä tarkoitetaan nimeämiskäytäntöä, koodin muotoilua ja tiettyjä ohjelman rakenteeseen liittyviä seikkoja. Ohjelmointistandardin noudattamista voidaan kontrolloida osittain automaattisesti staattisen analyysin työkaluilla, esimerkiksi Pythonin Pylint, sekä JavaScript-maailman [Eslint](https://eslint.org/) ja [Prettier](https://prettier.io/) ovat työkaluja, joiden avulla voidaan seurata, että koodi seuraa määriteltyä ohjelmointistandardia. Eräs esimerkki suosituksi nousseesta ohjelmointistandardista on [Airbnb](https://airbnb.io/javascript/react/):n tyyliopas.
 
 ## Testaus
 
