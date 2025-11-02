@@ -494,8 +494,8 @@ User storyn [määritelmän](/osa2#user-story) yhteydessä mainittiin, että use
 
 Esimerkiksi user storyn _asiakas voi lisätä tuotteen ostoskoriin_ hyväksymiskriteerejä voisivat olla
 
-- ollessaan tuotelistauksessa ja valitessaan tuotteen jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
-- ollessaan tuotelistauksessa ja valitessaan tuotteen jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
+- ollessaan tuotelistauksessa ja valitessaan tuotteen, jota on varastossa, menee tuote ostoskoriin ja ostoskorin hinta sekä korissa olevien tuotteiden määrä päivittyy oikein
+- ollessaan tuotelistauksessa ja valitessaan tuotteen, jota ei ole varastossa, pysyy ostoskorin tilanne muuttumattomana
 
 Optimaalisessa tilanteessa user storyjen hyväksymiskriteereistä saadaan muodostettua suurin osa ohjelmiston järjestelmätason, eli käyttäjän näkökulmasta sovelluksen toiminnallisuuden varmistavista toiminnallisista testeistä.
 
@@ -505,17 +505,17 @@ Storyn hyväksymiskriteerit on tarkoituksenmukaista kirjoittaa heti storyn toteu
 
 Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti suoritettavia.
 
-Automaattisen hyväksymistestauksen on olemassa monia työkaluja, eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/).
+Automaattiseen hyväksymistestaukseen on olemassa monia työkaluja. Eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/).
 
-Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
+Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance Test Driven Development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
 ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomiota käytettävään terminologiaan, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sen sijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla.
 
-Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [RSpec](https://rspec.info/) sanoo olevansa BDD-kirjasto, RSpec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon rspecin tapaan toimivia BDD-henkisiä kirjastoja, kuten JavaScript-maailman [Mocha](https://mochajs.org/) ja [Jest](https://jestjs.io/). Kohta käsiteltävä Cucumber on kuitenkin nimenomaan hyväksymistestaukseen työväline. Yksikkötestaamiseen sitä ei kannata käyttää.
+Käsite ATDD pitää sisällään aina ainoastaan hyväksymistason testauksen. BDD:llä voidaan tehdä myös muita, kuin hyväksymistason testejä. Rubylle alun perin kehitetty [RSpec](https://rspec.info/) sanoo olevansa BDD-kirjasto, RSpec sopii hyväksymistestien lisäksi hyvin myös yksikkötestaamiseen. Muille kielille on tehty paljon RSpecin tapaan toimivia BDD-henkisiä kirjastoja, kuten JavaScript-maailman [Mocha](https://mochajs.org/) ja [Jest](https://jestjs.io/). 
 
-### Cucumber
+### Robot Framework
 
-Kuten useimmissa hyväksymistason testauksen työkaluissa, myös Cucumberia käytettäessä testit kirjoitetaan asiakkaan kielellä.
+Kuten useimmissa hyväksymistason testauksen työkaluissa, myös Robot Frameworkia käytettäessä testit kirjoitetaan asiakkaan kielellä.
 
 Tarkastellaan esimerkkinä käyttäjätunnuksen luomisen ja sisäänkirjautumisen tarjoamaa palvelua.
 
@@ -524,151 +524,83 @@ Palvelun vaatimuksen määrittelevät user storyt
 - _a new user account can be created if a proper unused username and a proper password are given_
 - _user can log in with a valid username/password-combination_
 
-Cucumberissa jokaisesta user storysta kirjoitetaan oma _.feature_-päätteinen tiedosto, joka sisältää storyn nimen ja joukon storyyn liittyvä hyväksymiskriteereitä, joita Cucumber kutsuu _skenaarioiksi_. Storyn hyväksymiskriteerit eli skenaariot kirjoitetaan [Gherkin](https://cucumber.io/docs/gherkin/reference/)-kielellä, seuraavassa muodossa
-
-_Given [initial context], when [event occurs], then [ensure some outcomes]_
-
-Esimerkkimme ensimmäinen user story hyväksymiskriteereineen kirjoitettaisiin seuraavasti:
-
-![]({{ "/images/3-9.png" | absolute_url }}){:height="450px" }
-
-Skenaariot muutetaan automaattisesti suoritettaviksi testeiksi kirjoittamalla niistä mäppäys ohjelmakoodiin. Ohjelmoijat tekevät mäppäyksen siinä vaiheessa, kun tuotantokoodia on tarpeellinen määrä valmiina.
-
-Käytännössä jokaista testin _given_, _when_ ja _then_-askelta vastaa oma metodinsa.
-Metodit kutsuvat ohjelman luokkia simuloiden käyttäjän syötettä varmistaen, että ohjelma reagoi käyttäjän toimiin halutulla tavalla.
-
-![]({{ "/images/3-10a.png" | absolute_url }}){:height="500px" }
-
-### Web-sovellusten testauksen automatisointi
-
-Olemme jo nähneet ensimmäisen ja toisen viikon laskareissa, miten riippuvuuksien injektoinnin avulla on helppo tehdä komentoriviltä toimivista ohjelmista automatisoidusti testattavia. Myös Java Swing, JavaFX ja muilla käyttöliittymäkirjastoilla sekä web-selaimella käytettävien sovellusten automatisoitu testaaminen on mahdollista. Tutustumme laskareissa web-sovellusten testauksen automatisointiin käytettävään [Selenium 2.0 WebDriver](http://seleniumhq.org/docs/03_webdriver.html) -kirjastoon.
-
-Selenium tarjoaa rajapinnan, jonka avulla on mahdollisuus simuloida ohjelmakoodista tai testeistä käsin selaimen toimintaa, esim. linkkien klikkaamista ja tiedon syöttämistä lomakkeeseen. Selenium Webdriver -rajapinta on käytettävissä lähes kaikilla ohjelmointikielillä.
-
-Seleniumia käyttävät testit voi tehdä normaalin testikoodin tapaan unittest-kirjastolla seuraavaksi esiteltävän Robot Frameworkin avulla.
-
-Seuraavassa esimerkki käyttäjätunnuksista ja sisäänkirjautumisesta huolehtivan järjestelmän web-version testien mäppäyksestä:
-
-![]({{ "/images/3-11a.png" | absolute_url }}){:height="500px" }
-
-### Robot Framework
-
-Robot on toimintaperiaatteiltaan hyvin samankaltainen kuin Cucumber. Myös Robot-testit kirjoitetaan asiakkaan kielellä.
-
-User storya _user can log in with a valid username/password-combination_ vastaavat hyväksymäkriteerit ilmaistaisiin Robotissa seuraavasti (sovelluksen komentoriviversiolle):
+User storyn _user can log in with a valid username/password-combination_ hyväksymäkriteerit ilmaistaisiin Robotissa seuraavasti:
 
 ```
 Login With Correct Credentials
-    Input Login Command
-    Input Credentials  kalle  kalle123
-    Output Should Contain  Logged in
-
-Login With Incorrect Password
-    Input Login Command
-    Input Credentials  kalle  wrong
-    Output Should Contain  Invalid username or password
-
-Login With Nonexistent Username
-    Input Login Command
-    Input Credentials  ville  wrong
-    Output Should Contain  Invalid username or password
-```
-
-Testitapausten askeleet koostuvat _avainsanoista_ sekä niille annettavista parametreistä. Esimerkissä _Input Login Command_, _Input Credentials_ ja _Output Should Contain_ ovat avainsanoja. Avainsanojen merkitys tulee määritellä, joko "yksinkertaisempien" avainsanojen avulla tai koodina. Seuraavassa avainsanojen _Input Login Command_ ja _Input Credentials_ määrittelyt:
-
-```
-Input Login Command
-    Input  login
-
-Input Credentials
-    [Arguments]  ${username}  ${password}
-    Input  ${username}
-    Input  ${password}
-    Run Application
-```
-
-Jäljelle jäävät avainsanat _Input_, _Run Application_ ja _Output Should Contain_ on määriteltävä suoraan koodin tasolla, jotta testien suorittaminen olisi mahdollista (yksityiskohdat eivät ole nyt tärkeitä, pääset tutustumaan niihin laskareissa):
-
-```python
-class AppLibrary:
-    def __init__(self):
-        self._io = StubIO()
-        self._user_repository = UserRepository()
-        self._user_service = UserService(self._user_repository)
-
-        self._app = App(
-            self._user_service,
-            self._io
-        )
-
-    def input(self, value):
-        self._io.add_input(value)
-
-    def output_should_contain(self, value):
-        outputs = self._io.outputs
-
-        if not value in outputs:
-            raise AssertionError(
-                f"Output \"{value}\" is not in {str(outputs)}"
-            )
-
-    def run_application(self):
-        self._app.run()
-```
-
-Web-sovellusten testaaminen Robotilla on erittäin helppoa. Robot hyödyntää Seleniumia ja sisältää runsaasti [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html), joten web-sovelluksia testattaessa avainsanojen toiminnan määrittelevää koodia ei yleensä ole tarvetta kirjoittaa läheskään yhtä paljoa kuin Cucumberissa.
-
-Edellä olleen esimerkin web-version hyväksymäkriteerit Robotilla määriteltynä näyttäisivät seuraavalta:
-
-```
-Login With Correct Credentials
-    Go To Login Page
+    Setup Application
     Set Username  kalle
     Set Password  kalle123
     Submit Credentials
     Login Should Succeed
 
 Login With Incorrect Password
-    Go To Login Page
+    Setup Application
     Set Username  kalle
     Set Password  kalle456
     Submit Credentials
     Login Should Fail With Message  Invalid username or password
 
 Login With Nonexistent Username
-    Go To Login Page
+    Setup Application
     Set Username  palle
     Set Password  kalle456
     Submit Credentials
     Login Should Fail With Message  Invalid username or password
 ```
 
-Testien käyttämät avainsanat on määritelty seuraavasti Robotin valmiiksi määriteltyjen avainsanojen avulla:
+Testitapausten askeleet koostuvat _avainsanoista_ (engl. keyword) sekä niille annettavista parametreistä.
+
+> Termi avainsana on sikäli hieman harhaanjohtava, että Robot Frameworkissa avainsanan nimet ovat usein moniosaisia, eli esim. _Submit Credentials_ on yksittäinen avainsana (vaikka se koostuukin useasta englannin kielen sanasta).
+
+Esimerkissä avainsanoja ovat muun muassa _Setup Application_, _Set Username_, _Submit Credentials_,  ja _Login Should Succeed_. Avainsanojen merkitys tulee määritellä, joko yksinkertaisempien avainsanojen avulla tai koodina.
+
+Avainsanojen määrittelyt näyttävät seuraavilta
 
 ```
-Go To Login Page
+Setup Application
+    Reset Application
+    Create User  kalle  kalle123    
     Go To  ${LOGIN URL}
 
 Set Username
     [Arguments]  ${username}
     Input Text  username  ${username}
 
-Set Password
-    [Arguments]  ${password}
-    Input Password  password  ${password}
-
 Submit Credentials
     Click Button  Login
 
 Login Should Fail With Message
     [Arguments]  ${message}
-    Login Page Should Be Open
+    Title Should Be  Login
     Page Should Contain  ${message}
 ```
 
-Koska testien käyttämät avainsanat on määritelty käyttämällä ainoastaan Robotin valmiiksi määriteltyjä avainsanoja kuten _Input Text_, _Click Button_ ja _Page Should Contain_, ei testien toimintaan saattaminen edellytä muuta kuin muutaman rivin konfiguraatiota.
+Melkein kaikki määrittelyssä esiintyvistä avainsanoista, kuten _Input Text_, _Click Button_ ja _Page Should Contain_, ovat Robot Frameworkin käyttämän Web-sovellusten testaamiseen tarkoitetun [Selenium](https://www.selenium.dev/)-kirjaston [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html). Ne toimivat sellaisenaan ilman lisämäärittelyn tarvetta.
 
-Robot Frameworkia pääset käyttämään viikon 3 laskarien [Python-versiossa](/tehtavat3).
+Avainsanojen _Reset Application_ ja _Create User_ toteuttamiseen tarvitaan hieman koodia. Määrittelyt on kirjoitettu luokkaan _AppLibrary_:
+
+```python
+class AppLibrary:
+    def __init__(self):
+        self._base_url = "http://localhost:5001"
+
+    # resetoidaan sovelluksen tietokanta tekemällä HTTP-pyynto
+    def reset_application(self):
+        requests.post(f"{self._base_url}/tests/reset")
+
+    # luodaan tietokantaan käyttäjä HTTP-pyynnön avulla
+    def create_user(self, username, password):
+        data = {
+            "username": username,
+            "password": password,
+            "password_confirmation": password
+        }
+
+        requests.post(f"{self._base_url}/register", data=data)
+```
+
+Robot Frameworkiin tutustutaan tarkemmin viikon 3 [laskareissa](/tehtavat3) ja miniprojektissa.
 
 ## Ohjelmiston integraatio
 

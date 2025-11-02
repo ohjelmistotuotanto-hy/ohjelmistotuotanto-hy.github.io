@@ -121,7 +121,6 @@ permalink: /sisallys/
   - [Riippuvuuksien hallinta testeissä](/osa3#riippuvuuksien-hallinta-testeissä)
   - [User storyjen testaaminen](/osa3#user-storyjen-testaaminen)
     - [Järjestelmätestauksen automatisointi, ATDD ja BDD](/osa3#järjestelmätestauksen-automatisointi-atdd-ja-bdd)
-    - [Web-sovellusten testauksen automatisointi](/osa3#web-sovellusten-testauksen-automatisointi)
     - [Robot Framework](/osa3#robot-framework)
   - [Ohjelmiston integraatio](/osa3#ohjelmiston-integraatio)
     - [Daily build ja smoke test](/osa3#daily-build-ja-smoke-test)
