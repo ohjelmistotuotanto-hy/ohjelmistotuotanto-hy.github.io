@@ -604,9 +604,9 @@ Robot Frameworkiin tutustutaan tarkemmin viikon 3 [laskareissa](/tehtavat3) ja m
 
 ## Ohjelmiston integraatio
 
-Vesiputousmallissa eli lineaarisesti etenevässä ohjelmistotuotannossa ohjelmiston toteutusvaiheen päättää integraatiovaihe, jonka aikana yksittäin testatut komponentit integroidaan yhdessä toimivaksi kokonaisuudeksi sekä suoritetaan integraatiotestaus, joka varmistaa komponenttien yhteistoiminnallisuuden.
+Vesiputousmallissa, eli lineaarisesti etenevässä ohjelmistokehitysprosessissa, toteutusvaihe päättyy integraatiovaiheeseen. Tässä vaiheessa erikseen testatut komponentit yhdistetään toimivaksi kokonaisuudeksi. Samalla suoritetaan integraatiotestaus, jonka tarkoituksena on varmistaa, että komponentit toimivat saumattomasti yhdessä.
 
-Perinteisesti juuri integraatiovaihe on tuonut esiin suuren joukon ongelmia. Tarkasta etukäteissuunnittelusta huolimatta erillisten tiimien toteuttamat komponentit ovat kuitenkin olleet rajapinnoiltaan tai toiminnallisuuksiltaan epäyhteensopivia.
+Perinteisesti juuri integraatiovaihe on tuonut esiin suuren joukon ongelmia. Tarkasta etukäteissuunnittelusta huolimatta erillisten tiimien toteuttamat komponentit ovat kuitenkin saattaneet olla rajapinnoiltaan tai toiminnallisuuksiltaan epäyhteensopivia.
 
 Suurten projektien integraatiovaihe on kestänyt ennakoimattoman kauan, ja integraation aikana havaitut ongelmat ovat saattaneet aiheuttaa suuriakin suunnitteluun tai jopa vaatimusmäärittelyyn tarvittavia muutoksia.
 
@@ -614,7 +614,7 @@ Integraatio on ollut perinteisesti niin ikävä ja hankala vaihe, että sitä ku
 
 ### Daily build ja smoke test
 
-90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolivälissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel- ja Windows 95 -tiimien menestysten ansiosta.
+90-luvulla alettiin huomaamaan, että riskien minimoimiseksi integraatio kannattaa tehdä useammin kuin vain projektin lopussa. Parhaaksi käytänteeksi alkoi muodostua päivittäin tehtävä koko projektin koodin kääntäminen eli _daily build_ ja samassa yhteydessä suoritettava _smoke test_. Nämä käytänteet alkoivat nousta suurempaan tietoisuuteen 90-luvun puolivälissä erityisesti [Microsoftin](https://stevemcconnell.com/articles/daily-build-and-smoke-test/) Excel- ja Windows 95 -tiimien menestysten ansiosta.
 
 Smoke testillä tarkoitetaan kohtuullisen yksinkertaista järjestelmätason testiä, joka kuitenkin testaa järjestelmän kaikkia arkkitehtuurillisia tasoja (käyttöliittymää, sovelluslogiikkaa, tietokantaa), ja havaitsee jos jotain on pahasti pielessä. Smoke test ei siis kata kovin paljoa sovelluksen toiminnallisuudesta, mutta kuitenkin riittävästi havaitakseen jos sovellus hajoaa perustavanlaatuisella tavalla, esimerkiksi jos sovelluslogiikan ja tietokannan välille syntyy epäyhteensopivuus, joka estää kokonaan tietokantayhteyksien muodostamisen.
 
@@ -624,47 +624,46 @@ Daily buildia ja smoke testiä käytettäessä järjestelmän integraatio tehdä
 
 Kerran päivässä tapahtuva integraatiovaihe todettiin hyväksi käytännöksi. Extreme programming -yhteisö kehitti 90-luvun loppupuolella ideaa vielä pidemmälle ja päätyi edelleen tihentämään integraatiosykliä. Näin syntyi _jatkuva integraatio_ eli [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) (CI).
 
-Jatkuvaa integraatiota käytettäessä ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat "build skriptit" (kuten _build.gradle_- tai _pyproject.toml_-tiedosto) pidetään keskitetyssä versionhallintarepositoriossa.
+Jatkuvaa integraatiota noudatettaessa ohjelmakoodi, ohjelman käyttämien kirjastojen konfiguraatiot, automatisoidut testit sekä ohjelmiston kääntämisestä ja testaamisesta huolehtivat määrittelyt (kuten _pyproject.toml_-tiedosto) pidetään keskitetyssä versionhallintarepositoriossa.
 
-Yksittäinen palvelin, jonka konfiguraatio vastaa mahdollisimman läheisesti tuotantopalvelimen konfiguraatiota, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia, CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa sille testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua **välittömästi**.
+Yksittäinen palvelin, joka vastaa mahdollisimman läheisesti tuotantopalvelinta konfiguraatioltaan, varataan CI-palvelimeksi. Kun keskitetyssä repositoriossa olevaan koodiin tulee muutoksia, CI-palvelin hakee ohjelmiston koodin, kääntää sen sekä suorittaa sille testit. Jos koodi ei käänny tai testit eivät mene läpi, CI-palvelin kertoo ongelmista kehittäjätiimille, ja ongelmiin on tarkoitus puuttua **välittömästi**.
 
 Sovelluskehittäjän työskentely jatkuvaa integraatiota käytettäessä etenee seuraavasti.
 
 Aloittaessaan uuden ominaisuuden toteuttamisen, kehittäjä hakee versionhallinnasta koodin ajantasaisen version. Kehittäjä toteuttaa työn alla olevan ominaisuuden, tekee sille automatisoidut testit ja integroi sen muuhun koodiin. Kun kaikki on valmiina, ja testit menevät läpi paikallisesti, pushaa kehittäjä koodin versionhallintaan.
 
-CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit. Näin minimoituu mahdollisuus sille, että lisätty koodi toimii esimerkiksi konfiguraatioerojen takia ainoastaan kehittäjän omalla koneella.
+CI-palvelin huomaa tehdyt muutokset, hakee koodit ja suorittaa testit. Näin minimoidaan riski, että lisätty koodi toimii vain kehittäjän omalla koneella esimerkiksi konfiguraatioerojen vuoksi.
 
-Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä integroi tekemänsä työn muuhun koodiin mahdollisimman usein, vähintään kerran päivässä_. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. Jatkuvan integraation soveltaminen vaatiikin suurta kurinalaisuutta.
+Jatkuvan integraation tarkoituksena on siis se, että _jokainen kehittäjä integroi työnsä muuhun koodiin mahdollisimman usein, vähintään kerran päivässä_. CI siis rohkaisee jakamaan työn pieniin osiin, sellaisiin jotka saadaan testeineen "valmiiksi" yhden työpäivän aikana. Jatkuvan integraation soveltaminen vaatiikin suurta kurinalaisuutta.
 
-Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta täysin vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
+Täydellisenä kontrastina vesiputousmaailman integraatiohelvettiin, jatkuvan integraation pyrkimyksenä on tehdä ohjelmiston integraatiosta mahdollisimman vaivaton operaatio, joka takaa sen että ohjelmistosta on koko ajan saatavilla ajantasainen, kokonaisuudessaan integroitu ja testattu versio.
 
-Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti. Maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat end to end -testit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida ajettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_.
+Jotta CI-prosessi toimisi riittävän jouhevasti, tulee testien suorittamisen tapahtua suhteellisen nopeasti. Maagisena rajana pidetään usein kymmentä minuuttia. Erityisesti käyttöliittymän läpi suoritettavat end to end -testit voivat kuitenkin olla yllättävän aikaa vieviä. Jos testien suoritusaika alkaa kasvaa liikaa, voidaan testit konfiguroida suoritettavaksi _kahdessa vaiheessa_. Testien ensimmäisen vaiheen, usein nimeltään _commit buildin_ läpimeno antaa kehittäjälle riittävän varmuuden pushata uusi koodi versionhallintaan. CI-palvelimella suoritetaan sitten myös hitaammat testit sisältävä _secondary build_.
 
 Monimutkaisemmissa tilanteissa testaus voidaan jakaa vieläkin useampaan vaiheeseen. Sovellukselle saatetaan tehdä esim. suuren kuormituksen sietoa mittaavia testejä, joiden suorituksessa kestää useita tunteja. Tällaisia testejä ei ole missään nimessä tarkoituksenmukaista suorittaa jokaisen versionhallintaan tapahtuvan koodin muutoksen (eli commitin) yhteydessä, vaan esimerkiksi kerran vuorokaudessa.
 
-Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä kovimmassa nosteessa oleva SaaS-palveluna eli pilvessä toimiva CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaihtoehtoja ovat [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
+Ensimmäisen viikon laskareissa käytetty [GitHub Actions](https://github.com/features/actions) on tällä hetkellä suosituin SaaS-palveluna eli pilvipohjainen CI-ratkaisu. Hieman vanhempia, mutta edelleen käyttökelpoisia vaihtoehtoja ovat [CircleCI](https://circleci.com) ja [Travis](https://travis-ci.org/). Eräs SaaS-palveluina toimivien CI-ratkaisujen suurista eduista on se, että tarvetta oman CI-palvelimen asentamiselle ja ylläpitämiselle ei ole.
 
-GitHub Actionsia, CircleCI:tä ja Travisia paljon vanhempi [Jenkins](https://jenkins.io/) lienee edelleen maailmalla eniten käytetty CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. Vaikka Jenkins on suosittu ja sillä voi tehdä melkein mitä tahansa, on se kuitenkin aika vanhan liiton ohjelmisto verrattuna uudempiin tulokkaisiin.
+GitHub Actionsia, CircleCI:tä ja Travisia vanhempi [Jenkins](https://jenkins.io/) on todennäköisesti yhä maailman käytetyin CI-palvelinohjelmisto. Tällä hetkellä ei kuitenkaan ole yhtään ilmaista internetissä palveluna toimivaa Jenkins-palvelua. Jenkinsin käyttö siis edellyttää sen asentamista omalle palvelimelle. 
 
 ### Jatkuvan integraation määritelmä
 
-Palataan vielä siihen mitä jatkuva integraatio menetelmän [pioneerien](https://martinfowler.com/articles/continuousIntegration.html) mukaan oikeastaan tarkoittaa. Jatkuvan integraation tekemiseen _ei riitä_ että joku on konfiguroinut tiimille CI-palvelimen. Jotta tiimin voidaan sanoa tekevän jatkuvaa integraatiota, tulee sovelluskehittäjien todellakin synkronoida tekemänsä koodi mahdollisimman usein (vähintään päivittäin) yhteisen keskitetyn repositorion koodin kanssa. Tämä taas tarkoittaa sitä, että esimerkiksi jokaisen aamun alussa kaikilla sovelluskehittäjillä tulisi olla päivän työnsä lähtökohtana _sama koodi_. Kuten jokainen tiimissä sovelluskehitystä tehnyt tietää, kaikkien koodin synkronointi päivittäisellä tasolla ei välttämättä ole helppoa ja se vaatii systemaattista ja kurinalaista työskentelyä.
+Palataan vielä siihen mitä jatkuva integraatio menetelmän [pioneerien](https://martinfowler.com/articles/continuousIntegration.html) mukaan oikeastaan tarkoittaa. Jatkuvan integraation tekemiseen _ei riitä_ että joku on konfiguroinut tiimille CI-palvelimen. Jotta tiimin voidaan sanoa tekevän jatkuvaa integraatiota, tulee sovelluskehittäjien todellakin synkronoida tekemänsä koodi mahdollisimman usein (vähintään päivittäin) yhteisen keskitetyn repositorion koodin kanssa. Tämä taas tarkoittaa sitä, että esimerkiksi jokaisen aamun alussa kaikilla sovelluskehittäjillä tulisi olla päivän työnsä lähtökohtana _sama koodi_. Kuten jokainen tiimissä sovelluskehitystä tehnyt tietää, koodin päivittäinen synkronointi ei aina ole helppoa, vaan vaatii systemaattista ja kurinalaista työskentelyä
 
 Nykyään monin paikoin käytössä oleva tapa käyttää useiden päivien tai jopa viikkojen ikäisiä [feature branchejä](https://martinfowler.com/bliki/FeatureBranch.html), eli jokaiselle uudelle toiminnallisuudelle tarkoitettuja omia versionhallinnan haaroja tarkoittaa oikeastaan jo lähtökohtaisesti sitä, että tiimi [ei harjoita jatkuvaa integraatiota](https://www.innoq.com/en/blog/continuous-integration-contradicts-feature-branches/). Palaamme asiaan [myöhemmin](/osa3/#feature-branchit-ja-merge-hell) tässä osassa.
 
 ## Jatkuva toimittaminen ja toimitusvalmius
 
-Viime aikoina nousseen trendin mukaan jatkuvaa integraatiota on ruvettu viemään vielä muutama askel pidemmälle ja integraatioprosessiin on enenevissä määrin ruvettu lisäämään myös automaattinen "deployaus", eli käännetty ja testattu koodi siirretään automatisoidusti suoritettavaksi ns. _staging_- eli testipalvelimelle.
+Viime aikoina yleistyneen trendin myötä jatkuvaa integraatiota on alettu kehittää entistä pidemmälle. Integraatioprosessiin lisätään yhä useammin myös automaattinen "deployaus", jossa käännetty ja testattu koodi siirretään automatisoidusti suoritettavaksi niin sanotulle staging- eli testipalvelimelle.
 
-Staging-palvelin on ympäristö, joka on konfiguraatioidensa sekä myös sovelluksessa käsiteltävän datan (käytännössä siis tietokannan sisällön) osalta mahdollisimman lähellä varsinaista tuotantoympäristöä. Kun ohjelmiston uusi versio on viety eli deployattu staging-palvelimelle, suoritetaan sille hyväksymistestaus. Nämä testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, että sovellus toimii käyttäjän haluamalla tavalla mahdollisimman tuotannon kaltaisessa ympäristössä.
+Staging-palvelin on ympäristö, joka on konfiguraatioiden sekä sovelluksessa käsiteltävän datan (käytännössä siis tietokannan sisällön) osalta mahdollisimman lähellä varsinaista tuotantoympäristöä. Kun ohjelmiston uusi versio on viety staging-palvelimelle, suoritetaan sille hyväksymistestaus. Nämä testit ovat lähinnä järjestelmätason testejä, jotka varmistavat, että sovellus toimii käyttäjän haluamalla tavalla mahdollisimman tuotannon kaltaisessa ympäristössä.
 
-Hyväksymistestauksen jälkeen uusi versio voidaan siirtää tuotantopalvelimelle, eli loppukäyttäjien käyttöön. Parhaassa tapauksessa myös staging-ympäristössä tehtävien hyväksymistestien suoritus on automatisoitu, ja ohjelmisto kulkee koko _deployment pipelinen_ läpi, eli sovelluskehittäjän koneelta CI-palvelimelle, sieltä staging-ympäristöön ja lopulta tuotantoon, automaattisesti.
-
-Termillä _deployment pipeline_ tarkoitetaan niitä ohjelman käännöksen, testauksen ja muun laadunhallinnan vaiheita, joiden läpikäymistä edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön loppukäyttäjien käyttöön.
+Hyväksymistestauksen jälkeen uusi versio voidaan siirtää tuotantopalvelimelle, eli loppukäyttäjien käyttöön.
+Parhaassa tapauksessa myös staging-ympäristössä tehtävät hyväksymistestit ovat automatisoituja. Tällöin ohjelmisto kulkee koko deployment pipelinen läpi automaattisesti: ensin sovelluskehittäjän koneelta CI-palvelimelle, sieltä staging-ympäristöön ja lopulta tuotantoon. Termillä _deployment pipeline_ tarkoitetaan niitä ohjelman käännöksen, testauksen ja muun laadunhallinnan vaiheita, joiden läpikäymistä edellytetään, että ohjelma saadaan siirrettyä tuotantoympäristöön loppukäyttäjien käyttöön.
 
 Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteellisen "liukuhihnan" läpi
 
-- CI-palvelin suorittaa commitille joukon testejä ja mahdollisesti staattista analyysiä
+- CI-palvelin suorittaa commitille staattisen analyysin (esim. Pylintiä hyödyntäen) ja joukon testejä 
 - seuraavassa vaiheessa commitin aikaansaama sovelluksen uusi versio siirtyy staging-ympäristöön
 - staging-ympäristössä sovelluksen uudelle versiolle suoritetaan lisää testejä
 - lopulta commit siirtyy tuotantoympäristöön
@@ -673,9 +672,9 @@ Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteell
 
 Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi toimittamiseksi_ (engl. continuous deployment).
 
-On olemassa tilanteita, missä jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta "nappia painamalla", puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery).
+On olemassa tilanteita, jossa jokaista commitia ei haluta viedä automaattisesti tuotantoon. Jos viimeinen vaihe, eli tuotantoon vieminen tapahtuukin ainoastaan ihmisen toimesta nappia painamalla tai skripti suorittamalla, puhutaan _jatkuvasta toimitusvalmiudesta_, (engl. continuous delivery).
 
-Viime aikoina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivästä. Suomessa tätä käytäntöä harjoittaa mm. monia TKT:n opiskelijoitakin työllistävä [Smartly](https://www.smartly.io/).
+Viime vuosina on erityisesti suuren kokoluokan web-palveluissa (esim. Google, Amazon, Netflix, Facebook) ruvettu suosimaan tyyliä, jossa ohjelmistosta julkaistaan uusi versio tuotantoon jopa [kymmeniä tai satoja](https://dzone.com/articles/release-frequency-a-need-for-speed) kertoja päivässä. Suomessa tätä käytäntöä harjoittaa mm. monia TKT:n opiskelijoitakin työllistävä [Smartly](https://www.smartly.io/).
 
 ## Tutkiva testaaminen
 
