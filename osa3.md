@@ -130,7 +130,7 @@ Copilot antaa myös detaljoidumpia kommentteja sekä parannusehdotuksia
 
 Kommentti sekä korjausehdotus näyttävät tällä kerttaa asialliselta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
 
-## Extreme programmingin katselmoinnin menetelmiä
+### Extreme programmingin katselmoinnin menetelmiä
 
 Toisin kuin Scrum, [eXtreme Programming](http://www.extremeprogramming.org/) eli XP, joka oli erityisen suosittu 2000-luvun alkuvuosina, määrittelee useita ohjelmiston kehittäjän työskentelyyn kantaa ottavia käytänteitä.
 
@@ -160,7 +160,7 @@ Testauksella on kaksi hieman toisistaan poikkeavaa tavoitetta. Ensinnäkin tulee
 
 Molemmat tavoitteet tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (engl. external quality) eli käyttäjän kokeman laadun varmistamiseen. [Ulkoisella laadulla](http://c2.com/cgi/wiki?InternalAndExternalQuality) tarkoitetaan sitä, onko ohjelmisto sopiva käyttötarkoitukseensa, eli pystyykö käyttäjä tekemään ohjelmistolla haluamansa asiat.
 
-## Testauksen tasot
+### Testauksen tasot
 
 Testaus jakaantuu eri _tasoihin_ sen mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
 
@@ -372,13 +372,13 @@ Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testau
 
 Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
-Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, mitä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tämän takia testaajat ovat ideaalitilanteessa sijoitettu erillisen laatua valvovan QA-organisaation sijaan kehittäjätiimeihin, ja myös ohjelmoijat kirjoittavat testejä.
+Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, minkä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tästä syystä testaajat sijoitetaan ihannetilanteessa kehittäjätiimeihin erillisen laatua valvovan QA-tiimin sijaan. Myös ohjelmoijat osallistuvat testien kirjoittamiseen.
 
-Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [build quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään, ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa.
+Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [build quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa.
 
 Käymme tässä luvussa läpi joukon ketterien menetelmien suosimia testauskäytäntöjä.
 
-_Test driven development_ eli TDD on kehitysmenetelmä, missä testit tehdään jo ennen koodin kirjoittamista. Nimestään huolimatta kyseessä tosin on enemmän suunnittelu- ja toteutustason tekniikka, jonka sivutuotteena syntyy kattava joukko automaattisesti suoritettavia testejä.
+_Test driven development_ eli TDD on kehitysmenetelmä, jossa testit tehdään jo ennen koodin kirjoittamista. Nimestään huolimatta kyseessä tosin on enemmän suunnittelu- ja toteutustason tekniikka jonka sivutuotteena syntyy kattava joukko automaattisesti suoritettavia testejä.
 
 User storyjen tasolla tapahtuva automatisoitu testaus, joka kulkee nimillä _acceptance test driven development_ ja _behavior driven development_.
 
@@ -386,34 +386,34 @@ _Continuous Integration_ eli jatkuva integraatio ja _continuous delivery_ eli ja
 
 Kaikista edellisistä käytänteistä seurauksena on suuri joukko eritasoisia (eli yksikkö-, integraatio-, järjestelmä-) automatisoituja testejä, joiden avulla tehty regressiotestaus mahdollistaa sen, että ohjelmiston jatkokehityksen aikana voidaan olla turvallisin mielin siitä, että jo toimivia asioita ei pääse hajoamaan.
 
-Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä. Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Tuotantokäytössä tapahtuva testaus on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
+Tehdään testaus miten kattavasti tahansa, on kuitenkin hyvin tyypillistä, että tiettyjä ongelmia ilmenee vasta todellisessa käytössä. Nousevana trendinä on suorittaa uusien ominaisuuksien laadunhallintaa myös siinä vaiheessa kun osa oikeista käyttäjistä on jo ottanut ne käyttöönsä.  _Tuotantokäytössä tapahtuva testaus_ on suurta kurinalaisuutta vaativa menetelmä, joka vaatii pitkälle kehittynyttä automatisointia ja ohjelmiston sofistikoitunutta monitorointia.
 
 Voimakkaasta automatisointitrendistä huolimatta myös manuaalisesti tehtävällä testauksella on edelleen paikkansa. _Tutkiva testaus_ (engl. exploratory testing) on pääosin manuaalinen järjestelmätestauksen tekniikka, jossa testaaminen tapahtuu ilman tarkkaa etukäteen tehtävää testaussuunnitelmaa. Testaaja luo lennossa uusia testejä edellisten testien antaman palautteen perusteella. Tutkivaa testausta käytetään usein kokonaan uusien ohjelmiston ominaisuuksien testaamiseen.
 
 ## Test driven development
 
-[Test driven development](https://martinfowler.com/bliki/TestDrivenDevelopment.html) eli TDD (suomeksi testivetoinen kehitys) on yksi [eXtreme Programmingin](http://www.extremeprogramming.org/) käytänteistä, missä siis testit on tarkoitus tehdä ennen varsinaisen koodin kirjoittamista.
+[Test driven development](https://martinfowler.com/bliki/TestDrivenDevelopment.html) eli TDD (suomeksi testivetoinen kehitys) on yksi [eXtreme Programmingin](http://www.extremeprogramming.org/) käytänteistä, jossa testit on tarkoitus kirjoittaa ennen varsinaisen koodin kirjoittamista.
 
-Alan auktoriteettien kuten Kent Beckin ja Uncle Bob Martinin [määritelmän mukainen](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) TDD etenee seuraavasti
+Alan auktoriteettien, kuten Kent Beckin ja Uncle Bob Martinin, [määritelmän mukainen](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) TDD etenee seuraavasti
 
-1. Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
-2. Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
-3. Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) _refaktoroidaan_ koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
+1. Kirjoitetaan testiä sen verran että testi ei mene läpi. Testejä ei siis luoda heti kaikkia tarvittavia, vaan edetään yksi testi kerrallaan.
+2. Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei myöskään yritetä heti kirjoittaa lopullista koodia.
+3. Jos koodin rakenteen havaitaan menneen huonoksi (koodissa on esimerkiksi paljon toisteisuutta tai liian pitkiä funktioita) _refaktoroidaan_ koodin rakenne paremmaksi, ja huolehditaan jatkuvasti siitä, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
 4. Jatketaan askeleesta 1.
 
 TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään testi joka on punaisella, kirjoitetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
 ![]({{ "/images/3-6a.png" | absolute_url }}){:height="250px" }
 
-TDD:llä ohjelmoitaessa toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponentin käyttöä, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta.
+TDD:ssä toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponentin käyttöä, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta.
 
-TDD:ssä perinteisen suunnittelu-toteutus-testaus -syklin voi ajatella kääntyneen täysin päinvastaiseen järjestykseen, komponentin tarkka suunnittelu tapahtuu vasta refaktorointien yhteydessä.
+TDD:ssä perinteisen suunnittelu-toteutus-testaus-syklin voi ajatella kääntyneen täysin päinvastaiseen järjestykseen, komponentin tarkka suunnittelu tapahtuu vasta refaktorointien yhteydessä.
 
 ### TDD:n hyviä puolia
 
-TDD:tä tehtäessä korostetaan yleensä lopputuloksen yksinkertaisuutta, tarkoituksena on toteuttaa toiminnallisuutta vain sen verran, mitä testien läpimeno edellyttää. Ei siis toteuteta "varalta" ekstratoiminnallisuutta, sillä sitä ei todennäköisesti tarvita. Tästä yksinkertaisiin ratkaisuihin pyrkivästä käytännöstä käytetään usein nimitystä ["You ain't gonna need it", YAGNI](https://martinfowler.com/bliki/Yagni.html). Sama periaate on kirjattuna ketterään manifestiin muodossa _Simplicity – the art of maximizing the amount of work not done – is essential_.
+TDD:tä sovellettaessa korostetaan yleensä lopputuloksen yksinkertaisuutta. Tarkoituksena on toteuttaa toiminnallisuutta vain sen verran, mitä testien läpimeno edellyttää. Ei siis toteuteta "varalta" ekstratoiminnallisuutta, sillä sitä ei todennäköisesti tarvita. Tästä yksinkertaisiin ratkaisuihin pyrkivästä käytännöstä käytetään usein nimitystä ["You ain't gonna need it", YAGNI](https://martinfowler.com/bliki/Yagni.html). Sama periaate on kirjattuna ketterään manifestiin muodossa _Simplicity – the art of maximizing the amount of work not done – is essential_.
 
-Koodista on vaikea tehdä helposti testattavissa olevaa, jos se ei ole modulaarista ja löyhästi kytketyistä selkeän rajapinnan omaavista komponenteista koostuvaa. Määritelmän mukaisella TDD:llä ohjelmoitaessa taas koodista tulee useimmiten jo lähtökohtaisesti modulaarista ja vähäistä turhilta riippuvuuksiltaan. Tälläisen koodin taas on huomattu olevan laadukasta ylläpidettävyyden ja laajennettavuuden kannalta. Eli eräs argumentti TDD:n puolesta on juuri ollut sen tuottama laajennettavuuden ja jatkokehitettävyyden kannalta edullinen koodin laatu.
+Koodista on vaikea tehdä helposti testattavaa, jos se ei koostu modulaarisista ja löyhästi kytketyistä komponenteista, joilla on selkeät rajapinnat. Määritelmän mukaisella TDD:llä ohjelmoitaessa taas koodista tulee useimmiten jo lähtökohtaisesti modulaarista ja vähäistä turhilta riippuvuuksiltaan. Tällaisen koodin uskotaan olevan laadukasta ylläpidettävyyden ja laajennettavuuden kannalta. Eli eräs argumentti TDD:n puolesta on juuri ollut sen tuottama laajennettavuuden ja jatkokehitettävyyden kannalta edullinen koodin laatu.
 
 Muina TDD:n hyvinä puolina mainitaan, että se rohkaisee ottamaan pieniä askelia kerrallaan ja näin toimimaan fokusoidusti, ja että hyvin kirjoitetut testit toimivat toteutetun komponentin rajapinnan dokumentaationa.
 
@@ -421,9 +421,9 @@ TDD:tä on tutkittu akateemisesti kohtuullisen paljon. Kovin suurta evidenssiä 
 
 ### TDD:llä on myös ikävät puolensa
 
-Käytettäessä TDD:tä testikoodia tulee paljon, usein suunnilleen saman verran kuin varsinaista koodia. Jos ja kun sovellus muuttuu, tulee testejä myös ylläpitää, sillä monet suuremmat rakenteelliset muutokset rikkovat usein osan testeistä.
+Käytettäessä TDD:tä testikoodia syntyy paljon, usein suunnilleen saman verran kuin varsinaista koodia. Jos ja kun sovellus muuttuu, tulee testejä myös ylläpitää, sillä monet suuremmat rakenteelliset muutokset rikkovat usein osan testeistä.
 
-TDD:n soveltaminen on haastavaa mm. käyttöliittymä-, tietokantayhteyksistä sekä verkon yli kommunikoinnista huolehtivaa koodia tehtäessä, mahdotonta se ei kuitenkaan ole. Jo olemassa olevan koodin laajentaminen TDD:llä voi myöskin olla erittäin haastavaa erityisesti jos laajennettava koodi on rakenteeltaan vanhan liiton spagettikoodia.
+TDD:n soveltaminen on haastavaa esimerkiksi käyttöliittymä-, tietokantayhteyksistä tai verkon yli kommunikoinnista huolehtivaa koodia tehtäessä, mutta se ei kuitenkaan ole mahdotonta. Jo olemassa olevan koodin laajentaminen TDD:llä voi olla erittäin haastavaa, erityisesti jos laajennettava koodi on rakenteeltaan vanhan liiton spagettikoodia.
 
 ## Riippuvuuksien hallinta testeissä
 
