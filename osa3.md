@@ -427,34 +427,37 @@ TDD:n soveltaminen on haastavaa esimerkiksi käyttöliittymä-, tietokantayhteyk
 
 ## Riippuvuuksien hallinta testeissä
 
-Testatessa on ratkaistava kysymys, miten testeissä suhtaudutaan testattavien luokkien riippuvuuksiin, eli luokkiin, joiden oliota testattava luokka käyttää.
+Testatessa on ratkaistava kysymys, siitä miten suhtaudutaan testattavien luokkien riippuvuuksiin, eli komponentteihin, joita testattava koodi käyttää.
 
-Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunnittelumalli parantaa luokkien testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen luokille testistä käsin.
+Laskareista tuttu [riippuvuuksien injektio](/riippuvuuksien_injektointi/) -suunnittelumalli parantaa koodin testattavuutta, sillä se mahdollistaa riippuvuuksien asettamisen koodille testistä käsin.
 
 Yksi mahdollisuus on tehdä testejä varten riippuvuudet korvaavia tynkäkomponentteja, eli _stubeja_, näin tehtiin mm. [viikon 1 tehtävässä 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikk%C3%B6testaus). Stubeihin voidaan esim. kovakoodata metodikutsujen tulokset valmiiksi. Testit voivat myös kysellä stubilta millä arvoilla testattava metodi sitä kutsui ja näin varmistaa, että testattava koodi on kommunikoinut riippuvuuksiensa kanssa oletetulla tavalla.
 
-Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän "älyä" ja ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
+Tynkäkomponentteja kutsutaan niiden ominaisuuksista riippuen joko stubeiksi tai mock-olioiksi, Martin Fowlerin [artikkeli](http://martinfowler.com/articles/mocksArentStubs.html) selventää asiaa ja terminologiaa. Yleensä stubeksi kutsutaan sellaisia tynkäkomponentteja, jotka ainoastaan palauttavat kovakoodattuja metodikutsujen paluuarvoja. Mock-olioissa taas on enemmän älyä ja ne osaavat mm. tarkkailla onko niiden määrittelemiä metodeja kutsuttu oikeilla parametreilla ja halutun monta kertaa.
 
-On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareiden Java-versiossa [Mockito](https://site.mockito.org/)-kirjastoon ja Python-versiossa [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon.
+On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme laskareissa  [unittest-mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon.
 
-Tarkastellaan hieman unittest-mockin toimintalogiikkaa viikon 4 [laskareiden](/tehtavat4/) verkkokauppatehtävää esimerkkinä käyttäen.
+Tarkastellaan hieman unittest-mockin toimintalogiikkaa viikon 4 [laskareiden](/tehtavat4/) verkkokauppatehtävää esimerkkinä käyttäen. Luokan Kauppa oliolla on riippuvuutenaan Pankki- ja Viitegeneraattori-oliot.
 
-Ostotapahtuman yhteydessä verkkokaupan tulisi veloittaa asiakkaan tililtä ostosten hinta _kutsumalla luokan pankki metodia maksa_.
+![]({{ "/images/osa3-kauppa.png" | absolute_url }})
+
+Ostotapahtuman yhteydessä verkkokaupan tulisi veloittaa asiakkaan tililtä ostosten hinta *kutsumalla pankin metodia veloita_tilia*. Ostostapahtuman koodi näyttää seuraavalta:
 
 ```python
 my_net_bank = Pankki()
 viitteet = Viitegeneraattori()
 kauppa = Kauppa(my_net_bank, viitteet)
 
+# ostetaan kaupasta tuotteet joiden id on 5 ja 7
 kauppa.aloita_ostokset()
 kauppa.lisaa_ostos(5)
 kauppa.lisaa_ostos(7)
 
-# maksetaan ostokset, samalla pitäisi tapahtua maksa
-kauppa.maksa("1111")
+# maksetaan ostokset
+kauppa.maksa("FI1111-2222")
 ```
 
-Tästä koodista pitäisi siis testata, että metodikutsu `kauppa.maksa("1111")` tekee ostosten summaa vastaavan tilisiirron pankkitililtä _"1111"_ kaupan tilille.
+Tästä koodista pitäisi siis testata, että metodikutsu `kauppa.maksa("FI1111-2222")` tekee ostosten summaa vastaavan tilisiirron pankkitililtä _"FI1111-2222"_ kaupan tilille.
 
 Miten varmistamme, että tilisiirron suorittavaa luokan _Pankki_ olion metodia on kutsuttu oikeilla parametreilla?
 
@@ -472,13 +475,14 @@ def test_kutsutaan_pankkia_oikealla_tilinumerolla_ja_summalla(self):
     kauppa.aloita_ostokset()
     kauppa.lisaa_ostos(5)
     kauppa.lisaa_ostos(5)
-    kauppa.maksa("1111")
+    kauppa.maksa("FI1111-2222")
 
     # katsotaan, että ensimmäisen ja toisen parametrin arvo on oikea
-    pankki_mock.maksa.assert_called_with("1111", 10, ANY)
+    pankki_mock.veloita_tilia.assert_called_with("FI1111-2222", 55, ANY)
+    # oletetaan että tuotteiden 5 ja 7 yhteenlaskettu hinta on 55 euroa
 ```
 
-Pankkia edustavalle mock-oliolle on asetettu metodikutsulla `assert_called_with` vaatimus, joka varmistaa että metodia _maksa_ on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
+Pankkia edustavalle mock-oliolle on asetettu metodikutsulla `assert_called_with` vaatimus, joka varmistaa että pankin metodia *veloita_tilia* on kutsuttu testin aikana sopivilla parametreilla. Jos tämä vaatimus ei täyty, testi ei mene läpi.
 
 Pääset harjoittelemaan mock-kirjastojen käyttöä viikon 4 [laskareissa](/tehtavat4/).
 
