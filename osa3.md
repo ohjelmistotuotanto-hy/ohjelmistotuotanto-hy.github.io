@@ -688,7 +688,7 @@ Käsitteen kehittäjä [Cam Kaner](http://www.satisfice.com/articles/what_is_et.
 
 > _exploratory testing is simultaneous learning, test design and test execution_
 
-Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmassa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sen sijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien ja kokeilujen perusteella löytämään järjestelmästä virheitä.
+Ideana on, että testaaja ohjaa toimintaansa suorittamiensa testien ohjelmistossa aiheuttaman reaktion perusteella. Testitapauksia ei suunnitella kattavasti etukäteen, sen sijaan testaaja pyrkii kokemuksensa ja suorittamiensa testien sekä kokeilujen perusteella löytämään järjestelmästä virheitä.
 
 Tutkiva testaus ei kuitenkaan etene täysin sattumanvaraisesti, kullekin testisessiolle asetetaan jonkinlainen tavoite, eli mitä osaa tai toiminnallisuuksia sovelluksesta on tarkoitus tutkia ja minkälaisia virheitä tarkoitus etsiä.
 
@@ -699,13 +699,13 @@ Tutkivassa testauksessa keskeistä on kaikkien testattavassa ohjelmistossa tapah
 Esimerkiksi jos huomattaisiin selaimen osoiterivillä URL
 https://www.verkkokauppa.com/ostoskori?id=10 voitaisiin yrittää muuttaa käsin ostoskorin id:tä ja yrittää saada järjestelmä epästabiiliin tilaan.
 
-Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannattaa eliminoida lisäämällä ohjelmalle sopivat automaattiset regressiotestit. Tutkivaa testaamista ei siis kannata käyttää regressiotestauksen menetelmänä, vaan sen avulla kannattaa ensisijaisesti testata sprintin yhteydessä toteutettuja uusia ominaisuuksia.
+Tutkivan testaamisen avulla löydettyjen virheiden toistuminen jatkossa kannattaa eliminoida lisäämällä ohjelmalle sopivat automaattiset regressiotestit. Tutkivaa testaamista ei siis kannata käyttää regressiotestauksen menetelmänä, vaan sen avulla kannattaa ensisijaisesti testata uusia ominaisuuksia, jotka on toteutettu sprintin aikana.
 
 Tutkiva testaaminen siis ei missään tapauksessa ole vaihtoehto normaaleille tarkkaan etukäteen määritellyille ja automatisoiduille testeille, vaan niitä täydentävä testauksen muoto.
 
 ## Tuotannossa tapahtuva testaaminen ja laadunhallinta
 
-Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testaus tulee suorittaa ennen kuin ohjelmisto tai sen uudet toiminnallisuudet on otettu käyttöön eli viety tuotantoympäristöön. Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa.
+Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testaus tulisi suorittaa ennen kuin ohjelmisto tai sen uudet toiminnallisuudet otetaan käyttöön eli viedään tuotantoympäristöön. Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa.
 
 ![]({{ "/images/3-13.png" | absolute_url }}){:height="330px" }
 
@@ -715,7 +715,7 @@ Eräs tuotannossa tapahtuvan testaamisen tekniikka on [blue-green-deployment](ht
 
 Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa käytössä. Käyttäjien ja tuotantopalvelinten välissä oleva komponentti, esimerkiksi ns. reverse proxyna toimiva web-palvelin (kuvassa router) ohjaa käyttäjien liikenteen aktiivisena olevaan ympäristöön.
 
-Kun järjestelmään toteutetaan uusi ominaisuus, deployataan se ensin passiivisena olevaan ympäristöön.
+Kun järjestelmään toteutetaan uusi ominaisuus, viedään se ensin passiivisena olevaan ympäristöön.
 
 ![]({{ "/images/3-14.png" | absolute_url }}){:height="220px" }
 
@@ -743,7 +743,7 @@ Uuden version toimivaksi varmistaminen siis perustuu _järjestelmän monitoroi
 - luettujen ja lähetettyjen viestien määriä per käyttäjä
 - kirjautuneen käyttäjän sovelluksessa viettämää aikaa
 
-Monitoroinnissa tulee siis palvelimen yleisen toimivuuden lisäksi seurata
+Monitoroinnissa tulee palvelimen yleisen toimivuuden lisäksi seurata
 _käyttäjätason metriikoita_ (engl. business level metrics). Jos niissä huomataan eroavuuksia aiempaan, esim. kirjautuneet käyttäjät eivät lähetä keskimäärin samaa määrää viestejä kuin aiemmin, voidaan olettaa, että sovelluksen uudessa versiossa saattaa olla joku ongelma. Tälläisessä tilanteessa saatetaan tehdä rollback vanhaan versioon ja analysoida vikaa tarkemmin.
 
 Myös canary releasejen yhteydessä testauksen ja kaiken tuotantoon vientiin liittyvän on syytä tapahtua automatisoidusti.
@@ -754,7 +754,7 @@ Nimi canary release periytyy kaivostyöläisten tavasta käyttää kanarialintuj
 
 Edellisissä kuvissa oli merkitty järjestelmän vanhalle ja uudelle versiolle erillinen tietokantapalvelin (database server).
 
-Tilanne ei välttämättä ole tämä ja erityisesti canary releasejen yhteydessä järjestelmän molemmat versiot käyttävät yleensä samaa tietokantaa:
+Tilanne ei yleensä ole tämä ja erityisesti canary releasejen yhteydessä järjestelmän molemmat versiot käyttävät yleensä samaa tietokantaa:
 
 ![]({{ "/images/3-16.png" | absolute_url }}){:height="200px" }
 
@@ -783,13 +783,13 @@ Osassa 2 [Lean-startup](/osa2/#uuden-ajan-vaatimusmäärittely-lean-startup)-men
 Canary releaset ja A/B-testaus eivät ole feature togglejen ainoa sovellus, niitä käytetään
 yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
 
-Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, on ominaisuus mahdollista julkaista feature togglen avulla esim. kehittäjäyrityksen omaan käyttöön ja lopulta osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
+Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, se on mahdollista julkaista feature togglen avulla, esim. kehittäjäyrityksen omaan käyttöön ja tämän jälkeen osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
 
 Suuret internetpalvelut kuten Facebook, Netflix, Google ja Flickr soveltavat laajalti canary releaseihin ja feature toggleihin perustuvaa kehitysmallia.
 
 ### Feature branchit ja merge hell
 
-Edellisessä luvussa mainittiin [feature branchit](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Kyseessä on siis käytäntö, missä uudet ominaisuudet, esimerkiksi user storyn vaatima toiminnallisuus toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. masteriin).
+Edellisessä luvussa mainittiin [feature branchit](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Kyseessä on siis käytäntö, jossa uudet ominaisuudet, esimerkiksi user storyn vaatima toiminnallisuus toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. masteriin).
 
 Monet pitävät feature brancheja versionhallinnan käytön best practicena. Viime aikoina on kuitenkin monissa piireissä ruvettu pitämään feature branchaystä ikävänä käytänteenä, sillä se johtaa helposti pahoihin merge-konflikteihin, erityisesti jos branchit ovat pitkäikäisiä.
 
@@ -797,14 +797,13 @@ Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin no
 
 ![]({{ "/images/3-18.png" | absolute_url }}){:height="80px" }
 
-Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/) missä pitkäikäisiä feature brancheja ei käytetä ollenkaan.
+Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/)m jossa pitkäikäisiä feature brancheja ei käytetä ollenkaan.
 
-Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla master tai joku erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
+Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla _main_ tai  jokin muu erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
 Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin. Näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
 
-Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityisen suurta kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta.
-Feature togglejen holtiton käyttö voi johtaa feature toggle -helvettiin, eli suunnittelua ja systemaattisuutta todellakin tarvitaan.
+Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityistä kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta. Feature togglejen holtiton käyttö voi johtaa feature toggle -helvettiin, joten suunnittelua ja systemaattisuutta todellakin tarvitaan.
 
 Trunk-pohjaista kehitysmallia noudattavat monet maailman suurimmista internetpalveluista, esim. Google, Facebook ja Netflix.
 
