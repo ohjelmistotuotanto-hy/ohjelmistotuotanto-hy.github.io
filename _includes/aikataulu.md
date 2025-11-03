@@ -8,8 +8,7 @@
     - [youtube](https://youtu.be/OH27cBF8xP4), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
-  - tallenteet:
-    - [youtube](https://youtu.be/7lAj-idARFs), [unitube](https://www.helsinki.fi/fi/unitube/video/bc0e48bc-91ba-4964-9ff6-bf5055ac5d4c)
+  - tallenteet: [youtube](https://youtu.be/7lAj-idARFs), [unitube](https://www.helsinki.fi/fi/unitube/video/bc0e48bc-91ba-4964-9ff6-bf5055ac5d4c)
 - Laskarit
   - Luentojen 1 ja 2 <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat1) deadline {{site.lask-dl[1]}}
@@ -19,9 +18,7 @@
 - Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
-  - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/lINfFEyKX_4), [unitube](https://www.helsinki.fi/fi/unitube/video/5782eba4-5b8a-4915-9715-ac7f43a40a2c), tallenteen äänessä on ajoittain ongelmia 
-    - syksy 2023 [youtube](https://youtu.be/LoTkLUn-5c8)
+  - tallenteet: [youtube](https://youtu.be/OC5i41I5Pw4), [unitube](https://www.helsinki.fi/fi/unitube/video/d41717f2-1aed-4999-b21a-5cb331b8cafe)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)

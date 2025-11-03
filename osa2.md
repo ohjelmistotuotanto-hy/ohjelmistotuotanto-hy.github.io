@@ -225,7 +225,7 @@ Alan suurimman auktoriteetin [Mike Cohnin mukaan](https://www.mountaingoatsoftwa
 >     story
 > 3.  Tests that convey and document details and that will be used to determine that the story is complete
 
-User storyt siis kuvaavat _loppukäyttäjän kannalta arvoa tuottavia toiminnallisuuksia_. Jotta näin olisi, kirjoitetaan storyt asiakkaan kannalta ymmärrettävällä kielellä.
+User storyt siis kuvaavat _loppukäyttäjän kannalta arvokasta toiminnallisuuksia_. Jotta näin olisi, kirjoitetaan storyt asiakkaan kannalta ymmärrettävällä kielellä.
 
 Määritelmän alakohtien 1 ja 2 mukaan user story on _karkean tason tekstuaalinen kuvaus_ ja lupaus/muistutus siitä, että toiminnallisuuden _tarkka kuvaus on selvitettävä asiakkaan kanssa_.
 
@@ -303,7 +303,7 @@ On toki tilanteita, joissa storyjen keskinäistä riippuvuutta ei voi välttää
 
 Hyvä user story on _negotiable_, eli se ei ole tyhjentävästi kirjoitettu vaatimusmäärittely vaan lupaus siitä että asiakas ja toteutustiimi sopivat tarvittavalla tarkkuudella storyn toiminnallisuuden sisällön ennen kuin story otetaan toteutettavaksi.
 
-_Valuable_ tarkoittaa, että storyn tulee kuvata käyttäjälle arvoa tuottavia ominaisuuksia, jotka on muotoiltu käyttäen asiakkaan kieltä, ei teknistä jargonia.
+_Valuable_ tarkoittaa, että storyn tulee kuvata käyttäjälle arvokkaita ominaisuuksia, jotka on muotoiltu käyttäen asiakkaan kieltä, ei teknistä jargonia.
 
 Hyvänä käytäntönä pidetään että user story kuvaa järjestelmän kaikkia osia koskevaa (esim. käyttöliittymä, bisneslogiikka, tietokanta) eli "end to end"-toiminnallisuutta, eikä pelkästään yksittäistä järjestelmän teknistä kerrosta koskevaa, käyttäjän kannalta näkymätöntä teknistä ratkaisua.
 
