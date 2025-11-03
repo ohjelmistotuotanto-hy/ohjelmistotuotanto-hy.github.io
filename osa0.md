@@ -50,7 +50,7 @@ Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentoj
 
 Kurssiin liittyy viikoittaiset laskuharjoitukset. **Tehtäviä laskareissa on kahden tyyppisiä**.
 
-Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_. Poikkeuksena tähän on ensimmäistä kahta luentoa kertaavat viikon 1 monivalinnat joiden deadline on vasta toisen viikon sunnuntaina.
+Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_.
 
 Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
 
