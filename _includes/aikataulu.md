@@ -22,8 +22,7 @@
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
-  - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/3vl5CPBdvEg), [unitube](https://www.helsinki.fi/fi/unitube/video/ee76d6f6-7f54-4e0b-8cd5-82893765ce94)  
+  - tallenteet: [youtube](https://youtu.be/5jTQKWJiHks), [unitube](https://www.helsinki.fi/fi/unitube/video/8d1ccefa-0607-4c9f-8645-8d3e28d2a56c)  
 - Laskarit
   - Luentojen 3 ja 4 <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat2) deadline {{site.lask-dl[2]}}
