@@ -619,7 +619,7 @@ Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 3_ sisältä
 
 Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. 
 
-Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin sailaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin salaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. 
 
