@@ -9,7 +9,7 @@ permalink: /robot_framework/
 
 Vaikka Robot Framework on perinteisesti tarkoitettu koko ohjelmiston "end-to-end"-testaukseen, tarkastellaan ensin Robot Frameworkin toimintaperiaatteita testaamalla yksittäistä luokkaa. Hae [kurssirepositorion](https://github.com/ohjelmistotuotanto-hy/tehtavat/tree/main/viikko3/hello-robot) hakemistossa _koodi/viikko3/hello-robot_ oleva projekti.
 
-- Kopioi projekti palautusrepositorioosi, hakemiston _viikko3_ sisälle.
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston _viikko3_ sisälle.
 
 Testattavana on yksinkertainen laskuri:
 
@@ -162,7 +162,7 @@ Increase Counter Three Times
 
 Lisää _src/tests_-hakemistoon tiedosto <i>reset_counter.robot</i>, joka sisältää laskimen nollaamiseen liittyvät hyväksymistestit.
 
-**Lisää tiedostoon seuraavat testitapaukset:**
+<input type="checkbox"> Lisää tiedostoon seuraavat testitapaukset:
 
 ```robot
 *** Settings ***
@@ -184,7 +184,9 @@ Reset Counter After Several Increments
     Counter Value Should Be  0
 ```
 
-Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorita siellä komento `robot src/tests`. Testit eivät mene läpi ja tulosteessa on seuraava virhe:
+<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorita siellä komento `robot src/tests`.
+
+Testit eivät mene läpi ja tulosteessa on seuraava virhe:
 
 ```
 No keyword with name 'Reset Counter' found.
@@ -192,7 +194,7 @@ No keyword with name 'Reset Counter' found.
 
 Robot Framework siis ilmoittaa, ettei avainsanalle `Reset Counter` ole toteutusta.
 
-**Toteuta seuraavaksi `CounterLibrary`-luokkaan sopiva metodi, jotta testit menevät läpi.**
+<input type="checkbox"> Toteuta seuraavaksi `CounterLibrary`-luokkaan sopiva metodi, jotta testit menevät läpi.
 
 ## Typoja materiaalissa
 

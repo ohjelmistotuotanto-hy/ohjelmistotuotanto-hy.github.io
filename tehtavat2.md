@@ -43,7 +43,7 @@ Voit käyttää checkboxeja oman edistymisesi seurannan helpottamiseen. Kun aske
 
 <input type="checkbox"> Tee palautusrepositorioon hakemisto _viikko2_ ja sen sisälle hakemisto _poetry-web_ tätä tehtävää varten
 
-<input type="checkbox"> Lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
+Lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
 
 {% include no_pip2.md %}
 
@@ -53,23 +53,34 @@ Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimiss
 
 Tee seuraavat toimenpiteet:
 
-<input type="checkbox"> **Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle**. Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
+<input type="checkbox"> Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle
 
-<input type="checkbox">  Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. **Asenna Flask projektin riippuvuudeksi Poetryn avulla**
+Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
 
-<input type="checkbox">  Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. **Asenna pytest projektin _kehitysaikaiseksi riippuvuudeksi_**
+<input type="checkbox"> Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. 
+
+<input type="checkbox"> Asenna Flask projektin riippuvuudeksi Poetryn avulla
+
+<input type="checkbox">  Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. 
+
+<input type="checkbox"> Asenna pytest projektin _kehitysaikaiseksi riippuvuudeksi_
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi
 
-<input type="checkbox">  Sovellus käyttää relaatiotietokantaa joten päädyt etsimään tarkoitukseen sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [SQLAlchemy](https://pypi.org/project/SQLAlchemy/). **Asenna SQLAlchemy projektin riippuvuudeksi**
+Sovellus käyttää relaatiotietokantaa joten päädyt etsimään tarkoitukseen sopivia kirjastoja. Törmäät tarkoitukseen sopivaan kirjastoon nimeltä [SQLAlchemy](https://pypi.org/project/SQLAlchemy/).
 
-<input type="checkbox">  Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. **Asenna SQLAlchemy-kirjastosta versio `1.4.54`**.
-  
+<input type="checkbox"> Asenna SQLAlchemy projektin riippuvuudeksi
+
+Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositorion [issueita](https://github.com/sqlalchemy/sqlalchemy/issues). Eräässä issuessa kerrotaan, että löytämäsi bugi ei ilmene kirjaston versiossa `1.4.54`. 
+
+<input type="checkbox"> Asenna SQLAlchemy-kirjastosta versio `1.4.54`
+
 <input type="checkbox"> Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
   - Pohdi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `1.4.54` päivittäminen versioon `2.0.44` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole versiosta `2.0.5` versioon `2.0.44`?
   - Versiovaatimuksissa on mukana usein `^`- tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
 
-<input type="checkbox"> Kuulet kaveriltasi, että Flaskin sijaan kannattaisi käyttää [FastAPI](https://pypi.org/project/fastapi/)-kirjastoa. 
-**Poista Flask projektin riippuvuuksista ja asenna FastAPI.**
+Kuulet kaveriltasi, että Flaskin sijaan kannattaisi käyttää [FastAPI](https://pypi.org/project/fastapi/)-kirjastoa.
+
+<input type="checkbox"> Poista Flask projektin riippuvuuksista ja asenna FastAPI.
 
 Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
 

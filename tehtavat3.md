@@ -29,9 +29,16 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
 
+### Checkboxit tehtävien teon seurannan apuna
+
+Kurssin tehtävänannot ovat välillä pitkiä. Tekstin seasta saattaa olla haastavaa bongata niitä askelia, jotka edellyttävät toimenpiteitä. Tehtävien selkeyttämiseksi ja seurannan helpottamiseksi tehtävien toimenpiteitä edellyttävät askeleet on merkitty ranskalaisten viivojen sijaan **checkboxeilla**.
+
+Voit käyttää checkboxeja oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen, missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat, jos lataat sivun uudelleen.
+
+
 ### 1. Tutustuminen Robot Frameworkkiin
 
-Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
+<input type="checkbox"> Lue [täällä](/robot_framework) oleva Robot Framework -johdanto ja tee siihen liittyvät tehtävät.
 
 ### 2. Web-laskuri
 
@@ -41,9 +48,11 @@ Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallits
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion alihakemistosta viikko3/webcounter.
 
-**Tee tätä ja kahta seuraavaa tehtävää varten kokonaan uusi repositorio**, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
+<input type="checkbox"> Tee tätä ja kahta seuraavaa tehtävää varten kokonaan uusi repositorio, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
+
+Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
 ![]({{ "/images/laskuri1.png" | absolute_url }}){:height="350px" }
 
@@ -79,11 +88,15 @@ Testeissä on käytössä [Selenium WebDriver](http://docs.seleniumhq.org/projec
 
 Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria, tai Firefoxia jolloin testit voi suorittaa [GeckoDriverillä](https://github.com/mozilla/geckodriver).
 
-**Ennen kuin siirryt testien pariin, asenna ChromeDriver** tai **GeckoDriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
+<input type="checkbox"> Ennen kuin siirryt testien pariin, asenna **ChromeDriver** tai **GeckoDriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
 
-Kun ChromeDriver tai GeckoDriver on asennettu onnistuneesti **käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.** Varmista selaimella, että sovellus on päällä. Varmista, että sovelluksen laskurin arvo on 0. Jos se on jotain muuta, uudelleenkäynnistä sovellus.
+Seuraavassa oletetaan että ChromeDriver tai GeckoDriver on asennettu onnistuneesti.
 
-**Avaa uusi terminaali-ikkuna** ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit GeckoDriverin.
+<input type="checkbox"> Käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.
+ 
+Varmista selaimella, että sovellus on päällä. Varmista, että sovelluksen laskurin arvo on 0. Jos se on jotain muuta, uudelleenkäynnistä sovellus.
+
+<input type="checkbox">  Avaa uusi terminaali-ikkuna ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit GeckoDriverin.
 
 Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the counter is zero` ja `When button pressed twice the counter is two`. Testitapausten suoritusta voi seurata aukeavasta selaimen ikkunasta.
 
@@ -188,15 +201,17 @@ Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown
 - `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa `resource.robot`
 - `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
 
-Huomaa, että toimiakseen testit edellyttävät, että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!
+**Huomaa, että toimiakseen testit edellyttävät, että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!**
 
-Kun olet suorittanut testit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
+<input type="checkbox"> Kun olet suorittanut testit onnistuneesti ja tutustunut sovellukseen sekä testeihin on tämä tehtävä tehty.
 
 ### 3. Weblaskurin nollaus
 
-Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
+<input type="checkbox">  Laajenna sovellusta siten, että nappi "Nollaa" nollaa laskurin arvon.
 
-Tee Robot-testi, joka varmistaa, että nollaaminen toimii. Tee testi tiedostoon `reset.robot`, testin näyttää suunnilleen seuraavalta
+<input type="checkbox">  Tee Robot-testi, joka varmistaa, että nollaaminen toimii.
+
+Tee testi tiedostoon `reset.robot`, testin näyttää suunnilleen seuraavalta
 
 ```robot
 *** Settings ***
@@ -215,7 +230,9 @@ When counter has a nonzero value and it is reset the value becomes zero
 
 Selenium WebDriveria käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
-Konfiguraatioihin on tehtävä muutama muutos. Laajennetaan tiedostoa `resource.robot` seuraavasti:
+Konfiguraatioihin on tehtävä muutama muutos.
+
+<input type="checkbox"> Laajennetaan tiedostoa `resource.robot` seuraavasti:
 
 ```robot
 *** Settings ***
@@ -254,7 +271,7 @@ Headless-suoritus tapahtuu seuraavasti:
 robot --variable HEADLESS:true src/tests
 ```
 
-GitHub Actionien konfiguraatio näyttää seuraavalta:
+<input type="checkbox"> Tee projektille GitHub Actionit määrittelevä konfiguraatio, joka näyttää seuraavalta:
 
 ```yml
 name: CI
@@ -290,7 +307,9 @@ jobs:
 
 Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa ChromeDriverin GitHub Actionin käyttöön.
 
-Jotta sovelluksen testit voidaan suorittaa GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tests.sh`, joka löytyy tehtäväpohjassa:
+Jotta sovelluksen testit voidaan suorittaa GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. 
+
+Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tests.sh`, joka löytyy tehtäväpohjassa:
 
 ```bash
 #!/bin/bash
@@ -320,19 +339,21 @@ kill $(lsof -t -i:5001)
 exit $status
 ```
 
-Pushaa tehtävän repositorio GitHubiin ja varmista, että GitHub Actions suorittaa testit onnistuneesti.
+<input type="checkbox"> Lisää  `run_robot_tests.sh` projektiisi.
 
-**Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon.** Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
+<input type="checkbox"> Pushaa tehtävän repositorio GitHubiin ja varmista, että GitHub Actions suorittaa testit onnistuneesti.
+
+<input type="checkbox"> Laajenna vielä sovellusta siten, että siihen tulee mahdollisuus asettaa laskuri haluttuun arvoon.
+
+Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
 
 ![]({{ "/images/webcounter2.png" | absolute_url }}){:height="240px" }
-
-Tee ominaisuudelle Robot-testit.
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
 Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/osa3/) materiaalissa. **HUOM:** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect`, samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
-Tee ominaisuudelle Robot-testit.
+<input type="checkbox"> Tee ominaisuudelle Robot-testit.
 
 Jos lomakkeessa on käytössä syötekenttä, jonka attribuutti _name_ on arvoltaan _value_:
 
@@ -346,7 +367,7 @@ Robot-testi voi kirjoittaa kenttään arvon 10 avainsanan [Input Text](https://r
 Input Text  value  10
 ```
 
-Korjaa vielä testejä siten, että jokainen testitiedosto aloitetaan tilanteesta, missä laskurin arvo on nolla.
+<input type="checkbox"> Korjaa vielä testejä siten, että jokainen testitiedosto aloitetaan tilanteesta, missä laskurin arvo on nolla.
 
 ### Robot Framework -testien debuggaaminen
 
@@ -448,9 +469,11 @@ Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_tra
 
 Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka löytyy [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko3/login_. 
 
-Hae projekti ja kopioi se **palautusrepositorioosi**, hakemiston _viikko3_ sisälle.
+<input type="checkbox"> Hae projekti ja kopioi se **palautusrepositorioosi**, hakemiston _viikko3_ sisälle.
 
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`. Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
+
+Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
 Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
 - käyttäjä voi rekisteröityä, eli luoda järjestelmään käyttäjätunnuksen
@@ -528,7 +551,7 @@ password = request.form.get("password")
 
 Koodi tarkistaa käyttäjätunnuksen ja salasanan oikeellisuuden kutsumalla `UserService`-olion metodia `check_credentials`. Jos kirjautuminen onnistuu, ohjataan käyttäjä "/ohtu"-polun sivulle. Jos se epäonnistuu, `check_credentials`-metodi aiheuttaa poikkeuksen, jonka käsittelemme `except`-lohkossa ohjaamalla käyttäjän "/login"-polun sivulle ja näyttämällä siellä virheilmoituksena virheen sisältämän viestin.
 
-**Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.**
+<input type="checkbox"> Tutustu nyt sovelluksen rakenteeseen ja toiminnallisuuteen.
 
 #### Tutustuminen testeihin
 
@@ -602,7 +625,7 @@ Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
-**Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:**
+<input type="checkbox"> Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:
 
 ```robot
 *** Settings ***
@@ -629,7 +652,9 @@ Reset Application And Go To Starting Page
 
 Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link) -avainsanaa. 
 
-Kun suoritat testit, virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
+<input type="checkbox"> Suorita testit
+
+Seurauksena on todennäköisesti virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
 
 ```
 Click Register Link                                                   | FAIL |
@@ -637,7 +662,7 @@ Setup failed:
 No keyword with name 'Go To Starting Page' found.
 ```
 
-**Toteuta testin käyttämät määrittelemättömät avainsanat**.
+<input type="checkbox"> Toteuta testin käyttämät määrittelemättömät avainsanat.
 
 **HUOM:** ideana on, että avainsana `Go To Starting Page` vie sovelluksen polkuun / eli aloitussivulle.
 
@@ -697,7 +722,7 @@ def handle_register():
 ```
 
 
-**Lisää** User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
+<input type="checkbox"> Lisää User storylle _User can log in with valid username/password-combination_ seuraava testitapaus `login.robot`-tiedostoon:
 
 ```robot
 Login With Nonexistent Username
@@ -706,7 +731,7 @@ Login With Nonexistent Username
 
 ### 7. WebLogin, osa 3
 
-Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset uuteen tiedostoon `register.robot`:
+<input type="checkbox"> Tee User storylle _A new user account can be created if a proper unused username and a proper password are given_ seuraavat testitapaukset uuteen tiedostoon `register.robot`:
 
 ```robot
 *** Settings ***
@@ -745,7 +770,9 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 - Käyttäjätunnuksen on oltava vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
 - Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
 
-**Laajenna koodiasi siten, että testit menevät läpi.** Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
+<input type="checkbox"> Laajenna koodiasi siten, että testit menevät läpi. 
+
+Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i>-tiedoston `UserService`-luokan metodi `validate`.
 
 **Pro tips**:
 - Etene yksi testitapaus ja sen toteuttama koodi kerrallaan
@@ -757,11 +784,11 @@ Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
 Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
 
-Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
+<input type="checkbox"> Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
 
-Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko4_ sijoitettavaan tiedostoon _retro.md_.
+<input type="checkbox"> Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko4_ sijoitettavaan tiedostoon _retro.md_.
 
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen tai toisen sprintin lopussa jompaa kumpaa tekniikkaa noudattavan retrospektiivin!
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jotain tekniikkaa noudattavan retrospektiivin!
 
 
 ### Tehtävien palautus
