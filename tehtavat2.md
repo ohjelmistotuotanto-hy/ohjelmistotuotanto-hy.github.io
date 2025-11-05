@@ -9,7 +9,7 @@ permalink: /tehtavat2/
 
 {% include laskari_info.md part=2 %}
 
-Viikon ensimmäisessä ja toisessa tehtävässä tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 5-9. Laskarien lopuksi jatketaan _riippuvuuksien injektoinnin_ parissa. Tehtävissä 10-12 koodataan ja refaktoroidaan koodia siistimmäksi.
+Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan Poetryllä ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 9-13. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -285,7 +285,7 @@ Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsi
 
 ![]({{ "/images/py-lh2-12.png" | absolute_url }})
 
-### 8. Precommit hook ja Pylint
+### 8. Precommit hook ja Pylint 
 
 GitHub Action siis varmistaa, että repositorioon päätyneet Pylint-virheet huomataan. Parempi olisi toki, että sovelluskehittäjä suorittaisi Pylintin aina omalla koneellaan ja korjaisi virheet ennen kuin niitä pääsee livahtamaan GitHubin puolelle. Sovelluskehittäjät ovat kuitenkin usein laiskoja ja huonomuistisia, näinpä Pylint herkästi jää suorittamatta paikallisesti. Git tarjoaa kätevän ominaisuuden [hookit](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks), jonka avulla voimme automatisoida erilaisia esim. ennen committia suoritettavia toimenpiteitä.
 
