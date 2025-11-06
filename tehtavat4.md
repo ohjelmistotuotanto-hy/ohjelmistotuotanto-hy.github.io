@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan Gitin tägeihin.
@@ -309,11 +307,11 @@ Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkai
 
 ![]({{ "/images/kauppa2.png" | absolute_url }}){:height="330px" }
 
-Tutustu koodiin. 
+<input type="checkbox"> Tutustu koodiin. 
 
 <input type="checkbox"> Piirrä _sekvenssikaavio_, joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran). Kaaviota ei tarvitse palauttaa
 
-Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
+Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot.  Näistä on tehty testeissä Mock-kirjaston avulla mockatut versiot.
 
 Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
 
@@ -326,7 +324,7 @@ from varasto import Varasto
 from tuote import Tuote
 
 class TestKauppa(unittest.TestCase):
-    def test_ostoksen_paaytyttya_pankin_metodia_tilisiirto_kutsutaan(self):
+    def test_maksettaessa_ostos_pankin_metodia_tilisiirto_kutsutaan(self):
         pankki_mock = Mock()
         viitegeneraattori_mock = Mock()
 
@@ -363,10 +361,13 @@ class TestKauppa(unittest.TestCase):
         # toistaiseksi ei välitetä kutsuun liittyvistä argumenteista
 ```
 
-Aloita siten, että saat esimerkkitestin suoritettua. Tee sen jälkeen seuraavat testit:
+<input type="checkbox"> Varmista, että saat testit suoritettua.
 
-<input type="checkbox">  Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
-  - Tämä siis on muuten copypaste esimerkistä, mutta `assert_called_with`-metodia käytettävä, jotta voidaan tarkastaa, että parametreilla on oikeat arvot
+Tee tämän jälkeen seuraavat testit:
+
+<input type="checkbox"> Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
+
+Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with`-metodia käytettävä, jotta voidaan tarkastaa, että parametreilla on oikeat arvot
 
 <input type="checkbox"> Aloitetaan asiointi, koriin lisätään _kaksi eri tuotetta_, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
 
@@ -387,13 +388,11 @@ class TestKauppa(unittest.TestCase):
 
 Jatketaan edellisen tehtävän koodin testaamista
 
-<input type="checkbox">  Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin mock-demo testeistä!
+<input type="checkbox">  Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua [tehtävän 1](/tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
 
-<input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua [tehtävän 1](tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
+<input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle. Apua löytyy jälleen tarpeen tullen mock-demon testeistä.
 
-<input type="checkbox"> 
-Tarkasta viikoilla 1 ja 2 käytetyn coveragen avulla mikä on luokan `Kauppa` testauskattavuus.
-- katso esim. viikon 1 tehtävä [8](/tehtavat1#8-unittest)
+<input type="checkbox">  Tarkasta viikoilla [1](/tehtavat1#8-unittest) ja 2 käytetyn [coveragen](http://localhost:4000/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) avulla mikä on luokan `Kauppa` testauskattavuus.
 
 Jotain taitaa puuttua.
 
@@ -439,26 +438,26 @@ Varmista, että tagit siirtyvät GitHubiin:
 ```bash
 commit 26c50e603aca79f02d478ca36a3d307f7ea10e14
 Author: Matti Luukkainen <mluukkai@iki.fi>
-Date:   Mon Oct 30 16:35:04 2023 +0200
+Date:   Mon Oct 30 16:35:04 2025 +0200
 
     do not destroy answers if dl extended
 
 commit 8026bd3ac416a7b1e6957d54d9296156e97571e6
 Author: iPegii <51372604+iPegii@users.noreply.github.com>
-Date:   Sun Oct 29 14:25:31 2023 +0200
+Date:   Sun Oct 29 14:25:31 2025 +0200
 
     Show "Evaluation TDK" -special group in admin view
 
 commit 0834035d0c113c7c46161c6fe8d655a9a90b2548
 Merge: e5c09ae6 4dfcbf54
 Author: iPegii <51372604+iPegii@users.noreply.github.com>
-Date:   Sun Oct 29 14:03:13 2023 +0200
+Date:   Sun Oct 29 14:03:13 2025 +0200
 
     Merge branch 'master' of github.com:UniversityOfHelsinkiCS/lomake
 
 commit e5c09ae692ebf46cd0acfa15552ca3e85d7348fa
 Author: iPegii <51372604+iPegii@users.noreply.github.com>
-Date:   Sun Oct 29 14:02:52 2023 +0200
+Date:   Sun Oct 29 14:02:52 2025 +0200
 
     update eslintignore to stop eslint hanging
 ```
@@ -466,8 +465,6 @@ Date:   Sun Oct 29 14:02:52 2023 +0200
 Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista päästä helposti koodissa ajassa taaksepäin debuggaamaan juuri kyseisen julkaisun versiota.
 
 {% include submission_instructions.md %}
-
-
 
 ### Vapaaehtoinen lisätehtävä: Ostoskori TDD-tekniikalla
 
