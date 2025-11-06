@@ -240,10 +240,11 @@ Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](htt
 
 ### 2. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 2
 
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/maksukortti-mock_ oleva projekti.
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
+<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/maksukortti-mock_ oleva projekti.
 
-Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin osalle [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-23.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate) tuttu.
+Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
+
+Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin osalle [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-25.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate) tuttu.
 
 **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
@@ -282,34 +283,35 @@ Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin 
 
 Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa, eli että kortin metodia `osta` ei ole kutsuttu.
 
-**Testit eivät mene läpi. Korjaa kassapäätteen metodi `osta_lounas`.**
+<input type="checkbox"> Testit eivät mene läpi. Korjaa kassapäätteen metodi `osta_lounas`.
 
-**Muistutus** Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Maksukortin tilaa ei myöskään ole tarkoitus tutkia suoraan, koska Maksukortti on mock ei attribuuttien arvojen katsominen edes ole mahdollista/mielekästä.
+**Muistutus** Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Maksukortin tilaa ei myöskään ole tarkoitus tutkia testeissä suoraan. Koska Maksukortti on mock, ei attribuuttien arvojen katsominen edes ole mahdollista/mielekästä.
 
 **Tee tämän jälkeen samaa periaatetta noudattaen seuraavat testit:**
 
-- Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa` jos ladattava summa on positiivinen
-- Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään jos ladattava summa on negatiivinen
+<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa` jos ladattava summa on positiivinen
+
+<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään jos ladattava summa on negatiivinen
 
 **Huomio:** 
 - Testeissä ei ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla. 
 - Testit eivät myöskään testaa suoraan maksukortin tilaa, ainoastaan sitä onko maksukortin metodeja kutsuttu oikein.
 
-Korjaa kassapäätettä siten, että testit menevät läpi.
+<input type="checkbox"> Korjaa kassapäätettä siten, että testit menevät läpi.
 
 ### 3. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 3
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/verkkokauppa_ löytyy hieman laajennettu versio tehtävän 1 verkkokaupasta.
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
 
-Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa 
-luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Ohjelman rakenne luokkakaaviona:
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
+
+Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Ohjelman rakenne luokkakaaviona:
 
 ![]({{ "/images/kauppa2.png" | absolute_url }}){:height="330px" }
 
-Tutustu koodiin. Piirrä sekvenssikaavio joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran).
-- Kaaviota ei tarvitse palauttaa
+Tutustu koodiin. 
 
+<input type="checkbox"> Piirrä _sekvenssikaavio_, joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran). Kaaviota ei tarvitse palauttaa
 
 Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot. Tehdään näistä testeissä mock-kirjaston avulla mockatut versiot.
 
@@ -363,11 +365,14 @@ class TestKauppa(unittest.TestCase):
 
 Aloita siten, että saat esimerkkitestin suoritettua. Tee sen jälkeen seuraavat testit:
 
-- Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
+<input type="checkbox">  Aloitetaan asiointi, koriin lisätään tuote, jota varastossa on ja suoritetaan ostos, eli kutsutaan metodia kaupan `tilimaksu`, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumeroilla ja summalla
   - Tämä siis on muuten copypaste esimerkistä, mutta `assert_called_with`-metodia käytettävä, jotta voidaan tarkastaa, että parametreilla on oikeat arvot
-- Aloitetaan asiointi, koriin lisätään _kaksi eri tuotetta_, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
-- Aloitetaan asiointi, koriin lisätään _kaksi samaa tuotetta_, jota on varastossa tarpeeksi ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
-- Aloitetaan asiointi, koriin lisätään _tuote, jota on varastossa tarpeeksi ja tuote joka on loppu_ ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
+
+<input type="checkbox"> Aloitetaan asiointi, koriin lisätään _kaksi eri tuotetta_, joita varastossa on ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
+
+<input type="checkbox"> Aloitetaan asiointi, koriin lisätään _kaksi samaa tuotetta_, jota on varastossa tarpeeksi ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
+
+<input type="checkbox">  Aloitetaan asiointi, koriin lisätään _tuote, jota on varastossa tarpeeksi ja tuote joka on loppu_ ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
 
 Muista, että kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka toistetaan ennen jokaista testiä:
 
@@ -382,13 +387,17 @@ class TestKauppa(unittest.TestCase):
 
 Jatketaan edellisen tehtävän koodin testaamista
 
-- Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin mock-demo testeistä!
-- Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua [tehtävän 1](tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
+<input type="checkbox">  Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua projektin mock-demo testeistä!
 
+<input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle, katso tarvittaessa apua [tehtävän 1](tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
+
+<input type="checkbox"> 
 Tarkasta viikoilla 1 ja 2 käytetyn coveragen avulla mikä on luokan `Kauppa` testauskattavuus.
 - katso esim. viikon 1 tehtävä [8](/tehtavat1#8-unittest)
 
-Jotain taitaa puuttua. Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin! Jos bugeja ilmenee, korjaa ne.
+Jotain taitaa puuttua.
+
+<input type="checkbox"> Lisää testi, joka nostaa kattavuuden noin sataan prosenttiin! Jos bugeja ilmenee, korjaa ne.
 
 ### Mock-olioiden käytöstä
 
