@@ -31,9 +31,9 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
-Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) laskarien NHL-tilastot-tehtävässä luokka `StatisticsService` riippuu luokasta `PlayerReader`. Riippuvuuksien injektion avulla saimme mukavasti purettua riippuvuudet luokkien väliltä.
+Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) laskarien NHL-tilastot-tehtävässä luokka `StatisticsService` riippuu luokasta `PlayerReader`. Riippuvuuksien injektion avulla saimme mukavasti purettua suorat riippuvuudet luokkien väliltä.
 
-Vaikka luokilla ei olisikaan riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `StatisticsService` tulisi testata? Tuleeko testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
+Vaikka luokilla ei olisikaan suoria riippuvuuksia toisiin luokkiin, on tilanne edelleen se, että luokan oliot käyttävät joidenkin toisten luokkien olioiden palveluita. Tämä tekee yksikkötestauksesta välillä hankalaa. Miten esim. luokkaa `StatisticsService` tulisi testata? Tuleeko testeissä olla mukana toimivat versiot kaikista sen riippuvuuksista?
 
 NHL-tilastot-tehtävässä ongelma ratkaistiin ohjelmoimalla riippuvuuden korvaava "tynkäkomponentti" `PlayerReaderStub`:
 
@@ -66,7 +66,9 @@ Pythonille kuten kaikille muillekin kielille on tarjolla myös valmiita kirjasto
 
 Kuten pian huomaamme, mock-oliot eivät ole pelkkiä "tynkäolioita", mockien avulla voi myös varmistaa, että testattava metodi tai funktio kutsuu olioiden metodeja asiaankuuluvalla tavalla.
 
-Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon. Kirjastosta voidaan tuoda luokka [Mock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock). Katsotaan mitä luokalla voi tehdä käynnistämällä interaktiivinen Python-terminaali komennolla `python3` (virtuaaliympäristölle ei ole tarvetta, koska emme käytä ulkoisia riippuvuuksia):
+Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unittest.mock.html)-kirjastoon. Kirjastosta voidaan tuoda luokka [Mock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock).
+
+<input type="checkbox"> Käynnistä Python-terminaali komennolla `python3`:
 
 ```python
 >>> from unittest.mock import Mock
@@ -75,7 +77,11 @@ Tutustumme nyt unittest-moduulin [mock](https://docs.python.org/3/library/unitte
 <Mock id='4568521696'>
 ```
 
-Anna syötteet terminaaliin yksi kerrallaan. Enter-painikkeen painallus suorittaa annetun syötteen. Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niiden kaikki mahdolliset attribuutit ja metodit on toteutettu. Mitä tällä tarkoitetaan? Kokeillaan:
+<input type="checkbox"> Anna terminaaliin yksi kerrallaan samat syötteet kuin yo. esimerkissä. Enter-painikkeen painallus suorittaa annetun syötteen. 
+
+Muuttuja `mock` sisältää siis `Mock`-luokan olion. `Mock`-luokan olioilla on se mielenkiintoinen piirre, että niiden kaikki mahdolliset attribuutit ja metodit on toteutettu. Mitä tällä tarkoitetaan? 
+
+Kokeillaan:
 
 ```python
 >>> mock.foo
@@ -83,6 +89,8 @@ Anna syötteet terminaaliin yksi kerrallaan. Enter-painikkeen painallus suoritta
 >>> mock.foo.bar()
 <Mock name='mock.foo.bar()' id='4570560112'>
 ```
+
+<input type="checkbox"> Tee jälleen toimenpiteet myös itse!
 
 Kaikki annetut operaatiot palauttavat siis uuden `Mock`-olion. Voimme antaa olion metodeille haluttuja paluuarvoja [return_value](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.return_value)-attribuutin avulla:
 
@@ -92,6 +100,8 @@ Kaikki annetut operaatiot palauttavat siis uuden `Mock`-olion. Voimme antaa olio
 'Foobar'
 ```
 
+<input type="checkbox"> Tee jälleen toimenpiteet myös itse!
+
 Voimme myös antaa metodeille haluttuja toteutuksia [side_effect](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect)-attribuutin avulla:
 
 ```python
@@ -99,6 +109,8 @@ Voimme myös antaa metodeille haluttuja toteutuksia [side_effect](https://docs.p
 >>> mock.foo.bar("Kalle")
 'Kalle: Foobar'
 ```
+
+<input type="checkbox"> Do it!
 
 Attribuutin `side_effect` arvo pitää olla kutsuttavissa, kuten funktio, metodi, tai lambda. Huomaa, että `Mock`-oliota voi käyttää myös funktion kaltaisesti:
 
@@ -115,19 +127,21 @@ Mockeille voidaan määritellä toteutuksien lisäksi oletuksia. Voimme esimerki
 >>> mock.foo.doo.assert_called()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/unittest/mock.py", line 908, in assert_called
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.12/unittest/mock.py", line 908, in assert_called
 AssertionError: Expected 'doo' to have been called.
 ```
 
+<input type="checkbox"> Kokeile myös ylläolevaa
+
 Voimme siis kutsua tarkasteltavalle metodille [assert_called](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called)-metodia. Huomaa, että `mock.foo.bar`-metodia on kutsuttu, mutta `mock.foo.doo`-metodia sen sijaan ei ole. Voimme myös tarkistaa, että metodia on kutsuttu oikeilla argumenteilla käyttämällä [assert_called_with](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called_with)-metodia.
 
-Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
+<input type="checkbox">  Kun `Mock`-oliot ovat tulleet tutuksi, voit sulkea terminaalin komennolla `exit()`.
 
-**Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.**
-- Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa 
-- Voit halutessasi kopioida projektin palautusrepositorioosi, hakemiston viikko4 sisälle.
+<input type="checkbox">  Hae seuraavaksi [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/mock-demo_ oleva projekti.
 
-Projekti on yksinkertainen verkkokauppa, jonka sovelluslogiikan totutettaa luokka `Kauppa`. Luokalla on riippuvuus `Pankki`- ja `Viitegeneraattori`-olioihin.
+Tässä tehtävässä ei tehdä mitään koodia, joten projektia ei ole tarvetta välttämättä palauttaa. Voit halutessasi kopioida projektin palautusrepositorioosi, hakemiston viikko4 sisälle.
+
+Projekti on yksinkertainen verkkokauppa, jonka sovelluslogiikan toteuttaa luokka `Kauppa`. Luokalla on riippuvuus `Pankki`- ja `Viitegeneraattori`-olioihin.
 
 Kaupan toimintaperiaate on yksinkertainen:
 
@@ -142,13 +156,13 @@ kauppa.lisaa_ostos(7)
 kauppa.maksa("1111")
 ```
 
-Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron jolta summa veloitetaan.
+Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron, jolta summa veloitetaan.
 
 Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
 
 ![]({{ "/images/kauppa.png" | absolute_url }}){:height="200px" }
 
-Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit testaavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
+Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit varmistavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
 
 Seuraavassa testi, joka testaa, että kauppa kutsuu pankin metodia oikealla tilinumerolla ja summalla:
 
@@ -177,7 +191,7 @@ viitegeneraattori_mock = Mock(wraps=Viitegeneraattori())
 kauppa = Kauppa(pankki_mock, viitegeneraattori_mock)
 ```
 
-`Mock`-luokan [konstruktorin](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock) `wraps`-parametrin avulla voimme määritellä, minkä olion `Mock`-olio toteuttaa. Tämä mahdollistaa sen, ettei esimerkiksi `uusi`-metodille tarvitse määritellä toteutusta, vaan voimme käyttää sen oikeaa toteutusta.
+`Mock`-luokan [konstruktorin](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock) `wraps`-parametrin avulla voimme käyttää olemassa olevan olion metodeja mock-olion kautta. Tämä mahdollistaa sen, ettei esimerkiksi `uusi`-metodille tarvitse määritellä toteutusta, vaan voimme käyttää sen oikeaa toteutusta.
 
 Eli nyt viitegeneraattori on olio, jonka metodi `uusi` palauttaa arvot 1, 2, 3...
 
@@ -187,7 +201,7 @@ Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että panki
 pankki_mock.maksa.assert_called_with("1111", 10, ANY)
 ```
 
-Kuten edellisissä esimerkeissä tuli ilmi, `Mock`-olioille tehtyjen metodikutsujen paluuarvot on mahdollista määrittää. Seuraavassa määritellään, että viitegeneraattori palauttaa arvon `55` kun sen metodia `uusi` kutsutaan:
+Kuten edellisistä esimerkeistä käy ilmi, `Mock`-olioiden metodikutsuille voi määrittää palautettavat arvot. Seuraavassa määritellään, että viitegeneraattori palauttaa arvon `55` kun sen metodia `uusi` kutsutaan:
 
 ```python
 def test_kaytetaan_maksussa_palautettua_viitetta(self):
@@ -210,13 +224,17 @@ def test_kaytetaan_maksussa_palautettua_viitetta(self):
 
 Testin lopussa varmistetaan, että pankin `Mock`-oliota on kutsuttu oikeilla parametrinarvoilla, eli kolmantena parametrina tulee olla viitegeneraattorin palauttama arvo.
 
-Tutustu projektiin ja sen kaikkiin testeihin. Asenna projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`. Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota esim. seuraavasti:
+<input type="checkbox"> Tutustu projektiin ja sen kaikkiin testeihin:
+
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`
+
+<input type="checkbox"> Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota esim. seuraavasti:
 
 ```python
 pankki_mock.maksa.assert_called_with(ANY, ANY, 1000)
 ```
 
-Ja varmista, että testit eivät mene läpi. Katso miltä virheilmoitus näyttää.
+<input type="checkbox"> Varmista, että testit eivät mene läpi. Katso miltä virheilmoitus näyttää.
 
 Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](https://docs.python.org/3/library/unittest.mock.html).
 
