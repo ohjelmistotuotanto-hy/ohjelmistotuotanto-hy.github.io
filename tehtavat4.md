@@ -242,7 +242,7 @@ Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](htt
 
 Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
 
-Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin osalle [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-25.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate) tuttu.
+Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin joillekin tuttu [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-25.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate).
 
 **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
@@ -277,7 +277,7 @@ class TestKassapaate(unittest.TestCase):
 
 Ensimmäisessä testissä varmistetaan, että jos kortilla on riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen veloittaa summan kortilta eli kutsuu kortin metodia `osta`.
 
-Testi ottaa siis kantaa ainoastaan siihen miten kassapääte kutsuu maksukortin metodeja. **Maksukortin saldoa ei erikseen tarkasteta**, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
+Testi ottaa siis kantaa ainoastaan, siihen miten kassapääte kutsuu maksukortin metodeja. **Maksukortin saldoa ei erikseen tarkasteta**, sillä oletuksena on, että maksukortin omat testit varmistavat kortin toiminnan.
 
 Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapäätteen metodin `osta_lounas` kutsuminen _ei_ veloita kortilta rahaa, eli että kortin metodia `osta` ei ole kutsuttu.
 
@@ -287,9 +287,9 @@ Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapä�
 
 **Tee tämän jälkeen samaa periaatetta noudattaen seuraavat testit:**
 
-<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa` jos ladattava summa on positiivinen
+<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu lisää maksukortille ladattavan rahamäärän käyttäen kortin metodia `lataa`, jos ladattava summa on positiivinen
 
-<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään jos ladattava summa on negatiivinen
+<input type="checkbox"> Kassapäätteen metodin `lataa` kutsu ei tee maksukortille mitään, jos ladattava summa on negatiivinen
 
 **Huomio:** 
 - Testeissä ei ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla. 
@@ -462,7 +462,7 @@ Date:   Sun Oct 29 14:02:52 2025 +0200
     update eslintignore to stop eslint hanging
 ```
 
-Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista päästä helposti koodissa ajassa taaksepäin debuggaamaan juuri kyseisen julkaisun versiota.
+Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista palata helposti koodissa julkaisun versioon.
 
 {% include submission_instructions.md %}
 
