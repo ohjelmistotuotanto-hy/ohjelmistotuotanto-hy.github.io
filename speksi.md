@@ -7,7 +7,7 @@ permalink: /speksi/
 
 ## Taustaa
 
-Graduaan tekevät Riku ja Sini tarvitsevat järjestelmän, joka auttaa heitä pitämään tutkielman kirjoittamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa gradua varten. Kuten kaikki TKT:n opiskelijat, myös Riku ja Sini kirjoittavat gradun [LaTeX](https://www.latex-project.org/):illa.
+Väitöskirjaopiskelija Outi tarvitsee järjestelmän, joka auttaa häntä pitämään tutkielman kirjoittamisessa käytetyt lähdeviitteet järjestyksessä ja sopivassa muodossa tutkielmaa varten. Kuten kaikki TKT:n kasvatit, myös Outi kirjoittaa väitöskirjansa [LaTeX](https://www.latex-project.org/):illa.
 
 LaTeX:ia käytettäessä teksti näyttää seuraavalta:
 
@@ -89,7 +89,7 @@ Esimerkki hieman laajemmasta BibTeX-tiedostosta [täällä](/bibtex).
 
 ## Järjestelmän kuvaus
 
-Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
+Outi siis haluavaa järjestelmän, jonka avulla he voivat hallinnoida viitteitä helposti. Ohjelmalla pitää olla ainakin seuraavat ominaisuudet:
 - viitteitä pitää pystyä lisäämään järjestelmään ihmiselle hyvässä muodossa, esimerkiksi jonkun lomakkeen avulla
 - järjestelmässä olevista viitteistä pitää saada generoitua LaTeX-dokumenttiin sopiva BibTeX-muotoinen tiedosto
 - myös viitteiden listaaminen ihmiselle sopivammassa formaatissa pitää onnistua
@@ -101,8 +101,8 @@ Riku ja Sini siis haluavat järjestelmän, jonka avulla he voivat hallinnoida vi
 - jopa vielä parempi feature olisi datan haku [DOI](https://www.doi.org/)-tunnisteen perusteella
 - kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin gradun tekijöille ihan turhia
 - sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
-  - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Riku ja Sini vievät sovelluksen itse internettiin
-  - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Riku ja Sini asentavat itselleen omat sovellusinstanssit
+  - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Outi vie sovelluksen itse internettiin
+  - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Outi on järjestelmän ainoa käyttäjä.
   - lue ohje Flaskin käytöstä [täältä](/flask)
 
 
