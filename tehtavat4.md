@@ -408,32 +408,39 @@ Tutustutaan tässä tehtävässä Gitin tageihin:
 
 > Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on)
 
-Lue ensin [http://git-scm.com/book/en/v2/Git-Basics-Tagging](http://git-scm.com/book/en/v2/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags').
+<input type="checkbox"> Lue ensin [http://git-scm.com/book/en/v2/Git-Basics-Tagging](http://git-scm.com/book/en/v2/Git-Basics-Tagging) (voit ohittaa kohdat 'signed tags' ja 'verifying tags').
 
 Tee seuraavat samaan repositorioon, johon palautat tehtäväsi:
 
-- Tee tägi nimellä v1.0.0 (lightweight tag riittää)
-- Tee kolme committia (eli 3 kertaa muutos + add + commit)
-- Tee tägi nimellä v1.1.0
-- Katso `gitk`-komennolla miltä historiasi näyttää
-- Palaa tagin v.1.0.0 aikaan, eli anna komento `git checkout v1.0.0`
-  - Varmista, että tagin jälkeisiä muutoksia ei näy
-- Palaa nykyaikaan
-  - Tämä onnistuu komennolla `git checkout main`
-- Lisää tägi _edelliseen_ committiin
+<input type="checkbox"> Tee tägi nimellä v1.0.0 (lightweight tag riittää)
+
+<input type="checkbox"> Tee kolme committia (eli 3 kertaa muutos + add + commit)
+
+<input type="checkbox"> Tee tägi nimellä v1.1.0
+
+<input type="checkbox"> Katso `gitk`-komennolla miltä historiasi näyttää
+
+<input type="checkbox"> Palaa tagin v.1.0.0 aikaan, eli anna komento `git checkout v1.0.0`
+
+<input type="checkbox"> Varmista, että tagin jälkeisiä muutoksia ei näy
+
+<input type="checkbox"> Palaa nykyaikaan. Tämä onnistuu komennolla `git checkout main`
+
+<input type="checkbox"> Lisää tägi _edelliseen_ committiin
+
   - Operaatio onnistuu komennolla <code>git tag v1.0.1 HEAD^</code> , eli HEAD^ viittaa nykyistä "headia" eli olinpaikkaa historiassa edelliseen committiin
   - Joissain Windowseissa muoto <code>HEAD^</code> ei toimi, sen sijasta voit käyttää muotoa <code>HEAD~</code>
   - Tai katsomalla commitin tunniste (pitkä numerosarja) joko komennolla <code>git log</code> tai gitk:lla
-- Katso komennolla <code>gitk</code> miltä historia näyttää
+
+<input type="checkbox"> Katso komennolla <code>gitk</code> miltä historia näyttää
 
 Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin siten, että myös tagit siirtyvät mukana. Katso ohje [täältä](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Sharing-Tags).
 
-Varmista, että tagit siirtyvät GitHubiin:
+<input type="checkbox"> Varmista, että tagit siirtyvät GitHubiin:
 
 ![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
 
 **Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmiselle hankalien tunnisteiden avulla:
-
 
 ```bash
 commit 26c50e603aca79f02d478ca36a3d307f7ea10e14
@@ -470,7 +477,7 @@ Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodoss
 
 Jatketaan verkkokaupan parissa. 
 
-**Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa viikko4/tdd-ostoskori oleva projekti.**
+<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa viikko4/tdd-ostoskori oleva projekti.
 
 Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
 
@@ -499,7 +506,7 @@ class Tuote:
 
 Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
 
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon, sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
 
 ```python
 from tuote import Tuote
@@ -514,7 +521,7 @@ class Ostos:
 
     def muuta_lukumaaraa(self, muutos: int):
         self._lukumaara += muutos
-        if self._lukumaara<0:
+        if self._lukumaara < 0:
             self._lukumaara = 0
 
     def lukumaara(self):
@@ -587,7 +594,7 @@ Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
 
 _Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti._
 
-#### 1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.
+<input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.**
 
 Tehtäväpohjassa on yksi valmis testi
 
@@ -603,9 +610,7 @@ class TestOstoskori(unittest.TestCase):
 
 Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
 
-Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
-
-#### 2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.
+<input type="checkbox"> **2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
 
 **Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
 
@@ -629,29 +634,17 @@ class TestOstoskori(unittest.TestCase):
 
 **Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
 
-Lisää ja commitoi muutokset ja anna kuvaava commit-viesti.
+<input type="checkbox"> **3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
 
-#### 3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.
+<input type="checkbox"> **4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
 
-Lisää ja commitoi muutokset.
+<input type="checkbox"> **5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa**
 
-#### 4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
+<input type="checkbox"> **6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
 
-Lisää ja commitoi muutokset.
+<input type="checkbox"> **7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta**
 
-#### 5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa
-
-Lisää ja commitoi muutokset.
-
-#### 6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa
-
-Lisää ja commitoi muutokset.
-
-#### 7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta
-
-Lisää ja commitoi muutokset.
-
-#### 8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+<input type="checkbox"> **8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
 
 tässä testataan ostoskorin metodia `ostokset`:
 
@@ -666,9 +659,7 @@ tässä testataan ostoskorin metodia `ostokset`:
         # testaa että metodin palauttaman listan pituus 1
 ```
 
-Lisää ja commitoi muutokset.
-
-#### 9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1
+<input type="checkbox"> **9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1**
 
 Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
 
@@ -683,38 +674,24 @@ Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
         # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
 ```
 
-Lisää ja commitoi muutokset.
+<input type="checkbox"> **10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta**
 
-#### 10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta
-
-Lisää ja commitoi muutokset.
-
-#### 11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen
+<input type="checkbox"> **11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
 
 Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
 
-Lisää ja commitoi muutokset.
+<input type="checkbox"> **12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
 
-#### 12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen jolla sama nimi kuin tuotteella ja lukumäärä 2
+<input type="checkbox"> **13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl**
 
-Lisää ja commitoi muutokset.
-
-#### 13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl
-
-Lisää ja commitoi muutokset.
-
-#### 14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä
+<input type="checkbox"> **14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä**
 
 Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
 
-Lisää ja commitoi muutokset.
+<input type="checkbox"> **15. Metodi tyhjenna tyhjentää korin**
 
-#### 15. Metodi tyhjenna tyhjentää korin
+<input type="checkbox"> Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu.
 
-Lisää ja commitoi muutokset.
+Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
 
-Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu. Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
-
-Lisää ja commitoi mahdolliset muutokset.
-
-Tehtävää ei palauteta, eikä siitä saa kurssipisteitä. Palkkio tehtävästä on lisääntynyt osaaminen ja toivottavasti hyvä mieli!
+Tehtävää ei tarvitse palauttaa, eikä siitä saa kurssipisteitä. Palkkio tehtävästä on lisääntynyt osaaminen ja toivottavasti hyvä mieli!

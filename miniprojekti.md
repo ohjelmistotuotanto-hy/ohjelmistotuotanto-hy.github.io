@@ -20,16 +20,9 @@ inheader: yes
       <li>to 13.11. 16-18 B222</li>
     </ul>
   </li>
-  <li>Ilmoittaudu (eli kerro aikatoiveesi) viimeistään lauantaina 8.11. klo 23:59 osoitteessa <a href="https://study.cs.helsinki.fi/assembler/course/789ea450-0494-44d8-804c-0d545e0b537c">https://study.cs.helsinki.fi/assembler/course/789ea450-0494-44d8-804c-0d545e0b537c</a>
+  <li>
+    Aloitustilaisuuksien <a href='/ryhmajako'>ryhmäjako</a>
   </li>
-  <ul>
-    <li>
-      Valitse ajat jotka sopivat sinulle myös kolmen seuraavan viikon asiakastapaamisiin
-    </li>
-    <li>
-      Ryhmäjako tapahtuu aloitustilaisuuksissa
-    </li>
-  </ul>
  </ul>
 </div>
 
@@ -58,6 +51,7 @@ inheader: yes
   - ke 12.11. 12-14 C222
   - to 13.11. 14-16 B222
   - to 13.11. 16-18 B222
+- Aloitustilaisuuksien [ryhmajako](/ryhmajako)
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -106,7 +100,7 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 
 ### Toteutettava ohjelmisto
 
-Paljastuu aloitustilaisuudessa...
+Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 
 ### Toteutusteknologia
 
