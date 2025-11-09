@@ -692,7 +692,7 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 -  Oletusarvoisesti mukana tulee kloonatessa ainoastaan *main*
 
-<input type="checkbox"> Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta Tracking Branches)
+<input type="checkbox"> Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta [Tracking Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tracking_branches))
 
 <input type="checkbox"> Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branch GitHubiin
 
