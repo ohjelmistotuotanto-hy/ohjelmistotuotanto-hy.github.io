@@ -334,23 +334,21 @@ Ohjelmistoalalle vuosien varrella kerääntyneen [kansanviisauden](https://www.a
 
 Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnitteluratkaisuihin, joita noudattamalla on mahdollista kirjoittaa ylläpidettävyydeltään laadukasta koodia. Monet näistä hyvän suunnittelun periaatteista on nimetty ja dokumentoitu _suunnittelumalleina_ (engl. design patterns).
 
-Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, _singleton_ sekä _repository_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
+Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, sekä _repository_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
 
-### Koodin laatuattribuutti: kapselointi
+### Kapselointi
 
-Ohjelmoinnin peruskurssilla _kapselointi_ (engl. encapsulation) määriteltiin muutama vuosi seuraavasti
+[Ohjelmoinnin jatkokurssilla](https://ohjelmointi-21.mooc.fi/osa-9/3-kapselointi) _kapselointi_ (engl. encapsulation) määritellään seuraavasti:
 
-> Tapaa ohjelmoida olion toteutuksen yksityiskohdat luokkamäärittelyn sisään – piiloon olion käyttäjältä – kutsutaan kapseloinniksi. Olion käyttäjän ei tarvitse tietää mitään olioiden sisäisestä toiminnasta.
+> Luokka voi piilottaa attribuutit asiakkailta. Pythonissa tämä tapahtuu lisäämällä attribuuttimuuttujan nimen alkuun kaksi alaviivaa. Tietojen piilottamista asiakkaalta kutsutaan kapseloinniksi. Nimensä mukaisesti attribuutti siis "suljetaan kapseliin" ja asiakkaalle tarjotaan sopiva rajapinta, jonka kautta tietoa voi käsitellä.
 
-Määritelmä ei ole nykyisellä kurssilla sanatarkkaan sama, mutta aloitteleva ohjelmoija assosioi kapseloinnin nykyäänkin seuraavaan periaatteeseen: _oliomuuttujat tulee määritellä privaateiksi ja niille tulee tehdä tarvittaessa setterit ja getterit_. Javalla ohjelmonnissa periaate oli hyvin korostuneesti käytössä, Pythonissa vähemmän, vaikkakin asiaa käsitellään myös [Ohjelmoinnin jatkokurssin nykyisessä versiossa](https://ohjelmointi-21.mooc.fi/osa-9/3-kapselointi).
-
-Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
+Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
 Monissa suunnittelumalleissa on kyse juuri eritasoisten asioiden kapseloinnista, ja tulemme pian näkemään esimerkkejä asiasta.
 
 Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerkiksi kerrosarkkitehtuurissa ylempi kerros käyttää ainoastaan alapuolellaan olevan kerroksen ulospäin tarjoamaa rajapintaa, kaikki muu on kapseloitu näkymättömiin. Vastaavasti mikropalveluarkkitehtuureissa yksittäinen palvelu kapseloi toiminnallisuutensa sisäisen logiikan ja tarjoaa ulospäin ainoastaan verkon välityksellä käytettävän rajapinnan.
 
-### Koodin laatuattribuutti: koheesio
+### Koheesio
 
 _Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi keskittyy tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta.
 
@@ -462,7 +460,7 @@ Luokka rikkoo single responsibility -periaatetta. Miksi? Periaate sanoo, että l
 - Luokalle halutaan toteuttaa uusia laskutoimituksia
 - Kommunikointi käyttäjän kanssa halutaan hoitaa jotenkin muuten kuin konsolin välityksellä
 
-Eriyttämällä käyttäjän kanssa kommunikointi omaan luokkaan ja eristämällä se rajapinnan taakse eli _kapseloimalla kommunikoinnin toteutustapa_, saadaan luokan Laskin vastuita vähennettyä:
+Käyttäjän kanssa kommunikointi voidaan eriyttää omaan luokkaansa, jonka olio _io_ injektoidaan laskimelle konstruktorin parametrina. Näin saadaan vähennettyä Laskin-luokan vastuita:
 
 ```python
 class Laskin:
@@ -489,11 +487,11 @@ class Laskin:
         return luku1 + luku2
 ```
 
-Nyt kommunikointitavan muutos ei edellytä luokkaan mitään muutoksia edellyttäen että uusikin kommunikointitapa toteuttaa rajapinnan, jonka kautta `Laskin`-luokka hoitaa kommunikoinnin.
+Nyt kommunikointitavan muutos ei edellytä luokkaan `Laskin` mitään muutoksia edellyttäen, että uusi kommunikointitapa toteuttaa saman metodirajapinnan, jonka kautta `Laskin`-luokka hoitaa kommunikoinnin, eli metodit `lue`- ja `kirjoita`.
 
 Vaikka luokka `Laskin` siis toteuttaakin edelleen käyttäjänsä näkökulmasta samat asiat kuin aiemmin, ei se hoida kaikkea itse vaan _delegoi_ osan vastuistaan muualle.
 
-Kommunikointirajapinta voidaan toteuttaa esim. seuraavasti:
+Kommunikointi voidaan toteuttaa esim. seuraavasti:
 
 ```python
 class KonsoliIO:
@@ -549,12 +547,12 @@ Olioiden on oltava vuorovaikutuksessa toistensa kanssa saadakseen toteutettua oh
 
 Koska korkean koheesion periaatteen nojalla olioita on paljon, tulee riippuvuuksia pakostakin. Miten riippuvuudet sitten saadaan eliminoitua? Ideana on eliminoida tarpeettomat riippuvuudet _ja_ välttää riippuvuuksia konkreettisiin asioihin.
 
-Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli joko rajapintaan tai abstraktiin luokkaan. Sama idea kulkee parilla eri nimellä:
+Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli rajapintaan. Sama idea kulkee parilla eri nimellä:
 
 - Program to an interface, not to an implementation
 - Depend on abstractions, not on concrete implementation
 
-Toisin kuin Javassa ja monessa muussa stattisesti tyypitetyssä kielessä, ei Pythonissa ole selkeää rajapinnan tai abstraktin luokan käsitettä. Sama ajattelu voidaan laajentaa myös Pythoniin, olettamalla että rajapinnalla tarkoitetaan ainoastaan tietoa siitä minkälaisia metodeja riippuvuutena käytettävällä luokalla on.
+Toisin kuin Javassa ja monessa muussa stattisesti tyypitetyssä kielessä, ei Pythonissa ole selkeää rajapinnan käsitettä. Sama ajattelu voidaan laajentaa myös Pythoniin, olettamalla että rajapinnalla tarkoitetaan ainoastaan tietoa siitä minkälaisia metodeja riippuvuutena käytettävällä luokalla on.
 
 Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien toteutukset esimerkiksi konstruktorin, tai metodikutsun kautta. Olemme tehneet näin kurssilla usein, mm. Verkkokaupan konkreettiset riippuvuudet Varastoon, Pankkiin ja Viitegeneraattoriin korvattiin luokan konstruktorin kautta annetuilla olioilla. Riippuvuuksien injektointi -suunnittelumalli toimi usein apuvälineenä konkreettisen riippuvuuksien eliminoinnissa.
 
@@ -589,7 +587,7 @@ class Tili:
         self.saldo = self.saldo * (1 + self.korkoprosentti)
 ```
 
-Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan `EuriborTili` perimällä luokan `Tili` ja ylikirjoittamalla metodin `maksaKorko` siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
+Asiakkaan vaatimukset muuttuvat ja tulee tarve tilille, jonka korko perustuu joko 1, 3, 6 tai 12 kuukauden Euribor-korkoon. Päätämme tehdä uuden luokan `EuriborTili` perimällä luokan `Tili` ja ylikirjoittamalla metodin `maksa_korko` siten, että Euribor-koron senhetkinen arvo haetaan verkosta:
 
 ```python
 class EuriborTili(Tili):
@@ -620,14 +618,14 @@ class EuriborTili(Tili):
         self.saldo = self.saldo * (1 + self.get_korko())
 ```
 
-Huomaamme, että `EuriborTili`-luokka rikkoo _single responsibility_ -periaatetta, sillä luokka sisältää normaalin tiliin liittyvän toiminnan lisäksi koodia, joka hakee tavaraa internetistä. Vastuut kannattaa selkeyttää ja korkoprosentin haku eriyttää omaan rajapinnan takana olevaan luokkaan:
+Huomaamme, että `EuriborTili`-luokka rikkoo _single responsibility_ -periaatetta, sillä luokka sisältää normaalin tiliin liittyvän toiminnan lisäksi koodia, joka hakee tietoa internetistä. Vastuut kannattaa selkeyttää ja korkoprosentin haku eriyttää omaan rajapinnan takana olevaan luokkaan:
 
 ```python
 class EuriborLukija:
     def __init__(self, kuukauden):
         self.kuukauden = kuukauden
 
-    def get_korko():
+    def get_korko(self):
         data = urllib.request.urlopen(
             "https://www.euribor-rates.eu/en/current-euribor-rates/"
         ).read()
@@ -688,7 +686,7 @@ class TasaKorko:
     def __init__(self, korko):
         self.korko = korko
 
-    def get_korko():
+    def get_korko(self):
         return self.korko
 
 class EuriborKorko:
@@ -785,7 +783,7 @@ Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esi
 
 Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method) ja [täältä](http://www.oodesign.com/factory-method-pattern.html).
 
-Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään `Tili`-luokassa sijaitsevalta factoryltä, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan `MaaraaikaisTili`.
+Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään `Tili`-luokassa sijaitsevalta tehdasmetodilta, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan `MaaraaikaisTili`.
 
 Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Jamin tasakorkoinen määräaikaistili on helppo muuttaa lennossa kolmen kuukauden Euribor-tiliksi:
 
@@ -797,7 +795,7 @@ Eli luopumalla perinnästä oliorakenne selkeytyy huomattavasti ja saavutetaan s
 
 #### Suunnittelumalli: strategy <span style="color:blue">[viikko 5]</span>
 
-Tekniikka jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
+Tekniikka, jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
 Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määrittely. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa on mahdollista vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
 
@@ -946,7 +944,7 @@ Sovelluksen rakenne näyttää seuraavalta:
 
 #### Laskin ja komento-olio <span style="color:blue">[viikko 5]</span>
 
-Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan luokan `Operaatiotehdas` olemusta siten, että siirretään sen huolehdittavaksi myös käyttäjän kanssa tapahtuva kommunikointi.
+Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan laskuoperaatiot toteuttavien luokkien olemusta siten, että siirretään myös käyttäjän kanssa tapahtuva kommunikointi niiden huolehdittavaksi.
 
 Tämän muutoksen myötä siirrymme käyttämään Strategy-suunnittelumallin lähisukulaista _command_-suunnittelumallia. Komennon toteuttavat luokat ovat äärimmäisen yksinkertaisia. Niille annetaan konstruktorin kautta `IO`-olio, ja ne toteuttavat metodin `suorita`. Komennon voi ainoastaan suorittaa eikä se edes palauta mitään!
 
@@ -970,7 +968,7 @@ class Komentotehdas:
         return Tuntematon(self.io)
 ```
 
-Komentotehdas siis palauttaa `hae`-metodin merkkijonoparametria vastaavan komennon. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty Komento-olioille, annetaan niille `IO`-olio konstruktorin parametrina.
+Komentotehdas palauttaa `hae`-metodilla merkkijonoparametria vastaavan komento-olion. Koska vastuu käyttäjän kanssa kommunikoinnista on siirretty Komento-olioille, annetaan niille `IO`-olio konstruktorin parametrina.
 
 If-hässäkkä näyttää hieman ikävältä. Siitä pääsee kuitenkin helposti eroon tallentamalla erilliset komennon dictionaryyn:
 
@@ -1061,10 +1059,11 @@ Lisää command-suunnittelumallista esim. [täällä](http://www.oodesign.com/co
 
 #### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
 
-Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten yliluokka:
+Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten [abstrakti yliluokka](https://realpython.com/ref/glossary/abstract-base-class/) (eli luokka mikä on ainoastaan perintää varten tehty, luokasta itsestään ei voi tehdä olioita):
 
 ```python
-class BinaariOperaatio:
+from abc import ABC, abstractmethod
+class BinaariOperaatio(ABC):
     def __init__(self, io):
         self.io = io
         self.luku1 = 0
@@ -1074,13 +1073,16 @@ class BinaariOperaatio:
         self.luku1 = int(self.io.lue("Luku 1:"))
         self.luku2 = int(self.io.lue("Luku 2:"))
 
-        self.io.kirjoita(f"Vastaus: {self.laske()}")
+        tulos = self.laske()
 
+        self.io.kirjoita(f"Vastaus: {tulos}")
+
+    @abstractmethod
     def laske(self):
-        return 0
+        pass
 ```
 
-Summaa ja tuloa vastaavat komennot yksinkertaistuvat:
+Summaa ja tuloa vastaavat komennot yksinkertaistuvat entisestään:
 
 ```python
 class Summa(BinaariOperaatio):
@@ -1130,20 +1132,23 @@ Summa- ja Tulo-komentojen suoritus on oleellisesti samanlainen:
 
 Ainoastaan kolmas vaihe eli _operaation tuloksen laskeminen_ eroaa summaa ja tuloa selvitettäessä.
 
-Template methodin hengessä asia hoidetaan tekemällä yliluokka, jonka metodi `suorita` toteuttaa koko komennon suorituslogiikan:
+Template methodin hengessä asia hoidetaan tekemällä abstrakti yliluokka, jonka metodi `suorita` toteuttaa koko komennon suorituslogiikan:
 
 ```python
-class BinaariOperaatio:
+class BinaariOperaatio(ABC):
     # ...
 
     def suorita(self):
         self.luku1 = int(self.io.lue("Luku 1:"))
         self.luku2 = int(self.io.lue("Luku 2:"))
 
-        self.io.kirjoita(f"Vastaus: {self.laske()}")
+        tulos = self.laske()
 
+        self.io.kirjoita(f"Vastaus: {tulos}")
+
+    @abstractmethod
     def laske(self):
-        return 0
+        pass
 ```
 
 Suorituslogiikan vaihtuva osa eli operaation laskun tulos on määritelty metodina `laske`, jota metodi `suorita` kutsuu.
@@ -1160,13 +1165,11 @@ class Summa(BinaariOperaatio):
 
 Luokan metodi `suorita` on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
 
-Template-metodeita voi olla useampiakin kuin yksi eroava osa, tällöin metodeja määritellään tarpeellinen määrä.
-
 Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.
 
 Lisää template method -suunnittelumallista [täällä](http://www.oodesign.com/template-method-pattern.html).
 
-### Koodin laatuattribuutti: toisteettomuus
+### Toisteettomuus
 
 Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _riippuvuuksien vähäisyyttä_, seuraavana vuorossa redundanssi eli toisteisuus.
 
@@ -1376,7 +1379,7 @@ Monissa tilanteissa nimittäin copypasten poistamisella on pieni hintansa, se sa
 
 Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
-### Koodin laatuattribuutti: testattavuus
+### Testattavuus
 
 Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
 
@@ -1384,7 +1387,7 @@ Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta si
 
 Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia riippuvuuksien injektoinnin avulla.
 
-### Koodin laatuattribuutti: selkeys
+### Selkeys
 
 Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa.
 Esim. C-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa, metodikutsuja on vältetty tehokkuussyistä, muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja "koodaamalla" dataa bittitasolla.
