@@ -291,7 +291,7 @@ GitHub Action siis varmistaa, että repositorioon päätyneet Pylint-virheet huo
 
 Python-projekteissa hookien konfigurointi on helppoa [precommit](https://pre-commit.com/)-työkalun avulla. 
 
-<input type="checkbox">  Asenna pre-commit seuraavalla _ohtuvarastoon_ komennolla
+<input type="checkbox">  Asenna pre-commit _ohtuvarastoon_ seuraavalla komennolla
 
 ```
 poetry add pre-commit --group dev
