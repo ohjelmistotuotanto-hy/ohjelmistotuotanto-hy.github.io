@@ -12,7 +12,7 @@ inheader: yes
  <ul>
   <li>Aloitustilaisuudet (jokainen osallistuu yhteen)
     <ul>
-      <li>ma 10.11. 14-16 C222</li>
+      <li style="text-decoration: line-through">ma 10.11. 14-16 C222</li>
       <li>ti 11.11. 14-16 C321</li>
       <li>ke 12.11. 10-12 C222</li>
       <li>ke 12.11. 12-14 C222</li>
