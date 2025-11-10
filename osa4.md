@@ -249,9 +249,9 @@ Arkkitehtuuriin suunnittelu ja dokumentointi taas on perinteisesti ollut melko p
 
 Ketterien menetelmien yhteydessä puhutaan usein [inkrementaalisesta suunnittelusta ja arkkitehtuurista](https://www.jamesshore.com/Agile-Book/incremental_design.html).
 
-Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan riittävällä tasolla projektin alussa. Ohjelmiston "lopullinen" arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.
+Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan _riittävällä_ tasolla projektin alussa. Ohjelmiston lopullinen arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.
 
-Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) jonka aikana luodaan mm. alustava arkkitehtuuri sekä backlog.
+Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/), jonka aikana luodaan mm. alustava arkkitehtuuri sekä backlog.
 
 Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana tehtiin erilaisia kehitystyötä valmistelevia asioita, mm. hahmoteltiin alustava arkkitehtuuri. Sittemmin koko käsite on hävinnyt Scrumista ja toinen Scrumin alkuperäisistä kehittäjistä Ken Schwaber jopa eksplisiittisesti kieltää ja [tyrmää](https://web.archive.org/web/20120419073810/http://www.scrum.org/assessmentdiscussion/post/1317787) koko "nollasprintin" olemassaolon.
 
