@@ -26,6 +26,15 @@ inheader: yes
  </ul>
 </div>
 
+### Tärkeät linkit
+
+- Toteutettavan ohjelman [kuvaus](/speksi)
+- [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
+- Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
+- Eräs [esimerkkibacklog](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
+- Ohje Flaskin käyttöön [täällä](/flask)
+- [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
+
 ### Johdanto
 
 - Kurssin viikoilla 4-7 tehdään miniprojekti
