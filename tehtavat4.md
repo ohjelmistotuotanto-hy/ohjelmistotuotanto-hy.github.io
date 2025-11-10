@@ -392,7 +392,7 @@ Jatketaan edellisen tehtävän koodin testaamista
 
 <input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle. Apua löytyy jälleen tarpeen tullen mock-demon testeistä.
 
-<input type="checkbox">  Tarkasta viikoilla [1](/tehtavat1#8-unittest) ja 2 käytetyn [coveragen](http://localhost:4000/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) avulla mikä on luokan `Kauppa` testauskattavuus.
+<input type="checkbox">  Tarkasta viikoilla [1](/tehtavat1#8-unittest) ja 2 käytetyn [coveragen](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) avulla mikä on luokan `Kauppa` testauskattavuus.
 
 Jotain taitaa puuttua.
 
