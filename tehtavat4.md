@@ -594,7 +594,7 @@ Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
 
 _Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti._
 
-<input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä määrä on 0.**
+<input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
 
 Tehtäväpohjassa on yksi valmis testi
 
