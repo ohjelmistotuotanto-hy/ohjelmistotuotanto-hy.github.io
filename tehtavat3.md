@@ -465,7 +465,7 @@ Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien sovelluksen ta
 Sovelluksen käytössä oleva versio ei tallenna käyttäjien tietoja varsinaisesti mihinkän pysyvämpään paikkaan, kuten tietokantaan tai tiedostoon, käyttäjien tiedot pidetään ainoastaan keskusmuistissa.
 
 Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna muistiin suoraan `User`-oliota vaan epäsuorasti `UserRepository`-luokan olion kautta. Mistä on kysymys?
-`UserRepository`-luokka abstrahoi eli piilottaa käyttäjien hallinnointiin liittyvän logiikan sovelluksen muilta olista.
+`UserRepository`-luokka abstrahoi eli piilottaa käyttäjien hallinnointiin liittyvän logiikan sovelluksen muilta olioilta.
 
 #### Suunnittelumalli Repository
 
