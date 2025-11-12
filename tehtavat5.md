@@ -31,41 +31,57 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 ### 1. Git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
-Viikon 4 [tehtävässä 6](/tehtavat4/#6-git-tägit-versionhallinta) palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
+Viikon 4 [tehtävässä 5](/tehtavat4/#5-git-tägit-versionhallinta) palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
 Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
 
-- Tee jokin tiedosto, esim. nimeltään _important.txt_, lisää ja committaa se
-- Poista tiedosto ja committaa
-- Tee jotain muutoksia johonkin tiedostoon ja committaa
-- Historiasi näyttää seuraavalta
+<input type="checkbox"> Tee tiedosto nimeltään _important.txt_, lisää ja committaa se Gitiin
+
+<input type="checkbox"> Poista tiedosto ja committaa
+
+<input type="checkbox"> Tee jotain muutoksia _johonkin_ tiedostoon ja committaa
+
+Historiasi näyttää seuraavalta
 
 ```
 (1) - (2) - (3)
 ```
 
-- Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _important.txt_ on olemassa ja (2):ssa important.txt:ää ei ole.
-  - Huom: komennolla <code>gitk</code> voit tutkia historiaa
-- Haluamme palauttaa tiedoston
-- Selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai <code>git log</code> -komennolla
-- Anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- important.txt</code> missä pitkä merkkijono on siis kyseisen commitin id
-  - varmista että tiedosto on ilmestynyt staging-alueelle komennolla <code>git status</code>
-- Tee commit
-- _important.txt_ on palannut!
-- Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa:
+Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _important.txt_ on olemassa ja (2):ssa important.txt:ää ei ole.
+- Huom: komennolla <code>gitk</code> voit tutkia historiaa
 
+Haluamme palauttaa tiedoston _important.txt_.
+
+<input type="checkbox"> Selvitä sen commitin id, jossa tiedosto vielä on olemassa, tämä onnistuu gitk:lla tai komennolla <code>git log</code> 
+
+<input type="checkbox"> Anna komento <code>git checkout 3290b03cea08af987ee7ea57bb98a4886b97efe0 -- important.txt</code> missä pitkä merkkijono on siis kyseisen commitin id
+
+<input type="checkbox"> Varmista että tiedosto  _important.txt_ on ilmestynyt staging-alueelle komennolla <code>git status</code>
+
+<input type="checkbox"> Tee commit
+
+Kadonnut tiedosto _important.txt_ on palannut, ja versionhallinnassa!
+
+ Huom: koko id:tä ei komennossa tarvitse antaa, riittää antaa alusta niin monta merkkiä, että niiden perusteella id voidaan päätellä yksikäsitteisesti repositoriosi historiassa:
   - _"Generally, eight to ten characters are more than enough to be unique within a project. For example, as of October 2017, the Linux kernel (which is a fairly sizable project) has over 700,000 commits and almost six million objects, with no two objects whose SHA-1s are identical in the first 11 characters."_ Ks. lisää [täältä](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
-
 - Täsmälleen samalla tavalla onnistuu olemassa olevan tiedoston vanhan version palauttaminen.
 
 ### 2. Git: commitin muutosten kumoaminen [versionhallinta]
 
-- Huomaamme, että juuri tehty commit oli virhe, kumotaan se sanomalla <code>git revert HEAD --no-edit</code>
-  - HEAD siis viittaa siihen committiin, jonka kohdalla nyt ollaan
-- Syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
-  - Ilman optiota **no-edit** pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä
-  - Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
-- Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
+Jatketaan siitä mihin edellisessä tehtäväss jäimme. Huomaamme, että juuri tehty commit oli virhe.
+
+<input type="checkbox"> Kumotaan se komennolla <code>git revert HEAD --no-edit</code>
+  
+Komennossa HEAD viittaa siihen committiin, jonka kohdalla nyt ollaan.
+
+<input type="checkbox"> Varmista, että edellisen commitin tekemä muutos (eli tiedoston _important.txt_ lisääminen) kumoutuu
+
+Komennon `git revert` seurauksena syntyy uusi commit, jossa edellisessä tehdyt muutokset on kumottu
+- Ilman optiota **no-edit** pääset editoimaan kumoamiseen liittyvään commitiin tulevaa viestiä
+- Huom: sanomalla <code>git checkout HEAD^</code> pääsemme takaisin kumottuun tilanteeseen, eli mitään ei ole lopullisesti kadotettu
+
+Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
+
 
 ### 3. Tenniksen pisteenlaskun refaktorointi
 

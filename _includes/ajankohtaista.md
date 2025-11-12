@@ -10,9 +10,6 @@
     <li>
       Oletko tulossa erilliskokeeseen? Lue <a href='/ohje_kokeeseen'>ohjeita kokeeseen!</a>
     </li>
-    <li>
-      Ensimmäisen viikon monivalintojen deadline siirretty, uusi on sunnuntai 9.11.
-    </li>
   </ul>
 
 </div>
