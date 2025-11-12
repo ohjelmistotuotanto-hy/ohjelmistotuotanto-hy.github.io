@@ -179,7 +179,7 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 <input type="checkbox"> Odota katselmoinnin valmistumista... omassa tapauksessani taisi mennä noin 10 minuuttia
 
-<input type="checkbox"> Käy katselmoinnin tulos läpi ja hyväksy ehdotetut muutokset halutessasi
+<input type="checkbox"> Käy katselmoinnin tulos läpi. Hyväksy ehdotetut muutokset halutessasi ja merkitse kommentit selvitetyiksi (_resolve conversation_)
 
 <input type="checkbox"> Mergeä Pull request main-haaraan
 

@@ -131,6 +131,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
   - Ryhmä tekee päivittäin jäljellä olevan työajan arvioinnin ja dokumentoi tämän sprintin burndown-käyränä
+    - burndownin sijaan on myös mahdollista tehdä sprintille ylöspäin kasvava burnup-kaavio, ks lisää [täältä](https://ohjelmistotuotanto-hy.github.io/osa2/#burndown--ja-burnup-kaaviot)
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - jäljellä olevan työajan estimaatti
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
