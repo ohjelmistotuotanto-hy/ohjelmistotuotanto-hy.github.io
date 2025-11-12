@@ -1573,7 +1573,7 @@ class PrepaidPino:
         return self.pino.empty()
 ```
 
-`PrepaidPino`-luokka **sisältää** pinon, jonka se saa konstruktoriparametrina. Tätä sisältämäänsä pinoa `PrepaidPino`-luokka käyttää tallettamaan kaikki alkionsa. Eli jokainen `PrepaidPino`-luokan operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
+`PrepaidPino`-luokka **sisältää** pinon, jonka se saa konstruktorin parametrina. `PrepaidPino`-luokka käyttää sisältämäänsä pinoa tallettamaan kaikki alkionsa. Eli jokainen `PrepaidPino`-luokan operaatio _delegoi_ operaation toiminnallisuuden toteuttamisen sisältämälleen pinolle.
 
 `PrepaidPino` luodaan seuraavalla tavalla:
 
@@ -1738,7 +1738,7 @@ rakenna = Pinorakentaja()
 pino = rakenna.prepaid(10).pino()
 ```
 
-Jotta edellinen menisi kääntäjästä läpi, tulee rakentajalle lisätä metodi jonka signatuuri on `prepaid(self, krediitit)`, eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia `pino`, on metodin `prepaid` palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
+Jotta edellinen ei aiheuttaisi syntaksivirhettä, tulee rakentajalle lisätä metodi, jonka signatuuri on `prepaid(self, krediitit)`. Eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia `pino`, on metodin `prepaid` palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
 
 ```python
 class Pinorakentaja:
@@ -1807,21 +1807,21 @@ pino1 = rakentaja.pino();  # luo normaalin pinon
 pino2 = rakentaja.kryptattu().loggaava(loki).prepaid.pino()  # luo sen mitä odottaa saattaa!
 ```
 
-Huomaa, että rakentajan metodi-kutsut luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:
+Huomaa, että rakentajan metodikutsut luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:
 
 ```python
 rakentaja = Pinorakentaja()
 
 kryptattu_rakentaja = rakentaja.kryptattu()
-kryptatty_loki_rakentaja = kryptattu_rakentaja.loggaava(loki)
+kryptattu_loki_rakentaja = kryptattu_rakentaja.loggaava(loki)
 
-kryptattu_pino = kryptatty_rakentaja.pino()
-kryptattu_loki_pino = kryptatty_loki_rakentaja.pino()
+kryptattu_pino = kryptattu_rakentaja.pino()
+kryptattu_loki_pino = kryptattu_loki_rakentaja.pino()
 ```
 
-Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin loggaavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
+Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin lokiin kirjoittavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
 
-Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit, jotka ovat muuten luonteeltaan void:eja, onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
+Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit, jotka ovat muuten luonteeltaan sellaisia että ne eivät palauta mitään arvoa, onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
 
 ### Ohjelmistolisenssit
 
