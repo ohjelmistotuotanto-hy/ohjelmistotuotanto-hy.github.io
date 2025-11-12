@@ -9,9 +9,9 @@ permalink: /tehtavat5/
 
 {% include laskari_info.md part=5 %}
 
-Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2 eivät näy palautuksissa mitenkään.
+Tehtävissä 1-3 jatketaan Gitin harjoittelua. Nämä tehtävät eivät näy palautuksissa mitenkään.
 
-Tehtävät 3-4 ja 6-7 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>. Tehtävissä 5 ja 6 pääsemme hyödyntämään tekoälyä koodin katselmoinnissa sekä koodin tuottamisessa.
+Tehtävä 4 liittyy materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>. Tehtävissä 5 ja 6 pääsemme hyödyntämään tekoälyä koodin katselmoinnissa sekä koodin tuottamisessa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -82,7 +82,49 @@ Komennon `git revert` seurauksena syntyy uusi commit, jossa edellisessä tehdyt 
 
 Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
-### 3. Tenniksen pisteenlaskun refaktorointi
+### 3. Git: rebase [versionhallinta]
+
+_Tätä tehtävää ei palauteta mihinkään!_
+
+Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 13](/tehtavat2/#13-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
+
+Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
+
+Aikaansaa seuraavankaltainen tilanne:
+
+```
+------- main
+\
+ \--- haara
+```
+
+"Rebeissaa" haara mainiin, eli aikaansaa seuraava tilanne:
+
+```
+------- main
+       \
+        \--- haara
+```
+
+Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
+
+"Mergeä" main vielä haaraan:
+
+```
+       \     main
+        \--- haara
+```
+
+Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+
+Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
+
+Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) perustelee asiaa näin
+
+> The primary reason for rebasing is to maintain a linear project history. For example, consider a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch's history clean so it appears as if you've been working off the latest main branch. This gives the later benefit of a clean merge of your feature branch back into the main branch. Why do we want to maintain a "clean history"? The benefits of having a clean history become tangible when performing Git operations to investigate the introduction of a regression.
+
+
+### 4. Tenniksen pisteenlaskun refaktorointi
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
 
@@ -157,7 +199,7 @@ Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja te
 
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
-### 4. Pull request ja koodin katselmointi
+### 5. Pull request ja koodin katselmointi
 
 Tämän tehtävän tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
@@ -190,7 +232,7 @@ Kerro raportissa
 - Olivatko ehdotetut muutokset hyviä
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 
-### 5. Good vibe with warehouses
+### 6. Good vibe with warehouses
 
 Palataan jälleen viikolta 1 tutun Ohtuvaraston pariin. Tehtävässä on tarjkoitus saada tekoäly koodaamaan Ohtuvarastoon Web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
@@ -263,116 +305,6 @@ Kerro raportissa
 - Päätyikö Copilot toimivaan ja hyvään ratkaisuun
 - Oliko koodi selkeää
 - Opitko jotain uutta Coplotin tekemää koodia lukiessasi
-
-### 6. Laskin ja komento-oliot
-
-> **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. Toinen vaihtoehto on esim. pajaan meneminen...
-
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
-
-Jos tarvitsee, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali.
-
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
-
-> Jos törmäät virheilmoitukseen `ModuleNotFoundError: No module named 'tkinter'` ja käytät Ubuntu/Linuxia, syynä saattaa olla se, että koneessasi ei ole Pythonin mukana tavallisesti asentuvaa Tkinteriä. 
->
-> Ongelma saattaa ratketa suorittamalla asennus komennolla
- `sudo apt-get install python3-tk`
-
-Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
-
-```python
-def _suorita_komento(self, komento):
-    arvo = 0
-
-    try:
-        arvo = int(self._syote_kentta.get())
-    except Exception:
-        pass
-
-    if komento == Komento.SUMMA:
-        self._sovelluslogiikka.plus(arvo)
-    elif komento == Komento.EROTUS:
-        self._sovelluslogiikka.miinus(arvo)
-    elif komento == Komento.NOLLAUS:
-        self._sovelluslogiikka.nollaa()
-    elif komento == Komento.KUMOA:
-        pass
-
-    self._kumoa_painike["state"] = constants.NORMAL
-
-    if self._sovelluslogiikka.arvo() == 0:
-        self._nollaus_painike["state"] = constants.DISABLED
-    else:
-        self._nollaus_painike["state"] = constants.NORMAL
-
-    self._syote_kentta.delete(0, constants.END)
-    self._arvo_var.set(self._sovelluslogiikka.arvo())
-```
-
-Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-5).
-
-Tässä tehtävässä ei tarvitse vielä toteuttaa kumoa-komennon toiminnallisuutta!
-
-Luokka `Kayttoliittyma` voi näyttää refaktoroituna esimerkiksi seuraavalta:
-
-```python
-class Komento(Enum):
-    SUMMA = 1
-    EROTUS = 2
-    NOLLAUS = 3
-    KUMOA = 4
-
-
-class Kayttoliittyma:
-    def __init__(self, sovelluslogiikka, root):
-        self._sovelluslogiikka = sovelluslogiikka
-        self._root = root
-
-        self._komennot = {
-            Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
-            Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
-            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
-            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote) # ei ehkä tarvita täällä...
-        }
-
-    # ...
-
-    def _lue_syote(self):
-        return self._syote_kentta.get()
-
-    def _suorita_komento(self, komento):
-        komento_olio = self._komennot[komento]
-        komento_olio.suorita()
-        self._kumoa_painike["state"] = constants.NORMAL
-
-        if self._sovelluslogiikka.arvo() == 0:
-            self._nollaus_painike["state"] = constants.DISABLED
-        else:
-            self._nollaus_painike["state"] = constants.NORMAL
-
-        self._syote_kentta.delete(0, constants.END)
-        self._arvo_var.set(self._sovelluslogiikka.arvo())
-```
-
-Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
-
-### 7. Komentojen kumoaminen
-
-Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
-
-Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
-
-Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
-
-### Vapaaehtoinen bonus-tehtävä
-
-Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia. Eli jos olet esim. laskenut summan 1+2+3+4+5 (jonka tulos 15), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
-
-Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
-
-{% include submission_instructions.md %}
 
 ### Vapaaehtoinen bonus-tehtävä
 

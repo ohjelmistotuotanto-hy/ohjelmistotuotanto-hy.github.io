@@ -9,9 +9,7 @@ permalink: /tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
-Tehtävässä 1 jatketaan Gitin harjoittelua, tehtävä ei näy palautuksissa mitenkään.
-
-Tehtävät 2-5 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
+Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
 
 Tehtävässä 6 tutustutaan GitHubin pull request -mekanismiin ja tehdään sen avulla pull request johonkin miniprojektiin. Tehtävä tehdään suoraan GitHubiin.
 
@@ -33,48 +31,117 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
-### 1. Git: rebase [versionhallinta]
+### 1. Laskin ja komento-oliot
 
-_Tätä tehtävää ei palauteta mihinkään!_
+> **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. Toinen vaihtoehto on esim. pajaan meneminen...
 
-Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 13](/tehtavat2/#13-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
+- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
 
-Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
+Jos tarvitsee, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali.
 
-Aikaansaa seuraavankaltainen tilanne:
+Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 
+> Jos törmäät virheilmoitukseen `ModuleNotFoundError: No module named 'tkinter'` ja käytät Ubuntu/Linuxia, syynä saattaa olla se, että koneessasi ei ole Pythonin mukana tavallisesti asentuvaa Tkinteriä. 
+>
+> Ongelma saattaa ratketa suorittamalla asennus komennolla
+ `sudo apt-get install python3-tk`
+
+Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
+
+```python
+def _suorita_komento(self, komento):
+    arvo = 0
+
+    try:
+        arvo = int(self._syote_kentta.get())
+    except Exception:
+        pass
+
+    if komento == Komento.SUMMA:
+        self._sovelluslogiikka.plus(arvo)
+    elif komento == Komento.EROTUS:
+        self._sovelluslogiikka.miinus(arvo)
+    elif komento == Komento.NOLLAUS:
+        self._sovelluslogiikka.nollaa()
+    elif komento == Komento.KUMOA:
+        pass
+
+    self._kumoa_painike["state"] = constants.NORMAL
+
+    if self._sovelluslogiikka.arvo() == 0:
+        self._nollaus_painike["state"] = constants.DISABLED
+    else:
+        self._nollaus_painike["state"] = constants.NORMAL
+
+    self._syote_kentta.delete(0, constants.END)
+    self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
-------- main
-\
- \--- haara
+
+Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-5).
+
+Tässä tehtävässä ei tarvitse vielä toteuttaa kumoa-komennon toiminnallisuutta!
+
+Luokka `Kayttoliittyma` voi näyttää refaktoroituna esimerkiksi seuraavalta:
+
+```python
+class Komento(Enum):
+    SUMMA = 1
+    EROTUS = 2
+    NOLLAUS = 3
+    KUMOA = 4
+
+
+class Kayttoliittyma:
+    def __init__(self, sovelluslogiikka, root):
+        self._sovelluslogiikka = sovelluslogiikka
+        self._root = root
+
+        self._komennot = {
+            Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
+            Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
+            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
+            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote) # ei ehkä tarvita täällä...
+        }
+
+    # ...
+
+    def _lue_syote(self):
+        return self._syote_kentta.get()
+
+    def _suorita_komento(self, komento):
+        komento_olio = self._komennot[komento]
+        komento_olio.suorita()
+        self._kumoa_painike["state"] = constants.NORMAL
+
+        if self._sovelluslogiikka.arvo() == 0:
+            self._nollaus_painike["state"] = constants.DISABLED
+        else:
+            self._nollaus_painike["state"] = constants.NORMAL
+
+        self._syote_kentta.delete(0, constants.END)
+        self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
 
-"Rebeissaa" haara mainiin, eli aikaansaa seuraava tilanne:
+Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
 
-```
-------- main
-       \
-        \--- haara
-```
+### 2. Komentojen kumoaminen
 
-Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
+Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
-"Mergeä" main vielä haaraan:
+Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
 
-```
-       \     main
-        \--- haara
-```
+Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
 
-Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+### Vapaaehtoinen bonus-tehtävä
 
-Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
+Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia. Eli jos olet esim. laskenut summan 1+2+3+4+5 (jonka tulos 15), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
 
-Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) perustelee asiaa näin
+Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
 
-> The primary reason for rebasing is to maintain a linear project history. For example, consider a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch's history clean so it appears as if you've been working off the latest main branch. This gives the later benefit of a clean merge of your feature branch back into the main branch. Why do we want to maintain a "clean history"? The benefits of having a clean history become tangible when performing Git operations to investigate the introduction of a regression.
+{% include submission_instructions.md %}
 
-### 2. Kyselykieli NHL-tilastoihin, osa 1
+### 3. Kyselykieli NHL-tilastoihin, osa 1
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
 - Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
@@ -162,7 +229,7 @@ print(len(filtered_with_all))
 
 pitäisi tulostaa 958
 
-### 3. Kyselykieli NHL-tilastoihin, osa 2
+### 4. Kyselykieli NHL-tilastoihin, osa 2
 
 **Toteuta** `test`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
 
@@ -222,7 +289,7 @@ Mika Zibanejad       NYR          26 + 46 = 72
 
 Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
-### 4. Parannettu kyselykieli, osa 1
+### 5. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava uusi olio. Toinen ikävä puoli on se, että kyselyjä käyttävällä koodilla on suora riippuvuus sen käyttämiin Matcher-olioihin.
 
@@ -312,7 +379,7 @@ ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usei
 
 Python ikävä kyllä edellyttää tässä "ylimääräisten" sulkujen käyttöä.
 
-### 5. Parannettu kyselykieli, osa 2
+### 6. Parannettu kyselykieli, osa 2
 
 Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä. Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
@@ -368,7 +435,7 @@ matcher = (
 )
 ```
 
-### 6. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+### 7. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
 
 **HUOM tee tämä tehtävä aikaisintaan perjantaina 29.11.**
 

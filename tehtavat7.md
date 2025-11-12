@@ -7,7 +7,7 @@ permalink: /tehtavat7/
 
 {% include paivitys_kesken.md %}
 
-{% include paivitys_kesken.md current=true %}  
+{% include paivitys_kesken.md %}  
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
