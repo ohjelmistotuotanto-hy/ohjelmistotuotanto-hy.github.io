@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-3 jatketaan Gitin harjoittelua. Nämä tehtävät eivät näy palautuksissa mitenkään.
@@ -25,7 +23,7 @@ Tehtävä 4 liittyy materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Tämän viikon tehtävät 3-6 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko5_ sisälle.
+**Tämän viikon tehtävät 4-6 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko5_ sisälle. Tehtäviä 1-3 ei palauteta.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -33,7 +31,7 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 Viikon 4 [tehtävässä 5](/tehtavat4/#5-git-tägit-versionhallinta) palasimme jo menneisyyteen checkouttaamalla tagillä merkittyyn kohtaan. Katsotaan nyt miten voimme palauttaa jonkun menneisyydessä olevan tilanteen uudelleen voimaan.
 
-Voit tehdä tämän ja seuraavan tehtävän mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
+Voit tehdä tämän ja kaksi seuraavaa tehtävää mihin tahansa repositorioon, tehtävät eivät näy palautuksissa.
 
 <input type="checkbox"> Tee tiedosto nimeltään _important.txt_, lisää ja committaa se Gitiin
 
@@ -68,7 +66,7 @@ Kadonnut tiedosto _important.txt_ on palannut, ja versionhallinnassa!
 
 ### 2. Git: commitin muutosten kumoaminen [versionhallinta]
 
-Jatketaan siitä mihin edellisessä tehtäväss jäimme. Huomaamme, että juuri tehty commit oli virhe.
+Jatketaan siitä mihin edellisessä tehtävässä jäimme. Huomaamme, että juuri tehty commit oli virhe.
 
 <input type="checkbox"> Kumotaan se komennolla <code>git revert HEAD --no-edit</code>
   
@@ -84,13 +82,11 @@ Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <co
 
 ### 3. Git: rebase [versionhallinta]
 
-_Tätä tehtävää ei palauteta mihinkään!_
-
 Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 13](/tehtavat2/#13-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
 
-Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
+<input type="checkbox"> Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
 
-Aikaansaa seuraavankaltainen tilanne:
+<input type="checkbox"> Aikaansaa seuraavankaltainen tilanne branchien _main_ ja _haara_ välille:
 
 ```
 ------- main
@@ -98,7 +94,7 @@ Aikaansaa seuraavankaltainen tilanne:
  \--- haara
 ```
 
-"Rebeissaa" haara mainiin, eli aikaansaa seuraava tilanne:
+<input type="checkbox"> "Rebeissaa" _haara_ _mainiin_, eli aikaansaa seuraava tilanne:
 
 ```
 ------- main
@@ -106,18 +102,20 @@ Aikaansaa seuraavankaltainen tilanne:
         \--- haara
 ```
 
-Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
+<input type="checkbox"> Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
-"Mergeä" main vielä haaraan:
+"Mergeä" _haara_ vielä _mainiin_, jolloin tilanne on seuraava:
 
 ```
-       \     main
-        \--- haara
+------- \     main
+         \--- haara
 ```
 
-Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa. Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa.
 
-Poista branch haara. Etsi googlaamalla komento, jolla saat tuhottua branchin.
+<input type="checkbox"> Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
+
+<input type="checkbox"> Poista branch _haara_. Kysy tarvittaessa AI:lta tai Googlelta miten branchin poisto tapahtuu.
 
 Mikä on rebase-komennon käyttötarkoitus? Atlassianin [git-ohje](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) perustelee asiaa näin
 
@@ -184,7 +182,7 @@ Tenniksen pisteenlaskennasta voit lukea enemmän esim. [Wikipediasta](https://en
 
 Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
 
-<input type="checkbox"> Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksif
+<input type="checkbox"> Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi
 
 - Koodissa tulee välttää ["taikanumeroita"](<https://en.wikipedia.org/wiki/Magic_number_(programming)>) ja huonosti nimettyjä muuttujia
 - Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa
@@ -197,13 +195,13 @@ Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja te
 
 <input type="checkbox"> Kun olet valmis, commitoi koodi ja pushaa haara *tennis_refactoring* GitHubiin
 
-Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
+Lisää samankaltaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
 ### 5. Pull request ja koodin katselmointi
 
 Tämän tehtävän tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
-<input type="checkbox"> Tee nyt GitHubissa Pull request haastasta *tennis_refactoring* haaraan *main*
+<input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
 
 GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
@@ -232,21 +230,29 @@ Kerro raportissa
 - Olivatko ehdotetut muutokset hyviä
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 
+Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
+
 ### 6. Good vibe with warehouses
 
-Palataan jälleen viikolta 1 tutun Ohtuvaraston pariin. Tehtävässä on tarjkoitus saada tekoäly koodaamaan Ohtuvarastoon Web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
+Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada tekoäly koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
-<input type="checkbox"> Tee repositorioosi issue, missä kuvaat mahdollisimman tarkasti minkälaisen sovelluksen haluat. Sovelluksen pitäisi ainakin mahdollistaa usean varaston luominen ja käsittelu
+<input type="checkbox"> Tee repositorioosi [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue), jossa kuvaat mahdollisimman tarkasti minkälaisen sovelluksesta haluat:
 
-<input type="checkbox"> Assignaa issue Copilotille
+![]({{ "/images/issue0.png" | absolute_url }}){:height="350px" }
+
+Sovelluksen pitäisi mahdollistaa useiden varastojen luominen, muokkaaminen ja sisällön lisääminen tai poistaminen. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
+
+Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa.
+
+<input type="checkbox"> Assignaa issue Copilotille:
 
 ![]({{ "/images/issue1.png" | absolute_url }}){:height="130px" }
 
-Copilot avaa Pull requestin työskentelyään varten
+Copilot avaa Pull requestin työskentelyään varten:
 
 ![]({{ "/images/issue2.png" | absolute_url }})
 
-<input type="checkbox"> Mene Pull requestin näkymään, ja sieltä edelleen nappia "View session" painamalla katsomaan Copilotin työskentelyä
+<input type="checkbox"> Mene Pull requestin näkymään (ks. välilehti Pull requests), ja sieltä edelleen nappia "View session" painamalla katsomaan Copilotin työskentelyä
 
 Copilot aloittaa tutustumalla projektiin ja luo suunnitelman
 
@@ -256,9 +262,11 @@ Copilot aloittaa tutustumalla projektiin ja luo suunnitelman
 
 Copilotilla voi mennä aika kauan koodaillessa. Nyt on hyvä hetki esim. keittää kahvit tai hakea jääkaapista energiajuomatölkki.
 
-Kun Copilot on valmis (itselläni meni noin 15 min) näet sen luoman koodin pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
+<input type="checkbox"> Odota kunnes Copilot on valmis
 
-<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa, muuta sen tilaa painamalla nappia "Ready for review"
+Kun Copilot on valmis (itselläni meni noin 15 min) näet sen luoman koodin Pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
+
+<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa. ;uuta sen tilaa painamalla nappia "Ready for review"
 
 <input type="checkbox"> Hae pull requestin koodia omalla koneellasi
 
@@ -285,15 +293,15 @@ Oma sovellukseni oli konfiguroitu siten, että osoitteen http://localhost:5000/ 
 
 <input type="checkbox"> Tee sovellukselle katselmointi GitHubissa
 
-Pääset tekemään katselmoinnin Pull requestin sivun ylävasemmalla olevasta napista "Add your review". Saatat joutua uudelleenlataamaan sivun, jotta nappi ilmestyy näkyviin
+Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta napista "Add your review". Saatat joutua uudelleenlataamaan sivun, jotta nappi ilmestyy näkyviin
 
-<input type="checkbox"> Vaadi katselmoinnissa jotain muutosta koodiin
+<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia sovellukseen:
 
-![]({{ "/images/issue5.png" | absolute_url }})
+![]({{ "/images/issue5.png" | absolute_url }}){:height="450px" }
 
-Tekstissä tulee mainita _@copilot_, jotta Copilot suostuu tekemään muutokset
+Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/make-changes-to-an-existing-pr), jotta Copilot suostuu tekemään muutokset
 
-<input type="checkbox"> Seuraa jääleen Copilotin edistymistä napilla "View session"
+<input type="checkbox"> Seuraa jälleen Copilotin edistymistä napilla "View session"
 
 <input type="checkbox"> Varmista vielä omalla koneellasi, että koodi toimii muutosten jälkeen
 
@@ -306,10 +314,15 @@ Kerro raportissa
 - Oliko koodi selkeää
 - Opitko jotain uutta Coplotin tekemää koodia lukiessasi
 
+Tässä erittäin yksinkertaisessa tapauksessa vibekoodaus saattaa tuottaa hämmästyttävänkin hyvän lopputuloksen. Tilanne on kuitenkin aivan erilainen todellisen, isomman järjestelmän kanssa, pelkkä vibetys, eli haluttavan toiminnallisuuden kuvailu ei useimmiten riitä siihen että ulos saadaan toimiva ja robusti ratkaisu.
+
+{% include submission_instructions.md %}
+
 ### Vapaaehtoinen bonus-tehtävä
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
 
 Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
 
@@ -340,12 +353,15 @@ Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, 
 
 ```
 
-Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
+Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi ja helposti ylläpidettäväksi.:
 
-- Poista copypaste
-- Vähennä monimutkaisuutta
-- Anna muuttujille selkeät nimet
-- Tee metodeista pienempiä ja hyvän koheesion omaavia
+<input type="checkbox"> Poista copypaste
+
+<input type="checkbox"> Vähennä monimutkaisuutta
+
+<input type="checkbox"> Anna muuttujille selkeät nimet
+
+<input type="checkbox"> Tee metodeista pienempiä ja hyvän koheesion omaavia
 
 Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
 

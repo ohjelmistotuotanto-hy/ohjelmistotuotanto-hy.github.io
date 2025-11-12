@@ -31,7 +31,6 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
 
-
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
 Useimmilla luokilla on riippuvuuksia toisiin luokkiin. Esim. [viikon 1](/tehtavat1#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) laskarien NHL-tilastot-tehtävässä luokka `StatisticsService` riippuu luokasta `PlayerReader`. Riippuvuuksien injektion avulla saimme mukavasti purettua suorat riippuvuudet luokkien väliltä.
