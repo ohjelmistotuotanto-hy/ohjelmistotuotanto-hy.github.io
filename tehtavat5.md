@@ -82,11 +82,23 @@ Komennon `git revert` seurauksena syntyy uusi commit, jossa edellisessä tehdyt 
 
 Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <code>git revert kumottavancommitinid</code>
 
-
 ### 3. Tenniksen pisteenlaskun refaktorointi
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/tennis_, löytyy ohjelma, joka on tarkoitettu tenniksen [pisteenlaskentaan](https://github.com/emilybache/Tennis-Refactoring-Kata#tennis-kata).
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle
+
+<input type="checkbox"> Tee commit ja pushaa koodi GitHubiin
+
+<input type="checkbox"> Tee tehtävää varten oma haara nimeltään *tennis_refactoring*
+
+<input type="checkbox"> Varmista vielä, että olet seuraavassa tilanteessa ennen kuin jatkat seuraaviin askeleisiin
+
+```
+$ git status
+On branch tennis_refactoring
+nothing to commit, working tree clean
+```
 
 Pisteenlaskennan rajapinta on yksinkertainen. Metodi `get_score` kertoo voimassa olevan tilanteen tenniksessä käytetyn pisteenlaskennan määrittelemän tavan mukaan. Sitä mukaa kun jompi kumpi pelaajista voittaa palloja, kutsutaan metodia `won_point`, jossa parametrina on pallon voittanut pelaaja.
 
@@ -130,15 +142,22 @@ Tenniksen pisteenlaskennasta voit lukea enemmän esim. [Wikipediasta](https://en
 
 Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
 
-Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi. Koodissa tulee välttää ["taikanumeroita"](<https://en.wikipedia.org/wiki/Magic_number_(programming)>) ja huonosti nimettyjä muuttujia. Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa.
+<input type="checkbox"> Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi
 
-Etene refaktoroinnissa _todella pienin askelin_. Suorita testejä mahdollisimman usein. Yritä pitää ohjelma koko ajan toimintakunnossa, eli älä hajota testejä. Testeihin ohjelmassa ei tarvitse eikä edes saa koskea.
+- Koodissa tulee välttää ["taikanumeroita"](<https://en.wikipedia.org/wiki/Magic_number_(programming)>) ja huonosti nimettyjä muuttujia
+- Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa
+- Etene refaktoroinnissa _todella pienin askelin_
+- Suorita testejä mahdollisimman usein
+- Yritä pitää ohjelma koko ajan toimintakunnossa, eli älä hajota testejä
+- **Testeihin ohjelmassa ei tarvitse eikä edes saa koskea**
 
 Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata).
 
-Tehtävä on kenties hauskinta tehdä pariohjelmoiden. Itse tutustuin tehtävään kesällä 2013 Extreme Programming -konferenssissa järjestetyssä Coding Dojossa, jossa tehtävä tehtiin satunnaisesti valitun parin kanssa pariohjelmoiden.
+<input type="checkbox"> Kun olet valmis, commitoi koodi ja pushaa haara *tennis_refactoring* GitHubiin
 
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
+
+### 4. Koodikatselmointi
 
 ### 4. IntJoukon testaus ja siistiminen
 
