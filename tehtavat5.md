@@ -11,7 +11,7 @@ permalink: /tehtavat5/
 
 Tehtävissä 1-2 jatketaan Gitin harjoittelua. Tehtävät 1 ja 2 eivät näy palautuksissa mitenkään.
 
-Tehtävät 3-6 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>.
+Tehtävät 3-4 ja 6-7 liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>. Tehtävissä 5 ja 6 pääsemme hyödyntämään tekoälyä koodin katselmoinnissa sekä koodin tuottamisessa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -173,9 +173,9 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 ![]({{ "/images/pr2.png" | absolute_url }})
 
-<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi
+<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi:
 
-![]({{ "/images/pr3.png" | absolute_url }}){:height="150px" }
+![]({{ "/images/pr3.png" | absolute_url }}){:height="130px" }
 
 <input type="checkbox"> Odota katselmoinnin valmistumista... omassa tapauksessani taisi mennä noin 10 minuuttia
 
@@ -183,62 +183,88 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 <input type="checkbox"> Mergeä Pull request main-haaraan
 
-<input type="checkbox"> Kirjoita raportti katselmoinnista tiedoston _review.md_, joka tulee tallettaa palautusrepositorioon hakemistoon _viikko5_
+<input type="checkbox"> Kirjoita raportti katselmoinnista palautusrepositorioon hakemistoon _viikko5_ talletettavaan tiedoston _review.md_
 
 Kerro raportissa
-- Mitä huomioita Copilot koodistasi teki
-- Olivatko ehdotetut muutoksen hyviä
+- Mitä huomioita Copilot teki koodistasi
+- Olivatko ehdotetut muutokset hyviä
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 
-### 4. IntJoukon testaus ja siistiminen
+### 5. Good vibe with warehouses
 
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+Palataan jälleen viikolta 1 tutun Ohtuvaraston pariin. Tehtävässä on tarjkoitus saada tekoäly koodaamaan Ohtuvarastoon Web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
-Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
+<input type="checkbox"> Tee repositorioosi issue, missä kuvaat mahdollisimman tarkasti minkälaisen sovelluksen haluat. Sovelluksen pitäisi ainakin mahdollistaa usean varaston luominen ja käsittelu
 
-Koodi simuloi vanhanaikaista ohjelmointikieltä kuten C:tä missä ei ole Pythonin listan tapaista valmista tietorakennetta, vaan ainoastaan listoja, joiden koko on kiinteä, ja joka määritellään listan luomishetkellä. Koodissa listan luominen tapahtuu metodilla `_luo_lista`:
+<input type="checkbox"> Assignaa issue Copilotille
 
-```python
-class IntJoukko:
-    # tämä metodi on ainoa tapa luoda listoja
-    def _luo_lista(self, koko):
-        return [0] * koko
+![]({{ "/images/issue1.png" | absolute_url }}){:height="130px" }
 
-    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
-        # ...
-        
-        # luodaan lista, jolla haluttu kapasiteetti
-        self.ljono = self._luo_lista(self.kapasiteetti)
-        self.alkioiden_lkm = 0
+Copilot avaa Pull requestin työskentelyään varten
+
+![]({{ "/images/issue2.png" | absolute_url }})
+
+<input type="checkbox"> Mene Pull requestin näkymään, ja sieltä edelleen nappia "View session" painamalla katsomaan Copilotin työskentelyä
+
+Copilot aloittaa tutustumalla projektiin ja luo suunnitelman
+
+![]({{ "/images/issue3.png" | absolute_url }})
+
+<input type="checkbox"> Seuraa Copilotin edistymistä
+
+Copilotilla voi mennä aika kauan koodaillessa. Nyt on hyvä hetki esim. keittää kahvit tai hakea jääkaapista energiajuomatölkki.
+
+Kun Copilot on valmis (itselläni meni noin 15 min) näet sen luoman koodin pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
+
+<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa, muuta sen tilaa painamalla nappia "Ready for review"
+
+<input type="checkbox"> Hae pull requestin koodia omalla koneellasi
+
+Tämä tapahtuu komennoilla `git fetch` ja `git checkout`:
+
+```
+$ git fetch
+remote: Enumerating objects: 38, done.
+remote: Counting objects: 100% (36/36), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 25 (delta 9), reused 18 (delta 5), pack-reused 0 (from 0)
+Unpacking objects: 100% (25/25), 13.12 KiB | 206.00 KiB/s, done.
+From github.com:mluukkai/ohtuvarasto25
+ * [new branch]      copilot/add-warehouse-management-ui -> origin/copilot/add-warehouse-management-ui
+   a359cc1..7211227  user_interface -> origin/user_interface
+$ git checkout copilot/add-warehouse-management-ui
+branch 'copilot/add-warehouse-management-ui' set up to track 'origin/copilot/add-warehouse-management-ui'.
+Switched to a new branch 'copilot/add-warehouse-management-ui'
 ```
 
-Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, että joukon sisäistä listaa on kasvatettava. Tämä tapahtuu luomalla uusi lista metodilla `_luo_lista`:
+<input type="checkbox"> Varmista, että koodi toimii
 
-```python
-    def lisaa(self, n):
-        # ...
-                
-        # ei enää tilaa, luodaan uusi lista lukujen säilyttämiseen
-        self.ljono = self._luo_lista(self.alkioiden_lkm + self.kasvatuskoko)
+Oma sovellukseni oli konfiguroitu siten, että osoitteen http://localhost:5000/ sijaan sovellukseen pääsee käsiksi osoitteesta http://127.0.0.1:5000/
 
-```
+<input type="checkbox"> Tee sovellukselle katselmointi GitHubissa
 
-Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
+Pääset tekemään katselmoinnin Pull requestin sivun ylävasemmalla olevasta napista "Add your review". Saatat joutua uudelleenlataamaan sivun, jotta nappi ilmestyy näkyviin
 
-- Poista copypaste
-- Vähennä monimutkaisuutta
-- Anna muuttujille selkeät nimet
-- Tee metodeista pienempiä ja hyvän koheesion omaavia
+<input type="checkbox"> Vaadi katselmoinnissa jotain muutosta koodiin
 
-Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
+![]({{ "/images/issue5.png" | absolute_url }})
 
-Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
+Tekstissä tulee mainita _@copilot_, jotta Copilot suostuu tekemään muutokset
 
-**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
+<input type="checkbox"> Seuraa jääleen Copilotin edistymistä napilla "View session"
 
+<input type="checkbox"> Varmista vielä omalla koneellasi, että koodi toimii muutosten jälkeen
 
-### 5. Laskin ja komento-oliot
+<input type="checkbox"> Kun olet tyytyväinen mergeä Pull request main-haaraan
+
+<input type="checkbox"> Kirjoita raportti katselmoinnista palautusrepositorioon hakemistoon _viikko5_ talletettavaan tiedoston _vibe.md_
+
+Kerro raportissa
+- Päätyikö Copilot toimivaan ja hyvään ratkaisuun
+- Oliko koodi selkeää
+- Opitko jotain uutta Coplotin tekemää koodia lukiessasi
+
+### 6. Laskin ja komento-oliot
 
 > **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. Toinen vaihtoehto on esim. pajaan meneminen...
 
@@ -332,7 +358,7 @@ class Kayttoliittyma:
 
 Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sovelluslogiikka`-olion ja funktion, jota kutsumalla syötteen voi lukea.
 
-### 6. Komentojen kumoaminen
+### 7. Komentojen kumoaminen
 
 Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
@@ -347,3 +373,50 @@ Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräk
 Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
 
 {% include submission_instructions.md %}
+
+### Vapaaehtoinen bonus-tehtävä
+
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/int-joukko_ on alun perin Javalla tehty, mutta nyt Pythoniksi alkuperäiselle tyylille uskollisena käännetty aloittelevan ohjelmoijan ratkaisu syksyn 2011 Ohjelmoinnin jatkokurssin [viikon 2 tehtävään 3](http://www.cs.helsinki.fi/u/wikla/ohjelmointi/jatko/s2011/harjoitukset/2/). 
+- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+
+Kyseinen opiskelija on edennyt urallaan pitkälle, hän on työskennellyt mm. Googlella ja useassa korkean profiilin Piilaakson start upissa.
+
+Koodi simuloi vanhanaikaista ohjelmointikieltä kuten C:tä missä ei ole Pythonin listan tapaista valmista tietorakennetta, vaan ainoastaan listoja, joiden koko on kiinteä, ja joka määritellään listan luomishetkellä. Koodissa listan luominen tapahtuu metodilla `_luo_lista`:
+
+```python
+class IntJoukko:
+    # tämä metodi on ainoa tapa luoda listoja
+    def _luo_lista(self, koko):
+        return [0] * koko
+
+    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
+        # ...
+        
+        # luodaan lista, jolla haluttu kapasiteetti
+        self.ljono = self._luo_lista(self.kapasiteetti)
+        self.alkioiden_lkm = 0
+```
+
+Kun joukkoon lisätään riittävä määrä uusia lukuja, tulee eteen tilanne, että joukon sisäistä listaa on kasvatettava. Tämä tapahtuu luomalla uusi lista metodilla `_luo_lista`:
+
+```python
+    def lisaa(self, n):
+        # ...
+                
+        # ei enää tilaa, luodaan uusi lista lukujen säilyttämiseen
+        self.ljono = self._luo_lista(self.alkioiden_lkm + self.kasvatuskoko)
+
+```
+
+Koodi jättää hieman toivomisen varaa sisäisen laatunsa suhteen. Refaktoroi luokan `IntJoukko` koodi mahdollisimman siistiksi:
+
+- Poista copypaste
+- Vähennä monimutkaisuutta
+- Anna muuttujille selkeät nimet
+- Tee metodeista pienempiä ja hyvän koheesion omaavia
+
+Ratkaisusi tulee toimia siten, että edelleen joukon sisäisen listan koko on kiinteä, ja lista luodaan metodilla `_luo_lista`, eli jos lista täyttyy, luodaan uusi lista metodin avulla.
+
+Koodissa on joukko yksikkötestejä, jotka helpottavat refaktorointia.
+
+**HUOM:** Suorita refaktorointi mahdollisimman pienin askelin, pidä koodi koko ajan toimivana. Suorita testit jokaisen refaktorointiaskeleen jälkeen!
