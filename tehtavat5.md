@@ -142,7 +142,7 @@ Tenniksen pisteenlaskennasta voit lukea enemmän esim. [Wikipediasta](https://en
 
 Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koodi on kuitenkin sisäiseltä laadultaan kelvotonta.
 
-<input type="checkbox"> Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksi
+<input type="checkbox"> Tehtävänä on refaktoroida koodi luettavuudeltaan mahdollisimman ymmärrettäväksif
 
 - Koodissa tulee välttää ["taikanumeroita"](<https://en.wikipedia.org/wiki/Magic_number_(programming)>) ja huonosti nimettyjä muuttujia
 - Koodi kannattaa jakaa moniin pieniin metodeihin, jotka nimennällään paljastavat oman toimintalogiikkansa
@@ -157,7 +157,38 @@ Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja te
 
 Lisää samantapaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
-### 4. Koodikatselmointi
+### 4. Pull request ja koodin katselmointi
+
+Tämän tehtävän tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
+
+<input type="checkbox"> Tee nyt GitHubissa Pull request haastasta *tennis_refactoring* haaraan *main*
+
+GitHub ehkä jo ehdottaa Pull requestin tekemistä
+
+![]({{ "/images/pr1.png" | absolute_url }})
+
+<input type="checkbox"> Varmista, että PR kohdistuu haastasta *tennis_refactoring* haaraan *main*. 
+
+<input type="checkbox"> Kirjoita PR:lle kuvaus. Voit ottaa esim. [täältä](https://medium.com/@jmanuellugo96/how-to-write-an-awesome-pull-request-pr-description-bdd2c6e48418) tai [täältä](https://www.hackerone.com/blog/writing-great-pull-request-description) mallia kuvaukselle.
+
+![]({{ "/images/pr2.png" | absolute_url }})
+
+<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi
+
+![]({{ "/images/pr3.png" | absolute_url }}){:height="150px" }
+
+<input type="checkbox"> Odota katselmoinnin valmistumista... omassa tapauksessani taisi mennä noin 10 minuuttia
+
+<input type="checkbox"> Käy katselmoinnin tulos läpi ja hyväksy ehdotetut muutokset halutessasi
+
+<input type="checkbox"> Mergeä Pull request main-haaraan
+
+<input type="checkbox"> Kirjoita raportti katselmoinnista tiedoston _review.md_, joka tulee tallettaa palautusrepositorioon hakemistoon _viikko5_
+
+Kerro raportissa
+- Mitä huomioita Copilot koodistasi teki
+- Olivatko ehdotetut muutoksen hyviä
+- Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 
 ### 4. IntJoukon testaus ja siistiminen
 
