@@ -65,7 +65,7 @@ Increase Counter Once
 
 Testitapaus koostuu nyt kolmesta avainsanasta. Ensin tarkistetaan että laskurin arvo on aluksi nolla, tämän jälkeen kasvatetaan laskuria ja lopuksi vielä varmistetaan että laskurin arvo on yksi.
 
-Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa sopiva lisäosa, esim. [Robot Framework Language Server](https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp) tai [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode):
+Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa sopiva lisäosa, esim. [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode):
 
 ![]({{ "/images/lh3-robot2.png" | absolute_url }})
 
