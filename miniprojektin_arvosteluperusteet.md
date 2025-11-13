@@ -63,7 +63,7 @@ Pisteitä kertyy seuraavista asioista:
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
-- (0.25p) GitHubissa on järjevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
+- (0.25p) GitHubissa on järkevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
 - (0.25p) GitHub README:
   - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
