@@ -50,6 +50,7 @@ Pisteitä kertyy seuraavista asioista:
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
   - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
   - Sprintin burndown-käyrä olemassa
+    - Myös burnup-käyrä kelpaa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
