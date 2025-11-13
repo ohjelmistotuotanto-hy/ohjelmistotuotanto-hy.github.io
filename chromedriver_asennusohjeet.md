@@ -9,7 +9,9 @@ permalink: /chromedriver_asennusohjeet/
 
 {% include typo_instructions.md path="/python/chromedriver_asennusohjeet.md" %}
 
-**Huom:** myöhemmin tällä sivulla oleva [GeckoDriver](/chromedriver_asennusohjeet/#geckodriverin-asennusohjeet) saattaa olla helpompi asentaa kuin ensin esiteltävä ChromeDriver.
+Tarvitset Robot-testejä varten koneellesi joko ChromeDriverin tai GeckoDriverin (et molempia).
+
+**Huom:** myöhemmin tällä sivulla oleva [GeckoDriver](/chromedriver_asennusohjeet/#geckodriverin-asennusohjeet) saattaa olla helpompi asentaa kuin (historiallisista syistä) ensin esiteltävä ChromeDriver.
 
 ## ChromeDriverin asennusohjeet
 
