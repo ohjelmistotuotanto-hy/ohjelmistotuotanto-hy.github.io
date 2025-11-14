@@ -10,19 +10,7 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
  <ul>
-  <li>Aloitustilaisuudet (jokainen osallistuu yhteen)
-    <ul>
-      <li style="text-decoration: line-through">ma 10.11. 14-16 C222</li>
-      <li style="text-decoration: line-through">ti 11.11. 14-16 C321</li>
-      <li style="text-decoration: line-through">ke 12.11. 10-12 C222</li>
-      <li style="text-decoration: line-through">ke 12.11. 12-14 C222</li>
-      <li>to 13.11. 14-16 B222</li>
-      <li>to 13.11. 16-18 B222</li>
-    </ul>
-  </li>
-  <li>
-    Aloitustilaisuuksien <a href='/ryhmajako'>ryhmäjako</a>
-  </li>
+    <li>Projektit käynnissä!</li>
  </ul>
 </div>
 
