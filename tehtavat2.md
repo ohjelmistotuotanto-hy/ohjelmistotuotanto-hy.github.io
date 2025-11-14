@@ -423,7 +423,7 @@ def erotus(x, y):
 
 <input type="checkbox"> Mergaa branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
   - Mergaaminen aiheuttaa ns. merge-commitin, ja avaa tekstieditorin, johon joudut kirjoittamaan commit-viestin
-    - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1/) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
+    - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
 
 <input type="checkbox"> Muuta tiedostoa **index.py** seuraavasti ja commitoi muutos:
