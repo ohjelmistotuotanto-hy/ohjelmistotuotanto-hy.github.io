@@ -17,7 +17,7 @@ Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä 
 
 Osa sisältää paljon koodiesimerkkejä.
 
-Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span> liittyvät myöhempien viikkojen laskareihin, eli voit ohittaa ne viikolla 4.
+Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]</span> liittyvät viikon 6 laskareihin, eli voit ohittaa ne aemmilla viikoilla.
 
 ## Typoja materiaalissa
 
@@ -558,7 +558,7 @@ Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien
 
 Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa eliminoida muuttamalla luokan vastuita.
 
-#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">[viikko 5]</span>
+#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">[viikko 6]</span>
 
 Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, ja tämä voi jossain tapauksissa olla ongelmallista. Eräs oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
@@ -767,7 +767,7 @@ euribor12 = Tili.luo_euribor_tili("4422-3355", "Lea Kutvonen", 12)
 fyrkka = Tili.luo_euribor_tili("7895-4571", "Indre Zliobaite", 1)
 ```
 
-#### Suunnittelumalli: static factory method <span style="color:blue">[viikko 5]</span>
+#### Suunnittelumalli: static factory method <span style="color:blue">[viikko 6]</span>
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
@@ -793,7 +793,7 @@ maaraaikais.vaihda_korkoa(EuriborKorko(3))
 
 Eli luopumalla perinnästä oliorakenne selkeytyy huomattavasti ja saavutetaan suoritusaikaista joustavuutta (koronlaskutapa), joka perintää käyttämällä ei onnistu.
 
-#### Suunnittelumalli: strategy <span style="color:blue">[viikko 5]</span>
+#### Suunnittelumalli: strategy <span style="color:blue">[viikko 6]</span>
 
 Tekniikka, jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
@@ -801,7 +801,7 @@ Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on 
 
 Lisätietoa strategia-suunnittelumallista [täällä](http://www.oodesign.com/strategy-pattern.html) ja [täällä](https://sourcemaking.com/design_patterns/strategy).
 
-#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 5]</span>
+#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 6]</span>
 
 Loimme äsken luokalle `Tili` staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, `Pankki` vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
 
@@ -842,7 +842,7 @@ Jokaisesta tehdasmetodista on siis tehty luokan oman staattisen metodin sijaan t
 
 Luokkien vastuut ovat selkeytyneet, `Tili` vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. `Pankki` taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
-### Toiminnallisuuden kapselointi: laskin ja strategia <span style="color:blue">[viikko 5]</span>
+### Toiminnallisuuden kapselointi: laskin ja strategia <span style="color:blue">[viikko 6]</span>
 
 Olemme laajentaneet `Laskin`-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -942,7 +942,7 @@ Sovelluksen rakenne näyttää seuraavalta:
 
 ![]({{ "/images/4-10.png" | absolute_url }}){:height="250px" }
 
-#### Laskin ja komento-olio <span style="color:blue">[viikko 5]</span>
+#### Laskin ja komento-olio <span style="color:blue">[viikko 6]</span>
 
 Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan laskuoperaatiot toteuttavien luokkien olemusta siten, että siirretään myös käyttäjän kanssa tapahtuva kommunikointi niiden huolehdittavaksi.
 
@@ -1047,7 +1047,7 @@ Ohjelman rakenne tässä vaiheessa:
 
 ![]({{ "/images/4-11.png" | absolute_url }}){:height="250px" }
 
-#### Suunnittelumalli: command <span style="color:blue">[viikko 5]</span>
+#### Suunnittelumalli: command <span style="color:blue">[viikko 6]</span>
 
 Eristimme siis jokaiseen erilliseen laskuoperaatioon liittyvän toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi `suorita`.
 
@@ -1057,7 +1057,7 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 
 Lisää command-suunnittelumallista esim. [täällä](http://www.oodesign.com/command-pattern.html) ja [täällä](http://sourcemaking.com/design_patterns/command).
 
-#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 5]</span>
+#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 6]</span>
 
 Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten [abstrakti yliluokka](https://realpython.com/ref/glossary/abstract-base-class/) (eli luokka mikä on ainoastaan perintää varten tehty, luokasta itsestään ei voi tehdä olioita):
 
@@ -1119,7 +1119,7 @@ Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusi
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen).
 
-#### Suunnittelumalli: template method <span style="color:blue">[viikko 5]</span>
+#### Suunnittelumalli: template method <span style="color:blue">[viikko 6]</span>
 
 Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operaation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
@@ -1185,7 +1185,15 @@ DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toiston el
 
 Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
-#### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 5]</span>
+#### Hyvä vs. paha copypaste
+
+Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
+
+Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
+
+Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
+
+#### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 6]</span>
 
 Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
 
@@ -1370,14 +1378,6 @@ def rivit_jotka_tayttavat_ehdon(self, ehto):
 ```
 
 Voimme antaa `filter`-funktiolle suoraan parametrina saaduun ehdon.
-
-#### Hyvä vs. paha copypaste <span style="color:blue">[viikko 5]</span>
-
-Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
-
-Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
-
-Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
 ### Testattavuus
 

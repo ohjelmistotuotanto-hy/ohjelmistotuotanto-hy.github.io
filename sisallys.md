@@ -17,6 +17,7 @@ permalink: /sisallys/
   - [unittest](/unittest)
   - [Gen AI](/genai)  
   - [Robot Framework](/robot_framework)
+  - [asennusohjeet: ChromeDriver ja GeckoDeriver](chromedriver_asennusohjeet/)
 
 ### [Osa 0: Johdanto](/osa0)
 - [Esitiedot ja sisältö](/osa0/#esitiedot-ja-sisältö)
@@ -170,8 +171,8 @@ permalink: /sisallys/
       - [Yhteisen koodin eriyttäminen yliluokkaan](/osa4#yhteisen-koodin-eriyttäminen-yliluokkaan-viikko-5)
       - [Suunnittelumalli: template method](/osa4#suunnittelumalli-template-method-viikko-5)
     - [Toisteettomuus](/osa4#toisteettomuus)
-      - [Epätriviaalin copypasten poistaminen Strategy-patternin avulla](/osa4#epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5)
       - [Hyvä vs. paha copypaste](/osa4#hyvä-vs-paha-copypaste-viikko-5)
+      - [Epätriviaalin copypasten poistaminen Strategy-patternin avulla](/osa4#epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5)
     - [Testattavuus](/osa4#testattavuus)
     - [Selkeys](/osa4#selkeys)
     - [Code smell](/osa4#code-smell)
