@@ -312,7 +312,7 @@ Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot
 Kerro raportissa
 - Päätyikö Copilot toimivaan ja hyvään ratkaisuun
 - Oliko koodi selkeää
-- Opitko jotain uutta Coplotin tekemää koodia lukiessasi
+- Opitko jotain uutta Copilotin tekemää koodia lukiessasi
 
 Tässä erittäin yksinkertaisessa tapauksessa vibekoodaus saattaa tuottaa hämmästyttävänkin hyvän lopputuloksen. Tilanne on kuitenkin aivan erilainen todellisen, isomman järjestelmän kanssa, pelkkä vibetys, eli haluttavan toiminnallisuuden kuvailu ei useimmiten riitä siihen että ulos saadaan toimiva ja robusti ratkaisu.
 
