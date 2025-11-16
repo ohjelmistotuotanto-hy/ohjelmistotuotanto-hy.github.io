@@ -6,6 +6,7 @@ permalink: /miniprojektin_arvosteluperusteet/
 ---
 
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
+- [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 
 Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
@@ -82,6 +83,38 @@ Sprintin maksimi on 2.5 pistettä.
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
 - Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
+
+### Toisen sprintin arvosteluperusteet
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.25p) sprintin 2 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
+  - Burndown-käyrä olemassa
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
+- (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
+- (0.25p) sovellukseen on tehty ainakin yksi yksikkötesti (unittest-kirjastolla)
+  - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+  - main-haara ei ole hajonnut sprintin lopussa
+- (0.25p) projektille määritelty järkevät Pylint-säännöt, jotka tarkistetaan CI:n toimesta
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
+- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa ja siitä on tehty asialliset muistiinpanot
+- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+- **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks ohje alta
+
+Sprintin maksimi on 2.5 pistettä.
+
 
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein

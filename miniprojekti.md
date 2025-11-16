@@ -35,7 +35,7 @@ inheader: yes
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
 - Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
-  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://ohjelmistotuotanto-hy.github.io/flask/#sovelluksen-k%C3%A4ynnist%C3%A4minen) ohje
+  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://ohjelmistotuotanto-hy.github.io/flask/#tietokanta) ohje
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen

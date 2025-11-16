@@ -28,7 +28,7 @@ Käyttäjä voi myös luoda uusia Todoja:
 
 Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
-### Sovelluksen käynnistäminen
+### Tietokanta
 
 Sovellus tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain pilvipalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>. 
 
@@ -45,6 +45,8 @@ Tietokannan osoitteen määrittelevä `DATABASE_URL` on aiven.io:sta löytyvä S
 ![]({{ "/images/aiven.png" | absolute_url }}){:height="350px" }
 
 **HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa   .
+
+### Sovelluksen käynnistäminen
 
 Sovellus käynnistetään Poetry-virtuaaliympäristössä komennolla
 
