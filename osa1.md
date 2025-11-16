@@ -13,7 +13,7 @@ permalink: /osa1/
 
 {% include miniproj_ilmo.md %}
 
-#### [Sisällysluettelo](/sisallys/#osa-1-ohjelmistotuotanto-ja-scrum){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-1-ohjelmistotuotanto-ja-scrum)
 
 Ensimmäisessä osassa käydään aluksi katsaus _ohjelmistotuotantoon_, sen historiaan ja osa-alueisiin. Tämän jälkeen tutustutaan ensin ns. vesiputousmalliin, eli aiemmin suosittuun tapaan hallita ohjelmistoprojekteja ja sen jälkeen ketteriin menetelmiin, eli nykyään vallalla olevaan ohjelmistoprojektien kehitys- ja hallintatapaan.
 

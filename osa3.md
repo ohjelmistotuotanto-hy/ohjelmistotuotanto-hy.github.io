@@ -11,7 +11,7 @@ permalink: /osa3/
   />
 </a>
 
-#### [Sisällysluettelo](/sisallys/#osa-3-laadunhallinta){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-3-laadunhallinta)
 
 Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterien menetelmien suosimiin testauksen ja laadunhallinnan menetelmiin.
 

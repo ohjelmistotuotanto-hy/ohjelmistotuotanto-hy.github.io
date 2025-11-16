@@ -11,7 +11,7 @@ permalink: /osa4/
   />
 </a>
 
-#### [Sisällysluettelo](/sisallys/#osa-4-ohjelmiston-suunnittelu-devops){:target="_blank"}
+#### [Sisällysluettelo](/sisallys/#osa-4-ohjelmiston-suunnittelu-devops)
 
 Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä ja laadunhallintaa. Tässä osassa aiheena on ohjelmiston suunnittelu ja toteutus.
 
