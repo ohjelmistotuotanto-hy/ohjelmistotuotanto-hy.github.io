@@ -2,6 +2,9 @@
 
   <ul style="margin-bottom: -2px">
     <li>
+      Maanantain 17.11. luennon tallennus epäonnistui, katso viime vuoden luento
+    </li>
+    <li>
       Miniprojekti käynnissä. Lue lisää <a href='/miniprojekti/'>täältä!</a>
     </li>  
     <li>
