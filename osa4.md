@@ -17,7 +17,7 @@ Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä 
 
 Osa sisältää paljon koodiesimerkkejä.
 
-Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]</span> liittyvät viikon 6 laskareihin, eli voit ohittaa ne aemmilla viikoilla.
+Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]</span> liittyvät viikon 6 laskareihin, eli voit ohittaa ne aiemmilla viikoilla.
 
 ## Typoja materiaalissa
 
