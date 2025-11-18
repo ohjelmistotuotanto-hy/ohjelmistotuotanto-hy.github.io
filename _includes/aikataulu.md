@@ -59,9 +59,7 @@
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
-  - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/FsTSRsppF9Q), [unitube](https://www.helsinki.fi/fi/unitube/video/2a2f442c-023f-4689-a560-731f5f10722a), tallenteen äänessä ongelmia toisen luennon alussa
-    - syksy 2023: [youtube](https://youtu.be/34CKdOxwmac), [unitube](https://www.helsinki.fi/fi/unitube/video/680c1fe8-a709-4eb0-81f2-ec64919680ac)
+  - tallenteet: [youtube](https://youtu.be/1H6Cf_pWXWA), [unitube](https://www.helsinki.fi/fi/unitube/video/ba831e26-0d5a-458c-b025-20544cbf1602)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat4), deadline {{site.lask-dl[4]}}

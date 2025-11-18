@@ -597,7 +597,7 @@ Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käyttöön
 
 ### Miten laajasti ketteriä menetelmiä käytetään
 
-Internetistä löytyy melko paljon erilaisia kyselytutkimuksia, jotka kartoittavat ketterien menetelmien käytön yleisyyttä.
+Internetistä löytyy melko paljon erilaisia kyselytutkimuksia, jotka kartoittavat ketterien menetelmien käytön yleisyyttä. Tutkimukset ovat kuitenkin jo usean vuoden takaa, ja tuoreempia ei näytä löytyvän. Syynä tälle lienee se, että ketterät menetelmät ovat jo niin vallitsevia, että niiden käyttöastetta ei enää ole edes mielekästä kysyä.
 
 Max Steinmetzin [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytutkimusta, joista löytyy erilaisia lukemia siitä kuinka laajasti ketteriä menetelmiä käytetään ohjelmistoprojekteissa. Pienin prosentti löytyy [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselystä, jonka mukaan 46% ohjelmistoprojekteista tehdään ketterillä menetelmillä. [Stack owerflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyssä tulos oli, että kyselyyn vastanneista 85.9 % työskenteli ketterillä menetelmillä.
 
@@ -614,7 +614,7 @@ Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa-Seelannissa teh
 - Lean 39.7 %
 - vesiputous 35.3 %
 
-Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät eivät ole yrityksessä ollenkaan käytössä:
+Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät *eivät ole* yrityksessä ollenkaan käytössä:
 
 ![]({{ "/images/5-9a.png" | absolute_url }}){:height="300px" }
 
@@ -624,23 +624,24 @@ Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyviss
 
 ### State of Agile -raportti
 
-Jo 15 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin mukaan Scrum dominoi ketterien menetelmien kenttää.
+Jo 15 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin muoto on muuttunut hieman viime vuosien aikana. Tuorein eli vuoden 2024 raportti keskittyy jo ketteryyttä enemmän tekoälypöhinään, joten seuraavassa on muutaman vuoden takaisten raporttien lukemia.
 
-![]({{ "/images/5-11-2021.png" | absolute_url }}){:height="300px" }
+Raportin (2022) mukaan Scrum dominoi ketterien menetelmien kenttää:
 
-Scrumia ja sen johdannaisia käyttää siis 82 % vastaajista. Extreme programmingin (eli XP) osuus on enää marginaalinen 1%.
+![]({{ "/images/soa1.png" | absolute_url }}){:height="400px" }
 
-Ketterien projektinhallintakäytänteiden osuus näytti seuraavalta:
+Aiempien vuosien raportit erittelivät myös tarkemmin sitä missä määrin eri ketteriä käytänteitä noudatettiin.
+Projektinhallintakäytänteiden osuus näytti 2021 raportissa seuraavalta:
 
 ![]({{ "/images/5-12-2021.png" | absolute_url }}){:height="400px" }
 
-_Daily standup_ -palaverit on edellisten vuosien tapaan kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia).
+Scrumista tutut palaverit ovat kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia). Huomionarvoista lienee myös se, että tuotteenomistaja tai vastaava asiakkaan edustaja on kyselyn mukaan vain noin puolella kyselyyn vastanneiden tiimeistä.
 
-Ketterien teknisten käytänteiden osalta tilanne näyttää seuraavalta:
+Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei kteknisiä äytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
 
 ![]({{ "/images/5-13-2020.png" | absolute_url }}){:height="400px" }
 
-Tämäkin lista on osin hieman yllättävä, sillä voisi esimerkiksi olettaa että jatkuva integrointi olisi nykyään lähes kaikkialla käytössä, mutta ainoastaan 55 % ilmoittaa käyttävänsä sitä.
+Tämäkin lista on osin hieman yllättävä, sillä voisi esimerkiksi olettaa että jatkuva integrointi olisi ollut vuonna 2020 lähes kaikkialla käytössä, mutta ainoastaan 55 % ilmoittaa käyttävänsä sitä.
 
 Tämän kyselyn tietojen valossa teknisten käytänteiden suhteen todella monella näyttäisi olevan skarppaamisen paikka. Osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu laaja tutkimushan osoitti hyvin selkeästi sen miten tekniset käytenteet (mm. automatisoidut testit, jatkuva integraatio ja jatkuva tuotantoonvienti) vaikuttavat positiivisesti sekä työhyvinvointiin että organisaatioiden tehokkuuteen.
 
@@ -656,15 +657,21 @@ Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
 - _challenged_: projektin onnistuminen on _vaarantunut_, jos jokin onnistumisen komponenteista _aikataulu, budjetti, laajuus_ ei ole toteutunut, esimerkiksi jos sovellus on valmistunut aikataulussa, pysyy budjetin puitteissa, mutta kaikkea suunniteltua toiminnallisuutta ei ole toteutettu
 - _failed_: projekti on _epäonnistunut_ jos se ei valmistu, tai sitä ei oteta koskaan käyttöön
 
-Vuoden 2018 raportissa projektien onnistumisen aste näyttää seuraavalta:
+Vuoden 2020 raportissa projektien onnistumisen aste näyttää seuraavalta:
 
-![]({{ "/images/5-14.png" | absolute_url }}){:height="150px" }
+![]({{ "/images/chaos10.png" | absolute_url }}){:height="150px" }
 
 Projektin koolla on todella suuri merkitys onnistumisen kannalta. Jos tarkastelussa otetaan huomioon projektin koko, on onnistumisprosentti seuraavanlainen:
 
-![]({{ "/images/5-15.png" | absolute_url }}){:height="220px" }
+![]({{ "/images/chaos11.png" | absolute_url }}){:height="250px" }
+
+Suuriksi projekteiksi on luokiteltu yli 10000 henkilötyöpäivän prot
 
 Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa kun projektien koko kasvaa.
+
+On kuitenkin selvää, että suuret ohjelmistohankkeet ovat riskialttiita, oli käytetty menetelmä mikä tahansa. Suuret hankkeet onkin syytä pilkkoa useammaksi pienemmäksi hankkeeksi jotta onnistumistodennäköisyys kasvaisi.
+
+Chaos raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erittelyä onnistuneista ja epäonnistuneista projekteista. Raportin huono puoli on sen kaupallisuus, raportit ja niiden taustalla oleva data eivät ole julkisesti saatavilla.
 
 [State of Agile](https://www.stateofagile.com) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
 
