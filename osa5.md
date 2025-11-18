@@ -599,7 +599,7 @@ Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käyttöön
 
 Internetistä löytyy melko paljon erilaisia kyselytutkimuksia, jotka kartoittavat ketterien menetelmien käytön yleisyyttä. Tutkimukset ovat kuitenkin jo usean vuoden takaa, ja tuoreempia ei näytä löytyvän. Syynä tälle lienee se, että ketterät menetelmät ovat jo niin vallitsevia, että niiden käyttöastetta ei enää ole edes mielekästä kysyä.
 
-Max Steinmetzin [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytutkimusta, joista löytyy erilaisia lukemia siitä kuinka laajasti ketteriä menetelmiä käytetään ohjelmistoprojekteissa. Pienin prosentti löytyy [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselystä, jonka mukaan 46% ohjelmistoprojekteista tehdään ketterillä menetelmillä. [Stack owerflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyssä tulos oli, että kyselyyn vastanneista 85.9 % työskenteli ketterillä menetelmillä.
+Max Steinmetzin [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytutkimusta, joista löytyy erilaisia lukemia siitä kuinka laajasti ketteriä menetelmiä käytetään ohjelmistoprojekteissa. Pienin prosentti löytyy [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselystä, jonka mukaan 46% ohjelmistoprojekteista tehdään ketterillä menetelmillä. [Stack Owerflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyssä tulos oli, että kyselyyn vastanneista 85.9 % työskenteli ketterillä menetelmillä.
 
 Googlaamalla löytyy runsaasti lisää erilaisia kyselyjä, ja kaikissa ketteryyden käyttöaste sijoittuu suunnilleen näiden kahden prosenttilukeman väliin, useimmiten reilusti viidenkymmenen yläpuolelle.
 
@@ -637,7 +637,7 @@ Projektinhallintakäytänteiden osuus näytti 2021 raportissa seuraavalta:
 
 Scrumista tutut palaverit ovat kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia). Huomionarvoista lienee myös se, että tuotteenomistaja tai vastaava asiakkaan edustaja on kyselyn mukaan vain noin puolella kyselyyn vastanneiden tiimeistä.
 
-Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei kteknisiä äytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
+Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei teknisiä äytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
 
 ![]({{ "/images/5-13-2020.png" | absolute_url }}){:height="400px" }
 
@@ -645,7 +645,7 @@ Tämäkin lista on osin hieman yllättävä, sillä voisi esimerkiksi olettaa et
 
 Tämän kyselyn tietojen valossa teknisten käytänteiden suhteen todella monella näyttäisi olevan skarppaamisen paikka. Osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu laaja tutkimushan osoitti hyvin selkeästi sen miten tekniset käytenteet (mm. automatisoidut testit, jatkuva integraatio ja jatkuva tuotantoonvienti) vaikuttavat positiivisesti sekä työhyvinvointiin että organisaatioiden tehokkuuteen.
 
-Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi organisaatioiden tehokkuutta parantaa mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process). State of Agilen tutkimuksessa mukana olleista kuitenkaan 37 % _ei käytä_ lyhyitä iteraatioita ja 49 % _ei julkaise_ sovelluksesta uusia versiota usein (frequent releases), eli ketteryyden potentiaalisia hyötyjä ei selvästikkään ulosmitata täydessä mitassaan läheskään kaikissa organisaatioissa.
+Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi organisaatioiden tehokkuutta parantaa mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process). State of Agilen tutkimuksessa mukana olleista kuitenkaan 37 % _ei käytä_ lyhyitä iteraatioita ja 49 % _ei julkaise_ sovelluksesta uusia versiota usein (frequent releases), eli ketteryyden potentiaalisia hyötyjä ei selvästikään ulosmitata täydessä mitassaan läheskään kaikissa organisaatioissa.
 
 ### Toimiiko ketterä ohjelmistokehitys
 
@@ -654,7 +654,7 @@ Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group
 Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
 
 - _successful_: projekti on _onnistunut_ jos se valmistuu aikataulussa, budjetoituun hintaan ja suunnitellussa laajuudessa
-- _challenged_: projektin onnistuminen on _vaarantunut_, jos jokin onnistumisen komponenteista _aikataulu, budjetti, laajuus_ ei ole toteutunut, esimerkiksi jos sovellus on valmistunut aikataulussa, pysyy budjetin puitteissa, mutta kaikkea suunniteltua toiminnallisuutta ei ole toteutettu
+- _challenged_: projektin onnistuminen on _vaarantunut_, jos jokin onnistumisen osa-alueista (_aikataulu, budjetti, laajuus_) ei ole toteutunut, esimerkiksi jos sovellus on valmistunut aikataulussa, pysyy budjetin puitteissa, mutta kaikkea suunniteltua toiminnallisuutta ei ole toteutettu
 - _failed_: projekti on _epäonnistunut_ jos se ei valmistu, tai sitä ei oteta koskaan käyttöön
 
 Vuoden 2020 raportissa projektien onnistumisen aste näyttää seuraavalta:
@@ -665,11 +665,9 @@ Projektin koolla on todella suuri merkitys onnistumisen kannalta. Jos tarkastelu
 
 ![]({{ "/images/chaos11.png" | absolute_url }}){:height="250px" }
 
-Suuriksi projekteiksi on luokiteltu yli 10000 henkilötyöpäivän prot
-
 Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa kun projektien koko kasvaa.
 
-On kuitenkin selvää, että suuret ohjelmistohankkeet ovat riskialttiita, oli käytetty menetelmä mikä tahansa. Suuret hankkeet onkin syytä pilkkoa useammaksi pienemmäksi hankkeeksi jotta onnistumistodennäköisyys kasvaisi.
+On kuitenkin selvää, että suuret ohjelmistohankkeet ovat riskialttiita, oli käytetty menetelmä mikä tahansa. Suuret hankkeet onkin syytä pilkkoa useammaksi pienemmäksi hankkeeksi, jotta onnistumistodennäköisyys kasvaisi.
 
 Chaos raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erittelyä onnistuneista ja epäonnistuneista projekteista. Raportin huono puoli on sen kaupallisuus, raportit ja niiden taustalla oleva data eivät ole julkisesti saatavilla.
 
@@ -683,6 +681,6 @@ Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan o
 
 Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osan kolme luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu tutkimus lienee kattavin tällä hetkellä olemassa oleva ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus.
 
-Olemassa on myös suuri määrä tutkimuksia, joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin tai jatkuvan integraation hyötyjen mittaamiseen. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
+Olemassa on myös suuri määrä tutkimuksia, joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin tai jatkuvan integraation vaikutusten arviointiin. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
 
-Lähes kaikissa yksittäisen tekniikan esim. TDD:n hyötyjä mittaavissa tutkimuksissa ongelmana on se, että ne eivät mittaa tekniikoista saatavia pitkäaikaisia hyötyjä mm. ohjelmiston ylläpidolle ja jatkokehitettävyydelle. Sekä kansanviisaus että monet tutkimukset ovat todenneet, että valtaosa ohjelmiston kustannuksista muodostuu juurikin ylläpitovaiheen, eli ensimmäisen version julkaisun jälkeisistä kustannuksista. Esimerkiksi [tämä](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) tutkimus päätyy siihen, että peräti 79 % ohjelmiston kustannuksista muodostuu ylläpitovaiheen aikana. Onkin mahdollista, että jokin tekniikka tuottaa lyhytaikaisen hyödyn, mutta jopa heikentää tuottavuutta pitkällä aikavälillä.
+Lähes kaikissa yksittäisen tekniikan esim. TDD:n hyötyjä mittaavissa tutkimuksissa ongelmana on se, että ne eivät mittaa tekniikoista saatavia pitkäaikaisia hyötyjä mm. ohjelmiston ylläpidolle ja jatkokehitettävyydelle. Sekä kansanviisaus että monet tutkimukset ovat todenneet, että valtaosa ohjelmiston kustannuksista muodostuu juurikin ylläpitovaiheen, eli ensimmäisen version julkaisun jälkeisistä kustannuksista. Esimerkiksi [tämä](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) tutkimus osoittaa, että peräti 79 % ohjelmiston kustannuksista muodostuu ylläpitovaiheen aikana. Onkin mahdollista, että jokin tekniikka tuottaa lyhytaikaisen hyödyn, mutta jopa heikentää tuottavuutta pitkällä aikavälillä.
