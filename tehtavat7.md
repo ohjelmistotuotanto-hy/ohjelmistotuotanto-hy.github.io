@@ -7,8 +7,6 @@ permalink: /tehtavat7/
 
 {% include paivitys_kesken.md %}
 
-{% include paivitys_kesken.md %}  
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -174,11 +172,8 @@ class KPSPelaajaVsPelaaja(KiviPaperiSakset):
 
 Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</i>, jota Python ei osaa hanskata. Itse ratkaisin ongelman määrittelemällä tehdasfunktion _luo_peli_ omassa tiedostossaan.
 
-### 5. Pull requestin mergeäminen (tätä tehtävää ei lasketa versionhallintatehtäväksi)
+### 5. TODO
 
-Mergeä jokin miniprojektillesi tehty pull request (myös toisen miniprojektisi jäsenen tekemän pull requestin mergeäminen käy). Voit tehdä tehtävän yhdessä muiden miniprojektisi ryhmäläisten kanssa. Jos olet jo mergennyt pull requestin miniprojektiisi kurssin aikana, se riittää tämän tehtävä merkkaamiseksi.
-
-Laita palautusrepositoriosi hakemistoon viikko7 tiedosto _MERGE.md_ ja sen sisällöksi linkki mergettyyn pull requestiin.
 
 **Vaihtoehtoinen tehtävä:**
 

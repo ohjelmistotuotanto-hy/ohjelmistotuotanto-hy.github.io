@@ -9,11 +9,7 @@ permalink: /tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
-Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span> tai <span style="color:blue">[viikko 6]</span>.
-
-Tehtävässä 6 tutustutaan GitHubin pull request -mekanismiin ja tehdään sen avulla pull request johonkin miniprojektiin. Tehtävä tehdään suoraan GitHubiin.
-
-Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
+Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -27,25 +23,40 @@ Tämän viikon [monivalintatehtävät]({{site.stats_url}}/quiz/6).
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Tämän viikon tehtävät 2-5 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston viikko6 sisälle.
+**Tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston viikko6 sisälle.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### 1. Laskin ja komento-oliot
 
-> **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. Toinen vaihtoehto on esim. pajaan meneminen...
-
-[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko5/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
-
-Jos tarvitsee, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali.
-
-Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python3 src/index.py`. Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
-
-> Jos törmäät virheilmoitukseen `ModuleNotFoundError: No module named 'tkinter'` ja käytät Ubuntu/Linuxia, syynä saattaa olla se, että koneessasi ei ole Pythonin mukana tavallisesti asentuvaa Tkinteriä. 
+> **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. 
 >
-> Ongelma saattaa ratketa suorittamalla asennus komennolla
+> **HUOM2** tässä tehtävässä saattaa riittää että koneesi Python, Poetryä ei välttämättä tarvita ollenkaan. Katso hieman alempaa _Korjaustapa 1_
+
+[Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko6/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
+
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+
+<input type="checkbox">  Jos tarvetta, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali. Toinen vaihtoehto on koodin tutkiminen
+[tekoälyn](/genai/#viikko-6---tehtävä-1) avustuksella.
+
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python src/index.py`.
+
+Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
+
+> Jos törmäät virheilmoitukseen `ModuleNotFoundError: No module named 'tkinter'`, syynä saattaa olla se, että koneessasi ei ole Pythonin mukana tavallisesti asentuvaa Tkinteriä. 
+>
+> Korjaustapa 1:
+>
+> - Kokeile toimisiko sovellus koneesi Pythonilla "suoraan", eli ilman virtuaaliympäristöä, eli komennolla `python src/index.py` tai `python3 src/index.py` ilman, että olet virtuaaliympäristössä. Jos toimii, niin se riittää.
+>
+> Korjaustapa 2:
+> - Jos käytät Ubuntu/Linuxia, ngelma saattaa ratketa suorittamalla asennus komennolla
  `sudo apt-get install python3-tk`
+>
+> - Mac-käyttäjillä eräs tapa ratkaista ongelma on komento `brew install python-tk@3.13`, olettaen [brew](https://brew.sh/) on käytössä. Asennuksessa kannattaa käyttää samaa versionumeroa kuin mikä on käytössäsi olevalla Pythonilla.
+>
+> Paketin `python-tk` asennuksen jälkeen kannattaa poistaa virtuaaliympäristö, eli tiedosto _.venv_ ja suorittaa `poetry install` uudelleen.  
 
 Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
 
@@ -78,7 +89,7 @@ def _suorita_komento(self, komento):
     self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
 
-Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-5).
+<input type="checkbox">  Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-6).
 
 Tässä tehtävässä ei tarvitse vielä toteuttaa kumoa-komennon toiminnallisuutta!
 
@@ -97,6 +108,7 @@ class Kayttoliittyma:
         self._sovelluslogiikka = sovelluslogiikka
         self._root = root
 
+        # talletetaan komennot sanakirjaan eli dict-rakenteeseen
         self._komennot = {
             Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
             Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
@@ -110,6 +122,7 @@ class Kayttoliittyma:
         return self._syote_kentta.get()
 
     def _suorita_komento(self, komento):
+        # haetaan dict:istä oikea komento
         komento_olio = self._komennot[komento]
         komento_olio.suorita()
         self._kumoa_painike["state"] = constants.NORMAL
@@ -127,7 +140,11 @@ Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sove
 
 ### 2. Komentojen kumoaminen
 
-Toteuta laskimeen myös kumoa-toiminnallisuus. Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`. Olion tulee myös muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
+<input type="checkbox"> Toteuta laskimeen myös kumoa-toiminnallisuus.
+
+<input type="checkbox"> Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`.
+
+Komento-olion tulee siis muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
 Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
 
@@ -135,11 +152,11 @@ Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarv
 
 ### Vapaaehtoinen bonus-tehtävä
 
-Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia. Eli jos olet esim. laskenut summan 1+2+3+4+5 (jonka tulos 15), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
+<input type="checkbox"> Laajenna ohjelmaasi siten, että se mahdollistaa mielivaltaisen määrän peräkkäisiä kumoamisia.
+
+Eli jos olet esim. laskenut summan 1 + 2 + 3 + 4 + 5 (jonka tulos 15), napin _kumoa_ peräkkäinen painelu vie laskimen tilaan missä tulos on ensin 10 sitten 6, 3, 2, 1 ja lopulta 0.
 
 Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oikein: Summa 10, Erotus 6, Erotus 2, Kumoa (kumoaa komennon Erotus 2), Summa 4, Kumoa (Kumoaa komennon Summa 4), Kumoa (kumoaa komennon Erotus 6), Kumoa (kumoaa komennon Summa 10)
-
-{% include submission_instructions.md %}
 
 ### 3. Kyselykieli NHL-tilastoihin, osa 1
 
@@ -434,35 +451,5 @@ matcher = (
     .build()
 )
 ```
-
-### 7. Pull request ja refaktorointia (tätä tehtävää ei lasketa versionhallintatehtäväksi)
-
-**HUOM tee tämä tehtävä aikaisintaan perjantaina 29.11.**
-
-Isoa projektia on vaikea ylläpitää yksin ja vielä vaikeampaa on löytää oikeat ratkaisut jokaiseen ongelmaan, kun ohjelmisto kasvaa. On vaikeaa hallita itse kaikkea ja jotkin osa-alueet eivät välttämättä edes miellytä jolloin niihin on vaikea paneutua. Saatat löytää itsesi ajattelemasta vaikkapa: "Lukisipa joku tietorakenteiden asiantuntija tämän osuuden läpi ja tsekkaisi, että HashSet on nyt varmasti se tehokkain ratkaisu...".
-
-Ehkäpä et edes ajatellut asiaa, mutta joku silti näyttää, että binäärihakupuu onkin tilanteessa tehokkaampi ratkaisu, koodaa korjaukset puolestasi lähdekoodiin sekä tekee muutoksista _pull requestin_. Onneksi julkaisit projektisi Open Sourcena!
-
-GitHub on täynnä Open Source -projekteja, jotka kaipaavat panostasi. Mikäs sen kivempaa, kuin käyttää muutama tunti suosikkirepositioriosi lähdekoodin parissa ja korvata sieltä huomaamasi epäelegantti ratkaisu paremmalla. Useilla repositorioilla on valmiit ohjeet muutosehdotusten tekemiseen repositorion juuresta löytyvässä tiedostossa Contributing.md. Tässä esimerkiksi bluebird.js:än [CONTRIBUTING.md](https://github.com/petkaantonov/bluebird/blob/master/CONTRIBUTING.md).
-
-Tehtävänäsi on harjoitella muutosehdotuksen tekemistä "open source -projektiin" sekä vieraan koodin lukemista ja refaktorointia.
-
-- Valitse yksi repositorio [miniprojektien](https://study.cs.helsinki.fi/stats/api/courses/ohtu2024/projects/repositories) joukosta
-  - Mielellään sellaisen ryhmän repositorio, jolla ei ole jo viittä pull requestia.
-  - Ja luonnollisesti sellainen, jonka koodiin haluat tehdä jotain muutoksia
-- [Forkkaa](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) repositorio
-- Tee forkattuun repositorioon uusi branch nimellä "muutoksia"
-- Tee luomaasi branchiin "tyhjä" [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request): lisää esimerkiksi yksi tyhjä rivi README.md-tiedostoon, pushaa uusi branch GitHubiin ja tee branchista pull request.
-  - Tyhjän pull requestin tarkoituksena on varata sinulle paikka kyseisen repositorion muutoksentekijöiden joukosta. Haluamme, että kaikki ryhmät saavat suunnilleen tasaisesti pull requesteja, eli jos repositoriossa on niitä jo runsaasti, etsi mielellään jokin muu repositorio.
-- Etsi ryhmän lähdekoodista jotain refaktoroitavaa
-  - Kyseessä ei tarvitse olla iso muutos, esimerkiksi muuttujan/metodin uudelleennimeäminenkin riittää
-- Refaktoroi ja committaa
-- Käy katsomassa tekemääsi tyhjää pull requestia. Mitä tapahtui?
-- Rebeissaa (ks. tämän viikon ensimmäinen tehtävä) luomasi branch paikalliseen main-branchin päälle. Pushaa. Tapahtuiko pull requestissa muutoksia?
-- Otsikoi tekemäsi pull request niin, että se kuvaa tekemiäsi muutoksia. Tarkenna otsikon alle mitä teit ja miksi.
-- Jos ryhmä pyytää sinua tekemään muutoksia pull requestiisi, tee halutessasi tarvittavat muutokset ja committaa. Päivittyikö pull request?
-- Kun ryhmä on hyväksynyt muutoksesi, voit poistaa luomasi branchin
-
-Laita palautusrepositorioosi tiedosto _PULL.md_ ja sen sisällöksi linkki pull requestiin.
 
 {% include submission_instructions.md %}
