@@ -119,7 +119,7 @@ _miten f-merkkijonoilla saa sarakkeisteun tulostuksen_
 
 ## Viikko 6 - Tehtävä 1
 
-Tekoäly on oivallinen apuväline tutustuttaessa itselle etukäteen tuntemattomaan koodiin. Erityisen hyvödyllinen se on, jos koodissa käytetään itselle ennalta tuntemattomia kirjastoja.
+Tekoäly on oivallinen apuväline tutustuttaessa itselle etukäteen tuntemattomaan koodiin. Erityisen hyödyllinen se on, jos koodissa käytetään itselle ennalta tuntemattomia kirjastoja.
 
 Aloitetaan kopioimalla GitHub Copilotille (VS Codessa) osa sovelluksen käyttöliittymän koodista:
 
@@ -129,7 +129,7 @@ Selitys jatkuu melko hyvänä, suomen kieli ei kyllä kaikin osin ole ihan optim
 
 ![]({{ "/images/agentti6.png" | absolute_url }})
 
-Koodissa on luokka `StringVar` jonka toiminta on hieman hämärän peitossa. Kysytään takennusta
+Koodissa on luokka `StringVar` jonka toiminta on hieman hämärän peitossa. Kysytään tarkennusta
 
 ![]({{ "/images/agentti7.png" | absolute_url }})
 
@@ -137,4 +137,4 @@ Koodissa esiintyvä `lambda` on hämmentävä. Onko se ylipäätään tarpeen? K
 
 ![]({{ "/images/agentti8.png" | absolute_url }})
 
-Noniin, nyt koodi tuntuu jo selkeämmältä ja opimme taas uutta kiitos tekoälyn!
+Koodi tuntuu nyt selkeämmältä, ja opimme taas uutta tekoälyn ansiosta!

@@ -23,7 +23,7 @@ Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4]
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston viikko6 sisälle.
+**Tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston _viikko6_ sisälle.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -35,7 +35,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko6/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
 
-<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko5 sisälle.
+<input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
 
 <input type="checkbox">  Jos tarvetta, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali. Toinen vaihtoehto on koodin tutkiminen
 [tekoälyn](/genai/#viikko-6---tehtävä-1) avustuksella.
@@ -51,12 +51,12 @@ Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 > - Kokeile toimisiko sovellus koneesi Pythonilla "suoraan", eli ilman virtuaaliympäristöä, eli komennolla `python src/index.py` tai `python3 src/index.py` ilman, että olet virtuaaliympäristössä. Jos toimii, niin se riittää.
 >
 > Korjaustapa 2:
-> - Jos käytät Ubuntu/Linuxia, ngelma saattaa ratketa suorittamalla asennus komennolla
+> - Jos käytät Ubuntu/Linuxia, ongelma saattaa ratketa suorittamalla asennus komennolla
  `sudo apt-get install python3-tk`
 >
 > - Mac-käyttäjillä eräs tapa ratkaista ongelma on komento `brew install python-tk@3.13`, olettaen [brew](https://brew.sh/) on käytössä. Asennuksessa kannattaa käyttää samaa versionumeroa kuin mikä on käytössäsi olevalla Pythonilla.
 >
-> Paketin `python-tk` asennuksen jälkeen kannattaa poistaa virtuaaliympäristö, eli tiedosto _.venv_ ja suorittaa `poetry install` uudelleen.  
+> Paketin `python-tk` asennuksen jälkeen kannattaa poistaa virtuaaliympäristö, eli tiedosto _.venv_, ja suorittaa `poetry install` uudelleen.  
 
 Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
 
@@ -140,15 +140,15 @@ Komennoilla on nyt siis metodi `suorita` ja ne saavat konstruktorin kautta `Sove
 
 ### 2. Komentojen kumoaminen
 
-<input type="checkbox"> Toteuta laskimeen myös kumoa-toiminnallisuus.
+<input type="checkbox"> Toteuta laskimeen myös kumoa-toiminto.
 
 <input type="checkbox"> Periaatteena on siis toteuttaa jokaiseen komento-olioon metodi `kumoa`.
 
-Komento-olion tulee siis muistaa mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
+Komento-olion tulee siis muistaa, mikä oli tuloksen arvo ennen komennon suoritusta, jotta se osaa palauttaa laskimen suoritusta edeltävään tilaan.
 
 Jos kumoa-nappia painetaan, suoritetaan sitten edelliseksi suoritetun komento-olion metodi `kumoa`.
 
-Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
+Riittää, että ohjelma muistaa edellisen tuloksen, eli kumoa-toimintoa ei tarvitse osata suorittaa kahta tai useampaa kertaa peräkkäin. Tosin tämänkään toiminnallisuuden toteutus ei olisi kovin hankalaa, jos edelliset tulokset tallennettaisiin esimerkiksi listaan.
 
 ### Vapaaehtoinen bonus-tehtävä
 
@@ -161,8 +161,10 @@ Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oike
 ### 3. Kyselykieli NHL-tilastoihin, osa 1
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko6/query-language_ löytyy jälleen yksi versio tutusta NHL-tilastojen tarkasteluun tarkoitetusta ohjelmasta.
-- Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
-- Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](https://ohjelmistotuotanto-hy.github.io/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-5) voi olla eräs inspiraation lähde.
+
+<input type="checkbox">  Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
+
+Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) voi olla eräs inspiraation lähde.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 20 syöttöä_.
 
@@ -170,7 +172,7 @@ Koodiin onkin luotu hieman valmista kalustoa, josta pääset liikkeelle. Yllä o
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt"
+    url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -186,18 +188,20 @@ def main():
 
 Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä pelaajista, joille parametrina annettun olion metodi `test` palauttaa `True`.
 
-Tutustu ohjelman rakenteeseen.
+<input type="checkbox">  Tutustu ohjelman rakenteeseen.
 
 - Huomioi miten `HasAtLeast`-luokan metodi `test` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
-- Toinen huomioinarvoinen piirre on `And`-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, jonka tunnista `*`-etuliitteestä. Syntaksin avulla `*matchers` sisältää listan konstruktorille annetuista argumenteista
+- Toinen huomioinarvoinen piirre on `And`-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, jonka tunnistaa `*`-etuliitteestä. Syntaksin avulla `*matchers` sisältää listan konstruktorille annetuista argumenteista
 
-**Toteuta `test`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:**
+<input type="checkbox"> Toteuta `test`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:
 
-- All (tosi kaikille pelaajille)
-- Not (parametrina olevan ehdon negaatio)
-- HasFewerThan (HasAtLeast-komennon negaatio eli esim. on vähemmän kuin 10 maalia)
+<input type="checkbox" style="margin-left: 20px"> All (tosi kaikille pelaajille)
 
-Kaikille pelaajille tosi ehto _All_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, sitä pystyy kuitenkin hyödyntämään neljännessä tehtävässä.
+<input type="checkbox" style="margin-left: 20px"> Not (parametrina olevan ehdon negaatio)
+
+<input type="checkbox" style="margin-left: 20px"> HasFewerThan (HasAtLeast-komennon negaatio eli esim. on vähemmän kuin 10 maalia)
+
+Kaikille pelaajille tosi ehto _All_ ei ole vielä tämän tehtävän kannalta kovin mielenkiintoinen, mutta sitä hyödynnetään neljännessä tehtävässä.
 
 Voit tarkistaa toteutuksesi toimivuuden tekemällä kyselyn:
 
@@ -208,25 +212,20 @@ matcher = And(
 )
 ```
 
-Vastauksena pitäisi olla joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään kahta maalia, eli _0 tai 1 maalia tehneet_:
+<input type="checkbox"> Varmista, että vastauksena on joukkueen _NYR_ pelaajista ne, joilla ei ole vähintään kahta maalia, eli _0 tai 1 maalia tehneet_:
 
 <pre>
-Brandon Scanlin      NYR          0  + 0  = 0
-Nick Bonino          NYR          1  + 4  = 5
-Riley Nash           NYR          0  + 0  = 0
-Jake Leschyshyn      NYR          0  + 0  = 0
-Brennan Othmann      NYR          0  + 0  = 0
-Jake Leschyshyn      NYR          0  + 0  = 0
-Matt Rempe           NYR          1  + 1  = 2
+Gabe Perreault       NYR          0  + 0  = 0
+Zac Jones            NYR          1  + 10 = 11
 Connor Mackey        NYR          0  + 0  = 0
-Tyler Pitlick        NYR          1  + 3  = 4
-Filip Chytil         NYR          0  + 6  = 6
-Anton Blidh          NYR          0  + 0  = 0
+Brennan Othmann      NYR          0  + 2  = 2
+Chad Ruhwedel        NYR          0  + 1  = 1
+Matthew Robertson    NYR          0  + 0  = 0
 </pre>
 
-- Kaikissa esimerkitulostuksissa on käytetty vuoden 2023-24 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:ista, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt>
+Kaikissa esimerkitulostuksissa on käytetty vuoden 2024-25 tilastoja. Tilastoissa käytettävän vuoden voi valita tilastojen URL:sta, joka on koodipohjassa <https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt>
 
-Kyselyn
+<input type="checkbox"> Varmista, että kyselyn
 
 ```python
 matcher = And(
@@ -235,22 +234,24 @@ matcher = And(
 )
 ```
 
-tulisi palauttaa täsmälleen sama lista.
+palauttaa täsmälleen saman listan.
 
-Ehdon All pitäisi palauttaa kaikki pelaajat. Seuraavan koodin
+Ehdon All pitäisi palauttaa kaikki pelaajat.
+
+<input type="checkbox"> Varmista, että koodi
 
 ```python
 filtered_with_all = stats.matches(All())
 print(len(filtered_with_all))
 ```
 
-pitäisi tulostaa 958
+tulostaa 899
 
 ### 4. Kyselykieli NHL-tilastoihin, osa 2
 
-**Toteuta** `test`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
+<input type="checkbox"> Toteuta `test`-metodin toteuttava luokka `Or`, joka on tosi silloin jos ainakin yksi sen parametrina saamista ehdoista on tosi.
 
-Kyselyn
+<input type="checkbox"> Varmista, että kysely
 
 ```python
 matcher = Or(
@@ -259,58 +260,47 @@ matcher = Or(
 )
 ```
 
-tulee palauttaa ne, joilla on vähintään 45 maalia tai 70 syöttöä, eli seuraava lista
+palauttaa ne, joilla on vähintään 45 maalia tai 70 syöttöä, eli seuraavan listan
 
 ```
-Filip Forsberg       NSH          48 + 46 = 94
-Sam Reinhart         FLA          57 + 37 = 94
-Quinn Hughes         VAN          17 + 75 = 92
-Connor McDavid       EDM          32 + 100 = 132
-Auston Matthews      TOR          69 + 38 = 107
-David Pastrnak       BOS          47 + 63 = 110
-Nathan MacKinnon     COL          51 + 89 = 140
-Zach Hyman           EDM          54 + 23 = 77
-Artemi Panarin       NYR          49 + 71 = 120
-Brayden Point        TBL          46 + 44 = 90
-Nikita Kucherov      TBL          44 + 100 = 144
-Kirill Kaprizov      MIN          46 + 50 = 96
+Mitch Marner         TOR          27 + 75 = 102
+Connor McDavid       EDM          26 + 74 = 100
+William Nylander     TOR          45 + 39 = 84
+Nathan MacKinnon     COL          32 + 84 = 116
+Leon Draisaitl       EDM          52 + 54 = 106
+Nikita Kucherov      TBL          37 + 84 = 121
 ```
 
-Kyselyn
+<input type="checkbox"> Varmista, että kysely
 
-```java
+```python
 matcher = And(
     HasAtLeast(70, "points"),
     Or(
-        PlaysIn("NYR"),
+        PlaysIn("COL"),
         PlaysIn("FLA"),
         PlaysIn("BOS")
     )
 )
 ```
 
-tulee palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _NYR_, _FLA_ tai _BOS_. Lista näyttää seuraavalta:
+palauttaa kaikki vähintään 70 pistettä tehneet jotka pelaavat jossain seuraavista joukkueista _COL_, _FLA_ tai _BOS_, eli listan:
 
 ```
-Sam Reinhart         FLA          57 + 37 = 94
-Vincent Trocheck     NYR          25 + 52 = 77
-Matthew Tkachuk      FLA          26 + 62 = 88
-David Pastrnak       BOS          47 + 63 = 110
-Carter Verhaeghe     FLA          34 + 38 = 72
-Chris Kreider        NYR          39 + 36 = 75
-Adam Fox             NYR          17 + 56 = 73
-Artemi Panarin       NYR          49 + 71 = 120
-Aleksander Barkov    FLA          23 + 57 = 80
-Mika Zibanejad       NYR          26 + 46 = 72
+David Pastrnak       BOS          43 + 63 = 106
+Sam Reinhart         FLA          39 + 42 = 81
+Nathan MacKinnon     COL          32 + 84 = 116
+Cale Makar           COL          30 + 62 = 92
+Aleksander Barkov    FLA          20 + 51 = 71
 ```
 
-Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _OR_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _Or_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 5. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava uusi olio. Toinen ikävä puoli on se, että kyselyjä käyttävällä koodilla on suora riippuvuus sen käyttämiin Matcher-olioihin.
 
-Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
+<input type="checkbox"> Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
@@ -318,7 +308,7 @@ Ensin kysely, joka palauttaa jokaisen pelaajan:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2024-25/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -335,7 +325,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat, joiden joukkue on _NYR_:
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2024-25/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -351,7 +341,7 @@ Seuraavaksi kysely, missä tulostetaan pelaajat joiden joukkue on _NYR_, joilla 
 
 ```python
 def main():
-    url = "https://studies.cs.helsinki.fi//nhlstats/2023-24/players.txt"
+    url = "https://studies.cs.helsinki.fi//nhlstats/2024-25/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 
@@ -366,13 +356,14 @@ def main():
 Pelaajien lista on seuraava:
 
 ```
-Will Cuylle          NYR          13 + 8  = 21
-Jimmy Vesey          NYR          13 + 13 = 26
-Kaapo Kakko          NYR          13 + 6  = 19
-Adam Fox             NYR          17 + 56 = 73
+Alexis Lafrenière    NYR          17 + 28 = 45
+Jonny Brodzinski     NYR          12 + 7  = 19
+Adam Fox             NYR          10 + 51 = 61
 ```
 
 Peräkkäin ketjutetut ehdot siis toimivat "and"-periaatteella.
+
+<input type="checkbox"> Varmista, että ratkaisusi toimii edellisen esimerkin kyselyllä.
 
 Tässä tehtävässä riittää, että kyselyrakentaja osaa muodostaa _and_-periaatteella yhdistettyjä ehtoja.
 
@@ -394,11 +385,13 @@ ovat luettavuudeltaan hieman ikäviä, jos ne kirjoitetaan monelle riville. Usei
     )
 ```
 
-Python ikävä kyllä edellyttää tässä "ylimääräisten" sulkujen käyttöä.
+Python edellyttää ikävä kyllä tässä tapauksessa "ylimääräisten" sulkujen käyttöä.
 
 ### 6. Parannettu kyselykieli, osa 2
 
-Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä. Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
+<input type="checkbox"> Laajennetaan kyselyrakentajaa siten, että sen avulla voi muodostaa myös _or_-ehdolla muodostettuja kyselyjä.
+
+Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
 ```python
 m1 = (
@@ -422,16 +415,15 @@ matcher = query.one_of(m1, m2).build()
 Pelaajalistan tulisi olla:
 
 ```
-Leon Draisaitl       EDM          41 + 65 = 106
-Connor McDavid       EDM          32 + 100 = 132
-Garnet Hathaway      PHI          7  + 10 = 17
-Zach Hyman           EDM          54 + 23 = 77
-Garnet Hathaway      PHI          7  + 10 = 17
-Noah Cates           PHI          6  + 12 = 18
-Nick Seeler          PHI          1  + 12 = 13
-Egor Zamula          PHI          5  + 16 = 21
-Evan Bouchard        EDM          18 + 64 = 82
-Ryan Nugent-Hopkins  EDM          18 + 49 = 67
+Egor Zamula          PHI          3  + 12 = 15
+Connor McDavid       EDM          26 + 74 = 100
+Evan Bouchard        EDM          14 + 53 = 67
+Rasmus Ristolainen   PHI          4  + 15 = 19
+Nick Seeler          PHI          3  + 17 = 20
+Leon Draisaitl       EDM          52 + 54 = 106
+Cam York             PHI          4  + 13 = 17
+Jamie Drysdale       PHI          7  + 13 = 20
+Travis Sanheim       PHI          8  + 22 = 30
 ```
 
 Tai sama ilman apumuuttujia:
@@ -451,5 +443,7 @@ matcher = (
     .build()
 )
 ```
+
+<input type="checkbox"> Varmista, että ratkaisusi toimii edellisen esimerkin kyselyllä.
 
 {% include submission_instructions.md %}
