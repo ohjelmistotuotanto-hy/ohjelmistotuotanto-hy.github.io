@@ -160,7 +160,7 @@ kauppa.maksa("1111")
 
 Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen "ostoskoriin" lisätään tuotteita, joiden hinta kerrotaan metodin `lisaa_ostos` parametrina. Ostokset lopetetaan kutsumalla metodia `maksa` joka saa parametriksi tilinumeron, jolta summa veloitetaan.
 
-Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` olioa. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
+Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` oliota. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
 
 ![]({{ "/images/kauppa.png" | absolute_url }}){:height="200px" }
 
