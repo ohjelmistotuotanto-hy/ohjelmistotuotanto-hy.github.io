@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=6 %}
 
 Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>.
