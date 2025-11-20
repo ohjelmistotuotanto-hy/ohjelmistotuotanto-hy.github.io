@@ -70,4 +70,3 @@ Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä 
 Laajoja kielimalleja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen tekstiasun muokkaamiseen, vastausten generointi kielimalleilla ei kuitenkaan ole sallittua.
 
 Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
-
