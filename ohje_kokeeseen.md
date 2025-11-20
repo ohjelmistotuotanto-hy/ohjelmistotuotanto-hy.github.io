@@ -5,21 +5,18 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-### Uusinta- ja erilliskokeet
+### Erilliskokeet
 
 Erilliskoe on suoritettavissa Examinariumissa 2.1.-30.11.3025 ja taas 1.1.2026-. Ilmoittautuminen erilliskokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/104542?code=TKT20006_otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
 
-Tällä hetkellä on mahdollista ilmoittautua ainoastaan ennen 1.8. tehtävään tenttiin. Linkki syksyn ilmoittautumiselle ilmestyy kesällä.
 
-Uusintakoe siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
-
-**Myös uusintakoetta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että uusinnassa ja erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia. 
+**Erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia. 
 
 ### Kurssikoe
 
-Kurssikoe pidetään torstaina 19.12. klo 7.00-14.00 [Moodlessa](https://moodle.helsinki.fi/course/view.php?id=67825). Kokeessa on vastaamisaikaa 4 tuntia siitä hetkestä kun aloitat kokeen. Huomaa, että riippumatta siitä monelta kokeen aloitat, loppuu se klo 14.00, eli jos haluat käyttää 4h, tulee koe aloittaa viimeistään klo 10.
+Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen.
 
-Kokeeseen _ei tarvitse ilmoittautua erikseen_, kurssi-ilmoittautuminen riittää. Varmista hyvissä ajoin ennen koetta, että pääset kurssin Moodleen, eli [tänne](https://moodle.helsinki.fi/course/view.php?id=67825). Olen kokeen aikana ilmassa, joten mahdollinen käyttöoikeuden lisääminen ei kokeen aikana enää onnistu.
+Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline 6.12.2025
 
 Internet on melko vapaasti käytettävissä kokeen aikana. 
 
