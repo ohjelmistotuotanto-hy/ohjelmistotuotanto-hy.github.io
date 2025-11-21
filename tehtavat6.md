@@ -392,22 +392,17 @@ Python edellyttää ikävä kyllä tässä tapauksessa "ylimääräisten" sulkuj
 Or-ehdon sisältävä kysely voi olla muodostettu esim. seuraavasti:
 
 ```python
-m1 = (
+matcher = (
   query
-    .plays_in("PHI")
-    .has_at_least(10, "assists")
-    .has_fewer_than(10, "goals")
+    .one_of(
+      query.plays_in("PHI")
+          .has_at_least(10, "assists")
+          .has_fewer_than(10, "goals"),
+      query.plays_in("EDM")
+          .has_at_least(50, "points")
+    )
     .build()
 )
-
-m2 = (
-  query
-    .plays_in("EDM")
-    .has_at_least(50, "points")
-    .build()
-)
-
-matcher = query.one_of(m1, m2).build()
 ```
 
 Pelaajalistan tulisi olla:
@@ -422,24 +417,6 @@ Leon Draisaitl       EDM          52 + 54 = 106
 Cam York             PHI          4  + 13 = 17
 Jamie Drysdale       PHI          7  + 13 = 20
 Travis Sanheim       PHI          8  + 22 = 30
-```
-
-Tai sama ilman apumuuttujia:
-
-```python
-matcher = (
-  query
-    .one_of(
-      query.plays_in("PHI")
-          .has_at_least(10, "assists")
-          .has_fewer_than(10, "goals")
-          .build(),
-      query.plays_in("EDM")
-          .has_at_least(50, "points")
-          .build()
-    )
-    .build()
-)
 ```
 
 <input type="checkbox"> Varmista, että ratkaisusi toimii edellisen esimerkin kyselyllä.
