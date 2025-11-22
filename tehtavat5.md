@@ -266,7 +266,7 @@ Copilotilla voi mennä aika kauan koodaillessa. Nyt on hyvä hetki esim. keittä
 
 Kun Copilot on valmis (itselläni meni noin 15 min) näet sen luoman koodin Pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
 
-<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa. ;uuta sen tilaa painamalla nappia "Ready for review"
+<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa. Muuta sen tilaa painamalla nappia "Ready for review"
 
 <input type="checkbox"> Hae pull requestin koodia omalla koneellasi
 
