@@ -118,4 +118,4 @@
 ### Viikko 8
 
 - Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110 (sähköinen salitentti)
-  - Ilmoittaudu kokeesee [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006) 6.12. mennessä!
+  - Ilmoittaudu kokeeseen [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006) 6.12. mennessä!
