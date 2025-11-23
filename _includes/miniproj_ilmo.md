@@ -1,9 +1,15 @@
-<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF; position: sticky; top: 0;">
 
-<ul style="margin-bottom: -2px">
-  <li>
-      Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110, ilmoittaudu <a href='https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006'>täällä!</a>
-  </li>
-</ul>
+  <ul style="margin-bottom: -2px">
+    <li>
+      Muista Vierailuluennot 1.12.-9.12. Katso lisää <a href='/#viikko-6'>täältä</a>
+      <ul>
+        <li>Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)</li>
+      </ul>
+    </li>
+    <li>
+        Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110, ilmoittaudu <a href='https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006'>täällä!</a>
+    </li>
+  </ul>
 
 </div>

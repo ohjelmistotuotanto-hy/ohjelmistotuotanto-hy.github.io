@@ -88,11 +88,13 @@
 ### Viikko 6
 
 - Vierailuluennot
+  - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 11: {{site.luennot[11]}}
-    - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
-    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
+    - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_  
   - Luento 12: {{site.luennot[12]}} 
-    - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_
+    - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_    
+
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
@@ -102,6 +104,7 @@
 ### Viikko 7
 
 - Vierailuluennot
+  - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 13: {{site.luennot[13]}}
     - Sari Leppänen ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
   - Luento 14: {{site.luennot[14]}}
