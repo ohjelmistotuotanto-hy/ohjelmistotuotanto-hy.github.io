@@ -75,8 +75,8 @@
 - Luento 10: {{site.luennot[10]}} 
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
-    - tallenteet:
-      - syksy 2024: [youtube](https://youtu.be/S-9XmDN94zI), [unitube](https://www.helsinki.fi/fi/unitube/video/665cf928-dc6d-4e78-9c92-e1e22569d12d)
+  - tallenteet:
+    - syksy 2024: [youtube](https://youtu.be/S-9XmDN94zI), [unitube](https://www.helsinki.fi/fi/unitube/video/665cf928-dc6d-4e78-9c92-e1e22569d12d)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
