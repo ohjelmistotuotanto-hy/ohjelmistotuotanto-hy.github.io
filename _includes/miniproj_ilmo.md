@@ -2,7 +2,7 @@
 
   <ul style="margin-bottom: -2px">
     <li>
-      Muista Vierailuluennot 1.12.-9.12. Katso lisää <a href='/#viikko-6'>täältä</a>
+      Muista vierailuluennot 1.12.-9.12. Katso lisää <a href='/#viikko-6'>täältä</a>
       <ul>
         <li>Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)</li>
       </ul>

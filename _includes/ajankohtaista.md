@@ -3,23 +3,23 @@
   <ul style="margin-bottom: -2px">
     <li>Vierailuluennot lähestyvät
       <ul>
-      <li>Luento 11: maanantai 1.12. klo 12-14 B123
+      <li>Maanantai 1.12. klo 12-14 B123
         <ul>
           <li>Kristiina Vainio ja Francisco Zavala (Houston): <em>Juniorin kasvu senioriksi konsulttitalossa</em></li>
         </ul>
       </li>
-      <li>Luento 12: tiistai 2.12. klo 12-14 B123
+      <li>Tiistai 2.12. klo 12-14 B123
         <ul>
           <li>Tiina Romu (Wonna): <em>Mitä tekee lead developer ja miten sellaiseksi pääsee?</em></li>
           <li>Kasper Hirvikoski (Unity): <em>Ohjelmistoprojektien johtaminen</em></li>          
         </ul>
       </li>
-        <li>Luento 13: maanantai 8.12. klo 12-14 B123
+        <li>Maanantai 8.12. klo 12-14 B123
           <ul>
             <li>Sari Leppänen ja Michael Forsström (DNA): <em>AI ja ohjelmistokehitys</em></li>
           </ul>
         </li>
-        <li>Luento 14: tiistai 9.12. klo 12-14 B123
+        <li>Tiistai 9.12. klo 12-14 B123
           <ul>
             <li>Ville Nordberg (Trail openers): <em>Vihreä IT</em></li>
             <li>Tero Tapio (Funidata): <em>Softakehittäjän pehmeät taidot</em></li>
