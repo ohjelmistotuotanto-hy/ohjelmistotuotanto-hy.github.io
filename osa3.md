@@ -11,6 +11,8 @@ permalink: /osa3/
   />
 </a>
 
+{% include miniproj_ilmo.md %}
+
 #### [Sisällysluettelo](/sisallys/#osa-3-laadunhallinta)
 
 Tässä osassa tutustumme ohjelmistojen laadunhallintaan ja erityisesti ketterien menetelmien suosimiin testauksen ja laadunhallinnan menetelmiin.
