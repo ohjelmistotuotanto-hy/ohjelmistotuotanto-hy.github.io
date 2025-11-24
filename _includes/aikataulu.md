@@ -70,8 +70,7 @@
 
 - Luento 9: {{site.luennot[9]}}
   - [Lean](/osa5#lean)
-  - tallenteet:
-    - syksy 2024: [youtube](https://youtu.be/nQ_rHDazdXI), [unitube](https://www.helsinki.fi/fi/unitube/video/b081990c-3090-4419-921f-eb01ba33c546)
+  - tallenteet: [youtube](https://youtu.be/THvNdk4Y5xo), [unitube](https://www.helsinki.fi/fi/unitube/video/4fd987ce-5ef9-4197-bd54-0a42b591bb1a)
 - Luento 10: {{site.luennot[10]}} 
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
