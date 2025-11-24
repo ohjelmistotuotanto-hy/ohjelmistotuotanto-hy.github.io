@@ -8,6 +8,8 @@ permalink: /miniprojektin_arvosteluperusteet/
 - [Ensimmäisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#ensimmäisen-sprintin-arvosteluperusteet)
 - [Toisen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#toisen-sprintin-arvosteluperusteet)
 - [Kolmannen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet#kolmannen-sprintin-arvosteluperusteet)
+- [Neljännen sprintin arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljännen-sprintin-arvosteluperusteet)
+- [Lopputoimenpiteet](/miniprojektin_arvosteluperusteet#lopputoimenpiteet)
 
 Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja periaatteiden mukaan:
 
@@ -147,6 +149,14 @@ Pisteitä kertyy seuraavista asioista:
   - Katselmoinnissa sovellus näytetään videotykillä. Koneen kytkemistä videotykkiin **tulee harjoitella** etukäteen, esim. näyttö tulee olla valmiiksi konfiguroida oikein (display mirroring) tai konfiguraatio tulee osata tehdä maksimissaan viidessä sekunnissa
 
 Sprintin maksimi on 2.5 pistettä.
+
+### Neljännen sprintin arvosteluperusteet
+
+Julkaistaan 30.11.
+
+### Lopputoimenpiteet
+
+Julkaistaan 7.12.
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
