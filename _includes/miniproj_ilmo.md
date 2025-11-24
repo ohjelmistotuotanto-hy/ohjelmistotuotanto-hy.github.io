@@ -1,4 +1,4 @@
-<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF; position: sticky; top: 0;">
+<div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF; position: sticky; top: 0; z-index: 1000;">
 
   <ul style="margin-bottom: -2px">
     <li>
