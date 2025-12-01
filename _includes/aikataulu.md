@@ -87,6 +87,7 @@
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 11: {{site.luennot[11]}}
     - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_  
+    - Tallenne: [youtube](https://youtu.be/lOP-rUedwec) [unitube](https://www.helsinki.fi/fi/unitube/video/5579fd03-06c3-4f45-b3ba-252965deab6d)
   - Luento 12: {{site.luennot[12]}} 
     - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_    
