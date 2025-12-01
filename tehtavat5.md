@@ -207,7 +207,7 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 ![]({{ "/images/pr1.png" | absolute_url }})
 
-<input type="checkbox"> Varmista, että PR kohdistuu haastasta *tennis_refactoring* haaraan *main*. 
+<input type="checkbox"> Varmista, että PR kohdistuu haarasta *tennis_refactoring* haaraan *main*. 
 
 <input type="checkbox"> Kirjoita PR:lle kuvaus. Voit ottaa esim. [täältä](https://medium.com/@jmanuellugo96/how-to-write-an-awesome-pull-request-pr-description-bdd2c6e48418) tai [täältä](https://www.hackerone.com/blog/writing-great-pull-request-description) mallia kuvaukselle.
 
