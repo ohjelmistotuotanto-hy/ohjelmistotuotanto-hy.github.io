@@ -90,7 +90,8 @@
     - Tallenne: [youtube](https://youtu.be/lOP-rUedwec) [unitube](https://www.helsinki.fi/fi/unitube/video/5579fd03-06c3-4f45-b3ba-252965deab6d)
   - Luento 12: {{site.luennot[12]}} 
     - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
-    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_    
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
+    - Tallenne: [youtube](https://youtu.be/P0mTTSCCPsE), [unitube](https://www.helsinki.fi/fi/unitube/video/a45ce14d-fcb8-4578-8b80-2350f2342a0e)  
 
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
