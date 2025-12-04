@@ -107,7 +107,7 @@
     - Sari Leppänen ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
-    - Tero Tapio (Funidata): _Softakehittäjän pehmeät taidot_
+    - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _How we use AI to boost productivity at Unity_
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
