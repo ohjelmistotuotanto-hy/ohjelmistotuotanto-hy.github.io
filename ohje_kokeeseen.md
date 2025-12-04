@@ -66,7 +66,7 @@ Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä 
 
 ### Uusinta- ja erilliskokeet
 
-Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/104542?code=TKT20006_otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
+Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
 
 **Uusintakoe** siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
 
