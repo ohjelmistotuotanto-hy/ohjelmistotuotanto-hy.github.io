@@ -29,7 +29,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 > **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. 
 >
-> **HUOM2** tässä tehtävässä saattaa riittää että koneesi Python, Poetryä ei välttämättä tarvita ollenkaan. Katso hieman alempaa _Korjaustapa 1_
+> **HUOM2** tässä tehtävässä saattaa riittää että koneellasi on Python. Poetryä ei välttämättä tarvita ollenkaan. Katso hieman alempaa _Korjaustapa 1_
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko6/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
 
