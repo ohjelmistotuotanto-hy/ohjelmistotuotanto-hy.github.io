@@ -17,7 +17,7 @@ inheader: yes
       </ul>
     </li>
     <li>Varaa ryhmällesi aika demoon <a href="https://docs.google.com/document/d/1BCMh0_oWjUfcBDQPrfFdbtDfMe0EJOe8eNW8NHOG9dM/edit?usp=sharing">täällä</a></li>
-    <li>Miniprojektin <a href='http://localhost:4000/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
+    <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
   </ul>
 </div>
 
