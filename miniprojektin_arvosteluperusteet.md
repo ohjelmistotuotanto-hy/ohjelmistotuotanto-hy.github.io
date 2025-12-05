@@ -194,7 +194,40 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Lopputoimenpiteet
 
-Julkaistaan 7.12.
+#### Loppudemo ja sprintin 4 päättyminen
+
+Kuten tunnettua, loppudemot pidetään
+- keskiviikkona 10.12. klo 10-12 B123
+- torstaina 11.12. klo 10-12 A111
+
+Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
+
+Lue tarkasti neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit. Aika on lyhyt, joten kannattaa erityisesti huomioida seuraava arvostelukriteeri
+- _kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein_
+
+Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 12.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
+
+Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
+
+#### Vertaispalaute
+
+- Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään su 19.12. klo 23:59**
+  - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
+- Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
+  - Ryhmäläiset eivät näe toistensa vertaispalautteita
+
+#### Raportti
+
+Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivua)
+
+- Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
+- Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
+- Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
+- Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
+- Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
+- Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
+- **Raportin deadline pe 19.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 
