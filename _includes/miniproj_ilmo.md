@@ -16,6 +16,7 @@
     </li>
 
     <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
+    <li>Laskarien muuttuminen kurssipisteiksi selviää <a href='/pisteet'>täältä</a></li>
   </ul>
 
 </div>
