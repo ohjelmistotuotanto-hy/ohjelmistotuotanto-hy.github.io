@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
-{% include paivitys_kesken.md %}
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -41,14 +39,14 @@ Changes not staged for commit:
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	READEME.md
+	README.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **experimental**. Et kuitenkaan halua vielä commitoida mainissa olevia muutoksia. Jos siirryt branchiin **experimental** tekemättä committia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa. **git stash** pelastaa tästä tilanteesta: 
 
-<input type="checkbox"> Stashaa mainissa olevat muutoset
+<input type="checkbox"> Stashaa mainissa olevat muutokset
 
   Kokeile ennen ja jälkeen stash-komennon komentoa <code>git status</code>
 
@@ -128,7 +126,7 @@ class KiviPaperiSakset:
         return siirto == "k" or siirto == "p" or siirto == "s"
 ```
 
-Erilliset pelit sitten perivät luokan ja erikoistavat sitä tarpeidensa mukaan:
+Erilliset peliluokat perivät tämän luokan ja erikoistavat sitä tarpeidensa mukaan:
 
 ```python
 # luokka perii luokan KiviPaperiSakset
@@ -184,49 +182,50 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 
 ### 5. AI Agent in action
 
-Tämän tehtävän tekeminen edellyttää, että käytössäsi on [VS Coden GitHub copilot](https://code.visualstudio.com/docs/copilot/chat/copilot-chat#_builtin-chat-modes). Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla tai ilman AI:ta.
+Tämän tehtävän tekeminen edellyttää, että käytössäsi on [VS Code GitHub copilot](https://code.visualstudio.com/docs/copilot/chat/copilot-chat#_builtin-chat-modes). Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla tai jopa ilman AI:ta (joka voi olla melko työlästä).
 
 Jatketaan edellisen tehtävän koodin parissa.
 
-<input type="checkbox">  Ennen kun koodiin alkaa tulla muutoksia, tee palautusrepositorioosi kopio projektin sisältävästä hakemistosta. Anna kopiolle nimi _kivi-paperi-sakset-original_
+<input type="checkbox">  Ennen kun koodiin alkaa tulla muutoksia, tee palautusrepositorioosi kopio projektin sisältävästä hakemistosta. Anna kopiolle nimi _kivi-paperi-sakset-original_. Edellisen tehtävän jälkeinen tilanne jää kopioon.
 
-<input type="checkbox">  Avaa Copilotin Chat-ikkuna Agent-moodissa:
+<input type="checkbox"> Avaa Copilotin Chat-ikkuna Agent-moodissa:
 
 ![]({{ "/images/agent.png" | absolute_url }}){:height="450px" }
 
 Tehdään sovellus muutamassa vaiheessa
 
-<input type="checkbox">  Yritä saada agentti rakentamaan sovelluksellesi Web-käyttöliittymä
+<input type="checkbox">  Yritä saada agentti rakentamaan sovelluksellesi web-käyttöliittymä
 
-- muistita agenttia, että kyseessä on Poetry-projekti
+- muistuta agenttia, että kyseessä on Poetry-projekti
 - komenna agenttia käyttämään mahdollisimman paljon olemasaolevaa koodia
 - ohjelma kannattaa suorittaa siten, että pyydät agentin käynnistämään sen, näin agentti osaa korjata koodin jos se ei jostain syystä käynnisty
-- jos agentti luo sovelluksen joka käyttää porttia 5000 ja käytössäsi on Mac, pyydä agentilta jonkin muun portin käyttöä, 5000 on Macissa ehkä varattu portti
+- jos agentti luo sovelluksen, joka käyttää porttia 5000 ja käytössäsi on Mac, pyydä agentilta jonkin muun portin käyttöä, 5000 on Macissa ehkä varattu portti
 
 <input type="checkbox"> Kun sovellus toimii, käske agenttia tekemään sovellukselle automatisoidut testit. Pyydä agenttia myös varmistamaan, että testit menevät läpi
 
-<input type="checkbox"> Pyydä agenttia muuttamaan sovellusta (ja testejä) siten, että jokaisessa peliä pelataan niin kauan kunnes toinen osapuoli on saavuttanut 5 voittoa.
+<input type="checkbox"> Pyydä agenttia muuttamaan sovellusta (ja testejä) siten, että jokaista peliä pelataan niin kauan kunnes toinen osapuoli on saavuttanut viisi voittoa
 
-<input type="checkbox"> Tee peliin vielä agentin avulla joku haluamasi muutos.
+<input type="checkbox"> Tee peliin vielä agentin avulla jokin haluamasi muutos
 
-<input type="checkbox"> Muuta vielä koodia ilman agentin apua siten, että pelit päättyvät kun 3 toinen pelaajista saavuttaa kolme voittoa.
+<input type="checkbox"> Muuta vielä koodia **ilman agentin apua** siten, että pelit päättyvät kun toinen pelaajista saavuttaa kolme voittoa
 
-<input type="checkbox"> Varmista, että myös testit toimivat edelleen.
+<input type="checkbox"> Varmista, että myös testit toimivat edelleen
 
-<input type="checkbox"> Käy läpi agentin tekemä koodi. Jos koodissa on jotain itsellesi vierasta, pyydä agenttia selittämään mistä on kyse
+<input type="checkbox"> Käy läpi agentin tekemä koodi. Jos koodissa on jotain sinulle vierasta, pyydä agenttia selittämään, mistä on kyse
 
-<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedoston _agent.md_
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _agent.md_
 
 Kerro raportissa
-- Päätyikö Agentti toimivaan ratkaisuun?
+- Päätyikö agentti toimivaan ratkaisuun?
 - Kuinka paljon jouduit antamaan agentille komentoja matkan varrella?
+- Kuinka hyvät agentit tekemät testit olivat?
 - Onko agentin tekemä koodi ymmärrettävää?
-- Miten Agentti on muuttanut edellisessä tehtässä tekemääsi koodia?
+- Miten agentti on muuttanut edellisessä tehtässä tekemääsi koodia?
 - Mitä uutta opit?
 
 ### 6. Kurssipalaute
 
-Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 10-27.12.2024**. 
+Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 10-27.12.2025**. 
 
 **HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 10.12. aukeavaa normaalia loppupalautetta.
 
