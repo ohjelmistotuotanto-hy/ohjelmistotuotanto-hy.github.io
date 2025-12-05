@@ -26,6 +26,7 @@
       <li>Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)</li>
     </li>
     <li>Miniprojektien loppudemo lähestyy. Varaa ryhmällesi aika demoon <a href="https://docs.google.com/document/d/1BCMh0_oWjUfcBDQPrfFdbtDfMe0EJOe8eNW8NHOG9dM/edit?usp=sharing">täällä</a></li>
+    <li>Laskarien muuttuminen kurssipisteiksi selviää <a href='/pisteet'>täältä</a></li>
   </ul>
 
 </div>
