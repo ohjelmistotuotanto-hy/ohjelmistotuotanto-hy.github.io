@@ -1245,7 +1245,7 @@ def main():
     osoite = "https://www.gutenberg.org/files/2554/2554-0.txt"
     kirja = GutenbergLukija(osoite)
 
-    for rivi in kirja.rivit_joilla_sana("beer"):
+    for rivi in kirja.rivit_joilla_sana("olut"):
         print(rivi)
 
 if __name__ == "__main__":
@@ -1298,10 +1298,10 @@ def rivit_jotka_tayttavat_ehdon(self, ehto):
     return palautettavat_rivit
 ```
 
-ja sanan _beer_ sisältävät rivit saadaan tulostettua seuraavasti:
+ja sanan _olut_ sisältävät rivit saadaan tulostettua seuraavasti:
 
 ```python
-for rivi in kirja.rivit_jotka_tayttavat_ehdon(SisaltaaSanan("beer")):
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(SisaltaaSanan("olut")):
     print(rivi)
 ```
 
@@ -1323,16 +1323,16 @@ def rivit_jotka_tayttavat_ehdon(self, ehto):
 Huomaa, kuinka `ehto.test(rivi)` muuttui muotoon `ehto(rivi)`. Voimme nyt hyödyntää _lambdaa_ ehdon antamiseen:
 
 ```python
-for rivi in kirja.rivit_jotka_tayttavat_ehdon(lambda rivi: "beer" in rivi):
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(lambda rivi: "olut" in rivi):
     print(rivi)
 ```
 
 Lambda on ikään kuin funktion kompaktimpi esitys. Kuten funktiolla, myös lambdalla voi olla parametreja. Esimerkissä lambdalla on parametri `rivi`. Toisin kuin funktio, lambda määritellään aina yhdellä rivillä. Määritelty rivi suoritetaan ja sen arvo palautetaan ilman erilistä `return`-lausetta.
 
-Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _beer_ tai _milk_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
+Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _olut_ tai _maito_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
 ```python
-ehto = lambda rivi: "beer" in rivi or "milk" in rivi
+ehto = lambda rivi: "olut" in rivi or "maito" in rivi
 
 for rivi in kirja.rivit_jotka_tayttavat_ehdon(ehto):
     print(rivi)
@@ -1344,7 +1344,7 @@ Voimme myös toteuttaa funktioita, jotka palauttavat lambdoja:
 def sisaltaa_sanan(sana):
     return lambda rivi: sana in rivi
 
-for rivi in kirja.rivit_jotka_tayttavat_ehdon(sisaltaa_sanan("beer")):
+for rivi in kirja.rivit_jotka_tayttavat_ehdon(sisaltaa_sanan("olut")):
     print(rivi)
 ```
 
