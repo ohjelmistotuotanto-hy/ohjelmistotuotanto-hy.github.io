@@ -12,7 +12,7 @@
       <ul>
         <li>Maanantai 8.12. klo 12-14 B123
           <ul>
-            <li>Sari Leppänen ja Michael Forsström (DNA): <em>AI ja ohjelmistokehitys</em></li>
+            <li>Antero Kivi ja Michael Forsström (DNA): <em>AI ja ohjelmistokehitys</em></li>
           </ul>
         </li>
         <li>Tiistai 9.12. klo 12-14 B123
