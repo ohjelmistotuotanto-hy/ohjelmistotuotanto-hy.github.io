@@ -217,6 +217,8 @@ Tehdään sovellus muutamassa vaiheessa
 
 Kerro raportissa
 - Päätyikö agentti toimivaan ratkaisuun?
+- Miten varmistuit, että ratkaisu toimii?
+- Oletko ihan varma, että ratkaisu toimii oikein?
 - Kuinka paljon jouduit antamaan agentille komentoja matkan varrella?
 - Kuinka hyvät agentit tekemät testit olivat?
 - Onko agentin tekemä koodi ymmärrettävää?
