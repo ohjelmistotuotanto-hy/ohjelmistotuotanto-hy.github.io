@@ -18,7 +18,7 @@
         <li>Tiistai 9.12. klo 12-14 B123
           <ul>
             <li>Ville Nordberg (Trail openers): <em>Vihreä IT</em></li>
-            <li>Aleksandr Tereshchenko ja Risto Mikkola (Unity): <em>How we use AI to boost productivity at Unity</em></li>
+            <li>Aleksandr Tereshchenko ja Risto Mikkola (Unity): <em>AI usage at Unity</em></li>
           </ul>
         </li>
       </ul>
