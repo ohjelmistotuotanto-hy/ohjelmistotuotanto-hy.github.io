@@ -105,9 +105,10 @@
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 13: {{site.luennot[13]}}
     - Antero Kivi ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
+    - Tallenne: [youtube](https://youtu.be/LrW0N68auxs), [unitube](https://www.helsinki.fi/fi/unitube/video/3f387b03-1a50-4c93-915e-af01a507adc5)
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
-    - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _How we use AI to boost productivity at Unity_
+    - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
