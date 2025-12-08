@@ -104,7 +104,7 @@
 - Vierailuluennot
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 13: {{site.luennot[13]}}
-    - Sari Leppänen ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
+    - Antero Kivi ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _How we use AI to boost productivity at Unity_
