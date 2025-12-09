@@ -109,6 +109,7 @@
   - Luento 14: {{site.luennot[14]}}
     - Ville Nordberg (Trail openers): _Vihreä IT_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
+    - Tallenne: [youtube](), [unitube](https://www.helsinki.fi/fi/unitube/video/51620f49-d316-4602-bb3d-49bbd0e0077e)
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}

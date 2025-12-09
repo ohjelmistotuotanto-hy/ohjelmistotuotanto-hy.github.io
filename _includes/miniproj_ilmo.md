@@ -4,14 +4,7 @@
   <ul style="margin-bottom: -2px">
     <li>
         Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110. <a href='/ohje_kokeeseen'>Ohje kokeeseen</a>
-    </li>   
-    <li>
-      Muista vierailuluennot 1.12.-9.12. Katso lisää <a href='/#viikko-6'>täältä</a>
-      <ul>
-        <li>Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)</li>
-      </ul>
     </li>
-
     <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
     <li>Laskarien muuttuminen kurssipisteiksi selviää <a href='/pisteet'>täältä</a></li>
   </ul>
