@@ -10,7 +10,7 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Loppudemot lähestyvät (jokainen ryhmä osallistuu yhteen tilaisuuteen)
+    <li>Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
       <ul>
         <li>ke 10.12. klo 10-12 B123</li>
         <li>to 11.12. klo 10-12 A111</li>
