@@ -7,11 +7,11 @@ permalink: /ohje_kokeeseen/
 
 ### Kurssikoe
 
-Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen.
+Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen.
 
-Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline 6.12.2025
+Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline on mennyt.
 
-Internet on melko vapaasti käytettävissä kokeen aikana. 
+Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgtp). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
 
 Kannattaa huomata, että koe ja sen "oikeat vastaukset" perustuvat kurssimateriaaliin. Eli vaikka löytäisit googlaamalla satunnaiselta sivulta vastauksen johonkin kysymykseen, jos se käyttää eri terminologiaa kuin kurssi, tai muuten poikkeaa radikaalisti kurssilla esitetystä, voi olla että vastaus ei paljoa pisteitä tuo.
 
@@ -37,6 +37,7 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 - GitHub Actions
 - unittest
 - Robot/Selenium
+- GitHub copilot
 
 Vierailuluennot eivät kuulu koealueeseen.
 
@@ -56,7 +57,7 @@ Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
 
 #### Plagiointi ja ChatGTP
 
-Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun koe on verkossa.
+Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun kyseessä on konekoe.
 
 Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesi hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
 

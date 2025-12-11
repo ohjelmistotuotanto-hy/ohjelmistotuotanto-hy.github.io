@@ -2,7 +2,7 @@
 
   <ul style="margin-bottom: -2px">
     <li>
-       Kurssikoe tiistaina 16.12. klo 13-16 A111 ja CHE A110, <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
+       Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110, <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
     <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
     <li>Laskarien muuttuminen kurssipisteiksi selviää <a href='/pisteet'>täältä</a></li>
   </ul>
