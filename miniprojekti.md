@@ -10,13 +10,6 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-      <ul>
-        <li>ke 10.12. klo 10-12 B123</li>
-        <li>to 11.12. klo 10-12 A111</li>
-      </ul>
-    </li>
-    <li>Varaa ryhmällesi aika demoon <a href="https://docs.google.com/document/d/1BCMh0_oWjUfcBDQPrfFdbtDfMe0EJOe8eNW8NHOG9dM/edit?usp=sharing">täällä</a></li>
     <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
   </ul>
 </div>
