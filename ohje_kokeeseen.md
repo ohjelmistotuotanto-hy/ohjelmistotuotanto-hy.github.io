@@ -13,6 +13,8 @@ Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/ku
 
 Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgtp). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
 
+CurreChatin kurssimateriaalihaku ei ole kokeen aikana käytössä.
+
 Kannattaa huomata, että koe ja sen "oikeat vastaukset" perustuvat kurssimateriaaliin. Eli vaikka löytäisit googlaamalla satunnaiselta sivulta vastauksen johonkin kysymykseen, jos se käyttää eri terminologiaa kuin kurssi, tai muuten poikkeaa radikaalisti kurssilla esitetystä, voi olla että vastaus ei paljoa pisteitä tuo.
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
