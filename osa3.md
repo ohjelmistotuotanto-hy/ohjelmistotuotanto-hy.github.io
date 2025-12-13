@@ -799,7 +799,7 @@ Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin no
 
 ![]({{ "/images/3-18.png" | absolute_url }}){:height="80px" }
 
-Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/)m jossa pitkäikäisiä feature brancheja ei käytetä ollenkaan.
+Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/), jossa pitkäikäisiä feature brancheja ei käytetä ollenkaan.
 
 Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla _main_ tai  jokin muu erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
