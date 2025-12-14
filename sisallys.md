@@ -7,7 +7,7 @@ permalink: /sisallys/
 
 ### Linkit
 - [Laskarit](/tehtavat)
-  - [viikko 1](/tehtavat1) [viikko 2](/tehtavat1) [viikko 3](/tehtavat1)
+  - [viikko 1](/tehtavat1) [viikko 2](/tehtavat2) [viikko 3](/tehtavat3) [viikko 4](/tehtavat4) [viikko 5](/tehtavat5) [viikko 6](/tehtavat6) [viikko 7](/tehtavat7)
 - [Miniprojekti](/miniprojekti)
   - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
   - [Flask-ohje](/flask)
