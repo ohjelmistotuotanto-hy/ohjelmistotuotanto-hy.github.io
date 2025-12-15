@@ -638,7 +638,7 @@ Projektinhallintakäytänteiden osuus näytti 2021 raportissa seuraavalta:
 
 Scrumista tutut palaverit ovat kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia). Huomionarvoista lienee myös se, että tuotteenomistaja tai vastaava asiakkaan edustaja on kyselyn mukaan vain noin puolella kyselyyn vastanneiden tiimeistä.
 
-Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei teknisiä äytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
+Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei teknisiä käytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
 
 ![]({{ "/images/5-13-2020.png" | absolute_url }}){:height="400px" }
 
