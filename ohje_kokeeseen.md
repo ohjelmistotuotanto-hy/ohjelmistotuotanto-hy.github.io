@@ -7,7 +7,7 @@ permalink: /ohje_kokeeseen/
 
 ### Kurssikoe
 
-Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen.
+Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen. Koe on [moodlessa](https://docs.google.com/spreadsheets/d/1XI1PvQdBpdUgylJk1GaAzfO1oR2zA1kHxzCMpTriaKM/edit?usp=sharing), koe on kuitenkin tehtävä koesalissa, muualla tehty koe hylätään.
 
 Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline on mennyt.
 
