@@ -11,7 +11,7 @@ Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110. Koe on sähköinen 
 
 Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline on mennyt.
 
-Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgtp). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
+Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgpt). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
 
 CurreChatin kurssimateriaalihaku ei ole kokeen aikana käytössä.
 
@@ -57,7 +57,7 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 
 Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
 
-#### Plagiointi ja ChatGTP
+#### Plagiointi ja ChatGPT
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun kyseessä on konekoe.
 
@@ -73,4 +73,4 @@ Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.
 
 **Uusintakoe** siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
 
-**Uusinta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia. 
+**Uusinta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia.
