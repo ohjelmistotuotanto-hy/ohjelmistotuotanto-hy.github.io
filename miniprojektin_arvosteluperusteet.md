@@ -212,7 +212,7 @@ Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
 #### Vertaispalaute
 
 - Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään su 19.12. klo 23:59**
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään su 21.12. klo 23:59**
   - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
 - Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   - Ryhmäläiset eivät näe toistensa vertaispalautteita
@@ -227,7 +227,7 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline pe 19.12. klo 23:59**
+- **Raportin deadline su 21.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 

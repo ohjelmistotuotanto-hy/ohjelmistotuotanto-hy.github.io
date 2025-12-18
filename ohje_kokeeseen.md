@@ -5,11 +5,17 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
+### Uusinta- ja erilliskokeet
+
+Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05/TKT20006)
+
+**Uusintakoe** siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
+
+**Uusinta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että mitään lisämateriaalia ei ole käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman vuosien 2020- kurssikokeista, joissa tehtävät ovat olleen enemmän soveltavia. 
+
 ### Kurssikoe
 
-Kurssikoe tiistaina 16.12. klo 13.00-15.30 A111 ja CHE A110. Koe on sähköinen salitentti, eli tarvitset koetta varten oman koneen. Koe on [moodlessa](https://docs.google.com/spreadsheets/d/1XI1PvQdBpdUgylJk1GaAzfO1oR2zA1kHxzCMpTriaKM/edit?usp=sharing), koe on kuitenkin tehtävä koesalissa, muualla tehty koe hylätään.
-
-Kokeeseen on **pakko ilmoittautua** [osoitteessa](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006), ilmoittautumisen deadline on mennyt.
+Kurssikoe pidettiin tiistaina 16.12.
 
 Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgpt). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
 
@@ -67,10 +73,4 @@ Laajoja kielimalleja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen 
 
 Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
 
-### Uusinta- ja erilliskokeet
 
-Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-2d1ad02c-83fd-4c4c-8d1b-4aa5d576da3a/TKT20006)
-
-**Uusintakoe** siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
-
-**Uusinta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että erilliskokeissa ei ole mikään lisämateriaali käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman edellisen kolmen vuoden kurssikokeista, missä tehtävät olivat erittäin soveltavia.
