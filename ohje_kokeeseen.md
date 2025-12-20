@@ -17,7 +17,7 @@ Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.
 
 Kurssikoe pidettiin tiistaina 16.12.
 
-Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgtp). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
+Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgpt). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
 
 CurreChatin kurssimateriaalihaku ei ole kokeen aikana käytössä.
 
@@ -63,7 +63,7 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 
 Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
 
-#### Plagiointi ja ChatGTP
+#### Plagiointi ja ChatGPT
 
 Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun kyseessä on konekoe.
 
