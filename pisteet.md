@@ -42,3 +42,16 @@ Kurssilla on yhteensä 61 tehtävää, nämä muuttuvat kurssipisteiksi seuraava
 | 4    | 0,5   |
 | 2    | 0,25  |
 | 0    | 0     |
+
+Monivalinnat muuttuvat kurssipisteiksi seuraavasti
+
+| monivalintapisteitä | kurssipisteitä  |
+|------|-------|
+| 4     | 2    |
+| 3.5   | 1.75 |
+| 3     | 1.5  |
+| 2.5   | 1.25 |
+| 2     | 1    |
+| 1.5   | 0.75 |
+| 1     | 0.5  |
+| 0.5   | 0.25 |
