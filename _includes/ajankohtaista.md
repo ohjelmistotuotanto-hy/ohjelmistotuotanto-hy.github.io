@@ -8,7 +8,7 @@
         <li>Arvioitujen tehtävien arvosteluperusteet <a href='/koe2025'>täällä</a></li>
        </ul>
     </li>
-    <li>Laskarien ja monivalintojen muuttuminen kurssipisteiksi selviää <a href='/pisteet'>täältä</a></li>
+    <li>Arvosanarajat ja laskarien sekä monivalintojen muuttuminen kurssipisteiksi selviävät <a href='/pisteet'>täältä</a></li>
     <li>Uusintakoe tehtävissä examinariumissa 2.1.2026-, katso tarkemmin <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
   </ul>
 
