@@ -2,8 +2,23 @@
 layout: page
 permalink: /pisteet
 inheader: no
-title: Laskareista kurssipisteiksi
+title: Arvosanarajat ja laskareiden muuntuminen kurssipisteiksi
 ---
+
+Näet saamasi pisteet osoitteessa <https://study.cs.helsinki.fi/stats/courses/ohtu2025/results>
+
+Jos hyväksiluit miniprojektin, pisteesi kerrotaan 40/29:llä ja arvosana muodostuu lopputuloksen mukaan.
+
+Arvosanarajat
+
+| pist | arvosana  |
+|------|-------|
+| 34   | 5     |
+| 31   | 4     |
+| 28   | 3     |
+| 24   | 2     |
+| 20   | 1     |
+
 
 Kurssilla on yhteensä 61 tehtävää, nämä muuttuvat kurssipisteiksi seuraavan taulukon mukaan:
 
@@ -55,3 +70,4 @@ Monivalinnat muuttuvat kurssipisteiksi seuraavasti
 | 1.5   | 0.75 |
 | 1     | 0.5  |
 | 0.5   | 0.25 |
+
