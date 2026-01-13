@@ -5,7 +5,7 @@
        Kurssikoe pidettiin tiistaina 16.12.
        <ul>
         <li>Tehtävät arvioitu. Näet pisteesi täältä <a href='https://study.cs.helsinki.fi/stats/courses/ohtu2025/results'>https://study.cs.helsinki.fi/stats/courses/ohtu2025/results</a></li>
-        <li>Arvioitujen tehtävien arvosteluperusteet <a href='/koe2025'>täällä</a></li>
+        <li>Tehtävien arvosteluperusteet <a href='/koe2025'>täällä</a></li>
        </ul>
     </li>
     <li>Arvosanarajat ja laskarien sekä monivalintojen muuttuminen kurssipisteiksi selviävät <a href='/pisteet'>täältä</a></li>
