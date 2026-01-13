@@ -9,7 +9,7 @@ Näet saamasi pisteet osoitteessa <https://study.cs.helsinki.fi/stats/courses/oh
 
 Jos hyväksiluit miniprojektin, pisteesi kerrotaan 40/29:llä ja arvosana muodostuu lopputuloksen mukaan.
 
-Arvosanarajat
+#### Arvosanarajat
 
 | pist | arvosana  |
 |------|-------|
@@ -19,6 +19,8 @@ Arvosanarajat
 | 24   | 2     |
 | 20   | 1     |
 
+
+#### Laskareista saatavat pisteet
 
 Kurssilla on yhteensä 61 tehtävää, nämä muuttuvat kurssipisteiksi seuraavan taulukon mukaan:
 
@@ -58,7 +60,7 @@ Kurssilla on yhteensä 61 tehtävää, nämä muuttuvat kurssipisteiksi seuraava
 | 2    | 0,25  |
 | 0    | 0     |
 
-Monivalinnat muuttuvat kurssipisteiksi seuraavasti
+#### Monivalinnat muuttuvat kurssipisteiksi seuraavasti
 
 | monivalintapisteitä | kurssipisteitä  |
 |------|-------|
