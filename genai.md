@@ -45,7 +45,7 @@ Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan si
 
 Kielimallit kehittyvät koko ajan. Erityisen suuren avun ohjelmistokehityksen kannalta ovat tuoneet [agentit](https://cloud.google.com/discover/what-are-ai-agents), jotka osaavat tehdä suurempia kokonaisuuksia käyttäjän kehoitteista. Visual Studio Code -editoriin on ollut jo jonkin aikaa integroituna [agenttimoodi](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode), joka on nostanut AI:n kyvykkyyttä huomattavasti. Agenttimoodissa tekoäly osaa koodin generoinnin lisäksi mm. luoda tiedostoja, suorittaa koodia, ja korjata generoimaansa koodia koodin suorituksessa tapahtuneiden virheiden perusteella.
 
-Osaan kurssin tehtäviä liittyy tekoälyn käyttöön liittyviä viheitä. Vihjeet löytyvät tästä tiedostosta, mutta ne on tarkoitettu luettavaksi tehtäviä tehdessä. Tehtävien kohdalta on linkki tehtävään liittyvään vihjeeseen.
+Osaan kurssin tehtäviä liittyy tekoälyn käyttöön liittyviä vihjeitä. Vihjeet löytyvät tästä tiedostosta, mutta ne on tarkoitettu luettavaksi tehtäviä tehdessä. Tehtävien kohdalta on linkki tehtävään liittyvään vihjeeseen.
 
 ## Viikko 1 - Tehtävä 1
 
