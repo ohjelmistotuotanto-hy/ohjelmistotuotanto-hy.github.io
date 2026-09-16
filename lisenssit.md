@@ -7,12 +7,12 @@ permalink: /lisenssit/
 
 Tässä osassa ollaan käsitelty ohjelmiston suunnittelua ja toteutusta. Seuraavaksi katsotaan, missä kohtaa ohjelmiston suunnittelua lisenssöinti on merkittävässä osassa.
 
-Osan on kirjoittanut [Akira Taguchi](https://github.com/akirataguchi115).
+Osan on kirjoittanut [Akira Taguchi](https://github.com/lambdakilo/).
 
-Kuvitellaan, että teet ohtun miniprojektiksi graafisen laskimen. Julkaiset koodisi GitHubiin, ja joku ottaa sinuun yhteyttä. Yhteydenottaja kehuu teosta ja haluaisi ottaa tämän käyttöön oletuslaskimena kehittämässään käyttöjärjestelmäjakelussaan, Cubblissa. Yhteydenottaja kuitenkin kertoo, ettei tämä onnistu ennen kuin olet lisensöinyt ohjelmasi sopivalla lisenssillä. Mitä teet?
+Kuvitellaan, että teet ohtun miniprojektiksi graafisen laskimen. Julkaiset lähdekoodisi GitHubiin, ja joku ottaa sinuun yhteyttä. Yhteydenottaja kehuu teosta ja haluaisi ottaa tämän käyttöön oletuslaskimena kehittämässään käyttöjärjestelmäjakelussaan, Cubblissa. Yhteydenottaja kuitenkin kertoo, ettei tämä onnistu ennen kuin olet lisensöinyt ohjelmasi sopivalla lisenssillä. Mitä teet?
 
 ### Ohjelmistolisenssien perusteet
-Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käyttöä ja edelleenjakelua. Ohjelmistokehittäjillä tämä usein ilmenee LICENSE-tiedoston julkaisemista lähdekoodin mukana. Tämän LICENSE-tiedoston sisältö määrää valitun ohjelmistolisenssin. Esimerkki Poetryn ohjelmistolisenssistä: [https://github.com/python-poetry/poetry/blob/master/LICENSE](https://github.com/python-poetry/poetry/blob/master/LICENSE).
+Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käyttöä ja jakelua. Ohjelmistokehittäjillä tämä usein ilmenee LICENSE-tiedoston julkaisemista lähdekoodin mukana. Tämän LICENSE-tiedoston sisältö määrää valitun ohjelmistolisenssin. Esimerkki Poetryn ohjelmistolisenssistä: [https://github.com/python-poetry/poetry/blob/master/LICENSE](https://github.com/python-poetry/poetry/blob/master/LICENSE).
 
 Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry-esimerkki).
 
@@ -59,7 +59,7 @@ Mitä lisenssiä Visual Studio Code käyttää: [https://github.com/microsoft/vs
 
 Seuraavaksi harjoitellaan lisenssin valintaa ohtun miniprojektia varten.
 
-Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoilla. Valitsen 
+Haluan, että miniprojektini lähdekoodia voidaan käyttää miten vain, kunhan mainitaan alkuperäinen luoja. Valitsen
 
 <ol type="a">
   <li>MIT-lisenssi</li>
@@ -70,7 +70,7 @@ Haluan, että miniprojektiani voidaan käyttää ja jakaa millä tahansa ehdoill
 	<summary>
 		Vastaus
 	</summary>
-	b. The Unlicense
+	a. MIT-lisenssi
 </details>
 
 <br>
@@ -91,14 +91,10 @@ Mikäli miniprojektiani käytetään suuremmassa ohjelmistossa, haluan että suu
 
 <br>
 
-Nyt osaat toivottavasti lisensoida ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Mikäli jotain jäi epäselväksi, pingaa @mynamabitchiro (Akira Taguchi) OhTun Discord-palvelimella tai mistä vain internetin kulmasta löydätkään Akiran.
-
 ### Vapaa vai avoin
 
-Vapaalla ohjelmistolla ja avoimella lähdekoodilla on suuri ero. Seuraava video kertoo ohjelmistovapaudesta sekä tämän puolesta taistelevan Software Freedom Conservancysta:
+Vapaa ohjelmisto ja avoin lähdekoodi menevät monilla usein sekaisin. [Wikipedia-artikkeli](https://fi.wikipedia.org/wiki/Vapaa_ohjelmisto/) vapaasta ohjelmistosta on hyvä aloituspaikka sekaannuksen selvittämiseen. Tiivistettynä: Joskus liian avoimet lisenssit rajoittavat toisten vapauksia. Esimerkiksi MIT-lisenssi on niin avoin, että sillä pystyy eväämään kolmannen osapuolen vapauden suorittaa, tutkia, parantaa tai jakaa, kerran MIT-lisenssöityä lähdekoodia. Ohjelmistovapaudella tarkoitetaan tässä vastakkainasettelussa usein strong copyleft -mekanismia. Semantiikka on siis tässä aiheessa isossa roolissa.
 
-<video width="640" height="480" controls onloadstart="this.volume=0.5">
-	<source src="https://de4df61deef78e687eb1-7fe654f62734b2c8c91ba6b5edb21b0b.ssl.cf5.rackcdn.com/sfc-introduction_1080p.mp4" type="video/mp4">
-</video>
+### Loppusanat lisensseistä
 
-Jos kiinnostuit ohjelmistovapaudesta, pistä rohkeasti viestiä Akiralle!
+Nyt osaat toivottavasti lisenssöidä ohtun miniprojektisi sekä tulevat ohjelmistoprojektisi. Ohjelmistolisenssit ovat kuitenkin pitkälti lakijargonia, ja joskus löytää itsensä tilanteesta, jolloin tarvitaan juristia. Älä kuitenkaan pelästy. [Lähtökohtaisesti kaikki lisenssöintivirheet selviävät ensisijaisesti puhumalla](https://opensource.stackexchange.com/questions/5699/has-the-mit-license-been-battle-tested-in-court). Mikäli jotain jäi epäselväksi, lähetä kysymykset Akira Taguchin alumnisähköpostiin tai kysy apua assareilta.
