@@ -6,11 +6,11 @@ permalink: /flask/
 inheader: no
 ---
 
-Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan.
+Miniprojektin sovellus toteutetaan kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa tietokantaan. Pohja käyttää SQLite-tietokantaa, joka ei vaadi erillisen tietokantapalvelimen pystyttämistä.
 
 Flask-sovelluksen konfigurointi siten, että esim. GitHub Actionsien avulla tapahtuva automatisoitu testaus on jossain määrin haastavaa, ja tämän takia kurssille on luotu pohja <https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate> joka auttaa alkuun.
 
-Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot PostgreSQL-tietokantaan, muutaman Robot-testin, unittest-kirjastolla tehdyn yksikkötestin sekä testit suorittavan GitHub Actions workflown.
+Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa tiedot SQLite-tietokantaan, muutaman Robot-testin, unittest-kirjastolla tehdyn yksikkötestin sekä testit suorittavan GitHub Actions workflown.
 
 **Jos haluatte välttyä konfiguraation aiheuttamasta tuskasta, on suositeltavaa, että teette oman sovelluksenne pohjaa mukaillen**, lue myös [Protips](/flask/#protips)!
 
@@ -30,46 +30,42 @@ Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
 ### Tietokanta
 
-Sovellus tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain pilvipalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>.
+Sovellus käyttää SQLite-tietokantaa. SQLite-tietokanta on pelkkä tiedosto levyllä, joten sen käyttöön ei tarvita erillistä tietokantapalvelinta eikä pilvipalvelua.
 
 Sovelluksen juureen tulee luoda ympäristömuuttujat määrittelevä tiedosto nimeltään _.env_, jonka sisältö on seuraava
 
 ```.env
-DATABASE_URL=postgresql://xxx
+DATABASE_URL=sqlite:///database.db
 TEST_ENV=true
 SECRET_KEY=satunnainen_merkkijono
 ```
 
-Tietokannan osoitteen määrittelevä `DATABASE_URL` on aiven.io:sta löytyvä Service URI:
-
-![]({{ "/images/aiven.png" | absolute_url }}){:height="350px" }
-
-**HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa .
+`DATABASE_URL`-muuttuja määrittelee tietokantatiedoston nimen ja sijainnin. Yllä oleva arvo luo sovelluksen juureen tiedoston _database.db_. Tiedostoa ei tule lisätä versionhallintaan.
 
 ### Sovelluksen käynnistäminen
 
 Sovellus käynnistetään uv-virtuaaliympäristössä komennolla
 
 ```sh
-python src/index.py
+uv run python src/index.py
 ```
 
 **Huomaa** että ennen kuin käynnistät sovelluksen ensimmäisen kerran, tulee suorittaa komento, joka luo sovelluksen käyttämän tietokantataulun:
 
 ```sh
-python src/db_helper.py
+uv run python src/db_helper.py
 ```
 
 Yksikkötestit suoritetaan komennolla:
 
 ```sh
-pytest src/tests
+uv run pytest src/tests
 ```
 
 Robot-testit suoritetaan komennolla:
 
 ```sh
-robot src/story_tests
+uv run robot src/story_tests
 ```
 
 ### Sovelluksen rakenne
@@ -83,18 +79,18 @@ Rakenteeltaan sovellus on samankaltainen kuin [viikon 3 laskareiden](/tehtavat3/
 ├── util.py
 ├── db_helper.py
 ├── entities
-│   └── todo.py
+│   └── todo.py
 ├── repositories
-│   └── todo_repository.py
+│   └── todo_repository.py
 ├── templates
-│   ├── index.html
-│   ├── layout.html
-│   └── new_todo.html
+│   ├── index.html
+│   ├── layout.html
+│   └── new_todo.html
 ├── story_tests
-│   ├── resource.robot
-│   └── todos.robot
+│   ├── resource.robot
+│   └── todos.robot
 └── tests
-│   └── validate_todo_test.py
+│   └── validate_todo_test.py
 ```
 
 - `index.py` on sovelluksen käynnistävä tiedosto
@@ -150,10 +146,10 @@ def reset_db():
   db.session.commit()
 
 def tables():
-  """Returns all table names from the database except those ending with _id_seq"""
+  """Returns all table names from the database"""
   sql = text(
-    "SELECT table_name FROM information_schema.tables "
-    "WHERE table_schema = 'public' AND table_name NOT LIKE '%_id_seq'"
+    "SELECT name FROM sqlite_master "
+    "WHERE type = 'table' AND name NOT LIKE 'sqlite_%'"
   )
 
   result = db.session.execute(sql)
@@ -216,7 +212,7 @@ Ennen sovelluksen käynnistämistä skripti suorittaa komennon `python src/db_he
 
 ```sql
 CREATE TABLE todos (
-  id SERIAL PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   content TEXT NOT NULL,
   done BOOLEAN DEFAULT FALSE
 )
@@ -256,7 +252,7 @@ if test_env:
 Kyseinen reitinkäsittelijä on tarkoitettu ainoastaan testien käyttöön. Reitinkäsittelijää ei luoda ollenkaan, jos tiedostossa _.env_ määritellään ympäristömuuttujan _TEST_ENV_ arvoksi _false_:
 
 ```.env
-DATABASE_URL=postgresql://xxx
+DATABASE_URL=sqlite:///database.db
 TEST_ENV=false
 SECRET_KEY=satunnainen_merkkijono
 ```
