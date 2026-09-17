@@ -13,7 +13,7 @@ Riippuvuuksien injektointi (engl. dependency injection) on suunnittelumalli, jos
 
 Käytännössä riippuvuuksien injektointi mahdollistaa esimerkiksi testitilanteissa riippuvuuksien korvaamisen tynkäkomponenteilla (stubeilla), mikä helpottaa yksikkötestausta.
 
-Alla oleva koodi löytyy Poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi
+Alla oleva koodi löytyy uv-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi
 
 Seuraavassa yksinkertainen laskin:
 

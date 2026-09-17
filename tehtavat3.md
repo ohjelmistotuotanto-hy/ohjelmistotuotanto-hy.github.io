@@ -15,7 +15,7 @@ Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetu
 
 {% include norppa.md %}
 
-{% include poetry_ongelma.md %}
+{% include uv_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
@@ -50,7 +50,7 @@ Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esime
 
 <input type="checkbox"> Tee tätä ja kahta seuraavaa tehtävää varten kokonaan uusi repositorio, nimeltään esimerkiksi _webcounter_, ja laita muiden tehtävien palautukseen käyttämäsi *palautusrepositorion* tiedostoon README.md linkki tätä tehtävää varten tehtyyn repositorioon.
 
-<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
 
 Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
@@ -287,12 +287,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.1.0
         with:
-          python-version: '3.12'
-      - name: Install Poetry
-        run: pip install poetry
+          python-version: '3.14'
       - name: Setup chromedriver
         uses: nanasess/setup-chromedriver@master
       - run: |
@@ -300,7 +298,7 @@ jobs:
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
       - name: Run robot tests
         run: bash run_robot_tests.sh
 ```
@@ -317,7 +315,7 @@ Tähän tarkoitukseen, voimme käyttää seuraavaa bash-skriptiä `run_robot_tes
 echo "Running tests"
 
 # käynnistetään Flask-palvelin taustalle
-poetry run python3 src/index.py &
+uv run python3 src/index.py &
 
 echo "started Flask server"
 
@@ -329,7 +327,7 @@ done
 echo "Flask server is ready"
 
 # suoritetaan testit
-poetry run robot --variable HEADLESS:true src/tests
+uv run robot --variable HEADLESS:true src/tests
 
 status=$?
 
@@ -471,7 +469,7 @@ Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka lö
 
 <input type="checkbox"> Hae projekti ja kopioi se **palautusrepositorioosi**, hakemiston _viikko3_ sisälle.
 
-<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
 
 Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 

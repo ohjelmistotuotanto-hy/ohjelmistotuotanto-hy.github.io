@@ -12,9 +12,9 @@ Osan on kirjoittanut [Akira Taguchi](https://github.com/lambdakilo/).
 Kuvitellaan, että teet ohtun miniprojektiksi graafisen laskimen. Julkaiset lähdekoodisi GitHubiin, ja joku ottaa sinuun yhteyttä. Yhteydenottaja kehuu teosta ja haluaisi ottaa tämän käyttöön oletuslaskimena kehittämässään käyttöjärjestelmäjakelussaan, Cubblissa. Yhteydenottaja kuitenkin kertoo, ettei tämä onnistu ennen kuin olet lisensöinyt ohjelmasi sopivalla lisenssillä. Mitä teet?
 
 ### Ohjelmistolisenssien perusteet
-Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käyttöä ja jakelua. Ohjelmistokehittäjillä tämä usein ilmenee LICENSE-tiedoston julkaisemista lähdekoodin mukana. Tämän LICENSE-tiedoston sisältö määrää valitun ohjelmistolisenssin. Esimerkki Poetryn ohjelmistolisenssistä: [https://github.com/python-poetry/poetry/blob/master/LICENSE](https://github.com/python-poetry/poetry/blob/master/LICENSE).
+Ohjelmistolisenssi on lainopillinen väline, joka säätelee ohjelmiston käyttöä ja edelleenjakelua. Ohjelmistokehittäjillä tämä usein ilmenee LICENSE-tiedoston julkaisemista lähdekoodin mukana. Tämän LICENSE-tiedoston sisältö määrää valitun ohjelmistolisenssin. Esimerkki uv:n ohjelmistolisenssistä: [https://github.com/astral-sh/uv/blob/main/LICENSE-MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT).
 
-Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. Poetry-esimerkki).
+Ohjelmistolisenssi valitaan käyttötarkoituksen mukaan. Seuraava verkkosivu on hyvä lähtökohta löytää juuri oikea ohjelmistolisenssi tarkoitukseen: [https://choosealicense.com/](https://choosealicense.com/). Verkkosivuilta voidaan kopioida leikepöydälle haluttu lisenssi ja täyttää sillä repositorion LICENSE-tiedoston sisältö (ks. uv-esimerkki).
 
 Vaikka Choose a License-verkkosivun Appendix-alasivu ([https://choosealicense.com/appendix/](https://choosealicense.com/appendix/)) antaakin hyvin vertailtavaksi lisenssejä, käydään silti nyt läpi muutama käytetympi lisenssi karkeasti läpi:
 

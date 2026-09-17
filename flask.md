@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flaskin ja tietokannan käyttö miniprojektissa
-title_long: 'Flaskin ja tietokannan käyttö miniprojektissa'
+title_long: "Flaskin ja tietokannan käyttö miniprojektissa"
 permalink: /flask/
 inheader: no
 ---
@@ -30,7 +30,7 @@ Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
 ### Tietokanta
 
-Sovellus tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain pilvipalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>. 
+Sovellus tarvitsee toimiakseen PostgreSQL-tietokannan. Kannattaa käyttää jotain pilvipalveluna tarjottavaa tietokantaa. Eräs hyvä ja ilmainen vaihtoehto on <https://aiven.io>.
 
 Sovelluksen juureen tulee luoda ympäristömuuttujat määrittelevä tiedosto nimeltään _.env_, jonka sisältö on seuraava
 
@@ -44,11 +44,11 @@ Tietokannan osoitteen määrittelevä `DATABASE_URL` on aiven.io:sta löytyvä S
 
 ![]({{ "/images/aiven.png" | absolute_url }}){:height="350px" }
 
-**HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa   .
+**HUOM** urlin alun on oltava muodossa `postgresql://` EI muodossa `postgres://` kuten aiven.io:ssa .
 
 ### Sovelluksen käynnistäminen
 
-Sovellus käynnistetään Poetry-virtuaaliympäristössä komennolla
+Sovellus käynnistetään uv-virtuaaliympäristössä komennolla
 
 ```sh
 python src/index.py
@@ -59,7 +59,6 @@ python src/index.py
 ```sh
 python src/db_helper.py
 ```
-
 
 Yksikkötestit suoritetaan komennolla:
 
@@ -118,7 +117,7 @@ from entities.todo import Todo
 def get_todos():
     result = db.session.execute(text("SELECT id, content, done FROM todos"))
     todos = result.fetchall()
-    return [Todo(todo[0], todo[1], todo[2]) for todo in todos] 
+    return [Todo(todo[0], todo[1], todo[2]) for todo in todos]
 ```
 
 Funktio siis palauttaa SQL:stä hakemansa rivit luokan `Todo` olioina. Luokka on määritelty tiedostossa `entities/todo.py`
@@ -156,7 +155,7 @@ def tables():
     "SELECT table_name FROM information_schema.tables "
     "WHERE table_schema = 'public' AND table_name NOT LIKE '%_id_seq'"
   )
-  
+
   result = db.session.execute(sql)
   return [row[0] for row in result.fetchall()]
 
@@ -174,12 +173,12 @@ def setup_db():
     db.session.commit()
 
   print("Creating database")
-  
+
   # Read schema from schema.sql file
   schema_path = os.path.join(os.path.dirname(__file__), 'schema.sql')
   with open(schema_path, 'r') as f:
     schema_sql = f.read().strip()
-  
+
   sql = text(schema_sql)
   db.session.execute(sql)
   db.session.commit()
@@ -201,12 +200,12 @@ Robot-testit on konfiguroitu Viikon 3 [tehtävän 4](/tehtavat3/#4-web-sovelluks
 echo "Running tests"
 
 # luodaan tietokanta
-poetry run python src/db_helper.py
+uv run python src/db_helper.py
 
 echo "DB setup done"
 
 # käynnistetään Flask-palvelin taustalle
-poetry run python3 src/index.py &
+uv run python3 src/index.py &
 
 echo "started Flask server"
 
@@ -217,7 +216,7 @@ Ennen sovelluksen käynnistämistä skripti suorittaa komennon `python src/db_he
 
 ```sql
 CREATE TABLE todos (
-  id SERIAL PRIMARY KEY, 
+  id SERIAL PRIMARY KEY,
   content TEXT NOT NULL,
   done BOOLEAN DEFAULT FALSE
 )
@@ -254,7 +253,7 @@ if test_env:
         return jsonify({ 'message': "db reset" })
 ```
 
-Kyseinen reitinkäsittelijä on tarkoitettu ainoastaan testien käyttöön. Reitinkäsittelijää ei luoda ollenkaan, jos tiedostossa _.env_ määritellään ympäristömuuttujan *TEST_ENV* arvoksi _false_:
+Kyseinen reitinkäsittelijä on tarkoitettu ainoastaan testien käyttöön. Reitinkäsittelijää ei luoda ollenkaan, jos tiedostossa _.env_ määritellään ympäristömuuttujan _TEST_ENV_ arvoksi _false_:
 
 ```.env
 DATABASE_URL=postgresql://xxx
@@ -303,19 +302,18 @@ Oikea nappi on nyt etsitty käyttäen [XPath](https://developer.mozilla.org/en-U
 
 Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyksen miten Robot-testissä painetaan _tiettyyn_ Todon liittyvää nappia. Tekoäly antoi ystävällisesti oikean vastauksen ja selityksen XPath-komennon toiminnasta:
 
->The XPath `//li[div[contains(text(), 'Specific Todo Content')]]/form/button` is used to locate the button within the form for the specific todo item that is not done. Adjust the XPath as necessary to match the actual structure of your HTML.
+> The XPath `//li[div[contains(text(), 'Specific Todo Content')]]/form/button` is used to locate the button within the form for the specific todo item that is not done. Adjust the XPath as necessary to match the actual structure of your HTML.
 >
->Here is a more detailed breakdown of the XPath:
+> Here is a more detailed breakdown of the XPath:
 >
->```
->//li[div[contains(text(), 'Specific Todo Content')]]
+> ```
+> //li[div[contains(text(), 'Specific Todo Content')]]
 >    Selects the <li> element that contains a <div> with the specified text.
->/form/button
+> /form/button
 >    Selects the <button> element within the <form> inside the selected <li>.
->```
+> ```
 
 Lisää tavoista etsiä elementtejä testeissä voi lukea Robotin [dokumentaatiosta](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements).
-
 
 ### Protips
 

@@ -17,7 +17,7 @@ Tehtävä 4 liittyy materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/
 
 {% include norppa.md %}
 
-{% include poetry_ongelma.md %}
+{% include uv_ongelma.md %}
 
 ### Tehtävien palauttaminen
 

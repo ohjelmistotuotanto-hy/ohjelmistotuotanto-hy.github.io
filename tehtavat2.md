@@ -9,7 +9,7 @@ permalink: /tehtavat2/
 
 {% include laskari_info.md part=2 %}
 
-Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan Poetryllä ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 9-13. 
+Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan uv:lla ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 9-13. 
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -17,7 +17,7 @@ Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan Poetryllä ja ohje
 
 {% include norppa.md %}
 
-{% include poetry_ongelma.md %}
+{% include uv_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
@@ -37,29 +37,29 @@ Kurssin tehtävänannot ovat välillä pitkiä. Tekstin seasta saattaa olla haas
 
 Voit käyttää checkboxeja oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen, missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat, jos lataat sivun uudelleen.
 
-### 1. Poetryn harjoittelua
+### 1. uv:n harjoittelua
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin tehtiin viikon 1 tehtävät 14-17
 
-<input type="checkbox"> Tee palautusrepositorioon hakemisto _viikko2_ ja sen sisälle hakemisto _poetry-web_ tätä tehtävää varten
+<input type="checkbox"> Tee palautusrepositorioon hakemisto _viikko2_ ja sen sisälle hakemisto _uv-web_ tätä tehtävää varten
 
 Lue [täältä](/tehtavat2/#tehtävien-palauttaminen) lisää tehtävien palautusrepositorioista
 
 {% include no_pip2.md %}
 
-Tässä tehtävässä harjoittelemme lisää Poetryn käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. Ohjelmistotekniikka-kurssilta lainatusta [Poetry-ohjeesta](/poetry) ja [Poetryn dokumentaatiosta](https://python-poetry.org/docs/).
+Tässä tehtävässä harjoittelemme lisää uv:n käyttöä ja tutustumme semanttiseen versiointiin. Apua tehtävän tekoon saa mm. [uv-ohjeesta](/uv) ja [uv:n dokumentaatiosta](https://docs.astral.sh/uv/).
 
-Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimissä, joka on alkamassa kehittämään web-sovellusta. Olette päätyneet kehittämään sovelluksen Pythonilla ja käyttämään Poetrya riippuvuuksien hallinnassa.
+Kuvitellaan tilanne, jossa työskentelet ohjelmistokehittäjänä kehitystiimissä, joka on alkamassa kehittämään web-sovellusta. Olette päätyneet kehittämään sovelluksen Pythonilla ja käyttämään uv:tä riippuvuuksien hallinnassa.
 
 Tee seuraavat toimenpiteet:
 
-<input type="checkbox"> Alusta projekti Poetryn avulla _poetry-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle
+<input type="checkbox"> Alusta projekti uv:n avulla _uv-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle
 
-Muista käyttää alustuksessa komentoa `poetry init --python "^3.12"`, jotta projektin Python-version vaatimus asetetaan oikein.
+Muista käyttää alustuksessa komentoa `uv init --python 3.14`, jotta projektin Python-version vaatimus asetetaan oikein.
 
 <input type="checkbox"> Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. 
 
-<input type="checkbox"> Asenna Flask projektin riippuvuudeksi Poetryn avulla
+<input type="checkbox"> Asenna Flask projektin riippuvuudeksi uv:n avulla
 
 <input type="checkbox">  Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. 
 
@@ -76,17 +76,17 @@ Huomaat bugin SQLAlchemy-kirjastossa, joten alat tutkimaan sen GitHub repositori
 
 <input type="checkbox"> Tutustu _semanttiseen versiointiin_ [täällä](https://semver.org/)
   - Pohdi, mitä hyötyjä semanttisesta versioinnista on. Jos kirjasto noudattaa semanttista versiointia, miksi kirjaston version `1.4.54` päivittäminen versioon `2.0.44` saattaa sisältää riskejä? Miksei samoja riskejä luultavasti ole versiosta `2.0.5` versioon `2.0.44`?
-  - Versiovaatimuksissa on mukana usein `^`- tai `~`-etuliite. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [Poetryn dokumentaatiossa](https://python-poetry.org/docs/dependency-specification/)
+  - Versiovaatimuksissa on mukana usein esim. `>=`-, `==`- tai `~=`-operaattori. Selvitä, mitä näillä ilmaistaan. Asiaa käsitellään mm. [uv:n dokumentaatiossa](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-specifiers)
 
 Kuulet kaveriltasi, että Flaskin sijaan kannattaisi käyttää [FastAPI](https://pypi.org/project/fastapi/)-kirjastoa.
 
 <input type="checkbox"> Poista Flask projektin riippuvuuksista ja asenna FastAPI.
 
-Palautettavasta _poetry-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _poetry.lock_.
+Palautettavasta _uv-web_-hakemistosta ei tarvitse löytyä muita tiedostoja kuin _pyproject.toml_ ja _uv.lock_.
 
 ### 2. Riippuvuuksien hyödyntäminen: Pelaajalista
 
-Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä Poetry-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
+Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko2/nhl-reader_ lähes tyhjä uv-projektin runko. Mukana on kohta tarvitsemasi luokka `Player`.
 
 <input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston _viikko2_ sisälle.
 
@@ -98,7 +98,7 @@ Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan
 
 Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
-<input type="checkbox"> Asenna siis _requests_-kirjasto projektin riippuvuudeksi. Käytä kirjastosta uusinta versiota (jonka Poetry asentaa automaattisesti).
+<input type="checkbox"> Asenna siis _requests_-kirjasto projektin riippuvuudeksi. Käytä kirjastosta uusinta versiota (jonka uv asentaa automaattisesti).
 
 Voit ottaa projektisi pohjaksi seuraavan tiedoston:
 
@@ -252,7 +252,7 @@ Helpoin tapa löytää sääntöjä on hakemalla sopivalla hakusanalla niitä do
 
 **Toimi nyt seuraavasti:**
 
-<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
+<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `source .venv/bin/activate` ja suorita sen sisällä komento `pylint src`. Jos tarkistuksissa löytyy virheitä, korjaa ne
 
 <input type="checkbox"> Määrittele nyt tiedostoon _.pylintrc_ seuraavat säännöt (katso lista säännöistä Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#standard-checkers)):
 
@@ -294,7 +294,7 @@ Python-projekteissa hookien konfigurointi on helppoa [precommit](https://pre-com
 <input type="checkbox">  Asenna pre-commit _ohtuvarastoon_ seuraavalla komennolla
 
 ```
-poetry add pre-commit --group dev
+uv add pre-commit --dev
 ```
 
 <input type="checkbox"> Lisää projektin juureen tiedosto _.pre-commit-config.yaml_ ja sille seuraava sisältö
@@ -327,7 +327,7 @@ Kun nyt suoritat komennon `git commit -m"viesti"` suoritetaan Pylint ennen commi
 
 ### Bonus: palautusrepositorio ja precommit hook
 
-Konfiguroi palautusrepositioriosi siten, että se suorittaa Pylintin precommit hookissa tehtävien 2-5 projektille *nhl-reader*. Tämä tehtävä on hieman haasteellisempi, sillä Poetry-ympäristöä ei ole määritelty repositorion juuressa.
+Konfiguroi palautusrepositioriosi siten, että se suorittaa Pylintin precommit hookissa tehtävien 2-5 projektille *nhl-reader*. Tämä tehtävä on hieman haasteellisempi, sillä uv-ympäristöä ei ole määritelty repositorion juuressa.
 
 [precommit](https://pre-commit.com/)-työkalun sijaan tässä tehtävässä saattaa olla helpompaa tehdä precommit hook "käsin" projektin juuressa olevaan tiedostoon _.git/hooks/precommit_.
 

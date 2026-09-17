@@ -196,7 +196,7 @@ Tehdään sovellus muutamassa vaiheessa
 
 <input type="checkbox">  Yritä saada agentti rakentamaan sovelluksellesi web-käyttöliittymä
 
-- muistuta agenttia, että kyseessä on Poetry-projekti
+- muistuta agenttia, että kyseessä on uv-projekti
 - komenna agenttia käyttämään mahdollisimman paljon olemasaolevaa koodia
 - ohjelma kannattaa suorittaa siten, että pyydät agentin käynnistämään sen, näin agentti osaa korjata koodin jos se ei jostain syystä käynnisty
 - jos agentti luo sovelluksen, joka käyttää porttia 5000 ja käytössäsi on Mac, pyydä agentilta jonkin muun portin käyttöä, 5000 on Macissa ehkä varattu portti

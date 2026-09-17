@@ -15,7 +15,7 @@ Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4]
 
 {% include norppa.md %}
 
-{% include poetry_ongelma.md %}
+{% include uv_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
@@ -29,7 +29,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 > **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. 
 >
-> **HUOM2** tässä tehtävässä saattaa riittää että koneellasi on Python. Poetryä ei välttämättä tarvita ollenkaan. Katso hieman alempaa _Korjaustapa 1_
+> **HUOM2** tässä tehtävässä saattaa riittää että koneellasi on Python. uv:tä ei välttämättä tarvita ollenkaan. Katso hieman alempaa _Korjaustapa 1_
 
 [Kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko6/laskin_ löytyy yksinkertaisen laskimen toteutus. Laskimelle on toteutettu graafinen käyttöliittymä [Tkinter](https://docs.python.org/3/library/tkinter.html)-kirjaston avulla. 
 
@@ -38,7 +38,7 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 <input type="checkbox">  Jos tarvetta, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali. Toinen vaihtoehto on koodin tutkiminen
 [tekoälyn](/genai/#viikko-6---tehtävä-1) avustuksella.
 
-<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja käynnistä laskin virtuaaliympäristössä komennolla `python src/index.py`.
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja käynnistä laskin virtuaaliympäristössä komennolla `python src/index.py`.
 
 Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 
@@ -54,7 +54,7 @@ Komennon suorittamisen tulisi avata ikkuna, jossa on laskimen käyttöliittymä.
 >
 > - Mac-käyttäjillä eräs tapa ratkaista ongelma on komento `brew install python-tk@3.13`, olettaen [brew](https://brew.sh/) on käytössä. Asennuksessa kannattaa käyttää samaa versionumeroa kuin mikä on käytössäsi olevalla Pythonilla.
 >
-> Paketin `python-tk` asennuksen jälkeen kannattaa poistaa virtuaaliympäristö, eli tiedosto _.venv_, ja suorittaa `poetry install` uudelleen.  
+> Paketin `python-tk` asennuksen jälkeen kannattaa poistaa virtuaaliympäristö, eli tiedosto _.venv_, ja suorittaa `uv sync` uudelleen.  
 
 Sovelluksen avulla pystyy tällä hetkellä tekemään yhteen- ja vähennyslaskuja, sekä nollaamaan laskimen arvon. Laskutoimituksen kumoamista varten on lisätty jo painike "Kumoa", joka ei vielä toistaiseksi tee mitään. Sovelluksen varsinainen toimintalogiikka on luokassa `Kayttoliittyma`. Koodissa on tällä hetkellä hieman ikävä `if`-hässäkkä:
 

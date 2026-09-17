@@ -6,6 +6,6 @@
 Olet saattanut asentaa Pythonin tarvitsemia riippuvuuksia pip-komennolla. Älä käytä pipiä tällä kurssilla sillä jos teet niin, teet 99.9% todennäköisyydellä jotain väärin.
 </p>
 
-<p>Tällä kurssilla riippuvuudet asennetaan <a href="/poetry">poetryllä</a>.</p>
+<p>Tällä kurssilla riippuvuudet asennetaan <a href="/uv">uv:lla</a>.</p>
 
 </div>

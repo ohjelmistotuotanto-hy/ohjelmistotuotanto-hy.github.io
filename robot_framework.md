@@ -34,7 +34,7 @@ class Counter:
 
 Laskurille on toteutettu Robot Frameworkin avulla muutama testi _src/tests_-hakemiston <i>increase_counter.robot</i>-tiedostoon. Tutustu tiedoston sisältöön ja pohdi, vaatiiko testattavien skenaarioiden ymmärtäminen lukijalta erityistä teknistä osaamista esimerkiksi unittest-testeihin verrattuna.
 
-Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `poetry install`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorittamalla siellä komento `robot src/tests`.
+Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org/project/robotframework/)-kirjaston avulla, joka on määritelty projektin riippuvuudeksi. Ota projekti käyttöön asentamalla sen riippuvuudet komennolla `uv sync`. Suorita tämän jälkeen testit siirtymällä virtuaaliympäristöön komennolla `source .venv/bin/activate` ja suorittamalla siellä komento `robot src/tests`.
 
 Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston tiedostoon _report.html_ ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia avautuu mukava testien suorituksen statusta kuvaava näkymä:
 
@@ -184,7 +184,7 @@ Reset Counter After Several Increments
     Counter Value Should Be  0
 ```
 
-<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorita siellä komento `robot src/tests`.
+<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `source .venv/bin/activate` ja suorita siellä komento `robot src/tests`.
 
 Testit eivät mene läpi ja tulosteessa on seuraava virhe:
 

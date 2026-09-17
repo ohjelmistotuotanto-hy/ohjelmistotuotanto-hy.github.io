@@ -148,7 +148,7 @@ Olet jo todennäköisesti käyttänyt Gitiä aiemmilla kursseilla. Tässä teht�
 - `git reset HEAD`
 
 **Jos et vielä hallitse komentoja**, käy läpi kurssin Ohjelmistotekniikka
-  [Git-tutoriaali](/versionhallinta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin Git-operaatiot.
+[Git-tutoriaali](/versionhallinta). Pelkän lukemisen sijaan kannattanee myös tehdä itse tutoriaalin Git-operaatiot.
 
 Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
@@ -252,17 +252,24 @@ Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
-### 7. Poetry
+### 7. uv
 
-Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Python-asennuksen löytymisen koneeltasi voit tarkistaa komennolla:
+Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Kurssilla käytetään Python-projektien riippuvuuksien _ja_ Python-version hallintaan [uv](/uv)-komentorivityökalua, joten aloitetaan asentamalla se.
+
+<input type="checkbox"> Asenna uv tietokoneellesi seuraamalla [uv-ohjeen](/uv) asennusosiota
+
+- Kurssilla käytetään uv:n versiota 0.12 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää komennolla `uv self update`
+- Jos kohtaat ongelmia, katso [täältä](/uv#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin
+
+Kun uv on asennettu, sen avulla onnistuu myös kurssilla tarvittavan Python-version asentaminen, mitään erillistä Python-asennusta ei siis tarvita:
 
 ```bash
-python3 --version
+uv python install 3.14
 ```
 
-Jos Python on asennettu, komennon suorittaminen tulostaa asennetun Pythonin version. Varmista, että käytössä oleva versio on _vähintään 3.12.0_. Jos `python3`-komentoa ei löydy, kokeile komentoa `python`. Varmista kuitenkin, että `python`-komento suorittaa tarpeeksi uutta versiota. Jos asennusta ei löydy, tai käytössä on vanhempi versio, seuraa [ohjelmointikurssien](https://www.mooc.fi/fi/installation/vscode) ohjeita Pythonin asentamiselle. Jos Pythonin versio on liian vanha, voit asentaa uuden komennolla [pyenv](https://github.com/pyenv/pyenv), katso ohje Ohjelmistotekniikan [materiaalista](https://ohjelmistotekniikka-hy.github.io/python/toteutus#python-versioiden-hallinta).
+Tarkista asennetut versiot komennolla `uv python list`. Kun myöhemmin luot uuden uv-projektin komennolla `uv init --python 3.14`, uv käyttää automaattisesti juuri asentamaasi versiota. Katso tarvittaessa lisää [uv-ohjeen](/uv#python-version-hallinta) kohdasta _Python-version hallinta_.
 
-Asennusohjeista löytyy myös ohjeet Visual Studio Code -editorin asentamiselle. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liitännäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
+Koodin editointiin suosittelemme [Visual Studio Code](https://code.visualstudio.com/) -editoria. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liitännäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
 
 Ohjelmoinnin peruskursseilla olet saattanut suorittaa koodia painamalla VS Coden nuoli-painiketta, ja testejä painamalla silmä-painiketta. Ammattimaisessa ohjelmistokehityksessä koodin suorittaminen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahansa koneella, _skriptatusti_ komentoriviltä, eli riippumatta VS Coden kaltaisista kehitysympäristöistä.
 
@@ -270,12 +277,12 @@ Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kov
 
 Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta.
 
-Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut, voimme käyttää [Poetry](https://python-poetry.org/)-komentorivityökalua. Poetryn dokumentaation antama kuvaus on seuraava:
+Juuri asentamasi uv hoitaa nämä molemmat, eli sekä pipin että virtuaaliympäristön tuomat edut, samalla työkalulla. uv:n dokumentaation antama kuvaus on seuraava:
 
-> Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+> An extremely fast Python package and project manager, written in Rust.
 
-- Edellisessä tehtävässä lisättiin repositorioon Poetry-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`
-- Tutki Poetry-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole Poetryyn liittyvä käsky vaan normaali shell-komento)
+- Edellisessä tehtävässä lisättiin repositorioon uv-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`
+- Tutki uv-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole uv:hen liittyvä käsky vaan normaali shell-komento)
   - Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
   - **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
   - Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
@@ -283,26 +290,21 @@ Jotta saisimme helposti käyttöömme pipin ja virtuaaliympäristön tuomat edut
 - Tarkastele projektin määrittelevän tiedoston _pyproject.toml_ sisältöä
   - Tiedosto määrittelee mm. projektin käyttämät riippuvuudet
 
-Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta Poetry-komentojen suorittaminen onnistuu helpoiten komentoriviltä. 
+Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta uv-komentojen suorittaminen onnistuu helpoiten komentoriviltä.
 
 {% include no_pip.md %}
 
-Ennen siirtymistä tehtävien pariin, ja et ole aiemmin Poetryä käyttänyt, tutustu Poetryn asennus- ja käyttöohjeisiin lukemalla [tämä dokumentti](/poetry).
-- Kurssilla käytetään Poetryn versiota 2.2.1 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää.
-- On suositeltavaa, että teet [tämän](/poetry#asetusten-hienosäätö) muutoksen Poetryn asetuksiin! Varmista vielä, että asetus on koneellasi oikein tehtynä.
-- Jos kohtaat ongelmia, katso [täältä](/poetry#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin.
-
 **Tee nyt seuraavat toimenpiteet**.
 
-- Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
-- Käynnistä sovellus komennolla `poetry run python3 src/index.py`
-  - [Run](https://python-poetry.org/docs/cli/#run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
-- Siirry _virtuaaliympäristöön_ komennolla `eval $(poetry env activate)`
+- Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
+- Käynnistä sovellus komennolla `uv run python3 src/index.py`
+  - [Run](https://docs.astral.sh/uv/reference/cli/#uv-run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
+- Siirry _virtuaaliympäristöön_ komennolla `source .venv/bin/activate`
 - Suorita komento `python3 src/index.py`
   - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
   - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
 - Poistu virtuaaliympäristöstä komennolla `deactivate`
-- Suorita testit komennolla `poetry run pytest`
+- Suorita testit komennolla `uv run pytest`
   - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
 ### 8. Unittest
@@ -313,7 +315,7 @@ Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](http
 
 Edellisen tehtävän _ohtuvarastossa_ on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
-Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetry run pytest` tai siirtymällä virtuaaliympäristöön komennolla `eval $(poetry env activate)` ja suorittamalla sen jälkeen komennon `pytest`.
+Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `uv run pytest` tai siirtymällä virtuaaliympäristöön komennolla `source .venv/bin/activate` ja suorittamalla sen jälkeen komennon `pytest`.
 
 - Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
   - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
@@ -322,7 +324,7 @@ Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `poetr
 - Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
-poetry add coverage --group dev
+uv add coverage --dev
 ```
 
 - Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
@@ -332,7 +334,7 @@ poetry add coverage --group dev
 source = src
 ```
 
-- Siirry virtuaaliympäristöön komennolla `eval $(poetry env activate)`
+- Siirry virtuaaliympäristöön komennolla `source .venv/bin/activate`
   - Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
   - Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
 - Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa hakemiston _htmlcov_ tiedoston _index.html_
@@ -345,30 +347,29 @@ source = src
 
 Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-8)
 
-
 ### Bonustehtävä: alias
 
-Poetryä käyttäessä voit suorittaa komentoja joko pitkässä muodossa, eli 
+uv:tä käyttäessä voit suorittaa komentoja joko pitkässä muodossa, eli
 
 ```bash
-poetry run pytest
+uv run pytest
 ```
 
-tai siirtyä virtuaaliympäristöön komennolla `eval $(poetry env activate)`, jolloin komennon alkuosaa ei tarvita:
+tai siirtyä virtuaaliympäristöön komennolla `source .venv/bin/activate`, jolloin komennon alkuosaa ei tarvita:
 
 ```bash
 pytest
 ```
 
-Virtuaaliympäristö on siis varsin kätevä, mutta virtuaaliympäristön avaava komento, on aika ikävä ja vaikea muistaa. 
+Virtuaaliympäristö on siis varsin kätevä, mutta virtuaaliympäristön avaava komento, on aika ikävä ja vaikea muistaa.
 
-Voit helpottaa tekemällä komennolle helpommin muistettavan _aliaksen_. Tee halutessasi alias virtuaaliympäristön käynnistämiseen. Etsi ohjeet internetistä tai kysy [CurreChatiltä](<{{site.curre}}>) esim. promptilla
+Voit helpottaa tekemällä komennolle helpommin muistettavan _aliaksen_. Tee halutessasi alias virtuaaliympäristön käynnistämiseen. Etsi ohjeet internetistä tai kysy [CurreChatiltä]({{site.curre}}) esim. promptilla
 
-_miten teen Ubuntuun aliaksen joka suorittaa komennon eval $(poetry env activate)_
+_miten teen Ubuntuun aliaksen joka suorittaa komennon source .venv/bin/activate_
 
 ### 9. GitHub Actions, osa 1
 
-Poetryn avulla testien suorittaminen  on mahdollista tehdä skriptattavaksi, eli helposti komentoriviltä yhdellä komennolla suoritettavaksi. Seuraava askel on suorittaa [buildausprosessi](https://en.wikipedia.org/wiki/Software_build), eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
+uv:n avulla testien suorittaminen on mahdollista tehdä skriptattavaksi, eli helposti komentoriviltä yhdellä komennolla suoritettavaksi. Seuraava askel on suorittaa [buildausprosessi](https://en.wikipedia.org/wiki/Software_build), eli ohjelman suorittamiseen vaadittavat toimenpiteet ja siihen liittyvien testien suoritus, erillisellä _build-palvelimella_ (engl. build server).
 
 Ideana on, että ohjelmistokehittäjä noudattaa seuraavaa sykliä:
 
@@ -406,16 +407,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.1.0
         with:
-          python-version: '3.12'
-      - name: Install Poetry
-        run: pip install poetry
+          python-version: "3.14"
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
       - name: Run tests
-        run: poetry run coverage run --branch -m pytest
+        run: uv run coverage run --branch -m pytest
 ```
 
 Paina vihreää _Commit changes_ -nappia, ja anna sopiva commit-viesti.
@@ -455,16 +454,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.1.0
         with:
-          python-version: '3.12'
-      - name: Install Poetry
-        run: pip install poetry
+          python-version: "3.14"
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
       - name: Run tests
-        run: poetry run coverage run --branch -m pytest
+        run: uv run coverage run --branch -m pytest
 ```
 
 Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia.
@@ -475,7 +472,7 @@ Yksittäinen työ koostuu useista askelista, jotka on määritelty työn alla ko
 
 GitHub varaa työn askelien suorittamista varten virtuaalikoneen. Kohta [runs-on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) määrittelee minkälaisella käyttöjärjestelmällä työn askeleet suoritetaan. Esimerkkimme tapauksessa suoritusympäristö on Ubuntu Linux.
 
-Esimerkkimme tapauksessa työ koostuu viidestä askeleesta. Ensimmäinen askel
+Esimerkkimme tapauksessa työ koostuu neljästä askeleesta. Ensimmäinen askel
 
 ```yml
 - uses: actions/checkout@v5
@@ -487,26 +484,24 @@ suorittaa valmiiksi määritellyn actionin [checkout](https://github.com/marketp
 
 Eli _checkout_ action siis hakee repositorion koodin askeleet suorittavalle virtuaalikoneelle.
 
-Toinen askel on action [setup-python](https://github.com/marketplace/actions/setup-python), joka asentaan työn suorittavalle virtuaalikoneelle haluamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.12'. Jos hipsuja ei ole, yrittää GitHub Actions asentaa Pythonista version 3.1
+Toinen askel on action [setup-uv](https://github.com/astral-sh/setup-uv), joka asentaa työn suorittavalle virtuaalikoneelle uv:n, sekä `python-version`-parametrin avulla myös haluamamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.14'. Toisin kuin Poetryn kanssa, erillistä setup-python-actionia ei siis tarvita, sillä uv osaa asentaa Python-version itse.
+
+```yml
+- name: Install uv
+  uses: astral-sh/setup-uv@v10.1.0
+  with:
+    python-version: "3.14"
+```
 
 Molemmat näistä actioneista olivat GitHubin [marketplacesta](https://github.com/marketplace?type=actions) löytyviä valmiita actioneja. Esim. Pythonin asentaminen työn suorittavalle virtuaalikoneelle on itsessään aika monimutkainen toimenpide, mutta valmiiksi määritelty action tekee sen helpoksi.
 
-Kolmas askel on hieman erilainen:
+Kolmas askel asentaa projektin riippuvuudet `uv sync`-komennolla.
 
-```yml
-- name: Install Poetry
-  run: pip install poetry
-```
-
-Se suorittaa komentorivillä komennon, joka asentaa Poetryn.
-
-Neljäs askel asentaa projektin riippuvuudet `poetry install`-komennolla.
-
-Viides askel on kaikkein tärkein, se suorittaa Poetryn avulla projektin testit ja kerää testikattavuuden:
+Neljäs askel on kaikkein tärkein, se suorittaa uv:n avulla projektin testit ja kerää testikattavuuden:
 
 ```yml
 - name: Run tests
-  run: poetry run coverage run --branch -m pytest
+  run: uv run coverage run --branch -m pytest
 ```
 
 Tee nyt koodiin muutos, joka hajottaa testit ja committaa ja pushaa muutos GitHubiin.
@@ -590,12 +585,12 @@ hint: invocation.
 Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
 
 ```
-git config pull.rebase true 
+git config pull.rebase true
 ```
 
 Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet lokaalit commitit etärepositoriossa olevien committien perään.
 
-Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento  `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
+Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
 
 Jos muutit paikallisesti tiedostoa README.md, saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
@@ -610,25 +605,24 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 
 ![]({{ "/images/lh1-4-25.png" | absolute_url }})
 
-Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta. 
-
+Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta.
 
 Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 3_ sisältää oleellisen tärkeän asian, eli Codecovin _tokenin_:
 
 ![]({{ "/images/lh1-5-25.png" | absolute_url }})
 
-Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon. 
+Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon.
 
 Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin salaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
-Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin. 
+Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin.
 
 Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
 
 ```yml
 {% raw %}
 - name: Coverage report
-  run: poetry run coverage xml
+  run: uv run coverage xml
 - name: Coverage report to Codecov
   uses: codecov/codecov-action@v5
   env:
@@ -642,13 +636,13 @@ Kertauksena:
 
 1. Luo avain Codecovin ohjeiden mukaan
 1. Siirrä avain GitHubin secretiksi (Githubin repossa settings -> secrets and variables / actions -> New repository secret -> nimeksi CODECOV_TOKEN ja arvoksi avain)
-1. Lisää yllä olevat vaiheet GitHub Action -konfiguraatiosio 
+1. Lisää yllä olevat vaiheet GitHub Action -konfiguraatiosio
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
 ![]({{ "/images/lh1-6-25.png" | absolute_url }})
 
-Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `poetry run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `poetry run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
+Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `uv run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `uv run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub Actionien loki näyttää miten askelten suoritus etenee:
 
@@ -696,7 +690,7 @@ viikko1
   riippuvuuksien-injektoint
   nhl-statistics-1
 viikko2
-  poetry-web
+  uv-web
   project-reader
   nhl-reader
 viikko3
@@ -728,7 +722,7 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
     - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
     - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
   - Varmista että koodi, sekä sen testit toimiva
-    - Jos unohdit jo miten Poetry-projektit toimivat, kertaa [tehtävästä 7](/tehtavat1#7-poetry)
+    - Jos unohdit jo miten uv-projektit toimivat, kertaa [tehtävästä 7](/tehtavat1#7-uv)
 - Tee sovellukseen uusi testi, joka varmistaa, että laskin osaa laskea oikein kaksi peräkkäistä laskutoimitusta
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
@@ -738,7 +732,7 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
 - Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
   - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
     - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
-  - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `poetry install`
+  - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
 - Ohjelma koostuu kolmesta luokasta.
   - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   - `Player` on luokka, jonka olioina `StatisticsService`-luokka käsittelee yksittäisen pelaajan tietoja
@@ -755,7 +749,6 @@ stats = StatisticsService(
   PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt")
 )
 ```
-
 
 **HUOM:** jos törmäät virheeseen `URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, mahdollinen ratkaisu ongelmaan löytyy [täältä](https://stackoverflow.com/a/42334357).
 

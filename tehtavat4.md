@@ -17,7 +17,7 @@ Viikon loppuun on lisätty vapaaehtoinen tehtävä, missä päästään tutustum
 
 {% include norppa.md %}
 
-{% include poetry_ongelma.md %}
+{% include uv_ongelma.md %}
 
 ### Tehtävien palauttaminen
 
@@ -228,7 +228,7 @@ Testin lopussa varmistetaan, että pankin `Mock`-oliota on kutsuttu oikeilla par
 
 <input type="checkbox"> Tutustu projektiin ja sen kaikkiin testeihin:
 
-<input type="checkbox"> Asenna projektin riippuvuudet komennolla `poetry install` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`
+<input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja suorita sen jälkeen testit virtuaaliympäristössä komennolla `pytest`
 
 <input type="checkbox"> Riko jokin testi, esimerkiksi jokin edellä mainituista, muuttamalla sen ekspektaatiota esim. seuraavasti:
 

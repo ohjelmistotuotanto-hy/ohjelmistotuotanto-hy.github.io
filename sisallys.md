@@ -13,7 +13,7 @@ permalink: /sisallys/
   - [Flask-ohje](/flask)
   - [miniprojekti boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate)
 - Ohjeet
-  - [Poetry](/poetry)
+  - [uv](/uv)
   - [unittest](/unittest)
   - [Gen AI](/genai)  
   - [Robot Framework](/robot_framework)

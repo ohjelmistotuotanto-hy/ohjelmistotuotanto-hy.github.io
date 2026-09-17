@@ -86,20 +86,20 @@ WebDriverException: Message: unknown error: Chrome failed to start: crashed.
 
 [Tämä](https://www.gregbrisebois.com/posts/chromedriver-in-wsl2/) ohje saattaa tuoda ratkaisun.
 
-Yksi lisävaihtoehto WSL-käyttäjille on ajaa Web-sovelluksemme serveriä poetryssa WSL:n puolella, ja ajaa selenium/robot-testit poetryssa Windowsin PowerShellin puolella: 
+Yksi lisävaihtoehto WSL-käyttäjille on ajaa Web-sovelluksemme serveriä uv:lla WSL:n puolella, ja ajaa selenium/robot-testit uv:lla Windowsin PowerShellin puolella: 
 
   - Asenna Python Windowsille jos se ei ole jo asennettu
-  - Asenna Poetry Windowsille suorittamalla PowerShellissä
+  - Asenna uv Windowsille suorittamalla PowerShellissä
   
   ```
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
   ```
   
-  - Lisää asennuksen päätteeksi kerrottu polku esim.`C:\Users\<user>\AppData\Roaming\Python\Scripts` järjestelmän PATH-muuttujaan äskeisessä [ChromeDriver-ohjeessa](../chromedriver_asennusohjeet) kerrotulla tavalla
+  - Lisää asennuksen päätteeksi kerrottu polku esim.`C:\Users\<user>\.local\bin` järjestelmän PATH-muuttujaan äskeisessä [ChromeDriver-ohjeessa](../chromedriver_asennusohjeet) kerrotulla tavalla
   - Kloonaa projekti Windowsin tiedostojärjestelmän puolelle (löytyy WSL-järjestelmästä hakemiston /mnt alta aivan tiedostojärjestelmän juuresta) esim. työpöydälle `/mnt/c/Users/<user>/Desktop`
-  - Asenna riippuvuudet tavallisesti Poetryssa suorittamalla `poetry install` juuri kloonatun projektin hakemiston juuressa
+  - Asenna riippuvuudet tavallisesti uv:lla suorittamalla `uv sync` juuri kloonatun projektin hakemiston juuressa
   - Asenna ChromeDriver Windowsille äskeisen [ohjeen](../chromedriverin_asennusohjeet) mukaan
-  - Suorita Selenium/Robot-testit sovelluksen hakemiston juuresta komennolla `poetry run robot .\src\tests\`
+  - Suorita Selenium/Robot-testit sovelluksen hakemiston juuresta komennolla `uv run robot .\src\tests\`
 
 ## GeckoDriverin asennusohjeet
 
