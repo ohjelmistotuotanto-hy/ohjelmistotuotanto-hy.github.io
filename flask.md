@@ -101,7 +101,7 @@ Rakenteeltaan sovellus on samankaltainen kuin [viikon 3 laskareiden](/tehtavat3/
 - hakemisto `entities` sisältää sovelluksen tietosisältöä kuvaavat luokat
 - hakemisto `repositories` sisältää tietosisällön tietokantaan tallettamisesta vastaavat luokat
 - hakemisto `templates` sisältää näkymäpohjat
-- Robot-testit on sijoitettu tiedostoon `story_tests` ja unittestit tiedostoon `tests`
+- Robot-testit on sijoitettu tiedostoon `story_tests` ja yksikkötestit tiedostoon `tests`
 
 #### Tietokannan käyttö
 
@@ -184,7 +184,7 @@ if __name__ == "__main__":
       setup_db()
 ```
 
-Funktio `setup_db` luo tietokannan. Tietokannan luova koodi on määritelty tiedostossa _schema.sql_. Käytännössä tietokanta sisältää vain taulun ´todos´. Jos tietokanta on jo olemassa kun funktiota `setup_db` kutsutaan, poistetaan kannan taulut ja luodaan kanta uudelleen. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
+Funktio `setup_db` luo tietokannan. Tietokannan skeema on määritelty tiedostossa _schema.sql_. Käytännössä tietokanta sisältää vain taulun `todos`. Jos tietokanta on jo olemassa kun funktiota `setup_db` kutsutaan, poistetaan kannan taulut ja luodaan kanta uudelleen. Funktio `reset_db` tyhjentää tietokantataulun sisällön. Jos tiedosto suoritetaan "pääohjelmana", se luo tietokannan.
 
 #### Testien alustus ja suorittaminen
 
@@ -218,7 +218,7 @@ CREATE TABLE todos (
 )
 ```
 
-`Test Setup` määrittelee, että ennen jokaista testiä suoritetaan avainsana `Reset Todos`:
+`Test Setup` määrittelee, että ennen jokaista testiä (Test Setup) suoritetaan avainsana `Reset Todos`:
 
 ```robot
 *** Settings ***
