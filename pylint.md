@@ -64,11 +64,11 @@ ignore-paths=src/ui,src/tests
 
 Monissa editoreissa on lisäosia, jotka huomauttavat laatuvirheistä suoraan koodissa. Tämä tekee niiden huomaamisesta ja korjaamisesta nopeampaa. Jos käytössäsi on [Visual Studio Code](https://code.visualstudio.com/), riittää että asennat [Pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint)-lisäosan:
 
-![Visual Studio Code Pylint lisäosa]({{ "/images/vscode-pylint.png" | absolute_url }})
+![Visual Studio Code Pylint lisäosa]({{ "/images/vscode-pylint.png" | relative_url }})
 
 Tämän jälkeen Visual Studio Coden (joka pitää ehkä käynnistää uudelleen lisäosan asennuksen jälkeen) tulisi huomauttaa laatuvirheistä suoraan koodissa sinisellä alleviivauksessa. Viemällä hiiren ongelmallisen koodin päälle pitäisi aueta tarkempaa tietoa virheestä:
 
-![Visual Studio Code Pylint virhe]({{ "/images/vscode-pylint-virhe.png" | absolute_url }})
+![Visual Studio Code Pylint virhe]({{ "/images/vscode-pylint-virhe.png" | relative_url }})
 
 Jos integroinnin kanssa ilmenee ongelmia, tutustu Visual Studio Coden [ohjeisiin](https://code.visualstudio.com/docs/python/linting).
 

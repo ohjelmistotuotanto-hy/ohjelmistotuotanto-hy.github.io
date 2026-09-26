@@ -72,7 +72,7 @@ Latex tukee useita eri tyyppisiä viitteitä, kuten esimerkin _inproceedings, ar
 
 LaTeX:illa "käännetty" lopputulos näyttää seuraavalta:
 
-![]({{ "/images/latex.png" | absolute_url }})
+![]({{ "/images/latex.png" | relative_url }})
 
 Huomaamme että teksti päättyy oikeaoppisesti lähdeviitteisiin ja juuri lähdeviitteiden hallintaan nyt toteutettavan ohjelmiston on tarkoitus tuoda helpotusta.
 

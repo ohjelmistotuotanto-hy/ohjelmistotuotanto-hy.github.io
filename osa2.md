@@ -181,7 +181,7 @@ Eric Riesin vuonna 2011 julkaisema kirja [The Lean startup](http://theleanstartu
 
 Malli perustuu kolmiosaisen _build-measure-learn_ -syklin toistamiseen:
 
-![]({{ "/images/2-3.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/2-3.png" | relative_url }}){:height="300px" }
 
 Esim. internetpalveluja tai mobiilisovelluksia rakennettaessa käyttäjien tarpeista, eli järjestelmän vaatimuksista ei ole minkäänlaista varmuutta, voidaan vain tehdä oletuksia siitä mitä ihmiset haluaisivat käyttää. Alkuvaiheessahan järjestelmällä ei edes ole vielä asiakkaita tai käyttäjiä, joiden mielipidettä voitaisiin kysyä.
 
@@ -251,7 +251,7 @@ Mike Cohnin kolmiosaisen määritelmän kanssa täsmälleen samansisältöisen m
 
 Ennen kuin etätyöskentely yleistyi pandemian myötä oli tapana kirjoittaa user storyn kuvaus pienelle noin 10-15 cm pahvikortille tai postit-lapulle. [Scott Amblerilta](http://www.agilemodeling.com/artifacts/userStory.htm) lainattu esimerkki
 
-![]({{ "/images/2-4.jpg" | absolute_url }})
+![]({{ "/images/2-4.jpg" | relative_url }})
 
 Kortin etupuolelle on kirjoitettu lyhyt kuvaus storyn sisällöstä, prioriteetti ja estimaatti.
 _Estimaatilla_ tarkoitetaan kortin toiminnallisuuden toteuttamisen työmääräarviota. Palaamme estimointiin pian tarkemmin.
@@ -286,7 +286,7 @@ Näin muotoilemalla on ajateltu, että user story kiinnittää huomion siihen, k
 
 Tätä muotoa on myös ruvettu kritisoimaan muun muassa siksi, että kiinnittää liikaa huomioita siihen miten story kirjataan, itse asian eli _mistä storyssa on kysymys_ sijaan. Formaatin suosio onkin laskusuunnassa:
 
-![]({{ "/images/2-5.png" | absolute_url }}){:height="200px" }
+![]({{ "/images/2-5.png" | relative_url }}){:height="200px" }
 
 Bill Wake luettelee artikkelissa [INVEST in good User Stories](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) kuusi user storyille toivottavaa ominaisuutta:
 
@@ -371,7 +371,7 @@ Työmäärän arvioimiseen on kehitetty vuosien varrella useita erilaisia menete
 
 Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
-![]({{ "/images/2-6.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/2-6.png" | relative_url }}){:height="400px" }
 
 Eli mitä kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
 
@@ -426,7 +426,7 @@ Kuten äsken mainittiin, suhteellisessa estimoinnissa käytetty yksikkö _story 
 
 Eräs käyttökelpoinen tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
 
-![]({{ "/images/2-7.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/2-7.png" | relative_url }}){:height="300px" }
 
 Koska estimointi on joka tapauksessa melko epätarkkaa, ei estimoinnissa ole tarkoituksenmukaista käyttää kovin tarkkaa skaalaa. Useimmiten käytetään yläpäästä harvenevaa skaalaa esim. 1, 2, 3, 5, 10, 20, 40, 100. Myös Fibonaccin lukujono 1, 2, 3, 5, 8, 13, 21, 34, 55 on suosiossa estimoinnin skaalana.
 
@@ -451,7 +451,7 @@ Jos ehdotetuissa estimaateissa on paljon eroavaisuuksia, keskustelee tiimi eroav
 
 Kun tiimi on keskustellut aikansa, tapahtuu uusi estimointikierros ja riittävä konsensus todennäköisesti saavutetaan pian.
 
-![]({{ "/images/2-8.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-8.png" | relative_url }}){:height="350px" }
 
 Tiimin yhdessä tekemän estimoinnin sivutuotteena ymmärrys toteutettavana olevien user storyjen luonteesta leviää koko tiimin keskuuteen, ketterien menetelmien suuressa arvossa pitämä läpinäkyvyys (transparency) siis paranee estimoinnin sivutuotteena.
 
@@ -466,7 +466,7 @@ Hyvä backlog on myös _detailed appropriately_ eli sopivan yksityiskohtainen. B
 
 Alemman prioriteetin user storyt voivat vielä olla isompia ja karkeammin estimoituja. Itse asiassa alemman prioriteetin storyjä ei edes kannata määritellä kovin tarkasti, sillä kestää vielä kauan ennen kuin ne otetaan toteutettavaksi johonkin sprinttiin. Usein käy vieläpä niin, että alemman prioriteetin storyjä ei lopulta toteuteta koskaan, sillä niiden määrittelemä toiminnallisuus havaitaankin tarpeettomaksi. Alhaisen prioriteetin storyihin ei siis kannata investoida spekulatiivisesti liikaa aikaa.
 
-![]({{ "/images/2-9.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/2-9.png" | relative_url }}){:height="250px" }
 
 _Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/blog/make-the-product-backlog-deep/):
 
@@ -506,13 +506,13 @@ Projektin alkaessa velositeetti ei yleensä ole selvillä, ellei kyseessä ole j
 
 Velositeetti vaihtelee tyypillisesti alussa melko paljon, erityisesti jos sovellusalue ja/tai käytetyt teknologiat eivät ole tiimille täysin tuttuja. Velositeetti kuitenkin alkaa yleensä stabiloitumaan muutaman sprintin jälkeen.
 
-![]({{ "/images/2-11.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-11.png" | relative_url }}){:height="350px" }
 
 Tiimin velositeetti ja siihen perustuva projektin tai sen osakokonaisuuden keston arvio alkaa tarkentumaan pikkuhiljaa.
 
 Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti projektin etenemistä. Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli [definition of donen](/osa1#definition-of-done) määrittelemällä laatutasolla) toteutettujen user storyjen story pointit. "Lähes valmiiksi" tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi.
 
-![]({{ "/images/2-12.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/2-12.png" | relative_url }}){:height="250px" }
 
 #### Eri tiimien velositeettien vertailu
 
@@ -523,11 +523,11 @@ Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työm�
 Ketterän projektin etenemistä kuvataan joskus _release burndown_ -kaavion avulla.
 Aika etenee kaavion x-akselilla sprintti kerrallaan, y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna:
 
-![]({{ "/images/2-13.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-13.png" | relative_url }}){:height="350px" }
 
 Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siksi jäljellä olevan työn määrä ei aina vähene. Joskus käytetäänkin _burn up_ -kaavioita, joka tuo selkeämmin esiin kesken projektin etenemisen tapahtuvan työmäärän kasvun:
 
-![]({{ "/images/2-14.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-14.png" | relative_url }}){:height="350px" }
 
 ### Julkaisun suunnittelu ja tuotteen roadmap
 
@@ -540,7 +540,7 @@ Tällaistä yksittäisiä sprinttejä pidemmän aikavälin suunnittelun tekemist
 
 Voidaankin ajatella, että julkaisun suunnittelussa backlogin sisältö jaetaan karkeasti isompiin lohkoihin, joihin sijoitetaan ne user storyt, joiden ajatellaan suunnitteluhetkellä sisältyvän kyseiseen milestoneen:
 
-![]({{ "/images/2-10.png" | absolute_url }})
+![]({{ "/images/2-10.png" | relative_url }})
 
 Eri milestonet saattavat olla ajallisesti saman pituisia, eli ne voivat koostua vakiomäärästä sprinttejä. Kaikissa tilanteissa tämäkään ole tarkoituksenmukaista, ja voi olla mielekästä että milestonejen pituus vaihtelee.
 
@@ -560,7 +560,7 @@ Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suure
 
 Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, joka jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
 
-![]({{ "/images/2-15.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/2-15.png" | relative_url }}){:height="400px" }
 
 Story mapin rivit ovat loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
 
@@ -605,7 +605,7 @@ Sprintin onnistumista tarkastellaan yleensä suhteessa sprintin tavoitteeseen, e
 
 Kehitystiimi siis päättää kuinka monta user storyä sprinttiin otetaan toteutettavaksi. Pääperiaate on valita "sopiva määrä" backlogin korkeimmalle priorisoituja user storyjä ja siirtää ne _sprint backlogiin_.
 
-![]({{ "/images/2-16.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-16.png" | relative_url }}){:height="350px" }
 
 Tapoja päättää sprinttiin otettavien storyjen määrä on [useita](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/):
 
@@ -619,22 +619,22 @@ Käytetään mitä valintaperiaatetta tahansa, on joka tapauksessa oleellista et
 
 Oletusarvoisesti sprinttiin siis otetaan joukko backlogin kärjessä olevia user storyjä:
 
-![]({{ "/images/2-17.png" | absolute_url }}){:height="220px" }
+![]({{ "/images/2-17.png" | relative_url }}){:height="220px" }
 
 Product ownerilla on kuitenkin mahdollisuuksia vaikuttaa sprinttiin mukaan otettaviin storyihin tekemällä _uudelleenpriorisointia_.
 
 Entä jos product owner haluaa storyn D mukaan sprinttiin? Product owner nostaa D:n prioriteettia, C tippuu pois sprinttiin valittavien user storyjen joukosta:
 
-![]({{ "/images/2-18.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/2-18.png" | relative_url }}){:height="250px" }
 
 Entä jos product owner haluaa sprinttiin mukaan kaikki user storyt A-D? Jostain on luovuttava: product owner pienentää user storyn A määrittelemää toiminnallisuutta, kehitystiimi estimoi pienennetyn A:n ja nyt A-D mahtuvat sprinttiin:
 
-![]({{ "/images/2-19.png" | absolute_url }}){:height="215px" }
+![]({{ "/images/2-19.png" | relative_url }}){:height="215px" }
 
 Entä jos A:n toiminnallisuutta ei saa karsia ja product owner silti haluaa A-D:n mukaan sprinttiin?
 Ratkaisu tähän on **jakaa user story A kahteen pienempään osaan** A1:n ja A2:n. A1 sisältää A:n tärkeimmät piirteet ja otetaan mukaan sprinttiin, A2 saa alemman prioriteetin, ja jää sprintin ulkopuolelle:
 
-![]({{ "/images/2-20.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/2-20.png" | relative_url }}){:height="250px" }
 
 ### User storyjen jakaminen
 
@@ -766,13 +766,13 @@ Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user s
 
 Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yksi rivi kutakin sprinttiin valittua user storya kohti. Storyyn liittyvät taskit kulkevat vasemmalta oikealle niiden statusta kuvaavien sarakkeiden _not started, in progress, done_ kautta:
 
-![]({{ "/images/2-21.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/2-21.png" | relative_url }}){:height="400px" }
 
 Kaikkia storyyn liittyviä taskeja ei sprintin suunnittelun aikana yleensä löydetä ja uusia taskeja lisätään tarvittaessa sprintin edetessä.
 
 Samassa tilassa työskentelevien tiimien paras käytäntö on käyttää fyysisiä taskboardeja, user storyt ovat esimerkiksi pahvikortteja ja taskit kirjoitetaan post it -lapuille.
 
-![]({{ "/images/2-23.jpg" | absolute_url }})
+![]({{ "/images/2-23.jpg" | relative_url }})
 
 Esimerkin taskboardissa on edellisestä poiketen myös sarake _blocked_, joka kuvaa niitä taskeja, joiden toteuttaminen on syystä tai toisesta keskeytynyt jonkin esteen takia. Task board voikin sisältää mitä tahansa sarakkeita. Scrum ei anna mitään ohjeistoa sprint backlogin muodostamiseen, pääasia onkin että tiimi muokkaa taskboardinsa omia tavoitteitaan tukevaksi. On myös melko tyypillistä että tiimi muokkaa taskboardia projektin kuluessa huomatessaan että olemassa olevan taskboardin rakenne ei ole enää optimaalinen tiimin työskentelylle.
 
@@ -784,7 +784,7 @@ Taskien estimaatit tulee pitää ajan tasalla, eli jokaisen taskin jäljellä ol
 
 Jäljellä olevan työn määrä (tunteina mitattuna) voidaan visualisoida sprintin etenemistä kuvaavalla burndown-käyrällä:
 
-![]({{ "/images/2-22.png" | absolute_url }})
+![]({{ "/images/2-22.png" | relative_url }})
 
 Kuva sisältää useitakin eri käyriä, tummemman sininen kuvaa sprintissä jäljellä olevaa työmäärää tunteina.
 
@@ -802,7 +802,7 @@ Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on luk
 
 Taulukkolaskentaohjelmat toimivat kohtuullisen hyvin elektronisena taskboardina. Taulukkolaskentaa käyttäessä sprintin jokaiselle päivälle on oma sarake, johon merkitään kunkin päivän alussa estimaatti taskien jäljellä olevasta työmäärästä (tunteina):
 
-![]({{ "/images/2-24.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/2-24.png" | relative_url }}){:height="400px" }
 
 Näin sprintin burndown-kaavion piirto on helppo automatisoida. Erään ohjelmistoprojektin product- ja sprintbacklogit [täällä](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit?usp=sharing).
 
@@ -822,7 +822,7 @@ Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa on
 
 WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä taskboardin vaiheessa olevien töiden määrää:
 
-![]({{ "/images/2-25.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/2-25.png" | relative_url }}){:height="350px" }
 
 Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskien määräksi kaksi.
 

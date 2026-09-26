@@ -34,9 +34,11 @@ Jos et vielä tiedä mikä on GitHub ja repositorio, niin pian opit.
 
 Tehtäviä 0 ja 1 ei varsinaisesti palauteta minnekään. Tehtävää 0 ei myöskään lasketa varsinaiseksi tehtäväksi, sen tekeminen ei vaikuta laskaripisteisiin.
 
+{% include checkboxit.md %}
+
 ### 0. Orientaatio
 
-Lue nyt vielä kerran mitä tehtävien palauttamisesta sanotaan. Tällä viikolla siis tehtävät palautetaan kahteen repositorioon...
+<input type="checkbox"> Lue nyt vielä kerran mitä tehtävien palauttamisesta sanotaan. Tällä viikolla siis tehtävät palautetaan kahteen repositorioon...
 
 ### 1. Komentorivi
 
@@ -44,17 +46,16 @@ Lue nyt vielä kerran mitä tehtävien palauttamisesta sanotaan. Tällä viikoll
 
 Graafisten käyttöliittymien olemassaolosta huolimatta ohjelmistoalalla on edelleen erittäin tärkeää hallita komentorivin eli terminaalin käyttö. Itse asiassa komentorivin merkitys on jopa nousussa.
 
-Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista).
+<input type="checkbox"> Varmista, että osaat käyttää "riittävästi" komentoriviä (ks. alla oleva lista).
 
 Jos osaamisessasi on puutteita, kertaa haluamastasi resurssista. Muutama esimerkki:
 
-- <https://www.codecademy.com/learn/learn-the-command-line> online-kurssin kaksi ensimmäistä osaa _Navigating the File System_ ja _Viewing and Changing the File System_
-- <https://ryanstutorials.net/linuxtutorial/> oppaasta 4 osaa: _1. The Command Line_, _2. Basic Navigation_, _3.More About Files_ ja _5. File Manipulation_
-- Generoi materiaalia [tekoälyn avulla](/genai/#viikko-1---tehtävä-1)
+- Kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) (suomeksi)
+- Software Carpentryn [The Unix Shell](https://swcarpentry.github.io/shell-novice/) -oppaan osat _2. Navigating Files and Directories_ ja _3. Working With Files and Directories_. Osat kattavat lähes kaikki alla luetellut asiat, ja niissä on runsaasti harjoituksia. Oppaan [asennusohjeet](https://swcarpentry.github.io/shell-novice/#setup) neuvovat myös Windows-käyttäjiä
+- Ubuntun [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners) -tutoriaali, noin tunnin mittainen käytännönläheinen johdatus
+- Generoi materiaalia tekoälyn avulla, ks. vihje tehtävän lopussa
 
-Myös kurssin Tietokone työvälineenä [komentorivimateriaali](https://tkt-lapio.github.io/komentorivi/) käsittelee myös suurta osaa tehtävän komennoista.
-
-_HUOM. Codecademy vaatii kirjautumisen Facebook, Google tai GitHub -tunnuksella. Kurssilla käytetään muutenkin GitHubia, eli se tunnus pitäisi kaikilla olla viimeistään seuraavan tehtävän jälkeen._
+Jos perusasiat ovat jo hallussa ja haluat syventää osaamistasi, kannattaa katsoa MIT:n [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) -kurssin ensimmäinen luento _Course Overview + Introduction to the Shell_. Komentorivin käyttöä voi harjoitella myös pelillisesti [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) -tehtäväsarjan alkupään tasoilla.
 
 Tämän tehtävän jälkeen sinun tulisi hallita seuraavat asiat:
 
@@ -79,28 +80,47 @@ Tulet tarvitsemaan komentorivin käyttötaitoja tällä kurssilla ja muutenkin o
 
 Tehtävää ei palauteta mitenkään. Voit merkitä tehtävän tehdyksi kun osaat yllä luetellut asiat.
 
-Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-1)!
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+[Tehtävässä](/tehtavat1#1-komentorivi) on aiheena riittävän komentoriviosaamisen varmistaminen. Tehtävässä annetaan linkki muutamaan materiaaliin. Niiden läpikäymisen sijaan voi pyytää tekoälyltä, esim. CurreChatilta tai Copilot Chatilta, sopivaa oppimateriaalia aiheesta. Otetaan osa tehtävänannosta ja muotoillaan sopiva prompti:
+
+![]({{ "/images/cc1.png" | relative_url }}){: width="70%"}
+
+AI luo oppimateriaalin:
+
+![]({{ "/images/cc2.png" | relative_url }})
+
+AI:ta voi myös pyytää generoimaan tehtäviä aiheesta:
+
+![]({{ "/images/cc3.png" | relative_url }})
+
+Kysymysten yhteyteen tulleet vihjeet spoilaavat ehkä liikaa. AI:ta voi toki pyytää poistamaan vihjeet.
+
+Omat vastaukset voi tietysti antaa AI:n tarkastettavaksi. Kuten aina, myös oppimateriaalia ja tehtäviä generoitaessa on mahdollista, että AI hallusinoi ja kertoo mitä sattuu. Linuxin komentorivin kaltaisesta aihepiiristä kysyttäessä hallusinoinnin todennäköisyys ei ole kovin korkea, ja esim. hallusinoidut komentojen virheelliset muodot selviävät nopeasti kokeillessa.
+
+</details>
 
 ### 2. GitHubiin [versionhallinta]
 
-Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
+<input type="checkbox"> Jos sinulla ei jostain syystä ole vielä tunnusta [GitHubiin](https://github.com), luo se nyt.
 
-Luo GitHubiin repositorio nimellä _ohtuvarasto_
+<input type="checkbox"> Luo GitHubiin repositorio nimellä _ohtuvarasto_
 
 **Tämän tehtävän lisäksi tehtävät 3-13 tehdään nyt luotuun ohtuvarasto-repositorioon.**
 
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan "Add a README file"
 
-![]({{ "/images/lh1-1-22.png" | absolute_url }})
+![]({{ "/images/lh1-1-22.png" | relative_url }})
 
-**Jos et ole vielä luonut** koneellesi _ssh-avainta_ ja lisännyt sitä GitHubiin tee se nyt
+<input type="checkbox"> **Jos et ole vielä luonut** koneellesi _ssh-avainta_ ja lisännyt sitä GitHubiin tee se nyt
 
 - Ohje [täällä](/avain)
 
 Näin pystyt käyttämään GitHubia ilman salasanan syöttämistä koneelta, josta juuri luodun avaimen salainen pari löytyy
 
-Jos et ole jo aiemmin niin tehnyt, konfiguroi nimesi ja email-osoitteesi paikallisen koneesi Git:iin antamalla komennot:
+<input type="checkbox"> Jos et ole jo aiemmin niin tehnyt, konfiguroi nimesi ja email-osoitteesi paikallisen koneesi Git:iin antamalla komennot:
 
 ```bash
 git config --global user.name "Your Name"
@@ -121,7 +141,7 @@ git config --global core.editor notepad
 
 Tosin jos olet vimin käyttäjä, voit jättää edellisen tekemättä.
 
-Kloonaa nyt GitHubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
+<input type="checkbox"> Kloonaa nyt GitHubiin tehty repositorio **paikalliselle koneelle**. Tämä tapahtuu antamalla komentoriviltä komento:
 
 ```bash
 git clone git@github.com:omatunnustahan/ohtuvarasto.git
@@ -129,13 +149,13 @@ git clone git@github.com:omatunnustahan/ohtuvarasto.git
 
 missä komennon `git clone` parametrina on repositoriosi sivulla näkyvä merkkijono (huomaa, että formaatin on oltava SSH):
 
-![]({{ "/images/lh1-2-22.png" | absolute_url }})
+![]({{ "/images/lh1-2-22.png" | relative_url }})
 
 Nyt paikalliselle koneellesi syntynyt hakemisto _ohtuvarasto_ (hakemiston nimi on sama kuin repositoriosi), joka on GitHubissa olevan repositorion klooni.
 
 ### GitHub Education
 
-Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+{% include copilot_info.md %}
 
 ### 3. Gitin alkeet [versionhallinta]
 
@@ -160,44 +180,70 @@ Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 **Tee nyt seuraavat:**
 
-- Mene edellisessä tehtävässä luotuun repositorion klooniin (eli komennon `git clone` luomaan hakemistoon)
-- Lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
-  - Muista hyödyllinen komento `git status`
-- Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
-- Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, sekä hakemistot, joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
-  - Toinen ignoroitava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
-  - Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
-- Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että Git jättää ne huomioimatta
-  - Saat asian tarkastettua komennolla `git status`
-- Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista, että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
-- Lisää ja commitoi _.gitignore_-tiedosto repositorioosi
-- Seuraavat kohdat puhuvat Gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
-- Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
-  - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
-- Tee muutos ja lisää tiedosto "staging"-alueelle, varmista että muutosta ei enää näy tiedostossa
-  - Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu), varmista että muutosta ei enää näy tiedostossa
+<input type="checkbox"> Mene edellisessä tehtävässä luotuun repositorion klooniin (eli komennon `git clone` luomaan hakemistoon)
+
+<input type="checkbox"> Lisää ja committaa repositorioon kaksi tiedostoa ja kaksi hakemistoa, joiden sisällä on tiedostoja
+
+- Muista hyödyllinen komento `git status`
+
+<input type="checkbox"> Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
+
+<input type="checkbox"> Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, sekä hakemistot, joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
+
+- Toinen ignoroitava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
+- Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
+
+<input type="checkbox"> Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että Git jättää ne huomioimatta
+
+- Saat asian tarkastettua komennolla `git status`
+
+<input type="checkbox"> Lisää myös hakemisto nimeltä <i>\_\_pycache\_\_</i> ja hakemiston sisälle joku tiedosto. Varmista, että hakemisto sisältöineen ei mene versionhallinnan alaisuuteen
+
+<input type="checkbox"> Lisää ja commitoi _.gitignore_-tiedosto repositorioosi
+
+<input type="checkbox"> Seuraavat kohdat puhuvat Gitin staging-alueesta. Jos et tiedä mistä on kysymys, selvitä mistä kyse. Asia kyllä selviää ylle linkitetyistä ohjeista
+
+<input type="checkbox"> Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
+
+- Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
+
+<input type="checkbox"> Tee muutos ja lisää tiedosto "staging"-alueelle, varmista että muutosta ei enää näy tiedostossa
+
+- Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu), varmista että muutosta ei enää näy tiedostossa
 
 **git add -p**
 
 - Tutoriaaleissa ei valitettavasti käytetä `git add`-komennon hyödyllistä muotoa `git add -p`
-- Tee muutoksia muutamiin tiedostoihin ja lisää muutokset staging-alueelle komennon git add -p avulla
+
+<input type="checkbox"> Tee muutoksia muutamiin tiedostoihin ja lisää muutokset staging-alueelle komennon git add -p avulla
+
 - Jos lisäät projektiin uusia tiedostoja, ei `git add -p` huomaa niitä, eli ne on lisättävä staging-alueelle erikseen
 - _Käytä jatkossa komentoa `git add -p` aina kun se on suinkin mahdollista!_
 
 Komennolla `man git add` saat lisätietoa optiosta ja mm. vastausvaihtoehtojen selitykset.
 
-Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-3)
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+Kuten olettaa saattaa, AI osaa Gitiä varsin hyvin. Esim. sopivan .gitignore-tiedoston saa helposti:
+
+![]({{ "/images/cc4.png" | relative_url }})
+
+Voi olla hyödyllisempää ja/tai opettavaisempaa opetella asia pidemmän kaavan kautta ja syvällisemmin [dokumentaatiosta](https://git-scm.com/docs/gitignore). Tai sitten ei. Oleellista lienee ymmärtää .gitignore:n käytön periaatteet, mutta tarkka syntaksi on sellainen asia, että sen opettelu lähinnä kuormittaa, ja detaljien ulkoistaminen AI:lle on järkevää. Toki tässäkin tapauksessa on varmistettava, että tiedosto on oikein konfiguroitu, ja että vääriä tiedostoja ei pääse lipsahtamaan versionhallinnan alaisuuteen.
+
+</details>
 
 ### 4. Tiedostojen lisääminen GitHubiin [versionhallinta]
 
 Tehtävässä 2 tehtiin GitHubiin repositorio "ohtuvarasto", joka liitettiin paikalliselle koneelle luotuun repositorioon "remote repositoryksi". Synkronoidaan paikallisen repositorion ja GitHubin tilanne:
 
-- "Pushaa" nämä GitHubissa olevaan etärepositorioon antamalla komento `git push`
-- Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
+<input type="checkbox"> "Pushaa" nämä GitHubissa olevaan etärepositorioon antamalla komento `git push`
+
+<input type="checkbox"> Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
 GitHubissa pitäisi näyttää suunnilleen seuraavalta
 
-![]({{ "/images/lh1-3-22.png" | absolute_url }})
+![]({{ "/images/lh1-3-22.png" | relative_url }})
 
 ### 5. Monta kloonia samasta repositoriosta [versionhallinta]
 
@@ -207,48 +253,65 @@ Jos työskennellään useammalta koneelta, on GitHubissa olevasta repositoriosta
 
 Luodaan nyt harjoituksen vuoksi paikalliselle koneelle repositoriosta toinen klooni:
 
-- Mene komentoriville ja esim. kotihakemistoosi (tai johonkin paikkaan, joka ei ole Git-repositorio)
-- Anna komento `git clone git@github.com:githubtunnus/repositorionNimi.git nimiKloonille`
-  - _githubtunnus_ ja _repositorionNimi_ selviävät GitHubista repositoriosi tehtävän 2 toisen kuvan osoittamasta paikasta
-  - _nimiKloonille_ tulee olemaan kloonatun repositorion nimi, varmista että annat nimen, jonka nimistä tiedostoa tai hakemistoa ei jo ole kansiossa
-- Mene kloonattuun repositorioon ja lisää sinne jotain tiedostoja. Committaa lopuksi
-- "Pushaa" muutokset GitHubiin
-- Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
+<input type="checkbox"> Mene komentoriville ja esim. kotihakemistoosi (tai johonkin paikkaan, joka ei ole Git-repositorio)
+
+<input type="checkbox"> Anna komento `git clone git@github.com:githubtunnus/repositorionNimi.git nimiKloonille`
+
+- _githubtunnus_ ja _repositorionNimi_ selviävät GitHubista repositoriosi tehtävän 2 toisen kuvan osoittamasta paikasta
+- _nimiKloonille_ tulee olemaan kloonatun repositorion nimi, varmista että annat nimen, jonka nimistä tiedostoa tai hakemistoa ei jo ole kansiossa
+
+<input type="checkbox"> Mene kloonattuun repositorioon ja lisää sinne jotain tiedostoja. Committaa lopuksi
+
+<input type="checkbox"> "Pushaa" muutokset GitHubiin
+
+<input type="checkbox"> Varmista selaimella, että lisätyt tiedostot menevät GitHubiin
 
 **Mene nyt tehtävässä 2 tehtyyn GitHub-repositorion klooniin.**
 
-- Alkuperäinen paikallinen klooni ei ole enää ajantasalla, "pullaa" sinne muutokset komennolla `git pull`
-- Varmista että molempien paikallisten repositorioiden sisältö on nyt sama
-- Lisää alkuperäiseen klooniin joitain tiedostoja ja pushaa ne GitHubiin
-- Mene jälleen tässä tehtävässä tehtyyn klooniin ja pullaa
+<input type="checkbox"> Alkuperäinen paikallinen klooni ei ole enää ajantasalla, "pullaa" sinne muutokset komennolla `git pull`
+
+<input type="checkbox"> Varmista että molempien paikallisten repositorioiden sisältö on nyt sama
+
+<input type="checkbox"> Lisää alkuperäiseen klooniin joitain tiedostoja ja pushaa ne GitHubiin
+
+<input type="checkbox"> Mene jälleen tässä tehtävässä tehtyyn klooniin ja pullaa
 
 ### 6. Repositorion siivous [versionhallinta]
 
 Valmistaudutaan seuraavaan tehtävään siivoamalla repositoriostamme ylimääräiset tiedostot
 
-- Mene repositoriosi alkuperäiseen, tehtävässä 2 tekemääsi klooniin
-  - Voit poistaa tehtävää 5 varten tekemäsi harjoituskloonin
-- **Poista repositorioistasi** kaikki hakemistot sekä muut tiedostot paitsi _.git_, _.gitignore_ ja _README.md_
-- Committaa muutokset
-  - Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että Git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
-  - Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista tai kysymään AI:ta miten tiedostojen poistaminen Gitistä tapahtuu
-- Pushaa muutokset GitHubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
+<input type="checkbox"> Mene repositoriosi alkuperäiseen, tehtävässä 2 tekemääsi klooniin
+
+- Voit poistaa tehtävää 5 varten tekemäsi harjoituskloonin
+
+<input type="checkbox"> **Poista repositorioistasi** kaikki hakemistot sekä muut tiedostot paitsi _.git_, _.gitignore_ ja _README.md_
+
+<input type="checkbox"> Committaa muutokset
+
+- Varmista komennolla _git status_ että kaikki muutokset ovat versionhallinnassa, eli että Git ei ilmoita joidenkin tiedostojen olevan _Changes not staged for commit_
+- Joudut ehkä kertaamaan tehtävän 3 linkittämistä tutoriaaleista tai kysymään AI:ta miten tiedostojen poistaminen Gitistä tapahtuu
+
+<input type="checkbox"> Pushaa muutokset GitHubiin. Katso selaimella, että GitHubissa kaikki on ajan tasalla, eli että repositoriossa ei ole mitään muuta kuin tiedostot _.gitignore_ ja _README.md_
 
 Haetaan sitten seuraavissa tehtävissä käytettävä koodi:
 
-- Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/tehtavat/raw/main/viikko1/varasto.zip> löytyvä zipattu paketti
-- Pura paketti sopivaan paikkaan
-- Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
-- Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta
+<input type="checkbox"> Hae osoitteesta <https://github.com/ohjelmistotuotanto-hy/tehtavat/raw/main/viikko1/varasto.zip> löytyvä zipattu paketti
 
-![]({{ "/images/lh1-1-25.png" | absolute_url }})
+<input type="checkbox"> Pura paketti sopivaan paikkaan
 
-- Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
-- Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
+<input type="checkbox"> Siirrä paketin sisällä olevat tiedostot kloonattuun repositorioon siten, että **paketissa olevat tiedostot ja hakemistot tulevat repositorion juureen**
+
+Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta:
+
+![]({{ "/images/lh1-1-25.png" | relative_url }})
+
+<input type="checkbox"> Lisää ja committoi zipistä puretut tavarat repositorioosi ja pushaa ne GitHubiin
+
+<input type="checkbox"> Katso vielä kerran selaimella, että GitHubissa kaikki on ajan tasalla
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/lh1-2-25.png" | absolute_url }})
+![]({{ "/images/lh1-2-25.png" | relative_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
@@ -281,14 +344,18 @@ Juuri asentamasi uv hoitaa nämä molemmat, eli sekä pipin että virtuaaliympä
 
 > An extremely fast Python package and project manager, written in Rust.
 
-- Edellisessä tehtävässä lisättiin repositorioon uv-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`
-- Tutki uv-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole uv:hen liittyvä käsky vaan normaali shell-komento)
-  - Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
-  - **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
-  - Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
-  - Myöskään kaikissa Linuxeissa ei komento `tree` ole oletusarvoisesti asennettu. Debian-pohjaisissa Linuxeissa (esim Ubuntussa) saat asennettua `tree`-komennon komennolla `sudo apt-get install tree`
-- Tarkastele projektin määrittelevän tiedoston _pyproject.toml_ sisältöä
-  - Tiedosto määrittelee mm. projektin käyttämät riippuvuudet
+Edellisessä tehtävässä lisättiin repositorioon uv-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`.
+
+<input type="checkbox"> Tutki uv-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole uv:hen liittyvä käsky vaan normaali shell-komento)
+
+- Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
+- **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
+- Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
+- Myöskään kaikissa Linuxeissa ei komento `tree` ole oletusarvoisesti asennettu. Debian-pohjaisissa Linuxeissa (esim Ubuntussa) saat asennettua `tree`-komennon komennolla `sudo apt-get install tree`
+
+<input type="checkbox"> Tarkastele projektin määrittelevän tiedoston _pyproject.toml_ sisältöä
+
+- Tiedosto määrittelee mm. projektin käyttämät riippuvuudet
 
 Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual Studio Codella, mutta uv-komentojen suorittaminen onnistuu helpoiten komentoriviltä.
 
@@ -296,16 +363,24 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 **Tee nyt seuraavat toimenpiteet**.
 
-- Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
-- Käynnistä sovellus komennolla `uv run python3 src/index.py`
-  - [Run](https://docs.astral.sh/uv/reference/cli/#uv-run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
-- Siirry _virtuaaliympäristöön_ komennolla `source .venv/bin/activate`
-- Suorita komento `python3 src/index.py`
-  - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
-  - Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
-- Poistu virtuaaliympäristöstä komennolla `deactivate`
-- Suorita testit komennolla `uv run pytest`
-  - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
+<input type="checkbox"> Asenna varasto-projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
+
+<input type="checkbox"> Käynnistä sovellus komennolla `uv run python3 src/index.py`
+
+- [Run](https://docs.astral.sh/uv/reference/cli/#uv-run)-komento suorittaa annetun komennon (tässä tapauksessa `python3 src/index.py`) virtuaaliympäristössä
+
+<input type="checkbox"> Siirry _virtuaaliympäristöön_ komennolla `source .venv/bin/activate`
+
+<input type="checkbox"> Suorita komento `python3 src/index.py`
+
+- Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
+- Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
+
+<input type="checkbox"> Poistu virtuaaliympäristöstä komennolla `deactivate`
+
+<input type="checkbox"> Suorita testit komennolla `uv run pytest`
+
+- Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
 ### 8. Unittest
 
@@ -317,35 +392,70 @@ Edellisen tehtävän _ohtuvarastossa_ on jo jonkun verran unittest-testejä, **l
 
 Muista, että testit voi suorittaa projektin juurihakemistossa komennolla `uv run pytest` tai siirtymällä virtuaaliympäristöön komennolla `source .venv/bin/activate` ja suorittamalla sen jälkeen komennon `pytest`.
 
-- Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
-  - Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
-  - Edellinenkään ei vielä riitä
-- Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla [Coverage-ohje](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus)
-- Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
+<input type="checkbox"> Täydennä varasto-projektin testejä siten, että luokan `Varasto` testien haarautumakattavuudeksi (branch coverage) tulee 100%
+
+- Joudut huomioimaan ainakin tapaukset, joissa varastoon yritetään laittaa liikaa tavaraa ja varastosta yritetään ottaa enemmän kuin siellä on
+- Edellinenkään ei vielä riitä
+
+<input type="checkbox"> Testauksen rivikattavuuden saat selville [coverage](https://coverage.readthedocs.io/en/coverage-5.3/)-työkalun avulla. Tutustu työkaluun lukemalla [Coverage-ohje](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus)
+
+<input type="checkbox"> Ota työkalu projektissasi käyttöön asentamalla se projektin _kehityksen aikaiseksi riippuvuudeksi_ komennolla:
 
 ```bash
 uv add coverage --dev
 ```
 
-- Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
+<input type="checkbox"> Lisää projektin juurihakemistoon konfiguraatiotiedosto _.coveragerc_, jossa kerrotaan, mistä projektin tiedostoista testikattavuutta kerätään. Tiedoston sisällön tulee olla seuraava:
 
 ```text
 [run]
 source = src
 ```
 
-- Siirry virtuaaliympäristöön komennolla `source .venv/bin/activate`
-  - Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
-  - Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
-- Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avamaalla selaimessa hakemiston _htmlcov_ tiedoston _index.html_
-  - Klikkaamalla raportista yksittäisen tiedoston nimeä näet, mitkä koodin suorituksen haarat on vielä testaamatta
-- Lisää projektin _.gitignore_-tiedostoon tiedosto _.coverage_ ja hakemisto _htmlcov_
-- Kun luokan `Varasto` (tiedoston _src/varasto.py_) testien haarautumakattavuus (branch coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
-  - Raportissa on luultavasti mukana myös muita tiedostoja, mutta ainoastaan _src/varasto.py_-tiedoston haarautumakattavuus tarvitsee olla 100%. Opimme myöhemmin, kuinka ylimääräiset tiedostot pystyy jättämään raportin ulkopuolelle
-  - Kun muokkaat testejä, muista suorittaa komennot `coverage run --branch -m pytest` ja `coverage html` uudelleen, jotta raportti päivittyy
-  - Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
+<input type="checkbox"> Siirry virtuaaliympäristöön komennolla `source .venv/bin/activate`
 
-Katso vihje [tekoälyn käytöstä](/genai/#viikko-1---tehtävä-8)
+<input type="checkbox" style="margin-left: 20px"> Suorita komento `coverage run --branch -m pytest`. Komento suorittaa testit ja kerää testien haarautumakattavuuden
+
+<input type="checkbox" style="margin-left: 20px"> Tämän jälkeen suorita komento `coverage html`. Komento muodostaa raportin kerättyjen tietojen perusteella
+
+<input type="checkbox"> Projektin juurihakemistoon pitäisi ilmestyä hakemisto _htmlcov_. Voit tarkastella HTML-muotoista testikattavuusraporttia avaamalla selaimessa hakemiston _htmlcov_ tiedoston _index.html_
+
+- Klikkaamalla raportista yksittäisen tiedoston nimeä näet, mitkä koodin suorituksen haarat on vielä testaamatta
+
+<input type="checkbox"> Lisää projektin _.gitignore_-tiedostoon tiedosto _.coverage_ ja hakemisto _htmlcov_
+
+<input type="checkbox"> Kun luokan `Varasto` (tiedoston _src/varasto.py_) testien haarautumakattavuus (branch coverage) on 100%, pushaa tekemäsi muutokset GitHubiin
+
+- Raportissa on luultavasti mukana myös muita tiedostoja, mutta ainoastaan _src/varasto.py_-tiedoston haarautumakattavuus tarvitsee olla 100%. Opimme myöhemmin, kuinka ylimääräiset tiedostot pystyy jättämään raportin ulkopuolelle
+- Kun muokkaat testejä, muista suorittaa komennot `coverage run --branch -m pytest` ja `coverage html` uudelleen, jotta raportti päivittyy
+- Saat suoritettua molemmat komennot "yhdellä napin painalluksella" sijoittamalla ne samalle riville puolipisteellä eroteltuna `coverage run --branch -m pytest; coverage html`
+
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä. Chat-käyttöliittymän sijaan testien generointiin kannattaa käyttää VS Coden Copilotin _Agent_-tilaa, jossa tekoäly voi luoda tiedostoja ja suorittaa koodia (agenteista tarkemmin [viikolla 3](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3)).
+
+Kokeillaan miten agentti selviää viikon 1 tehtävästä 8. Agentti avataan VS Coden Chat-näkymästä:
+
+![]({{ "/images/cc5.png" | relative_url }}){: width="90%"}
+
+Annetaan agentille ohje:
+
+_generate tests for varasto.py so that branch coverage is 100%_
+
+![]({{ "/images/cc-6.png" | relative_url }}){: width="90%"}
+
+Agentti kertoo mitä on tekemässä, eli ensin se haluaa suorittaa komennon, joka selvittää testikattavuuden. Komento näyttää hieman oudolta, ja suoritusluvan antamisen jälkeen selviää, että se ei toimi. Agentti ehdottaakin uutta komentoa:
+
+![]({{ "/images/cc-7.png" | relative_url }}){: width="90%"}
+
+Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus nousee sataan prosenttiin:
+
+![]({{ "/images/cc-8.png" | relative_url }})
+
+Vastuumme tuntevina koodareina käydään testit läpi. Agentti on laittanut testeihin ehkä turhan runsaasti kommentteja, sillä testien tarkoitusperä käy ilmi jo testin nimestä. Poistetaan turhat kommentit (tai pyydetään agenttia poistamaan ne) ja commitoidaan muutokset GitHubiin.
+
+</details>
 
 ### Bonustehtävä: alias
 
@@ -388,11 +498,13 @@ Kurssilla käytetään GitHubiin sisäänrakennettua [Actions](https://github.co
 
 Konfiguroidaan seuraavaksi GitHub Actions huolehtimaan projektistamme.
 
-Valitse GitHub-repositoriostasi välilehti _Actions_ ja klikkaa _set up a workflow yourself_-linkkiä:
+<input type="checkbox"> Valitse GitHub-repositoriostasi välilehti _Actions_ ja klikkaa _set up a workflow yourself_-linkkiä:
 
-![]({{ "/images/py-lh1-20.png" | absolute_url }})
+![]({{ "/images/py-lh1-20.png" | relative_url }})
 
-Valinta avaa actionien konfiguraatiotiedoston. Muuta se seuraavaan muotoon:
+Valinta avaa actionien konfiguraatiotiedoston.
+
+<input type="checkbox"> Muuta tiedosto seuraavaan muotoon:
 
 ```yml
 name: CI
@@ -417,21 +529,21 @@ jobs:
         run: uv run coverage run --branch -m pytest
 ```
 
-Paina vihreää _Commit changes_ -nappia, ja anna sopiva commit-viesti.
+<input type="checkbox"> Paina vihreää _Commit changes_ -nappia, ja anna sopiva commit-viesti.
 
 Konfiguraatiotiedosto (jonka nimi on oletusarvoisesti _main.yml_) tallettuu repositorioosi hakemiston _.github/workflows_ alle:
 
-![]({{ "/images/py-lh1-21-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-21-22.png" | relative_url }})
 
 GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
-Kun nyt pullaat repositorion koodin omalle koneellesi, näkyy konfiguraatiotiedosto myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
+<input type="checkbox"> Pullaa repositorion koodi omalle koneellesi. Konfiguraatiotiedosto näkyy nyt myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/lh1-3-25.png" | absolute_url }})
+![]({{ "/images/lh1-3-25.png" | relative_url }})
 
-Kun avaan nyt repositorion välilehden _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
+<input type="checkbox"> Avaa repositorion välilehti _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
-![]({{ "/images/py-lh1-23-23.png" | absolute_url }})
+![]({{ "/images/py-lh1-23-23.png" | relative_url }})
 
 ### 10. GitHub Actions, osa 2
 
@@ -504,23 +616,23 @@ Neljäs askel on kaikkein tärkein, se suorittaa uv:n avulla projektin testit ja
   run: uv run coverage run --branch -m pytest
 ```
 
-Tee nyt koodiin muutos, joka hajottaa testit ja committaa ja pushaa muutos GitHubiin.
+<input type="checkbox"> Tee nyt koodiin muutos, joka hajottaa testit ja committaa ja pushaa muutos GitHubiin.
 
 Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi, ja että viimeisin on tilaltaan "punainen":
 
-![]({{ "/images/py-lh1-24-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-24-22.png" | relative_url }})
 
 Klikkaamalla rikki mennyttä committia, päästään tarkastelemaan hieman tarkemmin actionin suorituksen etenemistä:
 
-![]({{ "/images/py-lh1-25-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-25-22.png" | relative_url }})
 
 Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista.
 
-Korjaa testi ja pushaa muutokset uudelleen GitHubiin. Tarkkaile jälleen Actions-näkymää ja varmista, että kaikki toimii oikein.
+<input type="checkbox"> Korjaa testi ja pushaa muutokset uudelleen GitHubiin. Tarkkaile jälleen Actions-näkymää ja varmista, että kaikki toimii oikein.
 
 ### 11. GitHub Actions, osa 3
 
-Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Status Badge_.
+<input type="checkbox"> Laita repositoriossa olevaan tiedostoon _README.md_ koodin tilasta kertova _Status Badge_.
 
 [Tämän](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge) ohjeen mukaan badgen osoite on muotoa
 
@@ -534,17 +646,17 @@ Esimerkiksi omassa tapauksessani badgelinkki on
 https://github.com/mluukkai/ohtuvarasto/actions/workflows/main.yml/badge.svg
 ```
 
-Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
+<input type="checkbox"> Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
-![]({{ "/images/py-lh1-27-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-27-22.png" | relative_url }})
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/py-lh1-28-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-28-22.png" | relative_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
-Tee nyt jokin muutos koneellasi repositorioon johonkin muuhun tiedostoon kuin README.md ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
+<input type="checkbox"> Tee nyt jokin muutos koneellasi repositorioon johonkin muuhun tiedostoon kuin README.md ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 ```
 To github.com:mluukkai/ohtuvarasto.git
@@ -559,7 +671,9 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Tulet todennäköisesti törmäämään vastaavaan virheeseen usein. Syynä virheelle on se, että yrität pushata muutoksia GitHubiin vaikka GitHub on "edellä" paikallista repositoriotasi (ts. sinne lisättiin tiedosto _README.md_).
 
-Ongelma ratkeaa seuraavasti. Tee ensin komento `git pull`. Saat Gitiltä pitkän valitusviestin:
+Ongelma ratkeaa seuraavasti.
+
+<input type="checkbox"> Tee ensin komento `git pull`. Saat Gitiltä pitkän valitusviestin:
 
 ```
 remote: Enumerating objects: 5, done.
@@ -582,7 +696,9 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
-Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen, eli anna komentorivillä komento
+Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen.
+
+<input type="checkbox"> Anna komentorivillä komento
 
 ```
 git config pull.rebase true
@@ -590,34 +706,35 @@ git config pull.rebase true
 
 Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet lokaalit commitit etärepositoriossa olevien committien perään.
 
-Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onnistuu nyt. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
+<input type="checkbox"> Pullaa koodi uudelleen komennolla `git pull`, jonka jälkeen komento `git push` onnistuu. Jatkossa vastaavista tilanteista selviää komennoilla `git pull` ja `git push`.
 
 Jos muutit paikallisesti tiedostoa README.md, saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
-**Tee vielä** lopuksi badgestasi linkki Actions-välilehdelle. Eli kun badgea painetaan, tulee selaimen ohjautua repositorion Actions-välilehdelle, esim. omassa tapauksessani osoitteeseen <https://github.com/mluukkai/ohtuvarasto/actions>
+<input type="checkbox"> **Tee vielä** lopuksi badgestasi linkki Actions-välilehdelle. Eli kun badgea painetaan, tulee selaimen ohjautua repositorion Actions-välilehdelle, esim. omassa tapauksessani osoitteeseen <https://github.com/mluukkai/ohtuvarasto/actions>
 
 ### 12. Codecov
 
 Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <https://codecov.io> -palvelu mahdollistaa projektien koodikattavuuden julkaisemisen verkossa.
 
-- Kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
-- Lisää repositorio Codecoviin alaisuuteen:
+<input type="checkbox"> Kirjaudu [Codecoviin](https://codecov.io) (GitHub login)
 
-![]({{ "/images/lh1-4-25.png" | absolute_url }})
+<input type="checkbox"> Lisää repositorio Codecoviin alaisuuteen:
+
+![]({{ "/images/lh1-4-25.png" | relative_url }})
 
 Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta.
 
 Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 3_ sisältää oleellisen tärkeän asian, eli Codecovin _tokenin_:
 
-![]({{ "/images/lh1-5-25.png" | absolute_url }})
+![]({{ "/images/lh1-5-25.png" | relative_url }})
 
 Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon.
 
-Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin salaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+<input type="checkbox"> Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin salaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin.
 
-Lisätään GitHub Action -konfiguraatiomme loppuun kaksi uutta askelta:
+<input type="checkbox"> Lisää GitHub Action -konfiguraation loppuun kaksi uutta askelta:
 
 ```yml
 {% raw %}
@@ -640,19 +757,19 @@ Kertauksena:
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/lh1-6-25.png" | absolute_url }})
+![]({{ "/images/lh1-6-25.png" | relative_url }})
 
 Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `uv run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `uv run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub Actionien loki näyttää miten askelten suoritus etenee:
 
-![]({{ "/images/py-lh1-29-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-29-22.png" | relative_url }})
 
-Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen repositorion Codecov-sivun Configuration-valikosta.
+<input type="checkbox"> Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen repositorion Codecov-sivun Configuration-valikosta.
 
 Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta:
 
-![]({{ "/images/py-lh1-30-22.png" | absolute_url }})
+![]({{ "/images/py-lh1-30-22.png" | relative_url }})
 
 Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
@@ -660,7 +777,7 @@ Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaali
 
 Projektin testauskattavuutta häiritsee nyt se, että myös tiedosto _src/index.py_-tiedosto lasketaan testikattavuuteen. Voimme määritellä, että joitain tiedostoja tai kokonaisia hakemistoja jätetään huomioimatta kattavuusraportin generoinnissa.
 
-Lisää juurihakemiston _.coveragerc_-tiedostoon, `omit`-konfiguraatio ja määrittele siinä huomioimatta jätettävät tiedostot:
+<input type="checkbox"> Lisää juurihakemiston _.coveragerc_-tiedostoon `omit`-konfiguraatio ja määrittele siinä huomioimatta jätettävät tiedostot:
 
 ```
 [run]
@@ -670,7 +787,7 @@ omit = src/index.py
 
 Konfiguraatiossa määritellä pilkulla eroteltuna niin kutsuttaja [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)-polkuja. Voimme jättää huomioimatta esimerkiksi yksittäisen tiedoston polun (_src/index.py_), tai kaikki tietyn hakemiston alla olevat polut (_src/tests/\*\*_).
 
-Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että _src/index.py_-tiedosto jätetään huomioimatta.
+<input type="checkbox"> Pushaa koodi GitHubiin ja varmista, että Codecov generoi raportin siten, että _src/index.py_-tiedosto jätetään huomioimatta.
 
 ### Tehtävien palautusrepositoriot
 
@@ -681,7 +798,7 @@ Kuten jo aiemmin todettiin, tällä viikolla tehdään palautusta varten **kaksi
 
 Repositorioista jälkimmäistä (johon tehtävät 14-17 palautetaan) käytetään myös muiden viikkojen tehtävien palautusrepositoriona.
 
-Luo siis nyt **uusi repositorio**.
+<input type="checkbox"> Luo siis nyt **uusi repositorio**.
 
 Nyt luotavan palautusrepositorion rakenne voi olla esimerkiksi seuraava:
 
@@ -699,13 +816,18 @@ viikko3
 ...
 ```
 
-Jotta palautusrepositorioon ei pääsisi sinne kuulumatonta roskaa, kannattaa sen juureen tehdä tiedosto _.gitgnore_, joka sisältää ainakin seuraavat rivit
+<input type="checkbox"> Jotta palautusrepositorioon ei pääsisi sinne kuulumatonta roskaa, kannattaa sen juureen tehdä tiedosto _.gitignore_, joka sisältää ainakin seuraavat rivit
 
 ```
 __pycache__/
 .venv/
 .pytest_cache/
+.coverage
 htmlcov/
+output.xml
+log.html
+report.html
+selenium-screenshot-*.png
 ```
 
 ### 14. Riippuvuuksien injektointi osa 1
@@ -716,23 +838,32 @@ Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
 
-- Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
-  - Hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko1/riippuvuuksien-injektointi_
-    - Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
-    - **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
-    - **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
-  - Varmista että koodi, sekä sen testit toimiva
-    - Jos unohdit jo miten uv-projektit toimivat, kertaa [tehtävästä 7](/tehtavat1#7-uv)
-- Tee sovellukseen uusi testi, joka varmistaa, että laskin osaa laskea oikein kaksi peräkkäistä laskutoimitusta
+<input type="checkbox"> Tutustu riippuvuuksien injektointiin lukemalla [tämä dokumentti](/riippuvuuksien_injektointi/)
+
+<input type="checkbox"> Hae esimerkkiprojekti kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistosta _viikko1/riippuvuuksien-injektointi_
+
+- Järkevintä lienee että kloonaat repositorion paikalliselle koneellesi
+- **Tämän jälkeen kannattaa kopioida projekti tehtävien 14-17 palautukseen käyttämäsi palautusrepositorion sisälle**
+- **HUOM** lue 15 cm ylempää miten koodi kannattaa organisoida palautusrepositorion sisälle
+
+<input type="checkbox"> Varmista että koodi, sekä sen testit toimivat
+
+- Jos unohdit jo miten uv-projektit toimivat, kertaa [tehtävästä 7](/tehtavat1#7-uv)
+
+<input type="checkbox"> Tee sovellukseen uusi testi, joka varmistaa, että laskin osaa laskea oikein kaksi peräkkäistä laskutoimitusta
 
 ### 15. Riippuvuuksien injektointi osa 2: NHL-tilastot
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-- Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja)
-  - Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
-    - HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
-  - Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
+Kurssin [tehtävärepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko1/nhl-statistics_ on ohjelma, jonka avulla on mahdollista tutkia <https://nhl.com>-sivulla olevia tilastotietoja (vaihtamalla sovelluksen käyttämää URL:ia, voit katsoa eri kausien tilastoja).
+
+<input type="checkbox"> Kopioi projekti **palautusrepositorion** alle omaksi hakemistoksi
+
+- HUOM: nyt EI KÄYTETÄ tehtävien 2-13 ohtuvarasto-repositoriota!
+
+<input type="checkbox"> Asenna projektin riippuvuudet suorittamalla sen juurihakemistossa komento `uv sync`
+
 - Ohjelma koostuu kolmesta luokasta.
   - `StatisticsService` on palvelun tarjoava luokka, se tarjoaa metodit yhden pelaajan tietojen näyttämiseen, pistepörssin näyttämiseen ja yhden joukkueen pelaajien tietojen näyttämiseen
   - `Player` on luokka, jonka olioina `StatisticsService`-luokka käsittelee yksittäisen pelaajan tietoja
@@ -741,8 +872,9 @@ Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. depend
 
 **Itse tehtävä:**
 
-- Muokkaa ohjelman rakennetta siten, että `StatisticsService`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion, ja että `PlayerReader` saa konstruktoriparametrina osoitteen mistä se hakee pelaajien tiedot
-- Muokkaa pääohjelma siten, että se injektoi `StatisticsService`-oliolle `PlayerReader`-luokan olion (jolle on annettu konstruktoriparametrina haluttu osoite) ja kokeile että ohjelma toimii edelleen:
+<input type="checkbox"> Muokkaa ohjelman rakennetta siten, että `StatisticsService`-luokka saa konstruktoriparametrina `PlayerReader`-luokan olion, ja että `PlayerReader` saa konstruktoriparametrina osoitteen mistä se hakee pelaajien tiedot
+
+<input type="checkbox"> Muokkaa pääohjelma siten, että se injektoi `StatisticsService`-oliolle `PlayerReader`-luokan olion (jolle on annettu konstruktoriparametrina haluttu osoite) ja kokeile että ohjelma toimii edelleen:
 
 ```python
 stats = StatisticsService(
@@ -758,13 +890,14 @@ stats = StatisticsService(
 
 _Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle (AI käyttää todennäköisesti erästä tekniikkaa johon tutustumme vasta kurssin viikolla 4...). Oppimisen kannalta on kuitenkin parempi, että teet tehtävän suurimmaksi osaksi itse, ongelmiin ja yksityiskohtiin voit toki pyytää apua. Esim. sopivien assert-lauseiden generoinnissa tekoäly on hyvä apu._
 
-- Tee yksikkötestit luokalle `StatisticsService`
-  - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
-  - Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
-    - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
-    - Muiden luokkien testikattavuudesta ei tarvitse välittää
-  - Testit eivät saa käyttää verkkoyhteyttä
-  - Verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten `PlayerReader`-luokkaa muistuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
+<input type="checkbox"> Tee yksikkötestit luokalle `StatisticsService`
+
+- Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
+- Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
+  - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
+  - Muiden luokkien testikattavuudesta ei tarvitse välittää
+- Testit eivät saa käyttää verkkoyhteyttä
+- Verkkoyhteyden tarpeen saat eliminoitua luomalla testiä varten `PlayerReader`-luokkaa muistuttavan "stubin", jonka sisälle kovakoodaat palautettavan pelaajalistan
 
 ```python
 import unittest
@@ -797,7 +930,7 @@ Kun injektoit `PlayerReaderStub`-olion testissä `StatisticsService`-oliolle, pa
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperusteella" metodi palauttaa pelaajat.
+<input type="checkbox"> Muuta luokan `StatisticsService` metodia `top` siten, että sille voidaan antaa toinen parametri, joka määrittelee millä "parhausperusteella" metodi palauttaa pelaajat.
 
 Metodin toiminnallisuus selviää seuraavasta:
 
@@ -844,9 +977,9 @@ class SortBy(Enum):
     ASSISTS = 3
 ```
 
-Määrittele Enum tiedostossa statistics_service.py esim. ennen luokan StatisticsService määrittelyä.
+<input type="checkbox"> Määrittele Enum tiedostossa statistics_service.py esim. ennen luokan StatisticsService määrittelyä.
 
-Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-25.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
+<input type="checkbox"> Tee myös testit, jotka varmentavat metodin uuden version toiminnallisuuden. Jos StatisticsService-luokan käyttämä järjestämistapa näyttää vieraalta, Ohjelmointikurssin [materiaalissa](https://ohjelmointi-25.mooc.fi/osa-12/1-funktio-parametrina) avataan asiaa hieman tarkemmin.
 
 #### Miksi Enum?
 
@@ -873,17 +1006,17 @@ Periaatteessa tämä kyllä toimisi. Tälläistä tapaa kutsutaan [taikanumeroid
 
 ### Tehtävien palautus
 
-Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioosi.
+<input type="checkbox"> Lisää tehtävät 14-17 sisältävään repositorioosi (eli ns. palautusrepositorioosi) tiedosto _README.md_, mihin laitat linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioosi.
 
 Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 
-![]({{ "/images/lh1-31-22.png" | absolute_url }})
+![]({{ "/images/lh1-31-22.png" | relative_url }})
 
-Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>, välilehdelle _my submissions_.
+<input type="checkbox"> Pushaa kaikki tekemäsi tehtävät (paitsi ne, joissa mainitaan, että tehtävää ei palauteta mihinkään) GitHubiin palautusrepositorioosi ja merkkaa tekemäsi tehtävät palautussovellukseen <{{site.stats_url}}>, välilehdelle _my submissions_.
 
 - Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
 - Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
 
 Palautuslomakkeen löydät painamalla sinistä nappia
 
-![]({{ "/images/lh1-palautus.png" | absolute_url }})
+![]({{ "/images/lh1-palautus.png" | relative_url }})

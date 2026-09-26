@@ -29,13 +29,9 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 
 ### GitHub Education
 
-Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+{% include copilot_info.md %}
 
-### Checkboxit tehtävien teon seurannan apuna
-
-Kurssin tehtävänannot ovat välillä pitkiä. Tekstin seasta saattaa olla haastavaa bongata niitä askelia, jotka edellyttävät toimenpiteitä. Tehtävien selkeyttämiseksi ja seurannan helpottamiseksi tehtävien toimenpiteitä edellyttävät askeleet on merkitty ranskalaisten viivojen sijaan **checkboxeilla**.
-
-Voit käyttää checkboxeja oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen, missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat, jos lataat sivun uudelleen.
+{% include checkboxit.md %}
 
 ### 1. uv:n harjoittelua
 
@@ -174,8 +170,29 @@ Eeli Tolvanen         SEA             23 + 12 = 35
 - Vihje 1: [Täällä](https://docs.python.org/3/howto/sorting.html) on kerrottu miten järjestäminen Pythonilla tapahtuu
 - Vihje 2: voit halutessasi hyödyntää [filter](https://docs.python.org/3/library/functions.html#filter)-funktiota.
 - Vihje 3: kokeile, mitä `f"{self.name:20}"` tekee merkkijonoesitykselle `Player`-luokan `__str__`-metodissa.
-- Erityisesti vihje 2 on heikko, katso miten saat [apua tekoälyltä](/genai/#viikko-2---tehtävä-3)
+- Erityisesti vihje 2 on heikko, katso alta miten saat apua tekoälyltä
 - Myös Ohjelmoinnin MOOCin [osa 11](https://ohjelmointi-25.mooc.fi/osa-11) ja [osa 12](https://ohjelmointi-25.mooc.fi/osa-12) käsittelevät tehtävän kannalta hyödyllisiä asioita
+
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+Vihje 2 kehotti tutustumaan Pythonin _filter_-funktioon. [Dokumentaatio](https://docs.python.org/3/library/functions.html#filter) on kehnoa, kuten aika monesti Pythonin tapauksessa on.
+
+Tekoäly antaa varsin hyvät ohjeet promptilla _miten pythonin funktio filter toimii_
+
+![]({{ "/images/cc2-1.png" | relative_url }}){: width="90%"}
+
+Esimerkeissä esiintyy _lambda_, jonka toimintaperiaate on päässyt unohtumaan. Kysytään AI:ltä seuraavalla promptilla:
+_kerro miten pythonin lambda toimii_.
+
+Idea toivon mukaan selkiytyy ja tehtävä ratkeaa.
+
+Myös vihjeessä 3 mainittujen f-merkkijonojen toiminnasta saa tekoälyltä hyviä vastauksia, promptina voi olla esim. _kertaa pythonin f-merkkijonojen toimintaperiaatteet_
+
+Perusteiden jälkeen voi kokeilla hieman tarkemmin tehtävään soveltuvaa promptia:
+_miten f-merkkijonoilla saa sarakkeistetun tulostuksen_
+
+</details>
 
 ### 4. Pelaajalistan refaktorointi
 
@@ -211,7 +228,7 @@ Sovelluksen tulee pystyä näyttämään käyttäjän haluaman maan pelaajien ti
 
 Sovelluksen toiminta voi näyttää esimerkiksi seuraavalta:
 
-![]({{ "/images/lh2-1-2025.png" | absolute_url }})
+![]({{ "/images/lh2-1-2025.png" | relative_url }})
 
 
 **Tämä tehtävä tehdään palautusrepositorioon**, siis samaan mihin teit edellisen tehtävän
@@ -244,7 +261,7 @@ max-args=4
 
 Sääntö _max-args_ on määritelty dokumentaatiossa [seuraavasti](https://pylint.readthedocs.io/en/stable/user_guide/configuration/all-options.html#max-args):
 
-![]({{ "/images/lh2-2-2025.png" | absolute_url }})
+![]({{ "/images/lh2-2-2025.png" | relative_url }})
 
 Säännön nimen alussa olevaa kahta viivaa ei siis tule kirjoittaa tiedostoon _.pylintrc_
 
@@ -279,11 +296,11 @@ Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsi
 
 <input type="checkbox"> Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin Pylint-sääntöjä:
 
-![]({{ "/images/py-lh2-11.png" | absolute_url }})
+![]({{ "/images/py-lh2-11.png" | relative_url }})
 
 <input type="checkbox"> Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
-![]({{ "/images/py-lh2-12.png" | absolute_url }})
+![]({{ "/images/py-lh2-12.png" | relative_url }})
 
 ### 8. Precommit hook ja Pylint 
 
@@ -660,7 +677,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisältävät sisäänrakennetusti niin sanotun _merge toolin_, joka osaa jossain määrin helpottaa konfliktien ratkaisua:
 
-![]({{ "/images/lh2-merge.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/lh2-merge.png" | relative_url }}){:height="350px" }
 
 ### 12. Git: branchit ja GitHub [versionhallinta]
 
@@ -684,7 +701,7 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 <input type="checkbox"> Varmista, että näet GitHubissa molemmat brachit
 
-![]({{ "/images/github1.png" | absolute_url }})
+![]({{ "/images/github1.png" | relative_url }})
 
 <input type="checkbox"> Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 

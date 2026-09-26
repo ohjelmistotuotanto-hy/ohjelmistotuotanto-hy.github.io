@@ -87,13 +87,13 @@ Minkä tahansa GitHubissa olevan projektin saa konfiguroitua Qltyn tarkastettava
 
 Helsingin yliopistossa oppimisanalytiikkaan käytettävän [Oodikone](https://github.com/UniversityOfHelsinkiCS/oodikone)-sovelluksen yleisraportti näyttää seuraavalta:
 
-![]({{ "/images/qlty1.png" | absolute_url }})
+![]({{ "/images/qlty1.png" | relative_url }})
 
 Sovelluksen ylläpidettävyyden arvosana on B, eli toisiksi korkein, tietoturvaan liittyviä ongelmia ei ole havaittu. Qlty arvioi sovelluksessa olevan teknisen velan takaisinmaksuajaksi vajaat 1000 tuntia. Oikealla oleva diagrammi näyttää sovelluksen koodin ylläpidettävyyden hotspotit, eli sovelluksen osat, jotka kaipaisivat eniten koodin huoltotoimia.
 
 Qlty tarjoaa paljon erilaisia näkymiä. Koodin ylläpidettävyyttä voidaan tarkastella monella tasolla. Seuraava paljastaa, että hakemistoissa _faculty_ ja _studyProgramme_ oleva koodi kaipaa kenties parantelua:
 
-![]({{ "/images/qlt4.png" | absolute_url }})
+![]({{ "/images/qlt4.png" | relative_url }})
 
 Vastaavia palveluita on olemassa useita, mm. [SonarQube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevissä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
 
@@ -110,11 +110,11 @@ Pull requesteja käytettäessä työn kulku on seuraava:
 
 Seuraavassa esimerkki [TMC-projektiin](https://tmc.mooc.fi/) tehdystä pull requestista ja siihen liittyvistä kommenteista:
 
-![]({{ "/images/3-1.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/3-1.png" | relative_url }}){:height="350px" }
 
 Pull requestin kommentissa [sovelluskehittäjä](https://github.com/kennyhei/) toteaa, että pull requestin sisältämät commitit toteuttavat [tämän](https://github.com/testmycode/tmc-server/issues/185) GitHub-issuen kuvaaman toiminnallisuuden.
 
-![]({{ "/images/3-2.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/3-2.png" | relative_url }}){:height="500px" }
 
 TMC:n silloinen [pääkehittäjä](https://github.com/mpartel/) ei kuitenkaan hyväksy muutoksia vielä mergettäväksi, vaan antaa muutaman parannusehdotuksen sovelluskehittäjälle.
 
@@ -124,13 +124,13 @@ Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requeste
 
 GitHubissa on mahdollista pyytää Copilotia tekemään koodikatselmointi pull requesteille. Vibe-koodasin ohtuvarastoon interaktiivisen käyttöliittymän, ja tein lisäyksestä [pull requestin](https://github.com/mluukkai/ohtuvarasto25/pull/1), jonka pyysin Copilotin katselmoimaan. Katselmoinnin yleiskatsaus näyttää seuraavalta
 
-![]({{ "/images/vibe4.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/vibe4.png" | relative_url }}){:height="500px" }
 
 Copilot antaa myös detaljoidumpia kommentteja sekä parannusehdotuksia
 
-![]({{ "/images/vibe3.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/vibe3.png" | relative_url }}){:height="500px" }
 
-Kommentti sekä korjausehdotus näyttävät tällä kerttaa asialliselta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
+Kommentti sekä korjausehdotus näyttävät tällä kertaa asiallisilta. Korjausehdotuksen voi halutessaan commitoida, jolloin commit lisätään pull requestiin.
 
 ### Extreme programmingin katselmoinnin menetelmiä
 
@@ -156,7 +156,7 @@ _Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrit
 
 ## Testaus
 
-Ohjelmistojen osoittaminen täysin virheettömiksi on käytännössä mahdotonta, sillä ohjelmiston mahdollisten käyttöskenaarioiden ja syötteiden kombinaatio on yksinkertaisesti liian suuri. Testauksen tarkoituksena onkin vakuuttaa asiakaat ja järjestelmän kehitystiimi siitä, että ohjelmisto on riittävän hyvä käytettäväksi.
+Ohjelmistojen osoittaminen täysin virheettömiksi on käytännössä mahdotonta, sillä ohjelmiston mahdollisten käyttöskenaarioiden ja syötteiden kombinaatio on yksinkertaisesti liian suuri. Testauksen tarkoituksena onkin vakuuttaa asiakkaat ja järjestelmän kehitystiimi siitä, että ohjelmisto on riittävän hyvä käytettäväksi.
 
 Testauksella on kaksi hieman toisistaan poikkeavaa tavoitetta. Ensinnäkin tulee _osoittaa, että ohjelmisto täyttää sille asetetut vaatimukset_. Käytännössä tämä tarkoittaa vaatimusmäärittelyssä kirjattujen asioiden toteutumisen demonstroimista toteutetusta ohjelmistosta. Toinen tavoite on _löytää ohjelmistosta virheitä_ eli testatessa yritetään rikkoa ohjelma tai saattaa se jollain tavalla epäyhtenäiseen tilaan. Näin havaitut viat pyritään korjaamaan ennen kuin todelliset käyttäjät törmäävät samoihin ongelmiin.
 
@@ -166,7 +166,7 @@ Molemmat tavoitteet tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (eng
 
 Testaus jakaantuu eri _tasoihin_ sen mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
 
-![]({{ "/images/3-3.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/3-3.png" | relative_url }}){:height="300px" }
 
 Alimmalla tasolla on _yksikkötestaus_ (engl. unit testing), jossa tarkastellaan yksittäisten luokkien, metodien ja moduulien toimintaa, yleensä erillään muusta kokonaisuudesta. Yksikkötestauksen hoitavat sovelluskehittäjät.
 
@@ -208,7 +208,7 @@ Esimerkiksi henkilötietoja käsittelevässä järjestelmässä iän suhteen ekv
 
 Tarkastellaan toisena esimerkkinä teksti-tv:n selainversiota.
 
-![]({{ "/images/3-4.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/3-4.png" | relative_url }}){:height="450px" }
 
 Mitä testitapauksia kannattaisi valita tekstitv:n sivun valintaikkunan toimivuuden testaamisessa?
 
@@ -240,7 +240,7 @@ Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavi
 
 Tiedetään, että bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisessa vaiheessa, eli yksikkötestauksessa löydetty virhe on halvempi ja nopeampi korjata kuin integraatio- tai järjestelmätestauksessa löytyvä, tai vasta todellisessa käytössä ilmenevä virhe.
 
-Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu JUnit on edelleen yksi suosituimpia testikirjastoja, uudempia tulokkaita ovat mm. RSpec (Ruby), Mocha ja Jest (JavaScript). Pythonin suosituin yksikkötestauskirjasto on ensimmäisistä laskareista tuttu unittest.
+Koska yksikkötestejä joudutaan suorittamaan moneen kertaan, tulee niiden suorittaminen ja testien tulosten raportointi automatisoida, ja nykyinen hyvä työkalutuki tekeekin automatisoinnin helpoksi. Java-maailmasta tuttu JUnit on edelleen yksi suosituimpia testikirjastoja, muita suosittuja ovat mm. RSpec (Ruby) sekä Jest ja Vitest (JavaScript). Pythonin suosituin testikirjasto on [pytest](https://docs.pytest.org/), jota käytämme testien suorittamiseen. Testit kirjoitetaan kurssilla Pythonin standardikirjaston unittest-moduulin avulla, ja pytest osaa suorittaa myös ne.
 
 Kurssilla [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) tehdyt testit ovat useimmiten juurikin yksikkötestejä.
 
@@ -304,7 +304,7 @@ Monet työkalut, esim. laskareissa käyttämämme [Coverage](https://coverage.re
 
 Seuraavassa esimerkki Coveragella mitatusta rivi- ja haarautumakattavuudesta:
 
-![]({{ "/images/osa3-coverage.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/osa3-coverage.png" | relative_url }}){:height="450px" }
 
 Coverage ilmoittaa haarautumakattavuuden (branches). Puutteellisesti testattu haarautumiskohta esim. if ilmaistaan keltaisella ja ne rivit mitä testit eivät kata ovat punaisia.
 
@@ -327,7 +327,7 @@ Mutaatiotestauksen haasteena on mutaatioiden suuri määrä ja ns. _ekvivalentit
 
 Ekvivalentti mutantti tarkoittaa sellaista koodiin tehtyä muutosta, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Tällaisen mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
 
-Lisätietoa mutaatiotestauksesta esim. [Wikipediassa](http://en.wikipedia.org/wiki/).
+Lisätietoa mutaatiotestauksesta esim. [Wikipediassa](https://en.wikipedia.org/wiki/Mutation_testing).
 
 ## Integraatiotestaus
 
@@ -374,7 +374,7 @@ Testausta tehdäänkin sprintin "ensimmäisestä päivästä" lähtien ja testau
 
 Ketterän kehityksen luonne vaatiikin, että testejä voidaan suorittaa usein ja mahdollisimman vähällä vaivalla, siispä automatisoitu regressiotestaus on avainasemassa.
 
-Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjätiimi), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, minkä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tästä syystä testaajat sijoitetaan ihannetilanteessa kehittäjätiimeihin erillisen laatua valvovan QA-tiimin sijaan. Myös ohjelmoijat osallistuvat testien kirjoittamiseen.
+Kuten Scrumin käsittelyn yhteydessä [mainittiin](/osa1#kehittäjät), ketterien sovelluskehitystiimien tulisi olla _cross functional_, eli sisältää kaikki tietotaito, minkä järjestelmän kehittäminen ja tuotantokäyttöön valmiiksi saattaminen edellyttää. Tästä syystä testaajat sijoitetaan ihannetilanteessa kehittäjätiimeihin erillisen laatua valvovan QA-tiimin sijaan. Myös ohjelmoijat osallistuvat testien kirjoittamiseen.
 
 Testaajan rooli muuttuu virheiden etsijästä virheiden estäjään: testaaja auttaa tiimiä kirjoittamaan automatisoituja testejä, jotka pyrkivät estämään bugien pääsyn koodiin. Eräänä kantavana teemana ketterässä laadunhallinnassa onkin "sisäänrakentaa laatu tuotteisiin", eli Lean-maailmasta tuttu periaate [build quality in](https://www.101ways.com/2010/09/06/lean-principles-2-build-quality-in/). Tämä tarkoittaa sitä, että laadunhallintaan ei suhtauduta erillisen organisaation (esim. QA-tiimin) vastuulla olevana asiana, vaan sovelluskehityksessä on jo lähtökohtana se, että bugeja ei pääse syntymään ja jos pääsee, ne tulee havaita mieluiten jo ohjelmointivaiheessa.
 
@@ -405,7 +405,7 @@ Alan auktoriteettien, kuten Kent Beckin ja Uncle Bob Martinin, [määritelmän m
 
 TDD:n etenemisestä käytetään usein nimitystä _red-green-refactor_, eli tehdään testi joka on punaisella, kirjoitetaan koodia siten että testit menevät taas vihreäksi ja jos tarvetta, niin refaktoroidaan. Seuraava kuva havainnollistaa syklin etenemistä:
 
-![]({{ "/images/3-6a.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/3-6a.png" | relative_url }}){:height="250px" }
 
 TDD:ssä toteutettavaa komponenttia ei yleensä ole tapana suunnitella tyhjentävästi etukäteen. Testit kirjoitetaan ensisijaisesti ajatellen komponentin käyttöä, eli huomio on komponentin rajapinnassa ja rajapinnan helppokäyttöisyydessä, ei niinkään komponentin sisäisessä toteutuksessa. Komponentin sisäinen rakenne muotoutuu refaktorointien kautta.
 
@@ -441,7 +441,7 @@ On olemassa useita kirjastoja mock-olioiden luomisen helpottamiseksi, tutustumme
 
 Tarkastellaan hieman unittest-mockin toimintalogiikkaa viikon 4 [laskareiden](/tehtavat4/) verkkokauppatehtävää esimerkkinä käyttäen. Luokan Kauppa oliolla on riippuvuutenaan Pankki- ja Viitegeneraattori-oliot.
 
-![]({{ "/images/osa3-kauppa.png" | absolute_url }})
+![]({{ "/images/osa3-kauppa.png" | relative_url }})
 
 Ostotapahtuman yhteydessä verkkokaupan tulisi veloittaa asiakkaan tililtä ostosten hinta *kutsumalla pankin metodia veloita_tilia*. Ostostapahtuman koodi näyttää seuraavalta:
 
@@ -509,7 +509,7 @@ Ideaalitilanteessa storyjen hyväksymiskriteereistä tehdään automaattisesti s
 
 Automaattiseen hyväksymistestaukseen on olemassa monia työkaluja. Eräs suosituimmista on suomalainen Python-pohjainen [Robot framework](https://robotframework.org/).
 
-Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance Test Driven Development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_developmen) (ATDD) tai _[Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
+Automatisoidusta hyväksymistestauksesta käytetään joskus nimitystä [Acceptance Test Driven Development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development) (ATDD) tai _[Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development)_ (BDD), erityisesti jos testit toteutetaan jo iteraation alkupuolella, ennen kun storyn toteuttava koodi on valmiina.
 
 ATDD:ssä ja BDD:ssä on kyse lähes samasta asiasta pienin painotuseroin. BDD kiinnittää tarkemmin huomiota käytettävään terminologiaan, BDD ei esimerkiksi puhu ollenkaan testeistä vaan sen sijaan kuvailee hyväksymiskriteerit esimerkkikäyttäytymisten (example behavior) avulla.
 
@@ -670,7 +670,7 @@ Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteell
 - staging-ympäristössä sovelluksen uudelle versiolle suoritetaan lisää testejä
 - lopulta commit siirtyy tuotantoympäristöön
 
-![]({{ "/images/3-12.png" | absolute_url }}){:height="280px" }
+![]({{ "/images/3-12.png" | relative_url }}){:height="280px" }
 
 Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi toimittamiseksi_ (engl. continuous deployment).
 
@@ -686,7 +686,7 @@ Automatisoitujen hyväksymistestien luonne on täsmälleen samanlainen, jokaisen
 
 Hyvät testaajat ovat kautta aikojen tehneet "virallisen" dokumentoidun testauksen lisäksi epävirallista "ad hoc"-testausta. Viime vuosina "ad hoc"-testaus on saanut virallisen aseman ja sen strukturoitua muotoa on ruvettu kutsumaan nimellä _tutkiva testaaminen_ (engl. exploratory testing).
 
-Käsitteen kehittäjä [Cam Kaner](http://www.satisfice.com/articles/what_is_et.shtml) määrittelee termin seuraavasti
+Käsitteen lanseerasi Cem Kaner 1980-luvulla, ja sen käyttöä on myöhemmin kehittänyt erityisesti James Bach, joka [määrittelee](https://en.wikipedia.org/wiki/Exploratory_testing) termin seuraavasti
 
 > _exploratory testing is simultaneous learning, test design and test execution_
 
@@ -709,7 +709,7 @@ Tutkiva testaaminen siis ei missään tapauksessa ole vaihtoehto normaaleille ta
 
 Perinteisesti on ajateltu, että ohjelmiston laadunhallintaan liittyvä testaus tulisi suorittaa ennen kuin ohjelmisto tai sen uudet toiminnallisuudet otetaan käyttöön eli viedään tuotantoympäristöön. Viime aikoina erityisesti web-sovellusten kehityksessä on noussut esiin suuntaus, missä osa laadunhallinnasta tapahtuu monitoroimalla tuotannossa olevaa ohjelmistoa.
 
-![]({{ "/images/3-13.png" | absolute_url }}){:height="330px" }
+![]({{ "/images/3-13.png" | relative_url }}){:height="330px" }
 
 ### Blue-green-deployment
 
@@ -719,7 +719,7 @@ Tuotantoympäristöistä vain toinen on ohjelmiston käyttäjien aktiivisessa k�
 
 Kun järjestelmään toteutetaan uusi ominaisuus, viedään se ensin passiivisena olevaan ympäristöön.
 
-![]({{ "/images/3-14.png" | absolute_url }}){:height="220px" }
+![]({{ "/images/3-14.png" | relative_url }}){:height="220px" }
 
 Passiiviselle, uuden ominaisuuden sisältämälle ympäristölle voidaan sitten tehdä erilaisia testejä, esim. osa käyttäjien liikenteestä voidaan ohjata aktiivisen lisäksi passiiviseen ympäristöön ja varmistaa, että se toimii odotetulla tavalla.
 
@@ -733,7 +733,7 @@ On tarkoituksenmukaista, että kaikki blue-green-deploymentiin liittyvät testit
 
 Blue-green-deploymentin hieman pidemmälle viedyssä versiossa [canary-releasessa](https://martinfowler.com/bliki/CanaryRelease.html) uuden ominaisuuden sisältävään ympäristöön ohjataan osa, esim. 5% järjestelmän käyttäjistä:
 
-![]({{ "/images/3-15.png" | absolute_url }}){:height="220px" }
+![]({{ "/images/3-15.png" | relative_url }}){:height="220px" }
 
 Uuden ominaisuuden sisältämää versiota monitoroidaan aktiivisesti ja jos ongelmia ei ilmene, vähitellen kaikki liikenne ohjataan uuteen versioon. Kuten blue-green-deploymentin tapauksessa, ongelmatilanteissa palautetaan käyttäjät aiempaan, toimivaksi todettuun versioon.
 
@@ -758,7 +758,7 @@ Edellisissä kuvissa oli merkitty järjestelmän vanhalle ja uudelle versiolle e
 
 Tilanne ei yleensä ole tämä ja erityisesti canary releasejen yhteydessä järjestelmän molemmat versiot käyttävät yleensä samaa tietokantaa:
 
-![]({{ "/images/3-16.png" | absolute_url }}){:height="200px" }
+![]({{ "/images/3-16.png" | relative_url }}){:height="200px" }
 
 Tämä taas asettaa haasteita, jos järjestelmään toteutetut uudet ominaisuudet edellyttävät muutoksia tietokannan skeemaan, sillä canary releasejen yhteydessä tarvitaan usein yhtä aikaa sekä tietokannan uutta että vanhaa versiota.
 
@@ -797,7 +797,7 @@ Monet pitävät feature brancheja versionhallinnan käytön best practicena. Vii
 
 Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin normipäivä erityisesti sprintin lopussa alkaa muistuttaa seuraavaa
 
-![]({{ "/images/3-18.png" | absolute_url }}){:height="80px" }
+![]({{ "/images/3-18.png" | relative_url }}){:height="80px" }
 
 Viime aikaisena suuntauksena on noussut esiin [trunk based development](https://trunkbaseddevelopment.com/), jossa pitkäikäisiä feature brancheja ei käytetä ollenkaan.
 
@@ -844,13 +844,13 @@ Scrumin ja ketterien menetelmien eräs tärkeimmistä periaatteista on tehdä ke
 
 Eräs parhaista DevOpsin määritelmistä on [Daniel Storin](http://turnoff.us/geek/devops-explained/) käsialaa:
 
-![]({{ "/images/3-19.png" | absolute_url }}){:height="750px" }
+![]({{ "/images/3-19.png" | relative_url }}){:height="750px" }
 
 ## Yhteenveto - ketterän testauksen nelikenttä
 
 Ketterän testauksen kenttää voidaan jäsentää alunperin Brian Maricin käsialaa olevan [Agile Testing Quadrants](http://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) -kaavion avulla.
 
-![]({{ "/images/3-20.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/3-20.png" | relative_url }}){:height="400px" }
 
 Ketterän testauksen menetelmät voidaan siis jakaa neljään luokkaan (Q1...Q4) seuraavien dimensioiden suhteen:
 
@@ -889,17 +889,17 @@ Testitapausten kannattaa olla mahdollisimman paljon testattavan komponentin oike
 
 Testitapauksissa kannattaa käyttää mahdollisimman oikean kaltaista dataa, erityisesti järjestelmätason testeissä. Koodissa nimittäin lähes aina hajoaa jokin kun käytetään oikeaa dataa riippumatta siitä, miten hyvin testaus on suoritettu. Parasta onkin jos staging-ympäristössä on käytössä sama data kuin tuotantoympäristössä.
 
-Oma näkemykseni testaukseen on hieman poikkeava ja jopa jossain määrin vastakkainen kuin niin sanottu [testauspyramidi](https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid), eli Mike Cohenin ajatus, siitä että pääosan testeistä tulisi olla yksikkötestejä, sillä niitä on helppo tehdä, ja ne ovat nopeita suorittaa. Järjestelmää kokonaisuudessaan testaavat end to end -testit taas ovat hitaita, niitä on hankala tehdä ja ne ovat alttiita hajoamaan pienistä muutoksista, joten niiden määrän tulisi olla mahdollisimman vähäinen:
+Oma näkemykseni testaukseen on hieman poikkeava ja jopa jossain määrin vastakkainen kuin niin sanottu [testauspyramidi](https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid), eli Mike Cohnin ajatus, siitä että pääosan testeistä tulisi olla yksikkötestejä, sillä niitä on helppo tehdä, ja ne ovat nopeita suorittaa. Järjestelmää kokonaisuudessaan testaavat end to end -testit taas ovat hitaita, niitä on hankala tehdä ja ne ovat alttiita hajoamaan pienistä muutoksista, joten niiden määrän tulisi olla mahdollisimman vähäinen:
 
-![]({{ "/images/3-23.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/3-23.png" | relative_url }}){:height="300px" }
 
-Cohenin pyramidi-idea on jo aika vanha, ja läheskään kaikki eivät ole siitä samaa mieltä. Mielipiteitä löytyy [laidasta laitaan](https://laredoute.io/blog/the-traditional-test-pyramid-pitfalls-and-anti-patterns/) ja varmasti onkin niin, että yhtä totuutta asiasta ei ole. Kuten jo aiemminkin totesin, väärälle "tasolle" väärään aikaan tehdyt automatisoidut testit ovat suuri riski, ja koska järjestelmätason testien tekeminen on todella työlästä, piilee niissä aina hukkainvestoinnin vaara.
+Cohnin pyramidi-idea on jo aika vanha, ja läheskään kaikki eivät ole siitä samaa mieltä. Mielipiteitä löytyy [laidasta laitaan](https://laredoute.io/blog/the-traditional-test-pyramid-pitfalls-and-anti-patterns/) ja varmasti onkin niin, että yhtä totuutta asiasta ei ole. Kuten jo aiemminkin totesin, väärälle "tasolle" väärään aikaan tehdyt automatisoidut testit ovat suuri riski, ja koska järjestelmätason testien tekeminen on todella työlästä, piilee niissä aina hukkainvestoinnin vaara.
 
 Ehdottomasti kaikkein tärkein asia sovelluksen laadunhallinnan kannalta on mahdollisimman usein tapahtuva tuotantoonvienti. Se taas edellyttää hyvin rakennettua deployment pipelineä, riittävän kattavaa testauksen automatisointia ja helpottuu oleellisesti, jos feature branchien sijaan käytetään trunk based development -periaatetta. Suosittelen lämpimästi että tuotantoonvienti tapahtuu niin usein kuin mahdollista, jopa useita kertoja päivässä. Tämä takaa yleensä sen, että pahoja integrointiongelmia ei synny, ja sovellukseen syntyvät regressiot havaitaan ja pystytään korjaamaan mahdollisimman nopeasti.
 
 ## Tieteellinen evidenssi
 
-Edellä esitellyistä jatkuvan toimittamisen ja laadunhallinnan käytenteiden toimivuudesta on runsaasti anekdotaalista evidenssiä ja monista osa-alueista on tehty myös akateemista tutkimusta. Myös se, että erinomaisesti menestyneet organisaatiot kuten Google, Netflix, Amazon ja Facebook luottavat näihin käytänteisiin, ja ovat jopa paikoin kehittäneet ne, puhuu niiden puolesta.
+Edellä esitellyistä jatkuvan toimittamisen ja laadunhallinnan käytänteiden toimivuudesta on runsaasti anekdotaalista evidenssiä ja monista osa-alueista on tehty myös akateemista tutkimusta. Myös se, että erinomaisesti menestyneet organisaatiot kuten Google, Netflix, Amazon ja Facebook luottavat näihin käytänteisiin, ja ovat jopa paikoin kehittäneet ne, puhuu niiden puolesta.
 
 Toistaiseksi vakuuttavimman ja tieteellisesti vakaimmalla pohjalla olevan näkemyksen tarjoaa vuonna 2018 julkaistussa kirjassa
 [Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) raportoitu vuosina 2013-2017 tehty laaja, yli 20000 vastaukseen perustuva kyselytutkimus.
@@ -908,7 +908,7 @@ Tutkimustulokset on myös julkaistu korkeatasoisilla vertaisarvioiduilla foorume
 
 Tutkimuksen tuloksia summaa seuraava kaavio:
 
-![]({{ "/images/3-24.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/3-24.png" | relative_url }}){:height="400px" }
 
 Tutkimuksen ytimessä on selvittää mitkä tekijät vaikuttavat edesauttavasti yrityksen tehokkaaseen toimintaan, kuvassa _organizational performance_. Kyselytutkimuksessa yrityksen tehokkuutta on mitattu seuraavilla kysymyksillä:
 
@@ -933,4 +933,4 @@ On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänt
 
 Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrityksen tehokkuutta:
 
-![]({{ "/images/3-26.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/3-26.png" | relative_url }}){:height="500px" }

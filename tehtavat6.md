@@ -7,7 +7,7 @@ permalink: /tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
-Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>.
+Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>. Tehtävässä 7 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -25,6 +25,8 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+{% include checkbox_reset.md %}
+
 ### 1. Laskin ja komento-oliot
 
 > **HUOM** jos olet käyttänyt kontainerisoitua Poetry-ympäristöä, tämä tehtävä tulee tuottamaan haasteta, sillä sovelluksella on graafinen käyttöliittymä. Googlaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps) jos haluat saada tehtävän tehtyä kontainerissa. 
@@ -36,7 +38,32 @@ Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C
 <input type="checkbox"> Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
 
 <input type="checkbox">  Jos tarvetta, lue ensin kurssin Ohjelmistotekniikka [materiaalissa](https://ohjelmistotekniikka-hy.github.io/python/tkinter) oleva Tkinter-tutoriaali. Toinen vaihtoehto on koodin tutkiminen
-[tekoälyn](/genai/#viikko-6---tehtävä-1) avustuksella.
+tekoälyn avustuksella, ks. alla oleva vihje.
+
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+Tekoäly on oivallinen apuväline tutustuttaessa itselle etukäteen tuntemattomaan koodiin (ks. [viikon 6 materiaali](/genai/#tuntemattoman-koodin-ymmärtäminen)). Erityisen hyödyllinen se on, jos koodissa käytetään itselle ennalta tuntemattomia kirjastoja.
+
+Koodia ei tarvitse kopioida chattiin, vaan Copilotin _Ask_-tilassa riittää viitata tiedostoon, esim. _selitä miten #file:kayttoliittyma.py toimii_. Omassa kokeilussani kopioin chattiin osan sovelluksen käyttöliittymän koodista:
+
+![]({{ "/images/agentti5.png" | relative_url }})
+
+Selitys jatkuu melko hyvänä, suomen kieli ei kyllä kaikin osin ole ihan optimaalista:
+
+![]({{ "/images/agentti6.png" | relative_url }})
+
+Koodissa on luokka `StringVar`, jonka toiminta on hieman hämärän peitossa. Kysytään tarkennusta:
+
+![]({{ "/images/agentti7.png" | relative_url }})
+
+Koodissa esiintyvä `lambda` on hämmentävä. Onko se ylipäätään tarpeen? Kysytään täsmennystä sen suhteen:
+
+![]({{ "/images/agentti8.png" | relative_url }})
+
+Koodi tuntuu nyt selkeämmältä, ja opimme taas uutta tekoälyn ansiosta!
+
+</details>
 
 <input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja käynnistä laskin virtuaaliympäristössä komennolla `python src/index.py`.
 
@@ -420,5 +447,72 @@ Travis Sanheim       PHI          8  + 22 = 30
 ```
 
 <input type="checkbox"> Varmista, että ratkaisusi toimii edellisen esimerkin kyselyllä.
+
+### 7. Suunnittele ensin, toteuta sitten [tekoäly]
+
+Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 6 osuus [Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6).
+
+Kyselyrakentajan ansiosta kyselyjen muodostaminen on nyt aiempaa mukavampaa. Kyselyt ovat kuitenkin edelleen Python-koodia. Laajennetaan ohjelmaa siten, että kyselyn voi antaa myös merkkijonona:
+
+```python
+matcher = parse("team = NYR and goals >= 10 and goals < 20")
+
+for player in stats.matches(matcher):
+    print(player)
+```
+
+Tuloksen tulee olla sama kuin tehtävän 5 esimerkissä:
+
+```
+Alexis Lafrenière    NYR          17 + 28 = 45
+Jonny Brodzinski     NYR          12 + 7  = 19
+Adam Fox             NYR          10 + 51 = 61
+```
+
+Kyselykielessä on seuraavat ehdot:
+
+- `team = XXX` eli pelaaja pelaa joukkueessa XXX
+- `<attribuutti> >= <luku>` eli pelaajalla on vähintään annettu määrä esim. maaleja
+- `<attribuutti> < <luku>` eli pelaajalla on vähemmän kuin annettu määrä
+
+Ehtoja voi yhdistää sanoilla `and` ja `or`, ja `and` sitoo vahvemmin kuin `or`. Eli tehtävän 6 esimerkkikysely olisi muotoa:
+
+```python
+matcher = parse("team = PHI and assists >= 10 and goals < 10 or team = EDM and points >= 50")
+```
+
+ja sen tulos on sama kuin tehtävän 6 esimerkissä.
+
+Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
+
+<input type="checkbox"> Varmista, että tehtävien 1-6 koodi on commitoitu
+
+<input type="checkbox"> Avaa hakemisto _viikko6/query-language_ VS Codessa omana workspacenaan ja luo projektille tarvittaessa ohjetiedosto
+
+<input type="checkbox"> Valitse Copilotin Chat-näkymässä agentiksi _Plan_, ja anna sille tehtävänanto. Kerro pyynnössä ainakin seuraavat reunaehdot:
+
+- toteutuksen tulee hyödyntää olemassa olevaa `QueryBuilder`-luokkaa, eikä matcher-luokkien logiikkaa saa toteuttaa uudelleen
+- toteutukselle tulee tehdä yksikkötestit
+- toteutus tulee jakaa pieniin askeliin, joiden jokaisen toimivuus voidaan varmistaa erikseen
+
+<input type="checkbox"> Lue agentin laatima suunnitelma huolellisesti. Ymmärsikö agentti tehtävän? Noudattaako suunnitelma reunaehtoja? Onko suunnitelmassa jotain, mikä rikkoo [osan 4](/osa4/) periaatteita?
+
+<input type="checkbox"> Pyydä agenttia muuttamaan suunnitelmaa ainakin kerran. Jos suunnitelma on mielestäsi valmiiksi hyvä, voit esim. pyytää agenttia lisäämään kyselykieleen `not`-operaation tai perustelemaan jonkin suunnitelmansa ratkaisun
+
+<input type="checkbox"> Kun olet tyytyväinen suunnitelmaan, käynnistä toteutus
+
+<input type="checkbox"> Etene suunnitelma askel kerrallaan. Lue jokaisen askeleen jälkeen agentin tekemä muutos, varmista että testit menevät läpi, ja commitoi
+
+<input type="checkbox"> Varmista, että molemmat yllä olevat esimerkkikyselyt tuottavat oikean tuloksen
+
+<input type="checkbox"> Käy lopuksi läpi valmis koodi. Riippuuko parseri `QueryBuilder`-luokasta, vai suoraan matcher-luokista? Onko koodissa toisteisuutta?
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko6_ talletettavaan tiedostoon _plan.md_
+
+Kerro raportissa
+- Miltä agentin ensimmäinen suunnitelma näytti, ja mitä siihen muutettiin?
+- Noudattiko agentti suunnitelmaa toteutusvaiheessa?
+- Noudattaako lopputulos osan 4 suunnitteluperiaatteita?
+- Oliko suunnitteluvaiheesta hyötyä verrattuna siihen, että agentti olisi pistetty suoraan koodaamaan?
 
 {% include submission_instructions.md %}

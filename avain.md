@@ -15,9 +15,9 @@ title: Julkinen avain
 - Mene GitHubin asetussivulle klikkaamalla oikean yläkulman symbolista ja valitsemalla Settings
 - Valitse asetuksista SSH and GPG keys
 
-![]({{ "/images/ssh0.png" | absolute_url }})
+![]({{ "/images/ssh0.png" | relative_url }})
 
 - Luo uusi SSH-avain (New SSH key)
 - Anna avaimelle joku title (esim. TKT) ja kopioi tiedoston id_rsa.pub sisältö kohtaan key:
 
-![]({{ "/images/ssh1.png" | absolute_url }})
+![]({{ "/images/ssh1.png" | relative_url }})

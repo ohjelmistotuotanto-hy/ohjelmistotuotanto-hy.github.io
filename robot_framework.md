@@ -38,7 +38,7 @@ Robot Frameworkin käyttö onnistuu Pythonilla [robotframework](https://pypi.org
 
 Testien suorittamisen jälkeen komentoriville ilmestyy lyhyt raportti testien suorituksesta. Tämän raportin lisäksi projektin juurihakemiston tiedostoon _report.html_ ilmestyy yksityiskohtaisempi, HTML-muotoinen raportti. Klikkailemalla raporttia avautuu mukava testien suorituksen statusta kuvaava näkymä:
 
-![]({{ "/images/lh3-robot.png" | absolute_url }})
+![]({{ "/images/lh3-robot.png" | relative_url }})
 
 ### Vaatimusten ilmaiseminen
 
@@ -67,7 +67,7 @@ Testitapaus koostuu nyt kolmesta avainsanasta. Ensin tarkistetaan että laskurin
 
 Testitapaukset listataan `*** Test Cases ***`-osion alle. Avainsanojen ja testitapausten nimet kirjoitetaan yleensä suurilla alkukirjaimilla niin, että sanojen välissä on yksi välilyönti. **Argumenttien väliin tulee jättää vähintään kaksi välilyöntiä** (esimerkiksi <code>Counter Value Should Be &nbsp;0</code>). Jotta syntaksivirheet huomaisi helposti, kannattaa Visual Studio Codeen asentaa sopiva lisäosa, esim. [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode):
 
-![]({{ "/images/lh3-robot2.png" | absolute_url }})
+![]({{ "/images/lh3-robot2.png" | relative_url }})
 
 ### Testien suorituskelpoiseksi tekeminen
 

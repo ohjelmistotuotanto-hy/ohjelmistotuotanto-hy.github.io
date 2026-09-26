@@ -20,11 +20,11 @@ Pohja sisältää yksinkertaisen Todo- eli työlistasovelluksen joka tallettaa t
 
 Sovelluksen tarjoama toiminnallisuus on hyvin vähäinen. Sovellus näyttää Todot ja niiden tilan, sekä mahdollistaa tekemättömän työn merkkaamisen tehdyksi:
 
-![]({{ "/images/todo3.png" | absolute_url }}){:width="600px" }
+![]({{ "/images/todo3.png" | relative_url }}){:width="600px" }
 
 Käyttäjä voi myös luoda uusia Todoja:
 
-![]({{ "/images/todo2.png" | absolute_url }}){:width="550px" }
+![]({{ "/images/todo2.png" | relative_url }}){:width="550px" }
 
 Muuta toiminnallisuutta sovellus ei valitettavasti tarjoa.
 
@@ -276,7 +276,7 @@ Robot-testien toimintaperiaate on samankaltainen kuin viikon 3 [tehtävissä](/t
 
 Yksi testeistä on hieman mielenkiintoisempi. Testi luo kaksi Todoa ja klikkaa toiseen liittyvää nappia. Tilanne on siis seuraava:
 
-![]({{ "/images/todo4.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/todo4.png" | relative_url }}){:height="250px" }
 
 Painettavan napin etsiminen ei nyt onnistu pelkästään napin tekstin perusteella, sillä saman tekstin omaavia nappeja on kaksi. Testi näyttää seuraavalta
 

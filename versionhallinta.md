@@ -246,7 +246,7 @@ Gitin committeja voi tarkastella myös graafisella _gitk_-komennolla.
 
 Suorita komento repositoriossa:
 
-![]({{ "/images/gitk1.png" | absolute_url }})
+![]({{ "/images/gitk1.png" | relative_url }})
 
 Vasemmalla yläkulmassa näet kaikki commitit. Nykyhetken tilanne on ylimpänä. Klikkaamalla commitia, näet muissa ikkunoissa commitiin liittyviä tietoja. Oikealla alakulmassa näet ne tiedostot, jotka ovat muuttuneet commitissa (jos valinta on _patch_) tai ne tiedostot, joita repositoriossa oli olemassa commitin aikana (jos valinta on _tree_). Vasemmassa alakulmassa pystyt tarkastelemaan commitin tiedostoihin tekemiä muutoksia tai tiedostojen tilaa commitin aikana. Valinnat ovat hieman hämäävät, sillä ne toimivat eri tavoin riippuen oikean puolen moodista.
 
@@ -356,7 +356,7 @@ Tiedosto ei siis enää ole _staged_-tilassa, muutokset ovat kuitenkin _working 
 
 Seuraavassa tiedoston tilaa kuvaava kaavio täydennettynä, eli jos tiedosto on lisätty committoitavaksi, eli se on _staged_, voidaan muutos perua komennolla `git restore --staged`. Tällöin muutokset kuitenkin vielä jäävät tiedostoon, eli ovat _working directoryssä_. Tiedosto saadaan palautettua repositoriossa olevaan edellisen commitin tilaan komennolla `git restore`.
 
-![]({{ "/images/gitrestore.png" | absolute_url }})
+![]({{ "/images/gitrestore.png" | relative_url }})
 
 ### Harjoittelua
 

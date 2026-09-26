@@ -164,18 +164,18 @@ Kun huomaat kurssimateriaalissa kirjoitusvirheitä, tee korjausehdotus. Kurssima
 
 Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
 
-![]({{ "/images/0-1.png" | absolute_url }})
+![]({{ "/images/0-1.png" | relative_url }})
 
 Kun teksti on editoitu halutunkaltaiseksi, luodaan muutosehdotus sivun alalaidasta:
 
-![]({{ "/images/0-2.png" | absolute_url }})
+![]({{ "/images/0-2.png" | relative_url }})
 
 Tämän jälkeen vielä luodaan muutosehdotuksesta _pull request_
 
-![]({{ "/images/0-3.png" | absolute_url }})
+![]({{ "/images/0-3.png" | relative_url }})
 
 Kun kaikki klikkailu on tehty, syntyy materiaalirepositorioon pull request
 
-![]({{ "/images/0-4.png" | absolute_url }})
+![]({{ "/images/0-4.png" | relative_url }})
 
 Ja kun kurssihenkilökunta mergeää pull requestin, typo korjautuu materiaalista.

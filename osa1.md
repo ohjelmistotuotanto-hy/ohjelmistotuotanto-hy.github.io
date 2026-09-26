@@ -143,7 +143,7 @@ Winston Roycen vuonna 1970 julkaisema artikkeli [Management of the development o
 
 Roycen versio kuvasta näyttää seuraavalta:
 
-![]({{ "/images/1-1.png" | absolute_url }})
+![]({{ "/images/1-1.png" | relative_url }})
 
 Suoraviivainen lineaarinen malli, jota ruvettiin kutsumaan vesiputousmalliksi, saavutti nopeasti suosiota. Malli on monella tapaa järkeenkäypä; ensin kannattaa selvittää mitä ollaan tekemässä ja suunnittelu hoitaa vasta tämän jälkeen. Kun suunnitelma on valmis, voidaan tuote valmistaa ja sen jälkeen testata että se toimii kuten haluttiin, näinhän toimitaan monella muullakin tuotannon alalla.
 
@@ -189,7 +189,7 @@ Paradoksaalista kyllä vesiputousmallin isänä pidetty Royce _ei suosittele_ ar
 
 Roycen suosituksen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta siitä saatujen kokemusten valossa kannattaa suunnitella ja toteuttaa lopullinen ohjelmisto. Royce esitteleekin artikkelin loppupuolella mallin, jossa ohjelmisto tehdään kahdessa iteraatiossa, kuva Roycen artikkelista:
 
-![]({{ "/images/1-3.png" | absolute_url }})
+![]({{ "/images/1-3.png" | relative_url }})
 
 Vesiputousmalli, tai ainakin Roycen nimeäminen vesiputousmallin isäksi, on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
 
@@ -205,7 +205,7 @@ Asiakasta tavataan jokaisen iteraation välissä, asiakas näkee sen hetkisen ve
 
 Seuraava kuva havainnollistaa sitä, että iteratiivisessa mallissa kaikkia ohjelmistoprosessin vaiheita suoritetaan jokaisessa iteraatiossa. Määrittelyllä ja suunnittelulla on alussa suurempi painoarvo, mutta ohjelmiston toteutus ja testaus alkaa jo ensimmäisten iteraatioiden aikana.
 
-![]({{ "/images/1-4.png" | absolute_url }})
+![]({{ "/images/1-4.png" | relative_url }})
 
 Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista tapaa (kahden iteraation versiota) monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutettiin.
 
@@ -240,7 +240,7 @@ That is, while there is value in the items on the right, we value the items on t
 
 Manifesti siis koostuu neljästä vastakkainasettelun sisältävästä kohdasta, jotka ilmaisevat mikä on ketterien menetelmien näkemyksen mukaan oleellisinta ohjelmistokehityksessä. Ensimmäinen kohta sanoo, että erilaiset työkalut ja prosessit voivat olla tärkeää, mutta _vielä tärkeämpää_ ovat ohjelmiston kehittäjät, käyttäjät, tilaajat ja heidän välinen interaktio. Toinen kohta taas ei kiellä dokumentaation tärkeyttä, mutta sanoo että lopulta tärkeintä on toimiva ohjelmisto. Ketterä manifesti ei siis kiellä tai pidä arvottomana "vanhan maailman" tärkeänä pitämiä asioita kuten _suunnitelman noudattamista_, mutta osoittaa, että niitäkin oleellisimpia seikkoja on, kuten _muutokseen reagoiminen_.
 
-Manifestin [laatijoiden joukko](https://agilemanifesto.org/authors.html) koostuu monesta tutusta ja vaikutusvaltaisesta nimestä, kuten Kent Beck, Robert Martin, Ken Schwaber, Martin Fowler ja Alistair Coburn, jotka ovat vaikuttaneet merkittävästi nykyiseen vallitsevaan ohjelmistokehityksen tapaan.
+Manifestin [laatijoiden joukko](https://agilemanifesto.org/authors.html) koostuu monesta tutusta ja vaikutusvaltaisesta nimestä, kuten Kent Beck, Robert Martin, Ken Schwaber, Martin Fowler ja Alistair Cockburn, jotka ovat vaikuttaneet merkittävästi nykyiseen vallitsevaan ohjelmistokehityksen tapaan.
 
 ### Ketterät periaatteet
 
@@ -300,7 +300,7 @@ XP:ltä valta-aseman on ottanut pikkuhiljaa [Scrum](https://www.scrum.org/), jok
 
 Ketterä ohjelmistotuotanto on ottanut runsaasti vaikutteita [Toyota production systemin](https://global.toyota/en/company/vision-and-philosophy/production-system/) taustalla olevasta _lean_-ajattelusta. Viime vuosina termi lean on alkanut näkyä yhä tiiviimmin termin agile rinnalla tai tilalla ohjelmistokehityksestä puhuttaessa. Leanista peräisin olevaa [kanbania](https://fi.wikipedia.org/wiki/Kanban) on ruvettu soveltamaan runsaasti ohjelmistokehitykseen. Usein se täydentää jotain ketterää menetelmää kuten Scrumia. Kanbanin ja Scrumin yhdistelmä kulkeekin nimellä [Scrumban](https://www.amazon.com/exec/obidos/ASIN/0321150783/poppendieckco-20). Palaamme Leaniin tarkemmin kurssin [osassa 5](/osa5#lean).
 
-Ketterät menetelmät on alun perin kehitetty yksittäisten, pienehköjen ohjelmistotiimien hallintaan. Viime aikoina ketterille menetelmille on hahmoteltu useitakin laajennuksia mm. [SaFe](https://www.scaledagileframework.com/) ja [LeSS](https://less.works/), joiden avulla on mahdollista hallinnoida useista ohjelmistotiimeistä koostuvia kokonaisuuksia. Ketterien periaatteiden lisäksi nämä laajemman skaalan kehitysmenetelmän nojaavat voimakkaasti leanin tarjoamiin periaatteisiin. Palaamme asiaan kurssin [viidennessä osassa](/osa5#laajan-skaalan-ketterä-ohjelmistokehitys).
+Ketterät menetelmät on alun perin kehitetty yksittäisten, pienehköjen ohjelmistotiimien hallintaan. Ketterille menetelmille on 2010-luvulta alkaen hahmoteltu useitakin laajennuksia mm. [SAFe](https://www.scaledagileframework.com/) ja [LeSS](https://less.works/), joiden avulla on mahdollista hallinnoida useista ohjelmistotiimeistä koostuvia kokonaisuuksia. Ketterien periaatteiden lisäksi nämä laajemman skaalan kehitysmenetelmän nojaavat voimakkaasti leanin tarjoamiin periaatteisiin. Palaamme asiaan kurssin [viidennessä osassa](/osa5#laajan-skaalan-ketterä-ohjelmistokehitys).
 
 ## Scrum
 
@@ -337,53 +337,59 @@ Tutustutaan nyt Scrumiin, joka on tällä hetkellä selvästi suosituin ketterä
 
 Termi Scrum ja osa sen taustalla olevista periaatteista löytyvät ensimmäistä kertaa 1986 julkaistusta artikkelista [The new new product development game](http://www.agilepractice.eu/wp-content/uploads/2016/09/Product-Development-Scrum-1986.pdf), missä japanilaiset professorit Takeuchi ja Nonaka kuvailevat mitä yhteisiä toimintaperiaatteita joukolla menestyneitä yrityksiä (mm. Fuji-Xerox, Canon, Honda, NEC, Epson, Brother, 3M, Xerox, Hewlett-Packard) on.
 
-Tänä päivänä tuntemamme Scrum, joka alun perin suunnattiin ohjelmistokehitykseen, kehitettiin Ken Schwaberin ja Jeff Sutherlandin toimesta 1990-luvun puolivälissä. Scrumin perussisällön määrittelee [The Scrum guide](https://scrumguides.org/), vajaan 20 sivun mittainen dokumentti, joka päivittyy säännöllisin väliajoin. Edellinen versio on vuodelta 2020.
+Tänä päivänä tuntemamme Scrum, joka alun perin suunnattiin ohjelmistokehitykseen, kehitettiin Ken Schwaberin ja Jeff Sutherlandin toimesta 1990-luvun puolivälissä. Scrumin perussisällön määrittelee [The Scrum guide](https://scrumguides.org/), vajaan 20 sivun mittainen dokumentti, joka päivittyy aika ajoin. Voimassa oleva versio on vuodelta 2020.
 
 Kehittäjiensä sanoin
 
-> Scrum is a framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value
+> Scrum is a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.
 
 Scrumin kehittäjät mainitsevat, että kyseessä on framework, eli _menetelmäkehys_, jonka avulla monimutkaisten tuotteiden kehitystä voidaan hallita siten, että asiakkaalle saadaan tuotteista maksimaalinen arvo. Scrumin kehittäjät korostavat, että kyseessä ei ole prosessi (process) tai menetelmä/tekniikka (technique), joka yksistään antaisi riittävän ohjeiston työskentelylle, kyseessä on siis menetelmäkehys, joka antaa kehityksen suuntaviivat mutta mahdollistaa ja oikeastaan edellyttääkin muitakin menetelmiä ja tekniikoita, jotka kukin tulee valita tapauskohtaisesti.
 
 Scrumin tärkein tavoite on tehdä käytettyjen työskentelymenetelmien suorituskyky näkyväksi ja mahdollistaa näin ollen tuotteen sekä työskentely-ympäristön jatkuva parantaminen, eli edellä mainittu kolmikko _transparency, inspection_ ja _adaptation_, läpinäkyvyys, tarkkailu ja mukautuminen ovat Scrumin keskiössä.
 
-Kehittäjiensä mukaan Scrum on
+Scrum Guiden aiemmat versiot kuvasivat Scrumin olevan
 
 - _Lightweight_
 - _Simple to understand_
 - _Extremely difficult to master_
 
-Näin todellakin on, toisin kuin jotkin muut ohjelmistokehitysmallit (kuten vuosituhannen vaihteessa suosittu [Rational Unified Process](https://en.wikipedia.org/wiki/Rational_Unified_Process) tai viime vuosina suosioon noussut [SaFe](https://www.scaledagileframework.com/)), Scrum sisältää ainoastaan muutaman "säännön", joiden määritelmän sisältävän Scrum Guiden lukee puolessa tunnissa. Kaikki vaikuttaa selkeältä ja yksinkertaiselta, mutta todellisuus on usein toinen. Toimiakseen tehokkaasti Scrum vaatii syvällistä perehtymistä ja vuosien kokemusta. Pelkkä sääntöjen mekaaninen seuraaminen ei riitä.
+Vaikka luonnehdinta on jätetty vuoden 2020 Scrum Guidesta pois, pitää se edelleen paikkansa. Toisin kuin jotkin muut ohjelmistokehitysmallit (kuten vuosituhannen vaihteessa suosittu [Rational Unified Process](https://en.wikipedia.org/wiki/Rational_Unified_Process) tai laajan skaalan kehitykseen tarkoitettu [SAFe](https://framework.scaledagile.com/)), Scrum sisältää ainoastaan muutaman "säännön", joiden määritelmän sisältävän Scrum Guiden lukee puolessa tunnissa. Kaikki vaikuttaa selkeältä ja yksinkertaiselta, mutta todellisuus on usein toinen. Toimiakseen tehokkaasti Scrum vaatii syvällistä perehtymistä ja vuosien kokemusta. Pelkkä sääntöjen mekaaninen seuraaminen ei riitä.
 
 ### Scrum lyhyesti
 
-Scrum on iteratiivinen ja inkrementaalinen menetelmä tai kehittäjiensä mukaan menetelmäkehys (framework), jossa ohjelmistokehitys tapahtuu 1-4 viikon iteraatioissa, joita Scrumissa kutsutaan _sprinteiksi_.
+Scrum on iteratiivinen ja inkrementaalinen menetelmä tai kehittäjiensä mukaan menetelmäkehys (framework), jossa ohjelmistokehitys tapahtuu korkeintaan kuukauden mittaisissa iteraatioissa, joita Scrumissa kutsutaan _sprinteiksi_.
 
-Kehityksestä vastaa _Scrum-tiimi_, joka koostuu 3-9:stä kehittäjästä. _scrum master_ toimii tiimin apuna ohjaten mm. prosessin noudattamisessa ja parantamisessa sekä toimien rajapintana muihin sidosryhmiin. _Product owner_ eli tuotteenomistaja hallinnoi projektin _backlogia_, joka sisältää priorisoidussa järjestyksessä projektissa toteutettavalle ohjelmistolle asetetut vaatimukset.
+Kehityksestä vastaa _Scrum-tiimi_, johon kuuluvat kehittäjät (engl. developers), _scrum master_ ja _product owner_. Tiimin koko on tyypillisesti korkeintaan kymmenen henkilöä. Scrum master auttaa tiimiä mm. prosessin noudattamisessa ja parantamisessa sekä esteiden poistamisessa. _Product owner_ eli tuotteenomistaja hallinnoi projektin _backlogia_, joka sisältää priorisoidussa järjestyksessä projektissa toteutettavalle ohjelmistolle asetetut vaatimukset.
 
-Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset, eli ne toiminnallisuudet, jotka sprintin aikana on tarkoitus toteuttaa. Sprintin aikana Scrum-tiimi toteuttaa itseorganisoidusti sprintiin valitut vaatimukset lopputuloksena vaatimusten osalta toimiva ohjelmisto.
+Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset, eli ne toiminnallisuudet, jotka sprintin aikana on tarkoitus toteuttaa. Sprintin aikana Scrum-tiimi toteuttaa itseohjautuvasti sprinttiin valitut vaatimukset lopputuloksena vaatimusten osalta toimiva ohjelmisto.
 
-![]({{ "/images/2-1.png" | absolute_url }})
+![]({{ "/images/2-1.png" | relative_url }})
 
-#### Scrum: roolit, artefaktit ja eventit
+#### Scrum: vastuut, artefaktit ja eventit
 
 Käydään vielä läpi hieman seikkaperäisemmin Scrumin terminologiaa ennen kun mennään tarkempiin yksityiskohtiin.
 
-Scrum määrittelee 3 erilaista _henkilöroolia_: kehittäjän (engl. developer), scrum masterin ja product ownerin. Product ownerille on kohtuullisen vakiintunut suomennos _tuotteenomistaja_, käytämme kuitenkin kurssilla pääosin englanninkielistä termiä.
+Scrum määrittelee kolme erilaista _vastuuta_ (engl. accountability): kehittäjät (engl. developers), scrum masterin ja product ownerin. Aiemmin Scrum Guide puhui rooleista, vuoden 2020 versio korvasi termin vastuilla korostaakseen, että kyse ei ole työnimikkeistä vaan siitä, kuka vastaa mistäkin. Product ownerille on kohtuullisen vakiintunut suomennos _tuotteenomistaja_, käytämme kuitenkin kurssilla pääosin englanninkielistä termiä.
 
-Scrumiin kuuluvat _artefaktit_ eli "konkreettiset asiat" ovat _product backlog_ eli tuotteen kehitysjono, _sprint backlog_ eli sprintin tehtävälista sekä työn alla oleva ohjelmiston osa, englanniksi _potentially releasable increment_.
+Scrumiin kuuluvat _artefaktit_ eli "konkreettiset asiat" ovat _product backlog_ eli tuotteen kehitysjono, _sprint backlog_ eli sprintin tehtävälista sekä _increment_ eli valmiiksi saatu, käyttökelpoinen lisäys ohjelmistoon. Jokaiseen artefaktiin liittyy _sitoumus_ (engl. commitment), joka antaa artefaktille suunnan ja jota vasten edistymistä voidaan arvioida:
 
-Scrumissa tekeminen rytmittyy _sprintteihin_ eli 1-4 viikon mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (engl. events): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
+- product backlogiin liittyy tuotteen tavoite (engl. _product goal_)
+- sprint backlogiin liittyy sprintin tavoite (engl. _sprint goal_)
+- incrementiin liittyy valmiin määritelmä (engl. _definition of done_)
+
+Scrumissa tekeminen rytmittyy _sprintteihin_ eli korkeintaan kuukauden mittaisiin iteraatioihin. Sprintteihin kuuluu muutamia _standardipalavereja_ (engl. events): sprintin suunnittelupalaveri, daily scrum -palaverit, sprintin katselmointi sekä retrospektiivi.
 
 ### Product backlog
 
 Product backlog (jonka virallinen, mutta harvoin käytetty käännös on tuotteen tehtäväkehitysjono) on priorisoitu lista asiakkaan tuotteelle asettamista vaatimuksista eli toivotuista ominaisuuksista ja toiminnoista. Backlog voi sisältää myös esimerkiksi isompia bugikorjauksia.
 
+Backlogin sisältämät asiat tähtäävät _tuotteen tavoitteeseen_ (engl. product goal), joka kuvaa tuotteen tavoiteltua tulevaa tilaa. Tuotteen tavoite on pidemmän aikavälin päämäärä, jota kohti sprintit yksi kerrallaan vievät.
+
 Hyvänä käytänteenä pidetään sitä, että backlogille kirjatut vaatimukset ovat asiakkaan tasolla mielekkäitä, arvoa tuottavia toiminnallisuuksia, esim. verkkokaupassa toiminnallisuus voisi olla _ostoksen voi lisätä ostoskorille_, tai opintohallintojärjestelmässä _opiskelija voi ilmoittautua HOPS:iin lisäämälleen kurssille_. Kaikkea ohjelmistokehitykseen liittyviä tehtäviä ei saa ainakaan helposti muotoiltua asiakkaan tasolla mielekkäänä toiminnallisuutena. Esim. ohjelmiston rakenteen muokkaamiseen liittyvä refaktorointi voi olla tällainen. Nämä tulee joka tapauksessa merkata backlogille, muuten läpinäkyvyys vaarantuu.
 
 Backlogin kärjessä eli korkeimmilla prioriteetilla olevat vaatimukset valitaan toteutettavaksi seuraavan sprintin aikana, Tämän takia backlogin kärjessä olevat vaatimukset on yleensä kirjattu tarkemmin kuin backlogin häntäpään vaatimukset.
 
-Usein on tarkoituksena myös estimoida eli arvioida backlogissa olevien vaatimusten toteuttamisen vaatima työmäärä. Työmääräarviot tekee kehittäjätiimi.
+Backlogia ylläpidetään ja tarkennetaan jatkuvasti, tätä kutsutaan nimellä _backlog refinement_. Usein on tarkoituksena myös estimoida eli arvioida backlogissa olevien vaatimusten toteuttamisen vaatima työmäärä. Työmääräarviot tekevät kehittäjät.
 
 Scrum ei määrittele missä muodossa backlog ja siinä olevat vaatimukset esitetään. Viime vuosina on yleistynyt käytäntö, jossa tehtävät esitetään ns. _user storyinä_, tutustumme tähän tekniikkaan [osassa 2](/osa2/#user-story).
 
@@ -391,50 +397,52 @@ Scrum ei määrittele missä muodossa backlog ja siinä olevat vaatimukset esite
 
 Product backlogia hallinnoi _product owner_ eli tuotteen omistaja, joka päättää mitä backlogille voidaan lisätä, sekä priorisoi backlogilla olevat vaatimukset.
 
-Product owner on Scrumin mukaan yksittäinen henkilö. Priorisointiin voi toki olla vaikuttamassa useampikin henkilö, mutta product owner tekee lopulliset päätökset prioriteettien suhteen.
+Product owner on Scrumin mukaan yksittäinen henkilö, ei komitea. Priorisointiin voi toki olla vaikuttamassa useampikin henkilö, mutta product owner tekee lopulliset päätökset prioriteettien suhteen.
 
-Product owner kantaa vastuun backlogista ja täten kehityksen suunnasta, eli siitä mitä sovellukseen ollaan tekemässä ja missä järjestyksessä. Product ownerin tehtävänä on priorisoida product backlogilla olevat vaatimukset siten, että sovelluksen tilaaja/asiakas saa tuotteesta maksimaalisen hyödyn. Jotta product owner pystyy tähän, on hänen luonnollisesti kommunikoitava mahdollisimman laajalti kaikkien sovelluksen sidosryhmien kanssa.
+Product owner vastaa tuotteen tavoitteen määrittelemisestä ja kommunikoinnista, backlogista ja täten kehityksen suunnasta, eli siitä mitä sovellukseen ollaan tekemässä ja missä järjestyksessä. Product ownerin tehtävänä on priorisoida product backlogilla olevat vaatimukset siten, että sovelluksen tilaaja/asiakas saa tuotteesta maksimaalisen hyödyn. Jotta product owner pystyy tähän, on hänen luonnollisesti kommunikoitava mahdollisimman laajalti kaikkien sovelluksen sidosryhmien kanssa.
 
-Product ownerin vastuulla on myös varmistua siitä, että kehittäjätiimi varmasti ymmärtää toteutettavaksi valitut vaatimukset.
+Product ownerin vastuulla on myös varmistua siitä, että kehittäjät varmasti ymmärtävät toteutettavaksi valitut vaatimukset.
 
 ### Scrum master
 
-Jokaisella Scrum-tiimillä on _scrum master_, eli henkilö, joka vastaa siitä että Scrumin pelisääntöjä ja henkeä noudatetaan kehitystyössä. scrum master ei kuitenkaan ole perinteinen projektipäällikkö, vaan pikemminkin ryhmää tukeva valmentaja. Joissain yhteyksissä scrum masterin on luonnehdittu olevan _servant leader_.
+Jokaisella Scrum-tiimillä on _scrum master_, eli henkilö, joka vastaa siitä että Scrumin pelisääntöjä ja henkeä noudatetaan kehitystyössä. Scrum master vastaa myös Scrum-tiimin tehokkuudesta. Scrum master ei kuitenkaan ole perinteinen projektipäällikkö, vaan pikemminkin ryhmää tukeva valmentaja. Aiemmin scrum masteria luonnehdittiin termillä _servant leader_, vuoden 2020 Scrum Guide puhuu _todellisista johtajista, jotka palvelevat_ (engl. true leaders who serve) Scrum-tiimiä ja laajempaa organisaatiota.
 
-Scrum masterin tehtävänä on muun muassa opastaa ryhmää hyvien käytänteiden noudattamisessa sekä rohkaista ja auttaa kehitystiimiä itseorganisoitumisessa sekä työskentelytapojen parantamisessa. Scrum master hoitaa myös käytännön asioita, esim. järjestää Scrumiin liittyviä palavereja ja koordinoi kommunikointia sidosryhmiin päin.
+Scrum masterin tehtävänä on muun muassa opastaa ryhmää hyvien käytänteiden noudattamisessa sekä rohkaista ja auttaa tiimiä itseohjautuvuudessa sekä työskentelytapojen parantamisessa. Scrum master hoitaa myös käytännön asioita, esim. järjestää Scrumiin liittyviä palavereja ja koordinoi kommunikointia sidosryhmiin päin.
 
 Scrum masterin ehkä keskeisin tehtävä on pyrkiä eliminoimaan kehitystyön esteitä. Esteenä on usein jokin tiimistä riippumaton asia, jonka poistamiseksi scrum master joutuu neuvottelemaan yrityksen hallinnon tai muiden ohjelmistotiimien kanssa. Tällaisen esteen voi muodostaa myös esimerkiksi se, että sovelluskehitystiimillä ei ole pääsyä tuotantoympäristöön tai edes vastaaviin palvelinympäristöihin, tai jos kehitettävä sovellus on riippuvainen muiden toimittajien vastuulla olevista rajapinnoista, ja ne eivät valmistu ajoissa tai toimi määritelmien mukaan.
 
 "Este" voi myös liittyä ryhmän työskentelytapoihin, tällöin scrum master opastaa ryhmää muuttamaan toimintaansa siten, että tuottavuutta haittaava este poistuu.
 
-Scrum masterin roolina on myös taata kehitystiimille työrauha ja suojata tiimiä esim. ulkopuolisten yrityksiltä puuttua sprintin aikaiseen toimintaan.
+Scrum masterin tehtävänä on myös taata kehittäjille työrauha ja suojata tiimiä esim. ulkopuolisten yrityksiltä puuttua sprintin aikaiseen toimintaan.
 
 Joissain tilanteissa scrum master toimii product ownerin apuna product backlogin ylläpitämisessä, tämä on tärkeää erityisesti silloin jos product owner on kokematon ja ei vielä osaa optimaalisella tavalla muotoilla backlogille lisättäviä käyttäjien sovellukselle asettamia vaatimuksia.
 
-Scrum master siis pyrkii tekemään kaikkensa, jotta kehitystiimillä olisi optimaaliset olosuhteet asiakkaalle arvoa tuottavan sovelluksen kehittämiseen.
+Scrum master siis pyrkii tekemään kaikkensa, jotta tiimillä olisi optimaaliset olosuhteet asiakkaalle arvoa tuottavan sovelluksen kehittämiseen.
 
-### Kehittäjätiimi
+### Kehittäjät
 
-Kehittäjätiimi koostuu noin 3-9:stä henkilöstä, joista kaikista käytetään nimikettä developer. Vaikka kaikilla on sama nimike developer, voivat jotkut tiimin jäsenistä olla erikoistuneita tiettyyn osa-alueeseensa, esim. testaamiseen, tai backend-ohjelmointiin. Koko tiimi kuitenkin kantaa aina yhteisen vastuun kehitystyöstä.
+Kehittäjät (engl. developers) ovat ne Scrum-tiimin jäsenet, jotka tekevät jokaisessa sprintissä käyttökelpoisen lisäyksen ohjelmistoon. Aiemmat Scrum Guiden versiot puhuivat erillisestä kehitystiimistä, jonka kooksi määriteltiin 3-9 henkilöä. Vuoden 2020 versiossa on enää yksi Scrum-tiimi, jonka koko product owner ja scrum master mukaan lukien on tyypillisesti korkeintaan kymmenen henkilöä. Tiimin sisällä ei ole alitiimejä eikä hierarkioita.
+
+Vaikka kaikista käytetään nimikettä developer, voivat jotkut tiimin jäsenistä olla erikoistuneita tiettyyn osa-alueeseensa, esim. testaamiseen, tai backend-ohjelmointiin. Koko tiimi kuitenkin kantaa aina yhteisen vastuun kehitystyöstä.
 
 Scrum-tiimien tulee olla _cross-functional_, eli tiimin tulisi pitää sisällään kaikki tarvittava osaaminen järjestelmän suunnitteluun, toteuttamiseen, testaamiseen ja jopa tuotantoympäristössä operoimiseen.
 
-Tiimit ovat autonomisia, eli periaatteena on että kehitystiimiä ei johdeta ulkopuolelta vaan tiimi päättää miten moneen tuotteen backlogin priorisoidun vaatimuksen toteuttamiseen se kussakin sprintissä sitoutuu, eli miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös tiettyjen reunaehtojen puitteissa itse miten se sprintin tavoitteen toteuttaa. Tiimi on siis _itseorganisoituva_ (self organizing).
+Tiimit ovat autonomisia, eli periaatteena on että tiimiä ei johdeta ulkopuolelta vaan kehittäjät päättävät, miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös itse kuka tekee mitä, milloin ja miten sprintin tavoite saavutetaan. Vuoden 2020 Scrum Guide kuvaa tiimiä termillä _itseohjautuva_ (engl. self-managing), aiemmin käytössä oli termi _itseorganisoituva_ (engl. self-organizing).
 
-Scrumin mukaan tiimin tulee oletusarvoisesti työskennellä samassa paikassa, mieluiten yhteisessä tiimille varatussa avokonttorissa ja oletuksena on että tiimin jäsenet työskentelevät tiimissä 100%:lla työajalla.
+Scrum Guide ei ota kantaa siihen, missä tiimi työskentelee. Pitkään ideaalina pidettiin sitä, että tiimi työskentelee samassa tilassa ja täysipäiväisesti samassa tiimissä. Nykyään yhä useampi tiimi toimii hybridi- tai etämallilla, mikä korostaa sovittujen kommunikaatiokäytäntöjen ja läpinäkyvyyttä tukevien työkalujen merkitystä.
 
 ### Sprintti
 
-Scrumissa kehitystyö siis jakautuu 1-4 viikon mittaisiin iteraatioihin eli sprintteihin.
-Sprintin kesto on projektissa tyypillisesti aina sama, nykyään suosituin sprintin pituus lienee 2 viikkoa. Sprintti on "time-boxed", eli sprinttiä ei missään olosuhteissa pidennetä kesken sprintin.
+Scrumissa kehitystyö siis jakautuu korkeintaan kuukauden mittaisiin iteraatioihin eli sprintteihin.
+Sprintin kesto on projektissa tyypillisesti aina sama, nykyään suosituin sprintin pituus lienee 2 viikkoa. Sprintti on "time-boxed", eli sprinttiä ei missään olosuhteissa pidennetä kesken sprintin. Ainoastaan product owner voi perua sprintin, jos sprintin tavoite käy tarpeettomaksi.
 
-Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset. Backlog on product ownerin toimesta priorisoitu ja vaatimukset valitaan aina priorisoidun listan kärjestä. Product owner siis näin ohjaa sen missä järjestyksessä asioita toteutetaan. Tiimi kuitenkin valitsee itse sprinttiin ainoastaan sen verran toteutettavaa minkä valmistumiseen se uskoo kykenevänsä sitoutumaan.
+Jokaisen sprintin alussa tiimi valitsee projektin backlogista sprintin aikana toteutettavat vaatimukset. Backlog on product ownerin toimesta priorisoitu ja vaatimukset valitaan aina priorisoidun listan kärjestä. Product owner siis näin ohjaa sen missä järjestyksessä asioita toteutetaan. Kehittäjät kuitenkin valitsevat itse sprinttiin ainoastaan sen verran toteutettavaa, minkä he arvioivat saavansa valmiiksi.
 
-Sprintin aikana Scrum-tiimi toteuttaa itseorganisoidusti sprinttiin valitut ohjelmiston toiminnallisuudet.
+Sprintin aikana Scrum-tiimi toteuttaa itseohjautuvasti sprinttiin valitut ohjelmiston toiminnallisuudet.
 
-Scrumissa periaatteena on, että jokaisen sprintin lopuksi tuotteesta on oltava olemassa _toimiva versio_ (engl. potentially shippable product increment), eli sprintin aikana on tarkoitus saada aikaan käyttöön valmiita ominaisuuksia, ei ainoastaan kasaa melkein toimivaa koodia.
+Scrumissa periaatteena on, että jokaisen sprintin aikana saadaan aikaan ainakin yksi _increment_ eli käyttökelpoinen, valmis lisäys tuotteeseen. Sprintin aikana on siis tarkoitus saada aikaan käyttöön valmiita ominaisuuksia, ei ainoastaan kasaa melkein toimivaa koodia. Incrementtejä voi syntyä sprintin aikana useita, ja niitä voidaan toimittaa käyttäjille jo ennen sprintin loppua. Sprintin lopun katselmointia ei siis pidä nähdä porttina, jonka jälkeen vasta julkaistaan.
 
-Sprintin aikana tiimille ei esitetä uusia vaatimuksia, scrum master on vastuussa tiimin suojelemisesta jos joku ulkopuolinen yrittää saada kehitystiimin tekemään sprintin aikana muuta kuin siihen sovittuja backlogilta otettuja vaatimuksia.
+Sprintin aikana ei tehdä muutoksia, jotka vaarantaisivat sprintin tavoitteen, eikä laadusta tingitä. Sprintin sisältöä voidaan kuitenkin tarkentaa ja neuvotella uudelleen product ownerin kanssa, kun toteutettavasta asiasta opitaan lisää. Scrum master suojelee tiimiä, jos joku ulkopuolinen yrittää saada kehittäjät tekemään sprintin aikana muuta kuin sprintin tavoitteen kannalta oleellisia asioita.
 
 ### Definition of done
 
@@ -442,15 +450,15 @@ Eräs ketterän manifestin periaatteista nostaa ohjelmiston laadun ketteryyttä 
 
 > Continuous attention to technical excellence and good design enhances agility.
 
-Myös Scrum asettaa suuren painoarvon tuotetun ohjelmiston laadulle. Jokaisessa sprintissähän lopputuloksena tulee olla "potentially shippable", eli valmiiksi tehty, käyttöön valmis osa ohjelmistoa.
+Myös Scrum asettaa suuren painoarvon tuotetun ohjelmiston laadulle. Jokaisessa sprintissähän lopputuloksena tulee olla increment, eli valmiiksi tehty, käyttöön valmis osa ohjelmistoa.
 
 Jotta vallitsisi yksimielisyys siitä, minkälaisella laatutasolla ohjelmistoa on toteutettava, määritellään Scrumissa projektitasolla _definition of done_, suomeksi valmiin määritelmä, eli se mitä tarkoittaa, että jokin vaatimus on toteutettu valmiiksi.
 
 Valmiiksi tehty määritellään useimmiten tarkoittamaan sitä, että vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu, testaus automatisoitu, dokumentoitu, integroitu muuhun ohjelmistoon ja viety tuotantoympäristöön. Valmiin määritelmä siis parhaassa tapauksessa on määritelty niin, että kun asian sanotaan olevan valmis, ei siihen liity enää yhtään ekstratyötä.
 
-Kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan sillä nimenomaan definition of donen tasolla toimivia ja valmiiksi tehtyjä vaatimuksia. Jos joitain ohjelman osia on tehty puutteellisesti, scrum master hylkää ne ja siirtää toteutettavaksi seuraavaan sprinttiin.
+Kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan sillä nimenomaan definition of donen tasolla toimivia ja valmiiksi tehtyjä vaatimuksia. Jos jokin backlogin vaatimus ei täytä definition of donea, sitä ei voi julkaista eikä edes esitellä sprintin katselmoinnissa, vaan se palaa product backlogiin myöhemmin toteutettavaksi.
 
-Jos sprintin aikana osoittautuu että tiimi ei ehdi toteuttamaan kaikkea mihin se sitoutui, ei ole hyväksyttävää tinkiä laadusta, vaan osa vaatimuksista jätetään seuraavaan sprinttiin.
+Jos sprintin aikana osoittautuu että tiimi ei ehdi toteuttamaan kaikkea suunniteltua, ei ole hyväksyttävää tinkiä laadusta, vaan osa vaatimuksista jätetään seuraavaan sprinttiin.
 
 Definition of done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska ketterässä ohjelmistokehityksessä tärkein edistymisen mittari on valmiina oleva ohjelmisto, on erittäin tärkeää, että kaikilla on sama näkemys mitä "valmis" tarkoittaa. Asia ei nimittäin ole ollenkaan itsestäänselvä, jos sitä ei tarkkaan määritellä. On melko yleistä, että kun ohjelmistokehittäjä ilmaisee jonkun ominaisuuden olevan kahden päivän ohjelmoinnin jälkeen "melkein valmis", kestää lopulta parikin viikkoa ennen kun asia on kokonaan valmis siinä mielessä että sovelluksen asiakkaat pääsevät käyttämään uutta ominaisuutta.
 
@@ -458,33 +466,35 @@ Definition of done on eräs tapa millä Scrum pyrkii _läpinäkyvyyteen_, koska 
 
 Ennen jokaista sprinttiä järjestetään _sprint planning_ eli sprintin suunnittelukokous.
 
-Aiemmin Scrum määritteli, että kokous on kaksiosainen, vuoden 2017 Scrum guide yksinkertaisti asioita ja nykyään puhutaan ainoastaan sprintin suunnittelun kahdesta aiheesta (engl. topic).
+Vuoden 2020 Scrum Guide määrittelee sprintin suunnittelulle kolme aihetta (engl. topic): _miksi_ sprintti on arvokas, _mitä_ sprintissä voidaan saada valmiiksi ja _miten_ valittu työ tehdään.
 
-Ensimmäisenä aiheena on selvittää _mitä_ sprintin aikana tehdään. Product owner esittelee tiimille product backlogin kärjessä olevia vaatimuksia. Tiimin tulee päästä selvyyteen vaatimuksista sillä tasolla, että heidän on vähintäänkin summittaisesti mahdollista arvioida kuinka paljon vaatimuksen toteuttaminen vaatisi resursseja, sillä tiimin tulee arvioida kuinka monta backlogin vaatimuksista se kykenee sprintin aikana toteuttamaan _definition of donen määrittelemällä_ laadulla.
+Ensimmäisenä aiheena on selvittää, _miksi_ sprintti on arvokas. Product owner ehdottaa, miten sprintti voisi lisätä tuotteen arvoa ja edistää tuotteen tavoitetta, ja koko Scrum-tiimi muotoilee yhdessä _sprintin tavoitteen_ (engl. sprint goal).
 
-Sprintin aikana toteutettavien vaatimusten valinnan lisäksi asetetaan sprintin tavoite _sprint goal_, joka on yksittäisiä vaatimuksia geneerisempi ilmaus siitä, mitä tulevassa sprintissä on tarkoitus tehdä.
+Toisena aiheena on selvittää _mitä_ sprintin aikana tehdään. Product owner esittelee tiimille product backlogin kärjessä olevia vaatimuksia. Tiimin tulee päästä selvyyteen vaatimuksista sillä tasolla, että heidän on vähintäänkin summittaisesti mahdollista arvioida kuinka paljon vaatimuksen toteuttaminen vaatisi resursseja, sillä tiimin tulee arvioida kuinka monta backlogin vaatimuksista se kykenee sprintin aikana toteuttamaan _definition of donen määrittelemällä_ laadulla.
 
-Suunnittelukokouksen toisena aiheena on selvittää _miten_ sprintin tavoitteet saavutetaan.
+Sprintin tavoite on yksittäisiä vaatimuksia geneerisempi ilmaus siitä, mitä tulevassa sprintissä on tarkoitus saada aikaan. Se antaa kehittäjille joustavuutta, sillä sprintin tavoitteen saavuttamiseksi tarvittavaa työtä voidaan tarkentaa sprintin kuluessa.
 
-Tämä yleensä tarkoittaa, että tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla. Suunnittelukokouksen toisen osan tuotoksena on usein lista tehtävistä (engl. task), jotka sprintin aikana on toteutettava, jotta sprinttiin valitut vaatimukset saadaan toteutettua. Suunnittelun aikana identifioidut tehtävät kirjataan sprintin backlogiin eli sprintin tehtävälistaan.
+Suunnittelukokouksen kolmantena aiheena on selvittää _miten_ sprintin tavoite saavutetaan.
+
+Tämä yleensä tarkoittaa, että tiimi suunnittelee toteutettavaksi valitut vaatimukset tarvittavalla tasolla. Tämän vaiheen tuotoksena on usein lista tehtävistä (engl. task), jotka sprintin aikana on toteutettava, jotta sprinttiin valitut vaatimukset saadaan toteutettua. Suunnittelun aikana identifioidut tehtävät kirjataan sprintin backlogiin eli sprintin tehtävälistaan.
 
 Toisin kuin "asiakkaan kielellä" kirjoitettu product backlog, sprintin backlogilla olevat asiat ovat usein ilmaistu sovelluskehittäjien kielellä, ja sisältävät monia teknisen tason asioita, jotka eivät vielä itsessään ole asiakkaan kannalta kiinnostavia. Sprint backlog onkin ennen kaikkia scrum-tiimin sovelluskehittäjien työnteon organisoinnin väline.
 
-Sprint planningin maksimikesto on 8 tuntia jos sprinttien pituus on 4 viikkoa ja muuten 4 tuntia.
+Sprint planningin maksimikesto on 8 tuntia kuukauden mittaisessa sprintissä, lyhyemmissä sprinteissä kokous on yleensä lyhyempi.
 
 Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa [osassa 2](/osa2/#sprintin-suunnittelu).
 
 ### Daily scrum – päiväpalaveri
 
-Jokainen päivä sprintin aikana aloitetaan _daily scrumilla_ eli korkeintaan 15 minuutin mittaisella palaverilla. Palaveri pidetään aina samaan aikaan, samassa paikassa ja kaikkien kehittäjien oletetaan olevan paikalla.
+Jokainen päivä sprintin aikana aloitetaan _daily scrumilla_ eli korkeintaan 15 minuutin mittaisella palaverilla. Palaveri on tarkoitettu kehittäjille, ja se pidetään aina samaan aikaan ja samassa paikassa.
 
-Daily scrumin tarkoituksena on ylläpitää läpinäkyvyyttä sprintin tapahtumiin. Standardimallisessa päiväpalaverissa jokainen kehitystiimin jäsen vastaa vuorollaan kolmeen kysymykseen
+Daily scrumin tarkoituksena on ylläpitää läpinäkyvyyttä sprintin tapahtumiin. Pitkään käytetyssä standardimallisessa päiväpalaverissa jokainen kehittäjä vastasi vuorollaan kolmeen kysymykseen
 
 - Mitä sain aikaan edellisen tapaamisen jälkeen?
 - Mitä aion saada aikaan ennen seuraavaa tapaamista?
 - Mitä esteitä etenemiselläni on?
 
-Kuka tahansa saa olla seuraamassa daily scrumia, mutta vain tiimin jäsenillä on puheoikeus. Palaverin on tarkoitus olla lyhyt ja liian rönsyilevä keskustelu ei ole suotavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, scrum master huolehtii, että ongelmiin palataan asianomaisen kanssa daily scrumin jälkeen.
+Aiemmin Scrum Guide määritteli, että daily scrumia saa kuka tahansa seurata, mutta vain tiimin jäsenillä on puheoikeus. Vuoden 2020 Scrum Guide toteaa ainoastaan, että palaveri on kehittäjiä varten. Palaverin on tarkoitus olla lyhyt ja liian rönsyilevä keskustelu ei ole suotavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, scrum master huolehtii, että ongelmiin palataan asianomaisen kanssa daily scrumin jälkeen.
 
 Jos muuhun palaverointiin, esim. suunnitteluun tai vaatimusten tarkentamiseen on tarvetta, tulee palaverit järjestää daily scrumista erillään. Scrum ei ota kantaa muihin sprintin aikaisiin palavereihin.
 
@@ -504,17 +514,17 @@ Vuoden 2020 Scrum guide on omaksunut uuden näkemyksen todeten seuraavasti:
 
 ### Sprintin katselmointi
 
-Sprintin päätteeksi järjestetään sprint review eli katselmointi. Katselmointi on informaali tilaisuus, jonka aikana kehitystiimi esittelee sprintin aikaansaannoksia kaikille kehitettävästä tuotteesta kiinnostuneille sidosryhmille.
+Sprintin päätteeksi järjestetään sprint review eli katselmointi. Katselmointi on informaali tilaisuus, jonka aikana Scrum-tiimi esittelee sprintin aikaansaannoksia kaikille kehitettävästä tuotteesta kiinnostuneille sidosryhmille.
 
-Katselmoinnissa on tarkoituksena tarkastella, demota ja kokeilla toteutettua, toimivaa ohjelmistoa. PowerPoint-kalvojen näyttäminen katselmoinnissa on suorastaan kiellettyä.
+Katselmoinnissa on tarkoituksena tarkastella, demota ja kokeilla toteutettua, toimivaa ohjelmistoa. Scrum Guiden mukaan katselmointi on työskentelysessio, jota ei pidä rajata pelkäksi esitykseksi. Diaesityksen sijaan katselmoinnissa kannattaa siis näyttää toimivaa ohjelmistoa ja keskustella siitä.
 
-Scrum master huolehtii, että katselmoinnissa demonstroidaan ainoastaan niitä ominaisuuksia, jotka on toteutettu kokonaan eli definition of donen tasolla. Näin pyritään antamaan mahdollisimman realistinen kuva siitä miten sovelluksen kehitys etenee.
+Katselmoinnissa demonstroidaan ainoastaan niitä ominaisuuksia, jotka on toteutettu kokonaan eli definition of donen tasolla. Näin pyritään antamaan mahdollisimman realistinen kuva siitä miten sovelluksen kehitys etenee.
 
 Product owner varmistaa (joko katselmoinnissa tai ennen sitä), mitkä sprintissä kehitetyistä vaatimuksista on toteutettu hyväksyttävällä tavalla, eli että ne toimivat oletusten ja odotusten mukaan sen lisäksi että ne on toteutettu definition of donen määrittelemällä laatutasolla. Ne vaatimukset, joita ei hyväksytä toteutetuksi, siirretään takaisin product backlogiin viimeisteltäväksi myöhempien sprinttien aikana.
 
-Katselmoinnin aikana kuka tahansa saa antaa palautetta tuotteesta ja esimerkiksi ehdottaa uusia vaatimuksia lisättäväksi product backlogiin. Katselmointi aiheuttaa usein myös tarpeen product backlogin osittaiseen uudelleenpriorisointiin.
+Katselmoinnin aikana sidosryhmät antavat palautetta tuotteesta ja voivat esimerkiksi ehdottaa uusia vaatimuksia lisättäväksi product backlogiin. Samalla arvioidaan edistymistä kohti tuotteen tavoitetta. Katselmointi aiheuttaa usein myös tarpeen product backlogin osittaiseen uudelleenpriorisointiin.
 
-Myös katselmoinnin kesto on rajoitettu (4h tai 2h riippuen sprintin kestosta).
+Myös katselmoinnin kesto on rajoitettu: enintään neljä tuntia kuukauden mittaisessa sprintissä, lyhyemmissä sprinteissä yleensä vähemmän.
 
 ### Retrospektiivi
 
@@ -522,7 +532,7 @@ Eräs ketterän manifestin periaatteista toteaa seuraavasti
 
 > At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
 
-Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospektiivi_ ilmentää tätä periaatetta. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä tiimi scrum masterin johdolla tarkastelee nimenomaan omaa työskentelyprosessiaan.
+Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospektiivi_ ilmentää tätä periaatetta. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä Scrum-tiimi tarkastelee nimenomaan omaa työskentelyprosessiaan. Retrospektiivin maksimikesto on kolme tuntia kuukauden mittaisessa sprintissä.
 
 Tarkoituksena on identifioida mikä meni hyvin ja missä asioissa on parantamisen varaa. Palaverissa mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana.
 
@@ -538,15 +548,17 @@ Tarkkailun ja mukauttamisen mahdollistaa läpinäkyvyys, eli asioita ei piilotel
 
 Toisin sanoen asioiden läpinäkyvyys mahdollistaa niiden jatkuvan tarkkailun ja sen seurauksena sekä toimintatapoja että kehitettävää tuotetta on mahdollista mukauttaa haluttuun suuntaan.
 
-![]({{ "/images/2-2.png" | absolute_url }})
+![]({{ "/images/2-2.png" | relative_url }})
 
 ### Scrumin arvot
 
 Scrum guide nostaa esiin myös joukon _arvoja_ (engl. values) oleellisena seikkana sen taustalla että oikeanlainen mentaliteetti tehokkaaseen sovelluskehitykseen pääsee syntymään.
 
-> When the values of commitment, courage, focus, openness and respect are embodied and lived by the Scrum Team, the Scrum pillars of transparency, inspection, and adaptation come to life and build trust for everyone.
+> When these values are embodied by the Scrum Team and the people they work with, the empirical Scrum pillars of transparency, inspection, and adaptation come to life building trust.
 
-Tiimin tulee olla _sitoutunut_ (commitment) yhteisen tavoitteen saavuttamiseksi ja _fokusoitua_ oikeiden asioiden tekemiseen. Tulee olla myös _rohkeutta_ tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin _kunnioittaen_ koko ajan kaikkia kehitystiimin jäseniä sekä ohjelmiston sidosryhmiä.
+Arvoja on viisi: _commitment_, _focus_, _openness_, _respect_ ja _courage_.
+
+Tiimin tulee olla _sitoutunut_ (commitment) yhteisen tavoitteen saavuttamiseksi ja _fokusoitua_ oikeiden asioiden tekemiseen. Tulee olla myös _rohkeutta_ tehdä päätöksiä ja kohdata myös vaikeimpia asioita, eli tulee olla avoimia sekä onnistumisten että ongelmien suhteen kuitenkin _kunnioittaen_ koko ajan kaikkia tiimin jäseniä sekä ohjelmiston sidosryhmiä.
 
 Syksyllä 2019 julkaistu [A Scrum book](https://pragprog.com/book/jcscrum/a-scrum-book) toteaa, että arvojen kautta syntyy _fertile soil_, eli hedelmällinen maaperä, jonka ansiosta sovelluskehityksen on mahdollista kukoistaa.
 
@@ -585,36 +597,27 @@ Monimutkaisen tuotteen hallinnoiminen on kompleksista, Scrum ei kuitenkaan ota m
 
 Uncle Bobin kritiikki on vuodelta 2010 mutta pitkälti validi edelleen.
 
-Scrumin rinnalle viime vuosina voimakkaasti erityisesti Suomessa noussut [Scaled agile framework eli SAFe](https://www.scaledagileframework.com/) itse asiassa tarjoaa monia lääkkeitä Martininkin esiin nostamiin ongelmiin. SAFe on kuitenkin saanut myös voimakasta kritiikkiä ja autoritiivisetkin tahot (kuten Scrumin kehittäjä Ken Schwaber) ovat jopa kyseenalaistaneet menetelmän ketteryyden. Tutustumme SAFeen pintapuolisesti [osassa 5](/osa5/#laajan-skaalan-ketter%C3%A4t-menetelm%C3%A4t).
+Scrumin rinnalle erityisesti Suomessa suosituksi noussut [Scaled agile framework eli SAFe](https://framework.scaledagile.com/) itse asiassa tarjoaa monia lääkkeitä Martininkin esiin nostamiin ongelmiin. SAFe on kuitenkin saanut myös voimakasta kritiikkiä ja autoritiivisetkin tahot (kuten Scrumin kehittäjä Ken Schwaber) ovat jopa kyseenalaistaneet menetelmän ketteryyden. Tutustumme SAFeen pintapuolisesti [osassa 5](/osa5/#laajan-skaalan-ketter%C3%A4t-menetelm%C3%A4t).
 
 Scrum, kuten muutkin ketterät kehitystavat, ovat syntyneet pitkälti ohjelmistokehittäjien keskuudessa. Melko yleinen raportoitu ongelma ketterään kehitykseen siirryttäessä onkin se, että muu organisaatio jää täysin ennalleen. Tällöin tuloksena on usein nimikkeen [waterscrumfall](https://www.infoq.com/news/2011/12/water-scrum-fall-is-the-norm/) saanut kehitysmalli, missä ainoastaan ohjelman uusien toiminnallisuuksien kehitys tapahtuu Scrumia mukaillen, mutta budjetointi, vaatimusten hallinta sekä tuotantoonvienti etenevät edelleen vanhoja kontrolloituja prosesseja noudattaen.
 
-Päätetään alustava Scrumiin tutustumisemme menetelmän kehittäjien sanoihin
+Päätetään alustava Scrumiin tutustumisemme Scrum Guiden aiempien versioiden osuvaan kiteytykseen
 _Scrum is easy to understand but extremely difficult to master_.
 
 ## Laajat kielimallit ohjelmistokehityksessä
 
-Laajat kielimallit, kuten [ChatGPT](https://chatgpt.com/auth/login), [Claude](https://claude.ai/login?returnTo=%2F%3F) ja GitHub [Copilot](https://github.com/features/copilot) ovat osoittautuneet erittäin hyödyllisiksi ohjelmistokehityksessä.  
+Laajat kielimallit, kuten [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/) ja GitHub [Copilot](https://github.com/features/copilot), ovat muuttaneet ohjelmistokehitystä nopeasti. Alun koodin täydennyksestä ja chat-käyttöliittymistä on siirrytty _agentteihin_, jotka osaavat itsenäisesti tehdä useisiin tiedostoihin ulottuvia muutoksia, suorittaa koodia ja testejä ja korjata tekemisiään virheilmoitusten perusteella.
 
-Itse käytän koodatessa pääasiassa GitHub Copilottia, joka on nykyään natiivisti integroitu VS Codeen.  Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Student Developer Packin](https://education.github.com/pack) kautta.
+Itse käytän koodatessa pääasiassa GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
 
-Copilotin ja muiden kielimallien antamien vihjeiden hyödyllisyyden aste vaihtelee. Kielimallien ehkä suurin ongelma on hallusinointi, ne generoivat välillä täysin vakuuttavan näköisiä vastauksia mitkä kuitenkin ovat täysin päättömiä. Ohjelmoidessa toki hallusinoitu koodi jää usein nopeasti kiinni jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä kielimallin generoima koodi näyttää toimivan, mutta se sisältää vaikeammin havaittavia bugeja tai esim. tietoturvahaavoittuvuuksia.
+Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen.
 
-Toinen ongelma kielimallien soveltamisessa ohjelmistokehitykseen on se, että kielimallien on vaikea hahmottaa isompia projekteja, ja esim. generoida toiminnallisuutta, joka edellyttäisi muutoksia useisiin tiedostoihin. Kielimallit eivät myöskään nykyisellään osaa yleistää koodia, eli jos koodissa on esim. olemassaolevia funktioita tai komponentteja, joita kielimalli pystyisi pienin muutoksin hyödyntämään siltä pyydettyyn toiminnallisuuteen, ei kielimalli tähän aina taivu. Tästä voi olla seurauksena se, että koodikanta rapistuu sillä kielimallit generoivat koodiin paljon toisteisuutta (ks. lisää esim. [täältä](https://visualstudiomagazine.com/articles/2024/01/25/copilot-research.aspx)).
+Tekoälyä käytettäessä vastuu jää siis aina ohjelmoijalle.
 
-Kielimalleja käytettäessä vastuu siis jää aina ohjelmoijalle.
+Kielimallien nopea kehitys asettaa ohjelmointia opiskelevan haastavaan asemaan: kannattaako ja tarvitseeko enää ylipäätään opetella ohjelmointia, kun agentti kirjoittaa koodin nopeammin kuin ihminen?
 
-Kielimallien nopea kehitys asettaa ohjelmointia opiskelevan haastavaan asemaan: kannattaako ja tarvitseeko enää ylipäätään opetella ohjelmointia vanhan liiton tyyliin, kun lähes kaiken saa kielimalleilta valmiina?
+Kun koodin kirjoittaminen muuttuu halvaksi, arvokkaammaksi muuttuu se, mitä agentti ei osaa tehdä puolestamme. Tärkein näistä on suunnan näyttäminen. Agentti toteuttaa taitavasti sen, mitä sille kerrotaan, mutta se ei tiedä, mitä kannattaisi tehdä. Ihmistä tarvitaan selvittämään, mitä asiakas oikeasti tarvitsee, priorisoimaan tehtävät asiat ja arvioimaan, tuottaako ohjelmisto asiakkaalle arvoa. Nopeasti koodia tuottava agentti on hyödytön, jos se rakentaa väärää asiaa.
 
-Tässä kohtaa kannattaa muistaa C-kielen kehittäjän Brian Kerninghamin vanha viisaus
+Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan myös syvällinen tekninen osaaminen on edelleen oleellista. Agentin tuotosta ei pysty arvioimaan, eikä agenttia ohjaamaan oikeaan suuntaan, jos ei itse ymmärrä, mitä koodi tekee ja millainen on hyvä ratkaisu. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni, joka päättää minne ollaan menossa ja kantaa lopullisen vastuun.
 
-![]({{ "/images/kerningham.png" | absolute_url }})
-
-Eli koska ongelmien selvittely on kaksi kertaa vaikeampaa kuin ohjelmointi, ei kannata ohjelmoida sellaista koodia minkä vain juuri ja juuri itse ymmärtää. Miten debuggaus mahtaakaan onnistua tilanteessa missä ohjelmointi on ulkoistettu kielimallille ja ohjelmistokehittäjä ei ymmärrä debugattavaa koodia ollenkaan?
-
-Toistaiseksi kielimallien ja tekoälyn kehitys on vielä siinä vaiheessa, että ne eivät ole itseriittoisia, ja vaikeimmat ongelmat jäävät ihmisten selvitettäväksi. Tämän takia aloittelevien ohjelmistokehittäjien on kaiken varalta opeteltava ohjelmoimaan sujuvasti. Voi olla, että kielimallien kehityksestä huolimatta tarvitaankin entistä syvällisempää osaamista. Tekoäly tekee ne helpot asiat, mutta ihmistä tarvitaan kaikkein kiperimpien tekoälyn aiheuttamien sotkujen selvittelyyn. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on Copilot eli lentoperämies/nainen. Ohjelmoija on edelleen kapteeni ja kantaa lopullisen vastuun.
-
-Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan siis on edelleen oleellista hankkia syvällinen tekninen osaaminen. Syynä tälle on myös se, että AI on yhtä hyvä kuin sille annettu prompti. Promptaaminen taas on haastavaa, jos syvällinen tekninen osaaminen puuttuu. Generatiivista tekoälyä kannattaa mielestäni ehdottomasti hyödyntää, kunhan muistaa että käyttö on riittävissä määrin produktiivista. 
-
-Kielimallit kehittyvät koko ajan. Erityisen suuren avun ohjelmistokehityksen kannalta ovat tuoneet [agentit](https://cloud.google.com/discover/what-are-ai-agents), jotka osaavat tehdä suurempia kokonaisuuksia käyttäjän kehoitteista. Visual Studio Code -editoriin on ollut jo jonkin aikaa integroituna [agenttimoodi](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode), joka on nostanut AI:n kyvykkyyttä huomattavasti. Agenttimoodissa tekoäly osaa koodin generoinnin lisäksi mm. luoda tiedostoja, suorittaa koodia, ja korjata generoimaansa koodia koodin suorituksessa tapahtuneiden virheiden perusteella.
-
+Tekoälyn hyödyntämistä ohjelmistotuotannossa käsitellään tarkemmin erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/), joka etenee viikoittain laskareiden [tekoäly]-tehtävien tahdissa.

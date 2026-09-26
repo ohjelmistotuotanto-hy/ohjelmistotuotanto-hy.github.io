@@ -9,7 +9,7 @@ permalink: /tehtavat5/
 
 Tehtävissä 1-3 jatketaan Gitin harjoittelua. Nämä tehtävät eivät näy palautuksissa mitenkään.
 
-Tehtävä 4 liittyy materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>. Tehtävissä 5 ja 6 pääsemme hyödyntämään tekoälyä koodin katselmoinnissa sekä koodin tuottamisessa.
+Tehtävä 4 liittyy materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 5]</span>. Tehtävissä 5 ja 6 jatketaan kurssin [tekoäly]-tehtävien sarjaa, ja hyödynnetään tekoälyä koodin katselmoinnissa sekä koodin tuottamisessa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -26,6 +26,8 @@ Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palaut
 **Tämän viikon tehtävät 4-6 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko5_ sisälle. Tehtäviä 1-3 ei palauteta.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+
+{% include checkbox_reset.md %}
 
 ### 1. Git: vahingossa tuhotun tiedoston palautus [versionhallinta]
 
@@ -197,27 +199,29 @@ Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja te
 
 Lisää samankaltaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista](https://github.com/emilybache).
 
-### 5. Pull request ja koodin katselmointi
+### 5. Pull request ja koodin katselmointi [tekoäly]
 
-Tämän tehtävän tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
+Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 5 osuus [AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5).
+
+Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
 <input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
 
 GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
-![]({{ "/images/pr1.png" | absolute_url }})
+![]({{ "/images/pr1.png" | relative_url }})
 
 <input type="checkbox"> Varmista, että PR kohdistuu haarasta *tennis_refactoring* haaraan *main*. 
 
 <input type="checkbox"> Kirjoita PR:lle kuvaus. Voit ottaa esim. [täältä](https://medium.com/@jmanuellugo96/how-to-write-an-awesome-pull-request-pr-description-bdd2c6e48418) tai [täältä](https://www.hackerone.com/blog/writing-great-pull-request-description) mallia kuvaukselle.
 
-![]({{ "/images/pr2.png" | absolute_url }})
+![]({{ "/images/pr2.png" | relative_url }})
 
 <input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi:
 
-![]({{ "/images/pr3.png" | absolute_url }}){:height="130px" }
+![]({{ "/images/pr3.png" | relative_url }}){:height="130px" }
 
-<input type="checkbox"> Odota katselmoinnin valmistumista... omassa tapauksessani taisi mennä noin 10 minuuttia
+<input type="checkbox"> Odota katselmoinnin valmistumista, siihen menee yleensä muutamia minuutteja
 
 <input type="checkbox"> Käy katselmoinnin tulos läpi. Hyväksy ehdotetut muutokset halutessasi ja merkitse kommentit selvitetyiksi (_resolve conversation_)
 
@@ -229,34 +233,35 @@ Kerro raportissa
 - Mitä huomioita Copilot teki koodistasi
 - Olivatko ehdotetut muutokset hyviä
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
+- Huomasiko Copilot jotain, minkä olisit itse jättänyt huomaamatta? Entä jäikö siltä jotain oleellista huomaamatta?
 
 Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
 
-### 6. Good vibe with warehouses
+### 6. Good vibe with warehouses [tekoäly]
 
-Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada tekoäly koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
+Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada GitHubin pilviagentti ([Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)) koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
 <input type="checkbox"> Tee repositorioosi [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue), jossa kuvaat mahdollisimman tarkasti minkälaisen sovelluksesta haluat:
 
-![]({{ "/images/issue0.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/issue0.png" | relative_url }}){:height="350px" }
 
 Sovelluksen pitäisi mahdollistaa useiden varastojen luominen, muokkaaminen ja sisällön lisääminen tai poistaminen. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
 
-Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa.
+Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Kirjoita kuvaus [viikon 3 tehtävän 9](/tehtavat3/#9-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
 
 <input type="checkbox"> Assignaa issue Copilotille:
 
-![]({{ "/images/issue1.png" | absolute_url }}){:height="130px" }
+![]({{ "/images/issue1.png" | relative_url }}){:height="130px" }
 
 Copilot avaa Pull requestin työskentelyään varten:
 
-![]({{ "/images/issue2.png" | absolute_url }})
+![]({{ "/images/issue2.png" | relative_url }})
 
 <input type="checkbox"> Mene Pull requestin näkymään (ks. välilehti Pull requests), ja sieltä edelleen nappia "View session" painamalla katsomaan Copilotin työskentelyä
 
 Copilot aloittaa tutustumalla projektiin ja luo suunnitelman
 
-![]({{ "/images/issue3.png" | absolute_url }})
+![]({{ "/images/issue3.png" | relative_url }})
 
 <input type="checkbox"> Seuraa Copilotin edistymistä
 
@@ -264,7 +269,7 @@ Copilotilla voi mennä aika kauan koodaillessa. Nyt on hyvä hetki esim. keittä
 
 <input type="checkbox"> Odota kunnes Copilot on valmis
 
-Kun Copilot on valmis (itselläni meni noin 15 min) näet sen luoman koodin Pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
+Kun Copilot on valmis (itselläni meni noin vartti) näet sen luoman koodin Pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
 
 <input type="checkbox"> Pull request on tällä hetkellä draft-tilassa. Muuta sen tilaa painamalla nappia "Ready for review"
 
@@ -291,13 +296,17 @@ Switched to a new branch 'copilot/add-warehouse-management-ui'
 
 Oma sovellukseni oli konfiguroitu siten, että osoitteen http://localhost:5000/ sijaan sovellukseen pääsee käsiksi osoitteesta http://127.0.0.1:5000/
 
-<input type="checkbox"> Tee sovellukselle katselmointi GitHubissa
+<input type="checkbox"> Pyydä Copilotia katselmoimaan pull request samaan tapaan kuin edellisessä tehtävässä, ja käy katselmoinnin tulos läpi
+
+Agentin tekemää koodia katselmoi siis toinen AI. Tämä ei kuitenkaan riitä, vaan ihmisen on vielä katselmoitava koodi.
+
+<input type="checkbox"> Tee sovellukselle oma katselmointi GitHubissa
 
 Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta napista "Add your review". Saatat joutua uudelleenlataamaan sivun, jotta nappi ilmestyy näkyviin
 
 <input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia sovellukseen:
 
-![]({{ "/images/issue5.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/issue5.png" | relative_url }}){:height="450px" }
 
 Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/make-changes-to-an-existing-pr), jotta Copilot suostuu tekemään muutokset
 
@@ -311,10 +320,12 @@ Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot
 
 Kerro raportissa
 - Päätyikö Copilot toimivaan ja hyvään ratkaisuun
+- Miten varmistit, että ratkaisu toimii?
+- Tekikö agentti testit, ja olivatko ne hyviä?
 - Oliko koodi selkeää
 - Opitko jotain uutta Copilotin tekemää koodia lukiessasi
 
-Tässä erittäin yksinkertaisessa tapauksessa vibekoodaus saattaa tuottaa hämmästyttävänkin hyvän lopputuloksen. Tilanne on kuitenkin aivan erilainen todellisen, isomman järjestelmän kanssa, pelkkä vibetys, eli haluttavan toiminnallisuuden kuvailu ei useimmiten riitä siihen että ulos saadaan toimiva ja robusti ratkaisu.
+Tässä erittäin yksinkertaisessa tapauksessa [vibekoodaus](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys) saattaa tuottaa hämmästyttävänkin hyvän lopputuloksen. Tilanne on kuitenkin aivan erilainen todellisen, isomman järjestelmän kanssa. Pelkkä vibetys, eli haluttavan toiminnallisuuden kuvailu, ei useimmiten riitä siihen, että ulos saadaan toimiva ja robusti ratkaisu.
 
 {% include submission_instructions.md %}
 

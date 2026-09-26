@@ -7,7 +7,7 @@ permalink: /tehtavat3/
 
 {% include laskari_info.md part=3 %}
 
-Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin.
+Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 9 aloitetaan kurssin [tekoäly]-tehtävien sarja.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -21,20 +21,15 @@ Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetu
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-Tehtävät 1 ja 5-8 palautetaan  jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**,  tehtävän hakemiston _viikko3_ sisälle. Tehtävät 2-4 palautetaan omaan, uuteen repositorioon.
+Tehtävät 1 ja 5-9 palautetaan  jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**,  tehtävän hakemiston _viikko3_ sisälle. Tehtävät 2-4 palautetaan omaan, uuteen repositorioon.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
 ### GitHub Education
 
-Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), joka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+{% include copilot_info.md %}
 
-### Checkboxit tehtävien teon seurannan apuna
-
-Kurssin tehtävänannot ovat välillä pitkiä. Tekstin seasta saattaa olla haastavaa bongata niitä askelia, jotka edellyttävät toimenpiteitä. Tehtävien selkeyttämiseksi ja seurannan helpottamiseksi tehtävien toimenpiteitä edellyttävät askeleet on merkitty ranskalaisten viivojen sijaan **checkboxeilla**.
-
-Voit käyttää checkboxeja oman edistymisesi seurannan helpottamiseen. Kun askel on tehty, rastita boksi. Näin et mene sekaisin sen suhteen, missä kohtaa olet menossa. Huomaa, että boksit eivät sisällä mitään toiminnallisuutta, ja rastit nollautuvat, jos lataat sivun uudelleen.
-
+{% include checkboxit.md %}
 
 ### 1. Tutustuminen Robot Frameworkkiin
 
@@ -54,7 +49,7 @@ Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esime
 
 Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>:
 
-![]({{ "/images/laskuri1.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/laskuri1.png" | relative_url }}){:height="350px" }
 
 Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 Saat sammutettua sovelluksen painamalla komentoriviltä `ctrl+c` tai `ctrl+d`.
@@ -345,7 +340,7 @@ exit $status
 
 Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
 
-![]({{ "/images/webcounter2.png" | absolute_url }}){:height="240px" }
+![]({{ "/images/webcounter2.png" | relative_url }}){:height="240px" }
 
 Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
 
@@ -378,7 +373,7 @@ On todennäköistä, että testien tekemisen aikana tulee ongelmia, joiden selvi
 
 Jos testit eivät mene läpi, generoi Selenium hakemistoon kuvakaappauksen tilanteesta, siitä tilanteesta, joissa testi havaitsee ongelman. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
 
-![]({{ "/images/seleniumerror.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/seleniumerror.png" | relative_url }}){:height="350px" }
 
 Tässä tapauksessa ongelma oli erittäin helppo korjata.
 
@@ -477,7 +472,7 @@ Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
 - käyttäjä voi rekisteröityä, eli luoda järjestelmään käyttäjätunnuksen
 - rekisteröitynyt käyttäjä voi kirjautua järjestelmään
 
-![]({{ "/images/weblogin1.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/weblogin1.png" | relative_url }}){:height="300px" }
 
 Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
 
@@ -787,6 +782,69 @@ Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the en
 <input type="checkbox"> Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jotain tekniikkaa noudattavan retrospektiivin!
+
+### 9. Agentti ja hyväksymistestit [tekoäly]
+
+Tämä on ensimmäinen kurssin [tekoäly]-tehtävistä. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
+
+Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
+
+Jatketaan WebLogin-sovelluksen parissa. Varmista, että tehtävien 5-7 muutokset on commitoitu ennen kuin annat agentin koskea koodiin.
+
+<input type="checkbox"> Avaa VS Codessa hakemisto _viikko3/login_ omana workspacenaan (esim. komennolla `code .` hakemistossa _viikko3/login_), näin agentti keskittyy vain tähän projektiin
+
+<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse agentiksi _Agent_
+
+<input type="checkbox"> Generoi projektille ohjetiedosto kirjoittamalla chattiin `/init`
+
+Agentti tutkii projektin ja luo tiedoston _.github/copilot-instructions.md_ tai _AGENTS.md_.
+
+<input type="checkbox"> Lue ohjetiedosto huolellisesti ja korjaa tai täydennä sitä tarpeen mukaan. Tiedostossa tulee kertoa ainakin seuraavat asiat:
+
+- projekti on uv-projekti, ja komennot suoritetaan muodossa `uv run ...`
+- miten sovellus käynnistetään ja missä portissa se toimii
+- miten Robot Framework -testit suoritetaan (`uv run robot src/tests`) ja että sovelluksen on oltava käynnissä testien aikana
+- missä käyttäjätunnuksen ja salasanan validointi tapahtuu
+
+Pidä ohjetiedosto tiiviinä. Se liitetään jokaiseen agentille annettavaan pyyntöön.
+
+<input type="checkbox"> Commitoi ohjetiedosto
+
+<input type="checkbox"> Kirjoita sovellukselle uusi user story hyväksymiskriteereineen
+
+Voit keksiä storyn itse, tai käyttää esim. seuraavaa:
+
+```
+User story: Käyttäjätunnus saa sisältää vain pieniä kirjaimia a-z
+
+Hyväksymiskriteerit:
+- tunnus "kalle" hyväksytään
+- tunnus "Kalle" hylätään ja käyttäjälle näytetään virheilmoitus
+- tunnus "kalle1" hylätään ja käyttäjälle näytetään virheilmoitus
+```
+
+<input type="checkbox"> Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi ja varmistamaan, että testit eivät mene läpi. Vasta tämän jälkeen agentin tulee toteuttaa toiminnallisuus niin, että testit menevät läpi
+
+Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi.
+
+<input type="checkbox"> Kun agentti on valmis, suorita kaikki testit vielä itse ja varmista, että ne menevät läpi
+
+<input type="checkbox"> Käy agentin tekemä muutos läpi esim. komennolla `git diff`. Teki agentti muutoksia sellaisiin kohtiin, joihin sitä ei pyydetty koskemaan? Poista tai pyydä agenttia poistamaan tarpeeton koodi
+
+Miten voit olla varma, että agentin kirjoittamat testit oikeasti testaavat uutta toiminnallisuutta?
+
+<input type="checkbox"> Rikko toteutus **itse** tarkoituksella ainakin kahdella eri tavalla, esim. hyväksy tunnuksessa myös numerot tai poista validointi kokonaan, ja varmista jokaisen rikkomisen jälkeen, että ainakin yksi testi hajoaa
+
+<input type="checkbox"> Palauta toimiva toteutus ja commitoi muutokset
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko3_ talletettavaan tiedostoon _ai.md_
+
+Kerro raportissa
+- Minkälaisen ohjetiedoston agentti generoi, ja mitä jouduit korjaamaan?
+- Noudattiko agentti pyyntöä kirjoittaa testit ennen toteutusta?
+- Kuinka paljon jouduit ohjaamaan agenttia matkan varrella?
+- Hajosivatko testit, kun rikoit toteutuksen tarkoituksella?
+- Mitä uutta opit?
 
 
 ### Tehtävien palautus

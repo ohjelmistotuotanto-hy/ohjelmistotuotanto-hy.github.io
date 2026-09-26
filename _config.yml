@@ -19,43 +19,53 @@ curre_material: https://curre.helsinki.fi/chat/hy-opt-cur-2526-7a893cd5-d161-481
                 
 moniv-dl:
   - 'FAIL'
-  - 'sunnuntai 9.11. klo 23:59:00'
-  - 'sunnuntai 9.11. klo 23:59:00'
-  - 'sunnuntai 16.11. klo 23:59:00'
-  - 'sunnuntai 23.11. klo 23:59:00'
-  - 'sunnuntai 7.12. klo 23:59:00'
+  - 'sunnuntai 8.11. klo 23:59:00'
+  - 'sunnuntai 8.11. klo 23:59:00'
+  - 'sunnuntai 15.11. klo 23:59:00'
+  - 'sunnuntai 22.11. klo 23:59:00'
+  - 'sunnuntai 6.12. klo 23:59:00'
   - 'ei tehtäviä'
   - 'ei tehtäviä'
 
 lask-dl:
   - 'FAIL'
-  - 'maanantai 3.11. klo 23:59'
-  - 'maanantai 10.11. klo 23:59'
-  - 'maanantai 17.11. klo 23:59'
-  - 'maanantai 24.11. klo 23:59'
-  - 'maanantai 1.12. klo 23:59'
-  - 'tiistai 9.12. klo 23:59'
-  - 'sunnuntaina 21.12. klo 23:59'
+  - 'maanantai 2.11. klo 23:59'
+  - 'maanantai 9.11. klo 23:59'
+  - 'maanantai 16.11. klo 23:59'
+  - 'maanantai 23.11. klo 23:59'
+  - 'maanantai 30.11. klo 23:59'
+  - 'tiistai 8.12. klo 23:59'
+  - 'sunnuntaina 20.12. klo 23:59'
 
 luennot:
   - 'FAIL'
-  - 'maanantai 27.10. klo 12-14 B123'
-  - 'tiistai 28.10. klo 12-14 B123'
-  - 'maanantai 3.11. klo 12-14 B123'
-  - 'tiistai 4.11. klo 12-14 B123'
-  - 'maanantai 10.11. klo 12-14 B123'
-  - 'tiistai 11.11. klo 12-14 B123'
-  - 'maanantai 17.11. klo 12-14 B123'
-  - 'tiistai 18.11. klo 12-14 B123'
-  - 'maanantai 24.11. klo 12-14 B123'
-  - 'tiistai 25.11. klo 12-14 B123'
-  - 'maanantai 1.12. klo 12-14 B123'
-  - 'tiistai 2.12. klo 12-14 B123'
-  - 'maanantai 8.12. klo 12-14 B123'
-  - 'tiistai 9.12. klo 12-14 B123'
+  - 'maanantai 26.10. klo 12-14 B123'
+  - 'tiistai 27.10. klo 12-14 B123'
+  - 'maanantai 2.11. klo 12-14 B123'
+  - 'tiistai 3.11. klo 12-14 B123'
+  - 'maanantai 9.11. klo 12-14 B123'
+  - 'tiistai 10.11. klo 12-14 B123'
+  - 'maanantai 16.11. klo 12-14 B123'
+  - 'tiistai 17.11. klo 12-14 B123'
+  - 'maanantai 23.11. klo 12-14 B123'
+  - 'tiistai 24.11. klo 12-14 B123'
+  - 'maanantai 30.11. klo 12-14 B123'
+  - 'tiistai 1.12. klo 12-14 B123'
+  - 'maanantai 7.12. klo 12-14 B123'
+  - 'tiistai 8.12. klo 12-14 B123'
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - huomiot.md

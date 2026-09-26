@@ -13,9 +13,11 @@ permalink: /tehtavat7/
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Tämän viikon tehtävät 3-5 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston viikko7 sisälle. Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät.
+**Tämän viikon tehtävät 3-7 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston viikko7 sisälle. Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
+
+{% include checkbox_reset.md %}
 
 ### 1. Git: stash [versionhallinta]
 
@@ -180,26 +182,31 @@ class KPSPelaajaVsPelaaja(KiviPaperiSakset):
 
 Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</i>, jota Python ei osaa hanskata. Itse ratkaisin ongelman määrittelemällä tehdasfunktion _luo_peli_ omassa tiedostossaan.
 
-### 5. AI Agent in action
+### 5. AI Agent in action [tekoäly]
 
-Tämän tehtävän tekeminen edellyttää, että käytössäsi on [VS Code GitHub copilot](https://code.visualstudio.com/docs/copilot/chat/copilot-chat#_builtin-chat-modes). Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla tai jopa ilman AI:ta (joka voi olla melko työlästä).
+Lue ennen viikon [tekoäly]-tehtävien tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuus [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7).
+
+Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla tai jopa ilman AI:ta (joka voi olla melko työlästä).
 
 Jatketaan edellisen tehtävän koodin parissa.
 
 <input type="checkbox">  Ennen kun koodiin alkaa tulla muutoksia, tee palautusrepositorioosi kopio projektin sisältävästä hakemistosta. Anna kopiolle nimi _kivi-paperi-sakset-original_. Edellisen tehtävän jälkeinen tilanne jää kopioon.
 
-<input type="checkbox"> Avaa Copilotin Chat-ikkuna Agent-moodissa:
+<input type="checkbox"> Avaa hakemisto _viikko7/kivi-paperi-sakset_ VS Codessa omana workspacenaan ja valitse Copilotin Chat-näkymässä agentiksi _Agent_:
 
-![]({{ "/images/agent.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/agent.png" | relative_url }}){:height="450px" }
 
-Tehdään sovellus muutamassa vaiheessa
+<input type="checkbox"> Luo projektille ohjetiedosto kuten aiempien viikkojen [tekoäly]-tehtävissä. Kirjaa ohjetiedostoon ainakin seuraavat asiat:
+
+- kyseessä on uv-projekti
+- olemassa olevaa koodia tulee hyödyntää mahdollisimman paljon, eikä pelilogiikkaa saa toteuttaa uudelleen
+- jos käytössäsi on Mac, sovellus ei saa käyttää porttia 5000, joka on Macissa varattu
+
+Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**, näin pääset tarvittaessa palaamaan edelliseen toimivaan tilanteeseen.
 
 <input type="checkbox">  Yritä saada agentti rakentamaan sovelluksellesi web-käyttöliittymä
 
-- muistuta agenttia, että kyseessä on uv-projekti
-- komenna agenttia käyttämään mahdollisimman paljon olemasaolevaa koodia
 - ohjelma kannattaa suorittaa siten, että pyydät agentin käynnistämään sen, näin agentti osaa korjata koodin jos se ei jostain syystä käynnisty
-- jos agentti luo sovelluksen, joka käyttää porttia 5000 ja käytössäsi on Mac, pyydä agentilta jonkin muun portin käyttöä, 5000 on Macissa ehkä varattu portti
 
 <input type="checkbox"> Kun sovellus toimii, käske agenttia tekemään sovellukselle automatisoidut testit. Pyydä agenttia myös varmistamaan, että testit menevät läpi
 
@@ -213,6 +220,18 @@ Tehdään sovellus muutamassa vaiheessa
 
 <input type="checkbox"> Käy läpi agentin tekemä koodi. Jos koodissa on jotain sinulle vierasta, pyydä agenttia selittämään, mistä on kyse
 
+Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) avulla.
+
+<input type="checkbox"> Luo projektiin tiedosto _.github/prompts/review.prompt.md_, joka ohjeistaa agenttia katselmoimaan koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
+
+- [osan 4](/osa4/) suunnitteluperiaatteet, erityisesti toisteisuus ja riippuvuudet konkreettisiin luokkiin
+- testien kattavuus ja laatu
+- tietoturva, esim. onko sovellus käynnistetty `debug=True`-asetuksella, onko koodissa kovakoodattuja salaisuuksia ja validoidaanko käyttäjän syöte
+
+<input type="checkbox"> Suorita katselmointi chatissa komennolla `/review`
+
+<input type="checkbox"> Korjaa (itse tai agentin avulla) ainakin yksi katselmoinnin löydös ja commitoi
+
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _agent.md_
 
 Kerro raportissa
@@ -223,12 +242,123 @@ Kerro raportissa
 - Kuinka hyvät agentit tekemät testit olivat?
 - Onko agentin tekemä koodi ymmärrettävää?
 - Miten agentti on muuttanut edellisessä tehtässä tekemääsi koodia?
+- Mitä katselmointi löysi, ja olivatko löydökset aiheellisia?
 - Mitä uutta opit?
 
-### 6. Kurssipalaute
+### 6. MCP [tekoäly]
 
-Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 10-27.12.2025**. 
+Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-context-protocol) ensin käyttämällä valmista palvelinta ja sen jälkeen toteuttamalla oma.
 
-**HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 10.12. aukeavaa normaalia loppupalautetta.
+**Valmiin palvelimen käyttö**
+
+[Playwright MCP](https://github.com/microsoft/playwright-mcp) -palvelimen avulla agentti pystyy käyttämään selainta. Palvelimen käyttö edellyttää, että koneellesi on asennettu [Node.js](https://nodejs.org/) (versio 18 tai uudempi).
+
+<input type="checkbox"> Lisää edellisen tehtävän projektiin tiedosto _.vscode/mcp.json_, jolla Playwright MCP otetaan käyttöön:
+
+```json
+{
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}
+```
+
+<input type="checkbox"> Käynnistä palvelin (VS Code näyttää tiedoston päällä _Start_-painikkeen) ja varmista chatin työkaluvalikosta (_Configure Tools_), että palvelimen työkalut ovat agentin käytössä
+
+<input type="checkbox"> Käynnistä kivi-paperi-sakset-sovellus ja pyydä agenttia pelaamaan selaimella yksi peli jokaisessa pelimoodissa ja raportoimaan, toimiiko käyttöliittymä odotetusti
+
+Seuraa, mitä agentti tekee selaimessa. Löysikö agentti käyttöliittymästä ongelmia?
+
+**Oma MCP-palvelin**
+
+Toteutetaan seuraavaksi oma MCP-palvelin, jonka avulla agentti voi tehdä kyselyjä NHL-tilastoihin viikon 6 koodia hyödyntäen.
+
+<input type="checkbox"> Kopioi viikon 6 projekti _query-language_ palautusrepositorioosi hakemiston _viikko7_ sisälle ja avaa se VS Codessa omana workspacenaan
+
+<input type="checkbox"> Lisää projektiin MCP-kirjasto komennolla `uv add "mcp[cli]"`
+
+<input type="checkbox"> Luo tiedosto _src/mcp_server.py_, jonka pohjana voit käyttää seuraavaa:
+
+```python
+from mcp.server import MCPServer
+from statistics import Statistics
+from player_reader import PlayerReader
+
+URL = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt"
+stats = Statistics(PlayerReader(URL))
+
+mcp = MCPServer("NHL-tilastot")
+
+
+@mcp.tool()
+def top_scorers(how_many: int) -> list[str]:
+    """Return the players with the most points in the NHL 2024-25 season."""
+    return [str(player) for player in stats.top_scorers(how_many)]
+
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+**Huom:** MCP-kirjasto kehittyy nopeasti. Jos yllä oleva import ei toimi, käytössäsi on kirjaston vanhempi versio, jossa palvelinluokka on `FastMCP` ja se importataan `from mcp.server.fastmcp import FastMCP`.
+
+<input type="checkbox"> Testaa palvelinta [MCP Inspectorilla](https://github.com/modelcontextprotocol/inspector) komennolla `npx @modelcontextprotocol/inspector uv run python src/mcp_server.py` ja varmista, että työkalu `top_scorers` toimii
+
+<input type="checkbox"> Lisää palvelimelle ainakin seuraavat työkalut:
+
+- `team_players`, joka palauttaa annetun joukkueen pelaajat
+- `query_players`, joka palauttaa merkkijonona annetun kyselyn tuloksen käyttäen viikon 6 tehtävän 7 `parse`-funktiota. Jos et tehnyt tehtävää 7, voit toteuttaa työkalun esim. siten, että sille annetaan joukkue sekä maalien ja syöttöjen minimimäärät, ja kysely muodostetaan `QueryBuilder`-luokan avulla
+
+Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärrät palvelimen koodin. Kirjoita työkaluille kuvaavat docstringit, sillä agentti päättää niiden perusteella, milloin ja miten työkaluja käytetään. Kirjoita työkalujen kuvauksiin myös kyselykielen syntaksi.
+
+<input type="checkbox"> Tee työkaluille yksikkötestit. Työkalut ovat tavallisia Python-funktioita, joten niitä voi testata normaaliin tapaan
+
+<input type="checkbox"> Rekisteröi palvelin VS Codeen lisäämällä projektiin tiedosto _.vscode/mcp.json_:
+
+```json
+{
+  "servers": {
+    "nhl": {
+      "command": "uv",
+      "args": ["run", "--directory", "${workspaceFolder}", "python", "src/mcp_server.py"]
+    }
+  }
+}
+```
+
+<input type="checkbox"> Käynnistä palvelin ja kysy agentilta luonnollisella kielellä kysymyksiä, joihin se tarvitsee palvelimesi työkaluja, esim. _"Keillä NYR:n pelaajilla on vähintään 10 maalia mutta alle 20 maalia?"_ tai _"Kuka Edmontonin pelaaja teki eniten pisteitä?"_
+
+<input type="checkbox"> Seuraa, mitä työkaluja agentti kutsuu ja millä parametreilla. Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan
+
+<input type="checkbox"> Commitoi muutokset
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _mcp.md_
+
+Kerro raportissa
+- Miten Playwright MCP -palvelimen käyttö sujui, ja löysikö agentti selaimella ongelmia?
+- Osasiko agentti käyttää oman palvelimesi työkaluja oikein?
+- Miten docstringit vaikuttivat agentin toimintaan?
+- Mitä riskejä liittyisi palvelimeen, joka voisi myös muuttaa dataa, tai joka hakisi dataa epäluotettavista lähteistä?
+
+### 7. Tekoäly ja minä [tekoäly]
+
+<input type="checkbox"> Kirjoita hakemistoon _viikko7_ talletettavaan tiedostoon _reflektio.md_ noin puolen sivun (noin 250 sanaa) pohdinta tekoälyn käytöstä ohjelmistokehityksessä
+
+Pohdi kirjoituksessasi ainakin seuraavia:
+- Miten tekoälyn käyttösi muuttui kurssin aikana?
+- Missä tekoäly auttoi eniten, ja missä siitä oli haittaa?
+- Mitkä kurssilla opituista ohjelmistotuotannon käytänteistä ovat mielestäsi tärkeimpiä agentteja käytettäessä?
+- Minkälaiset pelisäännöt tekoälyn käytölle sopisit miniprojektisi tiimin kanssa, tai tulevassa työpaikassasi?
+
+Viittaa kirjoituksessasi ainakin kerran materiaaliin [Tekoäly ohjelmistotuotannossa](/genai/).
+
+### 8. Kurssipalaute
+
+Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 9.–26.12.2026**. 
+
+**HUOM** jos menet palautteenanto-osoitteeseen ennen loppupalautteen alkupäivää, näet kurssin "jatkuvan palauten" lomakkeen. Tässä tehtävässä tarkoitetaan kuitenkin 9.12. aukeavaa normaalia loppupalautetta.
 
 {% include submission_instructions.md %}

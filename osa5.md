@@ -62,7 +62,7 @@ Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon
 
 Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitettävänä kaaviona:
 
-![]({{ "/images/5-1.png" | absolute_url }}){:height="550px" }
+![]({{ "/images/5-1.png" | relative_url }}){:height="550px" }
 
 Leanilla on "talon ylimpänä kerroksena" sijaitseva _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
 
@@ -180,7 +180,7 @@ Kaizeniin liittyvä syklinen parannusprosessiin liittyy usein tasaisin väliajoi
 
 Hukan etsimiseen ja kartoittamiseen käytetään usein nimellä [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) kulkevaa tekniikkaa. Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen.
 
-![]({{ "/images/5-2.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-2.png" | relative_url }}){:height="400px" }
 
 Kuvassa on kuusi työvaihetta, joiden läpi tuote, esim. user story kulkee. Kussakin työvaiheessa kuluvan ajan voidaan ajatella kasvattavan työn arvoa, esim. vaihe _code and test_, vie 2 tuntia, mikä on välttämätöntä sen kannalta, että story ylipäätään saataisiin julkaistua. Kunkin työvaiheen välillä story on _välivarastossa_, odottamassa seuraavaa työvaihetta, ja välivarastointi taas on eräs hukan muoto. Value stream mappingin avulla onkin tarkoitus tuoda esille kaikki "välivarastot", turhat odotukset ja tarpeettomat työvaiheet, jotta olisi mahdollista miettiä miten niitä saataisiin minimoitua.
 
@@ -236,7 +236,7 @@ Virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamall
 
 Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analysis, develop, test_, joille kullekin on asetettu WIP-rajoite. Työvaiheiden väliin on myös sijoitettu välivarastoja, _dev ready_ ja _build ready_, joilla myös on WIP-rajoitteet.
 
-![]({{ "/images/5-3.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-3.png" | relative_url }}){:height="400px" }
 
 Kuvan kanban-taulu sallii maksimissaan, että sille on sijoitettu kaksikymmentä user storya. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_.
 
@@ -366,7 +366,7 @@ Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean
 
 Scaled Agile Framework eli SAFe on tämän hetken suosituin laajan mittakaavan ketterä menetelmä. Vuosittaisten [State of Agile](https://stateofagile.com/) -kyselytutkimuksien vastaajista 30-40% laajan mittakaavan ketterää kehitystä tekevistä organisaatiota mainitsee hyödyntävänsä SAFe:a.
 
-SAFe:n pääasiallinen kehittäjä on David Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011. Tällä hetkellä on menossa versio 6.0.
+SAFe:n pääasiallinen kehittäjä on Dean Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011. Tällä hetkellä on menossa versio 6.0.
 
 Kärjistetysti sanoen SAFe yhdistää kaikki viimeisen 20 vuoden aikana kehitetyt ketterän ja leanin ohjelmistokehityksen parhaat käytänteet, sekä joukon yrityksien tuotteiden hallinnointiin suunnattuja käytänteitä.
 
@@ -374,13 +374,13 @@ SAFe tarjoaa suuren määrän periaatteita (engl. principles), henkilö- ja tiim
 
 SAFe tarjoaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota. Näistä pienin _Essential SAFe_ on tarkoitettu pienemmille yrityksille ja SAFe:n soveltamisen alkuvaiheeseen. Konfiguraatioista suurin _Full SAFe_ taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön. Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
 
-![]({{ "/images/5-4.png" | absolute_url }}){:height="500px" }
+![]({{ "/images/5-4.png" | relative_url }}){:height="500px" }
 
 Sovelluskehityksen ytimessä (löydätkö sen kuvasta?) on SAFe:n hieman modifioima Scrum, johon on liitetty joukko XP:n periaatteita.
 
-Tiimien koordinointia hallitaan ylhäältä päin (engl. top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen _toimitusjuna_ (engl. release train) alle. Release trainin Scrum-tiimit toimivat synkronissa toistensa kanssa tuottaen yhdessä isompia toiminnallisia useammasta sprintistä koostuvan _product increment_ -jakson aikana.
+Tiimien koordinointia hallitaan ylhäältä päin (engl. top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen _toimitusjuna_ (engl. agile release train, ART) alle. Release trainin Scrum-tiimit toimivat synkronissa toistensa kanssa tuottaen yhdessä isompia toiminnallisia kokonaisuuksia useammasta sprintistä koostuvan _planning interval_ -jakson (PI) aikana. SAFe:n aiemmissa versioissa jaksosta käytettiin nimeä _program increment_.
 
-Product incrementtejä ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe tarjoaa tähänkin paljon tukea käsitteistön ja määrittämiensä roolien kautta.
+Planning intervaleja ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe tarjoaa tähänkin paljon tukea käsitteistön ja määrittämiensä roolien kautta.
 
 SAFe on dokumentoitu todella tarkasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFe:n käyttöönottoa ja noudattamista. Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi.
 
@@ -413,7 +413,7 @@ LeSS korostaa, että kyseessä _ei_ ole erillinen Scrumin päälle lisätty hall
 
 LeSS:in taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
 
-![]({{ "/images/5-5.png" | absolute_url }}){:height="440px" }
+![]({{ "/images/5-5.png" | relative_url }}){:height="440px" }
 
 Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction.html#LeSSPrinciples)
 
@@ -440,7 +440,7 @@ Tiimit ovat itseorganisoituvia _feature-tiimejä_, eli jokainen tiimi keskittyy 
 
 Myös artefaktit ovat samat kuin normaalissa Scrumissa. Product backlogeja on yksi, sprint backlog sen sijaan on jokaisella tiimillä oma. Kaikki tiimit työstävät sprintin aikana samaa ohjelmistoa, _potentially shippable product increment_ eli sprintin tuotoksena oleva ohjelmiston valmiiksi asti tehty laajennus on kaikille tiimeille sama.
 
-![]({{ "/images/5-6.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-6.png" | relative_url }}){:height="350px" }
 
 Sprintin suunnittelu eli sprint planning on normaalista Scrumista poiketen kaksiosainen.
 
@@ -448,11 +448,11 @@ Ensimmäisessä osassa product owner ja kaikkien tiimien edustajat valitsevat pr
 
 Suunnittelun toinen osa on tiimikohtainen. Kukin tiimi muodostaa oman sprint backlogin, jonka avulla sprintin sisäinen toiminta hallitaan normaalin scrumin tapaan. Tarpeen vaatiessa tosin useampikin tiimi voi toimia sprintin aikana synkronissa, käyttäen yhteistä sprint backlogia.
 
-![]({{ "/images/5-7.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-7.png" | relative_url }}){:height="350px" }
 
 Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katselmoidaan yhdessä. Retrospektiivi taas on kaksitasoinen, ensin pidetään normaalin scrumin tapaan tiimikohtainen retrospektiivi ja tämän jälkeen koko tuotteen valmistusprosessia tarkasteleva overall-retrospektiivi, missä on edustus kaikista tiimeistä ja mahdollisesti yrityksen johdosta.
 
-![]({{ "/images/5-8.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/5-8.png" | relative_url }}){:height="350px" }
 
 #### Muu tiimien välinen koordinointi
 
@@ -481,7 +481,7 @@ Jos tiimien määrä on suurempi kuin kahdeksan, suositellaan käytettäväksi _
 
 Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), joista jokaiselle on siitä vastuun kantava _area product owner_. Area product ownerit muodostavat tuotteen kokonaisuutta hallinnoiva _product owner -tiimin_, joka toimii koko tuotteen product ownerin johdolla.
 
-![]({{ "/images/5-9.png" | absolute_url }}){:height="380px" }
+![]({{ "/images/5-9.png" | relative_url }}){:height="380px" }
 
 #### LeSS vs SAFe
 
@@ -499,7 +499,7 @@ Henrik Knibergin 2012 ilmestynyt artikkeli [Scaling Agile @ Spotify](https://blo
 
 Spotifyn "malli" on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squad) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi/heimorakenteen lisäksi malli sisältää myös hieman toisenlaisen jaottelun, jossa firman ihmiset jaotellaan heimojen sisällä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
 
-![]({{ "/images/5-17.png" | absolute_url }}){:height="380px" }
+![]({{ "/images/5-17.png" | relative_url }}){:height="380px" }
 
 Vaikka Knibergin kuvauksen tarkoituksena ei ollutkaan se, että _muut firmat_ alkaisivat imitoimaan Spotifyn tapaa, näin kuitenkin kävi.
 
@@ -511,7 +511,7 @@ Spotifyn mallin ytimessä on noin 5-10 hengen tiimi, josta käytetään englanni
 
 Tiimit ovat ketterän ideaalin tapaan _cross-functional_, eli ne sisältävät kaiken tietotaidon vastuullaan olevien ohjelmiston osien saamisesta aina ideasta tuotantoympäristöön asti. Tiimit ovat täysin itseorganisoituvia, ja ne päättävät vapaasti omista työnteon käytänteistään. Tiimit voivat esim. käyttää sisäisesti Scrumia, Kanbania, Scrumbania tai mitä tahansa muuta työskentelyn tapaa. Koko tiimi työskentelee samassa työtilassa.
 
-![]({{ "/images/5-18.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/5-18.png" | relative_url }}){:height="250px" }
 
 Kunkin tiimin vastuulla on jokin looginen osa sovellusta. Usein tämä sovelluksen osa on jokin suoraan asiakkaalle näkyvä, ja itsenäisesti arvoa tuottava palanen, Spotifyn tiimit ovat siis ehdottomasti _feature-teameja_, samoin kuin LeSS-kehitysmallissa.
 
@@ -519,7 +519,7 @@ Tiimin vastuulla saattaa olla esim. Spotifyn iPhone-sovellus, käyttäjän soitt
 
 Seuraava kuva havainnollistaa sitä kuinka tiimin vastuulla on usein jopa konkreettinen palanen käyttöliittymän tarjoamasta toiminnallisuudesta:
 
-![]({{ "/images/5-19.png" | absolute_url }}){:height="345px" }
+![]({{ "/images/5-19.png" | relative_url }}){:height="345px" }
 
 Tiimeillä on _product owner_, joka huolehtii että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Käsitettä _scrum master_ ei Spotifyllä tunneta. Tiimien apuna toimivat _agile coachit_, eli ketteryyden valmentajat, joiden vastuulla on tavanomaisia scrum mastereiden vastuita alkaen palaverien järjestämisestä retrospektiivien fasilitointiin. Coachit auttavat myös teknisissä asioissa ja antavat tarvittaessa vaikkapa yksilöllistä uraohjausta tiimien jäsenille.
 
@@ -538,13 +538,13 @@ Tiimien toimivuutta ja toimintaolosuhteita mitataan muutaman kuukauden välein. 
 
 Tiimien mittareiden trendejä seurataan, jotta ongelmakohtiin myös puututtaisiin sopivin toimenpitein.
 
-![]({{ "/images/5-24.png" | absolute_url }}){:height="245px" }
+![]({{ "/images/5-24.png" | relative_url }}){:height="245px" }
 
 #### Tribe eli heimo
 
 Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka voi toimia ilman riippuvuutta muista tiimeistä. Tiimien välillä on kuitenkin väkisin riippuvuutta, ja myös synergiaa. Samojen aihepiirin ympärillä työskentelevät tiimit onkin jaettu _heimoihin_ (engl. tribe):
 
-![]({{ "/images/5-20.png" | absolute_url }}){:height="380px" }
+![]({{ "/images/5-20.png" | relative_url }}){:height="380px" }
 
 Spotifyn tiimit työskentelevät samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa. Tämä mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
 
@@ -562,19 +562,19 @@ Jakautuminen mahdollisimman autonomisiin tiimeihin on hyvä sikäli että sen an
 
 Eliminoidakseen tätä uhkaa Spotify on lanseerannut _jaostot_ (engl. chapter) jotka koostuvat yhden heimon niistä jäsenistä joilla on samankaltainen osaamisalue. Esim. heimon eri tiimien testaajat voisivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
 
-![]({{ "/images/5-21.png" | absolute_url }}){:height="320px" }
+![]({{ "/images/5-21.png" | relative_url }}){:height="320px" }
 
 Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, joissa jaoston jäsenet keskustelevast eri tiimien kohtaamista ongelmista ja eri puolilla kehitetyistä ratkaisuista. Näin esim. yhden tiimin sisällä kehitetyt testaukseen liittyvät hyvät käytänteet saadaan leviämään muihin tiimeihin. Kutakin jaostoa johtaa _chapter lead_, eli senioriteettia omaava jaoston jäsen, joka on kuitenkin itsekin mukana jossain tiimissä, eli kyse _ei ole_ jaostoon dedikoidusta johtajasta.
 
 Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta hieman eri dimensioilla. Product owner vastaa kysymykseen _what to build next_, eli ohjaa tuotteen kehityssuuntaa. Jaosto, erityisesti jaoston _lead_ (termi jolle en keksi hyvää suomenkielistä vastinetta) taas pyrkii tarjoamaan tukea kysymykseen "how to build it well". Jaosto myös tukee jäsentensä ammatillista kehittymistä.
 
-![]({{ "/images/5-23.png" | absolute_url }}){:height="280px" }
+![]({{ "/images/5-23.png" | relative_url }}){:height="280px" }
 
 #### Guild eli kilta
 
 Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompetenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen mutta yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden ryhmä. Esimerkiksi testaajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
 
-![]({{ "/images/5-22.png" | absolute_url }}){:height="360px" }
+![]({{ "/images/5-22.png" | relative_url }}){:height="360px" }
 
 #### Spotifyn mallin soveltaminen ja kritiikki
 
@@ -617,11 +617,11 @@ Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa-Seelannissa teh
 
 Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät *eivät ole* yrityksessä ollenkaan käytössä:
 
-![]({{ "/images/5-9a.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-9a.png" | relative_url }}){:height="300px" }
 
 Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoprojekteissa, joissa hitaan liikkeellelähdön jälkeen [agile on noussut](https://www2.deloitte.com/insights/us/en/industry/public-sector/agile-in-government-by-the-numbers.html) dominoivaan asemaan.
 
-![]({{ "/images/5-10.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/5-10.png" | relative_url }}){:height="300px" }
 
 ### State of Agile -raportti
 
@@ -629,18 +629,18 @@ Jo 15 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -rap
 
 Raportin (2022) mukaan Scrum dominoi ketterien menetelmien kenttää:
 
-![]({{ "/images/soa1.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/soa1.png" | relative_url }}){:height="400px" }
 
 Aiempien vuosien raportit erittelivät myös tarkemmin sitä missä määrin eri ketteriä käytänteitä noudatettiin.
 Projektinhallintakäytänteiden osuus näytti 2021 raportissa seuraavalta:
 
-![]({{ "/images/5-12-2021.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-12-2021.png" | relative_url }}){:height="400px" }
 
 Scrumista tutut palaverit ovat kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia). Huomionarvoista lienee myös se, että tuotteenomistaja tai vastaava asiakkaan edustaja on kyselyn mukaan vain noin puolella kyselyyn vastanneiden tiimeistä.
 
 Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei teknisiä käytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
 
-![]({{ "/images/5-13-2020.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-13-2020.png" | relative_url }}){:height="400px" }
 
 Tämäkin lista on osin hieman yllättävä, sillä voisi esimerkiksi olettaa että jatkuva integrointi olisi ollut vuonna 2020 lähes kaikkialla käytössä, mutta ainoastaan 55 % ilmoittaa käyttävänsä sitä.
 
@@ -660,11 +660,11 @@ Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
 
 Vuoden 2020 raportissa projektien onnistumisen aste näyttää seuraavalta:
 
-![]({{ "/images/chaos10.png" | absolute_url }}){:height="150px" }
+![]({{ "/images/chaos10.png" | relative_url }}){:height="150px" }
 
 Projektin koolla on todella suuri merkitys onnistumisen kannalta. Jos tarkastelussa otetaan huomioon projektin koko, on onnistumisprosentti seuraavanlainen:
 
-![]({{ "/images/chaos11.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/chaos11.png" | relative_url }}){:height="250px" }
 
 Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa kun projektien koko kasvaa.
 
@@ -674,11 +674,11 @@ Chaos raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erit
 
 [State of Agile](https://www.stateofagile.com) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
 
-![]({{ "/images/5-16-2021.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/5-16-2021.png" | relative_url }}){:height="400px" }
 
 ### Johtopäätöksiä
 
-Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä kaikki edellä referoidut tutkimukset ovat kyselytutkimuksia, joissa käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät useimmiten edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskään ole puolueettomia menetelmien suhteen, esim. State of Agile -raporttia tuottava [CollabNet/VersionOne](https://www.collab.net/) on ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
+Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä kaikki edellä referoidut tutkimukset ovat kyselytutkimuksia, joissa käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät useimmiten edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskään ole puolueettomia menetelmien suhteen, esim. State of Agile -raporttia nykyään tuottava [Digital.ai](https://digital.ai/) (aiemmin CollabNet/VersionOne) on ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
 
 Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osan kolme luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu tutkimus lienee kattavin tällä hetkellä olemassa oleva ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus.
 

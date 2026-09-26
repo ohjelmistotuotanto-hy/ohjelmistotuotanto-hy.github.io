@@ -54,25 +54,25 @@ Avaa VS Codeen hakemisto, jonka sisällä on Poetry-projekti.
 
 Suoritetaan komento _Dev Containers: Open Folder in Container_:
 
-![]({{ "/images/dc0.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc0.png" | relative_url }}){: width="80%"}
 
 Avataan nykyinen hakemisto, ja valitaan ensimmäinen vaihtoehto, joka tallentaa kehitysympäristön konfiguraatiot nykyiseen hakemistoon:
 
-![]({{ "/images/dc4.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc4.png" | relative_url }}){: width="80%"}
 
 Poetry ei ole tarjolla heti, joten valitaan _Show all templates_:
 
-![]({{ "/images/dc5.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc5.png" | relative_url }}){: width="80%"}
 
 Tämän jälkeen haluamamme löytyy:
 
-![]({{ "/images/dc6.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc6.png" | relative_url }}){: width="80%"}
 
 Valitaan seuraavaksi Pythonin versio. Valitettavasti tuorein tarjolla oleva Pythonin versio on 3.11. Seuraavista valinnoista otetaan _default_ ja _ok_.
 
 Kestää hetken, kunnes ympäristö on valmis. Tämän jälkeen Poetry on käytettävissä VS Coden terminaalin kautta:
 
-![]({{ "/images/dc3.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc3.png" | relative_url }}){: width="80%"}
 
 Muuta ei tarvita!
 
@@ -100,7 +100,7 @@ Muutoksen jälkeen VS Code buildaa imagen uudelleen, ja tämän jälkeen kehitys
 
 Seuraavan kerran, kun palaat projektin pariin, valitse _Dev Containers: Reopen in Container_:
 
-![]({{ "/images/dc7.png" | absolute_url }}){: width="80%"}
+![]({{ "/images/dc7.png" | relative_url }}){: width="80%"}
 
 
 #### Docker ja Robot-testit

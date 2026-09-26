@@ -23,7 +23,7 @@ Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]
 
 ## Typoja materiaalissa
 
-{% include typo_instructions.md path="/osa6.md" %}
+{% include typo_instructions.md path="/osa4.md" %}
 
 {% include norppa.md %}
 
@@ -56,7 +56,7 @@ IEEE:n standardi [Recommended practices for Architectural descriptions of Softwa
 
 Otetaan esimerkiksi pari muutakin määritelmää.
 
-[Philippe Krutchten](https://www.semanticscholar.org/paper/The-Rational-Unified-Process-An-Introduction%2C-3rd-Kruchten/3239cd654d82aa775cf9382a4d2ad834a3ea1014) määrittelee arkkitehtuurin seuraavasti
+[Philippe Kruchten](https://www.semanticscholar.org/paper/The-Rational-Unified-Process-An-Introduction%2C-3rd-Kruchten/3239cd654d82aa775cf9382a4d2ad834a3ea1014) määrittelee arkkitehtuurin seuraavasti
 
 > An architecture is the _set of significant decisions about the organization of a software system_, the selection of structural elements and their interfaces by which the system is composed, together with their behavior as specified in the collaborations among those elements, the composition of these elements into progressively larger subsystems, and the _architectural style_ that guides this organization - these elements and their interfaces, their collaborations, and their composition.
 
@@ -70,7 +70,7 @@ Arkkitehtuuri keskittyy järjestelmän tärkeimpiin rakenteellisiin periaatteisi
 
 Artikkelissa [Who needs an architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa.
 
-Melkein sama hieman toisin ilmaistuna oli Krutchtenin määritelmässä mainittu
+Melkein sama hieman toisin ilmaistuna oli Kruchtenin määritelmässä mainittu
 _set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintojen kautta.
 
 ### Arkkitehtuuriin vaikuttavia tekijöitä
@@ -113,7 +113,7 @@ Arkkitehtuurityyleistä varmasti tunnetuin ja eniten käytetty on _kerrosarkkite
 
 Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä (kuvassa presentation layer) ja tämän alapuolella sovelluslogiikasta (kuvassa business layer) vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen (kuvassa persistence layer ja database layer) tai verkon yli tapahtuvaan kommunikaatioon.
 
-![]({{ "/images/4-1.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/4-1.png" | relative_url }}){:height="350px" }
 
 Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai komponentteja, jotka muodostavat oman abstraktiotasonsa toiminnallisuuden suhteen loogisen kokonaisuuden.
 
@@ -129,11 +129,11 @@ Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria 
 
 Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
-![]({{ "/images/4-15.png" | absolute_url }}){:height="390px" }
+![]({{ "/images/4-15.png" | relative_url }}){:height="390px" }
 
 Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio):
 
-![]({{ "/images/4-16.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/4-16.png" | relative_url }}){:height="400px" }
 
 Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_.
 
@@ -147,13 +147,13 @@ Kovista yrityksistä huolimatta ohjelmistojen arkkitehtuurien kuvaamiselle ei ol
 
 Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_ tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjien hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
 
-![]({{ "/images/4-4.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/4-4.png" | relative_url }}){:height="450px" }
 
 UML:n sijaan arkkitehtuurin kuvaamiseen käytetään kuitenkin useimmiten epäformaaleja laatikko/nuoli-kaavioita.
 
 Seuraavassa esimerkki oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämästä arkkitehtuurikuvauksesta:
 
-![]({{ "/images/arkkit3.png" | absolute_url }}){:height="450px" }
+![]({{ "/images/arkkit3.png" | relative_url }}){:height="450px" }
 
 Arkkitehtuurikuvaus kannattaa tehdä _useasta näkökulmasta_, sillä ne vastaavat erilaisiin tarpeisiin.
 Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn aikana käytäviä keskusteluja eri sidosryhmien kanssa. Yksityiskohtaisemmat kuvaukset taas toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa.
@@ -168,7 +168,7 @@ Kerrosarkkitehtuurin eräänä epäkohtana mainittiin, että sen soveltaminen sa
 
 _Mikropalveluarkkitehtuuri_ (engl. microservices), joka on yleistynyt viime aikoina, pyrkii ratkaisemaan nämä ongelmat. Se jakaa sovelluksen useisiin pieniin, verkossa toimiviin ja itsenäisiin palveluihin, jotka kommunikoivat keskenään verkon välityksellä.
 
-![]({{ "/images/4-6.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/4-6.png" | relative_url }}){:height="300px" }
 
 Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löyhästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa eivätkä jaa koodia. Palvelut eivät kutsu suoraan toistensa metodeja, sen sijaan ne kommunikoivat verkon välityksellä.
 
@@ -197,7 +197,7 @@ Vaihtoehtoinen, huomattavasti joustavampi kommunikointikeino on ns. _viestinväl
 
 Palvelut eivät lähetä viestejä suoraan toisilleen, vaan käytössä on verkossa toimiva viestinvälityspalvelu, joka hoitaa viestien välityksen eri palveluiden välillä.
 
-![]({{ "/images/4-6b.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/4-6b.png" | relative_url }}){:height="400px" }
 
 Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish) viestejä viestinvälityspalveluun. Viesteillä on tyypillisesti jokin _aihe_ (topic) ja sen lisäksi _datasisältö_, esimerkiksi:
 
@@ -259,7 +259,7 @@ Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana t
 
 ### Kävelevä luuranko
 
-Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luurangon, eli walking skeletonin_ käyttö. [Alistair Coburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
+Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luurangon, eli walking skeletonin_ käyttö. [Alistair Cockburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
 
 > A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.
 >
@@ -343,6 +343,8 @@ Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat
 [Ohjelmoinnin jatkokurssilla](https://ohjelmointi-21.mooc.fi/osa-9/3-kapselointi) _kapselointi_ (engl. encapsulation) määritellään seuraavasti:
 
 > Luokka voi piilottaa attribuutit asiakkailta. Pythonissa tämä tapahtuu lisäämällä attribuuttimuuttujan nimen alkuun kaksi alaviivaa. Tietojen piilottamista asiakkaalta kutsutaan kapseloinniksi. Nimensä mukaisesti attribuutti siis "suljetaan kapseliin" ja asiakkaalle tarjotaan sopiva rajapinta, jonka kautta tietoa voi käsitellä.
+
+Pythonin vakiintunut konventio on tosin merkitä luokan sisäiseen käyttöön tarkoitetut attribuutit ja metodit _yhdellä_ alaviivalla, esim. `self._saldo`. Kaksi alaviivaa saa aikaan ns. [name manglingin](https://docs.python.org/3/tutorial/classes.html#private-variables), jonka ensisijainen tarkoitus on estää nimien törmääminen aliluokissa. Kumpikaan tapa ei estä attribuutin käyttöä luokan ulkopuolelta, vaan kyse on sopimuksesta.
 
 Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
@@ -665,11 +667,11 @@ class MaaraaikaisTili(Tili):
         super().__init__(tilinumero, omistaja, korkoprosentti)
         self.nostokielto = True
 
-    def salli_nosto():
+    def salli_nosto(self):
         self.nostokielto = False
 
     def siirra_rahaa_tililta(self, tilille, summa):
-        if nostokielto:
+        if self.nostokielto:
             return False
 
         return super().siirra_rahaa_tililta(tilille, summa)
@@ -677,7 +679,7 @@ class MaaraaikaisTili(Tili):
 
 Ohjelman rakenne näyttää tässä vaiheessa seuraavalta:
 
-![]({{ "/images/4-8.png" | absolute_url }}){:height="120px" }
+![]({{ "/images/4-8.png" | relative_url }}){:height="120px" }
 
 Seuraavaksi tulee idea _Euribor-korkoa käyttävistä määräaikaistileistä_. Miten nyt kannattaisi tehdä? Osa toiminnallisuudesta on luokassa _MaaraaikaisTili_ ja osa luokassa _EuriborTili_...
 
@@ -725,13 +727,13 @@ class Tili:
 Erilaisia tilejä luodaan seuraavasti:
 
 ```python
-normaali = Tili("1234-1234", "Jami Kousa", Tasakorko(0.04))
+normaali = Tili("1234-1234", "Jami Kousa", TasaKorko(0.04))
 euribor12 = Tili("4422-3355", "Lea Kutvonen", EuriborKorko(12))
 ```
 
 Ohjelman rakenne on nyt seuraava:
 
-![]({{ "/images/4-9.png" | absolute_url }}){:height="120px" }
+![]({{ "/images/4-9.png" | relative_url }}){:height="120px" }
 
 Muutetaan luokkaa `Tili` vielä siten, että tilejä voidaan luoda ilman konstruktoria:
 
@@ -749,11 +751,11 @@ class Tili:
 
     @staticmethod
     def luo_maaraaikais_tili(tilinumero, omistaja, korko):
-        return MaaraaikaisTili(tilinumero, omistaja, Tasakorko(korko))
+        return MaaraaikaisTili(tilinumero, omistaja, TasaKorko(korko))
 
     @staticmethod
     def luo_kaytto_tili(tilinumero, omistaja, korko):
-        return Tili(tilinumero, omistaja, Tasakorko(korko))
+        return Tili(tilinumero, omistaja, TasaKorko(korko))
 
     def vaihda_korkoa(self, korko):
         self.korko = korko
@@ -763,7 +765,7 @@ class Tili:
 
 Lisäsimme luokalle kolme _staattista apumetodia_ helpottamaan tilien luomista. Tilejä voidaan nyt luoda seuraavasti:
 
-```java
+```python
 maaraaikais = Tili.luo_maaraaikais_tili("1234-1234", "Jami Kousa", 0.025)
 euribor12 = Tili.luo_euribor_tili("4422-3355", "Lea Kutvonen", 12)
 fyrkka = Tili.luo_euribor_tili("7895-4571", "Indre Zliobaite", 1)
@@ -789,7 +791,7 @@ Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin til
 
 Teimme myös metodin jonka avulla tilin korkoa voi muuttaa. Jamin tasakorkoinen määräaikaistili on helppo muuttaa lennossa kolmen kuukauden Euribor-tiliksi:
 
-```java
+```python
 maaraaikais.vaihda_korkoa(EuriborKorko(3))
 ```
 
@@ -817,13 +819,13 @@ class Pankki:
         return f"12345-{self.numero}"
 
     def kayttotili(self, omistaja, korko):
-        return Tili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
+        return Tili(self.generoi_tilinumero(), omistaja, TasaKorko(korko))
 
     def maaraaikaistili(self, omistaja, korko):
-        return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, Tasakorko(korko))
+        return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, TasaKorko(korko))
 
     def euribortili(self, omistaja, kuukauden):
-        return Tili(self.generoi_tilinumero(), omistaja, EriborKorko(kuukauden))
+        return Tili(self.generoi_tilinumero(), omistaja, EuriborKorko(kuukauden))
 
     def maaraaikais_euribortili(self, omistaja, kuukauden):
         return MaaraaikaisTili(self.generoi_tilinumero(), omistaja, EuriborKorko(kuukauden))
@@ -870,7 +872,7 @@ class Laskin:
             elif komento == "tulo":
                 vastaus = self.laske_tulo(luku1, luku2)
             elif komento == "erotus":
-                vastaus = self.laske_erotus()
+                vastaus = self.laske_erotus(luku1, luku2)
 
             self.io.kirjoita(f"Tulos: {vastaus}")
 
@@ -942,7 +944,7 @@ Hienona puolena laskimessa on nyt se, että voimme lisätä operaatioita ja luok
 
 Sovelluksen rakenne näyttää seuraavalta:
 
-![]({{ "/images/4-10.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/4-10.png" | relative_url }}){:height="250px" }
 
 #### Laskin ja komento-olio <span style="color:blue">[viikko 6]</span>
 
@@ -1047,7 +1049,7 @@ class Laskin:
 
 Ohjelman rakenne tässä vaiheessa:
 
-![]({{ "/images/4-11.png" | absolute_url }}){:height="250px" }
+![]({{ "/images/4-11.png" | relative_url }}){:height="250px" }
 
 #### Suunnittelumalli: command <span style="color:blue">[viikko 6]</span>
 
@@ -1117,7 +1119,7 @@ Ja mikä parasta, ainoa muu luokka, jota on koskettava on komentoja luova `Komen
 
 Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusia operaatioita on helppo lisätä ja lisäys ei aiheuta muutoksia moneen kohtaan koodia. `Laskin`-luokallahan ei ole riippuvuuksia muualle kuin `Komentotehdas`-luokkaan sekä konstruktorin kautta injektoituun `KonsoliIO`-luokkaan.
 
-![]({{ "/images/4-12.png" | absolute_url }}){:height="300px" }
+![]({{ "/images/4-12.png" | relative_url }}){:height="300px" }
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen).
 
@@ -1202,17 +1204,17 @@ Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kir
 ```python
 class GutenbergLukija:
     def __init__(self, osoite):
-        self.rivit = []
+        self._rivit = []
 
         data = request.urlopen(osoite)
 
         for rivi in data:
-            self.rivit.append(rivi.decode("utf-8").strip())
+            self._rivit.append(rivi.decode("utf-8").strip())
 
     def rivit(self):
         palautettavat = []
 
-        for rivi in self.rivit:
+        for rivi in self._rivit:
             palautettavat.append(rivi)
 
         return palautettavat
@@ -1220,7 +1222,7 @@ class GutenbergLukija:
     def rivit_jotka_paattyvat_huutomerkkiin(self):
         ehdot_tayttavat = []
 
-        for rivi in self.rivit:
+        for rivi in self._rivit:
             if rivi.endswith("!"):
                 ehdot_tayttavat.append(rivi)
 
@@ -1229,7 +1231,7 @@ class GutenbergLukija:
     def rivit_joilla_sana(self, sana):
         ehdot_tayttavat = []
 
-        for rivi in self.rivit:
+        for rivi in self._rivit:
             if sana in rivi:
                 ehdot_tayttavat.append(rivi)
 
@@ -1291,7 +1293,7 @@ Kirjasta voidaan palauttaa oikean ehdon täyttävät sanat lisäämällä luokal
 def rivit_jotka_tayttavat_ehdon(self, ehto):
     palautettavat_rivit = []
 
-    for rivi in self.rivit:
+    for rivi in self._rivit:
         if ehto.test(rivi):
             palautettavat_rivit.append(rivi)
 
@@ -1313,7 +1315,7 @@ Ehdot voidaan esittää luokkien sijaan myös yksinkertaisemmassa muodossa, esim
 def rivit_jotka_tayttavat_ehdon(self, ehto):
     palautettavat_rivit = []
 
-    for rivi in self.rivit:
+    for rivi in self._rivit:
         if ehto(rivi):
             palautettavat_rivit.append(rivi)
 
@@ -1363,7 +1365,7 @@ def __init__(self, osoite):
         request.urlopen(osoite)
     )
 
-    self.rivit = list(rivit_iterator)
+    self._rivit = list(rivit_iterator)
 ```
 
 Huomaa, ettei `map`-funktio palauta listaa, vaan iteraattorin. Iteraattorin voi muuttaa listaksi helposti, [list](https://docs.python.org/3/library/functions.html#func-list)-funktion avulla.
@@ -1374,7 +1376,7 @@ Hyvä käyttökohde `filter`-funktiolle on `GutenbergLukija`-luokan metodi `rivi
 
 ```python
 def rivit_jotka_tayttavat_ehdon(self, ehto):
-    palautettavat_rivit_iterator = filter(ehto, self.rivit)
+    palautettavat_rivit_iterator = filter(ehto, self._rivit)
 
     return list(palautettavat_rivit_iterator)
 ```
@@ -1401,7 +1403,7 @@ Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean co
 
 Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa, [joidenkin arvioiden mukaan jopa 90%](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is) "ohjelmointiin" kuluvasta ajasta menee olemassa olevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
 
-![]({{ "/images/4-13.jpg" | absolute_url }}){:height="350px"}
+![]({{ "/images/4-13.jpg" | relative_url }}){:height="350px"}
 
 ### Code smell
 
@@ -1744,8 +1746,8 @@ Jotta edellinen ei aiheuttaisi syntaksivirhettä, tulee rakentajalle lisätä me
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino = Pino()):
-        self.pino_olio = pino
+    def __init__(self, pino=None):
+        self.pino_olio = pino if pino is not None else Pino()
 
     def prepaid(self, krediitit):
         # ???
@@ -1754,12 +1756,14 @@ class Pinorakentaja:
         return self.pino_olio
 ```
 
+Huomaa, että konstruktorissa ei käytetä oletusarvoa `pino=Pino()`. Pythonissa parametrin oletusarvo luodaan vain kerran funktion määrittelyhetkellä, joten kaikki rakentajat jakaisivat saman `Pino`-olion. Tämä on eräs Pythonin tunnetuimmista sudenkuopista.
+
 Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia `prepaid` ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa uuden `Pinorakentaja`-olion, jolle se antaa konstruktorin parametrina dekoroidun pinon. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino = Pino()):
-        self.pino_olio = pino
+    def __init__(self, pino=None):
+        self.pino_olio = pino if pino is not None else Pino()
 
     def prepaid(self, krediitit):
         return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
@@ -1772,8 +1776,8 @@ Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino = Pino()):
-        self.pino_olio = pino
+    def __init__(self, pino=None):
+        self.pino_olio = pino if pino is not None else Pino()
 
     def prepaid(self, krediitit):
         return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
@@ -1805,8 +1809,8 @@ Vastaavalla tavalla voidaan luoda pinoja muillakin ominaisuuksilla:
 ```python
 rakentaja = Pinorakentaja()
 
-pino1 = rakentaja.pino();  # luo normaalin pinon
-pino2 = rakentaja.kryptattu().loggaava(loki).prepaid.pino()  # luo sen mitä odottaa saattaa!
+pino1 = rakentaja.pino()  # luo normaalin pinon
+pino2 = rakentaja.kryptattu().loggaava(loki).prepaid(10).pino()  # luo sen mitä odottaa saattaa!
 ```
 
 Huomaa, että rakentajan metodikutsut luovat aina uuden rakentajan, joten edellistä rakentajaa ei muokata. Tämä estää potentiaaliset bugit, jotka voisi syntyä esimerkiksi seuraavassa koodissa:

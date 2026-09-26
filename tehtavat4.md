@@ -7,9 +7,9 @@ permalink: /tehtavat4/
 
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan Gitin tägeihin.
+Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan Gitin tägeihin. Tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä tekoälyagentin kanssa.
 
-Viikon loppuun on lisätty vapaaehtoinen tehtävä, missä päästään tutustumaan testivetoiseen ohjelmistokehitykseen eli TDD:hen.
+Viikon loppuun on lisätty vapaaehtoinen tehtävä, missä ostoskori ohjelmoidaan TDD:llä kokonaan itse. Tehtävän 6 pohjana on sama ostoskori.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -23,13 +23,15 @@ Viikon loppuun on lisätty vapaaehtoinen tehtävä, missä päästään tutustum
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Kaikki tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko4_ sisälle. Teknisesti ottaen tehtävän 7 palautus ei tosin luo repositorioon uutta sisältöä tiedostojen muodossa.
+**Kaikki tämän viikon tehtävät palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, sinne tehtävän hakemiston _viikko4_ sisälle.
 
 Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
+{% include checkbox_reset.md %}
+
 ### GitHub Education
 
-Muutama myöhemmin kurssilla oleva tehtävä käyttää GitHubin [Copilotia](https://github.com/features/copilot), jonka käyttö on ilmaista jos aktivoit [GitHub Education](https://github.com/education/students) -jäsenyyden. Jos et ole vielä jäsen, **hae jäsenyyttä nyt**. Hakemuksen hyväksyminen kestää internetin mukaan jopa viikon.
+{% include copilot_info.md %}
 
 ### 1. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 1
 
@@ -162,7 +164,7 @@ Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen 
 
 Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` oliota. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
 
-![]({{ "/images/kauppa.png" | absolute_url }}){:height="200px" }
+![]({{ "/images/kauppa.png" | relative_url }}){:height="200px" }
 
 Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit varmistavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
 
@@ -309,7 +311,7 @@ Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapä�
 
 Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Ohjelman rakenne luokkakaaviona:
 
-![]({{ "/images/kauppa2.png" | absolute_url }}){:height="330px" }
+![]({{ "/images/kauppa2.png" | relative_url }}){:height="330px" }
 
 <input type="checkbox"> Tutustu koodiin. 
 
@@ -442,7 +444,7 @@ Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin 
 
 <input type="checkbox"> Varmista, että tagit siirtyvät GitHubiin:
 
-![]({{ "/images/lh4-tagit.png" | absolute_url }}){:height="350px" }
+![]({{ "/images/lh4-tagit.png" | relative_url }}){:height="350px" }
 
 **Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmiselle hankalien tunnisteiden avulla:
 
@@ -475,6 +477,64 @@ Date:   Sun Oct 29 14:02:52 2025 +0200
 
 Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista palata helposti koodissa julkaisun versioon.
 
+### 6. TDD agentin kanssa [tekoäly]
+
+Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
+
+Tehtävässä ohjelmoidaan viikon lopun [vapaaehtoisessa tehtävässä](#vapaaehtoinen-lisätehtävä-ostoskori-tdd-tekniikalla) kuvattu ostoskori testivetoisesti, mutta nyt työ jaetaan ihmisen ja agentin kesken. Lue ensin vapaaehtoisen tehtävän kuvaus kohtaan "Tee seuraavat testit..." asti, jotta tiedät mistä on kyse.
+
+<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/tdd-ostoskori_ oleva projekti ja kopioi se palautusrepositorioosi hakemiston _viikko4_ sisälle
+
+<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 9](/tehtavat3/#9-agentti-ja-hyväksymistestit-tekoäly)
+
+<input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
+- testit suoritetaan komennolla `uv run pytest`
+- luokkia `Tuote` ja `Ostos` ei muuteta
+- **testitiedostoja ei saa muokata, ellei sitä erikseen pyydetä**
+- toteutetaan aina minimaalisin koodi, jolla testit saadaan menemään läpi
+
+<input type="checkbox"> Commitoi ohjetiedosto
+
+**Osa A: sinä kirjoitat testit, agentti koodaa**
+
+Tee vapaaehtoisen tehtävän askeleet 1-7 siten, että jokaisella askeleella
+
+<input type="checkbox" style="margin-left: 20px"> kirjoitat itse askeleen testin
+
+<input type="checkbox" style="margin-left: 20px"> varmistat, että testi ei mene läpi
+
+<input type="checkbox" style="margin-left: 20px"> pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
+
+<input type="checkbox" style="margin-left: 20px"> luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
+
+<input type="checkbox" style="margin-left: 20px"> commitoit muutoksen
+
+Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
+
+**Osa B: agentti kirjoittaa testit**
+
+<input type="checkbox"> Pyydä agenttia tekemään askeleet 8-12 TDD-tekniikalla, eli kirjoittamaan jokaiselle askeleelle ensin testi ja sitten toteutus. Anna agentille askelten kuvaukset tehtävänannosta
+
+<input type="checkbox"> Käy agentin kirjoittamat testit läpi. Testaavatko ne sitä, mitä askelten kuvaukset edellyttävät?
+
+Arvioi testien laatua istuttamalla koodiin bugeja:
+
+<input type="checkbox"> Tee ostoskorin koodiin **itse** ainakin kolme erilaista bugia, yksi kerrallaan. Esim. saman tuotteen toinen lisäys luo uuden ostoksen olemassa olevan päivittämisen sijaan, tai `ostokset` palauttaa aina tyhjän listan. Kirjaa ylös, huomasivatko testit bugin
+
+<input type="checkbox"> Jos jokin bugi jäi huomaamatta, lisää testi joko itse tai agentin avulla
+
+<input type="checkbox"> Palauta toimiva toteutus ja commitoi
+
+<input type="checkbox"> Voit halutessasi tehdä myös askeleet 13-15 haluamallasi tavalla
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _tdd_ai.md_
+
+Kerro raportissa
+- Pysyikö agentti osassa A minimitoteutuksessa, ja jättikö se testit rauhaan?
+- Yrittikö agentti missään vaiheessa "huijata", esim. kovakoodaamalla testin odottaman arvon?
+- Minkä bugeista testit huomasivat ja minkä eivät?
+- Kumpi työnjako, A vai B, tuntui paremmalta, ja miksi?
+
 {% include submission_instructions.md %}
 
 ### Vapaaehtoinen lisätehtävä: Ostoskori TDD-tekniikalla
@@ -485,7 +545,7 @@ Jatketaan verkkokaupan parissa.
 
 Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
 
-![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+![](https://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
 Ostoskori siis sisältää _ostoksia_, joista jokainen vastaa yhtä tiettyä tuotetta.
 
@@ -581,7 +641,7 @@ class Ostoskori:
 
 **Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
 
-![](http://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
+![](https://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
 
 Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
 

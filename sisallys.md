@@ -15,7 +15,12 @@ permalink: /sisallys/
 - Ohjeet
   - [uv](/uv)
   - [unittest](/unittest)
-  - [Gen AI](/genai)  
+  - [Tekoäly ohjelmistotuotannossa](/genai)
+    - [viikko 3: Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3)
+    - [viikko 4: Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4)
+    - [viikko 5: AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5)
+    - [viikko 6: Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6)
+    - [viikko 7: Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7)
   - [Robot Framework](/robot_framework)
   - [asennusohjeet: ChromeDriver ja GeckoDeriver](chromedriver_asennusohjeet/)
 
@@ -53,7 +58,7 @@ permalink: /sisallys/
     - [Product backlog](/osa1/#product-backlog)  
     - [Product owner](/osa1/#product-owner)  
     - [Scrum master](/osa1/#scrum-master)  
-    - [Kehittäjätiimi](/osa1/#kehittäjätiimi)  
+    - [Kehittäjät](/osa1/#kehittäjät)  
     - [Sprintti](/osa1/#sprintti)  
     - [Definition of done](/osa1/#definition-of-done)  
     - [Sprintin suunnittelu](/osa1/#sprintin-suunnittelu)  

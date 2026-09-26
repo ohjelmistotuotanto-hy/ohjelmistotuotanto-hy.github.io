@@ -21,7 +21,7 @@ _Huom:_ valitse ChromeDriverista versio, joka on yhteensopiva käyttämäsi Chro
 
 Linkin takana oleva lista on hieman kryptinen. Esimerkiksi omassa tapauksessani Chromen versio on _Version 142.0.7444.60 (Official Build) (arm64)_, joten oikea latauslinkki on
 
-![]({{ "/images/lcdriver.png" | absolute_url }}){:height="400px" }
+![]({{ "/images/lcdriver.png" | relative_url }}){:height="400px" }
 
 ### macOS ja Linux
 

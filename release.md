@@ -9,6 +9,6 @@ Projektin releasejen nimennän ja kuvauksen pitäisi olla keskenään riittävä
 
 ChatGPT antoi seuraavan ohjeen:
 
-![]({{ "/images/release.png" | absolute_url }})
+![]({{ "/images/release.png" | relative_url }})
 
 Jos releaseja tehdään tiheään tahtiin voinee kiitokset jättää pois.

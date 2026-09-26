@@ -418,11 +418,11 @@ coverage html
 
 Komennon suorittaminen luo projektin juurihakemistoon hakemiston _htmlcov_. Raporttia voi katsoa selaimessa avaamalla hakemiston tiedoston _index.html_ selaimen kautta. Selaimessa aukeava raportti näyttää kutakuinkin seuraavalta:
 
-![]({{ "/images/unittest0.png" | absolute_url }})
+![]({{ "/images/unittest0.png" | relative_url }})
 
 Raportista näemme, että koko koodin haaraumakattavuus on 90%. Yksittäisen tiedoston haaraumakattavuuden näemme taulukon "coverage"-sarakkeesta. Jos klikkaamme taulukosta yksittäisen tiedoston nimeä aukeaa tiedoston koodi ja testien siinä kattamat haarat. Katetut haarat näkyvät vihreinä palkkeina rivinumeron vieressä. Haarat, joita ei ole katettu ollenkaan, on korostettu punaisella värillä. Sen sijaan, jos haara on osittain katettu, se on korostettu keltaisella värillä. Viemällä hiiri rivin päälle, nähdään tarkempi selitys, miksi haaraa ei ole täysin katettu:
 
-![]({{ "/images/unittest.png" | absolute_url }})
+![]({{ "/images/unittest.png" | relative_url }})
 
 ![](/assets/images/python/coverage-tiedosto.png)
 
