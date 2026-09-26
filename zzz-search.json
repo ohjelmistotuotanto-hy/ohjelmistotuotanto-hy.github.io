@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- assign first = true -%}
+{%- for p in site.pages -%}
+  {%- if p.title and p.url != "/search.json" and p.url != "/404.html" and p.name contains ".md" -%}
+    {%- unless first -%},{%- endunless -%}
+    {%- assign first = false -%}
+    {"title": {{ p.title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "content": {{ p.content | jsonify }}}
+  {%- endif -%}
+{%- endfor -%}
+]

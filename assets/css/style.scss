@@ -87,3 +87,87 @@ table {
     background-color: #e6ebf2;
   }
 }
+
+.site-search {
+  float: right;
+  position: relative;
+  margin: 14px 0 0 20px;
+
+  .site-search-input {
+    width: 200px;
+    padding: 4px 8px;
+    font-size: 0.9em;
+    border: 1px solid #c8ced6;
+    border-radius: 4px;
+  }
+
+  .site-search-results {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 2000;
+    width: 480px;
+    max-width: 90vw;
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #c8ced6;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .site-search-result {
+    display: block;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    color: #111;
+    text-decoration: none;
+    line-height: 1.4;
+
+    &:hover, &:focus {
+      background-color: #eef3fa;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  .site-search-result-title {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #2a7ae2;
+  }
+
+  .site-search-result-snippet {
+    display: block;
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  .site-search-info {
+    padding: 8px 12px;
+    font-size: 0.85em;
+    color: #555;
+  }
+
+  mark {
+    background-color: #fff3a3;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    float: none;
+    clear: both;
+    margin: 0 0 10px;
+
+    .site-search-input {
+      width: 100%;
+    }
+
+    .site-search-results {
+      left: 0;
+      right: auto;
+    }
+  }
+}
