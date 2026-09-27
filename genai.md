@@ -51,7 +51,7 @@ Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Ka
 | Pilviagentti | tekee tehtävän GitHubin palvelimilla ja avaa pull requestin | [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |
 | Katselmointi | kommentoi pull requestin koodia | [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) |
 
-Kurssilla tutustutaan viikoilla 3–7 kaikkiin näistä.
+Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 
 ### Agenttinen koodaus
 

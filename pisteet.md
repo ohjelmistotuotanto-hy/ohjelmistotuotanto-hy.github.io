@@ -5,7 +5,7 @@ inheader: no
 title: Arvosanarajat ja laskareiden muuntuminen kurssipisteiksi
 ---
 
-Näet saamasi pisteet osoitteessa <https://study.cs.helsinki.fi/stats/courses/ohtu2025/results>
+Näet saamasi pisteet osoitteessa <https://study.cs.helsinki.fi/stats/courses/ohtu2026/results>
 
 Jos hyväksiluit miniprojektin, pisteesi kerrotaan 40/29:llä ja arvosana muodostuu lopputuloksen mukaan.
 

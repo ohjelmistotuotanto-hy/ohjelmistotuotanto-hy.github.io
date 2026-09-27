@@ -9,7 +9,7 @@ permalink: /tehtavat2/
 
 {% include laskari_info.md part=2 %}
 
-Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan uv:lla ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 9-13. 
+Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan uv:lla ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Gitiin tutustuminen jatkuu tehtävissä 9-13. Tehtävässä 14 aloitetaan kurssin [tekoäly]-tehtävien sarja GitHub Copilotin parissa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -865,5 +865,63 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onni
 
 <input type="checkbox"> Toimi yllä kuvatulla tavalla ja varmista, että tekemäsi muutokset menevät GitHubiin
 
+
+### 14. Ensikosketus Copilotiin [tekoäly]
+
+Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot).
+
+Tehtävässä käytetään VS Coden GitHub Copilotia. Tehtävän voi tehdä ilmaisella _Copilot Free_ -versiolla, eli GitHub Education -hakemuksesi ei tarvitse olla vielä hyväksytty. Free-version kuukausikiintiö on rajallinen, joten älä tuhlaa sitä turhiin kokeiluihin.
+
+Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että kaikki muutokset on commitoitu ja että Pylint ja precommit hook ovat projektissa käytössä, ennen kuin aloitat.
+
+<input type="checkbox"> Ota Copilot käyttöön VS Codessa: kirjaudu GitHub-tunnuksellasi Copilot-näkymän kautta. Katso tarvittaessa ohjeet [täältä](https://code.visualstudio.com/docs/copilot/overview)
+
+<input type="checkbox"> Avaa hakemisto _viikko2/nhl-reader_ VS Codessa omana workspacenaan, eli esim. komennolla `code .` projektin hakemistossa
+
+**Koodin täydennys**
+
+<input type="checkbox"> Kirjoita luokkaan `PlayerStats` uuden metodin määrittely ja sitä kuvaava docstring, esim.
+
+```python
+    def top_goal_scorers(self, how_many):
+        """Palauttaa how_many eniten maaleja tehnyttä pelaajaa maalimäärän mukaan laskevassa järjestyksessä"""
+```
+
+ja odota, että Copilot ehdottaa metodin runkoa.
+
+<input type="checkbox"> Lue ehdotus ennen kuin hyväksyt sen (Tab). Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
+
+**Chat: koodin ja virheiden selittäminen**
+
+<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse agentiksi _Ask_. Pyydä Copilotia selittämään, miten projektin koodi toimii, esim. _"Selitä miten #file:player_reader.py toimii"_
+
+<input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita `pylint src` ja pyydä Copilotia selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
+
+<input type="checkbox"> Tarkista Copilotin selitys Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/checkers/features.html). Pitikö selitys paikkansa?
+
+<input type="checkbox"> Korjaa koodi takaisin sääntöjen mukaiseksi
+
+**Agentti: uusi toiminnallisuus ja testit**
+
+<input type="checkbox"> Valitse Chat-näkymässä agentiksi _Agent_ ja pyydä agenttia lisäämään sovellukseen mahdollisuus näyttää halutun **joukkueen** pelaajat pisteiden mukaan järjestettynä
+
+<input type="checkbox"> Pyydä agenttia tekemään luokalle `PlayerStats` yksikkötestit. Vaadi, että testit **eivät käytä verkkoyhteyttä**, vaan `PlayerReader`-luokan tilalla käytetään stubia viikon 1 [tehtävän 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikkötestaus) tapaan
+
+Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.
+
+<input type="checkbox"> Varmista itse, että testit menevät läpi (`uv run pytest`) ja että ne eivät tee HTTP-pyyntöjä. Yksi tapa tarkistaa asia on katkaista koneen verkkoyhteys ja suorittaa testit uudelleen
+
+<input type="checkbox"> Käy agentin tekemä muutos läpi komennolla `git diff`. Muokkasiko agentti jotain, mihin sitä ei pyydetty koskemaan?
+
+<input type="checkbox"> Commitoi muutokset. Tehtävässä 8 tekemäsi precommit hook suorittaa Pylintin, eli agentin koodin on noudatettava samoja sääntöjä kuin omasi. Jos commit ei mene läpi, korjaa virheet itse tai pyydä agenttia korjaamaan ne
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi palautusrepositorion hakemistoon _viikko2_ talletettavaan tiedostoon _copilot.md_
+
+Kerro raportissa
+- Kuinka hyödyllisiksi koit koodin täydennyksen ehdotukset?
+- Pitikö Copilotin selitys Pylint-varoituksesta paikkansa?
+- Tekikö agentti toimivan ratkaisun, ja noudattivatko sen testit pyyntöä olla käyttämättä verkkoa?
+- Pysäyttikö precommit hook agentin koodia?
+- Mitä muuta opit?
 
 {% include submission_instructions.md %}

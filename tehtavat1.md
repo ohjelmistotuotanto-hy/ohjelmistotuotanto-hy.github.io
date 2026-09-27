@@ -112,7 +112,7 @@ Omat vastaukset voi tietysti antaa AI:n tarkastettavaksi. Kuten aina, myös oppi
 - Klikkaa yläpalkin oikeassa reunassa olevaa "Create a new repo"-ikonia
 - **Laita rasti** kohtaan "Add a README file"
 
-![]({{ "/images/lh1-1-22.png" | relative_url }})
+![]({{ "/images/repo26.png" | relative_url }})
 
 <input type="checkbox"> **Jos et ole vielä luonut** koneellesi _ssh-avainta_ ja lisännyt sitä GitHubiin tee se nyt
 
@@ -311,7 +311,7 @@ Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta:
 
 **Huomaa, että repositoriosi tulee näyttää tehtävän jälkeen suunnilleen seuraavalta:**
 
-![]({{ "/images/lh1-2-25.png" | relative_url }})
+![]({{ "/images/varasto.png" | relative_url }})
 
 **Jos hakemisto _src_ ja tiedostot _pyproject.toml_ ym. eivät ole repositorion juuressa, siirrä ne sinne ennen kuin siirryt eteenpäin.**
 
@@ -319,7 +319,7 @@ Repositoriosi sisältävän hakemiston tulee nyt näyttää seuraavalta:
 
 Tämän kurssin ohjelmointitehtävissä käytetään Pythonia. Kurssilla käytetään Python-projektien riippuvuuksien _ja_ Python-version hallintaan [uv](/uv)-komentorivityökalua, joten aloitetaan asentamalla se.
 
-<input type="checkbox"> Asenna uv tietokoneellesi seuraamalla [uv-ohjeen](/uv) asennusosiota
+<input type="checkbox"> Asenna uv seuraamalla [uv-ohjeen](/uv#asennus) asennusosiota
 
 - Kurssilla käytetään uv:n versiota 0.12 (tai uudempaa). Jos koneellasi on vanhempi versio, se on syytä päivittää komennolla `uv self update`
 - Jos kohtaat ongelmia, katso [täältä](/uv#ratkaisuja-yleisiin-ongelmiin) ratkaisuja joihinkin tyypillisiin ongelmatilanteisiin
@@ -332,26 +332,29 @@ uv python install 3.14
 
 Tarkista asennetut versiot komennolla `uv python list`. Kun myöhemmin luot uuden uv-projektin komennolla `uv init --python 3.14`, uv käyttää automaattisesti juuri asentamaasi versiota. Katso tarvittaessa lisää [uv-ohjeen](/uv#python-version-hallinta) kohdasta _Python-version hallinta_.
 
-Koodin editointiin suosittelemme [Visual Studio Code](https://code.visualstudio.com/) -editoria. Kurssin tehtäviä ei kuitenkaan palauteta TMC-liitännäisen avulla, joten VS Code -liitännäinen ei ole välttämätön kurssin suorittamiselle. Voit siis halutessasi käyttää kurssilla myös mitä tahansa muuta editoria.
+Koodin editointiin suosittelemme [Visual Studio Code](https://code.visualstudio.com/) -editoria.
 
 Ohjelmoinnin peruskursseilla olet saattanut suorittaa koodia painamalla VS Coden nuoli-painiketta, ja testejä painamalla silmä-painiketta. Ammattimaisessa ohjelmistokehityksessä koodin suorittaminen ja testaamisen on tapahduttava toistettavalla tavalla, ja siten että operaatiot pystytään suorittamaan millä tahansa koneella, _skriptatusti_ komentoriviltä, eli riippumatta VS Coden kaltaisista kehitysympäristöistä.
 
-Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kovin hankalaa. Ongelmia alkaa syntyä vasta, kun projekti tarvitsee ulkoisia _riippuvuuksia_ erilaisten asennettavien kirjastojen muodossa. Kirjastojen asennukseen ja hallintaan tarvitaan erilisiä työkaluja. Pythonin kohdalla suosituin komentorivityökalu tähän tarkoitukseen on [pip](https://pypi.org/project/pip/).
+Koodin suorittaminen komentoriviltä `python3`-komennolla ei itsessään ole kovin hankalaa. Ongelmia alkaa syntyä vasta, kun projekti tarvitsee ulkoisia _riippuvuuksia_ erilaisten asennettavien kirjastojen muodossa. Kirjastojen asennukseen ja hallintaan tarvitaan erilisiä työkaluja. Pythonin kohdalla on perinteisesti käytetty tähän tarkoitukseen [pip](https://pypi.org/project/pip/)-komentorivityökalua.
 
 Jotta samalla tietokoneella olevien projektien riippuvuuksissa ei syntyisi ristiriitoja, on käytössä usein niin kutsuttuja projektikohtaisia _virtuaaliympäristöjä_. Virtuaaliympäristöjä luodaan ja käytetään [venv](https://docs.python.org/3/library/venv.html)-moduulin kautta.
 
-Juuri asentamasi uv hoitaa nämä molemmat, eli sekä pipin että virtuaaliympäristön tuomat edut, samalla työkalulla. uv:n dokumentaation antama kuvaus on seuraava:
-
-> An extremely fast Python package and project manager, written in Rust.
+Juuri asentamasi uv yhdistää molemmat työkalut: se asentaa ja hallinnoi projektin riippuvuuksia pipin tapaan ja luo projektille automaattisesti oman virtuaaliympäristön. Näin kaikki riippuvuuksien hallintaan liittyvä hoituu yhdellä työkalulla, eikä pipiä tai venv-moduulia tarvitse käyttää erikseen.
 
 Edellisessä tehtävässä lisättiin repositorioon uv-muodossa oleva varasto-projekti. Projekti sisältää erittäin yksinkertaisen varaston hallintaan soveltuvaa koodia. Varaston hallinnasta vastaa _src/varasto.py_-tiedossa määritelty luokka `Varasto`. Luokkaa käyttää _src/index.py_-tiedossa määritelty funktio `main`.
 
 <input type="checkbox"> Tutki uv-muotoisen projektin hakemistorakennetta esim. antamalla komento `tree` projektihakemiston juuressa (`tree` ei ole uv:hen liittyvä käsky vaan normaali shell-komento)
 
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tree-komennon käyttö eri käyttöjärjestelmissä</summary>
+
 - Windowsissa komennosta käyttökelpoisin muoto on `tree /F` Jos käytössäsi on Windowsissa _git bash_ komento on muotoa `cmd //c tree`
 - **HUOM:** macOS:ssä ei ole oletusarvoisesti `tree`-komentoa
 - Mikäli koneellasi on [Homebrew](https://brew.sh/) asennettuna, saat `tree`-komennon asennettua komennolla `brew install tree`
 - Myöskään kaikissa Linuxeissa ei komento `tree` ole oletusarvoisesti asennettu. Debian-pohjaisissa Linuxeissa (esim Ubuntussa) saat asennettua `tree`-komennon komennolla `sudo apt-get install tree`
+
+</details>
 
 <input type="checkbox"> Tarkastele projektin määrittelevän tiedoston _pyproject.toml_ sisältöä
 
@@ -373,8 +376,8 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 <input type="checkbox"> Suorita komento `python3 src/index.py`
 
-- Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `run`-komentoa
-- Kun uutta koodia kehitetään ja suoritetaan tiheissä sykleissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
+- Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `uv run` -komentoa
+- Kun uutta koodia kehitetään ja suoritetaan tiheässä syklissä, on komentojen suorittaminen kätevintä tehdä virtuaaliympäristön sisällä
 
 <input type="checkbox"> Poistu virtuaaliympäristöstä komennolla `deactivate`
 
@@ -382,9 +385,11 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 - Testien suorittamista varten on käytössä [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys
 
-### 8. Unittest
+### 8. Yksikkötestit
 
-Ohjelmistokehityksen ehkä tärkein vaihe on laadunvarmistus, laadunvarmistuksen tärkein keino taas on testaus, joka on syytä automatisoida mahdollisimman pitkälle, sillä ohjelmistoja joudutaan testaamaan paljon. Erityisesti iteratiivisessa/ketterässä ohjelmistokehityksessä samat testit on suoritettava uudelleen aina ohjelman muuttuessa.
+Laadunvarmistus on ohjelmistokehityksen ehkä tärkein vaihe, ja sen tärkein keino on testaus. Ohjelmistoja joudutaan testaamaan paljon, joten testaus kannattaa automatisoida mahdollisimman pitkälle. Tämä korostuu iteratiivisessa eli ketterässä ohjelmistokehityksessä, jossa samat testit on ajettava uudelleen aina, kun ohjelmaa muutetaan.
+
+Tekoälyavusteinen sovelluskehitys tekee testauksesta entistäkin tärkeämpää. Tekoäly tuottaa nopeasti paljon koodia, joka näyttää usein uskottavalta mutta voi silti olla virheellistä. Kattavat automaattiset testit ovat paras keino varmistaa, että koodi, oli sen kirjoittanut ihminen tai tekoäly, toimii niin kuin pitää, ja että aiemmin toiminut toiminnallisuus ei hajoa muutosten myötä.
 
 Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 

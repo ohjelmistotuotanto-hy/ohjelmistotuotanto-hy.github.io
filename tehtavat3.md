@@ -7,7 +7,7 @@ permalink: /tehtavat3/
 
 {% include laskari_info.md part=3 %}
 
-Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 9 aloitetaan kurssin [tekoäly]-tehtävien sarja.
+Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 9 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -785,7 +785,7 @@ Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopu
 
 ### 9. Agentti ja hyväksymistestit [tekoäly]
 
-Tämä on ensimmäinen kurssin [tekoäly]-tehtävistä. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
+Jatketaan viikon 2 [tehtävässä 14](/tehtavat2/#14-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
 
 Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
 

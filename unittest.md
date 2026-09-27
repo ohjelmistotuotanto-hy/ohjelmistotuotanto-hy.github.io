@@ -47,11 +47,13 @@ class Maksukortti:
 
 ### Tehtävä
 
-Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita terminaalissa hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
+Luo hakemisto _maksukortti_. Suorita terminaalissa hakemiston sisällä projektin alustamiseen vaadittava komento:
 
 ```bash
-uv init --python 3.14
+uv init --python 3.14 --no-package
 ```
+
+Asetus `--no-package` estää uv:tä alustamasta projektia paketiksi, jolloin _src_-hakemistoon ei synny projektin nimistä moduulia. Voit poistaa komennon luoman esimerkkitiedoston _main.py_ turhana.
 
 Asennetaan projektiin kehityksen aikaiseksi riippuvuudeksi [pytest](https://docs.pytest.org/en/stable/)-sovelluskehys, joka helpottaa testien suorittamista. Riippuvuuden asentaminen onnistuu samassa hakemistossa komennolla:
 
@@ -89,13 +91,13 @@ class TestMaksukortti(unittest.TestCase):
         self.assertEqual("Hello world", "Hello world")
 ```
 
-Suoritetaan virtuaaliympäristössä komento `pytest src` uudestaan ja huomaamme, että yksi testi on suoritettu onnistuneesti. Huomaa, että `pytest`-komennon jälkeinen _src_ rajaa suoritettavien testien etsinnän projektin juurihakemistossa sijaitsevaan _src_-hakemistoon. Jos arvoa ei annettaisi, pytest lähtisi etsimään suoritettavia testejä suoraan projektin juurihakemistosta.
+Suoritetaan virtuaaliympäristössä komento `pytest src` uudestaan ja huomaamme, että yksi testi on suoritettu onnistuneesti.
 
 Komento `pytest src` etsii suoritettavia testejä projektin juurihakemiston _src_-hakemistosta, sekä rekursiivisesti kaikista sen alahakemistoista. Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytänteitä.** Nämä käytänteet ovat:
 
 - Testien tiedostojen nimen tulee päättyä <i>\_test</i>-päätteeseen, esim. <i>maksukortti_test.py</i>
-- Testattavan luokan nimen tulee alkaa _Test_-etuliitteellä, esim. `TestMaksukortti`
-- Testattavan luokan metodin nimen tulee alkaa <i>test\_</i>-etuliitteellä, esim. `test_hello_world`
+- Testiluokan nimen tulee alkaa _Test_-etuliitteellä, esim. `TestMaksukortti`
+- Testiluokan testimetodien nimien tulee alkaa <i>test\_</i>-etuliitteellä, esim. `test_hello_world`
 
 Huomaa, että testien hakemistossa tulee olla tyhjä <i>\_\_init\_\_.py</i>-tiedosto, jotta Python löytää moduulit oikein. Ilman kyseistä tiedostoa testi kaatuisi virheeseen:
 
@@ -260,7 +262,7 @@ class TestMaksukortti(unittest.TestCase):
 
 Testimetodit voivat myös alustaa eri käyttötarkoitukseen sopivia olioita, kuten on tehty testimetodissa `test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi`. Huomaa, että tässä tapauksessa `self.kortti` viittaa `setUp`-metodissa alustettuun oliomuuttujaan, kun taas `kortti` metodin sisäiseen muuttujaaan.
 
-### Lisää testejä
+### Rahan lataamisen testit
 
 Tehdään vielä testi metodille `lataa_rahaa`. Ensimmäinen testi varmistaa, että lataus onnistuu ja toinen testaa, ettei kortin saldo kasva suuremmaksi kuin 150 euroa.
 
@@ -276,7 +278,7 @@ def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
     self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
 ```
 
-### Vapaaehtoinen tehtävä: lisää testejä
+### Reunatapauksien testaus
 
 Lisää lopuksi maksukortille seuraavat testit:
 
@@ -351,7 +353,7 @@ Koska haarautumakattavuus antaa tyypillisesti realistisemman kuvan testien katta
 
 ### Testikattavuusraportti
 
-Testikattavuuden kerääminen testien suorituksesta onnistuu [coverage](https://coverage.readthedocs.io/en/latest/)-työkalun avulla. Sen asentamisen projektin kehityksen aikaiseksi riippuvuudeksi onnistuu tuttuun tapaan komennolla:
+Testikattavuuden kerääminen testien suorituksesta onnistuu [coverage](https://coverage.readthedocs.io/en/latest/)-työkalun avulla. Sen asentamisen projektin kehityksen aikaiseksi riippuvuudeksi onnistuu komennolla:
 
 ```bash
 uv add coverage --dev

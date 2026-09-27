@@ -1,15 +1,7 @@
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
 
   <ul style="margin-bottom: -2px">
-    <li>
-       Kurssikoe pidettiin tiistaina 16.12.
-       <ul>
-        <li>Tehtävät arvioitu. Näet pisteesi täältä <a href='https://study.cs.helsinki.fi/stats/courses/ohtu2025/results'>https://study.cs.helsinki.fi/stats/courses/ohtu2025/results</a></li>
-        <li>Tehtävien arvosteluperusteet <a href='/koe2025'>täällä</a></li>
-       </ul>
-    </li>
-    <li>Arvosanarajat ja laskarien sekä monivalintojen muuttuminen kurssipisteiksi selviävät <a href='/pisteet'>täältä</a></li>
-    <li>Uusintakoe tehtävissä examinariumissa 2.1.2026-, katso tarkemmin <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
+    <li>Kurssin erilliskoe on suoritettavissa Examinariumissa, katso tarkemmin <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
   </ul>
 
 </div>

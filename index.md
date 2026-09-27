@@ -6,11 +6,9 @@ permalink: /
 Kurssilla käsitellään ohjelmistotuotantoprojektien hallinnan, työvaiheiden ja työvälineiden perusteita. Erityinen
 painotus ketterissä ohjelmistotuotantomenetelmissä.
 
-{% comment %}
 ## Ajankohtaista
 
 {% include ajankohtaista.md path="/index.md" %}
-{% endcomment %}
 
 ## Tärkeät linkit
 
