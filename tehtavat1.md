@@ -188,10 +188,12 @@ Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 <input type="checkbox"> Muuta ainakin kahden tiedoston sisältöä ja committaa muutokset repositorioon
 
-<input type="checkbox"> Tee _.gitignore_-tiedosto, jossa määrittelet, että repositorion juurihakemistossa olevat tiedostot, joiden pääte on _tmp_, sekä hakemistot, joiden nimi on <i>\_\_pycache\_\_</i> ja <i>.pytest_cache</i> ignoroidaan
+<input type="checkbox"> Tee _.gitignore_-tiedosto, jonka avulla Git jättää huomiotta repositorion juurihakemistossa olevat _tmp_-päätteiset tiedostot sekä seuraavat hakemistot:
+- <i>.venv</i>
+- <i>\_\_pycache\_\_</i>
+- <i>.pytest_cache</i>
 
-- Toinen ignoroitava hakemisto on siis <i>.pytest_cache</i>, jonka nimi alkaa pisteellä
-- Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
+Huomaa, että hakemistojen <i>.venv</i> ja <i>.pytest_cache</i> nimet alkavat pisteellä. Pistealkuiset hakemistot ja tiedostot eivät näy oletusarvoisesti komennon `ls` listauksissa, saat ne näkyville komennolla `ls -a`
 
 <input type="checkbox"> Lisää tmp-päätteisiä tiedostoja hakemistoon ja varmista että Git jättää ne huomioimatta
 
@@ -205,15 +207,15 @@ Lisää Git-ohjeita löytyy runsaasti internetistä, esim:
 
 <input type="checkbox"> Tee muutos johonkin tiedostoon. Älä lisää tiedostoa "staging"-alueelle
 
-- Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
+<input type="checkbox">  Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu)
 
 <input type="checkbox"> Tee muutos ja lisää tiedosto "staging"-alueelle, varmista että muutosta ei enää näy tiedostossa
 
-- Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu), varmista että muutosta ei enää näy tiedostossa
+<input type="checkbox"> Peru muutos (`git status`-komento antaa vihjeen miten tämä tapahtuu), varmista että muutosta ei enää näy tiedostossa
 
 **git add -p**
 
-- Tutoriaaleissa ei valitettavasti käytetä `git add`-komennon hyödyllistä muotoa `git add -p`
+Tutoriaaleissa ei valitettavasti käytetä `git add`-komennon hyödyllistä muotoa `git add -p`
 
 <input type="checkbox"> Tee muutoksia muutamiin tiedostoihin ja lisää muutokset staging-alueelle komennon git add -p avulla
 
@@ -391,7 +393,9 @@ Laadunvarmistus on ohjelmistokehityksen ehkä tärkein vaihe, ja sen tärkein ke
 
 Tekoälyavusteinen sovelluskehitys tekee testauksesta entistäkin tärkeämpää. Tekoäly tuottaa nopeasti paljon koodia, joka näyttää usein uskottavalta mutta voi silti olla virheellistä. Kattavat automaattiset testit ovat paras keino varmistaa, että koodi, oli sen kirjoittanut ihminen tai tekoäly, toimii niin kuin pitää, ja että aiemmin toiminut toiminnallisuus ei hajoa muutosten myötä.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka. Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka.
+
+<input type="checkbox"> Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 
 Edellisen tehtävän _ohtuvarastossa_ on jo jonkun verran unittest-testejä, **laajennetaan nyt testejä**.
 
@@ -442,23 +446,29 @@ AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä
 
 Kokeillaan miten agentti selviää viikon 1 tehtävästä 8. Agentti avataan VS Coden Chat-näkymästä:
 
-![]({{ "/images/cc5.png" | relative_url }}){: width="90%"}
+![]({{ "/images/agent1.png" | relative_url }}){: width="90%"}
 
 Annetaan agentille ohje:
 
-_generate tests for varasto.py so that branch coverage is 100%_
+_generate tests for #file:varasto.py so that brach coverage is 100%_
 
-![]({{ "/images/cc-6.png" | relative_url }}){: width="90%"}
+![]({{ "/images/agent2.png" | relative_url }}){: width="90%"}
 
-Agentti kertoo mitä on tekemässä, eli ensin se haluaa suorittaa komennon, joka selvittää testikattavuuden. Komento näyttää hieman oudolta, ja suoritusluvan antamisen jälkeen selviää, että se ei toimi. Agentti ehdottaakin uutta komentoa:
+Agentti kertoo mitä on tekemässä, eli ensin se haluaa suorittaa komennon, joka selvittää testikattavuuden. Komento näyttää hieman oudolta, ja suoritusluvan antamisen jälkeen selviää, että se ei toimi. Agentti ehdottaa paria komentoa, kunnes se keksii että kyseessä on uv-projekti:
 
-![]({{ "/images/cc-7.png" | relative_url }}){: width="90%"}
+![]({{ "/images/agent3.png" | relative_url }}){: width="90%"}
 
-Uusi komento toimii, ja muutaman muunkin komennon suoritettuaan agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus nousee sataan prosenttiin:
+Uusi komento toimii. Hetken kuluttua agentti on tehnyt ehdotuksen uusista testeistä, joiden avulla kattavuus nousee sataan prosenttiin:
 
-![]({{ "/images/cc-8.png" | relative_url }})
+![]({{ "/images/agent4.png" | relative_url }})
 
-Vastuumme tuntevina koodareina käydään testit läpi. Agentti on laittanut testeihin ehkä turhan runsaasti kommentteja, sillä testien tarkoitusperä käy ilmi jo testin nimestä. Poistetaan turhat kommentit (tai pyydetään agenttia poistamaan ne) ja commitoidaan muutokset GitHubiin.
+Vastuumme tuntevina koodareina käymme testit läpi ennen kuin hyväksymme ne. Testeissä on käytetty meille tuntematonta metodia `assertAlmostEqual`. Emme hyväksy koodia, jota emme ymmärrä, joten selvitämme ensin, mistä on kyse. Voimme kysyä asiaa agentilta tai katsoa unittestin [dokumentaatiosta](https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertAlmostEqual):
+
+
+![]({{ "/images/agent5.png" | relative_url }})
+
+Ymmärrämme nyt testit, olemme myös oppineet uuden asian kiitos tekoälyn!
+Olemme nyt tyytyväisiä ja commitoimme muutokset GitHubiin.
 
 </details>
 
