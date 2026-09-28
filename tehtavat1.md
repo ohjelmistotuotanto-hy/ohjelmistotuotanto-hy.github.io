@@ -554,7 +554,7 @@ GitHub siis committoi uuden tiedoston automaattisesti repositorioosi.
 
 <input type="checkbox"> Pullaa repositorion koodi omalle koneellesi. Konfiguraatiotiedosto näkyy nyt myös siellä, esim. Visual Studio Code -editorilla se näyttää seuraavalta:
 
-![]({{ "/images/lh1-3-25.png" | relative_url }})
+![]({{ "/images/workflow.png" | relative_url }})
 
 <input type="checkbox"> Avaa repositorion välilehti _Actions_, huomaat että sinne on ilmestynyt hieman tavaraa:
 
@@ -589,6 +589,7 @@ jobs:
         run: uv sync
       - name: Run tests
         run: uv run coverage run --branch -m pytest
+
 ```
 
 Kohta [on](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranchestags) määrittelee missä tilanteissa actionit suoritetaan. Konfiguraatiomme määrää, että actionit suoritetaan aina kun repositorion päähaaraan pushataan koodia.
@@ -611,7 +612,7 @@ suorittaa valmiiksi määritellyn actionin [checkout](https://github.com/marketp
 
 Eli _checkout_ action siis hakee repositorion koodin askeleet suorittavalle virtuaalikoneelle.
 
-Toinen askel on action [setup-uv](https://github.com/astral-sh/setup-uv), joka asentaa työn suorittavalle virtuaalikoneelle uv:n, sekä `python-version`-parametrin avulla myös haluamamme Python-version. Jostain syystä versionumero on annettava hipsuissa, eli muodossa '3.14'. Toisin kuin Poetryn kanssa, erillistä setup-python-actionia ei siis tarvita, sillä uv osaa asentaa Python-version itse.
+Toinen askel on action [setup-uv](https://github.com/astral-sh/setup-uv), joka asentaa työn suorittavalle virtuaalikoneelle uv:n, sekä `python-version`-parametrin avulla myös haluamamme Python-version. Versionumero kannattaa antaa lainausmerkeissä, eli muodossa `"3.14"`, sillä muuten YAML tulkitsee sen liukuluvuksi, jolloin esim. versio `3.10` muuttuisi muotoon `3.1`.
 
 ```yml
 - name: Install uv
@@ -635,11 +636,11 @@ Neljäs askel on kaikkein tärkein, se suorittaa uv:n avulla projektin testit ja
 
 Hetken kuluttua actions-välilehdellä pitäisi näkyä että commiteja on kaksi, ja että viimeisin on tilaltaan "punainen":
 
-![]({{ "/images/py-lh1-24-22.png" | relative_url }})
+![]({{ "/images/broken1.png" | relative_url }})
 
 Klikkaamalla rikki mennyttä committia, päästään tarkastelemaan hieman tarkemmin actionin suorituksen etenemistä:
 
-![]({{ "/images/py-lh1-25-22.png" | relative_url }})
+![]({{ "/images/broken2.png" | relative_url }})
 
 Kuten odotettua, testi ei mennyt läpi. Riippuen GitHubin asetuksista, olet myös saattanut saada email-muistutuksen rikki menneestä buildista.
 
@@ -658,25 +659,25 @@ https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
 Esimerkiksi omassa tapauksessani badgelinkki on
 
 ```
-https://github.com/mluukkai/ohtuvarasto/actions/workflows/main.yml/badge.svg
+https://github.com/mattiluukkainen/ohtuvarasto26/actions/workflows/main.yml/badge.svg
 ```
 
 <input type="checkbox"> Lisää badge editoimalla tiedostoa _README.md_ suoraan GitHubissa:
 
-![]({{ "/images/py-lh1-27-22.png" | relative_url }})
+![]({{ "/images/badge1.png" | relative_url }})
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/py-lh1-28-22.png" | relative_url }})
+![]({{ "/images/badge1.png" | relative_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
 <input type="checkbox"> Tee nyt jokin muutos koneellasi repositorioon johonkin muuhun tiedostoon kuin README.md ja yritä pushata koodi GitHubiin. Toimenpiteestä seuraa virhe:
 
 ```
-To github.com:mluukkai/ohtuvarasto.git
+To github.com:mattiluukkainen/ohtuvarasto26.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'git@github.com:mluukkai/ohtuvarasto.git'
+error: failed to push some refs to 'git@github.com:mattiluukkainen/ohtuvarasto26.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -695,7 +696,7 @@ remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), 645 bytes | 215.00 KiB/s, done.
-From github.com:mluukkai/ohtuvarasto2
+From github.com:mattiluukkainen/ohtuvarasto26
    6f1cd65..aa6c099  main       -> origin/main
 hint: You have divergent branches and need to specify how to reconcile them.
 hint: You can do so by running one of the following commands sometime before
@@ -709,6 +710,7 @@ hint: You can replace "git config" with "git config --global" to set a default
 hint: preference for all repositories. You can also pass --rebase, --no-rebase,
 hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
 ```
 
 Käytännössä Git haluaa tietää minkälaisella strategialla paikallisen ja etärepositoriosi koodi tulisi yhdistää. Vaihtoehdoista kannattanee valita keskimäinen.
@@ -725,7 +727,7 @@ Käytännössä valittu vaihtoehto tarkoittaa sitä, että Git suorittaa uudet l
 
 Jos muutit paikallisesti tiedostoa README.md, saatoit aiheuttaa ns. merge-konfliktin jonka selvittämiseen vaaditaan jo hieman vaivaa. Palaamme asiaan tulevilla viikoilla...
 
-<input type="checkbox"> **Tee vielä** lopuksi badgestasi linkki Actions-välilehdelle. Eli kun badgea painetaan, tulee selaimen ohjautua repositorion Actions-välilehdelle, esim. omassa tapauksessani osoitteeseen <https://github.com/mluukkai/ohtuvarasto/actions>
+<input type="checkbox"> **Tee vielä** lopuksi badgestasi linkki Actions-välilehdelle. Eli kun badgea painetaan, tulee selaimen ohjautua repositorion Actions-välilehdelle, esim. omassa tapauksessani osoitteeseen <https://github.com/mattiluukkainen/ohtuvarasto26/actions>
 
 ### 12. Codecov
 
@@ -735,17 +737,19 @@ Tehtävässä 8 määrittelimme projektin testauskattavuuden coveragen avulla. <
 
 <input type="checkbox"> Lisää repositorio Codecoviin alaisuuteen:
 
-![]({{ "/images/lh1-4-25.png" | relative_url }})
+![]({{ "/images/ccov1.png" | relative_url }})
 
 Saatat joutua odottamaan hetken, ennen kuin Codecov löytää repositoriosi. On myös mahdollista, että joudut vielä sallimaan repositorion näkymisen GitHubin [asetusten](https://github.com/apps/codecov) kautta.
 
-Projektin lisäämisen jälkeen aukeavassa näkymässä oleva _Step 3_ sisältää oleellisen tärkeän asian, eli Codecovin _tokenin_:
+Projektin lisäämisen jälkeen aukeavassa näkymässä oleva **Step 3** sisältää oleellisen tärkeän asian, eli Codecovin _tokenin_:
 
-![]({{ "/images/lh1-5-25.png" | relative_url }})
+![]({{ "/images/ccov2.png" | relative_url }})
 
 Käytännössä Codecovin (repository) token on _avain_, jonka avulla palvelu tunnistaa projektin. Tällaisten avainten käytölle on tyypillistä, että niitä ei haluta kaikkien saataville julkiseen repositorioon.
 
-<input type="checkbox"> Lisää nyt avain Github Actioneiden käyttöön [Codecovin dokumentaatiota](https://docs.codecov.com/docs/adding-the-codecov-token) seuraten. Laajemmin salaisuuksien sisällyttämisestä GitHubiin on kuvattu [GitHubin dokumentaatiossa](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+**Unohda askeleet 1 ja 2!** 
+
+<input type="checkbox"> Lisää nyt avain Github Actioneiden käyttöön [tätä ohjetta](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#creating-secrets-for-a-repository) seuraten.
 
 Saamme muodostettua Codecovin ymmärtämän testikattavuusraportin käyttämällä `coverage html`-komennon sijaan komentoa `coverage xml`. Kyseinen komento muodostaa XML-muotoisen testikattavuusraportin.
 
@@ -768,23 +772,23 @@ Kertauksena:
 
 1. Luo avain Codecovin ohjeiden mukaan
 1. Siirrä avain GitHubin secretiksi (Githubin repossa settings -> secrets and variables / actions -> New repository secret -> nimeksi CODECOV_TOKEN ja arvoksi avain)
-1. Lisää yllä olevat vaiheet GitHub Action -konfiguraatiosio
+1. Lisää yllä olevat vaiheet GitHub Action -konfiguraatiosi
 
 Kun seuraavan kerran koodi pushataan GitHubiin, ilmestyy Codecoviin koodin testikattavuusraportti:
 
-![]({{ "/images/lh1-6-25.png" | relative_url }})
+![]({{ "/images/codecov3.png" | relative_url }})
 
 Käytännössä pyydämme nyt GitHub Actioneja suorittamaan ensin testit ja keräämään testikattavuuden (komennolla `uv run coverage run --branch -m pytest`), jonka jälkeen muodostetaan XML-muotoinen testikattavuusraportti (komennolla `uv run coverage xml`). Tämä testikattavuusraportti lähetetään Codeviin.
 
 GitHub Actionien loki näyttää miten askelten suoritus etenee:
 
-![]({{ "/images/py-lh1-29-22.png" | relative_url }})
+![]({{ "/images/codecov4.png" | relative_url }})
 
 <input type="checkbox"> Lisää repositoriosi README.md-tiedostoon myös Codecov-badge. Löydät badgen repositorion Codecov-sivun Configuration-valikosta.
 
 Projektisi GitHub-sivun tulisi lopulta näyttää suunnilleen seuraavalta:
 
-![]({{ "/images/py-lh1-30-22.png" | relative_url }})
+![]({{ "/images/ccov5.png" | relative_url }})
 
 Huomaa, että GitHub Actionin ja Codecovin badget eivät päivity täysin reaaliajassa. Eli vaikka projektin testikattavuus nousisi, kestää hetken, ennen kuin badge näyttää tuoreen tilanteen.
 
