@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-3 jatketaan Gitin harjoittelua. Nämä tehtävät eivät näy palautuksissa mitenkään.

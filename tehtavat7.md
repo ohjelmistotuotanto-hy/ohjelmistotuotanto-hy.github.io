@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
+{% include paivitys_kesken.md %}
+
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}

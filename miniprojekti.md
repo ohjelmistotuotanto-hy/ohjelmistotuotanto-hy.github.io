@@ -3,7 +3,7 @@ layout: page
 title: Miniprojekti
 title_long: 'Miniprojekti'
 permalink: /miniprojekti/
-inheader: yes
+inheader: no
 ---
 
 ### Ajankohtaista

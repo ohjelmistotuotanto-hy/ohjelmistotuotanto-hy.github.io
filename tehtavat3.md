@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include laskari_info.md part=3 %}
 
 Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 9 jatketaan kurssin [tekoäly]-tehtävien sarjaa.

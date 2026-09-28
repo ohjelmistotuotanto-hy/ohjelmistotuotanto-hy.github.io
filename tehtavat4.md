@@ -5,6 +5,8 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
+{% include paivitys_kesken.md %}
+
 {% include laskari_info.md part=4 %}
 
 Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan Gitin tägeihin. Tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä tekoälyagentin kanssa.

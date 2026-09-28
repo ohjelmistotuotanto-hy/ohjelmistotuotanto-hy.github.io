@@ -801,7 +801,7 @@ Projektin testauskattavuutta häiritsee nyt se, että myös tiedosto _src/index.
 ```
 [run]
 source = src
-omit = src/index.py
+omit = src/index.py, , src/tests/**
 ```
 
 Konfiguraatiossa määritellä pilkulla eroteltuna niin kutsuttaja [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)-polkuja. Voimme jättää huomioimatta esimerkiksi yksittäisen tiedoston polun (_src/index.py_), tai kaikki tietyn hakemiston alla olevat polut (_src/tests/\*\*_).
@@ -823,7 +823,7 @@ Nyt luotavan palautusrepositorion rakenne voi olla esimerkiksi seuraava:
 
 ```
 viikko1
-  riippuvuuksien-injektoint
+  riippuvuuksien-injektointi
   nhl-statistics-1
 viikko2
   uv-web
@@ -853,7 +853,7 @@ selenium-screenshot-*.png
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin laatua.
+Tutustumme kurssin aikana muutamiin _suunnittelumalleihin_ (engl. design pattern), eli hyviksi tunnettuihin useisiin erilaisiin tilanteisiin sopiviin ratkaisutapoihin, joiden soveltaminen usein parantaa koodin ylläpidettävyyttä.
 
 Kurssin ensimmäinen suunnittelumalli _riippuvuuksien injektointi_ (engl. dependency injection), on yksinkertainen periaate, jota noudattamalla koodin automatisoitua testaamista on monissa tilanteissa mahdollista helpottaa ratkaisevalla tavalla.
 
@@ -907,12 +907,12 @@ stats = StatisticsService(
 
 **Tämä tehtävä tehdään juuri luomaasi palautusrepositorioon, eli EI KÄYTETÄ ohtuvarasto-repositoriota mihin teit tehtävät 2-13**
 
-_Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle (AI käyttää todennäköisesti erästä tekniikkaa johon tutustumme vasta kurssin viikolla 4...). Oppimisen kannalta on kuitenkin parempi, että teet tehtävän suurimmaksi osaksi itse, ongelmiin ja yksityiskohtiin voit toki pyytää apua. Esim. sopivien assert-lauseiden generoinnissa tekoäly on hyvä apu._
+_Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle. Oppimisen kannalta on kuitenkin parempi, että teet tehtävän suurimmaksi osaksi itse, ongelmiin ja yksityiskohtiin voit toki pyytää apua. Esim. sopivien assert-lauseiden generoinnissa tekoäly on hyvä apu._
 
 <input type="checkbox"> Tee yksikkötestit luokalle `StatisticsService`
 
 - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
-- Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-unittest))
+- Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-yksikkötestit))
   - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Muiden luokkien testikattavuudesta ei tarvitse välittää
 - Testit eivät saa käyttää verkkoyhteyttä
@@ -1009,7 +1009,6 @@ def main():
     stats = StatisticsService(
       PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2023-24/players.txt")
     )
-
 
     # järjestetään pisteiden perusteella, parametrina oleva 1 määrää järjestyksen
     for player in stats.top(10, 1):

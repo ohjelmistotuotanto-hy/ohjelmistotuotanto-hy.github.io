@@ -19,9 +19,44 @@
         </label>
 
         <div class="trigger">
+          <a class="page-link" href="{{ "/#ajankohtaista" | relative_url }}">Ajankohtaista</a>
+          <a class="page-link" href="{{ "/#aikataulu" | relative_url }}">Aikataulu</a>
+          {% assign in_material_dropdown = "osa1.md,osa2.md,osa3.md,osa4.md,osa5.md,sisallys.md" | split: "," %}
           {% for path in page_paths %}
             {% assign my_page = site.pages | where: "path", path | first %}
-            {% if my_page.inheader %}
+            {% if my_page.inheader and my_page.path == "tehtavat.md" %}
+            <div class="nav-dropdown">
+              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }} &#9662;</a>
+              <div class="nav-dropdown-content">
+                <a class="page-link" href="{{ my_page.url | relative_url }}">Kaikki tehtävät</a>
+                {% for i in (1..7) %}
+                  {% assign week_path = "tehtavat" | append: i | append: ".md" %}
+                  {% assign week_page = site.pages | where: "path", week_path | first %}
+                  {% if week_page %}
+                  <a class="page-link" href="{{ week_page.url | relative_url }}">{{ week_page.title | escape }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            {% elsif my_page.inheader and my_page.path == "osa0.md" %}
+            {% assign toc_page = site.pages | where: "path", "sisallys.md" | first %}
+            <div class="nav-dropdown">
+              <a class="page-link" href="{{ my_page.url | relative_url }}">Kurssimateriaali &#9662;</a>
+              <div class="nav-dropdown-content">
+                {% for i in (0..5) %}
+                  {% assign part_path = "osa" | append: i | append: ".md" %}
+                  {% assign part_page = site.pages | where: "path", part_path | first %}
+                  {% if part_page %}
+                  <a class="page-link" href="{{ part_page.url | relative_url }}">{{ part_page.title | escape }}</a>
+                  {% endif %}
+                {% endfor %}
+                {% if toc_page %}
+                <a class="page-link" href="{{ toc_page.url | relative_url }}">{{ toc_page.title | escape }}</a>
+                {% endif %}
+              </div>
+            </div>
+            {% elsif my_page.inheader and in_material_dropdown contains my_page.path %}
+            {% elsif my_page.inheader %}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {% endif %}
           {% endfor %}
