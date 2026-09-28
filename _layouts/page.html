@@ -12,6 +12,13 @@ layout: default
   </header>
 
   <div class="post-content">
+    {% assign task_pages = "tehtavat1.md,tehtavat2.md,tehtavat3.md,tehtavat4.md,tehtavat5.md,tehtavat6.md,tehtavat7.md" | split: "," %}
+    {% if task_pages contains page.path %}
+    <details class="vihje tehtavalista" hidden>
+      <summary>Tämän viikon tehtävät</summary>
+      <ul></ul>
+    </details>
+    {% endif %}
     {{ content }}
   </div>
 
