@@ -15,13 +15,7 @@ Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.
 
 ### Kurssikoe
 
-Kurssikoe pidettiin tiistaina 16.12.
-
-Internet, mukaanlukien kurssimateriaali, on melko vapaasti käytettävissä kokeen aikana, katso rajoitteet tarkemmin [täältä](/ohje_kokeeseen/#plagiointi-ja-chatgpt). Kaikki etukäteen tehtävät muistiinpanot ovat myös sallittuja, jos teet muistiinpanot käsin, ota ne mukaan digitaalisessa muodossa.
-
-CurreChatin kurssimateriaalihaku ei ole kokeen aikana käytössä.
-
-Kannattaa huomata, että koe ja sen "oikeat vastaukset" perustuvat kurssimateriaaliin. Eli vaikka löytäisit googlaamalla satunnaiselta sivulta vastauksen johonkin kysymykseen, jos se käyttää eri terminologiaa kuin kurssi, tai muuten poikkeaa radikaalisti kurssilla esitetystä, voi olla että vastaus ei paljoa pisteitä tuo.
+Kurssikoe pidetään tiistaina 15.12. klo 13-16 (koeaikaa 2.5 tuntia) salissa A111 ja B123. Koe tehdään vanhaan tapaan kynällä ja paperilla. Kokeessa on sallittua olla mukana A4:n kokoinen (molemmat puolet) käsinkirjoitettu "lunttilappu".
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
@@ -62,15 +56,3 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [kevät 2016](https://github.com/mluukkai/ohtu2016)
 
 Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
-
-#### Plagiointi ja ChatGPT
-
-Huomaa, että yliopiston [plagiointiin ja vilppiin](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) liittyvät käytänteet ovat voimassa, ja niitä valvotaan erityisen tarkasti nyt kun kyseessä on konekoe.
-
-Eli **jos copy/pasteat** kurssimateriaalia tai jotain internetistä löydettyä tekstiä vastaukseksi, **koesuorituksesi hylätään** kokonaisuudessaan. Sama koskee kokeessa tehtyä yhteistyötä.
-
-Laajoja kielimalleja kuten ChatGPT:tä saa kokeessa käyttää esim. vastauksen tekstiasun muokkaamiseen, vastausten generointi kielimalleilla ei kuitenkaan ole sallittua.
-
-Jos vastaus haiskahtaa ChatGPT:llä generoidulta, käsitellään epäilyttävä vastaus ja kokeen muutkin vastaukset opiskelijan kanssa suullisesti.
-
-
