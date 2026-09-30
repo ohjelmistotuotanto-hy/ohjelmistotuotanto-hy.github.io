@@ -53,13 +53,11 @@ Tee seuraavat toimenpiteet:
 
 <input type="checkbox"> Alusta projekti uv:n avulla _uv-web_ nimiseen hakemistoon tehtävien palautukseen käyttämäsi repositorion hakemiston viikko2 sisälle
 
-Muista käyttää alustuksessa komentoa `uv init --python 3.14`, jotta projektin Python-version vaatimus asetetaan oikein.
-
 <input type="checkbox"> Etsit Googlettamalla sopivia kirjastoja web-sovellusta varten ja törmäät [Flask](https://pypi.org/project/Flask/)-viitekehykseen. 
 
 <input type="checkbox"> Asenna Flask projektin riippuvuudeksi uv:n avulla
 
-<input type="checkbox">  Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. 
+Sovelluksessa ilmenee ensimmäinen bugi. Syynä on luultavasti se, ettei sovellukselle ole toteutettu vielä yhtään testiä. Päädyt käyttämään testauksessa [pytest](https://pypi.org/project/pytest/)-kirjastoa. 
 
 <input type="checkbox"> Asenna pytest projektin _kehitysaikaiseksi riippuvuudeksi_
   - Pohdi itseksesi, miksi on hyödyllistä määritellä riippuvuus erikseen kehityksen aikaiseksi riippuvuudeksi

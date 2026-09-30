@@ -209,7 +209,7 @@ python3 src/index.py
 
 Voimme lähteä virtuaaliympäristöstä komennolla `deactivate`.
 
-### Kehityksaikaiset riippuvuudet
+### Kehityksenaikaiset riippuvuudet
 
 uv:n avulla riippuvuuksia on mahdollista ryhmitellä niiden käyttötarkoituksen mukaan. Melko yleinen tapa ryhmitellä riippuvuuksia on ryhmitellä ne _kehityksen_ ja _suorituksen_ aikaisiksi riippuvuuksiksi. Kehitysaikaisia riippuvuuksia tarvitaan ohjelmiston kehityksen aikana, mutta ne eivät ole välttämättömiä ohjelman suorituksessa.
 
