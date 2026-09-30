@@ -35,8 +35,11 @@ Lähtökohtaisesti Pylintin huomauttamat laatuvirheet kannattaa yrittää kaikin
 Otetaan esimerkiksi seuraava _src/index.py_-tiedosto:
 
 ```python
-X = 3
-print(x)
+def main():
+    X = 3
+    print(X)
+
+main()
 ```
 
 Komennon `pylint src` suorittaminen paljastaa, että Pylint löytää tiedostosta seuraavan virheen:
@@ -48,8 +51,9 @@ src/index.py:1:0: C0103: Variable name "X" doesn't conform to snake_case naming 
 Eli tiedoston _src/index.py_-riviltä yksi löytyy väärin nimetty muuttuja. Rikottavan säännön nimi on tässä tilanteessa `invalid-name`. Järkevintä olisi vain antaa muuttujalle nimeksi `X`, mutta havainnollistetaan, kuinka säännön tarkistuksen voi ottaa riviltä pois päältä. Lisätään riville seuraava kommentti:
 
 ```python
-X = 3 # pylint: disable=invalid-name
-print(x)
+def main():
+    X = 3 # pylint: disable=invalid-name
+    print(X)
 ```
 
 Nyt `pylint src`-komennon suorittaminen pitäisi kertoa, ettei virheitä enää löydy.
@@ -68,7 +72,7 @@ Monissa editoreissa on lisäosia, jotka huomauttavat laatuvirheistä suoraan koo
 
 Tämän jälkeen Visual Studio Coden (joka pitää ehkä käynnistää uudelleen lisäosan asennuksen jälkeen) tulisi huomauttaa laatuvirheistä suoraan koodissa sinisellä alleviivauksessa. Viemällä hiiren ongelmallisen koodin päälle pitäisi aueta tarkempaa tietoa virheestä:
 
-![Visual Studio Code Pylint virhe]({{ "/images/vscode-pylint-virhe.png" | relative_url }})
+![Visual Studio Code Pylint virhe]({{ "/images/pylint1.png" | relative_url }})
 
 Jos integroinnin kanssa ilmenee ongelmia, tutustu Visual Studio Coden [ohjeisiin](https://code.visualstudio.com/docs/python/linting).
 

@@ -90,7 +90,7 @@ Tehdään ohjelma, jonka avulla voi hakea jääkiekon [NHL-liigan](https://nhl.c
 
 Näet tilastojen [JSON](https://en.wikipedia.org/wiki/JSON)-muotoisen raakadatan web-selaimella osoitteesta <https://studies.cs.helsinki.fi/nhlstats/2024-25/players>
 
-<input type="checkbox"> Tee ohjelma, joka listaa _suomalaisten pelaajien_ tilastot. 
+Tehdään seuraavassa ohjelma, joka listaa tietyn maan pelaajien tilastot. 
 
 Tarvitset ohjelmassa yhtä kirjastoa, eli riippuvuutta. Kyseinen kirjasto on [requests](https://pypi.org/project/requests/)-kirjasto, jonka avulla voi tehdä HTTP-pyyntöjä. Huomaa, että Pythonilla on myös valmiita moduuleja tähän tarkoitukseen, mutta requests-kirjaston käyttö on huomattavasti näitä moduuleja helpompaa.
 
@@ -126,6 +126,8 @@ Tehtäväpohjassa on valmiina luokan `Player` koodin runko. Edellä esitetyssä 
 **Tässä tehtävässä on tarkoituksena toteuttaa toiminnallisuus, jonka avulla on mahdollista tulostaa tietyn kansalaisuuden pelaajat, esim. suomalaiset**.
 
 <input type="checkbox"> Tee `Player`-luokkaan attribuutit kaikille JSON-datassa oleville kentille, joita ohjelmasi tarvitsee.
+
+<input type="checkbox"> Viimeistele ohjelma siten, että se listaa _suomalaisten pelaajien_ tilastot. 
 
 Ohjelmasi voi toimia esimerkiksi niin, että se tulostaisi pelaajat seuraavalla tavalla:
 
@@ -296,11 +298,11 @@ Usein _.pylintrc_-konfiguraatiota ei ole järkevää kirjoittaa tyhjästä käsi
 
 <input type="checkbox"> Varmista, että GitHub huomaa tilanteen, missä koodi rikkoo projektin Pylint-sääntöjä:
 
-![]({{ "/images/py-lh2-11.png" | relative_url }})
+![]({{ "/images/pylint2.png" | relative_url }})
 
 <input type="checkbox"> Varmista myös, että kun korjaat koodin, kaikki toimii taas moitteettomasti:
 
-![]({{ "/images/py-lh2-12.png" | relative_url }})
+![]({{ "/images/pylint3.png" | relative_url }})
 
 ### 8. Precommit hook ja Pylint 
 
