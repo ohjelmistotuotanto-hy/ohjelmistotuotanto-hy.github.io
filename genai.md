@@ -40,7 +40,7 @@ Muutama periaate selittää paljon kielimallien käyttäytymisestä:
 
 ### AI-avusteisen ohjelmoinnin muodot
 
-Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Karkeasti voidaan erottaa seuraavat käyttötavat, jotka kaikki ovat Copilotissa tarjolla:
+Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Karkeasti voidaan erottaa seuraavat käyttötavat, jotka kaikki ovat GitHub Copilotissa tarjolla:
 
 | Käyttötapa | Mitä tekee | Copilotissa |
 |---|---|---|
@@ -53,6 +53,10 @@ Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Ka
 
 Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 
+Käytämme kurssilla GitHub Copilotia pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
+
+![]({{ "/images/agentti1.png" | relative_url }})
+
 ### Agenttinen koodaus
 
 [Agentti](https://cloud.google.com/discover/what-are-ai-agents) on kielimalli, jolla on käytössään _työkaluja_ ja joka toimii silmukassa kunnes tehtävä on valmis:
@@ -62,7 +66,7 @@ Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 3. agentti havainnoi työkalun tuloksen, esim. testien virheilmoituksen
 4. agentti korjaa toimintaansa havaintojen perusteella ja palaa kohtaan 1
 
-Ero chattiin on merkittävä: ohjelmoijan ei tarvitse kopioida koodia tai virheilmoituksia edestakaisin, vaan agentti näkee itse koko projektin ja pystyy tarkistamaan, toimiiko sen tekemä koodi. Agentit osaavat nykyään tehdä laajojakin, useisiin tiedostoihin ulottuvia muutoksia.
+Ero pelkkään AI-chattiin on merkittävä: ohjelmoijan ei tarvitse kopioida koodia tai virheilmoituksia edestakaisin, vaan agentti näkee itse koko projektin ja pystyy tarkistamaan, toimiiko sen tekemä koodi. Agentit osaavat nykyään tehdä laajojakin, useisiin tiedostoihin ulottuvia muutoksia.
 
 Agentti suorittaa komentoja omalla koneellasi omilla käyttöoikeuksillasi. VS Code kysyy oletusarvoisesti luvan ennen komentojen suorittamista. **Lue komento ennen kuin hyväksyt sen.** Komennot kuten `rm -rf`, `git push --force` tai tuntemattomien pakettien asentaminen ansaitsevat erityistä harkintaa. Kaikkien komentojen automaattinen hyväksyminen on houkuttelevaa, mutta riskialtista.
 
