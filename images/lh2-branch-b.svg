@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="900" height="260" fill="#ffffff"/>
+
+  <defs>
+    <marker id="nuoli-sin" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="nuoli-vihr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <!-- haarojen nimet -->
+  <text x="20" y="104" font-weight="bold" fill="#1f5fa8">main</text>
+  <text x="20" y="204" font-weight="bold" fill="#2e7d32">laskut</text>
+
+  <!-- selite -->
+  <g font-size="12" fill="#444">
+    <line x1="20" y1="20" x2="50" y2="20" stroke="#444" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="58" y="24">merge</text>
+    <rect x="120" y="11" width="44" height="18" rx="4" fill="#eef3fa" stroke="#1f5fa8" stroke-width="1.5"/>
+    <text x="142" y="24" text-anchor="middle" fill="#1f5fa8" font-weight="bold">main</text>
+    <text x="172" y="24">haara osoittaa uusimpaan committiinsa, HEAD kertoo missä haarassa olet</text>
+    <text x="880" y="24" text-anchor="end">aika →</text>
+  </g>
+
+  <!-- kaaret -->
+  <g fill="none" stroke-width="3">
+    <line x1="151" y1="100" x2="387" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <path d="M148 108 C 175 135, 200 200, 257 200" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="281" y1="200" x2="517" y2="200" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="411" y1="100" x2="627" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <path d="M538 191 C 560 160, 590 100, 627 100" stroke="#2e7d32" stroke-dasharray="6 4" marker-end="url(#nuoli-vihr)"/>
+    <line x1="651" y1="100" x2="747" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+  </g>
+
+  <!-- commitit -->
+  <g stroke-width="3" fill="#ffffff">
+    <circle cx="140" cy="100" r="11" stroke="#1f5fa8"/>
+    <circle cx="400" cy="100" r="11" stroke="#1f5fa8"/>
+    <circle cx="270" cy="200" r="11" stroke="#2e7d32"/>
+    <circle cx="530" cy="200" r="11" stroke="#2e7d32"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="140" y="76">index.py</text>
+    <text x="400" y="60">logger.py, index.py</text>
+    <text x="400" y="76">käyttää loggeria</text>
+    <text x="270" y="232">summa.py</text>
+    <text x="530" y="232">erotus.py</text>
+  </g>
+  <g stroke-width="3" stroke="#1f5fa8">
+    <circle cx="640" cy="100" r="11" fill="#1f5fa8"/>
+    <circle cx="760" cy="100" r="11" fill="#ffffff"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="640" y="60">merge</text>
+    <text x="640" y="76">laskut → main</text>
+    <text x="760" y="60">index.py käyttää</text>
+    <text x="760" y="76">summaa ja erotusta</text>
+  </g>
+
+  <!-- haarat -->
+  <g>
+    <rect x="782" y="88" width="102" height="24" rx="4" fill="#eef3fa" stroke="#1f5fa8" stroke-width="2"/>
+    <text x="833.0" y="105" text-anchor="middle" fill="#1f5fa8" font-weight="bold">HEAD → main</text>
+    <rect x="552" y="188" width="62" height="24" rx="4" fill="#eef7ee" stroke="#2e7d32" stroke-width="2"/>
+    <text x="583.0" y="205" text-anchor="middle" fill="#2e7d32" font-weight="bold">laskut</text>
+  </g>
+</svg>

@@ -241,7 +241,7 @@ Muista käyttää komentoa `git status` mahdollisimman usein. Älä myöskään 
 Gitin committeja voi tarkastella myös graafisella _gitk_-komennolla.
 
 - `gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.
-- Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
+- Saat asennettua Maciin `gitk`:n [Homebrewlla](https://git-scm.com/install/mac) komennolla `brew install git-gui`
   - Jos `gitk` ei jostain syystä toimi, voit asentaa [Sourcetree](https://www.sourcetreeapp.com)-työkalun
 
 Suorita komento repositoriossa:

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 350" width="860" height="350" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="860" height="350" fill="#ffffff"/>
+
+  <defs>
+    <marker id="nuoli-sin" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="nuoli-vihr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e7d32"/>
+    </marker>
+    <marker id="nuoli-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d9822b"/>
+    </marker>
+  </defs>
+
+  <!-- selite -->
+  <g font-size="12" fill="#444">
+    <rect x="20" y="11" width="44" height="18" rx="4" fill="#eef3fa" stroke="#1f5fa8" stroke-width="1.5"/>
+    <text x="42" y="24" text-anchor="middle" fill="#1f5fa8" font-weight="bold">main</text>
+    <text x="72" y="24">haara osoittaa uusimpaan committiinsa, HEAD kertoo mihin haaraan seuraava commit menee</text>
+  </g>
+
+  <!-- haarojen nimet -->
+  <text x="20" y="104" font-weight="bold" fill="#1f5fa8">main</text>
+  <text x="20" y="194" font-weight="bold" fill="#2e7d32">laskut</text>
+
+  <!-- kaaret -->
+  <g fill="none" stroke-width="3">
+    <line x1="131" y1="100" x2="587" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <line x1="131" y1="190" x2="287" y2="190" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <path d="M440 255 C 440 170, 560 150, 591 112" stroke="#d9822b" stroke-dasharray="6 4" marker-end="url(#nuoli-or)"/>
+  </g>
+  <text x="500" y="200" fill="#d9822b" font-weight="bold">git commit</text>
+
+  <!-- commitit -->
+  <g stroke-width="3">
+    <circle cx="120" cy="100" r="11" fill="#d6d6d6" stroke="#888"/>
+    <circle cx="120" cy="190" r="11" fill="#d6d6d6" stroke="#888"/>
+    <circle cx="300" cy="190" r="11" fill="#ffffff" stroke="#2e7d32"/>
+    <circle cx="600" cy="100" r="11" fill="#ffffff" stroke="#d9822b" stroke-width="4"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="120" y="76">tehtävä 10</text>
+    <text x="120" y="222">tehtävä 10</text>
+    <text x="300" y="222">README.md</text>
+    <text x="600" y="76">LICENSE</text>
+  </g>
+
+  <!-- haarat -->
+  <rect x="622" y="88" width="102" height="24" rx="4" fill="#eef3fa" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="673" y="105" text-anchor="middle" fill="#1f5fa8" font-weight="bold">HEAD → main</text>
+  <rect x="322" y="178" width="62" height="24" rx="4" fill="#eef7ee" stroke="#2e7d32" stroke-width="2"/>
+  <text x="353" y="195" text-anchor="middle" fill="#2e7d32" font-weight="bold">laskut</text>
+
+  <!-- working tree ja staging -->
+  <rect x="120" y="255" width="420" height="80" rx="8" fill="#f5f5f5" stroke="#888" stroke-width="1.5"/>
+  <g text-anchor="middle" fill="#444" font-size="12">
+    <text x="225" y="274">working tree</text>
+    <text x="435" y="274">staging-alue</text>
+  </g>
+  <rect x="135" y="283" width="180" height="38" rx="5" fill="#ffffff" stroke="#bbb"/>
+  <rect x="345" y="283" width="180" height="38" rx="5" fill="#ffffff" stroke="#d9822b" stroke-width="2"/>
+  <text x="225" y="307" text-anchor="middle" fill="#888">ei muutoksia</text>
+  <text x="435" y="307" text-anchor="middle" fill="#d9822b" font-weight="bold">LICENSE</text>
+
+  <g fill="#222">
+    <text x="560" y="282">ei kuulu mihinkään haaraan:</text>
+    <text x="560" y="300">sisältö säilyy ennallaan,</text>
+    <text x="560" y="318">kun vaihdat haaraa</text>
+  </g>
+</svg>

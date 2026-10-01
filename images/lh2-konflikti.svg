@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="820" height="300" fill="#ffffff"/>
+
+  <!-- haarojen nimet -->
+  <text x="20" y="104" font-weight="bold" fill="#1f5fa8">main</text>
+  <text x="20" y="214" font-weight="bold" fill="#2e7d32">bugikorjaus</text>
+
+  <defs>
+    <marker id="nuoli-sin" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="nuoli-vihr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <!-- kaaret -->
+  <g fill="none" stroke-width="3">
+    <line x1="131" y1="100" x2="187" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <line x1="211" y1="100" x2="347" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <line x1="371" y1="100" x2="477" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <line x1="501" y1="100" x2="625" y2="100" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <path d="M208 108 C 230 130, 235 210, 257 210" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="281" y1="210" x2="545" y2="210" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="575" y1="210" x2="725" y2="210" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <path d="M281 208 C 360 205, 400 100, 477 100" stroke="#2e7d32" stroke-dasharray="6 4" marker-end="url(#nuoli-vihr)"/>
+    <path d="M650 106 C 685 120, 700 210, 725 210" stroke="#1f5fa8" stroke-dasharray="6 4" marker-end="url(#nuoli-sin)"/>
+  </g>
+
+  <!-- main-haaran commitit -->
+  <g stroke="#1f5fa8" stroke-width="3">
+    <circle cx="120" cy="100" r="11" fill="#d6d6d6" stroke="#888"/>
+    <circle cx="200" cy="100" r="11" fill="#ffffff"/>
+    <circle cx="360" cy="100" r="11" fill="#ffffff"/>
+    <circle cx="490" cy="100" r="11" fill="#1f5fa8"/>
+    <circle cx="640" cy="100" r="11" fill="#ffffff" stroke="#d9822b" stroke-width="4"/>
+  </g>
+  <g text-anchor="middle" fill="#222">
+    <text x="120" y="76">tehtävä 11</text>
+    <text x="200" y="60">kommentti</text>
+    <text x="200" y="76">alkuun</text>
+    <text x="360" y="60">logger("aloitetaan</text>
+    <text x="360" y="76">ohjelma")</text>
+    <text x="490" y="60">merge</text>
+    <text x="490" y="76">bugikorjaus → main</text>
+    <text x="640" y="60">printit muotoon</text>
+    <text x="640" y="76">"x + y = …"</text>
+  </g>
+
+  <!-- bugikorjaus-haaran commitit -->
+  <g stroke="#2e7d32" stroke-width="3">
+    <circle cx="270" cy="210" r="11" fill="#ffffff"/>
+    <circle cx="560" cy="210" r="11" fill="#ffffff" stroke="#d9822b" stroke-width="4"/>
+    <circle cx="740" cy="210" r="13" fill="#c62828" stroke="#c62828"/>
+  </g>
+  <text x="740" y="215" text-anchor="middle" fill="#ffffff" font-weight="bold">!</text>
+  <g text-anchor="middle" fill="#222">
+    <text x="270" y="242">logger("lopetetaan ohjelma")</text>
+    <text x="270" y="258">+ print("goodbye!")</text>
+    <text x="560" y="242">printit muotoon</text>
+    <text x="560" y="258">"Lukujen x ja y summa on …"</text>
+    <text x="740" y="242" fill="#c62828" font-weight="bold">merge main →</text>
+    <text x="740" y="258" fill="#c62828" font-weight="bold">bugikorjaus</text>
+    <text x="740" y="274" fill="#c62828" font-weight="bold">KONFLIKTI</text>
+  </g>
+
+  <!-- selite -->
+  <g font-size="12" fill="#444">
+    <line x1="20" y1="20" x2="50" y2="20" stroke="#444" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="58" y="24">merge</text>
+    <circle cx="120" cy="20" r="7" fill="#fff" stroke="#d9822b" stroke-width="3"/>
+    <text x="133" y="24">muuttavat samoja rivejä (print-komennot)</text>
+    <text x="800" y="24" text-anchor="end">aika →</text>
+  </g>
+</svg>

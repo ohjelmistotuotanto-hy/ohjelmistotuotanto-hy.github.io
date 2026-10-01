@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat2/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include miniproj_ilmo.md %}
 
 {% include laskari_info.md part=2 %}
@@ -443,12 +441,14 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-<input type="checkbox"> Luo ja committaa hakemistoon tiedosto **index.py** jonka sisältö on seuraava
+<input type="checkbox"> Luo hakemistoon tiedosto **index.py** jonka sisältö on seuraava
 
 ```python
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
 ```
+
+<input type="checkbox"> lisää ja committaa tiedosto versionhallintaan
 
 <input type="checkbox"> Luo branch **laskut**, siirry branchiin (tämä tapahtuu esim. komennolla `git checkout -b laskut`), luo sinne tiedosto **summa.py** jolla on seuraava sisältö
 
@@ -488,19 +488,25 @@ logger("lopetetaan")
 
 <input type="checkbox"> Mene branchiin **laskut** ja tarkasta, että **mainiin** lisätty tiedosto ei ole branchissa ja että tiedostoon **index.py** tehty muutos ei näy
 
-<input type="checkbox"> Lisää ja committaa branchiin tiedosto **erotus.py** jolla on seuraava sisältö
+<input type="checkbox"> Luo branchiin tiedosto **erotus.py** jolla on seuraava sisältö
 
 ```python
 def erotus(x, y):
     return x-y
 ```
 
+<input type="checkbox"> lisää ja committaa tiedosto versionhallintaan
+
 <input type="checkbox"> Siirry takaisin **main**-branchiin
 
 <input type="checkbox"> Tarkasta että **laskut**-branchiin lisätyt muutokset eivät ole mainissa
 
+Repositorion historia näyttää nyt seuraavalta. Haarat ovat erkaantuneet toisistaan ensimmäisen commitin jälkeen:
+
+![]({{ "/images/lh2-branch-a.svg" | relative_url }})
+
 <input type="checkbox"> Tarkastele komennolla `gitk --all` miltä repositorio ja branchit näyttävät (`gitk`-komento toimii Windowsilla ainakin GitHub for Windowsin Git Shellissä.)
-  - Saat asennettua Maciin `gitk`:n [tämän ohjeen](https://www.geekbitzone.com/posts/git/gitk-for-macos/) avulla
+  - Saat asennettua Maciin `gitk`:n [Homebrewlla](https://git-scm.com/install/mac) komennolla `brew install git-gui`
     - jos asennus ei onnistu, on hyvä korvaaja gitk:lle [sourcetree](https://www.sourcetreeapp.com)
 
 <input type="checkbox"> Mergaa branchin **laskut** sisältö **mainiin** (tämä tapahtuu komennolla`git merge laskut`)
@@ -508,7 +514,9 @@ def erotus(x, y):
     - Jos et ole määritellyt gitille editoria viime viikon [tehtävän 2](/tehtavat1) ohjeiden mukaan, avautuu ehkä gitin oletusarvoinen editori [vim](http://www.vim.org)
     - Vimistä poistuminen saattaa osoittautua ensikertalaiselle hankalaksi, Google auttaa tarvittaessa
 
-<input type="checkbox"> Muuta tiedostoa **index.py** seuraavasti ja commitoi muutos:
+<input type="checkbox"> Katso komennolla gitk --all miten tilanne on muuttunut
+
+<input type="checkbox"> Muuta tiedostoa **index.py** seuraavasti:
 
 ```python
 from logger import logger
@@ -525,7 +533,13 @@ print(f"{erotus(x, y)}")
 logger("lopetetaan")
 ```
 
+<input type="checkbox"> lisää ja committaa muutos versionhallintaan
+
 <input type="checkbox"> Katso jälleen miltä näyttää `gitk --all`-komennolla
+
+Lopputulos näyttää seuraavalta. Merge-commitilla on kaksi edeltäjää, joten **main** sisältää nyt myös **laskut**-haaran muutokset. Haara **laskut** osoittaa edelleen samaan committiin kuin ennen mergeä:
+
+![]({{ "/images/lh2-branch-b.svg" | relative_url }})
 
 ### 11. Git: branchit ja staging-alue [versionhallinta]
 
@@ -594,6 +608,10 @@ Changes to be committed:
 - Staging-alue **ei kuulu** mihinkään branchiin, eli jos staging-alueella on committoimattomia muutoksia ja vaihdat branchia, säilyvät samat asiat stagingissa
 - Muutokset siirtyvät stagingista branchiin ainoastaan komennolla `git commit`
 
+Tilanne näyttää nyt seuraavalta. _LICENSE_ odottaa staging-alueella, ja kun suoritat komennon `git commit`, se menee siihen haaraan, johon HEAD osoittaa, eli **mainiin**:
+
+![]({{ "/images/lh2-staging.svg" | relative_url }})
+
 <input type="checkbox"> Committoi nyt staging-alueen muutokset eli _LICENSE_ haaraan **main**
 
 <input type="checkbox"> Varmista, komennolla `git status` että staging-alue on tyhjä:
@@ -617,7 +635,7 @@ _Tämän tehtävän ideana oli siis havainnollistaa, että working tree (muutoks
 
 Jatketaan edellisen tehtävän repositorion parissa
 
-<input type="checkbox">  Muuta **main**-branchin tiedostoa **index.py** seuraavasti:
+<input type="checkbox">  Muuta **main**-haarassa tiedostoa **index.py** seuraavasti:
 
 ```py
 # tehdään alussa importit
@@ -638,9 +656,9 @@ logger("lopetetaan")
 
 Alkuun on siis lisätty kommentti ja tyhjä rivi
 
-<input type="checkbox">  committaa muutos
+<input type="checkbox"> lisää ja committaa muutos versionhallintaan
 
-<input type="checkbox">  Tee uusi branch **bugikorjaus**, mene branchiin ja editoi tiedoston **index.py** loppua (esim. seuraavasti) ja committaa
+<input type="checkbox"> Tee uusi branch **bugikorjaus**, mene branchiin ja editoi tiedoston **index.py** loppua (esim. seuraavasti) 
 
 ```py
 # tehdään alussa importit
@@ -660,7 +678,11 @@ logger("lopetetaan ohjelma")
 print("goodbye!") # lisäys bugikorjaus-branchissa
 ```
 
-<input type="checkbox">  Mene takaisin **main**-branchiin, editoi tiedoston **index.py** alkupuolta esim. seuraavasti (muutos on funktion logger parametrissa) ja committaa muutokset:
+<input type="checkbox"> Lisää ja committoi muutos versionhallintaan
+
+<input type="checkbox"> Mene takaisin **main**-branchiin, 
+
+<input type="checkbox"> Editoi tiedoston **index.py** alkupuolta esim. seuraavasti (muutos on funktion logger parametrissa)
 
 ```py
 # tehdään alussa importit
@@ -679,13 +701,15 @@ print(f"{erotus(x, y)}")
 logger("lopetetaan ohjelma")
 ```
 
+<input type="checkbox"> Lisää ja committoi muutos versionhallintaan
+
 <input type="checkbox"> Mergaa branchin **bugikorjaus** sisältö **mainiin**
 
   - Katso tiedoston **index.py**-sisältöä, sen pitäisi sisältää nyt molemmissa brancheissa tehdyt muutokset
-  - Git osaa siis mergetä
+  - Git osaa siis mergetä muutokset automaattisesti sillä ne eivät ole keskenään ristiriidassa
   - **Huom:** jo tässä vaiheessa saattaa syntyä konflikti, jos olet vahingossa muuttanut merkkejä väärästä kohtaa tiedostoa! Toimi tällöin ao. ohjeen mukaan.
 
-<input type="checkbox"> Olet edelleen branchissa **main**. Muuta tiedostoa print-komentojen osalta seuraavasti, ja committaa muutos
+<input type="checkbox"> Olet edelleen branchissa **main**. Muuta tiedostoa print-komentojen osalta seuraavasti
 
 ```py
 # tehdään alussa importit
@@ -704,6 +728,9 @@ print(f"{x} - {y} = {erotus(x, y)}") # muutos mainissa
 logger("lopetetaan ohjelma")
 print("goodbye!")
 ```
+
+<input type="checkbox"> Lisää ja committoi muutos
+
 
 <input type="checkbox">  Siirry branchiin **bugikorjaus** ja muuta tiedostoa (jälleen print-komentojen osalta) seuraavasti ja committaa
 
@@ -725,6 +752,8 @@ logger("lopetetaan ohjelma")
 print("goodbye!")
 ```
 
+<input type="checkbox"> Lisää ja committoi muutos versionhallintaan
+
 <input type="checkbox"> Mergaa branchin **main** sisältö branchiin **bugikorjaus**
   - Nyt pitäisi syntyä konflikti, komento aiheuttaa tulostuksen
 
@@ -736,13 +765,18 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 - Git ei siis osannut yhdistää tiedostoon tehtyjä muutoksia, koska ne kohdistuvat samoille riveille, seurauksena on konflikti.
 
+Kuva havainnollistaa tilannetta. Kumpikin haara on muuttanut print-komentoja, eli samoja rivejä, sen jälkeen kun haarat on viimeksi yhdistetty:
+
+![]({{ "/images/lh2-konflikti.svg" | relative_url }})
+
 <input type="checkbox">  Ratkaise konflikti:
   - Editoi tiedoston **index.py** sisältö haluamaksesi
   - Ja toimi edellä mainitun artikkelien ohjeen mukaan, eli lisää konfliktoinut tiedosto staging-alueelle ja committoi
+  - Ohjeet mergen loppuunsuorittamiseksi antaa myös komento `git status` (jonka joudut todennäköisesti suorittamaan kaksi kertaa...)
 
-Jotkut editorit, esim [Visual Studio Code](https://code.visualstudio.com) sisältävät sisäänrakennetusti niin sanotun _merge toolin_, joka osaa jossain määrin helpottaa konfliktien ratkaisua:
+[Visual Studio Code](https://code.visualstudio.com) sisältää sisäänrakennetusti niin sanotun _merge toolin_, joka osaa jossain määrin helpottaa konfliktien ratkaisua:
 
-![]({{ "/images/lh2-merge.png" | relative_url }}){:height="350px" }
+![]({{ "/images/merge1.png" | relative_url }}){:height="350px" }
 
 ### 13. Git: branchit ja GitHub [versionhallinta]
 
@@ -766,21 +800,50 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 <input type="checkbox"> Varmista, että näet GitHubissa molemmat brachit
 
-![]({{ "/images/github1.png" | relative_url }})
+![]({{ "/images/remoterepo.png" | relative_url }})
 
 <input type="checkbox"> Kloonaa GitHub-repositoriosta koneellesi **toinen klooni**:
 
-<input type="checkbox"> Katso komennolla `git branch` mitä brancheja paikallisesti on näkyvissä
+```
+$ git clone git@github.com:omatunnus/palautusrepositorio.git kopio
+$ cd kopio
+```
+
+> simuloimme tällä tilannetta, missä GitHubissa olevalla koodilla on kaksi yhtäaikaista käyttäjää
+
+Seuraavassa tästä toisesta kloonista käytetään nimeä **kopio**.
+
+<input type="checkbox"> Katso komennolla `git branch` mitä brancheja kopiossa on paikallisesti näkyvissä
 
 -  Oletusarvoisesti mukana tulee kloonatessa ainoastaan *main*
 
-<input type="checkbox"> Tee klooniin branch joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta [Tracking Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tracking_branches))
+Kopio tietää kuitenkin kaikki GitHubin haarat. Ne ovat siellä niin sanottuina _etähaaroina_ (remote-tracking branch), jotka näet komennolla `git branch -r`. Träkkäävä haara tehdään etähaaran pohjalta:
 
-<input type="checkbox"> Lisää "träkkäävään" branchiin tiedosto _changelog.txt_, committaa ja pushaa branch GitHubiin
+![]({{ "/images/lh2-remote-1.svg" | relative_url }})
 
-<input type="checkbox"> Tarkastele GitHub-repositoriota selaimella, varmista että branch päivittyy
+> **Mitä etähaarat ovat?**
+>
+> Etähaarat, esim. `origin/main` ja `origin/bugikorjaus`, ovat paikallisen repositoriosi kirjanmerkkejä siitä, missä commitissa GitHubin haarat olivat, kun viimeksi olit yhteydessä GitHubiin. Ne ovat tallessa omalla koneellasi, eivätkä ne ole yhteys GitHubiin. Ne päivittyvät vain komennoilla `git clone`, `git fetch`, `git pull` ja `git push`, joten muulloin ne voivat olla vanhentuneita.
+>
+> Etähaaroihin ei voi commitoida. Jos haluat tehdä muutoksia, tehdään etähaarasta paikallinen _träkkäävä haara_ (tracking branch). Se on tavallinen paikallinen haara, joka on kytketty etähaaraan. Kytkennän ansiosta `git pull` ja `git push` toimivat ilman lisäparametreja, ja `git status` kertoo esim. _"Your branch is ahead of 'origin/main' by 1 commit"_. Vertailu tehdään etähaaraan eikä suoraan GitHubiin.
+>
+> Tehtävässä on siis kolme eri asiaa:
+>
+> | Mikä | Missä | Esimerkki |
+> |---|---|---|
+> | GitHubin haara (remote branch) | GitHubissa | `bugikorjaus` GitHubissa |
+> | etähaara (remote-tracking branch) | omalla koneella, vain luettavissa | `origin/bugikorjaus` |
+> | träkkäävä haara (tracking branch) | omalla koneella, tavallinen haara | paikallinen `bugikorjaus` |
 
-<input type="checkbox"> Tee klooniin uusi branch **tulo** ja sinne kahden luvun tulon laskeva funktio tiedostoon `tulo.py`
+<input type="checkbox"> Tee kopioon haara joka "träkkää" GitHubissa olevan projektisi branchia **bugikorjaus** (ks. <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches> kohta [Tracking Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#_tracking_branches))
+
+<input type="checkbox"> Lisää "träkkäävään" haaraan tiedosto _changelog.txt_
+
+<input type="checkbox"> Lisää ja commitoi muutow versionhallintaa ja pushaa haara GitHubiin
+
+<input type="checkbox"> Tarkastele GitHub-repositoriota selaimella, varmista että haara päivittyy
+
+<input type="checkbox"> Tee kopioon uusi branch **tulo** ja sinne kahden luvun tulon laskeva funktio tiedostoon `tulo.py`
 
 <input type="checkbox"> Muuta ohjelmaa seuraavasti
 
@@ -801,17 +864,21 @@ print(f"{x} * {y} = {tulo(x, y)}")
 logger("lopetetaan")
 print("goodbye!")
 ```
-<input type="checkbox"> Commitoi ja pushaa kloonin branchin **tulo** muutokset GitHubiin ja varmista, että ne näkyvät siellä
+<input type="checkbox"> Lisää ja commitoi sekä pushaa kopion branchin **tulo** muutokset GitHubiin ja varmista, että ne näkyvät siellä
 
 - Pushatessa saatat saada virheilmoituksen, ilmoitus kertoo mitä tulee tehdä
 
-<input type="checkbox"> Mene GitHub-repositorion **alkuperäiseen** paikalliseen kopioon:
+<input type="checkbox"> Mene GitHub-repositorion **alkuperäiseen** paikalliseen kopioon
 
 - Äsken luotu branch ei ole vielä alkuperäisessä kopiossa
 
-<input type="checkbox"> Tee alkuperäiseen kopioon branchia **tulo** träkkäävä branch
+<input type="checkbox"> Tee alkuperäiseen repositorioon branchia **tulo** träkkäävä branch
 
 - **Huom**: Joudut tekemään ensin komennon `git fetch`, jotta paikallinen kopio pääsee jyvälle siitä että GitHubiin on lisätty tavaraa
+
+Tilanne näyttää nyt seuraavalta. Haara **tulo** kulki kopiosta GitHubin kautta alkuperäiseen: `git push` vei sen GitHubiin, `git fetch` toi alkuperäiseen etähaaran _origin/tulo_, ja sen pohjalta tehtiin paikallinen träkkäävä haara:
+
+![]({{ "/images/lh2-remote-2.svg" | relative_url }})
 
 <input type="checkbox"> Mergaa haara **tulo** haaraan **main** ja tuhoa haara **tulo** sekä paikallisesti että GitHubista
 
@@ -841,7 +908,11 @@ print("goodbye!")
 ```
 
 - Komento kertoo, että Remote (eli GitHub) ja Local (eli paikallinen klooni) eivät ole branchien suhteen samassa tilassa.
-- Jo tuhottu branch **tulo** löytyy vielä paikallisesti, kun taas uutta branchia **osamaara** ei paikallisesti vielä ole.
+- Jo tuhottu haara **tulo** löytyy vielä paikallisesti, kun taas uutta branchia **osamaara** ei paikallisesti vielä ole.
+
+Kuvana tilanne näyttää seuraavalta:
+
+![]({{ "/images/lh2-remote-3.svg" | relative_url }})
 
 <input type="checkbox"> Korjaa tilanne siten, että `git remote show origin` tulostaa
 
@@ -879,9 +950,9 @@ Jos kiinnostaa, lue lisää yllä olevasta dokumentista.
 
 Demonstroidaan vielä (viime viikon [tehtävässä 11](/tehtavat1#11-github-actions-osa-3) mainittu) usein esiintyvä tilanne, jossa epäajantasaisen repositorion pushaaminen GitHubissa olevaan etärepositorioon epäonnistuu.
 
-<input type="checkbox"> Mene alkuperäisen repositorion paikallisen kloonin **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
+<input type="checkbox"> Mene edellisen tehtävän **alkuperäisen** kloonin **main**-haaraan, tee jokin muutos, commitoi ja pushaa se GitHubiin
 
-<input type="checkbox"> Mene toisen kloonin **main**-haaraan ja tee sinne jokin muutos
+<input type="checkbox"> Mene **kopion** haaraan **main** ja tee sinne jokin muutos
 
 <input type="checkbox"> Commitoi ja pushaa muutos GitHubiin
 
