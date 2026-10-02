@@ -22,7 +22,7 @@ permalink: /sisallys/
     - [viikko 6: Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6)
     - [viikko 7: Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7)
   - [Robot Framework](/robot_framework)
-  - [asennusohjeet: ChromeDriver ja GeckoDeriver](chromedriver_asennusohjeet/)
+  - [Browser-kirjaston asennus ja ongelmat](browser_asennusohjeet/)
 
 ### [Osa 0: Johdanto](/osa0)
 - [Esitiedot ja sisältö](/osa0/#esitiedot-ja-sisältö)

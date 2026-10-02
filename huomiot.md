@@ -103,7 +103,6 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 - **Järjestelmätestauksesta vastaavat "laadunhallinnasta vastaavat ihmiset"** on ristiriidassa myöhemmin esitetyn cross-functional-tiimin kanssa.
 - **Feature branchit vs. TBD:** vastakkainasettelu "feature branchit turvallisempia aloittelijoille" on keinotekoinen. Nykykäytäntö on lyhytikäiset branchit + PR + merge queue, mikä on trunkbaseddevelopment.com:n mukaan TBD:tä.
 - **Työkalut:**
-  - Selenium → Playwright. Robot Frameworkilla on Playwright-pohjainen Browser-kirjasto, mikä koskee myös tehtavat3.md:tä.
   - Pylint → Ruff (koskee myös pylint.md:tä)
   - Airbnb-tyyliopas on käytännössä ylläpitämätön
   - Coverage-linkissä on kovakoodattu versio 7.11.0
@@ -220,6 +219,6 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 
 ## Tehtäviä koskevat huomiot
 
-- **tehtavat3.md:** Robot Frameworkin Browser-kirjasto (Playwright) Seleniumin tilalle.
+- **tehtavat3.md:** kuva _images/seleniumerror.png_ (debuggausosio) on Selenium-ajalta. Tilalle kannattaa ottaa Browser-kirjaston kuvakaappaus raportista _log.html_.
 - **pylint.md** ja siihen viittaavat tehtävät: Ruff Pylintin tilalle tai rinnalle.
 - **sisallys.md:** osan 4 linkeissä on 13 vanhentunutta `viikko-5`-ankkuria, vaikka luvut on nykyään merkitty viikolle 6. Lisäksi osa5:n linkeissä on kaksi rikkinäistä ankkuria (työntekijöiden tarpeeton liikkuminen, muu tiimien välinen koordinointi).

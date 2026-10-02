@@ -487,7 +487,7 @@ Tehtävässä ohjelmoidaan viikon lopun [vapaaehtoisessa tehtävässä](#vapaaeh
 
 <input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/tdd-ostoskori_ oleva projekti ja kopioi se palautusrepositorioosi hakemiston _viikko4_ sisälle
 
-<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 9](/tehtavat3/#9-agentti-ja-hyväksymistestit-tekoäly)
+<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
 
 <input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
 - testit suoritetaan komennolla `uv run pytest`

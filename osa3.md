@@ -567,18 +567,18 @@ Setup Application
 
 Set Username
     [Arguments]  ${username}
-    Input Text  username  ${username}
+    Fill Text  id=username  ${username}
 
 Submit Credentials
-    Click Button  Login
+    Click  button >> text=Login
 
 Login Should Fail With Message
     [Arguments]  ${message}
-    Title Should Be  Login
-    Page Should Contain  ${message}
+    Get Title  ==  Login
+    Get Text  body  *=  ${message}
 ```
 
-Melkein kaikki määrittelyssä esiintyvistä avainsanoista, kuten _Input Text_, _Click Button_ ja _Page Should Contain_, ovat Robot Frameworkin käyttämän Web-sovellusten testaamiseen tarkoitetun [Selenium](https://www.selenium.dev/)-kirjaston [valmiiksi määriteltyjä avainsanoja](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html). Ne toimivat sellaisenaan ilman lisämäärittelyn tarvetta.
+Melkein kaikki määrittelyssä esiintyvistä avainsanoista, kuten _Fill Text_, _Click_ ja _Get Text_, ovat Robot Frameworkin Web-sovellusten testaamiseen tarkoitetun [Browser](https://robotframework-browser.org/)-kirjaston [valmiiksi määriteltyjä avainsanoja](https://marketsquare.github.io/robotframework-browser/Browser.html). Ne toimivat sellaisenaan ilman lisämäärittelyn tarvetta.
 
 Avainsanojen _Reset Application_ ja _Create User_ toteuttamiseen tarvitaan hieman koodia. Määrittelyt on kirjoitettu luokkaan _AppLibrary_:
 

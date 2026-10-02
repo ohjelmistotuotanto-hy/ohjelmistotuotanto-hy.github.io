@@ -105,12 +105,16 @@ Seuraavan kerran, kun palaat projektin pariin, valitse _Dev Containers: Reopen i
 
 #### Docker ja Robot-testit
 
-Web-sovelluksia testatessa käytä imagen [mluukkai/poetry](https://hub.docker.com/repository/docker/mluukkai/poetry) sijaan imagea [mluukkai/poetry-robot](https://hub.docker.com/repository/docker/mluukkai/poetry-robot/). Image toimii ainoastaan intelin prosessoriarkkitehtuurilla varustetuilla koneilla, eli M1 käyttäjät joutuvat etsimään jonkun muun ratkaisun...
+Web-sovellusten Robot-testit käyttävät [Browser](https://robotframework-browser.org/)-kirjastoa, jonka käyttämä selain on asennettava kontin sisällä. Kun projektin riippuvuudet on asennettu, selain ja sen tarvitsemat käyttöjärjestelmän kirjastot asentuvat kontissa komennolla:
+
+```bash
+uv run rfbrowser install --with-deps chromium
+```
 
 Jotta kontissa suoritettu web-sovellus näkyisi isäntäkoneelle, tulee konttia käynnistettäessä julkaista kontin portti 5001 (jossa sovellus toimii) isäntäkoneen porttiin. Tämä tapahtuu seuraavasti:
 
 ```bash
-docker run -it -p 5001:5001 --volume="$PWD:/mydir" mluukkai/poetry-robot
+docker run -it -p 5001:5001 --volume="$PWD:/mydir" mluukkai/poetry
 ```
 
 Robot-testit suoritetaan menemällä komennolla `docker exec` samaan kontiin, missä sovellus on jo päällä: 
@@ -121,6 +125,6 @@ docker exec -it kontainerintunnistetahan bash
 
 Kontin tunniste selviää komennolla `docker ps`.
 
-Testit toimivat valitettavasti ainoastaan ns. headless-tilassa, jonka saat päälle [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittamien-github-actioneissa) alussa neuvotulla tavalla.
+Testit toimivat valitettavasti ainoastaan ns. headless-tilassa, jonka saat päälle [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittaminen-github-actioneissa) alussa neuvotulla tavalla.
 
 Testit on mahdollista saada toimimaan myös siten että testejä suorittava selain näytetään. Tämä vaatii kuitenkin erinäistä säätöä, googlaa jos kiinnostaa esim. hakusanoilla [linux docker gui apps](https://www.google.com/search?q=linux+docker+gui+apps).

@@ -86,7 +86,7 @@ Vastaavalla tavalla voidaan kumota, eli revertata mikä tahansa commit, eli: <co
 
 ### 3. Git: rebase [versionhallinta]
 
-Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 13](/tehtavat2/#13-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
+Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11](/tehtavat1#11-github-actions-osa-3) ja [ja viikko 2 tehtävä 14](/tehtavat2/#14-git-ep%C3%A4ajantasaisen-kloonin-pushaaminen-versionhallinta)) Gitin käsitteeseen *rebase*. Otetaan nyt selvää tarkemmin mistä on kysymys.
 
 <input type="checkbox"> Lue <https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase> tai/ja <http://git-scm.com/book/en/Git-Branching-Rebasing>.
 
@@ -249,7 +249,7 @@ Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarko
 
 Sovelluksen pitäisi mahdollistaa useiden varastojen luominen, muokkaaminen ja sisällön lisääminen tai poistaminen. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
 
-Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Kirjoita kuvaus [viikon 3 tehtävän 9](/tehtavat3/#9-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
+Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Kirjoita kuvaus [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
 
 <input type="checkbox"> Assignaa issue Copilotille:
 

@@ -283,18 +283,18 @@ Painettavan napin etsiminen ei nyt onnistu pelkästään napin tekstin perusteel
 ```robot
 After adding two todos and marking one done, there is one unfinished
     Go To  ${HOME_URL}
-    Click Link  Create new todo
-    Input Text  content  Buy milk
-    Click Button  Create
-    Click Link  Create new todo
-    Input Text  content  Clean house
-    Click Button  Create
-    Click Button  //li[div[contains(text(), 'Buy milk')]]/form/button
-    Page Should Contain  things still unfinished: 1
-    Page Should Contain  Buy milk, done
+    Click  text=Create new todo
+    Fill Text  [name="content"]  Buy milk
+    Click  button >> text=Create
+    Click  text=Create new todo
+    Fill Text  [name="content"]  Clean house
+    Click  button >> text=Create
+    Click  //li[div[contains(text(), 'Buy milk')]]/form/button
+    Get Text  body  *=  things still unfinished: 1
+    Get Text  body  *=  Buy milk, done
 ```
 
-Oikea nappi on nyt etsitty käyttäen [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath):a, joka on yksi Robotin tukemista tavoista etsiä elementtejä Web-sivuilta.
+Oikea nappi on nyt etsitty käyttäen [XPath](https://developer.mozilla.org/en-US/docs/Web/XPath):a, joka on yksi Browser-kirjaston tukemista tavoista etsiä elementtejä Web-sivuilta. Kirjasto tunnistaa XPath-selektorin automaattisesti siitä, että se alkaa merkeillä `//`.
 
 Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyksen miten Robot-testissä painetaan _tiettyyn_ Todon liittyvää nappia. Tekoäly antoi ystävällisesti oikean vastauksen ja selityksen XPath-komennon toiminnasta:
 
@@ -309,7 +309,7 @@ Selvitin ratkaisun ChatGPT:n avulla. Annoin promptiksi näkymäpohjan ja kysymyk
 >    Selects the <button> element within the <form> inside the selected <li>.
 > ```
 
-Lisää tavoista etsiä elementtejä testeissä voi lukea Robotin [dokumentaatiosta](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements).
+Lisää tavoista etsiä elementtejä testeissä voi lukea Browser-kirjaston [dokumentaatiosta](https://marketsquare.github.io/robotframework-browser/Browser.html#Finding%20elements).
 
 ### Protips
 

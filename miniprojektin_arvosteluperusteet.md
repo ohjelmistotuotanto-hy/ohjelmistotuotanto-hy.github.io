@@ -81,7 +81,7 @@ Sprintin maksimi on 2.5 pistettä.
 #### Retrospektiivi
 
 - Sprintin 1 päätteeksi tulee pitää retrospektiivi
-- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat3/#8-retrospektiivitekniikat)
+- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat3/#9-retrospektiivitekniikat)
 - Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin

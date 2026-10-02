@@ -38,7 +38,7 @@ Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
 - uv
 - GitHub Actions
 - unittest
-- Robot/Selenium
+- Robot Framework ja Browser-kirjasto
 - GitHub copilot
 
 Vierailuluennot eivät kuulu koealueeseen.

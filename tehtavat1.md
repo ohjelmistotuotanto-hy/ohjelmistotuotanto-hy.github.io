@@ -846,7 +846,8 @@ htmlcov/
 output.xml
 log.html
 report.html
-selenium-screenshot-*.png
+browser/
+playwright-log.txt
 ```
 
 ### 14. Riippuvuuksien injektointi osa 1

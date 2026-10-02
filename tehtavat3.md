@@ -9,7 +9,7 @@ permalink: /tehtavat3/
 
 {% include laskari_info.md part=3 %}
 
-Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 9 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
+Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 8 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -41,7 +41,7 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 **HUOM:** jos käytät Dockeria, lue [tämä](/docker#docker-ja-robot-testit)!
 
-Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/3.0.x/)-kirjaston käytön.
+Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/stable/)-kirjaston käytön.
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion alihakemistosta viikko3/webcounter.
 
@@ -77,29 +77,29 @@ def increment():
     return redirect("/")
 ```
 
-Sovelluksen HTML-sivupohjat on määritelty hakemistossa _templates_. Sovelluksen ainoa näkymä näyttää muuttujaan _cnt_ talletetun laskuriolion arvon. Näkymä sisältää myös kaksi nappia, joista "Paina" aiheuttaa POST-pyynnön reitille _increment_. Reitin käsittelijä kasvattaa laskurin arvoa, ja _uudelleenohjaa_ sovelluksen takaisin juuriosoitteeseen. Nappi "Nollaa" ei tee tällä hetkellä mitään.
+Sovelluksen HTML-sivupohjat on määritelty hakemistossa _templates_. Sovelluksen ainoa näkymä näyttää muuttujaan _cnt_ talletetun laskuriolion arvon. Näkymä sisältää myös kaksi nappia, joista "Paina" aiheuttaa POST-pyynnön reitille _increment_. Reitin käsittelijä kasvattaa laskurin arvoa, ja _uudelleenohjaa_ sovelluksen takaisin juuriosoitteeseen. Nappi "Nollaa" ei toimi tällä hetkellä.
 
 Sovellukselle on tehty pari testiä Robot Frameworkilla. Testit suoritetaan normaaliin tapaan komennolla _robot src/tests_ mutta ennen testien suorittamista joudumme tekemään muutaman ekstratempun.
 
-Testeissä on käytössä [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/) -kirjasto, jonka avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Seleniumin käyttö Robot Framework -testeissä tapahtuu [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/)-kirjaston avulla.
+Testeissä on käytössä Robot Frameworkin [Browser](https://robotframework-browser.org/)-kirjasto, jonka avulla on mahdollista simuloida selaimen käyttöä koodista käsin. Browser-kirjasto perustuu Microsoftin [Playwright](https://playwright.dev/)-työkaluun, joka ohjaa selainta suoraan.
 
-Jotta selainta käyttävien testien suorittamien on mahdollista, täytyy lisäksi asentaa halutun selaimen ajuri. Projektin testit käyttävät Chrome- tai Chromium-selainta, jolla testejä voi suorittaa käyttämällä [ChromeDriver](https://chromedriver.chromium.org/)-ajuria, tai Firefoxia jolloin testit voi suorittaa [GeckoDriverillä](https://github.com/mozilla/geckodriver).
+> Projektin riippuvuuksina on kirjaston lisäksi paketti _robotframework-browser-batteries_, joka sisältää kirjaston tarvitseman [Node.js](https://nodejs.org/en)-ajoympäristön valmiina, eli Node.js:ää ei tarvitse asentaa erikseen.
 
-<input type="checkbox"> Ennen kuin siirryt testien pariin, asenna **ChromeDriver** tai **GeckoDriver** seuraamalla [tätä](../chromedriver_asennusohjeet) ohjetta. Fuksiläppärillä ChromeDriver saattaa olla jo asennettuna. Voit tarkistaa tämän komennolla ```chromedriver --version```
+<input type="checkbox"> Ennen kuin siirryt testien pariin, asenna testien käyttämä Chromium-selain komennolla `uv run rfbrowser install chromium`.
 
-Seuraavassa oletetaan että ChromeDriver tai GeckoDriver on asennettu onnistuneesti.
+Selain asentuu projektin virtuaaliympäristön sisälle. Asennus on siis tehtävä jokaiselle projektille erikseen, ja uudelleen, jos poistat hakemiston _.venv_.
 
 <input type="checkbox"> Käynnistä web-sovellus edellisen tehtävän tapaan komentoriviltä.
  
 Varmista selaimella, että sovellus on päällä. Varmista, että sovelluksen laskurin arvo on 0. Jos se on jotain muuta, uudelleenkäynnistä sovellus.
 
-<input type="checkbox">  Avaa uusi terminaali-ikkuna ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests` jos asensit ChromeDriverin tai `robot --variable BROWSER:firefox src/tests` jos asensit GeckoDriverin.
+<input type="checkbox">  Avaa uusi terminaali-ikkuna ja suorita projektin testit virtuaaliympäristössä komennolla `robot src/tests`.
 
 Komennon pitäisi suorittaa onnistuneesti kaksi testitapausta, `At start the counter is zero` ja `When button pressed twice the counter is two`. Testitapausten suoritusta voi seurata aukeavasta selaimen ikkunasta.
 
 #### Ongelmia?
 
-[Tämä ohje](/chromedriver_asennusohjeet/#mahdollisia-ongelmia) saattaa auttaa.
+[Tämä ohje](/browser_asennusohjeet/) saattaa auttaa.
 
 #### Tutustuminen testeihin
 
@@ -114,35 +114,40 @@ Suite Teardown  Close Browser
 *** Test Cases ***
 At start the counter is zero
     Go To  ${HOME_URL}
-    Title Should Be  Laskuri
-    Page Should Contain  nappia painettu 0 kertaa
+    Get Title  ==  Laskuri
+    Get Text  body  *=  nappia painettu 0 kertaa
 
 When button pressed twice the counter is two
     Go To  ${HOME_URL}
-    Click Button  Paina
-    Click Button  Paina
-    Page Should Contain  nappia painettu 2 kertaa
+    Click  button >> text=Paina
+    Click  button >> text=Paina
+    Get Text  body  *=  nappia painettu 2 kertaa
 ```
 
-Jos unohdetaan alun osio _Settings_, on testien toiminnallisuus aika ilmeinen. Käytössä olevat avainsanat [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To), [Click Button](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Button) ja [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) ovat SeleniumLibraryn tarjoamia valmiita avainsanoja.
+Jos unohdetaan alun osio _Settings_, on testien toiminnallisuus aika ilmeinen. Käytössä olevat avainsanat [Go To](https://marketsquare.github.io/robotframework-browser/Browser.html#Go%20To), [Click](https://marketsquare.github.io/robotframework-browser/Browser.html#Click), [Get Title](https://marketsquare.github.io/robotframework-browser/Browser.html#Get%20Title) ja [Get Text](https://marketsquare.github.io/robotframework-browser/Browser.html#Get%20Text) ovat Browser-kirjaston tarjoamia valmiita avainsanoja.
 
-#### Miten Selenium löytää sivun elementit?
+Avainsanat `Get Title` ja `Get Text` hakevat sivulta arvon, ja niille voi antaa lisäksi [vertailuoperaattorin](https://marketsquare.github.io/robotframework-browser/Browser.html#Assertions) ja odotetun arvon. Esimerkiksi <code>Get Title &nbsp;== &nbsp;Laskuri</code> tarkistaa, että sivun otsikko on täsmälleen _Laskuri_, ja <code>Get Text &nbsp;body &nbsp;*= &nbsp;nappia painettu 0 kertaa</code> tarkistaa, että sivun `body`-elementin teksti _sisältää_ annetun merkkijonon. Jos ehto ei toteudu, testi epäonnistuu. Browser-kirjasto odottaa tarvittaessa hetken (oletusarvoisesti korkeintaan 10 sekuntia), että ehto toteutuu, ennen kuin se toteaa testin epäonnistuneen.
 
-Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Selenium yrittää löytää elementin annettujen argumenttien perusteella käyttäen [tiettyä strategiaa](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Locating%20elements). Esimerkiksi <code>Click Button &nbsp;foo</code> löytää seuraavat [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)-elementit:
+#### Miten Browser-kirjasto löytää sivun elementit?
 
-```html
-<button id="foo">Nappi</button>
-<button name="foo">Nappi</button>
-<button>foo</button>
-```
+Testitapauksissa ollaan interaktiossa erilaisten HTML-elementtien, kuten tekstikenttien ja painikkeiden kanssa. Avainsanoille kerrotaan _selektorin_ avulla, mihin elementtiin ne kohdistuvat. Browser-kirjasto tukee [useita selektorityyppejä](https://marketsquare.github.io/robotframework-browser/Browser.html#Finding%20elements), joista tärkeimmät ovat:
 
-Selenium siis etsii `button`-elementin, jonka `id`-attribuutin arvo, `name`-attribuutin arvo, tai sisältö vastaa annettua argumenttia. Kutsu <code>Click Button &nbsp;Paina</code> löytää siis seuraavan _src/templates/index.html_-tiedostossa määritellyn painikkeen:
+| selektori | löytää |
+| --------- | ------ |
+| `id=foo` | elementin, jonka `id`-attribuutin arvo on _foo_ |
+| `text=foo` | elementin, jonka tekstisisältö on tai sisältää _foo_ |
+| `button` | CSS-selektori, tässä tapauksessa [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button)-elementti |
+| `input[name="foo"]` | CSS-selektori: `input`-elementti, jonka `name`-attribuutin arvo on _foo_ |
+
+Selektoreita voi myös ketjuttaa merkinnällä `>>`, jolloin jälkimmäistä selektoria etsitään edellisen löytämien elementtien joukosta. Kutsu <code>Click &nbsp;button >> text=Paina</code> etsii siis `button`-elementin, jonka tekstinä on _Paina_, eli seuraavan _src/templates/index.html_-tiedostossa määritellyn painikkeen:
 
 ```html
 <button type="submit">
   Paina
 </button>
 ```
+
+Pelkkä <code>Click &nbsp;text=Paina</code> toimisi tässä tapauksessa myös, sillä sivulla ei ole muita elementtejä, joiden tekstinä on _Paina_.
 
 #### Tutustuminen testeihin jatkuu
 
@@ -158,28 +163,31 @@ Tiedoston  `resource.robot` sisältö on seuraava:
 
 ```robot
 *** Settings ***
-Library  SeleniumLibrary
+Library  Browser
 
 *** Variables ***
-${DELAY}     0.5 seconds
+${DELAY}     500ms
 ${HOME_URL}  http://localhost:5001
-${BROWSER}   chrome
+${BROWSER}   chromium
 
 *** Keywords ***
 Open And Configure Browser
-    Set Selenium Speed  ${DELAY}
-    Open Browser  browser=${BROWSER}  options=${options}
+    New Browser  browser=${BROWSER}  headless=False  slowMo=${DELAY}
+    New Context
+    New Page  about:blank
 ```
 
-`*** Settings ***` osiossa otetaan käyttöön edellä mainittu SeleniumLibrary-kirjasto, joka siis tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html).
+`*** Settings ***` osiossa otetaan käyttöön edellä mainittu Browser-kirjasto, joka siis tuo mukaan lukuisia uusia avainsanoja, joista kaikki on dokumentoitu [täällä](https://marketsquare.github.io/robotframework-browser/Browser.html).
 
 Tiedostossa on myös osio `*** Variables ***` missä on mahdollista määritellä muuttujia, jotka ovat kaikkien osion avainsanojen käytössä. Huomaa, että määritellyt muuttujat kirjoitetaan isoilla kirjaimilla, toisin kuin argumentit. Muuttujia kannattaa suosia aina kovakoodattujen arvojen sijaan.
 
 `*** Keywords ***`-osiossa on määritellään avainsana `Open And Configure Browser` joka alustaa selaimen testejä varten:
 
-- Avainsana käynnistää selaimen käyttämällä SeleniumLibrary-kirjaston [Open Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Open%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen, joka on oletusarvoisesti  _chrome_.
-- Tämän lisäksi avainsana asettaa viiveeksi Selenium-komentojen välille `DELAY`-muuttujan arvon käyttämällä [Set Selenium Speed](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Selenium%20Speed) -avainsanaa. Pidempi viive helpottaa testien suorituksen seuraamista. 
-- Selaimen ikkunan koon voi tarvittaessa asettaa haluamakseen avainsanalla [Set Window Size](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Set%20Window%20Size), nyt käytössä on oletusarvoinen selaimen koko.
+- Avainsana käynnistää selaimen käyttämällä Browser-kirjaston [New Browser](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Browser) -avainsanaa antaen `browser`-argumentin arvoksi käytetyn selaimen, joka on oletusarvoisesti  _chromium_. Muita vaihtoehtoja ovat _firefox_ ja _webkit_, jotka tosin on asennettava erikseen komennolla `uv run rfbrowser install firefox` tai `uv run rfbrowser install webkit`.
+- Argumentti `headless=False` määrittelee, että selaimen ikkuna on näkyvissä testien suorituksen ajan.
+- Argumentti `slowMo` asettaa jokaisen selainoperaation väliin `DELAY`-muuttujan arvon mittaisen viiveen. Pidempi viive helpottaa testien suorituksen seuraamista.
+- [New Context](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Context) luo selaimeen uuden, muista erillisen _kontekstin_, joka vastaa käytännössä selaimen incognito-ikkunaa: kontekstilla on omat evästeensä ja muu tilansa. Selaimen ikkunan koon voi tarvittaessa asettaa kontekstin luomisen yhteydessä argumentilla `viewport`, nyt käytössä on oletusarvoinen koko.
+- [New Page](https://marketsquare.github.io/robotframework-browser/Browser.html#New%20Page) avaa kontekstiin uuden välilehden, tässä tapauksessa tyhjän sivun.
 
 Palataan vielä tiedostoon `increment.robot`, jonka alun osio `*** Settings ***` on seuraava
 
@@ -196,7 +204,7 @@ Suite Teardown  Close Browser
 Osiossa on käytössä ennestään tuntemattomat `Suite Setup`-, `Suite Teardown`-asetukset. Niiden merkitykset ovat seuraavat:
 
 - `Suite Setup` -asetuksen avulla voimme suorittaa avainsanan ennen tiedoston ensimmäistä testitapausta, eli aluksi siis suoritetaan  _Open And Configure Browser_ joka määriteltiin tiedostossa `resource.robot`
-- `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Close%20Browser)
+- `Suite Teardown` -asetuksen avulla voimme suorittaa avainsanan tiedoston viimeisen testitapauksen jälkeen, tapauksessamme suljemme selaimen avainsanalla [Close Browser](https://marketsquare.github.io/robotframework-browser/Browser.html#Close%20Browser)
 
 **Huomaa, että toimiakseen testit edellyttävät, että sovellus on alussa tilassa missä laskurin arvo on 0. Uudelleenkäynnistä siis sovellus aina ennen testien suorittamista!**
 
@@ -225,7 +233,7 @@ When counter has a nonzero value and it is reset the value becomes zero
 
 ### 4. Web-sovelluksen testien suorittaminen GitHub Actioneissa
 
-Selenium WebDriveria käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
+Browser-kirjastoa käyttävät Robot-testit on melko helppo suorittaa myös GitHub Actioneissa. 
 
 Konfiguraatioihin on tehtävä muutama muutos.
 
@@ -233,34 +241,29 @@ Konfiguraatioihin on tehtävä muutama muutos.
 
 ```robot
 *** Settings ***
-Library  SeleniumLibrary
+Library  Browser
 
 *** Variables ***
 ${SERVER}    localhost:5001
-${DELAY}     0.5 seconds
+${DELAY}     500ms
 ${HOME_URL}  http://${SERVER}
-${BROWSER}   chrome
+${BROWSER}   chromium
 ${HEADLESS}  false
 
 *** Keywords ***
 Open And Configure Browser
-    IF  $BROWSER == 'chrome'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-        Call Method  ${options}  add_argument  --incognito
-    ELSE IF  $BROWSER == 'firefox'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-        Call Method  ${options}  add_argument  --private-window
-    END
     IF  $HEADLESS == 'true'
-        Set Selenium Speed  0.05 seconds
-        Call Method  ${options}  add_argument  --headless
+        New Browser  browser=${BROWSER}  headless=True
     ELSE
-        Set Selenium Speed  ${DELAY}
+        New Browser  browser=${BROWSER}  headless=False  slowMo=${DELAY}
     END
-    Open Browser  browser=${BROWSER}  options=${options}
+    New Context
+    New Page  about:blank
 ```
 
-Olemme nyt lisääneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa Seleniumin viiveeksi asetetaan 0.05 jotta testit eivät hidastu tarpeettomasti. Joissain tilanteissa selaimelle asennetut liitännäiset haittaavat testien suorituksessa. Määrittelimmekin, että testatessa selaimet käyttävät incognito-tilaa, jolloin liitännäiset eivät ole käytössä. 
+Olemme nyt lisänneet muuttujan _HEADLESS_ jolle arvon _true_ asettamalla voimme suorittaa testit [headless](https://en.wikipedia.org/wiki/Headless_browser)-selaimella, eli selaimella missä ei ole käyttöliittymää. Olemme myös määritelleet, että headlessina suoritettaessa operaatioiden väliin ei lisätä viivettä, jotta testit eivät hidastu tarpeettomasti.
+
+> Huomaa, että ehto on kirjoitettu muodossa `$HEADLESS == 'true'` eikä `${HEADLESS} == 'true'`. Robot Framework tulkitsee `IF`-ehdon Python-lausekkeena, ja muoto `$HEADLESS` viittaa muuttujaan Python-muuttujan tapaan. Jos käyttäisimme muotoa `${HEADLESS}`, sijoittaisi Robot Framework muuttujan arvon lausekkeeseen sellaisenaan, ja lauseke olisi muotoa `false == 'true'`, mikä aiheuttaisi virheen.
 
 Headless-suoritus tapahtuu seuraavasti:
 
@@ -288,19 +291,15 @@ jobs:
         uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: '3.14'
-      - name: Setup chromedriver
-        uses: nanasess/setup-chromedriver@master
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
       - name: Install dependencies
         run: uv sync
+      - name: Install Playwright browser
+        run: uv run rfbrowser install --with-deps chromium
       - name: Run robot tests
         run: bash run_robot_tests.sh
 ```
 
-Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista suoritetaan valmiiksi määritelty Action [setup-chromedriver](https://github.com/nanasess/setup-chromedriver), joka asentaa ChromeDriverin GitHub Actionin käyttöön.
+Ennen viimeisessä askeleessa tapahtuvaa testien suorittamista asennetaan testien käyttämä Chromium-selain. Valitsin `--with-deps` asentaa myös selaimen tarvitsemat käyttöjärjestelmän kirjastot. Koska testit suoritetaan GitHub Actionissa headless-tilassa, mitään näyttöä tai ajuria ei tarvita.
 
 Jotta sovelluksen testit voidaan suorittaa GitHub Actionissa, tulee nämä askeleet suorittaa komentorivikomennoilla. 
 
@@ -334,7 +333,7 @@ kill $(lsof -t -i:5001)
 exit $status
 ```
 
-<input type="checkbox"> Lisää  `run_robot_tests.sh` projektiisi.
+<input type="checkbox"> Varmista, että  `run_robot_tests.sh` on mukana projektissasi.
 
 <input type="checkbox"> Pushaa tehtävän repositorio GitHubiin ja varmista, että GitHub Actions suorittaa testit onnistuneesti.
 
@@ -344,7 +343,7 @@ Sovellus voi näyttää laajennuksen jälkeen seuraavalta:
 
 ![]({{ "/images/webcounter2.png" | relative_url }}){:height="240px" }
 
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-browser-kirjasto-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Browser-kirjasto löytää sivun elementit.
 
 Ohjeita lomakkeen käsittelyyn kurssin [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/osa3/) materiaalissa. **HUOM:** lomakkeen datan vastaanottamisen jälkeen tulee tehdä `redirect`, samoin kuin nappien painallusten käsittelyssä, ks. [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
@@ -356,10 +355,10 @@ Jos lomakkeessa on käytössä syötekenttä, jonka attribuutti _name_ on arvolt
 <input type="text" name="value" />
 ```
 
-Robot-testi voi kirjoittaa kenttään arvon 10 avainsanan [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) avulla seuraavasti:
+Robot-testi voi kirjoittaa kenttään arvon 10 avainsanan [Fill Text](https://marketsquare.github.io/robotframework-browser/Browser.html#Fill%20Text) avulla seuraavasti:
 
 ```
-Input Text  value  10
+Fill Text  input[name="value"]  10
 ```
 
 <input type="checkbox"> Korjaa vielä testejä siten, että jokainen testitiedosto aloitetaan tilanteesta, missä laskurin arvo on nolla.
@@ -373,7 +372,7 @@ On todennäköistä, että testien tekemisen aikana tulee ongelmia, joiden selvi
 - Onko vika testissä, eli toimiiko sovellus kuten pitääkin? Voit esimerkiksi testata sovelluksen toimivuuden manuaalisesti. Jos näin on, keskity testin korjaamiseen
 - Onko vika sovelluksessa, eli eikö manuaalisesti testattu sovellus toimi kuten pitäisi? Jos näin on, keskity tarkastelemaan ohjelman suoritusta epäonnistuneessa testitapauksessa
 
-Jos testit eivät mene läpi, generoi Selenium hakemistoon kuvakaappauksen tilanteesta, siitä tilanteesta, joissa testi havaitsee ongelman. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
+Jos testit eivät mene läpi, ottaa Browser-kirjasto kuvakaappauksen siitä tilanteesta, jossa testi havaitsee ongelman. Kuvakaappaus näkyy testien suorituksen jälkeen syntyvässä raportissa _log.html_, ja se tallentuu myös hakemistoon _browser/screenshot_. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
 
 ![]({{ "/images/seleniumerror.png" | relative_url }}){:height="350px" }
 
@@ -383,10 +382,21 @@ Tutustutaan seuraavaksi muihin tekniikoihin, jotka helpottavat ja nopeuttavat vi
 
 #### Suoritettavien testien lukumäärän rajoittaminen
 
-Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Jos testitapaus `Login With Correct Credentials` epäonnistuu, voimme suorittaa ainoastaan sen seuraavalla komennolla:
+Kun kohtaat epäonnistuvan testitapauksen, kannattaa testien suorittamista nopeuttaa suorittamalla vain epäonnistunut testitapaus. Oletetaan, että olet tehnyt tehtävässä 4 laskurin arvon asettamiselle tiedostoon _set.robot_ seuraavan testin:
+
+```robot
+When counter is set to 10 the value is ten
+    Go To  ${HOME_URL}
+    Click  button >> text=Paina
+    Fill Text  input[name="value"]  10
+    Click  button >> text=Aseta
+    Get Text  body  *=  nappia painettu 10 kertaa
+```
+
+Jos testi epäonnistuu, voimme suorittaa ainoastaan sen seuraavalla komennolla:
 
 ```
-robot -t "Login With Correct Credentials" src/tests/login.robot
+robot -t "When counter is set to 10 the value is ten" src/tests/set.robot
 ```
 
 Komennolle `robot` annetaan siis `-t`-valitsimen avulla suoritettavan testitapauksen nimi ja tiedosto, jossa testitapaus sijaitsee.
@@ -395,70 +405,72 @@ Komennolle `robot` annetaan siis `-t`-valitsimen avulla suoritettavan testitapau
 
 Jos virheen löytäminen pelkän manuaalisen testauksen avulla ei tuota tulosta, kannattaa tutkia miten ohjelman suoritus etenee. Ensin on jollain tavalla rajattava, missä ongelma saattaisi olla. Vanha hyvä kikka eli komennolla _print_ tehtävät aputulostukset vievät jo pitkälle. 
 
-Joissain tapauksissa saatetaan tarvita järeämpiä keinoja. Oletetaan, että  `Login With Correct Credentials`-testitapaus epäonnistuu. Ongelma on luultavasti `UserService`-luokan metodissa `check_credentials`. Voimme pysäyttää ohjelman suorituksen halutulle riville hyödyntämällä [pdb](https://docs.python.org/3/library/pdb.html)-moduulia:
+Joissain tapauksissa saatetaan tarvita järeämpiä keinoja. Oletetaan, että edellisen esimerkin testi epäonnistuu, ja sivulla lukee _nappia painettu 11 kertaa_. Ongelma on luultavasti arvon asettavassa reitinkäsittelijässä. Voimme pysäyttää ohjelman suorituksen halutulle riville Pythonin sisäänrakennetun funktion `breakpoint` avulla, joka käynnistää [pdb](https://docs.python.org/3/library/pdb.html)-debuggerin:
 
 ```python
+from flask import Flask, redirect, render_template, request
+from counter import Counter
+
+app = Flask(__name__)
+cnt = Counter()
+
 # ...
-# debugattavaan tiedostoon tulee tuoda tarvittavat moduulit
-import sys, pdb
 
-class UserService:
-    def __init__(self, user_repository):
-        self._user_repository = user_repository
-
-    def check_credentials(self, username, password):
-        # pysäytetään ohjelman suoritus tälle riville
-        pdb.Pdb(stdout=sys.__stdout__).set_trace()
-
-        if not username or not password:
-            raise UserInputError("Username and password are required")
-
-        user = self._user_repository.find_by_username(username)
-
-        if not user or user.password != password:
-            raise AuthenticationError("Invalid username or password")
-
-        return user
-
-    # ...
+@app.route("/set", methods=["POST"])
+def set_value():
+    value = int(request.form["value"])
+    # pysäytetään ohjelman suoritus tälle riville
+    breakpoint()
+    cnt.increment(value)
+    return redirect("/")
 ```
 
-Ohjelman suorituksen pysäyttäminen onnistuu siis kutsumalla `Pdb`-luokan metodia `set_trace`. Jotta tulosteet tulisivat näkyviin testien suorituksen aikana, tulee luokan konstruktorin `stdout` argumentin arvoksi asettaa `sys.__stdout__`. Tätä varten debugattavaan tiedostoon tulee tuoda `pdb`-moduulin lisäksi `sys`-moduuli, joka tapahtuu esimerkissä `import sys, pdb`-rivillä.
-
-Käynnistä nyt ohjelma uudelleen, jotta muutokset koodiin astuvat voimaan. Suorita sen jälkeen pelkästään `Login With Correct Credentials`-testitapaus edellä mainitun ohjeen mukaisesti. Kun testitapauksen suoritus saavuttaa `check_credentials`-metodin kutsun, koodin suoritus pysähtyy ja palvelinta suorittavalle komentoriville ilmestyy seuraavanlainen komentorivi:
+Käynnistä nyt sovellus uudelleen, jotta muutokset koodiin astuvat voimaan. Suorita sen jälkeen pelkästään epäonnistuva testitapaus edellä mainitun ohjeen mukaisesti. Kun testin painallus saa aikaan POST-pyynnön reitille _/set_, koodin suoritus pysähtyy ja **sovellusta suorittavaan** terminaaliin ilmestyy seuraavanlainen komentorivi:
 
 ```
--> if not username or not password:
+> /polku/webcounter/src/app.py(20)set_value()
+-> breakpoint()
 (Pdb)
 ```
 
-Kyseessä on interaktiivinen komentorivi, jossa voimme suorittaa koodia. Nuoli (`->`) viittaa seuraavaksi suoritettavaan koodiriivin. Katsotaan komentorivin avulla, mitkä ovat muuttujien `username` ja `password` arvot:
+Kyseessä on interaktiivinen komentorivi, jossa voimme suorittaa koodia. Nuoli (`->`) osoittaa riviä, jolla suoritus on. Katsotaan, mitkä ovat muuttujan `value` ja laskurin arvot:
 
 ```
-(Pdb) username
-'kalle'
-(Pdb) password
-'kalle123'
-(Pdb)
+(Pdb) value
+10
+(Pdb) cnt.value
+1
 ```
 
-Annamme siis komentoriville syötteen ja painamme Enter-painiketta. Jatketaan koodin suorittamista antamalla syöte `next()`. Koodi on ohittanut `if`-lauseen (koska muuttujilla oli arvot) ja on seuraavaksi suorittamassa riviä `user = self._user_repository.find_by_username(username)`:
+Annamme siis komentoriville syötteen ja painamme Enter-painiketta. Lomakkeelta tullut arvo on siis oikein, ja laskurin arvo on testin painalluksen jälkeen 1, kuten pitääkin. Edetään koodissa rivi kerrallaan komennolla `next`:
 
 ```
--> user = self._user_repository.find_by_username(username)
-(Pdb)
+(Pdb) next
+> /polku/webcounter/src/app.py(21)set_value()
+-> cnt.increment(value)
+(Pdb) next
+> /polku/webcounter/src/app.py(22)set_value()
+-> return redirect("/")
+(Pdb) cnt.value
+11
 ```
 
-Suoritetaan rivi syöttämällä uudestaan `next()` ja tulostetaan `user`-muuttujan arvo:
+Vika löytyi: metodi `increment` kasvattaa laskurin arvoa annetulla määrällä, vaikka arvo pitäisi asettaa.
 
-```
--> if not user or user.password != password:
-(Pdb) user
-<entities.user.User object at 0x10f7a55e0>
-```
+Tärkeimmät pdb:n komennot ovat:
 
-Kun olet lopettanut debuggaamiseen, syötä `exit()` ja poista koodista `set_trace`-metodin kutsu.
+| komento | toiminto |
+| ------- | -------- |
+| `next` (tai `n`) | suorittaa seuraavan rivin |
+| `step` (tai `s`) | suorittaa seuraavan rivin ja menee funktiokutsun sisään |
+| `list` (tai `l`) | näyttää koodia nykyisen rivin ympäriltä |
+| `continue` (tai `c`) | jatkaa suoritusta seuraavaan pysähdyskohtaan asti |
 
+Muuttujan tai lausekkeen arvon saa näkyviin kirjoittamalla sen komentoriville. Jos muuttujan nimi on sama kuin jokin pdb:n komennoista, esim. `n` tai `c`, käytä muotoa `p n`.
+
+Kun olet lopettanut debuggaamisen, anna komento `continue` ja poista koodista `breakpoint`-kutsu.
+
+> **Huom:** Browser-kirjasto odottaa esim. avainsanan `Get Text` ehdon toteutumista oletusarvoisesti korkeintaan 10 sekuntia. Jos debuggaat tätä kauemmin, testi epäonnistuu aikakatkaisuun. Tästä ei ole haittaa, sillä debuggauksen tarkoituksena on selvittää, mitä sovelluksessa tapahtuu. Suorita testi uudelleen, kun olet korjannut vian.
 
 ### 5. WebLogin, osa 1
 
@@ -487,7 +499,7 @@ Eräs huomionarvoinen seikka on se, että `UserService`-olio ei tallenna muistii
 
 #### Suunnittelumalli Repository
 
-Tietoon kohdistuvien operaatioiden eriyttämiseen sovelluslogiikasta on olemassa useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
+Tietoon kohdistuvien operaatioiden eriyttämiseen sovelluslogiikasta on olemassa useita _suunnittelumalleja_, kuten [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object), [Active Record](https://en.wikipedia.org/wiki/Active_record_pattern) ja [Repository](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design). Kaikkien näiden suunnittelumallien perimmäinen idea on siinä, että sovelluslogiikalta tulee piilottaa tietoon kohdistuvien operaatioiden yksityiskohdat.
 
 Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien, kuten `find_all`, `create` ja `delete` kautta. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
 
@@ -554,38 +566,33 @@ Tutustutaan aluksi testitapauksien yhteisiin asetuksiin ja avainsanoihin, jotka 
 
 ```robot
 *** Settings ***
-Library  SeleniumLibrary
+Library  Browser
 Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}        localhost:5001
-${DELAY}         0.5 seconds
+${DELAY}         500ms
 ${HOME_URL}      http://${SERVER}
 ${LOGIN_URL}     http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
-${BROWSER}       chrome
+${BROWSER}       chromium
 ${HEADLESS}      false
 
 *** Keywords ***
 Open And Configure Browser
-    IF  $BROWSER == 'chrome'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
-    ELSE IF  $BROWSER == 'firefox'
-        ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-    END
     IF  $HEADLESS == 'true'
-        Set Selenium Speed  0.05 seconds
-        Call Method  ${options}  add_argument  --headless
+        New Browser  browser=${BROWSER}  headless=True
     ELSE
-        Set Selenium Speed  ${DELAY}
+        New Browser  browser=${BROWSER}  headless=False  slowMo=${DELAY}
     END
-    Open Browser  browser=${BROWSER}  options=${options}
+    New Context
+    New Page  about:blank
 
 Login Page Should Be Open
-    Title Should Be  Login
+    Get Title  ==  Login
 
 Main Page Should Be Open
-    Title Should Be  Ohtu Application main page
+    Get Title  ==  Ohtu Application main page
 
 Go To Login Page
     Go To  ${LOGIN_URL}
@@ -593,11 +600,11 @@ Go To Login Page
 ```
 
 Tiedoston sisältö on samankaltainen kuin edellisissä tehtävissä. Tällä kertaa
-`*** Settings ***` osiossa on otettu SeleniumLibrary-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee kaksi projektissa tarvittavaa avainsanaa, `Reset Application` ja `Create User`.
+`*** Settings ***` osiossa on otettu Browser-kirjaston lisäksi käyttöön myös projektin oma `AppLibrary.py`-kirjasto, joka määrittelee kaksi projektissa tarvittavaa avainsanaa, `Reset Application` ja `Create User`.
 
 `*** Keywords ***`-osiossa on määritelty myös muutama yleiskäyttöinen avainsana:
-- `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Title Should Be](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Title%20Should%20Be) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa
-- `Go To Login Page` -avainsana käyttää [Go To](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
+- `Login Page Should Be Open` ja `Main Page Should Be Open`, joiden tarkoitus on tarkistaa, että käyttäjä on oikealla sivulla. Ne käyttävät [Get Title](https://marketsquare.github.io/robotframework-browser/Browser.html#Get%20Title) -avainsanaa, joka tarkistaa HTML-sivun [title](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/title)-elementin arvon. Title-elementin arvon sijaan voisimme esimerkiksi tarkistaa, että sivulta löytyy tietty teksti käyttämällä [Get Text](https://marketsquare.github.io/robotframework-browser/Browser.html#Get%20Text) -avainsanaa
+- `Go To Login Page` -avainsana käyttää [Go To](https://marketsquare.github.io/robotframework-browser/Browser.html#Go%20To) -avainsanaa avatakseen selaimessa kirjautumis-sivun, jonka URL on tallennettu `LOGIN_URL`-muuttujaan
 
 Tutustutaan seuraavaksi itse testitapauksiin avaamalla tiedosto `src/tests/login.robot`. Tiedoston `*** Settings ***`-osio on seuraava:
 
@@ -614,11 +621,11 @@ Edellisten tehtävien testien lisäksi nyt on käytössä myös `Test Setup`, jo
 Tiedoston `*** Keywords ***` osiossa on testitapausten käyttämiä avainsanoja:
 
 - `Login Should Succeed` -avainsana tarkastaa, että käyttäjä on siirtynyt oikealla sivulle onnistuneen kirjautumisen jälkeen
-- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Page Should Contain](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain) -avainsanaa, joka tarkistaa, että sivulta löytyy haluttu teksti
-- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Input Text](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Text) - ja [Input Password](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Input%20Password) -avainsanoja (huomaa, että salasanan kenttä ei ole tavallinen tekstikenttä, vaan salasanakenttä)
+- `Login Should Fail With Message` -avainsana tarkastaa, että käyttäjä on kirjautumissivulla ja että sivulta löytyy tietty virheviesti. Tarkastuksessa käytetään [Get Text](https://marketsquare.github.io/robotframework-browser/Browser.html#Get%20Text) -avainsanaa operaattorilla `*=`, joka tarkistaa, että sivulta löytyy haluttu teksti
+- `Set Username`- ja `Set Password` -avainsanat syöttävät annetut arvot tiettyihin kenttiin käyttämällä [Fill Text](https://marketsquare.github.io/robotframework-browser/Browser.html#Fill%20Text) - ja [Fill Secret](https://marketsquare.github.io/robotframework-browser/Browser.html#Fill%20Secret) -avainsanoja. Kentät löydetään niiden `id`-attribuutin perusteella selektoreilla `id=username` ja `id=password`. Fill Secret toimii kuten Fill Text, mutta se ei kirjoita syötettyä arvoa testien lokiin. Tämän takia arvo annetaan sille muodossa `$password` eikä `${password}`
 - ` Reset Application Create User And Go To Login Page` -avainsana tyhjentää sovelluksen "tietokannan" eli sinne luodut käyttäjät, luo sovellukseen uuden käyttäjän ja avaa kirjautumissivun
 
-Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit.
+Kertaa tarvittaessa [täältä](/tehtavat3/#miten-browser-kirjasto-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Browser-kirjasto löytää sivun elementit.
 
 <input type="checkbox"> Tee nyt uusi tiedosto `home.robot` ja lisää sinne seuraavat testitapaukset:
 
@@ -631,11 +638,11 @@ Test Setup      Reset Application And Go To Starting Page
 
 *** Test Cases ***
 Click Login Link
-    Click Link  Login
+    Click  text=Login
     Login Page Should Be Open
 
 Click Register Link
-    Click Link  Register new user
+    Click  text=Register new user
     Register Page Should Be Open
 
 *** Keywords ***
@@ -645,7 +652,7 @@ Reset Application And Go To Starting Page
   Go To Starting Page
 ```
 
-Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click Link](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Click%20Link) -avainsanaa. 
+Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkien painaminen avaa oikean sivun. Linkkien klikkaus tapahtuu käyttämällä valmiiksi määriteltyä [Click](https://marketsquare.github.io/robotframework-browser/Browser.html#Click) -avainsanaa, jolle linkki yksilöidään sen tekstin perusteella selektorilla `text=...`. 
 
 <input type="checkbox"> Suorita testit
 
@@ -771,23 +778,13 @@ Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i
 
 **Pro tips**:
 - Etene yksi testitapaus ja sen toteuttama koodi kerrallaan
-- Kertaa tarvittaessa [täältä](/tehtavat3/#miten-selenium-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Selenium löytää sivun elementit
+- Kertaa tarvittaessa [täältä](/tehtavat3/#miten-browser-kirjasto-l%C3%B6yt%C3%A4%C3%A4-sivun-elementit) se miten Browser-kirjasto löytää sivun elementit
 - Ota mallia kirjautumisen testeistä!
 - Muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen)
 
-### 8. Retrospektiivitekniikat
+### 8. Agentti ja hyväksymistestit [tekoäly]
 
-Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
-
-<input type="checkbox"> Tutustu [täällä](http://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](http://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](http://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
-
-<input type="checkbox"> Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
-
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jotain tekniikkaa noudattavan retrospektiivin!
-
-### 9. Agentti ja hyväksymistestit [tekoäly]
-
-Jatketaan viikon 2 [tehtävässä 14](/tehtavat2/#14-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
+Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
 
 Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
 
@@ -848,6 +845,15 @@ Kerro raportissa
 - Hajosivatko testit, kun rikoit toteutuksen tarkoituksella?
 - Mitä uutta opit?
 
+### 9. Retrospektiivitekniikat
+
+Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
+
+<input type="checkbox"> Tutustu [täällä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
+
+<input type="checkbox"> Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
+
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jotain tekniikkaa noudattavan retrospektiivin!
 
 ### Tehtävien palautus
 
