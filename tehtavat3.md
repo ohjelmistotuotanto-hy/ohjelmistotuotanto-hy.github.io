@@ -370,9 +370,9 @@ On todennäköistä, että testien tekemisen aikana tulee ongelmia, joiden selvi
 - Onko vika testissä, eli toimiiko sovellus kuten pitääkin? Voit esimerkiksi testata sovelluksen toimivuuden manuaalisesti. Jos näin on, keskity testin korjaamiseen
 - Onko vika sovelluksessa, eli eikö manuaalisesti testattu sovellus toimi kuten pitäisi? Jos näin on, keskity tarkastelemaan ohjelman suoritusta epäonnistuneessa testitapauksessa
 
-Jos testit eivät mene läpi, ottaa Browser-kirjasto kuvakaappauksen siitä tilanteesta, jossa testi havaitsee ongelman. Kuvakaappaus näkyy testien suorituksen jälkeen syntyvässä raportissa _log.html_, ja se tallentuu myös hakemistoon _browser/screenshot_. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
+Jos testit eivät mene läpi, ottaa Browser-kirjasto kuvakaappauksen siitä tilanteesta, jossa testi havaitsee ongelman. Kuvakaappaus löytyy testien suorituksen jälkeen syntyvästä testiraportista tarkentamalla epäonnistuneen testin raporttiin. Tämän viikon tehtävää 7 tehdessäni törmäsin seuraavaan:
 
-![]({{ "/images/seleniumerror.png" | relative_url }}){:height="350px" }
+![]({{ "/images/errormsg.png" | relative_url }}){:height="350px" }
 
 Tässä tapauksessa ongelma oli erittäin helppo korjata.
 

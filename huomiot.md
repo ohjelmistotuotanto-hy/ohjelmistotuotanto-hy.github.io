@@ -219,6 +219,5 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 
 ## Tehtäviä koskevat huomiot
 
-- **tehtavat3.md:** kuva _images/seleniumerror.png_ (debuggausosio) on Selenium-ajalta. Tilalle kannattaa ottaa Browser-kirjaston kuvakaappaus raportista _log.html_.
 - **pylint.md** ja siihen viittaavat tehtävät: Ruff Pylintin tilalle tai rinnalle.
 - **sisallys.md:** osan 4 linkeissä on 13 vanhentunutta `viikko-5`-ankkuria, vaikka luvut on nykyään merkitty viikolle 6. Lisäksi osa5:n linkeissä on kaksi rikkinäistä ankkuria (työntekijöiden tarpeeton liikkuminen, muu tiimien välinen koordinointi).
