@@ -9,9 +9,7 @@ permalink: /tehtavat4/
 
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-4 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 5 tutustutaan Gitin tägeihin. Tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä tekoälyagentin kanssa.
-
-Viikon loppuun on lisätty vapaaehtoinen tehtävä, missä ostoskori ohjelmoidaan TDD:llä kokonaan itse. Tehtävän 6 pohjana on sama ostoskori.
+Tehtävissä 1-3 ja 5 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 4 siistitään testikoodia tekoälyagentin avulla ja tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä agentin kanssa. Tehtävässä 7 tutustutaan Gitin tägeihin.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -166,7 +164,7 @@ Ostokset aloitetaan tekemällä metodikutsu `aloita_ostokset`. Tämän jälkeen 
 
 Kauppa tekee veloituksen käyttäen tuntemaansa luokan `Pankki` oliota. Viitenumerona käytetään luokan `Viitegeneraattori` generoimaa numeroa. Sovelluksen rakenne siis näyttää seuraavalta:
 
-![]({{ "/images/kauppa.png" | relative_url }}){:height="200px" }
+![]({{ "/images/kauppa.png" | relative_url }}){:height="220px" }
 
 Projektiin on kirjoitettu kuusi `Mock`-luokkaa hyödyntävää testiä. Testit varmistavat, että kauppa tekee ostoksiin liittyvän veloituksen oikein, eli että se kutsuu `Pankki`-luokan metodia `maksa` oikeilla parametreilla, ja että jokaiselle laskutukselle on kysytty viitenumero `Viitegeneraattori`-luokan metodilta `uusi`. Testit siis eivät kohdistu kauppa-olion tilaan vaan sen muiden olioiden kanssa käymän interaktion oikeellisuuteen. Testeissä kaupan riippuvuudet (`Pankki` ja `Viitegeneraattori`) on määritelty `Mock`-olioina.
 
@@ -184,7 +182,7 @@ def test_kutsutaan_pankkia_oikealla_tilinumerolla_ja_summalla(self):
     kauppa.lisaa_ostos(5)
     kauppa.maksa("1111")
 
-    # katsotaan, että ensimmäisen ja toisen parametrin arvo on oikea
+    # varmistetaan, että ensimmäisen ja toisen parametrin arvo on oikea
     pankki_mock.maksa.assert_called_with("1111", 10, ANY)
 ```
 
@@ -207,7 +205,7 @@ Testi tarkastaa, että kaupalle tehdyt metodikutsut aiheuttavat sen, että panki
 pankki_mock.maksa.assert_called_with("1111", 10, ANY)
 ```
 
-Kuten edellisistä esimerkeistä käy ilmi, `Mock`-olioiden metodikutsuille voi määrittää palautettavat arvot. Seuraavassa määritellään, että viitegeneraattori palauttaa arvon `55` kun sen metodia `uusi` kutsutaan:
+Kuten edellisistä esimerkeistä käy ilmi, `Mock`-olioiden metodikutsuille voi määrittää palautettavat arvot. Seuraavassa testissä määritellään, että viitegeneraattori palauttaa arvon `55` kun sen metodia `uusi` kutsutaan:
 
 ```python
 def test_kaytetaan_maksussa_palautettua_viitetta(self):
@@ -224,7 +222,7 @@ def test_kaytetaan_maksussa_palautettua_viitetta(self):
     kauppa.lisaa_ostos(5)
     kauppa.maksa("1111")
 
-    # katsotaan, että kolmannen parametrin arvo on oikea
+    # tarkistetaan, että kolmannen parametrin arvo on oikea
     pankki_mock.maksa.assert_called_with(ANY, ANY, 55)
 ```
 
@@ -250,7 +248,7 @@ Voit tutustua aiheeseen tarkemmin lukemalla mock-kirjaston [dokumentaatiota](htt
 
 Kopioi projekti palautusrepositorioosi, hakemiston viikko4 sisälle.
 
-Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin joillekin tuttu [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-25.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate).
+Tässä tehtävässä on tarkoitus testata ja täydentää luokkaa `Kassapaate`, jonka hieman kehittyneempi versio lienee ainakin joillekin tuttu [Ohjelmoinnin jatkokurssilta](https://ohjelmointi-26.mooc.fi/osa-9/1-oliot-ja-viittaukset#programming-exercise-maksukortti-ja-kassapaate).
 
 **Maksukortin koodiin ei tehtävässä saa koskea ollenkaan! Testeissä ei myöskään ole tarkoitus luoda konkreettisia instansseja maksukortista, testien tarvitsemat kortit tulee luoda mock-kirjaston avulla.**
 
@@ -313,15 +311,15 @@ Toinen testi varmistaa, että jos kortilla ei ole riittävästi rahaa, kassapä�
 
 Ohjelma sisältää nyt hieman enemmän luokkia ja toiminnallisuus on monimutkaisempi. `Kauppa` hallinnoi kutakin ostostapahtumaa luokan `Ostoskori` olioina. Ostoskoriin laitetaan `Tuote`-olioita, jotka kuvaavat myynnissä olevia tuotteita. `Varasto` hallinnoi kaupan tuotevalikomaa. Yksinkertaisemman esimerkin tapaan kauppaan liittyy myös maksuliikenteen hoitava `Pankki` sekä `Viitegeneraattori`. Ohjelman rakenne luokkakaaviona:
 
-![]({{ "/images/kauppa2.png" | relative_url }}){:height="330px" }
+![]({{ "/images/kauppa2.png" | relative_url }}){:height="450px" }
 
 <input type="checkbox"> Tutustu koodiin. 
 
-<input type="checkbox"> Piirrä _sekvenssikaavio_, joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran). Kaaviota ei tarvitse palauttaa
+<input type="checkbox"> Piirrä [sekvenssikaavio](https://ohjelmistotekniikka-hy.github.io/python/viikko3#sekvenssikaaviot), joka kuvaa tiedostossa `src/index.py` olevan pääohjelman toimintaa (ensimmäisen ostostapahtuman verran). Kaaviota ei tarvitse palauttaa
 
 Luokalle `Kauppa` injektoidaan konstruktorissa `Pankki`-, `Viitelaskuri`- ja `Varasto`-oliot.  Näistä on tehty testeissä Mock-kirjaston avulla mockatut versiot.
 
-Seuraavassa esimerkkinä testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
+Ohjelmassa on valmiina testi, joka testaa, että ostostapahtuman jälkeen pankin metodia `tilisiirto` on kutsuttu:
 
 ```python
 import unittest
@@ -369,7 +367,7 @@ class TestKauppa(unittest.TestCase):
         # toistaiseksi ei välitetä kutsuun liittyvistä argumenteista
 ```
 
-<input type="checkbox"> Varmista, että saat testit suoritettua.
+<input type="checkbox"> Varmista, että testin suoritus onnistuu.
 
 Tee tämän jälkeen seuraavat testit:
 
@@ -383,7 +381,9 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 <input type="checkbox">  Aloitetaan asiointi, koriin lisätään _tuote, jota on varastossa tarpeeksi ja tuote joka on loppu_ ja suoritetaan ostos, varmista että kutsutaan pankin metodia `tilisiirto` oikealla asiakkaalla, tilinumerolla ja summalla
 
-Muista, että kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka toistetaan ennen jokaista testiä:
+### 4. Testikoodin siistiminen agentin avulla [tekoäly]
+
+Tehtävän 3 testeihin on todennäköisesti kertynyt paljon toisteisuutta, sillä jokainen testi luo samat mockit ja määrittelee niille samat toteutukset. Kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka suoritetaan ennen jokaista testiä:
 
 ```python
 class TestKauppa(unittest.TestCase):
@@ -392,11 +392,26 @@ class TestKauppa(unittest.TestCase):
         # ...
 ```
 
-### 4. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 4
+<input type="checkbox"> Pyydä tekoälyagenttia siistimään testikoodi poistamalla siitä toisteisuus siirtämällä yhteiset alustukset `setUp`-metodiin. Testien toiminnallisuus ei saa muuttua
 
-Jatketaan edellisen tehtävän koodin testaamista
+<input type="checkbox"> Lue agentin tekemät muutokset (`git diff`) ja varmista, että testit menevät edelleen läpi.
 
-<input type="checkbox">  Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa), katso tarvittaessa apua [tehtävän 1](/tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä!
+Parantele halutessasi agentin aikaansaannosta, joko itse tai pyytämällä agentilta muutoksia.
+
+<input type="checkbox"> Kirjoita lyhyt reflektio kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _setup_ai.md_
+
+Kerro reflektiossa
+- Poistiko agentti toisteisuuden mielestäsi järkevästi? Onko testikoodi nyt helpommin luettavaa?
+- Muuttiko agentti testien toiminnallisuutta, esim. poistiko tai heikensikö se tarkistuksia (`assert_called_with` vs. `assert_called`)?
+- Jouduitko korjaamaan agentin tekemiä muutoksia itse tai pyytämään siltä muutoksia? Mitä ja miksi?
+
+### 5. Yksikkötestaus ja riippuvuudet: mock-kirjasto, osa 4
+
+Jatketaan tehtävän 3 koodin testaamista
+
+<input type="checkbox">  Varmista, että metodin `aloita_asiointi` kutsuminen nollaa edellisen ostoksen tiedot (eli edellisen ostoksen hinta ei näy uuden ostoksen hinnassa)
+
+Katso tarvittaessa apua [tehtävän 1](/tehtavat4/#1-yksikkötestaus-ja-riippuvuudet-mock-kirjasto-osa-1) projektin mock-demo testeistä, jotka käyttävät mockin attribuuttia [call_args_list](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.call_args_list), joka sisältää listan kaikista mockille tehdyistä kutsuista parametreineen.
 
 <input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle. Apua löytyy jälleen tarpeen tullen mock-demon testeistä.
 
@@ -410,7 +425,280 @@ Jotain taitaa puuttua.
 
 Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esimerkiksi verkkokauppaesimerkissä luokka `Pankki`, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
 
-### 5. git: tägit [versionhallinta]
+### 6. TDD agentin kanssa [tekoäly]
+
+Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
+
+Tehtävässä ohjelmoidaan verkkokaupan ostoskori testivetoisesti, siten että työ jaetaan ihmisen ja agentin kesken.
+
+<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/tdd-ostoskori_ oleva projekti ja kopioi se palautusrepositorioosi hakemiston _viikko4_ sisälle
+
+Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
+
+![]({{ "/images/ostoskori.png" | relative_url }}){:height="150px" }
+
+Ostoskori siis sisältää _ostoksia_, joista jokainen vastaa yhtä tiettyä tuotetta.
+
+Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
+
+```python
+class Tuote:
+  def __init__(self, nimi: str, hinta: int):
+      self._nimi = nimi
+      self._hinta = hinta
+      self._saldo = 0
+
+  def hinta(self):
+    return self._hinta
+
+  def nimi(self):
+    return self._nimi
+
+  def __repr__(self):
+      return f"{self._nimi} hinta {self._hinta} euroa"
+```
+
+Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
+
+**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon, sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
+
+```python
+from tuote import Tuote
+
+class Ostos:
+    def __init__(self, tuote: Tuote):
+        self.tuote = tuote
+        self._lukumaara = 1
+
+    def tuotteen_nimi(self):
+        return self.tuote.nimi()
+
+    def muuta_lukumaaraa(self, muutos: int):
+        self._lukumaara += muutos
+        if self._lukumaara < 0:
+            self._lukumaara = 0
+
+    def lukumaara(self):
+        return self._lukumaara
+
+    def hinta(self):
+        return self._lukumaara * self.tuote.hinta()
+```
+
+Tehtävänä on nyt ohjelmoida luokka `Ostoskori`.
+
+Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
+
+```python
+from tuote import Tuote
+from ostos import Ostos
+
+class Ostoskori:
+    def __init__(self):
+        pass
+        # ostoskori tallettaa Ostos-oliota, yhden per korissa oleva Tuote
+
+    def tavaroita_korissa(self):
+        pass
+        # kertoo korissa olevien tavaroiden lukumäärän
+        # jos koriin lisätty 2 kpl tuotetta "maito",
+        #   tulee metodin palauttaa 2
+        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto",
+        #   tulee metodin palauttaa 2
+
+    def hinta(self):
+        return 0
+        # kertoo korissa olevien ostosten yhteenlasketun hinnan
+
+    def lisaa_tuote(self, lisattava: Tuote):
+        # lisää tuotteen
+        pass
+
+    def poista_tuote(self, poistettava: Tuote):
+        # poistaa tuotteen
+        pass
+
+    def tyhjenna(self):
+        pass
+        # tyhjentää ostoskorin
+
+    def ostokset(self):
+        pass
+        # palauttaa listan jossa on korissa olevat ostos-oliot
+        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse
+        #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
+```
+
+**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
+
+![]({{ "/images/ostoskori.png" | relative_url }}){:height="150px" }
+
+Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
+
+Ostoskori ohjelmoidaan [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikalla. Oikeaoppinen TDD etenee seuraavasti:
+
+- Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
+- Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
+- Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
+- Jatketaan askeleesta 1
+
+**Ostoskorin askeleet**
+
+Ostoskori rakennetaan seuraavina askelina, jokaisella askeleella ensin testi ja sitten testin läpäisevä koodi. Pidä _kaikki_ testit koko ajan toimivina, eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi. Askeleet tehdään alempana olevien osien A ja B ohjeiden mukaan.
+
+**1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
+
+Tehtäväpohjassa on yksi valmis testi
+
+```python
+class TestOstoskori(unittest.TestCase):
+    def setUp(self):
+        self.kori = Ostoskori()
+
+    # step 1
+    def test_ostoskorin_hinta_ja_tavaroiden_maara_alussa(self):
+        self.assertEqual(self.kori.hinta(), 0)
+```
+
+Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo).
+
+**2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
+
+**Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
+
+```python
+class TestOstoskori(unittest.TestCase):
+    def setUp(self):
+        self.kori = Ostoskori()
+
+    # step 1
+    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
+        self.assertEqual(self.kori.hinta(), 0)
+        # ...
+
+    # step 2
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_tavara(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+
+        # ...
+```
+
+**Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
+
+**3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
+
+**4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
+
+**5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa**
+
+**6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
+
+**7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta**
+
+**8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
+
+tässä testataan ostoskorin metodia `ostokset`:
+
+```python
+    # step 8
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+
+        ostokset = self.kori.ostokset()
+
+        # testaa että metodin palauttaman listan pituus 1
+```
+
+**9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1**
+
+Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
+
+```python
+    # step 9
+    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+
+        ostos = self.kori.ostokset()[0]
+
+        # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
+```
+
+**10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta**
+
+**11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
+
+Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
+
+**12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
+
+**13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl**
+
+**14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä**
+
+Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
+
+**15. Metodi tyhjenna tyhjentää korin**
+
+**Agentin ohjeistus**
+
+<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
+
+<input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
+- testit suoritetaan komennolla `uv run pytest`
+- luokkia `Tuote` ja `Ostos` ei muuteta
+- **testitiedostoja ei saa muokata, ellei sitä erikseen pyydetä**
+- toteutetaan aina minimaalisin koodi, jolla testit saadaan menemään läpi
+
+<input type="checkbox"> Commitoi ohjetiedosto
+
+**Osa A: sinä kirjoitat testit, agentti koodaa**
+
+Tee askeleet 1-7 siten, että jokaisella askeleella
+
+<input type="checkbox" style="margin-left: 20px"> kirjoitat itse askeleen testin
+
+<input type="checkbox" style="margin-left: 20px"> varmistat, että testi ei mene läpi
+
+<input type="checkbox" style="margin-left: 20px"> pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
+
+<input type="checkbox" style="margin-left: 20px"> luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
+
+<input type="checkbox" style="margin-left: 20px"> commitoit muutoksen
+
+Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
+
+**Osa B: agentti kirjoittaa testit**
+
+<input type="checkbox"> Pyydä agenttia tekemään askeleet 8-12 TDD-tekniikalla, eli kirjoittamaan jokaiselle askeleelle ensin testi ja sitten toteutus. Anna agentille askelten kuvaukset tehtävänannosta
+
+<input type="checkbox"> Käy agentin kirjoittamat testit läpi. Testaavatko ne sitä, mitä askelten kuvaukset edellyttävät?
+
+Arvioi testien laatua istuttamalla koodiin bugeja:
+
+<input type="checkbox"> Tee ostoskorin koodiin **itse** ainakin kolme erilaista bugia, yksi kerrallaan. Esim. saman tuotteen toinen lisäys luo uuden ostoksen olemassa olevan päivittämisen sijaan, tai `ostokset` palauttaa aina tyhjän listan. Kirjaa ylös, huomasivatko testit bugin
+
+<input type="checkbox"> Jos jokin bugi jäi huomaamatta, lisää testi joko itse tai agentin avulla
+
+<input type="checkbox"> Palauta toimiva toteutus ja commitoi
+
+<input type="checkbox"> Voit halutessasi tehdä myös askeleet 13-15 haluamallasi tavalla
+
+<input type="checkbox"> Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu.
+
+Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _tdd_ai.md_
+
+Kerro raportissa
+- Pysyikö agentti osassa A minimitoteutuksessa, ja jättikö se testit rauhaan?
+- Yrittikö agentti missään vaiheessa "huijata", esim. kovakoodaamalla testin odottaman arvon?
+- Minkä bugeista testit huomasivat ja minkä eivät?
+- Kumpi työnjako, A vai B, tuntui paremmalta, ja miksi?
+
+### 7. git: tägit [versionhallinta]
 
 Tutustutaan tässä tehtävässä Gitin tageihin:
 
@@ -479,285 +767,4 @@ Date:   Sun Oct 29 14:02:52 2025 +0200
 
 Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista palata helposti koodissa julkaisun versioon.
 
-### 6. TDD agentin kanssa [tekoäly]
-
-Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
-
-Tehtävässä ohjelmoidaan viikon lopun [vapaaehtoisessa tehtävässä](#vapaaehtoinen-lisätehtävä-ostoskori-tdd-tekniikalla) kuvattu ostoskori testivetoisesti, mutta nyt työ jaetaan ihmisen ja agentin kesken. Lue ensin vapaaehtoisen tehtävän kuvaus kohtaan "Tee seuraavat testit..." asti, jotta tiedät mistä on kyse.
-
-<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa _viikko4/tdd-ostoskori_ oleva projekti ja kopioi se palautusrepositorioosi hakemiston _viikko4_ sisälle
-
-<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
-
-<input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
-- testit suoritetaan komennolla `uv run pytest`
-- luokkia `Tuote` ja `Ostos` ei muuteta
-- **testitiedostoja ei saa muokata, ellei sitä erikseen pyydetä**
-- toteutetaan aina minimaalisin koodi, jolla testit saadaan menemään läpi
-
-<input type="checkbox"> Commitoi ohjetiedosto
-
-**Osa A: sinä kirjoitat testit, agentti koodaa**
-
-Tee vapaaehtoisen tehtävän askeleet 1-7 siten, että jokaisella askeleella
-
-<input type="checkbox" style="margin-left: 20px"> kirjoitat itse askeleen testin
-
-<input type="checkbox" style="margin-left: 20px"> varmistat, että testi ei mene läpi
-
-<input type="checkbox" style="margin-left: 20px"> pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
-
-<input type="checkbox" style="margin-left: 20px"> luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
-
-<input type="checkbox" style="margin-left: 20px"> commitoit muutoksen
-
-Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
-
-**Osa B: agentti kirjoittaa testit**
-
-<input type="checkbox"> Pyydä agenttia tekemään askeleet 8-12 TDD-tekniikalla, eli kirjoittamaan jokaiselle askeleelle ensin testi ja sitten toteutus. Anna agentille askelten kuvaukset tehtävänannosta
-
-<input type="checkbox"> Käy agentin kirjoittamat testit läpi. Testaavatko ne sitä, mitä askelten kuvaukset edellyttävät?
-
-Arvioi testien laatua istuttamalla koodiin bugeja:
-
-<input type="checkbox"> Tee ostoskorin koodiin **itse** ainakin kolme erilaista bugia, yksi kerrallaan. Esim. saman tuotteen toinen lisäys luo uuden ostoksen olemassa olevan päivittämisen sijaan, tai `ostokset` palauttaa aina tyhjän listan. Kirjaa ylös, huomasivatko testit bugin
-
-<input type="checkbox"> Jos jokin bugi jäi huomaamatta, lisää testi joko itse tai agentin avulla
-
-<input type="checkbox"> Palauta toimiva toteutus ja commitoi
-
-<input type="checkbox"> Voit halutessasi tehdä myös askeleet 13-15 haluamallasi tavalla
-
-<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _tdd_ai.md_
-
-Kerro raportissa
-- Pysyikö agentti osassa A minimitoteutuksessa, ja jättikö se testit rauhaan?
-- Yrittikö agentti missään vaiheessa "huijata", esim. kovakoodaamalla testin odottaman arvon?
-- Minkä bugeista testit huomasivat ja minkä eivät?
-- Kumpi työnjako, A vai B, tuntui paremmalta, ja miksi?
-
 {% include submission_instructions.md %}
-
-### Vapaaehtoinen lisätehtävä: Ostoskori TDD-tekniikalla
-
-Jatketaan verkkokaupan parissa. 
-
-<input type="checkbox"> Hae [kurssirepositorion]({{site.python_exercise_repo_url}}) hakemistossa viikko4/tdd-ostoskori oleva projekti.
-
-Tässä tehtävässä muutamien luokkien toteutuksen logiikka on periaatteiltaan hieman erilainen kuin aiemmissa tehtävissä käsittelemässämme verkkokaupassa. Tehtävän fokuksessa on kolme luokkaa `Ostoskori`, `Ostos` ja `Tuote` joiden suhde on seuraava:
-
-![](https://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
-
-Ostoskori siis sisältää _ostoksia_, joista jokainen vastaa yhtä tiettyä tuotetta.
-
-Luokka `Tuote` on hyvin suoraviivainen. Tuotteesta tiedetään nimi, hinta ja varastosaldo (jota ei tosin käytetä mihinkään):
-
-```python
-class Tuote:
-  def __init__(self, nimi: str, hinta: int):
-      self._nimi = nimi
-      self._hinta = hinta
-      self._saldo = 0
-
-  def hinta(self):
-    return self._hinta
-
-  def nimi(self):
-    return self._nimi
-
-  def __repr__(self):
-      return f"{self._nimi} hinta {self._hinta} euroa"
-```
-
-Tuote siis kuvaa yhden tuotteen esim. _Valion Plusmaito_ tiedot (nimi, hinta ja varastosaldo, tuotteella voisi olla myös esim. kuvaus ja muita sitä luonnehtivia kenttiä).
-
-**Ostoskoriin ei laiteta tuotteita vaan Ostoksia. Ostos viittaa tuotteeseen ja kertoo kuinka monesta tuotteesta on kysymys**. Eli jos ostetaan esim. 24 maitoa, tulee ostoskoriin Ostos-olio, joka viittaa Maito-tuoteolioon, sekä kertoo, että tuotetta on korissa 24 kpl. `Ostos`-luokan koodi:
-
-```python
-from tuote import Tuote
-
-class Ostos:
-    def __init__(self, tuote: Tuote):
-        self.tuote = tuote
-        self._lukumaara = 1
-
-    def tuotteen_nimi(self):
-        return self.tuote.nimi()
-
-    def muuta_lukumaaraa(self, muutos: int):
-        self._lukumaara += muutos
-        if self._lukumaara < 0:
-            self._lukumaara = 0
-
-    def lukumaara(self):
-        return self._lukumaara
-
-    def hinta(self):
-        return self._lukumaara * self.tuote.hinta()
-```
-
-Tehtävänäsi on ohjelmoida luokka `Ostoskori`.
-
-Ostoskorin API:n eli metodirajapinta on seuraava (metodien rungoissa on `pass`-komennot, jotta Python-tulkki ei valittaisi syntaksivirheistä):
-
-```python
-from tuote import Tuote
-from ostos import Ostos
-
-class Ostoskori:
-    def __init__(self):
-        pass
-        # ostoskori tallettaa Ostos-oliota, yhden per korissa oleva Tuote
-
-    def tavaroita_korissa(self):
-        pass
-        # kertoo korissa olevien tavaroiden lukumäärän
-        # jos koriin lisätty 2 kpl tuotetta "maito",
-        #   tulee metodin palauttaa 2
-        # jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto",
-        #   tulee metodin palauttaa 2
-
-    def hinta(self):
-        return 0
-        # kertoo korissa olevien ostosten yhteenlasketun hinnan
-
-    def lisaa_tuote(self, lisattava: Tuote):
-        # lisää tuotteen
-        pass
-
-    def poista_tuote(self, poistettava: Tuote):
-        # poistaa tuotteen
-        pass
-
-    def tyhjenna(self):
-        pass
-        # tyhjentää ostoskorin
-
-    def ostokset(self):
-        pass
-        # palauttaa listan jossa on korissa olevat ostos-oliot
-        # kukin ostos-olio siis kertoo mistä tuotteesta on kyse
-        #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
-```
-
-**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
-
-![](https://www.cs.helsinki.fi/u/mluukkai/otm2012/2.bmp)
-
-Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
-
-**Ohjelmoi nyt ostoskori käyttäen [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikkaa.** Oikeaoppinen TDD etenee seuraavasti:
-
-- Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
-- Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.
-- Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
-- Jatketaan askeleesta 1
-
-**Tee seuraavat testit ja aina jokaisen testin jälkeen testin läpäisevä koodi**. Jos haluat toimia oikean TDD:n hengessä, älä suunnittele koodiasi liikaa etukäteen, tee ainoastaan yksi askel kerrallaan ja paranna koodin rakennetta sitten kun koet sille tarvetta. Pidä _kaikki_ testit koko ajan toimivina. Eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi.
-
-Luokkia `Tuote` ja `Ostos` ei tässä tehtävässä tarvitse muuttaa ollenkaan.
-
-_Lisää ja commitoi muutokset repositorioon jokaisen vaiheen jälkeen, anna kuvaava commit-viesti._
-
-<input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
-
-Tehtäväpohjassa on yksi valmis testi
-
-```python
-class TestOstoskori(unittest.TestCase):
-    def setUp(self):
-        self.kori = Ostoskori()
-
-    # step 1
-    def test_ostoskorin_hinta_ja_tavaroiden_maara_alussa(self):
-        self.assertEqual(self.kori.hinta(), 0)
-```
-
-Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo). Kun testi on valmis, ohjelmoi ostoskoria sen verran että testi menee läpi. Tee ainoastaan minimaalisin mahdollinen toteutus, jolla saat testin läpi.
-
-<input type="checkbox"> **2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
-
-**Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
-
-```python
-class TestOstoskori(unittest.TestCase):
-    def setUp(self):
-        self.kori = Ostoskori()
-
-    # step 1
-    def test_ostoskorin_hinta_ja_tuotteiden_maara_alussa(self):
-        self.assertEqual(self.kori.hinta(), 0)
-        # ...
-
-    # step 2
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_tavara(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        # ...
-```
-
-**Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
-
-<input type="checkbox"> **3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
-
-<input type="checkbox"> **4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
-
-<input type="checkbox"> **5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa**
-
-<input type="checkbox"> **6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
-
-<input type="checkbox"> **7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta**
-
-<input type="checkbox"> **8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
-
-tässä testataan ostoskorin metodia `ostokset`:
-
-```python
-    # step 8
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostokset = self.kori.ostokset()
-
-        # testaa että metodin palauttaman listan pituus 1
-```
-
-<input type="checkbox"> **9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1**
-
-Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
-
-```python
-    # step 9
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostos = self.kori.ostokset()[0]
-
-        # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
-```
-
-<input type="checkbox"> **10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta**
-
-<input type="checkbox"> **11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
-
-Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
-
-<input type="checkbox"> **12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
-
-<input type="checkbox"> **13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl**
-
-<input type="checkbox"> **14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä**
-
-Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
-
-<input type="checkbox"> **15. Metodi tyhjenna tyhjentää korin**
-
-<input type="checkbox"> Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu.
-
-Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
-
-Tehtävää ei tarvitse palauttaa, eikä siitä saa kurssipisteitä. Palkkio tehtävästä on lisääntynyt osaaminen ja toivottavasti hyvä mieli!
