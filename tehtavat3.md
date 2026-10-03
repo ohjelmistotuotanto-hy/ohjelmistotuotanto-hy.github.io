@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat3/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=3 %}
 
 Tehtävät liittyvät storyjen hyväksymistestauksen automatisointiin tarkoitetun Robot Frameworkin. Tehtävässä 8 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
@@ -480,6 +478,10 @@ Tarkastellaan nyt rakenteeltaan hieman monimutkaisempaa Web-sovellusta, joka lö
 
 <input type="checkbox"> Asenna projektin riippuvuudet komennolla `uv sync` ja käynnistä se virtuaaliympäristössä komennolla `python3 src/index.py`.
 
+<input type="checkbox"> Asenna myös testien käyttämä Chromium-selain komennolla `uv run rfbrowser install chromium`.
+
+- Kyseessä on uusi projekti, jolla on oma virtuaaliympäristönsä. Tehtävässä 2 asennettu selain ei siis ole tämän projektin käytettävissä.
+
 Sovelluksen käynnistymisen jälkeen pääset käyttämään sitä avaamalla selaimella osoitteen <http://localhost:5001>. Sovellus siis toimii _localhostilla_ eli paikallisella koneellasi _portissa_ 5001.
 
 Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
@@ -489,6 +491,10 @@ Sovellus on hyvin yksinkertainen, se tarjoaa vain kaksi toimintoa:
 ![]({{ "/images/weblogin1.png" | relative_url }}){:height="300px" }
 
 Tutustutaan seuraavaksi sovelluksen rakenteeseen. Sovellus noudattaa ns. kerrosarkkitehtuuria eli se on rakenteeltaan samanlainen kuin kurssin Ohjelmistotekniikka [referenssisovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md).
+
+Sovelluksen rakenne ja testien suhde siihen näyttää seuraavalta:
+
+![]({{ "/images/lh3-weblogin-rakenne.svg" | relative_url }})
 
 Sovelluksen käyttöliittymä on toteutettu edellisten tehtävien sovelluksen tapaan tiedostoon `app.py` sekä hakemistoon `templates`. Ohjelman käyttäjien hallintaan liittyvä _sovelluslogiikka_ on sijoitettu omaan luokkaansa `UserService`.
 
@@ -503,7 +509,7 @@ Tietoon kohdistuvien operaatioiden eriyttämiseen sovelluslogiikasta on olemassa
 
 Esimerkiksi repositorio-suunnittelumallissa tämä tarkoittaa sitä, että tietokohteeseen kohdistetaan operaatioita erilaisten funktioiden tai metodien, kuten `find_all`, `create` ja `delete` kautta. Tämän abstraktion avulla sovelluslogiikka ei ole tietoinen operaatioiden yksityiskohdista, jolloin esimerkiksi tallennustapaa voidaan helposti muuttaa.
 
-Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi PostgreSQL-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
+Sovellukseen on määritelty repositorio-suunnittelumallin mukainen luokka `UserRepository`. Luokka tallentaa sovelluksen käyttäjiä koneen muistiin. Jos päättäisimme tallentaa käyttäjät esimerkiksi PostgreSQL-tietokantaan, ei tämä vaatisi muutoksia luokan ulkopuolelle.
 
 Seuraavassa vielä lyhyt katsaus sovelluksen käyttöliittymän, eli reitin käsittelijöiden sekä näkymien generoinnin toiminnasta.
 
@@ -656,6 +662,8 @@ Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkie
 
 <input type="checkbox"> Suorita testit
 
+> Muista, että selaimen tulee olla asennettuna ja sovelluksen on oltava käynnissä kun suoritat testit, ks. [tämä ohje](/browser_asennusohjeet/#mahdollisia-ongelmia)
+
 Seurauksena on todennäköisesti virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
 
 ```
@@ -753,13 +761,6 @@ Register With Too Short Username And Valid Password
 Register With Valid Username And Too Short Password
 # ...
 
-Register With Valid Username And Invalid Password
-# salasana ei sisällä halutunlaisia merkkejä
-# ...
-
-Register With Nonmatching Password And Password Confirmation
-# ...
-
 Register With Username That Is Already In Use
 #
 
@@ -770,7 +771,9 @@ Register With Username That Is Already In Use
 Käyttäjätunnus ja salasana noudattavat seuraavia sääntöjä:
 
 - Käyttäjätunnuksen on oltava vähintään 3 merkin pituinen merkkijono, joka ei ole vielä käytössä
-- Salasanan on oltava pituudeltaan vähintään 8 merkkiä ja se ei saa koostua pelkästään kirjaimista
+- Salasanan on oltava pituudeltaan vähintään 8 merkkiä
+
+Salasanaan liittyy vielä muita vaatimuksia, mutta ne toteutetaan vasta tehtävässä 8.
 
 <input type="checkbox"> Laajenna koodiasi siten, että testit menevät läpi. 
 
@@ -782,9 +785,22 @@ Oikea paikka koodiin tuleville muutoksille on <i>src/services/user_service.py</i
 - Ota mallia kirjautumisen testeistä!
 - Muista [tämä](/tehtavat3/#robot-framework--testien-debuggaaminen), ja sieltä erityisesti [tämä](/tehtavat3/#ohjelman-suorituksen-seuraaminen)
 
+#### Mihin avainsanat kannattaa sijoittaa?
+
+Rekisteröitymisen testejä tehdessä huomaat pian tarvitsevasi samoja avainsanoja kuin kirjautumisen testeissä, esim. avainsanoja `Set Username` ja `Set Password`, jotka on määritelty tiedostossa `login.robot`. Avainsanat voi sijoittaa joko testitiedoston `*** Keywords ***` -osioon tai yhteiseen tiedostoon `resource.robot`. Nyrkkisääntö on seuraava:
+
+- **Testitiedostoon** kuuluvat avainsanat, joita käytetään vain sen tiedoston testeissä. Esim. `Login Should Succeed` ja `Login Should Fail With Message` liittyvät vain kirjautumiseen, joten ne sopivat tiedostoon `login.robot`. Samoin rekisteröitymisen tarkistukset, kuten `Register Should Succeed`, sopivat tiedostoon `register.robot`.
+- **Tiedostoon `resource.robot`** kuuluvat avainsanat, joita käytetään useammassa testitiedostossa. Esimerkkejä ovat selaimen alustava `Open And Configure Browser`, sivulle siirtyvät avainsanat, kuten `Go To Login Page` ja `Go To Register Page`, sekä sivun tarkistavat avainsanat, kuten `Login Page Should Be Open` ja `Register Page Should Be Open`. Myös kaikkien testien yhteiset muuttujat, kuten sivujen osoitteet, kuuluvat tänne.
+
+Kun huomaat tarvitsevasi testitiedostossa avainsanaa, joka on jo määritelty toisessa testitiedostossa, **älä kopioi sitä**, vaan siirrä se tiedostoon `resource.robot`. Esim. jos `register.robot` tarvitsee avainsanoja `Set Username` ja `Set Password`, siirrä ne tiedostosta `login.robot` tiedostoon `resource.robot`. Kopioidut avainsanat erkaantuvat ajan myötä toisistaan, ja muutokset joudutaan tekemään moneen paikkaan.
+
+Jos samanniminen avainsana on määritelty sekä testitiedostossa että tiedostossa `resource.robot`, Robot Framework käyttää testitiedoston omaa määrittelyä. Tämä voi aiheuttaa hämmentäviä tilanteita, joten kun siirrät avainsanan tiedostoon `resource.robot`, muista poistaa se alkuperäisestä paikasta.
+
 ### 8. Agentti ja hyväksymistestit [tekoäly]
 
-Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa. Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 3 osuus [Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3).
+Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa.
+
+Kertaa tarvittaessa viime viikolla lukemasi materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot). Lue ennen tämän tehtävän tekemistä myös luvut [Agenttinen koodaus](/genai/#agenttinen-koodaus), [Kontekstin hallinta](/genai/#kontekstin-hallinta) ja [Vaatimukset promptina](/genai/#vaatimukset-promptina).
 
 Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
 
@@ -809,20 +825,31 @@ Pidä ohjetiedosto tiiviinä. Se liitetään jokaiseen agentille annettavaan pyy
 
 <input type="checkbox"> Commitoi ohjetiedosto
 
-<input type="checkbox"> Kirjoita sovellukselle uusi user story hyväksymiskriteereineen
-
-Voit keksiä storyn itse, tai käyttää esim. seuraavaa:
+Rekisteröitymiseen liittyy vielä kaksi vaatimusta, joita tehtävässä 7 ei toteutettu:
 
 ```
-User story: Käyttäjätunnus saa sisältää vain pieniä kirjaimia a-z
+User story: Salasana ei saa koostua pelkästään kirjaimista
 
 Hyväksymiskriteerit:
-- tunnus "kalle" hyväksytään
-- tunnus "Kalle" hylätään ja käyttäjälle näytetään virheilmoitus
-- tunnus "kalle1" hylätään ja käyttäjälle näytetään virheilmoitus
+- salasana "kalle123" hyväksytään
+- salasana "kalle#abc" hyväksytään
+- salasana "kallekalle" hylätään ja käyttäjälle näytetään virheilmoitus
+- salasana "KalleKalle" hylätään ja käyttäjälle näytetään virheilmoitus
 ```
 
-<input type="checkbox"> Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi ja varmistamaan, että testit eivät mene läpi. Vasta tämän jälkeen agentin tulee toteuttaa toiminnallisuus niin, että testit menevät läpi
+```
+User story: Salasanan ja salasanan vahvistuksen on oltava samat
+
+Hyväksymiskriteerit:
+- jos salasana ja sen vahvistus ovat samat, rekisteröityminen onnistuu
+- jos salasana ja sen vahvistus eroavat, rekisteröityminen epäonnistuu ja käyttäjälle näytetään virheilmoitus
+```
+
+Tehtävän 7 vaatimus salasanan vähimmäispituudesta on edelleen voimassa.
+
+<input type="checkbox"> Toteuta storyt agentin avulla yksi kerrallaan.
+
+Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi tiedostoon _register.robot_ ja varmistamaan, että testit eivät mene läpi. Vasta tämän jälkeen agentin tulee toteuttaa toiminnallisuus niin, että testit menevät läpi
 
 Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi.
 
@@ -832,7 +859,7 @@ Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin 
 
 Miten voit olla varma, että agentin kirjoittamat testit oikeasti testaavat uutta toiminnallisuutta?
 
-<input type="checkbox"> Rikko toteutus **itse** tarkoituksella ainakin kahdella eri tavalla, esim. hyväksy tunnuksessa myös numerot tai poista validointi kokonaan, ja varmista jokaisen rikkomisen jälkeen, että ainakin yksi testi hajoaa
+<input type="checkbox"> Rikko toteutus **itse** tarkoituksella ainakin kahdella eri tavalla, esim. hyväksy pelkistä kirjaimista koostuva salasana tai poista salasanan vahvistuksen tarkistus, ja varmista jokaisen rikkomisen jälkeen, että ainakin yksi testi hajoaa
 
 <input type="checkbox"> Palauta toimiva toteutus ja commitoi muutokset
 
@@ -844,6 +871,8 @@ Kerro raportissa
 - Kuinka paljon jouduit ohjaamaan agenttia matkan varrella?
 - Hajosivatko testit, kun rikoit toteutuksen tarkoituksella?
 - Mitä uutta opit?
+
+<input type="checkbox"> Lue tehtävän tekemisen jälkeen vielä AI-materiaalin luku [Vastuu ja osaaminen](/genai/#vastuu-ja-osaaminen)
 
 ### 9. Retrospektiivitekniikat
 

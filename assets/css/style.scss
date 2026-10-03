@@ -74,6 +74,34 @@ table {
   }
 }
 
+.code-copy-wrapper {
+  position: relative;
+
+  &:hover .code-copy-button,
+  .code-copy-button:focus {
+    opacity: 1;
+  }
+}
+
+.code-copy-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.75em;
+  padding: 0.2em 0.6em;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #c8ced6;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.25s;
+
+  &:hover {
+    background-color: #eef3fa;
+  }
+}
+
 .checkbox-reset {
   font-size: 0.85em;
   padding: 0.3em 0.8em;
