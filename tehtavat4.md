@@ -5,11 +5,9 @@ inheader: no
 permalink: /tehtavat4/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=4 %}
 
-Tehtävissä 1-3 ja 5 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 4 siistitään testikoodia tekoälyagentin avulla ja tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä agentin kanssa. Tehtävässä 7 tutustutaan Gitin tägeihin.
+Tehtävissä 1-3 ja 5 tutustutaan riippuvuuksien "mockaamiseen" yksikkötesteissä. Tehtävässä 4 siistitään testikoodia tekoälyagentin avulla ja tehtävässä 6 harjoitellaan testivetoista ohjelmistokehitystä eli TDD:tä yhdessä agentin kanssa. Tehtävässä 7 tutustutaan Gitin tägeihin. Viikon lopussa on lisäksi vapaaehtoinen mutaatiotestausta käsittelevä lisätehtävä.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -529,8 +527,6 @@ class Ostoskori:
         #   JA kuinka monta kappaletta kyseistä tuotetta korissa on
 ```
 
-**Kerrataan vielä:** ostoskoriin lisätään Tuote-oliota metodilla `lisaa_tuote`. Ostoskori ei kuitenkaan talleta sisäisesti tuotteita vaan `Ostos`-luokan oliota (jotka viittaavat tuotteseen):
-
 ![]({{ "/images/ostoskori.png" | relative_url }}){:height="150px" }
 
 Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
@@ -542,11 +538,31 @@ Ostoskori ohjelmoidaan [Test Driven Development](https://ohjelmistotuotanto-hy.g
 - Jos huomataan koodin rakenteen menneen huonoksi (eli havaitaan koodissa esimerkiksi toisteisuutta tai liian pitkiä metodeja) refaktoroidaan koodin rakenne paremmaksi, ja huolehditaan koko ajan, että testit menevät edelleen läpi. Refaktoroinnilla tarkoitetaan koodin sisäisen rakenteen muuttamista siten, että sen rajapinta ja toiminnallisuus säilyy muuttumattomana.
 - Jatketaan askeleesta 1
 
-**Ostoskorin askeleet**
+**Agentin ohjeistus**
 
-Ostoskori rakennetaan seuraavina askelina, jokaisella askeleella ensin testi ja sitten testin läpäisevä koodi. Pidä _kaikki_ testit koko ajan toimivina, eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi. Askeleet tehdään alempana olevien osien A ja B ohjeiden mukaan.
+<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
 
-**1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
+<input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
+- Tests executed with `uv run pytest`
+- Code of `ostos.py` and `tuote.py` should not be changed
+- Tests may not be edited unless explicitly asker
+- Always implement absolutely minimal code that makes the tests pass
+
+<input type="checkbox"> Commitoi ohjetiedosto
+
+**Osa A: sinä kirjoitat testit, agentti koodaa**
+
+Askeleet 1-7 tehdään siten, että jokaisella askeleella
+
+1. kirjoitat itse askeleen testin
+2. varmistat, että testi ei mene läpi
+3. pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
+4. luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
+5. commitoit muutoksen
+
+Pidä _kaikki_ testit koko ajan toimivina, eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi. Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
+
+<input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
 
 Tehtäväpohjassa on yksi valmis testi
 
@@ -562,7 +578,7 @@ class TestOstoskori(unittest.TestCase):
 
 Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo).
 
-**2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
+<input type="checkbox"> **2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
 
 **Huom:** joudut siis luomaan testissäsi tuotteen jonka lisäät koriin:
 
@@ -586,116 +602,58 @@ class TestOstoskori(unittest.TestCase):
 
 **Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
 
-**3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
+<input type="checkbox"> **3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
 
-**4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
+<input type="checkbox"> **4. Kahden eri tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
 
-**5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa**
+<input type="checkbox"> **5. Kahden eri tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteiden hintojen summa**
 
-**6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
+<input type="checkbox"> **6. Kahden saman tuotteen lisäämisen jälkeen ostoskorissa on 2 tavaraa**
 
-**7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta**
-
-**8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
-
-tässä testataan ostoskorin metodia `ostokset`:
-
-```python
-    # step 8
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostokset = self.kori.ostokset()
-
-        # testaa että metodin palauttaman listan pituus 1
-```
-
-**9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1**
-
-Testin on siis tutkittava jälleen korin metodin ostokset palauttamaa listaa:
-
-```python
-    # step 9
-    def test_yhden_tuotteen_lisaamisen_jalkeen_korissa_yksi_ostosolio_jolla_oikea_tuotteen_nimi_ja_maara(self):
-        maito = Tuote("Maito", 3)
-        self.kori.lisaa_tuote(maito)
-
-        ostos = self.kori.ostokset()[0]
-
-        # testaa täällä, että palautetun listan ensimmäinen ostos on halutunkaltainen.
-```
-
-**10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta**
-
-**11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
-
-Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
-
-**12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
-
-**13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl**
-
-**14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä**
-
-Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
-
-**15. Metodi tyhjenna tyhjentää korin**
-
-**Agentin ohjeistus**
-
-<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
-
-<input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
-- testit suoritetaan komennolla `uv run pytest`
-- luokkia `Tuote` ja `Ostos` ei muuteta
-- **testitiedostoja ei saa muokata, ellei sitä erikseen pyydetä**
-- toteutetaan aina minimaalisin koodi, jolla testit saadaan menemään läpi
-
-<input type="checkbox"> Commitoi ohjetiedosto
-
-**Osa A: sinä kirjoitat testit, agentti koodaa**
-
-Tee askeleet 1-7 siten, että jokaisella askeleella
-
-<input type="checkbox" style="margin-left: 20px"> kirjoitat itse askeleen testin
-
-<input type="checkbox" style="margin-left: 20px"> varmistat, että testi ei mene läpi
-
-<input type="checkbox" style="margin-left: 20px"> pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
-
-<input type="checkbox" style="margin-left: 20px"> luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
-
-<input type="checkbox" style="margin-left: 20px"> commitoit muutoksen
-
-Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
+<input type="checkbox"> **7. Kahden saman tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin 2 kertaa tuotteen hinta**
 
 **Osa B: agentti kirjoittaa testit**
 
-<input type="checkbox"> Pyydä agenttia tekemään askeleet 8-12 TDD-tekniikalla, eli kirjoittamaan jokaiselle askeleelle ensin testi ja sitten toteutus. Anna agentille askelten kuvaukset tehtävänannosta
+Askeleet 8-12 tehdään siten, että pyydät agenttia tekemään askeleen TDD-tekniikalla, eli kirjoittamaan ensin testin ja sen jälkeen toteutuksen. Anna agentille askeleen kuvaus tehtävänannosta. Käy jokaisen askeleen jälkeen agentin kirjoittama testi läpi: testaako se sitä, mitä askeleen kuvaus edellyttää? Commitoi jokaisen askeleen jälkeen.
 
-<input type="checkbox"> Käy agentin kirjoittamat testit läpi. Testaavatko ne sitä, mitä askelten kuvaukset edellyttävät?
+<input type="checkbox"> **8. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää yhden ostoksen**
 
-Arvioi testien laatua istuttamalla koodiin bugeja:
+Tässä testataan ostoskorin metodia `ostokset`, testin tulee tarkastaa, että metodin palauttaman listan pituus on 1.
 
-<input type="checkbox"> Tee ostoskorin koodiin **itse** ainakin kolme erilaista bugia, yksi kerrallaan. Esim. saman tuotteen toinen lisäys luo uuden ostoksen olemassa olevan päivittämisen sijaan, tai `ostokset` palauttaa aina tyhjän listan. Kirjaa ylös, huomasivatko testit bugin
+<input type="checkbox"> **9. Yhden tuotteen lisäämisen jälkeen ostoskori sisältää ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 1**
 
-<input type="checkbox"> Jos jokin bugi jäi huomaamatta, lisää testi joko itse tai agentin avulla
+Testin on siis tutkittava jälleen korin metodin `ostokset` palauttamaa listaa ja varmistettava, että listan ensimmäinen ostos on halutunkaltainen.
 
-<input type="checkbox"> Palauta toimiva toteutus ja commitoi
+<input type="checkbox"> **10. Kahden eri tuotteen lisäämisen jälkeen ostoskori sisältää kaksi ostosta**
 
-<input type="checkbox"> Voit halutessasi tehdä myös askeleet 13-15 haluamallasi tavalla
+<input type="checkbox"> **11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää tasan yhden ostoksen**
 
-<input type="checkbox"> Jos ostoskorissasi on mukana jotain ylimääräistä, refaktoroi koodiasi niin että kaikki turha poistuu.
+Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
 
-Erityisesti ylimääräisistä oliomuuttujista kannattaa hankkiutua eroon, tarvitset luokalle vain yhden oliomuuttujan, kaikki ylimääräiset tekevät koodista sekavamman ja vaikeammin ylläpidettävän.
+<input type="checkbox"> **12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää tasan ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
+
+**Osa C: loput askeleet**
+
+Tee vielä askeleet 13-15 haluamallasi tavalla, joko kirjoittamalla testit itse tai agentin avulla. Etene kuitenkin edelleen TDD:n mukaisesti testi kerrallaan ja commitoi jokaisen askeleen jälkeen.
+
+<input type="checkbox"> **13. Jos korissa on kaksi samaa tuotetta ja toinen näistä poistetaan, jää koriin ostos jossa on tuotetta 1 kpl**
+
+<input type="checkbox"> **14. Jos koriin on lisätty tuote ja sama tuote poistetaan, on kori tämän jälkeen tyhjä**
+
+Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksien listan pituus nolla
+
+<input type="checkbox"> **15. Metodi tyhjenna tyhjentää korin**
+
+<input type="checkbox"> On mahdollista, että agentin tekemään koodiin on jäänyt hieman toisteisuutta metodeihin `poista_tuote` ja `lisaa_tuote`. Pyydä agenttia poistamaan mahdollinen toisteisuus (engs. duplication)
+
+<input type="checkbox"> Varmista, että testit menevät edelleen läpi.
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _tdd_ai.md_
 
 Kerro raportissa
+- Päätyikö agentti hyvään toteutukseen ja laadukkaisiin testeihin?
 - Pysyikö agentti osassa A minimitoteutuksessa, ja jättikö se testit rauhaan?
 - Yrittikö agentti missään vaiheessa "huijata", esim. kovakoodaamalla testin odottaman arvon?
-- Minkä bugeista testit huomasivat ja minkä eivät?
 - Kumpi työnjako, A vai B, tuntui paremmalta, ja miksi?
 
 ### 7. git: tägit [versionhallinta]
@@ -734,7 +692,7 @@ Tagit eivät mene automaattisesti etärepositorioihin. Pushaa koodisi GitHubiin 
 
 <input type="checkbox"> Varmista, että tagit siirtyvät GitHubiin:
 
-![]({{ "/images/lh4-tagit.png" | relative_url }}){:height="350px" }
+![]({{ "/images/tagsgh.png" | relative_url }}){:height="350px" }
 
 **Mitä hyötyä tageista on?** Kun katsotaan commitien listaa komennolla `git log`, huomaamme, että Git yksilöi commitit ihmiselle hankalien tunnisteiden avulla:
 
@@ -768,3 +726,137 @@ Date:   Sun Oct 29 14:02:52 2025 +0200
 Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodossa. Tyypillistä on merkitä tagien avulla ohjelmiston julkaistuja versioita. Jos julkaistussa ohjelmassa esiintyy bugi, on näin mahdollista palata helposti koodissa julkaisun versioon.
 
 {% include submission_instructions.md %}
+
+### Vapaaehtoinen lisätehtävä: mutaatiotestaus
+
+Kuinka hyvät [tehtävän 6](#6-tdd-agentin-kanssa-tekoäly) ostoskorin testit ovat? Testien laatua voi arvioida istuttamalla koodiin tarkoituksella bugeja ja katsomalla, huomaavatko testit ne. Tämä idea on automatisoitu [mutaatiotestauksessa](/osa3#mutaatiotestaus): työkalu tekee koodiin systemaattisesti pieniä muutoksia eli _mutantteja_ (esim. vaihtaa `==`-vertailun `!=`-vertailuksi tai luvun `-1` luvuksi `-2`) ja suorittaa testit jokaiselle mutantille. Jos testit menevät mutantista huolimatta läpi, mutantti _selviää_, ja testeistä puuttuu todennäköisesti jotain. Kokeillaan ostoskoriin Pythonin [mutmut](https://mutmut.readthedocs.io/)-työkalua.
+
+**Huom:** mutmut ei toimi suoraan Windowsissa, Windows-käyttäjien tulee käyttää WSL:ää.
+
+<input type="checkbox"> Asenna mutmut projektin kehitysaikaiseksi riippuvuudeksi komennolla `uv add --dev mutmut`
+
+<input type="checkbox"> Lisää tiedoston _pyproject.toml_ loppuun seuraava konfiguraatio, joka rajaa mutaatiot luokkaan `Ostoskori`:
+
+```toml
+[tool.mutmut]
+source_paths = ["src/"]
+do_not_mutate = ["src/tests/*", "src/tuote.py", "src/ostos.py", "src/index.py"]
+```
+
+<input type="checkbox"> Lisää mutmutin luoma hakemisto _mutants_ tiedostoon _.gitignore_
+
+Mutmut kopioi koko projektin testeineen hakemistoon _mutants_. Jotta pelkkä `uv run pytest` ei yritä suorittaa myös sinne kopioituja testejä (mikä aiheuttaa virheen _import file mismatch_), rajataan pytest etsimään testejä ainoastaan hakemistosta _src_:
+
+<input type="checkbox"> Lisää tiedostoon _pyproject.toml_ vielä seuraava:
+
+```toml
+[tool.pytest.ini_options]
+testpaths = ["src"]
+```
+
+**Mutaatiotestaus ostoskorille**
+
+<input type="checkbox"> Suorita mutaatiotestaus komennolla `uv run mutmut run`
+
+Mutmut näyttää suorituksen aikana yhteenvedon, jossa 🎉 tarkoittaa _tapettuja_ mutantteja (testit huomasivat muutoksen), 🙁 _selvinneitä_ mutantteja (testit menivät muutoksesta huolimatta läpi) ja 🫥 mutantteja, joiden kohdalla suoritettavaa koodia ei testata ollenkaan. Esim. seuraavassa kaikki 16 mutanttia tapettiin:
+
+```
+⠙ 16/16  🎉 16 🫥 0  ⏰ 0  🤔 0  🙁 0  🔇 0  🧙 0
+```
+
+Jos tehtävän 6 askeleiden 1-15 testit ovat kunnossa, kaikki ostoskorin mutantit todennäköisesti kuolevat. Se on hyvä merkki, mutta ei vielä kerro paljoa siitä, miten mutaatiotestaus auttaa. Heikennetään siksi testejä tarkoituksella.
+
+**Huom:** mutmut ei huomaa pelkkiin testeihin tehtyjä muutoksia, vaan käyttää edellisen suorituksen tuloksia. Kun olet muuttanut ainoastaan testejä, poista hakemisto _mutants_ ennen uutta suoritusta:
+
+```
+rm -rf mutants && uv run mutmut run
+```
+
+<input type="checkbox"> Kommentoi pois tuotteen poistamista testaava askeleen 13 testi ja suorita mutaatiotestaus uudelleen
+
+<input type="checkbox"> Palauta askeleen 13 testi, kommentoi pois askeleen 14 testi ja suorita mutaatiotestaus jälleen
+
+Kummassakin tapauksessa jokin metodin `poista_tuote` mutanteista todennäköisesti selviää, sillä jäljelle jäävä testi ei huomaa kaikkia poistamiseen liittyviä virheitä.
+
+Voit kokeilla samaa myös muille testeille. Huomaat todennäköisesti, että kaikki testit eivät ole yhtä tärkeitä: osan testeistä voi poistaa ilman, että yksikään mutantti selviää, koska muut testit kattavat saman asian.
+
+Mutaatiotestauksen tulokset näkee komennolla `uv run mutmut results`, joka listaa selvinneet (_survived_) ja testaamattomat (_no tests_) mutantit. Yksittäisen mutantin tekemän muutoksen näkee komennolla `uv run mutmut show <mutantin nimi>`, esim.
+
+```
+$ uv run mutmut show "ostoskori.xǁOstoskoriǁpoista_tuote__mutmut_4"
+--- src/ostoskori.py
++++ src/ostoskori.py
+@@ -1,7 +1,7 @@
+ def poista_tuote(self, poistettava: Tuote):
+     for o in self._ostokset:
+         if o.tuotteen_nimi() == poistettava.nimi():
+-            o.muuta_lukumaaraa(-1)
++            o.muuta_lukumaaraa(-2)
+             if o.lukumaara() == 0:
+                 self._ostokset.remove(o)
+             return
+```
+
+Mutanttien nimet ja numerot riippuvat toteutuksestasi, joten omat tuloksesi näyttävät hieman erilaisilta.
+
+<input type="checkbox"> Tutki selvinneiden mutanttien tekemiä muutoksia. Mikä poistetuista testeistä olisi ne tappanut?
+
+<input type="checkbox"> Palauta testit ennalleen ja varmista, että kaikki mutantit kuolevat taas
+
+**Mutaatiotestaus luokalle Ostos**
+
+Laajennetaan vielä mutaatiot luokkaan `Ostos`, jota ostoskorin testit testaavat epäsuorasti.
+
+<input type="checkbox"> Poista tiedoston _pyproject.toml_ mutmut-konfiguraatiosta kohdan `do_not_mutate` listasta `"src/ostos.py"` ja suorita mutaatiotestaus uudelleen
+
+Nyt osa mutanteista todennäköisesti selviää. Ne löytyvät metodista `muuta_lukumaaraa`, esim.
+
+```
+$ uv run mutmut show "ostos.xǁOstosǁmuuta_lukumaaraa__mutmut_6"
+--- src/ostos.py
++++ src/ostos.py
+@@ -1,4 +1,4 @@
+ def muuta_lukumaaraa(self, muutos: int):
+     self._lukumaara += muutos
+     if self._lukumaara<0:
+-        self._lukumaara = 0
++        self._lukumaara = 1
+```
+
+<input type="checkbox"> Tutki selvinneet mutantit ja mieti kunkin kohdalla:
+- Onko mutantti _ekvivalentti_, eli muuttaako se ohjelman toimintaa ollenkaan?
+
+Esimerkki ekvivalentista mutantista:
+
+```
+$ uv run mutmut show "ostos.xǁOstosǁmuuta_lukumaaraa__mutmut_3"
+--- src/ostos.py
++++ src/ostos.py
+@@ -1,4 +1,4 @@
+ def muuta_lukumaaraa(self, muutos: int):
+     self._lukumaara += muutos
+-    if self._lukumaara<0:
++    if self._lukumaara <= 0:
+         self._lukumaara = 0
+```
+
+Mutantti muuttaa ehdon `< 0` muotoon `<= 0`. Ero näkyy ainoastaan silloin, kun lukumäärä on täsmälleen 0: alkuperäisessä koodissa ehto ei ole tosi ja lukumäärä jää arvoon 0, mutantissa ehto on tosi ja lukumäärä asetetaan arvoon 0. Lopputulos on molemmissa sama, joten mikään testi ei voi erottaa mutanttia alkuperäisestä koodista. Tällaista mutanttia ei siis voi tappaa, eikä sitä tarvitse yrittää. Ekvivalenteista mutanteista ja niiden aiheuttamista haasteista lisää esim. [Wikipediassa](https://en.wikipedia.org/wiki/Mutation_testing#Mutation_testing_overview).
+
+Ekvivalentit mutantit jäävät muuten aina selvinneiden listalle ja hukuttavat helposti alleen ne mutantit, jotka oikeasti kertovat testien puutteista. Mutmutille voi kertoa, ettei tiettyä riviä tule mutatoida, lisäämällä rivin loppuun kommentin `# pragma: no mutate`:
+
+```python
+    def muuta_lukumaaraa(self, muutos: int):
+        self._lukumaara += muutos
+        if self._lukumaara<0:  # pragma: no mutate
+            self._lukumaara = 0
+```
+
+Pragma estää _kaikki_ rivin mutaatiot, ei pelkästään ekvivalentteja. Sitä kannattaa siis käyttää vain riveillä, joiden kaikki mutantit on todettu ekvivalenteiksi, muuten pragma piilottaa myös oikeita testien puutteita. Tässä tapauksessa rivin molemmat mutantit (`<= 0` ja `< 1`) ovat ekvivalentteja.
+
+<input type="checkbox"> Merkitse ekvivalentit mutantit pragmalla ja suorita mutaatiotestaus uudelleen
+
+<input type="checkbox"> Tapa ne mutantit, jotka kannattaa tappaa, kirjoittamalla testejä luokalle `Ostos`. Voit käyttää apuna agenttia, mutta varmista, että lisätyt testit todella testaavat jotain mielekästä eivätkä ole pelkästään mutanttien tappamiseen viritettyjä
+
+Kaikkia mutantteja ei siis välttämättä kannata tai voi tappaa. Mutaatiotestauksen tulokset vaativatkin aina ihmisen tulkintaa.
+
+Tehtävää ei tarvitse palauttaa, eikä siitä saa kurssipisteitä.
