@@ -132,7 +132,7 @@ Agentit ovat tunnettuja siitä, että ne saattavat "huijata" saadakseen testit m
 
 Agentin voi myös pyytää kirjoittamaan testit. Testejä syntyy nopeasti ja paljon, ja testikattavuus voi olla lähes sata prosenttia. Kattavuus kertoo kuitenkin vain sen, että koodi on _suoritettu_ testien aikana, ei sitä, että testit _tarkistaisivat_ jotain järkevää.
 
-Testien laatua voi arvioida periaatteella, johon [mutaatiotestaus](https://en.wikipedia.org/wiki/Mutation_testing) perustuu: koodiin istutetaan tarkoituksella bugi, esim. vaihdetaan `>` merkiksi `>=` tai poistetaan jokin rivi. Jos testit menevät tästä huolimatta läpi, testit eivät testaa kyseistä asiaa.
+Testien laatua voi arvioida periaatteella, johon [mutaatiotestaus](https://en.wikipedia.org/wiki/Mutation_testing) perustuu: koodiin istutetaan tarkoituksella bugi, esim. vaihdetaan `>` merkiksi `>=` tai poistetaan jokin rivi. Jos testit menevät tästä huolimatta läpi, testit eivät testaa kyseistä asiaa. Mutaatiotestausta pääsee kokeilemaan viikon 4 [vapaaehtoisessa lisätehtävässä](/tehtavat4/#vapaaehtoinen-lisätehtävä-mutaatiotestaus).
 
 Erityistä huomiota kannattaa kiinnittää [mock-olioiden](/tehtavat4/#mock-olioiden-käytöstä) käyttöön. Agentin kirjoittamissa testeissä on usein niin paljon mockeja, että testi lopulta testaa lähinnä mockeja eikä varsinaista koodia.
 
@@ -307,6 +307,34 @@ suoritetaan chatissa komennolla `/review`.
 Vastaavalla tavalla voi määritellä kokonaisia [räätälöityjä agentteja](https://code.visualstudio.com/docs/agent-customization/custom-agents), joilla on oma ohjeistuksensa ja rajattu työkaluvalikoima. Esim. "katselmoija"-agentilla voi olla vain lukuoikeus koodiin.
 
 Prompt-tiedostot, ohjetiedostot ja agenttimääritykset ovat tiimin yhteistä osaamista, ja ne kannattaa tallentaa versionhallintaan siinä missä muukin koodi.
+
+### Skillsit
+
+Ohjetiedosto ladataan agentin kontekstiin jokaisessa keskustelussa, joten sinne kannattaa kirjata vain asiat, joita tarvitaan lähes aina. Harvemmin tarvittavat, mutta tarkkaa ohjeistusta vaativat työvaiheet sopivat paremmin [skillseiksi](https://code.visualstudio.com/docs/agent-customization/agent-skills) (_agent skills_).
+
+Skills on hakemisto, joka sisältää tiedoston `SKILL.md` ja tarvittaessa muita resursseja, kuten skriptejä, pohjia ja esimerkkejä. Projektin skillsit tallennetaan hakemistoon `.github/skills/`, esim. `.github/skills/ui-testaus/SKILL.md`:
+
+```markdown
+---
+name: ui-testaus
+description: 'Testaa sovelluksen web-käyttöliittymän selaimella. Käytä kun käyttöliittymää on muutettu tai kun pyydetään testaamaan käyttöliittymä.'
+---
+1. Käynnistä sovellus komennolla `uv run python src/app.py`
+2. Avaa sovellus selaimessa ja käy läpi jokainen sivu
+3. ...
+```
+
+Agentti näkee aluksi ainoastaan skillsien nimet ja kuvaukset. Kun käsillä oleva tehtävä vastaa kuvausta, agentti lataa skillsin ohjeet kontekstiinsa, ja ohjeissa viitatut tiedostot vasta niitä tarvitessaan. Näin skillsejä voi olla paljon ilman, että ne täyttävät kontekstia. Kuten MCP-työkaluissa, hyvin kirjoitettu kuvaus on oleellinen, sillä agentti päättää sen perusteella, milloin skillsiä käytetään. Skillsin voi käynnistää myös itse kirjoittamalla chatissa `/` ja skillsin nimen.
+
+Skillsit, prompt-tiedostot ja MCP eroavat toisistaan seuraavasti:
+
+- **prompt-tiedosto** on valmis kehote, jonka käyttäjä käynnistää itse
+- **skills** on ohjeistus resursseineen, jonka agentti ottaa käyttöön tarvittaessa
+- **MCP-palvelin** tuo agentille kokonaan uusia työkaluja
+
+Skillsit ja MCP täydentävät toisiaan: Playwright MCP antaa agentille selaimen, ja skills kertoo, miten juuri tämän projektin käyttöliittymä testataan.
+
+[Agent Skills](https://agentskills.io) on avoin standardi, ja samat skillsit toimivat mm. GitHub Copilotissa, Claude Codessa ja OpenAI Codexissa. VS Code etsii projektin skillsejä myös hakemistoista `.claude/skills/` ja `.agents/skills/`. Valmiita skillsejä on jaossa runsaasti, mutta niihin pätevät samat varoitukset kuin MCP-palvelimiin: skills voi sisältää skriptejä, joita agentti suorittaa koneellasi, joten käytä vain luotettavista lähteistä peräisin olevia skillsejä ja lue ne ennen käyttöönottoa.
 
 ### Riskit koottuna
 

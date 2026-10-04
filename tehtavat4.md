@@ -381,6 +381,8 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 ### 4. Testikoodin siistiminen agentin avulla [tekoäly]
 
+Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
+
 Tehtävän 3 testeihin on todennäköisesti kertynyt paljon toisteisuutta, sillä jokainen testi luo samat mockit ja määrittelee niille samat toteutukset. Kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka suoritetaan ennen jokaista testiä:
 
 ```python
@@ -729,7 +731,7 @@ Tagien avulla commitit on mahdollista merkitä ihmiselle selkeämmässä muodoss
 
 ### Vapaaehtoinen lisätehtävä: mutaatiotestaus
 
-Kuinka hyvät [tehtävän 6](#6-tdd-agentin-kanssa-tekoäly) ostoskorin testit ovat? Testien laatua voi arvioida istuttamalla koodiin tarkoituksella bugeja ja katsomalla, huomaavatko testit ne. Tämä idea on automatisoitu [mutaatiotestauksessa](/osa3#mutaatiotestaus): työkalu tekee koodiin systemaattisesti pieniä muutoksia eli _mutantteja_ (esim. vaihtaa `==`-vertailun `!=`-vertailuksi tai luvun `-1` luvuksi `-2`) ja suorittaa testit jokaiselle mutantille. Jos testit menevät mutantista huolimatta läpi, mutantti _selviää_, ja testeistä puuttuu todennäköisesti jotain. Kokeillaan ostoskoriin Pythonin [mutmut](https://mutmut.readthedocs.io/)-työkalua.
+Kuinka hyvät [tehtävän 6](#6-tdd-agentin-kanssa-tekoäly) ostoskorin testit ovat? Testien laatua voi arvioida istuttamalla koodiin tarkoituksella bugeja ja katsomalla, huomaavatko testit ne. Sama periaate mainitaan materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osiossa [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi) keinona arvioida agentin kirjoittamien testien laatua. Tämä idea on automatisoitu [mutaatiotestauksessa](/osa3#mutaatiotestaus): työkalu tekee koodiin systemaattisesti pieniä muutoksia eli _mutantteja_ (esim. vaihtaa `==`-vertailun `!=`-vertailuksi tai luvun `-1` luvuksi `-2`) ja suorittaa testit jokaiselle mutantille. Jos testit menevät mutantista huolimatta läpi, mutantti _selviää_, ja testeistä puuttuu todennäköisesti jotain. Kokeillaan ostoskoriin Pythonin [mutmut](https://mutmut.readthedocs.io/)-työkalua.
 
 **Huom:** mutmut ei toimi suoraan Windowsissa, Windows-käyttäjien tulee käyttää WSL:ää.
 

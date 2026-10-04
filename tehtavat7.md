@@ -249,7 +249,7 @@ Kerro raportissa
 
 ### 6. MCP [tekoäly]
 
-Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-context-protocol) ensin käyttämällä valmista palvelinta ja sen jälkeen toteuttamalla oma.
+Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-context-protocol) ensin käyttämällä valmista palvelinta ja sen jälkeen toteuttamalla oma. Lisäksi kokeillaan, miten [skillsillä](/genai/#skillsit) voi ohjeistaa agenttia käyttämään palvelinta.
 
 **Valmiin palvelimen käyttö**
 
@@ -273,6 +273,20 @@ Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-contex
 <input type="checkbox"> Käynnistä kivi-paperi-sakset-sovellus ja pyydä agenttia pelaamaan selaimella yksi peli jokaisessa pelimoodissa ja raportoimaan, toimiiko käyttöliittymä odotetusti
 
 Seuraa, mitä agentti tekee selaimessa. Löysikö agentti käyttöliittymästä ongelmia?
+
+**Skills käyttöliittymän testaamiseen**
+
+Edellä agentille piti kertoa, miten käyttöliittymä testataan. Tallennetaan ohjeet [skillsiksi](/genai/#skillsit), jolloin agentti osaa käyttää niitä jatkossa itsenäisesti.
+
+<input type="checkbox"> Luo projektiin tiedosto _.github/skills/ui-testaus/SKILL.md_, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella. Kirjoita skillsille kuvaus (`description`), josta agentti ymmärtää, milloin skillsiä tulee käyttää. Kirjaa ohjeisiin ainakin
+
+- miten sovellus käynnistetään ja missä portissa se toimii
+- mitkä pelimoodit ja tilanteet testataan, esim. pelin päättyminen kolmeen voittoon ja virheellinen syöte
+- miten agentin tulee raportoida tulokset
+
+<input type="checkbox"> Aloita uusi chat-keskustelu ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista chatista, ottiko agentti skillsin käyttöön. Jos ei ottanut, paranna kuvausta ja kokeile uudelleen
+
+<input type="checkbox"> Tee käyttöliittymään jokin pieni muutos ja pyydä agenttia varmistamaan, että sovellus toimii edelleen. Käyttääkö agentti skillsiä?
 
 **Oma MCP-palvelin**
 
@@ -341,6 +355,8 @@ Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärr�
 
 Kerro raportissa
 - Miten Playwright MCP -palvelimen käyttö sujui, ja löysikö agentti selaimella ongelmia?
+- Ottiko agentti skillsin käyttöön ilman erillistä pyyntöä? Miten kuvauksen sanamuoto vaikutti siihen?
+- Milloin käyttäisit skillsiä, milloin prompt-tiedostoa ja milloin ohjetiedostoa?
 - Osasiko agentti käyttää oman palvelimesi työkaluja oikein?
 - Miten docstringit vaikuttivat agentin toimintaan?
 - Mitä riskejä liittyisi palvelimeen, joka voisi myös muuttaa dataa, tai joka hakisi dataa epäluotettavista lähteistä?

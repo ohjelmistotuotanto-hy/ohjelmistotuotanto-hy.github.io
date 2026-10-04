@@ -41,15 +41,23 @@ Voit tehdä tämän ja kaksi seuraavaa tehtävää mihin tahansa repositorioon, 
 
 <input type="checkbox"> Poista tiedosto ja committaa
 
+- Vihje: katso poiston jälkeen komennolla <code>git status</code>, missä tilassa poistettu tiedosto on. Pelkkä tiedoston poistaminen ei vielä vie poistoa staging-alueelle, vaan se on tehtävä komennolla <code>git add important.txt</code> (tai <code>git add .</code>). Vaihtoehtoisesti tiedoston voi poistaa suoraan komennolla <code>git rm important.txt</code>, joka sekä poistaa tiedoston että lisää poiston staging-alueelle
+
 <input type="checkbox"> Tee jotain muutoksia _johonkin_ tiedostoon ja committaa
 
 Historiasi näyttää seuraavalta
 
 ```
-(1) - (2) - (3)
+   (1) ─────────────── (2) ─────────────── (3)  ◄── HEAD
+    │                   │                   │
+ important.txt       important.txt       muutos johonkin
+ lisätään            poistetaan          toiseen tiedostoon
+
+ important.txt:      important.txt:      important.txt:
+ on olemassa         ei ole              ei ole
 ```
 
-Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _important.txt_ on olemassa ja (2):ssa important.txt:ää ei ole.
+Nykyhetki eli HEAD on (3). Commitissa (1) tiedosto _important.txt_ on olemassa, mutta commitista (2) alkaen sitä ei enää ole.
 - Huom: komennolla <code>gitk</code> voit tutkia historiaa
 
 Haluamme palauttaa tiedoston _important.txt_.
@@ -92,30 +100,27 @@ Olemme jo törmänneet parissa aiemmassa tehtävässä ([viikko 1, tehtävä 11]
 
 <input type="checkbox"> Aikaansaa seuraavankaltainen tilanne branchien _main_ ja _haara_ välille:
 
-```
-------- main
-\
- \--- haara
-```
+![]({{ "/images/lh5-rebase1.png" | relative_url }}){:height="250px" }
+
+> Kuvassa jokainen ympyrä (A, B, C, ...) vastaa yhtä committia, commitien väliset nuolet osoittavat vanhemmasta commitista uudempaan, ja laatikot _main_ ja _haara_ näyttävät, mihin committiin kukin branch osoittaa.
+
+Haara _haara_ on siis erkaantunut mainista commitin B jälkeen, ja molempiin on sen jälkeen tehty committeja. Muutosten ei kannata kohdistua samoihin tiedostoihin, jotta vältyt konflikteilta.
+
+<input type="checkbox"> Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
 <input type="checkbox"> "Rebeissaa" _haara_ _mainiin_, eli aikaansaa seuraava tilanne:
 
-```
-------- main
-       \
-        \--- haara
-```
+![]({{ "/images/lh5-rebase2.png" | relative_url }}){:height="250px" }
+
+Haaran commitit on nyt siirretty mainin viimeisimmän commitin D perään. Commitit E' ja F' sisältävät samat muutokset kuin alkuperäiset E ja F, mutta ne ovat uusia committeja, joilla on eri id:t. Tämän näet esim. komennolla <code>git log</code>.
 
 <input type="checkbox"> Varmista komennolla <code>gitk --all</code> että tilanne on haluttu.
 
 "Mergeä" _haara_ vielä _mainiin_, jolloin tilanne on seuraava:
 
-```
-------- \     main
-         \--- haara
-```
+![]({{ "/images/lh5-rebase3.png" | relative_url }}){:height="190px" }
 
-Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa.
+Lopputuloksena pitäisi siis olla lineaarinen historia ja main sekä haara samassa. Koska _haara_ on rebasen jälkeen mainin suora jatke, merge on ns. _fast-forward_, eli main-viite vain siirtyy osoittamaan committiin F' eikä erillistä merge-committia synny.
 
 <input type="checkbox"> Varmista jälleen komennolla <code>gitk --all</code> että kaikki on kunnossa.
 
@@ -195,6 +200,8 @@ Pisteenlaskentaohjelman koodi toimii ja sillä on erittäin kattavat testit. Koo
 - Yritä pitää ohjelma koko ajan toimintakunnossa, eli älä hajota testejä
 - **Testeihin ohjelmassa ei tarvitse eikä edes saa koskea**
 
+*Tee tämä refaktorointi ilman agentin apua!*
+
 Jos haluat käyttää jotain muuta kieltä kuin Pythonia, löytyy koodista ja testeistä versioita useilla eri kielillä osoitteesta [https://github.com/emilybache/Tennis-Refactoring-Kata](https://github.com/emilybache/Tennis-Refactoring-Kata).
 
 <input type="checkbox"> Kun olet valmis, commitoi koodi ja pushaa haara *tennis_refactoring* GitHubiin
@@ -207,6 +214,8 @@ Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannos
 
 Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
+**Huomio kiintiöistä:** Copilot Student -versiossa on käytössä 200 _AI credit_ -yksikköä kuukaudessa (1 credit = 0,01 dollaria). Sekä Copilotin tekemä koodin katselmointi että pilviagentti kuluttavat näitä, ja kulutus riippuu muutosten koosta ja työn määrästä. GitHubin oman arvion mukaan yksi katselmointi maksaa kevyimmällä _Lite_-tasolla noin 0,05–1 dollaria ja oletuksena olevalla _Balanced_-tasolla noin 0,25–5 dollaria. Yksi Balanced-tason katselmointi voi siis pahimmillaan kuluttaa koko kuukauden kiintiön. Käytä tämän viikon tehtävissä katselmointiin aina Lite-tasoa, ja pidä pull requestit pieninä. Kiintiön kulutusta voit seurata osoitteessa <https://github.com/settings/billing>.
+
 <input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
 
 GitHub ehkä jo ehdottaa Pull requestin tekemistä
@@ -217,15 +226,17 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 <input type="checkbox"> Kirjoita PR:lle kuvaus. Voit ottaa esim. [täältä](https://medium.com/@jmanuellugo96/how-to-write-an-awesome-pull-request-pr-description-bdd2c6e48418) tai [täältä](https://www.hackerone.com/blog/writing-great-pull-request-description) mallia kuvaukselle.
 
-![]({{ "/images/pr2.png" | relative_url }})
+![]({{ "/images/pr22.png" | relative_url }})
 
-<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi:
+<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi. Valitse ennen katselmoinnin pyytämistä Copilotin nimen vierestä löytyvästä valikosta katselmoinnin tasoksi _Lite_ (kuvassa oletuksena oleva _Balanced_) ja paina sen jälkeen _Request_:
 
-![]({{ "/images/pr3.png" | relative_url }}){:height="130px" }
+![]({{ "/images/pr32.png" | relative_url }})
 
 <input type="checkbox"> Odota katselmoinnin valmistumista, siihen menee yleensä muutamia minuutteja
 
 <input type="checkbox"> Käy katselmoinnin tulos läpi. Hyväksy ehdotetut muutokset halutessasi ja merkitse kommentit selvitetyiksi (_resolve conversation_)
+
+Kommenttien yhteydessä on myös nappi _Fix with Copilot_, joka käynnistää pilviagentin tekemään korjauksen. Tämä kuluttaa kiintiötä, joten tee korjaukset mieluummin itse tai hyväksy Copilotin ehdottamat muutokset suoraan.
 
 <input type="checkbox"> Mergeä Pull request main-haaraan
 
@@ -237,7 +248,7 @@ Kerro raportissa
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 - Huomasiko Copilot jotain, minkä olisit itse jättänyt huomaamatta? Entä jäikö siltä jotain oleellista huomaamatta?
 
-Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
+Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
 
 ### 6. Good vibe with warehouses [tekoäly]
 
@@ -247,9 +258,24 @@ Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarko
 
 ![]({{ "/images/issue0.png" | relative_url }}){:height="350px" }
 
-Sovelluksen pitäisi mahdollistaa useiden varastojen luominen, muokkaaminen ja sisällön lisääminen tai poistaminen. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
+Pidä sovelluksen laajuus pienenä, sillä pilviagentin kiintiön kulutus kasvaa tehtävän koon mukana. Riittää, että sovelluksella voi
+- luoda useita varastoja (nimi ja tilavuus)
+- listata varastot saldoineen
+- lisätä varastoon tavaraa ja ottaa sieltä tavaraa
+
+Varastojen muokkaamista, poistamista tai muita lisäominaisuuksia ei tässä tehtävässä tarvita. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
 
 Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Kirjoita kuvaus [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
+
+**Jos kiintiö loppuu:** Jos Copilotin kiintiösi on loppumassa tai loppuu kesken tehtävän, voit tehdä tehtävän myös VS Coden agenttitilassa. Tämä on todennäköisesti kevyempää, sillä agentti suorittaa komennot omalla koneellasi eikä GitHub Actionsissa, ja voit pysäyttää sen, jos se lähtee väärään suuntaan. Tee tällöin seuraavasti:
+- tee issue kuten alla on neuvottu
+- luo uusi haara, esim. `git checkout -b web-ui`
+- anna issuen kuvaus agentille promptina VS Codessa
+- käy agentin tekemät muutokset läpi, commitoi ja pushaa haara GitHubiin
+- tee haarasta pull request, ja kirjoita sen kuvaukseen `Fixes #<issuen numero>`
+- tee pull requestille oma katselmointi kuten alla on neuvottu, mutta pyydä katselmoinnin muutokset agentilta VS Codessa ja pushaa ne samaan haaraan
+
+Pilviagentin seuraamiseen liittyvät askeleet voit tällöin ohittaa.
 
 <input type="checkbox"> Assignaa issue Copilotille:
 
@@ -298,9 +324,11 @@ Switched to a new branch 'copilot/add-warehouse-management-ui'
 
 Oma sovellukseni oli konfiguroitu siten, että osoitteen http://localhost:5000/ sijaan sovellukseen pääsee käsiksi osoitteesta http://127.0.0.1:5000/
 
-<input type="checkbox"> Pyydä Copilotia katselmoimaan pull request samaan tapaan kuin edellisessä tehtävässä, ja käy katselmoinnin tulos läpi
+Macissa portti 5000 on oletusarvoisesti macOS:n AirPlay Receiver -palvelun käytössä, ja osoite http://localhost:5000/ saattaa siksi vastata virheellä _403 Forbidden_. Käytä tällöin osoitetta http://127.0.0.1:5000/ tai käynnistä sovellus johonkin toiseen porttiin, esim. `flask run --port 5001`.
 
-Agentin tekemää koodia katselmoi siis toinen AI. Tämä ei kuitenkaan riitä, vaan ihmisen on vielä katselmoitava koodi.
+<input type="checkbox"> _Vapaaehtoinen:_ Jos kiintiötäsi on vielä jäljellä, pyydä Copilotia katselmoimaan pull request (Lite-tasolla) samaan tapaan kuin edellisessä tehtävässä, ja käy katselmoinnin tulos läpi
+
+Agentin tekemää koodia voi siis katselmoida toinen AI. Tämä ei kuitenkaan riitä, vaan ihmisen on joka tapauksessa katselmoitava koodi.
 
 <input type="checkbox"> Tee sovellukselle oma katselmointi GitHubissa
 
@@ -310,7 +338,9 @@ Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta nap
 
 ![]({{ "/images/issue5.png" | relative_url }}){:height="450px" }
 
-Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/make-changes-to-an-existing-pr), jotta Copilot suostuu tekemään muutokset
+Kokoa kaikki muutospyynnöt samaan katselmointiin, sillä jokainen pyyntö käynnistää uuden agenttisession, joka kuluttaa kiintiötä. Yksi korjauskierros riittää.
+
+Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github), jotta Copilot suostuu tekemään muutokset
 
 <input type="checkbox"> Seuraa jälleen Copilotin edistymistä napilla "View session"
 
