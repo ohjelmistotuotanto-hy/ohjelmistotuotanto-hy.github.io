@@ -71,10 +71,10 @@
 - Luento 9: {{site.luennot[9]}}
   - [Lean](/osa5#lean)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/THvNdk4Y5xo), [unitube](https://www.helsinki.fi/fi/unitube/video/4fd987ce-5ef9-4197-bd54-0a42b591bb1a)
-- Luento 10: {{site.luennot[10]}} 
-  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
-  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
-  - vuoden 2025 tallenteet: [youtube](https://youtu.be/h11oPrXQU3s), [unitube](https://www.helsinki.fi/fi/unitube/video/4575ff19-bd89-4efa-baef-85c7bb2b91ce)
+- Vierailuluennot
+  - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
+  - Luento 11: {{site.luennot[10]}}
+    - Lauri Suomalainen (Teamit): _Ohjelmistotuotanto kokonaisuutena: DevOps, tiimitopologiat ja platform engineering_
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
@@ -83,16 +83,14 @@
 
 ### Viikko 6
 
-- Vierailuluennot
-  - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
-  - Luento 11: {{site.luennot[11]}}
-    - Kristiina Vainio ja Francisco Zavala (Houston): _Juniorin kasvu senioriksi konsulttitalossa_  
-    - Tallenne: [youtube](https://youtu.be/lOP-rUedwec) [unitube](https://www.helsinki.fi/fi/unitube/video/5579fd03-06c3-4f45-b3ba-252965deab6d)
+- Luento 11: {{site.luennot[11]}} 
+  - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
+  - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
+  - vuoden 2025 tallenteet: [youtube](https://youtu.be/h11oPrXQU3s), [unitube](https://www.helsinki.fi/fi/unitube/video/4575ff19-bd89-4efa-baef-85c7bb2b91ce)
+  - Vierailuluennot
   - Luento 12: {{site.luennot[12]}} 
-    - Tiina Romu (Wonna): _Mitä tekee lead developer ja miten sellaiseksi pääsee?_
-    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
-    - Tallenne: [youtube](https://youtu.be/P0mTTSCCPsE), [unitube](https://www.helsinki.fi/fi/unitube/video/a45ce14d-fcb8-4578-8b80-2350f2342a0e)  
-
+    - Ville Nordberg (Trail openers): _Voiko tekoälyä tehdä kestävästi?_
+    - Irene Nikkarinen (Kesko): _Datatieteilijän elämää_
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
@@ -104,11 +102,12 @@
 - Vierailuluennot
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 13: {{site.luennot[13]}}
-    - Antero Kivi ja Michael Forsström (DNA): _AI ja ohjelmistokehitys_
-    - Tallenne: [youtube](https://youtu.be/LrW0N68auxs), [unitube](https://www.helsinki.fi/fi/unitube/video/3f387b03-1a50-4c93-915e-af01a507adc5)
+    - Olli Warro (Bought): Ohjelmistokehittäjä sarjayrittäjänä 
+    - N.N.
   - Luento 14: {{site.luennot[14]}}
-    - Ville Nordberg (Trail openers): _Vihreä IT_
+    - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
+
     - Tallenne: [youtube](https://youtu.be/o_tIj9SngAI), [unitube](https://www.helsinki.fi/fi/unitube/video/51620f49-d316-4602-bb3d-49bbd0e0077e)
 
 - Laskarit

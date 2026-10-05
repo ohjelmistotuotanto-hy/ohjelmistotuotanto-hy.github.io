@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat5/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=5 %}
 
 Tehtävissä 1-3 jatketaan Gitin harjoittelua. Nämä tehtävät eivät näy palautuksissa mitenkään.
@@ -214,7 +212,7 @@ Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannos
 
 Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
-**Huomio kiintiöistä:** Copilot Student -versiossa on käytössä 200 _AI credit_ -yksikköä kuukaudessa (1 credit = 0,01 dollaria). Sekä Copilotin tekemä koodin katselmointi että pilviagentti kuluttavat näitä, ja kulutus riippuu muutosten koosta ja työn määrästä. GitHubin oman arvion mukaan yksi katselmointi maksaa kevyimmällä _Lite_-tasolla noin 0,05–1 dollaria ja oletuksena olevalla _Balanced_-tasolla noin 0,25–5 dollaria. Yksi Balanced-tason katselmointi voi siis pahimmillaan kuluttaa koko kuukauden kiintiön. Käytä tämän viikon tehtävissä katselmointiin aina Lite-tasoa, ja pidä pull requestit pieninä. Kiintiön kulutusta voit seurata osoitteessa <https://github.com/settings/billing>.
+**Huomio Copilotin AI credit -kiintiöstä:** Copilot Student -versiossa on käytössä 200 _AI credit_ -yksikköä kuukaudessa (1 credit = 0,01 dollaria). Sekä Copilotin tekemä koodin katselmointi että pilviagentti kuluttavat näitä, ja kulutus riippuu muutosten koosta ja työn määrästä. GitHubin oman arvion mukaan yksi katselmointi maksaa kevyimmällä _Lite_-tasolla noin 0,05–1 dollaria ja oletuksena olevalla _Balanced_-tasolla noin 0,25–5 dollaria. Yksi Balanced-tason katselmointi voi siis pahimmillaan kuluttaa koko kuukauden AI credit -kiintiön. Käytä tämän viikon tehtävissä katselmointiin aina Lite-tasoa, ja pidä pull requestit pieninä. AI credit -kiintiön kulutusta voit seurata osoitteessa <https://github.com/settings/billing>.
 
 <input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
 
@@ -228,15 +226,15 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 ![]({{ "/images/pr22.png" | relative_url }})
 
-<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi. Valitse ennen katselmoinnin pyytämistä Copilotin nimen vierestä löytyvästä valikosta katselmoinnin tasoksi _Lite_ (kuvassa oletuksena oleva _Balanced_) ja paina sen jälkeen _Request_:
+<input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi. Valitse ennen katselmoinnin pyytämistä Copilotin nimen vierestä löytyvästä valikosta katselmoinnin tasoksi _Lite_ ja paina sen jälkeen _Request_:
 
-![]({{ "/images/pr32.png" | relative_url }})
+![]({{ "/images/pr-lite.png" | relative_url }})
 
 <input type="checkbox"> Odota katselmoinnin valmistumista, siihen menee yleensä muutamia minuutteja
 
 <input type="checkbox"> Käy katselmoinnin tulos läpi. Hyväksy ehdotetut muutokset halutessasi ja merkitse kommentit selvitetyiksi (_resolve conversation_)
 
-Kommenttien yhteydessä on myös nappi _Fix with Copilot_, joka käynnistää pilviagentin tekemään korjauksen. Tämä kuluttaa kiintiötä, joten tee korjaukset mieluummin itse tai hyväksy Copilotin ehdottamat muutokset suoraan.
+Kommenttien yhteydessä on myös nappi _Fix with Copilot_, joka käynnistää pilviagentin tekemään korjauksen. Tämä kuluttaa AI credit -kiintiötä, joten tee korjaukset mieluummin itse tai hyväksy Copilotin ehdottamat muutokset suoraan.
 
 <input type="checkbox"> Mergeä Pull request main-haaraan
 
@@ -254,54 +252,70 @@ Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/
 
 Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada GitHubin pilviagentti ([Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)) koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
+<input type="checkbox"> Varmista, että Ohtuvarastosta on GitHubissa ajantasainen versio!
+
 <input type="checkbox"> Tee repositorioosi [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue), jossa kuvaat mahdollisimman tarkasti minkälaisen sovelluksesta haluat:
 
-![]({{ "/images/issue0.png" | relative_url }}){:height="350px" }
+![]({{ "/images/issue0.png" | relative_url }})
 
-Pidä sovelluksen laajuus pienenä, sillä pilviagentin kiintiön kulutus kasvaa tehtävän koon mukana. Riittää, että sovelluksella voi
+Pidä sovelluksen laajuus pienenä, sillä pilviagentin AI credit -kiintiön kulutus kasvaa tehtävän koon mukana. Riittää, että sovelluksella voi
 - luoda useita varastoja (nimi ja tilavuus)
 - listata varastot saldoineen
 - lisätä varastoon tavaraa ja ottaa sieltä tavaraa
 
 Varastojen muokkaamista, poistamista tai muita lisäominaisuuksia ei tässä tehtävässä tarvita. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
 
-Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Kirjoita kuvaus [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
+Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Voit kirjoittaa kuvauksen esim. [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
 
-**Jos kiintiö loppuu:** Jos Copilotin kiintiösi on loppumassa tai loppuu kesken tehtävän, voit tehdä tehtävän myös VS Coden agenttitilassa. Tämä on todennäköisesti kevyempää, sillä agentti suorittaa komennot omalla koneellasi eikä GitHub Actionsissa, ja voit pysäyttää sen, jos se lähtee väärään suuntaan. Tee tällöin seuraavasti:
-- tee issue kuten alla on neuvottu
-- luo uusi haara, esim. `git checkout -b web-ui`
-- anna issuen kuvaus agentille promptina VS Codessa
-- käy agentin tekemät muutokset läpi, commitoi ja pushaa haara GitHubiin
-- tee haarasta pull request, ja kirjoita sen kuvaukseen `Fixes #<issuen numero>`
-- tee pull requestille oma katselmointi kuten alla on neuvottu, mutta pyydä katselmoinnin muutokset agentilta VS Codessa ja pushaa ne samaan haaraan
-
-Pilviagentin seuraamiseen liittyvät askeleet voit tällöin ohittaa.
+> **Jos AI credit -kiintiö loppuu:** Jos AI credit -kiintiösi on loppumassa tai loppuu kesken tehtävän, voit tehdä tehtävän myös VS Coden agenttitilassa. Tämä on todennäköisesti kevyempää, sillä agentti suorittaa komennot omalla koneellasi eikä GitHub Actionsissa, ja voit pysäyttää sen, jos se lähtee väärään suuntaan. Tee tällöin seuraavasti:
+> - tee issue kuten alla on neuvottu
+> - luo uusi haara, esim. `git checkout -b web-ui`
+> - anna issuen kuvaus agentille promptina VS Codessa
+> - käy agentin tekemät muutokset läpi, commitoi ja pushaa haara GitHubiin
+> - tee haarasta pull request, ja kirjoita sen kuvaukseen `Fixes #<issuen numero>`
+> - tee pull requestille oma katselmointi kuten alla on neuvottu, mutta pyydä katselmoinnin muutokset agentilta VS Codessa ja pushaa ne samaan haaraan
+>
+> Pilviagentin seuraamiseen liittyvät askeleet voit tällöin ohittaa.
 
 <input type="checkbox"> Assignaa issue Copilotille:
 
 ![]({{ "/images/issue1.png" | relative_url }}){:height="130px" }
 
-Copilot avaa Pull requestin työskentelyään varten:
+Copilotin valitseminen avaa ikkunan _Assign agent to issue_:
 
-![]({{ "/images/issue2.png" | relative_url }})
+![]({{ "/images/robot0.png" | relative_url }}){:height="300px" }
 
-<input type="checkbox"> Mene Pull requestin näkymään (ks. välilehti Pull requests), ja sieltä edelleen nappia "View session" painamalla katsomaan Copilotin työskentelyä
+Ikkunassa voi antaa agentille lisäohjeita (_Optional prompt_) sekä valita repositorion, haaran, josta työ aloitetaan, käytettävän agentin ja mallin (_Auto_). Oletusasetukset riittävät, ja lisäohjekentän voi jättää tyhjäksi, sillä issuen kuvaus toimii agentin spesifikaationa. Copilot Student -versiossa malli valitaan joka tapauksessa automaattisesti.
 
-Copilot aloittaa tutustumalla projektiin ja luo suunnitelman
+<input type="checkbox"> Käynnistä agentti painamalla _Assign_
 
-![]({{ "/images/issue3.png" | relative_url }})
+Copilot avaa työskentelyään varten draft-tilaisen pull requestin, jonka kuvausta se päivittää työn edetessä.
 
-<input type="checkbox"> Seuraa Copilotin edistymistä
+Voit tarkkailla Copilotin työskentelyä esim. pull requestin sivulta (välilehti Pull requests) napilla "View session". Session löytää myös repositorion välilehdeltä _Agents_ sekä issuen sivulta.
 
-Copilotilla voi mennä aika kauan koodaillessa. Nyt on hyvä hetki esim. keittää kahvit tai hakea jääkaapista energiajuomatölkki.
+Session-näkymästä näet, mitä Copilot tekee. Se aloittaa pystyttämällä itselleen ympäristön, eli kloonaa repositorion ja käynnistää muutaman [MCP-palvelimen](/genai/#mcp-eli-model-context-protocol), joiden avulla se saa käyttöönsä lisätyökaluja, esim. mahdollisuuden käyttää sovellusta selaimella. Tämän jälkeen Copilot tutustuu projektiin ja alkaa toteuttaa muutoksia:
+
+![]({{ "/images/robot2.png" | relative_url }})
+
+Näkymän yläosassa näkyy myös session käyttämä malli sekä tähän mennessä kulunut määrä AI creditejä. Kuvan noin 7 minuutin sessio kulutti 3 AI creditiä.
 
 <input type="checkbox"> Odota kunnes Copilot on valmis
 
-Kun Copilot on valmis (itselläni meni noin vartti) näet sen luoman koodin Pull requestin sivulta. Ainakin omassa tapauksessani Copilot on lisännyt PR:n sivulle myös kuvakaappauksia sovelluksesta.
+Itselläni Copilotilla meni työhön noin 7 minuuttia. Tiedät Copilotin olevan valmis seuraavista merkeistä:
+- session näkymässä Copilotin työvaiheen nimen perässä (heti tehtävän aloitusviestin alla) näkyy vihreä väkänen ja työhön kulunut aika, yllä olevassa kuvassa ✓ 7m 18s
+- Copilot pyytää sinulta katselmointia: pull requestin sivun yläosaan ilmestyy keltainen ilmoitus _Copilot requested your review on this pull request_, ja nimesi näkyy kohdassa _Reviewers_. Saat pyynnöstä myös GitHub-ilmoituksen
+- pull requestin kuvaus on päivittynyt yhteenvedoksi tehdyistä muutoksista
+- pull requestin aikajanalle on tullut merkintä _Copilot finished work on behalf of ..._
 
-<input type="checkbox"> Pull request on tällä hetkellä draft-tilassa. Muuta sen tilaa painamalla nappia "Ready for review"
+Valmis pull request näyttää esim. seuraavalta:
 
-<input type="checkbox"> Hae pull requestin koodia omalla koneellasi
+![]({{ "/images/robot11.png" | relative_url }})
+
+Pull requestin kuvauksesta näet, mitä Copilot teki ja miten sovellus käynnistetään. Copilotin luoman koodin näet välilehdeltä _Files changed_.
+
+<input type="checkbox"> Pull request on edelleen draft-tilassa. Muuta sen tilaa painamalla nappia _Ready for review_. Nappi löytyy _Conversation_-välilehden alaosasta. Vaihtoehtoisesti voit painaa pull requestin sivun yläoikealla olevaa nappia _Not ready_ ja valita avautuvasta paneelista _Ready for review_
+
+<input type="checkbox"> Hae pull requestin koodi omalla koneellasi
 
 Tämä tapahtuu komennoilla `git fetch` ja `git checkout`:
 
@@ -312,41 +326,44 @@ remote: Counting objects: 100% (36/36), done.
 remote: Compressing objects: 100% (20/20), done.
 remote: Total 25 (delta 9), reused 18 (delta 5), pack-reused 0 (from 0)
 Unpacking objects: 100% (25/25), 13.12 KiB | 206.00 KiB/s, done.
-From github.com:mluukkai/ohtuvarasto25
- * [new branch]      copilot/add-warehouse-management-ui -> origin/copilot/add-warehouse-management-ui
-   a359cc1..7211227  user_interface -> origin/user_interface
-$ git checkout copilot/add-warehouse-management-ui
-branch 'copilot/add-warehouse-management-ui' set up to track 'origin/copilot/add-warehouse-management-ui'.
-Switched to a new branch 'copilot/add-warehouse-management-ui'
+From github.com:mattiluukkainen/ohtuvarasto26
+ * [new branch]      copilot/add-web-interface-for-warehouses -> origin/copilot/add-web-interface-for-warehouses
+$ git checkout copilot/add-web-interface-for-warehouses
+branch 'copilot/add-web-interface-for-warehouses' set up to track 'origin/copilot/add-web-interface-for-warehouses'.
+Switched to a new branch 'copilot/add-web-interface-for-warehouses'
 ```
+
+Branchin nimen saat kopioitua Pull requestin sivulta.
 
 <input type="checkbox"> Varmista, että koodi toimii
 
-Oma sovellukseni oli konfiguroitu siten, että osoitteen http://localhost:5000/ sijaan sovellukseen pääsee käsiksi osoitteesta http://127.0.0.1:5000/
+Sovelluksen käynnistysohje löytyy projektin README-tiedostosta, jota Copilot on päivittänyt. Ohje on myös pull requestin kuvauksessa.
 
-Macissa portti 5000 on oletusarvoisesti macOS:n AirPlay Receiver -palvelun käytössä, ja osoite http://localhost:5000/ saattaa siksi vastata virheellä _403 Forbidden_. Käytä tällöin osoitetta http://127.0.0.1:5000/ tai käynnistä sovellus johonkin toiseen porttiin, esim. `flask run --port 5001`.
+<input type="checkbox"> Tutustu Copilotin tekemään koodiin omalla koneellasi VS Codessa. Jos vastaan tulee jotain, mitä et ymmärrä, esim. tuntematon kirjasto, Flaskin toimintaperiaate tai testien rakenne, pyydä Copilotia selittämään asia. Käytä tähän chatin _Ask_-tilaa (valitaan chat-ikkunan alareunan valikosta), jolloin Copilot vastaa kysymyksiin muuttamatta koodia
 
-<input type="checkbox"> _Vapaaehtoinen:_ Jos kiintiötäsi on vielä jäljellä, pyydä Copilotia katselmoimaan pull request (Lite-tasolla) samaan tapaan kuin edellisessä tehtävässä, ja käy katselmoinnin tulos läpi
+_Katselmoinnin tekeminen edellyttää, että ymmärrät mitä koodi tekee. Agentin tuottama koodi ei ole omaa koodia, joten sen tarkastamisessa tarvitaan hieman vaivannäköä._
 
-Agentin tekemää koodia voi siis katselmoida toinen AI. Tämä ei kuitenkaan riitä, vaan ihmisen on joka tapauksessa katselmoitava koodi.
-
-<input type="checkbox"> Tee sovellukselle oma katselmointi GitHubissa
+<input type="checkbox"> Tee sovellukselle katselmointi GitHubissa
 
 Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta napista "Add your review". Saatat joutua uudelleenlataamaan sivun, jotta nappi ilmestyy näkyviin
 
-<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia sovellukseen:
+<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia tai laajennuksia sovellukseen:
 
 ![]({{ "/images/issue5.png" | relative_url }}){:height="450px" }
 
-Kokoa kaikki muutospyynnöt samaan katselmointiin, sillä jokainen pyyntö käynnistää uuden agenttisession, joka kuluttaa kiintiötä. Yksi korjauskierros riittää.
+Kokoa kaikki muutospyynnöt samaan katselmointiin, sillä jokainen pyyntö käynnistää uuden agenttisession, joka kuluttaa AI credit -kiintiötä. Yksi korjauskierros riittää.
 
-Valitse siis lomakkeelta _Request changes_. Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github), jotta Copilot suostuu tekemään muutokset
+Valitse siis lomakkeelta _Request changes_. **Kommenteissa tulee mainita [@copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github), jotta Copilot suostuu tekemään muutokset**
 
 <input type="checkbox"> Seuraa jälleen Copilotin edistymistä napilla "View session"
 
 <input type="checkbox"> Varmista vielä omalla koneellasi, että koodi toimii muutosten jälkeen
 
+Copilot pushaa muutokset samaan haaraan, jonka olet jo hakenut koneellesi. Saat muutokset omalle koneellesi komennolla `git pull`, kun olet kyseisessä haarassa (tarkista tarvittaessa komennolla `git status`).
+
 <input type="checkbox"> Kun olet tyytyväinen mergeä Pull request main-haaraan
+
+<input type="checkbox"> Viikolla 1 tehty GitHub Actions -työnkulku käynnistyy, kun main-haaraan pushataan, eli nyt mergen jälkeen. Varmista, että CI menee läpi. Jos Copilot on muokannut työnkulkua, esim. lisännyt siihen testien suorittamisen, tarkista myös, että muutokset ovat järkeviä
 
 <input type="checkbox"> Kirjoita raportti katselmoinnista palautusrepositorioon hakemistoon _viikko5_ talletettavaan tiedoston _vibe.md_
 
