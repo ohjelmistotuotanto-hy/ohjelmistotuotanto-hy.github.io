@@ -19,6 +19,12 @@ layout: default
       <ul></ul>
     </details>
     {% endif %}
+    {% if page.path == "genai.md" %}
+    <details class="vihje tehtavalista" data-sections hidden>
+      <summary>Sisältö</summary>
+      <ul></ul>
+    </details>
+    {% endif %}
     {{ content }}
   </div>
 

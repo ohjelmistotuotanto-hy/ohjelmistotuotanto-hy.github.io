@@ -178,64 +178,66 @@ class KPSPelaajaVsPelaaja(KiviPaperiSakset):
 
 Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</i>, jota Python ei osaa hanskata. Itse ratkaisin ongelman määrittelemällä tehdasfunktion _luo_peli_ omassa tiedostossaan.
 
-### 5. AI Agent in action [tekoäly]
+### 5. Web-käyttöliittymä agentin avulla [tekoäly]
 
-Lue ennen viikon [tekoäly]-tehtävien tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuus [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7).
+Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-käyttöliittymä.
 
-Jatketaan edellisen tehtävän koodin parissa.
+<input type="checkbox"> Tee palautusrepositorioosi kopio projektin hakemistosta nimellä _kivi-paperi-sakset-original_, jolloin edellisen tehtävän jälkeinen tilanne jää talteen, ja commitoi
 
-<input type="checkbox">  Ennen kun koodiin alkaa tulla muutoksia, tee palautusrepositorioosi kopio projektin sisältävästä hakemistosta. Anna kopiolle nimi _kivi-paperi-sakset-original_. Edellisen tehtävän jälkeinen tilanne jää kopioon.
-
-<input type="checkbox"> Avaa hakemisto _viikko7/kivi-paperi-sakset_ VS Codessa omana workspacenaan ja valitse Copilotin Chat-näkymässä agentiksi _Agent_:
-
-![]({{ "/images/agent.png" | relative_url }}){:height="450px" }
-
-<input type="checkbox"> Luo projektille ohjetiedosto kuten aiempien viikkojen [tekoäly]-tehtävissä. Kirjaa ohjetiedostoon ainakin seuraavat asiat:
+<input type="checkbox"> Avaa hakemisto _viikko7/kivi-paperi-sakset_ VS Codessa omana workspacenaan ja luo projektille [ohjetiedosto](/genai/#kontekstin-hallinta). Kirjaa ohjetiedostoon ainakin seuraavat asiat:
 
 - kyseessä on uv-projekti
 - olemassa olevaa koodia tulee hyödyntää mahdollisimman paljon, eikä pelilogiikkaa saa toteuttaa uudelleen
 - jos käytössäsi on Mac, sovellus ei saa käyttää porttia 5000, joka on Macissa varattu
 
-Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**, näin pääset tarvittaessa palaamaan edelliseen toimivaan tilanteeseen.
+Tässä tehtävässä **ei kannata ehdä välicommiteja**, vaan kaikki tehtävän muutokset commitoidaan vasta lopussa. Näin tehtävän lopussa tehtävä katselmointi kohdistuu kaikkiin agentin tekemiin muutoksiin.
 
-<input type="checkbox">  Yritä saada agentti rakentamaan sovelluksellesi web-käyttöliittymä
+<input type="checkbox"> Toteuta agentin avulla sovellukselle web-käyttöliittymä. Voit joko suunnitella toteutuksen ensin _Plan_-tilassa [viikon 6](/tehtavat6/#7-suunnittele-ensin-toteuta-sitten-tekoäly) tapaan tai antaa tehtävän suoraan _Agent_-tilassa (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent))
 
-- ohjelma kannattaa suorittaa siten, että pyydät agentin käynnistämään sen, näin agentti osaa korjata koodin jos se ei jostain syystä käynnisty
+<input type="checkbox"> Pyydä agenttia tekemään sovellukselle Robot Frameworkilla testit. Varmista, että pystyt suorittamaan testit myös itse.
 
-<input type="checkbox"> Kun sovellus toimii, käske agenttia tekemään sovellukselle automatisoidut testit. Pyydä agenttia myös varmistamaan, että testit menevät läpi
-
-<input type="checkbox"> Pyydä agenttia muuttamaan sovellusta (ja testejä) siten, että jokaista peliä pelataan niin kauan kunnes toinen osapuoli on saavuttanut viisi voittoa
+<input type="checkbox"> Pyydä agenttia muuttamaan peliä siten, että se päättyy, kun jompikumpi osapuoli on saavuttanut viisi voittoa
 
 <input type="checkbox"> Tee peliin vielä agentin avulla jokin haluamasi muutos
 
-<input type="checkbox"> Muuta vielä koodia **ilman agentin apua** siten, että pelit päättyvät kun toinen pelaajista saavuttaa kolme voittoa
+<input type="checkbox"> Muuta koodia **ilman agentin apua** siten, että peli päättyy vasta, kun toisella on vähintään kolme voittoa **ja** kahden voiton johto. 
 
-<input type="checkbox"> Varmista, että myös testit toimivat edelleen
+<input type="checkbox"> Pyydä agenttia korjaamaan testit ja laajentamaan niitä ottamaan huomioon uuden lopetuslogiikan
 
-<input type="checkbox"> Käy läpi agentin tekemä koodi. Jos koodissa on jotain sinulle vierasta, pyydä agenttia selittämään, mistä on kyse
+<input type="checkbox"> Käy läpi agentin tekemä koodi sekä testit. Jos koodissa on jotain sinulle vierasta, pyydä agenttia selittämään, mistä on kyse
 
 Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) avulla.
 
-<input type="checkbox"> Luo projektiin tiedosto _.github/prompts/review.prompt.md_, joka ohjeistaa agenttia katselmoimaan koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
+Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuus [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7).
 
-- [osan 4](/osa4/) suunnitteluperiaatteet, erityisesti toisteisuus ja riippuvuudet konkreettisiin luokkiin
+<input type="checkbox"> Luo palautusrepositoriosi juureen tiedosto _.github/prompts/review.prompt.md_, joka ohjeistaa agenttia katselmoimaan koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
+
+- [osan 4](/osa4/) suunnitteluperiaatteet, erityisesti toisteisuus ja turhat riippuvuudet 
 - testien kattavuus ja laatu
 - tietoturva, esim. onko sovellus käynnistetty `debug=True`-asetuksella, onko koodissa kovakoodattuja salaisuuksia ja validoidaanko käyttäjän syöte
 
-<input type="checkbox"> Suorita katselmointi chatissa komennolla `/review`
+VS Code etsii prompt-tiedostoja workspacen juuren hakemistosta _.github/prompts_. Koska sovellus on palautusrepositorion alihakemistossa, prompt-tiedosto ei ole käytettävissä, jos VS Codessa on auki pelkkä hakemisto _viikko7/kivi-paperi-sakset_.
 
-<input type="checkbox"> Korjaa (itse tai agentin avulla) ainakin yksi katselmoinnin löydös ja commitoi
+Katselmointi kohdistuu _working treehen_, eli tiedostojen nykyiseen tilaan commitoimattomine muutoksineen.
+
+<input type="checkbox"> Jotta agentti huomioi myös uudet tiedostot, lisää ne gitiin komennolla `git add`, mutta älä vielä commitoi niitä
+
+<input type="checkbox"> Avaa VS Codessa koko palautusrepositorio, eli sen juurihakemisto, ja suorita katselmointi chatissa. Kerro komennossa, mikä projekti katselmoidaan, esim. `/review kivi-paperi-sakset`:
+
+![]({{ "/images/juuri.png" | relative_url }})
+
+Kuvassa VS Codessa on avattu palautusrepositorion juurihakemisto (_ohtu-palautus..._), jonka alla on hakemisto _.github/prompts_.
+
+<input type="checkbox"> Korjaa (itse tai agentin avulla) ainakin yksi katselmoinnin löydös ja commitoi lopuksi kaikki tehtävän muutokset
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _agent.md_
 
 Kerro raportissa
-- Päätyikö agentti toimivaan ratkaisuun?
-- Miten varmistuit, että ratkaisu toimii?
-- Oletko ihan varma, että ratkaisu toimii oikein?
-- Kuinka paljon jouduit antamaan agentille komentoja matkan varrella?
-- Kuinka hyvät agentit tekemät testit olivat?
-- Onko agentin tekemä koodi ymmärrettävää?
-- Miten agentti on muuttanut edellisessä tehtässä tekemääsi koodia?
+- Päätyikö agentti toimivaan ratkaisuun, ja miten varmistuit siitä?
+- Kuinka paljon jouduit ohjaamaan agenttia matkan varrella?
+- Kuinka hyviä agentin tekemät testit olivat?
+- Onko agentin tekemä koodi ymmärrettävää, ja miten agentti muutti edellisessä tehtävässä tekemääsi koodia?
+- Oliko itse tehtävän muutoksen tekeminen helppoa?
 - Mitä katselmointi löysi, ja olivatko löydökset aiheellisia?
 - Mitä uutta opit?
 
@@ -273,7 +275,7 @@ Edellä agentille piti kertoa, miten käyttöliittymä testataan. Tallennetaan o
 <input type="checkbox"> Luo projektiin tiedosto _.github/skills/ui-testaus/SKILL.md_, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella. Kirjoita skillsille kuvaus (`description`), josta agentti ymmärtää, milloin skillsiä tulee käyttää. Kirjaa ohjeisiin ainakin
 
 - miten sovellus käynnistetään ja missä portissa se toimii
-- mitkä pelimoodit ja tilanteet testataan, esim. pelin päättyminen kolmeen voittoon ja virheellinen syöte
+- mitkä pelimoodit ja tilanteet testataan, esim. pelin päättyminen kahden voiton johtoon ja virheellinen syöte
 - miten agentin tulee raportoida tulokset
 
 <input type="checkbox"> Aloita uusi chat-keskustelu ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista chatista, ottiko agentti skillsin käyttöön. Jos ei ottanut, paranna kuvausta ja kokeile uudelleen
@@ -355,15 +357,15 @@ Kerro raportissa
 
 ### 7. Tekoäly ja minä [tekoäly]
 
-<input type="checkbox"> Kirjoita hakemistoon _viikko7_ talletettavaan tiedostoon _reflektio.md_ noin puolen sivun (noin 250 sanaa) pohdinta tekoälyn käytöstä ohjelmistokehityksessä
+Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viimeinen luku [Lopuksi](/genai/#lopuksi-viikko-7), joka kokoaa yhteen tekoälyn käyttöön liittyviä riskejä ja tutkimustietoa tekoälyn vaikutuksista ohjelmistotuotantoon.
+
+<input type="checkbox"> Kirjoita hakemistoon _viikko7_ talletettavaan tiedostoon _reflektio.md_ noin sivun (noin 500 sanaa) pohdinta tekoälyn käytöstä ohjelmistokehityksessä
 
 Pohdi kirjoituksessasi ainakin seuraavia:
 - Miten tekoälyn käyttösi muuttui kurssin aikana?
 - Missä tekoäly auttoi eniten, ja missä siitä oli haittaa?
 - Mitkä kurssilla opituista ohjelmistotuotannon käytänteistä ovat mielestäsi tärkeimpiä agentteja käytettäessä?
 - Minkälaiset pelisäännöt tekoälyn käytölle sopisit miniprojektisi tiimin kanssa, tai tulevassa työpaikassasi?
-
-Viittaa kirjoituksessasi ainakin kerran materiaaliin [Tekoäly ohjelmistotuotannossa](/genai/).
 
 ### 8. Kurssipalaute
 

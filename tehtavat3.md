@@ -808,7 +808,7 @@ Jatketaan WebLogin-sovelluksen parissa. Varmista, että tehtävien 5-7 muutokset
 
 <input type="checkbox"> Avaa VS Codessa hakemisto _viikko3/login_ omana workspacenaan (esim. komennolla `code .` hakemistossa _viikko3/login_), näin agentti keskittyy vain tähän projektiin
 
-<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse agentiksi _Agent_
+<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse tilaksi _Agent_
 
 <input type="checkbox"> Generoi projektille ohjetiedosto kirjoittamalla chattiin `/init`
 

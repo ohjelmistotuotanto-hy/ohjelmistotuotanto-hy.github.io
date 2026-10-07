@@ -9,7 +9,7 @@ Tämä sivu käsittelee generatiivisen tekoälyn ja erityisesti koodausagenttien
 
 Osaan kurssin muista tehtävistä liittyy lisäksi tehtävän yhteydestä avattava vihje tekoälyn hyödyntämiseen.
 
-Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Pro -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
+Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
 
 ## Kurssin GPT
 
@@ -53,7 +53,7 @@ Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Ka
 
 Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 
-Käytämme kurssilla GitHub Copilotia pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
+Käytämme kurssilla GitHub Copilotia pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. VS Code kutsuu näitä tiloja nykyään agenteiksi, tässä materiaalissa puhutaan selkeyden vuoksi tiloista. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
 
 ![]({{ "/images/agentti1.png" | relative_url }})
 
@@ -127,6 +127,12 @@ Nopeasti koodia tuottava agentti on hyödytön, tai jopa haitallinen, jos se rak
 
 Myös syvällinen tekninen osaaminen on edelleen oleellista. Agentin tuotosta ei pysty arvioimaan, eikä agenttia ohjaamaan oikeaan suuntaan, jos ei itse ymmärrä, mitä koodi tekee ja millainen on hyvä ratkaisu. Ja kun jotain menee pieleen, ihmisen on pystyttävä selvittämään mistä on kyse. GitHub Copilot onkin varsin hyvin nimetty tuote: kyseessä on lentoperämies, ohjelmoija on edelleen kapteeni, joka päättää minne ollaan menossa ja kantaa lopullisen vastuun.
 
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 2, tehtävä 9: Ensikosketus Copilotiin](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly)
+- [Viikko 3, tehtävä 8: Agentti ja hyväksymistestit](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
+- [Viikko 6, tehtävät 1 ja 3: tuntemattoman koodin ymmärtäminen tekoälyn avulla](/tehtavat6/#1-laskin-ja-komento-oliot)
+
 ## Testit ja versionhallinta agentin suojakaiteina <span style="color:blue">[viikko 4]</span>
 
 Agentti kirjoittaa koodia paljon nopeammin kuin ihminen ehtii sitä lukea. Siksi tarvitaan mekanismeja, jotka pitävät agentin tuotoksen hallinnassa. Ohjelmistotuotannon perinteiset käytänteet, automatisoidut testit ja versionhallinta, osoittautuvat agenttien aikakaudella entistäkin tärkeämmiksi.
@@ -160,6 +166,12 @@ Versionhallinta on agentin kanssa työskennellessä paras turvaverkko:
 - **Lue diff ennen committia.** Komento `git diff` tai VS Coden Source Control -näkymä näyttää tarkasti, mitä agentti muutti. Agentit tekevät usein pyytämättä muutoksia myös muualle kuin minne pyydettiin.
 - **Käytä haaroja kokeiluihin.** Isompi agentin tekemä muutos kannattaa tehdä omaan haaraansa, jolloin main pysyy puhtaana.
 
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 4, tehtävä 4: Testikoodin siistiminen agentin avulla](/tehtavat4/#4-testikoodin-siistiminen-agentin-avulla-tekoäly)
+- [Viikko 4, tehtävä 6: TDD agentin kanssa](/tehtavat4/#6-tdd-agentin-kanssa-tekoäly)
+- [Viikko 4, vapaaehtoinen lisätehtävä: mutaatiotestaus](/tehtavat4/#vapaaehtoinen-lisätehtävä-mutaatiotestaus)
+
 ## AI katselmoinnissa ja pilviagentti <span style="color:blue">[viikko 5]</span>
 
 ### AI koodin katselmoinnissa
@@ -178,21 +190,22 @@ Pilviagentin käyttö muistuttaa ohjelmistokehityksen ulkoistamista: _issue on s
 
 Andrej Karpathy lanseerasi alkuvuodesta 2025 termin [vibe coding](https://x.com/karpathy/status/1886192184808149383): ohjelmoidaan kuvailemalla tekoälylle mitä halutaan, hyväksytään kaikki muutokset lukematta niitä ja katsotaan vain, näyttääkö lopputulos toimivan. Vibe coding sopii mainiosti kertakäyttöisiin prototyyppeihin ja harrasteprojekteihin.
 
-Tuotantokoodissa tarvitaan kuitenkin hallitumpaa otetta. Simon Willison kutsui sitä lokakuussa 2025 nimellä [vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/), mutta vakiintunut termi on nykyään [agentic engineering](https://thenewstack.io/vibe-coding-is-passe/), jonka Karpathy itse lanseerasi helmikuussa 2026. Agentic engineeringissä kehittäjä ohjaa ja valvoo agentteja: työ perustuu suunnitelmiin ja spesifikaatioihin, agenttien tuotos verifioidaan ja muutokset katselmoidaan oikeasti. Agentit toimivat parhaiten juuri niissä projekteissa, joissa on kunnossa ohjelmistotuotannon perusasiat, eli kattavat automatisoidut testit, CI, dokumentaatio, selkeä arkkitehtuuri ja katselmointikäytännöt. Nämä ovat juuri niitä asioita, joita tällä kurssilla opetellaan.
-
-Pisimmälle viedyissä kokeiluissa ihminen ei enää katselmoi koodia lainkaan. Dan Shapiro kutsuu tätä tasoa nimellä _dark factory_ tehtaiden mukaan, joissa robotit työskentelevät valot sammutettuina. Esim. StrongDM:n tekoälytiimin [Software Factory](https://simonwillison.net/2026/Feb/7/software-factory/) -periaatteiden mukaan koodia ei saa kirjoittaa eikä katselmoida ihminen. Ihmiset kirjoittavat spesifikaatiot ja testiskenaariot ja seuraavat tuloksia, ja agentit iteroivat koodia, kunnes skenaariot menevät läpi. Laadunvarmistus ei siis katoa vaan siirtyy koodin lukemisesta spesifikaatioihin, automatisoituihin testeihin ja muuhun verifiointiin, joiden laatu on tällöin kaikki kaikessa. Lähestymistapa on vielä kokeellinen, ja avoimia kysymyksiä riittää esim. tietoturvan, kustannusten ja vastuun osalta.
-
-### Laatu ja vastuu
-
-Tekoälyn tuottama koodi voi rapauttaa koodikantaa. Esim. [GitClearin tutkimus](https://www.gitclear.com/ai_assistant_code_quality_2025_research) havaitsi, että AI-avusteisen koodaamisen yleistyessä copy-paste-koodin määrä on kasvanut ja olemassa olevan koodin refaktoroiminen on vähentynyt. Agentti kirjoittaa helposti uuden funktion sen sijaan, että hyödyntäisi olemassa olevaa.
+Tuotantokoodissa tarvitaan kuitenkin hallitumpaa otetta. Simon Willison kutsui sitä lokakuussa 2025 nimellä [vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/), mutta vakiintunut termi on nykyään [agentic engineering](https://thenewstack.io/vibe-coding-is-passe/), jonka Karpathy itse lanseerasi helmikuussa 2026. Agentic engineeringissä kehittäjä ohjaa ja valvoo agentteja: työ perustuu suunnitelmiin ja spesifikaatioihin, agenttien tuotos verifioidaan ja muutokset katselmoidaan oikeasti. Agentit toimivat parhaiten projekteissa, joissa ohjelmistotuotannon perusasiat ovat kunnossa: kattavat automatisoidut testit, CI, dokumentaatio, selkeä arkkitehtuuri ja katselmointikäytännöt.
 
 Tiimin [definition of done](/osa1/#definition-of-done) koskee myös tekoälyn tekemää koodia. Jos DoD edellyttää testejä, katselmointia ja dokumentaatiota, se pätee riippumatta siitä, kuka tai mikä koodin kirjoitti.
 
+Pisimmälle viedyissä kokeiluissa ihminen ei enää katselmoi koodia lainkaan. Dan Shapiro kutsuu tätä tasoa nimellä _dark factory_ tehtaiden mukaan, joissa robotit työskentelevät valot sammutettuina. Esim. StrongDM:n tekoälytiimin [Software Factory](https://simonwillison.net/2026/Feb/7/software-factory/) -periaatteiden mukaan koodia ei saa kirjoittaa eikä katselmoida ihminen. Ihmiset kirjoittavat spesifikaatiot ja testiskenaariot ja seuraavat tuloksia, ja agentit iteroivat koodia, kunnes skenaariot menevät läpi. Laadunvarmistus ei siis katoa vaan siirtyy koodin lukemisesta spesifikaatioihin, automatisoituihin testeihin ja muuhun verifiointiin, joiden laatu on tällöin kaikki kaikessa. Lähestymistapa on vielä kokeellinen, ja avoimia kysymyksiä riittää esim. tietoturvan, kustannusten ja vastuun osalta.
+
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 5, tehtävä 5: Pull request ja koodin katselmointi](/tehtavat5/#5-pull-request-ja-koodin-katselmointi-tekoäly)
+- [Viikko 5, tehtävä 6: Good vibe with warehouses](/tehtavat5/#6-good-vibe-with-warehouses-tekoäly)
+
 ## Suunnittele ensin <span style="color:blue">[viikko 6]</span>
 
-### Plan-agentti
+### Plan-tila
 
-Isompia muutoksia tehtäessä agentin kannattaa antaa ensin _suunnitella_ ja vasta sitten toteuttaa. VS Coden [Plan-agentti](https://code.visualstudio.com/docs/agents/run/planning) (valitaan chatin agenttivalikosta tai komennolla `/plan`, ks. myös [Jos valikossa on vain Agent](#jos-valikossa-on-vain-agent)) tutkii koodia, kysyy tarvittaessa tarkentavia kysymyksiä ja laatii suunnitelman: mitä tiedostoja muutetaan, missä järjestyksessä ja miten lopputulos todennetaan. Suunnitelma ei vielä muuta koodia.
+Isompia muutoksia tehtäessä agentin kannattaa antaa ensin _suunnitella_ ja vasta sitten toteuttaa. VS Coden [Plan-tila](https://code.visualstudio.com/docs/agents/run/planning) (valitaan chatin tilavalikosta tai komennolla `/plan`, ks. myös [Jos valikossa on vain Agent](#jos-valikossa-on-vain-agent)) tutkii koodia, kysyy tarvittaessa tarkentavia kysymyksiä ja laatii suunnitelman: mitä tiedostoja muutetaan, missä järjestyksessä ja miten lopputulos todennetaan. Suunnitelma ei vielä muuta koodia.
 
 Suunnitelmaa katselmoidessa kannattaa varmistaa:
 
@@ -209,9 +222,18 @@ Suunnitelman arviointi edellyttää, että tunnet koodin, jota suunnitelma koske
 
 Kurssin [osan 4](/osa4/) suunnitteluperiaatteet, kuten koheesio, DRY, riippuvuuksien minimointi ja rajapintoihin ohjelmointi, eivät toteudu agentin koodissa itsestään. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ei sitä, että koodi pysyy ylläpidettävänä.
 
+Tämä näkyy myös tutkimuksissa: tekoälyn tuottama koodi voi rapauttaa koodikantaa. Esim. [GitClearin tutkimuksessa](https://www.gitclear.com/ai_assistant_code_quality_2025_research) analysoitiin 211 miljoonaa muutettua koodiriviä vuosilta 2020–2024. AI-avusteisen koodaamisen yleistyessä toisteisen, copy-paste-tyyppisen koodin osuus muutetuista riveistä kasvoi 8,3 prosentista 12,3 prosenttiin, ja tyypillisesti refaktorointiin liittyvän siirretyn koodin osuus laski 25 prosentista alle 10 prosenttiin. Vuonna 2024 kopioitua koodia oli ensimmäistä kertaa enemmän kuin siirrettyä. Agentti kirjoittaa helposti uuden funktion sen sijaan, että hyödyntäisi olemassa olevaa.
+
 Periaatteet kannattaa siksi sanoa ääneen joko suoraan pyynnössä tai projektin [ohjetiedostossa](#kontekstin-hallinta) (`AGENTS.md` tai `.github/copilot-instructions.md`), jolloin ne ovat agentin tiedossa jokaisessa pyynnössä, esim. _"Hyödynnä olemassa olevia Matcher-luokkia, älä toteuta vastaavaa logiikkaa uudelleen"_. Ohjelmoijan on myös osattava tunnistaa, milloin agentin ratkaisu rikkoo periaatteita. Tämä edellyttää, että periaatteet ovat omassa hallussa.
 
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 6, tehtävä 7: Suunnittele ensin, toteuta sitten](/tehtavat6/#7-suunnittele-ensin-toteuta-sitten-tekoäly)
+- [Viikko 7, tehtävä 5: Web-käyttöliittymä agentin avulla (Plan-tila)](/tehtavat7/#5-web-käyttöliittymä-agentin-avulla-tekoäly)
+
 ## Agentin laajentaminen ja räätälöinti <span style="color:blue">[viikko 7]</span>
+
+Agentin toimintaa on tähän asti ohjattu lähinnä pyynnöillä ja projektin [ohjetiedostolla](#kontekstin-hallinta). Tässä luvussa tutustutaan kolmeen tapaan laajentaa ja räätälöidä agenttia: _prompt-tiedostot_ tallentavat usein toistuvat pyynnöt, _MCP-palvelimet_ tuovat agentille kokonaan uusia työkaluja ja _skillsit_ antavat agentille tarkat ohjeet työvaiheisiin, joita tarvitaan vain silloin tällöin.
 
 ### Prompt-tiedostot ja räätälöidyt agentit
 
@@ -301,7 +323,7 @@ if __name__ == "__main__":
 
 Kirjasto muodostaa funktion tyyppimäärittelyistä parametrien skeeman ja docstringistä työkalun kuvauksen. Metodi `run` käynnistää palvelimen, joka kommunikoi oletusarvoisesti stdio:n välityksellä. Tästä seuraa, että palvelin ei saa tulostaa mitään `print`-komennolla, sillä tulosteet sotkisivat protokollan viestit.
 
-Palvelinta voi testata [MCP Inspectorilla](https://github.com/modelcontextprotocol/inspector) komennolla `uv run mcp dev server.py`, ja sen saa agentin käyttöön lisäämällä sen tiedostoon `.vscode/mcp.json`:
+Palvelinta voi testata [MCP Inspectorilla](https://github.com/modelcontextprotocol/inspector) komennolla `npx @modelcontextprotocol/inspector uv run python server.py`, ja sen saa agentin käyttöön lisäämällä sen tiedostoon `.vscode/mcp.json`:
 
 ```json
 {
@@ -352,6 +374,13 @@ Skillsit ja MCP täydentävät toisiaan: Playwright MCP antaa agentille selaimen
 
 [Agent Skills](https://agentskills.io) on avoin standardi, ja samat skillsit toimivat mm. GitHub Copilotissa, Claude Codessa ja OpenAI Codexissa. VS Code etsii projektin skillsejä myös hakemistoista `.claude/skills/` ja `.agents/skills/`. Valmiita skillsejä on jaossa runsaasti, mutta niihin pätevät samat varoitukset kuin MCP-palvelimiin: skills voi sisältää skriptejä, joita agentti suorittaa koneellasi, joten käytä vain luotettavista lähteistä peräisin olevia skillsejä ja lue ne ennen käyttöönottoa.
 
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 7, tehtävä 5: Web-käyttöliittymä agentin avulla (prompt-tiedosto)](/tehtavat7/#5-web-käyttöliittymä-agentin-avulla-tekoäly)
+- [Viikko 7, tehtävä 6: MCP](/tehtavat7/#6-mcp-tekoäly)
+
+## Lopuksi <span style="color:blue">[viikko 7]</span>
+
 ### Riskit koottuna
 
 Kerätään vielä yhteen tekoälyn käyttöön liittyviä riskejä:
@@ -364,8 +393,16 @@ Kerätään vielä yhteen tekoälyn käyttöön liittyviä riskejä:
 
 ### Tekoäly ja ohjelmistotuotantoprosessi
 
-Tekoälyn vaikutuksesta ohjelmistokehityksen tuottavuuteen on ristiriitaista tietoa. Kontrolloidussa [METR:n tutkimuksessa](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) (2025) kokeneet avoimen lähdekoodin kehittäjät olivat tekoälyä käyttäessään keskimäärin 19 % _hitaampia_, vaikka he itse uskoivat olleensa noin 20 % nopeampia. Googlen [DORA-raportti](https://dora.dev/research/2025/dora-report/) (2025) puolestaan toteaa, että tekoäly toimii vahvistimena: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Tekoäly ei korjaa huonoa prosessia.
+Tekoälyn vaikutuksesta ohjelmistokehityksen tuottavuuteen on ristiriitaista tietoa, ja sen mittaaminen on osoittautunut yllättävän vaikeaksi.
+
+Kontrolloidussa [METR:n tutkimuksessa](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) (2025) kokeneet avoimen lähdekoodin kehittäjät olivat tekoälyä käyttäessään keskimäärin 19 % _hitaampia_, vaikka he itse uskoivat olleensa noin 20 % nopeampia. Tulos kertoo ennen kaikkea siitä, että oma kokemus tuottavuudesta voi olla harhaanjohtava. METR:n [jatkotutkimuksessa](https://metr.org/blog/2026-02-24-uplift-update/) (2026) tilanne oli jo toinen: työkalut olivat kehittyneet, ja tulokset viittasivat siihen, että tekoäly nopeutti työtä. Tutkimuksen toistaminen osoittautui kuitenkin vaikeaksi, koska yhä useampi kehittäjä ei enää halunnut tehdä tehtäviä ilman tekoälyä, ja 30–50 % osallistujista jätti osan tehtävistä tekemättä tästä syystä. Tutkijoiden mukaan tämä vääristää tuloksia, ja todellinen hyöty on todennäköisesti mitattua suurempi.
+
+Googlen [DORA-raportin](https://dora.dev/research/2025/dora-report/) (2025) mukaan 90 % ohjelmistoalan ammattilaisista käyttää tekoälyä työssään ja yli 80 % kokee sen parantaneen tuottavuuttaan. Samalla noin 30 % luottaa tekoälyn tuottamaan koodiin vain vähän tai ei lainkaan. Tekoälyn käyttö on raportin mukaan yhteydessä nopeampaan toimitustahtiin, mutta myös suurempaan epävakauteen: tuotantoon viedyt muutokset epäonnistuvat useammin ja korjaustyötä on enemmän. Raportin keskeinen johtopäätös on, että tekoäly toimii _vahvistimena_: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Hyötyjä saavat erityisesti tiimit, joilla on kattavat automatisoidut testit, hyvät versionhallintakäytännöt ja nopea palautesykli. Tekoäly ei korjaa huonoa prosessia.
 
 [Leanin](/osa5/#lean) näkökulmasta on hyvä kysyä, missä arvovirran pullonkaula on. Jos koodin kirjoittaminen nopeutuu kymmenkertaisesti mutta katselmointi, testaus ja tuotantoonvienti eivät, syntyy [välivarastoa](/osa5/#välivarastointi-engl-in-process-inventory): pull requesteja, joita kukaan ei ehdi katselmoida. Koodin _arviointi_ onkin monessa tiimissä muodostunut uudeksi pullonkaulaksi.
 
 Tekoäly ei siis poista tarvetta ohjelmistotuotannon osaamiselle, vaan pikemminkin korostaa sitä. Vaatimusten täsmällinen muotoilu, testaus, versionhallinta, jatkuva integraatio, katselmointi ja hyvä ohjelmistosuunnittelu ovat juuri niitä asioita, jotka erottavat onnistuneen agenttien hyödyntämisen epäonnistuneesta.
+
+**Lukuun liittyvät tehtävät:**
+
+- [Viikko 7, tehtävä 7: Tekoäly ja minä](/tehtavat7/#7-tekoäly-ja-minä-tekoäly)

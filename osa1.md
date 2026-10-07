@@ -608,7 +608,7 @@ _Scrum is easy to understand but extremely difficult to master_.
 
 Laajat kielimallit, kuten [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/) ja GitHub [Copilot](https://github.com/features/copilot), ovat muuttaneet ohjelmistokehitystä nopeasti. Alun koodin täydennyksestä ja chat-käyttöliittymistä on siirrytty _agentteihin_, jotka osaavat itsenäisesti tehdä useisiin tiedostoihin ulottuvia muutoksia, suorittaa koodia ja testejä ja korjata tekemisiään virheilmoitusten perusteella.
 
-Itse käytän koodatessa pääasiassa GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Pro -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
+Itse käytän koodatessa pääasiassa GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Student -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
 
 Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen.
 
