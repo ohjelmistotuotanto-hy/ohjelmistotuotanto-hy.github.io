@@ -45,7 +45,7 @@ tekoälyn avustuksella, ks. alla oleva vihje.
 
 Tekoäly on oivallinen apuväline tutustuttaessa itselle etukäteen tuntemattomaan koodiin (ks. [viikon 6 materiaali](/genai/#tuntemattoman-koodin-ymmärtäminen)). Erityisen hyödyllinen se on, jos koodissa käytetään itselle ennalta tuntemattomia kirjastoja.
 
-Koodista voi kysyä suoraan VS Codessa Copilotin _Ask_-tilassa. Kysymyksessä voi viitata tiedostoon, esim. _selitä miten #file:kayttoliittyma.py toimii_, tai editorissa voi maalata osan koodista, jolloin valittu koodi liitetään kysymykseen automaattisesti. Omassa kokeilussani maalasin osan sovelluksen käyttöliittymän koodista (tiedoston _kayttoliittyma.py_ rivit 12–28) ja pyysin Copilotia selittämään sen:
+Koodista voi kysyä suoraan VS Codessa Copilotin _Ask_-tilassa (jos tilaa ei löydy valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent)). Kysymyksessä voi viitata tiedostoon, esim. _selitä miten #file:kayttoliittyma.py toimii_, tai editorissa voi maalata osan koodista, jolloin valittu koodi liitetään kysymykseen automaattisesti. Omassa kokeilussani maalasin osan sovelluksen käyttöliittymän koodista (tiedoston _kayttoliittyma.py_ rivit 12–28) ja pyysin Copilotia selittämään sen:
 
 ![]({{ "/images/agentti5.png" | relative_url }})
 
@@ -500,7 +500,7 @@ Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
 
 <input type="checkbox"> Avaa hakemisto _viikko6/query-language_ VS Codessa omana workspacenaan ja luo projektille tarvittaessa ohjetiedosto
 
-<input type="checkbox"> Valitse Copilotin Chat-näkymässä agentiksi _Plan_, ja anna sille tehtävänanto. Kerro pyynnössä ainakin seuraavat reunaehdot:
+<input type="checkbox"> Valitse Copilotin Chat-näkymässä agentiksi _Plan_ (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent)), ja anna sille tehtävänanto. Kerro pyynnössä ainakin seuraavat reunaehdot:
 
 - toteutuksen tulee hyödyntää olemassa olevaa `QueryBuilder`-luokkaa, eikä matcher-luokkien logiikkaa saa toteuttaa uudelleen
 - toteutukselle tulee tehdä yksikkötestit

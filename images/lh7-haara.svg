@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" width="600" height="230" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="600" height="230" fill="#ffffff"/>
+
+  <defs>
+    <marker id="nuoli-sin" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="nuoli-vihr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="580" y="218" text-anchor="end" font-size="12" fill="#444">aika →</text>
+
+  <!-- kaaret -->
+  <g fill="none" stroke-width="3">
+    <line x1="71" y1="115" x2="147" y2="115" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <path d="M168 107 C 190 80, 215 55, 267 55" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <line x1="291" y1="55" x2="387" y2="55" stroke="#1f5fa8" marker-end="url(#nuoli-sin)"/>
+    <path d="M168 123 C 190 150, 205 175, 237 175" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="261" y1="175" x2="337" y2="175" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+    <line x1="361" y1="175" x2="437" y2="175" stroke="#2e7d32" marker-end="url(#nuoli-vihr)"/>
+  </g>
+
+  <!-- commitit -->
+  <g stroke-width="3" fill="#ffffff">
+    <circle cx="60" cy="115" r="11" stroke="#1f5fa8"/>
+    <circle cx="160" cy="115" r="11" stroke="#1f5fa8"/>
+    <circle cx="280" cy="55" r="11" stroke="#1f5fa8"/>
+    <circle cx="400" cy="55" r="11" stroke="#1f5fa8"/>
+    <circle cx="250" cy="175" r="11" stroke="#2e7d32"/>
+    <circle cx="350" cy="175" r="11" stroke="#2e7d32"/>
+    <circle cx="450" cy="175" r="11" stroke="#2e7d32"/>
+  </g>
+
+  <!-- haarat -->
+  <g>
+    <rect x="422" y="43" width="102" height="24" rx="4" fill="#eef3fa" stroke="#1f5fa8" stroke-width="2"/>
+    <text x="473" y="60" text-anchor="middle" fill="#1f5fa8" font-weight="bold">HEAD → main</text>
+    <rect x="472" y="163" width="62" height="24" rx="4" fill="#eef7ee" stroke="#2e7d32" stroke-width="2"/>
+    <text x="503" y="180" text-anchor="middle" fill="#2e7d32" font-weight="bold">haara</text>
+  </g>
+</svg>

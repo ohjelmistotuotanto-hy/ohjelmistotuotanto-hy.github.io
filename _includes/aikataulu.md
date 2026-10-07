@@ -103,7 +103,7 @@
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 13: {{site.luennot[13]}}
     - Olli Warro (Bought): Ohjelmistokehittäjä sarjayrittäjänä 
-    - N.N.
+    - Matti Paksula (Donut Lab): _Ohjelmoijasta ohjelmistotuottajaksi_
   - Luento 14: {{site.luennot[14]}}
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_

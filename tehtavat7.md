@@ -31,21 +31,19 @@ Oletetaan että olet repositoriossa, jossa on ainakin kaksi branchia: main ja jo
 
 <input type="checkbox"> Ollessasi main-branchissa tee branchissa oleviin tiedostoihin muutoksia, joita lisäät staging-alueelle ja joitain muutoksia joita et vielä lisää. 
 
-<input type="checkbox">  Varmista, että komennon _git status_ tulos näyttää suunnilleen seuraavalta
+<input type="checkbox"> Varmista, että komennon _git status_ tulos näyttää suunnilleen seuraavalta
 
 ```
 $ git status
 On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   src/index.py
+
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   src/index.py
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
 	README.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Pomosi käskee sinua välittömästi tekemään pari muutosta branchiin **experimental**. Et kuitenkaan halua vielä commitoida mainissa olevia muutoksia. Jos siirryt branchiin **experimental** tekemättä committia, tulee hirveä sotku, sillä muutokset pysyvät muutoksina toisessakin branchissa. **git stash** pelastaa tästä tilanteesta: 
@@ -72,11 +70,7 @@ _Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtäv
 
 <input type="checkbox">  Tee mainiin ja haaraan committeja siten että saat aikaan seuraavankaltaisen tilanteen:
 
-```
-    main
-__/
-  \_____haara
-```
+![]({{ "/images/lh7-haara.svg" | relative_url }})
 
 Eli sekä main että haara ovat edenneet muutamien commitien verran haarautumisen tapahduttua. Huom: komennolla <code>gitk --all</code> näet kaikki haarat, kokeile!
 
@@ -84,7 +78,7 @@ Yhtäkkiä huomaat, että mainiin tekemäsi asiat eivät olekaan kovin hyviä ja
 
 <input type="checkbox"> Varmista että komento toimii oikein
   
-  Vanhan main-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata. Vanhaan committiin palaaminen onnistuu, jos commitin id on tiedossa -- jos ei, on olemassa [muutamia keinoja](http://stackoverflow.com/questions/4786972/list-of-all-git-commits) sen selvittämiseksi.
+  Vanhan main-haarankaan tavarat eivät katoa mihinkään, jos niihin jostain syystä vielä halutaan palata. Vanhaan committiin palaaminen onnistuu, jos commitin id on tiedossa. Jos ei, on olemassa [muutamia keinoja](http://stackoverflow.com/questions/4786972/list-of-all-git-commits) sen selvittämiseksi.
 
 ### 3. ja 4. (kahden rastin tehtävä) KPS yksin- ja kaksinpeli
 
@@ -187,8 +181,6 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 ### 5. AI Agent in action [tekoäly]
 
 Lue ennen viikon [tekoäly]-tehtävien tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuus [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7).
-
-Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla tai jopa ilman AI:ta (joka voi olla melko työlästä).
 
 Jatketaan edellisen tehtävän koodin parissa.
 

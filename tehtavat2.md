@@ -377,7 +377,7 @@ ja odota, että Copilot ehdottaa metodin runkoa.
 
 **Chat: koodin ja virheiden selittäminen**
 
-<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse agentiksi _Ask_. Pyydä Copilotia selittämään, miten projektin koodi toimii, esim. _"Selitä miten #file:player_reader.py toimii"_
+<input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse agentiksi _Ask_. Jos _Ask_-tilaa ei löydy valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent). Pyydä Copilotia selittämään, miten projektin koodi toimii, esim. _"Selitä miten #file:player_reader.py toimii"_
 
 <input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita komentoriviltä `pylint src`. Kopioi virheilmoitus Copilotin chattiin ja pyydä Copilotia selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
 

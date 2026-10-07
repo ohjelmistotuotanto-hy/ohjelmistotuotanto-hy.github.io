@@ -339,7 +339,7 @@ Branchin nimen saat kopioitua Pull requestin sivulta.
 
 Sovelluksen käynnistysohje löytyy projektin README-tiedostosta, jota Copilot on päivittänyt. Ohje on myös pull requestin kuvauksessa.
 
-<input type="checkbox"> Tutustu Copilotin tekemään koodiin omalla koneellasi VS Codessa. Jos vastaan tulee jotain, mitä et ymmärrä, esim. tuntematon kirjasto, Flaskin toimintaperiaate tai testien rakenne, pyydä Copilotia selittämään asia. Käytä tähän chatin _Ask_-tilaa (valitaan chat-ikkunan alareunan valikosta), jolloin Copilot vastaa kysymyksiin muuttamatta koodia
+<input type="checkbox"> Tutustu Copilotin tekemään koodiin omalla koneellasi VS Codessa. Jos vastaan tulee jotain, mitä et ymmärrä, esim. tuntematon kirjasto, Flaskin toimintaperiaate tai testien rakenne, pyydä Copilotia selittämään asia. Käytä tähän chatin _Ask_-tilaa (valitaan chat-ikkunan alareunan valikosta, ks. tarvittaessa [tämä](/genai/#jos-valikossa-on-vain-agent)), jolloin Copilot vastaa kysymyksiin muuttamatta koodia
 
 _Katselmoinnin tekeminen edellyttää, että ymmärrät mitä koodi tekee. Agentin tuottama koodi ei ole omaa koodia, joten sen tarkastamisessa tarvitaan hieman vaivannäköä._
 
