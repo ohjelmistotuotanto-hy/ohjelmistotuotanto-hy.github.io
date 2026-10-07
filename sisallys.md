@@ -16,7 +16,7 @@ permalink: /sisallys/
   - [uv](/uv)
   - [unittest](/unittest)
   - [Tekoäly ohjelmistotuotannossa](/genai)
-    - [viikko 3: Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3)
+    - [viikot 2-3: Kielimallit ja agentit ohjelmoinnin apuna](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikot-2-3)
     - [viikko 4: Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4)
     - [viikko 5: AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5)
     - [viikko 6: Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6)

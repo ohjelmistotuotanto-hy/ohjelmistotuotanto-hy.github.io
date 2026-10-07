@@ -442,7 +442,7 @@ source = src
 <details markdown="1" class="vihje">
 <summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
 
-AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä. Chat-käyttöliittymän sijaan testien generointiin kannattaa käyttää VS Coden Copilotin _Agent_-tilaa, jossa tekoäly voi luoda tiedostoja ja suorittaa koodia (agenteista tarkemmin [viikolla 3](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikko-3)).
+AI:n avulla on luonnollisestikin helppo generoida koodin lisäksi myös testejä. Chat-käyttöliittymän sijaan testien generointiin kannattaa käyttää VS Coden Copilotin _Agent_-tilaa, jossa tekoäly voi luoda tiedostoja ja suorittaa koodia (agenteista tarkemmin [viikolla 3](/genai/#kielimallit-ja-agentit-ohjelmoinnin-apuna-viikot-2-3)).
 
 Kokeillaan miten agentti selviää viikon 1 tehtävästä 8. Agentti avataan VS Coden Chat-näkymästä:
 

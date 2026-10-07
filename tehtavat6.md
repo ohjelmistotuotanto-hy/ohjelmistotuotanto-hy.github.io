@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat6/
 ---
 
-{% include paivitys_kesken.md %}
-
 {% include laskari_info.md part=6 %}
 
 Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>. Tehtävässä 7 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
@@ -191,7 +189,7 @@ Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oike
 
 <input type="checkbox">  Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
 
-Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) voi olla eräs inspiraation lähde.
+Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) voi olla eräs inspiraation lähde. Esimerkkiin kannattaa tutustua joka tapauksessa, jos strategy-suunnittelumalli ei ole tuttu.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 20 syöttöä_.
 
@@ -219,6 +217,17 @@ Luokalle `Statistics` on tehty metodi `matches`, joka palauttaa listan niistä p
 
 - Huomioi miten `HasAtLeast`-luokan metodi `test` käyttää funktiota [getattr](https://docs.python.org/3/library/functions.html#getattr) saadakseen parametrina annetun attribuutin arvon
 - Toinen huomioinarvoinen piirre on `And`-luokan konstruktorissa käytetty vaihtuvamittainen parametrilista, jonka tunnistaa `*`-etuliitteestä. Syntaksin avulla `*matchers` sisältää listan konstruktorille annetuista argumenteista
+
+<details markdown="1" class="vihje">
+<summary markdown="span">Vihje: tekoälyn hyödyntäminen tehtävässä</summary>
+
+Jos `getattr` tai jokin muu koodin kohta on epäselvä, maalaa se editorissa ja pyydä tekoälyä selittämään, miten koodi toimii (ks. [viikon 6 materiaali](/genai/#tuntemattoman-koodin-ymmärtäminen)). Omassa kokeilussani maalasin tiedostosta _matchers.py_ luokan `HasAtLeast` ja kysyin, miten se toimii:
+
+![]({{ "/images/getattr.png" | relative_url }})
+
+Selitys on selkeä, ja mukana on konkreettinen esimerkki: `HasAtLeast(10, "goals").test(player)` tarkoittaa samaa kuin `player.goals >= 10`. Kannattaa kysyä myös jatkokysymyksiä, esim. miksi `getattr`-funktiota käytetään sen sijaan, että jokaiselle attribuutille tehtäisiin oma luokkansa.
+
+</details>
 
 <input type="checkbox"> Toteuta `test`-metodin toteuttavat luokat, joiden avulla voit tehdä seuraavat operaatiot:
 
@@ -497,24 +506,22 @@ Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
 - toteutukselle tulee tehdä yksikkötestit
 - toteutus tulee jakaa pieniin askeliin, joiden jokaisen toimivuus voidaan varmistaa erikseen
 
-<input type="checkbox"> Lue agentin laatima suunnitelma huolellisesti. Ymmärsikö agentti tehtävän? Noudattaako suunnitelma reunaehtoja? Onko suunnitelmassa jotain, mikä rikkoo [osan 4](/osa4/) periaatteita?
+<input type="checkbox"> Lue agentin laatima suunnitelma huolellisesti. Jos et ymmärrä jotain suunnitelmasta, pyydä agentilta konkreettista esimerkkiä. 
 
 <input type="checkbox"> Pyydä agenttia muuttamaan suunnitelmaa ainakin kerran. Jos suunnitelma on mielestäsi valmiiksi hyvä, voit esim. pyytää agenttia lisäämään kyselykieleen `not`-operaation tai perustelemaan jonkin suunnitelmansa ratkaisun
 
 <input type="checkbox"> Kun olet tyytyväinen suunnitelmaan, käynnistä toteutus
 
-<input type="checkbox"> Etene suunnitelma askel kerrallaan. Lue jokaisen askeleen jälkeen agentin tekemä muutos, varmista että testit menevät läpi, ja commitoi
+<input type="checkbox"> Kun agentti on valmiina varmista, että molemmat yllä olevat esimerkkikyselyt tuottavat oikean tuloksen
 
-<input type="checkbox"> Varmista, että molemmat yllä olevat esimerkkikyselyt tuottavat oikean tuloksen
-
-<input type="checkbox"> Käy lopuksi läpi valmis koodi. Riippuuko parseri `QueryBuilder`-luokasta, vai suoraan matcher-luokista? Onko koodissa toisteisuutta?
+<input type="checkbox"> Käy lopuksi läpi valmis koodi ja agentin kirjoittamat testit. Pyydä agenttia selittämään koodin toimintaa, jotta saat siitä vähintään kohtuullisen hyvän käsityksen.
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko6_ talletettavaan tiedostoon _plan.md_
 
 Kerro raportissa
 - Miltä agentin ensimmäinen suunnitelma näytti, ja mitä siihen muutettiin?
 - Noudattiko agentti suunnitelmaa toteutusvaiheessa?
-- Noudattaako lopputulos osan 4 suunnitteluperiaatteita?
-- Oliko suunnitteluvaiheesta hyötyä verrattuna siihen, että agentti olisi pistetty suoraan koodaamaan?
+- Oliko agentin tuottama koodi ymmärrettävää ja rakenteeltaan selkeää?
+- Opitko tehtävässä jotain uutta?
 
 {% include submission_instructions.md %}

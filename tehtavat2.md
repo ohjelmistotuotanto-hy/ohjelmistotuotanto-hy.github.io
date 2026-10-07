@@ -352,7 +352,7 @@ Apuna kannattaa käyttää kaikkea mahdollista aina googlesta tekoälyyn.
 
 ### 9. Ensikosketus Copilotiin [tekoäly]
 
-Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot).
+Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on), [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot) ja [Tuntemattoman koodin ymmärtäminen](/genai/#tuntemattoman-koodin-ymmärtäminen).
 
 Tehtävässä käytetään VS Coden GitHub Copilotia. Tehtävän voi tehdä ilmaisella _Copilot Free_ -versiolla, eli GitHub Education -hakemuksesi ei tarvitse olla vielä hyväksytty. Free-version kuukausikiintiö on rajallinen, joten älä tuhlaa sitä turhiin kokeiluihin.
 

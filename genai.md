@@ -25,7 +25,7 @@ Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan mate
 
 Hakuindeksiä käyttäessä mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
 
-## Kielimallit ja agentit ohjelmoinnin apuna <span style="color:blue">[viikko 3]</span>
+## Kielimallit ja agentit ohjelmoinnin apuna <span style="color:blue">[viikot 2-3]</span>
 
 ### Mikä kielimalli on
 
@@ -56,6 +56,12 @@ Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 Käytämme kurssilla GitHub Copilotia pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
 
 ![]({{ "/images/agentti1.png" | relative_url }})
+
+### Tuntemattoman koodin ymmärtäminen
+
+Tekoäly on erinomainen apuväline tuntemattoman koodin ymmärtämisessä. _Ask_-tilassa Copilotilta voi kysyä esim. "_Selitä miten #file:player_reader.py toimii_" tai "_Mitä suunnittelumallia tässä koodissa käytetään?_". Copilot ei tällöin muuta koodia. Kysymykseen voi myös liittää osan koodista maalaamalla sen editorissa, jolloin valittu koodi liitetään kysymykseen automaattisesti.
+
+Selitykset ovat yleensä hyviä, mutta ne voivat myös olla virheellisiä. Jos selitys on tärkeä, tarkista se esim. kirjaston dokumentaatiosta tai kokeilemalla. Hyvä tapa syventää ymmärrystä on esittää jatkokysymyksiä, esim. miksi koodi on tehty juuri näin ja mitä vaihtoehtoja olisi ollut.
 
 ### Agenttinen koodaus
 
@@ -178,7 +184,7 @@ Tiimin [definition of done](/osa1/#definition-of-done) koskee myös tekoälyn te
 
 Isompia muutoksia tehtäessä agentin kannattaa antaa ensin _suunnitella_ ja vasta sitten toteuttaa. VS Coden [Plan-agentti](https://code.visualstudio.com/docs/agents/run/planning) (valitaan chatin agenttivalikosta tai komennolla `/plan`) tutkii koodia, kysyy tarvittaessa tarkentavia kysymyksiä ja laatii suunnitelman: mitä tiedostoja muutetaan, missä järjestyksessä ja miten lopputulos todennetaan. Suunnitelma ei vielä muuta koodia.
 
-Suunnitelmaa katselmoidessa kannattaa kysyä:
+Suunnitelmaa katselmoidessa kannattaa varmistaa:
 
 - Ymmärsikö agentti tehtävän oikein?
 - Hyödyntääkö suunnitelma olemassa olevaa koodia, vai rakennetaanko jotain rinnakkaista?
@@ -187,15 +193,13 @@ Suunnitelmaa katselmoidessa kannattaa kysyä:
 
 Suunnitelmaa voi iteroida niin kauan kunnes se on hyvä, ja suunnitelman korjaaminen on paljon halvempaa kuin valmiin koodin korjaaminen. Kun suunnitelma on hyväksytty, toteutus käynnistetään (_Start Implementation_) ja agentti etenee suunnitelman mukaan.
 
+Suunnitelman arviointi edellyttää, että tunnet koodin, jota suunnitelma koskee. Jos koodi on vierasta, tutustu siihen ensin esim. Ask-tilassa (ks. [Tuntemattoman koodin ymmärtäminen](#tuntemattoman-koodin-ymmärtäminen)).
+
 ### Suunnitteluperiaatteet ja agentti
 
 Kurssin [osan 4](/osa4/) suunnitteluperiaatteet, kuten koheesio, DRY, riippuvuuksien minimointi ja rajapintoihin ohjelmointi, eivät toteudu agentin koodissa itsestään. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ei sitä, että koodi pysyy ylläpidettävänä.
 
-Periaatteet kannattaa siksi sanoa ääneen joko suoraan pyynnössä tai ohjetiedostossa, esim. _"Hyödynnä olemassa olevia Matcher-luokkia, älä toteuta vastaavaa logiikkaa uudelleen"_. Ohjelmoijan on myös osattava tunnistaa, milloin agentin ratkaisu rikkoo periaatteita. Tämä edellyttää, että periaatteet ovat omassa hallussa.
-
-### Tuntemattoman koodin ymmärtäminen
-
-Tekoäly on erinomainen apuväline tuntemattoman koodin ymmärtämisessä. _Ask_-tilassa agentilta voi kysyä esim. "_Selitä miten #file:statistics.py ja matchers.py toimivat yhdessä_" tai "_Mitä suunnittelumallia tässä koodissa käytetään?_". Agentti ei tällöin muuta koodia. Kun oma ymmärrys on riittävä, on helpompi arvioida, onko agentin laatima suunnitelma järkevä.
+Periaatteet kannattaa siksi sanoa ääneen joko suoraan pyynnössä tai projektin [ohjetiedostossa](#kontekstin-hallinta) (`AGENTS.md` tai `.github/copilot-instructions.md`), jolloin ne ovat agentin tiedossa jokaisessa pyynnössä, esim. _"Hyödynnä olemassa olevia Matcher-luokkia, älä toteuta vastaavaa logiikkaa uudelleen"_. Ohjelmoijan on myös osattava tunnistaa, milloin agentin ratkaisu rikkoo periaatteita. Tämä edellyttää, että periaatteet ovat omassa hallussa.
 
 ## Agentin laajentaminen ja räätälöinti <span style="color:blue">[viikko 7]</span>
 
