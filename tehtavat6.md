@@ -47,7 +47,7 @@ tekoälyn avustuksella, ks. alla oleva vihje.
 
 Tekoäly on oivallinen apuväline tutustuttaessa itselle etukäteen tuntemattomaan koodiin (ks. [viikon 6 materiaali](/genai/#tuntemattoman-koodin-ymmärtäminen)). Erityisen hyödyllinen se on, jos koodissa käytetään itselle ennalta tuntemattomia kirjastoja.
 
-Koodia ei tarvitse kopioida chattiin, vaan Copilotin _Ask_-tilassa riittää viitata tiedostoon, esim. _selitä miten #file:kayttoliittyma.py toimii_. Omassa kokeilussani kopioin chattiin osan sovelluksen käyttöliittymän koodista:
+Koodista voi kysyä suoraan VS Codessa Copilotin _Ask_-tilassa. Kysymyksessä voi viitata tiedostoon, esim. _selitä miten #file:kayttoliittyma.py toimii_, tai editorissa voi maalata osan koodista, jolloin valittu koodi liitetään kysymykseen automaattisesti. Omassa kokeilussani maalasin osan sovelluksen käyttöliittymän koodista (tiedoston _kayttoliittyma.py_ rivit 12–28) ja pyysin Copilotia selittämään sen:
 
 ![]({{ "/images/agentti5.png" | relative_url }})
 

@@ -23,7 +23,7 @@
         <div class="trigger">
           <a class="page-link" href="{{ "/#ajankohtaista" | relative_url }}">Ajankohtaista</a>
           <a class="page-link" href="{{ "/#aikataulu" | relative_url }}">Aikataulu</a>
-          {% assign in_material_dropdown = "osa1.md,osa2.md,osa3.md,osa4.md,osa5.md,sisallys.md" | split: "," %}
+          {% assign in_material_dropdown = "osa1.md,osa2.md,osa3.md,osa4.md,osa5.md,sisallys.md,genai.md" | split: "," %}
           {% for path in page_paths %}
             {% assign my_page = site.pages | where: "path", path | first %}
             {% if my_page.inheader and my_page.path == "tehtavat.md" %}
@@ -42,7 +42,8 @@
             </div>
             {% elsif my_page.inheader and my_page.path == "osa0.md" %}
             {% assign toc_page = site.pages | where: "path", "sisallys.md" | first %}
-            <div class="nav-dropdown{% if current_prefix3 == 'osa' or page.path == 'sisallys.md' %} active{% endif %}">
+            {% assign genai_page = site.pages | where: "path", "genai.md" | first %}
+            <div class="nav-dropdown{% if current_prefix3 == 'osa' or page.path == 'sisallys.md' or page.path == 'genai.md' %} active{% endif %}">
               <a class="page-link" href="{{ my_page.url | relative_url }}">Kurssimateriaali<span class="nav-caret" aria-hidden="true"></span></a>
               <div class="nav-dropdown-content">
                 {% for i in (0..5) %}
@@ -54,6 +55,9 @@
                 {% endfor %}
                 {% if toc_page %}
                 <a class="page-link{% if page.url == toc_page.url %} active{% endif %}" href="{{ toc_page.url | relative_url }}">{{ toc_page.title | escape }}</a>
+                {% endif %}
+                {% if genai_page %}
+                <a class="page-link{% if page.url == genai_page.url %} active{% endif %}" href="{{ genai_page.url | relative_url }}">{{ genai_page.title | escape }}</a>
                 {% endif %}
               </div>
             </div>
