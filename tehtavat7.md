@@ -5,8 +5,6 @@ inheader: no
 permalink: /tehtavat7/
 ---
 
-{% include paivitys_kesken.md %}
-
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -15,7 +13,7 @@ permalink: /tehtavat7/
 
 Tehtävät palautetaan GitHubiin, sekä merkitsemällä tehdyt tehtävät palautussovellukseen <{{site.stats_url}}> välilehdelle "my submission".
 
-**Tämän viikon tehtävät 3-7 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston viikko7 sisälle. Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät.
+**Tämän viikon tehtävät 3-8 palautetaan** jo edellisillä viikoilla käyttämääsi **palautusrepositorioon**, hakemiston viikko7 sisälle. Tehtävien 1 ja 2 ei tarvitse näkyä palautuksessa, riittää kun teet tehtävät.
 
 Katso tarkempi ohje palautusrepositorioita koskien [täältä](/tehtavat1#teht%C3%A4vien-palautusrepositoriot).
 
@@ -190,7 +188,7 @@ Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-kä
 - olemassa olevaa koodia tulee hyödyntää mahdollisimman paljon, eikä pelilogiikkaa saa toteuttaa uudelleen
 - jos käytössäsi on Mac, sovellus ei saa käyttää porttia 5000, joka on Macissa varattu
 
-Tässä tehtävässä **ei kannata ehdä välicommiteja**, vaan kaikki tehtävän muutokset commitoidaan vasta lopussa. Näin tehtävän lopussa tehtävä katselmointi kohdistuu kaikkiin agentin tekemiin muutoksiin.
+Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**, näin pääset tarvittaessa palaamaan edelliseen toimivaan tilanteeseen.
 
 <input type="checkbox"> Toteuta agentin avulla sovellukselle web-käyttöliittymä. Voit joko suunnitella toteutuksen ensin _Plan_-tilassa [viikon 6](/tehtavat6/#7-suunnittele-ensin-toteuta-sitten-tekoäly) tapaan tai antaa tehtävän suoraan _Agent_-tilassa (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent))
 
@@ -208,27 +206,34 @@ Tässä tehtävässä **ei kannata ehdä välicommiteja**, vaan kaikki tehtävä
 
 Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) avulla.
 
-Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuus [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7).
+Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuuden [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7) johdanto ja luku [Prompt-tiedostot ja räätälöidyt agentit](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit).
 
-<input type="checkbox"> Luo palautusrepositoriosi juureen tiedosto _.github/prompts/review.prompt.md_, joka ohjeistaa agenttia katselmoimaan koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
+<input type="checkbox"> Luo projektiin tiedosto _.github/prompts/katselmointi.prompt.md_, joka ohjeistaa agenttia katselmoimaan projektin koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
 
 - [osan 4](/osa4/) suunnitteluperiaatteet, erityisesti toisteisuus ja turhat riippuvuudet 
 - testien kattavuus ja laatu
 - tietoturva, esim. onko sovellus käynnistetty `debug=True`-asetuksella, onko koodissa kovakoodattuja salaisuuksia ja validoidaanko käyttäjän syöte
 
-VS Code etsii prompt-tiedostoja workspacen juuren hakemistosta _.github/prompts_. Koska sovellus on palautusrepositorion alihakemistossa, prompt-tiedosto ei ole käytettävissä, jos VS Codessa on auki pelkkä hakemisto _viikko7/kivi-paperi-sakset_.
+Agentit ottavat helposti oikoteitä: "katselmointi" tulkitaan pelkkien viimeisimpien muutosten katselmoinniksi, vain osa tiedostoista luetaan, tai työ delegoidaan aliagentille, jolle annetaan alkuperäistä kapeampi tehtävänanto. Kirjaa siksi prompt-tiedostoon myös työskentelytapa ja raportin muoto:
 
-Katselmointi kohdistuu _working treehen_, eli tiedostojen nykyiseen tilaan commitoimattomine muutoksineen.
+- katselmointi kohdistuu koko projektiin, eikä sitä saa rajata git diffiin eli viimeisimpiin muutoksiin
+- agentti muodostaa ensin luettelon projektin kaikista lähdekoodi- ja testitiedostoista ja käy jokaisen läpi
+- agentti tekee katselmoinnin itse, eikä delegoi sitä aliagentille
+- agentti ei muuta tiedostoja katselmoinnin aikana
+- jokainen näkökulma käsitellään omassa osiossaan, ja jos jostain näkökulmasta ei löydy huomautettavaa, se kerrotaan perusteluineen
+- jokaisesta löydöksestä kerrotaan tiedosto ja rivit sekä korjausehdotus
+- raportin lopussa luetellaan kaikki läpikäydyt tiedostot
 
-<input type="checkbox"> Jotta agentti huomioi myös uudet tiedostot, lisää ne gitiin komennolla `git add`, mutta älä vielä commitoi niitä
+Huomioita prompt-tiedoston käytöstä:
 
-<input type="checkbox"> Avaa VS Codessa koko palautusrepositorio, eli sen juurihakemisto, ja suorita katselmointi chatissa. Kerro komennossa, mikä projekti katselmoidaan, esim. `/review kivi-paperi-sakset`:
+- VS Code etsii prompt-tiedostoja workspacen juuren hakemistosta _.github/prompts_, eli tiedosto tulee luoda hakemistoon _viikko7/kivi-paperi-sakset/.github/prompts_, ja VS Codessa tulee olla auki projektin hakemisto
+- prompt-tiedostot toimivat ainoastaan VS Coden _Local_-harnessissa (ks. [tämä](/genai/#jos-valikossa-on-vain-agent)). Muissa harnesseissa, kuten _Copilot_, prompt-tiedostoa ei ladata, ja komento ei tee sitä mitä tiedostossa pyydetään
 
-![]({{ "/images/juuri.png" | relative_url }})
+<input type="checkbox"> Valitse Chat-näkymän alalaidasta harnessiksi _Local_ ja suorita katselmointi chatissa komennolla `/katselmointi`
 
-Kuvassa VS Codessa on avattu palautusrepositorion juurihakemisto (_ohtu-palautus..._), jonka alla on hakemisto _.github/prompts_.
+<input type="checkbox"> Tarkista, noudattiko agentti prompt-tiedoston ohjeita: kävikö se läpi kaikki tiedostot, ja onko raportti pyydetyn muotoinen (voit kysyä tätä agentilta). Jos ei, pyydä agenttia parantamaan tarvittaessa prompt-tiedostoa ja tekemään uusi katselmointi.
 
-<input type="checkbox"> Korjaa (itse tai agentin avulla) ainakin yksi katselmoinnin löydös ja commitoi lopuksi kaikki tehtävän muutokset
+<input type="checkbox"> Korjaa (itse tai agentin avulla) ainakin yksi katselmoinnin löydös ja commitoi
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _agent.md_
 
@@ -238,16 +243,38 @@ Kerro raportissa
 - Kuinka hyviä agentin tekemät testit olivat?
 - Onko agentin tekemä koodi ymmärrettävää, ja miten agentti muutti edellisessä tehtävässä tekemääsi koodia?
 - Oliko itse tehtävän muutoksen tekeminen helppoa?
+- Noudattiko agentti prompt-tiedoston ohjeita? Miten varmistit sen, ja pitikö prompt-tiedostoa muuttaa?
 - Mitä katselmointi löysi, ja olivatko löydökset aiheellisia?
 - Mitä uutta opit?
 
-### 6. MCP [tekoäly]
+### 6. MCP ja skillsit [tekoäly]
 
-Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-context-protocol) ensin käyttämällä valmista palvelinta ja sen jälkeen toteuttamalla oma. Lisäksi kokeillaan, miten [skillsillä](/genai/#skillsit) voi ohjeistaa agenttia käyttämään palvelinta.
+Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. VS Coden agentti osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
+
+Lue ennen aloittamista materiaalin luku [MCP eli Model Context Protocol](/genai/#mcp-eli-model-context-protocol).
+
+Tehtävässä on kaksi osaa:
+
+1. otetaan käyttöön valmis MCP-palvelin, jonka avulla agentti voi käyttää selainta ja testata edellisessä tehtävässä tehdyn web-käyttöliittymän
+2. tallennetaan käyttöliittymän testausohjeet [skillsiksi](/genai/#skillsit), jolloin agentti osaa testata käyttöliittymän jatkossa omatoimisesti
+
+Seuraavassa tehtävässä toteutetaan vielä oma MCP-palvelin.
 
 **Valmiin palvelimen käyttö**
 
-[Playwright MCP](https://github.com/microsoft/playwright-mcp) -palvelimen avulla agentti pystyy käyttämään selainta. Palvelimen käyttö edellyttää, että koneellesi on asennettu [Node.js](https://nodejs.org/) (versio 18 tai uudempi).
+[Playwright](https://playwright.dev/) on selainautomaatiotyökalu, jolla voidaan ohjelmallisesti avata web-sivuja, klikkailla niitä ja täyttää lomakkeita. [Playwright MCP](https://github.com/microsoft/playwright-mcp) -palvelin tarjoaa nämä toiminnot agentin työkaluiksi, eli sen avulla agentti pystyy käyttämään selainta kuten ihminen. Palvelimen käyttö edellyttää, että koneellesi on asennettu [Node.js](https://nodejs.org/) (versio 18 tai uudempi).
+
+> **Node.js:n asennus**
+>
+> Tarkista ensin, onko Node.js jo asennettu, komennolla `node --version`. Jos komento tulostaa version 18 tai uudemman, voit jatkaa. Huomaa, että viikon 3 Robot Framework -tehtävien _robotframework-browser-batteries_ sisältää oman Node.js:n, joka ei ole käytettävissä komentoriviltä, joten Node.js on todennäköisesti asennettava erikseen.
+>
+> - **Mac:** asenna [Homebrew'lla](https://brew.sh/) komennolla `brew install node` tai lataa asennusohjelma (versio _LTS_) osoitteesta <https://nodejs.org/>
+> - **Windows:** lataa asennusohjelma (versio _LTS_) osoitteesta <https://nodejs.org/> tai asenna komennolla `winget install OpenJS.NodeJS.LTS`
+> - **Linux:** jakeluiden paketinhallinnan Node.js-versio on usein vanha, joten asenna mieluummin [nvm](https://github.com/nvm-sh/nvm):n avulla: asenna ensin nvm sen ohjeiden mukaan ja sen jälkeen Node.js komennolla `nvm install --lts`
+>
+> Asennuksen mukana tulee myös komento `npx`, jolla VS Code käynnistää palvelimen. Käynnistä VS Code asennuksen jälkeen uudelleen, jotta se löytää komennot.
+
+VS Code lukee MCP-palvelinten määrittelyt (tiedosto _.vscode/mcp.json_) ja skillsit (hakemisto _.github/skills_) workspacen juuresta, samoin kuin prompt-tiedostot. Työskentele siis edelleen siten, että VS Codessa on auki hakemisto _viikko7/kivi-paperi-sakset_.
 
 <input type="checkbox"> Lisää edellisen tehtävän projektiin tiedosto _.vscode/mcp.json_, jolla Playwright MCP otetaan käyttöön:
 
@@ -255,14 +282,44 @@ Tutustutaan tässä tehtävässä [MCP-palvelimiin](/genai/#mcp-eli-model-contex
 {
   "servers": {
     "playwright": {
+      "type": "stdio",
       "command": "npx",
-      "args": ["@playwright/mcp@latest"]
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"]
     }
   }
 }
 ```
 
-<input type="checkbox"> Käynnistä palvelin (VS Code näyttää tiedoston päällä _Start_-painikkeen) ja varmista chatin työkaluvalikosta (_Configure Tools_), että palvelimen työkalut ovat agentin käytössä
+Optio `-y` hyväksyy paketin latauksen automaattisesti, ja `--browser chromium` määrittelee käytettäväksi selaimeksi Playwrightin oman Chromiumin.
+
+<input type="checkbox"> Käynnistä palvelin klikkaamalla tiedostossa palvelimen nimen `"playwright"` yläpuolella näkyvää _Start_-linkkiä, ja varmista chatin työkaluvalikosta (_Configure Tools_, syöttökentän alapalkin työkalukuvake), että palvelimen työkalut ovat agentin käytössä
+
+![]({{ "/images/pieni_nappi.png" | relative_url }}){: width="70%"}
+
+> **Jos palvelin ei käynnisty**
+>
+> Palvelimen lokit näet valitsemalla _Start_-linkin vierestä _More..._ ja sieltä _Show Output_. Yleisin syy ongelmiin on se, että VS Code ei löydä komentoa `npx`. Näin käy etenkin, jos Node.js on asennettu [nvm](https://github.com/nvm-sh/nvm):llä.
+>
+> Taustaa: kun komento, kuten `npx`, annetaan ilman polkua, käyttöjärjestelmä etsii sitä ympäristömuuttujan `PATH` luettelemista hakemistoista. `PATH` on kaksoispisteillä (Windowsissa puolipisteillä) erotettu lista hakemistoja, ja sen arvon näet terminaalissa komennolla `echo $PATH`. Jokainen ohjelma perii ympäristömuuttujat ohjelmalta, joka sen käynnisti. Terminaalin `PATH` muodostuu, kun shell lukee käynnistyessään alustustiedostonsa, esim. _~/.zshrc_ tai _~/.bashrc_. Esimerkiksi nvm lisää Node.js:n hakemiston `PATH`:iin juuri alustustiedostossa, joten `npx` löytyy terminaalista. VS Code ja sen käynnistämät MCP-palvelimet eivät kuitenkaan välttämättä saa käyttöönsä samaa `PATH`:ia, jolloin `npx` ei löydy.
+>
+> Ongelma korjautuu kirjoittamalla konfiguraatioon `npx`:n koko polku. Selvitä polku terminaalissa komennolla `which npx` (Windowsissa `where npx`). Koska `npx` tarvitsee lisäksi komentoa `node` ja muita komentoja, lisää myös kohta `env`, jossa määritellään `PATH`. Kopioi sen arvoksi terminaalin `PATH` komennon `echo $PATH` tulosteesta (Windowsin PowerShellissä `$env:PATH`). Huomaa, että `env`-kohdan `PATH` korvaa koko `PATH`:n, joten mukana on oltava myös järjestelmän omat hakemistot, kuten _/usr/bin_ ja _/bin_. Esim. nvm:ää käyttävällä Macilla konfiguraatio voi näyttää seuraavalta:
+>
+> ```json
+> {
+>   "servers": {
+>     "playwright": {
+>       "type": "stdio",
+>       "command": "/Users/kayttaja/.nvm/versions/node/v24.21.0/bin/npx",
+>       "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+>       "env": {
+>         "PATH": "/Users/kayttaja/.nvm/versions/node/v24.21.0/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+>       }
+>     }
+>   }
+> }
+> ```
+>
+> Esimerkin `PATH` sisältää nvm:n Node.js-hakemiston, Homebrew'n hakemistot (_/usr/local/bin_ ja _/opt/homebrew/bin_) sekä macOS:n järjestelmähakemistot. Korvaa polut omilla poluillasi. Jos palvelin käynnistyy mutta selain ei aukea, asenna Playwrightin Chromium komennolla `npx playwright install chromium`.
 
 <input type="checkbox"> Käynnistä kivi-paperi-sakset-sovellus ja pyydä agenttia pelaamaan selaimella yksi peli jokaisessa pelimoodissa ja raportoimaan, toimiiko käyttöliittymä odotetusti
 
@@ -270,21 +327,62 @@ Seuraa, mitä agentti tekee selaimessa. Löysikö agentti käyttöliittymästä 
 
 **Skills käyttöliittymän testaamiseen**
 
-Edellä agentille piti kertoa, miten käyttöliittymä testataan. Tallennetaan ohjeet [skillsiksi](/genai/#skillsit), jolloin agentti osaa käyttää niitä jatkossa itsenäisesti.
+Edellä agentille piti kertoa erikseen, että käyttöliittymä testataan selaimella ja mitä siinä tulee tarkastaa. Jos testaus halutaan tehdä jokaisen käyttöliittymämuutoksen jälkeen, ohjeiden toistaminen joka kerta on työlästä. Ohjeet voisi kirjata ohjetiedostoon, mutta silloin ne olisivat agentin kontekstissa jokaisessa pyynnössä, myös silloin kun niitä ei tarvita.
 
-<input type="checkbox"> Luo projektiin tiedosto _.github/skills/ui-testaus/SKILL.md_, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella. Kirjoita skillsille kuvaus (`description`), josta agentti ymmärtää, milloin skillsiä tulee käyttää. Kirjaa ohjeisiin ainakin
+[Skills](/genai/#skillsit) ratkaisee tämän: agentti näkee aluksi vain skillsin kuvauksen ja lataa varsinaiset ohjeet kontekstiinsa vasta, kun käsillä oleva tehtävä vastaa kuvausta.
+
+Lue ennen jatkamista materiaalin luku [Skillsit](/genai/#skillsit). Tallennetaan käyttöliittymän testausohjeet skillsiksi.
+
+<input type="checkbox"> Luo projektiin tiedosto _.github/skills/ui-testaus/SKILL.md_, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella
+
+Tiedoston alussa on YAML-muotoinen otsake, jossa määritellään skillsin nimi (`name`) ja kuvaus (`description`). Nimen tulee olla sama kuin skillsin hakemiston nimi, eli tässä _ui-testaus_. Otsakkeen jälkeen tulevat varsinaiset ohjeet tavallisena Markdownina:
+
+```markdown
+---
+name: ui-testaus
+description: 'Testaa sovelluksen web-käyttöliittymän selaimella. Käytä kun käyttöliittymää on muutettu tai kun pyydetään testaamaan käyttöliittymä.'
+---
+1. Käynnistä sovellus komennolla ...
+2. ...
+```
+
+Kuvaus on skillsin tärkein osa, sillä agentti näkee aluksi ainoastaan sen ja päättää sen perusteella, milloin skillsiä käytetään. Kuvauksessa kannattaa siis kertoa sekä mitä skills tekee, että missä tilanteissa sitä tulee käyttää.
+
+Kirjaa ohjeisiin ainakin
 
 - miten sovellus käynnistetään ja missä portissa se toimii
+- että testaus tehdään selaimella Playwright MCP:n avulla
 - mitkä pelimoodit ja tilanteet testataan, esim. pelin päättyminen kahden voiton johtoon ja virheellinen syöte
-- miten agentin tulee raportoida tulokset
+- miten agentin tulee raportoida tulokset, esim. lista testatuista tilanteista ja niiden lopputuloksista
 
-<input type="checkbox"> Aloita uusi chat-keskustelu ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista chatista, ottiko agentti skillsin käyttöön. Jos ei ottanut, paranna kuvausta ja kokeile uudelleen
+<input type="checkbox"> Varmista, että VS Code löytää skillsin. Kirjoita chatiin komento `/skills`, joka listaa agentin käytössä olevat skillsit:
+
+![]({{ "/images/skills1.png" | relative_url }})
+
+Projektin omat skillsit näkyvät otsikon _project_ alla. Otsikon _plugin_ alla ovat VS Coden laajennusten mukanaan tuomat skillsit, joten listasi voi näyttää erilaiselta kuin kuvassa. Jos skillsiä ei löydy, tarkista tiedoston sijainti ja nimi sekä se, että otsakkeen `name` vastaa hakemiston nimeä.
+
+<input type="checkbox"> Aloita uusi chat-keskustelu ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista chatin työvaiheista, latasiko agentti skillsin käyttöönsä. Jos ei ladannut, paranna kuvausta ja kokeile uudelleen
+
+<input type="checkbox"> Skillsin voi käynnistää myös itse kirjoittamalla chatiin `/` ja skillsin nimen. Kokeile komentoa `/ui-testaus`
 
 <input type="checkbox"> Tee käyttöliittymään jokin pieni muutos ja pyydä agenttia varmistamaan, että sovellus toimii edelleen. Käyttääkö agentti skillsiä?
 
-**Oma MCP-palvelin**
+<input type="checkbox"> Commitoi muutokset
 
-Toteutetaan seuraavaksi oma MCP-palvelin, jonka avulla agentti voi tehdä kyselyjä NHL-tilastoihin viikon 6 koodia hyödyntäen.
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _mcp.md_
+
+Kerro raportissa
+- Miten Playwright MCP -palvelimen käyttö sujui, ja löysikö agentti selaimella ongelmia?
+- Ottiko agentti skillsin käyttöön ilman erillistä pyyntöä? Miten kuvauksen sanamuoto vaikutti siihen?
+- Milloin käyttäisit skillsiä, milloin prompt-tiedostoa ja milloin ohjetiedostoa?
+
+### 7. Oma MCP-palvelin [tekoäly]
+
+Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
+
+Valmiiden palvelinten lisäksi MCP-palvelimen voi toteuttaa myös itse. Näin agentin käyttöön saa esim. oman sovelluksen toiminnallisuutta tai yrityksen sisäistä dataa. Toteutetaan oma MCP-palvelin, jonka avulla agentti voi tehdä kyselyjä NHL-tilastoihin viikon 6 koodia hyödyntäen.
+
+Palvelin on tavallinen Python-ohjelma, jonka funktiot merkitään dekoraattorilla `@mcp.tool()`. MCP-kirjasto muodostaa funktioiden tyyppimäärittelyistä ja docstringeistä työkalujen kuvaukset, joiden perusteella agentti päättää, milloin ja miten työkaluja kutsutaan. VS Code käynnistää palvelimen taustalle, ja agentti kommunikoi sen kanssa standardisyötteen ja -tulosteen välityksellä.
 
 <input type="checkbox"> Kopioi viikon 6 projekti _query-language_ palautusrepositorioosi hakemiston _viikko7_ sisälle ja avaa se VS Codessa omana workspacenaan
 
@@ -315,7 +413,37 @@ if __name__ == "__main__":
 
 **Huom:** MCP-kirjasto kehittyy nopeasti. Jos yllä oleva import ei toimi, käytössäsi on kirjaston vanhempi versio, jossa palvelinluokka on `FastMCP` ja se importataan `from mcp.server.fastmcp import FastMCP`.
 
-<input type="checkbox"> Testaa palvelinta [MCP Inspectorilla](https://github.com/modelcontextprotocol/inspector) komennolla `npx @modelcontextprotocol/inspector uv run python src/mcp_server.py` ja varmista, että työkalu `top_scorers` toimii
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) on selainpohjainen työkalu, jolla MCP-palvelinta voi testata ilman agenttia. Inspectorilla voi kutsua palvelimen työkaluja käsin ja nähdä, mitä palvelin agentille tarjoaa: työkalujen nimet, kuvaukset ja parametrit.
+
+<input type="checkbox"> Käynnistä Inspector projektin hakemistossa komennolla
+
+```
+npx @modelcontextprotocol/inspector uv run python src/mcp_server.py
+```
+
+Komento käynnistää Inspectorin ja avaa sen selaimeen osoitteeseen, joka on muotoa `http://127.0.0.1:6274/?MCP_INSPECTOR_API_TOKEN=...`. Osoitteen lopussa oleva token suojaa Inspectoria siten, että muut koneella ajettavat ohjelmat eivät pääse käyttämään sitä. Jos selain ei aukea itsestään, kopioi osoite tokeneineen terminaalista.
+
+<input type="checkbox"> Yhdistä Inspector palvelimeen
+
+Inspector avautuu _Servers_-välilehdelle, jossa näkyy käynnistyskomennon perusteella määritelty palvelin `uv`. Yhdistä palvelimeen kortin oikeassa yläkulmassa olevasta kytkimestä, jolloin kortissa lukee _Connected_:
+
+![]({{ "/images/mcp1.png" | relative_url }})
+
+Oikeassa reunassa, välilehdellä _Protocol_, näkyvät Inspectorin ja palvelimen väliset [JSON-RPC](https://www.jsonrpc.org/specification)-viestit. Esimerkiksi viesti `tools/list` on pyyntö, jolla client kysyy palvelimelta sen tarjoamat työkalut. Samoja viestejä vaihtavat myös VS Code ja palvelin, kun agentti käyttää palvelinta.
+
+Jos viestien tila jää muotoon _PENDING_, eikä _Tools_-välilehdellä näy työkaluja, lähetä viesti `tools/list` uudelleen sen kortin ↻-kuvakkeesta (kuvassa alempi nuoli).
+
+<input type="checkbox"> Testaa työkalua `top_scorers`
+
+Siirry välilehdelle _Tools_ ja valitse listasta `top_scorers`. Oikealle avautuu työkalun kuvaus, eli funktion docstring, sekä kenttä parametrille _How Many_. Anna parametrille arvo ja paina _Execute Tool_, jolloin työkalun palauttama tulos näkyy alapuolella:
+
+![]({{ "/images/mcp2.png" | relative_url }})
+
+Kuvaus ja parametrit ovat juuri sitä tietoa, jonka perusteella agentti päättää, milloin ja miten työkalua käytetään.
+
+Jos palvelin ei käynnisty tai yhdistäminen epäonnistuu, näet virheilmoituksen oikean reunan välilehdeltä _Console_. Tyypillisiä syitä ovat virhe Python-koodissa tai se, että komento on suoritettu väärässä hakemistossa.
+
+Muista, että palvelin ei saa tulostaa mitään `print`-komennolla, sillä tulosteet sotkevat palvelimen ja Inspectorin välisen kommunikaation.
 
 <input type="checkbox"> Lisää palvelimelle ainakin seuraavat työkalut:
 
@@ -324,14 +452,13 @@ if __name__ == "__main__":
 
 Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärrät palvelimen koodin. Kirjoita työkaluille kuvaavat docstringit, sillä agentti päättää niiden perusteella, milloin ja miten työkaluja käytetään. Kirjoita työkalujen kuvauksiin myös kyselykielen syntaksi.
 
-<input type="checkbox"> Tee työkaluille yksikkötestit. Työkalut ovat tavallisia Python-funktioita, joten niitä voi testata normaaliin tapaan
-
 <input type="checkbox"> Rekisteröi palvelin VS Codeen lisäämällä projektiin tiedosto _.vscode/mcp.json_:
 
 ```json
 {
   "servers": {
     "nhl": {
+      "type": "stdio",
       "command": "uv",
       "args": ["run", "--directory", "${workspaceFolder}", "python", "src/mcp_server.py"]
     }
@@ -339,23 +466,24 @@ Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärr�
 }
 ```
 
+Jos palvelin ei käynnisty, koska VS Code ei löydä komentoa `uv`, toimi kuten [edellisen tehtävän](#6-mcp-ja-skillsit-tekoäly) Playwright-palvelimen kohdalla, eli kirjoita konfiguraatioon `uv`:n koko polku (`which uv`).
+
 <input type="checkbox"> Käynnistä palvelin ja kysy agentilta luonnollisella kielellä kysymyksiä, joihin se tarvitsee palvelimesi työkaluja, esim. _"Keillä NYR:n pelaajilla on vähintään 10 maalia mutta alle 20 maalia?"_ tai _"Kuka Edmontonin pelaaja teki eniten pisteitä?"_
 
-<input type="checkbox"> Seuraa, mitä työkaluja agentti kutsuu ja millä parametreilla. Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan
+<input type="checkbox"> Seuraa, mitä työkaluja agentti kutsuu ja millä parametreilla
 
-<input type="checkbox"> Commitoi muutokset
+Agentin tekemät työkalukutsut näkyvät chatissa agentin vastauksen työvaiheiden joukossa. Avaamalla työkalukutsun näet, millä parametreilla agentti työkalua kutsui (_Input_) ja mitä palvelin palautti (_Output_). VS Code kysyy oletusarvoisesti luvan ennen MCP-työkalun suorittamista, ja myös lupakyselyssä näkyvät kutsun parametrit.
 
-<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _mcp.md_
+<input type="checkbox"> Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan. Palvelin on käynnistettävä uudelleen muutosten jälkeen, esim. tiedoston _.vscode/mcp.json_ palvelimen nimen yläpuolella näkyvän _Restart_-linkin avulla
+
+<input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _oma_mcp.md_
 
 Kerro raportissa
-- Miten Playwright MCP -palvelimen käyttö sujui, ja löysikö agentti selaimella ongelmia?
-- Ottiko agentti skillsin käyttöön ilman erillistä pyyntöä? Miten kuvauksen sanamuoto vaikutti siihen?
-- Milloin käyttäisit skillsiä, milloin prompt-tiedostoa ja milloin ohjetiedostoa?
 - Osasiko agentti käyttää oman palvelimesi työkaluja oikein?
 - Miten docstringit vaikuttivat agentin toimintaan?
 - Mitä riskejä liittyisi palvelimeen, joka voisi myös muuttaa dataa, tai joka hakisi dataa epäluotettavista lähteistä?
 
-### 7. Tekoäly ja minä [tekoäly]
+### 8. Tekoäly ja minä [tekoäly]
 
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viimeinen luku [Lopuksi](/genai/#lopuksi-viikko-7), joka kokoaa yhteen tekoälyn käyttöön liittyviä riskejä ja tutkimustietoa tekoälyn vaikutuksista ohjelmistotuotantoon.
 
@@ -367,7 +495,7 @@ Pohdi kirjoituksessasi ainakin seuraavia:
 - Mitkä kurssilla opituista ohjelmistotuotannon käytänteistä ovat mielestäsi tärkeimpiä agentteja käytettäessä?
 - Minkälaiset pelisäännöt tekoälyn käytölle sopisit miniprojektisi tiimin kanssa, tai tulevassa työpaikassasi?
 
-### 8. Kurssipalaute
+### 9. Kurssipalaute
 
 Anna kurssipalautetta osoitteessa <{{site.norppa}}>. Voit antaa palautteen myös kokeen jälkeen. Rasti tähän tehtävään on lupaus siitä, että annat palautteen jossain vaiheessa. **Palautetta voi antaa välillä 9.–26.12.2026**. 
 
