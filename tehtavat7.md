@@ -443,7 +443,7 @@ Kuvaus ja parametrit ovat juuri sitä tietoa, jonka perusteella agentti päätt�
 
 Jos palvelin ei käynnisty tai yhdistäminen epäonnistuu, näet virheilmoituksen oikean reunan välilehdeltä _Console_. Tyypillisiä syitä ovat virhe Python-koodissa tai se, että komento on suoritettu väärässä hakemistossa.
 
-Muista, että palvelin ei saa tulostaa mitään `print`-komennolla, sillä tulosteet sotkevat palvelimen ja Inspectorin välisen kommunikaation.
+Muista, että palvelin ei saa tulostaa mitään standarditulosteeseen esim. tavallisella `print`-komennolla, sillä tulosteet sotkevat palvelimen ja Inspectorin välisen kommunikaation. Standardivirhevirtaan tulostaminen (`print(..., file=sys.stderr)`) on sen sijaan sallittua.
 
 <input type="checkbox"> Lisää palvelimelle ainakin seuraavat työkalut:
 
@@ -472,7 +472,35 @@ Jos palvelin ei käynnisty, koska VS Code ei löydä komentoa `uv`, toimi kuten 
 
 <input type="checkbox"> Seuraa, mitä työkaluja agentti kutsuu ja millä parametreilla
 
-Agentin tekemät työkalukutsut näkyvät chatissa agentin vastauksen työvaiheiden joukossa. Avaamalla työkalukutsun näet, millä parametreilla agentti työkalua kutsui (_Input_) ja mitä palvelin palautti (_Output_). VS Code kysyy oletusarvoisesti luvan ennen MCP-työkalun suorittamista, ja myös lupakyselyssä näkyvät kutsun parametrit.
+Agentin tekemät työkalukutsut näkyvät chatissa agentin vastauksen työvaiheiden joukossa, esim. _query_players – nhl (MCP Server)_. Avaamalla työkalukutsun näet, mitä palvelin palautti (_Output_). Kutsun parametrit eivät kuitenkaan välttämättä näy kohdassa _Input_, jossa saattaa olla ainoastaan palvelimen ja työkalun nimi.
+
+Parametrit saa näkyviin lisäämällä palvelimeen lokituksen. Koska palvelin ei saa tulostaa standarditulosteeseen, kirjoitetaan loki tiedostoon:
+
+```python
+from pathlib import Path
+
+LOG_FILE = Path(__file__).parent.parent / "mcp.log"
+
+def log(message: str):
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        print(message, file=f)
+
+@mcp.tool()
+def team_players(team: str) -> list[str]:
+    """..."""
+    log(f"team_players(team={team!r})")
+    # ...
+```
+
+Loki kirjoitetaan projektin juurihakemiston tiedostoon _mcp.log_. Lisää tiedosto myös _.gitignore_:en.
+
+Lokia on kätevintä seurata erillisessä terminaalissa komennolla
+
+```
+tail -f mcp.log
+```
+
+joka näyttää tiedostoon kirjoitettavat rivit sitä mukaa kun niitä syntyy. Windowsin PowerShellissä vastaava komento on `Get-Content mcp.log -Wait`.
 
 <input type="checkbox"> Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan. Palvelin on käynnistettävä uudelleen muutosten jälkeen, esim. tiedoston _.vscode/mcp.json_ palvelimen nimen yläpuolella näkyvän _Restart_-linkin avulla
 

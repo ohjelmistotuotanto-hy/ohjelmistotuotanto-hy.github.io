@@ -364,7 +364,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-Kirjasto muodostaa funktion tyyppimäärittelyistä parametrien skeeman ja docstringistä työkalun kuvauksen. Metodi `run` käynnistää palvelimen, joka kommunikoi oletusarvoisesti stdio:n välityksellä. Tästä seuraa, että palvelin ei saa tulostaa mitään `print`-komennolla, sillä tulosteet sotkisivat protokollan viestit.
+Kirjasto muodostaa funktion tyyppimäärittelyistä parametrien skeeman ja docstringistä työkalun kuvauksen. Metodi `run` käynnistää palvelimen, joka kommunikoi oletusarvoisesti stdio:n välityksellä. Tästä seuraa, että palvelin ei saa tulostaa mitään standarditulosteeseen esim. tavallisella `print`-komennolla, sillä tulosteet sotkisivat protokollan viestit. Standardivirhevirtaan (`print(..., file=sys.stderr)`) tulostaminen on sallittua, ja sitä voi käyttää esim. palvelimen lokitukseen.
 
 Palvelinta voi testata [MCP Inspectorilla](https://github.com/modelcontextprotocol/inspector) komennolla `npx @modelcontextprotocol/inspector uv run python server.py`, ja sen saa agentin käyttöön lisäämällä sen tiedostoon `.vscode/mcp.json`:
 
