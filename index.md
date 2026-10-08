@@ -29,7 +29,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Liittyminen kurssin kanavalle tapahtuu komennolla */join course TKT20006 - Ohjelmistotuotanto - ohtu*
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Generatiivinen tekoäly
-  - Käyttö on kurssilla sallittua (paitsi kokeessa), osittain jopa suositeltavaa, lue lisää [täältä](/genai)
+  - Käyttö on kurssilla sallittua (paitsi kokeessa), osittain jopa lähes pakollista, lue lisää [täältä](/genai)
   - [CurreChat](<{{site.curre}}>)
   - [KurssimateriaaliChat](<{{site.curre_material}}>)
 - Kurssipalaute

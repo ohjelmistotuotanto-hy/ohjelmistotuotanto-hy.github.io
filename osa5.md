@@ -685,3 +685,128 @@ Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muuta
 Olemassa on myös suuri määrä tutkimuksia, joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin tai jatkuvan integraation vaikutusten arviointiin. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
 
 Lähes kaikissa yksittäisen tekniikan esim. TDD:n hyötyjä mittaavissa tutkimuksissa ongelmana on se, että ne eivät mittaa tekniikoista saatavia pitkäaikaisia hyötyjä mm. ohjelmiston ylläpidolle ja jatkokehitettävyydelle. Sekä kansanviisaus että monet tutkimukset ovat todenneet, että valtaosa ohjelmiston kustannuksista muodostuu juurikin ylläpitovaiheen, eli ensimmäisen version julkaisun jälkeisistä kustannuksista. Esimerkiksi [tämä](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) tutkimus osoittaa, että peräti 79 % ohjelmiston kustannuksista muodostuu ylläpitovaiheen aikana. Onkin mahdollista, että jokin tekniikka tuottaa lyhytaikaisen hyödyn, mutta jopa heikentää tuottavuutta pitkällä aikavälillä.
+
+### kertaaja
+
+<div lang="fi" style="position: relative;" translate="yes"><iframe
+    id="cc-iframe"
+    style="border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 0.3rem;"
+    src="https://curre.helsinki.fi/chat/hy-opt-cur-2627-7a893cd5-d161-4815-ac8e-422dd8953ff9?embedded=true&amp;promptId=95dcc2c9-3713-4eeb-bf88-bc9e3cbac408"
+    width="100%" height="800px">
+  </iframe>
+  <div id="login-popup-info"
+    style="position: absolute; top: 0; left: 0; display: none; padding: 4rem; white-space: pre-line;">
+    <p>Sinun pitää uudistaa kirjautumissessiosi käyttääksesi CurreChattiä.
+      Kirjautuminen avautuu uuteen ikkunaan. Jos niin ei tapahtunut, <a
+        href="https://curre.helsinki.fi/chat/login-helper" target="_blank"
+        rel="noopener opener">paina tästä</a>.</p>
+    <p id="popup-blocked-info" style="display: none; margin-top: 1rem;">
+      Ponnahdusikkunaa ei voitu avata, joten käytä yllä olevaa linkkiä.</p>
+  </div>
+  <script>
+    /**
+     * @type {HTMLIFrameElement}
+     */
+
+    const iframe = document.getElementById("cc-iframe")
+    let successLoading = false
+
+    const toggleLoginInfo = (show) => {
+      document.getElementById("login-popup-info").style.display = show ?
+        "block" : "none"
+    }
+
+    iframe.onload = async () => {
+      if (successLoading) {
+        console.log("Iframe already loaded successfully, skipping")
+        return
+      }
+      // Listen for a pong message from the iframe
+
+      toggleLoginInfo(true)
+
+      window.addEventListener("message", function handler(event) {
+        if (event.origin !== "https://curre.helsinki.fi") {
+          return
+        }
+
+        console.log("Received message", event.data)
+
+        if (event.data.type === 'pong') {
+          successLoading = true
+          console.log(
+            "Pong message received, iframe loaded successfully")
+          window.removeEventListener("message", handler)
+          toggleLoginInfo(false)
+        }
+      })
+
+      iframe.contentWindow?.postMessage({
+        type: "ping"
+      }, "https://curre.helsinki.fi")
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      if (successLoading) {
+        console.log("Iframe responded, no need to login")
+        toggleLoginInfo(false)
+        return
+      }
+      console.log("No response from iframe, opening login popup")
+
+      // Open CC in a new window and do a handshake with it
+
+      const windowProxy = window.open(
+        "https://curre.helsinki.fi/chat/login-helper", "_blank",
+        "width=600,height=400,rel=opener")
+      if (!windowProxy) {
+        document.getElementById("popup-blocked-info").style.display =
+          "block"
+      }
+
+      // Listen for message from the popup window
+
+      const nonce = crypto.randomUUID()
+
+      window.addEventListener("message", function handler(event) {
+        if (event.origin !== "https://curre.helsinki.fi") {
+          return
+        }
+
+        console.log("Received message", event.data)
+
+        if (event.data.type === "login-success" && event.data.nonce ===
+          nonce) {
+          // Reload the iframe to reflect the new login state
+          console.log(
+            "Login success message received with correct nonce", nonce
+          )
+          successLoading = true
+          iframe.src = iframe.src
+          document.getElementById("login-popup-info").style.display =
+            "none"
+          windowProxy?.close()
+          window.removeEventListener("message", handler)
+        }
+      })
+
+      window.addEventListener("beforeunload", () => {
+        windowProxy?.close()
+      })
+
+      window.addEventListener("focus", function handler() {
+        // Reload the iframe to reflect the new login state
+        iframe.src = iframe.src
+        toggleLoginInfo(false)
+        windowProxy?.close()
+      })
+
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      console.log("Sending login-query message with nonce", nonce)
+      windowProxy?.postMessage({
+        type: "login-query",
+        nonce
+      }, "https://curre.helsinki.fi")
+    }
+  </script>
+</div>
