@@ -40,12 +40,7 @@
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
 - [Miniprojekti](/miniprojekti)
   - Aloitustilaisuudet (jokainen osallistuu yhteen)
-    - ma 14-16 C222
-    - ti 14-16 C321
-    - ke 10-12 C222
-    - ke 12-14 C222
-    - to 14-16 B222
-    - to 16-18 B222
+    - ma tbd
 
 ### Viikko 4
 
@@ -73,7 +68,7 @@
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/THvNdk4Y5xo), [unitube](https://www.helsinki.fi/fi/unitube/video/4fd987ce-5ef9-4197-bd54-0a42b591bb1a)
 - Vierailuluennot
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
-  - Luento 11: {{site.luennot[10]}}
+  - Luento 10: {{site.luennot[10]}}
     - Lauri Suomalainen (Teamit): _Ohjelmistotuotanto kokonaisuutena: DevOps, tiimitopologiat ja platform engineering_
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
@@ -92,7 +87,6 @@
     - Ville Nordberg (Trail openers): _Voiko tekoälyä tehdä kestävästi?_
     - Irene Nikkarinen (Kesko): _Datatieteilijän elämää_
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 - Miniprojekti
   - Asiakastapaamiset (sprintin 3 review, sprintin 4 suunnittelu)
@@ -114,8 +108,8 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
   - Loppudemot
-    - ke 10.12. klo 10-12 B123
-    - to 11.12. klo 10-12 A111
+    - tbd
+    - tbd
 
 ### Viikko 8
 

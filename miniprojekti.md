@@ -25,7 +25,7 @@ inheader: no
 
 ### Johdanto
 
-- Kurssin viikoilla 4-7 tehdään miniprojekti
+- Kurssin viikoilla 3-7 tehdään miniprojekti
 - **Kurssin läpipääsy edellyttää hyväksyttyä osallistumista miniprojektiin** tai sen [hyväksilukemista](/osa0#miniprojektin-hyv%C3%A4ksilukeminen)
 
 - Projekti tehdään noin 4-6 hengen ryhmissä

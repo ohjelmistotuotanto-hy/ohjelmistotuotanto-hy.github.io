@@ -20,8 +20,8 @@ Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotanto
 ## Esitiedot ja sisältö
 
 Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat tiedot) 
-- [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-25.mooc.fi/)
-- [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2025/)
+- [Ohjelmoinnin perusteet ja jatkokurssi](https://ohjelmointi-26.mooc.fi/)
+- [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2026/)
 - [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (aiemmalta nimeltään Tietokantasovellus)
 
 Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
@@ -44,7 +44,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 Kurssilla on 10 luentoa sekä neljä vierailuluentoa.  Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2024 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
+Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2025 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
 
 ### Laskuharjoitukset
 
@@ -55,7 +55,6 @@ Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittais
 Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
-
 
 ### Miniprojekti
 
@@ -118,18 +117,18 @@ Pisteet tulevat seuraavan kaavan mukaan:
 
 Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan:
 
-- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, on tuloksena on 0 mvp:tä.
+- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, tuloksena on 0 mvp:tä.
 - jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikkien kohtien ollessa oikein saa yhden mvp:n.
 
 Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
-Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Monivalinnoille nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
+Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Monivalinnoille on nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
 
 Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen aihepiireistä. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
 
-Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. ChatGPT:llä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
+Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. tekoälyllä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
 
 Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu sähköpostitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
 
