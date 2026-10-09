@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: route
+  labels:
+    router: external
+spec:
+  host: route-kertaaja-poc.ext.okd-cs-test-0.k8s.cs.helsinki.fi
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: svc
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

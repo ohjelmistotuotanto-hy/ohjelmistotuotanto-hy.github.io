@@ -68,3 +68,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - huomiot.md
+  - okd-poc

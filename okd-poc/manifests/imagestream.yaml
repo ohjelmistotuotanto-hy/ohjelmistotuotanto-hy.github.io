@@ -1,0 +1,17 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+
+metadata:
+  name: app
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: latest
+      from:
+        kind: DockerImage
+        name: source-image:latest
+      importPolicy:
+        scheduled: true
+      referencePolicy:
+        type: Local

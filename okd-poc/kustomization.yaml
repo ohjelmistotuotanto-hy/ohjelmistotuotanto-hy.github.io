@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ohtumateriaali
+
+resources:
+  - manifests/imagestream.yaml
+  - manifests/service.yaml
+  - manifests/route.yaml
+  - manifests/deployment.yaml
+
+configurations:
+  - manifests/kustomizeconfig.yaml
+
+images:
+  - name: source-image
+    newName: ghcr.io/ohjelmistotuotanto-hy/kertaaja-poc
+    newTag: latest
+
+patches:
+  - target:
+      kind: Route
+      name: route
+    patch: |-
+      - op: add
+        path: /spec/host
+        value: route-ohtumateriaali.ext.okd-cs-test-0.k8s.cs.helsinki.fi
