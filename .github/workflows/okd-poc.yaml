@@ -29,4 +29,4 @@ jobs:
         with:
           context: okd-poc
           push: true
-          tags: ghcr.io/ohjelmistotuotanto-hy/kertaaja-poc:latest
+          tags: ghcr.io/ohjelmistotuotanto-hy/ohtu-materiaali:latest

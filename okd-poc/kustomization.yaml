@@ -14,7 +14,7 @@ configurations:
 
 images:
   - name: source-image
-    newName: ghcr.io/ohjelmistotuotanto-hy/kertaaja-poc
+    newName: ghcr.io/ohjelmistotuotanto-hy/ohtu-materiaali
     newTag: latest
 
 patches:
