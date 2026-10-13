@@ -1,15 +1,11 @@
-<!doctype html>
-<html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kertaaja POC</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 0 auto; padding: 16px; }
-  </style>
-</head>
-<body>
-<h1>Kertaaja</h1>
+---
+layout: page
+title: POC
+inheader: no
+permalink: /poc/
+---
+
+### kertaaja
 
 <div lang="fi" style="position: relative;" translate="yes"><iframe
     id="cc-iframe"
@@ -133,5 +129,3 @@
     }
   </script>
 </div>
-</body>
-</html>

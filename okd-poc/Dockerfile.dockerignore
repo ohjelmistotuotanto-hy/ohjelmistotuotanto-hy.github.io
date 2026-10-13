@@ -1,0 +1,6 @@
+.git
+_site
+.jekyll-cache
+.sass-cache
+node_modules
+vendor

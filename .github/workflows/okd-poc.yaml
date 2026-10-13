@@ -1,10 +1,8 @@
-name: Build and push kertaaja POC image
+name: Build and push OKD image
 
 on:
   push:
     branches: [master]
-    paths:
-      - okd-poc/**
   workflow_dispatch:
 
 jobs:
@@ -27,6 +25,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: okd-poc
+          context: .
+          file: okd-poc/Dockerfile
           push: true
           tags: ghcr.io/ohjelmistotuotanto-hy/ohtu-materiaali:latest
