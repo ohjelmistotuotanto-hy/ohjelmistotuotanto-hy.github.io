@@ -1,4 +1,4 @@
-name: Build and push OKD image
+name: Build and push Docker image
 
 on:
   push:
@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: okd-poc/Dockerfile
+          file: containerization/Dockerfile
           push: true
           tags: ghcr.io/ohjelmistotuotanto-hy/ohtu-materiaali:latest

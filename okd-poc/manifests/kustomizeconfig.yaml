@@ -1,3 +1,0 @@
-images:
-  - path: spec/tags/from/name
-    kind: ImageStream

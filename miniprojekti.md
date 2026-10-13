@@ -35,7 +35,7 @@ inheader: no
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
 - Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
-  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://ohjelmistotuotanto-hy.github.io/flask/#tietokanta) ohje
+  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://studies.cs.helsinki.fi/ohtu/flask/#tietokanta) ohje
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
@@ -120,7 +120,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
   - Ryhmä tekee päivittäin jäljellä olevan työajan arvioinnin ja dokumentoi tämän sprintin burndown-käyränä
-    - burndownin sijaan on myös mahdollista tehdä sprintille ylöspäin kasvava burnup-kaavio, ks lisää [täältä](https://ohjelmistotuotanto-hy.github.io/osa2/#burndown--ja-burnup-kaaviot)
+    - burndownin sijaan on myös mahdollista tehdä sprintille ylöspäin kasvava burnup-kaavio, ks lisää [täältä](https://studies.cs.helsinki.fi/ohtu/osa2/#burndown--ja-burnup-kaaviot)
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - jäljellä olevan työajan estimaatti
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)

@@ -533,7 +533,7 @@ class Ostoskori:
 
 Jos ostoskoriin laitetaan useampi kappale samaa tuotetta, päivitetään vastaavaa `Ostos`-oliota, joka muistaa kyseisen tuotteen lukumäärän.
 
-Ostoskori ohjelmoidaan [Test Driven Development](https://ohjelmistotuotanto-hy.github.io/osa3/#test-driven-development) -tekniikalla. Oikeaoppinen TDD etenee seuraavasti:
+Ostoskori ohjelmoidaan [Test Driven Development](https://studies.cs.helsinki.fi/ohtu/osa3/#test-driven-development) -tekniikalla. Oikeaoppinen TDD etenee seuraavasti:
 
 - Kirjoitetaan testiä sen verran että testi ei mene läpi. Ei siis luoda heti kaikkia luokan tai metodin testejä, vaan edetään yksi testi kerrallaan.
 - Kirjoitetaan koodia sen verran, että testi saadaan menemään läpi. Ei yritetäkään heti kirjoittaa "lopullista" koodia.

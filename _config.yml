@@ -3,7 +3,7 @@ title: Ohjelmistotuotanto
 email: matti.luukkainen@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ''
-url: 'https://ohjelmistotuotanto-hy.github.io'
+url: 'https://studies.cs.helsinki.fi/ohtu'
 github_username: mluukkai
 repo_url: 'https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io'
 repo_branch: 'master'
@@ -15,6 +15,7 @@ norppa: https://norppa.helsinki.fi/targets/112400522/feedback
 
 curre: https://curre.helsinki.fi/chat
 curre_material: https://curre.helsinki.fi/chat/hy-opt-cur-2627-7a893cd5-d161-4815-ac8e-422dd8953ff9?promptId=45b183a7-58c2-48ce-bcb3-63bbfc8b0745
+curre_kertaaja: https://curre.helsinki.fi/chat/hy-opt-cur-2627-7a893cd5-d161-4815-ac8e-422dd8953ff9?promptId=95dcc2c9-3713-4eeb-bf88-bc9e3cbac408
                 
 moniv-dl:
   - 'FAIL'
@@ -68,4 +69,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - huomiot.md
-  - okd-poc
+  - containerization

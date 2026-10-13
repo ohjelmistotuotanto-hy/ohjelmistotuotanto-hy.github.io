@@ -913,7 +913,7 @@ _Jos olet laiska, voit ulkoistaa tämän(kin) tehtävän AI:lle. Oppimisen kanna
 <input type="checkbox"> Tee yksikkötestit luokalle `StatisticsService`
 
 - Muista nimetä testitiedosto, testiluokka ja testimetodit [unittest-ohjeiden](/unittest) mukaisesti. Muuten Pytest ei löydä suoritettavia testejä
-- Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://ohjelmistotuotanto-hy.github.io/tehtavat1#8-yksikkötestit))
+- Testien haarautumakattavuuden tulee `StatisticsService`-luokan osalta olla 100% (mittaa kattavuus coveragen avulla, katso [tehtävä 8](https://studies.cs.helsinki.fi/ohtu/tehtavat1#8-yksikkötestit))
   - Huomaa, että kattavuusraportti ei generoidu ennen kun sovellukseen on lisätty testejä
   - Muiden luokkien testikattavuudesta ei tarvitse välittää
 - Testit eivät saa käyttää verkkoyhteyttä

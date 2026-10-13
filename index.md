@@ -30,8 +30,9 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
 - Generatiivinen tekoäly
   - Käyttö on kurssilla sallittua (paitsi kokeessa), osittain jopa lähes pakollista, lue lisää [täältä](/genai)
+  - [OhtuBotit](/ohtubotit): kurssimateriaalista vastaava KurssimateriaaliChat ja materiaalia kanssasi kertaava Kertaaja
+    - botit suoraan CurreChatissa: [KurssimateriaaliChat](<{{site.curre_material}}>), [Kertaaja](<{{site.curre_kertaaja}}>)
   - [CurreChat](<{{site.curre}}>)
-  - [KurssimateriaaliChat](<{{site.curre_material}}>)
 - Kurssipalaute
   - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/95023982/feedback>
 

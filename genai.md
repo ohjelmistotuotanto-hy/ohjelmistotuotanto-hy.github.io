@@ -15,7 +15,14 @@ Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features
 
 Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen.
 
-Chatia on mahdollisuus käyttää "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. Hakuindeksi otetaan käyttöön valitsemalla alustukseksi _Materiaali_:
+Kurssilla on kaksi CurreChatin päälle tehtyä bottia, joita voi käyttää suoraan sivulta [OhtuBotit](/ohtubotit):
+
+- **KurssimateriaaliChat**: voit kysyä mitä tahansa koko kurssimateriaalista, esim. miten kurssi arvostellaan, milloin koe pidetään tai mikä on viikon 4 luentojen aiheena. Botti avautuu myös suoraan [CurreChatissa](<{{site.curre_material}}>).
+- **Kertaaja**: botti kyselee sinulta kysymyksiä kurssimateriaaliin (osat 1-3) liittyen. Voit pyytää esim. _Kysy 5 kysymystä koko materiaalista_ tai _Kysy 3 kysymystä Scrumista ja arvostele sen jälkeen, kuinka vastasin_. Tai ihan mitä vaan keksit! Botti avautuu myös suoraan [CurreChatissa](<{{site.curre_kertaaja}}>).
+
+Bottien käyttö edellyttää kirjautumista yliopiston tunnuksilla.
+
+CurreChatia on mahdollisuus käyttää myös "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. KurssimateriaaliChat toimii juuri näin. Hakuindeksi otetaan CurreChatissa käyttöön valitsemalla alustukseksi _Materiaali_:
 
 ![]({{ "/images/chat0.png" | relative_url }}){: width="70%"}
 
