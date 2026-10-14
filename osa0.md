@@ -24,7 +24,7 @@ Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat ti
 - [Tietokantojen perusteet](https://tikape.mooc.fi/syksy-2026/)
 - [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (aiemmalta nimeltään Tietokantasovellus)
 
-Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
+Kurssien [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/) ja [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
 
 Kurssin suoritettuaan opiskelijalla tulisi olla riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
@@ -56,7 +56,7 @@ Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittais
 
 Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23.59_. Tehtävien ohjelmointikieli on Python.
 
-Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
+Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viikolla 3 noin 6 tuntia, viikoilla 4–5 noin 4 tuntia ja viikolla 6 noin 6 tuntia. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
 ### Tekoäly kurssilla
 
