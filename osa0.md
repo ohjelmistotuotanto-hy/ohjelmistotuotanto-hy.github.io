@@ -34,9 +34,8 @@ Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 - tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
 - ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
 - ymmärtää ohjelmiston laadunhallinnan perusteet
-- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
-- osaa hyödyntää versionhallintaa, automatisoitua testausta ja jatkuvaa integraatiota
-- osaa hyödyntää tekoälyä hallitusti osana ohjelmistokehitystä
+- osaa tehdä ohjelmistokehityksestä hallittua ja toistettavaa versionhallinnan, automatisoidun testauksen ja jatkuvan integraation avulla
+- osaa hyödyntää tekoälyä hallitusti sovelluskehityksessä
 
 ## Kurssin suorittaminen ja arvostelu
 
