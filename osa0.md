@@ -26,7 +26,7 @@ Esitietovaatimuksina kurssilla on seuraavien kurssien suoritus (tai vastaavat ti
 
 Kurssin [Tietokone työvälineenä](https://tkt-lapio.github.io/) suorituksesta on myös hyötyä.
 
-Kurssin suoritettuaan opiskelijan tulisi omata riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
+Kurssin suoritettuaan opiskelijalla tulisi olla riittävät tiedolliset ja tekniset valmiudet toimia juniorikehittäjän roolissa pienessä ohjelmistotiimissä, esimerkiksi Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti).
 
 Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 
@@ -34,7 +34,9 @@ Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 - tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
 - ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
 - ymmärtää ohjelmiston laadunhallinnan perusteet
-- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
+- osaa toimia ympäristössä, jossa ohjelmistokehitys tapahtuu hallitusti ja toistettavalla tavalla
+- osaa hyödyntää versionhallintaa, automatisoitua testausta ja jatkuvaa integraatiota
+- osaa hyödyntää tekoälyä hallitusti osana ohjelmistokehitystä
 
 ## Kurssin suorittaminen ja arvostelu
 
@@ -42,29 +44,33 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa.  Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
-Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen jos Unitube-tallennus toimii... Vuoden 2025 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
+Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen, jos Unitube-tallennus toimii... Vuoden 2025 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
 
 ### Laskuharjoitukset
 
-Kurssiin liittyy viikoittaiset laskuharjoitukset. **Tehtäviä laskareissa on kahden tyyppisiä**.
+Kurssiin liittyy viikoittaiset laskuharjoitukset. **Tehtäviä laskareissa on kahdentyyppisiä**.
 
 Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_.
 
-Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23:59_. Tehtävien ohjelmointikieli on Python.
+Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23.59_. Tehtävien ohjelmointikieli on Python.
 
 Laskuharjoitusten oletettu kuormittavuus on noin 8 tuntia ensimmäisen kolmen viikon aikana ja 4 tuntia jälkimmäisinä viikkoina. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
+### Tekoäly kurssilla
+
+Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjoitellaan koodausagenttien hallittua käyttöä ohjelmistokehityksessä. Niihin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/). Kurssimateriaalin kertaamiseen voit käyttää [OhtuBotteja](/ohtubotit/), esim. materiaalista kysymyksiä esittävää Kertaajaa. Huomaa kuitenkin, että [luentopäiväkirjat](#monivalintojen-korvaaminen-luentopäiväkirjalla) on kirjoitettava itse ilman tekoälyä.
+
 ### Miniprojekti
 
-Kurssin loppupuolella, viikoilla 3-7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
+Kurssin viikoilla 3–7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
 
-Kukin miniprojektiryhmä koostuu 4-6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, jälkimmäisillä 30 minuuttia.
+Kukin miniprojektiryhmä koostuu 4–6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, myöhemmillä viikoilla 30 minuuttia.
 
-Kurssin lopussa on miniprojektien yhteinen 2h kestoinen demotilaisuus.
+Kurssin lopussa on miniprojektien yhteinen kahden tunnin mittainen demotilaisuus.
 
-Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
+Miniprojekteissa työskentelyyn tulee varata yhteensä noin 6 tuntia aikaa viikossa.
 
 _Kurssin läpäisyn edellytyksenä_ on hyväksytysti suoritettu tai hyväksiluettu miniprojekti.
 
@@ -74,13 +80,13 @@ Miniprojektista lisää [täällä](/miniprojekti).
 
 #### Miniprojektin hyväksilukeminen
 
-Miniprojektiin osallistuminen ei ole välttämätöntä jos täytät työkokemuksen perusteella tapahtuvan _Ohjelmistoprojektin (10 op)_ hyväksiluvun edellyttävät kriteerit.
+Miniprojektiin osallistuminen ei ole välttämätöntä jos täytät työkokemuksen perusteella tapahtuvan _Ohjelmistoprojektin (10 op)_ hyväksiluvun edellyttämät kriteerit.
 
 Kriteerit selviävät [täältä](https://studies.helsinki.fi/ohjeet/artikkeli/koulutusohjelmasi-harjoitteluohjeet) kohdasta _Laaja suoritus: Ohjelmistoprojekti_
 
 Toisin kuin Ohjelmistoprojektin hyväksilukuun, miniprojektin hyväksilukuun vaaditaan ainoastaan _kolmen kuukauden työkokemus_.
 
-Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta emailitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
+Jos hyväksiluet miniprojektin työkokemuksella, kerro asiasta sähköpostitse (matti.luukkainen@helsinki.fi) siinä vaiheessa kun olet tehnyt ensimmäisen viikon tehtävät.
 
 **HUOM:** miniprojektin hyväksiluku tapahtuu lähettämällä email osoitteeseen matti.luukkainen@helsinki.fi, eli **ÄLÄ LÄHETÄ MAILIA** osoitteeseen kumpula-student@helsinki.fi.
 
@@ -93,17 +99,17 @@ Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien k
   - viikoittaiset ohjelmointi/versionhallinta/konfigurointitehtävät 8 pistettä
 - miniprojekti 11 pistettä
 - koe 18 pistettä
-- osallistuminen paikan päällä vierailuluennoille 1 piste (0.33 pistettä yhdestä vierailuluentokertaläsnäolosta)
+- osallistuminen paikan päällä vierailuluennoille 1 piste (0,33 pistettä yhdestä vierailuluentokertaläsnäolosta, eli täydet pisteet saa kolmella osallistumiskerralla)
 
 Arvosanaan 1 riittää 20 pistettä, arvosanaan 5 tarvitaan 36 pistettä.
 
-Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolia kokeen pisteistä. **Lisäaikaa** kokeeseen haetaan sähköpostilla opettajalta (matti.luukkainen@helsinki.fi).
+Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai hyväksilukua) ja vähintään puolet kokeen pisteistä. **Lisäaikaa** kokeeseen haetaan sähköpostilla opettajalta (matti.luukkainen@helsinki.fi).
 
 Jos hyväksiluet miniprojektin, kokeen ja laskarien pistemääräsi skaalataan kertomalla 40/29:llä ja arvosana määritellään skaalatun pistemäärän perusteella.
 
 #### Laskarien pisteytysperusteet
 
-Viikoittaisista monivalintatehtävistä on siis tarjolla _2 kurssipistettä_. Täysiin kurssipisteisiin riittää 90% _monivalintakysymyspisteistä (mvp)_.
+Viikoittaisista monivalintatehtävistä on siis tarjolla _2 kurssipistettä_. Täysiin kurssipisteisiin riittää 90 % _monivalintakysymyspisteistä (mvp)_.
 
 Pisteet tulevat seuraavan kaavan mukaan:
 
@@ -117,40 +123,40 @@ Pisteet tulevat seuraavan kaavan mukaan:
 
 Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi olla oikein tai väärin. Jokaisen viikon monivalintakysymyksistä on tarjolla yksi _mvp_, joka lasketaan seuraavan kaavan mukaan:
 
-- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtäsuuri kuin 0.45, tuloksena on 0 mvp:tä.
-- jos _oikeatVastaukset/vaittamaLukumaara_ on enemmän kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikkien kohtien ollessa oikein saa yhden mvp:n.
+- jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtä suuri kuin 0.45, tuloksena on 0 mvp:tä.
+- jos _oikeatVastaukset/vaittamaLukumaara_ on suurempi kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikkien kohtien ollessa oikein saa yhden mvp:n.
 
 Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
-Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Monivalinnoille on nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
+Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Tämä on linjassa ns. testausvaikutuksen (engl. testing effect, retrieval practice) kanssa: asioiden aktiivinen mieleen palauttaminen tehostaa oppimista selvästi enemmän kuin pelkkä materiaalin uudelleenlukeminen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)). Monivalinnoille on nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
 
 Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen aihepiireistä. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
 
-Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. tekoälyllä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi?check_logged_in=1) mukaisesti.
+Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. luentomateriaalin copy paste) tai esim. tekoälyllä generoitu. Tällainen tulkitaan opintovilpiksi ja käsitellään HY:n [vilppikäytänteiden](https://studies.helsinki.fi/ohjeet/artikkeli/mita-ovat-vilppi-ja-plagiointi) mukaisesti.
 
-Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu sähköpostitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0-1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
+Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu sähköpostitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0–1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin, jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
 
-*HUOM* ainakaan tässä kurssiversiossa ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
+**HUOM** ainakaan tässä kurssiversiossa ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
 
 ## Versionhallinta 1 op
 
 Saat bonuksena suoritusmerkinnän opintojaksolta _Versionhallinta 1 op_ tekemällä _kaikki_ tämän kurssin versionhallintatehtävät (merkitty tehtävän yhteyteen) ja suorittamalla hyväksytysti miniprojektin (tai hyväksilukemalla sen).
 
-### Luennot - laskuharjoitukset - miniprojekti
+## Luennot - laskuharjoitukset - miniprojekti
 
 Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuharjoitukset sekä miniprojektin. Komponentit ovat luonteeltaan melko erilaisia, ja se on joskus aiheuttanut hämmennystä opiskelijoiden keskuudessa.
 
 Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin.
 
-Versionhallintaa, ohjelmistojen konfigurointia, testausta ja ohjelmointia käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (poislukien testaukseen liittyvä teoria).
+Versionhallintaa, ohjelmistojen konfigurointia, testausta ja ohjelmointia käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (lukuun ottamatta testaukseen liittyvää teoriaa).
 
-Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
+Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
 
-Kokeessa suurin paino tulee olemaan teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa ei kokeessa tulla kysymään. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
+Kokeessa suurin paino on teoriassa ja sen soveltamisessa käytäntöön. Laskareiden teknisimpiä asioita, kuten versionhallintaa, ei kokeessa kysytä. Tarkemmin kokeesta ja siihen valmistautumisesta kurssin viimeisellä luennolla.
 
-Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on erihenkisiä komponentteja, jotka kaikki ovat yhtä tärkeitä, ja jokaisella on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
+Kuten pian nähdään, ohjelmistotuotanto kattaa suuren kirjon erilaisia asioita alkaen ihmisten johtamisesta aina teknisimpiin komentoriviltä suoritettaviin operaatioihin asti. Sama heijastuu myös kurssin rakenteessa, kurssilla on erihenkisiä komponentteja, jotka kaikki ovat yhtä tärkeitä, ja jokaisella on oma painoarvonsa kurssin arvostelussa. Teoria-asioita arvioidaan koemenestyksen perusteella, käytännöllisimpiä asioita taas "jatkuvana arviona" laskareista kertyvien pisteiden ja miniprojektissa suoriutumisen perusteella.
 
 ## Aikataulu
 
@@ -161,20 +167,10 @@ Kuten kohta tulemme näkemään, ohjelmistotuotanto kattaa suuren kirjon erilais
 Kun huomaat kurssimateriaalissa kirjoitusvirheitä, tee korjausehdotus. Kurssimateriaali on repositoriossa
 [https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io) tiedostoissa [osa0.md](https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/blob/master/osa0.md) jne.
 
-Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
+Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_. GitHub tekee tällöin repositoriosta automaattisesti oman kopion (fork).
 
-![]({{ "/images/0-1.png" | relative_url }})
+Kun teksti on editoitu halutunkaltaiseksi, painetaan oikean yläkulman _Commit changes..._ -painiketta, kirjoitetaan muutokselle lyhyt kuvaus ja valitaan _Propose changes_.
 
-Kun teksti on editoitu halutunkaltaiseksi, luodaan muutosehdotus sivun alalaidasta:
-
-![]({{ "/images/0-2.png" | relative_url }})
-
-Tämän jälkeen vielä luodaan muutosehdotuksesta _pull request_
-
-![]({{ "/images/0-3.png" | relative_url }})
-
-Kun kaikki klikkailu on tehty, syntyy materiaalirepositorioon pull request
-
-![]({{ "/images/0-4.png" | relative_url }})
+Tämän jälkeen muutosehdotuksesta luodaan vielä _pull request_ painamalla _Create pull request_.
 
 Ja kun kurssihenkilökunta mergeää pull requestin, typo korjautuu materiaalista.
