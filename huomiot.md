@@ -1,6 +1,6 @@
 # Materiaalin katselmointi: avoimet huomiot (syyskuu 2026)
 
-Osien 1–5 katselmoinnissa löytyneet asiat, joita ei vielä korjattu. Nopeat faktavirheet ja osan 1 Scrum Guide 2020 -päivitys on jo tehty.
+Osien 0–5 katselmoinnissa löytyneet asiat, joita ei vielä korjattu. Nopeat faktavirheet ja osan 1 Scrum Guide 2020 -päivitys on jo tehty. Lokakuussa 2026 osat 0 ja 1 tarkistettiin uudelleen, ja niiden korjatut kohdat on poistettu listalta.
 
 Rivinumerot ovat suuntaa antavia, sillä korjaukset ovat siirtäneet rivejä. Kohdat löytyvät helpoimmin otsikon tai lainatun tekstin perusteella.
 
@@ -11,40 +11,18 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 ## Yleiset, kaikkia osia koskevat
 
 - **Vanhentuneet aikailmaisut.** Moni asia esitetään "viime aikoina", "viime vuosina" tai "uuden ajan" ilmiönä, vaikka se on 10–25 vuotta vanha. Esimerkkejä: Lean startup (2011), story mapping (2014), #NoEstimates (2012), continuous delivery (2010), trunk-based development, tutkiva testaus ja SAFe (2011). Aikailmaisut kannattaa käydä läpi hakemalla sanoja "viime", "uuden ajan" ja "tuore".
-- **Vanhentuneet ja kuolleet linkit.** Kaikissa osissa on http-linkkejä ja kadonneita sivustoja, esim. oualline.com, butunclebob.com, satisfice.com, IBM developerWorks, citeseerx, c2.com, alistair.cockburn.us, pcuf.fi, oodesign.com ja scaledagileframework.com (nykyään framework.scaledagile.com). Sourcemaking-linkit ovat nykyään refactoring.guru. Linkit kannattaa tarkistaa automaattisesti linkintarkistimella.
+- **Vanhentuneet ja kuolleet linkit.** Kaikissa osissa on http-linkkejä ja kadonneita sivustoja, esim. oualline.com, butunclebob.com, satisfice.com, IBM developerWorks, citeseerx, c2.com, alistair.cockburn.us, pcuf.fi, oodesign.com ja scaledagileframework.com (nykyään framework.scaledagile.com, korjattu osassa 1 mutta ei vielä osassa 5). Sourcemaking-linkit ovat nykyään refactoring.guru. Linkit kannattaa tarkistaa automaattisesti linkintarkistimella.
 - **"Facebook" → Meta** useassa kohdassa.
 - **Tutkimusaineisto.** Tutkimukset ja tilastot ovat pääosin vuosilta 2012–2022. Tilalle tai rinnalle kannattaa ottaa DORA-raportit (2019–2025), SPACE (Forsgren ym. 2021) ja DevEx (Noda ym. 2023).
-- **Lisenssi** on CC BY-NC-SA 3.0. Versiota 4.0 kannattaa harkita.
-- **Toistot osien välillä.** Vesiputousmallin ongelmat käsitellään osassa 1 kahdesti, osassa 3 kolmesti ja osittain osassa 2. Lean- ja Kanban-tausta toistuu osissa 2 ja 5.
+- **Toistot osien välillä.** Vesiputousmallin ongelmat käsitellään osassa 3 kolmesti ja osittain osassa 2 (osan 1 toisto on poistettu). Lean- ja Kanban-tausta toistuu osissa 2 ja 5.
 - **DevOpsin paikka.** sisallys.md ja osa4 lupaavat DevOpsia osaan 4, mutta se käsitellään osassa 3.
 
 ---
 
 ## Osa 1: Ohjelmistotuotanto ja Scrum
 
-### Vielä korjattavaa
-- **MIL-STD-498** on vuodelta 1994. Vesiputousta koskeva lainaus ja vuosi 2000 viittaavat todennäköisesti DoDI 5000.2 -ohjeeseen. Tarkista lähde.
-- **Scrumban-linkki** osoittaa Poppendieckien Lean-kirjaan. Scrumbanin esitti Corey Ladas (2009).
-- **SWEBOK:** mainitse versio 4.0 (2024).
-- **"Palaamme ... osassa 2"** (ohjelmistotuotannon osa-alueiden yhteydessä): prosessia käsitellään itse asiassa tässä osassa.
-- **Uncle Bobin Scrum-kritiikki** on vuodelta 2010. Kohta "30 Day Sprints are too long" on nykyään merkityksetön. Listan voisi tiivistää 3–4 kohtaan ja täydentää tuoreemmalla kritiikillä, esim. "agile industrial complex", Jeffries 2018 ja sertifiointiteollisuus.
-- **Henkilökohtainen Copilot-maininta** LLM-osiossa vanhenee nopeasti. Sen voisi yleistää.
-- **Ketterät periaatteet -luvussa** "self-organizing teams" on manifestin termi ja saa jäädä. Scrum-osuudessa termi on nyt päivitetty muotoon self-managing.
-
-### Lisättävää
-1. **Kanban omana vaihtoehtonaan ja hybridimallit.** Kanban Guide ja flow-mittarit (WIP, cycle time, throughput, work item age). Tutkimus (esim. HELENA, Kuhrmann ym.) osoittaa hybridien olevan valtavirtaa.
-2. **Tekoälyn vaikutus prosessiin** 1–2 kappaleena, ja tarkemmin linkkinä genai.md:hen. DORA 2025: AI vahvistaa organisaation olemassa olevia vahvuuksia ja heikkouksia. METR 2025: kokeneet kehittäjät olivat 19 % hitaampia, vaikka kokivat olevansa nopeampia. Pullonkaula siirtyy vaatimuksiin ja katselmointiin.
-3. **Etä- ja hybriditiimit.** Miten manifestin "face-to-face conversation" -periaatetta tulkitaan nyt: asynkroninen viestintä ja kirjallinen kulttuuri.
-4. **Tuoteajattelu:** outcome vs. output ja tuotetiimit vs. projektit (Cagan). Liittyy PO:n rooliin.
-
-### Tiivistettävää
-- Sprintin pituus toistuu yhä useassa kohdassa (Scrum lyhyesti, vastuut ja artefaktit, Sprintti).
-- Vesiputouksen ongelmien kertaus Scrum-luvun alussa on lähes toistoa aiemmasta.
-- Daily scrumin historiaosuus: kolmen kysymyksen malli ja A Scrum Book -lainaus. Nyt kun 2020-kuvaus on mukana, historian voisi tiivistää.
-- "Fertile soil" -viittaus (A Scrum Book) ja RUP-vertailu tuovat vähän lisäarvoa.
-
-### Muuta
-- **Koe- ja monivalintakysymykset** kannattaa tarkistaa Scrum-päivityksen jälkeen: 3–9 kehittäjää, sprint planningin kesto, kaksi vs. kolme aihetta, scrum masterin rooli hylkäämisessä ja potentially shippable.
+- **Koe- ja monivalintakysymykset** kannattaa tarkistaa Scrum-päivityksen jälkeen: 3–9 kehittäjää, sprint planningin kesto, kaksi vs. kolme aihetta, scrum masterin rooli hylkäämisessä ja potentially shippable. Lokakuun 2026 korjausten jälkeen tarkista myös: viisi tapahtumaa, DoD organisaatio- tai tiimitasolla, daily scrum ei välttämättä aamulla, NATO-konferenssin ajankohta ja DoD 5000.2.
+- **Luentokalvot** (`slides/1.md`, `slides/2.md`) on synkattu osien 0 ja 1 kanssa lokakuussa 2026. Muiden osien kalvoja ei ole tarkistettu.
 
 ---
 
@@ -78,7 +56,11 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
    - Cyber Resilience Act (raportointivelvoite 9/2026 alkaen) ja security by design
    - AI Act, NIS2
    - GDPR on jo mainittu
-4. **Flow-pohjainen ennustaminen:** throughput, cycle time ja Monte Carlo -simulaatio. Luonteva jatko #NoEstimates-osiolle.
+4. **Flow-mittarit ja flow-pohjainen ennustaminen:**
+   - luvussa "Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban": WIP-rajoitusten jatkoksi flow-mittarit (cycle time, throughput, work item age) ja Littlen laki, joka perustelee, miksi WIP:n rajoittaminen lyhentää läpimenoaikaa. Viittaus [Kanban Guideen](https://kanbanguides.org/).
+   - luvussa "Kannattaako estimointi?": throughputiin perustuva ennustaminen ja Monte Carlo -simulaatio luontevana jatkona #NoEstimates-osiolle
+   - Scrumbanin yhteydessä: tutkimus hybridimallien valtavirtaisuudesta (esim. HELENA, Kuhrmann ym.)
+   - osassa 1 Kanban Guide ja flow-pohjainen työskentely on jo mainittu lyhyesti
 5. **Tekoäly vaatimustyössä:** storyjen ja hyväksymiskriteerien luonnostelu sekä hyväksymiskriteerit agentin speksinä. Lyhyt maininta ja linkki genai.md:hen.
 6. **Jobs-to-be-done ja impact mapping** kartoitusmenetelmiin.
 
@@ -205,7 +187,7 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 1. **Team Topologies** (stream-aligned-, platform-, enabling- ja complicated-subsystem-tiimit, kognitiivinen kuorma) ja **platform engineering**. Päivittää Spotify-osuutta.
 2. **Flow-mittarit ja value stream management:** Flow Framework (Kersten), flow time, throughput ja flow efficiency. Jatkaa lean-osuutta.
 3. **DORA / SPACE / DevEx** State of Agilen ja Chaos Reportin tilalle tai rinnalle.
-4. **Agile backlash ja kritiikki:** "Agile is dead" -keskustelu, sertifiointiteollisuus, Scrum Master -roolien karsinta 2023–2024 ja SAFe-kritiikin jatkuminen.
+4. **Agile backlash ja kritiikki:** "Agile is dead" -keskustelu, sertifiointiteollisuus, Scrum Master -roolien karsinta 2023–2024 ja SAFe-kritiikin jatkuminen. Osassa 1 on nyt lyhyesti Dark Scrum, roolien karsinta ja Schwaberin *unSAFe at any speed*, joten osassa 5 voi syventää ja viitata osaan 1.
 5. **Etä- ja hybridityön tutkimus.**
 6. **Tekoäly** 1–2 virkkeenä ja linkkinä genai.md:hen: AI toimii vahvistimena (DORA 2025), ja katselmoinnista tulee uusi pullonkaula ("odotus"-hukka).
 

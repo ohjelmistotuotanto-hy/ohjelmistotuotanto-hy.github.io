@@ -77,7 +77,7 @@ _Software configuration management_ viittaa ohjelmiston käyttöönsaattamiseen 
 
 Ohjelmistojen tekemiseen liittyy paljon suunnittelua, koordinointia, hallinnointia ja raportointia eli "managementtia", tähän viittaa _software engineering management_.
 
-_Software engineering process_ eli ohjelmistotuotantoprosessi kuvaa tapoja tai menetelmiä miten ohjelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin materiaalin [osassa 2](/osa2).
+_Software engineering process_ eli ohjelmistotuotantoprosessi kuvaa tapoja tai menetelmiä miten ohjelmistoa kehittävien ihmisten tulisi hoitaa ja ajoittaa eri aktiviteettejä (requirements, design, construction, testing), joita ohjelmiston kehittäminen edellyttää. Palaamme aiheeseen tarkemmin myöhemmin tässä osassa.
 
 _Software engineering models and methods_ kuvaa yksityiskohtaisempia menetelmiä, joita ohjelmistokehityksessä käytetään, kuten mallinnusta ja erilaisia suunnittelumenetelmiä.
 
@@ -265,7 +265,7 @@ Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen,
 
 Vesiputousmallissa fundamentaalina periaatteena oli se, että ohjelmiston valmistaminen alkaa kattavalla vaatimusmäärittelyllä, jonka aikana asiakkaan vaatimukset selvitetään, dokumentoidaan huolellisesti ja "jäädytetään", eli vaatimuksiin ei sen koommin edes sallita muutoksia. Asiakas on seuraavan kerran mukana kehitystyössä ehkä vasta lopussa tekemässä hyväksymistestausta.
 
-Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohjelmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä saavuttamaan kilpailuetua.
+Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohjelmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Manifestin aikaan keskustelu tarkoitti kasvokkain käytävää keskustelua, mutta etä- ja hybridityön yleistyttyä periaatetta tulkitaan väljemmin: kasvokkaisen keskustelun rinnalle ovat nousseet videopalaverit sekä asynkroninen, kirjallinen viestintä esim. chatissa, issueissa ja pull requesteissa, joka samalla jättää päätöksistä jäljen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä saavuttamaan kilpailuetua.
 
 > Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
 
@@ -307,18 +307,13 @@ Ketterien menetelmien hyödyistä on myös tutkimusnäyttöä, joskin se on kirj
 
 ## Scrum
 
-Tutustumme nyt ketteristä menetelmistä eniten käytettyyn, eli [Scrumiin](https://www.scrum.org/). Tarkastellaan ensin vesiputousmallin ongelmia sekä muutamaa perustavanlaatuista Scrumin ja muidenkin ketterien menetelmien taustalla olevaa perusolettamusta.
+Tutustumme nyt ketteristä menetelmistä eniten käytettyyn, eli [Scrumiin](https://www.scrum.org/). Tarkastellaan ensin muutamaa perustavanlaatuista Scrumin ja muidenkin ketterien menetelmien taustalla olevaa perusolettamusta.
 
-### Vesiputousmallin ongelmia
+### Suunnitelmavetoisista malleista ketteryyteen
 
-Edellisestä luvusta kertauksena voidaan kiteyttää vesiputousmallin suurimmat ongelmat:
+Kuten [aiemmin](#vesiputousmallin-ongelmat) todettiin, vesiputousmallin perusongelma on, ettei vaatimuksia voi määritellä eikä ohjelmistoa suunnitella tyhjentävästi etukäteen, ja lopussa tapahtuva testaus paljastaa ongelmat liian myöhään.
 
-- Useimmiten on mahdotonta määritellä ohjelmiston vaatimukset tyhjentävästi projektin alkuvaiheessa. Asiakas ei yleensä ymmärrä vielä alussa mitä haluaa ja bisnesympäristö muuttuu projektin kuluessa.
-- Suunnittelu sillä tasolla, että ohjelmointi on triviaali ja ennustettava rakennusvaihe, rinnastettavissa esim. talon rakennukseen, on mahdotonta.
-- Ohjelmointi on osa suunnitteluprosessia, ohjelmakoodi on tuotteen lopullinen suunnitelma. Suunnittelu taas on teknisesti haastavaa, riskejä sisältävää toimintaa.
-- Lopussa tapahtuva testaus tuo ongelmat esiin liian myöhään, tämä nostaa korjausten kustannuksia
-
-90-luvulla kehitellyt iteratiiviset prosessimallit korjaavat monia näistä epäkohdista, mutta ne ovat kuitenkin vielä vahvasti suunnitelmavetoisia (engl. plan-based) ja olettavat, että ohjelmistotuotanto on jossain määrin _kontrolloitavissa oleva prosessi_.
+80- ja 90-luvuilla kehitellyt iteratiiviset prosessimallit korjaavat monia näistä epäkohdista, mutta ne ovat kuitenkin vielä vahvasti suunnitelmavetoisia (engl. plan-based) ja olettavat, että ohjelmistotuotanto on jossain määrin _kontrolloitavissa oleva prosessi_.
 
 Keskiössä on siis tarkka projektisuunnitelma (joka toki iteratiivisissa malleissa voi elää) ja sen noudattaminen sekä selkeä roolijako: projektipäälliköt, analyytikot, arkkitehdit, ohjelmoijat, testaajat muodostavat kukin omiin vastuualueisiinsa liittyvät tiiminsä.
 
@@ -394,7 +389,7 @@ Backlogin kärjessä eli korkeimmilla prioriteetilla olevat vaatimukset valitaan
 
 Backlogia ylläpidetään ja tarkennetaan jatkuvasti, tätä kutsutaan nimellä _backlog refinement_. Usein on tarkoituksena myös estimoida eli arvioida backlogissa olevien vaatimusten toteuttamisen vaatima työmäärä. Työmääräarviot tekevät kehittäjät. Scrum Guide ei määrää arviointitekniikkaa. Yleisiä tapoja ovat esim. ns. story pointit, mutta osa tiimeistä luopuu arvioinnista kokonaan ja pyrkii sen sijaan pilkkomaan työn tasakokoisiin pieniin osiin (ns. _#NoEstimates_-liike). Palaamme estimointiin [osassa 2](/osa2).
 
-Scrum ei määrittele missä muodossa backlog ja siinä olevat vaatimukset esitetään. Viime vuosina on yleistynyt käytäntö, jossa tehtävät esitetään ns. _user storyinä_, tutustumme tähän tekniikkaan [osassa 2](/osa2/#user-story).
+Scrum ei määrittele, missä muodossa backlog ja siinä olevat vaatimukset esitetään. Vakiintunut käytäntö on esittää vaatimukset ns. _user storyinä_, joihin tutustumme [osassa 2](/osa2/#user-story).
 
 ### Product owner
 
@@ -405,6 +400,10 @@ Product owner on Scrumin mukaan yksittäinen henkilö, ei komitea. Priorisointii
 Product owner vastaa tuotteen tavoitteen määrittelemisestä ja kommunikoinnista, backlogista ja täten kehityksen suunnasta, eli siitä mitä sovellukseen ollaan tekemässä ja missä järjestyksessä. Product ownerin tehtävänä on priorisoida product backlogilla olevat vaatimukset siten, että sovelluksen tilaaja/asiakas saa tuotteesta maksimaalisen hyödyn. Jotta product owner pystyy tähän, on hänen luonnollisesti kommunikoitava mahdollisimman laajalti kaikkien sovelluksen sidosryhmien kanssa.
 
 Product ownerin vastuulla on myös varmistua siitä, että kehittäjät varmasti ymmärtävät toteutettavaksi valitut vaatimukset.
+
+Product ownerin tehtävää tarkastellaan nykyään usein _tuoteajattelun_ (engl. product thinking) näkökulmasta. Keskeistä on erottaa toisistaan _tuotos_ (engl. output) eli valmistuneet ominaisuudet ja _vaikutus_ (engl. outcome) eli muutos käyttäjien toiminnassa tai liiketoiminnassa, jota ominaisuuksilla tavoitellaan. Toteutettujen ominaisuuksien määrä ei vielä kerro, onko ohjelmistosta ollut hyötyä. Myös Scrumin tuotteen tavoite (product goal) kuvaa tavoiteltua tilaa eikä listaa toteutettavia ominaisuuksia.
+
+Marty Cagan erottaa toisistaan _feature-tiimit_, jotka toteuttavat niille annettuja ominaisuuksia, ja _tuotetiimit_, joille annetaan ratkaistavaksi ongelma ja jotka vastaavat siitä, että ratkaisu todella toimii ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään. Palaamme käyttäjien todellisten tarpeiden selvittämiseen [osassa 2](/osa2).
 
 ### Scrum master
 
@@ -491,29 +490,24 @@ Palaamme sprintin suunnitteluun tarkemmin ja konkreettisten esimerkkien kanssa [
 
 Sprintin jokaisena työpäivänä pidetään _daily scrum_ eli korkeintaan 15 minuutin mittainen palaveri. Palaveri on tarkoitettu kehittäjille, ja se pidetään aina samaan aikaan ja samassa paikassa. Usein palaveri pidetään aamulla, mutta Scrum Guide ei tätä edellytä.
 
-Daily scrumin tarkoituksena on ylläpitää läpinäkyvyyttä sprintin tapahtumiin. Pitkään käytetyssä standardimallisessa päiväpalaverissa jokainen kehittäjä vastasi vuorollaan kolmeen kysymykseen
+Vuoden 2020 Scrum Guide määrittelee daily scrumin tarkoituksen seuraavasti:
+
+- Daily scrumin tarkoituksena on tarkastella edistymistä kohti sprintin tavoitetta ja mukauttaa sprintin backlogia tarvittaessa, eli muokata tulevaa suunniteltua työtä.
+- Kehittäjät voivat valita palaverille haluamansa rakenteen ja tekniikat, kunhan daily scrum keskittyy edistymiseen kohti sprintin tavoitetta ja tuottaa konkreettisen suunnitelman seuraavan työpäivän työlle.
+
+Daily scrum ei siis ole pelkkä statuspalaveri, vaan osa Scrumin inspect-and-adapt-sykliä: asioiden tilaa tarkastellaan päivittäin, ja kehitystyötä suunnataan tarvittaessa uudelleen, jotta sprintin tavoite pystytään edelleen saavuttamaan.
+
+Scrum Guide ei määrää palaverin muotoa, mutta pitkään Scrumin suosittelema kolmen kysymyksen malli on edelleen yleinen. Siinä jokainen kehittäjä vastaa vuorollaan kysymyksiin
 
 - Mitä sain aikaan edellisen tapaamisen jälkeen?
 - Mitä aion saada aikaan ennen seuraavaa tapaamista?
 - Mitä esteitä etenemiselläni on?
 
-Aiemmin Scrum Guide määritteli, että daily scrumia saa kuka tahansa seurata, mutta vain tiimin jäsenillä on puheoikeus. Vuoden 2020 Scrum Guide toteaa ainoastaan, että palaveri on kehittäjiä varten. Palaverin on tarkoitus olla lyhyt ja liian rönsyilevä keskustelu ei ole suotavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, niihin palataan tarkemmin daily scrumin jälkeen. Scrum Guiden mukaan kehittäjät kokoontuvatkin usein heti päiväpalaverin perään tarkempiin keskusteluihin.
+Mallissa on riskinä, että palaveri muuttuu yksittäisten kehittäjien raportoinniksi. Kysymyksiä kannattaakin tarkastella sprintin tavoitteen näkökulmasta.
+
+Palaverin on tarkoitus olla lyhyt, ja liian rönsyilevä keskustelu ei ole suotavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, niihin palataan tarkemmin daily scrumin jälkeen. Scrum Guiden mukaan kehittäjät kokoontuvatkin usein heti päiväpalaverin perään tarkempiin keskusteluihin.
 
 Jos muuhun palaverointiin, esim. suunnitteluun tai vaatimusten tarkentamiseen on tarvetta, tulee palaverit järjestää daily scrumista erillään. Scrum ei ota kantaa muihin sprintin aikaisiin palavereihin.
-
-Scrum suositteli yli 20 vuoden ajan pitämään daily scrum -palaverin yllä esitetyssä kolmen kysymyksen formaatissa.
-Syyskuussa 2019 ilmestynyt [A Scrum book](http://scrumbook.org/), jonka kirjoittajissa on mukana mm. toinen Scrumin kehittäjistä Jeff Sutherland, antaa hieman Scrum guidea laajemman ja mielenkiintoisemmankin kuvauksen siitä mikä [Daily Scrum -palaverin rooli](https://scrumbook.org/value-stream/sprint/daily-scrum.html) on:
-
-> Have a short event every day to replan the Sprint, to optimize the chances first of meeting the Sprint Goal and second of completing all Sprint Backlog Items. Strictly time-box the meeting to keep focus on the daily plan and to avoid robbing time from development. Focus on the next day’s work but keep the remainder of the Sprint in mind.
-
-Pelkän statuspalaverin (mitä tein eilen, mitä tänään ja mitä esteitä minulla on) sijaan päiväpalaverin roolina on myös tarvittaessa uudelleensuunnata kehitystyötä siten, että sprintin tavoitteet pystyttäisiin edelleen saavuttamaan.
-
-Eli siinä missä päiväpalaverilla oli aiemmin pelkästään läpinäkyvyyttä tukeva tehtävä, on uuden näkemyksen mukaan päiväpalaverilla roolinsa Scrumin inspect-and-adapt-syklissä, eli asioiden tilaa tarkastellaan ja tarvittaessa uudelleensuunnataan.
-
-Vuoden 2020 Scrum guide on omaksunut uuden näkemyksen todeten seuraavasti:
-
-- The purpose of the Daily Scrum is to inspect progress toward the Sprint Goal and adapt the Sprint Backlog as necessary, adjusting the upcoming planned work.
-- The Developers can select whatever structure and techniques they want, as long as their Daily Scrum focuses on progress toward the Sprint Goal and produces an actionable plan for the next day of work. 
 
 ### Sprintin katselmointi
 
@@ -579,16 +573,12 @@ Yhtenä syynä ongelmiin sanotaan olevan [ScrumBut](https://www.scrum.org/resour
 
 ScrumButilla siis viitataan siihen, että noudatetaan jotain Scrumin osa-alueita, mutta tehdään todella suuria kompromisseja joidenkin oleellisten osien suhteen ja näin ollen läpinäkyvyyden, tarkkailun tai mukauttamisen periaatteet vaarantuvat liikaa.
 
-Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluokkaa olevat projektit aiheuttavat edelleen haasteita Scrumille ja muillekin ketterille menetelmille, vaikkakin asiaan on viime vuosina kiinnitetty huomiota. [Uncle Bob Martinin Scrum-kritiikki](https://www.infoq.com/news/2010/02/scrum-failings) nostaa esiin nämä ja muutamia muitakin oleellisia seikkoja:
+Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluokkaa olevat projektit aiheuttavat edelleen haasteita Scrumille ja muillekin ketterille menetelmille, vaikkakin asiaan on sittemmin kiinnitetty paljon huomiota. [Uncle Bob Martinin Scrum-kritiikki](https://www.infoq.com/news/2010/02/scrum-failings) nostaa esiin nämä ja muutamia muitakin oleellisia seikkoja, jotka voi tiivistää neljään kohtaan:
 
-- _No Technical Practices_: Scrum is a project management framework and doesn’t make any technical recommendations.
-- _Automated Testing_: without high quality automated tests it is difficult to work in short cycles and know that stories are really done.
-- _30 Day Sprints are too long_
-- _Certification in CSM_: The Certificate that a Scrum Master, a trained CSM, holds means that on many teams only that person plays the role.
-- _Scrum Master sometimes turns into Project Manager_: Some Scrum Masters use Scrum as a form of micro management and control.
-- _Scrum carries an anti-management undercurrent_: "Scrum over-emphasizes the role of the team as self-managing. Self-organizing and self-managing teams are a good thing. But there is a limit. Scrum does not describe this with enough balance."
-- _Multiple Teams_: Scrum and generic Agile have little to say about how to scale.
-- _Insufficient Guidance Regarding the Product Backlog_
+- _Tekniset käytänteet puuttuvat_: Scrum on projektinhallinnan menetelmäkehys, eikä se anna teknisiä suosituksia, esim. automaattisesta testauksesta.
+- _Scrum masterin rooli_: sertifikaatin suorittanut scrum master voi muuttua mikromanageroivaksi projektipäälliköksi.
+- _Itseohjautuvuuden ja skaalautumisen rajat_: Scrum korostaa tiimien itseohjautuvuutta liikaa, eikä se kerro, miten toimitaan usean tiimin kanssa.
+- _Product backlogin hallinta_: Scrum antaa liian vähän ohjeita product backlogin organisointiin.
 
 Koska Scrum ei ota mitään kantaa ohjelmistokehityksen _teknisiin periaatteisiin_, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden. Kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riskiä nostaa se jos projektissa ei ole automaattisia testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
 
@@ -611,9 +601,9 @@ _Scrum is easy to understand but extremely difficult to master_.
 
 Laajoihin kielimalleihin perustuvat työkalut, kuten [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/) ja GitHub [Copilot](https://github.com/features/copilot), ovat muuttaneet ohjelmistokehitystä nopeasti. Alun koodin täydennyksestä ja chat-käyttöliittymistä on siirrytty _agentteihin_ (esim. Copilotin Agent-tila, Claude Code ja Cursor), jotka osaavat itsenäisesti tehdä useisiin tiedostoihin ulottuvia muutoksia, suorittaa koodia ja testejä ja korjata tekemisiään virheilmoitusten perusteella.
 
-Itse käytän koodatessa pääasiassa GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Student -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
+Itse käytän koodatessa pääasiassa [Claude Codea](https://claude.com/product/claude-code), mutta koska se on maksullinen, kurssilla käytetään GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Student -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
 
-Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen. Lisäksi kielimallit keksivät välillä olemattomia kirjastojen nimiä, ja hyökkääjät ovat alkaneet rekisteröidä näitä nimiä haitallisille paketeille. Riskejä on koottu tarkemmin [tekoälymateriaaliin](/genai/#riskit-koottuna).
+Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Agentteja käytettäessä hallusinointi onkin ohjelmoinnissa nykyään melko vähäistä, sillä agentti suorittaa koodin ja testit itse ja korjaa virheet niiden perusteella. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen. Lisäksi kielimallit keksivät välillä olemattomia kirjastojen nimiä, ja hyökkääjät ovat alkaneet rekisteröidä näitä nimiä haitallisille paketeille. Riskejä on koottu tarkemmin [tekoälymateriaaliin](/genai/#riskit-koottuna).
 
 Tekoälyä käytettäessä vastuu jää siis aina ohjelmoijalle.
 

@@ -55,7 +55,7 @@ Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittais
 
 Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23.59_. Tehtävien ohjelmointikieli on Python.
 
-Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viikolla 3 noin 6 tuntia, viikoilla 4–5 noin 4 tuntia ja viikolla 6 noin 6 tuntia. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
+Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viikolla 3 noin 6 tuntia, viikoilla 4–5 noin 4 tuntia ja viikoilla 6–7 noin 6 tuntia. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
 ### Tekoäly kurssilla
 
@@ -125,7 +125,7 @@ Kaikki monivalintatehtävät ovat joukkoja väittämiä, joista jokainen voi oll
 - jos _oikeatVastaukset/vaittamaLukumaara_ on pienempi tai yhtä suuri kuin 0.45, tuloksena on 0 mvp:tä.
 - jos _oikeatVastaukset/vaittamaLukumaara_ on suurempi kuin 0.45, kasvaa mvp-määrä lineaarisesti siten, että kaikkien kohtien ollessa oikein saa yhden mvp:n.
 
-Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä.
+Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteisiin edellytetään 90 % normaalien laskareiden tekemistä. Yhden kurssipisteen saa tekemällä 10 % tehtävistä, ja tästä pistemäärä kasvaa lineaarisesti täysiin pisteisiin asti. Esimerkiksi 50 % tehtävistä tuo 4,5 kurssipistettä.
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
