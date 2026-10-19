@@ -118,10 +118,9 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
-  - Ryhmä tekee päivittäin jäljellä olevan työajan arvioinnin ja dokumentoi tämän sprintin burndown-käyränä
-    - burndownin sijaan on myös mahdollista tehdä sprintille ylöspäin kasvava burnup-kaavio, ks lisää [täältä](https://studies.cs.helsinki.fi/ohtu/osa2/#burndown--ja-burnup-kaaviot)
+  - Ryhmä seuraa sprintin etenemistä valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
+    - kaavio voi olla esim. GitHub Projectsin automaattisesti piirtämä
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
-    - jäljellä olevan työajan estimaatti
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla

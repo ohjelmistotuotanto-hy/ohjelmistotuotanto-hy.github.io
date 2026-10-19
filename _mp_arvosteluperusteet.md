@@ -52,9 +52,8 @@ Pisteitä kertyy seuraavista asioista:
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
 - (0.25p) sprintin 1 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
-  - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
-  - Sprintin burndown-käyrä olemassa
-    - Myös burnup-käyrä kelpaa
+  - Sprintin etenemistä seurataan valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
+    - Kaavio voi olla esim. GitHub Projectsin automaattisesti piirtämä
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
@@ -95,8 +94,7 @@ Pisteitä kertyy seuraavista asioista:
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
 - (0.25p) sprintin 2 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
-  - Päivittäinen jäjellä oleva työmäärä arvioitu taskeittain
-  - Burndown-käyrä olemassa
+  - Sprintin etenemistä seurataan valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
   - Jokaiseen taskiin on merkitty sen tekijä(t)
 - (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
 - (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
