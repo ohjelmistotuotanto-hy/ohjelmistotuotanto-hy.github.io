@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 270" width="560" height="270" font-family="Helvetica, Arial, sans-serif">
+<rect width="560" height="270" fill="white"/>
+<text x="30" y="40" font-size="22" fill="#2d3748" text-anchor="start" font-weight="bold" >Keino 2: storyn karsiminen</text>
+<rect x="30" y="70" width="200" height="26" rx="6" fill="#bee3f8" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="89.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >A</text>
+<rect x="30" y="104" width="200" height="26" rx="6" fill="#e9d8fd" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="123.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >B</text>
+<rect x="30" y="138" width="200" height="26" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="157.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >C</text>
+<rect x="30" y="172" width="200" height="26" rx="6" fill="#fefcbf" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="191.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >D</text>
+<rect x="30" y="206" width="200" height="26" rx="6" fill="#fed7aa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="225.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >E</text>
+<path d="M245,70 q18,0 18,18 L263,116.0 q0,18 18,18 q-18,0 -18,18 L263,180 q0,18 -18,18" fill="none" stroke="#2b6cb0" stroke-width="3"/>
+<text x="295" y="130.0" font-size="17" fill="#2b6cb0" text-anchor="start" font-weight="normal" >Arvioitu velositeetti:</text>
+<text x="295" y="152.0" font-size="17" fill="#2b6cb0" text-anchor="start" font-weight="bold" >mahtuu sprinttiin</text>
+</svg>

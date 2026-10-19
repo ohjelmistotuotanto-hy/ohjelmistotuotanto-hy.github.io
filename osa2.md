@@ -385,7 +385,7 @@ Työmäärän arvioimiseen on kehitetty vuosien varrella useita erilaisia menete
 
 Estimointiin liittyvää epävarmuutta kuvaa käsite _cone of uncertainty_:
 
-![]({{ "/images/2-6.png" | relative_url }}){:height="400px" }
+![]({{ "/images/2-6.svg" | relative_url }}){:height="400px" }
 
 Eli mitä kauempana tuotteen/ominaisuuden valmistuminen on, sitä epätarkempia työmääräarviot ovat. Tämä taas johtuu siitä, että tuntemattomien epävarmuustekijöiden määrä alussa on suuri, mutta kun tuotteen rakentamisessa ollaan pidemmällä, ymmärrys kasvaa ja työmäärienkin arviointi alkaa olla realistisempaa. Jos esim. mietitään user storya _tuotteen voi poistaa ostoskorista_, on järjestelmän alustavassa määrittelyvaiheessa todella vaikea antaa minkäänlaista työmääräarviota storylle. Kun sovelluskehitys etenee ja tiedetään miten ostoskori teknisesti toteutetaan, minkälainen sovelluksen käyttöliittymä on jne, muuttuu tuotteen ostoskorista poistamista koskevan storyn työmääräarvion tekeminen jo huomattavasti helpommaksi.
 
@@ -417,7 +417,7 @@ Koska estimointi on joka tapauksessa epätarkkaa, siihen ei kannata käyttää p
 
 Eräs käyttökelpoinen tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
 
-![]({{ "/images/2-7.png" | relative_url }}){:height="300px" }
+![]({{ "/images/2-7.svg" | relative_url }}){:height="300px" }
 
 Estimoinnissa käytetään yleensä yläpäästä harvenevaa skaalaa, esim. Fibonaccin lukujonoa 1, 2, 3, 5, 8, 13, 21 tai sen muunnelmaa 1, 2, 3, 5, 8, 13, 20, 40, 100. Koska isojen storyjen estimointiin liittyy suuri epävarmuus, ei kannata teeskennellä, että skaala olisi niiden kohdalla kovin tarkka.
 
@@ -444,7 +444,7 @@ Hyvä backlog on myös _detailed appropriately_ eli sopivan yksityiskohtainen. B
 
 Alemman prioriteetin user storyt voivat vielä olla isompia ja karkeammin estimoituja. Itse asiassa alemman prioriteetin storyjä ei edes kannata määritellä kovin tarkasti, sillä kestää vielä kauan ennen kuin ne otetaan toteutettavaksi johonkin sprinttiin. Usein käy vieläpä niin, että alemman prioriteetin storyjä ei lopulta toteuteta koskaan, sillä niiden määrittelemä toiminnallisuus havaitaankin tarpeettomaksi. Alhaisen prioriteetin storyihin ei siis kannata investoida spekulatiivisesti liikaa aikaa.
 
-![]({{ "/images/2-9.png" | relative_url }}){:height="250px" }
+![]({{ "/images/2-9.svg" | relative_url }}){:height="250px" }
 
 _Emergent_ kuvaa backlogin [muuttuvaa luonnetta](https://www.romanpichler.com/blog/make-the-product-backlog-deep/):
 
@@ -484,13 +484,13 @@ Projektin alkaessa velositeetti ei yleensä ole selvillä, ellei kyseessä ole j
 
 Velositeetti vaihtelee tyypillisesti alussa melko paljon, erityisesti jos sovellusalue ja/tai käytetyt teknologiat eivät ole tiimille täysin tuttuja. Velositeetti kuitenkin alkaa yleensä stabiloitumaan muutaman sprintin jälkeen.
 
-![]({{ "/images/2-11.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-11.svg" | relative_url }}){:height="350px" }
 
 Tiimin velositeetti ja siihen perustuva projektin tai sen osakokonaisuuden keston arvio alkaa tarkentumaan pikkuhiljaa.
 
 Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti projektin etenemistä. Tämän takia velositeettiin lasketaan mukaan ainoastaan täysin valmiiksi (eli [definition of donen](/osa1#definition-of-done) määrittelemällä laatutasolla) toteutettujen user storyjen story pointit. "Lähes valmiiksi" tehtyä työtä ei siis katsota ollenkaan tehdyksi työksi.
 
-![]({{ "/images/2-12.png" | relative_url }}){:height="250px" }
+![]({{ "/images/2-12.svg" | relative_url }}){:height="250px" }
 
 #### Eri tiimien velositeettien vertailu
 
@@ -503,11 +503,11 @@ Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina ta
 Ketterän projektin etenemistä kuvataan joskus _release burndown_ -kaavion avulla.
 Aika etenee kaavion x-akselilla sprintti kerrallaan, y-akselilla on jäljellä olevan työn määrä story pointteina mitattuna:
 
-![]({{ "/images/2-13.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-13.svg" | relative_url }}){:height="350px" }
 
 Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siksi jäljellä olevan työn määrä ei aina vähene. Joskus käytetäänkin _burn up_ -kaavioita, joka tuo selkeämmin esiin kesken projektin etenemisen tapahtuvan työmäärän kasvun:
 
-![]({{ "/images/2-14.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-14.svg" | relative_url }}){:height="350px" }
 
 ### Julkaisun suunnittelu ja tuotteen roadmap
 
@@ -520,7 +520,7 @@ Tällaista yksittäisiä sprinttejä pidemmän aikavälin suunnittelun tekemist�
 
 Voidaankin ajatella, että julkaisun suunnittelussa backlogin sisältö jaetaan karkeasti isompiin lohkoihin, joihin sijoitetaan ne user storyt, joiden ajatellaan suunnitteluhetkellä sisältyvän kyseiseen milestoneen:
 
-![]({{ "/images/2-10.png" | relative_url }})
+![]({{ "/images/2-10.svg" | relative_url }})
 
 Eri milestonet saattavat olla ajallisesti samanpituisia, eli ne voivat koostua vakiomäärästä sprinttejä. Kaikissa tilanteissa tämä ei kuitenkaan ole tarkoituksenmukaista, ja voi olla mielekästä, että milestonejen pituus vaihtelee.
 
@@ -540,7 +540,7 @@ Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suure
 
 Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, joka jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
 
-![]({{ "/images/2-15.png" | relative_url }}){:height="400px" }
+![]({{ "/images/2-15.svg" | relative_url }}){:height="400px" }
 
 Story mapin rivit ovat loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
 
@@ -584,7 +584,7 @@ Sprintin onnistumista tarkastellaan yleensä suhteessa sprintin tavoitteeseen, e
 
 Kehittäjät siis päättävät, kuinka monta user storyä sprinttiin otetaan toteutettavaksi. Pääperiaate on valita "sopiva määrä" backlogin korkeimmalle priorisoituja user storyjä ja siirtää ne _sprint backlogiin_.
 
-![]({{ "/images/2-16.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-16.svg" | relative_url }}){:height="350px" }
 
 Tapoja päättää sprinttiin otettavien storyjen määrä on [useita](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/):
 
@@ -598,21 +598,21 @@ Käytetään mitä valintaperiaatetta tahansa, on joka tapauksessa oleellista et
 
 Oletusarvoisesti sprinttiin siis otetaan joukko backlogin kärjessä olevia user storyjä:
 
-![]({{ "/images/2-17.png" | relative_url }}){:height="220px" }
+![]({{ "/images/2-17.svg" | relative_url }}){:height="220px" }
 
 Product ownerilla on kolme keinoa vaikuttaa siihen, mitkä storyt mahtuvat sprinttiin:
 
 **1. Uudelleenpriorisointi.** Jos product owner haluaa storyn D mukaan, se nostaa D:n prioriteettia, jolloin C putoaa pois:
 
-![]({{ "/images/2-18.png" | relative_url }}){:height="250px" }
+![]({{ "/images/2-18.svg" | relative_url }}){:height="250px" }
 
 **2. Storyn karsiminen.** Jos product owner haluaa mukaan kaikki storyt A–D, jostain on luovuttava: product owner karsii A:n toiminnallisuutta, kehittäjät estimoivat pienennetyn A:n, ja A–D mahtuvat sprinttiin:
 
-![]({{ "/images/2-19.png" | relative_url }}){:height="215px" }
+![]({{ "/images/2-19.svg" | relative_url }}){:height="215px" }
 
 **3. Storyn jakaminen.** Jos A:n toiminnallisuudesta ei voi luopua, A jaetaan kahteen osaan. A1 sisältää tärkeimmät piirteet ja otetaan sprinttiin, ja A2 jää alemmalla prioriteetilla myöhemmäksi:
 
-![]({{ "/images/2-20.png" | relative_url }}){:height="250px" }
+![]({{ "/images/2-20.svg" | relative_url }}){:height="250px" }
 
 Lopullisen päätöksen sprinttiin mahtuvasta työmäärästä tekevät kuitenkin aina kehittäjät.
 
@@ -746,7 +746,7 @@ Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user s
 
 Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yksi rivi kutakin sprinttiin valittua user storya kohti. Storyyn liittyvät taskit kulkevat vasemmalta oikealle niiden statusta kuvaavien sarakkeiden _not started, in progress, done_ kautta:
 
-![]({{ "/images/2-21.png" | relative_url }}){:height="400px" }
+![]({{ "/images/2-21.svg" | relative_url }}){:height="400px" }
 
 Kaikkia storyyn liittyviä taskeja ei sprintin suunnittelun aikana yleensä löydetä ja uusia taskeja lisätään tarvittaessa sprintin edetessä.
 

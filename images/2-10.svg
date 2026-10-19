@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Helvetica, Arial, sans-serif">
+<rect width="720" height="400" fill="white"/>
+<text x="200" y="32" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold" >Product backlog</text>
+<rect x="110" y="50" width="180" height="10" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="65" width="180" height="10" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="80" width="180" height="12" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="97" width="180" height="12" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="114" width="180" height="14" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="95" y="94.0" font-size="16" fill="#dd6b20" text-anchor="end" font-weight="bold" >Julkaisu 1</text>
+<path d="M305,50 q14,0 14,14 L319,75.0 q0,14 14,14 q-14,0 -14,14 L319,114 q0,14 -14,14" fill="none" stroke="#718096" stroke-width="3"/>
+<text x="350" y="85.25" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >Pääosin tarkasti</text>
+<text x="350" y="103.25" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >priorisoitu</text>
+<line x1="20" y1="135" x2="700" y2="135" stroke="#dd6b20" stroke-width="2"/>
+<rect x="110" y="143" width="180" height="16" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="164" width="180" height="18" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="187" width="180" height="18" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="210" width="180" height="20" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="95" y="191.5" font-size="16" fill="#dd6b20" text-anchor="end" font-weight="bold" >Julkaisu 2</text>
+<path d="M305,143 q14,0 14,14 L319,172.5 q0,14 14,14 q-14,0 -14,14 L319,216 q0,14 -14,14" fill="none" stroke="#718096" stroke-width="3"/>
+<text x="350" y="182.75" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >Osittain</text>
+<text x="350" y="200.75" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >priorisoitu</text>
+<line x1="20" y1="237" x2="700" y2="237" stroke="#dd6b20" stroke-width="2"/>
+<rect x="110" y="245" width="180" height="24" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="274" width="180" height="26" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<rect x="110" y="305" width="180" height="30" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="95" y="295.0" font-size="16" fill="#dd6b20" text-anchor="end" font-weight="bold" >Julkaisu 3</text>
+<path d="M305,245 q14,0 14,14 L319,276.0 q0,14 14,14 q-14,0 -14,14 L319,321 q0,14 -14,14" fill="none" stroke="#718096" stroke-width="3"/>
+<text x="350" y="286.25" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >Ei vielä</text>
+<text x="350" y="304.25" font-size="15" fill="#2d3748" text-anchor="start" font-weight="normal" >priorisoitu</text>
+<line x1="20" y1="342" x2="700" y2="342" stroke="#dd6b20" stroke-width="2"/>
+<text x="200" y="380" font-size="14" fill="#718096" text-anchor="middle" font-weight="normal" >Alempana olevat storyt ovat isompia ja karkeammin määriteltyjä</text>
+</svg>

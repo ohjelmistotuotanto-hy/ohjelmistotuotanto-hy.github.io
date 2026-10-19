@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="440" fill="white"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<line x1="100" y1="370" x2="100" y2="30" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="100" y1="370" x2="870" y2="370" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="860" y="410" font-size="15" fill="#718096" text-anchor="end" font-weight="normal" >Sprintti</text>
+<text x="55" y="205.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" transform="rotate(-90 55 205.0)">Velositeetti (story pointia)</text>
+<rect x="130" y="216" width="50" height="154" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="155.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >14</text>
+<text x="155.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >1</text>
+<rect x="210" y="95" width="50" height="275" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="235.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >25</text>
+<text x="235.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >2</text>
+<rect x="290" y="172" width="50" height="198" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="315.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >18</text>
+<text x="315.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >3</text>
+<rect x="370" y="128" width="50" height="242" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="395.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >22</text>
+<text x="395.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >4</text>
+<rect x="450" y="161" width="50" height="209" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="475.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >19</text>
+<text x="475.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >5</text>
+<rect x="530" y="139" width="50" height="231" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="555.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >21</text>
+<text x="555.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >6</text>
+<rect x="610" y="150" width="50" height="220" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="635.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >20</text>
+<text x="635.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >7</text>
+<rect x="690" y="150" width="50" height="220" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="715.0" y="356" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >20</text>
+<text x="715.0" y="392" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >8</text>
+<line x1="100" y1="150" x2="770" y2="150" stroke="#dd6b20" stroke-width="2.5" stroke-dasharray="10 6"/>
+<text x="820" y="146.0" font-size="16" fill="#dd6b20" text-anchor="middle" font-weight="bold" >Keskiarvo</text>
+<text x="820" y="165.2" font-size="16" fill="#dd6b20" text-anchor="middle" font-weight="bold" >≈ 20</text>
+<text x="280" y="60" font-size="15" fill="#718096" text-anchor="middle" font-weight="normal" >Alussa vaihtelee paljon</text>
+<text x="600" y="60" font-size="15" fill="#718096" text-anchor="middle" font-weight="normal" >Tasaantuu muutaman sprintin jälkeen</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" font-family="Helvetica, Arial, sans-serif">
+<rect width="820" height="380" fill="white"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<rect x="210" y="30" width="240" height="320" rx="4" fill="white" stroke="#2d3748" stroke-width="2"/>
+<rect x="235" y="50.0" width="190" height="3.0" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="61.0" width="190" height="6.6" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="75.6" width="190" height="10.2" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="93.8" width="190" height="13.8" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="115.6" width="190" height="17.4" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="141.0" width="190" height="21.0" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="170.0" width="190" height="24.6" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="202.6" width="190" height="28.2" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="238.8" width="190" height="31.8" rx="1" fill="#2b6cb0"/>
+<rect x="235" y="278.6" width="190" height="35.4" rx="1" fill="#2b6cb0"/>
+<line x1="170" y1="45" x2="170" y2="330" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="95" y="46.0" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold" >Korkea</text>
+<text x="95" y="65.2" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold" >prioriteetti</text>
+<text x="95" y="316.0" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold" >Matala</text>
+<text x="95" y="335.2" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold" >prioriteetti</text>
+<text x="480" y="56.0" font-size="16" fill="#38a169" text-anchor="start" font-weight="bold" >Pienet, tarkasti määritellyt storyt:</text>
+<text x="480" y="75.2" font-size="16" fill="#38a169" text-anchor="start" font-weight="bold" >valmiina seuraavaan sprinttiin</text>
+<text x="480" y="311.0" font-size="16" fill="#718096" text-anchor="start" font-weight="bold" >Isot, karkeasti määritellyt storyt</text>
+<text x="480" y="330.2" font-size="16" fill="#718096" text-anchor="start" font-weight="bold" >(epiikit)</text>
+</svg>

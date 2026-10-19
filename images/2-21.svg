@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="560" fill="white"/>
+<text x="130" y="50" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >Stories</text>
+<text x="335" y="50" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >Not started</text>
+<text x="555" y="50" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >In progress</text>
+<text x="775" y="50" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >Done</text>
+<line x1="20" y1="70" x2="880" y2="70" stroke="#2d3748" stroke-width="2"/>
+<line x1="220" y1="20" x2="220" y2="540" stroke="#2d3748" stroke-width="2"/>
+<line x1="440" y1="20" x2="440" y2="540" stroke="#2d3748" stroke-width="2"/>
+<line x1="660" y1="20" x2="660" y2="540" stroke="#2d3748" stroke-width="2"/>
+<rect x="30" y="95" width="170" height="110" rx="4" fill="#81e6d9" stroke="#2d3748" stroke-width="1.5"/>
+<text x="115" y="125" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold" >Story #1</text>
+<line x1="50" y1="150" x2="180" y2="150" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="168" x2="180" y2="168" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="186" x2="180" y2="186" stroke="#2d3748" stroke-opacity="0.5"/>
+<rect x="673" y="98" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="670" y="95" width="88" height="55" rx="3" fill="#bee3f8" stroke="#b7a76a" stroke-width="1"/>
+<text x="714.0" y="127.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task A</text>
+<rect x="773" y="98" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="770" y="95" width="88" height="55" rx="3" fill="#bee3f8" stroke="#b7a76a" stroke-width="1"/>
+<text x="814.0" y="127.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task B</text>
+<rect x="673" y="163" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="670" y="160" width="88" height="55" rx="3" fill="#bee3f8" stroke="#b7a76a" stroke-width="1"/>
+<text x="714.0" y="192.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task C</text>
+<rect x="30" y="245" width="170" height="110" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="115" y="275" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold" >Story #2</text>
+<line x1="50" y1="300" x2="180" y2="300" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="318" x2="180" y2="318" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="336" x2="180" y2="336" stroke="#2d3748" stroke-opacity="0.5"/>
+<rect x="233" y="248" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="230" y="245" width="88" height="55" rx="3" fill="#fefcbf" stroke="#b7a76a" stroke-width="1"/>
+<text x="274.0" y="277.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task A</text>
+<rect x="453" y="248" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="450" y="245" width="88" height="55" rx="3" fill="#fefcbf" stroke="#b7a76a" stroke-width="1"/>
+<text x="494.0" y="277.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task C</text>
+<rect x="673" y="248" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="670" y="245" width="88" height="55" rx="3" fill="#fefcbf" stroke="#b7a76a" stroke-width="1"/>
+<text x="714.0" y="277.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task B</text>
+<rect x="30" y="395" width="170" height="110" rx="4" fill="#fbb6ce" stroke="#2d3748" stroke-width="1.5"/>
+<text x="115" y="425" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold" >Story #3</text>
+<line x1="50" y1="450" x2="180" y2="450" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="468" x2="180" y2="468" stroke="#2d3748" stroke-opacity="0.5"/>
+<line x1="50" y1="486" x2="180" y2="486" stroke="#2d3748" stroke-opacity="0.5"/>
+<rect x="233" y="398" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="230" y="395" width="88" height="55" rx="3" fill="#fed7e2" stroke="#b7a76a" stroke-width="1"/>
+<text x="274.0" y="427.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task B</text>
+<rect x="333" y="398" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="330" y="395" width="88" height="55" rx="3" fill="#fed7e2" stroke="#b7a76a" stroke-width="1"/>
+<text x="374.0" y="427.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task D</text>
+<rect x="673" y="398" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="670" y="395" width="88" height="55" rx="3" fill="#fed7e2" stroke="#b7a76a" stroke-width="1"/>
+<text x="714.0" y="427.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task A</text>
+<rect x="773" y="398" width="88" height="55" rx="3" fill="#0000001a"/>
+<rect x="770" y="395" width="88" height="55" rx="3" fill="#fed7e2" stroke="#b7a76a" stroke-width="1"/>
+<text x="814.0" y="427.4" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Task C</text>
+</svg>

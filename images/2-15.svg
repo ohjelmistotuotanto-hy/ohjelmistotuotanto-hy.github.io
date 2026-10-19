@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="560" fill="white"/>
+<defs><marker id="arrp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d53f8c"/></marker></defs>
+<rect x="43" y="23" width="130" height="55" rx="3" fill="#0000001a"/>
+<rect x="40" y="20" width="130" height="55" rx="3" fill="#9decf9" stroke="#b7a76a" stroke-width="1"/>
+<text x="105.0" y="52.75" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >Tuotehaku</text>
+<line x1="40" y1="100" x2="320" y2="100" stroke="#d53f8c" stroke-width="6" marker-end="url(#arrp)"/>
+<rect x="363" y="23" width="130" height="55" rx="3" fill="#0000001a"/>
+<rect x="360" y="20" width="130" height="55" rx="3" fill="#9decf9" stroke="#b7a76a" stroke-width="1"/>
+<text x="425.0" y="52.75" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >Tuotesivu</text>
+<line x1="360" y1="100" x2="640" y2="100" stroke="#d53f8c" stroke-width="6" marker-end="url(#arrp)"/>
+<rect x="683" y="23" width="130" height="55" rx="3" fill="#0000001a"/>
+<rect x="680" y="20" width="130" height="55" rx="3" fill="#9decf9" stroke="#b7a76a" stroke-width="1"/>
+<text x="745.0" y="52.75" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" >Kassa</text>
+<line x1="680" y1="100" x2="960" y2="100" stroke="#d53f8c" stroke-width="6" marker-end="url(#arrp)"/>
+<text x="180" y="92" font-size="13" fill="#718096" text-anchor="middle" font-weight="normal" >käyttäjän polku</text>
+<text x="20" y="122" font-size="16" fill="#2d3748" text-anchor="start" font-weight="bold" >Julkaisu 1</text>
+<line x1="20" y1="130" x2="980" y2="130" stroke="#2d3748" stroke-width="3"/>
+<rect x="43" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="40" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="87.5" y="169.79999999999998" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Suodatus</text>
+<text x="87.5" y="184.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >kategorian</text>
+<text x="87.5" y="198.59999999999997" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >mukaan</text>
+<rect x="363" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="360" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="407.5" y="177.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Tuote-</text>
+<text x="407.5" y="191.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >kuvaus</text>
+<rect x="465" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="462" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="509.5" y="177.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Osto-</text>
+<text x="509.5" y="191.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >vaihtoehdot</text>
+<rect x="567" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="564" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="611.5" y="177.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Osta-</text>
+<text x="611.5" y="191.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >painike</text>
+<rect x="683" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="680" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="727.5" y="177.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Toimitus-</text>
+<text x="727.5" y="191.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >tiedot</text>
+<rect x="785" y="148" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="782" y="145" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="829.5" y="177.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Maksu</text>
+<text x="829.5" y="191.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >PayPalilla</text>
+<text x="20" y="252" font-size="16" fill="#2d3748" text-anchor="start" font-weight="bold" >Julkaisu 2</text>
+<line x1="20" y1="260" x2="980" y2="260" stroke="#2d3748" stroke-width="3"/>
+<rect x="43" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="40" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="87.5" y="299.8" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Suodatus</text>
+<text x="87.5" y="314.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >värin</text>
+<text x="87.5" y="328.6" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >mukaan</text>
+<rect x="145" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="142" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="189.5" y="299.8" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Lajittelu</text>
+<text x="189.5" y="314.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >hinnan</text>
+<text x="189.5" y="328.6" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >mukaan</text>
+<rect x="247" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="244" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="291.5" y="299.8" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Suodatus</text>
+<text x="291.5" y="314.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >tyylin</text>
+<text x="291.5" y="328.6" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >mukaan</text>
+<rect x="363" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="360" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="407.5" y="307.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Kuva-</text>
+<text x="407.5" y="321.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >galleria</text>
+<rect x="683" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="680" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="727.5" y="307.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Postinumero-</text>
+<text x="727.5" y="321.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >haku</text>
+<rect x="785" y="278" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="782" y="275" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="829.5" y="299.8" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Maksu</text>
+<text x="829.5" y="314.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >luotto-</text>
+<text x="829.5" y="328.6" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >kortilla</text>
+<text x="20" y="412" font-size="16" fill="#2d3748" text-anchor="start" font-weight="bold" >Backlog</text>
+<line x1="20" y1="420" x2="980" y2="420" stroke="#2d3748" stroke-width="3"/>
+<rect x="43" y="438" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="40" y="435" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="87.5" y="459.8" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Lajittelu</text>
+<text x="87.5" y="474.2" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >arvion</text>
+<text x="87.5" y="488.6" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >mukaan</text>
+<rect x="145" y="438" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="142" y="435" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="189.5" y="467.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Pika-</text>
+<text x="189.5" y="481.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >esikatselu</text>
+<rect x="363" y="438" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="360" y="435" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="407.5" y="467.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Arvostelujen</text>
+<text x="407.5" y="481.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >luku</text>
+<rect x="465" y="438" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="462" y="435" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="509.5" y="467.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Jako-</text>
+<text x="509.5" y="481.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >painikkeet</text>
+<rect x="567" y="438" width="95" height="70" rx="3" fill="#0000001a"/>
+<rect x="564" y="435" width="95" height="70" rx="3" fill="#fbd38d" stroke="#b7a76a" stroke-width="1"/>
+<text x="611.5" y="467.0" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >Arvostelun</text>
+<text x="611.5" y="481.4" font-size="12" fill="#2d3748" text-anchor="middle" font-weight="normal" >kirjoitus</text>
+</svg>

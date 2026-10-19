@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="Helvetica, Arial, sans-serif">
+<rect width="880" height="480" fill="white"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<line x1="100" y1="400" x2="100" y2="30" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="100" y1="400" x2="850" y2="400" stroke="#2d3748" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="840" y="440" font-size="15" fill="#718096" text-anchor="end" font-weight="normal" >Sprintti</text>
+<text x="55" y="220.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" transform="rotate(-90 55 220.0)">Jäljellä oleva työ (story pointia)</text>
+<rect x="125" y="88.0" width="42" height="312.0" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="146" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >1</text>
+<rect x="189" y="114.0" width="42" height="286.0" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="210" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >2</text>
+<rect x="253" y="145.2" width="42" height="254.8" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="274" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >3</text>
+<rect x="317" y="176.4" width="42" height="223.6" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="338" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >4</text>
+<rect x="381" y="202.4" width="42" height="197.6" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="402" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >5</text>
+<rect x="445" y="160.79999999999998" width="42" height="239.20000000000002" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="466" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >6</text>
+<rect x="509" y="186.79999999999998" width="42" height="213.20000000000002" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="530" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >7</text>
+<rect x="573" y="233.6" width="42" height="166.4" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="594" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >8</text>
+<rect x="637" y="249.2" width="42" height="150.8" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="658" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >9</text>
+<rect x="701" y="306.4" width="42" height="93.60000000000001" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="722" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >10</text>
+<rect x="765" y="348.0" width="42" height="52.0" rx="2" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2"/>
+<text x="786" y="422" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >11</text>
+<line x1="146" y1="88.0" x2="594" y2="400" stroke="#dd6b20" stroke-width="2.5" stroke-dasharray="10 6"/>
+<line x1="600" y1="60" x2="650" y2="60" stroke="#dd6b20" stroke-width="2.5" stroke-dasharray="10 6"/>
+<text x="660" y="65" font-size="14" fill="#dd6b20" text-anchor="start" font-weight="bold" >Alkuperäinen suunnitelma</text>
+<line x1="304" y1="108.19999999999999" x2="274" y2="139.2" stroke="#2d3748" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="304" y="86.69999999999999" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Hitaampaa kuin</text>
+<text x="304" y="103.49999999999999" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >arvioitiin</text>
+<line x1="466" y1="113.79999999999998" x2="466" y2="154.79999999999998" stroke="#2d3748" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="466" y="92.29999999999998" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Uusia</text>
+<text x="466" y="109.09999999999998" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >storyja</text>
+<line x1="678" y1="197.2" x2="658" y2="243.2" stroke="#2d3748" stroke-width="1.2" marker-end="url(#arr)"/>
+<text x="678" y="175.7" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >Bugien</text>
+<text x="678" y="192.5" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="normal" >korjaamista</text>
+</svg>

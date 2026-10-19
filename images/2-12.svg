@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540" font-family="Helvetica, Arial, sans-serif">
+<rect width="880" height="540" fill="white"/>
+<rect x="60" y="70" width="140" height="122" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="137.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >8</text>
+<rect x="60" y="198" width="140" height="74" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="241.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<rect x="60" y="278" width="140" height="74" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="321.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<rect x="60" y="358" width="140" height="42" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="385.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >3</text>
+<rect x="60" y="406" width="140" height="74" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="130" y="449.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<text x="130" y="45" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >Sprintin alussa</text>
+<path d="M215,70 q18,0 18,18 L233,257.0 q0,18 18,18 q-18,0 -18,18 L233,462 q0,18 -18,18" fill="none" stroke="#2b6cb0" stroke-width="3"/>
+<text x="265" y="270" font-size="18" fill="#2b6cb0" text-anchor="start" font-weight="normal" >Arvioitu</text>
+<text x="265" y="294" font-size="18" fill="#2b6cb0" text-anchor="start" font-weight="bold" >velositeetti 26</text>
+<rect x="520" y="70" width="140" height="122" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="590" y="137.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >8</text>
+<rect x="520" y="198" width="140" height="74" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="590" y="241.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<rect x="520" y="278" width="140" height="74" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="590" y="321.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<rect x="520" y="358" width="140" height="42" rx="6" fill="#fefcbf" stroke="#2d3748" stroke-width="1.5"/>
+<text x="590" y="385.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >3</text>
+<rect x="520" y="406" width="140" height="74" rx="6" fill="#fed7d7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="590" y="449.0" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >5</text>
+<text x="590" y="45" font-size="20" fill="#2d3748" text-anchor="middle" font-weight="bold" >Sprintin lopussa</text>
+<text x="505" y="137.0" font-size="16" fill="#38a169" text-anchor="end" font-weight="bold" >Valmis</text>
+<text x="505" y="241.0" font-size="16" fill="#38a169" text-anchor="end" font-weight="bold" >Valmis</text>
+<text x="505" y="321.0" font-size="16" fill="#38a169" text-anchor="end" font-weight="bold" >Valmis</text>
+<text x="505" y="385.0" font-size="16" fill="#d69e2e" text-anchor="end" font-weight="bold" >Melkein valmis</text>
+<text x="505" y="449.0" font-size="16" fill="#c53030" text-anchor="end" font-weight="bold" >Ei aloitettu</text>
+<path d="M675,70 q18,0 18,18 L693,193.0 q0,18 18,18 q-18,0 -18,18 L693,334 q0,18 -18,18" fill="none" stroke="#38a169" stroke-width="3"/>
+<text x="720" y="206" font-size="18" fill="#38a169" text-anchor="start" font-weight="normal" >Toteutunut</text>
+<text x="720" y="230" font-size="18" fill="#38a169" text-anchor="start" font-weight="bold" >velositeetti 18</text>
+<text x="440" y="520" font-size="15" fill="#718096" text-anchor="middle" font-weight="normal" >Vain definition of donen mukaisesti valmiit storyt lasketaan velositeettiin</text>
+</svg>
