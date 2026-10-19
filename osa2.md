@@ -149,7 +149,9 @@ Vesiputousmallin hengen mukaista oli, että vaatimusmäärittelyä pidettiin eri
 Asiantuntijat korostivat, että vaatimusten dokumentaation on oltava kattava ja ristiriidaton.
 Pidettiin siis ehdottoman tärkeänä että heti alussa kerätään ja dokumentoidaan kaikki asiakkaan vaatimukset. Oli jopa suuntauksia, joissa vaatimukset haluttiin luonnollisen kielen sijaan ilmaista formaalilla kielellä eli matemaattisesti, jotta esim. ristiriidattomuuden osoittaminen olisi mahdollista.
 
-Pitkään pidettiin itsestäänselvyytenä, että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen moninkertaisesti kalliimpaa kuin heti alussa. Käsitys on sittemmin kyseenalaistettu: sitä tukevat luvut perustuvat pitkälti 1970- ja 80-lukujen aineistoihin, ja esimerkiksi [Menziesin ym.](https://arxiv.org/abs/1609.04886) (2017) 171 projektia kattaneessa tutkimuksessa myöhään havaittujen virheiden korjaaminen ei ollut systemaattisesti kalliimpaa. Vesiputousmallin aikakaudella tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
+Pitkään pidettiin itsestäänselvyytenä, että jos määrittelyvaiheessa tehdään virhe, joka huomataan vasta myöhemmin sovelluskehityksen aikana, esimerkiksi vasta sovellusta testatessa, on muutoksen tekeminen moninkertaisesti kalliimpaa kuin heti alussa. Tästä loogisena johtopäätöksenä oli tehdä vaatimusmäärittelystä erittäin järeä ja huolella tehty työvaihe. Ja koska vaatimusmäärittelyä ja sovelluskehitystä hoitivat eri ihmiset, tuli kaikki dokumentoida hyvin tarkalla tasolla.
+
+Käsitys virheiden korjaamisen kallistumisesta on sittemmin kyseenalaistettu: sitä tukevat luvut perustuvat pitkälti 1970- ja 80-lukujen aineistoihin, ja esimerkiksi [Menziesin ym.](https://arxiv.org/abs/1609.04886) (2017) 171 projektia kattaneessa tutkimuksessa myöhään havaittujen virheiden korjaaminen ei ollut systemaattisesti kalliimpaa.
 
 #### Vesiputousmainen vaatimusmäärittely on hankalaa...
 
@@ -201,11 +203,11 @@ MVP on siis jonkinlainen minimalistinen toteutus ohjelmistosta tai jostain sen u
 
 MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeille käyttäjille. Tämän jälkeen _mitataan_ miten käyttäjät toimivat MVP:n toteuttaman uuden toiminnallisuuden suhteen. Jos esimerkiksi kyseessä on internetpalvelu, voidaan _mitata_ kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjautuu järjestelmään, kirjautuu vielä viikon jälkeen rekisteröitymisestä ym.
 
-Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan helposti _mitata_ tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
+Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan _mitata_, tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
 
 A/B-testaus ei kuitenkaan sovi kaikkiin tilanteisiin. Luotettavien johtopäätösten tekeminen edellyttää riittävän suurta käyttäjämäärää, etukäteen sovittua mittaria sekä kokeen tulosten tilastollista arviointia. Pienellä käyttäjämäärällä erot voivat johtua pelkästä sattumasta. Teknisesti A/B-testaus toteutetaan yleensä [feature toggleilla](/osa3#feature-toggle), joihin palaamme osassa 3.
 
-Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään _oppimaan_, olivatko toteutetut vaatimukset järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne käyttäjiä enemmän sovelluksen käyttöön, saavatko ne käyttäjän tuhlaamaan enemmän rahaa ym...
+Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään _oppimaan_, olivatko toteutetut vaatimukset järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne käyttäjiä enemmän sovelluksen käyttöön, saavatko ne käyttäjät ostamaan enemmän ym.
 
 Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP:n sijaan robustimpi toteutus kyseisestä toiminnallisuudesta. Jos taas toteutettu idea ei osoittautunut hyväksi, voidaan palata järjestelmän edelliseen versioon ja jatkaa build-measure-learn -sykliä tekemällä hypoteesi jostain muusta ideasta.
 
@@ -360,7 +362,7 @@ Kun alustava lista user storyistä on kerätty, ne _priorisoidaan_ ja niiden vaa
 
 #### Backlogin priorisointi
 
-Product backlog on siis _priorisoitu lista user storyjä_.
+Product backlog on siis _priorisoitu lista vaatimuksia_, useimmiten user storyjä.
 
 Kuten [Scrumin esittelyn yhteydessä](/osa1#scrum) todettiin, priorisoinnista vastaa _product owner_. Prioriteetti määrää järjestyksen, missä ohjelmistokehittäjät toteuttavat backlogilla olevia toiminnallisuuksia.
 
@@ -410,6 +412,7 @@ Estimointia auttaa usein storyn pilkkominen teknisen tason työvaiheisiin eli ta
 Jos story muistuttaa jotain aiemmin toteutettua, sen voi estimoida suoraan vertaamalla siihen ilman taskeihin pilkkomista.
 
 Koska estimointi on joka tapauksessa epätarkkaa, siihen ei kannata käyttää paljon aikaa, esim. korkeintaan 15 minuuttia storya kohti. Jos aika ei riitä, storyn sisältöä ei todennäköisesti vielä tunneta riittävästi, tai story on liian iso ja kannattaa jakaa pienemmiksi. Estimaatteja myös tarkennetaan projektin kuluessa, kun ymmärrys toteutuksesta kasvaa.
+
 #### Estimoinnin menetelmiä
 
 Eräs käyttökelpoinen tapa estimoinnille on kiinnittää muutama erikokoinen story referenssiksi ja verrata sitten muiden storyjen vaativuutta näihin:
@@ -508,7 +511,7 @@ Ketterässä projektissa vaatimukset saattavat muuttua kehitystyön aikana, siks
 
 ### Julkaisun suunnittelu ja tuotteen roadmap
 
-Product backlog siis listaa järjestelmän vaatimuksia kuvaavat user storyt prioriteettijärjestyksessä. Prioriteetin määrittelee useimmiten storyjen asiakkaalle tuova arvo. Kehitystiimi toteuttaa storyja sprintti kerrallaan, valiten kuhunkin sprinttiin joukon sillä hetkellä korkeimman prioriteetin omaavia storyjä.
+Product backlog siis listaa järjestelmän vaatimuksia kuvaavat user storyt prioriteettijärjestyksessä. Prioriteetin määrittelee useimmiten storyjen asiakkaalle tuova arvo. Kehittäjät toteuttavat storyja sprintti kerrallaan, valiten kuhunkin sprinttiin joukon sillä hetkellä korkeimman prioriteetin omaavia storyjä.
 
 Ohjelmistoja kehitettäessä tarvitaan usein pelkkää backlogia ja yksittäisiä sprinttejä korkeammalla tasolla olevaa näkymää projektin aikataulutukseen ja kehitystyön suuntaamiseen. Syitä tälle on monia.
 Sovelluksilla saattaa esimerkiksi olla erilaisia deadlineja, joihin mennessä tiettyjen ominaisuuksien on pakko olla valmiina. Joissain tilanteissa taas sovelluksen versioita halutaan julkaista tasaisin väliajoin, esimerkiksi 4 kuukauden välein.
@@ -552,11 +555,11 @@ Story point -perustainen suhteellinen estimointi on saavuttanut vankan aseman ke
 
 Eräs jo [vuosia käytetty](https://ronjeffries.com/xprog/articles/jatrtsmetric/) menetelmä on arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen _lukumäärä_ sen sijaan, että käytetään story point -perustaista estimointia. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia.
 
-Valmistuneiden storyjen lukumäärään perustuvaa ennustamista voidaan viedä pidemmälle ns. _Monte Carlo -simulaatiolla_. Tiimin aiemmin toteutuneesta läpimenonopeudesta (esim. valmistuneet storyt viikossa) simuloidaan tuhansia mahdollisia tulevaisuuksia, ja tuloksena saadaan todennäköisyysjakauma, esim. "tämä kokonaisuus valmistuu 85 %:n todennäköisyydellä kuuden viikon kuluessa". Ennuste perustuu toteutuneeseen dataan eikä arvioihin, ja se ilmaisee ennusteen epävarmuuden suoraan. Menetelmää käsittelee tarkemmin esim. Daniel Vacantin kirja [When Will It Be Done?](https://leanpub.com/whenwillitbedone), ja sitä voi kokeilla Troy Magennisin [valmiilla taulukkopohjilla](https://github.com/FocusedObjective/FocusedObjective.Resources).
+Valmistuneiden storyjen lukumäärään perustuvaa ennustamista voidaan viedä pidemmälle ns. _Monte Carlo -simulaatiolla_. Tiimin aiemmin toteutuneesta läpimenonopeudesta (engl. throughput, esim. valmistuneet storyt viikossa) simuloidaan tuhansia mahdollisia tulevaisuuksia, ja tuloksena saadaan todennäköisyysjakauma, esim. "tämä kokonaisuus valmistuu 85 %:n todennäköisyydellä kuuden viikon kuluessa". Ennuste perustuu toteutuneeseen dataan eikä arvioihin, ja se ilmaisee ennusteen epävarmuuden suoraan. Menetelmää käsittelee tarkemmin esim. Daniel Vacantin kirja [When Will It Be Done?](https://leanpub.com/whenwillitbedone), ja sitä voi kokeilla Troy Magennisin [valmiilla taulukkopohjilla](https://github.com/FocusedObjective/FocusedObjective.Resources).
 
 ## Sprintin suunnittelu
 
-Kertauksena [viime viikolta](/osa1#sprintin-suunnittelu), Scrum määrittelee pidettäväksi ennen jokaista sprinttiä suunnittelupalaverin. Palaverin primäärisenä tavoitteena on selvittää, _mitä user storyjä sprintiin_ valitaan toteutettavaksi.
+Kertauksena [viime viikolta](/osa1#sprintin-suunnittelu), Scrum määrittelee pidettäväksi ennen jokaista sprinttiä suunnittelupalaverin, jossa sovitaan sprintin tavoite (_miksi_), siihen valittavat user storyt (_mitä_) ja niiden toteutustapa (_miten_). Tässä luvussa keskitymme erityisesti kahteen jälkimmäiseen.
 
 Sprintin suunnittelun lähtökohtana on sopivassa tilassa oleva, eli DEEP product backlog. Backlog on siis priorisoitu, estimoitu, ja korkeimman prioriteetin omaavat user storyt tarpeeksi pieniä sekä product ownerin hyvin ymmärtämiä.
 
