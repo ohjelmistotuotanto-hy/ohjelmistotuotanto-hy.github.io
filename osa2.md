@@ -201,6 +201,8 @@ Tämän jälkeen rakennetaan nopeasti niin sanottu _minimum viable product (MVP)
 
 MVP on siis jonkinlainen minimalistinen toteutus ohjelmistosta tai jostain sen uudesta ominaisuudesta, jonka motivaationa on käyttäjäpalautteen kerääminen. MVP ei ole vielä kaikilta osin ohjelmistokehityksen parhaiden käytänteiden mukaan rakennettu ja se on usein ominaisuuksiltaan rajoitettu, sisältäen ainoastaan sen verran toiminnallisuutta kuin hypoteesin mittaamiseen minimissään tarvitaan.
 
+Tekoälyagenttien avulla prototyyppien ja MVP:iden rakentaminen on nopeutunut huomattavasti. Ns. vibe coding sopii hyvin kertakäyttöisiin kokeiluihin, mutta jos MVP:stä tulee pysyvä osa tuotetta, tarvitaan hallitumpi ote, ks. [Vibe coding vs. hallittu agenttinen ohjelmistokehitys](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys).
+
 MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeille käyttäjille. Tämän jälkeen _mitataan_ miten käyttäjät toimivat MVP:n toteuttaman uuden toiminnallisuuden suhteen. Jos esimerkiksi kyseessä on internetpalvelu, voidaan _mitata_ kuinka moni ihminen löytää palvelun etusivulle, rekisteröityy käyttäjäksi, kirjautuu järjestelmään, kirjautuu vielä viikon jälkeen rekisteröitymisestä ym.
 
 Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan _mitata_, tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
@@ -285,6 +287,8 @@ Hyväksymiskriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuud
 - verkkomaksun tapauksessa on käytettävä opiskelijalle henkilökohtaisesti generoitua viitenumeroa
 
 Nykyään etänä tai hybridisti työskentelevät tiimit käyttävät postit-lappujen ja pahvikorttien sijaan jotain elektronista järjestelmää, esim. [Jiraa](https://www.atlassian.com/software/jira) tai [GitHub projectsia](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) user storyjen kirjaamiseen.
+
+Kun storyt on kirjattu esim. GitHubin issueiksi, voi storyn toteuttamisen antaa myös tekoälyn pilviagentille. Tällöin storyn kuvaus ja hyväksymiskriteerit toimivat agentin spesifikaationa, ja niiden laatu ratkaisee lopputuloksen, ks. [Pilviagentti](/genai/#pilviagentti).
 
 ### Hyvän user storyn kriteerit
 
@@ -557,6 +561,8 @@ Eräs jo [vuosia käytetty](https://ronjeffries.com/xprog/articles/jatrtsmetric/
 
 Valmistuneiden storyjen lukumäärään perustuvaa ennustamista voidaan viedä pidemmälle ns. _Monte Carlo -simulaatiolla_. Tiimin aiemmin toteutuneesta läpimenonopeudesta (engl. throughput, esim. valmistuneet storyt viikossa) simuloidaan tuhansia mahdollisia tulevaisuuksia, ja tuloksena saadaan todennäköisyysjakauma, esim. "tämä kokonaisuus valmistuu 85 %:n todennäköisyydellä kuuden viikon kuluessa". Ennuste perustuu toteutuneeseen dataan eikä arvioihin, ja se ilmaisee ennusteen epävarmuuden suoraan. Menetelmää käsittelee tarkemmin esim. Daniel Vacantin kirja [When Will It Be Done?](https://leanpub.com/whenwillitbedone), ja sitä voi kokeilla Troy Magennisin [valmiilla taulukkopohjilla](https://github.com/FocusedObjective/FocusedObjective.Resources).
 
+Tekoälytyökalut tekevät estimoinnista entistä vaikeampaa. Ne nopeuttavat eri tyyppisiä tehtäviä hyvin eri tavoin, jolloin storyjen suhteelliset koot muuttuvat, ja niiden käyttöönoton jälkeen aiempi velositeetti lakkaa ennustamasta tulevaa. Lisäksi kehittäjät yliarvioivat helposti tekoälyn tuoman hyödyn, ja tuottavuusvaikutuksista on ylipäätään ristiriitaista tutkimustietoa. Toteutuneeseen läpimenonopeuteen perustuva ennustaminen sopeutuu muutoksiin arvioita paremmin, ks. myös [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
+
 ## Sprintin suunnittelu
 
 Kertauksena [viime viikolta](/osa1#sprintin-suunnittelu), Scrum määrittelee pidettäväksi ennen jokaista sprinttiä suunnittelupalaverin, jossa sovitaan sprintin tavoite (_miksi_), siihen valittavat user storyt (_mitä_) ja niiden toteutustapa (_miten_). Tässä luvussa keskitymme erityisesti kahteen jälkimmäiseen.
@@ -740,6 +746,8 @@ Esimerkiksi story _tuotteen lisääminen ostoskoriin_ voitaisiin pilkkoa seuraav
 - yksikkötestit kontrollerille ja ostoskorin logiikalle
 - hyväksymistestien automatisointi
 
+Sama periaate pätee koodausagentin kanssa työskentelyyn: isompia muutoksia tehtäessä agentin kannattaa antaa ensin laatia suunnitelma, joka tarkastetaan ennen toteutusta, ks. [Plan-tila](/genai/#plan-tila).
+
 ### Sprint backlog
 
 Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehittäjien työväline, ja kehittäjät päättävät itse, miten se organisoidaan.
@@ -817,6 +825,8 @@ Kanbanissa työn etenemistä seurataan ns. flow-mittareilla. [Kanban Guide](http
 - _työn ikä_ (engl. work item age): kuinka kauan keskeneräinen kohde on ollut työn alla
 
 Mittarit liittyvät toisiinsa ns. _Littlen lain_ kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
+
+Tekoäly voi siirtää pullonkaulaa: jos koodin kirjoittaminen nopeutuu mutta katselmointi ja testaus eivät, syntyy välivarastoa katselmointia odottavista muutoksista. WIP-rajoitukset ja flow-mittarit auttavat huomaamaan tilanteen, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 
 ### Ennen seuraavaa sprintin alkua
 
