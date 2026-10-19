@@ -50,22 +50,24 @@ Pisteitä kertyy seuraavista asioista:
 
 - (0.25p) product backlog
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
-- (0.5p) sprintin 1 backlog
+- (0.25p) sprintin 1 backlog
   - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
   - Päivittäinen jäljellä oleva työmäärä arvioitu taskeittain
   - Sprintin burndown-käyrä olemassa
+    - Myös burnup-käyrä kelpaa
   - Jokaiseen taskiin on merkitty sen tekijä(t)
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
   - Projektissa on ainakin yksi Robot-testi
 - (0.25p) jatkuva integraatio
-  - Koodi GitHubissa
-  - GitHub Actions (tai jokin muu CI-palvelu) suorittaa testit ja ne menevät läpi
+  - Projektin koodi on GitHubissa
+  - GitHub Actions suorittaa testit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
+- (0.25p) GitHubissa on järkevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
 - (0.25p) GitHub README:
   - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
@@ -75,6 +77,15 @@ Pisteitä kertyy seuraavista asioista:
   - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
 
 Sprintin maksimi on 2.5 pistettä.
+
+#### Retrospektiivi
+
+- Sprintin 1 päätteeksi tulee pitää retrospektiivi
+- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat3/#9-retrospektiivitekniikat)
+- Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
+- Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
+  - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
+- Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
 
 ### Toisen sprintin arvosteluperusteet
 
@@ -93,10 +104,10 @@ Pisteitä kertyy seuraavista asioista:
   - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit
-  - main-branch ei ole hajonnut sprintin lopussa
-- (0.25p) projektille määritelty järkevät Pylint-säännöt jotka tarkistetaan CI:n toimesta
+  - main-haara ei ole hajonnut sprintin lopussa
+- (0.125p) projektille määritelty järkevät Pylint-säännöt, jotka tarkistetaan CI:n toimesta
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.25p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
   - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
 - (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa ja siitä on tehty asialliset muistiinpanot
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
@@ -106,16 +117,6 @@ Pisteitä kertyy seuraavista asioista:
 - **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks ohje alta
 
 Sprintin maksimi on 2.5 pistettä.
-
-
-#### Retrospektiivi
-
-- Sprintin 2 päätteeksi tulee pitää retrospektiivi
-- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat4/#5-retrospektiivitekniikat)
-- Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
-- Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
-  - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
-
 
 ### Kolmannen sprintin arvosteluperusteet
 
@@ -196,23 +197,22 @@ Sprintin maksimi on 2.5 pistettä.
 #### Loppudemo ja sprintin 4 päättyminen
 
 Kuten tunnettua, loppudemot pidetään
-- keskiviikkona 11.12. klo 12-14 B123 ja
-- torstaina 12.12. klo 12-14 CK112.
+- tiistaina 8.12. klo 14–16
+- keskiviikkona 9.12. klo 10–12
 
-Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus.
-Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
+Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
 
 Lue tarkasti neljännen sprintin arvosteluperusteista loppudemoon liittyvät arvostelukriteerit. Aika on lyhyt, joten kannattaa erityisesti huomioida seuraava arvostelukriteeri
 - _kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein_
 
-Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 13.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
+Loppudemossa demotaan softaa siinä tilassa missä se demon hetkellä on. Sprinttiä voi vielä jatkaa perjantaihin 11.12. klo 16 asti jos työtunteja on vielä käytettävissä. Sprinttien arvostelu tapahtuu vasta tämän jälkeen.
 
 Sprintin 4 päätteeksi ei erillistä asiakaspalaveria enää järjestetä.
 
 #### Vertaispalaute
 
 - Arvosteluperusteiden alussa mainittu henkilökohtainen pisteytys perustuu mm. vertaispalautteeseen
-- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään pe 20.12. klo 23:59**
+- Jokaisen ryhmäläisen tulee antaa **vertaispalaute viimeistään su 20.12. klo 23:59**
   - Vertaispalautteen antaminen on _pakollista_. Jos vertaispalaute puuttuu, ovat miniprojektin henkilökohtaiset pisteet -1.5p
 - Vertaispalautteen antaminen tapahtuu [tehtävänpalautussovelluksen]({{site.stats_url}}) miniproject-tabissa
   - Ryhmäläiset eivät näe toistensa vertaispalautteita
@@ -227,7 +227,7 @@ Vertaispalautteen lisäksi ryhmä laatii projektin kulusta pienen raportin (noin
 - Jos raportti puuttuu, vähennetään ryhmältä 2 pistettä
 - Raportti palautetaan lisäämällä raporttiin linkki projektin GitHubin README:hen
 - Raportista tulee ilmetä jokaisen projektiin osallistuneen nimi
-- **Raportin deadline pe 20.12. klo 23:59**
+- **Raportin deadline su 20.12. klo 23:59**
 
 ### Varmista, että commitisi näkyvät GitHubissa oikein
 

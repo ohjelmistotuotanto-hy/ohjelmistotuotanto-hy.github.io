@@ -9,36 +9,23 @@ inheader: yes
 ### Ajankohtaista
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
-
-  <ul>
-    <li>
-      Miniprojektin arvosteluperusteet: <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">sprintti 1</a>, <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">sprintti 2</a>, <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">sprintti 3</a>, <a href="/miniprojektin_arvosteluperusteet/#neljännen-sprintin-arvosteluperusteet">sprintti 4</a>
-    </li>
-    <li>
-      Loppudemot
-      <ul>
-        <li>
-          ke 11.12. klo 12-14 B123
-        </li>
-        <li>
-          to 12.12. klo 12-14 CK112
-        </li>
-      </ul>
-      Ilmoita ryhmäsi loppudemoon <a href="https://docs.google.com/document/d/1xudrKmSuvr0uQ_Scrny-mkJD713x50Qae-NFSJBSEPc/edit?usp=sharing">täällä</a>
-    </li>
-    <li>
-      Miniprojektin <a href="/miniprojektin_arvosteluperusteet/#lopputoimenpiteet">lopputoimenpiteet</a>
-    </li>
-    <li>
-      Ohje Flaskin käyttöön <a href="/flask">täältä</a>
-    </li>
+  <ul style="margin-bottom: -2px">
+    <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
   </ul>
-
 </div>
+
+### Tärkeät linkit
+
+- Toteutettavan ohjelman [kuvaus](/speksi)
+- [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
+- Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
+- Eräs [esimerkkibacklog](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
+- Ohje Flaskin käyttöön [täällä](/flask)
+- [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
 
 ### Johdanto
 
-- Kurssin viikoilla 4-7 tehdään miniprojekti
+- Kurssin viikoilla 3-7 tehdään miniprojekti
 - **Kurssin läpipääsy edellyttää hyväksyttyä osallistumista miniprojektiin** tai sen [hyväksilukemista](/osa0#miniprojektin-hyv%C3%A4ksilukeminen)
 
 - Projekti tehdään noin 4-6 hengen ryhmissä
@@ -48,12 +35,20 @@ inheader: yes
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
 - Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://studies.cs.helsinki.fi/ohtu/flask/#tietokanta) ohje
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostettiin 11.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
+- Ryhmät muodostetaan 9.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
+- Aloitustilaisuudet (jokainen osallistuu yhteen)
+  - ma 9.11. klo 14–16
+  - ti 10.11. klo 14–16
+  - ke 11.11. klo 16–18
+  - to 12.11. klo 10–12
+  - to 12.11. klo 14–16
+- Aloitustilaisuuksien [ryhmajako](/ryhmajako)
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -68,9 +63,9 @@ inheader: yes
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 3 (11-15.11.)
+#### viikko 3 (9.–13.11.)
 
-- Ryhmä muodostuvat/muodostetaan
+- Ryhmä muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
 - Projekti tulee rekisteröidä palautussovellukseen <{{site.stats_url}}>.
   - **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
@@ -79,48 +74,42 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
   - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
     - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
-- Teknisiä ohjeita sovelluksen tekemiseen [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
-#### viikko 4 (18-22.11.)
+#### viikko 4 (16.–20.11.)
 
 - Sprintin 1 katselmointi ja sprintin 2 suunnittelu
-- Sprintin 1 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet)
 
-#### viikko 5 (25-29.11.)
+#### viikko 5 (23.–27.11.)
 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
-- Sprintin 2 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet)
 
-#### viikko 6 (2-5.12.)
+#### viikko 6 (30.11.–4.12.)
 
 - Sprintin 3 katselmointi ja sprintin 4 suunnittelu
-- Sprintin 3 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet)
 
-#### viikko 7 (9-13.12.)
+#### viikko 7 (7.–11.12.)
 
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-  - ke 11.12. klo 12-14 B123
-  - to 12.12. klo 12-14 CK112
+  - ti 8.12. klo 14–16
+  - ke 9.12. klo 10–12
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
-- Sprintin 4 [arvosteluperusteet](/miniprojektin_arvosteluperusteet/#neljannen-sprintin-arvosteluperusteet)
-- Projektin [lopputoimenpiteet](/miniprojektin_arvosteluperusteet/#lopputoimenpiteet)
 
 ### Toteutettava ohjelmisto
 
-Asiakkaan alustavia ajatuksia [täällä](/speksi). Loput paljastuvat asiakastapaamisissa.
+Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 
 ### Toteutusteknologia
 
-Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
-- Riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella,
+Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+- Riittää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
 
-Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
+Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
-  - Vaatimukset kirjataan backlogiin user storyinä
+  - Vaatimukset kirjataan backlogiin user storyina
 - Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
@@ -129,13 +118,13 @@ Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten so
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
-  - Ryhmä tekee päivittäin jäljellä olevan työajan arviointia ja dokumentoi tämän sprintin burndown-käyränä
+  - Ryhmä tekee päivittäin jäljellä olevan työajan arvioinnin ja dokumentoi tämän sprintin burndown-käyränä
+    - burndownin sijaan on myös mahdollista tehdä sprintille ylöspäin kasvava burnup-kaavio, ks lisää [täältä](https://studies.cs.helsinki.fi/ohtu/osa2/#burndown--ja-burnup-kaaviot)
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - jäljellä olevan työajan estimaatti
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
-- Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration)
-  - Oletusarvoisesti kannattaa käyttää laskareista 1 tuttua GitHub Actionsia
+- Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
@@ -150,22 +139,22 @@ Flaskia ei kannata missään tapauksessa käyttää ihan miten sattuu, muuten so
 - Backlogit voi toteuttaa esim. Google Docs -spreadsheetinä, mallia voi ottaa seuraavista:
   - erään ohtuprojektin [backlogit](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
   - <http://www.mountaingoatsoftware.com/scrum/sprint-backlog> (tämä on sikäli huono, että siitä eivät ilmene taskin tekijät)
-- Backlogit voi tehdä Google Docsin sijaan myös johonkin backlogien ylläpitämiseen tarkoitettuun työkaluun
+- Backlogit voi tehdä Google Docsin sijaan myös johonkin backlogien ylläpitämiseen tarkoitettuun työkaluun, yksi aika hyvä vaihtoehto on [GitHub projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
   - kannattaa varmistaa, että työkalu kuitenkin tukee edellä lueteltuja vaatimuksia
-  - esim. <https://trello.com> ei tue Scrum-tyylisiä backlogeja oikeastaan ollenkaan, ja **Trelloa kannattaakin välttää tässä projektissa**
+
 
 #### Definition of done
 
 Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
-- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot-frameworkin](/robot_framework/) syntaksilla
-  - hyvänä käytänteenä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
+- User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot Frameworkin](/robot_framework/) syntaksilla
+  - hyvänä käytäntönä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
 - Toteutetun koodin testikattavuuden tulee olla kohtuullinen
 - Asiakas pääsee näkemään koko ajan koodin ja testien tilanteen CI-palvelusta
 - Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
-  - yhtenäinen koodityyli (noudattaa pylintin avulla määriteltyjä sääntöjä)
+  - yhtenäinen koodityyli (valvotaan Pylintin avulla)
 
 #### Repositorio ja README
 
@@ -174,18 +163,19 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 - Linkit backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä)
 - Linkki CI-palveluun
 - Linkki sovelluksen toimivaan versioon (jos sovellus on verkossa)
-- Jos kyse työpöytäsovelluksesta, tulee ohjelmalle olla asennus- ja käyttöohje
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
 
 ### Vihjeitä ryhmätyöskentelyyn
 
-Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikanpäällä tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
+Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikan päällä kampuksella tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
 
-Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storyä työstää aina kaksi henkilöä.
+Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storya työstää aina kaksi henkilöä.
 
-Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä joku vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
+Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
+
+Katso myös [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md) projektin alkuun.
 
 ### Työn arvostelu
 

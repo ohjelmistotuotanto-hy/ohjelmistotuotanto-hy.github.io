@@ -54,6 +54,11 @@ luennot:
   - 'maanantai 7.12. klo 12-14 B123'
   - 'tiistai 8.12. klo 12-14 B123'
 
+header_pages:
+  - osa0.md
+  - tehtavat.md
+  - miniprojekti.md
+
 # Build settings
 markdown: kramdown
 theme: minima

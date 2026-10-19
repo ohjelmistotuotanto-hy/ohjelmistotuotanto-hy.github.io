@@ -3,20 +3,20 @@ layout: page
 title: Miniprojekti
 title_long: 'Miniprojekti'
 permalink: /miniprojekti/
-inheader: no
+inheader: yes
 ---
 
 ### Ajankohtaista
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Miniprojektin <a href='/miniprojektin_arvosteluperusteet/#lopputoimenpiteet'>lopputoimenpiteet</a></li>
+    <li>Miniprojektit alkavat 9.11. alkavalla viikolla. Stay tuned!</li>
+    <li>Aloitustilaisuuksiin ilmoittautuminen alkaa 30.10. ja päättyy pe 6.11.</i>
   </ul>
 </div>
 
 ### Tärkeät linkit
 
-- Toteutettavan ohjelman [kuvaus](/speksi)
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
 - Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
 - Eräs [esimerkkibacklog](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
@@ -40,16 +40,15 @@ inheader: no
 
 ### Ryhmän muodostaminen
 
-- Ryhmät muodostetaan 10.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
+- Ryhmät muodostetaan 9.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuudet (jokainen osallistuu yhteen)
-  - ma 10.11. 14-16 C222
-  - ti 11.11. 14-16 C321
-  - ke 12.11. 10-12 C222
-  - ke 12.11. 12-14 C222
-  - to 13.11. 14-16 B222
-  - to 13.11. 16-18 B222
-- Aloitustilaisuuksien [ryhmajako](/ryhmajako)
+  - ma 9.11. klo 14–16
+  - ti 10.11. klo 14–16
+  - ke 11.11. klo 16–18
+  - to 12.11. klo 10–12
+  - to 12.11. klo 14–16
+  - Aloitustilaisuuksiin ilmoittautuminen alkaa 30.10. ja päättyy pe 6.11.
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -64,7 +63,7 @@ inheader: no
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
-#### viikko 3 (11-15.11.)
+#### viikko 3 (9.–13.11.)
 
 - Ryhmä muodostetaan
 - Ryhmät tapaavat asiakkaan aloitustilaisuuksissa
@@ -76,29 +75,29 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
   - **Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
     - Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
 
-#### viikko 4 (17-21.11.)
+#### viikko 4 (16.–20.11.)
 
 - Sprintin 1 katselmointi ja sprintin 2 suunnittelu
 
-#### viikko 5 (24-28.11.)
+#### viikko 5 (23.–27.11.)
 
 - Sprintin 2 katselmointi ja sprintin 3 suunnittelu
 
-#### viikko 6 (1-5.12.)
+#### viikko 6 (30.11.–4.12.)
 
 - Sprintin 3 katselmointi ja sprintin 4 suunnittelu
 
-#### viikko 7 (9-13.12.)
+#### viikko 7 (7.–11.12.)
 
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-  - ke 10.12. klo 10-12 B123
-  - to 11.12. klo 10-12 A111
+  - ti 8.12. klo 14–16
+  - ke 9.12. klo 10–12
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
 
 ### Toteutettava ohjelmisto
 
-Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
+Kuulet lisää asiakkaalta.
 
 ### Toteutusteknologia
 
