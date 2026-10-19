@@ -207,7 +207,19 @@ $nav-accent: $brand-color;
 $nav-hover-bg: #eef3fa;
 $nav-border: #e3e7ec;
 
+// height of the title row: border-top 4px + title padding 16px + 10px + line height 26px
+$header-title-row: 56px;
+
+// sticky nav row would otherwise cover anchor link targets
+html {
+  scroll-padding-top: 60px;
+}
+
+// the header sticks with a negative offset so that only the nav row stays visible
 .site-header {
+  position: sticky;
+  top: -$header-title-row;
+  z-index: 100;
   border-top: 4px solid $nav-accent;
   border-bottom: 1px solid $nav-border;
   background-color: #fff;
@@ -348,6 +360,16 @@ $nav-border: #e3e7ec;
 }
 
 @include media-query($on-palm) {
+  // on mobile the nav is a menu inside the title row, so the header is not sticky
+  html {
+    scroll-padding-top: 0;
+  }
+
+  .site-header {
+    position: relative;
+    top: 0;
+  }
+
   .site-header .wrapper {
     padding-right: 60px;
   }
