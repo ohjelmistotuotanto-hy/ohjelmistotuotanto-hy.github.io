@@ -122,7 +122,7 @@ Kaikki ylimääräiset työvaiheet, mitkä eivät ole välttämättömiä riitt�
 
 Tällaisia ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti, jota kukaan ei lopulta tarvitse. Vastaavanlainen haitallinen asia voi olla vaatimus siitä että testien rivikattavuuden kattavuuden on pakko olla 100%, sillä tämä voi johtaa lähes hyödyttömien, pelkästään kattavuutta lisäävien testien tekemiseen.
 
-Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
+Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
 
 #### Tarpeeton materiaalin siirtely (engl. transportation)
 
@@ -523,7 +523,7 @@ Seuraava kuva havainnollistaa sitä kuinka tiimin vastuulla on usein jopa konkre
 
 Tiimeillä on _product owner_, joka huolehtii että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Käsitettä _scrum master_ ei Spotifyllä tunneta. Tiimien apuna toimivat _agile coachit_, eli ketteryyden valmentajat, joiden vastuulla on tavanomaisia scrum mastereiden vastuita alkaen palaverien järjestämisestä retrospektiivien fasilitointiin. Coachit auttavat myös teknisissä asioissa ja antavat tarvittaessa vaikkapa yksilöllistä uraohjausta tiimien jäsenille.
 
-Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimien pyrkimyksenä on hyödyntää [Lean startup -menetelmästä](/osa2/#uuden-ajan-vaatimusmäärittely-lean-startup) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
+Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimien pyrkimyksenä on hyödyntää [Lean startup -menetelmästä](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
 
 Tiimeillä on valta tehdä jossain määrin liiketoimintaankin liittyviä päätöksiä varsin autonomisesti. Tälle perusteena on se, että koska Spotifyn pitää pystyä toimimaan mahdollisimman nopeasti haastavilla markkinoilla, on päätöksenteon oltava nopeaa ja jopa tiimitasolla tapahtuvaa. Toimiakseen se taas edellyttää vahvaa yhteistä visioa sovelluksen kehityssuunnasta, ja selkeitä mittareita siitä mihin suuntaan kehitystä on vietävä. Spotifyllä monien asioiden käyttökelpoisuutta on helpohko mitata asiakasmetriikoiden esim. päivittäisten aktiivisten käyttäjien lukumäärän avulla.
 

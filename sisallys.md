@@ -80,7 +80,7 @@ permalink: /sisallys/
    - [Ei-toiminnalliset vaatimukset](/osa2#ei-toiminnalliset-vaatimukset)
    - [Vaatimusmäärittely vesiputousmallin valtakaudella](/osa2/#vaatimusmäärittely-vesiputousmallin-valtakaudella)
    - [Vaatimusmäärittely iteratiivisessa ja ketterässä ohjelmistokehityksessä](/osa2/#vaatimusmäärittely-iteratiivisessa-ja-ketterässä-ohjelmistokehityksessä)
-   - [Uuden ajan vaatimusmäärittely: Lean startup](/osa2/#uuden-ajan-vaatimusm%C3%A4%C3%A4rittely-lean-startup)
+   - [Kokeileva vaatimusmäärittely: Lean startup](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)
 - [Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa](/osa2/#vaatimusm%C3%A4%C3%A4rittely-ja-projektisuunnittelu-ketter%C3%A4ss%C3%A4-prosessimallissa)
    - [User story](/osa2#user-story)
    - [Hyvän user storyn kriteerit](/osa2#hyv%C3%A4n-user-storyn-kriteerit)
@@ -97,7 +97,7 @@ permalink: /sisallys/
    - [User storyjen jakaminen](/osa2#user-storyjen-jakaminen)
    - [Sprintin tekninen suunnittelu](/osa2#sprintin-tekninen-suunnittelu)
    - [Sprint backlog](/osa2#sprint-backlog)
-   - [Kannattaako sprintin sisäinen työmäärän estimointi](/osa2#kannattaako-sprintin-sis%C3%A4inen-ty%C3%B6m%C3%A4%C3%A4r%C3%A4n-estimointi)
+   - [Sprintin etenemisen seuranta](/osa2#sprintin-etenemisen-seuranta)
    - [Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban)
    - [Ennen seuraavaa sprintin alkua](/osa2#ennen-seuraavaa-sprintin-alkua)   
 

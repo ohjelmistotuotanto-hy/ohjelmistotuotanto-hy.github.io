@@ -26,54 +26,6 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 
 ---
 
-## Osa 2: Vaatimusmäärittely
-
-### Vanhentunutta
-- **Kustannuskäyrä** ("On tunnettu tosiasia...") ja **epävarmuuden kartio** esitetään kiistattomina, vaikka niiden näyttö on kiistelty (Bossavit: *The Leprechauns of Software Engineering*; Todd Littlen data). Muotoilu kannattaa pehmentää.
-- **Scrum Guide 2020 -termit:** backlog grooming → *refinement*, kehitystiimi → *Developers*, "sitoutua" sprintin sisältöön → sprint goal / forecast.
-- **"Product backlog koostuu nimenomaan user storyistä"** ei pidä paikkaansa. Backlogissa on myös bugeja, teknistä velkaa ja spikeja.
-- **"Alan suurimman auktoriteetin"**: auktoriteettipuhe kannattaa poistaa.
-- **User story -formaattien suosiokaavio** on vanha kuva ilman lähdettä tai vuotta.
-- **Pelien koukuttavuuden maksimointi** esimerkkinä on eettisesti ongelmallinen, koska DSA kieltää dark patternit.
-- **Estimoinnin painotus:** story pointit, skaalat, planning poker ja velositeetti vievät noin 200 riviä. Velositeetin käyttö tavoitteena tai tiimien vertailussa kannattaisi nostaa esiin anti-patternina.
-- **Definition of Ready** esitetään ongelmattomana, vaikka tiukka DoR-portti tunnetaan anti-patternina.
-- **"Fyysinen taskboard ylivertainen" / "paras käytäntö"** ei vastaa hybridityön aikaa.
-- **Työkalulista:** Pivotal Tracker lopetettiin 2025. Trac ja Bugzilla ovat bugiseurantajärjestelmiä. Nykyisiä vaihtoehtoja ovat Jira, Linear, GitHub Projects ja Azure Boards.
-- **Tuntiburndown ja taulukkolaskentapohja** ovat historiallista käytäntöä.
-- **A/B-testin rinnastus spikeen** ontuu, ja MVP ja A/B-testaus sekoittuvat keskenään.
-- **Linkit:**
-  - Richard Lawrencen user story -linkissä on välilyönti, ja sivusto on nykyään humanizingwork.com
-  - Shoren *Art of Agile Development* -kirjasta on 2. painos
-  - pcuf.fi-PDF (2009)
-  - karhatsu (2013)
-  - Scrumban-kandi
-
-### Lisättävää
-1. **Outcome vs. output, product discovery ja dual-track:** opportunity solution tree (Torres), OKR:t ja hypoteesipohjainen backlog.
-2. **Kokeilu tuotannossa:** feature flagit, canary-julkaisu ja A/B-testauksen edellytykset (käyttäjämäärä, tilastollinen voima, mittarit). Kytkee Lean startupin osan 3 CI/CD:hen.
-3. **Sääntely ei-toiminnallisina vaatimuksina:**
-   - EU:n saavutettavuusdirektiivi (EAA), velvoitteet 28.6.2025 alkaen (WCAG 2.2 / EN 301 549)
-   - Cyber Resilience Act (raportointivelvoite 9/2026 alkaen) ja security by design
-   - AI Act, NIS2
-   - GDPR on jo mainittu
-4. **Flow-mittarit ja flow-pohjainen ennustaminen:**
-   - luvussa "Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban": WIP-rajoitusten jatkoksi flow-mittarit (cycle time, throughput, work item age) ja Littlen laki, joka perustelee, miksi WIP:n rajoittaminen lyhentää läpimenoaikaa. Viittaus [Kanban Guideen](https://kanbanguides.org/).
-   - luvussa "Kannattaako estimointi?": throughputiin perustuva ennustaminen ja Monte Carlo -simulaatio luontevana jatkona #NoEstimates-osiolle
-   - Scrumbanin yhteydessä: tutkimus hybridimallien valtavirtaisuudesta (esim. HELENA, Kuhrmann ym.)
-   - osassa 1 Kanban Guide ja flow-pohjainen työskentely on jo mainittu lyhyesti
-5. **Tekoäly vaatimustyössä:** storyjen ja hyväksymiskriteerien luonnostelu sekä hyväksymiskriteerit agentin speksinä. Lyhyt maininta ja linkki genai.md:hen.
-6. **Jobs-to-be-done ja impact mapping** kartoitusmenetelmiin.
-
-### Tiivistettävää
-- Taskilista esiintyy kahdesti.
-- Tuntiestimointi, tuntiburndown ja taulukkolaskentataulu: pari lausetta historiana riittää.
-- Product ownerin uudelleenpriorisointiesimerkit A–D ja neljä kuvaa: yksi kappale riittää.
-- Vesiputousosio on osittain päällekkäinen osan 1 kanssa.
-- Planning pokerin ja skaalojen yksityiskohdat: suhteellinen estimointi riittää periaatteen tasolla.
-- Lean- ja Kanban-tausta on päällekkäinen osan 5 kanssa.
-
----
-
 ## Osa 3: Laadunhallinta, testaus, CI/CD
 
 ### Vanhentunutta
