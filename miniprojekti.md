@@ -11,7 +11,7 @@ inheader: yes
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
     <li>Miniprojektit alkavat 9.11. alkavalla viikolla. Stay tuned!</li>
-    <li>Aloitustilaisuuksiin ilmoittautuminen alkaa 30.10. ja päättyy pe 6.11.</li>
+    <li>Aloitustilaisuuksiin ilmoittautuminen alkaa 27.10. ja päättyy to 5.11. klo 23.59</li>
   </ul>
 </div>
 
@@ -43,12 +43,12 @@ inheader: yes
 - Ryhmät muodostetaan 9.11. alkavalla viikolla pidettävissä aloitustilaisuuksissa
   - aloitustilaisuuden kesto on noin 2 tuntia
 - Aloitustilaisuudet (jokainen osallistuu yhteen)
-  - ma 9.11. klo 14–16
-  - ti 10.11. klo 14–16
-  - ke 11.11. klo 16–18
-  - to 12.11. klo 10–12
-  - to 12.11. klo 14–16
-  - Aloitustilaisuuksiin ilmoittautuminen alkaa 30.10. ja päättyy pe 6.11.
+  - ma 9.11. klo 14–16 C220
+  - ti 10.11. klo 14–16 D122
+  - ke 11.11. klo 16–18 C220
+  - to 12.11. klo 10–12 BK114
+  - to 12.11. klo 14–16 B222
+  - Aloitustilaisuuksiin ilmoittautuminen alkaa 27.10. ja päättyy to 5.11. klo 23.59
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -90,8 +90,8 @@ Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin 
 #### viikko 7 (7.–11.12.)
 
 - Loppudemot (jokainen ryhmä osallistuu yhteen tilaisuuteen)
-  - ti 8.12. klo 14–16
-  - ke 9.12. klo 10–12
+  - ti 8.12. klo 14–16 B123
+  - ke 9.12. klo 10–12 B123
 - Jokainen ryhmä osallistuu yhteen loppudemoon
 - Ei erillistä asiakaspalaveria
 

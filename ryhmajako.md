@@ -7,11 +7,11 @@ inheader: no
 
 ### Miniprojektien aloitustilaisuudet
 
-- ma 9.11. klo 14–16
-- ti 10.11. klo 14–16
-- ke 11.11. klo 16–18
-- to 12.11. klo 10–12
-- to 12.11. klo 14–16
+- ma 9.11. klo 14–16 C220
+- ti 10.11. klo 14–16 D122
+- ke 11.11. klo 16–18 C220
+- to 12.11. klo 10–12 BK114
+- to 12.11. klo 14–16 B222
 
 ### Oma ryhmäsi selviää seuraavasta
 

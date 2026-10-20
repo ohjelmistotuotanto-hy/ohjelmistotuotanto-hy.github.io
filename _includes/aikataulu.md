@@ -40,11 +40,11 @@
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat3), deadline {{site.lask-dl[3]}}
 - [Miniprojekti](/miniprojekti)
   - Aloitustilaisuudet (jokainen osallistuu yhteen)
-    - ma 9.11. klo 14–16
-    - ti 10.11. klo 14–16
-    - ke 11.11. klo 16–18
-    - to 12.11. klo 10–12
-    - to 12.11. klo 14–16
+    - ma 9.11. klo 14–16 C220
+    - ti 10.11. klo 14–16 D122
+    - ke 11.11. klo 16–18 C220
+    - to 12.11. klo 10–12 BK114
+    - to 12.11. klo 14–16 B222
 
 ### Viikko 4
 
@@ -112,8 +112,8 @@
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
   - Loppudemot
-    - ti 8.12. klo 14–16
-    - ke 9.12. klo 10–12
+    - ti 8.12. klo 14–16 B123
+    - ke 9.12. klo 10–12 B123
 
 ### Viikko 8
 

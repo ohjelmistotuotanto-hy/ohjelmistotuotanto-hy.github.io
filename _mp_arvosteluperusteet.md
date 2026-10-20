@@ -195,8 +195,8 @@ Sprintin maksimi on 2.5 pistettä.
 #### Loppudemo ja sprintin 4 päättyminen
 
 Kuten tunnettua, loppudemot pidetään
-- tiistaina 8.12. klo 14–16
-- keskiviikkona 9.12. klo 10–12
+- tiistaina 8.12. klo 14–16 B123
+- keskiviikkona 9.12. klo 10–12 B123
 
 Demossa on aikaa noin 5 minuuttia per ryhmä. Ajasta 4 minuuttia käytetään tuotteen esittelyyn. Aika on lyhyt, joten tuotteesta kannattaa esitellä ainoastaan muutama ydintoiminnallisuus. Loppudemon viimeisen minuutin aikana ryhmä kertoo lyhyesti kokemuksistaan: mikä onnistui hyvin ja mihin jäi parantamisen varaa.
 
