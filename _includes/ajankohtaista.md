@@ -2,7 +2,6 @@
 
   <ul style="margin-bottom: -2px">
     <li>Kurssin laskareiden tekemisen voi jo aloittaa</li>
-    <li>Kurssin erilliskoe on suoritettavissa Examinariumissa, katso tarkemmin <a href='/ohje_kokeeseen'>ohje kokeeseen</a></li>
   </ul>
 
 </div>
