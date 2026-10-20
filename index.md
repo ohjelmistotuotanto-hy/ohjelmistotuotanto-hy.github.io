@@ -18,13 +18,14 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
   - Maanantaisin ja tiistaisin klo 12-14 B123
   - Luennot ovat nähtävissä livenä [Unitubessa](https://video.helsinki.fi/unitube/live-stream.html?room=l10) 
   - Luennoista tulee myös tallenteet, ks. [aikataulu](/#aikataulu). Aikataulussa ovat jo valmiiksi vuoden 2025 luentojen tallenteet
-  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-25)
+  - [Luentokalvot](https://github.com/ohjelmistotuotanto-hy/slides-26)
 - Apua tehtävien tekoon pajassa BK107
-  - ma 1430-1630
-  - ti 12-16
-  - to 12-16
-  - pe 12-14
+  - ma 16-19
+  - ti 13-16
+  - to 16-19
+  - pe 13-16
 - Kurssimateriaalin [sisällysluettelo](/sisallys/#osa-0-johdanto)
+- Kurssin erilliskoe on suoritettavissa Examinariumissa, katso tarkemmin [ohje kokeeseen](/ohje_kokeeseen)
 - Kurssiin liittyvää keskustelua [Discordissa](https://study.cs.helsinki.fi/discord/join/ohtu), tule mukaan!
   - Liittyminen kurssin kanavalle tapahtuu komennolla */join course TKT20006 - Ohjelmistotuotanto - ohtu*
   - **HUOM:** kaikki epäasialliset, halventavat ja jotain ihmisryhmää syrjivät kommentit kanavalla ovat kiellettyjä ja tälläisten kommenttien esittäjät poistetaan kanavalta
@@ -34,7 +35,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
     - botit suoraan CurreChatissa: [KurssimateriaaliChat](<{{site.curre_material}}>), [Kertaaja](<{{site.curre_kertaaja}}>)
   - [CurreChat](<{{site.curre}}>)
 - Kurssipalaute
-  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <https://norppa.helsinki.fi/targets/95023982/feedback>
+  - Kurssilla on käytössä normaalin lopussa kerättävän palautteen lisäksi ns. jatkuva palaute: voit antaa milloin vain kurssihenkilökunnalle anonyymiä palautetta osoitteessa <{{site.norppa}}>
 
 ## Aikataulu
 
