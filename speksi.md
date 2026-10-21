@@ -100,7 +100,7 @@ Outi siis haluavaa järjestelmän, jonka avulla he voivat hallinnoida viitteitä
   - myös muita tietokantoja kuten [Google Scholaria](https://scholar.google.com/) voi tukea
 - jopa vielä parempi feature olisi datan haku [DOI](https://www.doi.org/)-tunnisteen perusteella
 - kannattaa muistaa että LaTeX mahdollistaa vaikka mitä kenttiä eri viitetyypeille, näistä kentistä aika moni on kuitenkin ainakin gradun tekijöille ihan turhia
-- sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgresSQL-tietokantaan
+- sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
   - riitää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella, Outi vie sovelluksen itse internettiin
   - sovelluksessa ei välttämättä tarvita käyttäjien hallintaa, eli voidaan olettaa, että Outi on järjestelmän ainoa käyttäjä.
   - lue ohje Flaskin käytöstä [täältä](/flask)

@@ -1,0 +1,37 @@
+<div id="uv-tietoturva" style="color:black; border-style: solid; border-width: thick; border-color: #c53030; padding: 10px 14px; margin-bottom: 20px; background-color: #fff5f5;">
+  <strong>Tietoturvapäivitys: päivitä uv versioon 0.13.4 tai uudempaan!</strong>
+  <p style="margin: 8px 0;">
+    Laskareissa käytettävän uv:n versioissa alle 0.13.4 on tietoturvahaavoittuvuus
+    (<a href="https://github.com/astral-sh/uv/security/advisories/GHSA-hq85-5cpj-mr62">GHSA-hq85-5cpj-mr62</a>).
+    Sen hyödyntäminen edellyttää, että hyökkääjä pystyy sieppaamaan verkkoliikenteesi, esim. julkisessa wifissä, joten riski on pieni, mutta päivitys on nopea tehdä.
+  </p>
+  <ul>
+    <li>Päivitä uv komennolla <code>uv self update</code> (jos asensit uv:n Homebrew'lla: <code>brew upgrade uv</code>)</li>
+    <li>Tarkista versio komennolla <code>uv --version</code>, sen pitää olla vähintään 0.13.4</li>
+    <li>Jos et ole vielä asentanut uv:ta, sinun ei tarvitse tehdä mitään: <a href="/uv">asennusohjeen</a> mukaan asennettaessa saat automaattisesti korjatun version</li>
+  </ul>
+  <label style="display: block; cursor: pointer;">
+    <input type="checkbox" id="uv-tietoturva-kuittaus">
+    uv on päivitetty versioon 0.13.4 tai uudempaan, tai en ole vielä asentanut sitä
+  </label>
+</div>
+<script>
+  (function () {
+    var KEY = 'uv-tietoturva-kunnossa'
+    var banner = document.getElementById('uv-tietoturva')
+
+    // piilotetaan heti, jos käyttäjä on jo kuitannut asian kuntoon
+    try {
+      if (localStorage.getItem(KEY) === '1') {
+        banner.style.display = 'none'
+        return
+      }
+    } catch (e) {}
+
+    document.getElementById('uv-tietoturva-kuittaus').addEventListener('change', function (event) {
+      if (!event.target.checked) return
+      try { localStorage.setItem(KEY, '1') } catch (e) {}
+      banner.style.display = 'none'
+    })
+  })()
+</script>

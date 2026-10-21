@@ -19,7 +19,6 @@ inheader: yes
 
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
 - Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
-- Eräs [esimerkkibacklog](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
 - Ohje Flaskin käyttöön [täällä](/flask)
 - [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
 
@@ -34,8 +33,8 @@ inheader: yes
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
-- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
-  - PostgreSQL:ta ei tarvitse välttämättä asentaa omalle kone, voit käyttää pilvipalveluna tarjottavaa tietokantaa, katso [täältä](https://studies.cs.helsinki.fi/ohtu/flask/#tietokanta) ohje
+- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
+  - SQLite ei vaadi erillistä tietokantapalvelinta, katso [ohje](/flask/#tietokanta)
 - ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
@@ -101,7 +100,7 @@ Kuulet lisää asiakkaalta.
 
 ### Toteutusteknologia
 
-Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa PostgreSQL-tietokantaan
+Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
 - Riittää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
 
 Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
@@ -110,11 +109,11 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
   - Vaatimukset kirjataan backlogiin user storyina
-- Sprintin suunnittelun yhteydessä ryhmä sitoutuu toteuttamaan sopivan määrän backlogin kärjessä olevista user storyistä
+- Sprintin suunnittelun yhteydessä ryhmä valitsee toteutettavaksi sopivan määrän backlogin kärjessä olevista user storyistä
   - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
     - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
-  - Ryhmä sitoutuu ainoastaan niihin storyihin, jotka se kuvittelee kykenevänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
-  - Kannattaa huomata, että storyihin sitoutuminen ei tarkoita sitä, että ne on pakko tehdä valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
+  - Ryhmä valitsee ainoastaan ne storyt, jotka se arvioi ehtivänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
+  - Kannattaa huomata, että valinta on ennuste eikä lupaus: storyja ei ole pakko saada valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
@@ -130,16 +129,13 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 #### Product ja sprint backlog
 
 - Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
-  - **miniprojektissa ei ole tarvetta estimoida user storya**, ainoastaan sprintissä olevien taskien työmäärä estimoidaan
+  - **miniprojektissa user storyja tai taskeja ei tarvitse estimoida**, sprintin etenemistä seurataan valmistuneiden taskien perusteella
 - Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta
-  - jäljellä olevan työajan estimaatti
   - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
   - taskin tekijä(t)
-- Backlogit voi toteuttaa esim. Google Docs -spreadsheetinä, mallia voi ottaa seuraavista:
-  - erään ohtuprojektin [backlogit](https://docs.google.com/spreadsheets/d/13RzIZI2NFFuV0zdRjrrfoC-CrootK8AZNuHS571Wlxo/edit#gid=1)
-  - <http://www.mountaingoatsoftware.com/scrum/sprint-backlog> (tämä on sikäli huono, että siitä eivät ilmene taskin tekijät)
-- Backlogit voi tehdä Google Docsin sijaan myös johonkin backlogien ylläpitämiseen tarkoitettuun työkaluun, yksi aika hyvä vaihtoehto on [GitHub projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-  - kannattaa varmistaa, että työkalu kuitenkin tukee edellä lueteltuja vaatimuksia
+- Backlogit kannattaa toteuttaa jollain backlogien ylläpitämiseen tarkoitetulla työkalulla, yksi hyvä vaihtoehto on [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects), jonka Insights-näkymä piirtää myös burnup-kaavion
+  - kannattaa varmistaa, että työkalu tukee edellä lueteltuja vaatimuksia
+  - myös taulukkolaskentaohjelma, esim. Google Sheets, kelpaa
 
 
 #### Definition of done
@@ -147,7 +143,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
 - User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot Frameworkin](/robot_framework/) syntaksilla
-  - hyvänä käytäntönä on laittaa README:stä linkki hyväksymäkriteerit määritteleviin tiedostoihin
+  - hyvänä käytäntönä on laittaa README:stä linkki hyväksymiskriteerit määritteleviin tiedostoihin
 - Toteutetun koodin testikattavuuden tulee olla kohtuullinen
 - Asiakas pääsee näkemään koko ajan koodin ja testien tilanteen CI-palvelusta
 - Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä
