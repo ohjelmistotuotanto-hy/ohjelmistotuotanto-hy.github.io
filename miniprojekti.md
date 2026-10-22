@@ -135,7 +135,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon
   - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
-  - retrospektiivin tärkeimmät havainnot ja 1–2 sovittua toimenpidettä kirjataan repositorioon
+  - retrospektiivin tärkeimmät havainnot ja vähintään kaksi sovittua kehitystoimenpidettä kirjataan repositorion juureen tiedostoon `retro.md`
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
@@ -202,7 +202,7 @@ Retrospektiivin voi pitää millä tahansa tekniikalla, ks. esim. [viikon 3 teht
 4. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
 5. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
 
-Lopuksi sovitaan 1–2 toimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrossa ei saisi kulua kuitenkaan tuntia enempää, koska miniprojektille on varattu vain 6 tuntia työaikaa per viikko.
+Lopuksi sovitaan vähintään kaksi kehitystoimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrossa ei saisi kulua kuitenkaan tuntia enempää, koska miniprojektille on varattu vain 6 tuntia työaikaa per viikko.
 
 ### Työn arvostelu
 
