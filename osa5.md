@@ -203,7 +203,7 @@ Näin kysymällä toistuvasti (noin viisi kertaa) _miksi_ on mahdollista pääst
 
 Itseasiassa olisi ollut hyvä kysyä ainakin yksi _miksi_ lisää. Perimmäisen syyn kannalta oleellista on se, että minkä takia sprintteihin otetaan liikaa storyja. Johtuuko se kehitystiimistä itsestään vai tiimin ulkopuolisista voimista?
 
-Perimmäistä syytä etsitään prosessista eikä yksittäisistä ihmisistä. Jos kysely päättyy vastaukseen "koska joku teki virheen" tai "koska joku sairastui", kannattaa kysyä vielä kerran, miksi prosessi salli tilanteen. Oletetaan esimerkiksi, että tiimin jäsen sairastuu ja hänen vastuullaan ollut työ jää kokonaan tekemättä. Sairastumista ei voi estää, mutta prosessin olisi pitänyt ohjata kertomaan poissaolosta heti. Silloin tiimi olisi voinut priorisoida työt uudelleen, ja vaikka jotain olisi silti jäänyt tekemättä, se olisi ollut vähiten tärkeä asia.
+Perimmäistä syytä etsitään prosessista eikä yksittäisistä ihmisistä. Jos kysely päättyy vastaukseen "koska joku teki virheen" tai "koska joku sairastui", kannattaa kysyä vielä kerran, miksi prosessi salli tilanteen. Oletetaan esimerkiksi, että tiimin jäsen sairastuu ja hänen vastuullaan ollut työ jää kokonaan tekemättä. Sairastumista ei voi estää, mutta prosessin olisi pitänyt ohjata kertomaan poissaolosta heti. Silloin tiimi olisi voinut priorisoida työt uudelleen, ja vaikka jotain olisi silti jäänyt tekemättä, se olisi ollut vähiten tärkeä asia. Samaa periaatetta noudatetaan ohjelmistoalalla ns. syyllistämättömissä jälkikatselmoinneissa (engl. [blameless postmortem](https://sre.google/sre-book/postmortem-culture/)), joissa tuotannon häiriöt käydään läpi syyllisiä etsimättä.
 
 ### Leanin periaatteita: pull-systeemi
 
@@ -252,7 +252,7 @@ Jotta pull-järjestelmä toimisi hyvin, eli asiakkaan arvo virtaa tasaisesti, on
 
 Eräs varianssin aiheuttaja ovat viat. Leanin periaatteita ovatkin _Stop and fix_ ja _build quality in_.
 
-_Stop and fix_ viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on velvollinen pysäyttämään tuotantolinjan vian, esimerkiksi vaurioituneen komponentin havaitessaan. Periaate toimii vain, jos linjan pysäyttäjää kiitetään eikä syyllistetä. Muuten ongelmista aletaan vaieta.
+_Stop and fix_ viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on velvollinen pysäyttämään tuotantolinjan vian, esimerkiksi vaurioituneen komponentin havaitessaan. Periaate edellyttää, että linjan pysäyttäjää kiitetään eikä syyllistetä. Muuten ongelmista aletaan vaieta.
 
 Tuotantolinjan pysäyttämisen yhteydessä _vian perimmäinen syy_ (engl. root cause) tulee selvittää mahdollisimman nopeasti (esimerkiksi äsken läpikäydyllä five whys -menetelmällä) ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotannossa tulee olla laatu sisäänrakennettua _build quality in_.
 

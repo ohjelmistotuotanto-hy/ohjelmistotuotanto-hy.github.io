@@ -136,7 +136,7 @@ Nopeasti koodia tuottava agentti on hyödytön, tai jopa haitallinen, jos se rak
 
 Myös syvällinen tekninen osaaminen on edelleen oleellista. Agentin tuotosta ei pysty arvioimaan, eikä agenttia ohjaamaan oikeaan suuntaan, jos ei itse ymmärrä, mitä koodi tekee ja millainen on hyvä ratkaisu. Ja kun jotain menee pieleen, ihmisen on pystyttävä selvittämään mistä on kyse. GitHub Copilot onkin varsin hyvin nimetty tuote: kyseessä on lentoperämies, ohjelmoija on edelleen kapteeni, joka päättää minne ollaan menossa ja kantaa lopullisen vastuun.
 
-Jos et ymmärrä, mitä agentin tuottama koodi tekee, voit tarkentaa ymmärrystäsi kysymällä epäselvistä kohdista kielimallilta, ks. [Tuntemattoman koodin ymmärtäminen](#tuntemattoman-koodin-ymmärtäminen). Jos koodi jää silti epäselväksi, se kannattaa sanoa ääneen esim. katselmoinnissa. Kun osaamattomuuden myöntäminen on tiimissä turvallista, ymmärtämätöntä koodia ei päädy huomaamatta tuotantoon.
+Jos et ymmärrä, mitä agentin tuottama koodi tekee, voit tarkentaa ymmärrystäsi kysymällä epäselvistä kohdista kielimallilta, ks. [Tuntemattoman koodin ymmärtäminen](#tuntemattoman-koodin-ymmärtäminen). Jos koodi jää silti epäselväksi, se kannattaa sanoa ääneen esim. katselmoinnissa. Kun osaamattomuuden myöntäminen on tiimissä turvallista, tuotantoon ei päädy huomaamatta koodia, jota kukaan ei ymmärrä.
 
 **Lukuun liittyvät tehtävät:**
 

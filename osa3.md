@@ -120,7 +120,7 @@ TMC:n silloinen [pääkehittäjä](https://github.com/mpartel/) ei kuitenkaan hy
 
 Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requesteja ja on jopa kirjannut definition of doneen, että yksi valmiin kriteereistä on, että joku muu kuin toteuttaja on katselmoinut koodin. Katselmoija voi olla joko toinen sovelluskehittäjä, tai aloittelevien koodareiden tapauksessa joku hieman seniorimpi tiimin jäsen.
 
-Katselmointi on myös vuorovaikutustilanne: virheiden osoittaminen ja eriävä mielipide ovat ihmissuhteisiin liittyviä riskejä niin katselmoijalle kuin koodin kirjoittajalle. Siksi kommentit kannattaa kohdistaa koodiin eikä sen kirjoittajaan. Katselmoinnin voi tehdä myös yhdessä, jolloin siitä tulee yhteistyötä ja molemmat saavat mahdollisuuden perustella ratkaisujaan ja kasvattaa ymmärrystään.
+Katselmointi on myös vuorovaikutustilanne: virheiden osoittaminen ja eriävä mielipide ovat ihmissuhteisiin liittyviä riskejä niin katselmoijalle kuin koodin kirjoittajalle. Siksi kommentit kannattaa kohdistaa koodiin eikä sen kirjoittajaan, kuten esim. [Googlen katselmointiohjeissa](https://google.github.io/eng-practices/review/reviewer/comments.html) neuvotaan. Katselmoinnin voi tehdä myös yhdessä, jolloin siitä tulee yhteistyötä ja molemmat saavat mahdollisuuden perustella ratkaisujaan ja kasvattaa ymmärrystään.
 
 ### AI:n hyödyntäminen koodin katselmoinnissa
 
@@ -943,4 +943,4 @@ Kuvan oikeassa yläkulmassa on myös _organisaatiokulttuuri_. Tutkimuksessa kult
 - _Sääntöihin perustuvassa_ (engl. bureaucratic) kulttuurissa osastot suojelevat omaa reviiriään ja toimivat omien sääntöjensä mukaan. Huonoja uutisia ei rangaista, mutta niistä ei myöskään välitetä, ja epäonnistumiset käsitellään sääntöjen mukaisesti.
 - _Tavoitteisiin perustuvassa_ (engl. generative) kulttuurissa kaikki keskittyy yhteiseen tavoitteeseen. Tieto kulkee avoimesti, riskit jaetaan, ja epäonnistuminen johtaa sen syiden selvittämiseen.
 
-Tutkimuksessa nimenomaan tavoitteisiin perustuva kulttuuri ennusti sekä parempaa toimituskykyä että työtyytyväisyyttä. Kiinnostavaa on myös se, että kuvan mukaan lean-käytänteet ja jatkuva toimittaminen puolestaan parantavat kulttuuria.
+Tutkimuksessa nimenomaan tavoitteisiin perustuva kulttuuri ennusti sekä parempaa toimituskykyä että työtyytyväisyyttä. Kiinnostavaa on myös se, että kuvan mukaan lean-käytänteet ja jatkuva toimittaminen puolestaan ennustavat parempaa kulttuuria.

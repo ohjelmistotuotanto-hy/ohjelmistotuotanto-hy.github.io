@@ -15,7 +15,7 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
 
 - Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
   - Ensisijainen arvostelukriteeri on prosessin seuraaminen, tasainen eteneminen ja ohjelmaan toteutettujen ominaisuuksien laatu
-  - Prosessiin kuuluvat myös pelisäännöt ja retrospektiivit. Niistä arvioidaan se, että ne on tehty, ei niiden sisältöä.
+  - Prosessiin kuuluvat myös pelisäännöt ja retrospektiivit. Niistä arvioidaan se, että ne on tehty asiallisesti, ei niiden sisältöä.
   - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pieni mutta ei toki nolla, eli jotain koodiakin tulee tehdä
   - Tarkemmat sprinttikohtaiset arvosteluperusteet alla
 - Henkilökohtainen suoriutumisesta on jaossa -1p ... 1, poikkeustapauksissa -2p tai 2p on mahdollinen

@@ -289,7 +289,7 @@ Ketterissä menetelmissä ei suosita erillistä arkkitehdin roolia, esimerkiksi 
 
 Ketterän ideaalin mukaan ohjelmiston arkkitehtuuri on koodin tapaan _tiimin yhteisomistama_. Tästä on muutamiakin etuja.
 
-Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman arkkitehtuurin noudattamiseen kuin "norsunluutornissa" olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriin. Yhteinen suunnittelu toimii kuitenkin vain, jos jokainen uskaltaa ehdottaa omia ratkaisujaan ja kyseenalaistaa muiden ehdotuksia. Muuten tiimin kokeneimman jäsenen ehdotuksesta tulee helposti arkkitehtuuri vain siksi, ettei kukaan esitä muuta.
+Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman arkkitehtuurin noudattamiseen kuin "norsunluutornissa" olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriin. Yhteinen suunnittelu edellyttää kuitenkin, että jokainen uskaltaa ehdottaa omia ratkaisujaan ja kyseenalaistaa muiden ehdotuksia. Muuten tiimin kokeneimman jäsenen ehdotuksesta tulee helposti arkkitehtuuri vain siksi, ettei kukaan esitä muuta.
 
 Tiimin keskenään suunnitteleman arkkitehtuurin dokumentointi voi olla kevyt ja informaali, esim. valkotaululle piirretty, sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan. Jos arkkitehtuurin suunnittelee joku ulkopuolinen, sen kommunikointi tiimille edellyttää raskaampaa dokumentaatiota.
 
@@ -1492,7 +1492,7 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
 
-Tekninen velka tulee kuitenkin hoidetuksi vain, jos siitä puhutaan. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
+Teknistä velkaa ei kuitenkaan saada hoidettua, jos siitä ei puhuta. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
 
 ### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
 
