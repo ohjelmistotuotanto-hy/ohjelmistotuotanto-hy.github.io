@@ -69,9 +69,6 @@ Ohjaaja toimii tapaamisissa kahdessa roolissa:
 2. mentorina, joka antaa palautetta teknisestä ja menetelmällisestä työstänne
 
 Ohjaaja kertoo ensimmäisessä tapaamisessa, miten roolin vaihtuminen näkyy. Voitte myös itse pyytää saada puhua mentorin tai asiakkaan kanssa tilanteen tullen. Ohjaajaan voi olla yhteydessä myös tapaamisten välillä, jos ryhmässä on ongelmia. Yhteydenottotapa sovitaan ohjaajan kanssa.
-
-Ennen jokaista asiakastapaamista jokainen ryhmäläinen täyttää lyhyen nimettömän kyselyn ryhmän toiminnasta.
-
 #### viikko 3 (9.–13.11.)
 
 - Ryhmä muodostetaan
@@ -132,7 +129,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
-- Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon
+- Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon tiedostoon `pelisaannot.md`, johon linkitetään README:stä
   - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
   - retrospektiivin tärkeimmät havainnot ja vähintään kaksi sovittua kehitystoimenpidettä kirjataan repositorion juureen tiedostoon `retro.md`
@@ -194,7 +191,15 @@ Katso myös [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-bo
 
 #### Retrospektiivin pitäminen
 
-Retrospektiivin voi pitää millä tahansa tekniikalla, ks. esim. [viikon 3 tehtävä 9](/tehtavat3/#9-retrospektiivitekniikat). Jos ette tiedä mistä aloittaa, kokeilkaa seuraavaa kierroksiin perustuvaa mallia. Siinä kenenkään ei tarvitse keksiä kerralla kuin yksi asia:
+Retrospektiivissä tiimi tarkastelee omaa työskentelyään: mikä sprintissä sujui hyvin, mitä voisi parantaa ja miten parannukset otetaan käyttöön seuraavassa sprintissä. Retrospektiivin voi pitää millä tahansa tekniikalla. Tässä kolme vaihtoehtoa:
+
+- [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel): tiimi kerää asioita, jotka pitäisi aloittaa, lopettaa tai joita kannattaa jatkaa, sekä asioita, joita pitäisi tehdä enemmän tai vähemmän.
+- [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad): jokainen kertoo, mikä sprintissä ilahdutti, harmitti ja suututti, ja niistä etsitään yhdessä parannettavat asiat.
+- Kierroksiin perustuva malli, joka on kuvattu alla.
+
+Lisää tekniikoita löytyy esim. [Retrospective Wikistä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans).
+
+Jos ette tiedä mistä aloittaa, kokeilkaa kierroksiin perustuvaa mallia. Siinä kenenkään ei tarvitse keksiä kerralla kuin yksi asia:
 
 1. Valitkaa kirjuri, joka kirjaa esiin nousseet asiat ylös.
 2. Jokainen miettii hiljaa minuutin ajan yhden asian, joka sujui sprintissä hyvin. Sen jälkeen kukin kertoo omansa lyhyesti, ja asiasta keskustellaan.
@@ -202,7 +207,7 @@ Retrospektiivin voi pitää millä tahansa tekniikalla, ks. esim. [viikon 3 teht
 4. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
 5. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
 
-Lopuksi sovitaan vähintään kaksi kehitystoimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrossa ei saisi kulua kuitenkaan tuntia enempää, koska miniprojektille on varattu vain 6 tuntia työaikaa per viikko.
+Lopuksi sovitaan vähintään kaksi kehitystoimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrospektiiviin ei kuitenkaan saisi kulua yli tuntia, koska miniprojektiin on varattu vain noin 6 tuntia työaikaa sprintissä.
 
 ### Työn arvostelu
 

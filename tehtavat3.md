@@ -876,15 +876,13 @@ Kerro raportissa
 
 ### 9. Retrospektiivitekniikat
 
-Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the end of a project or process (often after an iteration) to discuss what was successful about the project or time period covered by that retrospective, what could be improved, and how to incorporate the successes and improvements in future iterations or projects."_
-
-<input type="checkbox"> Tutustu [täällä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
+<input type="checkbox"> Tutustu [miniprojektin ohjeissa](/miniprojekti/#retrospektiivin-pitäminen) esiteltyihin retrospektiivitekniikoihin.
 
 <input type="checkbox"> Tee aiheesta noin 200 sanan tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
 
 Pohdi tiivistelmässä myös, mikä tekee retrospektiivistä tilaisuuden, jossa ongelmia uskalletaan nostaa esiin.
 
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa retrospektiivin, esim. jollain näistä tekniikoista tai miniprojektin ohjeissa kuvatulla [kierroksiin perustuvalla mallilla](/miniprojekti/#retrospektiivin-pitäminen)!
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa retrospektiivin!
 
 ### Tehtävien palautus
 
