@@ -38,6 +38,7 @@
                   <a class="page-link{% if page.url == week_page.url %} active{% endif %}" href="{{ week_page.url | relative_url }}">{{ week_page.title | escape }}</a>
                   {% endif %}
                 {% endfor %}
+                <a class="page-link" href="{{ site.stats_url }}" target="_blank" rel="noopener">Palautussovellus</a>
               </div>
             </div>
             {% elsif my_page.inheader and my_page.path == "osa0.md" %}

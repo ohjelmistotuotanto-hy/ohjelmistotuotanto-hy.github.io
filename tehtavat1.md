@@ -1036,6 +1036,3 @@ Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 - Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
 - Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
 
-Palautuslomakkeen löydät painamalla sinistä nappia
-
-![]({{ "/images/lh1-palautus.png" | relative_url }})
