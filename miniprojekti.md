@@ -200,9 +200,9 @@ Retrospektiivin voi pitää millä tahansa tekniikalla, ks. esim. [viikon 3 teht
 2. Jokainen miettii hiljaa minuutin ajan yhden asian, joka sujui sprintissä hyvin. Sen jälkeen kukin kertoo omansa lyhyesti, ja asiasta keskustellaan.
 3. Sama toistetaan yhdelle asialle, jota voisi parantaa.
 4. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
-5. Kierrosta toistetaan, kunnes uusia asioita ei enää tule, kuitenkin vähintään kolme kertaa.
+5. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
 
-Lopuksi sovitaan 1–2 toimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiivin kesto on enintään tunti.
+Lopuksi sovitaan 1–2 toimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrossa ei saisi kulua kuitenkaan tuntia enempää, koska miniprojektille on varattu vain 6 tuntia työaikaa per viikko.
 
 ### Työn arvostelu
 
