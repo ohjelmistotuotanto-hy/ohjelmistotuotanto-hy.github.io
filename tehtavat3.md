@@ -880,9 +880,11 @@ Wikipedian mukaan retrospektiivi on _"a meeting held by a project team at the en
 
 <input type="checkbox"> Tutustu [täällä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans) esiteltyihin retrospektiivitekniikoihin [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel) ja [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad).
 
-<input type="checkbox"> Tee aiheesta noin 0.25 sivun (eli noin 125 sanaa) tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
+<input type="checkbox"> Tee aiheesta noin 200 sanan tiivistelmä palautusreporitorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _retro.md_.
 
-Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa jotain tekniikkaa noudattavan retrospektiivin!
+Pohdi tiivistelmässä myös, mikä tekee retrospektiivistä tilaisuuden, jossa ongelmia uskalletaan nostaa esiin.
+
+Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa retrospektiivin, esim. jollain näistä tekniikoista tai miniprojektin ohjeissa kuvatulla [kierroksiin perustuvalla mallilla](/miniprojekti/#retrospektiivin-pitäminen)!
 
 ### Tehtävien palautus
 

@@ -33,6 +33,7 @@ Hieman tarkemmin eriteltynä, suoritettuaan kurssin opiskelija
 - tuntee ohjelmistoprosessin vaiheet (vaatimusmäärittely, suunnittelu, toteutus ja laadunhallinta)
 - tietää miten vaatimuksia hallitaan ketterässä ohjelmistotuotantoprosessissa
 - ymmärtää suunnittelun, toteutuksen ja testauksen vastuut ja luonteen ketterässä ohjelmistotuotannossa
+- tunnistaa tiimityöskentelyn merkityksen ja tuntee keinoja tukea sitä ketterässä tiimissä
 - ymmärtää ohjelmiston laadunhallinnan perusteet
 - osaa tehdä ohjelmistokehityksestä hallittua ja toistettavaa versionhallinnan, automatisoidun testauksen ja jatkuvan integraation avulla
 - osaa hyödyntää tekoälyä hallitusti sovelluskehityksessä
@@ -63,7 +64,7 @@ Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjo
 
 ### Miniprojekti
 
-Kurssin viikoilla 3–7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan sekä eräiden laadunhallintatekniikoiden harjoittelu.
+Kurssin viikoilla 3–7 järjestetään _miniprojekti_, eli ryhmässä tehtävä pieni harjoitustyö, jonka pääasiallisena tarkoituksena on projektinhallinnan, tiimityöskentelyn sekä eräiden laadunhallintatekniikoiden harjoittelu.
 
 Kukin miniprojektiryhmä koostuu 4–6 opiskelijasta, ryhmillä on myös asiakas, jota ryhmä tapaa viikoittain. Ensimmäisellä viikolla asiakastapaamiseen tulee varata 90 minuuttia, myöhemmillä viikoilla 30 minuuttia.
 

@@ -327,7 +327,7 @@ Näiden seikkojen takia ketterien menetelmien mukaan järkevää onkin lähteä 
 
 Ketterien menetelmien oletuksena on, että perinteinen command-and-control-tyylinen hallinnointi ja ihmisten sekä tiimien jakaminen eri vastuualueisiin (suunnittelija, ohjelmoija, testaaja, frontend, backend) ei tuota optimaalista tulosta.
 
-Sen sijaan oletetaan että ihmiset toimivat parhaiten [itseorganisoituvissa](https://www.mountaingoatsoftware.com/blog/the-role-of-leaders-on-a-self-organizing-team) (engl. self-organizing) tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä.
+Sen sijaan oletetaan että ihmiset toimivat parhaiten [itseorganisoituvissa](https://www.mountaingoatsoftware.com/blog/the-role-of-leaders-on-a-self-organizing-team) (engl. self-organizing) tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä. Yhteinen vastuu edellyttää, että virheistä voi puhua ilman syyllistämistä, ks. [psykologinen turvallisuus](#psykologinen-turvallisuus).
 
 ### Scrumin taustaa
 
@@ -429,7 +429,7 @@ Vaikka kaikista käytetään nimikettä developer, voivat jotkut tiimin jäsenis
 
 Scrum-tiimien tulee olla _cross-functional_, eli tiimin tulisi pitää sisällään kaikki tarvittava osaaminen järjestelmän suunnitteluun, toteuttamiseen, testaamiseen ja jopa tuotantoympäristössä operoimiseen.
 
-Tiimit ovat autonomisia, eli periaatteena on että tiimiä ei johdeta ulkopuolelta vaan kehittäjät päättävät, miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös itse kuka tekee mitä, milloin ja miten sprintin tavoite saavutetaan. Vuoden 2020 Scrum Guide kuvaa tiimiä termillä _itseohjautuva_ (engl. self-managing), aiemmin käytössä oli termi _itseorganisoituva_ (engl. self-organizing).
+Tiimit ovat autonomisia, eli periaatteena on että tiimiä ei johdeta ulkopuolelta vaan kehittäjät päättävät, miten paljon vaatimuksia backlogista valitaan sprintissä toteutettavaksi. Tiimi päättää myös itse kuka tekee mitä, milloin ja miten sprintin tavoite saavutetaan. Vuoden 2020 Scrum Guide kuvaa tiimiä termillä _itseohjautuva_ (engl. self-managing), aiemmin käytössä oli termi _itseorganisoituva_ (engl. self-organizing). Pelkkä autonomia ei kuitenkaan riitä, vaan itseohjautuvuus toimii vain, jos tiimin jäsenet luottavat toisiinsa.
 
 Scrum Guide ei ota kantaa siihen, missä tiimi työskentelee. Pitkään ideaalina pidettiin sitä, että tiimi työskentelee samassa tilassa ja täysipäiväisesti samassa tiimissä. Nykyään yhä useampi tiimi toimii hybridi- tai etämallilla, mikä korostaa sovittujen kommunikaatiokäytäntöjen ja läpinäkyvyyttä tukevien työkalujen merkitystä.
 
@@ -503,7 +503,7 @@ Scrum Guide ei määrää palaverin muotoa, mutta pitkään Scrumin suosittelema
 - Mitä aion saada aikaan ennen seuraavaa tapaamista?
 - Mitä esteitä etenemiselläni on?
 
-Mallissa on riskinä, että palaveri muuttuu yksittäisten kehittäjien raportoinniksi. Kysymyksiä kannattaakin tarkastella sprintin tavoitteen näkökulmasta.
+Mallissa on riskinä, että palaveri muuttuu yksittäisten kehittäjien raportoinniksi. Kysymyksiä kannattaakin tarkastella sprintin tavoitteen näkökulmasta. Esteistä kertominen puolestaan edellyttää, että tiimissä uskalletaan myöntää olevansa jumissa.
 
 Palaverin on tarkoitus olla lyhyt, ja liian rönsyilevä keskustelu ei ole suotavaa. Jos joillakin ilmenee ongelmia tai etenemisen esteitä, niihin palataan tarkemmin daily scrumin jälkeen. Scrum Guiden mukaan kehittäjät kokoontuvatkin usein heti päiväpalaverin perään tarkempiin keskusteluihin.
 
@@ -531,7 +531,7 @@ Eräs ketterän manifestin periaatteista toteaa seuraavasti
 
 Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospektiivi_ ilmentää tätä periaatetta. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä Scrum-tiimi tarkastelee nimenomaan omaa työskentelyprosessiaan. Retrospektiivin maksimikesto on kolme tuntia kuukauden mittaisessa sprintissä.
 
-Tarkoituksena on identifioida mikä meni hyvin ja missä asioissa on parantamisen varaa. Palaverissa mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana.
+Tarkoituksena on identifioida mikä meni hyvin ja missä asioissa on parantamisen varaa. Palaverissa mietitään ratkaisuja joihinkin ongelmakohtiin, joita pyritään korjaamaan seuraavan sprintin aikana. Retrospektiivi toimii vain, jos ongelmia voi nostaa esiin syyllisiä etsimättä: tarkastelun kohteena on prosessi, ei yksittäiset ihmiset.
 
 Aikojen saatossa on kehitetty [lukuisia tekniikoita](https://retrospectivewiki.org) retrospektiivien pitämiseen, ja esim. [Retromat](https://retromat.org/) kokoaa satoja valmiita retrospektiiviharjoituksia. Palaamme niihin laskareiden yhteydessä.
 
@@ -561,6 +561,14 @@ Syksyllä 2019 julkaistu [A Scrum book](https://pragprog.com/titles/jcscrum/a-sc
 
 Scrumin ei siis pidä missään tapauksessa olla Scrum Guiden ohjeiden orjallista noudattamista. Jotta Scrum toimisi, tarvitaan sen soveltamiseen sopivanlainen asenne ja orientaatio. Scrumin tarkkailuun ja mukauttamiseen perustuva luonne jopa ohjaa siihen, että tiimien kannattaa jossain vaiheessa toimia joidenkin Scrumin ohjeiden vastaisesti, jos tiimin optimaalinen toiminta sitä vaatii.
 
+### Psykologinen turvallisuus
+
+Scrumin arvoista avoimuus, kunnioitus ja rohkeus ohjaavat rehtiin ja läpinäkyvään kommunikointiin ja vuorovaikutukseen. Jos arvot eivät kuitenkaan toteudu tiimissä, on yhden henkilön raskasta pyrkiä näihin arvoihin. Tätä ilmiötä kuvaa käsite _psykologinen turvallisuus_ (engl. psychological safety), jonka Amy Edmondson [vuonna 1999](https://doi.org/10.2307/2666999) määritteli tiimin jäsenten yhteiseksi käsitykseksi siitä, että tiimissä on turvallista ottaa ihmissuhteisiin liittyviä riskejä. Tällaisia riskejä ovat esim. kysyminen, oman osaamattomuuden tai virheen myöntäminen, eriävän mielipiteen esittäminen ja ongelmien esiin nostaminen. Psykologinen turvallisuus ei tarkoita, että kaikki ovat aina samaa mieltä, vaan sitä, että erimielisyydestä uskalletaan puhua. Esimerkiksi Googlen omien tiimiensä tehokkuutta selvittäneessä [tutkimuksessa](https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness) psykologinen turvallisuus todettiin tärkeimmäksi tekijäksi tiimien onnistumisessa.
+
+Ketterät käytänteet ja psykologinen turvallisuus vahvistavat toisiaan. Retrospektiivi ja daily scrum toimivat vain, jos niissä uskalletaan kertoa ongelmista, ja toisaalta käytänteet itse rakentavat turvallisuutta. Ketterissä ohjelmistotiimeissä psykologista turvallisuutta tukevat erityisesti syyllistämisen välttäminen (engl. no blame), eli virheiden näkeminen prosessin eikä yksilöiden ongelmina, yhteinen päätöksenteko sekä avoimuus palautteelle ja kritiikille. Psykologista turvallisuutta ei voi vaatia tai pakottaa, vaan se rakentuu luottamuksesta tiimin jäseniin.
+
+Psykologisen turvallisuuden kannalta merkittävää on se, miten tiimissä johdetaan. Johtaminen ei ole pelkästään esihenkilön tai scrum masterin tehtävä. Johtamista tapahtuu itseohjautuvassa tiimissä jatkuvasti, esim. silloin kun joku vetää palaveria, ehdottaa ratkaisua tai ottaa vastuun jonkin asian hoitamisesta, ja jokaisen käytös näissä tilanteissa vaikuttaa siihen, uskaltavatko muut puhua. Turvallisuutta tarvitaan myös toiseen suuntaan: aloitteen ottaminen on riski, ja se tuntuu luontevalta vain, jos muut arvostavat sitä. Tiimin jäsenten ei tarvitse olla ystäviä, mutta heidän on kunnioitettava toisiaan voidakseen luottaa toisiinsa.
+
 ### Scrumin ongelmia
 
 Scrum on osoittautunut monin paikoin paremmaksi tavaksi ohjelmistojen kehittämiseen kuin vesiputousmalli tai muut suunnitelmavetoiset mallit. Scrum ei kuitenkaan ole mikään [silver bullet](https://en.wikipedia.org/wiki/No_Silver_Bullet), eli yleispätevä resepti, joka ratkaisisi kaikki sovelluskehityksen ongelmat, ja Scrumin käytön yleistyessä myös epäonnistuneiden Scrum-projektien määrä kasvaa.
@@ -588,7 +596,7 @@ Vaikka Martin pelkää, että scrum masterit monesti ovat ainoastaan managereita
 
 Monimutkaisen tuotteen hallinnoiminen on kompleksista, Scrum ei kuitenkaan ota millään tavalla kantaa product backlogin organisointiin ja jättää kehittäjät omilleen asian suhteen.
 
-Uncle Bobin kritiikki on vuodelta 2010 mutta pitkälti validi edelleen. Myöhemmin kritiikkiä on esittänyt mm. ketterän manifestin allekirjoittaja Ron Jeffries, joka kuvaa kirjoituksessaan [Dark Scrum](https://ronjeffries.com/articles/016-09ff/defense/) (2016), miten Scrumista tulee helposti kehittäjiä kontrolloivan johdon väline. 2020-luvulla monet yritykset ovat myös vähentäneet erillisiä scrum master- ja agile coach -rooleja ja siirtäneet niiden tehtäviä tiimeille ja esihenkilöille.
+Uncle Bobin kritiikki on vuodelta 2010 mutta pitkälti validi edelleen. Myöhemmin kritiikkiä on esittänyt mm. ketterän manifestin allekirjoittaja Ron Jeffries, joka kuvaa kirjoituksessaan [Dark Scrum](https://ronjeffries.com/articles/016-09ff/defense/) (2016), miten Scrumista tulee helposti kehittäjiä kontrolloivan johdon väline. 2020-luvulla monet yritykset ovat myös vähentäneet erillisiä scrum master- ja agile coach -rooleja ja siirtäneet niiden tehtäviä tiimeille ja esihenkilöille. Psykologisen turvallisuuden näkökulmasta liiallinen kontrolli myös heikentää tiimin ketteryyttä, sillä ongelmista ja virheistä ei enää uskalleta puhua avoimesti.
 
 Scrumin rinnalle erityisesti Suomessa suosituksi noussut [Scaled agile framework eli SAFe](https://framework.scaledagile.com/) itse asiassa tarjoaa monia lääkkeitä Martininkin esiin nostamiin ongelmiin. SAFe on kuitenkin saanut myös voimakasta kritiikkiä ja auktoritatiivisetkin tahot (kuten Scrumin kehittäjä Ken Schwaber kirjoituksessaan [unSAFe at any speed](https://kenschwaber.wordpress.com/2013/08/06/unsafe-at-any-speed/)) ovat jopa kyseenalaistaneet menetelmän ketteryyden. Tutustumme SAFeen pintapuolisesti [osassa 5](/osa5/#laajan-skaalan-ketter%C3%A4t-menetelm%C3%A4t).
 
