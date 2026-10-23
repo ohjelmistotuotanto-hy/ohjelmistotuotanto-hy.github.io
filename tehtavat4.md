@@ -381,6 +381,8 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 ### 4. Testikoodin siistiminen agentin avulla [tekoäly]
 
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-4-tehtävä-4).
+
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
 
 Tehtävän 3 testeihin on todennäköisesti kertynyt paljon toisteisuutta, sillä jokainen testi luo samat mockit ja määrittelee niille samat toteutukset. Kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka suoritetaan ennen jokaista testiä:
@@ -426,6 +428,8 @@ Jotain taitaa puuttua.
 Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. Mockeilla on kuitenkin paikkansa. Jos testattavana olevan olion riippuvuutena oleva olio on monimutkainen, kuten esimerkiksi verkkokauppaesimerkissä luokka `Pankki`, kannattaa testattavana oleva olio testata ehdottomasti ilman todellisen riippuvuuden käyttöä testissä. Valeolion voi toki tehdä myös "käsin", mutta tietyissä tilanteissa mock-kirjastoilla tehdyt mockit ovat käsin tehtyjä valeolioita kätevämpiä, erityisesti jos on syytä tarkastella testattavan olion riippuvuuksille tekemiä metodikutsuja.
 
 ### 6. TDD agentin kanssa [tekoäly]
+
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-4-tehtävä-6).
 
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
 

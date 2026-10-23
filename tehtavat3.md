@@ -798,6 +798,8 @@ Jos samanniminen avainsana on määritelty sekä testitiedostossa että tiedosto
 
 ### 8. Agentti ja hyväksymistestit [tekoäly]
 
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-3-tehtävä-8).
+
 Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa.
 
 Kertaa tarvittaessa viime viikolla lukemasi materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot). Lue ennen tämän tehtävän tekemistä myös luvut [Agenttinen koodaus](/genai/#agenttinen-koodaus), [Kontekstin hallinta](/genai/#kontekstin-hallinta) ja [Vaatimukset promptina](/genai/#vaatimukset-promptina).

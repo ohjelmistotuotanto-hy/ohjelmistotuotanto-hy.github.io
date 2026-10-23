@@ -178,6 +178,8 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 
 ### 5. Web-käyttöliittymä agentin avulla [tekoäly]
 
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-5).
+
 Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-käyttöliittymä.
 
 <input type="checkbox"> Tee palautusrepositorioosi kopio projektin hakemistosta nimellä _kivi-paperi-sakset-original_, jolloin edellisen tehtävän jälkeinen tilanne jää talteen, ja commitoi
@@ -248,6 +250,8 @@ Kerro raportissa
 - Mitä uutta opit?
 
 ### 6. MCP ja skillsit [tekoäly]
+
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-6).
 
 Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. VS Coden agentti osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
 
@@ -377,6 +381,8 @@ Kerro raportissa
 - Milloin käyttäisit skillsiä, milloin prompt-tiedostoa ja milloin ohjetiedostoa?
 
 ### 7. Oma MCP-palvelin [tekoäly]
+
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-7).
 
 Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
 
