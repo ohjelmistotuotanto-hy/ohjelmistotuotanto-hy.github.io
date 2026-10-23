@@ -245,6 +245,7 @@ Kerro raportissa
 - Olivatko ehdotetut muutokset hyviä
 - Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
 - Huomasiko Copilot jotain, minkä olisit itse jättänyt huomaamatta? Entä jäikö siltä jotain oleellista huomaamatta?
+- Miltä Copilotin kommentit tuntuivat verrattuna siihen, että saman palautteen olisi antanut tiimikaveri? Mitä palautteen antamisessa kannattaa ottaa huomioon, kun katselmoijana on ihminen?
 
 Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
 

@@ -522,6 +522,7 @@ Pohdi kirjoituksessasi ainakin seuraavia:
 - Missä tekoäly auttoi eniten, ja missä siitä oli haittaa?
 - Mitkä kurssilla opituista ohjelmistotuotannon käytänteistä ovat mielestäsi tärkeimpiä agentteja käytettäessä?
 - Minkälaiset pelisäännöt tekoälyn käytölle sopisit miniprojektisi tiimin kanssa, tai tulevassa työpaikassasi?
+- Miten tekoälyn käyttö vaikutti siihen, kuinka paljon keskustelitte koodista ja ratkaisuista tiimin kanssa?
 
 ### 9. Kurssipalaute
 

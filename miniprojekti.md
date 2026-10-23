@@ -56,12 +56,19 @@ inheader: yes
   - sprint backlog
   - hyväksymäkriteeri
   - definition of done
+  - [psykologinen turvallisuus](/osa1#psykologinen-turvallisuus)
 - Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
 
 ### Työn eteneminen
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
+Ohjaaja toimii tapaamisissa kahdessa roolissa:
+
+1. asiakkaana, jolta saatte sovelluksen vaatimukset, joka hyväksyy toteutetut ominaisuudet ja joka ei välttämättä ole teknisesti kovin osaava
+2. mentorina, joka antaa palautetta teknisestä ja menetelmällisestä työstänne
+
+Ohjaaja kertoo ensimmäisessä tapaamisessa, miten roolin vaihtuminen näkyy. Voitte myös itse pyytää saada puhua mentorin tai asiakkaan kanssa tilanteen tullen. Ohjaajaan voi olla yhteydessä myös tapaamisten välillä, jos ryhmässä on ongelmia. Yhteydenottotapa sovitaan ohjaajan kanssa.
 #### viikko 3 (9.–13.11.)
 
 - Ryhmä muodostetaan
@@ -122,6 +129,10 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
+- Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon tiedostoon `pelisaannot.md`, johon linkitetään README:stä
+  - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
+- Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
+  - retrospektiivin tärkeimmät havainnot ja vähintään kaksi sovittua kehitystoimenpidettä kirjataan repositorion juureen tiedostoon `retro.md`
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
@@ -164,6 +175,12 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 
 Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikan päällä kampuksella tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
 
+Pelisäännöissä kannattaa sopia ainakin siitä, mitä viestintäkanavaa käytetään ja kuinka nopeasti viesteihin vastataan, miten poissaoloista ja myöhästymisistä ilmoitetaan, miten päätökset tehdään ja mitä tehdään, jos joku ei pysy sovitussa. Ryhmän kannattaa myös tavata ainakin kerran epämuodollisesti, esim. kahvin tai pelien merkeissä, sillä tutustuminen helpottaa yhteistyötä. Ensimmäisessä sprintissä tällaisesta tapaamisesta voi laskea 30 minuuttia sprintin työaikaan.
+
+Ongelmista kannattaa kertoa ryhmälle heti, kun ne huomaa. Jos työ myöhästyy tai jää kesken, ryhmä ehtii vielä priorisoida tehtävät uudelleen. Kun jokin menee pieleen, syytä kannattaa etsiä prosessista eikä ihmisistä, ks. [psykologinen turvallisuus](/osa1#psykologinen-turvallisuus). Avun pyytäminen ja oman osaamattomuuden myöntäminen ovat projektissa täysin odotettuja asioita, erityisesti kun ryhmän jäsenten kokemustaso vaihtelee.
+
+Ryhmällä ei ole nimettyä johtajaa, joten aloitteen ottaminen voi tuntua hankalalta. Kannattaa vuorotella palaverien ja retrospektiivien vetäjänä, ja kun joku ottaa vetovastuun, sitä kannattaa myös kiittää. Johtamisesta saa myös puhua: on täysin ok kertoa, että arvostaa sitä, kun joku ottaa vetovastuun, tai että itse pitää vetämisestä.
+
 Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storya työstää aina kaksi henkilöä.
 
 Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
@@ -171,6 +188,26 @@ Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
 
 Katso myös [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md) projektin alkuun.
+
+#### Retrospektiivin pitäminen
+
+Retrospektiivissä tiimi tarkastelee omaa työskentelyään: mikä sprintissä sujui hyvin, mitä voisi parantaa ja miten parannukset otetaan käyttöön seuraavassa sprintissä. Retrospektiivin voi pitää millä tahansa tekniikalla. Tässä kolme vaihtoehtoa:
+
+- [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel): tiimi kerää asioita, jotka pitäisi aloittaa, lopettaa tai joita kannattaa jatkaa, sekä asioita, joita pitäisi tehdä enemmän tai vähemmän.
+- [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad): jokainen kertoo, mikä sprintissä ilahdutti, harmitti ja suututti, ja niistä etsitään yhdessä parannettavat asiat.
+- Kierroksiin perustuva malli, joka on kuvattu alla.
+
+Lisää tekniikoita löytyy esim. [Retrospective Wikistä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans).
+
+Jos ette tiedä mistä aloittaa, kokeilkaa kierroksiin perustuvaa mallia. Siinä kenenkään ei tarvitse keksiä kerralla kuin yksi asia:
+
+1. Valitkaa kirjuri, joka kirjaa esiin nousseet asiat ylös.
+2. Jokainen miettii hiljaa minuutin ajan yhden asian, joka sujui sprintissä hyvin. Sen jälkeen kukin kertoo omansa lyhyesti, ja asiasta keskustellaan.
+3. Sama toistetaan yhdelle asialle, jota voisi parantaa.
+4. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
+5. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
+
+Lopuksi sovitaan vähintään kaksi kehitystoimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrospektiiviin ei kuitenkaan saisi kulua yli tuntia, koska miniprojektiin on varattu vain noin 6 tuntia työaikaa sprintissä.
 
 ### Työn arvostelu
 

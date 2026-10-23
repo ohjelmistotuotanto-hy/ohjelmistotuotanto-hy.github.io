@@ -15,6 +15,7 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
 
 - Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
   - Ensisijainen arvostelukriteeri on prosessin seuraaminen, tasainen eteneminen ja ohjelmaan toteutettujen ominaisuuksien laatu
+  - Prosessiin kuuluvat myös pelisäännöt ja retrospektiivit. Niistä arvioidaan se, että ne on tehty asiallisesti, ei niiden sisältöä.
   - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pieni mutta ei toki nolla, eli jotain koodiakin tulee tehdä
   - Tarkemmat sprinttikohtaiset arvosteluperusteet alla
 - Henkilökohtainen suoriutumisesta on jaossa -1p ... 1, poikkeustapauksissa -2p tai 2p on mahdollinen
@@ -25,6 +26,7 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
     - Luotettavuutta
     - Ryhmätyön sujuvuutta
     - Työskentelyn tasaisuutta
+    - Ongelmien rakentavaa esiin nostamista ja muiden auttamista
     - Kontribuutiota ryhmän tuotoksiin (koodi, testit, deployment pipeline, backlogit)
       - [varmista, että committisi näkyvät GitHubissa oikein](/miniprojektin_arvosteluperusteet#varmista-että-commitisi-näkyvät-githubissa-oikein)
   - **Sankarikoodauksella ei voi kompensoida muuten puutteellista ryhmätyöskentelyä**
@@ -48,6 +50,12 @@ Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla kok
 
 Pisteitä kertyy seuraavista asioista:
 
+- (0.25p) GitHub README:
+  - README:sta löytyy linkki ryhmän pelisääntöihin (tiedosto `pelisaannot.md`, ks. [vihjeitä ryhmätyöskentelyyn](/miniprojekti/#vihjeitä-ryhmätyöskentelyyn))
+    - Pelisäännöistä arvioidaan ainoastaan se, että ne on laadittu, ei niiden sisältöä
+  - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
+  - Definition of done kirjattu eksplisiittisesti
+  - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
 - (0.25p) product backlog
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
 - (0.25p) sprintin 1 backlog
@@ -67,10 +75,6 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHubissa on järkevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
-- (0.25p) GitHub README:
-  - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
-  - Definition of done kirjattu eksplisiittisesti
-  - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
 - (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
   - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
@@ -80,10 +84,11 @@ Sprintin maksimi on 2.5 pistettä.
 #### Retrospektiivi
 
 - Sprintin 1 päätteeksi tulee pitää retrospektiivi
-- Muutama ohje retrospektiivin pitämiseen [täällä](/tehtavat3/#9-retrospektiivitekniikat)
+- Ohjeet retrospektiivin pitämiseen löytyvät [miniprojektin ohjeista](/miniprojekti/#retrospektiivin-pitäminen)
 - Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
 - Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
   - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
+- Retrospektiivin perusteella kannattaa tarvittaessa päivittää myös ryhmän pelisääntöjä
 - Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
 
 ### Toisen sprintin arvosteluperusteet

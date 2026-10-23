@@ -435,7 +435,7 @@ Planning pokerissa käydään läpi backlogin user storyja yksi kerrallaan. Prod
 
 ![]({{ "/images/2-8.png" | relative_url }}){:height="350px" }
 
-Yhteisen estimoinnin tärkein hyöty on usein itse keskustelu: ymmärrys storyjen sisällöstä leviää koko tiimiin, mikä parantaa ketterien menetelmien arvostamaa läpinäkyvyyttä.
+Yhteisen estimoinnin tärkein hyöty on usein itse keskustelu: ymmärrys storyjen sisällöstä leviää koko tiimiin, mikä parantaa ketterien menetelmien arvostamaa läpinäkyvyyttä. Arvioiden näyttäminen yhtä aikaa antaa myös kokemattomimmalle tiimin jäsenelle saman äänen kuin kokeneimmalle, sillä kenenkään ei tarvitse mukautua siihen, mitä muut ovat jo sanoneet. Jos joku jättää eriävän arvionsa sanomatta, arvio ei vastaa todellisuutta, ja ongelmat paljastuvat vasta sprintin aikana.
 
 ### Hyvä product backlog on DEEP
 
@@ -500,7 +500,7 @@ Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti proj
 
 Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään. Tiimi voi esimerkiksi määritellä, että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
 
-Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä _Goodhartin laki_: kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
+Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä _Goodhartin laki_: kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Jos velositeettia käytetään tiimiä vastaan, tiimi alkaa suojautua, ja arvioista sekä ongelmista ei enää kerrota rehellisesti. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
 
 #### Burndown- ja burnup-kaaviot
 

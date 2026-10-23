@@ -120,6 +120,8 @@ TMC:n silloinen [pääkehittäjä](https://github.com/mpartel/) ei kuitenkaan hy
 
 Nykyään moni ohjelmistokehitystiimi käyttää säännöllisesti pull requesteja ja on jopa kirjannut definition of doneen, että yksi valmiin kriteereistä on, että joku muu kuin toteuttaja on katselmoinut koodin. Katselmoija voi olla joko toinen sovelluskehittäjä, tai aloittelevien koodareiden tapauksessa joku hieman seniorimpi tiimin jäsen.
 
+Katselmointi on myös vuorovaikutustilanne: virheiden osoittaminen ja eriävä mielipide ovat ihmissuhteisiin liittyviä riskejä niin katselmoijalle kuin koodin kirjoittajalle. Siksi kommentit kannattaa kohdistaa koodiin eikä sen kirjoittajaan, kuten esim. [Googlen katselmointiohjeissa](https://google.github.io/eng-practices/review/reviewer/comments.html) neuvotaan. Katselmoinnin voi tehdä myös yhdessä, jolloin siitä tulee yhteistyötä ja molemmat saavat mahdollisuuden perustella ratkaisujaan ja kasvattaa ymmärrystään.
+
 ### AI:n hyödyntäminen koodin katselmoinnissa
 
 GitHubissa on mahdollista pyytää Copilotia tekemään koodikatselmointi pull requesteille. Vibe-koodasin ohtuvarastoon interaktiivisen käyttöliittymän, ja tein lisäyksestä [pull requestin](https://github.com/mluukkai/ohtuvarasto25/pull/1), jonka pyysin Copilotin katselmoimaan. Katselmoinnin yleiskatsaus näyttää seuraavalta
@@ -142,7 +144,7 @@ _Pariohjelmoinnissa_ (engl. pair programming) kaksi ohjelmoijaa työskentelee yh
 
 Pariohjelmointi parantaa ohjelmoijien kuria ja keskittymistä työhön sekä on erinomainen oppimisen väline: parit oppivat toisiltaan, erityisesti noviisit kokeneemmilta. Jos pariohjelmointia sovelletaan systemaattisesti, ei koodiin jää osa-alueita, jotka ainoastaan yksi ohjelmoija tuntee.
 
-Pariohjelmointia on tutkittu suhteellisen paljon. [Tutkimuksissa](https://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) sen on todettu vähentävän bugien määrää jossain määrin, mutta kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. Tutkimukset korostavat pelkkien koodin tasolla näkyvien hyötyjen lisäksi myös pariohjelmoinnin myönteistä vaikutusta tiimidynamiikkaan ja jopa työtyytyväisyyteen.
+Pariohjelmointia on tutkittu suhteellisen paljon. [Tutkimuksissa](https://collaboration.csc.ncsu.edu/laurie/Papers/XPSardinia.PDF) sen on todettu vähentävän bugien määrää jossain määrin, mutta kokonaisuudessa resurssien kulutus kuitenkin nousee hieman. Tutkimukset korostavat pelkkien koodin tasolla näkyvien hyötyjen lisäksi myös pariohjelmoinnin myönteistä vaikutusta tiimidynamiikkaan ja jopa työtyytyväisyyteen. Pariohjelmointi onkin yksi niistä ketteristä käytänteistä, jotka rakentavat tiimin [psykologista turvallisuutta](/osa1#psykologinen-turvallisuus).
 
 Vaikka pariohjelmointi tai jopa useamman ihmisen versio siitä, [mob-programming](https://en.wikipedia.org/wiki/Mob_programming) on melko suosittua, ei kovin monissa paikoissa kuitenkaan harrasteta systemaattisesti määritelmän mukaista pariohjelmointia ainakaan joka päivä. Hyvin yleistä on, että kehittäjät työskentelevät suurimman osan aikaa yksin, mutta tekevät tarpeen mukaan spontaaneja pari- tai mob-ohjelmointisessioita, erityisesti kohdatessaan teknisiä haasteita.
 
@@ -150,7 +152,7 @@ Koodin laatuun katselmoinnin kaltaisesti vaikuttavat myös XP:n periaatteet: yht
 
 Koodin _yhteisomistajuus_ (engl. collective code ownership) tarkoittaa periaatetta, jossa kukaan yksittäinen ohjelmoija ei hallitse yksin mitään kohtaa koodista, eli kaikilla on lupa tehdä muutoksia ja laajennuksia mihin tahansa kohtaan koodia. Pariohjelmointi tukee yhteisomistajuutta.
 
-Yhteisomistajuudessa on omat riskinsä: joku koodia kunnolla tuntematon voi saada huolimattomilla muutoksilla pahaa jälkeä aikaan. XP pyrkii eliminoimaan tästä aiheutuvia riskejä testaukseen liittyvillä käytänteillä, käytännössä automatisoiduilla regressiotesteillä.
+Yhteisomistajuudessa on omat riskinsä: joku koodia kunnolla tuntematon voi saada huolimattomilla muutoksilla pahaa jälkeä aikaan. XP pyrkii eliminoimaan tästä aiheutuvia riskejä testaukseen liittyvillä käytänteillä, käytännössä automatisoiduilla regressiotesteillä. Kun virhe kuitenkin pääsee läpi, kannattaa selvittää, millainen virhe oli ja onko testeissä samanlainen aukko muuallakin.
 
 _Ohjelmointistandardi_ (engl. coding standards) tarkoittaa, että tiimi määrittelee koodityylin, johon kaikki ohjelmoijat sitoutuvat. Tyylillä tarkoitetaan nimeämiskäytäntöä, koodin muotoilua ja tiettyjä ohjelman rakenteeseen liittyviä seikkoja. Ohjelmointistandardin noudattamista voidaan kontrolloida osittain automaattisesti staattisen analyysin työkaluilla, esimerkiksi Pythonin Pylint, sekä JavaScript-maailman [Eslint](https://eslint.org/) ja [Prettier](https://prettier.io/) ovat työkaluja, joiden avulla voidaan seurata, että koodi seuraa määriteltyä ohjelmointistandardia. Eräs esimerkki suosituksi nousseesta ohjelmointistandardista on [Airbnb](https://airbnb.io/javascript/react/):n tyyliopas.
 
@@ -934,3 +936,11 @@ On myös identifioitu lisää organisaatioiden tehokkuuteen liittyviä käytänt
 Seuraavassa Accelerate-kirjasta lainattu kuva, joka visualisoi miten eri käytänteet edesauttavat yrityksen tehokkuutta:
 
 ![]({{ "/images/3-26.png" | relative_url }}){:height="500px" }
+
+Kuvan oikeassa yläkulmassa on myös _organisaatiokulttuuri_. Tutkimuksessa kulttuuria mitattiin sosiologi Ron Westrumin mallilla, joka jakaa organisaatiot kolmeen tyyppiin sen mukaan, miten niissä suhtaudutaan tietoon ja epäonnistumisiin:
+
+- _Valtaan perustuvassa_ (engl. pathological) kulttuurissa vallitsee pelko. Tietoa panttaillaan tai vääristellään oman aseman suojaamiseksi, huonojen uutisten tuojia rangaistaan, ja epäonnistumisen jälkeen etsitään syyllistä.
+- _Sääntöihin perustuvassa_ (engl. bureaucratic) kulttuurissa osastot suojelevat omaa reviiriään ja toimivat omien sääntöjensä mukaan. Huonoja uutisia ei rangaista, mutta niistä ei myöskään välitetä, ja epäonnistumiset käsitellään sääntöjen mukaisesti.
+- _Tavoitteisiin perustuvassa_ (engl. generative) kulttuurissa kaikki keskittyy yhteiseen tavoitteeseen. Tieto kulkee avoimesti, riskit jaetaan, ja epäonnistuminen johtaa sen syiden selvittämiseen.
+
+Tutkimuksessa nimenomaan tavoitteisiin perustuva kulttuuri ennusti sekä parempaa toimituskykyä että työtyytyväisyyttä. Kiinnostavaa on myös se, että kuvan mukaan lean-käytänteet ja jatkuva toimittaminen puolestaan ennustavat parempaa kulttuuria.
