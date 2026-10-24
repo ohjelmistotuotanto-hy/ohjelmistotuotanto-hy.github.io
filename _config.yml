@@ -74,4 +74,5 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - huomiot.md
+  - CLAUDE.md
   - containerization
