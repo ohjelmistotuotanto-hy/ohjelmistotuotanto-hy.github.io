@@ -60,7 +60,7 @@ Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viiko
 
 ### Tekoäly kurssilla
 
-Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjoitellaan koodausagenttien hallittua käyttöä ohjelmistokehityksessä. Niihin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/). Kurssimateriaalin kertaamiseen voit käyttää [OhtuBotteja](/ohtubotit/), esim. materiaalista kysymyksiä esittävää Kertaajaa. Huomaa kuitenkin, että [luentopäiväkirjat](#monivalintojen-korvaaminen-luentopäiväkirjalla) on kirjoitettava itse ilman tekoälyä.
+Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjoitellaan koodausagenttien hallittua käyttöä ohjelmistokehityksessä. Niihin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/). Tehtävissä käytetään oletusarvoisesti GitHub Copilotia, mutta ne voi tehdä myös [OpenCodella](/opencode/) CurreChatin kielimalleja käyttäen. Kurssimateriaalin kertaamiseen voit käyttää [OhtuBotteja](/ohtubotit/), esim. materiaalista kysymyksiä esittävää Kertaajaa. Huomaa kuitenkin, että [luentopäiväkirjat](#monivalintojen-korvaaminen-luentopäiväkirjalla) on kirjoitettava itse ilman tekoälyä.
 
 ### Miniprojekti
 

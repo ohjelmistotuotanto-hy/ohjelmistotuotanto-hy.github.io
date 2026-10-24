@@ -21,6 +21,7 @@ permalink: /sisallys/
     - [viikko 5: AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5)
     - [viikko 6: Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6)
     - [viikko 7: Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7)
+  - [OpenCode](/opencode)
   - [Robot Framework](/robot_framework)
   - [Browser-kirjaston asennus ja ongelmat](browser_asennusohjeet/)
 
@@ -29,6 +30,7 @@ permalink: /sisallys/
 - [Kurssin suorittaminen ja arvostelu](/osa0/#kurssin-suorittaminen-ja-arvostelu)
   - [Luennot](/osa0/#luennot)
   - [Laskuharjoitukset](/osa0/#laskuharjoitukset)
+  - [Tekoäly kurssilla](/osa0/#tekoäly-kurssilla)
   - [Miniprojekti](/osa0/#miniprojekti)
     - [Miniprojektin hyväksilukeminen](/osa0/#miniprojektin-hyväksilukeminen)
   - [Kurssin arvostelu](/osa0/#kurssin-arvostelu)
@@ -41,12 +43,14 @@ permalink: /sisallys/
 
 ### [Osa 1: Ohjelmistotuotanto ja Scrum](/osa1)
 - [Ohjelmistotuotanto ja sen osa-alueet](/osa1/#ohjelmistotuotanto-ja-sen-osa-alueet)  
+    - [Ohjelmistotuotannon osa-alueet](/osa1/#ohjelmistotuotannon-osa-alueet)  
 - [Ohjelmiston vaiheet ja elinkaari](/osa1/#ohjelmiston-vaiheet-ja-elinkaari)  
     - [Code'n'fix](/osa1/#codenfix)  
     - [Ohjelmistokriisi](/osa1/#ohjelmistokriisi)  
     - [Ohjelmistokehitys insinööritieteenä: software engineering](/osa1/#ohjelmistokehitys-insinööritieteenä-software-engineering)  
     - [Vesiputous- eli lineaarinen malli](/osa1/#vesiputous--eli-lineaarinen-malli)
     - [Vesiputousmallin ongelmat](/osa1/#vesiputousmallin-ongelmat)  
+    - [Royce ja vesiputousmalli](/osa1/#royce-ja-vesiputousmalli)  
     - [Iteratiivinen ja inkrementaalinen ohjelmistokehitys](/osa1/#iteratiivinen-ja-inkrementaalinen-ohjelmistokehitys)  
 - [Ketterä ohjelmistokehitys](/osa1/#ketterä-ohjelmistokehitys)  
     - [Ketterä manifesti](/osa1/#ketterä-manifesti)  
@@ -67,6 +71,7 @@ permalink: /sisallys/
     - [Retrospektiivi](/osa1/#retrospektiivi)  
     - [Scrumin periaatteet: transparency - inspection - adaptation](/osa1/#scrumin-periaatteet-transparency---inspection---adaptation)  
     - [Scrumin arvot](/osa1/#scrumin-arvot)  
+    - [Psykologinen turvallisuus](/osa1/#psykologinen-turvallisuus)  
     - [Scrumin ongelmia](/osa1/#scrumin-ongelmia)  
 - [Laajat kielimallit ohjelmistokehityksessä](/osa1/#laajat-kielimallit-ohjelmistokehityksessä)
 

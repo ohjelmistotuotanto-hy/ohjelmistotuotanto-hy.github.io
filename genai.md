@@ -9,11 +9,11 @@ Tämä sivu käsittelee generatiivisen tekoälyn ja erityisesti koodausagenttien
 
 Osaan kurssin muista tehtävistä liittyy lisäksi tehtävän yhteydestä avattava vihje tekoälyn hyödyntämiseen.
 
-Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
+Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat. Jos et halua käyttää Copilotia, suositeltu vaihtoehto on avoimen lähdekoodin koodausagentti [OpenCode](/opencode/), jota voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. OpenCode-sivulta löytyvät myös tehtäväkohtaiset ohjeet [tekoäly]-tehtäviin.
 
 ## Kurssin GPT
 
-Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen.
+Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen. CurreChatin kielimalleja voi käyttää myös koodausagentti OpenCodessa, ks. [CurreChatin käyttö](/opencode/#currechatin-käyttö).
 
 Kurssilla on kaksi CurreChatin päälle tehtyä bottia, joita voi käyttää suoraan sivulta [OhtuBotit](/ohtubotit):
 
@@ -22,15 +22,15 @@ Kurssilla on kaksi CurreChatin päälle tehtyä bottia, joita voi käyttää suo
 
 Bottien käyttö edellyttää kirjautumista yliopiston tunnuksilla.
 
-CurreChatia on mahdollisuus käyttää myös "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. KurssimateriaaliChat toimii juuri näin. Hakuindeksi otetaan CurreChatissa käyttöön valitsemalla alustukseksi _Materiaali_:
+CurreChatia on mahdollisuus käyttää myös "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. Molemmat kurssin botit toimivat juuri näin. Botit löytyvät CurreChatissa valikosta _Kurssit ja alustukset_ kurssin _Ohjelmistotuotanto, Lähiopetus_ alta. Esim. Kertaaja otetaan käyttöön valitsemalla alustukseksi _Kertaaja_:
 
-![]({{ "/images/chat0.png" | relative_url }}){: width="70%"}
+![]({{ "/images/bottivalinta.png" | relative_url }}){: width="70%"}
 
-Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan materiaaliin pohjautuen:
+Valittu alustus näkyy vasemman reunan kohdassa _Alustus_, ja keskustelu Kertaajan kanssa voi alkaa:
 
-![]({{ "/images/chat2.png" | relative_url }}){: width="70%"}
+![]({{ "/images/koebotti.png" | relative_url }}){: width="70%"}
 
-Hakuindeksiä käyttäessä mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
+Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan materiaaliin pohjautuen, joten mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
 
 ## Kielimallit ja agentit ohjelmoinnin apuna <span style="color:blue">[viikot 2-3]</span>
 
