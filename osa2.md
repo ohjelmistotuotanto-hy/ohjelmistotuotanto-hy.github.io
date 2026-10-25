@@ -217,6 +217,10 @@ Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon 
 
 Lean startupin ajatus on sittemmin laajentunut yleisemmäksi _product discovery_ -käytännöksi. Siinä tiimi selvittää jatkuvasti, mitä kannattaa rakentaa, samaan aikaan kun se toteuttaa jo valittuja ominaisuuksia (engl. dual-track development). Esimerkiksi Teresa Torresin [opportunity solution tree](https://www.producttalk.org/opportunity-solution-trees/) jäsentää työn tavoitellusta vaikutuksesta (engl. outcome) käyttäjien tarpeisiin, niistä ratkaisuideoihin ja edelleen ideoita testaaviin kokeiluihin. Ajattelu liittyy osassa 1 käsiteltyyn [tuoteajatteluun](/osa1#product-owner): backlogin kohteet ovat hypoteeseja siitä, mikä tuottaa käyttäjille arvoa, eivätkä valmiiksi tiedettyjä vaatimuksia.
 
+Product discovery vaikuttaa myös siihen, millainen vastuu tiimille annetaan. Marty Cagan erottaa toisistaan _feature-tiimit_, jotka toteuttavat niille valmiiksi päätettyjä ominaisuuksia, ja _tuotetiimit_, joille annetaan ratkaistavaksi ongelma ja jotka vastaavat myös siitä, että ratkaisu todella toimii ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Tuotetiimi siis tekee product discoveryä itse sen sijaan, että toteuttaisi muiden sille määrittelemiä vaatimuksia. Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään.
+
+Huomaa, että Caganin feature-tiimi on eri asia kuin [osassa 5](/osa5#less-käytännössä) LeSS:n yhteydessä esiteltävä feature-tiimi, jolla tarkoitetaan arkkitehtuurin kerrosten sijaan kokonaisia asiakkaalle arvoa tuottavia toiminnallisuuksia toteuttavaa tiimiä.
+
 ## Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa
 
 Käydään seuraavaksi läpi yleinen tapa vaatimustenhallintaan ja projektisuunnitteluun ketterässä ohjelmistotuotantoprojektissa.

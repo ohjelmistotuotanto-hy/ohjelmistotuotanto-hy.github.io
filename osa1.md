@@ -315,7 +315,7 @@ Kuten [aiemmin](#vesiputousmallin-ongelmat) todettiin, vesiputousmallin perusong
 
 80- ja 90-luvuilla kehitellyt iteratiiviset prosessimallit korjaavat monia näistä epäkohdista, mutta ne ovat kuitenkin vielä vahvasti suunnitelmavetoisia (engl. plan-based) ja olettavat, että ohjelmistotuotanto on jossain määrin _kontrolloitavissa oleva prosessi_.
 
-Keskiössä on siis tarkka projektisuunnitelma (joka toki iteratiivisissa malleissa voi elää) ja sen noudattaminen sekä selkeä roolijako: projektipäälliköt, analyytikot, arkkitehdit, ohjelmoijat, testaajat muodostavat kukin omiin vastuualueisiinsa liittyvät tiiminsä.
+Keskiössä oli siis tarkka projektisuunnitelma (joka toki iteratiivisissa malleissa saattoi elää) ja sen noudattaminen sekä selkeä roolijako: projektipäälliköt, analyytikot, arkkitehdit, ohjelmoijat, testaajat muodostavat kukin omiin vastuualueisiinsa liittyvät tiiminsä.
 
 ### Ketterien menetelmien perusolettamuksia
 
@@ -325,7 +325,7 @@ Näiden seikkojen takia ketterien menetelmien mukaan järkevää onkin lähteä 
 
 [Empiirisessä prosessissa](https://resources.scrumalliance.org/Article/empirical-process-control-scrum) taustalla olevina periaatteina ovat _läpinäkyvyys_ (transparency), _tarkkailu_ (inspection) ja _mukauttaminen_ (adaptation). On oleellista, että koko tiimi on mahdollisimman hyvin selvillä siitä, mitä tapahtuu ja mistä puhutaan, esim. mitä tarkoitetaan, kun jonkin asian sanotaan olevan valmiina. Projektiin liittyvien asioiden suhteen tulee siis vallita suuri läpinäkyvyys (transparency), joka taas mahdollistaa asioiden tilan jatkuvan tarkkailun (inspection), eli onko tuotteen kehitys menossa sinne suuntaan, mikä on asiakkaan nykyisen näkemyksen mukainen ja tukevatko tiimin käytänteet optimaalisella tavalla sovelluksen kehitystä. Jos ja _kun_ asioissa havaitaan parannuksen varaa, mukautetaan (adaptation) tuotteen kehityssuuntaa tai tiimin toimintaperiaatteita.
 
-Ketterien menetelmien oletuksena on, että perinteinen command-and-control-tyylinen hallinnointi ja ihmisten sekä tiimien jakaminen eri vastuualueisiin (suunnittelija, ohjelmoija, testaaja, frontend, backend) ei tuota optimaalista tulosta.
+Ketterien menetelmien oletuksena on myös, että perinteinen command-and-control-tyylinen ylhäältäpäin tapahtuva johtaminen ja ihmisten sekä tiimien jakaminen eri vastuualueisiin (suunnittelija, ohjelmoija, testaaja, frontend, backend) ei tuota optimaalista tulosta.
 
 Sen sijaan oletetaan että ihmiset toimivat parhaiten [itseorganisoituvissa](https://www.mountaingoatsoftware.com/blog/the-role-of-leaders-on-a-self-organizing-team) (engl. self-organizing) tiimeissä, jossa tiimille annetaan työskentelyrauha ja uskotaan tiimin omaan kykyyn ottaa vastuu toiminnastaan. Itseorganisoituva tiimi toimii kollektiivina, kantaen yhteisen vastuun tekemisistään, eli tiimi onnistuu ja epäonnistuu yhdessä. Yhteinen vastuu edellyttää, että virheistä voi puhua ilman syyllistämistä, ks. [psykologinen turvallisuus](#psykologinen-turvallisuus).
 
@@ -335,7 +335,7 @@ Tutustutaan nyt Scrumiin, joka on tällä hetkellä selvästi suosituin ketterä
 
 Termi Scrum ja osa sen taustalla olevista periaatteista löytyvät ensimmäistä kertaa 1986 julkaistusta artikkelista [The new new product development game](https://hbr.org/1986/01/the-new-new-product-development-game), missä japanilaiset professorit Takeuchi ja Nonaka kuvailevat mitä yhteisiä toimintaperiaatteita joukolla menestyneitä yrityksiä (mm. Fuji-Xerox, Canon, Honda, NEC, Epson, Brother, 3M, Xerox, Hewlett-Packard) on.
 
-Tänä päivänä tuntemamme Scrum, joka alun perin suunnattiin ohjelmistokehitykseen, kehitettiin Ken Schwaberin ja Jeff Sutherlandin toimesta 1990-luvun puolivälissä. Scrumin perussisällön määrittelee [The Scrum guide](https://scrumguides.org/), noin 13-sivuinen dokumentti, joka päivittyy aika ajoin. Voimassa oleva versio on vuodelta 2020. Kesällä 2025 Jeff Sutherland julkaisi yhdessä Ralph Jochamin ja John Colemanin kanssa Scrum Guidea täydentävän, huomattavasti laajemman [Scrum Guide Expansion Packin](https://scrumexpansion.org/), joka käsittelee mm. tuoteajattelua ja tekoälyn roolia Scrum-tiimeissä. Se ei korvaa Scrum Guidea, vaan on vapaaehtoinen lisäosa.
+Tänä päivänä tuntemamme Scrum, joka alun perin suunnattiin ohjelmistokehitykseen, kehitettiin Ken Schwaberin ja Jeff Sutherlandin toimesta 1990-luvun puolivälissä. Scrumin perussisällön määrittelee [The Scrum guide](https://scrumguides.org/), 13-sivuinen dokumentti, joka päivittyy aika ajoin. Voimassa oleva versio on vuodelta 2020. Kesällä 2025 Jeff Sutherland julkaisi yhdessä Ralph Jochamin ja John Colemanin kanssa Scrum Guidea täydentävän, huomattavasti laajemman [Scrum Guide Expansion Packin](https://scrumexpansion.org/), joka käsittelee mm. tuoteajattelua ja tekoälyn roolia Scrum-tiimeissä. Se ei korvaa Scrum Guidea, vaan on vapaaehtoinen lisäosa.
 
 Kehittäjiensä sanoin
 
@@ -401,9 +401,7 @@ Product owner vastaa tuotteen tavoitteen määrittelemisestä ja kommunikoinnist
 
 Product ownerin vastuulla on myös varmistua siitä, että kehittäjät varmasti ymmärtävät toteutettavaksi valitut vaatimukset.
 
-Product ownerin tehtävää tarkastellaan nykyään usein _tuoteajattelun_ (engl. product thinking) näkökulmasta. Keskeistä on erottaa toisistaan _tuotos_ (engl. output) eli valmistuneet ominaisuudet ja _vaikutus_ (engl. outcome) eli muutos käyttäjien toiminnassa tai liiketoiminnassa, jota ominaisuuksilla tavoitellaan. Toteutettujen ominaisuuksien määrä ei vielä kerro, onko ohjelmistosta ollut hyötyä. Myös Scrumin tuotteen tavoite (product goal) kuvaa tavoiteltua tilaa eikä listaa toteutettavia ominaisuuksia.
-
-Marty Cagan erottaa toisistaan _feature-tiimit_, jotka toteuttavat niille annettuja ominaisuuksia, ja _tuotetiimit_, joille annetaan ratkaistavaksi ongelma ja jotka vastaavat siitä, että ratkaisu todella toimii ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään. Palaamme käyttäjien todellisten tarpeiden selvittämiseen [osassa 2](/osa2).
+Product ownerin tehtävää tarkastellaan nykyään usein _tuoteajattelun_ (engl. product thinking) näkökulmasta. Keskeistä on erottaa toisistaan _tuotos_ (engl. output) eli valmistuneet ominaisuudet ja _vaikutus_ (engl. outcome) eli muutos käyttäjien toiminnassa tai liiketoiminnassa, jota ominaisuuksilla tavoitellaan. Toteutettujen ominaisuuksien määrä ei vielä kerro, onko ohjelmistosta ollut hyötyä. Myös Scrumin tuotteen tavoite (product goal) kuvaa tavoiteltua tilaa eikä listaa toteutettavia ominaisuuksia. Palaamme käyttäjien todellisten tarpeiden selvittämiseen [osassa 2](/osa2#kokeileva-vaatimusmäärittely-lean-startup).
 
 ### Scrum master
 
@@ -458,7 +456,7 @@ Jotta vallitsisi yksimielisyys siitä, minkälaisella laatutasolla ohjelmistoa o
 
 Valmiiksi tehty määritellään useimmiten tarkoittamaan sitä, että vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu, testaus automatisoitu, dokumentoitu, integroitu muuhun ohjelmistoon ja viety tuotantoympäristöön. Valmiin määritelmä siis parhaassa tapauksessa on määritelty niin, että kun asian sanotaan olevan valmis, ei siihen liity enää yhtään ekstratyötä.
 
-Kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan sillä nimenomaan definition of donen tasolla toimivia ja valmiiksi tehtyjä vaatimuksia. Jos jokin backlogin vaatimus ei täytä definition of donea, sitä ei voi julkaista eikä edes esitellä sprintin katselmoinnissa, vaan se palaa product backlogiin myöhemmin toteutettavaksi.
+Kun sprintin lopussa tavoitteena on olla toimiva ohjelma, tarkoitetaan sillä nimenomaan definition of donen tasolla toimivia ja valmiiksi toteutettuja vaatimuksia. Jos jokin backlogin vaatimus ei täytä definition of donea, sitä ei voi julkaista eikä edes esitellä sprintin katselmoinnissa, vaan se palaa product backlogiin myöhemmin toteutettavaksi.
 
 Jos sprintin aikana osoittautuu että tiimi ei ehdi toteuttamaan kaikkea suunniteltua, ei ole hyväksyttävää tinkiä laadusta, vaan osa vaatimuksista jätetään seuraavaan sprinttiin.
 
@@ -497,7 +495,7 @@ Vuoden 2020 Scrum Guide määrittelee daily scrumin tarkoituksen seuraavasti:
 
 Daily scrum ei siis ole pelkkä statuspalaveri, vaan osa Scrumin inspect-and-adapt-sykliä: asioiden tilaa tarkastellaan päivittäin, ja kehitystyötä suunnataan tarvittaessa uudelleen, jotta sprintin tavoite pystytään edelleen saavuttamaan.
 
-Scrum Guide ei määrää palaverin muotoa, mutta pitkään Scrumin suosittelema kolmen kysymyksen malli on edelleen yleinen. Siinä jokainen kehittäjä vastaa vuorollaan kysymyksiin
+Uusin Scrum Guide ei määrää palaverin muotoa, mutta  Scrum Guiden aiempien versioiden suosittelema kolmen kysymyksen malli on edelleen yleinen. Siinä jokainen kehittäjä vastaa vuorollaan kysymyksiin
 
 - Mitä sain aikaan edellisen tapaamisen jälkeen?
 - Mitä aion saada aikaan ennen seuraavaa tapaamista?
@@ -588,7 +586,7 @@ Hajautettu ohjelmistotuotanto, alihankkijoiden käyttö ja massiivista kokoluokk
 - _Itseohjautuvuuden ja skaalautumisen rajat_: Scrum korostaa tiimien itseohjautuvuutta liikaa, eikä se kerro, miten toimitaan usean tiimin kanssa.
 - _Product backlogin hallinta_: Scrum antaa liian vähän ohjeita product backlogin organisointiin.
 
-Koska Scrum ei ota mitään kantaa ohjelmistokehityksen _teknisiin periaatteisiin_, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden. Kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riskiä nostaa se jos projektissa ei ole automaattisia testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
+Koska Scrum ei ota mitään kantaa ohjelmistokehityksen _teknisiin periaatteisiin_, on suurena riskinä se, että sovelluksen sisäiseen laatuun ei kiinnitetä riittävää huomiota, ja tämä taas saattaa rapauttaa ketteryyden. Kehitys ehkä etenee aluksi nopeasti, mutta hidastuu ajan myötä sovelluksen teknisen velan tehdessä sen laajentamisen yhä vaikeammaksi. Erityisesti tätä riskiä nostaa se jos projektissa ei ole automatisoituja testejä. Scrum ei ota mitään kantaa sovelluksen testaukseen.
 
 Martin pitää scrum masterin roolia ongelmallisena monellakin tavalla. Ensinnäkin häntä hiertää sertifiointisysteemi, scrum mastereita pikakoulutetaan parin päivän kursseilla ja joskus scrum masterina toimiikin aiemmin projektimanagerin titteliä kantanut henkilö. Vaikka sertifikaatti on suoritettu, ei henkilön toimintatapaan ole välttämättä tullut muita muutoksia kuin uusi terminologia.
 
@@ -609,9 +607,9 @@ _Scrum is easy to understand but extremely difficult to master_.
 
 Laajoihin kielimalleihin perustuvat työkalut, kuten [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/) ja GitHub [Copilot](https://github.com/features/copilot), ovat muuttaneet ohjelmistokehitystä nopeasti. Alun koodin täydennyksestä ja chat-käyttöliittymistä on siirrytty _agentteihin_ (esim. Copilotin Agent-tila, Claude Code ja Cursor), jotka osaavat itsenäisesti tehdä useisiin tiedostoihin ulottuvia muutoksia, suorittaa koodia ja testejä ja korjata tekemisiään virheilmoitusten perusteella.
 
-Itse käytän koodatessa pääasiassa [Claude Codea](https://claude.com/product/claude-code), mutta koska se on maksullinen, kurssilla käytetään GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Student -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta.
+Itse käytän koodatessa [Claude Codea](https://claude.com/product/claude-code), mutta koska se on maksullinen, kurssilla käytetään GitHub Copilotia, joka on natiivisti integroitu VS Codeen. Yliopisto-opiskelijat saavat Copilot Student -version käyttöönsä ilmaiseksi GitHub [Educationin](https://github.com/education/students) kautta. Vaihtoehtoisesti tehtävät voi tehdä avoimen lähdekoodin [OpenCode](/opencode/)-agentilla CurreChatin kielimalleja käyttäen.
 
-Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Agentteja käytettäessä hallusinointi onkin ohjelmoinnissa nykyään melko vähäistä, sillä agentti suorittaa koodin ja testit itse ja korjaa virheet niiden perusteella. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen. Lisäksi kielimallit keksivät välillä olemattomia kirjastojen nimiä, ja hyökkääjät ovat alkaneet rekisteröidä näitä nimiä haitallisille paketeille. Riskejä on koottu tarkemmin [tekoälymateriaaliin](/genai/#riskit-koottuna).
+Kielimallien ehkä suurin ongelma on hallusinointi: ne generoivat välillä täysin vakuuttavan näköisiä vastauksia, jotka ovat kuitenkin täysin päättömiä. Ohjelmoidessa hallusinoitu koodi jää usein nopeasti kiinni, jos koodi ei toimi. Agentteja käytettäessä hallusinointi onkin ohjelmoinnissa nykyään melko vähäistä, sillä agentti suorittaa koodin ja testit itse ja korjaa virheet niiden perusteella. Ongelmallisempia tilanteita ovat ne, missä tekoälyn generoima koodi näyttää toimivan, mutta sisältää vaikeammin havaittavia bugeja tai tietoturvahaavoittuvuuksia. Jos asiaan ei kiinnitetä huomiota, tekoäly myös usein kirjoittaa uutta koodia sen sijaan, että hyödyntäisi olemassa olevaa, mistä voi seurata koodikannan rapautuminen. Riskejä on koottu tarkemmin [tekoälymateriaaliin](/genai/#riskit-koottuna).
 
 Tekoälyä käytettäessä vastuu jää siis aina ohjelmoijalle.
 
@@ -621,6 +619,6 @@ Kielimallien nopea kehitys asettaa ohjelmointia opiskelevan haastavaan asemaan: 
 
 Kun koodin kirjoittaminen muuttuu halvaksi, arvokkaammaksi muuttuu se, mitä agentti ei osaa tehdä puolestamme. Tärkein näistä on suunnan näyttäminen. Agentti toteuttaa taitavasti sen, mitä sille kerrotaan, mutta se ei tiedä, mitä kannattaisi tehdä. Ihmistä tarvitaan selvittämään, mitä asiakas oikeasti tarvitsee, priorisoimaan tehtävät asiat ja arvioimaan, tuottaako ohjelmisto asiakkaalle arvoa. Nopeasti koodia tuottava agentti on hyödytön, jos se rakentaa väärää asiaa.
 
-Oman näkemykseni (jonka varmaan lähes jokainen alalla toimiva jakaa) mukaan myös syvällinen tekninen osaaminen on edelleen oleellista. Agentin tuotosta ei pysty arvioimaan, eikä agenttia ohjaamaan oikeaan suuntaan, jos ei itse ymmärrä, mitä koodi tekee ja millainen on hyvä ratkaisu. GitHub Copilot onkin varsin hyvin nimetty tuote, kyseessä on lentoperämies, ohjelmoija on edelleen kapteeni, joka päättää minne ollaan menossa ja kantaa lopullisen vastuun.
+Syvällistä teknistä osaamista tarvitaan edelleen. Agentin tuotosta arvioidaan yhä useammin testien, toimivan sovelluksen ja suunnitteluratkaisujen kautta eikä pelkästään koodia rivi riviltä lukemalla, mutta sekin edellyttää ymmärrystä siitä, miten ohjelmistot rakentuvat ja millainen on hyvä ratkaisu. Ilman tätä ymmärrystä agenttia ei myöskään pysty ohjaamaan oikeaan suuntaan. Ohjelmointia siis kannattaa edelleen opetella, mutta painopiste siirtyy koodirivien tuottamisesta kokonaisuuden hallintaan: ohjelmiston suunnitteluun, ratkaisujen arvioimiseen ja laadun varmistamiseen.
 
 Tekoälyn hyödyntämistä ohjelmistotuotannossa käsitellään tarkemmin erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/), joka etenee viikoittain laskareiden [tekoäly]-tehtävien tahdissa.
