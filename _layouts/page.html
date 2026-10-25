@@ -1,6 +1,16 @@
 ---
 layout: default
 ---
+{% assign task_pages = "tehtavat1.md,tehtavat2.md,tehtavat3.md,tehtavat4.md,tehtavat5.md,tehtavat6.md,tehtavat7.md" | split: "," %}
+{% if task_pages contains page.path %}
+<nav class="sidebar-toc" aria-label="Sisällys" hidden>
+  <a class="sidebar-toc-title" href="/tehtavat/">Kaikki tehtävät</a>
+</nav>
+{% elsif page.path contains "osa" or page.path == "genai.md" or page.path == "miniprojekti.md" %}
+<nav class="sidebar-toc" aria-label="Sisällys" hidden>
+  <a class="sidebar-toc-title" href="/sisallys/">Sisällysluettelo</a>
+</nav>
+{% endif %}
 <article class="post">
 
   <header class="post-header">
@@ -12,15 +22,8 @@ layout: default
   </header>
 
   <div class="post-content">
-    {% assign task_pages = "tehtavat1.md,tehtavat2.md,tehtavat3.md,tehtavat4.md,tehtavat5.md,tehtavat6.md,tehtavat7.md" | split: "," %}
-    {% if task_pages contains page.path %}
-    <details class="vihje tehtavalista" hidden>
-      <summary>Tämän viikon tehtävät</summary>
-      <ul></ul>
-    </details>
-    {% endif %}
     {% if page.path == "genai.md" %}
-    <details class="vihje tehtavalista" data-sections hidden>
+    <details class="vihje tehtavalista" hidden>
       <summary>Sisältö</summary>
       <ul></ul>
     </details>

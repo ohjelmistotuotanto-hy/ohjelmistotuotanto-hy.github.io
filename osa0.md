@@ -13,8 +13,6 @@ permalink: /osa0/
 
 {% include miniproj_ilmo.md %}
 
-#### [Sisällysluettelo](/sisallys/#osa-0-johdanto)
-
 Kurssi on jo ohjelmointia hallitseville tarkoitettu johdanto _ohjelmistotuotantoon_, eli systemaattiseen tapaan tehdä hieman laajempia ohjelmistoja useamman hengen tiimissä ulkoiselle asiakkaalle. Erityinen paino kurssilla on niin sanotuissa ketterissä ohjelmistotuotantomenetelmissä.
 
 ## Esitiedot ja sisältö
@@ -52,15 +50,15 @@ Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentoj
 
 Kurssiin liittyy viikoittaiset laskuharjoitukset. **Tehtäviä laskareissa on kahdentyyppisiä**.
 
-Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_.
+- Luennoilla ja tässä materiaalissa käytävää teoriaa kertaavat **viikoittaiset monivalintatehtävät**, monivalintatehtävien deadline on _sunnuntaina klo 23.59_.
 
-Toinen osa tehtävistä käsittelee **ohjelmistotuotantoon liittyviä teknisempiä asioita, kuten versionhallintaa, testaamista ja ohjelmistojen konfigurointia**, näiden deadline on _maanantaina klo 23.59_. Tehtävien ohjelmointikieli on Python.
+- Toinen osa tehtävistä käsittelee **ohjelmointia, versionhallintaa, automatisoitua testaamista ja tekoälyn hyödyntämistä ohjelmistokehityksessä**, näiden deadline on _maanantaina klo 23.59_ (viikon 7 deadline poikkeaa tästä, ks. [tehtäväsivu](/tehtavat/)). Tehtävien ohjelmointikieli on Python.
 
-Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viikolla 3 noin 6 tuntia, viikoilla 4–5 noin 4 tuntia ja viikoilla 6–7 noin 6 tuntia. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
+Laskuharjoitusten oletettu kuormittavuus on viikoilla 1–2 noin 8 tuntia, viikolla 3 noin 6 tuntia, viikoilla 4–6 noin 4 tuntia ja viikolla 7 noin 6 tuntia. Monivalintatehtäviin vastaaminen on suhteellisen nopeaa, mutta järkevästi vastaaminen edellyttää osallistumista luennoille ja/tai viikon materiaalin lukemista.
 
 ### Tekoäly kurssilla
 
-Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjoitellaan koodausagenttien hallittua käyttöä ohjelmistokehityksessä. Niihin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/). Tehtävissä käytetään oletusarvoisesti GitHub Copilotia, mutta ne voi tehdä myös [OpenCodella](/opencode/) CurreChatin kielimalleja käyttäen. Kurssimateriaalin kertaamiseen voit käyttää [OhtuBotteja](/ohtubotit/), esim. materiaalista kysymyksiä esittävää Kertaajaa. Huomaa kuitenkin, että [luentopäiväkirjat](#monivalintojen-korvaaminen-luentopäiväkirjalla) on kirjoitettava itse ilman tekoälyä.
+Viikoittaisiin tehtäviin kuuluu [tekoäly]-merkittyjä tehtäviä, joissa harjoitellaan koodausagenttien hallittua käyttöä ohjelmistokehityksessä. Niihin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/). Tehtävissä käytetään oletusarvoisesti GitHub Copilotia, mutta ne voi tehdä myös [OpenCodella](/opencode/) CurreChatin kielimalleja käyttäen. Kurssimateriaalin kertaamiseen voit käyttää [OhtuBotteja](/ohtubotit/), esim. materiaalista kysymyksiä esittävää Kertaajaa. Huomaa kuitenkin, että monivalintatehtävät korvaavat [luentopäiväkirjat](/osa0/#monivalintojen-korvaaminen-luentopäiväkirjalla) on kirjoitettava itse ilman tekoälyä.
 
 ### Miniprojekti
 
@@ -130,7 +128,9 @@ Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteis
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
-Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Tämä on linjassa ns. testausvaikutuksen (engl. testing effect, retrieval practice) kanssa: asioiden aktiivinen mieleen palauttaminen tehostaa oppimista selvästi enemmän kuin pelkkä materiaalin uudelleenlukeminen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)). Monivalinnoille on nyt tarjolla vaihtoehto, **viikoittainen luentopäiväkirja!**
+Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Tämä on linjassa ns. testausvaikutuksen (engl. testing effect, retrieval practice) kanssa: asioiden aktiivinen mieleen palauttaminen tehostaa oppimista selvästi enemmän kuin pelkkä materiaalin uudelleenlukeminen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)).
+
+Monivalinnoille on tarjolla myös vaihtoehto, **viikoittainen luentopäiväkirja!**
 
 Luentopäiväkirja on noin A4:n kokoinen omin sanoin tehty yhteenveto viikon luentojen aihepiireistä. Muoto voi olla melkein mikä vaan, joko proosatekstiä, lista ranskalaisia viivoja tai vaikkapa mind map. Luentopäiväkirjan voi tehdä joko koneella tai käsin.
 
@@ -138,7 +138,7 @@ Luentopäiväkirja ei kuitenkaan missään tapauksessa saa olla plagiaatti (ts. 
 
 Kunkin viikon luentopäiväkirjan **deadline on viikon sunnuntai klo 23:59**, palautus tapahtuu sähköpostitse matti.luukkainen@helsinki.fi. Viikon palautus tuo 0–1 _monivalintapistettä_. Alle yhden pisteen saa lähinnä silloin, jos luentopäiväkirjaa ei ole tehty tosissaan. Luentopäiväkirjoista koostuvat monivalintapisteet muuntuvat kurssipisteiksi kuten normaalit monivalintapisteet, ks. [edellinen luku](/osa0/#laskarien-pisteytysperusteet).
 
-**HUOM** ainakaan tässä kurssiversiossa ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
+**HUOM** ei ole mahdollista tehdä osalla viikoista monivalintoja ja osalla luentopäiväkirjoja. Molemmat saa toki tehdä, ja tällöin kurssipisteet määrittyvät sen mukaan kumpi menee paremmin. Eli **jos päätät tehdä luentopäiväkirjoja, tee niitä ensimmäisestä viikosta lähtien**. 
 
 ## Versionhallinta 1 op
 
@@ -150,7 +150,7 @@ Kurssi siis sisältää kolme pääkomponenttia, luennot, viikoittaiset laskuhar
 
 Kurssin luennoilla keskitytään pääosin ohjelmistokehityksen teoriaan ja käsitteistöön. Laskareista monivalintatehtävät liittyvät kunkin viikon luentoihin.
 
-Versionhallintaa, ohjelmistojen konfigurointia, testausta ja ohjelmointia käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (lukuun ottamatta testaukseen liittyvää teoriaa).
+Ohjelmointia, versionhallintaa, automatisoitua testaamista ja tekoälyn hyödyntämistä käsittelevien teknisempien tehtävien aihepiirejä ei taas luennoilla käsitellä oikeastaan ollenkaan (lukuun ottamatta testaukseen liittyvää teoriaa). Tekoälytehtäviin liittyvä teoria on erillisessä materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/), jota luennoilla sivutaan vain vähän.
 
 Miniprojektin ideana taas on yhdistää luentojen teoria ja laskareissa käsitellyt teknisemmät asiat, ja soveltaa niitä käytännössä pienessä ohjelmistoprojektissa.
 

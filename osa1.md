@@ -13,8 +13,6 @@ permalink: /osa1/
 
 {% include miniproj_ilmo.md %}
 
-#### [Sisällysluettelo](/sisallys/#osa-1-ohjelmistotuotanto-ja-scrum)
-
 Ensimmäisessä osassa käydään aluksi katsaus _ohjelmistotuotantoon_, sen historiaan ja osa-alueisiin. Tämän jälkeen tutustutaan ensin ns. vesiputousmalliin, eli aiemmin suosittuun tapaan hallita ohjelmistoprojekteja ja sen jälkeen ketteriin menetelmiin, eli nykyään vallalla olevaan ohjelmistoprojektien kehitys- ja hallintatapaan.
 
 Tämän osan jälkipuolisko keskittyy suosituimpaan ketterään menetelmään _Scrumiin_, joka antaa erään konkreettisen ohjeiston sille miten ketteriä ohjelmistoprojekteja voi hallita.
@@ -85,13 +83,13 @@ Ohjelmistojen laatu eli _software quality_ on vielä testaustakin laajempi näk�
 
 Ohjelmistot elävät harvoin tyhjiössä, useimmiten niiden avulla halutaan automatisoida ja tehostaa jotain toimintaa, eli niillä on kaupallinen motivaatio, toisaalta ohjelmistojen kehittäminen on kallista, eli ohjelmistojen kehittämisen ja ylläpitämisen hintalappu on iso. Ohjelmistoihin liittyvien taloudellisten vaikuttimien ja realiteettien tarkastelua kuvaa _Software engineering economics_.
 
-Ohjelmistotuotanto pitää siis sisällään suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käsitellään ainakin jossain määrin näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Lähes jokaisesta aihepiiristä on kuitenkin tarjolla syventäviä kursseja maisteriopinnoissa.
+Ohjelmistotuotanto pitää siis sisällään suuren määrän hyvin erilaisiakin asioita. Tällä kurssilla käsitellään ainakin jossain määrin näitä kaikkia osa-alueita. Koska aihepiirien määrä on todella suuri ja aikaa rajallisesti, jää asioiden läpikäynti osin valitettavan pintapuoliseksi. Useasta aihepiiristä on kuitenkin tarjolla syventäviä kursseja maisteriopinnoissa.
 
 Aloittelevalle ohjelmistoalan opiskelijalle on tässä vaiheessa olennaisinta saada kokonaiskuva koko ohjelmistotuotannon kentästä ja sen jälkeen soveltaa sekä reflektoida oppimaansa teoriaa käytännön ohjelmistotyössä, esim. Tietojenkäsittelytieteen osaston opintojaksolla [Ohjelmistoprojekti](https://github.com/HY-TKTL/TKT20007-Ohjelmistotuotantoprojekti) tai oikeassa työelämässä. Aihepiiriä syventävät kurssit ovat todennäköisesti huomattavasti antoisampia kokemuksia siinä vaiheessa kun opiskelija omaa jo jonkin verran käytännön työkokemusta alalta.
 
 ## Ohjelmiston vaiheet ja elinkaari
 
-Edellisessä luvussa mainittujen ohjelmistotuotannon osa-alueiden
+Edellisessä luvussa mainittii ohjelmistotuotannon osa-alueeet
 
 - Software requirements, vaatimusten määrittely
 - Software design, suunnittelu
@@ -99,7 +97,7 @@ Edellisessä luvussa mainittujen ohjelmistotuotannon osa-alueiden
 - Software testing, testaus
 - Software maintenance, ylläpito
 
-voidaan ajatella muodostavan _vaiheet_ (engl. phases) joiden kautta ohjelmisto kehityksensä aikana etenee. Joskus näistä vaiheista käytetään nimitystä ohjelmiston _elinkaari_ (engl. software lifecycle). Aikojen saatossa on ollut erilaisia tapoja jäsentää ohjelmistojen kehittäminen elinkaaren suhteen, eli se miten ja kenen toimesta vaiheet on suoritettu, on vaihdellut.
+Näiden voidaan ajatella muodostavan _vaiheet_ (engl. phases) joiden kautta ohjelmisto kehityksensä aikana etenee. Joskus näistä vaiheista käytetään nimitystä ohjelmiston _elinkaari_ (engl. software lifecycle). Aikojen saatossa on ollut erilaisia tapoja jäsentää ohjelmistojen kehittäminen elinkaaren suhteen, eli se miten ja kenen toimesta vaiheet on suoritettu, on vaihdellut.
 
 ### Code'n'fix
 
@@ -107,7 +105,7 @@ Tietokoneiden historian alkuaikoina laitteet maksoivat paljon, ohjelmistot oliva
 
 Sovelluskehitys tapahtui pitkälti _code and fix_ -mentaliteetilla, eli koodattiin ja katsottiin toimiko softa. Ohjelmistojen yksinkertaisuuden ja suhteellisen halpuuden takia se ei muodostanut minkäänlaista pullonkaulaa työskentelylle vaan päinvastoin helpotti työskentelyä, kun laskutoimitukset voitiin tehdä tietokoneella käsin laskemisen sijaan.
 
-Vähitellen ohjelmistot alkoivat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin sotateollisuuteen. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
+Vähitellen ohjelmistot alkoivat kasvaa. Kehitettiin korkeamman tason ohjelmointikieliä kuten Fortran, Cobol, Algol ja ohjelmistojen käyttöalue alkoi laajeta muuallekin kuin puolustusteollisuuteen. Ohjelmistoja alettiin tekemään loppukäyttäjille, jotka eivät enää olleet ohjelmistoalan ammattilaisia, eli kuilu ohjelmiston tekijöiden ja loppukäyttäjien välillä alkoi kasvaa.
 
 Ohjelmistoala alkoi joutua ongelmiin, [wikipedian](https://en.wikipedia.org/wiki/Software_crisis) mukaan ongelmaksi alkoivat muodostua mm. seuraavat seikat
 
@@ -118,7 +116,7 @@ Ohjelmistoala alkoi joutua ongelmiin, [wikipedian](https://en.wikipedia.org/wiki
 
 ### Ohjelmistokriisi
 
-Lokakuussa 1968 Saksan Garmischissa NATO:n järjestämässä konferenssissa todettiinkin, että maailmassa on _software crisis_, eli ohjelmistokriisi. Konferenssista termi levisi yleiseen käyttöön.
+Lokakuussa 1968 Saksan Garmisch-Partenkirchenissä NATO:n järjestämässä konferenssissa todettiinkin, että maailmassa on _software crisis_, eli ohjelmistokriisi. Konferenssista termi levisi yleiseen käyttöön.
 
 Termillä viitataan siihen että on vaikeaa toteuttaa käyttökelpoisia, oikein toimivia, tehokkaita ja laajennettavissa olevia ohjelmistoja käytössä olevien resurssien puitteissa.
 
@@ -168,7 +166,7 @@ Ongelmista keskeisin on se, että tehtiin vaatimusmäärittely miten huolellises
 
 On myös kerta toisensa jälkeen nähty, että asiakas alkaa haluta muutoksia heti, kun näkee valmiin lopputuloksen. Koska ohjelmistot ovat abstrakteja tuotteita, joilla ei välttämättä ole aiempia esikuvia, on asiakkaiden hyvin vaikea pystyä etukäteen miettimään kaikkea toiminnallisuutta sillä tasolla, että se voitaisiin lyödä täysin lukkoon, kuten vesiputousmalli olettaa.
 
-Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut ymmärretyksi täysin vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
+Oma riskinsä on myös se, että suunnittelijat tai ohjelmoijat tulkitsevat dokumentoituja asiakkaan vaatimuksia väärin, tai että asiakas ei ole tullut täysin ymmärretyksi vaatimusten kirjaushetkellä, eli vaatimukset on jo lähtökohtaisesti dokumentoitu väärin. Oikeastaan kyseessä ei edes ole riski, vaan on jopa varmaa että ymmärrys- ja tulkintaepäselvyyksiä tapahtuu, oli dokumentaatio miten tarkkaa tahansa.
 
 Vesiputousmallin mukaisen vaatimusmäärittelyn, suunnittelun ja toteutuksen erottaminen on käytännössä järjetöntä tai jopa mahdotonta. Valittu ohjelmiston arkkitehtuuri eli "korkean tason rakenne" ja käytössä olevat toteutusteknologiat vaikuttavat suuresti määriteltyjen ominaisuuksien hintaan, määritellessä kannattaa siis miettiä myös suunnittelua ja toteutusta, ja sitä missä muodossa asiakkaan vaatimukset on ylipäätään mahdollista toteuttaa järkevin resurssein.
 
@@ -192,23 +190,23 @@ Roycen suosituksen mukaan sovelluksesta tulee ensin tehdä prototyyppi ja vasta 
 
 ![]({{ "/images/1-3.png" | relative_url }})
 
-Vesiputousmalli, tai ainakin Roycen nimeäminen vesiputousmallin isäksi, on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään helposti saatavilla internetissä ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
+Vesiputousmalli, tai ainakin Roycen nimeäminen vesiputousmallin isäksi, on siis suuri väärinymmärrys. Onneksi Roycen artikkeli on nykyään saatavilla internetissä (enää tosin ainoastaan web.archive.org:ssa) ja kaikki voivat käydä itse tarkistamassa mitä Royce on vesiputousmallista sanonut.
 
 ### Iteratiivinen ja inkrementaalinen ohjelmistokehitys
 
 Lineaarisen mallin ongelmiin reagoinut _iteratiivinen_ tapa tehdä ohjelmistoja alkoi yleistyä 80- ja 90-luvuilla (mm. Barry Boehmin spiraalimalli, prototyyppimalli, Rational Unified Process).
 
-Iteratiivisessa mallissa ohjelmistotuotanto jaetaan pienempiin aikaväleihin, eli _iteraatioihin_. Toisin kuin vesiputousmallin mukaisessa ohjelmistotuotannossa, iteratiivisesti edetessä ei pyritä tekemään heti alussa kattavaa määrittelyä ja suunnittelua.
+Iteratiivisessa mallissa kehitystyö jaetaan lyhyisiin, yleensä muutaman viikon mittaisiin jaksoihin eli _iteraatioihin_. Jokaisessa iteraatiossa käydään läpi kaikki ohjelmistoprosessin vaiheet: osa ohjelmistosta määritellään, suunnitellaan, toteutetaan ja testataan. Toisin kuin vesiputousmallissa, kattavaa määrittelyä ja suunnittelua ei siis tehdä heti alussa, vaan ne tarkentuvat sitä mukaa kun kehitys etenee.
 
-Jokaisen iteraation aikana määritellään, suunnitellaan, toteutetaan sekä testataan osa ohjelmistoa, eli ohjelmisto kehittyy vähitellen. Ohjelma valmistuu siis pala palalta, tämän takia iteratiivisten menetelmien sanotaan olevan myös _inkrementaalisia_.
+Malli on samalla _inkrementaalinen_: jokainen iteraatio tuottaa toimivan lisäyksen (inkrementin) aiempaan, eli ohjelmisto kasvaa pala palalta. Termit kuvaavat kahta eri asiaa. _Iteratiivisuus_ tarkoittaa saman työskentelysyklin toistamista ja tuotoksen parantamista palautteen perusteella, _inkrementaalisuus_ taas ohjelmiston kasvamista vähitellen. Käytännössä nykyiset menetelmät ovat molempia.
 
 Asiakasta tavataan jokaisen iteraation välissä, asiakas näkee sen hetkisen version ohjelmasta ja pystyy vaikuttamaan seuraavien iteraatioiden kulkuun. Ohjelmiston inkrementaalisen kasvamisen takia sen perusversio on mahdollista saada loppukäyttäjien käyttöönkin vielä kehitystyön ollessa käynnissä.
 
-Seuraava kuva havainnollistaa sitä, että iteratiivisessa mallissa kaikkia ohjelmistoprosessin vaiheita suoritetaan jokaisessa iteraatiossa. Määrittelyllä ja suunnittelulla on alussa suurempi painoarvo, mutta ohjelmiston toteutus ja testaus alkaa jo ensimmäisten iteraatioiden aikana.
+Seuraava kuva havainnollistaa mallia. Määrittelyllä ja suunnittelulla on alussa suurempi painoarvo, mutta toteutus ja testaus alkavat jo ensimmäisessä iteraatiossa, ja ohjelmisto kasvaa jokaisen iteraation myötä.
 
-![]({{ "/images/1-4.png" | relative_url }})
+![Iteratiivinen ja inkrementaalinen ohjelmistokehitys]({{ "/images/1-4.svg" | relative_url }})
 
-Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista tapaa (kahden iteraation versiota) monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei oikeastaan ollut inkrementaalinen, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutettiin.
+Vesiputousmallin "isä" Royce suositteli siis jo vuonna 1970 juurikin iteratiivista tapaa (kahden iteraation versiota) monimutkaisten ohjelmistojen kehitysmalliksi. Roycen ehdottama menetelmä ei kuitenkaan ollut inkrementaalinen yllä kuvatussa mielessä, sillä ensimmäisen iteraation aikana rakennettiin ainoastaan prototyyppi, jonka pohjalta varsinainen sovellus määriteltiin, suunniteltiin ja toteutettiin.
 
 Myös Yhdysvaltojen puolustusministeriö muutti kantaansa. Vuonna 1994 vesiputousta suosineen standardin korvasi MIL-STD-498, joka salli myös iteratiivisen kehityksen, ja vuonna 2000 julkaistu hankintaohje DoD 5000.2 alkoi suorastaan suosittelemaan iteratiivista ohjelmistoprosessia:
 
@@ -226,18 +224,20 @@ Ristiriidan seurauksena syntyi joukko ketteriä menetelmiä (engl. agile methods
 
 ### Ketterä manifesti
 
-17 ketterien menetelmien pioneeria kerääntyi helmikuussa 2001 kokoukseen, jonka tuloksena oli [ketterä manifesti](http://agilemanifesto.org/), eli näkemys siitä, mitä ketterällä ohjelmistokehityksellä tarkoitetaan.
+17 ketterien menetelmien pioneeria kerääntyi helmikuussa 2001 kokoukseen, jonka tuloksena oli [ketterä manifesti](http://agilemanifesto.org/), eli näkemys siitä, mitä ketterällä ohjelmistokehityksellä tarkoitetaan:
 
-Manifesti on käännetty monelle kielelle, myös [suomeksi](https://agilemanifesto.org/iso/fi/manifesto.html), mutta tarkastellaan sen englanninkielistä versiota:
+![Manifesto for Agile Software Development]({{ "/images/manifesto.jpeg" | relative_url }})
 
-We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+Manifesti on käännetty monelle kielelle, myös [suomeksi](https://agilemanifesto.org/iso/fi/manifesto.html). Suomeksi manifesti kuuluu seuraavasti:
 
-- _Individuals and interactions_ over processes and tools
-- _Working software_ over comprehensive documentation
-- _Customer collaboration_ over contract negotiation
-- _Responding to change_ over following a plan
+Etsimme parempia tapoja tehdä ohjelmistokehitystä, kun teemme sitä itse ja autamme muita siinä. Kokemuksemme perusteella arvostamme:
 
-That is, while there is value in the items on the right, we value the items on the left more.
+- _Yksilöitä ja kanssakäymistä_ enemmän kuin menetelmiä ja työkaluja
+- _Toimivaa ohjelmistoa_ enemmän kuin kattavaa dokumentaatiota
+- _Asiakasyhteistyötä_ enemmän kuin sopimusneuvotteluja
+- _Vastaamista muutokseen_ enemmän kuin pitäytymistä suunnitelmassa
+
+Jälkimmäisilläkin asioilla on arvoa, mutta arvostamme ensiksi mainittuja enemmän.
 
 Manifesti siis koostuu neljästä vastakkainasettelun sisältävästä kohdasta, jotka ilmaisevat mikä on ketterien menetelmien näkemyksen mukaan oleellisinta ohjelmistokehityksessä. Ensimmäinen kohta sanoo, että erilaiset työkalut ja prosessit voivat olla tärkeää, mutta _vielä tärkeämpää_ ovat ohjelmiston kehittäjät, käyttäjät, tilaajat ja heidän välinen interaktio. Toinen kohta taas ei kiellä dokumentaation tärkeyttä, mutta sanoo että lopulta tärkeintä on toimiva ohjelmisto. Ketterä manifesti ei siis kiellä tai pidä arvottomana "vanhan maailman" tärkeänä pitämiä asioita kuten _suunnitelman noudattamista_, mutta osoittaa, että niitäkin oleellisimpia seikkoja on, kuten _muutokseen reagoiminen_.
 
@@ -249,43 +249,43 @@ Manifesti sisältää yllä olevan lisäksi 12 hieman konkreettisempaa toiminnan
 
 Aloitetaan kolmesta periaatteesta.
 
-> Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+> Tärkeimpänä tavoitteenamme on täyttää asiakkaan toiveet toimittamalla arvokasta ohjelmistoa jo varhaisessa vaiheessa ja jatkuvasti.
 
-> Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+> Toimitamme toimivaa ohjelmistoa säännöllisesti, parin viikon tai kuukauden välein, mieluummin lyhyemmällä aikavälillä.
 
-> Working software is the primary measure of progress.
+> Toimiva ohjelmisto on ensisijainen edistymisen mittari.
 
-Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen, arvoa tuottavan ohjelmiston toimittaminen asiakkaalle. Toisin kuin vesiputousmallissa, aloitetaan valmiin toiminnallisuuden toimittaminen jo aikaisessa vaiheessa ja sitä tehdään toistuvasti tiheähkösti iteroiden. Manifesti puhuu _from couple of weeks to couple of months_, nykyään ideaali on vieläkin tiheämpi toimitusväli, jopa joka päivä tapahtuva useiden sovelluksen versioiden julkaisu. Tämä on mahdollista [jatkuvan toimittamisen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) ja [DevOpsin](/osa3#devops) käytänteiden avulla. Ohjelmistotiimien toimituskykyä mitataankin nykyään usein ns. [DORA-metriikoilla](https://dora.dev/guides/dora-metrics/), joista keskeisiä ovat mm. julkaisutiheys sekä aika, joka kuluu muutoksen tekemisestä sen päätymiseen tuotantoon.
+Oleellisinta kaikesta ja mittarina projektin edistymiselle on toimintakelpoisen, arvoa tuottavan ohjelmiston toimittaminen asiakkaalle. Toisin kuin vesiputousmallissa, aloitetaan valmiin toiminnallisuuden toimittaminen jo aikaisessa vaiheessa ja sitä tehdään toistuvasti tiheähkösti iteroiden. Manifesti puhuu parin viikon tai kuukauden välein tapahtuvasta toimittamisesta, nykyään ideaali on vieläkin tiheämpi toimitusväli, jopa joka päivä tapahtuva useiden sovelluksen versioiden julkaisu. Tämä on mahdollista [jatkuvan toimittamisen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) ja [DevOpsin](/osa3#devops) käytänteiden avulla. Ohjelmistotiimien toimituskykyä mitataankin nykyään usein ns. [DORA-metriikoilla](https://dora.dev/guides/dora-metrics/), joista keskeisiä ovat mm. julkaisutiheys sekä aika, joka kuluu muutoksen tekemisestä sen päätymiseen tuotantoon.
 
-> Business people and developers must work together daily throughout the project.
+> Liiketoiminnan edustajien ja kehittäjien tulee työskennellä yhdessä päivittäin koko projektin ajan.
 
-> The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+> Tehokkain ja toimivin tapa välittää tietoa kehitystiimille ja tiimin sisällä on kasvokkain käytävä keskustelu.
 
-> Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+> Otamme muuttuvat vaatimukset vastaan myös kehityksen loppuvaiheessa. Ketterät menetelmät valjastavat muutoksen asiakkaan kilpailueduksi.
 
 Vesiputousmallissa fundamentaalina periaatteena oli se, että ohjelmiston valmistaminen alkaa kattavalla vaatimusmäärittelyllä, jonka aikana asiakkaan vaatimukset selvitetään, dokumentoidaan huolellisesti ja "jäädytetään", eli vaatimuksiin ei sen koommin edes sallita muutoksia. Asiakas on seuraavan kerran mukana kehitystyössä ehkä vasta lopussa tekemässä hyväksymistestausta.
 
 Ketterän manifestin periaatteet ovat täysin päinvastaiset. Asiakkaiden ja sovelluskehittäjien oletetaan toimivan koko ohjelmiston kehityskaaren tiiviissä, jopa päivittäisessä yhteistyössä. Kommunikointi pyritään hoitamaan raskaan dokumentaation sijaan kevyemmin, jopa keskustellen. Manifestin aikaan keskustelu tarkoitti kasvokkain käytävää keskustelua, mutta etä- ja hybridityön yleistyttyä periaatetta tulkitaan väljemmin: kasvokkaisen keskustelun rinnalle ovat nousseet videopalaverit sekä asynkroninen, kirjallinen viestintä esim. chatissa, issueissa ja pull requesteissa, joka samalla jättää päätöksistä jäljen. Myös suhtautuminen vaatimusmäärittelyyn on mennyt päälaelleen. Asiakas saa vaihtaa vaatimuksiaan kesken ohjelmistokehityksen ja siihen jopa rohkaistaan, jos asiakas pystyy muuttamalla vaatimusmäärittelyä saavuttamaan kilpailuetua.
 
-> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+> Rakennamme projektit motivoituneiden yksilöiden ympärille. Annamme heille ympäristön ja tuen, jota he tarvitsevat, ja luotamme siihen, että he saavat työn tehtyä.
 
-> The best architectures, requirements, and designs emerge from self-organizing teams.
+> Parhaat arkkitehtuurit, vaatimukset ja suunnitelmat syntyvät itseorganisoituvissa tiimeissä.
 
 Ketterät periaatteet luottavat siihen, että kun ohjelmistokehittäjille annetaan sopiva työskentely-ympäristö, he tekevät parhaansa toimittaakseen asiakkaalle arvokkaan sovelluksen ilman tarvetta ulkoiselle kontrolloinnille. Ei ole tarvetta myöskään erillisille vaatimuksia keräävän analyytikon tai suunnittelusta huolehtivan ohjelmistoarkkitehdin rooleille, softatiimit osaavat toimia parhaiten itseorganisoitumalla, eli päättämällä itse toimintamenetelmistään. Tämän voi ajatella myös niin, että jos näitä rooleja omaavia ihmisiä on, he työskentelevät osana tiimejä eikä erillisissä tiimeissä.
 
-> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+> Tiimi tarkastelee säännöllisin väliajoin, kuinka toimia tehokkaammin, ja mukauttaa toimintaansa sen mukaisesti.
 
-Aiemmin mainittu periaate _Welcome changing requirements..._ siis kuvailee, että ketterä mahdollistaa ja suorastaan kannustaa tuotteen kehityssuunnan muuttamisen uusien tarpeiden ilmetessä. Vastaavasti kehitystiimin odotetaan tarkastelevan omaa toimintaansa ja muokkaavan sitä jatkuvasti parempaan suuntaan.
+Aiemmin mainittu periaate _Otamme muuttuvat vaatimukset vastaan..._ siis kuvailee, että ketterä mahdollistaa ja suorastaan kannustaa tuotteen kehityssuunnan muuttamisen uusien tarpeiden ilmetessä. Vastaavasti kehitystiimin odotetaan tarkastelevan omaa toimintaansa ja muokkaavan sitä jatkuvasti parempaan suuntaan.
 
-> Simplicity – the art of maximizing the amount of work not done – is essential.
+> Yksinkertaisuus – tekemättä jätettävän työn maksimointi – on olennaista.
 
-Vesiputousmalli ja muut vanhemmat kehitysmenetelmät antoivat suuren painoarvon dokumentaatiolle ja erilaisille "prosessin määräämille" raporteille, joihin käytettiin paljon aikaa ja vaivaa, ilman että ne olisivat kuitenkaan kovin paljoa edistäneet itse tuotteen valmistumista. Ketterissä menetelmissä ideana on eliminoida mahdollisimman pitkälle kaikki mikä ei ole primääristen tavoitteiden kannalta oleellista (_Working software is the primary measure of progress_). Myös ohjelmistokehittäjillä on pyrkimys rakentaa ohjelmistoon tulevaisuuden varalta kaikenlaista ekstraa, myös tällaiseen tulisi ketterässä hengessä suhtautua kriittisesti.
+Vesiputousmalli ja muut vanhemmat kehitysmenetelmät antoivat suuren painoarvon dokumentaatiolle ja erilaisille "prosessin määräämille" raporteille, joihin käytettiin paljon aikaa ja vaivaa, ilman että ne olisivat kuitenkaan kovin paljoa edistäneet itse tuotteen valmistumista. Ketterissä menetelmissä ideana on eliminoida mahdollisimman pitkälle kaikki mikä ei ole primääristen tavoitteiden kannalta oleellista (_Toimiva ohjelmisto on ensisijainen edistymisen mittari_). Myös ohjelmistokehittäjillä on pyrkimys rakentaa ohjelmistoon tulevaisuuden varalta kaikenlaista ekstraa, myös tällaiseen tulisi ketterässä hengessä suhtautua kriittisesti.
 
 Viimeiset kaksi periaatetta ovat ne, jotka tahtovat useimmiten unohtua:
 
-> Continuous attention to technical excellence and good design enhances agility.
+> Jatkuva huomio tekniseen laatuun ja hyvään suunnitteluun edistää ketteryyttä.
 
-> Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+> Ketterät menetelmät edistävät kestävää kehitystä. Tilaajien, kehittäjien ja käyttäjien tulisi pystyä ylläpitämään tasainen työtahti loputtomiin.
 
 Ketteryys edellyttää että tiimi pystyy muuttamaan tarvittaessa sovelluskehityksen suuntaa uusien tarpeiden noustessa esiin. Tämä taas edellyttää, että tiimin on ylläpidettävä ohjelmiston laatua riittävällä tasolla. Jos sovellus on sisäiseltä rakenteeltaan huono purkkaviritys, on siitä koko ajan vaikeampi laajentaa uusilla toiminnallisuuksilla, erityisesti sellaisilla, joiden tarvetta ei aiemmin osattu ennakoida. Eli jos laatuun ei kiinnitetä riittävää huomiota, ketteryys menetetään, ja sovelluksen kehitys muuttuu erittäin hitaaksi. Tämä myös tarkoittaa sitä, että ohjelmistoa on suunniteltava riittävissä määrin. Ketterässä kehityksessä suunnittelu ei kuitenkaan tapahdu kerralla etukäteen, vaan jatkuvasti koko kehityksen ajan: rakennetta parannetaan refaktoroimalla sitä mukaa kun uusia tarpeita ilmenee. Ilman jatkuvaa huolenpitoa sovelluksen rakenteesta sovellukseen kertyy [teknistä velkaa](/osa4#tekninen-velka), eikä se pysy rakenteeltaan laadukkaana.
 
@@ -450,7 +450,7 @@ Sprintin aikana ei tehdä muutoksia, jotka vaarantaisivat sprintin tavoitteen, e
 
 Eräs ketterän manifestin periaatteista nostaa ohjelmiston laadun ketteryyttä edistäväksi seikaksi
 
-> Continuous attention to technical excellence and good design enhances agility.
+> Jatkuva huomio tekniseen laatuun ja hyvään suunnitteluun edistää ketteryyttä.
 
 Myös Scrum asettaa suuren painoarvon tuotetun ohjelmiston laadulle. Jokaisessa sprintissähän lopputuloksena tulee olla increment, eli valmiiksi tehty, käyttöön valmis osa ohjelmistoa.
 
@@ -527,7 +527,7 @@ Myös katselmoinnin kesto on rajoitettu: enintään neljä tuntia kuukauden mitt
 
 Eräs ketterän manifestin periaatteista toteaa seuraavasti
 
-> At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+> Tiimi tarkastelee säännöllisin väliajoin, kuinka toimia tehokkaammin, ja mukauttaa toimintaansa sen mukaisesti.
 
 Scrumissa jokaisen sprintin päätteeksi pidettävä _retrospektiivi_ ilmentää tätä periaatetta. Siinä missä Scrumin muut palaverit on tarkoitettu enimmäkseen tuotteen suunnan tarkasteluun, retrospektiivissä Scrum-tiimi tarkastelee nimenomaan omaa työskentelyprosessiaan. Retrospektiivin maksimikesto on kolme tuntia kuukauden mittaisessa sprintissä.
 
