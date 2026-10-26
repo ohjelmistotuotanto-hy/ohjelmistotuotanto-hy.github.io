@@ -397,7 +397,7 @@ Laadunvarmistus on ohjelmistokehityksen ehkä tärkein vaihe, ja sen tärkein ke
 
 Tekoälyavusteinen sovelluskehitys tekee testauksesta entistäkin tärkeämpää. Tekoäly tuottaa nopeasti paljon koodia, joka näyttää usein uskottavalta mutta voi silti olla virheellistä. Kattavat automaattiset testit ovat paras keino varmistaa, että koodi, oli sen kirjoittanut ihminen tai tekoäly, toimii niin kuin pitää, ja että aiemmin toiminut toiminnallisuus ei hajoa muutosten myötä.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka.
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustua kurssilla Ohjelmistotekniikka.
 
 <input type="checkbox"> Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 
