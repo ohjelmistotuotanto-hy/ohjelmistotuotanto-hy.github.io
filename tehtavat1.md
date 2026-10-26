@@ -13,6 +13,10 @@ Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokeh
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
+### Ennakkokysely
+
+Vastaathan ennen tehtävien aloittamista kurssin ennakkokyselyyn osoitteessa <https://norppa.helsinki.fi/targets/121576179/feedback>
+
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -1036,3 +1040,4 @@ Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 - Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
 - Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
 
+<input type="checkbox"> **Muistutus:** jos et vielä vastannut kurssin [ennakkokyselyyn](https://norppa.helsinki.fi/targets/121576179/feedback), tee se nyt.
