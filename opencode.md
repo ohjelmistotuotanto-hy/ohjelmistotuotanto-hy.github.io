@@ -65,6 +65,8 @@ Valitse listasta palvelu, jonka API-avain sinulla on, ja liitä avain sitä pyyd
 
 Yhdistämisen voi tehdä myös suoraan komentoriviltä komennolla `opencode auth login`, ja käytettävissä olevat mallit näkee komennolla `opencode models`. Tuettujen palvelujen lista ja palvelukohtaiset ohjeet löytyvät [dokumentaatiosta](https://opencode.ai/docs/providers/).
 
+Kätevä vaihtoehto on [OpenRouter](https://openrouter.ai), jonka kautta saa yhdellä API-avaimella käyttöön käytännössä minkä tahansa kielimallin, niin Anthropicin, OpenAI:n ja Googlen mallit kuin avoimetkin mallit. Näin eri malleja on helppo kokeilla ja vertailla ilman, että jokaiseen palveluun tarvitsee luoda oma tili.
+
 API-avaimella tehty käyttö laskutetaan yleensä käytettyjen tokenien mukaan, ja agenttinen koodaus kuluttaa niitä paljon. Aseta palvelun hallintapaneelissa käytölle kuukausiraja, jotta laskusta ei tule yllätystä. Mallin valinta vaikuttaa hintaan merkittävästi, ja kurssin tehtäviin riittää yleensä hyvin keskitason malli.
 
 ## Käyttö

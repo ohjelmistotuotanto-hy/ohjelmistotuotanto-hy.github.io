@@ -138,7 +138,7 @@ Syntyi idea siitä, että _code'n'fix_ -mentaliteetin sijaan ohjelmistojen kehit
 
 Winston Roycen vuonna 1970 julkaisema artikkeli [Managing the development of Large Software Systems](https://web.archive.org/web/20230308124552/http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf) pohdiskelee isojen ohjelmistojen kehittämiseen liittyvää problematiikkaa. Artikkelin sivulla 2 Royce esittelee yksinkertaisen _prosessimallin_ (eli ohjeiston työvaiheiden jaksottamiseen), jossa ohjelmiston elinkaaren vaiheet suoritetaan lineaarisesti peräkkäin:
 
-![](https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/l-1.png)
+![Vesiputousmalli]({{ "/images/vesiputous.png" | relative_url }})
 
 Roycen versio kuvasta näyttää seuraavalta:
 
