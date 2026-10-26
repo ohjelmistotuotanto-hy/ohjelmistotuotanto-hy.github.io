@@ -4,6 +4,7 @@
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
+  - tallenne: [youtube](https://youtu.be/FL6nh-_-W7Y), [unitube](https://www.helsinki.fi/fi/unitube/video/bda293c0-60a0-40b3-ace2-e18bc86617cc?t=12:00)
   - vuoden 2025 tallenteet
     - [youtube](https://youtu.be/OH27cBF8xP4), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Luento 2: {{site.luennot[2]}}
