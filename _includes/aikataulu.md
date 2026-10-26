@@ -107,8 +107,6 @@
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
 
-    - Tallenne: [youtube](https://youtu.be/o_tIj9SngAI), [unitube](https://www.helsinki.fi/fi/unitube/video/51620f49-d316-4602-bb3d-49bbd0e0077e)
-
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
