@@ -9,6 +9,7 @@
     - [youtube](https://youtu.be/OH27cBF8xP4), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
+  - tallenne: [youtube](https://youtu.be/u25_9B7nu5g), [unitube](https://www.helsinki.fi/fi/unitube/video/eb08df91-cab7-4d3f-bfc7-66de3021efbc)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/7lAj-idARFs), [unitube](https://www.helsinki.fi/fi/unitube/video/bc0e48bc-91ba-4964-9ff6-bf5055ac5d4c)
 - Laskarit
   - Luentojen 1 ja 2 <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
