@@ -10,8 +10,16 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Miniprojektit alkavat 9.11. alkavalla viikolla. Stay tuned!</li>
-    <li>Aloitustilaisuuksiin <a href="{{site.stats_url}}/miniproject">ilmoittautuminen</a> alkaa 27.10. ja päättyy to 5.11. klo 23.59</li>
+    <li>Miniprojektit alkavat 9.11. alkavalla viikolla. Aloitustilaisuudet (jokainen osallistuu yhteen):
+      <ul>
+        <li>ma 9.11. klo 14–16 C220</li>
+        <li>ti 10.11. klo 14–16 D122</li>
+        <li>ke 11.11. klo 16–18 C220</li>
+        <li>to 12.11. klo 10–12 BK114</li>
+        <li>to 12.11. klo 14–16 B222</li>
+      </ul>
+    </li>
+    <li>Aloitustilaisuuksiin käynnissä, ja taphtuu <a href="{{site.stats_url}}/miniproject">täällä</a>. Ilmoittautuminen päättyy to 5.11. klo 23.59</li>
   </ul>
 </div>
 
