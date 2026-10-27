@@ -19,7 +19,7 @@ inheader: yes
         <li>to 12.11. klo 14–16 B222</li>
       </ul>
     </li>
-    <li>Aloitustilaisuuksiin käynnissä, ja taphtuu <a href="{{site.stats_url}}/miniproject">täällä</a>. Ilmoittautuminen päättyy to 5.11. klo 23.59</li>
+    <li>Ilmoittautuminen aloitustilaisuuksiin käynnissä, ja taphtuu <a href="{{site.stats_url}}/miniproject">täällä</a>. Ilmoittautuminen päättyy to 5.11. klo 23.59</li>
   </ul>
 </div>
 
