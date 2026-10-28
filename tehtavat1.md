@@ -672,7 +672,7 @@ https://github.com/mattiluukkainen/ohtuvarasto26/actions/workflows/main.yml/badg
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/badge1.png" | relative_url }})
+![]({{ "/images/badge2.png" | relative_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
