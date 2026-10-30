@@ -30,12 +30,11 @@ Ohjelmistojen vaatimusten ajatellaan jakaantuvan kahteen luokkaan. _Toiminnallis
 Vaatimusten selvittämistä, dokumentoimista ja hallinnointia kutsutaan
 _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä prosessimallista riippumatta vaatimusmäärittelyn tulee ainakin alkaa ennen ohjelmiston suunnittelua ja toteuttamista.
 
-Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittely tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvaessa.
-
+Vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ja ketterässä ohjelmistokehityksessä vaatimusmäärittely tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvaessa.
 
 ### Vaatimusmäärittelyn vaiheet
 
-Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä prosessimallista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
+Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä kehitysprosessista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
 
 Vaatimusmäärittely jaotellaan yleensä muutamaan työvaiheeseen:
 
@@ -49,7 +48,7 @@ Useimmiten nämä työvaiheet limittyvät ja vaatimusmäärittely etenee spiraal
 
 ### Vaatimusten kartoituksen menetelmiä
 
-Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat, sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
+Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, ohjelmiston tilaavan yrityksen päätösvaltaiset edustajat, sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
 
 Kun eri sidosryhmät on kartoitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
 
@@ -60,11 +59,32 @@ Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edu
 
 Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
 
+Tekoälyn avulla paperiprototyypin sijaan voidaan nykyään tehdä nopeasti myös klikattava, toimivalta näyttävä prototyyppi. Tällaisen "vibetetyn" prototyypin tekeminen vie usein vain tunteja, ja asiakas pääsee kokeilemaan ideaa lähes oikean sovelluksen tavoin, mikä tuo vaatimuksiin liittyvät väärinymmärrykset esiin jo ennen varsinaista toteutusta. Prototyyppi on kuitenkin syytä nähdä kertakäyttöisenä vaatimusten selvittämisen välineenä, eikä sitä välttämättä kannata sellaisenaan ottaa toteutuksen pohjaksi, ks. [Vibe coding vs. hallittu agenttinen ohjelmistokehitys](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys).
+
 Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä, vaatimuksia voidaan selvittää myös havainnoimalla loppukäyttäjän työskentelyä, tästä menetelmästä käytetään nimitystä _etnografia_.
 
 Jos uuden sovelluksen on tarkoitus korvata olemassa oleva työskentelyprosessi, esimerkiksi tilanvarausjärjestelmä, on usein hyödyllistä tarkastella myös itse työskentelyprosessia ja koittaa miettiä sen suoraviivaistamista. Ei nimittäin ole useinkaan mielekästä toisintaa vanhaa, ehkä kankeaakin työskentelyprosessia sellaisenaan uuteen sovellukseen.
 
-Vaatimusten kartoitukseen on kehitetty myös jäsennellympiä menetelmiä. [Jobs to be done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) -ajattelussa kysytään, mitä "työtä" käyttäjä yrittää saada tehdyksi ja miksi, sen sijaan että kysyttäisiin suoraan, mitä ominaisuuksia hän haluaa. [Impact mapping](https://www.impactmapping.org/) puolestaan lähtee liiketoiminnan tavoitteesta ja etenee sen kautta toimijoihin ja heidän käyttäytymisessään tavoiteltuihin muutoksiin. Vasta lopuksi mietitään ominaisuuksia, jotka voisivat saada muutokset aikaan. Molemmat menetelmät auttavat varmistamaan, että vaatimukset palvelevat todellista tarvetta eivätkä ole pelkkiä toiveita ominaisuuksista.
+Vaatimusten kartoitukseen on kehitetty myös jäsennellympiä menetelmiä. Niiden yhteinen ajatus on, että vaatimuksia ei kysytä suoraan ominaisuuksina, vaan ne johdetaan siitä tarpeesta, jonka takia ohjelmistoa ylipäätään tehdään.
+
+[Jobs to be done](https://www.christenseninstitute.org/theory/jobs-to-be-done/) -ajattelussa (JTBD) kysytään, mitä "työtä" käyttäjä yrittää saada tehdyksi ja miksi, sen sijaan että kysyttäisiin suoraan, mitä ominaisuuksia hän haluaa. Ajattelua popularisoineen Clayton Christensenin mukaan asiakas "palkkaa" tuotteen hoitamaan jonkin työn. Tunnetuimmassa esimerkissä pikaruokaketju yritti kasvattaa pirtelöiden myyntiä kysymällä asiakkailta, millaista pirtelöä he haluaisivat, mutta toiveiden mukaan tehdyt muutokset eivät lisänneet myyntiä. Kun sitten selvitettiin, mihin työhön pirtelö oikeastaan palkattiin, paljastui, että suuri osa pirtelöistä ostettiin aamulla pitkälle työmatkalle: pirtelö piti nälän loitolla ja teki tylsästä ajomatkasta mukavamman. Pirtelön kilpailijoita eivät siis olleet muiden ketjujen pirtelöt vaan banaanit, bagelit ja donitsit, ja tämä johti aivan toisenlaisiin parannusideoihin. Lisää aiheesta esim. [Christensen Instituten sivuilla](https://www.christenseninstitute.org/theory/jobs-to-be-done/).
+
+JTBD-ajattelusta on johdettu myös [user storyn](/osa2#user-story) vaihtoehdoksi ehdotettu _job story_ ([Alan Klement: Designing Features Using Job Stories](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)). Se kuvaa käyttäjäroolin sijaan tilanteen, jossa tarve syntyy, sekä käyttäjän motivaation: _When situation, I want to motivation, so I can expected outcome_. Esimerkiksi: _kun olen bussissa matkalla luennolle, haluan nähdä yhdellä silmäyksellä päivän deadlinet, jotta tiedän ehdinkö palauttaa tehtävät ennen luentoa_. Tilanteen kuvaaminen kertoo kehittäjille enemmän kuin käyttäjärooli, esim. sen, että käyttö tapahtuu puhelimella ja nopeasti.
+
+[Impact mapping](https://www.impactmapping.org/) on Gojko Adzicin kehittämä menetelmä, joka lähtee liiketoiminnan tavoitteesta ja etenee sen kautta toimijoihin ja heidän käyttäytymisessään tavoiteltuihin muutoksiin. Vasta lopuksi mietitään ominaisuuksia, jotka voisivat saada muutokset aikaan. Tuloksena on puumainen kaavio, jossa on neljä tasoa:
+
+- _miksi_ (engl. why): mitattava liiketoiminnan tavoite
+- _kuka_ (engl. who): toimijat, joiden käyttäytyminen vaikuttaa tavoitteen saavuttamiseen
+- _miten_ (engl. how): tavoitellut muutokset toimijoiden käyttäytymisessä (engl. impact)
+- _mitä_ (engl. what): ominaisuudet (engl. deliverable), jotka voisivat saada muutokset aikaan
+
+Verkkokaupan tavoitteena voisi olla esimerkiksi kasvattaa toistuvien ostojen osuutta 20 prosenttia vuodessa. Yksi toimijoista on vakioasiakas, ja tavoiteltu muutos on, että hän tilaa samat tuotteet uudelleen vaivattomasti. Ominaisuuksia voisivat olla uudelleentilaus tilaushistoriasta ja muistutus, kun aiemmin ostettu tuote on todennäköisesti loppumassa. Toinen toimija voisi olla asiakaspalvelu, jonka tavoiteltu muutos on, että ongelmatilanteet ratkeavat nopeammin, jolloin asiakas ei siirry kilpailijalle. Tätä voisivat tukea esim. asiakkaan tilaushistorian näyttäminen asiakaspalvelijalle ja palautuksen hyväksyminen yhdellä napilla.
+
+![]({{ "/images/2-26.svg" | relative_url }})
+
+Kartan ominaisuudet ovat oletuksia siitä, mikä saa aikaan halutun muutoksen. Kartta auttaakin priorisoimaan: ensin toteutetaan ominaisuudet, joilla uskotaan olevan suurin vaikutus tavoitteeseen, ja tuloksia mitataan. Ominaisuus, jolta ei löydy polkua mihinkään tavoitteeseen, on hyvä ehdokas karsittavaksi. Ajattelu on lähellä myöhemmin käsiteltävää [Lean startupia](/osa2#kokeileva-vaatimusmäärittely-lean-startup) ja product discoveryn opportunity solution treetä. Ohjeita karttojen laatimiseen löytyy [impactmapping.org](https://www.impactmapping.org/drawing.html)-sivustolta.
+
+Molemmat menetelmät auttavat varmistamaan, että vaatimukset palvelevat todellista tarvetta eivätkä ole pelkkiä toiveita ominaisuuksista.
 
 ### Vaatimusten analysointi, dokumentointi, validointi ja hallinnointi
 
@@ -752,7 +772,7 @@ Sama periaate pätee koodausagentin kanssa työskentelyyn: isompia muutoksia teh
 
 ### Sprint backlog
 
-Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehittäjien työväline, ja kehittäjät päättävät itse, miten se organisoidaan.
+Sprintin tehtävälista eli _sprint backlog_ koostuu sprinttiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehittäjien työväline, ja kehittäjät päättävät itse, miten se organisoidaan.
 
 Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yksi rivi kutakin sprinttiin valittua user storya kohti. Storyyn liittyvät taskit kulkevat vasemmalta oikealle niiden statusta kuvaavien sarakkeiden _not started, in progress, done_ kautta:
 
@@ -792,9 +812,7 @@ Kuvassa tummemman sininen käyrä kuvaa sprintissä jäljellä olevaa työmäär
 
 ### Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban
 
-Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
-
-Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan HELENA-tutkimuksen mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä ([Kuhrmann ym. 2019](https://doi.org/10.1109/MS.2018.110161245)). Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
+Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä _Scrumban_, johon palaamme [luvun lopussa](/osa2#scrumban).
 
 WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä taskboardin vaiheessa olevien töiden määrää:
 
@@ -809,10 +827,6 @@ Lean-ajattelun taustalla on idea hukan (engl. waste, jap. muda) eli arvoa tuotta
 Lean tunnistaa usean tyyppistä hukkaa (lean waste), näiden joukossa ovat esimerkiksi osittain tehty työ (partially done work), välivarastointi ja turha odottaminen. Ohjelmistotuotannon kontekstiin sovellettuna työvaiheet, jotka eivät ole vielä definition of donen mielessä valmiina edustavat leanin mukaista hukkaa. Esimerkiksi testaamista odottavien toiminnallisuuksien (user storyjen) katsotaan olevan "välivarastoituna", samoin jo testatut mutta tuotantoon viemistä vielä odottavat toiminnallisuudet ovat "välivarastossa".
 
 Asiakkaalle toiminnallisuudet alkavat tuottaa arvoa vasta kun ne saadaan käyttöön, siinä vaiheessa kun toiminnallisuudet ovat työn alla, ne aiheuttavat ainoastaan kustannuksia ja muodostavat riskin.
-
-Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aikaa työn alla olevien user storyjen määrää. Kanbanissa ja Scrumbanissa ei yleensä ole olemassa Scrumin sprintin kaltaista kehitystyötä rytmittävää käsitettä vaan saatetaan noudattaa periaatetta, missä tiimi tekee yhden user storyn kerrallaan valmiiksi, demoaa sen asiakkaalle ja valitsee product backlogista seuraavan storyn työn alle.
-
-Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voi Kanbanissa ja Scrumbanissa tapahtua sovitun aikataulun, esimerkiksi 2 viikon välein vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
 
 WIP-rajoitteita voidaan soveltaa Scrumin yhteydessä monella tapaa. Edellä olleessa esimerkissä rajoitettiin kerrallaan yhdessä työvaiheessa sallittujen taskien määrää. Voi olla mielekästä myös määritellä, kuinka monta taskia yhdellä henkilöllä saa olla yhdellä kertaa työn alla.
 Ehkä paras tapa soveltaa WIP-rajoitteita on rajoittaa kerrallaan työn alla olevien user storyjen määrää. Esimerkiksi [Scrum book](http://scrumbook.org/) suosittelee, että työn alla on kerrallaan ainoastaan yksi user story. Näin taataan että arvoa tuottavia kokonaisuuksia "virtaa" sovelluksen käyttäjälle mahdollisimman tasaisesti.
@@ -829,6 +843,24 @@ Kanbanissa työn etenemistä seurataan ns. flow-mittareilla. [Kanban Guide](http
 Mittarit liittyvät toisiinsa ns. _Littlen lain_ kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
 
 Tekoäly voi siirtää pullonkaulaa: jos koodin kirjoittaminen nopeutuu mutta katselmointi ja testaus eivät, syntyy välivarastoa katselmointia odottavista muutoksista. WIP-rajoitukset ja flow-mittarit auttavat huomaamaan tilanteen, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
+
+#### Scrumban
+
+Scrumban-nimen lanseerasi Corey Ladas vuonna 2008. Alun perin hän kuvasi sillä tapaa siirtyä Scrumista vähitellen kohti Kanbania, mutta nykyään nimellä tarkoitetaan yleisemmin mitä tahansa Scrumin ja Kanbanin yhdistelmää. Yhdistelmästä ei ole yhtä virallista määritelmää, mutta tyypillisesti Scrumbanissa Scrumin rooleja ja tapahtumia, kuten retrospektiivejä, täydennetään Kanbanista lainatuilla käytännöillä:
+
+- työvaiheet näkyvät taskboardilla ja niille asetetaan WIP-rajoitteet
+- työ etenee _pull_-periaatteella: uusi story otetaan työn alle vasta, kun edellinen valmistuu ja kapasiteettia vapautuu
+- suunnittelu tehdään tarpeen mukaan, esim. aina kun toteutusta odottavien storyjen jono lyhenee tietyn rajan alle, eikä välttämättä kiinteän sprinttirytmin mukaan
+- estimointia kevennetään tai siitä luovutaan, ja ennusteet perustuvat toteutuneeseen läpimenonopeuteen
+- työn etenemistä seurataan edellä esitellyillä flow-mittareilla
+
+Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aikaa työn alla olevien user storyjen määrää. Kanbanissa ja Scrumbanissa ei yleensä ole olemassa Scrumin sprintin kaltaista kehitystyötä rytmittävää käsitettä vaan saatetaan noudattaa periaatetta, missä tiimi tekee yhden user storyn kerrallaan valmiiksi, demoaa sen asiakkaalle ja valitsee product backlogista seuraavan storyn työn alle. Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voivat silti tapahtua sovitun aikataulun mukaan, esimerkiksi kahden viikon välein, vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
+
+Scrumban sopii erityisesti tilanteisiin, joissa työtä tulee jatkuvasti ja ennakoimattomasti, esim. ylläpito- ja tukitiimeille. Tällaisessa työssä kahden viikon sprintin sisällöstä sopiminen etukäteen on usein keinotekoista, koska kiireelliset korjaukset sotkevat suunnitelman joka tapauksessa. Toisaalta kiinteä sprinttirytmi tuo tiimille säännöllisen hetken pysähtyä tarkastelemaan tuotetta ja omaa toimintaansa, ja sprintit poistava tiimi joutuu huolehtimaan siitä, ettei tämä katoa.
+
+Scrumin ylläpitäjä Scrum.org on julkaissut myös oman ohjeensa Kanbanin käytäntöjen hyödyntämiseen Scrumissa ([Kanban Guide for Scrum Teams](https://www.scrum.org/resources/kanban-guide-scrum-teams)). Sen lähtökohta on hieman Scrumbania varovaisempi: sprintit ja muut Scrumin tapahtumat säilyvät, ja Kanbanin WIP-rajoitteet, pull-periaate ja flow-mittarit tuodaan niiden sisälle parantamaan työn virtausta. Suomenkielinen esimerkki Scrumbanin käyttöönotosta löytyy esim. [tästä kandidaatintutkielmasta](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Kanbania käsitellään tarkemmin [osassa 5](/osa5#kanban).
+
+Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan HELENA-tutkimuksen mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä ([Kuhrmann ym. 2019](https://doi.org/10.1109/MS.2018.110161245)). Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
 
 ### Ennen seuraavaa sprintin alkua
 
