@@ -82,7 +82,7 @@ Verkkokaupan tavoitteena voisi olla esimerkiksi kasvattaa toistuvien ostojen osu
 
 ![]({{ "/images/2-26.svg" | relative_url }})
 
-Kartan ominaisuudet ovat oletuksia siitä, mikä saa aikaan halutun muutoksen. Kartta auttaakin priorisoimaan: ensin toteutetaan ominaisuudet, joilla uskotaan olevan suurin vaikutus tavoitteeseen, ja tuloksia mitataan. Ominaisuus, jolta ei löydy polkua mihinkään tavoitteeseen, on hyvä ehdokas karsittavaksi. Ajattelu on lähellä myöhemmin käsiteltävää [Lean startupia](/osa2#kokeileva-vaatimusmäärittely-lean-startup) ja product discoveryn opportunity solution treetä. Ohjeita karttojen laatimiseen löytyy [impactmapping.org](https://www.impactmapping.org/drawing.html)-sivustolta.
+Kartan ominaisuudet ovat oletuksia siitä, mikä saa aikaan halutun muutoksen. Kartta auttaakin priorisoimaan: ensin toteutetaan ominaisuudet, joilla uskotaan olevan suurin vaikutus tavoitteeseen, ja tuloksia mitataan. Ominaisuus, jolta ei löydy polkua mihinkään tavoitteeseen, on hyvä ehdokas karsittavaksi. Ajattelu on lähellä myöhemmin käsiteltävää [Lean startupia](/osa2#kokeileva-vaatimusmäärittely-lean-startup) ja [product discoveryn](/osa2#product-discovery) opportunity solution treetä. Ohjeita karttojen laatimiseen löytyy [impactmapping.org](https://www.impactmapping.org/drawing.html)-sivustolta.
 
 Molemmat menetelmät auttavat varmistamaan, että vaatimukset palvelevat todellista tarvetta eivätkä ole pelkkiä toiveita ominaisuuksista.
 
@@ -152,7 +152,7 @@ Toimintaympäristön rajoitteita (engl. constraints) ovat muun muassa
 - integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimien rajapintojen tarjoamaa dataa
 - mukautuminen lakeihin ja standardeihin, esimerkiksi
   - EU:n yleinen tietosuoja-asetus (GDPR) henkilötietojen käsittelystä
-  - EU:n esteettömyysdirektiivi (European Accessibility Act), jonka mukaan mm. verkkokauppojen ja muiden digitaalisten kuluttajapalvelujen on 28.6.2025 alkaen oltava saavutettavia (käytännössä WCAG 2.1 AA -tason mukaisesti)
+  - EU:n esteettömyysdirektiivi (European Accessibility Act), jonka mukaan mm. verkkokauppojen ja muiden digitaalisten kuluttajapalvelujen on 28.6.2025 alkaen oltava [saavutettavia](https://www.saavutettavuusvaatimukset.fi/fi/digipalvelulain-vaatimukset/palvelukohtaiset-vaatimukset-ja-velvoitteet)
   - EU:n kyberkestävyyssäädös (Cyber Resilience Act), joka asettaa ohjelmistoja sisältäville tuotteille tietoturvavaatimuksia. Velvoitteet tulevat voimaan vaiheittain vuosina 2026–2027.
   - EU:n tekoälysäädös (AI Act), joka asettaa vaatimuksia erityisesti suuren riskin tekoälyjärjestelmille
 
@@ -233,13 +233,31 @@ Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP
 
 Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat, siispä menetelmän voidaan ajatella olevan eräänlainen vaatimusten analysointi- ja validointimenetelmä.
 
-Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon suurissa internetpalveluita tuottavissa yhtiöissä, kuten Meta, Google, Netflix ja Amazon. Myös pelialalla kokeileva tuotekehitys on aktiivisessa käytössä. Tuotannossa tehtäviin kokeiluihin liittyy kuitenkin myös eettisiä kysymyksiä: kokeilujen tavoitteena ei pidä olla käyttäjiä harhaanjohtavien käyttöliittymäratkaisujen eli ns. dark patternien optimointi, ja EU:n digipalvelusäädös (DSA) kieltääkin niiden käytön verkkoalustoilla.
+Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon suurissa internetpalveluita tuottavissa yhtiöissä, kuten Meta, Google, Netflix ja Amazon. Myös pelialalla kokeileva tuotekehitys on aktiivisessa käytössä. Tuotannossa tehtäviin kokeiluihin liittyy kuitenkin myös eettisiä kysymyksiä: kokeilujen tavoitteena ei pidä olla käyttäjiä harhaanjohtavien käyttöliittymäratkaisujen eli ns. [dark patternien](https://www.kkv.fi/kuluttaja-asiat/huijaukset/pimeat-kaytannot/) optimointi, ja EU:n digipalvelusäädös (DSA) kieltääkin niiden käytön verkkoalustoilla.
 
-Lean startupin ajatus on sittemmin laajentunut yleisemmäksi _product discovery_ -käytännöksi. Siinä tiimi selvittää jatkuvasti, mitä kannattaa rakentaa, samaan aikaan kun se toteuttaa jo valittuja ominaisuuksia (engl. dual-track development). Esimerkiksi Teresa Torresin [opportunity solution tree](https://www.producttalk.org/opportunity-solution-trees/) jäsentää työn tavoitellusta vaikutuksesta (engl. outcome) käyttäjien tarpeisiin, niistä ratkaisuideoihin ja edelleen ideoita testaaviin kokeiluihin. Ajattelu liittyy osassa 1 käsiteltyyn [tuoteajatteluun](/osa1#product-owner): backlogin kohteet ovat hypoteeseja siitä, mikä tuottaa käyttäjille arvoa, eivätkä valmiiksi tiedettyjä vaatimuksia.
+### Product discovery
 
-Product discovery vaikuttaa myös siihen, millainen vastuu tiimille annetaan. Marty Cagan erottaa toisistaan _feature-tiimit_, jotka toteuttavat niille valmiiksi päätettyjä ominaisuuksia, ja _tuotetiimit_, joille annetaan ratkaistavaksi ongelma ja jotka vastaavat myös siitä, että ratkaisu todella toimii ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Tuotetiimi siis tekee product discoveryä itse sen sijaan, että toteuttaisi muiden sille määrittelemiä vaatimuksia. Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään.
+Lean startupin ajatus on sittemmin laajentunut yleisemmäksi _product discovery_ -käytännöksi. Lean startup kuvaa yksittäisen idean testaamisen syklin, product discovery taas tekee ideoiden selvittämisestä jatkuvan osan tiimin työtä. Tiimi selvittää koko ajan, mitä kannattaa rakentaa, samalla kun se toteuttaa jo valittuja ominaisuuksia. Tästä käytetään nimitystä _dual-track development_:
 
-Huomaa, että Caganin feature-tiimi on eri asia kuin [osassa 5](/osa5#less-käytännössä) LeSS:n yhteydessä esiteltävä feature-tiimi, jolla tarkoitetaan arkkitehtuurin kerrosten sijaan kokonaisia asiakkaalle arvoa tuottavia toiminnallisuuksia toteuttavaa tiimiä.
+- _discovery-trackilla_ selvitetään, mitä kannattaa rakentaa: haastatellaan käyttäjiä, testataan prototyyppejä ja tehdään pieniä kokeiluja
+- _delivery-trackilla_ toteutetaan valitut ideat tuotantolaatuisina, esim. Scrumin sprinteissä
+
+Product backlogiin päätyy näin ideoita, joiden arvosta on jo saatu jonkinlaista näyttöä. Discovery ei ole erillinen projektin vaihe eikä erillisen tiimin työtä, vaan samat ihmiset tekevät molempia. Esimerkiksi product owner, tiimin käyttöliittymäsuunnittelija ja yksi kehittäjistä voivat haastatella asiakkaita viikoittain.
+
+Discoveryn jäsentämiseen käytetään usein Teresa Torresin [opportunity solution treetä](https://www.producttalk.org/opportunity-solution-trees/). Puussa on neljä tasoa, joita voi havainnollistaa [impact mappingin](/osa2#vaatimusten-kartoituksen-menetelmiä) yhteydessä käytetyllä verkkokauppaesimerkillä:
+
+- _tavoiteltu vaikutus_ (engl. outcome): toistuvien ostojen osuus kasvaa
+- _mahdollisuudet_ (engl. opportunity): haastatteluissa havaitut käyttäjien tarpeet ja ongelmat, esim. "unohdan tilata kahvisuodattimia ennen kuin ne loppuvat" tai "saman ostoskorin kokoaminen joka kerta on työlästä"
+- _ratkaisut_: ideat, jotka voisivat vastata tarpeeseen, esim. muistutusviesti tai uudelleentilaus tilaushistoriasta
+- _kokeilut_: tavat testata ratkaisun taustalla olevia oletuksia ennen kuin ratkaisu rakennetaan, esim. klikattavan prototyypin näyttäminen viidelle asiakkaalle tai muistutusviestin lähettäminen käsin pienelle asiakasjoukolle
+
+Rakenne muistuttaa impact mappingia, mutta painopiste on käyttäjien tarpeissa: ratkaisuja ei mietitä ennen kuin tarve on havaittu oikeiden käyttäjien kanssa. Samaan tarpeeseen kannattaa myös keksiä useampi vaihtoehtoinen ratkaisu ja verrata niitä, sen sijaan että toteutettaisiin ensimmäinen mieleen tullut idea.
+
+Ajattelu liittyy osassa 1 käsiteltyyn [tuoteajatteluun](/osa1#product-owner): backlogin kohteet ovat hypoteeseja siitä, mikä tuottaa käyttäjille arvoa, eivätkä valmiiksi tiedettyjä vaatimuksia.
+
+Product discovery vaikuttaa myös siihen, millainen vastuu tiimille annetaan. Marty Cagan erottaa toisistaan _feature-tiimit_ ja _tuotetiimit_ ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Feature-tiimille annetaan toteutettavaksi valmiiksi päätetty ominaisuus, esim. "lisää tilaushistoriaan uudelleentilauspainike". Tuotetiimille taas annetaan ratkaistavaksi ongelma, esim. "kasvata toistuvien ostojen osuutta", ja se vastaa myös siitä, että valittu ratkaisu todella toimii. Jos uudelleentilaus ei lisää ostoja, feature-tiimin työ on silti tehty, tuotetiimin ei. Tuotetiimi siis tekee product discoveryä itse sen sijaan, että toteuttaisi muiden sille määrittelemiä vaatimuksia. Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään.
+
+> Huomaa, että Caganin feature-tiimi on eri asia kuin [osassa 5](/osa5#less-käytännössä) LeSS:n yhteydessä esiteltävä feature-tiimi, jolla tarkoitetaan arkkitehtuurin kerrosten sijaan kokonaisia asiakkaalle arvoa tuottavia toiminnallisuuksia toteuttavaa tiimiä.
 
 ## Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa
 
@@ -303,9 +321,9 @@ toiminnallisuuden tulee käyttäytyä eri tilanteissa. Esim. nyt storyn sisält�
 - parkkilupa myönnetään kuukaudeksi kerrallaan
 - on mahdollista ostaa vain yksi parkkilupa kuukaudessa
 
-Hyväksymiskriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein hyväksymiskriteerit nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen – miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
+Hyväksymiskriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein hyväksymiskriteerit nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen, miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
 
-- parkkilupa maksetaan käteisellä tai verkkopankissa
+- parkkilupa maksetaan käteisellä tai tilisiirtona verkkopankissa
 - verkkomaksun tapauksessa on käytettävä opiskelijalle henkilökohtaisesti generoitua viitenumeroa
 
 Nykyään etänä tai hybridisti työskentelevät tiimit käyttävät postit-lappujen ja pahvikorttien sijaan jotain elektronista järjestelmää, esim. [Jiraa](https://www.atlassian.com/software/jira) tai [GitHub projectsia](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) user storyjen kirjaamiseen.

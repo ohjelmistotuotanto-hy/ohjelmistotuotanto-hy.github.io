@@ -86,6 +86,7 @@ permalink: /sisallys/
    - [Vaatimusmäärittely vesiputousmallin valtakaudella](/osa2/#vaatimusmäärittely-vesiputousmallin-valtakaudella)
    - [Vaatimusmäärittely iteratiivisessa ja ketterässä ohjelmistokehityksessä](/osa2/#vaatimusmäärittely-iteratiivisessa-ja-ketterässä-ohjelmistokehityksessä)
    - [Kokeileva vaatimusmäärittely: Lean startup](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)
+   - [Product discovery](/osa2/#product-discovery)
 - [Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa](/osa2/#vaatimusm%C3%A4%C3%A4rittely-ja-projektisuunnittelu-ketter%C3%A4ss%C3%A4-prosessimallissa)
    - [User story](/osa2#user-story)
    - [Hyvän user storyn kriteerit](/osa2#hyv%C3%A4n-user-storyn-kriteerit)
