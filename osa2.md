@@ -399,6 +399,7 @@ Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset
 - haastattelut
 - brainstormaus
 - workshopit
+- impact mapping
 
 Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän (tähän on toki poikkeuksia riippuen kehitettävän ohjelmiston koosta ja kehittäjäorganisaatiosta). User storyn luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee siitä hyvän työkalun projektin aloitukseen. Turhiin yksityiskohtiin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
 
@@ -540,7 +541,7 @@ Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti proj
 
 Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään. Tiimi voi esimerkiksi määritellä, että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
 
-Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä _Goodhartin laki_: kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Jos velositeettia käytetään tiimiä vastaan, tiimi alkaa suojautua, ja arvioista sekä ongelmista ei enää kerrota rehellisesti. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
+Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä [_Goodhartin laki_](https://fi.wikipedia.org/wiki/Goodhartin_laki): kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Jos velositeettia käytetään tiimiä vastaan, tiimi alkaa suojautua, ja arvioista sekä ongelmista ei enää kerrota rehellisesti. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
 
 #### Burndown- ja burnup-kaaviot
 
@@ -580,13 +581,21 @@ Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä ka
 
 #### User story mapping
 
-Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille. Jeff Pattonin kehittämä [user story mapping](https://www.jpattonassociates.com/user-story-mapping/) on tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun.
+Product backlogin hankaluutena on, että se on yksiulotteinen prioriteettijärjestyksessä oleva lista. Listasta ei näe, miten storyt liittyvät toisiinsa ja mitkä niistä yhdessä muodostavat käyttäjälle mielekkään kokonaisuuden. Jos verkkokaupan backlogin kärjessä on kymmenen tuotehakua parantavaa storya, ne voidaan toteuttaa huolellisesti, mutta käyttäjä ei silti pysty ostamaan mitään, koska kassa puuttuu.
 
-Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, joka jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
+Jeff Pattonin kehittämä [user story mapping](https://www.jpattonassociates.com/user-story-mapping/) ratkaisee ongelmaa järjestämällä storyt kaksiulotteiseksi kartaksi:
+
+- vaakasuunnassa on käyttäjän polku sovelluksen läpi, eli vaiheet siinä järjestyksessä kuin käyttäjä ne kohtaa. Vaatteita myyvässä verkkokaupassa vaiheet voisivat olla _tuotehaku_, _tuotesivu_ ja _kassa_. Tätä kartan ylintä riviä kutsutaan sen selkärangaksi (engl. backbone)
+- pystysuunnassa kunkin vaiheen alla ovat siihen liittyvät storyt tärkeysjärjestyksessä, tärkeimmät ylimpänä
+- kartta jaetaan vaakaviivoilla julkaisuiksi
 
 ![]({{ "/images/2-15.svg" | relative_url }}){:height="400px" }
 
-Story mapin rivit ovat loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
+Kartan tärkein idea on se, että ensimmäinen julkaisu on vaakasuuntainen viipale koko kartan läpi. Siihen otetaan jokaisesta vaiheesta vain välttämättömin, jotta käyttäjä pääsee polun alusta loppuun. Esimerkin ensimmäisessä julkaisussa käyttäjä voi suodattaa tuotteita kategorian mukaan, lukea tuotekuvauksen, valita koon ja värin, painaa osta-painiketta, antaa toimitustiedot ja maksaa PayPalilla. Tuotehaku on vielä vaatimaton, mutta verkkokauppa toimii ja sitä voidaan käyttää. Toinen julkaisu parantaa jokaista vaihetta: hakuun tulee suodatus värin ja tyylin mukaan sekä lajittelu hinnan mukaan, tuotesivulle kuvagalleria ja kassalle postinumerohaku ja korttimaksu. Alimmalla rivillä on vielä myöhempään ajankohtaan jätettyjä storyja.
+
+Story map laaditaan yleensä yhdessä product ownerin ja tiimin kanssa esim. seinälle post-it-lapuilla tai Miron kaltaisella sähköisellä taululla. Ensin kirjataan polun vaiheet kertomalla, mitä käyttäjä tekee sovelluksen kanssa alusta loppuun. Sen jälkeen kunkin vaiheen alle kirjataan siihen liittyvät storyt ja ne järjestetään tärkeysjärjestykseen. Lopuksi vedetään julkaisujen rajat. Polun läpikäyminen paljastaa usein myös puuttuvia storyja. Esim. kysymys "mitä tapahtuu maksamisen jälkeen?" voi tuoda esiin tarpeen tilausvahvistukselle.
+
+Story map ei korvaa product backlogia, vaan on eräs näkymä siihen. Kartasta saadaan backlogin järjestys, ja kukin julkaisu voi muodostaa oman milestonensa. Jos ensimmäinen julkaisu on liian suuri yhteen sprinttiin, viipaletta voidaan ohentaa tai sen toteutus voidaan jakaa useampaan sprinttiin.
 
 ### Kannattaako estimointi?
 
@@ -598,8 +607,6 @@ Story point -perustainen suhteellinen estimointi on saavuttanut vankan aseman ke
 #NoEstimates-liike [ei missään tapauksessa kiistä](https://plan.io/blog/noestimates-6-software-experts-give-their-view/) etteikö työmääräarvioista olisi hyötyä, tarkoituksena onkin saada ihmiset ajattelemaan, missä tilanteissa estimointi on järkevää sekä nostaa esiin vaihtoehtoisia tapoja estimoinnin suorittamiseen.
 
 Eräs jo [vuosia käytetty](https://ronjeffries.com/xprog/articles/jatrtsmetric/) menetelmä on arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen _lukumäärä_ sen sijaan, että käytetään story point -perustaista estimointia. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia.
-
-Valmistuneiden storyjen lukumäärään perustuvaa ennustamista voidaan viedä pidemmälle ns. _Monte Carlo -simulaatiolla_. Tiimin aiemmin toteutuneesta läpimenonopeudesta (engl. throughput, esim. valmistuneet storyt viikossa) simuloidaan tuhansia mahdollisia tulevaisuuksia, ja tuloksena saadaan todennäköisyysjakauma, esim. "tämä kokonaisuus valmistuu 85 %:n todennäköisyydellä kuuden viikon kuluessa". Ennuste perustuu toteutuneeseen dataan eikä arvioihin, ja se ilmaisee ennusteen epävarmuuden suoraan. Menetelmää käsittelee tarkemmin esim. Daniel Vacantin kirja [When Will It Be Done?](https://leanpub.com/whenwillitbedone), ja sitä voi kokeilla Troy Magennisin [valmiilla taulukkopohjilla](https://github.com/FocusedObjective/FocusedObjective.Resources).
 
 Tekoälytyökalut tekevät estimoinnista entistä vaikeampaa. Ne nopeuttavat eri tyyppisiä tehtäviä hyvin eri tavoin, jolloin storyjen suhteelliset koot muuttuvat, ja niiden käyttöönoton jälkeen aiempi velositeetti lakkaa ennustamasta tulevaa. Lisäksi kehittäjät yliarvioivat helposti tekoälyn tuoman hyödyn, ja tuottavuusvaikutuksista on ylipäätään ristiriitaista tutkimustietoa. Toteutuneeseen läpimenonopeuteen perustuva ennustaminen sopeutuu muutoksiin arvioita paremmin, ks. myös [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 
