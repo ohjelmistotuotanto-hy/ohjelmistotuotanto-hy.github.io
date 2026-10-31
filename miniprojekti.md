@@ -141,7 +141,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon tiedostoon `pelisaannot.md`, johon linkitetään README:stä
   - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
-  - retrospektiivin tärkeimmät havainnot ja vähintään kaksi sovittua kehitystoimenpidettä kirjataan repositorion juureen tiedostoon `retro.md`
+  - retrospektiivin tärkeimmät havainnot ja vähintään kolme konkreettista parannuskohdetta kirjataan repositorion juureen tiedostoon `retro.md`, ja parannuskohteet lisätään seuraavan sprintin backlogiin taskeiksi
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
@@ -171,6 +171,10 @@ Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
   - yhtenäinen koodityyli (valvotaan Pylintin avulla)
+
+#### Tekoälyn käyttö
+
+Koodausagenttien ja muiden tekoälytyökalujen käyttö miniprojektissa on sallittua. Definition of done koskee myös tekoälyn tuottamaa koodia: sen on oltava testattua ja ylläpidettävää samalla tavalla kuin itse kirjoitetun koodin. Ryhmä vastaa kaikesta repositorioon päätyvästä koodista, ja jokaisen ryhmäläisen tulee ymmärtää, mitä hänen kauttaan repositorioon tuleva koodi tekee. Tekoälyn hallitusta käytöstä lisää materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/).
 
 #### Repositorio ja README
 
@@ -217,7 +221,7 @@ Jos ette tiedä mistä aloittaa, kokeilkaa kierroksiin perustuvaa mallia. Siinä
 4. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
 5. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
 
-Lopuksi sovitaan vähintään kaksi kehitystoimenpidettä seuraavaan sprinttiin. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrospektiiviin ei kuitenkaan saisi kulua yli tuntia, koska miniprojektiin on varattu vain noin 6 tuntia työaikaa sprintissä.
+Lopuksi sovitaan vähintään kolme konkreettista parannuskohdetta seuraavaan sprinttiin. Parannuskohteen toteutumisen pitää olla sprintin lopussa tarkistettavissa, esim. _jokainen pull request katselmoidaan ennen mergeämistä_ eikä _kommunikoidaan paremmin_. Retrospektiivin aluksi käydään läpi, miten edellisen retrospektiivin parannuskohteet toteutuivat. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrospektiiviin ei kuitenkaan saisi kulua yli tuntia, koska miniprojektiin on varattu vain noin 6 tuntia työaikaa sprintissä.
 
 ### Työn arvostelu
 
