@@ -105,7 +105,7 @@ Pisteitä kertyy seuraavista asioista:
   - Jokaiseen taskiin on merkitty sen tekijä(t)
 - (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
 - (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
-- (0.25p) sovellukseen on tehty ainakin yksi yksikkötesti
+- (0.25p) sovellukseen on tehty ainakin yksi ryhmän itse tekemä yksikkötesti (boilerplaten valmiita testejä ei lasketa)
   - testit voi kirjoittaa boilerplaten tapaan unittest-kirjastolla, ja ne suoritetaan pytestillä
   - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
 - (0.25p) jatkuva integraatio
