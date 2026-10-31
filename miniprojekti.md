@@ -29,6 +29,7 @@ inheader: yes
 - Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
 - Ohje Flaskin käyttöön [täällä](/flask)
 - [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
+- [Esimerkki ja ohje backlogien tekemiseen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)
 
 ### Johdanto
 
@@ -152,9 +153,10 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta
   - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
   - taskin tekijä(t)
-- Backlogit kannattaa toteuttaa jollain backlogien ylläpitämiseen tarkoitetulla työkalulla, yksi hyvä vaihtoehto on [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects), jonka Insights-näkymä piirtää myös burnup-kaavion
-  - kannattaa varmistaa, että työkalu tukee edellä lueteltuja vaatimuksia
-  - myös taulukkolaskentaohjelma, esim. Google Sheets, kelpaa
+- **Tehkää backlogit GitHub Projectsilla boilerplaten esimerkin mukaisesti**
+  - esimerkki ja ohje backlogien tekemiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta
+  - esimerkin backlogit esitellään myös materiaalin osassa 2, ks. [Esimerkki: backlogit GitHub Projectsilla](/osa2/#esimerkki-backlogit-github-projectsilla)
+  - GitHub Projectsin Insights-näkymä piirtää myös sprintin burnup-kaavion
 
 
 #### Definition of done

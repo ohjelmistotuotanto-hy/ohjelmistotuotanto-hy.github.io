@@ -105,6 +105,7 @@ permalink: /sisallys/
    - [Sprint backlog](/osa2#sprint-backlog)
    - [Sprintin etenemisen seuranta](/osa2#sprintin-etenemisen-seuranta)
    - [Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban)
+   - [Scrumban](/osa2/#scrumban)
    - [Ennen seuraavaa sprintin alkua](/osa2#ennen-seuraavaa-sprintin-alkua)   
 
 ### [Osa 3: Laadunhallinta](/osa3)

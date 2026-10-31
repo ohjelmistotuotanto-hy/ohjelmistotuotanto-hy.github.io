@@ -819,9 +819,31 @@ Nykyään useimmat tiimit käyttävät kuitenkin elektronista taskboardia. Josku
 
 Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi Exceliä tai Google Driveä. GitHub Projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän GitHubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon Jira, Linear, Azure Boards, Asana ja Trello.
 
-Myös taulukkolaskentaohjelmat toimivat kohtuullisen hyvin backlogin ja taskboardin pohjana.
-
 Taskboard ja mahdollisesti käytössä oleva burndown-käyrä tuovat selkeästi esille sprintin etenemisen asteen ja onkin suositeltavaa, että ne ovat kaikkien tiimiläisten ja projektin sidosryhmäläisten nähtävillä. Elektronisia taskboardeja käytettäessä on aina se riski, että ne eivät säteile informaatiota yhtä hyvin kuin seinällä oleva manuaalinen taskboard. Näin ketterän kehityksen kannalta elintärkeä läpinäkyvyyden periaate saattaa vaarantua.
+
+#### Esimerkki: backlogit GitHub Projectsilla
+
+Katsotaan esimerkkinä, miten product backlog ja sprint backlog voidaan toteuttaa GitHub Projectsilla. Esimerkki on kurssin [miniprojektin boilerplate-repositoriosta](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate). Sovelluksena on yksinkertainen todo-sovellus, ja backlogit ovat sellaiset kuin ne voisivat olla kesken toista sprinttiä.
+
+Jokainen user story ja taski on oma GitHubin issuensa. Issuet kootaan samaan projektiin, jossa niille annetaan omia kenttiä, kuten _Sprint_ ja _Tyyppi_ (user story tai task). Projektista tehdään useita näkymiä, joissa issueita suodatetaan näiden kenttien perusteella.
+
+[Product backlog](https://github.com/orgs/ohjelmistotuotanto-hy/projects/1/views/1) on taulukkonäkymä, johon on suodatettu vain user storyt prioriteettijärjestyksessä:
+
+![]({{ "/images/2-27.png" | relative_url }})
+
+Taulukosta näkyy jokaisen storyn status, sprintti, johon story on otettu, sekä kuinka moni storyn taskeista on jo valmiina. Backlog on [DEEP](/osa2#hyvä-product-backlog-on-deep): ylimmät storyt on määritelty tarkasti hyväksymiskriteereineen, kun taas alempien, esim. _Käyttäjänä voin jakaa todolistan toisen käyttäjän kanssa_, sisältö tarkennetaan asiakkaan kanssa vasta myöhemmin. Esimerkissä storyja ei ole estimoitu, sillä miniprojektissa sitä ei vaadita. Estimaateille voisi lisätä projektiin oman numerokentän.
+
+Sprintin suunnittelussa sprinttiin valitut storyt jaetaan teknisen tason taskeiksi, jotka ovat storyn issuen _sub-issueita_. Storyn [#22](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/issues/22) sivulta näkyvät sen taskit ja niiden tilanne. Storyn kuvauksessa on linkki testitiedostoon, johon storyn hyväksymiskriteerit on kirjoitettu automaattisesti suoritettaviksi testeiksi:
+
+![]({{ "/images/2-29.png" | relative_url }})
+
+[Sprintin 2 backlog](https://github.com/orgs/ohjelmistotuotanto-hy/projects/1/views/3) on taskboardiksi organisoitu näkymä sprinttiin kuuluvista taskeista. Sarakkeet vastaavat taskien statusta, ja kortista näkyy, mihin storyyn taski liittyy ja kuka sitä tekee:
+
+![]({{ "/images/2-28.png" | relative_url }})
+
+Taskboardista näkee esim., että tiimi tekee storyja valmiiksi yksi kerrallaan: storyn #17 taskit ovat valmiina, storyn #22 työ on kesken ja storyn #27 taskit odottavat vuoroaan. Tähän palataan pian [WIP-rajoitusten](/osa2#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban) yhteydessä.
+
+Ohjeet backlogien rakentamiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta.
 
 ### Sprintin etenemisen seuranta
 
@@ -837,13 +859,19 @@ Kuvassa tummemman sininen käyrä kuvaa sprintissä jäljellä olevaa työmäär
 
 ### Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban
 
-Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä _Scrumban_, johon palaamme [luvun lopussa](/osa2#scrumban).
+Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua Scrumissa ongelmaksi. Jos jokainen tiimiläinen aloittaa aina uuden taskin sen sijaan, että auttaisi saamaan jo aloitettuja kokonaan valmiiksi testaus mukaanlukien, voi taskboard näyttää sprintin loppupuolella esim. seuraavalta:
+
+![]({{ "/images/2-30.png" | relative_url }})
+
+Lähes kaikki taskit on ohjelmoitu, mutta ne ovat jääneet jonoon testausvaiheeseen, eikä yksikään kolmesta storysta ole valmis. Jos sprintti päättyy nyt, asiakkaalle ei ole mitään näytettävää, vaikka tiimi on tehnyt paljon työtä.
+
+Tilannetta voidaan yrittää välttää rajoittamalla yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä _Scrumban_, johon palaamme [luvun lopussa](/osa2#scrumban).
 
 WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä taskboardin vaiheessa olevien töiden määrää:
 
-![]({{ "/images/2-25.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-31.png" | relative_url }})
 
-Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskien määräksi kaksi.
+Esimerkissä sarakkeissa _Coding_ ja _Testing_ saa olla kummassakin yhtä aikaa korkeintaan kaksi taskia. Kun testausvaihe on täynnä, uutta taskia ei voi siirtää testattavaksi, ja ohjelmoijan kannattaa auttaa testauksessa sen sijaan, että aloittaisi uuden taskin. Näin työ etenee story kerrallaan valmiiksi: _Tuotteiden selaaminen_ on jo valmis, _Tuotteen lisääminen ostoskoriin_ on työn alla, ja _Ostoskorin maksaminen_ odottaa vuoroaan.
 
 Yhtä aikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä. Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista.
 
@@ -865,13 +893,13 @@ Kanbanissa työn etenemistä seurataan ns. flow-mittareilla. [Kanban Guide](http
 - _läpimenonopeus_ (engl. throughput): aikayksikössä valmistuneiden kohteiden määrä
 - _työn ikä_ (engl. work item age): kuinka kauan keskeneräinen kohde on ollut työn alla
 
-Mittarit liittyvät toisiinsa ns. _Littlen lain_ kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
+Mittarit liittyvät toisiinsa ns. [_Littlen lain_](https://en.wikipedia.org/wiki/Little%27s_law) kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
 
 Tekoäly voi siirtää pullonkaulaa: jos koodin kirjoittaminen nopeutuu mutta katselmointi ja testaus eivät, syntyy välivarastoa katselmointia odottavista muutoksista. WIP-rajoitukset ja flow-mittarit auttavat huomaamaan tilanteen, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 
-#### Scrumban
+### Scrumban
 
-Scrumban-nimen lanseerasi Corey Ladas vuonna 2008. Alun perin hän kuvasi sillä tapaa siirtyä Scrumista vähitellen kohti Kanbania, mutta nykyään nimellä tarkoitetaan yleisemmin mitä tahansa Scrumin ja Kanbanin yhdistelmää. Yhdistelmästä ei ole yhtä virallista määritelmää, mutta tyypillisesti Scrumbanissa Scrumin rooleja ja tapahtumia, kuten retrospektiivejä, täydennetään Kanbanista lainatuilla käytännöillä:
+Scrumban-nimen lanseerasi Corey Ladas vuonna 2008 kirjoituksessaan [Scrum-ban](http://web.archive.org/web/20091102163055/http://leansoftwareengineering.com/ksse/scrum-ban/). Alun perin hän kuvasi sillä tapaa siirtyä Scrumista vähitellen kohti Kanbania, mutta nykyään nimellä tarkoitetaan yleisemmin mitä tahansa Scrumin ja Kanbanin yhdistelmää. Yhdistelmästä ei ole yhtä virallista määritelmää, mutta tyypillisesti Scrumbanissa Scrumin rooleja ja tapahtumia, kuten retrospektiivejä, täydennetään Kanbanista lainatuilla käytännöillä:
 
 - työvaiheet näkyvät taskboardilla ja niille asetetaan WIP-rajoitteet
 - työ etenee _pull_-periaatteella: uusi story otetaan työn alle vasta, kun edellinen valmistuu ja kapasiteettia vapautuu
@@ -883,9 +911,9 @@ Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aik
 
 Scrumban sopii erityisesti tilanteisiin, joissa työtä tulee jatkuvasti ja ennakoimattomasti, esim. ylläpito- ja tukitiimeille. Tällaisessa työssä kahden viikon sprintin sisällöstä sopiminen etukäteen on usein keinotekoista, koska kiireelliset korjaukset sotkevat suunnitelman joka tapauksessa. Toisaalta kiinteä sprinttirytmi tuo tiimille säännöllisen hetken pysähtyä tarkastelemaan tuotetta ja omaa toimintaansa, ja sprintit poistava tiimi joutuu huolehtimaan siitä, ettei tämä katoa.
 
-Scrumin ylläpitäjä Scrum.org on julkaissut myös oman ohjeensa Kanbanin käytäntöjen hyödyntämiseen Scrumissa ([Kanban Guide for Scrum Teams](https://www.scrum.org/resources/kanban-guide-scrum-teams)). Sen lähtökohta on hieman Scrumbania varovaisempi: sprintit ja muut Scrumin tapahtumat säilyvät, ja Kanbanin WIP-rajoitteet, pull-periaate ja flow-mittarit tuodaan niiden sisälle parantamaan työn virtausta. Suomenkielinen esimerkki Scrumbanin käyttöönotosta löytyy esim. [tästä kandidaatintutkielmasta](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Kanbania käsitellään tarkemmin [osassa 5](/osa5#kanban).
+Scrumin ylläpitäjä Scrum.org on julkaissut myös [ohjeen](https://www.scrum.org/resources/kanban-guide-scrum-teams) Kanbanin käytäntöjen hyödyntämiseen Scrumissa. Sen lähtökohta on hieman Scrumbania varovaisempi: sprintit ja muut Scrumin tapahtumat säilyvät, ja Kanbanin WIP-rajoitteet, pull-periaate ja flow-mittarit tuodaan niiden sisälle parantamaan työn virtausta. Suomenkielinen esimerkki Scrumbanin käyttöönotosta löytyy esim. [tästä kandidaatintutkielmasta](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Kanbania käsitellään tarkemmin [osassa 5](/osa5#kanban).
 
-Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan HELENA-tutkimuksen mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä ([Kuhrmann ym. 2019](https://doi.org/10.1109/MS.2018.110161245)). Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
+Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan  [tutkimuksen](https://doi.org/10.1109/MS.2018.110161245) mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä . Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
 
 ### Ennen seuraavaa sprintin alkua
 
