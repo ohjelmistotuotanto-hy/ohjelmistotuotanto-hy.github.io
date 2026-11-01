@@ -1,0 +1,28 @@
+<div id="miniprojekti-ilmo" style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px 14px; margin-bottom: 20px; background-color: #F1EFEF;">
+  <button id="miniprojekti-ilmo-sulje" aria-label="Sulje" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666; padding: 0; margin: 0 0 0 10px; line-height: 1;">×</button>
+  <strong>Miniprojektin ilmoittautuminen päättyy to 5.11. klo 23.59!</strong>
+  <p style="margin: 8px 0 0 0;">
+    Ilmoittaudu yhteen <a href="/miniprojekti/#ryhmän-muodostaminen">aloitustilaisuuksista</a> <a href="{{site.stats_url}}/miniproject">täällä</a>.
+    Kurssin läpäisy edellyttää miniprojektiin osallistumista tai sen <a href="/osa0#miniprojektin-hyväksilukeminen">hyväksilukemista</a>.
+  </p>
+</div>
+<script>
+  (function () {
+    var KEY = 'miniprojekti-ilmo-suljettu'
+    var DEADLINE = new Date('2026-11-06T00:00:00+02:00')
+    var banner = document.getElementById('miniprojekti-ilmo')
+
+    // piilotetaan deadlinen jälkeen ja jos käyttäjä on sulkenut bannerin
+    try {
+      if (new Date() >= DEADLINE || localStorage.getItem(KEY) === '1') {
+        banner.style.display = 'none'
+        return
+      }
+    } catch (e) {}
+
+    document.getElementById('miniprojekti-ilmo-sulje').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, '1') } catch (e) {}
+      banner.style.display = 'none'
+    })
+  })()
+</script>

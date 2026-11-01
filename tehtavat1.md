@@ -380,6 +380,9 @@ Ohjelmakoodin editointi kannattaa tehdä järkevällä editorilla, esim. Visual 
 
 <input type="checkbox"> Siirry _virtuaaliympäristöön_ komennolla `source .venv/bin/activate`
 
+- Windowsilla komento on komentokehotteessa (cmd) `.venv\Scripts\activate.bat` ja PowerShellissä `.venv\Scripts\Activate.ps1`, ks. [Pythonin dokumentaatio](https://docs.python.org/3/library/venv.html#how-venvs-work)
+- Jatkossa materiaalissa käytetään Linux/macOS-muotoa `source .venv/bin/activate`
+
 <input type="checkbox"> Suorita komento `python3 src/index.py`
 
 - Virtuaaliympäristössä komentoja voi suorittaa "normaalisti", eli ilman `uv run` -komentoa
