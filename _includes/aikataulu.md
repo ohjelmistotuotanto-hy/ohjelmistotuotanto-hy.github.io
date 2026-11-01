@@ -4,10 +4,12 @@
   - [Johdanto](/osa0)
   - [Ohjelmistotuotantoprosessin vaiheet](/osa1#ohjelmistotuotanto-ja-sen-osa-alueet)
   - [Ketterä ohjelmistokehitys](/osa1#ketterä-ohjelmistokehitys)
+  - tallenne: [youtube](https://youtu.be/FL6nh-_-W7Y), [unitube](https://www.helsinki.fi/fi/unitube/video/bda293c0-60a0-40b3-ace2-e18bc86617cc?t=12:00)
   - vuoden 2025 tallenteet
     - [youtube](https://youtu.be/OH27cBF8xP4), [unitube](https://www.helsinki.fi/fi/unitube/video/afeb7cde-288e-4d0a-aac9-64c2ce854b4a)
 - Luento 2: {{site.luennot[2]}}
   - [Scrum](/osa1#scrum)
+  - tallenne: [youtube](https://youtu.be/u25_9B7nu5g), [unitube](https://www.helsinki.fi/fi/unitube/video/eb08df91-cab7-4d3f-bfc7-66de3021efbc)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/7lAj-idARFs), [unitube](https://www.helsinki.fi/fi/unitube/video/bc0e48bc-91ba-4964-9ff6-bf5055ac5d4c)
 - Laskarit
   - Luentojen 1 ja 2 <a href="{{site.stats_url}}/quiz/1">monivalintatehtävät</a> deadline {{site.moniv-dl[1]}}
@@ -106,8 +108,6 @@
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
 
-    - Tallenne: [youtube](https://youtu.be/o_tIj9SngAI), [unitube](https://www.helsinki.fi/fi/unitube/video/51620f49-d316-4602-bb3d-49bbd0e0077e)
-
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}
 - [Miniprojekti](/miniprojekti)
@@ -118,4 +118,4 @@
 ### Viikko 8
 
 - Kurssikoe tiistaina 15.12. klo 13-16 A111 ja B123
-  - Ilmoittaudu kokeeseen [täällä](https://studies.helsinki.fi/kurssit/toteutus/otm-f5f21571-77e5-4ce0-bcea-7806256b21b0/TKT20006) 6.12. mennessä!
+

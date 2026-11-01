@@ -16,11 +16,12 @@ inheader: yes
 
 ### Tärkeät linkit
 
-- Toteutettavan ohjelman [kuvaus](/speksi)
 - [Arvosteluperusteet](/miniprojektin_arvosteluperusteet)
 - Alun [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md)
 - Ohje Flaskin käyttöön [täällä](/flask)
 - [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
+- [Esimerkki ja ohje backlogien tekemiseen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)
+- Toteutettavan ohjelman [kuvaus](/speksi)
 
 ### Johdanto
 
@@ -33,9 +34,6 @@ inheader: yes
   - Asiakastapaamisiin menevää aikaa ei lasketa viikoittaiseen työaikaan!
 - Ryhmä tekee kussakin sprintissä sen minkä se sprinttiin varatussa ajassa pystyy tekemään, ei enempää eikä vähempää
   - Kuuden tunnin työajan reilu ylittäminen siis **ei ole** järkevää, se on suorastaan kiellettyä
-- Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
-  - SQLite ei vaadi erillistä tietokantapalvelinta, katso [ohje](/flask/#tietokanta)
-- ohje Flaskin käyttöön [täällä](/flask), **on erittäin tärkeää että luet tämän ohjeen**
 
 ### Ryhmän muodostaminen
 
@@ -54,14 +52,21 @@ inheader: yes
   - user story
   - product backlog
   - sprint backlog
-  - hyväksymäkriteeri
+  - hyväksymiskriteeri
   - definition of done
+  - [psykologinen turvallisuus](/osa1#psykologinen-turvallisuus)
 - Tämä dokumentti ja miniprojektin [arvosteluperusteet](/miniprojektin_arvosteluperusteet) on myös syytä lukea huolellisesti ennen aloitustilaisuutta
 
 ### Työn eteneminen
 
 Seuraavien viikkojen asiakastapaaminen (sprintin katselmointi ja uuden sprintin suunnittelu) tapahtuu saman 2h sisällä missä aloitustilaisuus pidetään. Tilaisuuden kesto on 30 minuuttia. Aika kerrotaan palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 
+Ohjaaja toimii tapaamisissa kahdessa roolissa:
+
+1. asiakkaana, jolta saatte sovelluksen vaatimukset, joka hyväksyy toteutetut ominaisuudet ja joka ei välttämättä ole teknisesti kovin osaava
+2. mentorina, joka antaa palautetta teknisestä ja menetelmällisestä työstänne
+
+Ohjaaja kertoo ensimmäisessä tapaamisessa, miten roolin vaihtuminen näkyy. Voitte myös itse pyytää saada puhua mentorin tai asiakkaan kanssa tilanteen tullen. Ohjaajaan voi olla yhteydessä myös tapaamisten välillä, jos ryhmässä on ongelmia. Yhteydenottotapa sovitaan ohjaajan kanssa.
 #### viikko 3 (9.–13.11.)
 
 - Ryhmä muodostetaan
@@ -101,17 +106,16 @@ Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 ### Toteutusteknologia
 
 Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
+- SQLite ei vaadi erillistä tietokantapalvelinta, katso [ohje](/flask/#tietokanta)
 - Riittää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
 
-Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue ohje Flaskin käytöstä [täältä](/flask)
+Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue [ohje Flaskin käytöstä](/flask), **on erittäin tärkeää että luet tämän ohjeen**.
 
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
   - Vaatimukset kirjataan backlogiin user storyina
 - Sprintin suunnittelun yhteydessä ryhmä valitsee toteutettavaksi sopivan määrän backlogin kärjessä olevista user storyistä
-  - Jokaisen ryhmäläisen "työaika" on 6 tuntia viikossa
-    - Työajan ylittävä sankarikoodaus ei ole suositeltavaa, se on jopa kiellettyä
   - Ryhmä valitsee ainoastaan ne storyt, jotka se arvioi ehtivänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   - Kannattaa huomata, että valinta on ennuste eikä lupaus: storyja ei ole pakko saada valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
@@ -122,6 +126,10 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
     - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
     - taskin tekijä(t)
+- Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon tiedostoon `pelisaannot.md`, johon linkitetään README:stä
+  - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
+- Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
+  - retrospektiivin tärkeimmät havainnot ja vähintään kolme konkreettista parannuskohdetta kirjataan repositorion juureen tiedostoon `retro.md`, ja parannuskohteet lisätään seuraavan sprintin backlogiin taskeiksi
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
@@ -130,17 +138,15 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 
 - Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
   - **miniprojektissa user storyja tai taskeja ei tarvitse estimoida**, sprintin etenemistä seurataan valmistuneiden taskien perusteella
-- Kuten edellä todettiin sprint backlogista tulee ilmetä kunkin taskin osalta
-  - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
-  - taskin tekijä(t)
-- Backlogit kannattaa toteuttaa jollain backlogien ylläpitämiseen tarkoitetulla työkalulla, yksi hyvä vaihtoehto on [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects), jonka Insights-näkymä piirtää myös burnup-kaavion
-  - kannattaa varmistaa, että työkalu tukee edellä lueteltuja vaatimuksia
-  - myös taulukkolaskentaohjelma, esim. Google Sheets, kelpaa
+- **Tehkää backlogit GitHub Projectsilla boilerplaten esimerkin mukaisesti**
+  - esimerkki ja ohje backlogien tekemiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta
+  - esimerkin backlogit esitellään myös materiaalin osassa 2, ks. [Esimerkki: backlogit GitHub Projectsilla](/osa2/#esimerkki-backlogit-github-projectsilla)
+  - GitHub Projectsin Insights-näkymä piirtää myös sprintin burnup-kaavion
 
 
 #### Definition of done
 
-Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
+Seuraavassa lähtökohta definition of donelle. Ryhmän tulee määritellä GitHub-repositorioon oma, omiin lähtökohtiin sopiva DoD
 
 - User storyille tulee määritellä hyväksymiskriteerit, jotka dokumentoidaan sprintistä 2 alkaen [Robot Frameworkin](/robot_framework/) syntaksilla
   - hyvänä käytäntönä on laittaa README:stä linkki hyväksymiskriteerit määritteleviin tiedostoihin
@@ -150,6 +156,10 @@ Seuraavassa lähtökohta definition donelle. Ryhmän tulee määritellä GitHub-
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
   - yhtenäinen koodityyli (valvotaan Pylintin avulla)
+
+#### Tekoälyn käyttö
+
+Koodausagenttien ja muiden tekoälytyökalujen käyttö miniprojektissa on sallittua. Definition of done koskee myös tekoälyn tuottamaa koodia: sen on oltava testattua ja ylläpidettävää samalla tavalla kuin itse kirjoitetun koodin. Ryhmä vastaa kaikesta repositorioon päätyvästä koodista, ja jokaisen ryhmäläisen tulee ymmärtää, mitä hänen kauttaan repositorioon tuleva koodi tekee. Tekoälyn hallitusta käytöstä lisää materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/).
 
 #### Repositorio ja README
 
@@ -164,13 +174,40 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 
 Melko varma resepti epäonnistumiseen on huono kommunikaatio. Tehkää siis asioita mahdollisimman paljon yhdessä, mieluiten paikan päällä kampuksella tai jos se ei onnistu niin esim. Discordin voice chatissa. Ylipäänsä on hyvä kommunikoida ryhmälle mitä lähtee tekemään ja milloin on saanut sen valmiiksi, tällöin vältytään päällekkäisyyksiltä. Erityisesti projektin alkuvaiheessa esim. GitHub-actionsia konfiguroitaessa yhdessä tapahtuvaan työskentelyyn kannattaa panostaa. Projektin kuluessa omatoiminenkin työskentely muuttuu jo helpommaksi jos ja kun ryhmä on sopinut työskentelyn periaatteista ja pelisäännöistä.
 
-Pariohjelmointi/konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storya työstää aina kaksi henkilöä.
+Pelisäännöissä kannattaa sopia ainakin siitä, mitä viestintäkanavaa käytetään ja kuinka nopeasti viesteihin vastataan, miten poissaoloista ja myöhästymisistä ilmoitetaan, miten päätökset tehdään ja mitä tehdään, jos joku ei pysy sovitussa. Ryhmän kannattaa myös tavata ainakin kerran epämuodollisesti, esim. kahvin tai pelien merkeissä, sillä tutustuminen helpottaa yhteistyötä. Ensimmäisessä sprintissä tällaisesta tapaamisesta voi laskea 30 minuuttia sprintin työaikaan.
 
-Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, project backlogille ja sprint backlogille kannattanee nimetä vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
+Ongelmista kannattaa kertoa ryhmälle heti, kun ne huomaa. Jos työ myöhästyy tai jää kesken, ryhmä ehtii vielä priorisoida tehtävät uudelleen. Kun jokin menee pieleen, syytä kannattaa etsiä prosessista eikä ihmisistä, ks. [psykologinen turvallisuus](/osa1#psykologinen-turvallisuus). Avun pyytäminen ja oman osaamattomuuden myöntäminen ovat projektissa täysin odotettuja asioita, erityisesti kun ryhmän jäsenten kokemustaso vaihtelee.
+
+Ryhmällä ei ole nimettyä johtajaa, joten aloitteen ottaminen voi tuntua hankalalta. Kannattaa vuorotella palaverien ja retrospektiivien vetäjänä, ja kun joku ottaa vetovastuun, sitä kannattaa myös kiittää. Johtamisesta saa myös puhua: on täysin ok kertoa, että arvostaa sitä, kun joku ottaa vetovastuun, tai että itse pitää vetämisestä.
+
+Pariohjelmointi ja yhdessä konfigurointi on havaittu erittäin hyödylliseksi. Voikin olla hyvä idea, että jokaista user storya työstää aina kaksi henkilöä.
+
+Jokaiselle asialle, kuten vaikkapa README.md-tiedostolle, product backlogille ja sprint backlogille kannattaa nimetä vastuuhenkilö joka varmistaa, että ryhmä hoitaa asian. Asian X vastuuhenkilö ei välttämättä siis tee asiaa itse, vaan varmistaa että se tulee tehdyksi.
 
 Pitäkää ohjelma koko ajan toimintakykyisenä. On erittäin huono idea koittaa saada viikon aikana eri ihmisten koodaamat tuotokset integroitua tunti ennen asiakaspalaveria...
 
 Katso myös [checklist](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/misc/ohjeita.md) projektin alkuun.
+
+#### Retrospektiivin pitäminen
+
+Retrospektiivissä tiimi tarkastelee omaa työskentelyään: mikä sprintissä sujui hyvin, mitä voisi parantaa ja miten parannukset otetaan käyttöön seuraavassa sprintissä. Retrospektiivin voi pitää millä tahansa tekniikalla. Tässä kolme vaihtoehtoa:
+
+- [Start, Stop, Continue, More of, Less of Wheel](https://retrospectivewiki.org/index.php?title=Start,_Stop,_Continue,_More_of,_Less_of_Wheel): tiimi kerää asioita, jotka pitäisi aloittaa, lopettaa tai joita kannattaa jatkaa, sekä asioita, joita pitäisi tehdä enemmän tai vähemmän.
+- [Glad, Sad, Mad](https://retrospectivewiki.org/index.php?title=Glad,_Sad,_Mad): jokainen kertoo, mikä sprintissä ilahdutti, harmitti ja suututti, ja niistä etsitään yhdessä parannettavat asiat.
+- Kierroksiin perustuva malli, joka on kuvattu alla.
+
+Lisää tekniikoita löytyy esim. [Retrospective Wikistä](https://retrospectivewiki.org/index.php?title=Retrospective_Plans).
+
+Jos ette tiedä mistä aloittaa, kokeilkaa kierroksiin perustuvaa mallia. Siinä kenenkään ei tarvitse keksiä kerralla kuin yksi asia:
+
+1. Valitkaa kirjuri, joka kirjaa esiin nousseet asiat ylös.
+2. Käykää läpi, miten edellisen retrospektiivin parannuskohteet toteutuivat.
+3. Jokainen miettii hiljaa minuutin ajan yhden asian, joka sujui sprintissä hyvin. Sen jälkeen kukin kertoo omansa lyhyesti, ja asiasta keskustellaan. Miettimisaikaa voi tarvittaessa pidentää kahteen minuuttiin.
+4. Sama toistetaan yhdelle asialle, jota voisi parantaa.
+5. Sama toistetaan yhdelle asialle, jonka tekeminen kannattaisi lopettaa.
+6. Kierros käydään läpi kaksi kertaa tai enemmän, jos aika riittää.
+
+Lopuksi sovitaan vähintään kolme konkreettista parannuskohdetta seuraavaan sprinttiin. Parannuskohteen toteutumisen pitää olla sprintin lopussa tarkistettavissa, esim. _jokainen pull request katselmoidaan ennen mergeämistä_ eikä _kommunikoidaan paremmin_. Retrospektiiviin kannattaa varata noin puoli tuntia, tarvittaessa hieman enemmän. Retrospektiiviin ei kuitenkaan saisi kulua yli tuntia, koska miniprojektiin on varattu vain noin 6 tuntia työaikaa sprintissä.
 
 ### Työn arvostelu
 

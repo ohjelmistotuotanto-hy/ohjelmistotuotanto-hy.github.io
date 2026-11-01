@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 350" width="1060" height="350" font-family="Helvetica, Arial, sans-serif">
+<rect width="1060" height="350" fill="white"/>
+<text x="115.0" y="40" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Tavoite</text>
+<text x="115.0" y="62" font-size="15" fill="#718096" text-anchor="middle" font-style="italic">miksi?</text>
+<text x="345.0" y="40" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Toimijat</text>
+<text x="345.0" y="62" font-size="15" fill="#718096" text-anchor="middle" font-style="italic">kuka?</text>
+<text x="615.0" y="40" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Vaikutukset</text>
+<text x="615.0" y="62" font-size="15" fill="#718096" text-anchor="middle" font-style="italic">miten?</text>
+<text x="920.0" y="40" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Ominaisuudet</text>
+<text x="920.0" y="62" font-size="15" fill="#718096" text-anchor="middle" font-style="italic">mitä?</text>
+<path d="M210,209.0 C235.0,209.0 235.0,143.0 260,143.0" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M430,143.0 C465.0,143.0 465.0,143.0 500,143.0" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M210,209.0 C235.0,209.0 235.0,275.0 260,275.0" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M430,275.0 C465.0,275.0 465.0,275.0 500,275.0" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M730,143.0 C765.0,143.0 765.0,110 800,110" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M730,143.0 C765.0,143.0 765.0,176 800,176" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M730,275.0 C765.0,275.0 765.0,242 800,242" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<path d="M730,275.0 C765.0,275.0 765.0,308 800,308" fill="none" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="20" y="173.0" width="190" height="72" rx="6" fill="#bee3f8" stroke="#2d3748" stroke-width="1.5"/>
+<text x="115.0" y="196.0" font-size="15" fill="#2d3748" text-anchor="middle">Toistuvien ostojen</text>
+<text x="115.0" y="214.0" font-size="15" fill="#2d3748" text-anchor="middle">osuus +20 %</text>
+<text x="115.0" y="232.0" font-size="15" fill="#2d3748" text-anchor="middle">vuodessa</text>
+<rect x="260" y="119.0" width="170" height="48" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="345.0" y="148.0" font-size="15" fill="#2d3748" text-anchor="middle">Vakioasiakas</text>
+<rect x="260" y="251.0" width="170" height="48" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="345.0" y="280.0" font-size="15" fill="#2d3748" text-anchor="middle">Asiakaspalvelu</text>
+<rect x="500" y="119.0" width="230" height="48" rx="6" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="615.0" y="139.0" font-size="15" fill="#2d3748" text-anchor="middle">Tilaa samat tuotteet</text>
+<text x="615.0" y="157.0" font-size="15" fill="#2d3748" text-anchor="middle">uudelleen vaivattomasti</text>
+<rect x="500" y="251.0" width="230" height="48" rx="6" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="615.0" y="271.0" font-size="15" fill="#2d3748" text-anchor="middle">Ratkaisee ongelmatilanteet</text>
+<text x="615.0" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">nopeammin</text>
+<rect x="800" y="86.0" width="240" height="48" rx="6" fill="#e9d8fd" stroke="#2d3748" stroke-width="1.5"/>
+<text x="920.0" y="106.0" font-size="15" fill="#2d3748" text-anchor="middle">Uudelleentilaus</text>
+<text x="920.0" y="124.0" font-size="15" fill="#2d3748" text-anchor="middle">tilaushistoriasta</text>
+<rect x="800" y="152.0" width="240" height="48" rx="6" fill="#e9d8fd" stroke="#2d3748" stroke-width="1.5"/>
+<text x="920.0" y="172.0" font-size="15" fill="#2d3748" text-anchor="middle">Muistutus loppumassa</text>
+<text x="920.0" y="190.0" font-size="15" fill="#2d3748" text-anchor="middle">olevasta tuotteesta</text>
+<rect x="800" y="218.0" width="240" height="48" rx="6" fill="#e9d8fd" stroke="#2d3748" stroke-width="1.5"/>
+<text x="920.0" y="238.0" font-size="15" fill="#2d3748" text-anchor="middle">Asiakkaan tilaushistoria</text>
+<text x="920.0" y="256.0" font-size="15" fill="#2d3748" text-anchor="middle">asiakaspalvelun näkymään</text>
+<rect x="800" y="284.0" width="240" height="48" rx="6" fill="#e9d8fd" stroke="#2d3748" stroke-width="1.5"/>
+<text x="920.0" y="304.0" font-size="15" fill="#2d3748" text-anchor="middle">Palautuksen hyväksyntä</text>
+<text x="920.0" y="322.0" font-size="15" fill="#2d3748" text-anchor="middle">yhdellä napilla</text>
+</svg>

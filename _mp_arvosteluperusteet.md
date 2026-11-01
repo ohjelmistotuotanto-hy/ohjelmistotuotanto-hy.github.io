@@ -15,7 +15,7 @@ Miniprojektista saa maksimissaan 11 kurssipistettä seuraavien kriteereiden ja p
 
 - Jokaisesta sprintistä on jaossa **ryhmälle** 2.5 kurssipistettä, eli maksimissaan neljästä sprintistä ryhmä voi saada 10 pistettä
   - Ensisijainen arvostelukriteeri on prosessin seuraaminen, tasainen eteneminen ja ohjelmaan toteutettujen ominaisuuksien laatu
-  - Prosessiin kuuluvat myös pelisäännöt ja retrospektiivit. Niistä arvioidaan se, että ne on tehty asiallisesti, ei niiden sisältöä.
+  - Prosessiin kuuluvat myös pelisäännöt ja retrospektiivit. Niistä arvioidaan se, että ne on tehty asiallisesti, ei sitä, mitä niissä on päätetty.
   - Toteutettujen ominaisuuksien määrän merkitys arvostelussa on aika pieni mutta ei toki nolla, eli jotain koodiakin tulee tehdä
   - Tarkemmat sprinttikohtaiset arvosteluperusteet alla
 - Henkilökohtainen suoriutumisesta on jaossa -1p ... 1, poikkeustapauksissa -2p tai 2p on mahdollinen
@@ -66,7 +66,7 @@ Pisteitä kertyy seuraavista asioista:
   - Taskin status on näkyvissä (esim. todo, doing, done)
 - (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
 - (0.25p) testaus
-  - Projektissa on ainakin yksi Robot-testi
+  - Projektissa on ainakin yksi ryhmän itse tekemä Robot-testi (boilerplaten valmiita testejä ei lasketa)
 - (0.25p) jatkuva integraatio
   - Projektin koodi on GitHubissa
   - GitHub Actions suorittaa testit ja ne menevät läpi
@@ -86,8 +86,10 @@ Sprintin maksimi on 2.5 pistettä.
 - Sprintin 1 päätteeksi tulee pitää retrospektiivi
 - Ohjeet retrospektiivin pitämiseen löytyvät [miniprojektin ohjeista](/miniprojekti/#retrospektiivin-pitäminen)
 - Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
-- Retrospektiivissa havaituista asioista tulee identifioida vähintään kaksi _kehitystoimenpidettä_, eli asiaa joissa tiimi yrittää parantaa toimintaa seuraavassa sprintissä
-  - kehitystoimenpiteet pitää kirjata retrospektiivin muistiinpanoihin
+- Retrospektiivissa havaituista asioista tulee identifioida vähintään kolme _konkreettista parannuskohdetta_, eli asiaa joissa tiimi parantaa toimintaansa seuraavassa sprintissä
+  - parannuskohteen tulee olla sellainen, että sen toteutumisen voi sprintin lopussa tarkistaa: esim. _jokainen pull request katselmoidaan ennen mergeämistä_ eikä _kommunikoidaan paremmin_
+  - parannuskohteet kirjataan muistiinpanoihin ja lisätään seuraavan sprintin backlogiin omiksi taskeikseen, joille on merkitty vastuuhenkilö
+- Jokaisen retrospektiivin alussa käydään läpi edellisen retrospektiivin parannuskohteet ja kirjataan muistiinpanoihin, miten kukin toteutui (toteutui / osittain / ei) ja miksi
 - Retrospektiivin perusteella kannattaa tarvittaessa päivittää myös ryhmän pelisääntöjä
 - Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
 
@@ -103,7 +105,8 @@ Pisteitä kertyy seuraavista asioista:
   - Jokaiseen taskiin on merkitty sen tekijä(t)
 - (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
 - (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
-- (0.25p) sovellukseen on tehty ainakin yksi yksikkötesti (unittest-kirjastolla)
+- (0.25p) sovellukseen on tehty ainakin yksi ryhmän itse tekemä yksikkötesti (boilerplaten valmiita testejä ei lasketa)
+  - testit voi kirjoittaa boilerplaten tapaan unittest-kirjastolla, ja ne suoritetaan pytestillä
   - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
 - (0.25p) jatkuva integraatio
   - CI-palvelu suorittaa testit
@@ -112,8 +115,9 @@ Pisteitä kertyy seuraavista asioista:
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
 - (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
   - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
-- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa ja siitä on tehty asialliset muistiinpanot
-- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+- (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
+- (0.25p) Sprintin 1 retrospektiivin parannuskohteet ovat sprintin 2 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
+- (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
   - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
@@ -140,11 +144,13 @@ Pisteitä kertyy seuraavista asioista:
   - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
 - (0.125p) GitHubin README:stä linkki testikattavuusraporttiin
   - raportti kattaa ainoastaan ne tiedostot joita on mielekästä yksikkötestata
-- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 2 lopussa ja siitä on tehty asialliset muistiinpanot
+- (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 2 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
+  - muistiinpanoista käy ilmi, miten sprintin 1 retrospektiivin parannuskohteet toteutuivat
+- (0.25p) Sprintin 2 retrospektiivin parannuskohteet ovat sprintin 3 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
-- (0.125p) Ohjelmalle on valittu sopiva lisenssi, ja määritely se repositorioon
-  - Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
+- (0.125p) release ja lisenssi
+  - toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
+  - ohjelmalle on valittu sopiva lisenssi, ja se on määritelty repositorioon. Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
 - (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
@@ -157,13 +163,12 @@ Sprintin maksimi on 2.5 pistettä.
 
 Pisteitä kertyy seuraavista asioista:
 
-- (0.25p) product backlog
-  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.375p) backlogit
+  - Product backlog on DEEP (storyjä ei tarvitse estimoida)
   - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
+  - Sprintin 4 backlogin vaatimukset kuten edellisissä sprinteissä
 - (0.25p) sprintiin 4 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
   - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
-- (0.25p) sprintin 4 backlog
-  - Vaatimukset kuten edellisissä sprinteissä
 - (0.125p) relevantit osat sovellusta testauttu yksikkötestein
   - kattavuusraportti README-tiedostossa
   - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
@@ -173,9 +178,9 @@ Pisteitä kertyy seuraavista asioista:
   - CI-palvelu suorittaa yksikkö- ja storytestit sekä Pylintin
   - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
-- (0.25p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 3 lopussa, toimintaa kehitetty
-  - edellisestä retrospektiivistä on tehty asialliset muistiinpanot
-  - tiimi on kehittänyt toimintaansa, parantamalla edellisessä retrospektiivissa identifioituja ongelmakohtia 
+- (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 3 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
+  - muistiinpanoista käy ilmi, miten sprintin 2 retrospektiivin parannuskohteet toteutuivat
+- (0.25p) Sprintin 3 retrospektiivin parannuskohteet ovat sprintin 4 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
 - (0.25p) Koodin sisäinen laatu on kohtuullisella tasolla
   - koodi on jaoiteltu järkevästi tiedostoihin ja hakemistoihin
   - koodissa käytetään järkevää nimentää 

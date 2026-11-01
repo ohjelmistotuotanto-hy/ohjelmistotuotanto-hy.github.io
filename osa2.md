@@ -13,8 +13,6 @@ permalink: /osa2/
 
 {% include miniproj_ilmo.md %}
 
-#### [Sisällysluettelo](/sisallys/#osa-2-vaatimustenhallinta)
-
 Viikon aiheena on ohjelmistojen vaatimusmäärittely, erityisesti ketterien menetelmien näkökulma vaatimusmäärittelyyn. Käsittelemme myös hieman tuotteen hallintaa sekä koko projektin tasolla että sprintin aikana.
 
 ## Typoja materiaalissa
@@ -32,12 +30,11 @@ Ohjelmistojen vaatimusten ajatellaan jakaantuvan kahteen luokkaan. _Toiminnallis
 Vaatimusten selvittämistä, dokumentoimista ja hallinnointia kutsutaan
 _vaatimusmäärittelyksi_ (engl. requirements engineering). Käytettävästä prosessimallista riippumatta vaatimusmäärittelyn tulee ainakin alkaa ennen ohjelmiston suunnittelua ja toteuttamista.
 
-Lineaarisissa prosessimalleissa, eli vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ohjelmistokehityksessä vaatimusmäärittely tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvaessa.
-
+Vesiputousmallissa vaatimusmäärittely tehdään kokonaisuudessaan ennen ohjelmiston suunnittelua ja toteutusta. Iteratiivisessa ja ketterässä ohjelmistokehityksessä vaatimusmäärittely tapahtuu vähän kerrallaan ohjelmiston toiminnallisuuden kasvaessa.
 
 ### Vaatimusmäärittelyn vaiheet
 
-Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä prosessimallista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
+Vaatimusmäärittelyn luonne vaihtelee paljon riippuen kehitettävästä ohjelmistosta, kehittäjäorganisaatiosta ja ohjelmistokehitykseen käytettävästä kehitysprosessista. Joka tapauksessa loppukäyttäjän, asiakkaan tai asiakkaan edustajan on oltava prosessissa aktiivisesti mukana.
 
 Vaatimusmäärittely jaotellaan yleensä muutamaan työvaiheeseen:
 
@@ -51,7 +48,7 @@ Useimmiten nämä työvaiheet limittyvät ja vaatimusmäärittely etenee spiraal
 
 ### Vaatimusten kartoituksen menetelmiä
 
-Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, tilaavan yrityksen päätösvaltaiset edustajat, sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
+Vaatimusmäärittelyn aluksi on syytä selvittää järjestelmän _sidosryhmät_ (engl. stakeholders) eli ne tahot, jotka ovat suoraan tai epäsuorasti tekemisissä järjestelmän kanssa. Tällaisia ovat luonnollisesti ohjelmiston aiotut loppukäyttäjät, ohjelmiston tilaavan yrityksen päätösvaltaiset edustajat, sekä esim. tarpeen tullen niiden tahojen edustajat, jotka ovat vastuussa tietojärjestelmistä, joiden kanssa määriteltävä ohjelmisto integroituu.
 
 Kun eri sidosryhmät on kartoitettu, käytetään "kaikki mahdolliset keinot" vaatimusten esiin kaivamiseen, esim.:
 
@@ -62,11 +59,32 @@ Alustavien keskustelujen jälkeen kehittäjätiimi voi yhdessä sidosryhmien edu
 
 Sovelluksesta kannattaa myös tehdä käyttöliittymäluonnoksia ja paperiprototyyppejä. Skenaarioita ja prototyyppejä tarkastelemalla ja läpikäymällä asiakas voi edelleen tarkentaa näkemystään vaatimuksista.
 
+Tekoälyn avulla paperiprototyypin sijaan voidaan nykyään tehdä nopeasti myös klikattava, toimivalta näyttävä prototyyppi. Tällaisen "vibetetyn" prototyypin tekeminen vie usein vain tunteja, ja asiakas pääsee kokeilemaan ideaa lähes oikean sovelluksen tavoin, mikä tuo vaatimuksiin liittyvät väärinymmärrykset esiin jo ennen varsinaista toteutusta. Prototyyppi on kuitenkin syytä nähdä kertakäyttöisenä vaatimusten selvittämisen välineenä, eikä sitä välttämättä kannata sellaisenaan ottaa toteutuksen pohjaksi, ks. [Vibe coding vs. hallittu agenttinen ohjelmistokehitys](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys).
+
 Jos kehitettävän sovelluksen on tarkoitus korvata olemassa oleva järjestelmä, vaatimuksia voidaan selvittää myös havainnoimalla loppukäyttäjän työskentelyä, tästä menetelmästä käytetään nimitystä _etnografia_.
 
 Jos uuden sovelluksen on tarkoitus korvata olemassa oleva työskentelyprosessi, esimerkiksi tilanvarausjärjestelmä, on usein hyödyllistä tarkastella myös itse työskentelyprosessia ja koittaa miettiä sen suoraviivaistamista. Ei nimittäin ole useinkaan mielekästä toisintaa vanhaa, ehkä kankeaakin työskentelyprosessia sellaisenaan uuteen sovellukseen.
 
-Vaatimusten kartoitukseen on kehitetty myös jäsennellympiä menetelmiä. [Jobs to be done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) -ajattelussa kysytään, mitä "työtä" käyttäjä yrittää saada tehdyksi ja miksi, sen sijaan että kysyttäisiin suoraan, mitä ominaisuuksia hän haluaa. [Impact mapping](https://www.impactmapping.org/) puolestaan lähtee liiketoiminnan tavoitteesta ja etenee sen kautta toimijoihin ja heidän käyttäytymisessään tavoiteltuihin muutoksiin. Vasta lopuksi mietitään ominaisuuksia, jotka voisivat saada muutokset aikaan. Molemmat menetelmät auttavat varmistamaan, että vaatimukset palvelevat todellista tarvetta eivätkä ole pelkkiä toiveita ominaisuuksista.
+Vaatimusten kartoitukseen on kehitetty myös jäsennellympiä menetelmiä. Niiden yhteinen ajatus on, että vaatimuksia ei kysytä suoraan ominaisuuksina, vaan ne johdetaan siitä tarpeesta, jonka takia ohjelmistoa ylipäätään tehdään.
+
+[Jobs to be done](https://www.christenseninstitute.org/theory/jobs-to-be-done/) -ajattelussa (JTBD) kysytään, mitä "työtä" käyttäjä yrittää saada tehdyksi ja miksi, sen sijaan että kysyttäisiin suoraan, mitä ominaisuuksia hän haluaa. Ajattelua popularisoineen Clayton Christensenin mukaan asiakas "palkkaa" tuotteen hoitamaan jonkin työn. Tunnetuimmassa esimerkissä pikaruokaketju yritti kasvattaa pirtelöiden myyntiä kysymällä asiakkailta, millaista pirtelöä he haluaisivat, mutta toiveiden mukaan tehdyt muutokset eivät lisänneet myyntiä. Kun sitten selvitettiin, mihin työhön pirtelö oikeastaan palkattiin, paljastui, että suuri osa pirtelöistä ostettiin aamulla pitkälle työmatkalle: pirtelö piti nälän loitolla ja teki tylsästä ajomatkasta mukavamman. Pirtelön kilpailijoita eivät siis olleet muiden ketjujen pirtelöt vaan banaanit, bagelit ja donitsit, ja tämä johti aivan toisenlaisiin parannusideoihin. Lisää aiheesta esim. [Christensen Instituten sivuilla](https://www.christenseninstitute.org/theory/jobs-to-be-done/).
+
+JTBD-ajattelusta on johdettu myös [user storyn](/osa2#user-story) vaihtoehdoksi ehdotettu _job story_ ([Alan Klement: Designing Features Using Job Stories](https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/)). Se kuvaa käyttäjäroolin sijaan tilanteen, jossa tarve syntyy, sekä käyttäjän motivaation: _When situation, I want to motivation, so I can expected outcome_. Esimerkiksi: _kun olen bussissa matkalla luennolle, haluan nähdä yhdellä silmäyksellä päivän deadlinet, jotta tiedän ehdinkö palauttaa tehtävät ennen luentoa_. Tilanteen kuvaaminen kertoo kehittäjille enemmän kuin käyttäjärooli, esim. sen, että käyttö tapahtuu puhelimella ja nopeasti.
+
+[Impact mapping](https://www.impactmapping.org/) on Gojko Adzicin kehittämä menetelmä, joka lähtee liiketoiminnan tavoitteesta ja etenee sen kautta toimijoihin ja heidän käyttäytymisessään tavoiteltuihin muutoksiin. Vasta lopuksi mietitään ominaisuuksia, jotka voisivat saada muutokset aikaan. Tuloksena on puumainen kaavio, jossa on neljä tasoa:
+
+- _miksi_ (engl. why): mitattava liiketoiminnan tavoite
+- _kuka_ (engl. who): toimijat, joiden käyttäytyminen vaikuttaa tavoitteen saavuttamiseen
+- _miten_ (engl. how): tavoitellut muutokset toimijoiden käyttäytymisessä (engl. impact)
+- _mitä_ (engl. what): ominaisuudet (engl. deliverable), jotka voisivat saada muutokset aikaan
+
+Verkkokaupan tavoitteena voisi olla esimerkiksi kasvattaa toistuvien ostojen osuutta 20 prosenttia vuodessa. Yksi toimijoista on vakioasiakas, ja tavoiteltu muutos on, että hän tilaa samat tuotteet uudelleen vaivattomasti. Ominaisuuksia voisivat olla uudelleentilaus tilaushistoriasta ja muistutus, kun aiemmin ostettu tuote on todennäköisesti loppumassa. Toinen toimija voisi olla asiakaspalvelu, jonka tavoiteltu muutos on, että ongelmatilanteet ratkeavat nopeammin, jolloin asiakas ei siirry kilpailijalle. Tätä voisivat tukea esim. asiakkaan tilaushistorian näyttäminen asiakaspalvelijalle ja palautuksen hyväksyminen yhdellä napilla.
+
+![]({{ "/images/2-26.svg" | relative_url }})
+
+Kartan ominaisuudet ovat oletuksia siitä, mikä saa aikaan halutun muutoksen. Kartta auttaakin priorisoimaan: ensin toteutetaan ominaisuudet, joilla uskotaan olevan suurin vaikutus tavoitteeseen, ja tuloksia mitataan. Ominaisuus, jolta ei löydy polkua mihinkään tavoitteeseen, on hyvä ehdokas karsittavaksi. Ajattelu on lähellä myöhemmin käsiteltävää [Lean startupia](/osa2#kokeileva-vaatimusmäärittely-lean-startup) ja [product discoveryn](/osa2#product-discovery) opportunity solution treetä. Ohjeita karttojen laatimiseen löytyy [impactmapping.org](https://www.impactmapping.org/drawing.html)-sivustolta.
+
+Molemmat menetelmät auttavat varmistamaan, että vaatimukset palvelevat todellista tarvetta eivätkä ole pelkkiä toiveita ominaisuuksista.
 
 ### Vaatimusten analysointi, dokumentointi, validointi ja hallinnointi
 
@@ -134,7 +152,7 @@ Toimintaympäristön rajoitteita (engl. constraints) ovat muun muassa
 - integroituminen muihin järjestelmiin: käytetäänkö esim. jonkin ulkoisen palvelun käyttäjätunnusta kirjautumiseen tai jotain avoimien rajapintojen tarjoamaa dataa
 - mukautuminen lakeihin ja standardeihin, esimerkiksi
   - EU:n yleinen tietosuoja-asetus (GDPR) henkilötietojen käsittelystä
-  - EU:n esteettömyysdirektiivi (European Accessibility Act), jonka mukaan mm. verkkokauppojen ja muiden digitaalisten kuluttajapalvelujen on 28.6.2025 alkaen oltava saavutettavia (käytännössä WCAG 2.1 AA -tason mukaisesti)
+  - EU:n esteettömyysdirektiivi (European Accessibility Act), jonka mukaan mm. verkkokauppojen ja muiden digitaalisten kuluttajapalvelujen on 28.6.2025 alkaen oltava [saavutettavia](https://www.saavutettavuusvaatimukset.fi/fi/digipalvelulain-vaatimukset/palvelukohtaiset-vaatimukset-ja-velvoitteet)
   - EU:n kyberkestävyyssäädös (Cyber Resilience Act), joka asettaa ohjelmistoja sisältäville tuotteille tietoturvavaatimuksia. Velvoitteet tulevat voimaan vaiheittain vuosina 2026–2027.
   - EU:n tekoälysäädös (AI Act), joka asettaa vaatimuksia erityisesti suuren riskin tekoälyjärjestelmille
 
@@ -215,9 +233,31 @@ Testattavan idean osoittautuessa käyttökelpoiseksi, tehdään sovellukseen MVP
 
 Lean startup -menetelmällä on siis tarkoitus oppia systemaattisesti ja mahdollisimman nopeasti mitä asiakkaat haluavat, siispä menetelmän voidaan ajatella olevan eräänlainen vaatimusten analysointi- ja validointimenetelmä.
 
-Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon suurissa internetpalveluita tuottavissa yhtiöissä, kuten Meta, Google, Netflix ja Amazon. Myös pelialalla kokeileva tuotekehitys on aktiivisessa käytössä. Tuotannossa tehtäviin kokeiluihin liittyy kuitenkin myös eettisiä kysymyksiä: kokeilujen tavoitteena ei pidä olla käyttäjiä harhaanjohtavien käyttöliittymäratkaisujen eli ns. dark patternien optimointi, ja EU:n digipalvelusäädös (DSA) kieltääkin niiden käytön verkkoalustoilla.
+Nimestään huolimatta Lean startup -menetelmää käytetään erityisen paljon suurissa internetpalveluita tuottavissa yhtiöissä, kuten Meta, Google, Netflix ja Amazon. Myös pelialalla kokeileva tuotekehitys on aktiivisessa käytössä. Tuotannossa tehtäviin kokeiluihin liittyy kuitenkin myös eettisiä kysymyksiä: kokeilujen tavoitteena ei pidä olla käyttäjiä harhaanjohtavien käyttöliittymäratkaisujen eli ns. [dark patternien](https://www.kkv.fi/kuluttaja-asiat/huijaukset/pimeat-kaytannot/) optimointi, ja EU:n digipalvelusäädös (DSA) kieltääkin niiden käytön verkkoalustoilla.
 
-Lean startupin ajatus on sittemmin laajentunut yleisemmäksi _product discovery_ -käytännöksi. Siinä tiimi selvittää jatkuvasti, mitä kannattaa rakentaa, samaan aikaan kun se toteuttaa jo valittuja ominaisuuksia (engl. dual-track development). Esimerkiksi Teresa Torresin [opportunity solution tree](https://www.producttalk.org/opportunity-solution-trees/) jäsentää työn tavoitellusta vaikutuksesta (engl. outcome) käyttäjien tarpeisiin, niistä ratkaisuideoihin ja edelleen ideoita testaaviin kokeiluihin. Ajattelu liittyy osassa 1 käsiteltyyn [tuoteajatteluun](/osa1#product-owner): backlogin kohteet ovat hypoteeseja siitä, mikä tuottaa käyttäjille arvoa, eivätkä valmiiksi tiedettyjä vaatimuksia.
+### Product discovery
+
+Lean startupin ajatus on sittemmin laajentunut yleisemmäksi _product discovery_ -käytännöksi. Lean startup kuvaa yksittäisen idean testaamisen syklin, product discovery taas tekee ideoiden selvittämisestä jatkuvan osan tiimin työtä. Tiimi selvittää koko ajan, mitä kannattaa rakentaa, samalla kun se toteuttaa jo valittuja ominaisuuksia. Tästä käytetään nimitystä _dual-track development_:
+
+- _discovery-trackilla_ selvitetään, mitä kannattaa rakentaa: haastatellaan käyttäjiä, testataan prototyyppejä ja tehdään pieniä kokeiluja
+- _delivery-trackilla_ toteutetaan valitut ideat tuotantolaatuisina, esim. Scrumin sprinteissä
+
+Product backlogiin päätyy näin ideoita, joiden arvosta on jo saatu jonkinlaista näyttöä. Discovery ei ole erillinen projektin vaihe eikä erillisen tiimin työtä, vaan samat ihmiset tekevät molempia. Esimerkiksi product owner, tiimin käyttöliittymäsuunnittelija ja yksi kehittäjistä voivat haastatella asiakkaita viikoittain.
+
+Discoveryn jäsentämiseen käytetään usein Teresa Torresin [opportunity solution treetä](https://www.producttalk.org/opportunity-solution-trees/). Puussa on neljä tasoa, joita voi havainnollistaa [impact mappingin](/osa2#vaatimusten-kartoituksen-menetelmiä) yhteydessä käytetyllä verkkokauppaesimerkillä:
+
+- _tavoiteltu vaikutus_ (engl. outcome): toistuvien ostojen osuus kasvaa
+- _mahdollisuudet_ (engl. opportunity): haastatteluissa havaitut käyttäjien tarpeet ja ongelmat, esim. "unohdan tilata kahvisuodattimia ennen kuin ne loppuvat" tai "saman ostoskorin kokoaminen joka kerta on työlästä"
+- _ratkaisut_: ideat, jotka voisivat vastata tarpeeseen, esim. muistutusviesti tai uudelleentilaus tilaushistoriasta
+- _kokeilut_: tavat testata ratkaisun taustalla olevia oletuksia ennen kuin ratkaisu rakennetaan, esim. klikattavan prototyypin näyttäminen viidelle asiakkaalle tai muistutusviestin lähettäminen käsin pienelle asiakasjoukolle
+
+Rakenne muistuttaa impact mappingia, mutta painopiste on käyttäjien tarpeissa: ratkaisuja ei mietitä ennen kuin tarve on havaittu oikeiden käyttäjien kanssa. Samaan tarpeeseen kannattaa myös keksiä useampi vaihtoehtoinen ratkaisu ja verrata niitä, sen sijaan että toteutettaisiin ensimmäinen mieleen tullut idea.
+
+Ajattelu liittyy osassa 1 käsiteltyyn [tuoteajatteluun](/osa1#product-owner): backlogin kohteet ovat hypoteeseja siitä, mikä tuottaa käyttäjille arvoa, eivätkä valmiiksi tiedettyjä vaatimuksia.
+
+Product discovery vaikuttaa myös siihen, millainen vastuu tiimille annetaan. Marty Cagan erottaa toisistaan _feature-tiimit_ ja _tuotetiimit_ ([Product vs. Feature Teams](https://www.svpg.com/product-vs-feature-teams/)). Feature-tiimille annetaan toteutettavaksi valmiiksi päätetty ominaisuus, esim. "lisää tilaushistoriaan uudelleentilauspainike". Tuotetiimille taas annetaan ratkaistavaksi ongelma, esim. "kasvata toistuvien ostojen osuutta", ja se vastaa myös siitä, että valittu ratkaisu todella toimii. Jos uudelleentilaus ei lisää ostoja, feature-tiimin työ on silti tehty, tuotetiimin ei. Tuotetiimi siis tekee product discoveryä itse sen sijaan, että toteuttaisi muiden sille määrittelemiä vaatimuksia. Samasta syystä monet organisaatiot ovat siirtymässä määräaikaisista projekteista pysyviin tuotetiimeihin, jotka kehittävät ja ylläpitävät samaa tuotetta pitkään.
+
+> Huomaa, että Caganin feature-tiimi on eri asia kuin [osassa 5](/osa5#less-käytännössä) LeSS:n yhteydessä esiteltävä feature-tiimi, jolla tarkoitetaan arkkitehtuurin kerrosten sijaan kokonaisia asiakkaalle arvoa tuottavia toiminnallisuuksia toteuttavaa tiimiä.
 
 ## Vaatimusmäärittely ja projektisuunnittelu ketterässä prosessimallissa
 
@@ -281,9 +321,9 @@ toiminnallisuuden tulee käyttäytyä eri tilanteissa. Esim. nyt storyn sisält�
 - parkkilupa myönnetään kuukaudeksi kerrallaan
 - on mahdollista ostaa vain yksi parkkilupa kuukaudessa
 
-Hyväksymiskriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein hyväksymiskriteerit nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen – miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
+Hyväksymiskriteerit ovat tuloksena keskusteluista, joita storyn toiminnallisuuden rajaamisesta käydään product ownerin tai asiakkaan kanssa. Usein hyväksymiskriteerit nimenomaan rajaavat toiminnallisuutta. Esimerkkinä olevan storyn kriteerit jättävät vielä paljon yksityiskohtia auki vaikkapa maksamisen suhteen, miten se tapahtuu? Kriteerejä voisi täydentää seuraavasti
 
-- parkkilupa maksetaan käteisellä tai verkkopankissa
+- parkkilupa maksetaan käteisellä tai tilisiirtona verkkopankissa
 - verkkomaksun tapauksessa on käytettävä opiskelijalle henkilökohtaisesti generoitua viitenumeroa
 
 Nykyään etänä tai hybridisti työskentelevät tiimit käyttävät postit-lappujen ja pahvikorttien sijaan jotain elektronista järjestelmää, esim. [Jiraa](https://www.atlassian.com/software/jira) tai [GitHub projectsia](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) user storyjen kirjaamiseen.
@@ -359,6 +399,7 @@ Alustavan product backlogin muodostamisessa ovat käytettävissä kaikki yleiset
 - haastattelut
 - brainstormaus
 - workshopit
+- impact mapping
 
 Alustavan user storyjen keräämisvaiheen ei ole tarkoituksenmukaista kestää kovin kauaa, maksimissaan muutaman päivän (tähän on toki poikkeuksia riippuen kehitettävän ohjelmiston koosta ja kehittäjäorganisaatiosta). User storyn luonne (muistilappu ja lupaus, että vaatimus tarkennetaan ennen toteutusta) tekee siitä hyvän työkalun projektin aloitukseen. Turhiin yksityiskohtiin ei ole tarkoitus puuttua ja ei edes kannata tavoitella täydellistä ja kattavaa listaa vaatimuksista, sillä storyjä tarkennetaan, muokataan ja luodaan lisää myöhemmin. User storyn määritelmän toinen kohtahan on _conversations about the story to serve to flesh the details of the story_, ja tämä tarkoittaa sitä että storyn sisältö saattaa elää ajan mittaan.
 
@@ -500,7 +541,7 @@ Ketterissä menetelmissä on olennaista kuvata mahdollisimman realistisesti proj
 
 Kuten aiemmin mainittiin, story point [ei vastaa mitään aikaan sidottua työmäärää](/osa2#suhteelliseen-kokoon-perustuva-estimointi). Kukin tiimi määrittelee itse sen mitä story point tiimille tarkoittaa. Usein määritelmä perustuu jonkin tietyn user storyn oletettuun työmäärään. Tiimi voi esimerkiksi määritellä, että storyn _käyttäjä lisää tuotteen ostoskoriin_ koko on yksi story point. Tämän takia taas eri kehitystiimien velositeetit eivät ole ollenkaan vertailukelpoisia, poikkeuksena tilanteet, joissa tiimit työskentelevät yhteisen backlogin parissa ja hoitavat estimoinnin yhdessä.
 
-Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä _Goodhartin laki_: kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Jos velositeettia käytetään tiimiä vastaan, tiimi alkaa suojautua, ja arvioista sekä ongelmista ei enää kerrota rehellisesti. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
+Velositeettiä ei myöskään pidä käyttää tiimin suorituskyvyn mittarina tai tavoitteena. Jos velositeetin kasvattamisesta tehdään tavoite, tiimi alkaa helposti, tietoisesti tai tiedostamattaan, paisuttaa estimaatteja, jolloin velositeetti kasvaa mutta tuotettu arvo ei. Ilmiö tunnetaan nimellä [_Goodhartin laki_](https://fi.wikipedia.org/wiki/Goodhartin_laki): kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari. Jos velositeettia käytetään tiimiä vastaan, tiimi alkaa suojautua, ja arvioista sekä ongelmista ei enää kerrota rehellisesti. Velositeetti on tarkoitettu ainoastaan tiimin oman suunnittelun apuvälineeksi.
 
 #### Burndown- ja burnup-kaaviot
 
@@ -540,13 +581,21 @@ Ketterän hengen mukaan milestonejen sisältö voi kuitenkin elää, ja mitä ka
 
 #### User story mapping
 
-Product backlogin hienoisena hankaluutena on, että sovelluksen kehityksen suuret linjat eivät tule siitä kunnolla esille. Jeff Pattonin kehittämä [user story mapping](https://www.jpattonassociates.com/user-story-mapping/) on tekniikka, joka tarjoaa product backlogin "yksiulotteista" näkymää paremman työkalun sovelluksen julkaisun suunnitteluun.
+Product backlogin hankaluutena on, että se on yksiulotteinen prioriteettijärjestyksessä oleva lista. Listasta ei näe, miten storyt liittyvät toisiinsa ja mitkä niistä yhdessä muodostavat käyttäjälle mielekkään kokonaisuuden. Jos verkkokaupan backlogin kärjessä on kymmenen tuotehakua parantavaa storya, ne voidaan toteuttaa huolellisesti, mutta käyttäjä ei silti pysty ostamaan mitään, koska kassa puuttuu.
 
-Tekniikka jakaa user storyt sovelluksen eri toiminnallisten kokonaisuuksien alle omiksi sarakkeikseen tärkeysjärjestykseen. Seuraavassa esimerkkinä verkkokaupan _story map_, joka jaottelee user storyt sen mukaan liittyvätkö ne tuotteiden etsimiseen (product search), yksittäisen tuotteen näkymään (product page) vai ostoksen tekemiseen (checkout):
+Jeff Pattonin kehittämä [user story mapping](https://www.jpattonassociates.com/user-story-mapping/) ratkaisee ongelmaa järjestämällä storyt kaksiulotteiseksi kartaksi:
+
+- vaakasuunnassa on käyttäjän polku sovelluksen läpi, eli vaiheet siinä järjestyksessä kuin käyttäjä ne kohtaa. Vaatteita myyvässä verkkokaupassa vaiheet voisivat olla _tuotehaku_, _tuotesivu_ ja _kassa_. Tätä kartan ylintä riviä kutsutaan sen selkärangaksi (engl. backbone)
+- pystysuunnassa kunkin vaiheen alla ovat siihen liittyvät storyt tärkeysjärjestyksessä, tärkeimmät ylimpänä
+- kartta jaetaan vaakaviivoilla julkaisuiksi
 
 ![]({{ "/images/2-15.svg" | relative_url }}){:height="400px" }
 
-Story mapin rivit ovat loogisia kokonaisuuksia, joista kustakin muodostuu sovellukseen oma milestone tai vaikkapa yhdessä sprintissä kehitettävä mielekäs kokonaisuus.
+Kartan tärkein idea on se, että ensimmäinen julkaisu on vaakasuuntainen viipale koko kartan läpi. Siihen otetaan jokaisesta vaiheesta vain välttämättömin, jotta käyttäjä pääsee polun alusta loppuun. Esimerkin ensimmäisessä julkaisussa käyttäjä voi suodattaa tuotteita kategorian mukaan, lukea tuotekuvauksen, valita koon ja värin, painaa osta-painiketta, antaa toimitustiedot ja maksaa PayPalilla. Tuotehaku on vielä vaatimaton, mutta verkkokauppa toimii ja sitä voidaan käyttää. Toinen julkaisu parantaa jokaista vaihetta: hakuun tulee suodatus värin ja tyylin mukaan sekä lajittelu hinnan mukaan, tuotesivulle kuvagalleria ja kassalle postinumerohaku ja korttimaksu. Alimmalla rivillä on vielä myöhempään ajankohtaan jätettyjä storyja.
+
+Story map laaditaan yleensä yhdessä product ownerin ja tiimin kanssa esim. seinälle post-it-lapuilla tai Miron kaltaisella sähköisellä taululla. Ensin kirjataan polun vaiheet kertomalla, mitä käyttäjä tekee sovelluksen kanssa alusta loppuun. Sen jälkeen kunkin vaiheen alle kirjataan siihen liittyvät storyt ja ne järjestetään tärkeysjärjestykseen. Lopuksi vedetään julkaisujen rajat. Polun läpikäyminen paljastaa usein myös puuttuvia storyja. Esim. kysymys "mitä tapahtuu maksamisen jälkeen?" voi tuoda esiin tarpeen tilausvahvistukselle.
+
+Story map ei korvaa product backlogia, vaan on eräs näkymä siihen. Kartasta saadaan backlogin järjestys, ja kukin julkaisu voi muodostaa oman milestonensa. Jos ensimmäinen julkaisu on liian suuri yhteen sprinttiin, viipaletta voidaan ohentaa tai sen toteutus voidaan jakaa useampaan sprinttiin.
 
 ### Kannattaako estimointi?
 
@@ -558,8 +607,6 @@ Story point -perustainen suhteellinen estimointi on saavuttanut vankan aseman ke
 #NoEstimates-liike [ei missään tapauksessa kiistä](https://plan.io/blog/noestimates-6-software-experts-give-their-view/) etteikö työmääräarvioista olisi hyötyä, tarkoituksena onkin saada ihmiset ajattelemaan, missä tilanteissa estimointi on järkevää sekä nostaa esiin vaihtoehtoisia tapoja estimoinnin suorittamiseen.
 
 Eräs jo [vuosia käytetty](https://ronjeffries.com/xprog/articles/jatrtsmetric/) menetelmä on arvioida kehitystiimin velositeetti laskemalla kussakin sprintissä valmistuneiden user storyjen _lukumäärä_ sen sijaan, että käytetään story point -perustaista estimointia. Monien [kokemuksen](http://blog.karhatsu.com/2013/08/from-hour-estimates-gradually-to.html) mukaan menetelmä toimii varsin hyvin, erityisesti jos storyt ovat riittävän tasakokoisia.
-
-Valmistuneiden storyjen lukumäärään perustuvaa ennustamista voidaan viedä pidemmälle ns. _Monte Carlo -simulaatiolla_. Tiimin aiemmin toteutuneesta läpimenonopeudesta (engl. throughput, esim. valmistuneet storyt viikossa) simuloidaan tuhansia mahdollisia tulevaisuuksia, ja tuloksena saadaan todennäköisyysjakauma, esim. "tämä kokonaisuus valmistuu 85 %:n todennäköisyydellä kuuden viikon kuluessa". Ennuste perustuu toteutuneeseen dataan eikä arvioihin, ja se ilmaisee ennusteen epävarmuuden suoraan. Menetelmää käsittelee tarkemmin esim. Daniel Vacantin kirja [When Will It Be Done?](https://leanpub.com/whenwillitbedone), ja sitä voi kokeilla Troy Magennisin [valmiilla taulukkopohjilla](https://github.com/FocusedObjective/FocusedObjective.Resources).
 
 Tekoälytyökalut tekevät estimoinnista entistä vaikeampaa. Ne nopeuttavat eri tyyppisiä tehtäviä hyvin eri tavoin, jolloin storyjen suhteelliset koot muuttuvat, ja niiden käyttöönoton jälkeen aiempi velositeetti lakkaa ennustamasta tulevaa. Lisäksi kehittäjät yliarvioivat helposti tekoälyn tuoman hyödyn, ja tuottavuusvaikutuksista on ylipäätään ristiriitaista tutkimustietoa. Toteutuneeseen läpimenonopeuteen perustuva ennustaminen sopeutuu muutoksiin arvioita paremmin, ks. myös [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 
@@ -750,7 +797,7 @@ Sama periaate pätee koodausagentin kanssa työskentelyyn: isompia muutoksia teh
 
 ### Sprint backlog
 
-Sprintin tehtävälista eli _sprint backlog_ koostuu sprintiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehittäjien työväline, ja kehittäjät päättävät itse, miten se organisoidaan.
+Sprintin tehtävälista eli _sprint backlog_ koostuu sprinttiin valituista user storyista sekä niihin liittyvistä teknisen tason tehtävistä eli taskeista. Sprint backlog on ensisijaisesti kehittäjien työväline, ja kehittäjät päättävät itse, miten se organisoidaan.
 
 Sprint backlog organisoidaan usein taulukkomaiseksi _taskboardiksi_, jossa on yksi rivi kutakin sprinttiin valittua user storya kohti. Storyyn liittyvät taskit kulkevat vasemmalta oikealle niiden statusta kuvaavien sarakkeiden _not started, in progress, done_ kautta:
 
@@ -772,9 +819,31 @@ Nykyään useimmat tiimit käyttävät kuitenkin elektronista taskboardia. Josku
 
 Erilaisia ratkaisuja elektronisen backlogin ja taskboardin muodostamiseen on lukemattomia. Voidaan käyttää jotain yleishyödyllistä sovellusta, esimerkiksi Exceliä tai Google Driveä. GitHub Projects tarjoaa nykyään varsin käyttökelpoisen taskboard-näkymän GitHubin issueihin. On myös olemassa suuri joukko enemmän tai vähemmän käyttökelpoisia sovelluksia, jotka on tehty varta vasten ketterien projektien hallintaan, muutamana esimerkkinä mainittakoon Jira, Linear, Azure Boards, Asana ja Trello.
 
-Myös taulukkolaskentaohjelmat toimivat kohtuullisen hyvin backlogin ja taskboardin pohjana.
-
 Taskboard ja mahdollisesti käytössä oleva burndown-käyrä tuovat selkeästi esille sprintin etenemisen asteen ja onkin suositeltavaa, että ne ovat kaikkien tiimiläisten ja projektin sidosryhmäläisten nähtävillä. Elektronisia taskboardeja käytettäessä on aina se riski, että ne eivät säteile informaatiota yhtä hyvin kuin seinällä oleva manuaalinen taskboard. Näin ketterän kehityksen kannalta elintärkeä läpinäkyvyyden periaate saattaa vaarantua.
+
+#### Esimerkki: backlogit GitHub Projectsilla
+
+Katsotaan esimerkkinä, miten product backlog ja sprint backlog voidaan toteuttaa GitHub Projectsilla. Esimerkki on kurssin [miniprojektin boilerplate-repositoriosta](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate). Sovelluksena on yksinkertainen todo-sovellus, ja backlogit ovat sellaiset kuin ne voisivat olla kesken toista sprinttiä.
+
+Jokainen user story ja taski on oma GitHubin issuensa. Issuet kootaan samaan projektiin, jossa niille annetaan omia kenttiä, kuten _Sprint_ ja _Tyyppi_ (user story tai task). Projektista tehdään useita näkymiä, joissa issueita suodatetaan näiden kenttien perusteella.
+
+[Product backlog](https://github.com/orgs/ohjelmistotuotanto-hy/projects/1/views/1) on taulukkonäkymä, johon on suodatettu vain user storyt prioriteettijärjestyksessä:
+
+![]({{ "/images/2-27.png" | relative_url }})
+
+Taulukosta näkyy jokaisen storyn status, sprintti, johon story on otettu, sekä kuinka moni storyn taskeista on jo valmiina. Backlog on [DEEP](/osa2#hyvä-product-backlog-on-deep): ylimmät storyt on määritelty tarkasti hyväksymiskriteereineen, kun taas alempien, esim. _Käyttäjänä voin jakaa todolistan toisen käyttäjän kanssa_, sisältö tarkennetaan asiakkaan kanssa vasta myöhemmin. Esimerkissä storyja ei ole estimoitu, sillä miniprojektissa sitä ei vaadita. Estimaateille voisi lisätä projektiin oman numerokentän.
+
+Sprintin suunnittelussa sprinttiin valitut storyt jaetaan teknisen tason taskeiksi, jotka ovat storyn issuen _sub-issueita_. Storyn [#22](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/issues/22) sivulta näkyvät sen taskit ja niiden tilanne. Storyn kuvauksessa on linkki testitiedostoon, johon storyn hyväksymiskriteerit on kirjoitettu automaattisesti suoritettaviksi testeiksi:
+
+![]({{ "/images/2-29.png" | relative_url }})
+
+[Sprintin 2 backlog](https://github.com/orgs/ohjelmistotuotanto-hy/projects/1/views/3) on taskboardiksi organisoitu näkymä sprinttiin kuuluvista taskeista. Sarakkeet vastaavat taskien statusta, ja kortista näkyy, mihin storyyn taski liittyy ja kuka sitä tekee:
+
+![]({{ "/images/2-28.png" | relative_url }})
+
+Taskboardista näkee esim., että tiimi tekee storyja valmiiksi yksi kerrallaan: storyn #17 taskit ovat valmiina, storyn #22 työ on kesken ja storyn #27 taskit odottavat vuoroaan. Tähän palataan pian [WIP-rajoitusten](/osa2#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban) yhteydessä.
+
+Ohjeet backlogien rakentamiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta.
 
 ### Sprintin etenemisen seuranta
 
@@ -790,15 +859,19 @@ Kuvassa tummemman sininen käyrä kuvaa sprintissä jäljellä olevaa työmäär
 
 ### Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban
 
-Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua scrumissa ongelmaksi, sillä riski sille, että sprintin päätyttyä on paljon osittain valmiita user storyja kasvaa. Voikin olla mielekästä rajoittaa yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä [Scrumban](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Scrumbanissa on tosin muitakin Kanbanista lainattuja elementtejä kuin WIP-rajoitukset.
+Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua Scrumissa ongelmaksi. Jos jokainen tiimiläinen aloittaa aina uuden taskin sen sijaan, että auttaisi saamaan jo aloitettuja kokonaan valmiiksi testaus mukaanlukien, voi taskboard näyttää sprintin loppupuolella esim. seuraavalta:
 
-Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan HELENA-tutkimuksen mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä ([Kuhrmann ym. 2019](https://doi.org/10.1109/MS.2018.110161245)). Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
+![]({{ "/images/2-30.png" | relative_url }})
+
+Lähes kaikki taskit on ohjelmoitu, mutta ne ovat jääneet jonoon testausvaiheeseen, eikä yksikään kolmesta storysta ole valmis. Jos sprintti päättyy nyt, asiakkaalle ei ole mitään näytettävää, vaikka tiimi on tehnyt paljon työtä.
+
+Tilannetta voidaan yrittää välttää rajoittamalla yhtä aikaa työn alla olevien töiden määrää asettamalla _work in progress (eli WIP)_ -rajoituksia. WIP-rajoitukset on lainattu Kanban-menetelmästä, jota käsittelemme tarkemmin [osassa 5](/osa5#kanban). Scrumin ja Kanbanin yhdistelmää kutsutaan usein nimellä _Scrumban_, johon palaamme [luvun lopussa](/osa2#scrumban).
 
 WIP-rajoituksia voidaan soveltaa monella tavalla, esim. rajaamalla tietyssä taskboardin vaiheessa olevien töiden määrää:
 
-![]({{ "/images/2-25.png" | relative_url }}){:height="350px" }
+![]({{ "/images/2-31.png" | relative_url }})
 
-Kuvan esimerkissä rajoitteet on ilmaistu työvaiheita kuvaavien sarakkeiden otsikoihin merkittynä numerona. Esimerkiksi numero 3 sarakkeessa _development_ määrää, että toteutusvaiheessa ei saa olla yhtä aikaa enempää kuin kolme taskia, vastaavasti 2 sarakkeessa _testing_ rajaa kerrallaan testauksen alla olevien taskien määräksi kaksi.
+Esimerkissä sarakkeissa _Coding_ ja _Testing_ saa olla kummassakin yhtä aikaa korkeintaan kaksi taskia. Kun testausvaihe on täynnä, uutta taskia ei voi siirtää testattavaksi, ja ohjelmoijan kannattaa auttaa testauksessa sen sijaan, että aloittaisi uuden taskin. Näin työ etenee story kerrallaan valmiiksi: _Tuotteiden selaaminen_ on jo valmis, _Tuotteen lisääminen ostoskoriin_ on työn alla, ja _Ostoskorin maksaminen_ odottaa vuoroaan.
 
 Yhtä aikaa tehtävän työn määrää kontrolloivien WIP- eli Work in progress -rajoitusten idea on siis peräisin Kanban-menetelmästä. Kanban-menetelmä taas on eräs keskeisimmistä Lean-ajattelun työkaluista.
 
@@ -807,10 +880,6 @@ Lean-ajattelun taustalla on idea hukan (engl. waste, jap. muda) eli arvoa tuotta
 Lean tunnistaa usean tyyppistä hukkaa (lean waste), näiden joukossa ovat esimerkiksi osittain tehty työ (partially done work), välivarastointi ja turha odottaminen. Ohjelmistotuotannon kontekstiin sovellettuna työvaiheet, jotka eivät ole vielä definition of donen mielessä valmiina edustavat leanin mukaista hukkaa. Esimerkiksi testaamista odottavien toiminnallisuuksien (user storyjen) katsotaan olevan "välivarastoituna", samoin jo testatut mutta tuotantoon viemistä vielä odottavat toiminnallisuudet ovat "välivarastossa".
 
 Asiakkaalle toiminnallisuudet alkavat tuottaa arvoa vasta kun ne saadaan käyttöön, siinä vaiheessa kun toiminnallisuudet ovat työn alla, ne aiheuttavat ainoastaan kustannuksia ja muodostavat riskin.
-
-Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aikaa työn alla olevien user storyjen määrää. Kanbanissa ja Scrumbanissa ei yleensä ole olemassa Scrumin sprintin kaltaista kehitystyötä rytmittävää käsitettä vaan saatetaan noudattaa periaatetta, missä tiimi tekee yhden user storyn kerrallaan valmiiksi, demoaa sen asiakkaalle ja valitsee product backlogista seuraavan storyn työn alle.
-
-Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voi Kanbanissa ja Scrumbanissa tapahtua sovitun aikataulun, esimerkiksi 2 viikon välein vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
 
 WIP-rajoitteita voidaan soveltaa Scrumin yhteydessä monella tapaa. Edellä olleessa esimerkissä rajoitettiin kerrallaan yhdessä työvaiheessa sallittujen taskien määrää. Voi olla mielekästä myös määritellä, kuinka monta taskia yhdellä henkilöllä saa olla yhdellä kertaa työn alla.
 Ehkä paras tapa soveltaa WIP-rajoitteita on rajoittaa kerrallaan työn alla olevien user storyjen määrää. Esimerkiksi [Scrum book](http://scrumbook.org/) suosittelee, että työn alla on kerrallaan ainoastaan yksi user story. Näin taataan että arvoa tuottavia kokonaisuuksia "virtaa" sovelluksen käyttäjälle mahdollisimman tasaisesti.
@@ -824,9 +893,27 @@ Kanbanissa työn etenemistä seurataan ns. flow-mittareilla. [Kanban Guide](http
 - _läpimenonopeus_ (engl. throughput): aikayksikössä valmistuneiden kohteiden määrä
 - _työn ikä_ (engl. work item age): kuinka kauan keskeneräinen kohde on ollut työn alla
 
-Mittarit liittyvät toisiinsa ns. _Littlen lain_ kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
+Mittarit liittyvät toisiinsa ns. [_Littlen lain_](https://en.wikipedia.org/wiki/Little%27s_law) kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
 
 Tekoäly voi siirtää pullonkaulaa: jos koodin kirjoittaminen nopeutuu mutta katselmointi ja testaus eivät, syntyy välivarastoa katselmointia odottavista muutoksista. WIP-rajoitukset ja flow-mittarit auttavat huomaamaan tilanteen, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
+
+### Scrumban
+
+Scrumban-nimen lanseerasi Corey Ladas vuonna 2008 kirjoituksessaan [Scrum-ban](http://web.archive.org/web/20091102163055/http://leansoftwareengineering.com/ksse/scrum-ban/). Alun perin hän kuvasi sillä tapaa siirtyä Scrumista vähitellen kohti Kanbania, mutta nykyään nimellä tarkoitetaan yleisemmin mitä tahansa Scrumin ja Kanbanin yhdistelmää. Yhdistelmästä ei ole yhtä virallista määritelmää, mutta tyypillisesti Scrumbanissa Scrumin rooleja ja tapahtumia, kuten retrospektiivejä, täydennetään Kanbanista lainatuilla käytännöillä:
+
+- työvaiheet näkyvät taskboardilla ja niille asetetaan WIP-rajoitteet
+- työ etenee _pull_-periaatteella: uusi story otetaan työn alle vasta, kun edellinen valmistuu ja kapasiteettia vapautuu
+- suunnittelu tehdään tarpeen mukaan, esim. aina kun toteutusta odottavien storyjen jono lyhenee tietyn rajan alle, eikä välttämättä kiinteän sprinttirytmin mukaan
+- estimointia kevennetään tai siitä luovutaan, ja ennusteet perustuvat toteutuneeseen läpimenonopeuteen
+- työn etenemistä seurataan edellä esitellyillä flow-mittareilla
+
+Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aikaa työn alla olevien user storyjen määrää. Kanbanissa ja Scrumbanissa ei yleensä ole olemassa Scrumin sprintin kaltaista kehitystyötä rytmittävää käsitettä vaan saatetaan noudattaa periaatetta, missä tiimi tekee yhden user storyn kerrallaan valmiiksi, demoaa sen asiakkaalle ja valitsee product backlogista seuraavan storyn työn alle. Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voivat silti tapahtua sovitun aikataulun mukaan, esimerkiksi kahden viikon välein, vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
+
+Scrumban sopii erityisesti tilanteisiin, joissa työtä tulee jatkuvasti ja ennakoimattomasti, esim. ylläpito- ja tukitiimeille. Tällaisessa työssä kahden viikon sprintin sisällöstä sopiminen etukäteen on usein keinotekoista, koska kiireelliset korjaukset sotkevat suunnitelman joka tapauksessa. Toisaalta kiinteä sprinttirytmi tuo tiimille säännöllisen hetken pysähtyä tarkastelemaan tuotetta ja omaa toimintaansa, ja sprintit poistava tiimi joutuu huolehtimaan siitä, ettei tämä katoa.
+
+Scrumin ylläpitäjä Scrum.org on julkaissut myös [ohjeen](https://www.scrum.org/resources/kanban-guide-scrum-teams) Kanbanin käytäntöjen hyödyntämiseen Scrumissa. Sen lähtökohta on hieman Scrumbania varovaisempi: sprintit ja muut Scrumin tapahtumat säilyvät, ja Kanbanin WIP-rajoitteet, pull-periaate ja flow-mittarit tuodaan niiden sisälle parantamaan työn virtausta. Suomenkielinen esimerkki Scrumbanin käyttöönotosta löytyy esim. [tästä kandidaatintutkielmasta](https://www.cs.helsinki.fi/u/mluukkai/ohtu/ilves-kandi.pdf). Kanbania käsitellään tarkemmin [osassa 5](/osa5#kanban).
+
+Scrumban on esimerkki laajemmasta ilmiöstä: käytännössä harva organisaatio noudattaa yhtä menetelmää sellaisenaan. Laajaan kansainväliseen kyselyyn perustuvan  [tutkimuksen](https://doi.org/10.1109/MS.2018.110161245) mukaan valtaosa organisaatioista yhdistelee useita menetelmiä ja käytäntöjä, esim. Scrumia, Kanbania ja jopa vesiputousmallin piirteitä . Tällaiset _hybridimallit_ ovat siis pikemminkin sääntö kuin poikkeus.
 
 ### Ennen seuraavaa sprintin alkua
 

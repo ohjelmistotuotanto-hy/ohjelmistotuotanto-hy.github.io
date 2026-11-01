@@ -9,11 +9,11 @@ Tämä sivu käsittelee generatiivisen tekoälyn ja erityisesti koodausagenttien
 
 Osaan kurssin muista tehtävistä liittyy lisäksi tehtävän yhteydestä avattava vihje tekoälyn hyödyntämiseen.
 
-Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
+Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat. Jos et halua käyttää Copilotia, suositeltu vaihtoehto on avoimen lähdekoodin koodausagentti [OpenCode](/opencode/), jota voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. OpenCode-sivulta löytyvät myös tehtäväkohtaiset ohjeet [tekoäly]-tehtäviin.
 
 ## Kurssin GPT
 
-Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen.
+Kurssilla on käytössä HY:n tarjoama [CurreChat](<{{site.curre}}>), joka on Azuressa hostattu GPT-pohjainen chat, johon syötettyä materiaalia ei käytetä kielimallien kouluttamiseen. CurreChatin kielimalleja voi käyttää myös koodausagentti OpenCodessa, ks. [CurreChatin käyttö](/opencode/#currechatin-käyttö).
 
 Kurssilla on kaksi CurreChatin päälle tehtyä bottia, joita voi käyttää suoraan sivulta [OhtuBotit](/ohtubotit):
 
@@ -22,15 +22,15 @@ Kurssilla on kaksi CurreChatin päälle tehtyä bottia, joita voi käyttää suo
 
 Bottien käyttö edellyttää kirjautumista yliopiston tunnuksilla.
 
-CurreChatia on mahdollisuus käyttää myös "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. KurssimateriaaliChat toimii juuri näin. Hakuindeksi otetaan CurreChatissa käyttöön valitsemalla alustukseksi _Materiaali_:
+CurreChatia on mahdollisuus käyttää myös "normaalisti", tai siten, että Chatin hakuindeksinä (ks. lisää [täältä](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)) on kurssimateriaali. Molemmat kurssin botit toimivat juuri näin. Botit löytyvät CurreChatissa valikosta _Kurssit ja alustukset_ kurssin _Ohjelmistotuotanto, Lähiopetus_ alta. Esim. Kertaaja otetaan käyttöön valitsemalla alustukseksi _Kertaaja_:
 
-![]({{ "/images/chat0.png" | relative_url }}){: width="70%"}
+![]({{ "/images/bottivalinta.png" | relative_url }}){: width="70%"}
 
-Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan materiaaliin pohjautuen:
+Valittu alustus näkyy vasemman reunan kohdassa _Alustus_, ja keskustelu Kertaajan kanssa voi alkaa:
 
-![]({{ "/images/chat2.png" | relative_url }}){: width="70%"}
+![]({{ "/images/koebotti.png" | relative_url }}){: width="70%"}
 
-Hakuindeksiä käyttäessä mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
+Hakuindeksiä käytettäessä Chat pyrkii vastaamaan kysymyksiin ainoastaan materiaaliin pohjautuen, joten mahdollisuus AI:n hallusinoinnille on paljon pienempi kuin chatin vapaassa käytössä. Virheet ovat kuitenkin mahdollisia, ja käyttö tapahtuu omalla vastuulla, tärkeät asiat kuten vaikkapa kokeen aika ja paikka tulee aina tarkastaa kurssisivulta.
 
 ## Kielimallit ja agentit ohjelmoinnin apuna <span style="color:blue">[viikot 2-3]</span>
 
@@ -165,7 +165,7 @@ Agentit ovat tunnettuja siitä, että ne saattavat "huijata" saadakseen testit m
 
 Agentin voi myös pyytää kirjoittamaan testit. Testejä syntyy nopeasti ja paljon, ja testikattavuus voi olla lähes sata prosenttia. Kattavuus kertoo kuitenkin vain sen, että koodi on _suoritettu_ testien aikana, ei sitä, että testit _tarkistaisivat_ jotain järkevää.
 
-Testien laatua voi arvioida periaatteella, johon [mutaatiotestaus](https://en.wikipedia.org/wiki/Mutation_testing) perustuu: koodiin istutetaan tarkoituksella bugi, esim. vaihdetaan `>` merkiksi `>=` tai poistetaan jokin rivi. Jos testit menevät tästä huolimatta läpi, testit eivät testaa kyseistä asiaa. Mutaatiotestausta pääsee kokeilemaan viikon 4 [vapaaehtoisessa lisätehtävässä](/tehtavat4/#vapaaehtoinen-lisätehtävä-mutaatiotestaus).
+Testien laatua voi arvioida periaatteella, johon [mutaatiotestaus](/osa3/#mutaatiotestaus) perustuu: koodiin istutetaan tarkoituksella bugi, esim. vaihdetaan `>` merkiksi `>=` tai poistetaan jokin rivi. Jos testit menevät tästä huolimatta läpi, testit eivät testaa kyseistä asiaa. Mutaatiotestausta pääsee kokeilemaan viikon 4 [vapaaehtoisessa lisätehtävässä](/tehtavat4/#vapaaehtoinen-lisätehtävä-mutaatiotestaus).
 
 Erityistä huomiota kannattaa kiinnittää [mock-olioiden](/tehtavat4/#mock-olioiden-käytöstä) käyttöön. Agentin kirjoittamissa testeissä on usein niin paljon mockeja, että testi lopulta testaa lähinnä mockeja eikä varsinaista koodia.
 
@@ -414,7 +414,7 @@ Tekoälyn vaikutuksesta ohjelmistokehityksen tuottavuuteen on ristiriitaista tie
 
 Kontrolloidussa [METR:n tutkimuksessa](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) (2025) kokeneet avoimen lähdekoodin kehittäjät olivat tekoälyä käyttäessään keskimäärin 19 % _hitaampia_, vaikka he itse uskoivat olleensa noin 20 % nopeampia. Tulos kertoo ennen kaikkea siitä, että oma kokemus tuottavuudesta voi olla harhaanjohtava. METR:n [jatkotutkimuksessa](https://metr.org/blog/2026-02-24-uplift-update/) (2026) tilanne oli jo toinen: työkalut olivat kehittyneet, ja tulokset viittasivat siihen, että tekoäly nopeutti työtä. Tutkimuksen toistaminen osoittautui kuitenkin vaikeaksi, koska yhä useampi kehittäjä ei enää halunnut tehdä tehtäviä ilman tekoälyä, ja 30–50 % osallistujista jätti osan tehtävistä tekemättä tästä syystä. Tutkijoiden mukaan tämä vääristää tuloksia, ja todellinen hyöty on todennäköisesti mitattua suurempi.
 
-Googlen [DORA-raportin](https://dora.dev/research/2025/dora-report/) (2025) mukaan 90 % ohjelmistoalan ammattilaisista käyttää tekoälyä työssään ja yli 80 % kokee sen parantaneen tuottavuuttaan. Samalla noin 30 % luottaa tekoälyn tuottamaan koodiin vain vähän tai ei lainkaan. Tekoälyn käyttö on raportin mukaan yhteydessä nopeampaan toimitustahtiin, mutta myös suurempaan epävakauteen: tuotantoon viedyt muutokset epäonnistuvat useammin ja korjaustyötä on enemmän. Raportin keskeinen johtopäätös on, että tekoäly toimii _vahvistimena_: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Hyötyjä saavat erityisesti tiimit, joilla on kattavat automatisoidut testit, hyvät versionhallintakäytännöt ja nopea palautesykli. Tekoäly ei korjaa huonoa prosessia. Sama pätee tiimin toimintakulttuuriin; jos virheistä ei uskalleta puhua, myös agentin tekemät virheet jäävät helpommin piiloon. Tekoäly voi myös heikentää tiimin keskinäistä viestintää. Jos ilmapiiri on kireä, kielimallilta on helpompi kysyä kuin kollegalta, jolloin tieto ei enää kulje tiimin sisällä.
+Googlen [DORA-raportin](https://dora.dev/research/2025/dora-report/) (2025) mukaan 90 % ohjelmistoalan ammattilaisista käyttää tekoälyä työssään ja yli 80 % kokee sen parantaneen tuottavuuttaan. Samalla noin 30 % luottaa tekoälyn tuottamaan koodiin vain vähän tai ei lainkaan. Tekoälyn käyttö on raportin mukaan yhteydessä nopeampaan toimitustahtiin, mutta myös suurempaan epävakauteen: tuotantoon viedyt muutokset epäonnistuvat useammin ja suunnittelematonta korjaustyötä on enemmän (ks. [DORA-mittarit](/osa3/#tieteellinen-evidenssi)). Raportin keskeinen johtopäätös on, että tekoäly toimii _vahvistimena_: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Hyötyjä saavat erityisesti tiimit, joilla on kattavat automatisoidut testit, hyvät versionhallintakäytännöt ja nopea palautesykli. Tekoäly ei korjaa huonoa prosessia. Sama pätee tiimin toimintakulttuuriin; jos virheistä ei uskalleta puhua, myös agentin tekemät virheet jäävät helpommin piiloon. Tekoäly voi myös heikentää tiimin keskinäistä viestintää. Jos ilmapiiri on kireä, kielimallilta on helpompi kysyä kuin kollegalta, jolloin tieto ei enää kulje tiimin sisällä.
 
 Tästä syystä myös [pariohjelmointi](/osa3/#extreme-programmingin-katselmoinnin-menetelmiä) on edelleen hyödyllistä. Kielimallin kanssa on helppo työskennellä, koska sillä ei ole tunteita eikä omia näkemyksiä, jotka pitäisi ottaa huomioon. Juuri siksi se ei kuitenkaan korvaa keskustelua tiimin kanssa: jos omasta koodista ei koskaan puhuta kenenkään kanssa, yhteys tiimiin heikkenee. Pariohjelmointi ei tekoälyn aikakaudella välttämättä tarkoita saman funktion kirjoittamista yhdessä, vaan esim. arkkitehtuurista ja kehitettävän ohjelmiston suunnasta käytäviä keskusteluja. Ne rakentavat yhteistä ymmärrystä ja luottamusta, jota agentin kanssa ei synny.
 

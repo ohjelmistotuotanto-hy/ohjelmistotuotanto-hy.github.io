@@ -14,6 +14,11 @@ RUN bundle _1.17.3_ exec jekyll build -d /site \
 
 FROM nginxinc/nginx-unprivileged:alpine
 
+# CVE-2026-111497 (Broccoli2Shell): brotli-libs 1.2.0 in the base image is vulnerable
+USER root
+RUN apk upgrade --no-cache brotli-libs
+USER 101
+
 COPY containerization/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /site /usr/share/nginx/html
 

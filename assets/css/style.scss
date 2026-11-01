@@ -455,3 +455,126 @@ html {
 details.tehtavalista ul {
   margin-bottom: 0;
 }
+
+// table of contents in the left margin on wide screens, a drawer opened from a button on narrow ones
+// narrower sidebar and gap from $sidebar-toc-wide, full ones from $sidebar-toc-wider
+$sidebar-toc-wide: 1100px;
+$sidebar-toc-wider: 1280px;
+$sidebar-toc-width: 300px;
+$sidebar-toc-width-narrow: 240px;
+
+.sidebar-toc {
+  display: none;
+  font-size: 0.8em;
+  line-height: 1.4;
+
+  ul {
+    list-style: none;
+    margin: 0 0 0 0.8em;
+  }
+
+  > ul {
+    margin-left: 0;
+  }
+
+  li {
+    margin: 3px 0;
+  }
+
+  a {
+    color: #5a6670;
+    display: block;
+    padding-left: 6px;
+    border-left: 2px solid transparent;
+
+    &.active {
+      color: $nav-accent;
+      border-left-color: $nav-accent;
+      font-weight: 600;
+    }
+  }
+
+  .sidebar-toc-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+}
+
+.sidebar-toc-toggle,
+.sidebar-toc-backdrop {
+  display: none;
+}
+
+@media screen and (min-width: $sidebar-toc-wide) {
+  .sidebar-toc:not([hidden]) {
+    display: block;
+    position: fixed;
+    left: 16px;
+    width: $sidebar-toc-width-narrow;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+  }
+
+  // keep the text clear of the sidebar, using the free space on the right
+  .has-sidebar-toc .page-content .wrapper {
+    margin-left: unquote("max(calc((100vw - #{$content-width}) / 2), #{16px + $sidebar-toc-width-narrow + 40px - $spacing-unit})");
+  }
+}
+
+@media screen and (min-width: $sidebar-toc-wider) {
+  .sidebar-toc:not([hidden]) {
+    width: $sidebar-toc-width;
+  }
+
+  .has-sidebar-toc .page-content .wrapper {
+    margin-left: unquote("max(calc((100vw - #{$content-width}) / 2), #{16px + $sidebar-toc-width + 80px - $spacing-unit})");
+  }
+}
+
+@media screen and (max-width: $sidebar-toc-wide - 1px) {
+  .sidebar-toc-toggle:not([hidden]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 150;
+    width: 44px;
+    height: 44px;
+    border: 1px solid $nav-border;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+
+  .sidebar-toc.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 210;
+    width: 320px;
+    max-width: 85vw;
+    padding: 20px 16px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+
+    li {
+      margin: 6px 0;
+    }
+  }
+
+  .sidebar-toc-backdrop.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

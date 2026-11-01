@@ -1,6 +1,6 @@
 # Materiaalin katselmointi: avoimet huomiot (syyskuu 2026)
 
-Osien 0–5 katselmoinnissa löytyneet asiat, joita ei vielä korjattu. Nopeat faktavirheet ja osan 1 Scrum Guide 2020 -päivitys on jo tehty. Lokakuussa 2026 osat 0 ja 1 tarkistettiin uudelleen, ja niiden korjatut kohdat on poistettu listalta.
+Osien 0–5 katselmoinnissa löytyneet asiat, joita ei vielä korjattu. Nopeat faktavirheet ja osan 1 Scrum Guide 2020 -päivitys on jo tehty. Lokakuussa 2026 osat 0–3 tarkistettiin uudelleen, ja niiden korjatut kohdat on poistettu listalta.
 
 Rivinumerot ovat suuntaa antavia, sillä korjaukset ovat siirtäneet rivejä. Kohdat löytyvät helpoimmin otsikon tai lainatun tekstin perusteella.
 
@@ -10,55 +10,12 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 
 ## Yleiset, kaikkia osia koskevat
 
-- **Vanhentuneet aikailmaisut.** Moni asia esitetään "viime aikoina", "viime vuosina" tai "uuden ajan" ilmiönä, vaikka se on 10–25 vuotta vanha. Esimerkkejä: Lean startup (2011), story mapping (2014), #NoEstimates (2012), continuous delivery (2010), trunk-based development, tutkiva testaus ja SAFe (2011). Aikailmaisut kannattaa käydä läpi hakemalla sanoja "viime", "uuden ajan" ja "tuore".
-- **Vanhentuneet ja kuolleet linkit.** Kaikissa osissa on http-linkkejä ja kadonneita sivustoja, esim. oualline.com, butunclebob.com, satisfice.com, IBM developerWorks, citeseerx, c2.com, alistair.cockburn.us, pcuf.fi, oodesign.com ja scaledagileframework.com (nykyään framework.scaledagile.com, korjattu osassa 1 mutta ei vielä osassa 5). Sourcemaking-linkit ovat nykyään refactoring.guru. Linkit kannattaa tarkistaa automaattisesti linkintarkistimella.
-- **"Facebook" → Meta** useassa kohdassa.
-- **Tutkimusaineisto.** Tutkimukset ja tilastot ovat pääosin vuosilta 2012–2022. Tilalle tai rinnalle kannattaa ottaa DORA-raportit (2019–2025), SPACE (Forsgren ym. 2021) ja DevEx (Noda ym. 2023).
-- **Toistot osien välillä.** Vesiputousmallin ongelmat käsitellään osassa 3 kolmesti ja osittain osassa 2 (osan 1 toisto on poistettu). Lean- ja Kanban-tausta toistuu osissa 2 ja 5.
-- **DevOpsin paikka.** sisallys.md ja osa4 lupaavat DevOpsia osaan 4, mutta se käsitellään osassa 3.
-
----
-
-## Osa 1: Ohjelmistotuotanto ja Scrum
-
-- **Koe- ja monivalintakysymykset** kannattaa tarkistaa Scrum-päivityksen jälkeen: 3–9 kehittäjää, sprint planningin kesto, kaksi vs. kolme aihetta, scrum masterin rooli hylkäämisessä ja potentially shippable. Lokakuun 2026 korjausten jälkeen tarkista myös: viisi tapahtumaa, DoD organisaatio- tai tiimitasolla, daily scrum ei välttämättä aamulla, NATO-konferenssin ajankohta ja DoD 5000.2.
-- **Luentokalvot** (`slides/1.md`, `slides/2.md`) on synkattu osien 0 ja 1 kanssa lokakuussa 2026. Muiden osien kalvoja ei ole tarkistettu.
-
----
-
-## Osa 3: Laadunhallinta, testaus, CI/CD
-
-### Vanhentunutta
-- **"Bugit on taloudellisesti edullista paikallistaa mahdollisimman aikaisin"** esitetään tunnettuna tosiasiana, vaikka evidenssi on heikko (Menzies ym. 2017, "Are delayed issues harder to resolve?"). Muotoilu kannattaa pehmentää.
-- **Jenkins "todennäköisesti yhä maailman käytetyin"**: kyselyissä GitHub Actions on nykyään edellä. Travis (travis-ci.org suljettiin 2021) kannattaa poistaa ja lisätä tilalle GitLab CI.
-- **"Yksittäinen palvelin varataan CI-palvelimeksi"**: nykyään käytetään efemeerisiä kontitettuja runnereita.
-- **Feature toggle:** vakiintunut termi on nykyään *feature flag* (mm. CNCF:n OpenFeature).
-- **Blue-green** on ensisijaisesti julkaisutekniikka eikä "tuotannossa testaamisen tekniikka", ja kohdassa sekoittuu mukaan liikenteen peilaus (shadow traffic).
-- **Järjestelmätestauksesta vastaavat "laadunhallinnasta vastaavat ihmiset"** on ristiriidassa myöhemmin esitetyn cross-functional-tiimin kanssa.
-- **Feature branchit vs. TBD:** vastakkainasettelu "feature branchit turvallisempia aloittelijoille" on keinotekoinen. Nykykäytäntö on lyhytikäiset branchit + PR + merge queue, mikä on trunkbaseddevelopment.com:n mukaan TBD:tä.
-- **Työkalut:**
-  - Pylint → Ruff (koskee myös pylint.md:tä)
-  - Airbnb-tyyliopas on käytännössä ylläpitämätön
-  - Coverage-linkissä on kovakoodattu versio 7.11.0
-- **BDD:** Robot Framework esitetään yhtenä suosituimmista, vaikka se on kapea-alainen. Cucumber ja Gherkin (Given–When–Then) puuttuvat kokonaan.
-- **Esimerkit:** Flickr ja TMC:n noin 2013 pull request ovat vanhoja. PR-esimerkki kuvaa fork-mallin, vaikka tiimeissä PR tehdään normaalisti saman repon branchista.
-- **Pariohjelmointitutkimus** on noin vuodelta 2000. Tilalle esim. meta-analyysi Hannay ym. 2009.
-- **Accelerate** (data 2013–2017) ei ole enää "toistaiseksi vakuuttavin" evidenssi. Päivitä DORA-raporteilla.
-
-### Lisättävää
-1. **DORA-metriikat** (deployment frequency, lead time, change fail rate, recovery time, rework rate) evidenssiosioon, ja ristiviite genai.md:n AI-havaintoihin.
-2. **Observability ja SRE:** lokit, metriikat ja jäljet (OpenTelemetry), SLO:t ja error budget sekä blameless postmortem. Canary-osio nojaa monitorointiin, mutta käsitteitä ei esitellä.
-3. **Toimitusketjun turvallisuus ja DevSecOps:** Dependabot/Renovate, SAST (CodeQL), salaisuuksien skannaus ja SBOM. Cyber Resilience Act tekee aiheesta ajankohtaisen.
-4. **Nykyaikainen testausstrategia:** testing trophy / honeycomb (tukee omaa kantaasi pyramidia vastaan), contract testing (Pact), flaky testit.
-5. **Property-based testing** (Hypothesis) ekvivalenssiluokkien jatkoksi. Mutaatiotestauksen työkalut (mutmut, Stryker, PIT) ja maininta, että mutaatiotestauksella voi arvioida AI:n generoimia testejä.
-6. **Expand/contract (parallel change)** -skeemamigraatiot. Tietokantamuutoksia käsittelevä kohta kuvaa ongelman mutta ei ratkaisua.
-
-### Tiivistettävää
-- Vesiputousmallin integraatiohelvetti toistuu kolmesti.
-- Daily build ja smoke test: 2–3 lausetta historiana riittää.
-- Travis- ja Jenkins-kappale: yksi lause riittää.
-- TMC-kuvakaappaukset: korvaa ajankohtaisella esimerkillä tai poista, koska AI-katselmointiesimerkki on jo mukana.
-- Vuoden 2016 kyselylomakkeen kysymykset: korvaa DORA-metriikoilla.
+- **Vanhentuneet aikailmaisut.** Moni asia esitetään "viime aikoina" tai "viime vuosina" yleistyneenä, vaikka se on 10–25 vuotta vanha. Osat 0–3 on korjattu. Jäljellä:
+  - osa4: mikropalvelut "yleistynyt viime aikoina"
+  - osa5: Lean "viime vuosina" vaikutteita antanut (johdanto), arvon virtauksen tehostaminen ja jatkuvaan toimittamiseen siirtyminen "viime aikoina" / "viime aikojen trendinä", "viime aikainen ketterien menetelmien kehitys" sekä "tuoreempia ei näytä löytyvän" (käyttöastetutkimukset)
+- **Vanhentuneet ja kuolleet linkit.** Kaikissa osissa on http-linkkejä ja kadonneita sivustoja, esim. oualline.com, butunclebob.com, satisfice.com, IBM developerWorks, citeseerx, c2.com, alistair.cockburn.us, pcuf.fi, oodesign.com ja scaledagileframework.com (nykyään framework.scaledagile.com, korjattu osassa 1 mutta ei vielä osassa 5). Sourcemaking-linkit ovat nykyään refactoring.guru. Linkit kannattaa tarkistaa automaattisesti linkintarkistimella. Osan 3 http-linkit on tarkistettu: jäljellä olevat (butunclebob.com, extremeprogramming.org) eivät toimi https:llä.
+- **Tutkimusaineisto.** Tutkimukset ja tilastot ovat pääosin vuosilta 2012–2022. Tilalle tai rinnalle kannattaa ottaa DORA-raportit (2019–2025), SPACE (Forsgren ym. 2021) ja DevEx (Noda ym. 2023). Osan 3 evidenssiosio on päivitetty DORA-tutkimuksella ja -mittareilla, jäljellä erityisesti osa 5.
+- **Toistot osien välillä.** Vesiputousmallin ongelmat käsitellään osassa 3 ja osittain osassa 2 (osan 1 toisto on poistettu, osan 3 toistoja on tiivistetty). Lean- ja Kanban-tausta toistuu osissa 2 ja 5.
 
 ---
 
@@ -151,7 +108,8 @@ Tiedosto on jätetty Jekyll-buildin ulkopuolelle (`_config.yml` → `exclude`).
 
 ---
 
-## Tehtäviä koskevat huomiot
+## Seuraavaan kurssiin
 
-- **pylint.md** ja siihen viittaavat tehtävät: Ruff Pylintin tilalle tai rinnalle.
-- **sisallys.md:** osan 4 linkeissä on 13 vanhentunutta `viikko-5`-ankkuria, vaikka luvut on nykyään merkitty viikolle 6. Lisäksi osa5:n linkeissä on kaksi rikkinäistä ankkuria (työntekijöiden tarpeeton liikkuminen, muu tiimien välinen koordinointi).
+Muutokset, joita ei kannata tehdä kesken kurssin, koska ne koskevat jo tehtyjä tehtäviä tai miniprojektin arvosteluperusteita.
+
+- **Pylint → Ruff.** Pylint on viikon 2 tehtävien 6–8 ja tekoälytehtävän ytimessä (.pylintrc, GitHub Actions, precommit hook), ja miniprojektin ohjeet ja arvosteluperusteet edellyttävät Pylint-sääntöjä CI:ssä. Muutos koskee ainakin tiedostoja pylint.md, tehtavat2.md, miniprojekti.md, _miniprojekti.md ja _mp_arvosteluperusteet.md sekä tehtävärepositorion .pylintrc-tiedostoja. osa3.md mainitsee Ruffin jo vaihtoehtona.

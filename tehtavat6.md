@@ -461,6 +461,8 @@ Travis Sanheim       PHI          8  + 22 = 30
 
 ### 7. Suunnittele ensin, toteuta sitten [tekoäly]
 
+Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-6-tehtävä-7).
+
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 6 osuus [Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6).
 
 Kyselyrakentajan ansiosta kyselyjen muodostaminen on nyt aiempaa mukavampaa. Kyselyt ovat kuitenkin edelleen Python-koodia. Laajennetaan ohjelmaa siten, että kyselyn voi antaa myös merkkijonona:

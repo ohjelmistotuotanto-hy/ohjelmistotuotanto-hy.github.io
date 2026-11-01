@@ -13,6 +13,10 @@ Tämän viikon tehtävissä harjoitellaan ensin muutaman tärkeän ohjelmistokeh
 
 Laskarien lopuksi harjoitellaan _riippuvuuksien injektointia_, joka on melko simppeli mutta erittäin käyttökelpoinen tekniikka, jonka avulla sovellusten testattavuutta on mahdollista parantaa.
 
+### Ennakkokysely
+
+Vastaathan ennen tehtävien aloittamista kurssin ennakkokyselyyn osoitteessa <https://norppa.helsinki.fi/targets/121576179/feedback>
+
 ### Typoja tai epäselvyyksiä tehtävissä?
 
 {% include typo_instructions.md %}
@@ -393,7 +397,7 @@ Laadunvarmistus on ohjelmistokehityksen ehkä tärkein vaihe, ja sen tärkein ke
 
 Tekoälyavusteinen sovelluskehitys tekee testauksesta entistäkin tärkeämpää. Tekoäly tuottaa nopeasti paljon koodia, joka näyttää usein uskottavalta mutta voi silti olla virheellistä. Kattavat automaattiset testit ovat paras keino varmistaa, että koodi, oli sen kirjoittanut ihminen tai tekoäly, toimii niin kuin pitää, ja että aiemmin toiminut toiminnallisuus ei hajoa muutosten myötä.
 
-Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustunut kurssilla Ohjelmistotekniikka.
+Python-maailmassa automatisoidun testaamisen johtava työkalu on [unittest](https://docs.python.org/3/library/unittest.html), johon olet saattanut jo tutustua kurssilla Ohjelmistotekniikka.
 
 <input type="checkbox"> Jos unittest on vieras, tai päässyt unohtumaan, kertaa sen perusteet [tästä unittest-ohjeesta](/unittest).
 
@@ -668,7 +672,7 @@ https://github.com/mattiluukkainen/ohtuvarasto26/actions/workflows/main.yml/badg
 
 Oikein toimiva badge näyttää seuraavalta:
 
-![]({{ "/images/badge1.png" | relative_url }})
+![]({{ "/images/badge2.png" | relative_url }})
 
 Badge toimii siis sen indikaattorina onko repositoriossasi oleva koodi testien puolesta kunnossa!
 
@@ -1036,3 +1040,4 @@ Palautusrepositorion pitäisi näyttää nyt suunnilleen seuraavalta
 - Kerro palautussovelluksessa tehtävät 14-17 sisältävä repositoriosi.
 - Jos et tehnyt tehtäviä 14-17, voit laittaa linkin tehtävät 2-13 sisältävään ohtuvarasto-repositorioon.
 
+<input type="checkbox"> **Muistutus:** jos et vielä vastannut kurssin [ennakkokyselyyn](https://norppa.helsinki.fi/targets/121576179/feedback), tee se nyt.
