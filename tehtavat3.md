@@ -886,6 +886,45 @@ Pohdi tiivistelmässä myös, mikä tekee retrospektiivistä tilaisuuden, jossa 
 
 Pidä huoli siitä, että miniprojektitiimisi pitää ensimmäisen sprintin lopussa retrospektiivin!
 
+### 10. Daily scrumin harjoittelu
+
+Tässä tehtävässä harjoittelemme [OhtuBotin](/ohtubotit/) avulla jumista kertomista daily scrumissa. Botti esittää tiimiäsi, ja sinä kerrot tiimille ongelmastasi. Harjoitusta ei pisteytetä, ja siinä saa epäonnistua.
+
+<input type="checkbox"> Käy botin kanssa läpi vähintään kolme simulaatiota. Kokeile eri simulaatioissa eri toimintatapoja ja blokkereita.
+
+<input type="checkbox"> Pohdi simulaatioiden jälkeen, miltä hyvä daily scrum näyttää. Kirjoita pohdinnasta 100–200 sanaa palautusrepositorion hakemistoon _viikko3_ sijoitettavaan tiedostoon _daily.md_.
+
+{% include curre_embed.html %}
+
+<details class="bot" id="daily">
+  <summary>Daily Scrum</summary>
+  <p>Aloita keskustelu kertomalla, millainen tiimin toimintatapa on: <em>turvallinen</em>, <em>vaihteleva</em> tai <em>syyllistävä</em>.</p>
+  <p>Olet ollut jumissa taskisi kanssa jo kaksi päivää, ja sinun on tärkeää jakaa tämä tiimille. Valitse yksi alla olevista ongelmista ja kerro se omin sanoin tiimillesi:</p>
+  <ol>
+    <li>Et saa projektia käynnistymään koneellasi.</li>
+    <li>Taski on liian abstrakti, etkä tiedä, miten edetä sen kanssa.</li>
+    <li>Et osaa tietokanta-asioita tarpeeksi hyvin, ja sinua jännittää tehdä skeemamuutos.</li>
+    <li>Keksi oma blokkeri.</li>
+  </ol>
+  <div lang="fi" style="position: relative;" translate="yes"><iframe
+      id="cc-iframe-daily"
+      style="border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 0.3rem;"
+      data-src="https://curre.helsinki.fi/chat/hy-opt-cur-2627-7a893cd5-d161-4815-ac8e-422dd8953ff9?embedded=true&amp;promptId=52864821-4356-4200-b629-520093ea6573"
+      width="100%" height="800px">
+    </iframe>
+    <div id="login-popup-info-daily"
+      style="position: absolute; top: 0; left: 0; display: none; padding: 4rem; white-space: pre-line;">
+      <p>Sinun pitää uudistaa kirjautumissessiosi käyttääksesi CurreChattiä.
+        Kirjautuminen avautuu uuteen ikkunaan. Jos niin ei tapahtunut, <a
+          href="https://curre.helsinki.fi/chat/login-helper" target="_blank"
+          rel="noopener opener">paina tästä</a>.</p>
+      <p id="popup-blocked-info-daily" style="display: none; margin-top: 1rem;">
+        Ponnahdusikkunaa ei voitu avata, joten käytä yllä olevaa linkkiä.</p>
+    </div>
+  </div>
+  <script>embedCurre("daily")</script>
+</details>
+
 ### Tehtävien palautus
 
 Laita palautusrepositoriosi tiedostoon README.md linkki tehtäviä 2-4 varten tehtyyn webcounter-repositoroosi.
