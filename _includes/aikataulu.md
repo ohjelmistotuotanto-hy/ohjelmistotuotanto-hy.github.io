@@ -20,6 +20,7 @@
 - Luento 3: {{site.luennot[3]}}
   - [Vaatimusmäärittely](/osa2#vaatimusmäärittely)
   - [Ketterä vaatimusten hallinta](/osa2#user-story)
+  - tallenne: [youtube](https://youtu.be/6aa8-x8ng08), [unitube](https://www.helsinki.fi/fi/unitube/video/6ccf102d-aeb7-40fe-aad4-81d696bf032e?t=13:06)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/OC5i41I5Pw4), [unitube](https://www.helsinki.fi/fi/unitube/video/d41717f2-1aed-4999-b21a-5cb331b8cafe)
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
@@ -117,5 +118,5 @@
 
 ### Viikko 8
 
-- Kurssikoe tiistaina 15.12. klo 13-16 A111 ja B123
+- Kurssikoe tiistaina 15.12. klo 13-16 A111 ja B123, ilmoittautuminen viimeistään la 5.12. klo 23.59, <a href="#" class="koeilmo-avaa">ohje ilmoittautumiseen</a>
 

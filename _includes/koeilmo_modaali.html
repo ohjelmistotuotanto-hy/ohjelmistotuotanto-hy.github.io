@@ -1,0 +1,35 @@
+<dialog id="koeilmo-modaali" style="max-width: 600px; border: thick solid green; padding: 16px 20px; background-color: #F1EFEF; color: black;">
+  <button id="koeilmo-sulje" aria-label="Sulje" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666; padding: 0; margin: 0 0 0 10px; line-height: 1;">×</button>
+  <strong>Kurssikokeeseen ilmoittautuminen Sisussa, viimeistään la 5.12.2026 klo 23.59</strong>
+  <p style="margin: 8px 0;">
+    Tenttitoteutus valitaan opintosuunnitelmaan Sisussa samoin kuin itse kurssi. Sisussa on kaksi eri opintosuunnitelman näkymää, ja toteutus valitaan niissä hieman eri tavalla:
+  </p>
+  <ul>
+    <li><strong>Vanha näkymä:</strong> avaa opintojakson esite painamalla opintojakson koodia ja valitse kurssitentin toteutus <em>Suoritustavat</em>-välilehdeltä</li>
+    <li><strong>Uusi näkymä:</strong> toteutukset valitaan suoritustavan yhteydessä avautuvasta ponnahdusikkunasta</li>
+  </ul>
+  <p style="margin: 8px 0 0 0;">
+    Kun toteutus on valittuna, ilmoittaudu tenttiin <em>Ilmoittautuminen</em>-välilehdellä.
+  </p>
+</dialog>
+<script>
+  (function () {
+    var modaali = document.getElementById('koeilmo-modaali')
+
+    document.querySelectorAll('.koeilmo-avaa').forEach(function (linkki) {
+      linkki.addEventListener('click', function (event) {
+        event.preventDefault()
+        modaali.showModal()
+      })
+    })
+
+    document.getElementById('koeilmo-sulje').addEventListener('click', function () {
+      modaali.close()
+    })
+
+    // suljetaan myös klikkaamalla modaalin ulkopuolelle
+    modaali.addEventListener('click', function (event) {
+      if (event.target === modaali) modaali.close()
+    })
+  })()
+</script>

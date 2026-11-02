@@ -18,11 +18,12 @@
 <script>
   (function () {
     var KEY = 'uv-tietoturva-kunnossa'
+    var POISTUU = new Date('2026-11-03T00:00:00+02:00')
     var banner = document.getElementById('uv-tietoturva')
 
-    // piilotetaan heti, jos käyttäjä on jo kuitannut asian kuntoon
+    // piilotetaan 3.11. alkaen ja heti, jos käyttäjä on jo kuitannut asian kuntoon
     try {
-      if (localStorage.getItem(KEY) === '1') {
+      if (new Date() >= POISTUU || localStorage.getItem(KEY) === '1') {
         banner.style.display = 'none'
         return
       }

@@ -2,6 +2,7 @@
 
   <ul style="margin-bottom: -2px">
     <li><a href="/miniprojekti">Miniprojektin</a> aloitustilaisuuksiin <a href="{{site.stats_url}}/miniproject">ilmoittautuminen</a> on käynnissä ja päättyy to 5.11. klo 23.59</li>
+    <li>Muista ilmoittautua kurssikokeeseen Sisussa viimeistään la 5.12. klo 23.59, <a href="#" class="koeilmo-avaa">ohje ilmoittautumiseen</a></li>
   </ul>
 
 </div>
