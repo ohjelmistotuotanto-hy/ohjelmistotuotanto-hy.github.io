@@ -808,7 +808,7 @@ Projektin testauskattavuutta häiritsee nyt se, että myös tiedosto _src/index.
 ```
 [run]
 source = src
-omit = src/index.py, , src/tests/**
+omit = src/index.py, src/tests/**
 ```
 
 Konfiguraatiossa määritellä pilkulla eroteltuna niin kutsuttaja [glob](<https://en.wikipedia.org/wiki/Glob_(programming)>)-polkuja. Voimme jättää huomioimatta esimerkiksi yksittäisen tiedoston polun (_src/index.py_), tai kaikki tietyn hakemiston alla olevat polut (_src/tests/\*\*_).
