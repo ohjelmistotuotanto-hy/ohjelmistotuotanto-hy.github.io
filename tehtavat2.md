@@ -9,7 +9,7 @@ permalink: /tehtavat2/
 
 {% include laskari_info.md part=2 %}
 
-Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan uv:lla ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Tehtävässä 9 aloitetaan kurssin [tekoäly]-tehtävien sarja GitHub Copilotin parissa. Gitiin tutustuminen jatkuu tehtävissä 10-14.
+Viikon tehtävissä 1-4 tutustutaan riippuvuuksien hallintaan uv:lla ja ohjelmoidaan hieman paria kirjastoa hyödyntäen. Tehtävissä 6-8 tutustutaan koodin _staattiseen analyysin_ Pylint-työkalun avulla. Tehtävässä 9 aloitetaan kurssin [tekoäly]-tehtävien sarja GitHub Copilotin tai OpenCoden parissa. Gitiin tutustuminen jatkuu tehtävissä 10-14.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -352,20 +352,37 @@ Apuna kannattaa käyttää kaikkea mahdollista aina googlesta tekoälyyn.
 
 ### 9. Ensikosketus Copilotiin [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-2-tehtävä-9).
-
 Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on), [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot) ja [Tuntemattoman koodin ymmärtäminen](/genai/#tuntemattoman-koodin-ymmärtäminen).
 
+**Copilot vai OpenCode?**
+
+{% include ai_valinta_ohje.md %}
+
+{% include ai_valitsin.html %}
+
+<div class="vain-copilot" markdown="1">
 Tehtävässä käytetään VS Coden GitHub Copilotia. Tehtävän voi tehdä ilmaisella _Copilot Free_ -versiolla, eli GitHub Education -hakemuksesi ei tarvitse olla vielä hyväksytty. Free-version kuukausikiintiö on rajallinen, joten älä tuhlaa sitä turhiin kokeiluihin.
+</div>
+
+<div class="vain-opencode" markdown="1">
+Tehtävässä käytetään [OpenCodea](/opencode/). Asenna se ja yhdistä se CurreChatin kielimalleihin sivun [ohjeiden](/opencode/#asennus) mukaan.
+</div>
 
 Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että kaikki muutokset on commitoitu ja että Pylint on projektissa käytössä, ennen kuin aloitat.
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Ota Copilot käyttöön VS Codessa: kirjaudu GitHub-tunnuksellasi Copilot-näkymän kautta. Katso tarvittaessa ohjeet [täältä](https://code.visualstudio.com/docs/copilot/overview)
 
 <input type="checkbox"> Avaa hakemisto _viikko2/nhl-reader_ VS Codessa omana workspacenaan, eli esim. komennolla `code .` projektin hakemistossa
+</div>
+
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Käynnistä OpenCode hakemistossa _viikko2/nhl-reader_ komennolla `opencode`
+</div>
 
 **Koodin täydennys**
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Kirjoita luokkaan `PlayerStats` uuden metodin määrittely ja sitä kuvaava docstring, esim.
 
 ```python
@@ -377,23 +394,51 @@ ja odota, että Copilot ehdottaa metodin runkoa.
 
 <input type="checkbox"> Lue ehdotus ennen kuin hyväksyt sen (Tab). Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
 
+Inline-ehdotukset kannattaa kokeilun jälkeen ottaa pois päältä. Kun ehdotus ilmestyy ennen kuin olet ehtinyt itse miettiä ratkaisua, Tab-näppäimen painaminen korvaa helposti oman ajattelun, ja kurssin tehtävistä jää oppimatta se, mitä niissä on tarkoitus oppia. Ehdotukset saa pois päältä painamalla VS Coden alapalkin Copilot-ikonia ja poistamalla valinta kohdasta _Ghost text suggestions_:
+
+![]({{ "/images/disable_inline.png" | relative_url }})
+
+Chat ja agentti toimivat normaalisti, vaikka inline-ehdotukset ovat pois päältä.
+</div>
+
+<div class="vain-opencode" markdown="1">
+OpenCodessa ei ole editorin koodin täydennystä. Jos haluat kokeilla täydennystä, voit tehdä tämän kohdan ilmaisella Copilot Free -versiolla valitsemalla yltä Copilotin. Muussa tapauksessa toimi seuraavasti:
+
+<input type="checkbox"> Kirjoita luokkaan `PlayerStats` uuden metodin määrittely ja sitä kuvaava docstring, esim.
+
+```python
+def top_goal_scorers(self, how_many):
+  """Palauttaa how_many eniten maaleja tehnyttä pelaajaa maalimäärän mukaan laskevassa järjestyksessä"""
+```
+
+ja pyydä OpenCodea toteuttamaan metodi.
+
+<input type="checkbox"> Lue toteutus. Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
+</div>
+
 **Chat: koodin ja virheiden selittäminen**
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse tilaksi _Ask_. Jos _Ask_-tilaa ei löydy valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent). Pyydä Copilotia selittämään, miten projektin koodi toimii, esim. _"Selitä miten #file:player_reader.py toimii"_
+</div>
 
-<input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita komentoriviltä `pylint src`. Kopioi virheilmoitus Copilotin chattiin ja pyydä Copilotia selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Vaihda Tab-näppäimellä [Plan-agenttiin](/opencode/#build--ja-plan-agentit), joka ei muuta tiedostoja. Pyydä sitä selittämään, miten projektin koodi toimii. Tiedostoon viitataan `@`-merkillä, esim. _"Selitä miten @src/player_reader.py toimii"_
+</div>
 
-<input type="checkbox"> Tarkista Copilotin selitys Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/checkers/features.html). Pitikö selitys paikkansa?
+<input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita komentoriviltä `pylint src`. Kopioi virheilmoitus <span class="vain-copilot">Copilotin chattiin ja pyydä Copilotia</span><span class="vain-opencode">OpenCodeen ja pyydä Plan-agenttia</span> selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
+
+<input type="checkbox"> Tarkista <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> selitys Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/checkers/features.html). Pitikö selitys paikkansa?
 
 <input type="checkbox"> Korjaa koodi takaisin sääntöjen mukaiseksi
 
 **Agentti: uusi toiminnallisuus ja testit**
 
-<input type="checkbox"> Valitse Chat-näkymässä tilaksi _Agent_ ja pyydä agenttia lisäämään sovellukseen mahdollisuus näyttää halutun **joukkueen** pelaajat pisteiden mukaan järjestettynä
+<input type="checkbox"> <span class="vain-copilot">Valitse Chat-näkymässä tilaksi _Agent_</span><span class="vain-opencode">Vaihda Tab-näppäimellä Build-agenttiin</span> ja pyydä agenttia lisäämään sovellukseen mahdollisuus näyttää halutun **joukkueen** pelaajat pisteiden mukaan järjestettynä
 
 <input type="checkbox"> Pyydä agenttia tekemään luokalle `PlayerStats` yksikkötestit. Vaadi, että testit **eivät käytä verkkoyhteyttä**, vaan `PlayerReader`-luokan tilalla käytetään stubia viikon 1 [tehtävän 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikkötestaus) tapaan
 
-Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.
+<span class="vain-copilot">Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span><span class="vain-opencode">OpenCode suorittaa oletusarvoisesti komentoja kysymättä. Ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen) ja lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span>
 
 <input type="checkbox"> Varmista itse, että testit menevät läpi (`uv run pytest`) ja että ne eivät tee HTTP-pyyntöjä.
 
@@ -409,7 +454,7 @@ On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen (j
 
 Kerro raportissa
 - Kuinka hyödyllisiksi koit koodin täydennyksen ehdotukset?
-- Pitikö Copilotin selitys Pylint-varoituksesta paikkansa?
+- Pitikö <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> selitys Pylint-varoituksesta paikkansa?
 - Tekikö agentti toimivan ratkaisun, ja testit?
 - Eroaako testeissä joku siitä miten testejä tehtiin edellisellä viikolla?
 - Löysikö Pylint agentin koodista virheitä?

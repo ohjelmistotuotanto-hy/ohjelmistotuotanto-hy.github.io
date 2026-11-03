@@ -798,23 +798,31 @@ Jos samanniminen avainsana on määritelty sekä testitiedostossa että tiedosto
 
 ### 8. Agentti ja hyväksymistestit [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-3-tehtävä-8).
+{% include ai_valitsin.html %}
 
 Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa.
 
 Kertaa tarvittaessa viime viikolla lukemasi materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot). Lue ennen tämän tehtävän tekemistä myös luvut [Agenttinen koodaus](/genai/#agenttinen-koodaus), [Kontekstin hallinta](/genai/#kontekstin-hallinta) ja [Vaatimukset promptina](/genai/#vaatimukset-promptina).
 
-Tehtävässä käytetään VS Coden GitHub Copilotia. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
+Tehtävässä käytetään <span class="vain-copilot">VS Coden GitHub Copilotia</span><span class="vain-opencode">[OpenCodea](/opencode/)</span>. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
 
 Jatketaan WebLogin-sovelluksen parissa. Varmista, että tehtävien 5-7 muutokset on commitoitu ennen kuin annat agentin koskea koodiin.
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Avaa VS Codessa hakemisto _viikko3/login_ omana workspacenaan (esim. komennolla `code .` hakemistossa _viikko3/login_), näin agentti keskittyy vain tähän projektiin
 
 <input type="checkbox"> Avaa Copilotin Chat-näkymä ja valitse tilaksi _Agent_
+</div>
+
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Käynnistä OpenCode hakemistossa _viikko3/login_, näin agentti keskittyy vain tähän projektiin
+
+<input type="checkbox"> Varmista, että käytössä on Build-agentti
+</div>
 
 <input type="checkbox"> Generoi projektille ohjetiedosto kirjoittamalla chattiin `/init`
 
-Agentti tutkii projektin ja luo tiedoston _.github/copilot-instructions.md_ tai _AGENTS.md_.
+Agentti tutkii projektin ja luo tiedoston <span class="vain-copilot">_.github/copilot-instructions.md_ tai _AGENTS.md_</span><span class="vain-opencode">_AGENTS.md_</span>.
 
 <input type="checkbox"> Lue ohjetiedosto huolellisesti ja korjaa tai täydennä sitä tarpeen mukaan. Tiedostossa tulee kertoa ainakin seuraavat asiat:
 
@@ -853,7 +861,7 @@ Tehtävän 7 vaatimus salasanan vähimmäispituudesta on edelleen voimassa.
 
 Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi tiedostoon _register.robot_ ja varmistamaan, että testit eivät mene läpi. Vasta tämän jälkeen agentin tulee toteuttaa toiminnallisuus niin, että testit menevät läpi
 
-Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi.
+Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi.<span class="vain-opencode"> OpenCode suorittaa oletusarvoisesti komentoja kysymättä, joten ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen).</span>
 
 <input type="checkbox"> Kun agentti on valmis, suorita kaikki testit vielä itse ja varmista, että ne menevät läpi
 
@@ -925,8 +933,6 @@ Tässä tehtävässä harjoittelemme [OhtuBotin](/ohtubotit/) avulla jumista ker
   <script>embedCurre("daily")</script>
 </details>
 
-### Tehtävien palautus
-
-Laita palautusrepositoriosi tiedostoon README.md linkki tehtäviä 2-4 varten tehtyyn webcounter-repositoroosi.
-
 {% include submission_instructions.md %}
+
+Laita palautusrepositoriosi tiedostoon README.md linkki tehtäviä 2-4 varten tehtyyn webcounter-repositorioosi.

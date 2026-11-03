@@ -1,0 +1,26 @@
+<style>
+  html:not([data-ai="opencode"]) .vain-opencode,
+  html[data-ai="opencode"] .vain-copilot { display: none; }
+
+  .ai-valitsin { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 15px 0; padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; background-color: #F1EFEF; color: black; font-size: 15px; }
+  .ai-valitsin button { border: 1px solid #888; background: white; color: black; padding: 2px 10px; border-radius: 4px; cursor: pointer; font-size: 15px; }
+  html:not([data-ai="opencode"]) .ai-valitsin button[data-ai="copilot"],
+  html[data-ai="opencode"] .ai-valitsin button[data-ai="opencode"] { background: #2a7ae2; border-color: #2a7ae2; color: white; }
+</style>
+<script>
+  // valittu tekoälytyökalu (copilot tai opencode) on yhteinen kaikille sivuille
+  (function () {
+    var KEY = 'ai-tyokalu'
+    try {
+      if (localStorage.getItem(KEY) === 'opencode') document.documentElement.setAttribute('data-ai', 'opencode')
+    } catch (e) {}
+
+    document.addEventListener('click', function (event) {
+      var nappi = event.target.closest('.ai-valitsin button')
+      if (!nappi) return
+      var valinta = nappi.getAttribute('data-ai')
+      document.documentElement.setAttribute('data-ai', valinta)
+      try { localStorage.setItem(KEY, valinta) } catch (e) {}
+    })
+  })()
+</script>

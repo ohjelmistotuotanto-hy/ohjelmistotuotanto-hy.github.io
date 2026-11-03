@@ -381,7 +381,7 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 ### 4. Testikoodin siistiminen agentin avulla [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-4-tehtävä-4).
+{% include ai_valitsin.html %}
 
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
 
@@ -394,7 +394,7 @@ class TestKauppa(unittest.TestCase):
         # ...
 ```
 
-<input type="checkbox"> Pyydä tekoälyagenttia siistimään testikoodi poistamalla siitä toisteisuus siirtämällä yhteiset alustukset `setUp`-metodiin. Testien toiminnallisuus ei saa muuttua
+<input type="checkbox"> Pyydä <span class="vain-copilot">Copilotin _Agent_-tilaa</span><span class="vain-opencode">OpenCoden Build-agenttia</span> siistimään testikoodi poistamalla siitä toisteisuus siirtämällä yhteiset alustukset `setUp`-metodiin. Testien toiminnallisuus ei saa muuttua
 
 <input type="checkbox"> Lue agentin tekemät muutokset (`git diff`) ja varmista, että testit menevät edelleen läpi.
 
@@ -429,7 +429,7 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 ### 6. TDD agentin kanssa [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-4-tehtävä-6).
+{% include ai_valitsin.html %}
 
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
 
@@ -546,7 +546,7 @@ Ostoskori ohjelmoidaan [Test Driven Development](https://studies.cs.helsinki.fi/
 
 **Agentin ohjeistus**
 
-<input type="checkbox"> Avaa hakemisto VS Codessa omana workspacenaan ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
+<input type="checkbox"> <span class="vain-copilot">Avaa hakemisto VS Codessa omana workspacenaan</span><span class="vain-opencode">Käynnistä OpenCode projektin hakemistossa</span> ja luo projektille ohjetiedosto samaan tapaan kuin [viikon 3 tehtävässä 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
 
 <input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
 - Tests executed with `uv run pytest`
@@ -565,6 +565,10 @@ Askeleet 1-7 tehdään siten, että jokaisella askeleella
 3. pyydät agenttia toteuttamaan koodin, jolla testi menee läpi
 4. luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
 5. commitoit muutoksen
+
+<div class="vain-opencode" markdown="1">
+Muista, että OpenCode suorittaa oletusarvoisesti komentoja ja muokkaa tiedostoja kysymättä. Agentti ei saa muuttaa osan A testejä, joten lue `git diff` jokaisen askeleen jälkeen huolellisesti, tai ota käyttöön [muutosten hyväksyminen](/opencode/#komentojen-hyväksyminen).
+</div>
 
 Pidä _kaikki_ testit koko ajan toimivina, eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi. Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
 

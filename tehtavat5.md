@@ -208,13 +208,19 @@ Lisää samankaltaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista]
 
 ### 5. Pull request ja koodin katselmointi [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-5-tehtävä-5).
+{% include ai_valitsin.html %}
 
 Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 5 osuus [AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5).
 
+<div class="vain-copilot" markdown="1">
 Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.
 
 **Huomio Copilotin AI credit -kiintiöstä:** Copilot Student -versiossa on käytössä 200 _AI credit_ -yksikköä kuukaudessa (1 credit = 0,01 dollaria). Sekä Copilotin tekemä koodin katselmointi että pilviagentti kuluttavat näitä, ja kulutus riippuu muutosten koosta ja työn määrästä. GitHubin oman arvion mukaan yksi katselmointi maksaa kevyimmällä _Lite_-tasolla noin 0,05–1 dollaria ja oletuksena olevalla _Balanced_-tasolla noin 0,25–5 dollaria. Yksi Balanced-tason katselmointi voi siis pahimmillaan kuluttaa koko kuukauden AI credit -kiintiön. Käytä tämän viikon tehtävissä katselmointiin aina Lite-tasoa, ja pidä pull requestit pieninä. AI credit -kiintiön kulutusta voit seurata osoitteessa <https://github.com/settings/billing>.
+</div>
+
+<div class="vain-opencode" markdown="1">
+Copilotin katselmointi tehdään GitHubissa, ja se edellyttää [GitHub Education](/tehtavat2/#github-education) -jäsenyyttä. OpenCodella katselmointi tehdään omalla koneella. Jos sinulla on GitHub Education -jäsenyys, voit halutessasi tehdä tämän tehtävän Copilotilla valitsemalla yltä Copilotin.
+</div>
 
 <input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
 
@@ -228,6 +234,7 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 
 ![]({{ "/images/pr22.png" | relative_url }})
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Pyydä GitHub Copilotia tekemään PR:llesi koodin katselmointi. Valitse ennen katselmoinnin pyytämistä Copilotin nimen vierestä löytyvästä valikosta katselmoinnin tasoksi _Lite_ ja paina sen jälkeen _Request_:
 
 ![]({{ "/images/pr-lite.png" | relative_url }})
@@ -237,25 +244,32 @@ GitHub ehkä jo ehdottaa Pull requestin tekemistä
 <input type="checkbox"> Käy katselmoinnin tulos läpi. Hyväksy ehdotetut muutokset halutessasi ja merkitse kommentit selvitetyiksi (_resolve conversation_)
 
 Kommenttien yhteydessä on myös nappi _Fix with Copilot_, joka käynnistää pilviagentin tekemään korjauksen. Tämä kuluttaa AI credit -kiintiötä, joten tee korjaukset mieluummin itse tai hyväksy Copilotin ehdottamat muutokset suoraan.
+</div>
+
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Siirry omalla koneellasi haaraan _tennis_refactoring_, käynnistä OpenCode ja valitse Plan-agentti. Pyydä sitä katselmoimaan haaran muutokset, esim. _"Katselmoi tämän haaran muutokset suhteessa main-haaraan (`git diff main...tennis_refactoring`). Kerro jokaisesta löydöksestä tiedosto, rivi ja korjausehdotus."_
+
+<input type="checkbox"> Käy löydökset läpi ja tee tarpeellisiksi katsomasi korjaukset itse tai Build-agentin avulla. Pushaa korjaukset samaan haaraan, jolloin ne päivittyvät pull requestiin
+</div>
 
 <input type="checkbox"> Mergeä Pull request main-haaraan
 
 <input type="checkbox"> Kirjoita raportti katselmoinnista palautusrepositorioon hakemistoon _viikko5_ talletettavaan tiedoston _review.md_
 
 Kerro raportissa
-- Mitä huomioita Copilot teki koodistasi
+- Mitä huomioita <span class="vain-copilot">Copilot</span><span class="vain-opencode">agentti</span> teki koodistasi
 - Olivatko ehdotetut muutokset hyviä
-- Kuinka hyödylliseksi koit Copilotin tekemän katselmoinnin
-- Huomasiko Copilot jotain, minkä olisit itse jättänyt huomaamatta? Entä jäikö siltä jotain oleellista huomaamatta?
-- Miltä Copilotin kommentit tuntuivat verrattuna siihen, että saman palautteen olisi antanut tiimikaveri? Mitä palautteen antamisessa kannattaa ottaa huomioon, kun katselmoijana on ihminen?
+- Kuinka hyödylliseksi koit <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> tekemän katselmoinnin
+- Huomasiko <span class="vain-copilot">Copilot</span><span class="vain-opencode">agentti</span> jotain, minkä olisit itse jättänyt huomaamatta? Entä jäikö siltä jotain oleellista huomaamatta?
+- Miltä <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> kommentit tuntuivat verrattuna siihen, että saman palautteen olisi antanut tiimikaveri? Mitä palautteen antamisessa kannattaa ottaa huomioon, kun katselmoijana on ihminen?
 
-Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)
+<span class="vain-copilot">Lisää aiheesta [GitHubin dokumentaatiossa](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-code-review)</span>
 
 ### 6. Good vibe with warehouses [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-5-tehtävä-6).
+{% include ai_valitsin.html %}
 
-Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada GitHubin pilviagentti ([Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)) koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
+Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada <span class="vain-copilot">GitHubin pilviagentti ([Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent))</span><span class="vain-opencode">OpenCode</span> koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 
 <input type="checkbox"> Varmista, että Ohtuvarastosta on GitHubissa ajantasainen versio!
 
@@ -263,15 +277,16 @@ Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarko
 
 ![]({{ "/images/issue0.png" | relative_url }})
 
-Pidä sovelluksen laajuus pienenä, sillä pilviagentin AI credit -kiintiön kulutus kasvaa tehtävän koon mukana. Riittää, että sovelluksella voi
+Pidä sovelluksen laajuus pienenä, sillä <span class="vain-copilot">pilviagentin AI credit -kiintiön</span><span class="vain-opencode">CurreChatin tokenien</span> kulutus kasvaa tehtävän koon mukana. Riittää, että sovelluksella voi
 - luoda useita varastoja (nimi ja tilavuus)
 - listata varastot saldoineen
 - lisätä varastoon tavaraa ja ottaa sieltä tavaraa
 
 Varastojen muokkaamista, poistamista tai muita lisäominaisuuksia ei tässä tehtävässä tarvita. Myös mahdolliset käytettävät kirjastot kuten Flask kannattaa mainita kuvauksessa.
 
-Copilot käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Voit kirjoittaa kuvauksen esim. [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
+<span class="vain-copilot">Copilot</span><span class="vain-opencode">Agentti</span> käyttää issuen kuvausta promptina, joten kuvauksen laatuun kannattaa panostaa. Voit kirjoittaa kuvauksen esim. [viikon 3 tehtävän 8](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly) tapaan user storyina, joilla on selkeät hyväksymiskriteerit. Pyydä kuvauksessa myös automatisoituja testejä.
 
+<div class="vain-copilot" markdown="1">
 > **Jos AI credit -kiintiö loppuu:** Jos AI credit -kiintiösi on loppumassa tai loppuu kesken tehtävän, voit tehdä tehtävän myös VS Coden agenttitilassa. Tämä on todennäköisesti kevyempää, sillä agentti suorittaa komennot omalla koneellasi eikä GitHub Actionsissa, ja voit pysäyttää sen, jos se lähtee väärään suuntaan. Tee tällöin seuraavasti:
 > - tee issue kuten alla on neuvottu
 > - luo uusi haara, esim. `git checkout -b web-ui`
@@ -365,19 +380,46 @@ Valitse siis lomakkeelta _Request changes_. **Kommenteissa tulee mainita [@copil
 <input type="checkbox"> Varmista vielä omalla koneellasi, että koodi toimii muutosten jälkeen
 
 Copilot pushaa muutokset samaan haaraan, jonka olet jo hakenut koneellesi. Saat muutokset omalle koneellesi komennolla `git pull`, kun olet kyseisessä haarassa (tarkista tarvittaessa komennolla `git status`).
+</div>
+
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Luo uusi haara, esim. `git checkout -b web-ui`
+
+<input type="checkbox"> Käynnistä OpenCode projektin hakemistossa ja anna issuen kuvaus Build-agentille promptina
+
+Ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen), jos et halua agentin suorittavan komentoja kysymättä.
+
+<input type="checkbox"> Kun agentti on valmis, varmista, että koodi toimii
+
+<input type="checkbox"> Commitoi muutokset ja pushaa haara GitHubiin
+
+<input type="checkbox"> Tee haarasta pull request ja kirjoita sen kuvaukseen `Fixes #<issuen numero>`, jolloin issue suljetaan, kun pull request mergetään
+
+<input type="checkbox"> Tutustu agentin tekemään koodiin. Jos vastaan tulee jotain, mitä et ymmärrä, esim. tuntematon kirjasto, Flaskin toimintaperiaate tai testien rakenne, pyydä Plan-agenttia selittämään asia. Plan-agentti vastaa kysymyksiin muuttamatta koodia
+
+_Katselmoinnin tekeminen edellyttää, että ymmärrät mitä koodi tekee. Agentin tuottama koodi ei ole omaa koodia, joten sen tarkastamisessa tarvitaan hieman vaivannäköä._
+
+<input type="checkbox"> Tee sovellukselle katselmointi GitHubissa
+
+Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta napista "Add your review".
+
+<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia tai laajennuksia sovellukseen. Valitse lomakkeelta _Request changes_
+
+<input type="checkbox"> Pyydä katselmoinnin muutokset Build-agentilta, varmista että koodi toimii muutosten jälkeen, ja pushaa muutokset samaan haaraan. Yksi korjauskierros riittää
+</div>
 
 <input type="checkbox"> Kun olet tyytyväinen mergeä Pull request main-haaraan
 
-<input type="checkbox"> Viikolla 1 tehty GitHub Actions -työnkulku käynnistyy, kun main-haaraan pushataan, eli nyt mergen jälkeen. Varmista, että CI menee läpi. Jos Copilot on muokannut työnkulkua, esim. lisännyt siihen testien suorittamisen, tarkista myös, että muutokset ovat järkeviä
+<input type="checkbox"> Viikolla 1 tehty GitHub Actions -työnkulku käynnistyy, kun main-haaraan pushataan, eli nyt mergen jälkeen. Varmista, että CI menee läpi. Jos <span class="vain-copilot">Copilot</span><span class="vain-opencode">agentti</span> on muokannut työnkulkua, esim. lisännyt siihen testien suorittamisen, tarkista myös, että muutokset ovat järkeviä
 
 <input type="checkbox"> Kirjoita raportti katselmoinnista palautusrepositorioon hakemistoon _viikko5_ talletettavaan tiedoston _vibe.md_
 
 Kerro raportissa
-- Päätyikö Copilot toimivaan ja hyvään ratkaisuun
+- Päätyikö <span class="vain-copilot">Copilot</span><span class="vain-opencode">agentti</span> toimivaan ja hyvään ratkaisuun
 - Miten varmistit, että ratkaisu toimii?
 - Tekikö agentti testit, ja olivatko ne hyviä?
 - Oliko koodi selkeää
-- Opitko jotain uutta Copilotin tekemää koodia lukiessasi
+- Opitko jotain uutta <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> tekemää koodia lukiessasi
 
 Tässä erittäin yksinkertaisessa tapauksessa [vibekoodaus](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys) saattaa tuottaa hämmästyttävänkin hyvän lopputuloksen. Tilanne on kuitenkin aivan erilainen todellisen, isomman järjestelmän kanssa. Pelkkä vibetys, eli haluttavan toiminnallisuuden kuvailu, ei useimmiten riitä siihen, että ulos saadaan toimiva ja robusti ratkaisu.
 

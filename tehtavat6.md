@@ -461,7 +461,7 @@ Travis Sanheim       PHI          8  + 22 = 30
 
 ### 7. Suunnittele ensin, toteuta sitten [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-6-tehtävä-7).
+{% include ai_valitsin.html %}
 
 Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 6 osuus [Suunnittele ensin](/genai/#suunnittele-ensin-viikko-6).
 
@@ -500,9 +500,9 @@ Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
 
 <input type="checkbox"> Varmista, että tehtävien 1-6 koodi on commitoitu
 
-<input type="checkbox"> Avaa hakemisto _viikko6/query-language_ VS Codessa omana workspacenaan ja luo projektille tarvittaessa ohjetiedosto
+<input type="checkbox"> <span class="vain-copilot">Avaa hakemisto _viikko6/query-language_ VS Codessa omana workspacenaan</span><span class="vain-opencode">Käynnistä OpenCode hakemistossa _viikko6/query-language_</span> ja luo projektille tarvittaessa ohjetiedosto
 
-<input type="checkbox"> Valitse Copilotin Chat-näkymässä tilaksi _Plan_ (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent)), ja anna sille tehtävänanto. Kerro pyynnössä ainakin seuraavat reunaehdot:
+<input type="checkbox"> <span class="vain-copilot">Valitse Copilotin Chat-näkymässä tilaksi _Plan_ (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent))</span><span class="vain-opencode">Vaihda Tab-näppäimellä Plan-agenttiin, joka ei muuta koodia</span>, ja anna sille tehtävänanto. Kerro pyynnössä ainakin seuraavat reunaehdot:
 
 - toteutuksen tulee hyödyntää olemassa olevaa `QueryBuilder`-luokkaa, eikä matcher-luokkien logiikkaa saa toteuttaa uudelleen
 - toteutukselle tulee tehdä yksikkötestit
@@ -512,7 +512,7 @@ Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
 
 <input type="checkbox"> Pyydä agenttia muuttamaan suunnitelmaa ainakin kerran. Jos suunnitelma on mielestäsi valmiiksi hyvä, voit esim. pyytää agenttia lisäämään kyselykieleen `not`-operaation tai perustelemaan jonkin suunnitelmansa ratkaisun
 
-<input type="checkbox"> Kun olet tyytyväinen suunnitelmaan, käynnistä toteutus
+<input type="checkbox"> Kun olet tyytyväinen suunnitelmaan, käynnistä toteutus<span class="vain-opencode">: vaihda Build-agenttiin ja pyydä sitä toteuttamaan suunnitelma, esim. _"Toteuta suunnitelma"_</span>
 
 <input type="checkbox"> Kun agentti on valmiina varmista, että molemmat yllä olevat esimerkkikyselyt tuottavat oikean tuloksen
 

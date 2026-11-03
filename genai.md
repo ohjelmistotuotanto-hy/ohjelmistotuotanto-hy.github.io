@@ -9,7 +9,9 @@ Tämä sivu käsittelee generatiivisen tekoälyn ja erityisesti koodausagenttien
 
 Osaan kurssin muista tehtävistä liittyy lisäksi tehtävän yhteydestä avattava vihje tekoälyn hyödyntämiseen.
 
-Kurssin tehtävissä käytetään GitHub [Copilotia](https://github.com/features/copilot) VS Coden kautta. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat. Jos et halua käyttää Copilotia, suositeltu vaihtoehto on avoimen lähdekoodin koodausagentti [OpenCode](/opencode/), jota voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. OpenCode-sivulta löytyvät myös tehtäväkohtaiset ohjeet [tekoäly]-tehtäviin.
+Kurssin tehtävät voi tehdä joko GitHub [Copilotilla](https://github.com/features/copilot) VS Coden kautta tai avoimen lähdekoodin koodausagentti [OpenCodella](/opencode/), ja tehtävänannoissa on ohjeet molemmille. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. OpenCodea voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. Valinnan perusteista kerrotaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly). Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
+
+Tämän materiaalin esimerkit on kirjoitettu Copilotille. OpenCoden vastaavat ominaisuudet on koottu [OpenCode-sivulle](/opencode/#copilotin-ominaisuudet-opencodessa).
 
 ## Kurssin GPT
 
@@ -60,7 +62,7 @@ Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Ka
 
 Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
 
-Käytämme kurssilla GitHub Copilotia pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. VS Code kutsuu näitä tiloja nykyään agenteiksi, tässä materiaalissa puhutaan selkeyden vuoksi tiloista. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
+Copilotia käytetään kurssilla pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. VS Code kutsuu näitä tiloja nykyään agenteiksi, tässä materiaalissa puhutaan selkeyden vuoksi tiloista. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
 
 ![]({{ "/images/agentti1.png" | relative_url }})
 

@@ -28,6 +28,11 @@
         }
       });
 
+      // OpenCode-versioiden rasteilla on oma numerointinsa, jotta Copilot-versioiden avaimet säilyvät ennallaan
+      if (checkbox.closest('.vain-opencode')) {
+        section = `${section}:opencode`;
+      }
+
       counters[section] = (counters[section] || 0) + 1;
       return `${PREFIX}:${window.location.pathname}:${section}:${counters[section]}`;
     });

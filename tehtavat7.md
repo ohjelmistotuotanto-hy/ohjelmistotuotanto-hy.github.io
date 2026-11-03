@@ -178,13 +178,13 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 
 ### 5. Web-käyttöliittymä agentin avulla [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-5).
+{% include ai_valitsin.html %}
 
 Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-käyttöliittymä.
 
 <input type="checkbox"> Tee palautusrepositorioosi kopio projektin hakemistosta nimellä _kivi-paperi-sakset-original_, jolloin edellisen tehtävän jälkeinen tilanne jää talteen, ja commitoi
 
-<input type="checkbox"> Avaa hakemisto _viikko7/kivi-paperi-sakset_ VS Codessa omana workspacenaan ja luo projektille [ohjetiedosto](/genai/#kontekstin-hallinta). Kirjaa ohjetiedostoon ainakin seuraavat asiat:
+<input type="checkbox"> <span class="vain-copilot">Avaa hakemisto _viikko7/kivi-paperi-sakset_ VS Codessa omana workspacenaan</span><span class="vain-opencode">Käynnistä OpenCode hakemistossa _viikko7/kivi-paperi-sakset_</span> ja luo projektille [ohjetiedosto](/genai/#kontekstin-hallinta)<span class="vain-opencode"> `AGENTS.md` esim. komennolla `/init`</span>. Kirjaa ohjetiedostoon ainakin seuraavat asiat:
 
 - kyseessä on uv-projekti
 - olemassa olevaa koodia tulee hyödyntää mahdollisimman paljon, eikä pelilogiikkaa saa toteuttaa uudelleen
@@ -192,7 +192,7 @@ Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-kä
 
 Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**, näin pääset tarvittaessa palaamaan edelliseen toimivaan tilanteeseen.
 
-<input type="checkbox"> Toteuta agentin avulla sovellukselle web-käyttöliittymä. Voit joko suunnitella toteutuksen ensin _Plan_-tilassa [viikon 6](/tehtavat6/#7-suunnittele-ensin-toteuta-sitten-tekoäly) tapaan tai antaa tehtävän suoraan _Agent_-tilassa (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent))
+<input type="checkbox"> Toteuta agentin avulla sovellukselle web-käyttöliittymä. Voit joko suunnitella toteutuksen ensin <span class="vain-copilot">_Plan_-tilassa</span><span class="vain-opencode">Plan-agentilla</span> [viikon 6](/tehtavat6/#7-suunnittele-ensin-toteuta-sitten-tekoäly) tapaan tai antaa tehtävän suoraan <span class="vain-copilot">_Agent_-tilassa (jos _Plan_ puuttuu valikosta, ks. [tämä](/genai/#jos-valikossa-on-vain-agent))</span><span class="vain-opencode">Build-agentille</span>
 
 <input type="checkbox"> Pyydä agenttia tekemään sovellukselle Robot Frameworkilla testit. Varmista, että pystyt suorittamaan testit myös itse.
 
@@ -206,11 +206,11 @@ Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**,
 
 <input type="checkbox"> Käy läpi agentin tekemä koodi sekä testit. Jos koodissa on jotain sinulle vierasta, pyydä agenttia selittämään, mistä on kyse
 
-Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) avulla.
+Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) <span class="vain-opencode">(OpenCodessa [komento](https://opencode.ai/docs/commands/))</span> avulla.
 
 Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuuden [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7) johdanto ja luku [Prompt-tiedostot ja räätälöidyt agentit](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit).
 
-<input type="checkbox"> Luo projektiin tiedosto _.github/prompts/katselmointi.prompt.md_, joka ohjeistaa agenttia katselmoimaan projektin koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
+<input type="checkbox"> Luo projektiin tiedosto <span class="vain-copilot">_.github/prompts/katselmointi.prompt.md_</span><span class="vain-opencode">_.opencode/commands/katselmointi.md_</span>, joka ohjeistaa agenttia katselmoimaan projektin koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
 
 - [osan 4](/osa4/) suunnitteluperiaatteet, erityisesti toisteisuus ja turhat riippuvuudet 
 - testien kattavuus ja laatu
@@ -226,12 +226,29 @@ Agentit ottavat helposti oikoteitä: "katselmointi" tulkitaan pelkkien viimeisim
 - jokaisesta löydöksestä kerrotaan tiedosto ja rivit sekä korjausehdotus
 - raportin lopussa luetellaan kaikki läpikäydyt tiedostot
 
+<div class="vain-copilot" markdown="1">
 Huomioita prompt-tiedoston käytöstä:
 
 - VS Code etsii prompt-tiedostoja workspacen juuren hakemistosta _.github/prompts_, eli tiedosto tulee luoda hakemistoon _viikko7/kivi-paperi-sakset/.github/prompts_, ja VS Codessa tulee olla auki projektin hakemisto
 - prompt-tiedostot toimivat ainoastaan VS Coden _Local_-harnessissa (ks. [tämä](/genai/#jos-valikossa-on-vain-agent)). Muissa harnesseissa, kuten _Copilot_, prompt-tiedostoa ei ladata, ja komento ei tee sitä mitä tiedostossa pyydetään
 
 <input type="checkbox"> Valitse Chat-näkymän alalaidasta harnessiksi _Local_ ja suorita katselmointi chatissa komennolla `/katselmointi`
+</div>
+
+<div class="vain-opencode" markdown="1">
+Lisää komentotiedoston alkuun otsake, joka määrittelee komennon kuvauksen ja suorittaa komennon Plan-agentilla. Näin agentti ei voi muuttaa tiedostoja katselmoinnin aikana:
+
+```markdown
+---
+description: Katselmoi koko projektin koodin
+agent: plan
+---
+
+Katselmoi projektin koodi ...
+```
+
+<input type="checkbox"> Suorita katselmointi komennolla `/katselmointi`
+</div>
 
 <input type="checkbox"> Tarkista, noudattiko agentti prompt-tiedoston ohjeita: kävikö se läpi kaikki tiedostot, ja onko raportti pyydetyn muotoinen (voit kysyä tätä agentilta). Jos ei, pyydä agenttia parantamaan tarvittaessa prompt-tiedostoa ja tekemään uusi katselmointi.
 
@@ -251,9 +268,9 @@ Kerro raportissa
 
 ### 6. MCP ja skillsit [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-6).
+{% include ai_valitsin.html %}
 
-Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. VS Coden agentti osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
+Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. <span class="vain-copilot">VS Coden agentti</span><span class="vain-opencode">OpenCoden Build-agentti</span> osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
 
 Lue ennen aloittamista materiaalin luku [MCP eli Model Context Protocol](/genai/#mcp-eli-model-context-protocol).
 
@@ -276,8 +293,9 @@ Seuraavassa tehtävässä toteutetaan vielä oma MCP-palvelin.
 > - **Windows:** lataa asennusohjelma (versio _LTS_) osoitteesta <https://nodejs.org/> tai asenna komennolla `winget install OpenJS.NodeJS.LTS`
 > - **Linux:** jakeluiden paketinhallinnan Node.js-versio on usein vanha, joten asenna mieluummin [nvm](https://github.com/nvm-sh/nvm):n avulla: asenna ensin nvm sen ohjeiden mukaan ja sen jälkeen Node.js komennolla `nvm install --lts`
 >
-> Asennuksen mukana tulee myös komento `npx`, jolla VS Code käynnistää palvelimen. Käynnistä VS Code asennuksen jälkeen uudelleen, jotta se löytää komennot.
+> Asennuksen mukana tulee myös komento `npx`, jolla <span class="vain-copilot">VS Code</span><span class="vain-opencode">OpenCode</span> käynnistää palvelimen. Käynnistä <span class="vain-copilot">VS Code</span><span class="vain-opencode">terminaali</span> asennuksen jälkeen uudelleen, jotta se löytää komennot.
 
+<div class="vain-copilot" markdown="1">
 VS Code lukee MCP-palvelinten määrittelyt (tiedosto _.vscode/mcp.json_) ja skillsit (hakemisto _.github/skills_) workspacen juuresta, samoin kuin prompt-tiedostot. Työskentele siis edelleen siten, että VS Codessa on auki hakemisto _viikko7/kivi-paperi-sakset_.
 
 <input type="checkbox"> Lisää edellisen tehtävän projektiin tiedosto _.vscode/mcp.json_, jolla Playwright MCP otetaan käyttöön:
@@ -324,6 +342,51 @@ Optio `-y` hyväksyy paketin latauksen automaattisesti, ja `--browser chromium` 
 > ```
 >
 > Esimerkin `PATH` sisältää nvm:n Node.js-hakemiston, Homebrew'n hakemistot (_/usr/local/bin_ ja _/opt/homebrew/bin_) sekä macOS:n järjestelmähakemistot. Korvaa polut omilla poluillasi. Jos palvelin käynnistyy mutta selain ei aukea, asenna Playwrightin Chromium komennolla `npx playwright install chromium`.
+</div>
+
+<div class="vain-opencode" markdown="1">
+OpenCode lukee MCP-palvelinten määrittelyt projektin juuren tiedostosta _opencode.json_ ja skillsit hakemistosta _.opencode/skills_. Työskentele siis edelleen siten, että OpenCode on käynnistetty hakemistossa _viikko7/kivi-paperi-sakset_.
+
+<input type="checkbox"> Lisää edellisen tehtävän projektin juureen tiedosto _opencode.json_, jolla Playwright MCP otetaan käyttöön. Jos tiedosto on jo olemassa, esim. [komentojen hyväksymisen](/opencode/#komentojen-hyväksyminen) takia, lisää `mcp`-kohta sen sisään:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest", "--browser", "chromium"],
+      "enabled": true
+    }
+  }
+}
+```
+
+Optio `-y` hyväksyy paketin latauksen automaattisesti, ja `--browser chromium` määrittelee käytettäväksi selaimeksi Playwrightin oman Chromiumin.
+
+<input type="checkbox"> Käynnistä OpenCode uudelleen, sillä se käynnistää palvelimet käynnistyessään. Varmista terminaalissa komennolla `opencode mcp list`, että palvelin on käynnissä
+
+> **Jos palvelin ei käynnisty**
+>
+> Yleisin syy ongelmiin on se, että OpenCode ei löydä komentoa `npx`. Näin käy etenkin, jos Node.js on asennettu [nvm](https://github.com/nvm-sh/nvm):llä.
+>
+> Taustaa: kun komento, kuten `npx`, annetaan ilman polkua, käyttöjärjestelmä etsii sitä ympäristömuuttujan `PATH` luettelemista hakemistoista. `PATH` on kaksoispisteillä (Windowsissa puolipisteillä) erotettu lista hakemistoja, ja sen arvon näet terminaalissa komennolla `echo $PATH`. Jokainen ohjelma perii ympäristömuuttujat ohjelmalta, joka sen käynnisti. Terminaalin `PATH` muodostuu, kun shell lukee käynnistyessään alustustiedostonsa, esim. _~/.zshrc_ tai _~/.bashrc_. Esimerkiksi nvm lisää Node.js:n hakemiston `PATH`:iin juuri alustustiedostossa. Jos OpenCode käynnistetään muualta kuin tällaisesta terminaalista, se ei välttämättä saa käyttöönsä samaa `PATH`:ia, jolloin `npx` ei löydy.
+>
+> Ongelma korjautuu kirjoittamalla `command`-kohtaan `npx`:n koko polku. Selvitä polku terminaalissa komennolla `which npx` (Windowsissa `where npx`). Koska `npx` tarvitsee lisäksi komentoa `node` ja muita komentoja, lisää myös kohta `environment`, jossa määritellään `PATH`. Kopioi sen arvoksi terminaalin `PATH` komennon `echo $PATH` tulosteesta (Windowsin PowerShellissä `$env:PATH`). Huomaa, että `environment`-kohdan `PATH` korvaa koko `PATH`:n, joten mukana on oltava myös järjestelmän omat hakemistot, kuten _/usr/bin_ ja _/bin_. Esim. nvm:ää käyttävällä Macilla määrittely voi näyttää seuraavalta:
+>
+> ```json
+> "playwright": {
+>   "type": "local",
+>   "command": ["/Users/kayttaja/.nvm/versions/node/v24.21.0/bin/npx", "-y", "@playwright/mcp@latest", "--browser", "chromium"],
+>   "environment": {
+>     "PATH": "/Users/kayttaja/.nvm/versions/node/v24.21.0/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+>   },
+>   "enabled": true
+> }
+> ```
+>
+> Korvaa polut omilla poluillasi. Jos palvelin käynnistyy mutta selain ei aukea, asenna Playwrightin Chromium komennolla `npx playwright install chromium`.
+</div>
 
 <input type="checkbox"> Käynnistä kivi-paperi-sakset-sovellus ja pyydä agenttia pelaamaan selaimella yksi peli jokaisessa pelimoodissa ja raportoimaan, toimiiko käyttöliittymä odotetusti
 
@@ -337,7 +400,7 @@ Edellä agentille piti kertoa erikseen, että käyttöliittymä testataan selaim
 
 Lue ennen jatkamista materiaalin luku [Skillsit](/genai/#skillsit). Tallennetaan käyttöliittymän testausohjeet skillsiksi.
 
-<input type="checkbox"> Luo projektiin tiedosto _.github/skills/ui-testaus/SKILL.md_, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella
+<input type="checkbox"> Luo projektiin tiedosto <span class="vain-copilot">_.github/skills/ui-testaus/SKILL.md_</span><span class="vain-opencode">_.opencode/skills/ui-testaus/SKILL.md_</span>, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella
 
 Tiedoston alussa on YAML-muotoinen otsake, jossa määritellään skillsin nimi (`name`) ja kuvaus (`description`). Nimen tulee olla sama kuin skillsin hakemiston nimi, eli tässä _ui-testaus_. Otsakkeen jälkeen tulevat varsinaiset ohjeet tavallisena Markdownina:
 
@@ -359,15 +422,34 @@ Kirjaa ohjeisiin ainakin
 - mitkä pelimoodit ja tilanteet testataan, esim. pelin päättyminen kahden voiton johtoon ja virheellinen syöte
 - miten agentin tulee raportoida tulokset, esim. lista testatuista tilanteista ja niiden lopputuloksista
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Varmista, että VS Code löytää skillsin. Kirjoita chatiin komento `/skills`, joka listaa agentin käytössä olevat skillsit:
 
 ![]({{ "/images/skills1.png" | relative_url }})
 
 Projektin omat skillsit näkyvät otsikon _project_ alla. Otsikon _plugin_ alla ovat VS Coden laajennusten mukanaan tuomat skillsit, joten listasi voi näyttää erilaiselta kuin kuvassa. Jos skillsiä ei löydy, tarkista tiedoston sijainti ja nimi sekä se, että otsakkeen `name` vastaa hakemiston nimeä.
+</div>
 
-<input type="checkbox"> Aloita uusi chat-keskustelu ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista chatin työvaiheista, latasiko agentti skillsin käyttöönsä. Jos ei ladannut, paranna kuvausta ja kokeile uudelleen
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Varmista, että OpenCode löytää skillsin. OpenCodessa ei ole komentoa `/skills`, joten kysy agentilta, mitä skillsejä sillä on käytössä. Jos skillsiä ei löydy, tarkista tiedoston sijainti ja nimi sekä se, että otsakkeen `name` vastaa hakemiston nimeä.
+</div>
 
+<input type="checkbox"> Aloita uusi <span class="vain-copilot">chat-keskustelu</span><span class="vain-opencode">keskustelu komennolla `/new`</span> ja pyydä agenttia esim. tarkastamaan, toimiiko sovelluksen käyttöliittymä, mainitsematta skillsiä. Tarkista <span class="vain-copilot">chatin työvaiheista</span><span class="vain-opencode">keskustelusta</span>, latasiko agentti skillsin käyttöönsä<span class="vain-opencode"> (skillsin lataus näkyy `skill`-työkalun kutsuna)</span>. Jos ei ladannut, paranna kuvausta ja kokeile uudelleen
+
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Skillsin voi käynnistää myös itse kirjoittamalla chatiin `/` ja skillsin nimen. Kokeile komentoa `/ui-testaus`
+</div>
+
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Skillsin voi käynnistää myös itse kirjoittamalla `/` ja skillsin nimen. OpenCodessa tämä edellyttää, että skillsin otsakkeeseen lisätään seuraava:
+
+```yaml
+metadata:
+  opencode/slash: "true"
+```
+
+Lisää määrittely ja kokeile komentoa `/ui-testaus`
+</div>
 
 <input type="checkbox"> Tee käyttöliittymään jokin pieni muutos ja pyydä agenttia varmistamaan, että sovellus toimii edelleen. Käyttääkö agentti skillsiä?
 
@@ -382,15 +464,15 @@ Kerro raportissa
 
 ### 7. Oma MCP-palvelin [tekoäly]
 
-Jos teet tehtävän [OpenCodella](/opencode/), katso myös sen [tehtäväkohtaiset ohjeet](/opencode/#viikko-7-tehtävä-7).
+{% include ai_valitsin.html %}
 
 Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
 
 Valmiiden palvelinten lisäksi MCP-palvelimen voi toteuttaa myös itse. Näin agentin käyttöön saa esim. oman sovelluksen toiminnallisuutta tai yrityksen sisäistä dataa. Toteutetaan oma MCP-palvelin, jonka avulla agentti voi tehdä kyselyjä NHL-tilastoihin viikon 6 koodia hyödyntäen.
 
-Palvelin on tavallinen Python-ohjelma, jonka funktiot merkitään dekoraattorilla `@mcp.tool()`. MCP-kirjasto muodostaa funktioiden tyyppimäärittelyistä ja docstringeistä työkalujen kuvaukset, joiden perusteella agentti päättää, milloin ja miten työkaluja kutsutaan. VS Code käynnistää palvelimen taustalle, ja agentti kommunikoi sen kanssa standardisyötteen ja -tulosteen välityksellä.
+Palvelin on tavallinen Python-ohjelma, jonka funktiot merkitään dekoraattorilla `@mcp.tool()`. MCP-kirjasto muodostaa funktioiden tyyppimäärittelyistä ja docstringeistä työkalujen kuvaukset, joiden perusteella agentti päättää, milloin ja miten työkaluja kutsutaan. <span class="vain-copilot">VS Code</span><span class="vain-opencode">OpenCode</span> käynnistää palvelimen taustalle, ja agentti kommunikoi sen kanssa standardisyötteen ja -tulosteen välityksellä.
 
-<input type="checkbox"> Kopioi viikon 6 projekti _query-language_ palautusrepositorioosi hakemiston _viikko7_ sisälle ja avaa se VS Codessa omana workspacenaan
+<input type="checkbox"> Kopioi viikon 6 projekti _query-language_ palautusrepositorioosi hakemiston _viikko7_ sisälle<span class="vain-copilot"> ja avaa se VS Codessa omana workspacenaan</span>
 
 <input type="checkbox"> Lisää projektiin MCP-kirjasto komennolla `uv add "mcp[cli]"`
 
@@ -435,7 +517,7 @@ Inspector avautuu _Servers_-välilehdelle, jossa näkyy käynnistyskomennon peru
 
 ![]({{ "/images/mcp1.png" | relative_url }})
 
-Oikeassa reunassa, välilehdellä _Protocol_, näkyvät Inspectorin ja palvelimen väliset [JSON-RPC](https://www.jsonrpc.org/specification)-viestit. Esimerkiksi viesti `tools/list` on pyyntö, jolla client kysyy palvelimelta sen tarjoamat työkalut. Samoja viestejä vaihtavat myös VS Code ja palvelin, kun agentti käyttää palvelinta.
+Oikeassa reunassa, välilehdellä _Protocol_, näkyvät Inspectorin ja palvelimen väliset [JSON-RPC](https://www.jsonrpc.org/specification)-viestit. Esimerkiksi viesti `tools/list` on pyyntö, jolla client kysyy palvelimelta sen tarjoamat työkalut. Samoja viestejä vaihtavat myös <span class="vain-copilot">VS Code</span><span class="vain-opencode">OpenCode</span> ja palvelin, kun agentti käyttää palvelinta.
 
 Jos viestien tila jää muotoon _PENDING_, eikä _Tools_-välilehdellä näy työkaluja, lähetä viesti `tools/list` uudelleen sen kortin ↻-kuvakkeesta (kuvassa alempi nuoli).
 
@@ -458,6 +540,7 @@ Muista, että palvelin ei saa tulostaa mitään standarditulosteeseen esim. tava
 
 Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärrät palvelimen koodin. Kirjoita työkaluille kuvaavat docstringit, sillä agentti päättää niiden perusteella, milloin ja miten työkaluja käytetään. Kirjoita työkalujen kuvauksiin myös kyselykielen syntaksi.
 
+<div class="vain-copilot" markdown="1">
 <input type="checkbox"> Rekisteröi palvelin VS Codeen lisäämällä projektiin tiedosto _.vscode/mcp.json_:
 
 ```json
@@ -473,14 +556,42 @@ Voit toteuttaa työkalut itse tai agentin avulla, mutta varmista, että ymmärr�
 ```
 
 Jos palvelin ei käynnisty, koska VS Code ei löydä komentoa `uv`, toimi kuten [edellisen tehtävän](#6-mcp-ja-skillsit-tekoäly) Playwright-palvelimen kohdalla, eli kirjoita konfiguraatioon `uv`:n koko polku (`which uv`).
+</div>
 
-<input type="checkbox"> Käynnistä palvelin ja kysy agentilta luonnollisella kielellä kysymyksiä, joihin se tarvitsee palvelimesi työkaluja, esim. _"Keillä NYR:n pelaajilla on vähintään 10 maalia mutta alle 20 maalia?"_ tai _"Kuka Edmontonin pelaaja teki eniten pisteitä?"_
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> Rekisteröi palvelin OpenCodeen lisäämällä projektin tiedostoon _opencode.json_ (luo tiedosto, jos sitä ei vielä ole):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "nhl": {
+      "type": "local",
+      "command": ["uv", "run", "python", "src/mcp_server.py"],
+      "enabled": true
+    }
+  }
+}
+```
+
+Jos palvelin ei käynnisty, koska OpenCode ei löydä komentoa `uv`, toimi kuten [edellisen tehtävän](#6-mcp-ja-skillsit-tekoäly) Playwright-palvelimen kohdalla, eli kirjoita konfiguraatioon `uv`:n koko polku (`which uv`).
+</div>
+
+<input type="checkbox"> Käynnistä palvelin<span class="vain-opencode"> käynnistämällä OpenCode projektin hakemistossa</span> ja kysy agentilta luonnollisella kielellä kysymyksiä, joihin se tarvitsee palvelimesi työkaluja, esim. _"Keillä NYR:n pelaajilla on vähintään 10 maalia mutta alle 20 maalia?"_ tai _"Kuka Edmontonin pelaaja teki eniten pisteitä?"_
 
 <input type="checkbox"> Seuraa, mitä työkaluja agentti kutsuu ja millä parametreilla
 
+<div class="vain-copilot" markdown="1">
 Agentin tekemät työkalukutsut näkyvät chatissa agentin vastauksen työvaiheiden joukossa, esim. _query_players – nhl (MCP Server)_. Avaamalla työkalukutsun näet, mitä palvelin palautti (_Output_). Kutsun parametrit eivät kuitenkaan välttämättä näy kohdassa _Input_, jossa saattaa olla ainoastaan palvelimen ja työkalun nimi.
 
-Parametrit saa näkyviin lisäämällä palvelimeen lokituksen. Koska palvelin ei saa tulostaa standarditulosteeseen, kirjoitetaan loki tiedostoon:
+Parametrit saa näkyviin lisäämällä palvelimeen lokituksen. 
+</div>
+
+<div class="vain-opencode" markdown="1">
+Agentin tekemät työkalukutsut parametreineen näkyvät keskustelussa. Lisätään palvelimeen silti lokitus, josta näkee palvelimen saamat kutsut agentista riippumatta.
+</div>
+
+Koska palvelin ei saa tulostaa standarditulosteeseen, kirjoitetaan loki tiedostoon:
 
 ```python
 from pathlib import Path
@@ -508,7 +619,7 @@ tail -f mcp.log
 
 joka näyttää tiedostoon kirjoitettavat rivit sitä mukaa kun niitä syntyy. Windowsin PowerShellissä vastaava komento on `Get-Content mcp.log -Wait`.
 
-<input type="checkbox"> Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan. Palvelin on käynnistettävä uudelleen muutosten jälkeen, esim. tiedoston _.vscode/mcp.json_ palvelimen nimen yläpuolella näkyvän _Restart_-linkin avulla
+<input type="checkbox"> Kokeile, miten docstringien muuttaminen vaikuttaa agentin toimintaan. Palvelin on käynnistettävä uudelleen muutosten jälkeen, <span class="vain-copilot">esim. tiedoston _.vscode/mcp.json_ palvelimen nimen yläpuolella näkyvän _Restart_-linkin avulla</span><span class="vain-opencode">eli käynnistä OpenCode uudelleen</span>
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko7_ talletettavaan tiedostoon _oma_mcp.md_
 
