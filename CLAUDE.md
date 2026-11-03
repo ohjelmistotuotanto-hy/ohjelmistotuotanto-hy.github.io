@@ -18,7 +18,7 @@ There are no tests or linters. Production is built from `containerization/Docker
 ## Structure
 
 - `osa0.md`–`osa5.md`: the main course material (parts 0–5). `genai.md`: separate AI material that progresses week by week; sections marked `<span style="color:blue">[viikko N]</span>` belong to week N.
-- `tehtavat1.md`–`tehtavat7.md`: weekly exercises; `tehtavat.md` lists them with deadlines. Exercise headings are numbered (`### 9. Otsikko [tekoäly]`), and other pages link to their auto-generated anchors, e.g. `/tehtavat2/#9-ensikosketus-copilotiin-tekoäly`. Renaming a heading breaks those links, so grep for the anchor before changing one.
+- `tehtavat1.md`–`tehtavat7.md`: weekly exercises; `tehtavat.md` lists them with deadlines. Exercise headings are numbered (`### 9. Otsikko [tekoäly]`), and other pages link to their auto-generated anchors, e.g. `/tehtavat2/#9-ensikosketus-koodausagenttiin-tekoäly`. Renaming a heading breaks those links, so grep for the anchor before changing one.
 - `[tekoäly]`-tagged exercises support both GitHub Copilot and OpenCode. Each starts with `{% include ai_valitsin.html %}`, a switch whose choice is stored in localStorage and applies site-wide. Tool-specific text is wrapped in `<div class="vain-copilot" markdown="1">` / `<div class="vain-opencode" markdown="1">` blocks or inline `<span>`s with the same classes. When an AI exercise changes, update both versions. `opencode.md` only covers installing and using OpenCode.
 - `miniprojekti.md`, `miniprojektin_arvosteluperusteet.md`: group project instructions and grading.
 - `_includes/*.md` are shared snippets pulled in with `{% include ... %}` (e.g. `submission_instructions.md` at the end of each exercise page).

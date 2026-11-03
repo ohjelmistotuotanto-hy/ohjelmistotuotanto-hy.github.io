@@ -11,6 +11,8 @@ Valitse **OpenCode**, jos
 - haluat tutustua terminaalissa toimivaan, editorista riippumattomaan agenttiin, jonka käyttötapa muistuttaa Claude Codea
 - haluat käyttää avoimen lähdekoodin työkalua, jossa kielimallin voi vaihtaa vapaasti
 
+Tehtävät on alun perin tehty Copilotille, ja niiden OpenCode-versioita ei ole testattu yhtä perusteellisesti. OpenCoden ohjeissa voi siis olla enemmän virheitä ja epäselvyyksiä.
+
 Jos et osaa päättää, valitse Copilot. Viikon 5 GitHub-integraatiota hyödyntävät tehtävät ovat sillä suoraviivaisempia, ja OpenCodella ne tehdään omalla koneella.
 
 Kummankin käyttö on kiintiöity: Copilotilla on kuukausikiintiö, ja CurreChatin tokenit ovat rajalliset. Valitse siis harkiten, mihin tekoälyä käytät, äläkä tuhlaa kiintiötä turhiin kokeiluihin.

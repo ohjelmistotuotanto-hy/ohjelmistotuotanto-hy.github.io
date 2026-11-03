@@ -9,7 +9,7 @@ Tämä sivu käsittelee generatiivisen tekoälyn ja erityisesti koodausagenttien
 
 Osaan kurssin muista tehtävistä liittyy lisäksi tehtävän yhteydestä avattava vihje tekoälyn hyödyntämiseen.
 
-Kurssin tehtävät voi tehdä joko GitHub [Copilotilla](https://github.com/features/copilot) VS Coden kautta tai avoimen lähdekoodin koodausagentti [OpenCodella](/opencode/), ja tehtävänannoissa on ohjeet molemmille. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. OpenCodea voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. Valinnan perusteista kerrotaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly). Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
+Kurssin tehtävät voi tehdä joko GitHub [Copilotilla](https://github.com/features/copilot) VS Coden kautta tai avoimen lähdekoodin koodausagentti [OpenCodella](/opencode/), ja tehtävänannoissa on ohjeet molemmille. Yliopisto-opiskelijat saavat Copilot Student -version ilmaiseksi [GitHub Educationin](https://github.com/education/students) kautta. OpenCodea voi käyttää CurreChatin kielimalleilla ilman omaa maksullista API-avainta. Valinnan perusteista kerrotaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-koodausagenttiin-tekoäly). Tehtävät on toki mahdollista tehdä myös jollain muulla AI-avusteisella työkalulla, esim. Claude Codella tai Cursorilla. Käsitteet ovat työkalusta riippumatta samat.
 
 Tämän materiaalin esimerkit on kirjoitettu Copilotille. OpenCoden vastaavat ominaisuudet on koottu [OpenCode-sivulle](/opencode/#copilotin-ominaisuudet-opencodessa).
 
@@ -142,7 +142,7 @@ Jos et ymmärrä, mitä agentin tuottama koodi tekee, voit tarkentaa ymmärryst�
 
 **Lukuun liittyvät tehtävät:**
 
-- [Viikko 2, tehtävä 9: Ensikosketus Copilotiin](/tehtavat2/#9-ensikosketus-copilotiin-tekoäly)
+- [Viikko 2, tehtävä 9: Ensikosketus koodausagenttiin](/tehtavat2/#9-ensikosketus-koodausagenttiin-tekoäly)
 - [Viikko 3, tehtävä 8: Agentti ja hyväksymistestit](/tehtavat3/#8-agentti-ja-hyväksymistestit-tekoäly)
 - [Viikko 6, tehtävät 1 ja 3: tuntemattoman koodin ymmärtäminen tekoälyn avulla](/tehtavat6/#1-laskin-ja-komento-oliot)
 

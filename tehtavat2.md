@@ -350,7 +350,7 @@ Konfiguroi palautusrepositioriosi siten, että se suorittaa Pylintin precommit h
 
 Apuna kannattaa käyttää kaikkea mahdollista aina googlesta tekoälyyn.
 
-### 9. Ensikosketus Copilotiin [tekoäly]
+### 9. Ensikosketus koodausagenttiin [tekoäly]
 
 Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on), [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot) ja [Tuntemattoman koodin ymmärtäminen](/genai/#tuntemattoman-koodin-ymmärtäminen).
 
@@ -377,6 +377,8 @@ Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että ka
 </div>
 
 <div class="vain-opencode" markdown="1">
+<input type="checkbox"> Toisin kuin Copilot, OpenCode muokkaa oletusarvoisesti tiedostoja ja suorittaa komentoja kysymättä lupaa. Ota ennen aloittamista käyttöön [komentojen ja muokkausten hyväksyminen](/opencode/#komentojen-hyväksyminen) lisäämällä hakemistoon _viikko2/nhl-reader_ tiedosto `opencode.json`
+
 <input type="checkbox"> Käynnistä OpenCode hakemistossa _viikko2/nhl-reader_ komennolla `opencode`
 </div>
 
@@ -402,7 +404,7 @@ Chat ja agentti toimivat normaalisti, vaikka inline-ehdotukset ovat pois päält
 </div>
 
 <div class="vain-opencode" markdown="1">
-OpenCodessa ei ole editorin koodin täydennystä. Jos haluat kokeilla täydennystä, voit tehdä tämän kohdan ilmaisella Copilot Free -versiolla valitsemalla yltä Copilotin. Muussa tapauksessa toimi seuraavasti:
+OpenCodessa ei ole editorin koodin täydennystä, joten tässä kohdassa agentti toteuttaa yksittäisen metodin. Jos haluat kokeilla koodin täydennystä, voit tehdä tämän kohdan ilmaisella Copilot Free -versiolla valitsemalla yltä Copilotin. Muussa tapauksessa toimi seuraavasti:
 
 <input type="checkbox"> Kirjoita luokkaan `PlayerStats` uuden metodin määrittely ja sitä kuvaava docstring, esim.
 
@@ -411,9 +413,9 @@ def top_goal_scorers(self, how_many):
   """Palauttaa how_many eniten maaleja tehnyttä pelaajaa maalimäärän mukaan laskevassa järjestyksessä"""
 ```
 
-ja pyydä OpenCodea toteuttamaan metodi.
+ja pyydä Build-agenttia (oletusagentti, valittu agentti näkyy oikeassa alakulmassa) toteuttamaan metodi, esim. _"Toteuta metodi top_goal_scorers tiedostossa @src/player_stats.py"_. Käytä viittauksessa sitä tiedostoa, jossa luokkasi `PlayerStats` on.
 
-<input type="checkbox"> Lue toteutus. Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
+<input type="checkbox"> Lue muutos ennen kuin hyväksyt sen. Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
 </div>
 
 **Chat: koodin ja virheiden selittäminen**
@@ -438,11 +440,11 @@ ja pyydä OpenCodea toteuttamaan metodi.
 
 <input type="checkbox"> Pyydä agenttia tekemään luokalle `PlayerStats` yksikkötestit. Vaadi, että testit **eivät käytä verkkoyhteyttä**, vaan `PlayerReader`-luokan tilalla käytetään stubia viikon 1 [tehtävän 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikkötestaus) tapaan
 
-<span class="vain-copilot">Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span><span class="vain-opencode">OpenCode suorittaa oletusarvoisesti komentoja kysymättä. Ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen) ja lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span>
+<span class="vain-copilot">Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span><span class="vain-opencode">Lue jokainen komento ja muokkaus ennen kuin annat agentille luvan. Jos OpenCode ei kysy lupaa, tarkista tehtävän alussa luomasi `opencode.json`.</span>
 
 <input type="checkbox"> Varmista itse, että testit menevät läpi (`uv run pytest`) ja että ne eivät tee HTTP-pyyntöjä.
 
-On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen (joka johtuu siitä, mihin agentti on viestit sijoittanut). Jos komento ei toimi, pyydä agenttia suorittamaan se, ja korjaamaan tilanne.
+On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen (joka johtuu siitä, mihin agentti on testit sijoittanut). Jos komento ei toimi, pyydä agenttia suorittamaan se, ja korjaamaan tilanne.
 
 <input type="checkbox"> Käy agentin tekemä muutos läpi komennolla `git diff`. Muokkasiko agentti jotain, mihin sitä ei pyydetty koskemaan?
 
@@ -450,10 +452,10 @@ On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen (j
 
 <input type="checkbox"> Commitoi muutokset
 
-<input type="checkbox"> Kirjoita raportti kokemuksistasi palautusrepositorion hakemistoon _viikko2_ talletettavaan tiedostoon _copilot.md_
+<input type="checkbox"> Kirjoita raportti kokemuksistasi palautusrepositorion hakemistoon _viikko2_ talletettavaan tiedostoon <span class="vain-copilot">_copilot.md_</span><span class="vain-opencode">_opencode.md_</span>
 
 Kerro raportissa
-- Kuinka hyödyllisiksi koit koodin täydennyksen ehdotukset?
+- <span class="vain-copilot">Kuinka hyödyllisiksi koit koodin täydennyksen ehdotukset?</span><span class="vain-opencode">Toteuttiko agentti metodin `top_goal_scorers` docstringin mukaisesti ja luokan muun koodin tyyliin?</span>
 - Pitikö <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> selitys Pylint-varoituksesta paikkansa?
 - Tekikö agentti toimivan ratkaisun, ja testit?
 - Eroaako testeissä joku siitä miten testejä tehtiin edellisellä viikolla?
