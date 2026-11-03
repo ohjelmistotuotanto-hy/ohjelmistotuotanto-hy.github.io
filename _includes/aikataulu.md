@@ -25,6 +25,7 @@
 - Luento 4: {{site.luennot[4]}}
   - [Ketterä vaatimusten hallinta jatkuu](/osa2#user-story)
   - [Sprintin suunnittelu ja hallinta](/osa2#sprintin-suunnittelu)
+  - tallenne: [youtube](https://youtu.be/jb_NM_dPR0I), [unitube](https://www.helsinki.fi/fi/unitube/video/cce4c289-2e65-4a2e-bbb4-12d518046f68?t=10:45)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/5jTQKWJiHks), [unitube](https://www.helsinki.fi/fi/unitube/video/8d1ccefa-0607-4c9f-8645-8d3e28d2a56c)  
 - Laskarit
   - Luentojen 3 ja 4 <a href="{{site.stats_url}}/quiz/2">monivalintatehtävät</a> deadline {{site.moniv-dl[2]}}
