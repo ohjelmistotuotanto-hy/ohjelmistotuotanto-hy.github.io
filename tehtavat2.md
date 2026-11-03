@@ -396,7 +396,11 @@ ja odota, että Copilot ehdottaa metodin runkoa.
 
 <input type="checkbox"> Lue ehdotus ennen kuin hyväksyt sen (Tab). Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
 
-Inline-ehdotukset kannattaa kokeilun jälkeen ottaa pois päältä. Kun ehdotus ilmestyy ennen kuin olet ehtinyt itse miettiä ratkaisua, Tab-näppäimen painaminen korvaa helposti oman ajattelun, ja kurssin tehtävistä jää oppimatta se, mitä niissä on tarkoitus oppia. Ehdotukset saa pois päältä painamalla VS Coden alapalkin Copilot-ikonia ja poistamalla valinta kohdasta _Ghost text suggestions_:
+Inline-ehdotukset ovat Copilotin vanha, alkuperäinen toiminnallisuus, josta on nykyään oikeastaan enemmän haittaa kuin hyötyä, ja jonka agenttitila on käytännössä korvannut. Ne kannattaa siis kokeilun jälkeen ottaa pois päältä.
+
+> Ehdotukset ovat myös pedagogisesti huono asia silloin, kun kirjoitat koodia osin itse: ehdotus ilmestyy ennen kuin olet ehtinyt itse miettiä ratkaisua, ja Tab-näppäimen painaminen korvaa helposti oman ajattelun. Näin tehtävistä jää oppimatta juuri se, mitä niissä on tarkoitus oppia.
+
+Ehdotukset saa pois päältä painamalla VS Coden alapalkin Copilot-ikonia ja poistamalla valinta kohdasta _Ghost text suggestions_:
 
 ![]({{ "/images/disable_inline.png" | relative_url }})
 
@@ -404,7 +408,7 @@ Chat ja agentti toimivat normaalisti, vaikka inline-ehdotukset ovat pois päält
 </div>
 
 <div class="vain-opencode" markdown="1">
-OpenCodessa ei ole editorin koodin täydennystä, joten tässä kohdassa agentti toteuttaa yksittäisen metodin. Jos haluat kokeilla koodin täydennystä, voit tehdä tämän kohdan ilmaisella Copilot Free -versiolla valitsemalla yltä Copilotin. Muussa tapauksessa toimi seuraavasti:
+Ennen kuin alamme käyttää agenttia nykyaikaisempaan tapaan laajempien kokonaisuuksien toteuttamiseen, kokeillaan aiemmin tyypillistä tapaa koodata tekoälyn avulla: ohjelmoija kirjoittaa metodin määrittelyn ja sitä kuvaavan kommentin, ja tekoäly täydentää toteutuksen. OpenCodessa ei ole editorin koodin täydennystä, joten pyydetään agenttia toteuttamaan yksittäinen metodi:
 
 <input type="checkbox"> Kirjoita luokkaan `PlayerStats` uuden metodin määrittely ja sitä kuvaava docstring, esim.
 
