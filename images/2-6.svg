@@ -22,9 +22,9 @@
 <text x="80" y="425.0" font-size="14" fill="#718096" text-anchor="end" font-weight="normal" >0,25×</text>
 <text x="26" y="230" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" transform="rotate(-90 26 230)">Arvion vaihteluväli</text>
 <text x="730" y="252" font-size="14" fill="#718096" text-anchor="end" font-weight="normal" >aika</text>
-<text x="120.5" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Alkuvaihe</text>
-<text x="303.5" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Määrittely</text>
-<text x="504.8" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Toteutus</text>
+<text x="120.5" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Idea</text>
+<text x="303.5" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Alustava backlog</text>
+<text x="504.8" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Muutama sprintti</text>
 <text x="700.0" y="460.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="normal" >Valmis</text>
 <text x="200" y="40" font-size="17" fill="#c53030" text-anchor="start" font-weight="bold" >Älä lupaa aikataulua tässä vaiheessa</text>
 <line x1="230" y1="48" x2="160" y2="74.93451952754626" stroke="#c53030" stroke-width="1.5" marker-end="url(#arr)"/>
