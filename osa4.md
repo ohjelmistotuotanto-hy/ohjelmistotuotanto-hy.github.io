@@ -29,49 +29,41 @@ Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]
 
 Ohjelmiston suunnittelu jakautuu yleensä kahteen vaiheeseen: arkkitehtuurisuunnitteluun ja olio- tai komponenttisuunnitteluun.
 
-_Arkkitehtuurisuunnittelussa_ hahmotellaan ohjelman rakenne karkealla tasolla, eli mietitään mistä suuremmista rakennekomponenteista ohjelma koostuu. Miten komponentit kommunikoivat ja minkälaiset niiden väliset rajapinnat ovat.
+_Arkkitehtuurisuunnittelussa_ hahmotellaan ohjelman rakenne karkealla tasolla, eli mietitään mistä suuremmista rakennekomponenteista ohjelma koostuu, miten komponentit kommunikoivat ja minkälaiset niiden väliset rajapinnat ovat.
 
 _Olio- tai komponenttisuunnittelussa_ taas suunnitellaan yksityiskohtaisemmin, miten yksittäiset komponentit, luokat ja metodit tulisi toteuttaa.
 
-Näiden teknisten näkökulmien lisäksi ohjelmiston määrittelyn ja suunnittelun välimaastossa on [käyttöliittymä- ja käyttökokemussuunnittelu](https://www.itewiki.fi/opas/kayttoliittymasuunnittelu-ux-user-experience-design-eli-kayttajakokemus/), joihin kurssin materiaalissa ei valitettavasti pystytä syventymään. Osastolla on muutamia syventäviä kursseja aihepiiristä, mm. [Human computer interaction](https://courses.helsinki.fi/fi/csm13401).
+Näiden teknisten näkökulmien lisäksi ohjelmiston määrittelyn ja suunnittelun välimaastossa on [käyttöliittymä- ja käyttökokemussuunnittelu](https://www.itewiki.fi/opas/kayttoliittymasuunnittelu-ux-user-experience-design-eli-kayttajakokemus/), joihin kurssin materiaalissa ei valitettavasti pystytä syventymään. Osastolla on muutamia syventäviä kursseja aihepiiristä, mm. Human computer interaction.
 
 Ohjelmiston suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista.
 Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu on valmiina ja dokumentoitu. Ketterissä menetelmissä suunnittelua tehdään jokaisessa sprintissä tarpeen mukaan, eikä tarkkaa suunnitteludokumenttia yleensä laadita.
 
-Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, ja ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät.
+Vesiputousmallin mukainen suunnitteluprosessi tuskin on enää juuri missään käytössä, ja ainakin vaatimusmäärittely ja arkkitehtuurisuunnittelu limittyvät.
 
 Tarkkaa ja raskasta suunnittelua ennen ohjelmointia, jota kutsutaan joskus nimellä  [Big Design Up Front](https://en.wikipedia.org/wiki/Big_Design_Up_Front) (BDUF), tehdään yhä. Se sopii erityisesti järjestelmiin, joissa sovellusalue tunnetaan hyvin ja vaatimukset eivät muutu.
 
 ## Ohjelmiston arkkitehtuuri
 
-Käsite _ohjelmiston arkkitehtuuri_ (engl. software architecture) on ollut olemassa jo vuosikymmeniä. Termi on vakiintunut yleiseen käyttöön 2000-luvun aikana ja on siirtynyt mm. riviohjelmoijaa kokeneempaa työntekijää tarkoittavaksi nimikkeeksi _ohjelmistoarkkitehti_ engl. software architect.
+Käsite _ohjelmiston arkkitehtuuri_ (engl. software architecture) on ollut olemassa jo vuosikymmeniä. Termi on vakiintunut yleiseen käyttöön 2000-luvun aikana ja on siirtynyt mm. riviohjelmoijaa kokeneempaa työntekijää tarkoittavaksi nimikkeeksi _ohjelmistoarkkitehti_ engl. software architect.
 
 Useimmilla alan ihmisillä on jonkinlainen kuva siitä, mitä ohjelmiston arkkitehtuurilla tarkoitetaan. Termiä ei ole kuitenkaan yrityksistä huolimatta onnistuttu määrittelemään siten, että kaikki olisivat määritelmästä yksimielisiä.
 
-IEEE:n standardi [Recommended practices for Architectural descriptions of Software intensive systems](https://ieeexplore.ieee.org/document/875998) määrittelee käsitteen seuraavasti:
+Arkkitehtuurin kuvaamista käsittelevä standardi [ISO/IEC/IEEE 42010](https://en.wikipedia.org/wiki/ISO/IEC_42010) (alun perin IEEE 1471 vuodelta 2000) määrittelee käsitteen seuraavasti:
 
-> Ohjelmiston arkkitehtuuri on järjestelmän perusorganisaatio, joka sisältää järjestelmän osat, osien keskinäiset suhteet, osien suhteet ympäristöön sekä periaatteet, jotka ohjaavat järjestelmän suunnittelua ja evoluutiota.
+> Ohjelmiston arkkitehtuuri on järjestelmän perusorganisaatio, joka sisältää järjestelmän osat, osien keskinäiset suhteet, osien suhteet ympäristöön sekä periaatteet, jotka ohjaavat järjestelmän suunnittelua ja evoluutiota.
 
-Otetaan esimerkiksi pari muutakin määritelmää.
+Muut määritelmät painottavat samoja asioita hieman eri tavoin. [Philippe Kruchtenin](https://www.semanticscholar.org/paper/The-Rational-Unified-Process-An-Introduction%2C-3rd-Kruchten/3239cd654d82aa775cf9382a4d2ad834a3ea1014) mukaan arkkitehtuuri on _joukko merkittäviä päätöksiä ohjelmiston organisoinnista_ (engl. set of significant decisions about the organization of a software system). McGovern ym. taas korostavat kirjassa _A Practical Guide to Enterprise Architecture_, että arkkitehtuuripäätösten tehtävä on tukea niitä laatuominaisuuksia, joita järjestelmältä vaaditaan.
 
-[Philippe Kruchten](https://www.semanticscholar.org/paper/The-Rational-Unified-Process-An-Introduction%2C-3rd-Kruchten/3239cd654d82aa775cf9382a4d2ad834a3ea1014) määrittelee arkkitehtuurin seuraavasti
-
-> An architecture is the _set of significant decisions about the organization of a software system_, the selection of structural elements and their interfaces by which the system is composed, together with their behavior as specified in the collaborations among those elements, the composition of these elements into progressively larger subsystems, and the _architectural style_ that guides this organization - these elements and their interfaces, their collaborations, and their composition.
-
-[McGovern ym.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.1174&rep=rep1&type=pdf) taas sanovat
-
-> The software architecture of a system or a collection of systems consists of all the important design decisions about the software structures and the interactions between those structures that comprise the systems. _The design decisions support a desired set of qualities that the system should support to be successful_. The design decisions provide a conceptual basis for system development, support, and maintenance.
-
-Vaikka arkkitehtuurin määritelmät hieman vaihtelevat, löytyy määritelmistä joukko samoja teemoja. Jokaisen määritelmän mukaan arkkitehtuuri määrittelee ohjelmiston rakenteen, eli jakautumisen erillisiin osiin sekä osien väliset rajapinnat. Arkkitehtuuri ottaa kantaa rakenteen lisäksi myös käyttäytymiseen, se määrittelee arkkitehtuuritason rakenneosien vastuut ja niiden keskinäisen kommunikoinnin muodot.
+Vaikka arkkitehtuurin määritelmät hieman vaihtelevat, löytyy määritelmistä joukko samoja teemoja. Jokaisen määritelmän mukaan arkkitehtuuri määrittelee ohjelmiston rakenteen, eli jakautumisen erillisiin osiin sekä osien väliset rajapinnat. Arkkitehtuuri ottaa kantaa rakenteen lisäksi myös käyttäytymiseen, se määrittelee arkkitehtuuritason rakenneosien vastuut ja niiden keskinäisen kommunikoinnin muodot.
 
 Arkkitehtuuri keskittyy järjestelmän tärkeimpiin rakenteellisiin periaatteisiin. Se ei kuvaa järjestelmää yksityiskohtaisesti, vaan keskittyy suuriin linjoihin ja toimii _abstraktiona_.
 
-Artikkelissa [Who needs an architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa.
+Artikkelissa [Who needs an architect](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) Martin Fowler toteaa seuraavasti _you might end up defining architecture as things that people perceive as hard to change_, eli arkkitehtuurin voisi määritellä niiksi asioiksi, jotka ovat ohjelmistossa vaikeita muuttaa. Järjestelmän tärkeät rakenneperiaatteet voivat myös muuttua ajan myötä, eli arkkitehtuuri [ei ole muuttumaton](https://web.archive.org/web/20160105123447/http://www.ibm.com/developerworks/rational/library/feb06/eeles/) mutta sen radikaali muuttaminen voi olla haastavaa.
 
 Melkein sama hieman toisin ilmaistuna oli Kruchtenin määritelmässä mainittu
 _set of significant decisions about the organization of a software system_, eli arkkitehtuuri muodostuu arkkitehtuuristen päätösten, eli joukon ohjelmiston rakenteen ja toiminnan kannalta tehtävien fundamentaalisten valintojen kautta.
 
-### Arkkitehtuuriin vaikuttavia tekijöitä
+### Arkkitehtuuriin vaikuttavia tekijöitä
 
 [Osassa 2](/osa2) mainittiin järjestelmän vaatimusten jakautuvat kahteen luokkaan, toiminnallisiin ja ei-toiminnallisiin vaatimuksiin.
 
@@ -79,9 +71,9 @@ Järjestelmän ei-toiminnalliset [laatuvaatimukset](/osa2#ei-toiminnalliset-vaat
 
 Koska jotkin laatuvaatimukset voivat olla ristiriidassa keskenään, arkkitehdin on löydettävä kompromissi, joka tyydyttää kaikkia sidosryhmiä. Esimerkiksi time-to-market, eli kuinka nopeasti sovellus saadaan loppukäyttäjille ja alhainen hinta, lienevät ristiriidassa lähes kaikkien laatuvaatimusten kanssa.
 
-Tiedon ajantasaisuus, skaalautuvuus ja vikasietoisuus ovat ominaisuuksia, joiden välillä on usein tehtävä kompromisseja. On jopa matemaattisesti todistettu, että kaikissa tilanteissa ei voida saavuttaa kaikkia näitä yhtä aikaa (ks. [CAP-teoreema](http://en.wikipedia.org/wiki/CAP_theorem)).
+Tiedon ajantasaisuus, saatavuus ja vikasietoisuus ovat ominaisuuksia, joiden välillä on usein tehtävä kompromisseja. Hajautetuille järjestelmille on jopa todistettu, että jos verkko katkeaa osien välillä, järjestelmä ei voi samanaikaisesti sekä vastata kaikkiin pyyntöihin että taata, että kaikki osat näkevät saman ajantasaisen tiedon (ks. [CAP-teoreema](https://en.wikipedia.org/wiki/CAP_theorem)).
 
-Myös toteutusteknologiat, esimerkiksi toteutuksessa käytettävät sovelluskehykset ja integraatio olemassaoleviin järjestelmiin sekä järjestelmän toimintaympäristö esim. lääketieteen ja ilmailualan säädökset sekä edellytetyt toimintastandardit, vaikuttavat arkkitehtuuriin.
+Myös toteutusteknologiat, esimerkiksi toteutuksessa käytettävät sovelluskehykset ja integraatio olemassaoleviin järjestelmiin sekä järjestelmän toimintaympäristö esim. lääketieteen ja ilmailualan säädökset sekä edellytetyt toimintastandardit, vaikuttavat arkkitehtuuriin.
 
 Arkkitehtuurin suurin merkitys on antaa sovelluksen kehitykselle ja ylläpidolle sellaiset raamit, että sovellus pystyy jatkossakin vastaamaan asiakkaan asettamien toiminnallisten vaatimusten lisäksi järjestelmälle asetettuihin laatuvaatimuksiin.
 
@@ -103,7 +95,7 @@ Arkkitehtuurityylejä on [suuri määrä](https://en.wikipedia.org/wiki/Architec
 - Mikropalveluarkkitehtuuri
 - Palveluperustainen arkkitehtuuri
 
-Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien piirteitä.
+Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien piirteitä.
 
 ### Kerrosarkkitehtuuri
 
@@ -115,7 +107,7 @@ Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimp
 
 Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai komponentteja, jotka muodostavat oman abstraktiotasonsa toiminnallisuuden suhteen loogisen kokonaisuuden.
 
-Kerrosarkkitehtuurilla on monia etuja. Kerroksittaisuus helpottaa ylläpitoa, sillä jos tietyn kerroksen palvelurajapintaan eli muille kerroksille näkyvään osaan tehdään muutoksia, aiheuttavat muutokset ylläpitotoimenpiteitä ainoastaan suoraan yläpuolella olevaan kerroksen. Esim. käyttöliittymän muutokset eivät vaikuta muihin kerroksiin ja tiedon tallennuksesta huolehtivaan kerrokseen tehtävät muutokset eivät vaikuta käyttöliittymään.
+Kerrosarkkitehtuurilla on monia etuja. Kerroksittaisuus helpottaa ylläpitoa, sillä jos tietyn kerroksen palvelurajapintaan eli muille kerroksille näkyvään osaan tehdään muutoksia, aiheuttavat muutokset ylläpitotoimenpiteitä ainoastaan suoraan yläpuolella olevaan kerrokseen. Esim. käyttöliittymän muutokset eivät vaikuta muihin kerroksiin ja tiedon tallennuksesta huolehtivaan kerrokseen tehtävät muutokset eivät vaikuta käyttöliittymään.
 
 Sovelluslogiikan riippumattomuus käyttöliittymästä helpottaa ohjelman siirtämistä uusille alustoille, esimerkiksi toimimaan webin lisäksi mobiiliympäristössä. Alimpien kerroksien palveluja, kuten tallennuskerrosta tai ainakin sen osia voidaan mahdollisesti uusiokäyttää myös muissa sovelluksissa.
 
@@ -123,7 +115,7 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
 
 #### Todo-sovelluksen arkkitehtuuri
 
-Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://courses.helsinki.fi/fi/tkt20002) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app).
+Eräs konkreettinen, joskin hyvin yksinkertainen esimerkki kerrosarkkitehtuuria noudattavasta sovelluksesta on kurssin [Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/) referenssisovelluksena toimiva [Todo-sovellus](https://github.com/ohjelmistotekniikka-hy/python-todo-app).
 
 Koodin tasolla kerrosrakenne näkyy siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
@@ -137,11 +129,13 @@ Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivall
 
 Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
 
-Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entities_-olioita. Vaikka kyseinen pakkaus kuuluu loogisesti ajatelleen tallennuspalveluita ylempään "bisneslogiikkakerrokseen", ohjelmakoodin tasolla alempana oleva tallennuskerros on riippuvainen pakkauksesta sillä se käsittelee pakkauksen luokkien koodia.
+Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entities_-olioita. Vaikka kyseinen pakkaus kuuluu loogisesti ajateltuna tallennuspalveluita ylempään "bisneslogiikkakerrokseen", ohjelmakoodin tasolla alempana oleva tallennuskerros on riippuvainen pakkauksesta sillä se käsittelee pakkauksen luokkien koodia.
+
+> Kerrosarkkitehtuurin säännöt, kuten se, että sovelluslogiikka ei saa riippua käyttöliittymästä, rapautuvat helposti, jos niiden noudattamista ei valvota. Sääntöjä voi tarkastaa automaattisesti esim. työkalulla [import-linter](https://import-linter.readthedocs.io/), jolle määritellään sallitut riippuvuudet pakkausten välillä. Kun tarkastus lisätään CI-putkeen, sääntöä rikkova muutos huomataan heti. Tällaisia arkkitehtuurin ominaisuuksia valvovia automaattisia tarkastuksia kutsutaan nimellä _fitness function_.
 
 ### Arkkitehtuurin kuvaamisesta
 
-Kovista yrityksistä huolimatta ohjelmistojen arkkitehtuurien kuvaamiselle ei ole onnistuttu kehittämään mitään yleisesti käytössä olevaa notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu ja käyttökelpoinen ei sekään ole. Edellisessä esimerkissä käytettyä pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
+Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu se ei ole. Viime vuosina suosiota on saavuttanut Simon Brownin [C4-malli](https://c4model.com/), jossa arkkitehtuuri kuvataan neljällä tarkentuvalla tasolla: järjestelmän konteksti (järjestelmä, sen käyttäjät ja muut järjestelmät), kontit (sovellukset, tietokannat ja muut erikseen ajettavat osat), komponentit sekä tarvittaessa koodi. C4 ei määrää tarkkaa merkintätapaa, vaan sen idea on, että jokaisella kaaviolla on selkeä taso ja jokainen laatikko ja nuoli on nimetty. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla. Edellisessä esimerkissä käytettyä pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
 
 Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_ tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjien hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
 
@@ -158,13 +152,15 @@ Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn 
 
 Kannattaa huomata, että arkkitehtuurikuvaus ei suinkaan ole pelkkä kuva, mm. komponenttien vastuut tulee tarkentaa sekä niiden väliset rajapinnat ja kommunikaation muodot määritellä. Jos näin ei tehdä, kasvaa riski sille että arkkitehtuuria ei noudateta.
 
-Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
+Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
+
+Päätösten kirjaamiseen on vakiintunut kevyt käytäntö, _Architecture Decision Record_ (ADR). Jokaisesta merkittävästä arkkitehtuuripäätöksestä kirjoitetaan lyhyt, yleensä enintään sivun mittainen Markdown-tiedosto, joka tallennetaan versionhallintaan koodin rinnalle, esim. hakemistoon _docs/adr_. Michael Nygardin [alkuperäisen mallin](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) mukaan ADR:ssä kerrotaan päätöksen konteksti, itse päätös ja sen seuraukset, myös kielteiset. Vanhoja päätöksiä ei muokata, vaan jos päätös muuttuu, kirjoitetaan uusi ADR, joka korvaa edellisen. Näin päätösten historia perusteluineen säilyy.
 
 ### Mikropalveluarkkitehtuuri
 
 Kerrosarkkitehtuurin eräänä epäkohtana mainittiin, että sen soveltaminen saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
 
-_Mikropalveluarkkitehtuuri_ (engl. microservices), joka on yleistynyt viime aikoina, pyrkii ratkaisemaan nämä ongelmat. Se jakaa sovelluksen useisiin pieniin, verkossa toimiviin ja itsenäisiin palveluihin, jotka kommunikoivat keskenään verkon välityksellä.
+_Mikropalveluarkkitehtuuri_ (engl. microservices), joka yleistyi 2010-luvulla erityisesti suurissa verkkopalveluissa, pyrkii ratkaisemaan nämä ongelmat. Se jakaa sovelluksen useisiin pieniin, verkossa toimiviin ja itsenäisiin palveluihin, jotka kommunikoivat keskenään verkon välityksellä.
 
 ![]({{ "/images/4-6.png" | relative_url }}){:height="300px" }
 
@@ -181,7 +177,7 @@ Mikropalveluiden on tarkoitus olla suhteellisen pieniä ja huolehtia vain "yhdes
 Järjestelmään lisätään toiminnallisuutta yleensä toteuttamalla uusia palveluita tai laajentamalla olemassa olevia.
 Sovelluksen laajentaminen voi näin olla helpompaa kuin kerrosarkkitehtuurissa, missä laajennus yleensä edellyttää jokaisessa kerroksessa olevan koodin muokkaamista.
 
-Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata, sillä suorituskyvyn pullonkaulan aiheuttavia mikropalveluja voidaan suorittaa useita rinnakkain.
+Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata, sillä suorituskyvyn pullonkaulan aiheuttavia mikropalveluja voidaan suorittaa useita rinnakkain.
 
 Mikropalveluilla sovellusta voi kehittää helposti useilla ohjelmointikielillä tai eri sovelluskehyksillä. Toisin kuin monoliittisissa projekteissa, mikään ei edellytä, että kaikki mikropalvelut olisi toteutettu samalla tekniikalla.
 
@@ -189,15 +185,15 @@ Mikropalveluilla sovellusta voi kehittää helposti useilla ohjelmointikielillä
 
 Mikropalvelut siis kommunikoivat keskenään verkon välityksellä. Erilaisia tapoja kommunikointiin on useita.
 
-Yksinkertainen vaihtoehto on käyttää kommunikointiin HTTP-protokollaa, eli samaa mekanismia, jonka avulla web-selaimet keskustelevat palvelimien kanssa. Tällöin sanotaan, että mikropalvelut tarjoavat kommunikointia varten REST-rajapinnan. Viikon 3 laskareissa haettiin NHL-tilastotietoja JSON-muotoista dataa tarjoavasta REST-rajapinnasta.
+Yksinkertainen vaihtoehto on käyttää kommunikointiin HTTP-protokollaa, eli samaa mekanismia, jonka avulla web-selaimet keskustelevat palvelimien kanssa. Tällöin sanotaan, että mikropalvelut tarjoavat kommunikointia varten REST-rajapinnan. Viikon 2 laskareissa haettiin NHL-tilastotietoja JSON-muotoista dataa tarjoavasta REST-rajapinnasta.
 
-Vaihtoehtoinen, huomattavasti joustavampi kommunikointikeino on ns. _viestinvälityksen_ (message queue/bus) käyttö.
+Vaihtoehtoinen, huomattavasti joustavampi kommunikointikeino on ns. _viestinvälityksen_ (message queue/bus) käyttö.
 
-Palvelut eivät lähetä viestejä suoraan toisilleen, vaan käytössä on verkossa toimiva viestinvälityspalvelu, joka hoitaa viestien välityksen eri palveluiden välillä.
+Palvelut eivät lähetä viestejä suoraan toisilleen, vaan käytössä on verkossa toimiva viestinvälityspalvelu, joka hoitaa viestien välityksen eri palveluiden välillä.
 
 ![]({{ "/images/4-6b.png" | relative_url }}){:height="400px" }
 
-Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish) viestejä viestinvälityspalveluun. Viesteillä on tyypillisesti jokin _aihe_ (topic) ja sen lisäksi _datasisältö_, esimerkiksi:
+Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish) viestejä viestinvälityspalveluun. Viesteillä on tyypillisesti jokin _aihe_ (topic) ja sen lisäksi _datasisältö_, esimerkiksi:
 
 ```json
 {
@@ -213,11 +209,11 @@ Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish)
 
 Palvelut voivat _tilata_ (subscribe) viestipalvelusta niihin aiheisiin liittyvät viestit joista ne ovat kiinnostuneita. Esimerkiksi käyttäjähallinnasta vastaava palvelu todennäköisesti tilaa viestit, joiden aihe on _new_user_. Viestinvälityspalvelu välittää vastaanottamansa viestit edelleen kaikille palveluille, jotka ovat kyseisen aiheen tilanneet.
 
-Kaikki viestien välitys tapahtuu siis viestinvälityspalvelun kautta, eli palvelut eivät kommunikoi suoraan toistensa kanssa. Näin mikropalveluista tulee erittäin löyhästi kytkettyjä, ja muutokset yhdessä palvelussa eivät vaikuta mihinkään muualle, niin kauan kuin viestit säilyvät entisen muotoisina.
+Kaikki viestien välitys tapahtuu siis viestinvälityspalvelun kautta, eli palvelut eivät kommunikoi suoraan toistensa kanssa. Näin mikropalveluista tulee erittäin löyhästi kytkettyjä, ja yhteen palveluun voi tehdä muutoksia vaikuttamatta muihin, kunhan viestien muoto ja merkitys säilyvät ennallaan. Viesteistä tulee siis palveluiden välinen sopimus, jonka muuttaminen vaatii yhtä lailla koordinointia kuin minkä tahansa rajapinnan muuttaminen.
 
-Viestien lähetys on lähettäjän kannalta _asynkronista_ eli palvelu lähettää viestin, jatkaa se heti koodissaan eteenpäin siitä huolimatta onko viesti välitetty sen tilanneille palveluille.
+Viestien lähetys on lähettäjän kannalta _asynkronista_ eli palvelu lähettää viestin ja jatkaa heti koodissaan eteenpäin riippumatta siitä, onko viesti välitetty sen tilanneille palveluille.
 
-Asynkronisten viestien (joita kutsutaan usein myös _eventeiksi_) välitykseen perustuvaa arkkitehtuureja kutsutaan myös _event-driven_-arkkitehtuureiksi. Kaikki event-driven-arkkitehtuurit eivät suinkaan ole mikropalveluarkkitehtuureja, esim. Pythonin Tkinter-kirjaston avulla toteutettu käyttöliittymä kommunikoi sovelluksen kanssa eventtien avulla.
+Asynkronisten viestien (joita kutsutaan usein myös _eventeiksi_) välitykseen perustuvia arkkitehtuureja kutsutaan myös _event-driven_-arkkitehtuureiksi. Kaikki event-driven-arkkitehtuurit eivät suinkaan ole mikropalveluarkkitehtuureja, esim. Pythonin Tkinter-kirjaston avulla toteutettu käyttöliittymä kommunikoi sovelluksen kanssa eventtien avulla.
 
 #### Mikropalveluiden haasteita
 
@@ -225,13 +221,21 @@ Monista eduistaan huolimatta mikropalveluarkkitehtuurin soveltaminen tuo mukanaa
 
 Useista palveluista koostuvan sovelluksen debuggaaminen ja testaaminen on monimutkaisempaa kuin monoliittisen. Tämä on erityisen totta, jos mikropalvelut käyttävät viestinvälitystä.
 
-Kymmenistä tai sadoista mikropalveluista koostuvan ohjelmiston käynnistäminen ja hallinta tuotantopalvelimilla on haastavaa ja vaatii pitkälle vietyä automatisointia. Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota.
+Kymmenistä tai sadoista mikropalveluista koostuvan ohjelmiston käynnistäminen ja hallinta tuotantopalvelimilla on haastavaa ja vaatii pitkälle vietyä automatisointia. Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota.
 Mikropalveluiden menestyksekäs soveltaminen edellyttääkin vahvaa DevOps-kulttuuria.
 
-Mikropalveluiden yhteydessä käytetäänkin paljon konttiteknologiaa (engl. container), eli käytännössä [Docker](https://www.docker.com/)-ohjelmistoa. Kontit ovat hieman yksinkertaistaen sanottuna kevyitä virtuaalikoneita, joita on mahdollista suorittaa suuret määrät yksittäisellä palvelimella. Jos mikropalvelu on omassa kontissa, vastaa se käytännössä tilannetta, missä mikropalvelua suoritettaisiin omalla koneellaan.
+Mikropalveluiden yhteydessä käytetäänkin paljon konttiteknologiaa (engl. container), eli käytännössä [Docker](https://www.docker.com/)-ohjelmistoa. Kontit ovat hieman yksinkertaistaen sanottuna kevyitä virtuaalikoneita, joita on mahdollista suorittaa suuret määrät yksittäisellä palvelimella. Jos mikropalvelu on omassa kontissa, vastaa se käytännössä tilannetta, missä mikropalvelua suoritettaisiin omalla koneellaan.
 
 Aihe on tärkeä, mutta emme valitettavasti voi mennä siihen tämän kurssin
 puitteissa ollenkaan, onneksi Avoimessa yliopistossa on tarjolla sopiva kurssi aiheesta: [DevOps with Docker](https://docker-hy.github.io/).
+
+#### Modulaarinen monoliitti
+
+Mikropalveluiden haasteiden takia niitä ei nykyään pidetä oletusratkaisuna. Esim. [Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html) suosittelee aloittamaan monoliitista ja pilkkomaan sen palveluiksi vasta, kun siihen on selkeä tarve. Myös toiseen suuntaan kuljetaan: Amazon Prime Videon tiimi [kertoi](https://web.archive.org/web/20231230202019/https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90) vuonna 2023 yhdistäneensä hajautetuista palveluista koostuneen videoiden laadunvalvontajärjestelmänsä yhdeksi sovellukseksi, jolloin sen infrastruktuurikustannukset putosivat 90 %.
+
+Välimuotona on _modulaarinen monoliitti_ (engl. modular monolith). Sovellus julkaistaan yhtenä kokonaisuutena, mutta se jaetaan sisäisesti toiminnallisuuksittain moduuleihin, joilla on selkeät rajapinnat ja jotka eivät käytä toistensa sisäisiä osia tai tietokantatauluja. Moduulirajat voi tarvittaessa myöhemmin muuttaa palvelurajoiksi.
+
+Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järjestelmän osien erilaiset skaalautuvuustarpeet. Kun samaa järjestelmää kehittää kymmeniä tiimejä, erilliset palvelut mahdollistavat sen, että tiimit voivat julkaista omia osiaan toisistaan riippumatta. Taustalla on ns. [Conwayn laki](https://en.wikipedia.org/wiki/Conway%27s_law): järjestelmän rakenne heijastelee sen kehittäneen organisaation kommunikaatiorakennetta.
 
 ## Arkkitehtuuri ketterissä menetelmissä
 
@@ -245,19 +249,17 @@ Ketterät menetelmät suosivat suunnitteluratkaisujen yksinkertaisuutta:
 
 _Simplicity, the art of maximizing the amount of work not done, is essential_
 
-Arkkitehtuuriin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
+Arkkitehtuurin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
 
 Ketterien menetelmien yhteydessä puhutaan usein [inkrementaalisesta suunnittelusta ja arkkitehtuurista](https://www.jamesshore.com/Agile-Book/incremental_design.html).
 
 Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan _riittävällä_ tasolla projektin alussa. Ohjelmiston lopullinen arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.
 
-Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/), jonka aikana luodaan mm. alustava arkkitehtuuri sekä backlog.
-
-Scrumin varhaisissa artikkeleissa puhuttiin "pre game"-vaiheesta, jonka aikana tehtiin erilaisia kehitystyötä valmistelevia asioita, mm. hahmoteltiin alustava arkkitehtuuri. Sittemmin koko käsite on hävinnyt Scrumista ja toinen Scrumin alkuperäisistä kehittäjistä Ken Schwaber jopa eksplisiittisesti kieltää ja [tyrmää](https://web.archive.org/web/20120419073810/http://www.scrum.org/assessmentdiscussion/post/1317787) koko "nollasprintin" olemassaolon.
+Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) (engl. sprint zero), jonka aikana luodaan mm. alustava arkkitehtuuri, kehitysympäristö sekä backlog. Scrum ei tunne nollasprintin käsitettä, ja sitä on kritisoitu siitä, että se houkuttelee tekemään suunnittelua tuottamatta toimivaa ohjelmistoa. Nollasprintinkin tavoitteena kannattaa siksi olla toimiva, joskin minimaalinen ohjelmisto, esim. seuraavaksi esiteltävä kävelevä luuranko.
 
 ### Kävelevä luuranko
 
-Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luurangon, eli walking skeletonin_ käyttö. [Alistair Cockburn](http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
+Yleinen lähestymistapa inkrementaaliseen arkkitehtuuriin on _kävelevän luurangon, eli walking skeletonin_ käyttö. [Alistair Cockburn](https://web.archive.org/web/20160210222727/http://alistair.cockburn.us/Walking+skeleton) kuvailee käsitettä seuraavasti:
 
 > A Walking Skeleton is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components.
 >
@@ -281,7 +283,7 @@ Walking skeleton ei ole pelkästään poisheitettävää koodia, vaan sovellukse
 
 Perinteisesti, esimerkiksi vesiputousmallia käytettäessä arkkitehtuurista on vastannut ohjelmistoarkkitehti ja ohjelmoijat ovat olleet velvoitettuja noudattamaan sovellukselle määriteltyä arkkitehtuuria.
 
-Ketterissä menetelmissä ei suosita erillistä arkkitehdin roolia, esimerkiksi Scrum käyttää kaikista ryhmän jäsenistä nimikettä developer. Ketterien menetelmien ideaalina on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi ketterän manifestin periaatteista:
+Ketterissä menetelmissä ei suosita erillistä arkkitehdin roolia, esimerkiksi Scrumissa kaikki inkrementin tekemiseen osallistuvat tiimin jäsenet ovat nimikkeeltään developereita, eikä tiimin sisällä tunnusteta erillisiä erikoistuneita rooleja. Ketterien menetelmien ideaalina on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi ketterän manifestin periaatteista:
 
 > The best architectures, requirements, and designs emerge from self-organizing teams.
 
@@ -291,21 +293,21 @@ Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman ar
 
 Tiimin keskenään suunnitteleman arkkitehtuurin dokumentointi voi olla kevyt ja informaali, esim. valkotaululle piirretty, sillä tiimi tuntee joka tapauksessa arkkitehtuurin hengen ja pystyy sitä noudattamaan. Jos arkkitehtuurin suunnittelee joku ulkopuolinen, sen kommunikointi tiimille edellyttää raskaampaa dokumentaatiota.
 
-Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa, jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tue parhaalla tavalla ohjelmiston kehittämistä.
+Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa, jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tue parhaalla tavalla ohjelmiston kehittämistä.
 
-Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkivät välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
+Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkivät välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
 
 ### Inkrementaalisen arkkitehtuurin riskit
 
 Inkrementaalinen lähestymistapa arkkitehtuurin muodostamiseen edellyttää koodilta hyvää sisäistä laatua ja kehitystiimiltä suurta kurinalaisuutta.
 
-[Martin Fowler](http://martinfowler.com/articles/designDead.html) toteaa seuraavasti
+[Martin Fowler](https://martinfowler.com/articles/designDead.html) toteaa seuraavasti
 
 > Essentially, incremental design means that the design of the system grows as the system is implemented. Design is part of the programming processes and as the program evolves the design changes.
 >
 > In its common usage, incremental design is a disaster. The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
 
-Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten sovelluskehittäjien huolimattomuus, aikataulupaineet ym. syyt johtavat siihen, että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmisto on muodoton kasa spagettikoodia, eli [big ball of mud](http://www.laputan.org/mud/) jonka ylläpitäminen ja jatkokehittäminen muuttuu erittäin haastavaksi.
+Fowlerin havaintojen mukaan inkrementaalisen arkkitehtuurin ja suunnittelun ihanne toteutuu vain harvoin, useimmiten sovelluskehittäjien huolimattomuus, aikataulupaineet ym. syyt johtavat siihen, että ohjelmiston sisäinen laatu alkaa ajan myötä heikentyä ja lopulta ohjelmisto on muodoton kasa spagettikoodia, eli [big ball of mud](https://www.laputan.org/mud/) jonka ylläpitäminen ja jatkokehittäminen muuttuu erittäin haastavaksi.
 
 ## Olio- ja komponenttisuunnittelu
 
@@ -313,7 +315,7 @@ Sovelluksen arkkitehtuuri siis antaa raamit, jotka ohjaavat sovelluksen tarkempa
 
 Vesiputousmaisessa työskentelyssä komponenttisuunnittelu saattaa olla dokumentoitu hyvinkin tarkkaan esim. UML:n luokka- ja sekvenssikaavioita hyväksikäyttäen. Erityisesti ketterässä ohjelmistotuotannossa tarkka suunnittelu tapahtuu kuitenkin yleensä vasta ohjelmoitaessa.
 
-Ohjelmiston suunnittelussa pyritään ennen kaikkia maksimoimaan [koodin sisäinen laatu](/osa3#yksikk%C3%B6testaus), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana.
+Ohjelmiston suunnittelussa pyritään ennen kaikkea maksimoimaan [koodin sisäinen laatu](/osa3#yksikk%C3%B6testaus), eli pitämään sovellus rakenteeltaan helposti ylläpidettävänä ja laajennettavana.
 
 Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja ovat mm. seuraavat
 
@@ -323,7 +325,7 @@ Ylläpidettävyyden ja laajennettavuuden kannalta tärkeitä seikkoja ovat mm. s
 - Jos ohjelmasta muutetaan "yhtä asiaa", tulee kaikkien muutosten tapahtua vain yhteen kohtaan koodia (metodiin, luokkaan tai komponenttiin)
 - Muutosten ja laajennusten jälkeen tulee olla helposti tarkastettavissa ettei muutos aiheuta sivuvaikutuksia muualle järjestelmään
 
-Ohjelmistoalalle vuosien varrella kerääntyneen [kansanviisauden](https://www.amazon.com/Software-Development-Principles-Practices-Paperback/dp/B011DBKELY) mukaan ylläpidettävyyden ja laajennettavuuden kannalta hyvällä koodilla on joukko yhteneviä ominaisuuksia, tai _laatuattribuutteja_, joita ovat esim. seuraavat:
+Ylläpidettävyyden ja laajennettavuuden kannalta hyvällä koodilla on joukko yhteneviä ominaisuuksia, tai _laatuattribuutteja_, joita ovat esim. seuraavat:
 
 - Kapselointi
 - Korkea koheesion aste
@@ -331,10 +333,13 @@ Ohjelmistoalalle vuosien varrella kerääntyneen [kansanviisauden](https://www.a
 - Toisteettomuus
 - Testattavuus
 - Selkeys
+- Yksinkertaisuus
+
+Neljä ensimmäistä ovat koodin rakenteen ominaisuuksia, ja testattavuus ja selkeys seuraavat pitkälti niistä. Kyse ei ole pelkästä kansanviisaudesta: kapseloinnin, koheesion ja riippuvuuksien periaatteet muotoiltiin jo 1970-luvun tutkimuksessa, ja niiden yhteyttä ohjelmistojen laatuun on sittemmin tutkittu empiirisesti. Esimerkiksi [Tornhill ja Borg](https://doi.org/10.1145/3524843.3528091) (2022) analysoivat 39 kaupallisen ohjelmiston koodikantaa ja havaitsivat, että heikkolaatuisessa koodissa oli 15 kertaa enemmän virheitä kuin laadukkaassa ja että muutosten tekeminen siihen kesti keskimäärin yli kaksi kertaa kauemmin.
 
 Tutustutaan nyt näihin laatuattribuutteihin sekä periaatteisiin ja suunnitteluratkaisuihin, joita noudattamalla on mahdollista kirjoittaa ylläpidettävyydeltään laadukasta koodia. Monet näistä hyvän suunnittelun periaatteista on nimetty ja dokumentoitu _suunnittelumalleina_ (engl. design patterns).
 
-Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, sekä _repository_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
+Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat: _dependency injection_ eli riippuvuuksien injektointi, sekä _repository_. Suurin osa tällä kurssilla käsiteltävistä suunnittelumalleista on syntynyt olio-ohjelmoinnin parissa. Osa suunnittelumalleista on relevantteja myös muita paradigmoja, kuten funktionaalista ohjelmointia käytettäessä. Muilla paradigmoilla on myös omia suunnittelumalleja, mutta niitä emme kurssilla käsittele.
 
 ### Kapselointi
 
@@ -344,7 +349,9 @@ Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat
 
 Pythonin vakiintunut konventio on tosin merkitä luokan sisäiseen käyttöön tarkoitetut attribuutit ja metodit _yhdellä_ alaviivalla, esim. `self._saldo`. Kaksi alaviivaa saa aikaan ns. [name manglingin](https://docs.python.org/3/tutorial/classes.html#private-variables), jonka ensisijainen tarkoitus on estää nimien törmääminen aliluokissa. Kumpikaan tapa ei estä attribuutin käyttöä luokan ulkopuolelta, vaan kyse on sopimuksesta.
 
-Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
+Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
+
+Laajemman näkökulman kapselointiin muotoili jo David Parnas klassisessa artikkelissaan [On the criteria to be used in decomposing systems into modules](https://doi.org/10.1145/361598.361623) (1972). Parnasin mukaan ohjelma kannattaa jakaa moduuleihin siten, että kukin moduuli kätkee sisäänsä yhden todennäköisesti muuttuvan suunnittelupäätöksen, esim. tietorakenteen tai algoritmin. Periaatteesta käytetään nimeä _tiedon kätkentä_ (engl. information hiding).
 
 Monissa suunnittelumalleissa on kyse juuri eritasoisten asioiden kapseloinnista, ja tulemme pian näkemään esimerkkejä asiasta.
 
@@ -352,7 +359,7 @@ Pyrkimys kapselointiin näkyy myös ohjelmiston arkkitehtuurin tasolla. Esimerki
 
 ### Koheesio
 
-_Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi keskittyy tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta.
+_Koheesiolla_ (engl. cohesion) tarkoitetaan sitä, kuinka pitkälle metodissa, luokassa tai komponentissa oleva ohjelmakoodi keskittyy tietyn yksittäisen toiminnallisuuden toteuttamiseen. Hyvänä asiana pidetään mahdollisimman korkeaa koheesion astetta. Käsitteet koheesio ja kytkentä (engl. coupling) esittelivät Stevens, Myers ja Constantine artikkelissaan [Structured Design](https://doi.org/10.1147/sj.132.0115) (1974).
 
 Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa ja komponenteissa.
 
@@ -537,7 +544,7 @@ Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaam
 
 #### Koheesio komponenttitasolla
 
-Koheesio ja _single responsibility_ -periaate eivät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy yhteen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Web-sovelluksen tilan käsittely taas pyritään kapseloimaan Redux-storeen, jonka ainoa vastuu on tilasta ja sen muutoksista huolehtiminen.
+Koheesio ja _single responsibility_ -periaate eivät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy yhteen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Sovelluksen tilan käsittely taas pyritään erottamaan näkymistä omaan kokonaisuuteensa, esim. tilanhallintakirjastoon kuten Reduxiin tai Zustandiin, jonka vastuulla on ainoastaan tila ja sen muutokset.
 
 Koheesion periaate näkyy myös sovelluksen arkkitehtuurien tasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen liiketoiminnan tason toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
 
@@ -547,6 +554,8 @@ Single responsibility -periaatteen hengessä tehty ohjelma koostuu suuresta mä�
 
 Olioiden on oltava vuorovaikutuksessa toistensa kanssa saadakseen toteutettua ohjelman toiminnallisuuden. _Riippuvuuksien vähäisyyden_ (engl. low coupling) periaate pyrkii eliminoimaan luokkien ja olioiden välisiä riippuvuuksia.
 
+Koheesiota ja riippuvuuksien määrää voidaan myös mitata. Chidamber ja Kemerer määrittelivät [oliosuunnittelun metriikat](https://doi.org/10.1109/32.295895) (1994), joihin kuuluvat mm. luokan metodien yhtenäisyyttä mittaava LCOM (lack of cohesion in methods) ja luokan riippuvuuksia mittaava CBO (coupling between objects). [Basili ym.](https://doi.org/10.1109/32.544352) (1996) havaitsivat, että metriikat ennustivat luokkien virhealttiutta: mitä enemmän luokalla oli riippuvuuksia, sitä todennäköisemmin siitä löytyi virheitä.
+
 Koska korkean koheesion periaatteen nojalla olioita on paljon, tulee riippuvuuksia pakostakin. Miten riippuvuudet sitten saadaan eliminoitua? Ideana on eliminoida tarpeettomat riippuvuudet _ja_ välttää riippuvuuksia konkreettisiin asioihin.
 
 Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli rajapintaan. Sama idea kulkee parilla eri nimellä:
@@ -554,7 +563,17 @@ Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli rajapintaa
 - Program to an interface, not to an implementation
 - Depend on abstractions, not on concrete implementation
 
-Toisin kuin Javassa ja monessa muussa stattisesti tyypitetyssä kielessä, ei Pythonissa ole selkeää rajapinnan käsitettä. Sama ajattelu voidaan laajentaa myös Pythoniin, olettamalla että rajapinnalla tarkoitetaan ainoastaan tietoa siitä minkälaisia metodeja riippuvuutena käytettävällä luokalla on.
+Javassa ja monessa muussa staattisesti tyypitetyssä kielessä rajapinta (engl. interface) on oma kielen rakenteensa. Pythonissa rajapinnat ovat perinteisesti olleet epämuodollisia: rajapinnalla tarkoitetaan tietoa siitä, minkälaisia metodeja riippuvuutena käytettävällä oliolla on, ja mikä tahansa olio, jolla on tarvittavat metodit, kelpaa (ns. [duck typing](https://en.wikipedia.org/wiki/Duck_typing)). Rajapinnan voi kuitenkin kirjoittaa auki myös Pythonissa [Protocol](https://docs.python.org/3/library/typing.html#typing.Protocol)-luokkana. Esim. aiemman laskinesimerkin `KonsoliIO`-luokan rajapinta näyttäisi seuraavalta:
+
+```python
+from typing import Protocol
+
+class IO(Protocol):
+    def lue(self, teksti: str) -> str: ...
+    def kirjoita(self, teksti: str) -> None: ...
+```
+
+Kun laskimen konstruktorin parametri tyypitetään tällä rajapinnalla, eli `def __init__(self, io: IO)`, tyyppitarkastin kuten [mypy](https://mypy-lang.org/) tai [Pyright](https://github.com/microsoft/pyright) varmistaa jo ennen ohjelman suorittamista, että laskimelle annettavalla oliolla on vaaditut metodit. Rajapinnan toteuttavan luokan ei tarvitse periä rajapintaa, vaan riittää, että sillä on oikeanlaiset metodit.
 
 Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien toteutukset esimerkiksi konstruktorin, tai metodikutsun kautta. Olemme tehneet näin kurssilla usein, mm. Verkkokaupan konkreettiset riippuvuudet Varastoon, Pankkiin ja Viitegeneraattoriin korvattiin luokan konstruktorin kautta annetuilla olioilla. Riippuvuuksien injektointi -suunnittelumalli toimi usein apuvälineenä konkreettisen riippuvuuksien eliminoinnissa.
 
@@ -655,7 +674,7 @@ class EuriborTili(Tili):
         self.saldo = self.saldo * (1 + self.euribor.get_korko())
 ```
 
-`EuriborTili`-luokka alkaa olla nyt melko siisti, `EuriborLukija`-luokassa olisi paljon parantemisen varaa, mm. sen ainoan metodin _koheesio_ on huono: metodi tekee aivan liian montaa asiaa.
+`EuriborTili`-luokka alkaa olla nyt melko siisti, `EuriborLukija`-luokassa olisi paljon parantamisen varaa, mm. sen ainoan metodin _koheesio_ on huono: metodi tekee aivan liian montaa asiaa.
 
 Seuraavaksi huomaamme, että on tarvetta _määräaikaistilille_, joka on muuten samanlainen kuin `Tili`, mutta määräaikaistililtä ei voi siirtää rahaa muualle ennen kuin se on tehty tietyn ajan kuluttua mahdolliseksi. Perimme jälleen luokan `Tili`:
 
@@ -783,7 +802,9 @@ Tehdasmetodi siis auttaa _kapseloinnissa_, olion luomiseen liittyvät detaljit j
 
 Staattinen tehdasmetodi ei ole testauksen kannalta erityisen hyvä ratkaisu, esimerkissämme olisi vaikea luoda tili, jolle annetaan korko-olion sijaan mock-olio. Nyt se tosin onnistuu koska konstruktoria ei ole täysin piilotettu.
 
-Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method) ja [täältä](http://www.oodesign.com/factory-method-pattern.html).
+> Pythonissa tehdasmetodi toteutetaan usein `@staticmethod`-metodin sijaan [`@classmethod`](https://docs.python.org/3/library/functions.html#classmethod)-metodina, joka saa ensimmäisenä parametrinaan luokan, jolloin tehdasmetodi toimii oikein myös aliluokissa. Yhtä usein tehdas on pelkkä moduulitason funktio, sillä Pythonissa kaiken ei tarvitse olla luokan sisällä.
+
+Lisätietoa factory-suunnittelumallista esim. [täältä](https://sourcemaking.com/design_patterns/factory_method) ja [täältä](https://www.oodesign.com/factory-method-pattern).
 
 Tehdasmetodien avulla voimme siis kapseloida luokan todellisen tyypin. Jamin tilihän on määräaikaistili, se kuitenkin pyydetään `Tili`-luokassa sijaitsevalta tehdasmetodilta, olion oikea tyyppi on piilotettu tarkoituksella käyttäjältä. Määräaikaistilin käyttäjällä ei siis ole enää konkreettista riippuvuutta luokkaan `MaaraaikaisTili`.
 
@@ -799,9 +820,9 @@ Eli luopumalla perinnästä oliorakenne selkeytyy huomattavasti ja saavutetaan s
 
 Tekniikka, jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
-Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määrittely. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategia-olioa on mahdollista vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
+Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on muuten sama, mutta tietyissä kohdissa on käytössä eri "algoritmi". Esimerkissämme tämä algoritmi oli korkoprosentin määrittely. Sama tilanne voidaan hoitaa usein myös perinnän avulla käyttämättä erillisiä olioita, strategy kuitenkin mahdollistaa huomattavasti dynaamisemman ratkaisun, sillä strategiaolioita on mahdollista vaihtaa ajoaikana. Strategyn käyttö ilmentää hienosti "favour composition over inheritance"-periaatetta
 
-Lisätietoa strategia-suunnittelumallista [täällä](http://www.oodesign.com/strategy-pattern.html) ja [täällä](https://sourcemaking.com/design_patterns/strategy).
+Lisätietoa strategia-suunnittelumallista [täällä](https://www.oodesign.com/strategy-pattern) ja [täällä](https://sourcemaking.com/design_patterns/strategy).
 
 #### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 6]</span>
 
@@ -944,6 +965,8 @@ Sovelluksen rakenne näyttää seuraavalta:
 
 ![]({{ "/images/4-10.png" | relative_url }}){:height="250px" }
 
+> Koska Pythonissa funktiot ovat arvoja, joita voi tallettaa muuttujiin ja tietorakenteisiin, strategia toteutetaan Pythonissa usein pelkkänä funktiona. Laskuoperaatiot voisi esim. tallettaa sanakirjaan `{"summa": operator.add, "tulo": operator.mul}`, jolloin erillisiä luokkia ei tarvita. Palaamme funktioiden käyttöön strategioina [toisteettomuutta](#epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) käsittelevässä luvussa.
+
 #### Laskin ja komento-olio <span style="color:blue">[viikko 6]</span>
 
 Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan laskuoperaatiot toteuttavien luokkien olemusta siten, että siirretään myös käyttäjän kanssa tapahtuva kommunikointi niiden huolehdittavaksi.
@@ -1057,7 +1080,7 @@ Ohjelman edellisessä versiossa sovelsimme strategia-suunnittelumallia, missä e
 
 Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilotettiin tehtaan sisälle. Komento-olioiden `suorita`-metodi suoritettiin esimerkissä välittömästi, näin ei välttämättä ole, komentoja voitaisiin laittaa esim. jonoon ja suorittaa myöhemmin.
 
-Lisää command-suunnittelumallista esim. [täällä](http://www.oodesign.com/command-pattern.html) ja [täällä](http://sourcemaking.com/design_patterns/command).
+Lisää command-suunnittelumallista esim. [täällä](https://www.oodesign.com/command-pattern) ja [täällä](https://sourcemaking.com/design_patterns/command).
 
 #### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 6]</span>
 
@@ -1088,16 +1111,10 @@ Summaa ja tuloa vastaavat komennot yksinkertaistuvat entisestään:
 
 ```python
 class Summa(BinaariOperaatio):
-    def __init__(self, io):
-        super().__init__(io)
-
     def laske(self):
         return self.luku1 + self.luku2
 
 class Tulo(BinaariOperaatio):
-    def __init__(self, io):
-        super().__init__(io)
-
     def laske(self):
         return self.luku1 * self.luku2
 ```
@@ -1106,9 +1123,6 @@ Jos sovellukseen haluttaisiin toteuttaa lisää kaksiparametrisia operaatioita, 
 
 ```python
 class Erotus(BinaariOperaatio):
-    def __init__(self, io):
-        super().__init__(io)
-
     def laske(self):
         return self.luku1 - self.luku2
 ```
@@ -1159,8 +1173,6 @@ Konkreettiset toteutukset `Summa` ja `Tulo` ylikirjoittavat metodin `laske`, mä
 
 ```python
 class Summa(BinaariOperaatio):
-    # ...
-
     def laske(self):
         return self.luku1 + self.luku2
 ```
@@ -1169,7 +1181,7 @@ Luokan metodi `suorita` on _template-metodi_, joka määrittelee suorituksen sit
 
 Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.
 
-Lisää template method -suunnittelumallista [täällä](http://www.oodesign.com/template-method-pattern.html).
+Lisää template method -suunnittelumallista [täällä](https://www.oodesign.com/template-method-pattern).
 
 ### Toisteettomuus
 
@@ -1177,27 +1189,27 @@ Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _ri
 
 Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen, varmaan jokainen on kuullut varoituksen: _älä copypastea koodia_!
 
-Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yourself](http://c2.com/cgi/wiki?DontRepeatYourself), ja siihen viitataan usein lyhenteellä _DRY_.
+Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yourself](https://wiki.c2.com/?DontRepeatYourself), ja siihen viitataan usein lyhenteellä _DRY_.
 
 Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi funktioiden tai metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan `BinaariOperaatio` motivaationa oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa `Summa` ja `Tulo`.
 
-Moneen paikkaan kopioidun koodinpätkän ilmeisin ongelma on siinä, että jos kopioidusta koodista löytyy bugi tai sen toiminnallisuuden logiikkaa tulee muuttaa, on työlästä tehdä muutos moneen kohtaan. Yleensä moneen kohtaan kopioitu koodinpätkä on myös viite siitä että esim. koodin koheesiossa olisi parantamisen varaa.
+Moneen paikkaan kopioidun koodinpätkän ilmeisin ongelma on siinä, että jos kopioidusta koodista löytyy bugi tai sen toiminnallisuuden logiikkaa tulee muuttaa, on työlästä tehdä muutos moneen kohtaan. Yleensä moneen kohtaan kopioitu koodinpätkä on myös viite siitä että esim. koodin koheesiossa olisi parantamisen varaa. Ongelma ei ole pelkästään teoreettinen. [Juergens ym.](https://doi.org/10.1109/ICSE.2009.5070547) (2009) tutkivat useiden teollisten ohjelmistojen kopioitua koodia ja havaitsivat, että kun kopioista oli muutettu vain osaa, eikä eroa ollut tehty tarkoituksella, joka toinen tällainen epäjohdonmukaisuus oli virhe.
 
 DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toiston eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
 
-Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritive representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
+Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritative representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
 
 #### Hyvä vs. paha copypaste
 
 Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
 
-Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät.
+Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät. Myös tutkimus tukee tätä näkemystä: [Kapser ja Godfrey](https://doi.org/10.1007/s10664-008-9076-6) (2008) havaitsivat, että merkittävä osa avoimen lähdekoodin projektien kopioinnista oli tarkoituksellista ja perusteltua, esim. kun kopiota oli tarkoitus kehittää jatkossa alkuperäisestä erillään.
 
 Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
 
 #### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 6]</span>
 
-Tarkastellaan [Project Gutenbergistä](http://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
+Tarkastellaan [Project Gutenbergistä](https://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
 
 ```python
 class GutenbergLukija:
@@ -1327,7 +1339,7 @@ for rivi in kirja.rivit_jotka_tayttavat_ehdon(lambda rivi: "olut" in rivi):
     print(rivi)
 ```
 
-Lambda on ikään kuin funktion kompaktimpi esitys. Kuten funktiolla, myös lambdalla voi olla parametreja. Esimerkissä lambdalla on parametri `rivi`. Toisin kuin funktio, lambda määritellään aina yhdellä rivillä. Määritelty rivi suoritetaan ja sen arvo palautetaan ilman erilistä `return`-lausetta.
+Lambda on ikään kuin funktion kompaktimpi esitys. Kuten funktiolla, myös lambdalla voi olla parametreja. Esimerkissä lambdalla on parametri `rivi`. Toisin kuin funktio, lambda määritellään aina yhdellä rivillä. Määritelty rivi suoritetaan ja sen arvo palautetaan ilman erillistä `return`-lausetta.
 
 Lambdojen avulla on helppoa määritellä mielivaltaisia ehtoja. Seuraavassa tulostetaan kaikki rivit, joilla esiintyy jompi kumpi sanoista _olut_ tai _maito_. Ehdon ilmaiseva lambda-lauseke on nyt määritelty selvyyden vuoksi omalla rivillään:
 
@@ -1348,7 +1360,7 @@ for rivi in kirja.rivit_jotka_tayttavat_ehdon(sisaltaa_sanan("olut")):
     print(rivi)
 ```
 
-Huomaa, kuinka kyseissä esimerkissä funktio `sisaltaa_sanan` muistuttaa tehdas-suunnittelumallin mukaisia tehdasmetodeja.
+Huomaa, kuinka kyseisessä esimerkissä funktio `sisaltaa_sanan` muistuttaa tehdas-suunnittelumallin mukaisia tehdasmetodeja.
 
 Refaktoroidaan vielä `GutenbergLukija`-luokkaa hyödyntämällä Pythonin funktionaalisen ohjelmoinnin työkalupakkia. Koska luokan metodeissa käsitellään paljon listoja, voimme hyödyntää funktiota [map](https://docs.python.org/3/library/functions.html#map) ja [filter](https://docs.python.org/3/library/functions.html#filter).
 
@@ -1368,7 +1380,7 @@ def __init__(self, osoite):
 
 Huomaa, ettei `map`-funktio palauta listaa, vaan iteraattorin. Iteraattorin voi muuttaa listaksi helposti, [list](https://docs.python.org/3/library/functions.html#func-list)-funktion avulla.
 
-Toinen hyödyllinen funktio listojen käsittelyyn on `filter`-funktio, jonka avulla listan (tai minkä tahansa muun iteraattorin) alkioita voidaan suodattaa. Funktiolla on kaksi parametria. Ensimmäinen paramateri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa `True`, jos alkiota halutaan sisällyttää suodatettuun iteraattoriin, muutoin `False`. Toinen parametri on iteraattori, jonka alkioita suodatetaan. Kuten `map`-funktio, `filter`-funktio ei muuta parametrina saatua iteraattoria vaan palauttaa uuden iteraation, jonka alkiot on suodatettu annetulla ehdolla.
+Toinen hyödyllinen funktio listojen käsittelyyn on `filter`-funktio, jonka avulla listan (tai minkä tahansa muun iteraattorin) alkioita voidaan suodattaa. Funktiolla on kaksi parametria. Ensimmäinen parametri on lambda (tai vastaava kutsuttavissa oleva arvo), joka saa parametriksi iteraattorin alkion ja palauttaa `True`, jos alkiota halutaan sisällyttää suodatettuun iteraattoriin, muutoin `False`. Toinen parametri on iteraattori, jonka alkioita suodatetaan. Kuten `map`-funktio, `filter`-funktio ei muuta parametrina saatua iteraattoria vaan palauttaa uuden iteraation, jonka alkiot on suodatettu annetulla ehdolla.
 
 Hyvä käyttökohde `filter`-funktiolle on `GutenbergLukija`-luokan metodi `rivit_jotka_tayttavat_ehdon`:
 
@@ -1379,11 +1391,13 @@ def rivit_jotka_tayttavat_ehdon(self, ehto):
     return list(palautettavat_rivit_iterator)
 ```
 
-Voimme antaa `filter`-funktiolle suoraan parametrina saaduun ehdon.
+Voimme antaa `filter`-funktiolle suoraan parametrina saadun ehdon.
+
+Pythonissa sama tehdään usein idiomaattisemmin [listakoosteella](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) (engl. list comprehension), esim. `[rivi for rivi in self._rivit if ehto(rivi)]`. Listakooste ja `map`/`filter` ovat saman funktionaalisen ajattelun eri ilmaisutapoja.
 
 ### Testattavuus
 
-Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
+Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
 
 Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että komponenttien vastuut eivät ole selkeät, ja niillä on liikaa riippuvuuksia.
 
@@ -1391,17 +1405,19 @@ Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testat
 
 ### Selkeys
 
-Perinteisesti ohjelmakoodin on ajateltu olevan väkisinkin kryptistä ja vaikeasti luettavaa.
-Esim. C-kielessä on tapana ollut kirjoittaa todella tiivistä koodia, jossa yhdellä rivillä on ollut tarkoitus tehdä mahdollisimman monta asiaa, metodikutsuja on vältetty tehokkuussyistä, muistinkäyttöä on optimoitu uusiokäyttämällä muuttujia ja "koodaamalla" dataa bittitasolla.
+Aikoinaan koneiden rajallisten resurssien takia koodia kirjoitettiin usein mahdollisimman tiiviiksi ja tehokkaaksi luettavuuden kustannuksella. Nykyään pyrkimyksenä on koodi, joka jo nimeämisen ja rakenteensa kautta ilmaisee mahdollisimman hyvin sen, mitä se tekee.
 
-Ajat ovat muuttuneet ja nykyisen trendin mukaista on pyrkiä kirjoittamaan koodia, joka jo nimeämiskäytänteiden sekä rakenteen kautta ilmaisee mahdollisimman hyvin sen, mitä koodi tekee.
+Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat, joita on listattu esim. Pythonin tyyliohjeessa [PEP 8](https://peps.python.org/pep-0008/) ja Robert Martinin kirjassa [Clean Code](https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884).
 
-Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat, joita on listattu esim.
-[täällä](https://www.planetgeek.ch/wp-content/uploads/2011/02/Clean-Code-Cheat-Sheet-V1.3.pdf).
-
-Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa, [joidenkin arvioiden mukaan jopa 90%](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is) "ohjelmointiin" kuluvasta ajasta menee olemassa olevan koodin lukemiseen. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
+Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa ohjelmointiin kuluvasta ajasta menee olemassa olevan koodin lukemiseen ja ymmärtämiseen. [Xia ym.](https://doi.org/10.1109/TSE.2017.2734091) (2018) seurasivat 78 ammattilaisohjelmoijan työtä yhteensä yli 3 000 tunnin ajan ja havaitsivat, että noin 58 % työajasta kului koodin ymmärtämiseen. Robert Martin on arvioinut [lukemisen ja kirjoittamisen suhteeksi](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is) jopa 10:1. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
 
 ![]({{ "/images/4-13.jpg" | relative_url }}){:height="350px"}
+
+### Yksinkertaisuus
+
+Edellä esitellyt suunnittelumallit lisäävät koodin joustavuutta, mutta joustavuudella on hintansa: laskinesimerkissä luokkien määrä kasvoi ja ohjelman toiminnan hahmottaminen vaikeutui. Siksi laatuattribuuttien listaan kuuluu myös _yksinkertaisuus_. Periaatteesta käytetään usein lyhenteitä KISS (keep it simple, stupid) ja [YAGNI](https://martinfowler.com/bliki/Yagni.html) (you aren't gonna need it). Jälkimmäinen on peräisin Extreme Programmingista, ja sen mukaan koodiin ei kannata lisätä toiminnallisuutta tai joustavuutta sen varalta, että sitä ehkä joskus tarvitaan. Ennakoidut tarpeet jäävät usein toteutumatta, ja käyttämätön joustavuus tekee koodista vaikeammin ymmärrettävää ja muutettavaa.
+
+Suunnittelumalli kannattaa siis ottaa käyttöön vasta, kun sille on todellinen tarve, esim. kun sama toisteinen rakenne tulee vastaan kolmannen kerran (ks. [three strikes and you refactor](#hyvä-vs-paha-copypaste)). Kun koodi pidetään testattuna ja siistinä, joustavuuden lisääminen [refaktoroimalla](#refaktorointi) on myöhemminkin helppoa. Periaate on ajankohtainen myös koodausagentteja käytettäessä, sillä agentit tuottavat helposti tarpeettomia abstraktioita ja varautuvat tilanteisiin, joita ei ole pyydetty.
 
 ### Code smell
 
@@ -1419,17 +1435,17 @@ Koodihajuja on hyvin monenlaisia ja monentasoisia. Muutamia esimerkkejä helpost
 - Epäselkeät muuttujien, metodien tai luokkien nimet
 - Kommentit
 
-Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuutteja heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa, että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa suurella todennäköisyydellä että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametreja, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain toisessa luokassa.
+Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuutteja heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa, että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa suurella todennäköisyydellä että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametreja, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain toisessa luokassa. Koodihajujen haitallisuutta on myös tutkittu. Esim. [Khomh ym.](https://doi.org/10.1007/s10664-011-9171-y) (2012) analysoivat useiden avoimen lähdekoodin projektien versiohistoriaa ja havaitsivat, että hajuisia rakenteita sisältäviä luokkia jouduttiin muuttamaan useammin ja niistä löytyi useammin virheitä kuin muista luokista.
 
-Nykyään koodin [kommentointia](https://medium.com/@fagnerbrack/code-comment-is-a-smell-4e8d78b0415b) on hieman yllättäen alettu pitämään koodihajuna. Kyse on oikeastaan siitä, että koodi pitäisi lähtökohtaisesti kirjoittaa niin selkeäksi ja nimeämiskäytäntöjen osalta kommunikoivaksi, että kommentteja ei tarvita. Eli kommentit tulee säästää vain sellaisiin kohtiin, jossa samaa asiaa ole mahdollista ilmaista koodin muotoilulla ja paremmalla nimeämisellä.
+Kommenttien listaaminen koodihajuksi voi tuntua yllättävältä. Kyse on siitä, että kommentti, joka selittää _mitä_ koodi tekee, on usein merkki siitä, että koodi pitäisi kirjoittaa selkeämmäksi esim. paremmalla nimeämisellä tai jakamalla se pienempiin osiin. Tällaiset kommentit myös vanhenevat helposti, kun koodia muutetaan mutta kommenttia ei. Kaikki kommentit eivät kuitenkaan ole hajuja. Arvokkaita ovat kommentit, jotka kertovat _miksi_ koodi on kirjoitettu tietyllä tavalla, esim. perustelu epätavalliselle ratkaisulle tai viittaus bugiraporttiin, sekä funktioiden ja luokkien käyttöä kuvaavat docstringit. Nämä ovat hyödyllisiä sekä ihmisille että koodausagenteille.
 
 Otetaan pari esimerkkiä hieman vähemmän ilmeisistä koodihajuista.
 
-[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession) tarkoittaa tilannetta, missä jossa jokin konkreettinen käsite esim. _osoite_ tai _rahamäärä_ esitetään primitiivityyppisten muuttujien (esim. merkkijono tai kokonaisluku) avulla, sen sijaan että määriteltäisiin luokka asian esittämiseen.
+[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession) tarkoittaa tilannetta, jossa jokin konkreettinen käsite esim. _osoite_ tai _rahamäärä_ esitetään primitiivityyppisten muuttujien (esim. merkkijono tai kokonaisluku) avulla, sen sijaan että määriteltäisiin luokka asian esittämiseen.
 
 Nimellä [shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery) kuvataan tilannetta, missä yhden loogisen asian muuttaminen, laajentaminen tai siihen tehtävä bugikorjaus aiheuttaakin sarjan muutoksia myös todella moneen muuhun paikkaan koodia. Tämä on oire siitä, että toiminnallisuutta ei ole kapseloitu riittävän hyvin yhteen koodimoduuliin, eli kyseessä on DRY-periaatetta rikkova design.
 
-Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
+Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 - <https://sourcemaking.com/refactoring/bad-smells-in-code>
 - <https://blog.codinghorror.com/code-smells/>
@@ -1438,7 +1454,7 @@ Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
 
 Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen, joka kuitenkin pitää sen toiminnallisuuden ennallaan.
 
-Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 2000 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018.
+Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 1999 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018.
 
 Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktorointioperaatioita. Kirjan listaamat refaktoroinnit löytyvät myös [internetistä](https://refactoring.com/catalog/index.html). Seuraavassa muutamia esimerkkejä
 
@@ -1452,8 +1468,8 @@ Melko monissa ei niin suoraviivaisissa refaktorointioperaatioissa, epäoptimaali
 Aiemmissa esimerkeissä näimme tämän kaltaisia refaktorointeja, esim.
 
 - Tilien koronmaksustrategia, [replace conditional with polymorfism](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)
-- Tilien luominen, [replace constructor with factory method](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
-- Laskimen komennot, [replace method with method object](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
+- Tilien luominen, [replace constructor with factory function](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
+- Laskimen komennot, [replace function with command](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
 - Laskimen binäärioperaatiot, [form template method](https://sourcemaking.com/refactoring/form-template-method).
 
 Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaiset automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo. Refaktoroinnissa on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana, ja tästä varmistuminen ilman testejä on työlästä.
@@ -1466,24 +1482,24 @@ Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitk
 
 ### Tekninen velka
 
-Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. technical debt).
+Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. technical debt). Termin otti käyttöön Ward Cunningham vuonna 1992. Hän vertasi keskeneräisen ymmärryksen varassa kirjoitettua koodia lainaan, jonka korkoja maksetaan niin kauan, kunnes koodi korjataan vastaamaan parempaa ymmärrystä.
 
-Oikoteitä ottamalla tehdyllä ohjelmoinnilla saadaan ehkä nopeasti aikaan jotain toiminnallisuutta, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin _jos_ ohjelmaa on tarkoitus laajentaa. Käytännössä käy siis niin, että koodiin kertyneet sisäisen laadun ongelmat, eli _tekninen velka_ alkaa hidastamaan kehitystyön etenemistä, ja uusien ominaisuuksien toteuttamisesta tulee koko ajan hankalammaksi ja kalliimmaksi.
+Oikoteitä ottamalla tehdyllä ohjelmoinnilla saadaan ehkä nopeasti aikaan jotain toiminnallisuutta, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin _jos_ ohjelmaa on tarkoitus laajentaa. Käytännössä käy siis niin, että koodiin kertyneet sisäisen laadun ongelmat, eli _tekninen velka_ alkaa hidastamaan kehitystyön etenemistä, ja uusien ominaisuuksien toteuttamisesta tulee koko ajan hankalammaksi ja kalliimmaksi.
 
-Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen asiakkaan kannalta kannattava ratkaisu.
+Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen asiakkaan kannalta kannattava ratkaisu.
 
 [Osassa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimal viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuutta voidaan testata. Kuten nimikin jo antaa ymmärtää, MVP on luonteeltaan sellainen rakennelma, jonka tekemisessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutuksi, tekninen velka maksetaan pois tekemällä toiminnallisuudelle robustimpi toteutus.
 
-Lyhytaikaisen teknisen velan ottaminen voi joskus olla jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti, tai muuten tilaisuus saattaa mennä kokonaan ohi.
+Lyhytaikaisen teknisen velan ottaminen voi joskus olla jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti, tai muuten tilaisuus saattaa mennä kokonaan ohi.
 Startup-yrityksillä tilanne voi olla sellainen, että firma joutuu valitsemaan teknisen velan ja varman rahojen loppumisen välillä. Tekemällä jotain nopeasti huonolla sisäisellä laadulla firma saattaa pystyä keräämään riittävästi rahoitusta jatkaakseen toimintaansa. Tämänkaltaisissa tilanteissa otetaan tietoisesti teknistä velkaa ja sovelluksen koodin huonosta laadusta ja testauksen puuttumisesta huolehditaan myöhemmin.
 
 Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytettynä hyväkin väline, aivan kuten esim. asuntolaina - ilman lainaa kaikilla ei ole varaa omistusasuntoon. On kuitenkin oleellista mitoittaa lainan määrä oikein, muuten seurauksena saattaa olla luottokelpoisuuden menetys.
 
-Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
+Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
 
 1. Reckless and deliberate: "we do not have time for design"
-2. Reckless and inadverent: "what is layering"?
-3. Prudent and inadverent: "now we know how we should have done it"
+2. Reckless and inadvertent: "what is layering"?
+3. Prudent and inadvertent: "now we know how we should have done it"
 4. Prudent and deliberate: "we must ship now and will deal with consequences"
 
 Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voidaan ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
@@ -1491,6 +1507,16 @@ Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uh
 Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
 
 Teknistä velkaa ei kuitenkaan saada hoidettua, jos siitä ei puhuta. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
+
+### Koodin laatu ja koodausagentit
+
+Tässä osassa esitellyt laatuattribuutit eivät menetä merkitystään, vaikka yhä suurempi osa koodista syntyy koodausagenttien avulla. Agentti näkee kerrallaan vain osan koodikannasta, joten sille pätevät samat asiat kuin koodiin tutustuvalle ihmiselle. Kun koodi on koheesiivista, löyhästi kytkettyä, toisteetonta ja selkeästi nimettyä, agentti löytää muutoskohdan helpommin ja muutos pysyy paikallisena. Kattavat testit ovat agentin tekemien muutosten edellytys samaan tapaan kuin refaktoroinnissa.
+
+Asiaa on myös tutkittu. [Borg ym.](https://arxiv.org/abs/2601.02200) (2026) pyysivät kielimalleja refaktoroimaan 5 000 Python-tiedostoa ja tarkastivat testien avulla, säilyikö koodin toiminta. Viisi keskikokoista kielimallia rikkoi laadultaan hyvän koodin toimintaa noin 15–30 % harvemmin kuin heikkolaatuisen koodin. Järeimmillä malleilla eroa ei kuitenkaan havaittu. Tutkijat edustavat koodin laatua mittaavaa yritystä, joten tuloksiin kannattaa suhtautua varauksella.
+
+Agentti voi myös rapauttaa koodia, sillä se saa pyydetyn toiminnallisuuden toimimaan nopeasti, mutta ei itsestään noudata tämän osan suunnitteluperiaatteita. Aiheesta lisää tekoälymateriaalin luvussa [Suunnitteluperiaatteet ja agentti](/genai/#suunnitteluperiaatteet-ja-agentti). Lopputulos ei kuitenkaan ole väistämättä huonompaa koodia. [Kontrolloidussa kokeessa](https://arxiv.org/abs/2507.00788) (Borg ym. 2025, 151 osallistujaa) tekoälyn avulla kirjoitettua koodia ei ollut sen vaikeampi jatkokehittää kuin ilman tekoälyä kirjoitettua. Ratkaisevaa on, kuinka hyvin agenttia ohjataan ja sen tuotosta katselmoidaan.
+
+Teknisen velan rinnalle voi syntyä myös _kognitiivista velkaa_ (engl. cognitive debt): jos koodin tuottaminen ulkoistetaan agentille ilman, että sitä ymmärretään, tiimi ylläpitää lopulta koodia, jota kukaan ei tunne. Tämän osan suunnitteluperiaatteet ovat juuri sitä osaamista, jolla agentin tuotosta arvioidaan.
 
 ### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
 
@@ -1658,7 +1684,9 @@ pino = KryptattuPino(LokiPino(Pino(), loki))
 
 Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle paljon erilaisia ominaisuuskombinaatioita. Jos olisimme yrittäneet hoitaa kaiken normaalilla perinnällä, olisi luokkien määrä kasvanut eksponentiaalisesti eri ominaisuuksien määrän suhteen ja uusiokäytöstäkään ei olisi tullut mitään.
 
-Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerran oliosuunnitteun periaate "favour composition over inheritance" on näyttänyt voimansa.
+Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerran oliosuunnittelun periaate "favour composition over inheritance" on näyttänyt voimansa.
+
+> Pythonissa on myös kielen ominaisuus nimeltä [dekoraattori](https://docs.python.org/3/glossary.html#term-decorator), eli `@`-merkillä funktion tai luokan eteen kirjoitettava merkintä, kuten edellä käytetty `@staticmethod` tai viikon 7 MCP-palvelimen `@mcp.tool()`. Nimestä huolimatta kyse ei ole samasta asiasta kuin dekoraattori-suunnittelumallissa. Ideassa on kuitenkin yhtäläisyyttä: Pythonin dekoraattori on funktio, joka saa parametrinaan funktion ja palauttaa uuden funktion, joka laajentaa alkuperäisen toimintaa, samaan tapaan kuin dekoroitu pino laajentaa sisältämänsä pinon toimintaa.
 
 Lisää dekoraattori-suunnittelumallista esim. [täällä](https://sourcemaking.com/design_patterns/decorator)
 
@@ -1725,14 +1753,14 @@ Saamme rakentajan ensimmäisen version toimimaan seuraavasti:
 
 ```python
 class Pinorakentaja:
-    def __init__(self):
-        self.pino_olio = Pino()
+    def __init__(self, luo_pino=Pino):
+        self._luo_pino = luo_pino
 
     def pino(self):
-        return self.pino_olio
+        return self._luo_pino()
 ```
 
-Eli kun `Pinorakentaja`-olio luodaan, rakentaja luo pinon. Rakentajan "rakennusvaiheen alla" olevan pinon voi pyytää rakentajalta kutsumalla metodia `pino`.
+Rakentaja ei siis luo pinoa heti, vaan tallettaa funktion, jolla pino luodaan. Oletusarvona on luokka `Pino` itse, sillä luokkakin on kutsuttava: `Pino()` luo uuden pinon. Varsinainen pino luodaan vasta, kun sitä pyydetään metodilla `pino`, ja jokainen kutsu luo uuden pinon.
 
 Laajennetaan nyt rakentajaa siten, että voimme luoda prepaidpinoja seuraavasti:
 
@@ -1742,54 +1770,52 @@ rakenna = Pinorakentaja()
 pino = rakenna.prepaid(10).pino()
 ```
 
-Jotta edellinen ei aiheuttaisi syntaksivirhettä, tulee rakentajalle lisätä metodi, jonka signatuuri on `prepaid(self, krediitit)`. Eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia `pino`, on metodin `prepaid` palautettava rakentaja. Rakentajamme runko laajenee siis seuravasti:
+Jotta edellinen ei aiheuttaisi syntaksivirhettä, tulee rakentajalle lisätä metodi, jonka signatuuri on `prepaid(self, krediitit)`. Eli jotta metodin tuloksena olevalle oliolle voitaisiin kutsua metodia `pino`, on metodin `prepaid` palautettava rakentaja. Rakentajamme runko laajenee siis seuraavasti:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino=None):
-        self.pino_olio = pino if pino is not None else Pino()
+    def __init__(self, luo_pino=Pino):
+        self._luo_pino = luo_pino
 
     def prepaid(self, krediitit):
         # ???
 
     def pino(self):
-        return self.pino_olio
+        return self._luo_pino()
 ```
 
-Huomaa, että konstruktorissa ei käytetä oletusarvoa `pino=Pino()`. Pythonissa parametrin oletusarvo luodaan vain kerran funktion määrittelyhetkellä, joten kaikki rakentajat jakaisivat saman `Pino`-olion. Tämä on eräs Pythonin tunnetuimmista sudenkuopista.
-
-Rakentaja siis pitää oliomuuttujassa rakentumassa olevaa pinoa. Kun kutsumme rakentajalle metodia `prepaid` ideana on, että rakentaja dekoroi rakennuksen alla olevan pinon prepaid-pinoksi. Metodi palauttaa uuden `Pinorakentaja`-olion, jolle se antaa konstruktorin parametrina dekoroidun pinon. Tämä mahdollistaa sen, että metodikutsun jälkeen päästään edelleen käsiksi työn alla olevaan pinoon. Koodi siis seuraavassa:
+Kun kutsumme rakentajalle metodia `prepaid`, rakentaja palauttaa uuden `Pinorakentaja`-olion. Sen luontifunktio luo ensin pinon edellisen rakentajan luontifunktiolla ja dekoroi sen prepaid-pinoksi:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino=None):
-        self.pino_olio = pino if pino is not None else Pino()
+    def __init__(self, luo_pino=Pino):
+        self._luo_pino = luo_pino
 
     def prepaid(self, krediitit):
-        return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
+        return Pinorakentaja(lambda: PrepaidPino(self._luo_pino(), krediitit))
 
     def pino(self):
-        return self.pino_olio
+        return self._luo_pino()
 ```
 
 Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
 
 ```python
 class Pinorakentaja:
-    def __init__(self, pino=None):
-        self.pino_olio = pino if pino is not None else Pino()
+    def __init__(self, luo_pino=Pino):
+        self._luo_pino = luo_pino
 
     def prepaid(self, krediitit):
-        return Pinorakentaja(PrepaidPino(self.pino_olio, krediitit))
+        return Pinorakentaja(lambda: PrepaidPino(self._luo_pino(), krediitit))
 
     def kryptattu(self):
-        return Pinorakentaja(KryptattuPino(self.pino_olio))
+        return Pinorakentaja(lambda: KryptattuPino(self._luo_pino()))
 
     def loggaava(self, loki):
-        return Pinorakentaja(LokiPino(self.pino_olio, loki))
+        return Pinorakentaja(lambda: LokiPino(self._luo_pino(), loki))
 
     def pino(self):
-        return self.pino_olio
+        return self._luo_pino()
 ```
 
 Rakentajan koodi voi vaikuttaa aluksi hieman hämmentävältä.
@@ -1825,9 +1851,11 @@ kryptattu_pino = kryptattu_rakentaja.pino()
 kryptattu_loki_pino = kryptattu_loki_rakentaja.pino()
 ```
 
-Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin lokiin kirjoittavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
+Jos metodit eivät loisi aina uutta rakentajaa, vaan käyttäisivät samaa viitettä, esimerkin koodissa `kryptattu_rakentaja` rakentaisikin lokiin kirjoittavan kryptatun pinon. Tämä olisi erittäin hämmentävää ja synnyttäisi helposti hankalasti debugattavia bugeja. Koska jokainen `pino()`-kutsu lisäksi luo kokonaan uuden pinon, eri rakentajilla luodut pinot eivät myöskään jaa keskenään dataa. Kyseessä on erittäin hyödyllinen ja laajalti käytössä oleva periaate, josta käytetään englannin kielistä nimitystä _immutability_. Periaatteen perusajatus on se, että objekteja muokkaavien metodien ja funktioiden ei tulisi tehdä muokkauksia suoraan saatuun viitteeseen, vaan palauttaa viite uuteen objektiin, joka sisältää halutut muutokset. Esimerkiksi aina uuden iteraattorin palauttavat funktiot `map` ja `filter` noudattavat tätä periaatetta.
 
-Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](http://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit, jotka ovat muuten luonteeltaan sellaisia että ne eivät palauta mitään arvoa, onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
+Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](https://en.wikipedia.org/wiki/Method_chaining) eli metodikutsujen ketjutukseen. Metodit, jotka ovat muuten luonteeltaan sellaisia että ne eivät palauta mitään arvoa, onkin laitettu palauttamaan rakentajaolio. Tämä taas mahdollistaa metodin kutsumisen toisen metodin palauttamalle rakentajalle, ja näin metodikutsuja voidaan ketjuttaa peräkkäin mielivaltainen määrä. Metodiketjutuksen motivaationa on yleensä saada olion rajapinta käytettävyydeltään mahdollisimman luonnollisen kielen kaltaiseksi DSL:ksi.
+
+> Rakentajaa ei kannata käyttää pelkästään siksi, että oliolla on paljon valinnaisia konstruktoriparametreja. Pythonissa tähän riittävät [avainsana-argumentit](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments) ja oletusarvot, esim. `Tilaus(tuote="kirja", maara=2, lahjapaketointi=True)`. Rakentajasta on hyötyä pinorakentajan kaltaisissa tilanteissa, joissa olio kootaan vaihtelevasta määrästä toisiaan dekoroivia osia.
 
 ### Ohjelmistolisenssit
 
