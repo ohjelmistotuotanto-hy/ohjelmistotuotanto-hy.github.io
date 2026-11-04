@@ -1054,5 +1054,8 @@ Voit nyt pullata koodin uudelleen komennolla `git pull`. Komento `git push` onni
 
 <input type="checkbox"> Toimi yllä kuvatulla tavalla ja varmista, että tekemäsi muutokset menevät GitHubiin
 
+### Palautekysely
+
+Vastaathan vielä lyhyeen AI-agentteja koskevaan palautekyselyyn osoitteessa <https://norppa.helsinki.fi/targets/122262023/feedback>.
 
 {% include submission_instructions.md %}

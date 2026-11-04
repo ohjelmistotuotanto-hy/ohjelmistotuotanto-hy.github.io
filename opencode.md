@@ -43,13 +43,31 @@ Suositeltu tapa on käyttää CurreChatia. Jos sinulla on jo jonkin muun palvelu
 
 ### CurreChatin käyttö
 
-Yliopiston opiskelijana voit käyttää OpenCodessa [CurreChatin](<{{site.curre}}>) kielimalleja, jolloin omaa maksullista API-avainta ei tarvita. Valmis konfiguraatio löytyy [täältä](https://github.com/ohjelmistotuotanto-hy/misc/blob/main/opencode.json). Kopioi se tiedostoon `~/.config/opencode/opencode.json` (tai projektin juuressa olevaan tiedostoon `opencode.json`). Jos hakemistossa _~/.config/opencode_ on jo tiedosto `opencode.jsonc`, kopioi konfiguraatio sen sisällöksi, äläkä luo rinnalle toista tiedostoa. Korvaa lopuksi kentän `apiKey` arvo omalla API-avaimellasi. API-avaimen voit luoda CurreChatin oikean yläkulman hampurilaisvalikosta löytyvästä API-avainten hallinnasta:
+Yliopiston opiskelijana voit käyttää OpenCodessa [CurreChatin](<{{site.curre}}>) kielimalleja, jolloin omaa maksullista API-avainta ei tarvita. API-avain ja valmis OpenCode-konfiguraatio saadaan CurreChatista:
 
-![]({{ "/images/avain.png" | relative_url }}){:width="600px" }
+1. Avaa CurreChatin oikean yläkulman hampurilaisvalikosta _API-avaimet_
+2. Anna avaimelle nimi, esim. _ohtu26_, ja paina _Luo uusi avain_
+3. Näkyviin tulee laatikko _Uusi avain luotu_. Paina siinä _Lataa opencode.json_, jolloin saat konfiguraation, johon avaimesi on valmiiksi täytetty. Avain näytetään vain kerran, joten jos tarvitset sitä myöhemmin, kopioi se talteen turvalliseen paikkaan napilla _Kopioi_. Konfiguraation saa myöhemminkin kohdasta _Käytä Opencoden kanssa_, mutta silloin tiedostossa oleva `YOUR_API_KEY` täytyy korvata itse avaimella
+4. Siirrä ladattu tiedosto nimelle `~/.config/opencode/opencode.json` (tai projektin juureen nimelle `opencode.json`). Jos hakemistossa _~/.config/opencode_ on jo tiedosto `opencode.jsonc`, kopioi ladatun tiedoston sisältö sen sisällöksi, äläkä luo rinnalle toista tiedostoa
+
+![]({{ "/images/avain2.png" | relative_url }}){:width="600px" }
 
 Älä tallenna avainta julkiseen repositorioon. Jos laitat konfiguraation projektin juureen, lisää `opencode.json` tiedostoon `.gitignore`.
 
-**Huom:** CurreChatin tokenit eivät ole rajattomia. Käytä siis ensisijaisesti heikointa mallia `gpt-5-mini`, joka on konfiguraatiossa oletuksena, ja vaihda järeämpään malliin vain, jos se ei selviä tehtävästä.
+Konfiguraatiossa ovat käytettävissä seuraavat mallit:
+
+| Malli | Tokenraja |
+|---|---|
+| `gpt-6-luna` | 1 200 000 tokenia viikossa |
+| `gpt-5-mini` | 1 200 000 tokenia viikossa |
+| `gpt-5.5` | 200 000 tokenia viikossa |
+| `gpt-6.1-sol` | 200 000 tokenia viikossa |
+| `Mistral-Large-3-1` | 200 000 tokenia viikossa |
+| `gemma-4-26B-A4B` | ei rajaa |
+
+**Huom:** CurreChatin tokenit eivät ole rajattomia. Käytä siis ensisijaisesti mallia `gpt-6-luna`, jolla on `gpt-5-mini`:n ohella suurin viikkoraja, ja vaihda järeämpään malliin vain, jos se ei selviä tehtävästä. Mallia vaihdetaan OpenCodessa komennolla `/models`, joka avaa listan käytettävissä olevista malleista.
+
+[Gemma 4](https://huggingface.co/google/gemma-4-26B-A4B) on ilmainen. Se on avoin malli, jota suoritetaan yliopiston omalla laitteistolla Tietotekniikkakeskuksen OpenShift-klusterissa, joten sen suorituskyky on rajallinen.
 
 ### Muut kielimallipalvelut
 
