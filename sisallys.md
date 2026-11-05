@@ -104,7 +104,7 @@ permalink: /sisallys/
    - [Sprintin tekninen suunnittelu](/osa2#sprintin-tekninen-suunnittelu)
    - [Sprint backlog](/osa2#sprint-backlog)
    - [Sprintin etenemisen seuranta](/osa2#sprintin-etenemisen-seuranta)
-   - [Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban)
+   - [Yhtä aikaa tehtävän työn rajoittaminen](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen)
    - [Scrumban](/osa2/#scrumban)
    - [Ennen seuraavaa sprintin alkua](/osa2#ennen-seuraavaa-sprintin-alkua)   
 

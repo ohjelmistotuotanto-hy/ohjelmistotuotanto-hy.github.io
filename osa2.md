@@ -841,7 +841,7 @@ Sprintin suunnittelussa sprinttiin valitut storyt jaetaan teknisen tason taskeik
 
 ![]({{ "/images/2-28.png" | relative_url }})
 
-Taskboardista näkee esim., että tiimi tekee storyja valmiiksi yksi kerrallaan: storyn #17 taskit ovat valmiina, storyn #22 työ on kesken ja storyn #27 taskit odottavat vuoroaan. Tähän palataan pian [WIP-rajoitusten](/osa2#yhtä-aikaa-tehtävän-työn-rajoittaminen-lean-ja-scrumban) yhteydessä.
+Taskboardista näkee esim., että tiimi tekee storyja valmiiksi yksi kerrallaan: storyn #17 taskit ovat valmiina, storyn #22 työ on kesken ja storyn #27 taskit odottavat vuoroaan. Tähän palataan pian [WIP-rajoitusten](/osa2#yhtä-aikaa-tehtävän-työn-rajoittaminen) yhteydessä.
 
 Ohjeet backlogien rakentamiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta.
 
@@ -857,7 +857,7 @@ Aiemmin yleinen tapa oli estimoida myös sprintin taskit työtunteina ja päivit
 
 Kuvassa tummemman sininen käyrä kuvaa sprintissä jäljellä olevaa työmäärää tunteina. Tavassa olennaista oli, että taskeista arvioitiin aina _jäljellä oleva_ työmäärä eikä niihin jo käytettyä aikaa. Scrum Guide ei kuitenkaan vuoden 2020 versiosta lähtien mainitse sprintin sisäistä työmäärän seurantaa, ja tuntipohjainen taskiestimointi on harvinaistunut.
 
-### Yhtä aikaa tehtävän työn rajoittaminen: Lean ja Scrumban
+### Yhtä aikaa tehtävän työn rajoittaminen
 
 Yhtä aikaa työn alla olevien taskien suuri määrä voikin koitua Scrumissa ongelmaksi. Jos jokainen tiimiläinen aloittaa aina uuden taskin sen sijaan, että auttaisi saamaan jo aloitettuja kokonaan valmiiksi testaus mukaanlukien, voi taskboard näyttää sprintin loppupuolella esim. seuraavalta:
 
@@ -908,6 +908,28 @@ Scrumban-nimen lanseerasi Corey Ladas vuonna 2008 kirjoituksessaan [Scrum-ban](h
 - työn etenemistä seurataan edellä esitellyillä flow-mittareilla
 
 Kanban- ja Scrumban-menetelmissä WIP-rajoitteilla rajataan useimmiten yhtä aikaa työn alla olevien user storyjen määrää. Kanbanissa ja Scrumbanissa ei yleensä ole olemassa Scrumin sprintin kaltaista kehitystyötä rytmittävää käsitettä vaan saatetaan noudattaa periaatetta, missä tiimi tekee yhden user storyn kerrallaan valmiiksi, demoaa sen asiakkaalle ja valitsee product backlogista seuraavan storyn työn alle. Joissain tapauksissa asiakastapaamiset ja valmiiden storyjen esittely voivat silti tapahtua sovitun aikataulun mukaan, esimerkiksi kahden viikon välein, vaikka itse kehitystyö ei noudattaisi sprinttejä vaan etenisi story kerrallaan.
+
+#### Backlog ja taskboard Scrumbanissa
+
+Koska Scrumbanissa ei välttämättä ole sprinttejä, ei ole myöskään erillistä sprint backlogia. Product backlog ja taskboard yhdistetään usein yhdeksi tauluksi, jonka vasemmanpuoleisin sarake on product backlog. Taulun kortit ovat user storyja, jotka kulkevat työvaiheesta toiseen, ja WIP-rajoitteet rajaavat kussakin vaiheessa olevien storyjen määrää:
+
+![]({{ "/images/scrumban-2.png" | relative_url }}){:width="700px" }
+
+Sarakkeessa _Ready_ ovat storyt, jotka on tarkennettu ja jotka ovat valmiita työn alle otettaviksi. Kun sarakkeeseen vapautuu tilaa, tiimi valitsee backlogin kärjestä seuraavan storyn ja tarkentaa sen. Tämä korvaa Scrumin sprintin suunnittelun.
+
+Storyjen jakaminen taskeiksi on Scrumbanissakin hyödyllistä. Yksi tapa on kirjata taskit storyn korttiin tarkistuslistaksi. Taululla liikkuu edelleen story, ja sen taskit merkitään valmiiksi sitä mukaa kun ne valmistuvat:
+
+![]({{ "/images/scrumban-3.png" | relative_url }}){:width="700px" }
+
+Toinen tapa on käyttää Scrumin taskboardin tapaan storykohtaisia rivejä, joilla taskit liikkuvat työvaiheesta toiseen. Taululla ovat riveinä vain työn alle otetut storyt, ja WIP-rajoitteet koskevat tällöin taskeja:
+
+![]({{ "/images/scrumban-4.png" | relative_url }}){:width="700px" }
+
+Työvaiheet voidaan myös jakaa _doing_- ja _done_-osiin. Done-osa kertoo, että työ on kyseisessä vaiheessa tehty ja odottaa seuraavaa vaihetta. Koska WIP-raja koskee koko vaihetta, myös odottavat työt kuluttavat rajaa, ja jonot tulevat näkyviin:
+
+![]({{ "/images/scrumban-5.png" | relative_url }}){:width="700px" }
+
+Kuvassa haku on koodattu, mutta se odottaa testaajaa, sillä testausvaiheen raja on täynnä. Koska myös koodausvaiheen raja on täynnä, koodarit eivät voi aloittaa uutta storya, vaan heidän kannattaa auttaa testauksessa. Näin WIP-rajoitteet paljastavat pullonkaulan ja ohjaavat tiimiä saamaan aloitetut työt valmiiksi ennen uusien aloittamista.
 
 Scrumban sopii erityisesti tilanteisiin, joissa työtä tulee jatkuvasti ja ennakoimattomasti, esim. ylläpito- ja tukitiimeille. Tällaisessa työssä kahden viikon sprintin sisällöstä sopiminen etukäteen on usein keinotekoista, koska kiireelliset korjaukset sotkevat suunnitelman joka tapauksessa. Toisaalta kiinteä sprinttirytmi tuo tiimille säännöllisen hetken pysähtyä tarkastelemaan tuotetta ja omaa toimintaansa, ja sprintit poistava tiimi joutuu huolehtimaan siitä, ettei tämä katoa.
 
