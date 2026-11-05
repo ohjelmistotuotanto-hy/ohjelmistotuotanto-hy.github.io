@@ -365,7 +365,7 @@ Tehtävässä käytetään VS Coden GitHub Copilotia. Tehtävän voi tehdä ilma
 </div>
 
 <div class="vain-opencode" markdown="1">
-Tehtävässä käytetään [OpenCodea](/opencode/). Asenna se ja yhdistä se CurreChatin kielimalleihin sivun [ohjeiden](/opencode/#asennus) mukaan.
+Tehtävässä käytetään [OpenCodea](/opencode/). Asenna se ja yhdistä se CurreChatin kielimalleihin sivun [ohjeiden](/opencode/#asennus) mukaan. Riittää että luet ohjetta kohtaan _Ohjetiedosto_ asti.
 </div>
 
 Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että kaikki muutokset on commitoitu ja että Pylint on projektissa käytössä, ennen kuin aloitat.
@@ -377,7 +377,7 @@ Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että ka
 </div>
 
 <div class="vain-opencode" markdown="1">
-<input type="checkbox"> Toisin kuin Copilot, OpenCode muokkaa oletusarvoisesti tiedostoja ja suorittaa komentoja kysymättä lupaa. Ota ennen aloittamista käyttöön [komentojen ja muokkausten hyväksyminen](/opencode/#komentojen-hyväksyminen) lisäämällä hakemistoon _viikko2/nhl-reader_ tiedosto `opencode.json`
+<input type="checkbox"> Toisin kuin Copilot, OpenCode muokkaa tiedostoja ja suorittaa komentoja oletusarvoisesti kysymättä lupaa. Ota siksi ennen aloittamista käyttöön komentojen ja muokkausten hyväksyminen: lisää hakemistoon _viikko2/nhl-reader_ tiedosto `opencode.json`, jonka sisältö löytyy OpenCode-sivun kohdasta [Komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen)
 
 <input type="checkbox"> Käynnistä OpenCode hakemistossa _viikko2/nhl-reader_ komennolla `opencode`
 </div>
