@@ -55,7 +55,7 @@ Pisteitä kertyy seuraavista asioista:
     - Pelisäännöistä arvioidaan ainoastaan se, että ne on laadittu, ei niiden sisältöä
   - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
   - Definition of done kirjattu eksplisiittisesti
-  - Ohjelman asennus- ja käyttöohje **TAI** linkki internetissä olevaan toimivaan sovellukseen
+  - Linkki OKD-klusterilla toimivaan sovellukseen (riittää, että boilerplate tai sprintin ensimmäinen story toimii siellä)
 - (0.25p) product backlog
   - Backlog on DEEP (storyjä ei tarvitse estimoida)
 - (0.25p) sprintin 1 backlog
@@ -72,6 +72,7 @@ Pisteitä kertyy seuraavista asioista:
   - GitHub Actions suorittaa testit ja ne menevät läpi
 - (0.25p) toteutus
   - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
 - (0.25p) työtä tehty tasaisesti
   - Kaikki työ ei saa olla yhtenä päivänä tehty
 - (0.25p) GitHubissa on järkevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
@@ -113,6 +114,7 @@ Pisteitä kertyy seuraavista asioista:
   - main-haara ei ole hajonnut sprintin lopussa
 - (0.125p) projektille määritelty järkevät Pylint-säännöt, jotka tarkistetaan CI:n toimesta
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
 - (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
   - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
 - (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
@@ -148,6 +150,7 @@ Pisteitä kertyy seuraavista asioista:
   - muistiinpanoista käy ilmi, miten sprintin 1 retrospektiivin parannuskohteet toteutuivat
 - (0.25p) Sprintin 2 retrospektiivin parannuskohteet ovat sprintin 3 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
 - (0.125p) release ja lisenssi
   - toimivasta, demossa näytettävästä versiosta on luotu GitHubiin asiallisesti nimetty ja kuvattu [release](https://help.github.com/articles/creating-releases/)
   - ohjelmalle on valittu sopiva lisenssi, ja se on määritelty repositorioon. Lue [täältä](/lisenssit/) enemmän ohjelmistolisensseistä
@@ -178,6 +181,7 @@ Pisteitä kertyy seuraavista asioista:
   - CI-palvelu suorittaa yksikkö- ja storytestit sekä Pylintin
   - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
 - (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
 - (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 3 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
   - muistiinpanoista käy ilmi, miten sprintin 2 retrospektiivin parannuskohteet toteutuivat
 - (0.25p) Sprintin 3 retrospektiivin parannuskohteet ovat sprintin 4 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti

@@ -107,7 +107,11 @@ Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 
 Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
 - SQLite ei vaadi erillistä tietokantapalvelinta, katso [ohje](/flask/#tietokanta)
-- Riittää että sovellus toimii kehitysvaiheessa sovelluskehittäjien koneella
+- Sovellus viedään yliopiston OKD-klusterille boilerplaten [ohjeen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate#sovelluksen-vieminen-okd-klusterille) mukaan
+  - ryhmälle on luotu klusterille valmiiksi oma projekti (namespace)
+  - `oc`-komentorivityökalun asennus ja klusteriin kirjautuminen neuvotaan [täällä](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/OKD.md). Klusteri näkyy vain yliopiston verkosta, eli Eduroamista tai HY:n VPN:n kautta
+  - GitHub Actionsin buildaaman Docker-imagen on oltava julkinen
+  - salaisuuksia sisältävää tiedostoa `secret.env` ei lisätä versionhallintaan
 
 Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue [ohje Flaskin käytöstä](/flask), **on erittäin tärkeää että luet tämän ohjeen**.
 
@@ -131,6 +135,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
   - retrospektiivin tärkeimmät havainnot ja vähintään kolme konkreettista parannuskohdetta kirjataan repositorion juureen tiedostoon `retro.md`, ja parannuskohteet lisätään seuraavan sprintin backlogiin taskeiksi
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
+- Sovellus on viety OKD-klusterille, ja klusterilla oleva versio päivittyy automaattisesti main-haaran muutosten myötä (jatkuva toimitus, continuous delivery)
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
@@ -156,6 +161,7 @@ Seuraavassa lähtökohta definition of donelle. Ryhmän tulee määritellä GitH
   - järkevä nimeäminen
   - järkevä/selkeä ja perusteltu arkkitehtuuri
   - yhtenäinen koodityyli (valvotaan Pylintin avulla)
+- Story on valmis vasta, kun se toimii OKD-klusterilla olevassa sovelluksen versiossa
 
 #### Tekoälyn käyttö
 
@@ -167,7 +173,7 @@ README:ssa tulee löytyä ainakin seuraavat asiat:
 
 - Linkit backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä)
 - Linkki CI-palveluun
-- Linkki sovelluksen toimivaan versioon (jos sovellus on verkossa)
+- Linkki OKD-klusterilla toimivaan sovellukseen
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
 
 ### Vihjeitä ryhmätyöskentelyyn
