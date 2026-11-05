@@ -420,6 +420,8 @@ def top_goal_scorers(self, how_many):
 ja pyydä Build-agenttia (oletusagentti, valittu agentti näkyy oikeassa alakulmassa) toteuttamaan metodi, esim. _"Toteuta metodi top_goal_scorers tiedostossa @src/player_stats.py"_. Käytä viittauksessa sitä tiedostoa, jossa luokkasi `PlayerStats` on.
 
 <input type="checkbox"> Lue muutos ennen kuin hyväksyt sen. Tekeekö koodi sen mitä docstring lupaa? Onko koodi samaa tyyliä kuin luokan muut metodit?
+
+Agentti saattaa toteutuksen jälkeen yrittää suorittaa projektin testit, ja suoritus epäonnisuu. Tästä ei tarvitse tässä vaiheessa välittää, sillä testeihin palataan tehtävän lopussa.
 </div>
 
 **Chat: koodin ja virheiden selittäminen**
@@ -432,7 +434,13 @@ ja pyydä Build-agenttia (oletusagentti, valittu agentti näkyy oikeassa alakulm
 <input type="checkbox"> Vaihda Tab-näppäimellä [Plan-agenttiin](/opencode/#build--ja-plan-agentit), joka ei muuta tiedostoja. Pyydä sitä selittämään, miten projektin koodi toimii. Tiedostoon viitataan `@`-merkillä, esim. _"Selitä miten @src/player_reader.py toimii"_
 </div>
 
-<input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita komentoriviltä `pylint src`. Kopioi virheilmoitus <span class="vain-copilot">Copilotin chattiin ja pyydä Copilotia</span><span class="vain-opencode">OpenCodeen ja pyydä Plan-agenttia</span> selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
+<input type="checkbox"> Pyydä selitystä myös yksittäiselle metodille, esim. `PlayerStats`-luokan metodille `top_scorers_by_nationality`. <span class="vain-copilot">Valitse metodin rivit editorissa ja kysy chatissa esim. _"Selitä valittu koodi"_, jolloin valinta liitetään pyyntöön automaattisesti.</span><span class="vain-opencode">Kerro pyynnössä metodin nimi tai rivinumerot, esim. _"Selitä tiedoston @src/player_stats.py metodi top_scorers_by_nationality"_ tai _"Selitä tiedoston @src/player_stats.py rivit 10–20"_.</span>
+
+<div class="vain-opencode" markdown="1">
+> Jos käytät OpenCodea VS Coden terminaalissa ja sen [VS Code -laajennus](https://opencode.ai/docs/ide/) on asennettuna, voit myös valita rivit editorissa ja lisätä viittauksen niihin pyyntöön näppäinyhdistelmällä Cmd+Option+K (Mac) tai Alt+Ctrl+K (Windows ja Linux).
+</div>
+
+<input type="checkbox"> Riko koodistasi jokin tehtävässä 6 määrittelemistäsi Pylint-säännöistä, suorita komentoriviltä `uv run pylint src`. Kopioi virheilmoitus <span class="vain-copilot">Copilotin chattiin ja pyydä Copilotia</span><span class="vain-opencode">OpenCodeen ja pyydä Plan-agenttia</span> selittämään, mistä Pylintin varoituksessa on kyse ja miksi sääntö on olemassa
 
 <input type="checkbox"> Tarkista <span class="vain-copilot">Copilotin</span><span class="vain-opencode">agentin</span> selitys Pylintin [dokumentaatiosta](https://pylint.readthedocs.io/en/stable/user_guide/checkers/features.html). Pitikö selitys paikkansa?
 
@@ -442,17 +450,36 @@ ja pyydä Build-agenttia (oletusagentti, valittu agentti näkyy oikeassa alakulm
 
 <input type="checkbox"> <span class="vain-copilot">Valitse Chat-näkymässä tilaksi _Agent_</span><span class="vain-opencode">Vaihda Tab-näppäimellä Build-agenttiin</span> ja pyydä agenttia lisäämään sovellukseen mahdollisuus näyttää halutun **joukkueen** pelaajat pisteiden mukaan järjestettynä
 
+> Agentti saattaa tarkistaa koodinsa komennolla `python -m compileall src`. Komento kääntää hakemiston _src_ Python-tiedostot tavukoodiksi (hakemistoihin `__pycache__`) ja paljastaa näin syntaksivirheet suorittamatta ohjelmaa. Se ei kuitenkaan kerro mitään siitä, toimiiko koodi oikein, joten agentin "tarkistus" ei korvaa sovelluksen kokeilemista ja testejä.
+
+<input type="checkbox"> Testaa itse, että uusi toiminnallisuus toimii ja halutun joukkueen pelaajat näytetään oikeassa järjestyksessä
+
+Uutta metodia on helpointa kokeilla yksinkertaisella testipääohjelmalla, joka tehdään omaan tiedostoonsa, esim. _src/kokeilu.py_:
+
+```python
+from player_reader import PlayerReader
+from player_stats import PlayerStats
+
+url = "https://studies.cs.helsinki.fi/nhlstats/2026-27/players"
+stats = PlayerStats(PlayerReader(url))
+
+for p in stats.top_scorers_by_team("DAL"):
+    print(p)
+```
+
+Suorita ohjelma komennolla `uv run python src/kokeilu.py`. Käytä metodista ja moduuleista niitä nimiä, jotka sovelluksessasi on.
+
 <input type="checkbox"> Pyydä agenttia tekemään luokalle `PlayerStats` yksikkötestit. Vaadi, että testit **eivät käytä verkkoyhteyttä**, vaan `PlayerReader`-luokan tilalla käytetään stubia viikon 1 [tehtävän 16](/tehtavat1#16-nhl-tilastot-ohjelman-yksikkötestaus) tapaan
 
 <span class="vain-copilot">Lue jokainen komento ennen kuin annat agentille luvan suorittaa sen.</span><span class="vain-opencode">Lue jokainen komento ja muokkaus ennen kuin annat agentille luvan. Jos OpenCode ei kysy lupaa, tarkista tehtävän alussa luomasi `opencode.json`.</span>
 
 <input type="checkbox"> Varmista itse, että testit menevät läpi (`uv run pytest`) ja että ne eivät tee HTTP-pyyntöjä.
 
-On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen (joka johtuu siitä, mihin agentti on testit sijoittanut). Jos komento ei toimi, pyydä agenttia suorittamaan se, ja korjaamaan tilanne.
+On mahdollista, että testien suorittaminen komentoriviltä aiheuttaa virheen. Jos komento ei toimi, pyydä agenttia suorittamaan se, ja korjaamaan tilanne.
 
 <input type="checkbox"> Käy agentin tekemä muutos läpi komennolla `git diff`. Muokkasiko agentti jotain, mihin sitä ei pyydetty koskemaan?
 
-<input type="checkbox"> Suorita `pylint src` ja varmista, että agentin koodi noudattaa samoja sääntöjä kuin omasi. Jos Pylint löytää virheitä, korjaa ne itse tai pyydä agenttia korjaamaan ne. Jos teit bonustehtävän precommit hookin, se tekee tarkastuksen automaattisesti commitoinnin yhteydessä
+<input type="checkbox"> Suorita `uv run pylint src` ja varmista, että agentin koodi noudattaa samoja sääntöjä kuin omasi. Jos Pylint löytää virheitä, korjaa ne itse tai pyydä agenttia korjaamaan ne. Jos teit bonustehtävän precommit hookin, se tekee tarkastuksen automaattisesti commitoinnin yhteydessä
 
 <input type="checkbox"> Commitoi muutokset
 
