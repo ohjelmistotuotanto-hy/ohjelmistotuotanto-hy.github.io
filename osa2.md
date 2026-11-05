@@ -225,7 +225,7 @@ MVP toteutetaan mahdollisimman nopeasti ja laitetaan tuotantokäyttöön oikeill
 
 Jos MVP koskee jotain järjestelmään toteutettua uutta ominaisuutta, käytetään usein _A/B-testausta_: uusi ominaisuus julkaistaan vain osalle käyttäjistä, loput jatkavat vanhan ominaisuuden käyttöä. MVP:n avulla testattava uusi ominaisuus voisi olla esim. verkkokaupan uudenlainen suosittelualgoritmi ja koejärjestelyllä voidaan _mitata_, tuottaako testattava ominaisuus suuremman määrän ostoksia kuin järjestelmän aiempi versio.
 
-A/B-testaus ei kuitenkaan sovi kaikkiin tilanteisiin. Luotettavien johtopäätösten tekeminen edellyttää riittävän suurta käyttäjämäärää, etukäteen sovittua mittaria sekä kokeen tulosten tilastollista arviointia. Pienellä käyttäjämäärällä erot voivat johtua pelkästä sattumasta. Teknisesti A/B-testaus toteutetaan yleensä [feature toggleilla](/osa3#feature-toggle), joihin palaamme osassa 3.
+A/B-testaus ei kuitenkaan sovi kaikkiin tilanteisiin. Luotettavien johtopäätösten tekeminen edellyttää riittävän suurta käyttäjämäärää, etukäteen sovittua mittaria sekä kokeen tulosten tilastollista arviointia. Pienellä käyttäjämäärällä erot voivat johtua pelkästä sattumasta. Teknisesti A/B-testaus toteutetaan yleensä [feature flageilla](/osa3#feature-flag), joihin palaamme osassa 3.
 
 Käyttäjien oikeasta järjestelmästä mitattua käyttäytymistä verrataan siis alussa asetettuun hypoteesiin ja näin pystytään _oppimaan_, olivatko toteutetut vaatimukset järjestelmän käytön suhteen toivottavia, eli käytetäänkö ominaisuuksia, saako niiden avulla hankittua lisää maksavia asiakkaita, sitouttavatko ne käyttäjiä enemmän sovelluksen käyttöön, saavatko ne käyttäjät ostamaan enemmän ym.
 

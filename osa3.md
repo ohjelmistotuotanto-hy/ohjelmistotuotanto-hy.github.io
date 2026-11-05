@@ -170,7 +170,7 @@ Molemmat tavoitteet tähtäävät ensisijaisesti ohjelman _ulkoisen laadun_ (eng
 
 Testaus jakaantuu eri _tasoihin_ sen mukaan, mikä testauksen ensisijaisena kohteena on. Ohjelmiston elinkaarta vesiputousmaisesti kuvaava _testauksen V-malli_ havainnollistaa testauksen eri tasoja.
 
-![]({{ "/images/3-3.png" | relative_url }}){:height="300px" }
+![]({{ "/images/v-malli.png" | relative_url }}){:height="300px" }
 
 Alimmalla tasolla on _yksikkötestaus_ (engl. unit testing), jossa tarkastellaan yksittäisten luokkien, metodien ja moduulien toimintaa, yleensä erillään muusta kokonaisuudesta. Yksikkötestauksen hoitavat sovelluskehittäjät.
 
@@ -736,7 +736,7 @@ Jokainen sovelluskehittäjän commit kulkee deployment pipelinen eli käsitteell
 - staging-ympäristössä sovelluksen uudelle versiolle suoritetaan lisää testejä
 - lopulta commit siirtyy tuotantoympäristöön
 
-![]({{ "/images/3-12.png" | relative_url }}){:height="280px" }
+![]({{ "/images/pipeline.png" | relative_url }}){:height="240px" }
 
 Käytännöstä, jossa jokainen CI:n läpäisevä ohjelmiston commit, eli versionhallintaan pushattu versio viedään automatisoidusti staging-palvelimelle ja siellä tapahtuvan automatisoidun hyväksymistestauksen jälkeen tuotantoon, nimitetään _jatkuvaksi toimittamiseksi_ (engl. continuous deployment).
 
@@ -840,13 +840,13 @@ Tavallinen ratkaisu on tehdä skeemamuutos vaiheittain niin sanotulla [expand/co
 
 Jos järjestelmän uusi ja vanha versio joutuvat jostain syystä käyttämään eri tietokantaa, täytyy kantojen tila synkronoida, jotta järjestelmien vaihtaminen onnistuu saumattomasti. Yhteen kantaan sovelluksen tekemät päivitykset on siis tavalla tai toisella tehtävä myös toiseen, kenties skeemaltaan jo muuttuneeseen kantaan.
 
-### Feature toggle
+### Feature flag
 
-Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisinä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature toggleja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature flag, conditional feature ja config flag. Nykyään yleisin nimitys lienee feature flag, jota käyttää esim. avoin [OpenFeature](https://openfeature.dev/)-standardi.
+Canary releasea havainnollistavassa kuvassa järjestelmän uusi ja vanha versio näytettiin erillisinä palvelimina. Sama voidaan toteuttaa myös käyttäen yksittäistä palvelinta ns. [feature flageja](https://martinfowler.com/articles/feature-toggles.html) hyödyntämällä. Sama asia kulkee myös nimillä feature toggle, conditional feature ja config flag. Feature flag on nykyään yleisin nimitys, jota käyttää esim. avoin [OpenFeature](https://openfeature.dev/)-standardi.
 
-Feature togglejen periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadunhallinnan alla olevaan toteutukseen.
+Feature flagien periaate on erittäin yksinkertainen. Koodiin laitetaan ehtolauseita, joiden avulla osa liikenteestä ohjataan vanhan toteutuksen sijaan uuteen laadunhallinnan alla olevaan toteutukseen.
 
-Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytettävien uutisten listaan asettaa feature toggle, jonka avulla tietyin perustein valituille käyttäjille näytettäisiinkin uuden algoritmin perusteella generoitu lista uutisia:
+Esimerkiksi sosiaalisen median palvelussa voitaisiin käyttäjälle näytettävien uutisten listaan asettaa feature flag, jonka avulla tietyin perustein valituille käyttäjille näytettäisiinkin uuden algoritmin perusteella generoitu lista uutisia:
 
 ```python
 def recommended_news_generator(user):
@@ -856,14 +856,14 @@ def recommended_news_generator(user):
         return recommendation_algoritm(user)
 ```
 
-Osassa 2 [Lean-startup](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature togglejen avulla.
+Osassa 2 [Lean-startup](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature flagien avulla.
 
-Canary releaset ja A/B-testaus eivät ole feature togglejen ainoa sovellus, niitä käytetään
-yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature toggleilla.
+Canary releaset ja A/B-testaus eivät ole feature flagien ainoa sovellus, niitä käytetään
+yleisesti myös eliminoimaan tarve pitkäikäisille _feature brancheille_. Eli sen sijaan, että uusia ominaisuuksia toteutetaan erilliseen versionhallinnan haaraan, joka ominaisuuksien valmistumisen yhteydessä mergetään pääkehityshaaraan, uudet ominaisuudet tehdään suoraan pääkehityshaaraan, mutta ne piilotetaan käyttäjiltä feature flageilla.
 
-Käytännössä feature toggle siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature toggle palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, se on mahdollista julkaista feature togglen avulla, esim. kehittäjäyrityksen omaan käyttöön ja tämän jälkeen osalle käyttäjistä canary releasena. Lopulta feature toggle ja vanha toteutus voidaan poistaa koodista.
+Käytännössä feature flag siis palauttaa aina vanhan version normaaleille käyttäjille. Sovelluskehittäjien ja testaajien taas on mahdollista valita, kumman version feature flag palauttaa. Kun ominaisuus on valmis testattavaksi laajemmalla joukolla, se on mahdollista julkaista feature flagin avulla, esim. kehittäjäyrityksen omaan käyttöön ja tämän jälkeen osalle käyttäjistä canary releasena. Lopulta feature flag ja vanha toteutus voidaan poistaa koodista.
 
-Suuret internetpalvelut kuten Meta, Netflix, Google ja GitHub soveltavat laajalti canary releaseihin ja feature toggleihin perustuvaa kehitysmallia. Esimerkiksi GitHub [kertoo](https://github.blog/engineering/infrastructure/ship-code-faster-safer-feature-flags/) julkaisevansa lähes kaikki uudet ominaisuudet feature flagien takana.
+Suuret internetpalvelut kuten Meta, Netflix, Google ja GitHub soveltavat laajalti canary releaseihin ja feature flageihin perustuvaa kehitysmallia. Esimerkiksi GitHub [kertoo](https://github.blog/engineering/infrastructure/ship-code-faster-safer-feature-flags/) julkaisevansa lähes kaikki uudet ominaisuudet feature flagien takana.
 
 ### Feature branchit ja merge hell
 
@@ -879,11 +879,11 @@ Vaihtoehtona tälle on [trunk based development](https://trunkbaseddevelopment.c
 
 Kaikki muutokset tehdään suoraan pääkehityshaaraan, josta käytetään nimitystä _trunk_. Pääkehityshaara voi olla _main_ tai  jokin muu erillinen branch käytännöistä riippuen. Ohjelmiston kustakin julkaistusta versiosta saatetaan tarvittaessa tehdä oma _release branch_.
 
-Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature toggleihin. Näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
+Trunk-pohjainen kehitys pakottaa sovelluskehittäjät tekemään pieniä, nopeasti päähaaraan mergettäviä muutoksia. Trunk-pohjainen kehitys yhdistetään usein feature flageihin. Näin puolivalmiina olevia ominaisuuksia voidaan helposti ohjelmoida suoraan päähaaraan ja viedä tuotantoympäristöön ilman sovelluksen olemassa olevan toiminnallisuuden sotkemista.
 
 Trunk-pohjainen kehitys ei välttämättä tarkoita, että jokainen commit tehtäisiin suoraan pääkehityshaaraan. Yleinen käytäntö on käyttää _lyhytikäisiä_ haaroja: muutos tehdään omaan haaraansa, siitä avataan pull request katselmointia varten, ja haara mergetään päähaaraan viimeistään vuorokauden kuluessa. Näin pull requestien tarjoama katselmointi ja jatkuva integraatio sopivat yhteen. [DORA-tutkimuksen](https://dora.dev/capabilities/trunk-based-development/) mukaan parempaan toimituskykyyn liittyy, että haarat mergetään päähaaraan vähintään kerran päivässä. Tämä edellyttää, että työ pilkotaan pieniksi muutoksiksi ja että katselmointi tapahtuu nopeasti.
 
-Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityistä kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta. Feature togglejen holtiton käyttö voi johtaa feature toggle -helvettiin, joten suunnittelua ja systemaattisuutta todellakin tarvitaan.
+Trunk-pohjainen kehitysmalli edellyttää sovelluskehittäjiltä erityistä kuria ja systemaattisuutta. Feature brancheihin perustuva työskentely onkin aloittelijoiden tai vähemmän kurinalaisten kehittäjien kanssa turvallisempi toimintatapa kaikista ongelmistaan huolimatta. Feature flagien holtiton käyttö voi johtaa feature flag -helvettiin, joten suunnittelua ja systemaattisuutta todellakin tarvitaan.
 
 Trunk-pohjaista kehitysmallia noudattavat monet maailman suurimmista internetpalveluista, esim. Google, Meta ja Netflix.
 
@@ -917,6 +917,8 @@ Eräs tärkeimmistä DevOps:ia mahdollistavista asioista on ollut siirtyminen yh
 Palvelinten, tallennuskapasiteetin ja verkon konfiguraatioiden automatisoitu ohjelmallisesti tapahtuva hallinnointi on siis yleistynyt koko ajan. Palvelinten konfiguraatioita voidaan tallettaa versionhallintaan ja jopa testata. Sovelluskehitys ja ylläpito ovat alkaneet muistuttaa enemmän toisiaan kuin vanhoina (huonoina) aikoina. Tämä suuntaus on johtanut siihen, että sovelluskehittäjiltä on ruvettu pikkuhiljaa vaatimaan sellaisia taitoja, jotka olivat aiemmin selkeästi järjestelmäylläpitäjien vastuulla.
 
 Työkalujen käyttöönotto ei kuitenkaan riitä, DevOps:in soveltaminen lähtee pohjimmiltaan kulttuurisista tekijöistä, tiimirakenteista sekä asioiden sallimisesta.
+
+DevOpsin rinnalla puhutaan usein Googlen kehittämästä _Site Reliability Engineeringistä_ (SRE). [Googlen määritelmän](https://sre.google/sre-book/introduction/) mukaan SRE:ssä ylläpitoa tehdään ohjelmistokehityksen keinoin: toistuva manuaalinen työ (engl. toil) automatisoidaan, ja SRE-tiimin työajasta enintään puolet saa kulua operointiin, loppu käytetään järjestelmän luotettavuutta parantavaan kehitystyöhön. SRE:n keskeiset käytännöt, palvelutasotavoitteet, virhebudjetti ja syyllistämättömät jälkianalyysit, esiteltiin jo [canary releasen](#canary-release) yhteydessä. SRE:tä voi pitää yhtenä konkreettisena tapana toteuttaa DevOps-ajattelua, Google itse [kuvaa](https://sre.google/workbook/how-sre-relates/) suhdetta ohjelmoijan termein: _class SRE implements interface DevOps_.
 
 Scrumin ja ketterien menetelmien eräs tärkeimmistä periaatteista on tehdä kehitystiimeistä _cross functional_, eli sellaisia, että ne sisältävät kaiken tietotaidon, joka tarvitaan saamaan user storyt valmiiksi definition of donen määrittelemällä laatutasolla. DevOps onkin eräs keino viedä ketteryyttä vielä askel pitemmälle, mahdollistaa se, että ketterät tiimit ovat todella monitaitoisia ja pystyvät viemään vaivattomasti toteuttamansa uudet toiminnallisuudet tuotantoympäristöön asti sekä jopa testaamaan ja operoimaan niitä tuotannossa.
 

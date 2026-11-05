@@ -146,7 +146,7 @@ permalink: /sisallys/
     - [Blue-green-deployment](/osa3#blue-green-deployment)
     - [Canary release](/osa3#canary-release)
     - [Tuotannossa testaaminen ja tietokanta](/osa3#tuotannossa-testaaminen-ja-tietokanta)
-    - [Feature toggle](/osa3#feature-toggle)
+    - [Feature flag](/osa3#feature-flag)
     - [Feature branchit ja merge hell](/osa3#feature-branchit-ja-merge-hell)
   - [DevOps](/osa3#devops)
   - [Yhteenveto - ketterän testauksen nelikenttä](/osa3#yhteenveto---ketterän-testauksen-nelikenttä)
