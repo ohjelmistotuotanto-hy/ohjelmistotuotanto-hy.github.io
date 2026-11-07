@@ -578,3 +578,82 @@ $sidebar-toc-width-narrow: 240px;
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
+
+.lataa-pdf {
+  font: inherit;
+  font-size: 14px;
+  padding: 4px 12px;
+  margin-bottom: 8px;
+  color: #424242;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+}
+
+// "Lataa PDF:nä" prints the page; the browser saves it as a PDF
+@media print {
+  .site-header,
+  .site-footer,
+  .sidebar-toc,
+  .sidebar-toc-toggle,
+  .sidebar-toc-backdrop,
+  .site-search,
+  .lataa-pdf,
+  .ai-valitsin,
+  .heading-anchor,
+  .code-copy-button,
+  #miniprojekti-ilmo,
+  #uv-tietoturva,
+  #koeilmo-modaali {
+    display: none !important;
+  }
+
+  body,
+  .page-content,
+  .page-content .wrapper {
+    background: white !important;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+
+  .page-content .wrapper,
+  .has-sidebar-toc .page-content .wrapper {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img,
+  svg,
+  pre,
+  table,
+  blockquote {
+    break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+
+  a {
+    color: inherit;
+  }
+}

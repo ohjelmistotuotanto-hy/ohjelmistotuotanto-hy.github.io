@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="420" fill="white"/>
+<polygon points="170.0,60 170.0,60 227.5,175 112.5,175" fill="#fed7d7" stroke="#c53030" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="112.5,175 227.5,175 272.5,265 67.5,265" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="67.5,265 272.5,265 310.0,340 30.0,340" fill="#c6f6d5" stroke="#2f855a" stroke-width="2" stroke-linejoin="round"/>
+<text x="170" y="158" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">end to</text>
+<text x="170" y="172" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">end</text>
+<text x="170" y="225" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">integraatio</text>
+<text x="170" y="308" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">yksikkö</text>
+<polygon points="450,60 550,60 545,110 455,110" fill="#fed7d7" stroke="#c53030" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="455,110 545,110 595,120 595,170 570,230 430,230 405,170 405,120" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="430,230 570,230 528,290 472,290" fill="#c6f6d5" stroke="#2f855a" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="425,300 575,300 580,340 420,340" fill="#e2e8f0" stroke="#4a5568" stroke-width="2" stroke-linejoin="round"/>
+<line x1="500" y1="290" x2="500" y2="300" stroke="#4a5568" stroke-width="2"/>
+<text x="500" y="90" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">end to end</text>
+<text x="500" y="178" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">integraatio</text>
+<text x="500" y="265" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">yksikkö</text>
+<text x="500" y="325" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">staattinen analyysi</text>
+<defs><clipPath id="hx"><polygon points="830.0,60.0 708.8,130.0 708.8,270.0 830.0,340.0 951.2,270.0 951.2,130.0"/></clipPath></defs>
+<rect x="690.0" y="60" width="280.0" height="60" fill="#fed7d7" stroke="#c53030" stroke-width="2" clip-path="url(#hx)"/>
+<rect x="690.0" y="120" width="280.0" height="135" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" clip-path="url(#hx)"/>
+<rect x="690.0" y="255" width="280.0" height="85" fill="#c6f6d5" stroke="#2f855a" stroke-width="2" clip-path="url(#hx)"/>
+<polygon points="830.0,60.0 708.8,130.0 708.8,270.0 830.0,340.0 951.2,270.0 951.2,130.0" fill="none" stroke="#2d3748" stroke-width="2" stroke-linejoin="round"/>
+<text x="830" y="105" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">integroitu</text>
+<text x="830" y="192" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">integraatio</text>
+<text x="830" y="283" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">toteutuksen</text>
+<text x="830" y="299" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">yksityiskohdat</text>
+<text x="170" y="375" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Testauspyramidi</text>
+<text x="170" y="395" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">test pyramid – Mike Cohn</text>
+<text x="500" y="375" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Testauspokaali</text>
+<text x="500" y="395" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">testing trophy – Kent C. Dodds</text>
+<text x="830" y="375" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Testauskenno</text>
+<text x="830" y="395" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">testing honeycomb – Spotify</text>
+<text x="500.0" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Testien painopiste: pyramidi, pokaali ja kenno</text>
+</svg>

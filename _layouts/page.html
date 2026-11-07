@@ -16,6 +16,10 @@ layout: default
   <header class="post-header">
     {% if page.title %}
     <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% assign pdf_pages = "osa1.md,osa2.md,osa3.md,osa4.md,osa5.md" | split: "," %}
+    {% if pdf_pages contains page.path %}
+    <button type="button" class="lataa-pdf" onclick="window.print()">Lataa PDF:nä</button>
+    {% endif %}
     {% else %}
     <h1 class="post-title">{{ site.title | escape }}</h1>
     {% endif %}
