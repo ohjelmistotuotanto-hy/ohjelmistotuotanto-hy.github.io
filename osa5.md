@@ -13,7 +13,7 @@ permalink: /osa5/
 
 {% include miniproj_ilmo.md %}
 
-Kurssin viidennellä viikolla käsitellään kolmea aihetta, viime vuosina ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoa ketterien menetelmien käytöstä ja hyödyistä.
+Kurssin viidennellä viikolla käsitellään kolmea aihetta, ketterään ohjelmistokehitykseen paljon vaikutteita antanutta Lean-filosofiaa, ketterien menetelmien skaalaamista suurempiin projekteihin sekä erilaisia tilasto- ja tutkimustietoa ketterien menetelmien käytöstä ja hyödyistä.
 
 ## Typoja materiaalissa
 
@@ -29,32 +29,32 @@ Kurssin aikana on jo muutamaan kertaan sivuttu käsitettä _Lean_, katsotaan nyt
 
 Lean on kotoisin Toyotan tuotannon ja tuotekehityksen menetelmistä, ja sen synty on jäljitettävissä 1900-luvun alkupuoliskolle.
 
-Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennusbuumi, mutta pääomaa ja raaka-aineita oli saatavissa niukalti. Havaittiin, että laadun parantaminen nostaa tuottavuutta: mitä vähemmän tuotteissa ja tuotantoprosesseissa on virheitä ja ongelmia, sitä enemmän tuottavuus kasvaa, ja se taas johtaa markkinaosuuden kasvuun ja sitä kautta uusiin työmahdollisuuksiin. Japanilaisiin yrityksiin muodostui vahva laatua korostava kulttuuri.
+Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennusbuumi, mutta pääomaa ja raaka-aineita oli saatavissa niukalti. Havaittiin, että laadun parantaminen nostaa tuottavuutta: mitä vähemmän tuotteissa ja tuotantoprosesseissa on virheitä ja ongelmia, sitä enemmän tuottavuus kasvaa, ja se taas johtaa markkinaosuuden kasvuun ja sitä kautta uusiin työmahdollisuuksiin. Japanilaisiin yrityksiin muodostui vahva laatua korostava kulttuuri.
 
 Resurssien niukkuus johti siihen, että Toyota kehitti ns. _Just In Time (JIT)_ -tuotantomallin, missä ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Vastakohtana tälle on perinteinen massatuotanto, missä tuotteita valmistetaan etukäteen suuret määrät varastoon. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt _läpimenoaika_ (engl. lead time) tilauksesta toimitukseen.
 
-JIT-tuotantomalli toi monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen läpimenoaika tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
+JIT-tuotantomalli toi monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen läpimenoaika tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
 toisin kuin mahdollisesti kuukausia varastossa olevilla tuotteilla.
 
-Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen läpimenoaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
+Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen läpimenoaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
 
-Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä kunnioittavan, kuuntelevan ja _vastuuttavan_ (engl. empowering) tuotannon optimoimisen kulttuurin. Tärkeäksi periaatteeksi tuli koko henkilöstön tasolla tapahtuva toiminta- ja työskentelytapojen jatkuva parantaminen. Käytännössä jokainen työntekijä oli oikeutettu ja jopa velvollinen vaikka pysäyttämään koko tuotantolinjan heti havaitessaan ongelmia.
+Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä kunnioittavan, kuuntelevan ja _vastuuttavan_ (engl. empowering) tuotannon optimoimisen kulttuurin. Tärkeäksi periaatteeksi tuli koko henkilöstön tasolla tapahtuva toiminta- ja työskentelytapojen jatkuva parantaminen. Käytännössä jokainen työntekijä oli oikeutettu ja jopa velvollinen vaikka pysäyttämään koko tuotantolinjan heti havaitessaan ongelmia.
 
 #### Toyota production system, TPS
 
-Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa [Toyota Production Systemiksi](https://global.toyota/en/company/vision-and-philosophy/production-system/) (TPS). Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977. Toyotan menestys herätti kiinnostusta länsimaissa ja [MIT](https://fi.wikipedia.org/wiki/Massachusetts_Institute_of_Technology):in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää. Tutkijat lanseeraavat nimikkeen _lean_- eli virtaviivainen tuotanto kuvaamaan TPS:n taustafilosofiaa.
+Vuodesta 1965 alkaen Toyota alkoi kutsua toimintatapaansa [Toyota Production Systemiksi](https://global.toyota/en/company/vision-and-philosophy/production-system/) (TPS). Ensimmäiset englanninkieliset julkaisut aiheesta ovat vuodelta 1977. Toyotan menestys herätti kiinnostusta länsimaissa ja [MIT](https://fi.wikipedia.org/wiki/Massachusetts_Institute_of_Technology):in tutkijat alkoivat 1980-luvun lopussa kartoittamaan ja dokumentoimaan tarkemmin Toyotan tuotantojärjestelmää. Yksi heistä, John Krafcik, lanseerasi vuonna 1988 artikkelissaan _Triumph of the Lean Production System_ nimikkeen _lean_- eli virtaviivainen tuotanto kuvaamaan TPS:n taustafilosofiaa.
 
-Vuonna 1990 ilmestyi kirja [The Machine That Changed the World](<https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)>), joka toi leanin laajempaan länsimaalaiseen tietoisuuteen. Toyota alkoi 2000-luvulla käyttämään tuotantojärjestelmästään myös sisäisesti nimitystä lean.
+Vuonna 1990 ilmestyi kirja [The Machine That Changed the World](<https://en.wikipedia.org/wiki/The_Machine_That_Changed_the_World_(book)>), joka toi leanin laajempaan länsimaalaiseen tietoisuuteen.
 
-Viimeisen 30 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on [Jeffrey Likerin The Toyota Way](https://www.amazon.com/Toyota-Way-Management-Principles-Manufacturer/dp/0071392319) (2001).
+Viimeisen 30 vuoden aikana on ilmestynyt suuri määrä kirjoja, jotka kuvaavat Toyotan tuotantojärjestelmää, eräs kuuluisimmista ja vaikutusvaltaisimmista näistä on [Jeffrey Likerin The Toyota Way](https://www.amazon.com/Toyota-Way-Management-Principles-Manufacturer/dp/0071392319) (2004).
 
-Alun perin lean oli Toyotalla autojen _tuotantoa_ (engl. production) optimoiva toimintatapa, sittemmin leania on ruvettu hyödyntämään myös _tuotekehityksessä_ (engl. development). Tuotanto ja tuotekehitys ovat luonteeltaan hyvin erilaisia ja niihin sovellettavat lean-käytänteet eroavat monin paikoin.
+Alun perin lean oli Toyotalla autojen _tuotantoa_ (engl. production) optimoiva toimintatapa, sittemmin leania on ruvettu hyödyntämään myös _tuotekehityksessä_ (engl. development). Tuotanto ja tuotekehitys ovat luonteeltaan hyvin erilaisia ja niihin sovellettavat lean-käytänteet eroavat monin paikoin.
 
 Leania on sovellettu lukuisille eri aloille, ohjelmistotuotantoon sen lanseerasi 2003 ilmestynyt Mary ja Tom Poppendieckin kirja [Lean software development, an agile toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783). Klassikon asemastaan huolimatta kirja on paikoin vanhentunut ja tulkitsee leania osin melko suppeasti. Myös Scrumin kehittäjät Ken Schwaber ja Jeff Sutherland tunsivat hyvin lean-ajattelun, ja monet Scrumin piirteet ovat saaneet vaikutteita leanista.
 
-Leania on ruvettu soveltamaan yhä suurempaan määrään asioita, aina terveydenhoidosta, leipomoihin ja pankkitoimintaan. Myös Helsingin yliopiston hallinto on alkanut puhumaan yhä enenevissä määrin leanista ja muutaman vuoden ajan aiheesta on järjestetty yliopiston sisällä useita tilaisuuksia. Lean tai mitä erilaisimmat lean-nimikkeen alla olevat ja myytävät asiat ovatkin alkaneet elämään omaa, Toyota production systemistä erillistä elämäänsä ja nykyään on välillä vaikea sanoa tarkemmin mistä on kyse kun joku puhuu leanista.
+Leania on ruvettu soveltamaan yhä useampiin asioihin, aina terveydenhoidosta leipomoihin ja pankkitoimintaan, myös julkishallinnossa ja yliopistoissa. Lean tai mitä erilaisimmat lean-nimikkeen alla myytävät asiat ovatkin alkaneet elää omaa, Toyota production systemistä erillistä elämäänsä, ja nykyään on välillä vaikea sanoa tarkemmin, mistä on kyse, kun joku puhuu leanista.
 
-Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan [Scaling Lean and Agile Development](https://www.amazon.com/Scaling-Lean-Agile-Development-Organizational/dp/0321480961) perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [täällä](http://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
+Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon kirjaan [Scaling Lean and Agile Development](https://www.amazon.com/Scaling-Lean-Agile-Development-Organizational/dp/0321480961) perustuen. Kirjan leania esittelevä luku on kaikkien luettavissa [täällä](https://www.leanprimer.com/downloads/lean_primer.pdf). Luku esittelee nimenomaan Toyota production systemin modernia muotoa.
 
 ### Leanin tavoitteet, perusta ja peruspilarit
 
@@ -62,15 +62,15 @@ Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitett�
 
 ![]({{ "/images/5-1.png" | relative_url }}){:height="550px" }
 
-Leanilla on "talon ylimpänä kerroksena" sijaitseva _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
+Leanilla on "talon ylimpänä kerroksena" sijaitseva _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
 
-Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaalle myytyyn tuotteeseen" siten, että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys._
+Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaalle myytyyn tuotteeseen" siten, että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys._
 
 Jotta tavoite olisi mahdollinen, tulee taustalla olla syvälle yrityksen kaikille tasoille juurtunut pitkän tähtäimen hyötyihin tähtäävä lean-toimintatapa, jota johtajat soveltavat ja opettavat alaisille. Tätä nimitetään _leanin perustaksi_.
 
 Leanin kaksi peruspilaria ovat _jatkuva parantaminen_ (engl. continuous improvement) ja _ihmisten kunnioittaminen_ (engl. respect for people).
 
-_Jatkuva parantaminen_ määrittelee pohjimmiltaan koko Toyotan toimintakulttuurin, jonka ytimessä on halukkuus oppia ja kannustava ilmapiiri muutosten tekemiselle:
+_Jatkuva parantaminen_ määrittelee pohjimmiltaan koko Toyotan toimintakulttuurin, jonka ytimessä on halukkuus oppia ja kannustava ilmapiiri muutosten tekemiselle. Toyotan pääjohtajana vuosina 2005–2009 toiminut Katsuaki Watanabe kiteyttää asian seuraavasti:
 
 > _The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"._
 
@@ -86,7 +86,7 @@ Toyota production systemin kehittäjä [Taiichi Ohno](https://en.wikipedia.org/w
 
 Ohnon mukaan keino päästä nopeampaan tuotantosykliin on siis eliminoida _arvoa_ (engl. value) tuottamattomia asioita eli _hukkaa_ (engl. waste).
 
-Mitä lean tarkalleen ottaen tarkoittaa arvolla ja hukalla? Arvolla tarkoitetaan niitä asioita ja työnteon vaiheita, mistä asiakas on valmis maksamaan, eli mitkä tuottavat asiakkaalle hyötyä. Hukalla taas tarkoitetaan kaikkea tuotantoon liittyvää, joka ei tuo suoraa tai välillistä arvoa asiakkaalle.
+Mitä lean tarkalleen ottaen tarkoittaa arvolla ja hukalla? Arvolla tarkoitetaan niitä asioita ja työnteon vaiheita, mistä asiakas on valmis maksamaan, eli mitkä tuottavat asiakkaalle hyötyä. Hukalla taas tarkoitetaan kaikkea tuotantoon liittyvää, joka ei tuo suoraa tai välillistä arvoa asiakkaalle.
 
 Leanin mukaan on olemassa kolmen eri tyypin hukkaa: muri, mura ja muda.
 
@@ -106,21 +106,21 @@ Alunperin nämä ovat olleet autojen valmistuksen tuotantolinjaan liittyvää hu
 
 Tuotteita tulee valmistaa ainoastaan siinä määrin, mitä asiakas on niitä tilannut, eli ei kannata tehdä varastoon. Varastoon tehdyt tuotteet ovat monella tapaa ongelmallisia. Ne syövät pääomaa ja saattavat myös sisältää systemaattisia vikoja, jotka huomataan vasta kun tuotteet otetaan käyttöön.
 
-Ohjelmistojen ylimääräisten toiminnallisuuksien voidaan ajatella olevan ylituotantoa. Joidenkin tutkimuksien mukaan jopa [64% ohjelmistojen toiminnallisuuksista](https://www.mountaingoatsoftware.com/blog/are-64-of-features-really-rarely-or-never-used) on joko ei ollenkaan tai ainoastaan erittäin harvoin käytettyjä. Ylimääräisten toiminnallisuuksien toteuttaminen maksaa sekä kasvattaa koodin määrää, ja tämä taas tekee jatkokehityksen hankalammaksi.
+Ohjelmistojen ylimääräisten toiminnallisuuksien voidaan ajatella olevan ylituotantoa. Usein toistetun väitteen mukaan jopa [64 % ohjelmistojen toiminnallisuuksista](https://www.mountaingoatsoftware.com/agile/are-64-of-features-really-rarely-or-never-used) on joko ei ollenkaan tai ainoastaan erittäin harvoin käytettyjä. Luku on peräisin Standish Groupin Jim Johnsonin esitelmästä vuodelta 2002, ja se perustui vain neljään yritysten sisäiseen sovellukseen, joten sitä ei kannata yleistää. Ilmiö on kuitenkin tuttu: merkittävä osa toteutetuista ominaisuuksista jää vähälle käytölle. Ylimääräisten toiminnallisuuksien toteuttaminen maksaa sekä kasvattaa koodin määrää, ja tämä taas tekee jatkokehityksen hankalammaksi.
 
 #### Välivarastointi (engl. in-process inventory)
 
-Tähän kategoriaan kuuluu osittain tehty työ ja sen säilöminen, eli esim. komponentit joille ei vielä ole käyttöä. Ongelmat ovat samat kuin ylituotannossa.
+Tähän kategoriaan kuuluu osittain tehty työ ja sen säilöminen, eli esim. komponentit joille ei vielä ole käyttöä. Ongelmat ovat samat kuin ylituotannossa.
 
-Ohjelmistokehityksessä välivarastointia ovat esim. liian tarkkaan tehty vaatimusmäärittely sellaisille ominaisuuksille, joita ei vielä hetkeen toteuteta, valmis koodi jota ei ole vielä testattu tai otettu käyttöön tai koodi, joka toteuttaa asiakkaan _ehkä_ joskus tulevaisuudessa haluamia toiminnallisuuksia.
+Ohjelmistokehityksessä välivarastointia ovat esim. liian tarkkaan tehty vaatimusmäärittely sellaisille ominaisuuksille, joita ei vielä hetkeen toteuteta, valmis koodi jota ei ole vielä testattu tai otettu käyttöön tai koodi, joka toteuttaa asiakkaan _ehkä_ joskus tulevaisuudessa haluamia toiminnallisuuksia. Tekoälyavusteisessa ohjelmistokehityksessä uudenlaista välivarastoa ovat pull requestit, joita koodausagentit tuottavat nopeammin kuin tiimi ehtii niitä katselmoida, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 
 #### Liikatyö (engl. over/extra processing)
 
 Kaikki ylimääräiset työvaiheet, mitkä eivät ole välttämättömiä riittävän laadukkaaseen lopputulokseen ovat myös hukkaa.
 
-Tällaisia ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti, jota kukaan ei lopulta tarvitse. Vastaavanlainen haitallinen asia voi olla vaatimus siitä että testien rivikattavuuden kattavuuden on pakko olla 100%, sillä tämä voi johtaa lähes hyödyttömien, pelkästään kattavuutta lisäävien testien tekemiseen.
+Tällaisia ovat esimerkiksi prosessin pakottamat työvaiheet, joilla ei kuitenkaan ole lopputuloksen kanssa merkitystä, esim. pakolliseksi määritelty suunnitteludokumentti, jota kukaan ei lopulta tarvitse. Vastaavanlainen haitallinen asia voi olla vaatimus siitä että testien rivikattavuuden on pakko olla 100%, sillä tämä voi johtaa lähes hyödyttömien, pelkästään kattavuutta lisäävien testien tekemiseen.
 
-Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim, ollaan tekemässä jonkin ominaisuuden hyödyllistä validoivaa MVP:tä ([ks. osa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
+Liian hyvällä laadulla tehty koodi voidaan myös tulkita joissain tapauksissa liikatyöksi. Jos esim. ollaan tekemässä jonkin ominaisuuden hyödyllisyyttä validoivaa MVP:tä ([ks. osa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)), kannattaa toteutus tehdä normaalia tuotantokoodia heikommalla laadulla, ja esim. automatisoitu testaus voidaan jättää tekemättä. MVP:tä toteutettaessa kannattaa siis useimmiten ottaa [teknistä velkaa](/osa4/#tekninen-velka), joka sitten saatetaan joutua maksamaan takaisin jos MVP:n toteuttama ominaisuus päätetään jättää järjestelmään.
 
 #### Tarpeeton materiaalin siirtely (engl. transportation)
 
@@ -128,11 +128,11 @@ Tuotteen tekemiseen tarvittavia raaka-aineita tai osittain valmista tuotetta ei 
 
 Ohjelmistokehityksen kontekstissa tämä tarkoittaa että kehitettävä ohjelmisto tulisi määritellä, suunnitella, toteuttaa, testata ja viedä tuotantoon yhden tiimin toimesta. Eli ns. "handoff", missä esimerkiksi toteutettu ohjelmisto annetaan kehittäjätiimistä erillisen tiimin (esim. QA-tiimi) testattavaksi ajatellaan hukkana.
 
-#### Työntekijöiden tarpeeton liikkuminen (engl. motion)
+#### Työntekijöiden tarpeeton liikkuminen (engl. motion)
 
 Tuotantovälineet ja materiaalit tulisi järjestää siten, että työntekijöiden ei tarvitse tehdä ylimääräisiä liikkeitä tai kulkea työpisteiden välillä tuotteen valmistamisen aikana.
 
-Ohjelmistokehityksessä tarpeettomaksi liikkumiseksi on ajateltu _task switching_ eli liian nopea vaihtelu eri työtehtävien välillä, esim. työskentely yhtä aikaa monessa projektissa.
+Ohjelmistokehityksessä tarpeettomaksi liikkumiseksi on ajateltu _task switching_ eli liian nopea vaihtelu eri työtehtävien välillä, esim. työskentely yhtä aikaa monessa projektissa.
 
 #### Turha odotus (engl. waiting)
 
@@ -162,25 +162,27 @@ Kolmas hukan tyyppi _muri_ tarkoittaa ylikuormitusta tai mahdottomia vaatimuksia
 
 ### Kaizen
 
-Jatkuvassa parantamisessa on siis tarkoitus optimoida toimintaa eliminoimalla asiakkaalle arvoa tuottamatonta hukkaa. Jatkuvasta parantamisesta käytetään usein sen japaninkielistä nimitystä _kaizen_, joka on kaikkia työntekijöitä koskeva kattava toimintafilosofia:
+Jatkuvassa parantamisessa on siis tarkoitus optimoida toimintaa eliminoimalla asiakkaalle arvoa tuottamatonta hukkaa. Jatkuvasta parantamisesta käytetään usein sen japaninkielistä nimitystä _kaizen_, joka on kaikkia työntekijöitä koskeva kattava toimintafilosofia:
 
 > As a mindset, it suggests "My work is to do my work and to improve my work" and "continuously improve for its own sake."
 
-Kaizen on myös konkreettinen tapa toimia:
+Kaizen on myös konkreettinen tapa toimia:
 
 - valitaan jokin tekniikka/työskentelytapa ja sitoudutaan sen suorittamiseen joksikin aikaa
 - kun toiminta on stabiloitunut, tarkastellaan valitun työskentelytavan toimivuutta ja optimoidaan sitä havaittujen epäkohtien suhteen ja luodaan näin uusi työnteon standarditapa
 - toistetaan tätä sykliä ikuisesti...
 
-Kaizeniin liittyvä syklinen parannusprosessiin liittyy usein tasaisin väliajoin pidettävät tilaisuudet, eli "kaizen eventit". Scrumin retrospektiivit ovat klassinen esimerkki kaizen eventeistä.
+Kaizenin sykliseen parannusprosessiin liittyvät usein tasaisin väliajoin pidettävät tilaisuudet, eli "kaizen eventit". Scrumin retrospektiivit ovat klassinen esimerkki kaizen eventeistä.
 
 #### Lean työkalu: value stream mapping
 
-Hukan etsimiseen ja kartoittamiseen käytetään usein nimellä [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) kulkevaa tekniikkaa. Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen.
+Hukan etsimiseen ja kartoittamiseen käytetään usein nimellä [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) kulkevaa tekniikkaa. Ideana on kuvata tuotteen kulku käytetyn prosessin työvaiheiden läpi ja visualisoida tuotteelle arvoa tuottavat työvaiheet suhteessa tuotteen koko valmistuksen elinkaareen.
 
 ![]({{ "/images/5-2.png" | relative_url }}){:height="400px" }
 
 Kuvassa on kuusi työvaihetta, joiden läpi tuote, esim. user story kulkee. Kussakin työvaiheessa kuluvan ajan voidaan ajatella kasvattavan työn arvoa, esim. vaihe _code and test_, vie 2 tuntia, mikä on välttämätöntä sen kannalta, että story ylipäätään saataisiin julkaistua. Kunkin työvaiheen välillä story on _välivarastossa_, odottamassa seuraavaa työvaihetta, ja välivarastointi taas on eräs hukan muoto. Value stream mappingin avulla onkin tarkoitus tuoda esille kaikki "välivarastot", turhat odotukset ja tarpeettomat työvaiheet, jotta olisi mahdollista miettiä miten niitä saataisiin minimoitua.
+
+Value stream mappingin ajatusta on laajennettu ohjelmistokehityksen jatkuvaksi seurannaksi, josta käytetään nimitystä _value stream management_. Tunnetuin esimerkki on Mik Kerstenin kirjassa [Project to Product](https://itrevolution.com/product/project-to-product/) (2018) esitetty [Flow Framework](https://flowframework.org/). Siinä työ jaetaan neljään tyyppiin (uudet ominaisuudet, virheet, riskit ja tekninen velka), ja niiden virtausta mitataan [osassa 2](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen) esiteltyjen flow-mittareiden kaltaisilla mittareilla. Erityisen kuvaava on _virtauksen tehokkuus_ (engl. flow efficiency): kuinka suuren osan läpimenoajasta työtä oikeasti tehdään. Usein se on vain murto-osa, ja loppuaika kuluu odottamiseen, eli juuri siihen hukkaan, jota value stream map pyrkii tekemään näkyväksi.
 
 #### Lean työkalu: perimmäisen syyn analyysi - five whys
 
@@ -188,10 +190,10 @@ Jos value stream mapping tai jokin muu menetelmä paljastaa tuotantoprosessista 
 
 Eräs root cause analysis -tekniikka on [five whys](https://en.wikipedia.org/wiki/Five_whys), minkä toimintaa on helpointa havainnollistaa esimerkillä.
 
-Edellisestä kuvassa olevasta _value stream mapista_ havaitaan, että koodin valmistumisesta (code and test) menee 1.5 viikkoa sen tuotantoon saamiseen (deploy).
+Edellisessä kuvassa olevasta _value stream mapista_ havaitaan, että koodin valmistumisesta (code and test) menee 1.5 viikkoa sen tuotantoon saamiseen (deploy).
 
-- **Miksi?** QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
-- **Miksi?** Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
+- **Miksi?** QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
+- **Miksi?** Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
 - **Miksi?** Ohjelmoijilla on kiire sprintin tavoitteena olevien user storyjen tekemisessä.
 - **Miksi?** Edellisten sprinttien aikana tehtyjen storyjen bugikorjaukset vievät yllättävän paljon aikaa.
 - **Miksi?** Laadunhallintaa ei ehditä koskaan tekemään kunnolla siinä sprintissä missä storyt toteutetaan.
@@ -201,13 +203,13 @@ Näin kysymällä toistuvasti (noin viisi kertaa) _miksi_ on mahdollista pääst
 
 Itseasiassa olisi ollut hyvä kysyä ainakin yksi _miksi_ lisää. Perimmäisen syyn kannalta oleellista on se, että minkä takia sprintteihin otetaan liikaa storyja. Johtuuko se kehitystiimistä itsestään vai tiimin ulkopuolisista voimista?
 
-Perimmäistä syytä etsitään prosessista eikä yksittäisistä ihmisistä. Jos kysely päättyy vastaukseen "koska joku teki virheen" tai "koska joku sairastui", kannattaa kysyä vielä kerran, miksi prosessi salli tilanteen. Oletetaan esimerkiksi, että tiimin jäsen sairastuu ja hänen vastuullaan ollut työ jää kokonaan tekemättä. Sairastumista ei voi estää, mutta prosessin olisi pitänyt ohjata kertomaan poissaolosta heti. Silloin tiimi olisi voinut priorisoida työt uudelleen, ja vaikka jotain olisi silti jäänyt tekemättä, se olisi ollut vähiten tärkeä asia. Samaa periaatetta noudatetaan ohjelmistoalalla ns. syyllistämättömissä jälkikatselmoinneissa (engl. [blameless postmortem](https://sre.google/sre-book/postmortem-culture/)), joissa tuotannon häiriöt käydään läpi syyllisiä etsimättä.
+Perimmäistä syytä etsitään prosessista eikä yksittäisistä ihmisistä. Jos kysely päättyy vastaukseen "koska joku teki virheen" tai "koska joku sairastui", kannattaa kysyä vielä kerran, miksi prosessi salli tilanteen. Oletetaan esimerkiksi, että tiimin jäsen sairastuu ja hänen vastuullaan ollut työ jää kokonaan tekemättä. Sairastumista ei voi estää, mutta prosessin olisi pitänyt ohjata kertomaan poissaolosta heti. Silloin tiimi olisi voinut priorisoida työt uudelleen, ja vaikka jotain olisi silti jäänyt tekemättä, se olisi ollut vähiten tärkeä asia. Samaa periaatetta noudatetaan ohjelmistoalalla ns. syyllistämättömissä [jälkianalyyseissä](/osa3/#canary-release) (engl. [blameless postmortem](https://sre.google/sre-book/postmortem-culture/)), joissa tuotannon häiriöt käydään läpi syyllisiä etsimättä.
 
 ### Leanin periaatteita: pull-systeemi
 
-Leanissa on siis tarkoituksena optimoida aikaa, joka kuluu tuotteen tilaamisesta sen asiakkaalle toimittamiseen. Arvo pyritään saamaan _virtaamaan_ (engl. flow) asiakkaalle ilman turhia viiveitä ja työvaiheita. Äsken esitelty value stream map siis visualisoi nimenomaan arvon virtausta.
+Leanissa on siis tarkoituksena optimoida aikaa, joka kuluu tuotteen tilaamisesta sen asiakkaalle toimittamiseen. Arvo pyritään saamaan _virtaamaan_ (engl. flow) asiakkaalle ilman turhia viiveitä ja työvaiheita. Äsken esitelty value stream map siis visualisoi nimenomaan arvon virtausta.
 
-Leanin mekanismi virtauksen optimointiin on _pull-systeemien_ (suomeksi imuohjaus) käyttö. Pull-systeemillä tarkoitetaan tuotannonohjaustapaa, jossa tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen niitä edellyttäessä. Tämän vastakohta on _push-systeemi_, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi.
+Leanin mekanismi virtauksen optimointiin on _pull-systeemien_ (suomeksi imuohjaus) käyttö. Pull-systeemillä tarkoitetaan tuotannonohjaustapaa, jossa tuotteita, tai tuotteiden tarvitsemia komponentteja tehdään ainoastaan asiakkaan tilauksen niitä edellyttäessä. Tämän vastakohta on _push-systeemi_, missä tuotteita ja komponentteja tehdään etukäteen varastoon ja toivotaan sitten että tuotteet ja komponentit menevät kaupaksi.
 
 Esimerkiksi pizzeriat toimivat pull-periaatteen mukaan, pizza valmistetaan vasta kun asiakas tilaa sen. Unicafe taas on push-systeemi, lounaita tehdään varastoon ja toivotaan että ne menevät kaupaksi asiakkaille.
 
@@ -215,30 +217,30 @@ Leanin taustaa käsitelleessä [luvussa](/osa5#taustaa) puhuttiin Just in time (
 
 #### Kanban
 
-Pull-systeemi toteutetaan usein [kanbanin](https://fi.wikipedia.org/wiki/Kanban) avulla. Japaninkielinen sana kanban tarkoittaa signaalikorttia, englanniksi "card you can see". Kanban toteuttaa _visuaalisen ohjauksen_, jonka avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimia.
+Pull-systeemi toteutetaan usein [kanbanin](https://fi.wikipedia.org/wiki/Kanban) avulla. Japaninkielinen sana kanban tarkoittaa signaalikorttia, englanniksi "card you can see". Kanban toteuttaa _visuaalisen ohjauksen_, jonka avulla työntekijöiden on helppo tietää miten seuraavaksi tulee toimia.
 
 Kun asiakas tilaa tuotteen, viedään tilausta vastaava kanban-kortti tehtaalle.
-Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti. Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella. Kun komponentti on valmis, viedään se tilaajalle. Samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten.
+Jos tuotteen valmistaminen edellyttää esim. viittä eri komponenttia, "tilataan" komponentit niitä valmistavilta työpisteiltä viemällä niihin kunkin komponentin tilausta vastaava kanban-kortti. Jos komponenttien valmistus edellyttää jotain muita komponentteja, tilataan nekin samalla periaatteella. Kun komponentti on valmis, viedään se tilaajalle. Samalla kanban-kortti palautetaan tulevien tilauksien tekemistä varten.
 
-Kanban-kortteja on käytössä vain rajallinen määrä. Tällä kontrolloidaan sitä, että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen. Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sen sijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon.
+Kanban-kortteja on käytössä vain rajallinen määrä. Tällä kontrolloidaan sitä, että liikaa työtä ei pääse kasautumaan mihinkään tuotannon vaiheeseen. Näin kanbanin avulla "vedetään" (pull) tarvittavat komponentit, sen sijaan että komponentteja olisi etukäteen valmistettu varalta suuret määrät varastoon.
 
 Kuten on jo mainittu välivarastoon tehdyt komponentit on eräs leanin hukan muoto. Varastoidut komponentit sitovat pääomaa, ja jos tilauksia ei tulisi tarpeeksi, niitä ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa: jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret määrät.
 
-Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan läpimenoaikaa optimoitua.
+Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan läpimenoaikaa optimoitua.
 
 #### Kanban ohjelmistotuotannossa
 
-Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, [osassa 2](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen) sivuttiin jo asiaa. Ohjelmistotuotannon kanban on periaatteiltaan hieman erilainen kuin perinteisessä tuotannossa käytetty kanban.
+Kanban on otettu laajalti käyttöön myös ketterässä ohjelmistokehityksessä, [osassa 2](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen) sivuttiin jo asiaa. Ohjelmistotuotannon kanban on periaatteiltaan hieman erilainen kuin perinteisessä tuotannossa käytetty kanban.
 
-Toteutettavaa toiminnallisuutta, esim. user storyä tai jotain sen teknistä taskia vastaa kanban-kortti, joka kulkee eri työvaiheiden kautta.
+Toteutettavaa toiminnallisuutta, esim. user storyä tai jotain sen teknistä taskia vastaa kanban-kortti, joka kulkee eri työvaiheiden kautta.
 
-Virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamalla tietyissä työvaiheissa kesken olevan työn määrää asettamalla _work in progress_ (WIP) -rajoitteita.
+Virtaus, eli yksittäisen storyn nopea valmistuminen saadaan aikaan rajoittamalla tietyissä työvaiheissa kesken olevan työn määrää asettamalla _work in progress_ (WIP) -rajoitteita.
 
 Allaolevassa kuvassa oleva kanban-taulu on jaettu kolmeen työvaiheeseen _analysis, develop, test_, joille kullekin on asetettu WIP-rajoite. Työvaiheiden väliin on myös sijoitettu välivarastoja, _dev ready_ ja _build ready_, joilla myös on WIP-rajoitteet.
 
 ![]({{ "/images/5-3.png" | relative_url }}){:height="400px" }
 
-Kuvan kanban-taulu sallii maksimissaan, että sille on sijoitettu kaksikymmentä user storya. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasitettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_.
+Kuvan kanban-taulu sallii maksimissaan, että sille on sijoitettu kaksikymmentä user storya. Kun story on kulkenut kaikkien työvaiheiden läpi, vapautuu kanban-taululle taas uutta kapasiteettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_.
 
 Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri, maksimissaan 15 storya. Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanban-taululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _läpimenoaikaa_, eli sitä aikaa, joka kuluu kun user story "tilataan", siihen kun sen määrittelemä ominaisuus on valmis.
 
@@ -246,7 +248,7 @@ Leanin ideaalin mukaista olisi toteuttaa ns. _one piece flow_, eli toimia siten 
 
 ### Leanin periaatteita
 
-Jotta pull-järjestelmä toimisi hyvin, eli asiakkaan arvo virtaa tasaisesti, on edullista, jos eri työvaiheiden kestoon ei liity liikaa varianssia. Tähän liittyy leanin periaate _level the work_. Yksi kolmesta leanin hukan muodoista olikin _mura_ eli epäsäännöllisyys tai epäyhdenmukaisuus. Työvaiheiden keston tai ohjelmistokehityksen kontekstissa toteutettavien user storyjen koon suuri varianssi on eräs tämän ilmentymistä.
+Jotta pull-järjestelmä toimisi hyvin, eli asiakkaan arvo virtaa tasaisesti, on edullista, jos eri työvaiheiden kestoon ei liity liikaa varianssia. Tähän liittyy leanin periaate _level the work_. Yksi kolmesta leanin hukan muodoista olikin _mura_ eli epäsäännöllisyys tai epäyhdenmukaisuus. Työvaiheiden keston tai ohjelmistokehityksen kontekstissa toteutettavien user storyjen koon suuri varianssi on eräs tämän ilmentymistä.
 
 Eräs varianssin aiheuttaja ovat viat. Leanin periaatteita ovatkin _Stop and fix_ ja _build quality in_.
 
@@ -254,24 +256,24 @@ _Stop and fix_ viittaa Toyotan vanhaan periaatteeseen, missä kuka tahansa on ve
 
 Tuotantolinjan pysäyttämisen yhteydessä _vian perimmäinen syy_ (engl. root cause) tulee selvittää mahdollisimman nopeasti (esimerkiksi äsken läpikäydyllä five whys -menetelmällä) ja pyrkiä eliminoimaan vian mahdollisuus tulevaisuudessa eli tuotannossa tulee olla laatu sisäänrakennettua _build quality in_.
 
-Ohjelmistotuotannon käytänteistä automatisoitu testaus ja jatkuvan integraatio voidaan nähdä suoraan _stop and fix_ - ja _build quality in_ -periaatteiden ilmentymänä.
+Ohjelmistotuotannon käytänteistä automatisoitu testaus ja jatkuva integraatio voidaan nähdä suoraan _stop and fix_ - ja _build quality in_ -periaatteiden ilmentymänä.
 
-Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot käynnissä maksimikapasiteetilla ja työntekijät koko ajan työllistettyinä. Yksittäisten työntekijöiden palkkauskin perustuu usein suoritusbonuksiin. Näin ajatellaan, että tuotteiden yksikköhinta saadaan mahdollisimman alhaiseksi ja yrityksen tuottavuus maksimoituu.
+Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot käynnissä maksimikapasiteetilla ja työntekijät koko ajan työllistettyinä. Yksittäisten työntekijöiden palkkauskin perustuu usein suoritusbonuksiin. Näin ajatellaan, että tuotteiden yksikköhinta saadaan mahdollisimman alhaiseksi ja yrityksen tuottavuus maksimoituu.
 
-Yksittäisten työntekijöiden ja koneiden tehokkuuden tarkastelun sijaan lean keskittyy arvon virtauksen optimoinnin avulla järjestelmien kokonaisvaltaiseen kehittämiseen ja olettaa, että se on pidemmällä tähtäimellä yritykselle kannattavampaa. Tämän kiteyttää periaate _long term philosophy_.
+Yksittäisten työntekijöiden ja koneiden tehokkuuden tarkastelun sijaan lean keskittyy arvon virtauksen optimoinnin avulla järjestelmien kokonaisvaltaiseen kehittämiseen ja olettaa, että se on pidemmällä tähtäimellä yritykselle kannattavampaa. Tämän kiteyttää periaate _long term philosophy_.
 
-Esimerkiksi yksittäisen koneen suuri käyttöaste tai henkilökohtaisen suorituksen palkitseminen voi olla _lokaalia optimointia_, joka voi koko yrityksen kannalta olla jopa haitallista. Näin saatetaan esimerkiksi valmistaa paljon komponentteja, joita ei lopulta koskaan tarvita. Yksittäisten tuotantolaitteiden, henkilöiden tai tiimien suorituskyvyn sijaan keskittymällä arvon virtaamiseen tilauksesta asiakkaalle pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat.
+Esimerkiksi yksittäisen koneen suuri käyttöaste tai henkilökohtaisen suorituksen palkitseminen voi olla _lokaalia optimointia_, joka voi koko yrityksen kannalta olla jopa haitallista. Näin saatetaan esimerkiksi valmistaa paljon komponentteja, joita ei lopulta koskaan tarvita. Yksittäisten tuotantolaitteiden, henkilöiden tai tiimien suorituskyvyn sijaan keskittymällä arvon virtaamiseen tilauksesta asiakkaalle pyritään toiminnan parannuksessa ottamaan huomioon koko tuotantosysteemiä koskevat pullonkaulat.
 
-Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on turhan paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista. Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä.
+Surullisen kuuluisia esimerkkejä lokaalista optimoinnista on turhan paljon, mm. yliopistojen eri laitosten säästöt tilakustannuksista. Yliopiston rakennuksista maksama vuokra on edelleen sama vaikka jokin laitos "säästää" jättämällä tiloja käyttämättä.
 
-Pull-systeemeissä ei ole tapana tehdä tuotantoon liittyviä päätöksiä (esim. miten paljon tuotetta ja sen tarvitsemia komponentteja tulee valmistaa) liian aikaisessa vaiheessa, vaan vasta tarpeen vaatiessa. Englanniksi tätä myöhäistä päätöksen tekemistä luonnehditaan _commit at the last responsible moment_, eli päätöksiä viivytetään, mutta ei kuitenkaan niin kauaa että viivyttely aiheuttaa ongelmia. Tämä kiteytyy periaatteessa _decide as late as possible_.
+Pull-systeemeissä ei ole tapana tehdä tuotantoon liittyviä päätöksiä (esim. miten paljon tuotetta ja sen tarvitsemia komponentteja tulee valmistaa) liian aikaisessa vaiheessa, vaan vasta tarpeen vaatiessa. Englanniksi tätä myöhäistä päätöksen tekemistä luonnehditaan _commit at the last responsible moment_, eli päätöksiä viivytetään, mutta ei kuitenkaan niin kauaa että viivyttely aiheuttaa ongelmia. Tämä kiteytyy periaatteessa _decide as late as possible_.
 
-Kun päätös tehdään myöhään, on tästä se merkittävä etu, että päätöksen teon tueksi on käytettävissä maksimaalinen määrä tietoa, toisin kuin liian aikaisin etukäteen tehtävissä päätöksissä, jotka ovat enemmän spekulatiivisia.
+Kun päätös tehdään myöhään, on tästä se merkittävä etu, että päätöksen teon tueksi on käytettävissä maksimaalinen määrä tietoa, toisin kuin liian aikaisin etukäteen tehtävissä päätöksissä, jotka ovat enemmän spekulatiivisia.
 
-Kun päätökset on tehty, toimitaan pull-systeemin hengessä mahdollisimman nopeasti, eli
+Kun päätökset on tehty, toimitaan pull-systeemin hengessä mahdollisimman nopeasti, eli
 _implement rapidly_ tai _deliver as fast as possible_, näin arvo saadaan virtaamaan asiakkaalle ilman turhia viiveitä.
 
-Mitä nopeammin arvo saadaan virtaamaan, sitä enemmän päätöksiä on mahdollista viivyttää ja päätökset voidaan tehdä entistä paremman tiedon valossa.
+Mitä nopeammin arvo saadaan virtaamaan, sitä enemmän päätöksiä on mahdollista viivyttää ja päätökset voidaan tehdä entistä paremman tiedon valossa.
 
 ### Arvon virtaaminen ketterässä ohjelmistotuotannossa
 
@@ -281,27 +283,27 @@ Alhaisen prioriteetin user storyja ei ole määritelty kovin tarkkaan. Kun produ
 
 Scrum voidaankin nähdä leanin mukaisena _pull-systeeminä_, missä jokaiseen sprinttiin otetaan kerrallaan asiakkaan edustajan viime hetkellä (eli viimeistään sprint planningissa) määrittelemät tilaukset, jotka toteutetaan mahdollisimman nopeasti, eli sprintin aikana. Arvo, eli toimivaksi asti toteutetut uudet toiminnallisuudet, virtaa asiakkaalle sprinttien määrittelemässä rytmissä.
 
-Ketterässä ohjelmistotuotannossa on viime aikoina ruvettu tehostamaan arvon virtausta usein eri menetelmin. Alun perin ja osin vieläkin Scrumin pyrkimys on viedä uusia ominaisuuksia tuotantoon sprinteittäin, eli muutaman viikon välein. Viime aikojen trendinä on ollut tihentää sykliä, [jatkuva toimittaminen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) eli _continuous deployment_ voi tarkoittaa, että jopa jokainen commit johtaa ohjelman uuden version julkaisuun, eli ohjelmistosta voi ilmestyä uutta arvoa tuottavia ominaisuuksia jopa kymmeniä kertoja päivässä.
+Ketterässä ohjelmistotuotannossa arvon virtausta on tehostettu monin eri menetelmin. Alun perin ja osin vieläkin Scrumin pyrkimys on viedä uusia ominaisuuksia tuotantoon sprinteittäin, eli muutaman viikon välein. 2010-luvulta alkaen sykliä on tihennetty: [jatkuva toimittaminen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) eli _continuous deployment_ voi tarkoittaa, että jopa jokainen commit johtaa ohjelman uuden version julkaisuun, eli ohjelmistosta voi ilmestyä uutta arvoa tuottavia ominaisuuksia jopa kymmeniä kertoja päivässä.
 
-Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs leanin hukka) siten, että sprinttiin otetaan vaan tiimin velositeetin verran user storyja. Kaikissa konteksteissa, esimerkiksi jatkuvaa toimittamista sovellettaessa aikarajoitettu sprintti ei ole mielekäs.
+Scrum rajoittaa kesken olevan työn määrää (joka on siis eräs leanin hukka) siten, että sprinttiin otetaan vain tiimin velositeetin verran user storyja. Kaikissa konteksteissa, esimerkiksi jatkuvaa toimittamista sovellettaessa aikarajoitettu sprintti ei ole mielekäs.
 
-Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyja toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](/osa2/#yht%C3%A4-aikaa-teht%C3%A4v%C3%A4n-ty%C3%B6n-rajoittaminen) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
+Paikoin onkin siirrytty "puhtaampaan" pull-systeemiin, missä user storyja toteutetaan yksi (tai joku hieman suurempi määrä) kerrallaan niin nopeasti kuin mahdollista. Kun story valmistuu eli tuotantokapasiteettia vapautuu, valitsee product owner seuraavaksi tärkeimmän storyn, joka sitten määritellään, suunnitellaan ja toteutetaan välittömästi alusta loppuun. Virtaus varmistetaan sillä, että yhtä aikaa työn alla ei ole kuin yksi tai korkeintaan muutama user story. [Osassa 2](/osa2/#yht%C3%A4-aikaa-teht%C3%A4v%C3%A4n-ty%C3%B6n-rajoittaminen) mainittu Scrumban-menetelmä toimii pitkälti juuri näin.
 
 ### Kasvattaminen leaniin ja johtajuuden periaatteet
 
-Toyotalla useimmat uudet työntekijät koulutetaan huolellisesti perehtymään käytännön tasolla lean-ajattelun periaatteisiin. Useiden kuukausien koulutuksen aikana uudet työntekijät työskentelevät monissa eri työtehtävissä ja heidät opetetaan tunnistamaan lean-hukka sen eri muodoissa. Tarkoituksena on sisäistää jatkuvan parantamisen eli kaizenin mentaliteetti.
+Toyotalla useimmat uudet työntekijät koulutetaan huolellisesti perehtymään käytännön tasolla lean-ajattelun periaatteisiin. Useiden kuukausien koulutuksen aikana uudet työntekijät työskentelevät monissa eri työtehtävissä ja heidät opetetaan tunnistamaan lean-hukka sen eri muodoissa. Tarkoituksena on sisäistää jatkuvan parantamisen eli kaizenin mentaliteetti.
 
-Toyotan johtamiskulttuurin keskiössä ovat lean-ajattelun opettajina, mentoreina ja työn valmentajina toimivat johtajat/managerit. Periaate _grow leaders_ kuvaa Toyotan tapaa kasvattaa lean-toimintafilosofian sisäistäviä managereja.
+Toyotan johtamiskulttuurin keskiössä ovat lean-ajattelun opettajina, mentoreina ja työn valmentajina toimivat johtajat/managerit. Periaate _grow leaders_ kuvaa Toyotan tapaa kasvattaa lean-toimintafilosofian sisäistäviä managereja.
 
-Periaate _my manager can do my job better than me_ kuvaa sitä, että managerit ovat firman sisällä eri työtehtävien kautta uusiin vastuisiin kasvaneita ihmisiä, jotka hallitsevat myös työntekijöiden vastuulla olevan _hands on_ -työn. Managerit ovat ensisijaisesti toiminnan etulinjassa toimivia lean-käytänteiden opettajia ja mentoreita.
+Periaate _my manager can do my job better than me_ kuvaa sitä, että managerit ovat firman sisällä eri työtehtävien kautta uusiin vastuisiin kasvaneita ihmisiä, jotka hallitsevat myös työntekijöiden vastuulla olevan _hands on_ -työn. Managerit ovat ensisijaisesti toiminnan etulinjassa toimivia lean-käytänteiden opettajia ja mentoreita.
 
-Eräs tärkeä leanin johtamisen periaate on _go see_ (japaniksi genchi genbutsu): työntekijöiden, erityisesti managerien tulee "nähdä asiat omin silmin" eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja. Tämä liittyy siihen ideaaliin, että managerien oletetaan _johtavan etulinjassa_ (japaniksi gemba) eli siellä missä työ tosiasiallisesti tehdään.
+Eräs tärkeä leanin johtamisen periaate on _go see_ (japaniksi genchi genbutsu): työntekijöiden, erityisesti managerien tulee "nähdä asiat omin silmin" eikä pelkästään istua työpöydän ääressä lukemassa muiden raportoimia faktoja. Tämä liittyy siihen ideaaliin, että managerien oletetaan _johtavan etulinjassa_ (japaniksi gemba) eli siellä missä työ tosiasiallisesti tehdään.
 
-Toyota production systemsin kehittäjän T. Ohnon sanoin:
+Toyota production systemin kehittäjän T. Ohnon sanoin:
 
 > You can’t come up with useful kaizen sitting at your desk... We have too many people these days who don’t understand the workplace. They think a lot, but they don’t see. I urge you to make a special effort to see what’s happening in the workplace. That’s where the facts are.
 
-Scrum masterin rooli on osin leanin johtajuuden ideaalien mukainen. Tosin useimpiin scrum mastereihin ei päde periaate _my manager can do my job better than me_. Monissa kehitystiimeissä teknistä puolta johtajuudesta edustavat esim. lead developer tai senior developer -nimikkeellä olevat kokeneemmat mentorin roolissa toimivat työntekijät.
+Scrum masterin rooli on osin leanin johtajuuden ideaalien mukainen. Tosin useimpiin scrum mastereihin ei päde periaate _my manager can do my job better than me_. Monissa kehitystiimeissä teknistä puolta johtajuudesta edustavat esim. lead developer tai senior developer -nimikkeellä olevat kokeneemmat mentorin roolissa toimivat työntekijät.
 
 ### Lean-tuotekehityksen periaatteita
 
@@ -314,65 +316,62 @@ Leanissa tuotekehityksessä fokukseen nouseekin toiminnan tehostamisen lisäksi 
 Eräs leanin tuotekehityksen mekanismi oppimisen nopeuttamiseen on _set based concurrent
 development_. Jos tarkoituksena on kehittää esim. uusi moottorin jäähdytysjärjestelmä, aletaan yhtä aikaa kehittämään useita vaihtoehtoisia ratkaisuja eri tiimien toimesta. Tasaisin väliajoin kehitettäviä ratkaisuja vertaillaan, ja osa niistä karsitaan. Lopulta parhaaksi osoittautuva ratkaisu valitaan käytettäväksi lopputuotteessa.
 
-Set based development -menetelmä on radikaalisti erilainen kuin usein sovellettava _iteratiivinen_ kehitysmenetelmä, missä lähtökohtana on yksi askeleittain paranneltava ratkaisu.
+Set based development -menetelmä on radikaalisti erilainen kuin usein sovellettava _iteratiivinen_ kehitysmenetelmä, missä lähtökohtana on yksi askeleittain paranneltava ratkaisu.
 
-Ohjelmistokehityksessä set based development -menetelmää sovelletaan melko harvoin, lähinnä käyttöliittymäsuunnittelussa esittelemällä asiakkaalle aluksi useita rinnakkaisia ehdotelmia mahdollisesta käyttöliittymäratkaisusta.
+Ohjelmistokehityksessä set based development -menetelmää sovelletaan melko harvoin, lähinnä käyttöliittymäsuunnittelussa esittelemällä asiakkaalle aluksi useita rinnakkaisia ehdotelmia mahdollisesta käyttöliittymäratkaisusta.
 
-Toyotalla tuotekehitystä johtaa _chief technical engineer_, joka on vastuussa sekä tuotteiden teknisestä että liiketoiminnallisesta menestyksestä. Kyseessä on tyypillinen leanin etulinjassa toimiva johtaja, joka tuntee tarkasti käytännön työn, mutta on myös erittäin lähellä asiakasta. Rooli poikkeaa Scrumin _product ownerista_ teknisen taustansa takia.
+Toyotalla tuotekehitystä johtaa _chief engineer_ (japaniksi _shusa_), joka on vastuussa sekä tuotteiden teknisestä että liiketoiminnallisesta menestyksestä. Kyseessä on tyypillinen leanin etulinjassa toimiva johtaja, joka tuntee tarkasti käytännön työn, mutta on myös erittäin lähellä asiakasta. Rooli poikkeaa Scrumin _product ownerista_ teknisen taustansa takia.
 
 ### Leanin soveltaminen eri aloille
 
 90-luvulta alkaen lean on herättänyt maailmalla suurta kiinnostusta ja sitä on pyritty soveltamaan lähes kaikilla aloilla ohjelmistokehitys mukaan lukien. Lean-periaatteet ovat olleet hyvin esim. Scrumin kehittäjien tiedossa ja vaikka Scrumin alkuperäiset lähteet eivät käytäkään leanin terminologiaa, on Scrumissa monin paikoin piirteitä leanista.
 
-Viime aikainen ketterien menetelmien kehitys on vienyt tiettyjä ideoita, esimerkiksi user storyjen läpimenoaikojen minimointia huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle. Nykyään puhutaankin paljon leanista ohjelmistokehityksestä.
+Ketterien menetelmien myöhempi kehitys on vienyt tiettyjä ideoita, esimerkiksi user storyjen läpimenoaikojen minimointia, huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle. Puhutaankin paljon leanista ohjelmistokehityksestä.
 
 Sekä ketterissä menetelmissä, että leanissa on sama fundamentaali periaate: _toimintojen jatkuva kehittäminen_. Rajanveto leanin ja ketterän välillä ei olekaan ollenkaan selvä ja se on osin täysin keinotekoista. Esimerkiksi Scrumin kehittäjät eivät ole missään nimessä tarkoittaneet Scrumia staattiseksi rakennelmaksi, jota noudatetaan kirjaimellisesti tästä ikuisuuteen, sellainen toiminta ei olisi ketteryyttä.
-Ketteryyttä on _läpinäkyvyyden_ (engl. transparency) mahdollistava toimintojen jatkuvaan parantamiseen keskittyvä _inspect-and-adapt_-sykli. Käytännössä tämä on täsmälleen sama idea kuin leanin _kaizen_.
+Ketteryyttä on _läpinäkyvyyden_ (engl. transparency) mahdollistava toimintojen jatkuvaan parantamiseen keskittyvä _inspect-and-adapt_-sykli. Käytännössä tämä on täsmälleen sama idea kuin leanin _kaizen_.
 
-Leanin soveltamisessa on kohdattu myös paljon ongelmia. Lean on ajattelumalli, joka on kehitetty Toyotan tarpeisiin, malli on jalostunut ja muuttunut vuosikymmenten kuluessa.
+Leanin soveltamisessa on kohdattu myös paljon ongelmia. Lean on ajattelumalli, joka on kehitetty Toyotan tarpeisiin, malli on jalostunut ja muuttunut vuosikymmenten kuluessa.
 Onkin osin epäselvää miten Toyotan käytänteet siirretään eri aloille.
 
-Kuten ketterä, myös lean ei ole joukko työkaluja, vaan jatkuva toimintatapa, Toyotan CEO:n [Akio Toyodan](https://en.wikipedia.org/wiki/Akio_Toyoda) sanoin
+Leanin hyödyistä ohjelmistokehityksessä on myös tutkimusnäyttöä. Osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) esitelty DORA-tutkimus havaitsi, että lean-johtamisen käytänteet (esim. keskeneräisen työn rajoittaminen ja työn virtauksen näkyväksi tekeminen) ja lean-tuotekehityksen käytänteet (esim. työskentely pienissä erissä ja asiakaspalautteen hyödyntäminen) ennustavat parempaa ohjelmistotoimituksen suorituskykyä, parempaa organisaatiokulttuuria ja vähäisempää loppuunpalamista.
 
-- _The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, "Why are we doing this?"_
-- _In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever._
+Kuten ketterä, myös lean ei ole joukko työkaluja, vaan jatkuva toimintatapa. Larmanin ja Vodden sanoin:
+
+> _In Toyota and in lean thinking, the idea is to repeat cycles of improvement experiments forever._
 
 ## Laajan skaalan ketterä ohjelmistokehitys
 
-Ketterät ohjelmistotuotantomenetelmät ovat alunperin tarkoitettu pienten tiimien hallintaan. Esimerkiksi Scrum mainitsee kehitystiimin koostuvan 3-9:stä henkilöstä. Entä jos on kyseessä tuote, joka edellyttää suurempaa määrää kehittäjiä?
+Ketterät ohjelmistotuotantomenetelmät on alun perin tarkoitettu pienten tiimien hallintaan. Esimerkiksi Scrum-tiimin koko on Scrum Guiden mukaan tyypillisesti korkeintaan kymmenen henkilöä. Entä jos on kyseessä tuote, joka edellyttää suurempaa määrää kehittäjiä?
 
-Perusperiaatteena on edelleen pitää tiimit pieninä, mutta kasvattaa tuotantokapasiteettia käyttämällä useampia tiimejä. Tämä taas edellyttää, että tiimien välistä työtä on koordinoitava jollain tavalla.
+Perusperiaatteena on edelleen pitää tiimit pieninä, mutta kasvattaa tuotantokapasiteettia käyttämällä useampia tiimejä. Tämä taas edellyttää, että tiimien välistä työtä on koordinoitava jollain tavalla.
 
 ### Scrum of Scrums
 
-Jo kauan käytetty tapa Scrumin skaalaamiseen on niin sanottu _Scrum of Scrums_, missä ideana on muodostaa koordinoiva tiimi, johon kuuluu yksi tai tarvittaessa useampikin jäsen jokaisesta Scrum-tiimistä. Perinteisin tapa lienee koostaa koordinointitiimi Scrum mastereista. Joissain tilanteissa parempi henkilö koordinointiin voi kuitenkin olla ns. lead developer, eli Scrum-tiimin kokeneempi sovelluskehittäjä. Scrum of Scrums -tiimi voi tavata joka päivä tai jos se ei ole tarpeen niin esimerkiksi viikoittain.
+Jo kauan käytetty tapa Scrumin skaalaamiseen on niin sanottu _Scrum of Scrums_, jossa ideana on muodostaa koordinoiva tiimi, johon kuuluu yksi tai tarvittaessa useampikin jäsen jokaisesta Scrum-tiimistä, esimerkiksi scrum master tai tiimin kokenut sovelluskehittäjä. Scrum of Scrums -tiimi voi tavata päivittäin tai harvemmin, esimerkiksi viikoittain.
 
-Scrum of Scrums -periaate on jo hyvin vanha. Artikkelissa [Agile Can Scale: Inventing and Reinventing SCRUM in Five Companies](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) toinen Scrumin kehittäjistä Jeff Sutherland kertoo käyttäneensä Scrum of Scrumia jo vuonna 1996.
-
-Sutherland sovelsi periaatetta firmassa, missä oli satoja sovelluskehittäjiä ja kymmeniä Scrum-tiimejä, joiden vastuulla oli useita eri tuotteita.
-
-Jokaisen tuotteen tiimejä koordinoi oma, kerran viikossa kokoontuva Scrum of Scrums -tiimi. Koko firman tuotteiden joukkoa hallinnoi "management Scrum" eli Scrum of Scrum of Scrums -tiimi, joka kokoontui kuukausittain. Tämä ylimmän tason management Scrum-tiimi koostui yrityksen johdosta, tuotepäälliköistä ja johtavista ohjelmistoarkkitehdeistä.
-
-Sutherlandin kuvaus ei ole kovin seikkaperäinen, ja se ei anna viitteitä miten esimerkiksi backlogien suhteen tulisi toimia laajemman skaalan Scrumissa.
+Periaate on jo hyvin vanha: toinen Scrumin kehittäjistä, Jeff Sutherland, [kertoo](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) käyttäneensä sitä jo vuonna 1996 yrityksessä, jossa oli kymmeniä Scrum-tiimejä. Tuotekohtaisia Scrum of Scrums -tiimejä koordinoi vielä kuukausittain kokoontuva yrityksen johdon "management Scrum". Kuvaus ei kuitenkaan kerro esimerkiksi sitä, miten backlogien suhteen tulisi toimia laajemman skaalan Scrumissa. Tähän vastaavat seuraavaksi esiteltävät laajan skaalan menetelmät.
 
 ### Laajan skaalan ketterät menetelmät
 
-Viimeisen kymmenen vuoden aikana ketterän skaalaamiseen on alettu kiinnittämään enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä. Näistä eniten huomiota saaneet ovat Scaled Agile Framework eli
-[SAFe](http://www.scaledagileframework.com), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disciplined Agile eli [DA](http://www.disciplinedagiledelivery.com) sekä [Scrum@scale](https://www.scrumatscale.com/).
+2010-luvulta alkaen ketterän skaalaamiseen on alettu kiinnittää enemmän huomiota ja on esitelty useita laajan mittakaavan ketteriä menetelmiä. Näistä eniten huomiota saaneet ovat Scaled Agile Framework eli
+[SAFe](https://framework.scaledagile.com/), Large Scale Scrum eli [LeSS](https://less.works) ja jossain määrin myös Disciplined Agile eli [DA](https://www.pmi.org/disciplined-agile) sekä [Scrum@scale](https://www.scrumatscale.com/).
 
-Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua. Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFe:a ja LeSS:iä.
+Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua. Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFe:a ja LeSS:iä.
+
+Laajan skaalan menetelmiä vertaillut systemaattinen [kirjallisuuskatsaus](https://doi.org/10.1109/TSE.2021.3069039) havaitsi, että tutkimus on keskittynyt kaupallisten menetelmien käytänteisiin niiden taustaperiaatteiden kustannuksella. Katsaus vertaili valmiiden kehysten lisäksi myös organisaatioiden, kuten Nokian ja Ericssonin, itse räätälöimiä menetelmiä.
 
 ### SAFe eli Scaled Agile Framework
 
-Scaled Agile Framework eli SAFe on tämän hetken suosituin laajan mittakaavan ketterä menetelmä. Vuosittaisten [State of Agile](https://stateofagile.com/) -kyselytutkimuksien vastaajista 30-40% laajan mittakaavan ketterää kehitystä tekevistä organisaatiota mainitsee hyödyntävänsä SAFe:a.
+Scaled Agile Framework eli SAFe on suosituin laajan mittakaavan ketterä menetelmä. Vuosittaisissa [State of Agile](https://stateofagile.com/) -kyselytutkimuksissa SAFe on ollut selvästi yleisimmin mainittu skaalauskehys, joskin sen osuus on viime vuosina laskenut ja yhä useampi organisaatio kertoo, ettei käytä mitään valmista skaalauskehystä.
 
-SAFe:n pääasiallinen kehittäjä on Dean Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011. Tällä hetkellä on menossa versio 6.0.
+SAFe:n pääasiallinen kehittäjä on Dean Leffingwell, joka toimi Nokia Mobile Phonesissa (NMP) konsulttina 2000-luvulla. SAFe on syntynyt pitkälti Nokialla tehdyn työn pohjalta. Nokialla oli käytössä eräänlainen SAFe:n esiversio. SAFe:n virallinen ensimmäinen versio julkaistiin 2011. Tällä hetkellä on menossa versio 6.0.
 
 Kärjistetysti sanoen SAFe yhdistää kaikki viimeisen 20 vuoden aikana kehitetyt ketterän ja leanin ohjelmistokehityksen parhaat käytänteet, sekä joukon yrityksien tuotteiden hallinnointiin suunnattuja käytänteitä.
 
-SAFe tarjoaa suuren määrän periaatteita (engl. principles), henkilö- ja tiimirooleja sekä käsitteitä. SAFe kutsuu itseään menetelmäkehykseksi (engl. framework) eli tarkoitus on, että yritykset räätälöivät itselleen sopivanlaisen prosessin käyttäen SAFe:n tarjoamia työkaluja.
+SAFe tarjoaa suuren määrän periaatteita (engl. principles), henkilö- ja tiimirooleja sekä käsitteitä. SAFe kutsuu itseään menetelmäkehykseksi (engl. framework) eli tarkoitus on, että yritykset räätälöivät itselleen sopivanlaisen prosessin käyttäen SAFe:n tarjoamia työkaluja.
 
-SAFe tarjoaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota. Näistä pienin _Essential SAFe_ on tarkoitettu pienemmille yrityksille ja SAFe:n soveltamisen alkuvaiheeseen. Konfiguraatioista suurin _Full SAFe_ taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön. Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
+SAFe tarjoaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota. Näistä pienin _Essential SAFe_ on tarkoitettu pienemmille yrityksille ja SAFe:n soveltamisen alkuvaiheeseen. Konfiguraatioista suurin _Full SAFe_ taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön. Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
 
 ![]({{ "/images/5-4.png" | relative_url }}){:height="500px" }
 
@@ -380,21 +379,21 @@ Sovelluskehityksen ytimessä (löydätkö sen kuvasta?) on SAFe:n hieman modifio
 
 Tiimien koordinointia hallitaan ylhäältä päin (engl. top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen _toimitusjuna_ (engl. agile release train, ART) alle. Release trainin Scrum-tiimit toimivat synkronissa toistensa kanssa tuottaen yhdessä isompia toiminnallisia kokonaisuuksia useammasta sprintistä koostuvan _planning interval_ -jakson (PI) aikana. SAFe:n aiemmissa versioissa jaksosta käytettiin nimeä _program increment_.
 
-Planning intervaleja ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe tarjoaa tähänkin paljon tukea käsitteistön ja määrittämiensä roolien kautta.
+Planning intervaleja ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe tarjoaa tähänkin paljon tukea käsitteistön ja määrittämiensä roolien kautta.
 
-SAFe on dokumentoitu todella tarkasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFe:n käyttöönottoa ja noudattamista. Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi.
+SAFe on dokumentoitu todella tarkasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFe:n käyttöönottoa ja noudattamista. Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi.
 
 SAFe vaikuttaa olevan erityisesti firmojen johdon suosiossa. Tämä on ymmärrettävää, sillä toisin kuin useimmat ketterät menetelmät, SAFe tarjoaa firman managementille sopivasti tekemistä roolien ja käytänteiden muodossa.
 
-Kuten aiemmin mainittu, sisältää SAFe käytännössä kaikki mahdolliset ketterän ja lean-ohjelmistokehityksen parhaat käytänteet vieläpä selkeästi ja yksityiskohtaisesti dokumentoituna. SAFe onkin eräänlainen agile/lean-kehityksen supermarket, kaikki on helposti saatavissa valmiina pakatussa muodossa. Pick and mix, avaa paketti ja seuraa käyttöohjetta...
+Kuten aiemmin mainittu, sisältää SAFe käytännössä kaikki mahdolliset ketterän ja lean-ohjelmistokehityksen parhaat käytänteet vieläpä selkeästi ja yksityiskohtaisesti dokumentoituna. SAFe onkin eräänlainen agile/lean-kehityksen supermarket, kaikki on helposti saatavissa valmiina pakatussa muodossa. Pick and mix, avaa paketti ja seuraa käyttöohjetta...
 
-SAFe on saanut osakseen myös paljon kritiikkiä. Osa kritiikistä kohdistuu SAFe:n määrittelemän prosessin raskauteen, osa taas SAFe:n top down -management luonteeseen.
+SAFe on saanut osakseen myös paljon kritiikkiä. Osa kritiikistä kohdistuu SAFe:n määrittelemän prosessin raskauteen, osa taas SAFe:n top down -management luonteeseen.
 
 Esim. Scrumin kehittäjä Ken Schwaber on [kyseenalaistanut sen, onko SAFe ylipäätään ketterä menetelmä](https://kenschwaber.wordpress.com/2013/08/06/unsafe-at-any-speed/) ketteryyden alkuperäisen idean mukaan. Agile Manifestissahan on periaate _individuals and Interactions Over Processes and Tools_. SAFe taas prosessina vaikuttaa kovin raskaalta.
 
 ### LeSS eli Large Scale Scrum
 
-LeSS:in taustalla on Craig Larman ja Bas Vodde, jotka työskentelivät konsultteina 2000-luvun alussa mm. Nokia Siemens Networksilla. Toisin kuin SAFe, LeSS on erittäin yksinkertainen, hyvin vahvasti Scrumiin pohjautuva. Uusia rooleja, artifakteja ja palavereja ei ole.
+LeSS:in taustalla on Craig Larman ja Bas Vodde, jotka työskentelivät konsultteina 2000-luvun alussa mm. Nokia Siemens Networksilla. Toisin kuin SAFe, LeSS on erittäin yksinkertainen, hyvin vahvasti Scrumiin pohjautuva. Uusia rooleja, artifakteja ja palavereja ei ole.
 
 LeSSistä on kaksi eri versiota: _LeSS_ tilanteisiin, joissa tuotetta tekee 2-8 Scrum-tiimiä ja _LeSS Huge_ tilanteisiin, missä tiimejä tarvitaan suurempi määrä.
 
@@ -415,7 +414,7 @@ LeSS:in taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
 
 ![]({{ "/images/5-5.png" | relative_url }}){:height="440px" }
 
-Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction.html#LeSSPrinciples)
+Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction)
 
 _More with less:_
 
@@ -428,7 +427,7 @@ _More with less:_
 
 Eli minimoimalla prosessin, roolien ja artefaktien määrää pyritään siihen että tiimit ottavat itse omistajuuden tuotteen kehittämisestä ja asiakkaan kanssa käytävästä kommunikaatiosta.
 
-Lisää periaatteista löytyy LeSS:in [dokumentaatiossa](https://less.works/less/framework/introduction.html).
+Lisää periaatteista löytyy LeSS:in [dokumentaatiossa](https://less.works/less/framework/introduction).
 
 #### LeSS käytännössä
 
@@ -438,7 +437,7 @@ Henkilöroolit ovat samat kuin normaalissa Scrumissa. Product ownereita on yksi,
 
 Tiimit ovat itseorganisoituvia _feature-tiimejä_, eli jokainen tiimi keskittyy asiakkaalle arvoa tuottavien kokonaisuuksien toteuttamiseen. Tiimijako siis _ei noudata_ sovelluksen arkkitehtuurisia kerroksia, eli ei ole esimerkiksi erillisiä frontend-, backend- ja tietokantatiimejä. Kukin tiimi operoi ohjelmiston kaikilla tasoilla toteuttaen alusta loppuun user storyjen kuvaaman toiminnallisuuden definition of donen tasolla.
 
-Myös artefaktit ovat samat kuin normaalissa Scrumissa. Product backlogeja on yksi, sprint backlog sen sijaan on jokaisella tiimillä oma. Kaikki tiimit työstävät sprintin aikana samaa ohjelmistoa, _potentially shippable product increment_ eli sprintin tuotoksena oleva ohjelmiston valmiiksi asti tehty laajennus on kaikille tiimeille sama.
+Myös artefaktit ovat samat kuin normaalissa Scrumissa. Product backlogeja on yksi, sprint backlog sen sijaan on jokaisella tiimillä oma. Kaikki tiimit työstävät sprintin aikana samaa ohjelmistoa, eli sprintin tuotoksena oleva valmis lisäys tuotteeseen (LeSS:n termein _potentially shippable product increment_, Scrumissa [increment](/osa1/#scrum-vastuut-artefaktit-ja-eventit)) on kaikille tiimeille yhteinen.
 
 ![]({{ "/images/5-6.png" | relative_url }}){:height="350px" }
 
@@ -463,13 +462,13 @@ LeSS antaa joukon aiheeseen liittyviä ohjeita ja suosituksia:
 - Prefer decentralized and informal coordination over centralized coordination
 - Emphasize _just talk_ and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
 
-Periaate _just talk_ korostaa suoran kommunikoinnin tärkeyttä, _communicate in code_ tarkoittaa ryhmien välistä työskentelyä helpottavaa ohjelmointitapaa, esimerkiksi yhteisiä koodikäytänteitä sekä jatkuvaa integraatiota. _Scouteilla_ tarkoitetaan muiden tiimien daily scrumissa vierailemista.
+Periaate _just talk_ korostaa suoran kommunikoinnin tärkeyttä, _communicate in code_ tarkoittaa ryhmien välistä työskentelyä helpottavaa ohjelmointitapaa, esimerkiksi yhteisiä koodikäytänteitä sekä jatkuvaa integraatiota. _Scouteilla_ tarkoitetaan muiden tiimien daily scrumissa vierailemista.
 
-LeSS mainitsee myös scrum of scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mielummin epämuodollisempia kommunikaation muotoja.
+LeSS mainitsee myös scrum of scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mieluummin epämuodollisempia kommunikaation muotoja.
 
 #### Backlogin ylläpito
 
-Scrum olettaa, että noin 5-10% sprintin työskentelystä käytetään backlog groomingiin, jonka tarkoituksena siis pitää backlog [DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep):inä. Toisin kuin Scrum, LeSS kiinnittää eksplisiittisesti huomioita backlogin ylläpitämiseen ja antaa aiheeseen liittyvää ohjeistusta.
+Scrumissa backlogia ylläpidetään jatkuvasti (engl. backlog refinement, aiemmin myös backlog grooming), jotta se pysyy [DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep):inä. Scrum Guiden aiemmat versiot arvioivat tähän kuluvan korkeintaan noin 10 % kehittäjien ajasta. Toisin kuin Scrum, LeSS kiinnittää eksplisiittisesti huomiota backlogin ylläpitämiseen ja antaa aiheeseen liittyvää ohjeistusta.
 
 Product owner on vastuussa backlogista, ja hoitaa kaiken priorisoinnin. Backlogin ylläpidossa (grooming/refinement) tulee olla mukana myös kaikkien tiimien, sekä sovelluksen eri sidosryhmien edustajia. Oletusarvoisesti kukin tiimi hoitaa niiden storyjen tarkentamista, joita tiimi tulee todennäköisesti toteuttamaan. Tarpeen mukaan tiimit kuitenkin järjestävät yhteisiä backlogin groomaustilaisuuksia tarkastellessaan toisiinsa läheisesti liittyvien storyjen tarkennusta tai miettiessään sovelluksen kehityksen suurempia linjauksia, esimerkiksi arkkitehtuuriin vaikuttavia asioita.
 
@@ -487,15 +486,15 @@ Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), jois
 
 On erittäin mielenkiintoista että molemmat SAFe ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehityksen tapa oli kuitenkin täysin erilainen, ja SAFe (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteista ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
 
-Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyman kirjoittama [menetelmien vertailu](https://gosei.fi/blog/less-safe-comparison/) kannattaa lukea.
+Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyman kirjoittama [menetelmien vertailu](https://gosei.eu/blog/less-safe-comparison/) kannattaa lukea.
 
 Kuten aiemmin todettiin, SAFe on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaisten ketterän kehityksen edustajien toimesta. En myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe:a.
 
-En tiedä kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan. Nokia (Siemens) Networks taas on nykyinen Nokia ja soveltaa edelleen LeSS-menetelmää.
+En tiedä, kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan. Nokia (Siemens) Networks taas on nykyinen Nokia, jossa LeSS-menetelmää on sovellettu pitkään.
 
-### Spotifyn ketterän skaalaamisen viitekehys
+### Spotifyn malli
 
-Henrik Knibergin 2012 ilmestynyt artikkeli [Scaling Agile @ Spotify](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) kertoi suurelle yleisölle miten ruotsalainen musiikkistreamauspalvelu Spotify onnistui skaalaamaan toimintansa noin neljän vuoden aikana muutamasta sovelluskehittäjästä useaan sataan, eri kaupungeissa työskentelevään softakehittäjään säilyttäen toiminnassaan startupmaisen ketteryyden.
+Henrik Knibergin ja Anders Ivarssonin 2012 ilmestynyt artikkeli [Scaling Agile @ Spotify](https://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf) kertoi suurelle yleisölle miten ruotsalainen musiikkistreamauspalvelu Spotify onnistui skaalaamaan toimintansa noin neljän vuoden aikana muutamasta sovelluskehittäjästä useaan sataan, eri kaupungeissa työskentelevään softakehittäjään säilyttäen toiminnassaan startupmaisen ketteryyden.
 
 Spotifyn "malli" on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squad) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi/heimorakenteen lisäksi malli sisältää myös hieman toisenlaisen jaottelun, jossa firman ihmiset jaotellaan heimojen sisällä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
 
@@ -503,70 +502,41 @@ Spotifyn "malli" on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ 
 
 Vaikka Knibergin kuvauksen tarkoituksena ei ollutkaan se, että _muut firmat_ alkaisivat imitoimaan Spotifyn tapaa, näin kuitenkin kävi.
 
+Kuvaus ei myöskään vastannut täysin Spotifyn todellisuutta. Spotifyllä vuosina 2011–2017 ketteränä valmentajana toiminut Joakim Sundén on [todennut](https://www.jeremiahlee.com/posts/failed-squad-goals/), että malli oli jo kirjoitushetkellä osin tavoite ja osin likiarvo: _"Even at the time we wrote it, we weren't doing it. It was part ambition, part approximation."_ Malli ei siis ole valmis viitekehys, vaan kuvaus yhden yrityksen tavasta toimia ja sen tavoitteista tiettynä ajankohtana.
+
 Käydään nyt hieman tarkemmalla tasolla läpi Spotifyn mallia, tai sitä miltä se näytti noin vuonna 2012 ja siitä muutaman vuoden eteenpäin.
 
 #### Squad eli tiimi
 
-Spotifyn mallin ytimessä on noin 5-10 hengen tiimi, josta käytetään englanninkielistä termiä _squad_, joka lienee suomeksi joukkue tai ryhmä. Puhumme tässä kuitenkin tiimistä sillä se lienee squadeista yleisimmin suomeksi käytetty termi.
+Spotifyn mallin ytimessä on noin 5–10 hengen tiimi, josta käytetään englanninkielistä termiä _squad_. Puhumme tässä kuitenkin tiimistä, sillä se lienee squadeista yleisimmin suomeksi käytetty termi.
 
-Tiimit ovat ketterän ideaalin tapaan _cross-functional_, eli ne sisältävät kaiken tietotaidon vastuullaan olevien ohjelmiston osien saamisesta aina ideasta tuotantoympäristöön asti. Tiimit ovat täysin itseorganisoituvia, ja ne päättävät vapaasti omista työnteon käytänteistään. Tiimit voivat esim. käyttää sisäisesti Scrumia, Kanbania, Scrumbania tai mitä tahansa muuta työskentelyn tapaa. Koko tiimi työskentelee samassa työtilassa.
+Tiimit ovat ketterän ideaalin tapaan _cross-functional_, eli ne sisältävät kaiken tietotaidon vastuullaan olevien ohjelmiston osien saamisesta aina ideasta tuotantoympäristöön asti. Tiimit ovat itseorganisoituvia ja päättävät vapaasti omista työnteon käytänteistään: ne voivat käyttää sisäisesti Scrumia, Kanbania, Scrumbania tai mitä tahansa muuta työskentelyn tapaa.
 
 ![]({{ "/images/5-18.png" | relative_url }}){:height="250px" }
 
-Kunkin tiimin vastuulla on jokin looginen osa sovellusta. Usein tämä sovelluksen osa on jokin suoraan asiakkaalle näkyvä, ja itsenäisesti arvoa tuottava palanen, Spotifyn tiimit ovat siis ehdottomasti _feature-teameja_, samoin kuin LeSS-kehitysmallissa.
+Kunkin tiimin vastuulla on jokin looginen osa sovellusta, usein suoraan asiakkaalle näkyvä ja itsenäisesti arvoa tuottava palanen, esimerkiksi iPhone-sovellus, soittolistat, viikon suositukset tai laskutus. Spotifyn tiimit ovat siis _feature-tiimejä_, samoin kuin LeSS-kehitysmallissa. Osa tiimeistä vastaa muiden tiimien hyödyntämistä sisäisistä asioista, kuten taustajärjestelmän suorituskyvystä.
 
-Tiimin vastuulla saattaa olla esim. Spotifyn iPhone-sovellus, käyttäjän soittolista, viikon suositukset -toiminnallisuus tai laskutustoiminnot. Osalla tiimeistä vastuulla taas on enemmän Spotifyn muiden tiimien sisäisesti hyödyntäviä asioita, kuten esimerkiksi backendin eli taustajärjestelmän riittävän suorituskyvyn varmistaminen.
+Tiimeillä on _product owner_, joka huolehtii, että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Scrum mastereiden sijaan tiimien apuna toimivat _agile coachit_, eli ketteryyden valmentajat, jotka mm. fasilitoivat retrospektiivejä ja antavat tarvittaessa uraohjausta.
 
-Seuraava kuva havainnollistaa sitä kuinka tiimin vastuulla on usein jopa konkreettinen palanen käyttöliittymän tarjoamasta toiminnallisuudesta:
-
-![]({{ "/images/5-19.png" | relative_url }}){:height="345px" }
-
-Tiimeillä on _product owner_, joka huolehtii että tiimin vastuulla olevaa sovelluksen osaa kehitetään kokonaisuuden kannalta järkevään suuntaan. Käsitettä _scrum master_ ei Spotifyllä tunneta. Tiimien apuna toimivat _agile coachit_, eli ketteryyden valmentajat, joiden vastuulla on tavanomaisia scrum mastereiden vastuita alkaen palaverien järjestämisestä retrospektiivien fasilitointiin. Coachit auttavat myös teknisissä asioissa ja antavat tarvittaessa vaikkapa yksilöllistä uraohjausta tiimien jäsenille.
-
-Tiimien on tarkoitus toimia mahdollisimman startupmaisesti, ja olla suorassa yhteydessä loppukäyttäjiin. Tiimien pyrkimyksenä on hyödyntää [Lean startup -menetelmästä](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien kehitettävien toiminnallisuuksien hyödyllisyyttä.
-
-Tiimeillä on valta tehdä jossain määrin liiketoimintaankin liittyviä päätöksiä varsin autonomisesti. Tälle perusteena on se, että koska Spotifyn pitää pystyä toimimaan mahdollisimman nopeasti haastavilla markkinoilla, on päätöksenteon oltava nopeaa ja jopa tiimitasolla tapahtuvaa. Toimiakseen se taas edellyttää vahvaa yhteistä visioa sovelluksen kehityssuunnasta, ja selkeitä mittareita siitä mihin suuntaan kehitystä on vietävä. Spotifyllä monien asioiden käyttökelpoisuutta on helpohko mitata asiakasmetriikoiden esim. päivittäisten aktiivisten käyttäjien lukumäärän avulla.
-
-Tiimien toimivuutta ja toimintaolosuhteita mitataan muutaman kuukauden välein. Mittareina ovat
-
-- suhde _product owneriin_ ja _agile coacheihin_: onko saatava tuen määrä riittävä, annetaanko tiimille esim. liikaa painetta tuotteen kehittämiseen koodin laadun kustannuksella
-- missä määrin tiimi ja sen jäsenet pystyvät itse vaikuttamaan työskentelyn tapoihin (_influencing work_)
-- onko tiimin helppo julkaista tekemänsä muutokset tuotantoon (_easy to release_); tämä on erityisen tärkeä komponentti, sillä tiheä julkaisutahti on oleellista tuotteen nopean A/B-testaukseen perustuvan kehittämisen kannalta
-- onko tiimin käyttämä kehitysprosessi optimaalinen tiimin tarpeisiin nähden (_process fits the team_)
-- onko tiimin _missio_, eli työtä ohjaava isompi tavoite selkeä
-- onko muun _organisaation tuki_ riittävä, niin teknisten kuin vähemmän teknisten ongelmien ratkaisun suhteen
-
-Tiimien mittareiden trendejä seurataan, jotta ongelmakohtiin myös puututtaisiin sopivin toimenpitein.
-
-![]({{ "/images/5-24.png" | relative_url }}){:height="245px" }
+Tiimien on tarkoitus toimia mahdollisimman startupmaisesti ja olla suorassa yhteydessä loppukäyttäjiin. Ne hyödyntävät [Lean startup -menetelmästä](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) tuttuja MVP:itä ja A/B-testausta validoidessaan uusien toiminnallisuuksien hyödyllisyyttä, ja niillä on valta tehdä jossain määrin liiketoimintaankin liittyviä päätöksiä autonomisesti. Tämä edellyttää vahvaa yhteistä visiota ja selkeitä mittareita, esimerkiksi päivittäisten aktiivisten käyttäjien määrää. Tiimien toimintaedellytyksiä, kuten tukea, vaikutusmahdollisuuksia ja julkaisemisen helppoutta, seurataan säännöllisillä kyselyillä.
 
 #### Tribe eli heimo
 
-Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkönsä joka voi toimia ilman riippuvuutta muista tiimeistä. Tiimien välillä on kuitenkin väkisin riippuvuutta, ja myös synergiaa. Samojen aihepiirin ympärillä työskentelevät tiimit onkin jaettu _heimoihin_ (engl. tribe):
+Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkö, joka voi toimia ilman riippuvuutta muista tiimeistä. Tiimien välillä on kuitenkin väkisin riippuvuutta ja myös synergiaa. Samojen aihepiirien ympärillä työskentelevät tiimit onkin jaettu _heimoihin_ (engl. tribe), jotka pitävät aika ajoin yhteisiä kokoontumisia:
 
 ![]({{ "/images/5-20.png" | relative_url }}){:height="380px" }
 
-Spotifyn tiimit työskentelevät samassa tilassa. Kaikkien heimon tiimien on myös tarkoituksena työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa. Tämä mahdollistaa helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä.
+Vuoden 2012 kuvauksessa Spotifyn tiimit työskentelivät samassa tilassa, ja kaikkien heimon tiimien oli tarkoitus työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa. Tämä mahdollisti helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä. Nykyään tilanne on toinen: vuodesta 2021 Spotify on antanut työntekijöidensä [valita](https://newsroom.spotify.com/2021-02-12/distributed-first-is-the-future-of-work-at-spotify/), työskentelevätkö he toimistolla, etänä vai näiden yhdistelmänä.
 
-Heimoon kuuluu maksimissaan kymmenkunta tiimiä sillä heimojen koko halutaan pitää maksimissaan sadassa henkilössä. Luku 100 perustuu ns. [Dunbarin lukuun](https://en.wikipedia.org/wiki/Dunbar's_number), joka on on teoreettinen kognitiivinen raja ihmisten lukumäärälle, johon keskiverto ihmisyksilö voi ylläpitää pysyviä sosiaalisia suhteita. On siis idea että heimolaiset tuntevat enemmän tai vähemmän kaikki toinen toisensa.
-
-Kniberg perustelee heimon kokoa myös seuraavasti: _When groups get too big, we start seeing more things like restrictive rules, bureaucracy, politics, extra layers of management, and other waste._ Eli pitämällä heimon koko suunnilleen Dunbarin luvun rajoissa, on se vielä mahdollista hallita hyvin kevyesti, ilman turhan monimutkaista ja monikerroksista organisaatiota.
-
-Heimot pitävät aika ajoin yhteisiä kokoontumisia, missä heimon tiimit esittelevät toisilleen aikaansaannoksiaan sekä oman kehityksensä suuntaa.
-
-Sellaiset tiimit, jotka tekevät samaan teemaan liittyviä kokonaisuuksia, ja joiden tulee kommunikoida usein, on mielekästä sijoittaa samaan heimoon. Näin tiimien keskinäinen kommunikointi ja tiedonvaihto helpottuu sillä jo määritelmänsä mukaan kaikki heimon tiimit työskentelevät lähekkäin, samassa rakennuksessa ja mieluiten vieläpä samassa kerroksessa.
+Heimoon kuuluu maksimissaan kymmenkunta tiimiä, sillä heimojen koko halutaan pitää alle sadassa henkilössä. Rajaa perustellaan ns. [Dunbarin luvulla](https://en.wikipedia.org/wiki/Dunbar's_number), joka on teoreettinen kognitiivinen raja ihmisten lukumäärälle, jonka kanssa keskiverto ihminen pystyy ylläpitämään pysyviä sosiaalisia suhteita. Dunbarin luku on noin 150, ja Spotify halusi pysyä selvästi sen alapuolella. Kniberg perustelee rajaa myös seuraavasti: _When groups get too big, we start seeing more things like restrictive rules, bureaucracy, politics, extra layers of management, and other waste._
 
 #### Chapter eli jaosto
 
-Jakautuminen mahdollisimman autonomisiin tiimeihin on hyvä sikäli että sen ansiosta kunkin tiimin on mahdollista edetä nopeasti kohti liiketoiminnallisia tavoitteita. Negatiivisena puolena autonomiasta taas on se, että samoja ongelmia saatetaan joutua ratkomaan kerta toisensa jälkeen eri tiimien sisällä ja yhden tiimin oppimat asiat eivät automaattisesti leviä muihin tiimeihin.
-
-Eliminoidakseen tätä uhkaa Spotify on lanseerannut _jaostot_ (engl. chapter) jotka koostuvat yhden heimon niistä jäsenistä joilla on samankaltainen osaamisalue. Esim. heimon eri tiimien testaajat voisivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
+Autonomisten tiimien varjopuolena on, että samoja ongelmia saatetaan ratkoa kerta toisensa jälkeen eri tiimeissä, eivätkä yhden tiimin oppimat asiat leviä muihin. Tätä varten Spotifyllä on _jaostot_ (engl. chapter), jotka koostuvat yhden heimon samankaltaista osaamista omaavista jäsenistä. Esimerkiksi heimon eri tiimien testaajat voivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
 
 ![]({{ "/images/5-21.png" | relative_url }}){:height="320px" }
 
-Jaostot järjestävät enemmän tai vähemmän säännöllisiä tapaamisia, joissa jaoston jäsenet keskustelevast eri tiimien kohtaamista ongelmista ja eri puolilla kehitetyistä ratkaisuista. Näin esim. yhden tiimin sisällä kehitetyt testaukseen liittyvät hyvät käytänteet saadaan leviämään muihin tiimeihin. Kutakin jaostoa johtaa _chapter lead_, eli senioriteettia omaava jaoston jäsen, joka on kuitenkin itsekin mukana jossain tiimissä, eli kyse _ei ole_ jaostoon dedikoidusta johtajasta.
-
-Tiimit ja jaostot siis palvelevat isossa kuvassa samaa suurta tavoitetta, mutta hieman eri dimensioilla. Product owner vastaa kysymykseen _what to build next_, eli ohjaa tuotteen kehityssuuntaa. Jaosto, erityisesti jaoston _lead_ (termi jolle en keksi hyvää suomenkielistä vastinetta) taas pyrkii tarjoamaan tukea kysymykseen "how to build it well". Jaosto myös tukee jäsentensä ammatillista kehittymistä.
+Jaostot kokoontuvat säännöllisesti jakamaan ongelmia ja ratkaisuja, ja ne tukevat jäsentensä ammatillista kehittymistä. Product owner vastaa kysymykseen _what to build next_, jaosto taas kysymykseen _how to build it well_. Kutakin jaostoa johtaa _chapter lead_, joka toimii jaoston jäsenten esihenkilönä mutta työskentelee itsekin jossain tiimissä. Jäljempänä esitellyn kritiikin mukaan juuri tämä rakenne osoittautui ongelmalliseksi, sillä chapter leadilla ei ollut vastuuta tiimin työn etenemisestä.
 
 ![]({{ "/images/5-23.png" | relative_url }}){:height="280px" }
 
@@ -576,13 +546,15 @@ Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompetenssin omaa
 
 ![]({{ "/images/5-22.png" | relative_url }}){:height="360px" }
 
+Jaostot ja killat ovat lähellä jäljempänä esiteltävän Team Topologies -mallin mahdollistavia tiimejä: kaikissa on kyse osaamisen levittämisestä tiimirajojen yli.
+
 #### Spotifyn mallin soveltaminen ja kritiikki
 
 Spotifyn mallia on ruvettu soveltamaan monin paikoin muissakin yrityksissä. Spotifyn skaalaamisen tavan dokumentoineen ja maailmalle esitelleen Henrik Knibergin [mukaan](https://blog.crisp.se/2015/06/07/henrikkniberg/no-i-didnt-invent-the-spotify-model) Spotifyn mallia ei ollut tarkoitettu muualla sovellettavaksi, ja hänen mukaansa ei edes ole mitään Spotifyn mallia, sillä sovelluskehityksen tapa muuttuu Spotifyllä koko ajan, mukautuen yhä kasvavan yrityksen tarpeisiin.
 
 Spotify on sittemmin lisännyt malliinsa muutaman uuden organisatorisen komponentin (trio ja allianssi) joiden avulla pystytään hallitsemaan kehityksen suuntaa isossa kuvassa. Spotifyllä on myös muutamia yli kaikkien heimojen toimivia henkilörooleja, mm. _chief architect_ eli henkilö, joka vastaa koko tuotteen arkkitehtuurista.
 
-Spotifyn mallille on annettu internetissä [rajuakin](https://www.linkedin.com/pulse/spotify-sucks-erwin-verweij/) [kritiikkiä](https://www.jeremiahlee.com/posts/failed-squad-goals/). Onkin ilmeistä, että Spotifyn toiminta on kohdannut monia vaikeuksia firman kasvettua nopeasti ja tämä on johtanut Spotifyn mallin (mikäli mitään mallia siis voi edes sanoa olevan olemassa) muutoksiin ja mitä ilmeisemmin muokannut firman toimintaa kohti [perinteisempää jäykempää korporaatiota](https://www.youtube.com/watch?v=ar4lq1l8pAc&t=2462s&ab_channel=QAgileQualityinAgile).
+Spotifyn mallille on annettu internetissä rajuakin [kritiikkiä](https://www.jeremiahlee.com/posts/failed-squad-goals/). Onkin ilmeistä, että Spotifyn toiminta on kohdannut monia vaikeuksia firman kasvettua nopeasti ja tämä on johtanut Spotifyn mallin (mikäli mitään mallia siis voi edes sanoa olevan olemassa) muutoksiin ja mitä ilmeisemmin muokannut firman toimintaa kohti [perinteisempää jäykempää korporaatiota](https://www.youtube.com/watch?v=ar4lq1l8pAc&t=2462s&ab_channel=QAgileQualityinAgile).
 
 Spotifyn mallia sovellettaessa on siis hyvä pitää mielessä että sen ei todellakaan ole tarkoitettu olevan staattinen rakennelma, jonka voi kopioida kirjaimellisesti toiseen kontekstiin. Moni asia Spotifyn mallissa onkin ainoastaan uusi nimi jollekin vanhalle tutulle asialle, jotka löytyvät suoraan esim. Scrumista, Leanista, SAFe:sta tai LeSS:istä, ja voikin olla viisaampi kääntyä suoraan näiden menetelmien kirjallisuuden pariin.
 
@@ -592,65 +564,57 @@ Spotifyn mallia, tai ainakin sen käyttämää terminologiaa on omaksuttu käytt
 
 Jos Spotifyn malli kiinnostaa, kannattaa ehdottomasti katsoa [tämä](https://www.youtube.com/watch?v=Yvfz4HGtoPc&ab_channel=HenrikKniberg) ja [tämä](https://www.youtube.com/watch?v=vOt4BbWLWQw&ab_channel=HenrikKniberg) aihetta käsittelevä Youtube-video. Jos haluat myös kurkistaa Spotifyn osittain sotkuiseenkin todellisuuteen, kannattaa katsoa myös Joakim Sundénin esitelmä [You can do better than the Spotify Model](https://www.youtube.com/watch?v=gL6ou9UwqUQ&ab_channel=PreziConferenceTeam).
 
+### Team Topologies
+
+Spotifyn mallin jälkeen laajimmin omaksuttu tapa jäsentää ohjelmistokehityksen tiimirakennetta on Matthew Skeltonin ja Manuel Paisin kirjassa [Team Topologies](https://teamtopologies.com/key-concepts) (2019) esitetty malli. Toisin kuin SAFe tai LeSS, se ei ole prosessi, vaan tapa suunnitella tiimit ja niiden väliset rajapinnat niin, että työ virtaa nopeasti.
+
+Mallin keskeinen käsite on tiimin _kognitiivinen kuorma_ (engl. cognitive load): tiimin vastuulla saa olla vain sen verran, kuin se pystyy kerralla hallitsemaan. Taustalla on myös [osassa 4](/osa4/#modulaarinen-monoliitti) mainittu Conwayn laki, jonka mukaan järjestelmän rakenne heijastaa sitä tekevän organisaation kommunikaatiorakennetta. Siksi tiimirakenne kannattaa suunnitella sen mukaan, millaisen arkkitehtuurin halutaan syntyvän.
+
+Malli tunnistaa neljä tiimityyppiä:
+
+- _virtaan keskittyvä tiimi_ (engl. stream-aligned team) vastaa jostain asiakkaalle arvoa tuottavasta kokonaisuudesta alusta loppuun, samaan tapaan kuin LeSS:n feature-tiimit tai Spotifyn squadit. Valtaosa tiimeistä on tätä tyyppiä.
+- _alustatiimi_ (engl. platform team) tarjoaa muille tiimeille sisäisiä palveluita, esimerkiksi tuotantoympäristöt, CI/CD-putket ja monitoroinnin, niin että tiimit voivat käyttää niitä itsepalveluna
+- _mahdollistava tiimi_ (engl. enabling team) auttaa muita tiimejä omaksumaan uusia taitoja ja tekniikoita, hieman Spotifyn jaostojen ja kiltojen tapaan
+- _monimutkaisen osajärjestelmän tiimi_ (engl. complicated-subsystem team) vastaa erityisosaamista vaativasta osasta, esimerkiksi laskenta-algoritmista
+
+Tiimien välille määritellään kolme vuorovaikutustapaa: tiivis _yhteistyö_ (collaboration), toisen tiimin tarjoaman palvelun käyttö _palveluna_ (X-as-a-Service) ja _fasilitointi_ (facilitating), jossa tiimi auttaa toista oppimaan.
+
+Alustatiimeihin liittyy 2020-luvulla yleistynyt käsite _platform engineering_: organisaatio rakentaa sisäisen kehitysalustan, jonka avulla tiimit voivat ottaa käyttöön ympäristöjä ja työkaluja itsenäisesti. Tarkoituksena on keventää virtaan keskittyvien tiimien kognitiivista kuormaa, jottei jokaisen tiimin tarvitse hallita koko infrastruktuuria itse.
+
 ## Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa
 
 Tehdään vielä kurssin lopussa nopea katsaus ketterien menetelmien käyttöön ja hyötyihin liittyvään tutkimukseen.
 
 ### Miten laajasti ketteriä menetelmiä käytetään
 
-Internetistä löytyy melko paljon erilaisia kyselytutkimuksia, jotka kartoittavat ketterien menetelmien käytön yleisyyttä. Tutkimukset ovat kuitenkin jo usean vuoden takaa, ja tuoreempia ei näytä löytyvän. Syynä tälle lienee se, että ketterät menetelmät ovat jo niin vallitsevia, että niiden käyttöastetta ei enää ole edes mielekästä kysyä.
+Internetistä löytyy melko paljon erilaisia kyselytutkimuksia, jotka kartoittavat ketterien menetelmien käytön yleisyyttä. Suurin osa niistä on jo usean vuoden takaa, ja niiden tulokset vaihtelevat suuresti. Esimerkiksi vuonna 2018 [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselyn mukaan 46 % ohjelmistoprojekteista tehtiin ketterillä menetelmillä, kun taas [Stack Overflowin](https://survey.stackoverflow.co/2018/) yli 100 000 vastaajan kyselyssä 86 % kertoi työskentelevänsä ketterästi. Suomessa Oulun yliopiston [tutkimuksessa](https://doi.org/10.1145/2372251.2372275) vuonna 2012 ketteriä tai lean-menetelmiä käytti 58 % yrityksistä, ja Helsingin yliopiston ja Nitorin [selvityksessä](https://nitor.com/fi/artikkelit/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) vuonna 2018 vain 5,9 % vastaajista kertoi, ettei ketteriä menetelmiä käytetä lainkaan. Ketterät menetelmät ovat siis jo pitkään olleet valtavirtaa, ja pelkkää käyttöastetta tuskin on enää mielekästä kysyä.
 
-Max Steinmetzin [artikkeli vuodelta 2018](https://www.targetprocess.com/blog/agile-statistics/) referoi useampaa eri kyselytutkimusta, joista löytyy erilaisia lukemia siitä kuinka laajasti ketteriä menetelmiä käytetään ohjelmistoprojekteissa. Pienin prosentti löytyy [Project Management Instituten](https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf) kyselystä, jonka mukaan 46% ohjelmistoprojekteista tehdään ketterillä menetelmillä. [Stack Overflowin](https://insights.stackoverflow.com/survey/2018#development-practices) yli sadan tuhannen vastaajan kyselyssä tulos oli, että kyselyyn vastanneista 85.9 % työskenteli ketterillä menetelmillä.
+Valtaosa kyselyistä ei täytä tieteellisen tutkimuksen kriteerejä: otokset eivät välttämättä edusta koko populaatiota, ja osa tekijöistä on kaupallisia toimijoita, joiden intressinä saattaa olla itselleen suosiollisten tulosten julkaisu.
 
-Googlaamalla löytyy runsaasti lisää erilaisia kyselyjä, ja kaikissa ketteryyden käyttöaste sijoittuu suunnilleen näiden kahden prosenttilukeman väliin, useimmiten reilusti viidenkymmenen yläpuolelle.
+Tuoreempi tutkimus keskittyykin siihen, _miten_ menetelmiä käytännössä sovelletaan. Brasiliassa, Suomessa ja Uudessa-Seelannissa tehdyssä [tutkimuksessa](https://ieeexplore.ieee.org/document/7890614/) (2016) Scrumia käytti 71 %, Kanbania 50 %, leania 40 % ja vesiputousmallia 35 % vastaajista. Samassa organisaatiossa käytetään siis usein yhtä aikaa useampaa menetelmää. Laajassa kansainvälisessä [HELENA-kyselytutkimuksessa](https://arxiv.org/abs/2109.11435) havaittiin, että alle 15 % vastaajista toteuttaa projektejaan puhtaasti ketterästi tai puhtaasti perinteisesti. Valtaosa käyttää ns. _hybridimenetelmiä_, eli itse koottuja yhdistelmiä eri menetelmistä ja käytänteistä. Tutkijoiden johtopäätös on, että ketteryyttä ei voi määritellä pelkästään käytetyn menetelmän perusteella, vaan olennaista on, mitä käytänteitä tiimit todella soveltavat.
 
-Valtaosa internetissä olevista kyselyistä ei täytä tieteellisen tutkimuksen kriteerejä: niiden tutkimusten otokset eivät ole välttämättä koko populaatiota edustavia ja tutkimusmetodologia voi olla kyseenalainen. Osa tutkimusten tekijöistä on kaupallisia toimijoita, joiden intressinä saattaa olla itselleen suosiollisten tulosten julkaisu.
+### Ohjelmistotoimituksen tila DORA-tutkimuksen valossa
 
-Aiheesta on tehty myös jonkun verran tieteellistä tutkimusta. Oulun yliopiston tutkijoiden vuonna 2012 julkaiseman artikkelin [Survey on Agile and Lean usage in Finnish software industry](http://esem.cs.lth.se/industry_public/Rodriguezetal_ESEM2012_IndustryTrack_1_0.pdf) mukaan 58 % tutkimukseen osallistuneista 200 suomalaisesta yrityksestä ilmoitti käyttävänsä ketteriä tai lean-menetelmiä ohjelmistokehityksessä.
+Vuodesta 2006 ilmestynyt [State of Agile](https://stateofagile.com/) -raportti oli pitkään tunnetuin ketterien menetelmien käyttöä kartoittava kysely. Sen mukaan Scrum on selvästi yleisin ketterä menetelmä. Raportti on kuitenkin kaupallisen työkaluvalmistajan tuottama, ja sen tuorein, vuonna 2025 ilmestynyt 18. versio ei enää edes kysy tiimien käyttämistä menetelmistä.
 
-Loppuvuodesta 2016 julkaistussa Brasiliassa, Suomessa ja Uudessa-Seelannissa tehdyssä tutkimuksessa [Adoption and Suitability of Software Development Methods and Practices](https://ieeexplore.ieee.org/document/7890614/) päädyttiin seuraaviin lukuihin eri menetelmien käytön osalta
+Paremman kuvan siitä, miten hyvin organisaatiot todella hallitsevat ohjelmistokehityksen, antavat osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) esitellyt DORA-raportit. Vuoteen 2024 asti DORA jakoi vastaajat neljään suoritustasoon DORA-mittareiden perusteella. [Vuoden 2024 raportissa](https://dora.dev/research/2024/dora-report/) tasot olivat seuraavat:
 
-- Scrum 71.2 %
-- Kanban 49.5 %
-- Lean 39.7 %
-- vesiputous 35.3 %
+| Taso | Osuus vastaajista | Tuotantoonvientien tiheys | Muutoksen läpimenoaika | Epäonnistuneiden muutosten osuus | Palautumisaika |
+|---|---|---|---|---|---|
+| Elite | 19 % | tarpeen mukaan, useita kertoja päivässä | alle päivä | 5 % | alle tunti |
+| High | 22 % | päivittäin–viikoittain | päivästä viikkoon | 20 % | alle päivä |
+| Medium | 35 % | viikoittain–kuukausittain | viikosta kuukauteen | 10 % | alle päivä |
+| Low | 25 % | kuukausittain–puolivuosittain | 1–6 kuukautta | 40 % | viikosta kuukauteen |
 
-Helsingin yliopiston ja Nitorin loppuvuodesta 2018 tekemän [selvityksen mukaan](https://www.nitor.com/fi/uutiset-ja-blogi/nitor-ja-helsingin-yliopisto-selvittivat-suomalaisyritykset-ketteryyden-edellakavijoita) ainoastaan 5.9 % vastaajista ilmoitti että ketterät menetelmät *eivät ole* yrityksessä ollenkaan käytössä:
+Parhaiten suoriutuvat organisaatiot vievät muutoksia tuotantoon tarpeen mukaan alle päivässä, kun heikoimmilla siihen kuluu kuukausia. Valtaosa organisaatioista on siis vielä kaukana siitä, mitä [jatkuva toimittaminen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) mahdollistaisi, ja teknisissä käytänteissä on monella skarppaamisen paikka.
 
-![]({{ "/images/5-9a.png" | relative_url }}){:height="300px" }
+Taulukossa on myös kiinnostava yksityiskohta: medium-tason organisaatiot vievät muutoksia tuotantoon harvemmin kuin high-tason, mutta niiden muutokset epäonnistuvat harvemmin. Raportin mukaan ei ole yleispätevää vastausta siihen, kumpi on parempi, tiheämmät tuotantoonviennit vai harvemmat epäonnistumiset. Se riippuu sovelluksesta ja sen käyttäjien odotuksista. Raportti korostaakin, että tärkeämpää kuin tietyn tason saavuttaminen on se, että tiimi parantaa toimintaansa jatkuvasti.
 
-Kuten lukemat osoittavat, ketterä kehitys valtaa alaa. Sama trendi on näkyvissä Yhdysvaltojen hallituksen alaisissa ohjelmistoprojekteissa, joissa hitaan liikkeellelähdön jälkeen [agile on noussut](https://www2.deloitte.com/insights/us/en/industry/public-sector/agile-in-government-by-the-numbers.html) dominoivaan asemaan.
-
-![]({{ "/images/5-10.png" | relative_url }}){:height="300px" }
-
-### State of Agile -raportti
-
-Jo 15 vuoden ajan ilmestynyt [State of Agile](https://www.stateofagile.com) -raportti tarjoaa paljon mielenkiintoista tilastotietoa ketterien menetelmien käytöstä. Raportin muoto on muuttunut hieman viime vuosien aikana. Tuorein eli vuoden 2024 raportti keskittyy jo ketteryyttä enemmän tekoälypöhinään, joten seuraavassa on muutaman vuoden takaisten raporttien lukemia.
-
-Raportin (2022) mukaan Scrum dominoi ketterien menetelmien kenttää:
-
-![]({{ "/images/soa1.png" | relative_url }}){:height="400px" }
-
-Aiempien vuosien raportit erittelivät myös tarkemmin sitä missä määrin eri ketteriä käytänteitä noudatettiin.
-Projektinhallintakäytänteiden osuus näytti 2021 raportissa seuraavalta:
-
-![]({{ "/images/5-12-2021.png" | relative_url }}){:height="400px" }
-
-Scrumista tutut palaverit ovat kärjessä. Vastanneista 63 % ilmottaa että käytössä on _short iterations_. Tutkimus ei valitettavasti erittele sitä miten pitkä on _short_, mutta vastaus on joka tapauksessa hieman yllättävä. Ainakin itse olettaisin että ketterien menetelmien käytössä _short iterations_ on suorastaan edellytys. Jos iteraatiot ovat pitkiä, esim. useamman kuukauden mittaisia, ei voida kunnolla puhua enää ketteryydestä ja käytössä saattaa olla jopa pahamaineinen [ScrumBut](/osa1#scrumin-ongelmia). Huomionarvoista lienee myös se, että tuotteenomistaja tai vastaava asiakkaan edustaja on kyselyn mukaan vain noin puolella kyselyyn vastanneiden tiimeistä.
-
-Ketterien teknisten käytänteiden osalta (nämä ovat 2020 raportista, uudemmissa ei teknisiä käytänteitä enää valitettavasti kysytty) tilanne näyttää seuraavalta:
-
-![]({{ "/images/5-13-2020.png" | relative_url }}){:height="400px" }
-
-Tämäkin lista on osin hieman yllättävä, sillä voisi esimerkiksi olettaa että jatkuva integrointi olisi ollut vuonna 2020 lähes kaikkialla käytössä, mutta ainoastaan 55 % ilmoittaa käyttävänsä sitä.
-
-Tämän kyselyn tietojen valossa teknisten käytänteiden suhteen todella monella näyttäisi olevan skarppaamisen paikka. Osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu laaja tutkimushan osoitti hyvin selkeästi sen miten tekniset käytenteet (mm. automatisoidut testit, jatkuva integraatio ja jatkuva tuotantoonvienti) vaikuttavat positiivisesti sekä työhyvinvointiin että organisaatioiden tehokkuuteen.
-
-Sama tutkimus osoitti myös, että tiettyjen teknisten käytänteiden lisäksi organisaatioiden tehokkuutta parantaa mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process). State of Agilen tutkimuksessa mukana olleista kuitenkaan 37 % _ei käytä_ lyhyitä iteraatioita ja 49 % _ei julkaise_ sovelluksesta uusia versiota usein (frequent releases), eli ketteryyden potentiaalisia hyötyjä ei selvästikään ulosmitata täydessä mitassaan läheskään kaikissa organisaatioissa.
+Saman tutkimuksen mukaan teknisten käytänteiden lisäksi organisaatioiden tehokkuutta ennustavat mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process).
 
 ### Toimiiko ketterä ohjelmistokehitys
 
-Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaissut vuodesta 1995 alkaen ohjelmistoprojektien onnistumisen astetta kartoittavaa _Chaos Reportia_.
+Ohjelmistoprojektin hallinnointimenetelmistä tutkimusta tekevä [Standish Group](https://www.standishgroup.com/) on julkaissut vuodesta 1994 alkaen ohjelmistoprojektien onnistumisen astetta kartoittavaa _Chaos Reportia_.
 
 Raportti jakaa projektit onnistumisen suhteen kolmeen ryhmään:
 
@@ -666,22 +630,42 @@ Projektin koolla on todella suuri merkitys onnistumisen kannalta. Jos tarkastelu
 
 ![]({{ "/images/chaos11.png" | relative_url }}){:height="250px" }
 
-Ketterät menetelmät näyttävät siis toimivan vesiputousmallia paremmin projektin koosta riippumatta, mutta ero kasvaa kun projektien koko kasvaa.
+Raportin lukujen perusteella ketterät menetelmät näyttäisivät toimivan vesiputousmallia paremmin projektin koosta riippumatta, ja ero kasvaa, kun projektien koko kasvaa. Lukuihin kannattaa kuitenkin suhtautua varauksella, kuten jäljempänä todetaan.
 
 On kuitenkin selvää, että suuret ohjelmistohankkeet ovat riskialttiita, oli käytetty menetelmä mikä tahansa. Suuret hankkeet onkin syytä pilkkoa useammaksi pienemmäksi hankkeeksi, jotta onnistumistodennäköisyys kasvaisi.
 
-Chaos raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erittelyä onnistuneista ja epäonnistuneista projekteista. Raportin huono puoli on sen kaupallisuus, raportit ja niiden taustalla oleva data eivät ole julkisesti saatavilla.
+Chaos-raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erittelyä onnistuneista ja epäonnistuneista projekteista. Raportin huono puoli on sen kaupallisuus: raportit ja niiden taustalla oleva data eivät ole julkisesti saatavilla.
 
-[State of Agile](https://www.stateofagile.com) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
+Chaos-raportin lukuja on myös kritisoitu tieteellisesti. Erään [tutkimuksen](https://ieeexplore.ieee.org/document/5232804) mukaan raportin onnistumisen määritelmä on yksipuolinen: projekti katsotaan onnistuneeksi vain, jos se pysyy alkuperäisessä aikataulu-, budjetti- ja laajuusarviossa. Tällöin mitataan pikemminkin alkuperäisten arvioiden osuvuutta kuin sitä, tuottiko projekti arvoa. Ketterässä kehityksessä laajuuden muuttuminen on lisäksi tarkoituksellista, joten määritelmä sopii sen arviointiin huonosti.
+
+[State of Agile](https://stateofagile.com/) -raportti erittelee tarkemmin ketteryydellä saavutettuja hyötyjä:
 
 ![]({{ "/images/5-16-2021.png" | relative_url }}){:height="400px" }
+
+### Ketteryyden kritiikki
+
+Ketteryyden suosion kasvaessa myös kritiikki on kasvanut, ja sitä ovat esittäneet usein juuri ketterän liikkeen perustajat itse. Agile-manifestin kirjoittajiin kuulunut Dave Thomas julisti jo vuonna 2014 kirjoituksessaan [Agile is Dead (Long Live Agility)](https://articles.pragdave.me/p/2014-03-04-time-to-kill-agilehtml), että sana _agile_ on muuttunut markkinointitermiksi, jonka avulla myydään konsultointia, koulutuksia ja työkaluja. Hän ehdotti, että puhuttaisiin mieluummin _ketteryydestä_ (engl. agility) eli toimintatavasta kuin tuotteistetuista menetelmistä.
+
+Kritiikki kohdistuu erityisesti ketteryyden ympärille syntyneeseen teollisuuteen: lyhyillä kursseilla myönnettäviin sertifikaatteihin, raskaisiin skaalauskehyksiin ja tilanteisiin, joissa ketterän terminologian alla jatketaan vanhaa käskyttävää johtamista, kuten [osassa 1](/osa1/#scrumin-ongelmia) käsitelty Dark Scrum ja waterscrumfall. 2020-luvulla moni yritys on myös karsinut erillisiä ketteriä rooleja. Esimerkiksi yhdysvaltalainen pankki Capital One [lakkautti](https://www.bankingdive.com/news/capital-one-cuts-1100-tech-jobs-agile/640861/) vuonna 2023 yli 1 100 ketterää roolia ja siirsi niiden vastuut tiimeille ja tuotepäälliköille.
+
+Kritiikki ei yleensä kohdistu ketterän manifestin arvoihin ja periaatteisiin, vaan siihen, miten niitä on sovellettu. Tähän viittaa myös edellä mainittu [HELENA-tutkimuksen](https://arxiv.org/abs/2109.11435) havainto: ketteryys ei synny valitusta menetelmästä, vaan tiimien todellisista käytänteistä.
+
+### Etä- ja hybridityö
+
+Ketterät menetelmät syntyivät aikana, jolloin tiimi työskenteli samassa tilassa. Agile-manifestin periaatteiden mukaan tehokkain tapa välittää tietoa kehitystiimissä on kasvokkain käytävä keskustelu. Covid-pandemian jälkeen etä- ja hybridityöstä on kuitenkin tullut ohjelmistoalalla yleistä. Esimerkiksi Spotify antaa työntekijöidensä valita työskentelytapansa, kuten [edellä](/osa5/#tribe-eli-heimo) todettiin.
+
+Etätyön vaikutuksista on tehty myös laajaa tutkimusta. Microsoftin noin 61 000 työntekijän viestintäaineistoon perustuneessa [tutkimuksessa](https://www.nature.com/articles/s41562-021-01196-4) havaittiin, että koko yrityksen siirtyminen etätyöhön teki yhteistyöverkostoista staattisempia ja siiloutuneempia: oman ryhmän ulkopuolisten kanssa tehdyn yhteistyön osuus väheni noin neljänneksellä, ja viestintä siirtyi reaaliaikaisesta keskustelusta sähköpostiin ja pikaviesteihin. Kiinalaisen Trip.comin noin 1 600 työntekijän satunnaistetussa [kokeessa](https://www.nature.com/articles/s41586-024-07500-2) taas havaittiin, että kahtena päivänä viikossa etänä työskentely vähensi irtisanoutumisia noin kolmanneksella eikä heikentänyt suoriutumista tai ylenemistä. Mukana olleiden sovelluskehittäjien kirjoittaman koodin määrä ei myöskään muuttunut. Ohjelmistokehittäjiä koskeva Microsoftin [tutkimus](https://arxiv.org/abs/2008.11147) puolestaan osoitti, että kokemukset vaihtelevat suuresti: osa kehittäjistä menestyi kotoa käsin paremmin kuin toimistolla, osa taas kärsi esimerkiksi keskeytyksistä ja eristyneisyydestä.
+
+Tutkimusten perusteella hybridityö näyttää toimivan yksilötasolla hyvin, mutta tiimien välinen spontaani tiedonkulku kärsii helposti. Tämä on olennaista erityisesti laajan skaalan ketterässä kehityksessä, joka perustuu pitkälti tiimien väliseen epämuodolliseen koordinaatioon, kuten LeSS:n periaate _just talk_ ja Spotifyn jaostot ja killat.
 
 ### Johtopäätöksiä
 
 Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä kaikki edellä referoidut tutkimukset ovat kyselytutkimuksia, joissa käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät useimmiten edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskään ole puolueettomia menetelmien suhteen, esim. State of Agile -raporttia nykyään tuottava [Digital.ai](https://digital.ai/) (aiemmin CollabNet/VersionOne) on ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
 
-Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osan kolme luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu tutkimus lienee kattavin tällä hetkellä olemassa oleva ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus.
+Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Osan kolme luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) referoitu DORA-tutkimus lienee kattavin tällä hetkellä olemassa oleva ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus, ja sitä jatketaan edelleen vuosittaisina raportteina. Sekin perustuu kyselyihin, mutta sen menetelmät ovat huomattavasti huolellisemmat kuin useimmissa edellä mainituissa kyselyissä: mitattavat käsitteet on määritelty ja validoitu, ja tekijöiden välisiä yhteyksiä on analysoitu tilastollisilla malleilla. Tuloksia on julkaistu myös vertaisarvioiduissa julkaisuissa.
 
 Olemassa on myös suuri määrä tutkimuksia, joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin tai jatkuvan integraation vaikutusten arviointiin. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
 
 Lähes kaikissa yksittäisen tekniikan esim. TDD:n hyötyjä mittaavissa tutkimuksissa ongelmana on se, että ne eivät mittaa tekniikoista saatavia pitkäaikaisia hyötyjä mm. ohjelmiston ylläpidolle ja jatkokehitettävyydelle. Sekä kansanviisaus että monet tutkimukset ovat todenneet, että valtaosa ohjelmiston kustannuksista muodostuu juurikin ylläpitovaiheen, eli ensimmäisen version julkaisun jälkeisistä kustannuksista. Esimerkiksi [tämä](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) tutkimus osoittaa, että peräti 79 % ohjelmiston kustannuksista muodostuu ylläpitovaiheen aikana. Onkin mahdollista, että jokin tekniikka tuottaa lyhytaikaisen hyödyn, mutta jopa heikentää tuottavuutta pitkällä aikavälillä.
+
+Tekoäly tuo tutkimukseen uuden muuttujan. DORA-ryhmän vuoden 2025 raportin keskeinen havainto on, että tekoäly toimii _vahvistimena_: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Ne käytänteet, joiden hyödyistä tässä osassa ja osassa 3 on esitelty näyttöä, eivät siis menetä merkitystään tekoälyn myötä vaan pikemminkin korostuvat. Aiheesta tarkemmin materiaalissa [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).

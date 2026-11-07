@@ -181,7 +181,7 @@ Ongelmia aiheuttaa myös se, että huolimatta huolellisesta vaatimusmäärittely
 
 Vaatimusmäärittelyä ei myöskään ole mahdollista tai järkevää irrottaa kokonaan suunnittelusta. Suunnittelu auttaa ymmärtämään ongelma-aluetta syvällisemmin ja se taas generoi usein muutoksia vaatimuksiin.
 
-Ohjelmia tehdään enenevissä määrin valmiiden komponenttien, esim. open source -kirjastojen tai verkossa olevien SaaS (Software as a Service) -palveluiden varaan, ja tämäkin on oleellista ottaa huomioon vaatimusmäärittelyssä.
+Ohjelmia tehdään enenevässä määrin valmiiden komponenttien, esim. open source -kirjastojen tai verkossa olevien SaaS (Software as a Service) -palveluiden varaan, ja tämäkin on oleellista ottaa huomioon vaatimusmäärittelyssä.
 
 Jos suunnittelu ja toteutustason asiat otetaan huomioon vaatimusmäärittelyssä, on vaatimusten muotoilu ja priorisointikin helpompaa: näin on mahdollista edes jollain tavalla arvioida vaatimusten toteuttamisen hintaa.
 

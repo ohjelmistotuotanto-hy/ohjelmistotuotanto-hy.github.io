@@ -22,4 +22,4 @@ Huomioi:
 - tekoälyaiheiden on oltava synkassa genai.md:n kanssa, ei päällekkäistä sisältöä
 - muutokset tehdään vain annettuun tiedostoon, ellei toisin sanota
 - näytä ehdotukset ensin, älä muokkaa ennen hyväksyntää
-- osa5.md:n lopun on oltava synkassa osa4.md:n tieteellisen evidenssin kanssa
+- osa5.md:n lopun on oltava synkassa osa3.md:n tieteellisen evidenssin kanssa

@@ -93,7 +93,7 @@ Qlty tarjoaa paljon erilaisia näkymiä. Koodin ylläpidettävyyttä voidaan tar
 
 ![]({{ "/images/qlt4.png" | relative_url }})
 
-Vastaavia palveluita on olemassa useita, mm. [SonarQube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevissä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
+Vastaavia palveluita on olemassa useita, mm. [SonarQube](https://www.sonarsource.com/) ja [Codacy](https://www.codacy.com/). Staattisen analyysin työkalut mainostavat yhä enenevässä määrin olevansa AI:lla tehostettuja. Esim. Qlty tarjoaa mahdollisuuden AI:n generoimiin korjausehdotuksiin.
 
 Valtaosa nykyisten sovellusten koodista on peräisin kolmannen osapuolen kirjastoista, joten sovelluksen turvallisuus riippuu myös niistä. Tätä kutsutaan _toimitusketjun turvallisuudeksi_ (engl. software supply chain security). Riippuvuuksien haavoittuvuuksia valvovan Dependabotin lisäksi GitHub tarjoaa [salaisuuksien skannauksen](https://docs.github.com/en/code-security/secret-scanning), joka varoittaa, jos repositorioon päätyy vahingossa esimerkiksi API-avain tai salasana.
 
@@ -242,7 +242,7 @@ Yksikkötestejä laadittaessa saatetaan ottaa huomioon testattavan koodin rakenn
 
 Yksikkötestauksella ei testata suoranaisesti sitä, täyttääkö ohjelmisto käyttäjän sille asettamat vaatimukset, pikemminkin tavoitteena on ohjelman _sisäisen laadun_ (engl. internal quality) kontrollointi. [Sisäinen laatu](https://wiki.c2.com/?InternalAndExternalQuality) viittaa koodin sisäisen rakenteen hyvyyteen: onko koodia helppo jatkokehittää, onko virheiden jäljittäminen ja korjaaminen helppoa, ja pystytäänkö koodin toiminnallisuuden oikeellisuus varmistamaan muutoksia tehtäessä.
 
-Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä: jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertyä enenevissä määrin bugeja jotka näkyvät myös loppukäyttäjälle.
+Sisäinen laatu kiinnostaa ensisijaisesti ohjelmistokehittäjiä: jos koodi on sisäiseltä laadultaan heikkoa, on sen parissa työskenteleminen ikävää ja hidasta. Jos koodin sisäinen laatu alkaa rapistua, sovelluksen kehitystahti hidastuu, ja ohjelmistoon alkaa todennäköisesti kertyä enenevässä määrin bugeja jotka näkyvät myös loppukäyttäjälle.
 
 Pelkkä sisäisen laadun kontrollimekanismi yksikkötestaus ei siis ole. Kattavilla yksikkötesteillä saadaan parannettua myös ohjelman ulkoista, eli asiakkaan kokemaa laatua. Yksikkötestit voivat eliminoida joitain asiakkaalle näkyviä virheitä, joita järjestelmätestauksen testitapaukset eivät löydä.
 
@@ -877,7 +877,7 @@ def recommended_news_generator(user):
     if is_in_canary_release(user):
         return experimental_recommendation_algorithm(user)
     else:
-        return recommendation_algoritm(user)
+        return recommendation_algorithm(user)
 ```
 
 Osassa 2 [Lean-startup](/osa2/#kokeileva-vaatimusmäärittely-lean-startup)-menetelmän yhteydessä mainittu A/B-testaus toteutetaan yleensä feature flagien avulla.
@@ -935,7 +935,7 @@ On olemassa joukko käsitteellisiä ja teknisiä työkaluja, jotka usein liitet�
 
 Monet edellisistä ovat kypsyneet 2010-luvulla ja tehneet DevOpsin soveltamisesta helpompaa.
 
-Eräs tärkeimmistä DevOps:ia mahdollistavista asioista on ollut siirtyminen yhä enenevissä määrin käyttämään fyysisten palvelinten sijaan virtuaalisia ja pilvessä toimivia palvelimia. Pikkuhiljaa myös "palvelinrautaa" on ruvettu määrittelemään koodin avulla käsiteltävien konfiguraatiotiedostojen kautta. Englanniksi tästä ilmiöstä käytetään nimitystä [infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code).
+Eräs tärkeimmistä DevOps:ia mahdollistavista asioista on ollut siirtyminen yhä enenevässä määrin käyttämään fyysisten palvelinten sijaan virtuaalisia ja pilvessä toimivia palvelimia. Pikkuhiljaa myös "palvelinrautaa" on ruvettu määrittelemään koodin avulla käsiteltävien konfiguraatiotiedostojen kautta. Englanniksi tästä ilmiöstä käytetään nimitystä [infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code).
 
 Palvelinten, tallennuskapasiteetin ja verkon konfiguraatioiden automatisoitu ohjelmallisesti tapahtuva hallinnointi on siis yleistynyt koko ajan. Palvelinten konfiguraatioita voidaan tallettaa versionhallintaan ja jopa testata. Sovelluskehitys ja ylläpito ovat alkaneet muistuttaa enemmän toisiaan kuin vanhoina (huonoina) aikoina. Tämä suuntaus on johtanut siihen, että sovelluskehittäjiltä on ruvettu pikkuhiljaa vaatimaan sellaisia taitoja, jotka olivat aiemmin selkeästi järjestelmäylläpitäjien vastuulla.
 
@@ -1052,6 +1052,14 @@ DORA-mittarit kuvaavat ohjelmistotoimituksen suorituskykyä, mutta eivät suoraa
 
 Tuottavuuden arvioinnissa suositellaan käytettäväksi useampaa ulottuvuutta yhtä aikaa ja yhdistämään mittausdataan myös kehittäjien omat arviot.
 
+SPACE-viitekehyksen tekijöihin kuuluvat tutkijat ovat myöhemmin tiivistäneet kehittäjien tuottavuuteen vaikuttavat tekijät _kehittäjäkokemukseksi_ (engl. [developer experience, DevEx](https://queue.acm.org/detail.cfm?id=3595878), 2023). Sen kolme ulottuvuutta ovat
+
+- _palautesilmukat_ (engl. feedback loops): kuinka nopeasti kehittäjä saa palautetta esim. testeiltä, CI-palvelimelta ja katselmoinnista
+- _kognitiivinen kuorma_ (engl. cognitive load): kuinka paljon ylimääräistä ajattelua työ vaatii esimerkiksi huonosti dokumentoidun koodin tai monimutkaisten työkalujen takia
+- _flow-tila_ (engl. flow state): kuinka hyvin kehittäjä pystyy keskittymään työhönsä ilman keskeytyksiä
+
+Ajatus on, että parantamalla näitä kehittäjien kokemia asioita parannetaan samalla tuottavuutta. Moni tämän osan käytänne, kuten nopea CI ja automatisoitu testaus, vaikuttaa suoraan palautesilmukoihin.
+
 Tuloksia tulkittaessa on hyvä muistaa, että ne perustuvat vastaajien omiin arvioihin, ja havaitut yhteydet ovat tilastollisia riippuvuuksia eivätkä suoraan todistettuja syy-seuraussuhteita. Esimerkiksi menestyvillä organisaatioilla voi olla muutenkin paremmat edellytykset ottaa käyttöön hyviä käytäntöjä.
 
 ## Loppupäätelmiä testauksesta ja laadunhallinnasta
@@ -1062,7 +1070,7 @@ Ketterissä menetelmissä kantavana teemana on arvon tuottaminen asiakkaalle ja 
 
 Testauksen automatisointi ei ole halpaa eikä helppoa. Väärin, väärään aikaan tai väärälle "tasolle" tehdyt automatisoidut testit voivat tuottaa enemmän harmia ja kustannuksia kuin hyötyä, erityisen suuri riski on käyttöliittymän kautta tehtävillä testeillä.
 
-Jos ohjelmistossa on komponentteja, jotka tullaan ehkä poistamaan tai korvaamaan pian, on useimmiten järkevintä olla automatisoimatta niiden testejä. Esimerkiksi osassa 2 esitelty [MVP eli Minimal Viable Product](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) on karsittu toteutus, jonka avulla halutaan nopeasti selvittää, onko jokin ominaisuus ylipäätään käyttäjien kannalta arvokas. Jos MVP:n toteuttama ominaisuus osoittautuu tarpeettomaksi, se poistetaan järjestelmästä. MVP-periaatteella tehty ominaisuus on siis useimmiten viisasta tehdä ilman testien automatisointia.
+Jos ohjelmistossa on komponentteja, jotka tullaan ehkä poistamaan tai korvaamaan pian, on useimmiten järkevintä olla automatisoimatta niiden testejä. Esimerkiksi osassa 2 esitelty [MVP eli Minimum Viable Product](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) on karsittu toteutus, jonka avulla halutaan nopeasti selvittää, onko jokin ominaisuus ylipäätään käyttäjien kannalta arvokas. Jos MVP:n toteuttama ominaisuus osoittautuu tarpeettomaksi, se poistetaan järjestelmästä. MVP-periaatteella tehty ominaisuus on siis useimmiten viisasta tehdä ilman testien automatisointia.
 
 Ongelmallista kuitenkin usein on, että kertakäyttöiseksi tarkoitettu komponentti voi jäädä järjestelmään pitkäksikin aikaa, joskus jopa pysyvästi koska sitä "ei ole aikaa" toteuttaa kunnolla.
 

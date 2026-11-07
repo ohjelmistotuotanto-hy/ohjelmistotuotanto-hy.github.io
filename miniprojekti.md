@@ -120,24 +120,26 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 ### Tekniset ja prosessiin liittyvät vaatimukset
 
 - Ryhmä laatii yhdessä asiakkaan kanssa _product backlogin_
-  - Vaatimukset kirjataan backlogiin user storyina
+  - Vaatimukset kirjataan backlogiin user storyina, jokainen story omana issuenaan
 - Sprintin suunnittelun yhteydessä ryhmä valitsee toteutettavaksi sopivan määrän backlogin kärjessä olevista user storyistä
   - Ryhmä valitsee ainoastaan ne storyt, jotka se arvioi ehtivänsä toteuttamaan sprintissä **definition of donen** määrittelemällä laatutasolla. Definition of done on määritelty alla
   - Kannattaa huomata, että valinta on ennuste eikä lupaus: storyja ei ole pakko saada valmiiksi. Ohjelmistoja tehdessä sattuu ja tapahtuu ennakoimattomia asioita, ja aina suunnitelmat eivät toteudu.
   - Asiakkaalle ei kannata luvata liikaa, ja varsinkin ensimmäisten sprinttien aikana arvioissa on oltava varovainen, konfiguroimiseen, testaamiseen ja ryhmän järjestäytymiseen tulee kulumaan paljon aikaa
 - Ryhmä ylläpitää _sprint backlogia_
   - User storyt jaetaan sprintin suunnittelussa teknisen tason tehtäviksi eli _taskeiksi_ jotka sijoitetaan sprint backlogiin
-  - Ryhmä seuraa sprintin etenemistä valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
-    - kaavio voi olla esim. GitHub Projectsin automaattisesti piirtämä
+    - GitHub Projectsissa taskit tehdään storyn _sub-issueiksi_
+    - sprinttiin voi kuulua myös taskeja, jotka eivät liity mihinkään storyyn, esim. CI:n konfigurointi tai retrospektiivi
+  - Ryhmä seuraa sprintin etenemistä valmistuneiden taskien perusteella burnup- (tai burndown-) kaaviona
+    - kaavio voi olla esim. GitHub Projectsin Insights-näkymän piirtämä sprinttikohtainen burnup-kaavio
   - Sprint backlogista tulee ilmetä kunkin taskin osalta
-    - taskin tila (esim. aloitettu, ohjelmoitu, testauksessa, valmis)
+    - taskin tila (esim. Todo, In Progress, Done)
     - taskin tekijä(t)
 - Ryhmä laatii ensimmäisen sprintin aikana yhteiset pelisäännöt (ks. [vihjeitä ryhmätyöskentelyyn](#vihjeitä-ryhmätyöskentelyyn)) ja tallettaa ne repositorioon tiedostoon `pelisaannot.md`, johon linkitetään README:stä
   - pelisääntöjä päivitetään tarvittaessa, esim. retrospektiivin perusteella
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
   - retrospektiivin tärkeimmät havainnot ja vähintään kolme konkreettista parannuskohdetta kirjataan repositorion juureen tiedostoon `retro.md`, ja parannuskohteet lisätään seuraavan sprintin backlogiin taskeiksi
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
-- Sovellus on viety OKD-klusterille, ja klusterilla oleva versio päivittyy automaattisesti main-haaran muutosten myötä (jatkuva toimitus, continuous delivery)
+- Sovellus on viety OKD-klusterille, ja klusterilla oleva versio päivittyy automaattisesti main-haaran muutosten myötä (jatkuva toimittaminen, continuous deployment)
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
@@ -145,10 +147,18 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 
 - Backlogissa vaatimukset ilmaistaan järkevästi muotoiltuna user storyinä
   - **miniprojektissa user storyja tai taskeja ei tarvitse estimoida**, sprintin etenemistä seurataan valmistuneiden taskien perusteella
-- **Tehkää backlogit GitHub Projectsilla boilerplaten esimerkin mukaisesti**
-  - esimerkki ja ohje backlogien tekemiseen sekä valmis kopioitava pohja löytyvät boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedostosta
+- **Backlogit kannattaa tehdä GitHub Projectsilla ja noudattaa boilerplaten [BACKLOG.md](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)-tiedoston esimerkkiä ja ohjetta**
+  - helpointa on kopioida valmis [backlog-pohja](https://github.com/orgs/ohjelmistotuotanto-hy/projects/2), jossa on valmiina kentät _Sprint_ ja _Tyyppi_, näkymät _Product backlog_ ja _Sprint 1–4 backlog_ sekä sprinttikohtaiset burnup-kaaviot
+  - katso mallia [esimerkkiprojektista](https://github.com/orgs/ohjelmistotuotanto-hy/projects/1), jossa on boilerplaten todo-sovelluksen backlogit kesken sprinttiä 2
   - esimerkin backlogit esitellään myös materiaalin osassa 2, ks. [Esimerkki: backlogit GitHub Projectsilla](/osa2/#esimerkki-backlogit-github-projectsilla)
-  - GitHub Projectsin Insights-näkymä piirtää myös sprintin burnup-kaavion
+- Product backlogin tulee olla DEEP
+  - storyt ovat prioriteettijärjestyksessä, tärkein ylimpänä
+  - ylimmät storyt on kuvattu tarkasti hyväksymiskriteereineen, alempana olevat saavat olla karkeampia
+  - backlogista näkyy jokaisen storyn status ja sprintti, johon se on otettu
+- Sprint backlogissa jokaisella taskilla on status (Todo, In Progress, Done) ja tekijä (Assignees)
+  - kun aloitat taskin, merkitse itsesi sen tekijäksi ja siirrä se tilaan In Progress
+  - sulje taskin issue heti, kun taski valmistuu, muuten burnup-kaavio ei näytä sprintin todellista etenemistä
+- Sprintin 1 storyissa hyväksymiskriteerit voi kirjata issueen tekstinä, sprintistä 2 alkaen ne kirjoitetaan Robot Framework -testeiksi ja issueen laitetaan linkki testitiedostoon
 
 
 #### Definition of done
@@ -173,7 +183,7 @@ Koodausagenttien ja muiden tekoälytyökalujen käyttö miniprojektissa on salli
 
 README:ssa tulee löytyä ainakin seuraavat asiat:
 
-- Linkit backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä)
+- Linkit product backlogiin ja sprint backlogeihin (backlogeista tulee olla luettavissa olevat versiot julkisessa internetissä, tarkistakaa linkkien toimivuus kirjautumattomana esim. selaimen incognito-ikkunassa)
 - Linkki CI-palveluun
 - Linkki OKD-klusterilla toimivaan sovellukseen
 - Työlle tulee määritellä lisenssi <https://help.github.com/articles/licensing-a-repository/>
