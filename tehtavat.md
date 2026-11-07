@@ -40,11 +40,12 @@ Tehtävien vaikutus kurssin arvosteluun selviää [osasta 0](/osa0#kurssin-arvos
 
 ### Viikko 5
 
-- [monivalintatehtävät]({{site.stats_url}}/quiz/5) deadline {{site.moniv-dl[5]}}
+- [monivalintatehtävät]({{site.stats_url}}/quiz/5) (viikkojen 5 ja 6 luennot) deadline {{site.moniv-dl[5]}}
 -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5) deadline {{site.lask-dl[5]}}
 
 ### Viikko 6
 
+- luennon 11 asiat kuuluvat viikon 5 [monivalintatehtäviin]({{site.stats_url}}/quiz/5), deadline {{site.moniv-dl[5]}}
 -  [ohjelmointi/versionhallinta/konfigurointitehtävät ](/tehtavat6) deadline {{site.lask-dl[6]}}
 
 ### Viikko 7

@@ -79,7 +79,7 @@
   - Luento 10: {{site.luennot[10]}}
     - Lauri Suomalainen (Teamit): _Ohjelmistotuotanto kokonaisuutena: DevOps, tiimitopologiat ja platform engineering_
 - Laskarit
-  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> deadline {{site.moniv-dl[5]}}
+  - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> (viikkojen 5 ja 6 luennot) deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}
 - [Miniprojekti](/miniprojekti)
   - Asiakastapaamiset (sprintin 2 review, sprintin 3 suunnittelu)
@@ -95,6 +95,7 @@
     - Ville Nordberg (Trail openers): _Voiko tekoälyä tehdä kestävästi?_
     - Irene Nikkarinen (Kesko): _Datatieteilijän elämää_
 - Laskarit
+  - luennon 11 asiat kuuluvat viikon 5 <a href="{{site.stats_url}}/quiz/5">monivalintatehtäviin</a>, deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat6), deadline {{site.lask-dl[6]}}
 - Miniprojekti
   - Asiakastapaamiset (sprintin 3 review, sprintin 4 suunnittelu)

@@ -128,7 +128,7 @@ Normaaleista laskareista on tarjolla _8 kurssipistettä_. Täysiin kurssipisteis
 
 ## Monivalintojen korvaaminen luentopäiväkirjalla
 
-Kurssin viikkojen 1-5 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Tämä on linjassa ns. testausvaikutuksen (engl. testing effect, retrieval practice) kanssa: asioiden aktiivinen mieleen palauttaminen tehostaa oppimista selvästi enemmän kuin pelkkä materiaalin uudelleenlukeminen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)).
+Kurssin viikkojen 1–6 luentoja kertaavat monivalintatehtävät (2/40 pistettä). Monivalinnat ovat herättäneet tunteita, en ole itsekään monivalintojen fani. Hyödyt ovat kuitenkin kiistattomat, monivalintojen käyttöönoton jälkeen kokeiden tulokset ovat parantuneet. Tämä on linjassa ns. testausvaikutuksen (engl. testing effect, retrieval practice) kanssa: asioiden aktiivinen mieleen palauttaminen tehostaa oppimista selvästi enemmän kuin pelkkä materiaalin uudelleenlukeminen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x)).
 
 Monivalinnoille on tarjolla myös vaihtoehto, **viikoittainen luentopäiväkirja!**
 
