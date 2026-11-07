@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="nuoli" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<rect width="1000" height="360" fill="white"/>
+<text x="500" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Kehittäjän työskentely jatkuvaa integraatiota käytettäessä</text>
+<rect x="30" y="70" width="300" height="190" rx="6" fill="#bee3f8" stroke="#2d3748" stroke-width="1.5"/>
+<text x="180" y="96" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Kehittäjän kone</text>
+<circle cx="62" cy="135" r="13" fill="#dd6b20"/>
+<text x="62" y="140" font-size="14" fill="white" text-anchor="middle" font-weight="bold">2</text>
+<text x="84" y="140" font-size="14" fill="#2d3748" text-anchor="start">toteuttaa ominaisuuden</text>
+<text x="84" y="158" font-size="14" fill="#2d3748" text-anchor="start">ja sen testit</text>
+<circle cx="62" cy="200" r="13" fill="#dd6b20"/>
+<text x="62" y="205" font-size="14" fill="white" text-anchor="middle" font-weight="bold">3</text>
+<text x="84" y="205" font-size="14" fill="#2d3748" text-anchor="start">ajaa testit paikallisesti</text>
+<rect x="410" y="120" width="180" height="90" rx="6" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="500" y="155" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">keskitetty</text>
+<text x="500" y="175" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">repositorio</text>
+<text x="500" y="195" font-size="13" fill="#718096" text-anchor="middle" font-style="italic">(esim. GitHub)</text>
+<rect x="670" y="70" width="300" height="190" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="820" y="96" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">CI-palvelin</text>
+<text x="820" y="114" font-size="13" fill="#718096" text-anchor="middle" font-style="italic">(esim. GitHub Actions)</text>
+<text x="820" y="160" font-size="14" fill="#2d3748" text-anchor="middle">hakee koodin, asentaa</text>
+<text x="820" y="178" font-size="14" fill="#2d3748" text-anchor="middle">riippuvuudet ja suorittaa</text>
+<text x="820" y="196" font-size="14" fill="#2d3748" text-anchor="middle">testit puhtaassa ympäristössä</text>
+<line x1="408" y1="140" x2="334" y2="140" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<circle cx="352" cy="120" r="13" fill="#dd6b20"/>
+<text x="352" y="125" font-size="14" fill="white" text-anchor="middle" font-weight="bold">1</text>
+<text x="372" y="125" font-size="13" fill="#718096" text-anchor="start" font-style="italic">pull</text>
+<line x1="332" y1="195" x2="406" y2="195" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<circle cx="352" cy="215" r="13" fill="#dd6b20"/>
+<text x="352" y="220" font-size="14" fill="white" text-anchor="middle" font-weight="bold">4</text>
+<text x="372" y="220" font-size="13" fill="#718096" text-anchor="start" font-style="italic">push</text>
+<line x1="592" y1="165" x2="666" y2="165" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<circle cx="629" cy="147" r="13" fill="#dd6b20"/>
+<text x="629" y="152" font-size="14" fill="white" text-anchor="middle" font-weight="bold">5</text>
+<text x="629" y="190" font-size="13" fill="#718096" text-anchor="middle" font-style="italic">muutos</text>
+<path d="M820,262 C820,315 180,315 180,264" fill="none" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<circle cx="330" cy="338" r="13" fill="#dd6b20"/>
+<text x="330" y="343" font-size="14" fill="white" text-anchor="middle" font-weight="bold">6</text>
+<text x="350" y="343" font-size="14" fill="#2d3748" text-anchor="start">palaute: jos build punainen, se korjataan heti</text>
+</svg>

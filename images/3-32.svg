@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" width="1000" height="330" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="nr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e53e3e"/></marker></defs>
+<rect width="1000" height="330" fill="white"/>
+<text x="500.0" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Trunk based development</text>
+<line x1="110" y1="240" x2="970" y2="240" stroke="#2d3748" stroke-width="4" marker-end="url(#n)"/>
+<text x="98" y="245" font-size="15" fill="#2d3748" text-anchor="end" font-weight="bold">trunk</text>
+<text x="98" y="262" font-size="12" fill="#718096" text-anchor="end">(main)</text>
+<path d="M150,240 C150,268 150,268 160,268 L175,268 C185,268 185,268 185,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="167.5" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M260,240 C260,268 260,268 270,268 L280,268 C290,268 290,268 290,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="275.0" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M370,240 C370,268 370,268 380,268 L395,268 C405,268 405,268 405,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="387.5" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M530,240 C530,268 530,268 540,268 L550,268 C560,268 560,268 560,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="545.0" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M650,240 C650,268 650,268 660,268 L680,268 C690,268 690,268 690,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="670.0" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M790,240 C790,268 790,268 800,268 L810,268 C820,268 820,268 820,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="805.0" cy="268" r="3.5" fill="#3182ce"/>
+<path d="M880,240 C880,268 880,268 890,268 L905,268 C915,268 915,268 915,240" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<circle cx="897.5" cy="268" r="3.5" fill="#3182ce"/>
+<circle cx="130" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="152" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="174" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="196" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="218" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="240" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="262" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="284" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="328" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="350" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="372" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="394" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="416" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="460" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="482" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="504" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="526" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="548" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="570" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="592" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="614" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="636" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="658" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="680" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="702" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="724" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="746" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="768" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="790" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="812" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="834" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="856" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="878" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="900" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="922" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<circle cx="944" cy="240" r="5.5" fill="#38a169" stroke="white" stroke-width="1.2"/>
+<path d="M200,240 L240,95 L590,95" fill="none" stroke="#2d3748" stroke-width="3"/>
+<line x1="590" y1="85" x2="590" y2="105" stroke="#2d3748" stroke-width="3"/>
+<text x="248" y="81" font-size="15" fill="#2d3748" text-anchor="start" font-weight="bold">release branch 1.1.x</text>
+<path d="M620,240 L660,95 L970,95" fill="none" stroke="#2d3748" stroke-width="3" marker-end="url(#n)"/>
+<text x="668" y="81" font-size="15" fill="#2d3748" text-anchor="start" font-weight="bold">release branch 1.2.x</text>
+<rect x="259" y="84" width="22" height="22" transform="rotate(45 270 95)" fill="#805ad5" stroke="white" stroke-width="1.5"/>
+<text x="270" y="129" font-size="13" fill="#805ad5" text-anchor="middle" font-weight="bold">1.1.0</text>
+<rect x="489" y="84" width="22" height="22" transform="rotate(45 500 95)" fill="#805ad5" stroke="white" stroke-width="1.5"/>
+<text x="500" y="129" font-size="13" fill="#805ad5" text-anchor="middle" font-weight="bold">1.1.1</text>
+<rect x="709" y="84" width="22" height="22" transform="rotate(45 720 95)" fill="#805ad5" stroke="white" stroke-width="1.5"/>
+<text x="720" y="129" font-size="13" fill="#805ad5" text-anchor="middle" font-weight="bold">1.2.0</text>
+<circle cx="300" cy="240" r="7" fill="#e53e3e" stroke="white" stroke-width="1.2"/>
+<line x1="303" y1="231" x2="328" y2="107" stroke="#e53e3e" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#nr)"/>
+<circle cx="330" cy="95" r="7" fill="white" stroke="#e53e3e" stroke-width="2.5"/>
+<circle cx="445" cy="240" r="7" fill="#e53e3e" stroke="white" stroke-width="1.2"/>
+<line x1="448" y1="231" x2="468" y2="107" stroke="#e53e3e" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#nr)"/>
+<circle cx="470" cy="95" r="7" fill="white" stroke="#e53e3e" stroke-width="2.5"/>
+<text x="395" y="179.5" font-size="12" fill="#e53e3e" text-anchor="middle" font-style="italic">cherry-pick</text>
+<circle cx="90" cy="304" r="5.5" fill="#38a169"/>
+<text x="106" y="309" font-size="13" fill="#718096" text-anchor="start">pieni muutos trunkiin</text>
+<path d="M263.6,298 C263.6,308 263.6,308 269.6,308 L277.6,308 C283.6,308 283.6,308 283.6,298" fill="none" stroke="#3182ce" stroke-width="1.8"/>
+<text x="289.6" y="309" font-size="13" fill="#718096" text-anchor="start">lyhytikäinen haara, mergetään alle vuorokaudessa</text>
+<circle cx="635.4" cy="304" r="5.5" fill="#e53e3e"/>
+<text x="651.4" y="309" font-size="13" fill="#718096" text-anchor="start">virheen korjaus</text>
+<rect x="773.4" y="298" width="12" height="12" transform="rotate(45 779.4 304)" fill="#805ad5"/>
+<text x="795.4" y="309" font-size="13" fill="#718096" text-anchor="start">julkaisu</text>
+</svg>

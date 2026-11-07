@@ -10,8 +10,9 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Miniprojektit alkavat 9.11. alkavalla viikolla <a href="#ryhmän-muodostaminen">aloitustilaisuuksilla</a></li>
-    <li>Ilmoittautuminen aloitustilaisuuksiin käynnissä, ja tapahtuu <a href="{{site.stats_url}}/miniproject">täällä</a>. Ilmoittautuminen päättyy to 5.11. klo 23.59</li>
+    <li><a href="#johdanto">Miniprojektit</a> alkavat 9.11. alkavalla viikolla <a href="#ryhmän-muodostaminen">aloitustilaisuuksilla</a></li>
+    <li>Näet aloitustilaisuutesi palautussovelluksesta <a href="{{site.stats_url}}/miniproject">täältä</a></li>
+    <li>Ensimmäisen sprintin <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
   </ul>
 </div>
 
@@ -22,6 +23,7 @@ inheader: yes
 - Ohje Flaskin käyttöön [täällä](/flask)
 - [Boilerplate](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate) 
 - [Esimerkki ja ohje backlogien tekemiseen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/BACKLOG.md)
+- Toteutettavan ohjelman [kuvaus](/speksi)
 
 ### Johdanto
 
@@ -45,7 +47,7 @@ inheader: yes
   - ke 11.11. klo 16–18 C220
   - to 12.11. klo 10–12 BK114
   - to 12.11. klo 14–16 B222
-  - Aloitustilaisuuksiin ilmoittautuminen alkaa 27.10. ja päättyy to 5.11. klo 23.59
+  - Näet aloitustilaisuutesi palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject)
 - Aloitustilaisuuteen tullessa on syytä tuntea materiaalin osien 1 ja 2 asioista ainakin seuraavat:
   - Scrum
   - sprintti
@@ -101,7 +103,7 @@ Ohjaaja kertoo ensimmäisessä tapaamisessa, miten roolin vaihtuminen näkyy. Vo
 
 ### Toteutettava ohjelmisto
 
-Kuulet lisää asiakkaalta.
+Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 
 ### Toteutusteknologia
 

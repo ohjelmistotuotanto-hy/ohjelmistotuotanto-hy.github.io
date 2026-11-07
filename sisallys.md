@@ -147,11 +147,11 @@ permalink: /sisallys/
     - [Canary release](/osa3#canary-release)
     - [Tuotannossa testaaminen ja tietokanta](/osa3#tuotannossa-testaaminen-ja-tietokanta)
     - [Feature flag](/osa3#feature-flag)
-    - [Feature branchit ja merge hell](/osa3#feature-branchit-ja-merge-hell)
+    - [Trunk based development](/osa3#trunk-based-development)
   - [DevOps](/osa3#devops)
   - [Yhteenveto - ketterän testauksen nelikenttä](/osa3#yhteenveto---ketterän-testauksen-nelikenttä)
-  - [Loppupäätelmiä testauksesta ja laadunhallinnasta](/osa3#loppupäätelmiä-testauksesta-ja-laadunhallinnasta)
   - [Tieteellinen evidenssi](/osa3#tieteellinen-evidenssi)
+  - [Loppupäätelmiä testauksesta ja laadunhallinnasta](/osa3#loppupäätelmiä-testauksesta-ja-laadunhallinnasta)
 
 ### [Osa 4: Ohjelmiston suunnittelu](/osa4)
 

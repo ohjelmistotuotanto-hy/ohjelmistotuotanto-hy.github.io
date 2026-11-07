@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 375" width="1000" height="375" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="nuoli" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<rect width="1000" height="375" fill="white"/>
+<text x="500" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Mitä testi kattaa?</text>
+<text x="250" y="65" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Yksikkötesti</text>
+<text x="750" y="65" font-size="16" fill="#2d3748" text-anchor="middle" font-weight="bold">Integraatiotesti</text>
+<rect x="40" y="90" width="140" height="44" rx="6" fill="#bee3f8" stroke="#2d3748" stroke-width="1.5"/>
+<text x="110" y="117" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">testi</text>
+<line x1="180" y1="112" x2="268" y2="112" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<rect x="270" y="90" width="140" height="44" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="340" y="117" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">Kauppa</text>
+<line x1="340" y1="144" x2="270" y2="192" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<line x1="340" y1="144" x2="410" y2="192" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<rect x="190" y="195" width="150" height="44" rx="6" fill="white" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="265" y="216" font-size="14" fill="#2d3748" text-anchor="middle">Pankki</text>
+<text x="265" y="232" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">mock</text>
+<rect x="350" y="195" width="150" height="44" rx="6" fill="white" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="425" y="216" font-size="14" fill="#2d3748" text-anchor="middle">Viitegeneraattori</text>
+<text x="425" y="232" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">mock</text>
+<rect x="258" y="80" width="164" height="64" rx="8" fill="none" stroke="#dd6b20" stroke-width="2.5"/>
+<rect x="540" y="90" width="140" height="44" rx="6" fill="#bee3f8" stroke="#2d3748" stroke-width="1.5"/>
+<text x="610" y="117" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">testi</text>
+<line x1="680" y1="112" x2="728" y2="112" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<rect x="730" y="90" width="170" height="44" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="815" y="117" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">sovelluslogiikka</text>
+<line x1="815" y1="134" x2="815" y2="174" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<rect x="730" y="176" width="170" height="44" rx="6" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="815" y="203" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">tietokantarajapinta</text>
+<line x1="815" y1="220" x2="815" y2="258" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<rect x="715" y="250" width="200" height="56" rx="8" fill="white" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="815" y="269" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">Docker-kontti</text>
+<rect x="730" y="274" width="170" height="26" rx="4" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<text x="815" y="292" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">PostgreSQL</text>
+<rect x="715" y="80" width="210" height="232" rx="8" fill="none" stroke="#dd6b20" stroke-width="2.5"/>
+<rect x="300" y="340" width="30" height="16" fill="none" stroke="#dd6b20" stroke-width="2.5" rx="4"/>
+<text x="340" y="353" font-size="14" fill="#2d3748" text-anchor="start">testattava kokonaisuus</text>
+<rect x="560" y="340" width="30" height="16" fill="white" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4" rx="4"/>
+<text x="600" y="353" font-size="14" fill="#2d3748" text-anchor="start">korvattu testissä (mock) tai kontissa ajettava</text>
+</svg>

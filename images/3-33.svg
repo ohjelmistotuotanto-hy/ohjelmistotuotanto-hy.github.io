@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="600" fill="white"/>
+<text x="500.0" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Ketterän testauksen nelikenttä</text>
+<rect x="110" y="90" width="390.0" height="225.0" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+<text x="486.0" y="301.0" font-size="16" fill="#3182ce" text-anchor="end" font-weight="bold">Q2</text>
+<text x="305.0" y="159.5" font-size="15" fill="#2d3748" text-anchor="middle">hyväksymistestit ja BDD</text>
+<text x="305.0" y="183.5" font-size="13" fill="#718096" text-anchor="middle">(esim. Robot Framework)</text>
+<text x="305.0" y="207.5" font-size="15" fill="#2d3748" text-anchor="middle">end-to-end-testit (esim. Playwright)</text>
+<text x="305.0" y="231.5" font-size="15" fill="#2d3748" text-anchor="middle">esimerkit ja user storyjen testit</text>
+<text x="305.0" y="255.5" font-size="15" fill="#2d3748" text-anchor="middle">prototyypit ja simulaatiot</text>
+<rect x="500.0" y="90" width="390.0" height="225.0" fill="#fffaf0" stroke="#dd6b20" stroke-width="2"/>
+<text x="514.0" y="301.0" font-size="16" fill="#dd6b20" text-anchor="start" font-weight="bold">Q3</text>
+<text x="695.0" y="159.5" font-size="15" fill="#2d3748" text-anchor="middle">tutkiva testaus</text>
+<text x="695.0" y="183.5" font-size="15" fill="#2d3748" text-anchor="middle">käytettävyystestaus</text>
+<text x="695.0" y="207.5" font-size="15" fill="#2d3748" text-anchor="middle">saavutettavuuden testaus käsin</text>
+<text x="695.0" y="231.5" font-size="15" fill="#2d3748" text-anchor="middle">käyttäjien hyväksymistestaus (UAT)</text>
+<text x="695.0" y="255.5" font-size="15" fill="#2d3748" text-anchor="middle">alfa- ja betatestaus</text>
+<rect x="110" y="315.0" width="390.0" height="225.0" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+<text x="486.0" y="341.0" font-size="16" fill="#38a169" text-anchor="end" font-weight="bold">Q1</text>
+<text x="305.0" y="396.5" font-size="15" fill="#2d3748" text-anchor="middle">yksikkötestit</text>
+<text x="305.0" y="420.5" font-size="15" fill="#2d3748" text-anchor="middle">komponentti- ja integraatiotestit</text>
+<text x="305.0" y="444.5" font-size="15" fill="#2d3748" text-anchor="middle">staattinen analyysi</text>
+<text x="305.0" y="468.5" font-size="13" fill="#718096" text-anchor="middle">(esim. lint, tyyppitarkistus)</text>
+<rect x="500.0" y="315.0" width="390.0" height="225.0" fill="#faf5ff" stroke="#805ad5" stroke-width="2"/>
+<text x="514.0" y="341.0" font-size="16" fill="#805ad5" text-anchor="start" font-weight="bold">Q4</text>
+<text x="695.0" y="384.5" font-size="15" fill="#2d3748" text-anchor="middle">suorituskyky- ja kuormitustestaus</text>
+<text x="695.0" y="408.5" font-size="15" fill="#2d3748" text-anchor="middle">tietoturvatestaus ja</text>
+<text x="695.0" y="432.5" font-size="15" fill="#2d3748" text-anchor="middle">riippuvuuksien skannaus</text>
+<text x="695.0" y="456.5" font-size="15" fill="#2d3748" text-anchor="middle">automaattinen saavutettavuustarkistus</text>
+<text x="695.0" y="480.5" font-size="15" fill="#2d3748" text-anchor="middle">luotettavuus, skaalautuvuus ym.</text>
+<text x="500.0" y="64" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">liiketoimintanäkökulma</text>
+<text x="500.0" y="81" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">business facing</text>
+<text x="500.0" y="564" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">teknologianäkökulma</text>
+<text x="500.0" y="581" font-size="12" fill="#718096" text-anchor="middle" font-style="italic">technology facing</text>
+<text x="74" y="315.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" transform="rotate(-90 74 315.0)">kehitystä ohjaavat</text>
+<text x="92" y="315.0" font-size="12" fill="#718096" text-anchor="middle" font-style="italic" transform="rotate(-90 92 315.0)">guide development</text>
+<text x="920" y="315.0" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" transform="rotate(90 920 315.0)">tuotetta arvioivat</text>
+<text x="904" y="315.0" font-size="12" fill="#718096" text-anchor="middle" font-style="italic" transform="rotate(90 904 315.0)">critique the product</text>
+</svg>

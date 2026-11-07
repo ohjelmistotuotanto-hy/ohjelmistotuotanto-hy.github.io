@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" width="1000" height="330" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="nuoli" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="nuolip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="nuolir" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c53030"/></marker><marker id="nuolig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#718096"/></marker></defs>
+<rect width="1000" height="330" fill="white"/>
+<text x="500.0" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Canary release</text>
+<circle cx="48" cy="163.1" r="7.6499999999999995" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<path d="M34.4,190.3 C34.4,173.3 61.6,173.3 61.6,190.3 Z" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<circle cx="92" cy="163.1" r="7.6499999999999995" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<path d="M78.4,190.3 C78.4,173.3 105.6,173.3 105.6,190.3 Z" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<circle cx="70" cy="161" r="9" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<path d="M54,193 C54,173 86,173 86,193 Z" fill="#fefcbf" stroke="#b7791f" stroke-width="1.5"/>
+<text x="70" y="217" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">käyttäjät</text>
+<rect x="160" y="152" width="150" height="56" rx="6" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5"/>
+<text x="235.0" y="184.9" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold">reverse proxy</text>
+<line x1="115" y1="180" x2="156" y2="180" stroke="#2d3748" stroke-width="4" marker-end="url(#nuoli)"/>
+<rect x="470" y="50" width="505" height="120" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+<text x="484" y="72" font-size="14" fill="#3182ce" text-anchor="start" font-weight="bold">vanha versio</text>
+<rect x="490" y="86" width="130" height="70" rx="6" fill="white" stroke="#2d3748" stroke-width="1.5"/>
+<text x="555.0" y="125.55" font-size="13" fill="#2d3748" text-anchor="middle">web-palvelin</text>
+<line x1="620" y1="121.0" x2="648" y2="121.0" stroke="#2d3748" stroke-width="1.2" marker-end="url(#nuolip)"/>
+<rect x="650" y="86" width="140" height="70" rx="6" fill="white" stroke="#2d3748" stroke-width="1.5"/>
+<text x="720.0" y="125.55" font-size="13" fill="#2d3748" text-anchor="middle">sovelluspalvelin</text>
+<line x1="790" y1="121.0" x2="818" y2="121.0" stroke="#2d3748" stroke-width="1.2" marker-end="url(#nuolip)"/>
+<path d="M822,92 L822,150 A55.0,10 0 0 0 932,150 L932,92" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+<ellipse cx="877.0" cy="92" rx="55.0" ry="10" fill="#f3ebff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="877.0" y="133.0" font-size="13" fill="#2d3748" text-anchor="middle">tietokanta</text>
+<rect x="470" y="200" width="505" height="120" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+<text x="484" y="222" font-size="14" fill="#38a169" text-anchor="start" font-weight="bold">uusi versio (canary)</text>
+<rect x="490" y="236" width="130" height="70" rx="6" fill="white" stroke="#2d3748" stroke-width="1.5"/>
+<text x="555.0" y="275.55" font-size="13" fill="#2d3748" text-anchor="middle">web-palvelin</text>
+<line x1="620" y1="271.0" x2="648" y2="271.0" stroke="#2d3748" stroke-width="1.2" marker-end="url(#nuolip)"/>
+<rect x="650" y="236" width="140" height="70" rx="6" fill="white" stroke="#2d3748" stroke-width="1.5"/>
+<text x="720.0" y="275.55" font-size="13" fill="#2d3748" text-anchor="middle">sovelluspalvelin</text>
+<line x1="790" y1="271.0" x2="818" y2="271.0" stroke="#2d3748" stroke-width="1.2" marker-end="url(#nuolip)"/>
+<path d="M822,242 L822,300 A55.0,10 0 0 0 932,300 L932,242" fill="#e9d8fd" stroke="#805ad5" stroke-width="1.5"/>
+<ellipse cx="877.0" cy="242" rx="55.0" ry="10" fill="#f3ebff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="877.0" y="283.0" font-size="13" fill="#2d3748" text-anchor="middle">tietokanta</text>
+<line x1="312" y1="168" x2="466" y2="112" stroke="#2d3748" stroke-width="4" marker-end="url(#nuoli)"/>
+<text x="368" y="118" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">suurin osa</text>
+<text x="368" y="134" font-size="13" fill="#718096" text-anchor="middle">95 %</text>
+<line x1="312" y1="194" x2="466" y2="256" stroke="#2d3748" stroke-width="1.5" marker-end="url(#nuoli)"/>
+<text x="366" y="252" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold">osa käyttäjistä</text>
+<text x="366" y="268" font-size="13" fill="#718096" text-anchor="middle">5 %</text>
+</svg>

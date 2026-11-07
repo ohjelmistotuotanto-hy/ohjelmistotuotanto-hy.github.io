@@ -36,7 +36,63 @@ Perusteeton osallistumattomuus johonkin sprinttiin johtaa miniprojektisuoritukse
 
 ### Ensimmäisen sprintin arvosteluperusteet
 
-_Tulossa myöhemmin!_
+Projekti tulee olla rekisteröity palautussovellukseen <{{site.stats_url}}>.
+
+- **Yksi ryhmäläinen** kirjautuu järjestelmään, menee välilehdelle _miniprojects_
+  - Luo projektin _create project_ -napista avautuvasta lomakkeesta
+  - Ja jakaa muille ryhmäläisille luodun projektin id:n
+- **Muut ryhmäläiset** kirjautuvat järjestelmään ja liittyvät id:n avulla ryhmään _join project_ -napista avautuvasta lomakkeesta
+
+**Jokaisen ryhmäläisen on oltava rekisteröitynyt projektiin viimeistään ensimmäisen sprintin lopuksi pidettävässä asiakastapaamisessa.**
+- Ne ryhmäläiset joita ei ole rekisteröity ensimmäisen sprintin asiakastapaamiseen mennessä, eivät saa ryhmälle sprintistä tulevia pisteitä
+
+Linkit projektin backlogeihin ja muihin dokumentteihin (ja niihin tulee olla koko maailmalla lukuoikeus), ja GitHub Actionsiin (tai muuhun käytössä olevaan CI-palveluun) tulee laittaa projektin GitHub-repositorion README:hen!
+
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) GitHub README:
+  - README:sta löytyy linkki ryhmän pelisääntöihin (tiedosto `pelisaannot.md`, ks. [vihjeitä ryhmätyöskentelyyn](/miniprojekti/#vihjeitä-ryhmätyöskentelyyn))
+    - Pelisäännöistä arvioidaan ainoastaan se, että ne on laadittu, ei niiden sisältöä
+  - README:sta löytyy linkki backlogeihin (ja niihin on _koko maailmalla_ lukuoikeudet)
+  - Definition of done kirjattu eksplisiittisesti
+  - Linkki OKD-klusterilla toimivaan sovellukseen (riittää, että boilerplate tai sprintin ensimmäinen story toimii siellä)
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.25p) sprintin 1 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Sprintin etenemistä seurataan valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
+    - Kaavio voi olla esim. GitHub Projectsin automaattisesti piirtämä
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+  - Taskin status on näkyvissä (esim. todo, doing, done)
+- (0.25p) sprintiin 1 valittujen user storyjen hyväksymiskriteerit kirjattu
+- (0.25p) testaus
+  - Projektissa on ainakin yksi ryhmän itse tekemä Robot-testi (boilerplaten valmiita testejä ei lasketa)
+- (0.25p) jatkuva integraatio
+  - Projektin koodi on GitHubissa
+  - GitHub Actions suorittaa testit ja ne menevät läpi
+- (0.25p) toteutus
+  - Ainakin _yksi_ sprintin tavoitteeseen sovituista storyista toteutettu _definition of donen_ mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
+- (0.25p) työtä tehty tasaisesti
+  - Kaikki työ ei saa olla yhtenä päivänä tehty
+- (0.25p) GitHubissa on järkevästi määritelty .gitignore ja repositoriossa ei ole sinne kuulumattomia tiedostoja
+- (0.25p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle demonstroidaan ne sprinttiin valitut user storyt jotka on toteutettu hyväksymiskriteerien mukaisesti
+
+Sprintin maksimi on 2.5 pistettä.
+
+#### Retrospektiivi
+
+- Sprintin 1 päätteeksi tulee pitää retrospektiivi
+- Ohjeet retrospektiivin pitämiseen löytyvät [miniprojektin ohjeista](/miniprojekti/#retrospektiivin-pitäminen)
+- Retrospektiivista tulee kirjoittaa lyhyet muistiinpanot projektin repositorion juureen laitettavaan tiedostoon `retro.md`
+- Retrospektiivissa havaituista asioista tulee identifioida vähintään kolme _konkreettista parannuskohdetta_, eli asiaa joissa tiimi parantaa toimintaansa seuraavassa sprintissä
+  - parannuskohteen tulee olla sellainen, että sen toteutumisen voi sprintin lopussa tarkistaa: esim. _jokainen pull request katselmoidaan ennen mergeämistä_ eikä _kommunikoidaan paremmin_
+  - parannuskohteet kirjataan muistiinpanoihin ja lisätään seuraavan sprintin backlogiin omiksi taskeikseen, joille on merkitty vastuuhenkilö
+- Jokaisen retrospektiivin alussa käydään läpi edellisen retrospektiivin parannuskohteet ja kirjataan muistiinpanoihin, miten kukin toteutui (toteutui / osittain / ei) ja miksi
+- Retrospektiivin perusteella kannattaa tarvittaessa päivittää myös ryhmän pelisääntöjä
+- Retrospektiivi vaikuttaa sprintin 2 pisteytykseen
 
 ### Toisen sprintin arvosteluperusteet
 

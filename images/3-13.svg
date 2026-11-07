@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" width="1000" height="350" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="nuoli" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="nuolip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="nuolir" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c53030"/></marker><marker id="nuolig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#718096"/></marker></defs>
+<rect width="1000" height="350" fill="white"/>
+<text x="500.0" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Laadunhallinta tuotannossa</text>
+<text x="40" y="92" font-size="14" fill="#718096" text-anchor="start" font-style="italic">deployment pipeline</text>
+<rect x="40" y="110" width="200" height="70" rx="10" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="140.0" y="141.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">commit ja</text>
+<text x="140.0" y="159.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">käännös</text>
+<line x1="244" y1="145" x2="276" y2="145" stroke="#2d3748" stroke-width="3" marker-end="url(#nuoli)"/>
+<rect x="280" y="110" width="200" height="70" rx="10" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="380.0" y="141.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">automaattiset</text>
+<text x="380.0" y="159.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">testit</text>
+<line x1="484" y1="145" x2="516" y2="145" stroke="#2d3748" stroke-width="3" marker-end="url(#nuoli)"/>
+<rect x="520" y="110" width="200" height="70" rx="10" fill="#edf2f7" stroke="#2d3748" stroke-width="1.5"/>
+<text x="620.0" y="150.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">staging</text>
+<line x1="724" y1="145" x2="756" y2="145" stroke="#2d3748" stroke-width="3" marker-end="url(#nuoli)"/>
+<rect x="760" y="110" width="200" height="70" rx="10" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5"/>
+<text x="860.0" y="150.25" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">tuotanto</text>
+<rect x="540" y="40" width="160" height="34" rx="17" fill="#c53030"/>
+<text x="620" y="62" font-size="14" fill="white" text-anchor="middle" font-weight="bold">laadunhallinta</text>
+<line x1="620" y1="76" x2="620" y2="104" stroke="#c53030" stroke-width="2" marker-end="url(#nuolir)"/>
+<text x="730" y="52" font-size="13" fill="#c53030" text-anchor="start" font-style="italic">perinteisesti: testataan ennen tuotantoon</text>
+<text x="730" y="70" font-size="13" fill="#c53030" text-anchor="start" font-style="italic">vientiä, onko ohjelmisto valmis julkaistavaksi</text>
+<rect x="720" y="258" width="160" height="34" rx="17" fill="#c53030"/>
+<text x="800" y="280" font-size="14" fill="white" text-anchor="middle" font-weight="bold">laadunhallinta</text>
+<line x1="760" y1="256" x2="640" y2="186" stroke="#c53030" stroke-width="2" marker-end="url(#nuolir)"/>
+<line x1="820" y1="256" x2="850" y2="186" stroke="#c53030" stroke-width="2" marker-end="url(#nuolir)"/>
+<text x="700" y="316" font-size="13" fill="#c53030" text-anchor="middle" font-style="italic">laadunhallinta tuotannossa: valvotaan myös käytössä olevaa</text>
+<text x="700" y="334" font-size="13" fill="#c53030" text-anchor="middle" font-style="italic">ohjelmistoa ja löydetään laatuongelmat monitoroimalla sen käyttöä</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <pattern id="viivoitus" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="8" height="8" fill="#edf2f7"/>
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#a0aec0" stroke-width="3"/>
+  </pattern>
+</defs>
+<rect width="1000" height="400" fill="white"/>
+
+<text x="500" y="30" font-size="18" fill="#2d3748" text-anchor="middle" font-weight="bold">Tekstitv:n sivunumeron ekvivalenssiluokat</text>
+
+<!-- luokkien otsikot -->
+<text x="155" y="72" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">liian pieni</text>
+<text x="500" y="72" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">validi sivunumero 100–899</text>
+<text x="845" y="72" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">liian suuri</text>
+
+<!-- lukusuora -->
+<rect x="60" y="90" width="190" height="44" fill="#fed7d7" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="250" y="90" width="500" height="44" fill="#c6f6d5" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="750" y="90" width="190" height="44" fill="#fed7d7" stroke="#2d3748" stroke-width="1.5"/>
+
+<!-- sivut joita ei ole -->
+<rect x="330" y="91" width="40" height="42" fill="url(#viivoitus)"/>
+<rect x="470" y="91" width="25" height="42" fill="url(#viivoitus)"/>
+<rect x="560" y="91" width="70" height="42" fill="url(#viivoitus)"/>
+<rect x="680" y="91" width="30" height="42" fill="url(#viivoitus)"/>
+
+<!-- testisyötteet: tavalliset edustajat -->
+<circle cx="140" cy="112" r="7" fill="#3182ce"/>
+<text x="140" y="160" font-size="14" fill="#2d3748" text-anchor="middle">esim. 42</text>
+<circle cx="420" cy="112" r="7" fill="#3182ce"/>
+<text x="420" y="160" font-size="14" fill="#2d3748" text-anchor="middle">esim. 235</text>
+<circle cx="595" cy="112" r="7" fill="#3182ce"/>
+<text x="595" y="160" font-size="14" fill="#2d3748" text-anchor="middle">sivu, jota ei ole</text>
+<circle cx="860" cy="112" r="7" fill="#3182ce"/>
+<text x="860" y="160" font-size="14" fill="#2d3748" text-anchor="middle">esim. 1234</text>
+
+<!-- raja-arvot -->
+<circle cx="238" cy="112" r="7" fill="#dd6b20"/>
+<circle cx="262" cy="112" r="7" fill="#dd6b20"/>
+<circle cx="738" cy="112" r="7" fill="#dd6b20"/>
+<circle cx="762" cy="112" r="7" fill="#dd6b20"/>
+<line x1="238" y1="134" x2="238" y2="190" stroke="#dd6b20" stroke-width="1.2"/>
+<line x1="262" y1="134" x2="262" y2="190" stroke="#dd6b20" stroke-width="1.2"/>
+<line x1="738" y1="134" x2="738" y2="190" stroke="#dd6b20" stroke-width="1.2"/>
+<line x1="762" y1="134" x2="762" y2="190" stroke="#dd6b20" stroke-width="1.2"/>
+<text x="232" y="206" font-size="15" fill="#dd6b20" text-anchor="end" font-weight="bold">99</text>
+<text x="268" y="206" font-size="15" fill="#dd6b20" text-anchor="start" font-weight="bold">100</text>
+<text x="732" y="206" font-size="15" fill="#dd6b20" text-anchor="end" font-weight="bold">899</text>
+<text x="768" y="206" font-size="15" fill="#dd6b20" text-anchor="start" font-weight="bold">900</text>
+
+<!-- ei-numeeriset luokat -->
+<text x="500" y="262" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold">syötteet, jotka eivät ole lukuja</text>
+<rect x="250" y="276" width="230" height="50" rx="6" fill="#fed7d7" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="278" cy="301" r="7" fill="#3182ce"/>
+<text x="296" y="306" font-size="14" fill="#2d3748">kiellettyjä merkkejä: 2a5</text>
+<rect x="520" y="276" width="230" height="50" rx="6" fill="#fed7d7" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="548" cy="301" r="7" fill="#3182ce"/>
+<text x="566" y="306" font-size="14" fill="#2d3748">tyhjä syöte</text>
+
+<!-- selite -->
+<circle cx="80" cy="368" r="7" fill="#3182ce"/>
+<text x="94" y="373" font-size="14" fill="#2d3748">luokan edustaja</text>
+<circle cx="250" cy="368" r="7" fill="#dd6b20"/>
+<text x="264" y="373" font-size="14" fill="#2d3748">raja-arvo</text>
+<rect x="380" y="358" width="30" height="20" fill="url(#viivoitus)" stroke="#2d3748" stroke-width="1"/>
+<text x="420" y="373" font-size="14" fill="#2d3748">validi luku, jota vastaavaa sivua ei ole</text>
+<rect x="720" y="358" width="30" height="20" fill="#fed7d7" stroke="#2d3748" stroke-width="1"/>
+<text x="760" y="373" font-size="14" fill="#2d3748">virheellinen syöte</text>
+</svg>
