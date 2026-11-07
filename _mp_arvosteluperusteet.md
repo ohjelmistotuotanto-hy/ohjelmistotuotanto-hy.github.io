@@ -123,7 +123,7 @@ Pisteitä kertyy seuraavista asioista:
   - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
   - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
   - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
-- **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks ohje alta
+- **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks. [ohje](/miniprojektin_arvosteluperusteet/#retrospektiivi)
 
 Sprintin maksimi on 2.5 pistettä.
 
