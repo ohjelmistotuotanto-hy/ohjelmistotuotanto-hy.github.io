@@ -108,6 +108,8 @@ Pull requesteja käytettäessä työn kulku on seuraava:
 - Jos koodi ei ole vielä siinä kunnossa, että tehdyt muutokset voidaan liittää repositorioon, hallinnoija kirjoittaa pull requestin tekijälle joukon parannusehdotuksia.
 - Muutosten ollessa hyväksyttävästi tehtyjä, pull request mergetään eli yhdistetään päärepositorioon.
 
+![]({{ "/images/3-35.png" | relative_url }})
+
 Seuraavassa esimerkki [miniprojektin boilerplate-repositorioon](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/pull/46) tehdystä pull requestista. Pull request toteuttaa todon poistamisen. Kuvauksessa mainitaan story, johon muutos liittyy, ja rivit _Closes #28_ ja _Closes #29_ kertovat GitHubille, että pull requestin mergeäminen sulkee samalla storyn kaksi taskia. Oikeassa reunassa näkyy pull requestille pyydetty katselmoija.
 
 ![]({{ "/images/3-1.png" | relative_url }})
@@ -208,7 +210,9 @@ Yksittäinen _testitapaus_ (engl. test case) testaa järjestelmän toiminnallisu
 
 Testeissä kannattaakin pyrkiä jakamaan syötteet _ekvivalenssiluokkiin_, eli ryhmiin joihin kuuluvien syötteiden suhteen ohjelma toimii oleellisesti samalla tavalla. Testitapauksia kannattaa tehdä useimmiten ainoastaan yksi tai kaksi kutakin ekvivalenssiluokkaa tai syötteiden ekvivalenssiluokkien kombinaatiota kohti. Ekvivalenssiluokkien edustajiksi kannattaa erityisesti valita näiden _raja-arvoja_, koodissa olevat bugit nimittäin liittyvät erittäin usein toisto- ja ehtolauseiden ehtojen äärimmäisiin arvoihin.
 
-Esimerkiksi henkilötietoja käsittelevässä järjestelmässä iän suhteen ekvivalenssiluokkia olisivat ehkä _alaikäinen_ 0-17 vuotta, _työikäinen_ 18-65 vuotta ja _eläkeläinen_ 66- vuotta. Ekvivalenssiluokkien raja-arvojen järkevä määrittely edellyttää tietoa järjestelmän toiminnallisuudesta. Todennäköisesti työikäisten ja eläkeläisten suhteen ei olisi mahdollista tehdä selkeää jakoa iän perusteella. Jos oletetaan, että edelliset ekvivalenssiluokat olisivat järkeviä, sopivat iän _raja-arvot_ testitapauksia varten olisivat 17, 18, 65 ja 66 vuotta, eli näitä kaikkia kohti voitaisiin tehdä oma testitapauksensa.
+Esimerkiksi henkilötietoja käsittelevässä järjestelmässä iän suhteen ekvivalenssiluokkia olisivat ehkä _alaikäinen_ 0-17 vuotta, _työikäinen_ 18-65 vuotta ja _eläkeläinen_ 66- vuotta. Ekvivalenssiluokkien raja-arvojen järkevä määrittely edellyttää tietoa järjestelmän toiminnallisuudesta. Todennäköisesti työikäisten ja eläkeläisten suhteen ei olisi mahdollista tehdä selkeää jakoa iän perusteella. Jos oletetaan, että edelliset ekvivalenssiluokat olisivat järkeviä, sopivat iän _raja-arvot_ testitapauksia varten olisivat 17, 18, 65 ja 66 vuotta, eli näitä kaikkia kohti voitaisiin tehdä oma testitapauksensa. Myös virheelliset syötteet, kuten negatiiviset luvut, muodostavat oman ekvivalenssiluokkansa, jonka raja-arvot ovat -1 ja 0.
+
+![Iän ekvivalenssiluokat, kustakin luokasta valittu edustaja sekä luokkien väliset raja-arvot]({{ "/images/3-36.png" | relative_url }})
 
 Tarkastellaan toisena esimerkkinä teksti-tv:n selainversiota.
 
@@ -381,6 +385,10 @@ Erilaisia mutanttityyppejä, joita mutaatiotestauksessa generoidaan koodiin on p
 - kovakoodataan paluuarvo: <tt>return x</tt> muutetaan muotoon <tt>return True</tt>
 - korvataan konstruktorikutsu: <tt>olio = Olio()</tt> muutetaan muotoon <tt>olio = None</tt>
 
+Jos testit huomaavat mutantin, eli jokin testi hajoaa, mutantti on _tapettu_. Jos testit menevät mutantista huolimatta läpi, mutantti jää _eloon_, ja testeistä puuttuu jotain olennaista. Alla olevassa esimerkissä funktiolla on kaksi testiä, jotka suorittavat kaikki koodirivit, eli rivikattavuus on 100 %. Silti mutantti, joka muuttaa ehdon <tt>ika < 18</tt> muotoon <tt>ika <= 18</tt>, jää eloon, sillä yksikään testi ei kokeile raja-arvoa 18. Mutaatiotestaus paljastaa siis puuttuvan raja-arvotestin, jota kattavuus ei paljasta:
+
+![Mutaatiotestaus: kolmesta mutantista kaksi tapetaan, mutta ehdon muuttava mutantti jää eloon, kunnes lisätään raja-arvoa 18 testaava testi]({{ "/images/3-37.png" | relative_url }})
+
 Mutaatiotestauksen haasteena on mutaatioiden suuri määrä ja ns. _ekvivalentit mutantit_, joiden takia mutaatiotestauksen tulos vaatii aina ihmisen tulkintaa.
 
 Ekvivalentti mutantti tarkoittaa sellaista koodiin tehtyä muutosta, joka ei kuitenkaan muuta ohjelman toiminnallisuutta. Tällaisen mutantin lisäämistä koodiin ei voi mikään testi havaita. Mutantin toteaminen ekvivalentiksi algoritmisesti on mahdotonta.
@@ -406,6 +414,10 @@ _Ominaisuuksiin perustuvassa integroinnissa_ taas liitetään yhteen alikomponen
 Vesiputousmallin kulta-aikoina vanhan liiton ohjelmistotuotannossa toimintatapa oli se, että kaikki ohjelman yksittäiset komponentit ohjelmoitiin ja yksikkötestattiin erikseen. Lopuksi komponentit integroitiin (yleensä rakenteeseen perustuen) kerralla yhteen.
 
 Tällainen vesiputousmallin maailmassa yleinen, nimellä _big bang_ -integraatio kulkeva tekniikka on osoittautunut todella riskialttiiksi eikä sitä enää suositella käytettäväksi.
+
+Big bang -integraation ongelma näkyy hyvin, kun tarkastellaan, milloin sovelluksessa on ensimmäinen toimiva toiminnallisuus. Rakenteeseen perustuvassa integraatiossa mikään ei toimi päästä päähän ennen kuin kaikki kerrokset on integroitu yhteen, ja integraation ongelmat paljastuvat vasta projektin lopussa. Ominaisuuksiin perustuvassa integraatiossa ensimmäinen toimiva toiminnallisuus on valmiina jo ensimmäisen sprintin jälkeen:
+
+![Rakenteeseen perustuvassa integraatiossa ensimmäinen toimiva toiminnallisuus valmistuu vasta lopussa, ominaisuuksiin perustuvassa jo ensimmäisessä sprintissä]({{ "/images/3-38.png" | relative_url }})
 
 Moderni ohjelmistotuotanto suosii _jatkuvaa integraatiota_ (engl. continuous integration), joka on hyvin tiheässä tahdissa tapahtuvaa ominaisuuksiin perustuvaa integrointia. Palaamme aiheeseen tarkemmin pian.
 
@@ -895,6 +907,10 @@ Feature branchit ovat yleinen käytäntö, mutta pitkäikäisinä ne johtavat he
 Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin normipäivä erityisesti sprintin lopussa alkaa muistuttaa seuraavaa
 
 ![]({{ "/images/3-18.png" | relative_url }}){:height="80px" }
+
+Mitä pidempään haara elää erillään päähaarasta, sitä enemmän päähaaraan ehtii kertyä muiden tekemiä muutoksia, ja sitä työläämpi merge lopulta on. Jos haarat sen sijaan ovat lyhytikäisiä ja ne mergetään päähaaraan useita kertoja päivässä, kukin merge on pieni ja mahdolliset konfliktit helppoja korjata:
+
+![Pitkäikäiset haarat johtavat merge-konflikteihin, lyhytikäiset haarat mergetään päähaaraan useita kertoja päivässä]({{ "/images/3-39.png" | relative_url }})
 
 Vaihtoehtona tälle on [trunk based development](https://trunkbaseddevelopment.com/), jossa pitkäikäisiä feature brancheja ei käytetä ollenkaan.
 
