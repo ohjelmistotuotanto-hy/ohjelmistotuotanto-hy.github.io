@@ -109,11 +109,14 @@ Alustava kuvaus [täällä](/speksi). Kuulet asiakkaalta lisää.
 
 Sovellus tulee toteuttaa kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) tutulla Flask-sovelluskehyksellä, ja sen tulee tallentaa tietonsa SQLite-tietokantaan
 - SQLite ei vaadi erillistä tietokantapalvelinta, katso [ohje](/flask/#tietokanta)
-- Sovellus viedään yliopiston OKD-klusterille boilerplaten [ohjeen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate#sovelluksen-vieminen-okd-klusterille) mukaan
-  - ryhmälle on luotu klusterille valmiiksi oma projekti (namespace)
+- Sovellus viedään yliopiston OKD-klusterille boilerplaten [deployausohjeen](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/DEPLOYMENT.md) mukaan
+  - deployaus tehdään kerran koko ryhmän puolesta, mutta siitä kannattaa vastata kahden ryhmäläisen, jotta osaaminen ei ole vain yhden varassa
+  - ryhmälle on luotu klusterille valmiiksi oma projekti (namespace), jonka nimen näet palautussovelluksen välilehdeltä [miniproject]({{site.stats_url}}/miniproject) kohdasta _OKD-projekti_
   - `oc`-komentorivityökalun asennus ja klusteriin kirjautuminen neuvotaan [täällä](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/OKD.md). Klusteri näkyy vain yliopiston verkosta, eli Eduroamista tai HY:n VPN:n kautta
   - GitHub Actionsin buildaaman Docker-imagen on oltava julkinen
   - salaisuuksia sisältävää tiedostoa `secret.env` ei lisätä versionhallintaan
+  - kun sovellus on kerran deployattu, klusterilla oleva versio [päivittyy automaattisesti](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/DEPLOYMENT.md#automaattinen-päivittyminen) aina kun main-haaraan pushattu koodi läpäisee GitHub Actionsin testit. Komento `oc apply -k .` on kuitenkin suoritettava itse, jos esim. tiedostoa `kustomization.yaml`, hakemiston `manifests` tiedostoja tai tiedostoa `secret.env` muutetaan, ks. [Milloin deployaus tulee tehdä itse?](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/DEPLOYMENT.md#milloin-deployaus-tulee-tehdä-itse)
+  - **klusterin tietokanta ei päivity automaattisesti**: tietokannan taulut on luotava klusterille itse ensimmäisen deployauksen jälkeen ja aina kun tiedostoa `src/schema.sql` muutetaan, ks. [Tietokanta klusterilla](https://github.com/ohjelmistotuotanto-hy/miniprojekti-boilerplate/blob/main/DEPLOYMENT.md#tietokanta-klusterilla). Huomaa, että alustus hävittää kaiken klusterin tietokannassa olevan datan
 
 Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovelluksen konfiguroinnissa saattaa ajautua pahoihin vaikeuksiin. Lue [ohje Flaskin käytöstä](/flask), **on erittäin tärkeää että luet tämän ohjeen**.
 
@@ -139,7 +142,7 @@ Flaskia ei kannata missään tapauksessa käyttää miten sattuu, muuten sovellu
 - Ryhmä pitää jokaisen sprintin lopussa retrospektiivin (ks. [retrospektiivin pitäminen](#retrospektiivin-pitäminen))
   - retrospektiivin tärkeimmät havainnot ja vähintään kolme konkreettista parannuskohdetta kirjataan repositorion juureen tiedostoon `retro.md`, ja parannuskohteet lisätään seuraavan sprintin backlogiin taskeiksi
 - Ryhmä toteuttaa jatkuvaa integraatiota (continuous integration) GitHub Actionsin avulla
-- Sovellus on viety OKD-klusterille, ja klusterilla oleva versio päivittyy automaattisesti main-haaran muutosten myötä (jatkuva toimittaminen, continuous deployment)
+- Sovellus on viety OKD-klusterille, ja klusterilla oleva versio päivittyy automaattisesti, kun main-haaraan tehdyt muutokset läpäisevät CI:n testit (jatkuva toimittaminen, continuous deployment)
 - Koodi on talletettu GitHubiin
 - Projektin GitHub-repositoriolla on järkevä README.md
 
