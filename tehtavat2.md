@@ -921,7 +921,7 @@ Kopio tietää kuitenkin kaikki GitHubin haarat. Ne ovat siellä niin sanottuina
 
 <input type="checkbox"> Lisää "träkkäävään" haaraan tiedosto _changelog.txt_
 
-<input type="checkbox"> Lisää ja commitoi muutow versionhallintaa ja pushaa haara GitHubiin
+<input type="checkbox"> Lisää ja commitoi muutos versionhallintaan ja pushaa haara GitHubiin
 
 <input type="checkbox"> Tarkastele GitHub-repositoriota selaimella, varmista että haara päivittyy
 
