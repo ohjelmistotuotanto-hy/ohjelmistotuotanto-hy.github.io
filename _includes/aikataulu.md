@@ -35,6 +35,7 @@
 
 - Luento 5: {{site.luennot[5]}} 
   - [Laadunhallinnan perusteet](/osa3)
+  - tallenne: [youtube](https://youtu.be/jYdo6iv0dT4), [unitube](https://www.helsinki.fi/fi/unitube/video/fa729a3a-a910-4ade-ac53-bcb2e4ca00d5?t=8:24)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/cnFDix74Ecs), [unitube](https://www.helsinki.fi/fi/unitube/video/65e0ef27-6624-494a-9128-2ebc74ab5ff3)
 - Luento 6: {{site.luennot[6]}} 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauskäytänteitä)
