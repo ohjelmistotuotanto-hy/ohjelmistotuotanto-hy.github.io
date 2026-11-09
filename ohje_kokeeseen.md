@@ -5,13 +5,14 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-### Uusinta- ja erilliskokeet
+### Erilliskokeet
 
-Uusinta- ja erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05/TKT20006)
+Erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05/TKT20006)
 
-**Uusintakoe** siis suoritetaan samassa koetilaisuudessa kuin erilliskoe. Jos suoritat kokeen uusintakokeena, arvostelussa oteaan huomioon syksyn kurssin aikana kertyneet pisteet. Jos teet kokeen uusintana, lähetä emailia osoitteeseen matti.luukkainen@helsinki.fi. Uusinta on mahdollista tehdä ainostaan kertaalleen.
 
-**Uusinta ja erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että mitään lisämateriaalia ei ole käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman vuosien 2020- kurssikokeista, joissa tehtävät ovat olleen enemmän soveltavia. 
+**Erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että mitään lisämateriaalia ei ole käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman vuosien 2020- kurssikokeista, joissa tehtävät ovat olleen enemmän soveltavia. 
+
+Jos suoritat kurssin erilliskokeella, miniprojektin suorittamista ei vaadita.
 
 ### Kurssikoe
 
