@@ -210,7 +210,7 @@ Lisää samankaltaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista]
 
 {% include ai_valitsin.html %}
 
-Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 5 osuus [AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5).
+<input type="checkbox"> Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 5 osuus [AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5).
 
 <div class="vain-copilot" markdown="1">
 Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys.

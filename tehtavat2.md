@@ -352,7 +352,9 @@ Apuna kannattaa käyttää kaikkea mahdollista aina googlesta tekoälyyn.
 
 ### 9. Ensikosketus koodausagenttiin [tekoäly]
 
-Tämä on kurssin ensimmäinen [tekoäly]-tehtävä. Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on), [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot) ja [Tuntemattoman koodin ymmärtäminen](/genai/#tuntemattoman-koodin-ymmärtäminen).
+Tämä on kurssin ensimmäinen [tekoäly]-tehtävä.
+
+<input type="checkbox"> Lue ennen tehtävää materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on), [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot) ja [Tuntemattoman koodin ymmärtäminen](/genai/#tuntemattoman-koodin-ymmärtäminen).
 
 **Copilot vai OpenCode?**
 

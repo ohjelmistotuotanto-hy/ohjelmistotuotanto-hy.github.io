@@ -802,7 +802,9 @@ Jos samanniminen avainsana on määritelty sekä testitiedostossa että tiedosto
 
 Jatketaan viikon 2 [tehtävässä 9](/tehtavat2/#9-ensikosketus-koodausagenttiin-tekoäly) alkanutta [tekoäly]-tehtävien sarjaa.
 
-Kertaa tarvittaessa viime viikolla lukemasi materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot). Lue ennen tämän tehtävän tekemistä myös luvut [Agenttinen koodaus](/genai/#agenttinen-koodaus), [Kontekstin hallinta](/genai/#kontekstin-hallinta) ja [Vaatimukset promptina](/genai/#vaatimukset-promptina).
+Kertaa tarvittaessa viime viikolla lukemasi materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) luvut [Mikä kielimalli on](/genai/#mikä-kielimalli-on) ja [AI-avusteisen ohjelmoinnin muodot](/genai/#ai-avusteisen-ohjelmoinnin-muodot).
+
+<input type="checkbox"> Lue ennen tämän tehtävän tekemistä luvut [Agenttinen koodaus](/genai/#agenttinen-koodaus), [Kontekstin hallinta](/genai/#kontekstin-hallinta) ja [Vaatimukset promptina](/genai/#vaatimukset-promptina).
 
 Tehtävässä käytetään <span class="vain-copilot">VS Coden GitHub Copilotia</span><span class="vain-opencode">[OpenCodea](/opencode/)</span>. Voit toki tehdä tehtävän myös jollain muulla AI-avusteisella koodaustyökalulla.
 
@@ -820,7 +822,7 @@ Jatketaan WebLogin-sovelluksen parissa. Varmista, että tehtävien 5-7 muutokset
 <input type="checkbox"> Varmista, että käytössä on Build-agentti
 </div>
 
-<input type="checkbox"> Generoi projektille ohjetiedosto kirjoittamalla chattiin `/init`
+<input type="checkbox"> Generoi projektille [ohjetiedosto](/genai/#kontekstin-hallinta) kirjoittamalla chattiin `/init`
 
 Agentti tutkii projektin ja luo tiedoston <span class="vain-copilot">_.github/copilot-instructions.md_ tai _AGENTS.md_</span><span class="vain-opencode">_AGENTS.md_</span>.
 
@@ -857,11 +859,17 @@ Hyväksymiskriteerit:
 
 Tehtävän 7 vaatimus salasanan vähimmäispituudesta on edelleen voimassa.
 
-<input type="checkbox"> Toteuta storyt agentin avulla yksi kerrallaan.
+<div class="vain-opencode" markdown="1">
+<input type="checkbox"> OpenCode suorittaa oletusarvoisesti komentoja kysymättä, joten ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen) lisäämällä asetus tiedostoon _opencode.json_
+</div>
 
-Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi tiedostoon _register.robot_ ja varmistamaan, että testit eivät mene läpi. Vasta tämän jälkeen agentin tulee toteuttaa toiminnallisuus niin, että testit menevät läpi
+Toteuta storyt agentin avulla **yksi kerrallaan**. Tee kummallekin storylle seuraavat:
 
-Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi.<span class="vain-opencode"> OpenCode suorittaa oletusarvoisesti komentoja kysymättä, joten ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen).</span>
+<input type="checkbox"> Pyydä agenttia kirjoittamaan **ensin** storyn hyväksymiskriteerit Robot Framework -testeiksi tiedostoon _register.robot_ ja varmistamaan, että testit eivät mene läpi
+
+<input type="checkbox"> Pyydä agenttia vasta tämän jälkeen toteuttamaan toiminnallisuus niin, että testit menevät läpi
+
+<input type="checkbox"> Anna agentin suorittaa sovellus ja testit itse. Lue jokainen komento ennen kuin hyväksyt sen suoritettavaksi
 
 <input type="checkbox"> Kun agentti on valmis, suorita kaikki testit vielä itse ja varmista, että ne menevät läpi
 

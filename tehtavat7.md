@@ -208,7 +208,7 @@ Tehdään sovellus muutamassa vaiheessa. **Commitoi jokaisen vaiheen jälkeen**,
 
 Tehdään vielä koodille katselmointi uudelleenkäytettävän [prompt-tiedoston](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit) <span class="vain-opencode">(OpenCodessa [komento](https://opencode.ai/docs/commands/))</span> avulla.
 
-Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuuden [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7) johdanto ja luku [Prompt-tiedostot ja räätälöidyt agentit](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit).
+<input type="checkbox"> Lue ennen jatkamista materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 7 osuuden [Agentin laajentaminen ja räätälöinti](/genai/#agentin-laajentaminen-ja-räätälöinti-viikko-7) johdanto ja luku [Prompt-tiedostot ja räätälöidyt agentit](/genai/#prompt-tiedostot-ja-räätälöidyt-agentit).
 
 <input type="checkbox"> Luo projektiin tiedosto <span class="vain-copilot">_.github/prompts/katselmointi.prompt.md_</span><span class="vain-opencode">_.opencode/commands/katselmointi.md_</span>, joka ohjeistaa agenttia katselmoimaan projektin koodin ja raportoimaan löydökset. Katselmoinnin tulee tarkastella ainakin seuraavia asioita:
 
@@ -272,7 +272,7 @@ Kerro raportissa
 
 Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. <span class="vain-copilot">VS Coden agentti</span><span class="vain-opencode">OpenCoden Build-agentti</span> osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
 
-Lue ennen aloittamista materiaalin luku [MCP eli Model Context Protocol](/genai/#mcp-eli-model-context-protocol).
+<input type="checkbox"> Lue ennen aloittamista materiaalin luku [MCP eli Model Context Protocol](/genai/#mcp-eli-model-context-protocol).
 
 Tehtävässä on kaksi osaa:
 
@@ -398,7 +398,7 @@ Edellä agentille piti kertoa erikseen, että käyttöliittymä testataan selaim
 
 [Skills](/genai/#skillsit) ratkaisee tämän: agentti näkee aluksi vain skillsin kuvauksen ja lataa varsinaiset ohjeet kontekstiinsa vasta, kun käsillä oleva tehtävä vastaa kuvausta.
 
-Lue ennen jatkamista materiaalin luku [Skillsit](/genai/#skillsit). Tallennetaan käyttöliittymän testausohjeet skillsiksi.
+<input type="checkbox"> Lue ennen jatkamista materiaalin luku [Skillsit](/genai/#skillsit). Tallennetaan käyttöliittymän testausohjeet skillsiksi.
 
 <input type="checkbox"> Luo projektiin tiedosto <span class="vain-copilot">_.github/skills/ui-testaus/SKILL.md_</span><span class="vain-opencode">_.opencode/skills/ui-testaus/SKILL.md_</span>, joka ohjeistaa agenttia testaamaan sovelluksen käyttöliittymän selaimella
 
@@ -466,7 +466,7 @@ Kerro raportissa
 
 {% include ai_valitsin.html %}
 
-Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
+<input type="checkbox"> Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
 
 Valmiiden palvelinten lisäksi MCP-palvelimen voi toteuttaa myös itse. Näin agentin käyttöön saa esim. oman sovelluksen toiminnallisuutta tai yrityksen sisäistä dataa. Toteutetaan oma MCP-palvelin, jonka avulla agentti voi tehdä kyselyjä NHL-tilastoihin viikon 6 koodia hyödyntäen.
 
@@ -630,7 +630,7 @@ Kerro raportissa
 
 ### 8. Tekoäly ja minä [tekoäly]
 
-Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viimeinen luku [Lopuksi](/genai/#lopuksi-viikko-7), joka kokoaa yhteen tekoälyn käyttöön liittyviä riskejä ja tutkimustietoa tekoälyn vaikutuksista ohjelmistotuotantoon.
+<input type="checkbox"> Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viimeinen luku [Lopuksi](/genai/#lopuksi-viikko-7), joka kokoaa yhteen tekoälyn käyttöön liittyviä riskejä ja tutkimustietoa tekoälyn vaikutuksista ohjelmistotuotantoon.
 
 <input type="checkbox"> Kirjoita hakemistoon _viikko7_ talletettavaan tiedostoon _reflektio.md_ noin sivun (noin 500 sanaa) pohdinta tekoälyn käytöstä ohjelmistokehityksessä
 

@@ -383,7 +383,7 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 {% include ai_valitsin.html %}
 
-Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
+<input type="checkbox"> Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
 
 Tehtävän 3 testeihin on todennäköisesti kertynyt paljon toisteisuutta, sillä jokainen testi luo samat mockit ja määrittelee niille samat toteutukset. Kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka suoritetaan ennen jokaista testiä:
 
@@ -431,7 +431,7 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 
 {% include ai_valitsin.html %}
 
-Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
+<input type="checkbox"> Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
 
 Tehtävässä ohjelmoidaan verkkokaupan ostoskori testivetoisesti, siten että työ jaetaan ihmisen ja agentin kesken.
 
