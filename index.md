@@ -42,6 +42,7 @@ Kurssin opetusjärjestelyt ja arvosteluperusteet on kuvattu [osassa 0](/osa0), l
 {% include aikataulu.md path="/index.md" %}
 
 ## Kurssimateriaalin tekijä ja lisenssi
+{: .ei-sisallykseen}
 
 Kurssimateriaalin ovat tehneet <a href="https://github.com/mluukkai">Matti Luukkainen</a> ja <a href="https://github.com/Kaltsoon">Kalle Ilves</a>. Lukuisat <a href="https://github.com/ohjelmistotuotanto-hy/ohjelmistotuotanto-hy.github.io/graphs/contributors">henkilöt</a> ovat parantaneet materiaalin laatua kirjoitus- ja asiavirhekorjauksin. Voit <a href="/osa0#typoja-materiaalissa">osallistua</a> kurssimateriaalin parantamiseen myös itse.
 

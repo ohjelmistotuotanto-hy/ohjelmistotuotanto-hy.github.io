@@ -44,8 +44,8 @@
       return;
     }
 
-    const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3'))
-      .filter((heading) => heading.id);
+    const headings = Array.from(document.querySelectorAll('.post-content h2, .post-content h3, .home h2, .home h3'))
+      .filter((heading) => heading.id && !heading.classList.contains('ei-sisallykseen'));
 
     if (headings.length === 0) {
       return;
