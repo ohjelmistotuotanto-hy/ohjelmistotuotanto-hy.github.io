@@ -530,7 +530,7 @@ x = int(input("luku 1: "))
 y = int(input("luku 2: "))
 ```
 
-<input type="checkbox"> lisää ja committaa tiedosto versionhallintaan
+<input type="checkbox"> Lisää ja committaa tiedosto versionhallintaan
 
 <input type="checkbox"> Luo branch **laskut**, siirry branchiin (tämä tapahtuu esim. komennolla `git checkout -b laskut`), luo sinne tiedosto **summa.py** jolla on seuraava sisältö
 
@@ -539,7 +539,7 @@ def summa(x, y):
     return x+y
 ```
 
-<input type="checkbox"> lisää ja committaa tiedosto versionhallintaan
+<input type="checkbox"> Lisää ja committaa tiedosto versionhallintaan
 
 <input type="checkbox"> Siirry takaisin **main**-branchiin (komennolla`git checkout main`), tiedoston **summa.py** ei pitäisi nyt näkyä
   - **huom:** muistutus vielä siitä, että kun siirryt branchista toiseen varmista **aina** komennolla `git status` että kaikki muutokset on committoitu
@@ -577,7 +577,7 @@ def erotus(x, y):
     return x-y
 ```
 
-<input type="checkbox"> lisää ja committaa tiedosto versionhallintaan
+<input type="checkbox"> Lisää ja committaa tiedosto versionhallintaan
 
 <input type="checkbox"> Siirry takaisin **main**-branchiin
 
