@@ -39,7 +39,7 @@
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/cnFDix74Ecs), [unitube](https://www.helsinki.fi/fi/unitube/video/65e0ef27-6624-494a-9128-2ebc74ab5ff3)
 - Luento 6: {{site.luennot[6]}} 
   - [Ketterien menetelmien testauskäytänteet](/osa3#ketterien-menetelmien-testauskäytänteitä)
-  - tallenne: [unitube](https://www.helsinki.fi/fi/unitube/video/e61f8fb2-949c-4ee9-8a46-0785756acd19?t=8:04)
+  - tallenne: [youtube](https://youtu.be/pFtCI4hvuB0), [unitube](https://www.helsinki.fi/fi/unitube/video/e61f8fb2-949c-4ee9-8a46-0785756acd19?t=8:04)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/9FAjsbAKEbU), [unitube](https://www.helsinki.fi/fi/unitube/video/bfc95c30-58ee-4a18-b611-03fd911c4e2b)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/3">monivalintatehtävät</a> deadline {{site.moniv-dl[3]}}
