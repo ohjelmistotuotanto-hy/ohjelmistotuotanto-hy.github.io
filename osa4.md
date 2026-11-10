@@ -101,9 +101,9 @@ Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien piir
 
 Arkkitehtuurityyleistä varmasti tunnetuin ja eniten käytetty on _kerrosarkkitehtuuri_ (engl. layered architecture), jossa pyrkimyksenä on jakaa sovellus käsitteellisiin kerroksiin, joissa kukin kerros suorittaa oman "abstraktiotason" tehtäväänsä käyttäen ainoastaan sen alapuolella olevan kerroksen palveluja.
 
-Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä (kuvassa presentation layer) ja tämän alapuolella sovelluslogiikasta (kuvassa business layer) vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen (kuvassa persistence layer ja database layer) tai verkon yli tapahtuvaan kommunikaatioon.
+Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää, ylimpänä kerroksena on yleensä käyttöliittymä ja tämän alapuolella sovelluslogiikasta vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen tai verkon yli tapahtuvaan kommunikaatioon. Seuraavassa kuvassa esimerkkinä on alempana tarkemmin esiteltävän Todo-sovelluksen kerrosrakenne:
 
-![]({{ "/images/4-1.png" | relative_url }}){:height="350px" }
+![Kerrosarkkitehtuuri: käyttöliittymän näkymät käyttävät sovelluslogiikan TodoServiceä, joka käyttää tallennuskerroksen repositorioita, jotka puolestaan käyttävät tietokantaa]({{ "/images/4-17.png" | relative_url }}){:height="350px" }
 
 Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai komponentteja, jotka muodostavat oman abstraktiotasonsa toiminnallisuuden suhteen loogisen kokonaisuuden.
 
@@ -162,7 +162,7 @@ Kerrosarkkitehtuurin eräänä epäkohtana mainittiin, että sen soveltaminen sa
 
 _Mikropalveluarkkitehtuuri_ (engl. microservices), joka yleistyi 2010-luvulla erityisesti suurissa verkkopalveluissa, pyrkii ratkaisemaan nämä ongelmat. Se jakaa sovelluksen useisiin pieniin, verkossa toimiviin ja itsenäisiin palveluihin, jotka kommunikoivat keskenään verkon välityksellä.
 
-![]({{ "/images/4-6.png" | relative_url }}){:height="300px" }
+![Mikropalveluarkkitehtuuri: käyttöliittymä kutsuu verkon yli verkkokaupan palveluita (käyttäjien hallinta, tuotehaku, suosittelu, ostoskori ja maksut), joista jokaisella on oma tietokanta, ja osa palveluista kutsuu toisiaan]({{ "/images/4-18.png" | relative_url }}){:height="300px" }
 
 Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löyhästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa eivätkä jaa koodia. Palvelut eivät kutsu suoraan toistensa metodeja, sen sijaan ne kommunikoivat verkon välityksellä.
 
