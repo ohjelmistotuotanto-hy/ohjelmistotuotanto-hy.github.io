@@ -902,6 +902,8 @@ Suuret internetpalvelut kuten Meta, Netflix, Google ja GitHub soveltavat laajalt
 
 Yleinen tapa kehittää uusia ominaisuuksia ovat [feature branchit](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Kyseessä on käytäntö, jossa uudet ominaisuudet, esimerkiksi user storyn vaatima toiminnallisuus toteutetaan ensin omaan versionhallinnan haaraansa (branch) ja ominaisuuden valmistuttua haara mergetään pääkehityshaaraan (esim. main-haaraan).
 
+![Feature branchit: ominaisuudet feature-x ja feature-z toteutetaan lyhyissä haaroissa, jotka mergetään nopeasti main-haaraan, feature-y taas pitkäikäisessä haarassa, joka mergetään vasta paljon myöhemmin]({{ "/images/3-40.png" | relative_url }})
+
 Feature branchit ovat yleinen käytäntö, mutta pitkäikäisinä ne johtavat helposti pahoihin merge-konflikteihin.
 
 Seurauksena pienimuotoinen integraatiohelvetti, _merge hell_ ja kehitystiimin normipäivä erityisesti sprintin lopussa alkaa muistuttaa seuraavaa

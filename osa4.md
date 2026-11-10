@@ -135,7 +135,7 @@ Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entitie
 
 ### Arkkitehtuurin kuvaamisesta
 
-Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu se ei ole. Viime vuosina suosiota on saavuttanut Simon Brownin [C4-malli](https://c4model.com/), jossa arkkitehtuuri kuvataan neljällä tarkentuvalla tasolla: järjestelmän konteksti (järjestelmä, sen käyttäjät ja muut järjestelmät), kontit (sovellukset, tietokannat ja muut erikseen ajettavat osat), komponentit sekä tarvittaessa koodi. C4 ei määrää tarkkaa merkintätapaa, vaan sen idea on, että jokaisella kaaviolla on selkeä taso ja jokainen laatikko ja nuoli on nimetty. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla. Edellisessä esimerkissä käytettyä pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
+Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu se ei ole. Edellisessä esimerkissä käytettyä pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
 
 Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_ tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjien hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
 
@@ -147,6 +147,22 @@ Seuraavassa esimerkki oman [sovelluskehitystiimini](https://toska.dev/) valkotau
 
 ![]({{ "/images/arkkit3.png" | relative_url }}){:height="450px" }
 
+Epäformaaleja kaavioita vaivaa usein se, että niistä ei käy ilmi, millä tarkkuustasolla järjestelmää kuvataan ja mitä laatikot ja nuolet oikeastaan tarkoittavat. Tähän pyrkii vastaamaan viime vuosina suosiota saavuttanut Simon Brownin [C4-malli](https://c4model.com/), jossa arkkitehtuuri kuvataan neljällä tarkentuvalla tasolla: järjestelmän konteksti (engl. system context), containerit (engl. containers), komponentit (engl. components) sekä tarvittaessa koodi (engl. code). C4 ei määrää tarkkaa merkintätapaa, vaan sen idea on, että jokaisella kaaviolla on selkeä taso ja jokainen laatikko ja nuoli on nimetty.
+
+Tarkastellaan esimerkkinä kuvitteellista verkkokauppaa. Ylimmällä tasolla, _kontekstikaaviossa_, järjestelmä on yksi laatikko, ja kaavio näyttää sen käyttäjät sekä ulkoiset järjestelmät, joiden kanssa se toimii:
+
+![C4-kontekstikaavio: asiakas selaa ja ostaa tuotteita verkkokaupasta, joka välittää maksut maksunvälittäjälle ja lähettää tilausvahvistukset sähköpostipalvelun kautta]({{ "/images/4-19.png" | relative_url }}){:height="300px" }
+
+_Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa erikseen ajettavaa osaa, kuten selainsovellusta, palvelinsovellusta tai tietokantaa (kyse ei siis välttämättä ole Docker-kontista). Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
+
+![C4-container-kaavio: verkkokaupan sisällä selainsovellus kutsuu backendia REST/JSON-rajapinnan kautta, backend käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-20.png" | relative_url }}){:height="300px" }
+
+_Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Verkkokaupan backend noudattaa kerrosarkkitehtuuria: reitit käyttävät sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta:
+
+![C4-komponenttikaavio: backendin reitit kutsuvat OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-21.png" | relative_url }}){:height="400px" }
+
+Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokkakaaviolla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
+
 Arkkitehtuurikuvaus kannattaa tehdä _useasta näkökulmasta_, sillä ne vastaavat erilaisiin tarpeisiin.
 Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn aikana käytäviä keskusteluja eri sidosryhmien kanssa. Yksityiskohtaisemmat kuvaukset taas toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa.
 
@@ -155,6 +171,27 @@ Kannattaa huomata, että arkkitehtuurikuvaus ei suinkaan ole pelkkä kuva, mm. k
 Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
 
 Päätösten kirjaamiseen on vakiintunut kevyt käytäntö, _Architecture Decision Record_ (ADR). Jokaisesta merkittävästä arkkitehtuuripäätöksestä kirjoitetaan lyhyt, yleensä enintään sivun mittainen Markdown-tiedosto, joka tallennetaan versionhallintaan koodin rinnalle, esim. hakemistoon _docs/adr_. Michael Nygardin [alkuperäisen mallin](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) mukaan ADR:ssä kerrotaan päätöksen konteksti, itse päätös ja sen seuraukset, myös kielteiset. Vanhoja päätöksiä ei muokata, vaan jos päätös muuttuu, kirjoitetaan uusi ADR, joka korvaa edellisen. Näin päätösten historia perusteluineen säilyy.
+
+Esimerkiksi edellä kuvatun verkkokaupan tietokantavalinta voitaisiin kirjata seuraavasti:
+
+```markdown
+# ADR 3: Tietokannaksi PostgreSQL
+
+Tila: hyväksytty 12.3.2026
+
+## Konteksti
+Tilaus- ja tuotedata on relaatioista ja vaatii transaktioita.
+Tiimi osaa SQL:n.
+
+## Päätös
+Käytetään pilvipalvelun hallinnoimaa PostgreSQL:ää.
+
+## Seuraukset
++ tilauksille transaktiot ja eheys
++ ei omaa tietokantapalvelimen ylläpitoa
+- skeemamuutokset vaativat migraatiot
+- sidos pilvipalveluntarjoajaan
+```
 
 ### Mikropalveluarkkitehtuuri
 
@@ -348,6 +385,22 @@ Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat
 > Luokka voi piilottaa attribuutit asiakkailta. Pythonissa tämä tapahtuu lisäämällä attribuuttimuuttujan nimen alkuun kaksi alaviivaa. Tietojen piilottamista asiakkaalta kutsutaan kapseloinniksi. Nimensä mukaisesti attribuutti siis "suljetaan kapseliin" ja asiakkaalle tarjotaan sopiva rajapinta, jonka kautta tietoa voi käsitellä.
 
 Pythonin vakiintunut konventio on tosin merkitä luokan sisäiseen käyttöön tarkoitetut attribuutit ja metodit _yhdellä_ alaviivalla, esim. `self._saldo`. Kaksi alaviivaa saa aikaan ns. [name manglingin](https://docs.python.org/3/tutorial/classes.html#private-variables), jonka ensisijainen tarkoitus on estää nimien törmääminen aliluokissa. Kumpikaan tapa ei estä attribuutin käyttöä luokan ulkopuolelta, vaan kyse on sopimuksesta.
+
+Tarkastellaan esimerkkinä verkkokaupan ostoskoria:
+
+```python
+class Ostoskori:
+    def __init__(self):
+        self._ostokset = []
+
+    def lisaa(self, tuote):
+        self._ostokset.append(tuote)
+
+    def hinta(self):
+        return sum(t.hinta for t in self._ostokset)
+```
+
+Ostoskoria käyttävälle koodille näkyvät ainoastaan metodit `lisaa` ja `hinta`. Se, että ostokset on talletettu listaan, on luokan sisäinen asia. Jos tallennustapaa myöhemmin muutetaan, esim. sanakirjaksi, jossa avaimena on tuote ja arvona sen lukumäärä, muutos rajoittuu luokan sisälle, eikä ostoskoria käyttävään koodiin tarvitse koskea.
 
 Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
@@ -547,6 +600,15 @@ Luokka ei ole vielä kaikin osin laajennettavuuden kannalta optimaalinen. Palaam
 Koheesio ja _single responsibility_ -periaate eivät ole pelkästään olio-ohjelmointiin liittyviä käsitteitä vaan universaaleja hyvän koodin periaatteita. Jos ajatellaan kurssilla [Full stack -websovelluskehitys](https://fullstackopen.com/) käytettävää React-kirjastoa, on siinäkin periaatteena koostaa käyttöliittymä pienistä komponenteista, joista kukin keskittyy yhteen asiaan, esim. yksittäisen napin HTML-koodin renderöintiin. Sovelluksen tilan käsittely taas pyritään erottamaan näkymistä omaan kokonaisuuteensa, esim. tilanhallintakirjastoon kuten Reduxiin tai Zustandiin, jonka vastuulla on ainoastaan tila ja sen muutokset.
 
 Koheesion periaate näkyy myös sovelluksen arkkitehtuurien tasolla. Kerrosarkkitehtuurissa kukin sovelluksen kerros keskittyy oman abstraktiotason asioihin, esim. sovelluslogiikka ei ota kantaa käyttöliittymään tai tiedon tallentamisen tapaan. Mikropalveluarkkitehtuureissa koheesio taas näkyy hieman eri tavalla, yksittäinen mikropalvelu keskittyy toteuttamaan yksittäisen liiketoiminnan tason toiminnallisuuden, esim. verkkokaupan suosittelualgoritmin tai laskutuksen.
+
+#### Miksi korkea koheesio?
+
+Kootaan vielä yhteen, miksi korkeaan koheesioon kannattaa pyrkiä:
+
+- _Muutos kohdistuu yhteen paikkaan._ Kun luokalla on vain yksi syy muuttua, esim. laskimen kommunikointitavan vaihtaminen koskee ainoastaan IO-luokkaa, eikä muutos aiheuta sivuvaikutuksia muualle.
+- _Koodia on helpompi ymmärtää._ Yhteen asiaan keskittyvän luokan tai funktion nimi kertoo, mitä se tekee.
+- _Koodia on helpompi testata._ Laskimen laskentalogiikkaa voidaan testata StubIO:n avulla ilman konsolia. Vastaavasti web-sovelluksessa syötteen validointia voidaan testata ilman HTTP-pyyntöä ja tietokantaa, jos validointi on eriytetty omaksi kokonaisuudekseen.
+- _Koodia voi uudelleenkäyttää._ Omaksi kokonaisuudekseen eriytettyä toiminnallisuutta, esim. syötteen validointia, voidaan käyttää myös muualla.
 
 ### Riippuvuuksien vähäisyys
 
@@ -1480,6 +1542,8 @@ Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu sä
 
 Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitkien metodien jakaminen pienemmiksi on helppoa. Aina ei näin kuitenkaan ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja, joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tällaiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
 
+Koodausagenttien kanssa refaktorointiin on kiinnitettävä erityistä huomiota. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ja lisää mieluummin uutta koodia kuin siistii olemassa olevaa. Tämä näkyy myös [GitClearin tutkimuksessa](https://www.gitclear.com/ai_assistant_code_quality_2025_research), jonka mukaan AI-avusteisen ohjelmoinnin yleistyessä copypaste-koodin osuus muutetuista riveistä kasvoi ja refaktorointiin liittyvän siirretyn koodin osuus laski selvästi (ks. tarkemmin [tekoälymateriaali](/genai/#suunnitteluperiaatteet-ja-agentti)). Refaktorointi kannattaakin pyytää agentilta omana askeleenaan TDD:n red-green-refactor-syklin hengessä: ensin toiminnallisuus toimivaksi, sitten koodi siistiksi. Periaatteet, kuten olemassa olevan koodin hyödyntäminen kopioimisen sijaan, kannattaa kirjata myös projektin ohjetiedostoon (esim. `AGENTS.md`). Toisaalta agenttien myötä refaktoroinnista on tullut halpaa: kun kattavat testit ovat kunnossa, agentti tekee laajankin refaktoroinnin nopeasti.
+
 ### Tekninen velka
 
 Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. technical debt). Termin otti käyttöön Ward Cunningham vuonna 1992. Hän vertasi keskeneräisen ymmärryksen varassa kirjoitettua koodia lainaan, jonka korkoja maksetaan niin kauan, kunnes koodi korjataan vastaamaan parempaa ymmärrystä.
@@ -1497,14 +1561,14 @@ Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytetty
 
 Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
 
-1. Reckless and deliberate: "we do not have time for design"
-2. Reckless and inadvertent: "what is layering?"
-3. Prudent and inadvertent: "now we know how we should have done it"
-4. Prudent and deliberate: "we must ship now and will deal with consequences"
+1. Holtiton ja tietoinen (engl. reckless and deliberate): "meillä ei ole aikaa suunnittelulle" (we do not have time for design)
+2. Holtiton ja tahaton (engl. reckless and inadvertent): "mikä on kerrosarkkitehtuuri?" (what is layering?)
+3. Harkittu ja tahaton (engl. prudent and inadvertent): "nyt tiedämme, miten se olisi pitänyt tehdä" (now we know how we should have done it)
+4. Harkittu ja tietoinen (engl. prudent and deliberate): "julkaistaan nyt, seurauksista huolehditaan myöhemmin" (we must ship now and will deal with consequences)
 
-Luokkien 1 ja 2, joista Fowler käyttää termiä _reckless_ eli holtiton tai uhkarohkea, voidaan ajatella olevan huonoa teknistä velkaa. Toinen syntyy tarkoituksella, eli ajatellen että ei ole aikaa laadulle, toinen taas syntyy osaamattomuuden takia.
+Luokkien 1 ja 2 _holtitonta_ teknistä velkaa voidaan ajatella huonoksi tekniseksi velaksi. Toinen syntyy tietoisesti, eli ajatellen että ei ole aikaa laadulle, toinen taas tahattomasti osaamattomuuden takia.
 
-Luokat 3 ja 4 ovat harkinnan alla (engl. _prudent_) syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
+Luokat 3 ja 4 ovat _harkittua_, eli harkinnan alla syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
 
 Teknistä velkaa ei kuitenkaan saada hoidettua, jos siitä ei puhuta. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
 
@@ -1516,7 +1580,7 @@ Asiaa on myös tutkittu. [Borg ym.](https://arxiv.org/abs/2601.02200) (2026) pyy
 
 Agentti voi myös rapauttaa koodia, sillä se saa pyydetyn toiminnallisuuden toimimaan nopeasti, mutta ei itsestään noudata tämän osan suunnitteluperiaatteita. Aiheesta lisää tekoälymateriaalin luvussa [Suunnitteluperiaatteet ja agentti](/genai/#suunnitteluperiaatteet-ja-agentti). Lopputulos ei kuitenkaan ole väistämättä huonompaa koodia. [Kontrolloidussa kokeessa](https://arxiv.org/abs/2507.00788) (Borg ym. 2025, 151 osallistujaa) tekoälyn avulla kirjoitettua koodia ei ollut sen vaikeampi jatkokehittää kuin ilman tekoälyä kirjoitettua. Ratkaisevaa on, kuinka hyvin agenttia ohjataan ja sen tuotosta katselmoidaan.
 
-Teknisen velan rinnalle voi syntyä myös _kognitiivista velkaa_ (engl. cognitive debt): jos koodin tuottaminen ulkoistetaan agentille ilman, että sitä ymmärretään, tiimi ylläpitää lopulta koodia, jota kukaan ei tunne. Tämän osan suunnitteluperiaatteet ovat juuri sitä osaamista, jolla agentin tuotosta arvioidaan.
+Ääritapaus on niin sanottu [vibe-koodaus](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys), jossa agentin tuottama koodi hyväksytään sitä lukematta, kunhan se näyttää toimivan. Seurauksena on kahdenlaista velkaa. Teknistä velkaa kertyy, kun koodiin jää copypastea, tarpeettomia abstraktioita ja refaktoroimattomia rakenteita. Teknisen velan rinnalle voi syntyä myös _kognitiivista velkaa_ (engl. cognitive debt): jos koodin tuottaminen ulkoistetaan agentille ilman, että sitä ymmärretään, tiimi ylläpitää lopulta koodia, jota kukaan ei tunne. Tämän osan suunnitteluperiaatteet ovat juuri sitä osaamista, jolla agentin tuotosta arvioidaan.
 
 ### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
 
