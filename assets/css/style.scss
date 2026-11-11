@@ -32,7 +32,8 @@ h6 {
   transition: opacity 0.25s;
 }
 
-details.vihje {
+details.vihje,
+details.lisatieto {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   padding: 0.5em 1em;
@@ -45,6 +46,15 @@ details.vihje {
 
   &[open] summary {
     margin-bottom: 0.5em;
+  }
+}
+
+details.lisatieto {
+  background: #f7f9fb;
+  border-left: 4px solid #b8c7d9;
+
+  > :last-child {
+    margin-bottom: 0;
   }
 }
 

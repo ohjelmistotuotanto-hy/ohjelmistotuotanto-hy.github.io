@@ -17,7 +17,7 @@ Olemme nyt käsitelleet ohjelmiston elinkaaren vaiheista vaatimusmäärittelyä 
 
 Osa sisältää paljon koodiesimerkkejä.
 
-Tämän osan luvuista ne, joihin on merkitty <span style="color:blue">[viikko 6]</span> liittyvät viikon 6 laskareihin, eli voit ohittaa ne aiemmilla viikoilla.
+Osan lopun luku [Suunnittelumalleja](#suunnittelumalleja-viikko-6) liittyy viikon 6 laskareihin, eli voit ohittaa sen aiemmilla viikoilla.
 
 ## Typoja materiaalissa
 
@@ -416,9 +416,7 @@ Olemme jo nähneet kurssin aikana muutamia suunnittelumalleja, ainakin seuraavat
 
 [Ohjelmoinnin jatkokurssilla](https://ohjelmointi-21.mooc.fi/osa-9/3-kapselointi) _kapselointi_ (engl. encapsulation) määritellään seuraavasti:
 
-> Luokka voi piilottaa attribuutit asiakkailta. Pythonissa tämä tapahtuu lisäämällä attribuuttimuuttujan nimen alkuun kaksi alaviivaa. Tietojen piilottamista asiakkaalta kutsutaan kapseloinniksi. Nimensä mukaisesti attribuutti siis "suljetaan kapseliin" ja asiakkaalle tarjotaan sopiva rajapinta, jonka kautta tietoa voi käsitellä.
-
-Pythonin vakiintunut konventio on tosin merkitä luokan sisäiseen käyttöön tarkoitetut attribuutit ja metodit _yhdellä_ alaviivalla, esim. `self._saldo`. Kaksi alaviivaa saa aikaan ns. [name manglingin](https://docs.python.org/3/tutorial/classes.html#private-variables), jonka ensisijainen tarkoitus on estää nimien törmääminen aliluokissa. Kumpikaan tapa ei estä attribuutin käyttöä luokan ulkopuolelta, vaan kyse on sopimuksesta.
+> Luokka voi piilottaa attribuutit asiakkailta. Pythonissa tämä tapahtuu lisäämällä attribuuttimuuttujan nimen alkuun alaviiva. Tietojen piilottamista asiakkaalta kutsutaan kapseloinniksi. Nimensä mukaisesti attribuutti siis "suljetaan kapseliin" ja asiakkaalle tarjotaan sopiva rajapinta, jonka kautta tietoa voi käsitellä.
 
 Tarkastellaan esimerkkinä verkkokaupan ostoskoria:
 
@@ -434,7 +432,9 @@ class Ostoskori:
         return sum(t.hinta for t in self._ostokset)
 ```
 
-Ostoskoria käyttävälle koodille näkyvät ainoastaan metodit `lisaa` ja `hinta`. Se, että ostokset on talletettu listaan, on luokan sisäinen asia. Jos tallennustapaa myöhemmin muutetaan, esim. sanakirjaksi, jossa avaimena on tuote ja arvona sen lukumäärä, muutos rajoittuu luokan sisälle, eikä ostoskoria käyttävään koodiin tarvitse koskea.
+> Pythonin vakiintunut konventio on merkitä luokan sisäiseen käyttöön tarkoitetut attribuutit ja metodit _yhdellä_ alaviivalla, kuten esimerkin `self._ostokset`. Alaviiva ei estä attribuutin käyttöä luokan ulkopuolelta, vaan kyse on sopimuksesta.
+
+Ostoskoria käyttävälle koodille näkyvät ainoastaan metodit `lisaa` ja `hinta`. Se, että ostokset on talletettu listaan, on luokan sisäinen asia. Jos tallennustapaa myöhemmin muutetaan, esim. sanakirjaksi, jossa avaimena on tuote ja arvona sen lukumäärä, muutos rajoittuu luokan sisälle, eikä ostoskoria käyttävään koodiin tarvitse koskea. Ostoskori siis kapseloi sen, missä muodossa ostokset on talletettu, sekä sen, miten ostosten yhteishinta lasketaan.
 
 Aloitteleva ohjelmoija assosioi kapseloinnin usein juuri siihen että _olion attribuutit määritellään piilotetuiksi ja niille tehdään tarvittaessa aksessorimetodit_. Tämä on kuitenkin melko kapea näkökulma kapselointiin. Olion sisäisen tilan lisäksi kapseloinnin kohde voi olla mm. käytettävän olion tyyppi, käytetty algoritmi, olioiden luomisen tapa, käytettävän komponentin rakenne, jne...
 
@@ -455,46 +455,46 @@ Koheesioon tulee siis pyrkiä kaikilla ohjelman tasoilla, metodeissa, luokissa j
 Tarkastellaan esimerkkinä tietokannasta tietoa hakevaa metodia. Metodin koodi näyttää seuraavalta:
 
 ```python
-# SQL_SELECT_PARTS on vakio, joka sisältää SQL-kyselyn
+# SQL_SELECT_PRODUCTS on vakio, joka sisältää SQL-kyselyn
 
-def populate(self):
+def find_all_products(self):
     connection = sqlite3.connect(DATABASE_FILE_PATH)
     connection.row_factory = sqlite3.Row
     cursor = connection.cursor()
-    cursor.execute(SQL_SELECT_PARTS)
+    cursor.execute(SQL_SELECT_PRODUCTS)
     rows = cursor.fetchall()
 
-    parts = []
+    products = []
 
     for row in rows:
-        parts.append(Part(row["name"], row["brand"], row["retail_price"]))
+        products.append(Product(row["name"], row["brand"], row["retail_price"]))
 
     connection.close()
 
-    return parts
+    return products
 ```
 
 Metodissa tehdään montaa asiaa:
 
 - Luodaan yhteys tietokantaan
 - Tehdään tietokantakysely
-- Käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti `Part`-olio
+- Käydään kyselyn tulosrivit läpi ja luodaan jokaista tulosriviä kohti `Product`-olio
 - Suljetaan yhteys
 
-Metodi toimii myös monella erilaisella _abstraktiotasolla_. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta sovelluslogiikan tasolla mielekkäitä `Part`-olioita.
+Metodi toimii myös monella erilaisella _abstraktiotasolla_. Toisaalta käsitellään teknisiä tietokantatason asioita kuten tietokantayhteyden avaamista ja kyselyn tekemistä, toisaalta sovelluslogiikan tasolla mielekkäitä `Product`-olioita.
 
 Metodin koheesion taso on siis erittäin huono.
 
 Metodi on helppo _refaktoroida_ pilkkomalla se pienempiin osiin, joiden kutsumista alkuperäinen metodi koordinoi.
 
 ```python
-def populate(self):
+def find_all_products(self):
     connection = self.get_database_connection()
     rows = self.get_rows(connection)
-    parts = self.get_parts_by_rows(rows)
+    products = self.get_products_by_rows(rows)
     connection.close()
 
-    return parts
+    return products
 
 def get_database_connection(self):
     connection = sqlite3.connect(DATABASE_FILE_PATH)
@@ -504,17 +504,17 @@ def get_database_connection(self):
 
 def get_rows(self, connection):
     cursor = connection.cursor()
-    cursor.execute(SQL_SELECT_PARTS)
+    cursor.execute(SQL_SELECT_PRODUCTS)
 
     return cursor.fetchall()
 
-def get_parts_by_rows(self, rows):
-    parts = []
+def get_products_by_rows(self, rows):
+    products = []
 
     for row in rows:
-        parts.append(Part(row["name"], row["brand"], row["retail_price"]))
+        products.append(Product(row["name"], row["brand"], row["retail_price"]))
 
-    return parts
+    return products
 ```
 
 Yksittäiset metodit ovat nyt kaikki samalla abstraktiotasolla toimivia ja kuvaavasti nimettyjä.
@@ -650,8 +650,6 @@ Single responsibility -periaatteen hengessä tehty ohjelma koostuu suuresta mä�
 
 Olioiden on oltava vuorovaikutuksessa toistensa kanssa saadakseen toteutettua ohjelman toiminnallisuuden. _Riippuvuuksien vähäisyyden_ (engl. low coupling) periaate pyrkii eliminoimaan luokkien ja olioiden välisiä riippuvuuksia.
 
-Koheesiota ja riippuvuuksien määrää voidaan myös mitata. Chidamber ja Kemerer määrittelivät [oliosuunnittelun metriikat](https://doi.org/10.1109/32.295895) (1994), joihin kuuluvat mm. luokan metodien yhtenäisyyttä mittaava LCOM (lack of cohesion in methods) ja luokan riippuvuuksia mittaava CBO (coupling between objects). [Basili ym.](https://doi.org/10.1109/32.544352) (1996) havaitsivat, että metriikat ennustivat luokkien virhealttiutta: mitä enemmän luokalla oli riippuvuuksia, sitä todennäköisemmin siitä löytyi virheitä.
-
 Koska korkean koheesion periaatteen nojalla olioita on paljon, tulee riippuvuuksia pakostakin. Miten riippuvuudet sitten saadaan eliminoitua? Ideana on eliminoida tarpeettomat riippuvuudet _ja_ välttää riippuvuuksia konkreettisiin asioihin.
 
 Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli rajapintaan. Sama idea kulkee parilla eri nimellä:
@@ -659,7 +657,14 @@ Riippuvuuden kannattaa kohdistua asiaan, joka ei muutu herkästi, eli rajapintaa
 - Program to an interface, not to an implementation
 - Depend on abstractions, not on concrete implementation
 
-Javassa ja monessa muussa staattisesti tyypitetyssä kielessä rajapinta (engl. interface) on oma kielen rakenteensa. Pythonissa rajapinnat ovat perinteisesti olleet epämuodollisia: rajapinnalla tarkoitetaan tietoa siitä, minkälaisia metodeja riippuvuutena käytettävällä oliolla on, ja mikä tahansa olio, jolla on tarvittavat metodit, kelpaa (ns. [duck typing](https://en.wikipedia.org/wiki/Duck_typing)). Rajapinnan voi kuitenkin kirjoittaa auki myös Pythonissa [Protocol](https://docs.python.org/3/library/typing.html#typing.Protocol)-luokkana. Esim. aiemman laskinesimerkin `KonsoliIO`-luokan rajapinta näyttäisi seuraavalta:
+Ensimmäinen muotoilu on peräisin suunnittelumallit tunnetuksi tehneestä kirjasta [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) (Gamma, Helm, Johnson ja Vlissides, 1994). Jälkimmäinen on Robert Martinin [dependency inversion](https://en.wikipedia.org/wiki/Dependency_inversion_principle) -periaate (1996).
+
+Javassa ja monessa muussa staattisesti tyypitetyssä kielessä rajapinta (engl. interface) on oma kielen rakenteensa. Pythonissa rajapinnat ovat perinteisesti olleet epämuodollisia: rajapinnalla tarkoitetaan tietoa siitä, minkälaisia metodeja riippuvuutena käytettävällä oliolla on, ja mikä tahansa olio, jolla on tarvittavat metodit, kelpaa (ns. [duck typing](https://en.wikipedia.org/wiki/Duck_typing)).
+
+<details markdown="1" class="lisatieto">
+<summary markdown="span">Lisätietoa: rajapinnan määrittely Pythonissa</summary>
+
+Rajapinnan voi kirjoittaa auki myös Pythonissa [Protocol](https://docs.python.org/3/library/typing.html#typing.Protocol)-luokkana. Esim. aiemman laskinesimerkin `KonsoliIO`-luokan rajapinta näyttäisi seuraavalta:
 
 ```python
 from typing import Protocol
@@ -671,13 +676,228 @@ class IO(Protocol):
 
 Kun laskimen konstruktorin parametri tyypitetään tällä rajapinnalla, eli `def __init__(self, io: IO)`, tyyppitarkastin kuten [mypy](https://mypy-lang.org/) tai [Pyright](https://github.com/microsoft/pyright) varmistaa jo ennen ohjelman suorittamista, että laskimelle annettavalla oliolla on vaaditut metodit. Rajapinnan toteuttavan luokan ei tarvitse periä rajapintaa, vaan riittää, että sillä on oikeanlaiset metodit.
 
-Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien toteutukset esimerkiksi konstruktorin, tai metodikutsun kautta. Olemme tehneet näin kurssilla usein, mm. Verkkokaupan konkreettiset riippuvuudet Varastoon, Pankkiin ja Viitegeneraattoriin korvattiin luokan konstruktorin kautta annetuilla olioilla. Riippuvuuksien injektointi -suunnittelumalli toimi usein apuvälineenä konkreettisen riippuvuuksien eliminoinnissa.
+</details>
+
+Konkreettisen riippuvuuden eliminointi onnistuu antamalla oliolle riippuvuuksien toteutukset esimerkiksi konstruktorin, tai metodikutsun kautta. Olemme tehneet näin kurssilla jo ensimmäisestä viikosta alkaen. [Viikon 1 laskareissa](/tehtavat1/#15-riippuvuuksien-injektointi-osa-2-nhl-tilastot) NHL-tilastoja käsittelevä `StatisticsService` loi aluksi itse tarvitsemansa `PlayerReader`-olion, joka haki pelaajien tiedot internetistä. Konkreettinen riippuvuus eliminoitiin muuttamalla luokkaa siten, että se saa lukijan konstruktorin parametrina:
+
+```python
+class StatisticsService:
+    def __init__(self, reader):
+        self._players = reader.get_players()
+
+# sovelluksessa pelaajat haetaan internetistä
+stats = StatisticsService(PlayerReader(url))
+
+# testeissä käytetään kovakoodatun pelaajalistan palauttavaa stubia
+stats = StatisticsService(PlayerReaderStub())
+```
+
+`StatisticsService` ei enää tiedä, mistä pelaajat ovat peräisin. Sille kelpaa mikä tahansa olio, jolla on metodi `get_players`, ja tämän ansiosta luokkaa voitiin testata ilman verkkoyhteyttä. Samalla tavalla laskimen riippuvuus konsoliin korvattiin konstruktorin kautta annetulla `io`-oliolla. Riippuvuuksien injektointi -suunnittelumalli toimii siis apuvälineenä konkreettisten riippuvuuksien eliminoinnissa.
 
 Osa luokkien välisistä riippuvuuksista on tarpeettomia ja ne kannattaa eliminoida muuttamalla luokan vastuita.
 
-#### Favour composition over inheritance eli milloin ei kannata periä <span style="color:blue">[viikko 6]</span>
+Myös perintä muodostaa riippuvuuden perivän ja perittävän luokan välille. Osan lopussa oleva pankkitiliesimerkki [Favour composition over inheritance](#favour-composition-over-inheritance-eli-milloin-ei-kannata-periä) näyttää, miten perinnän aiheuttamasta riippuvuudesta päästään eroon suunnittelumallien [strategy](#strategy) ja [static factory method](#static-factory-method) avulla. [Laskinesimerkissä](#toiminnallisuuden-kapselointi-laskin-ja-strategia) taas laskimen riippuvuudet yksittäisiin laskuoperaatioihin eliminoidaan kapseloimalla operaatiot omiksi olioikseen suunnittelumallien strategy ja [command](#command) avulla. Esimerkit liittyvät viikon 6 laskareihin.
 
-Perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, ja tämä voi jossain tapauksissa olla ongelmallista. Eräs oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
+<details markdown="1" class="lisatieto">
+<summary markdown="span">Lisätietoa: koheesion ja riippuvuuksien mittaaminen</summary>
+
+Koheesiota ja riippuvuuksien määrää voidaan myös mitata. Chidamber ja Kemerer määrittelivät [oliosuunnittelun metriikat](https://doi.org/10.1109/32.295895) (1994), joihin kuuluvat mm. luokan metodien yhtenäisyyttä mittaava LCOM (lack of cohesion in methods) ja luokan riippuvuuksia mittaava CBO (coupling between objects).
+
+LCOM perustuu siihen, käyttävätkö luokan metodit samoja attribuutteja. Tarkastellaan esimerkkinä seuraavaa luokkaa:
+
+```python
+class Tilaus:
+    def __init__(self, tuotteet, email):
+        self._tuotteet = tuotteet
+        self._email = email
+
+    def hinta(self):
+        return sum(t.hinta for t in self._tuotteet)
+
+    def tuotteiden_maara(self):
+        return len(self._tuotteet)
+
+    def email_kelvollinen(self):
+        return "@" in self._email
+
+    def email_palvelin(self):
+        return self._email.split("@")[1]
+```
+
+Metodit `hinta` ja `tuotteiden_maara` käyttävät ainoastaan attribuuttia `_tuotteet`, metodit `email_kelvollinen` ja `email_palvelin` taas ainoastaan attribuuttia `_email`. Metodit jakautuvat siis kahteen ryhmään, joilla ei ole yhtään yhteistä attribuuttia, ja luokan LCOM-arvo on korkea eli koheesio heikko. Tämä viittaa siihen, että luokalla on kaksi erillistä vastuuta ja että sähköpostiosoitteen käsittely kannattaisi eriyttää omaan luokkaansa.
+
+CBO puolestaan kertoo, kuinka moneen muuhun luokkaan luokka on kytketty, eli kuinka monen muun luokan metodeja tai attribuutteja se käyttää tai kuinka moni muu luokka käyttää sitä. Esimerkin `Tilaus` käyttää tuoteolioiden attribuuttia `hinta`, eli sen oma koodi kytkee sen yhteen muuhun luokkaan.
+
+Metriikoilla on havaittu olevan yhteys koodin laatuun. [Basili ym.](https://doi.org/10.1109/32.544352) (1996) havaitsivat, että metriikat ennustivat luokkien virhealttiutta: mitä enemmän luokalla oli riippuvuuksia, sitä todennäköisemmin siitä löytyi virheitä. Metriikat ovat kuitenkin vain suuntaa antavia, eli ne kertovat, mihin kohtaan koodia kannattaa kiinnittää huomiota, mutta eivät sitä, miten koodi tulisi korjata.
+
+</details>
+
+### Toisteettomuus
+
+Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _riippuvuuksien vähäisyyttä_. Seuraavana vuorossa redundanssi eli toisteisuus.
+
+Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen, varmaan jokainen on kuullut varoituksen: _älä copypastea koodia_!
+
+Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yourself](https://wiki.c2.com/?DontRepeatYourself), ja siihen viitataan usein lyhenteellä _DRY_.
+
+Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi funktioiden tai metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista. Näemme tästä esimerkkejä osan lopun luvussa [Suunnittelumalleja](#suunnittelumalleja-viikko-6).
+
+Moneen paikkaan kopioidun koodinpätkän ilmeisin ongelma on siinä, että jos kopioidusta koodista löytyy bugi tai sen toiminnallisuuden logiikkaa tulee muuttaa, on työlästä tehdä muutos moneen kohtaan. Yleensä moneen kohtaan kopioitu koodinpätkä on myös viite siitä että esim. koodin koheesiossa olisi parantamisen varaa. Ongelma ei ole pelkästään teoreettinen. [Juergens ym.](https://doi.org/10.1109/ICSE.2009.5070547) (2009) tutkivat useiden teollisten ohjelmistojen kopioitua koodia ja havaitsivat, että kun kopioista oli muutettu vain osaa, eikä eroa ollut tehty tarkoituksella, joka toinen tällainen epäjohdonmukaisuus oli virhe.
+
+DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toiston eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
+
+Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritative representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
+
+#### Hyvä vs. paha copypaste
+
+Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
+
+Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Sandi Metz on tiivistänyt asian muotoon [duplication is far cheaper than the wrong abstraction](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction): liian aikaisin tehty, vääräksi osoittautuva abstraktio voi tulla kalliimmaksi kuin toisteinen koodi. Pieni määrä toisteista koodia voi olla täysin riittävä ratkaisu, eikä sen poistaminen ole välttämättä vaivan arvoista. Jos samaa rakennetta kuitenkin joudutaan kopioimaan yhä uusiin paikkoihin, alkuperäinen ratkaisu ei enää taivu tarpeisiin ja refaktorointi alkaa kannattaa. Osan lopussa käsiteltävä [Gutenberg-lukija](#gutenberg-lukija-epätriviaalin-copypasten-poistaminen) on esimerkki tällaisesta tilanteesta.
+
+Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
+
+### Testattavuus
+
+Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
+
+Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että komponenttien vastuut eivät ole selkeät, ja niillä on liikaa riippuvuuksia.
+
+Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia riippuvuuksien injektoinnin avulla.
+
+### Selkeys
+
+Aikoinaan koneiden rajallisten resurssien takia koodia kirjoitettiin usein mahdollisimman tiiviiksi ja tehokkaaksi luettavuuden kustannuksella. Nykyään pyrkimyksenä on koodi, joka jo nimeämisen ja rakenteensa kautta ilmaisee mahdollisimman hyvin sen, mitä se tekee.
+
+Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean code) tunnusmerkkejä ovat monet meille entuudestaan tutut asiat:
+
+- johdonmukainen sisennys ja muotoilu
+- lyhyet, yhteen asiaan keskittyvät funktiot ja metodit
+- syvien sisäkkäisten rakenteiden välttäminen
+- "maagisten lukujen" korvaaminen nimetyillä vakioilla
+- kommentit vain siellä, missä koodi ei itse kerro tarkoitustaan
+
+Näitä ja monia muita käytänteitä käsitellään esim. Pythonin tyyliohjeessa [PEP 8](https://peps.python.org/pep-0008/) ja Robert Martinin kirjassa [Clean Code](https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884).
+
+Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa ohjelmointiin kuluvasta ajasta menee olemassa olevan koodin lukemiseen ja ymmärtämiseen. [Xia ym.](https://doi.org/10.1109/TSE.2017.2734091) (2018) seurasivat 78 ammattilaisohjelmoijan työtä yhteensä yli 3 000 tunnin ajan ja havaitsivat, että noin 58 % työajasta kului koodin ymmärtämiseen. Robert Martin on arvioinut [lukemisen ja kirjoittamisen suhteeksi](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is) jopa 10:1. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa.
+
+On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
+
+![]({{ "/images/4-13.jpg" | relative_url }}){:height="350px"}
+
+### Yksinkertaisuus
+
+Suunnittelumallit lisäävät koodin joustavuutta, mutta joustavuudella on hintansa: osan lopun [laskinesimerkissä](#toiminnallisuuden-kapselointi-laskin-ja-strategia) luokkien määrä kasvaa ja ohjelman toiminnan hahmottaminen vaikeutuu. Siksi laatuattribuuttien listaan kuuluu myös _yksinkertaisuus_. Periaatteesta käytetään usein lyhenteitä KISS (keep it simple, stupid) ja [YAGNI](https://martinfowler.com/bliki/Yagni.html) (you aren't gonna need it). Jälkimmäinen on peräisin Extreme Programmingista, ja sen mukaan koodiin ei kannata lisätä toiminnallisuutta tai joustavuutta sen varalta, että sitä ehkä joskus tarvitaan. Ennakoidut tarpeet jäävät usein toteutumatta, ja käyttämätön joustavuus tekee koodista vaikeammin ymmärrettävää ja muutettavaa.
+
+Suunnittelumalli kannattaa siis ottaa käyttöön vasta, kun sille on todellinen tarve, esim. kun sama toisteinen rakenne tulee vastaan kolmannen kerran (ks. [three strikes and you refactor](#hyvä-vs-paha-copypaste)). Kun koodi pidetään testattuna ja siistinä, joustavuuden lisääminen [refaktoroimalla](#refaktorointi) on myöhemminkin helppoa. Periaate on ajankohtainen myös koodausagentteja käytettäessä, sillä agentit tuottavat helposti tarpeettomia abstraktioita ja varautuvat tilanteisiin, joita ei ole pyydetty.
+
+### Code smell
+
+Koodissa olevista epäilyttävistä piirteistä on ruvettu käyttämään nimitystä _code smell_ eli koodihaju.
+
+Martin Fowlerin [määritelmää mukaillen](https://martinfowler.com/books/refactoring.html) koodihaju on helpohkosti huomattava merkki siitä että koodissa on jotain pielessä. Vaikka jopa aloitteleva ohjelmoija saattaa pystyä havaitsemaan koodihajun, sen takana oleva todellinen syy voi olla jossain syvemmällä, jopa ohjelman designissa. Koodihaju siis kertoo sen, että syystä tai toisesta koodin sisäinen laatu ei ole parhaalla mahdollisella tasolla.
+
+Koodihajuja on hyvin monenlaisia ja monentasoisia. Muutamia esimerkkejä helposti tunnistettavista hajuista:
+
+- Toisteinen koodi
+- Liian pitkät metodit ja funktiot
+- Luokat joissa on liikaa oliomuuttujia
+- Luokat joissa on liikaa koodia
+- Metodien liian pitkät parametrilistat
+- Epäselkeät muuttujien, metodien tai luokkien nimet
+- Kommentit
+
+Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuutteja heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa, että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa suurella todennäköisyydellä että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametreja, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain toisessa luokassa. Koodihajujen haitallisuutta on myös tutkittu. Esim. [Khomh ym.](https://doi.org/10.1007/s10664-011-9171-y) (2012) analysoivat useiden avoimen lähdekoodin projektien versiohistoriaa ja havaitsivat, että hajuisia rakenteita sisältäviä luokkia jouduttiin muuttamaan useammin ja niistä löytyi useammin virheitä kuin muista luokista.
+
+Kommenttien listaaminen koodihajuksi voi tuntua yllättävältä. Kyse on siitä, että kommentti, joka selittää _mitä_ koodi tekee, on usein merkki siitä, että koodi pitäisi kirjoittaa selkeämmäksi esim. paremmalla nimeämisellä tai jakamalla se pienempiin osiin. Tällaiset kommentit myös vanhenevat helposti, kun koodia muutetaan mutta kommenttia ei. Kaikki kommentit eivät kuitenkaan ole hajuja. Arvokkaita ovat kommentit, jotka kertovat _miksi_ koodi on kirjoitettu tietyllä tavalla, esim. perustelu epätavalliselle ratkaisulle tai viittaus bugiraporttiin, sekä funktioiden ja luokkien käyttöä kuvaavat docstringit. Nämä ovat hyödyllisiä sekä ihmisille että koodausagenteille.
+
+Otetaan pari esimerkkiä hieman vähemmän ilmeisistä koodihajuista.
+
+[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession) tarkoittaa tilannetta, jossa jokin konkreettinen käsite esim. _osoite_ tai _rahamäärä_ esitetään primitiivityyppisten muuttujien (esim. merkkijono tai kokonaisluku) avulla, sen sijaan että määriteltäisiin luokka asian esittämiseen.
+
+Nimellä [shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery) kuvataan tilannetta, missä yhden loogisen asian muuttaminen, laajentaminen tai siihen tehtävä bugikorjaus aiheuttaakin sarjan muutoksia myös todella moneen muuhun paikkaan koodia. Tämä on oire siitä, että toiminnallisuutta ei ole kapseloitu riittävän hyvin yhteen koodimoduuliin, eli kyseessä on DRY-periaatetta rikkova design.
+
+Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
+
+- <https://sourcemaking.com/refactoring/bad-smells-in-code>
+- <https://blog.codinghorror.com/code-smells/>
+
+### Refaktorointi
+
+Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen, joka kuitenkin pitää sen toiminnallisuuden ennallaan.
+
+Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 1999 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018.
+
+Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktorointioperaatioita. Kirjan listaamat refaktoroinnit löytyvät myös [internetistä](https://refactoring.com/catalog/index.html). Seuraavassa muutamia esimerkkejä
+
+- _Rename variable/method/class_, uudelleennimetään huonosti nimetty asia
+- _Extract method_, jaetaan liian pitkä metodi erottamalla siitä pienempiä metodeja
+- _Move field/method_, siirretään oliomuuttuja tai metodi toiseen luokkaan
+- _Extract superclass_, luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
+
+Melko monissa ei niin suoraviivaisissa refaktorointioperaatioissa, epäoptimaalinen koodi refaktoroidaan paremmaksi soveltamalla jotain suunnittelumallia. Joshua Kerievsky on kirjoittanut aiheesta mainion kirjan [Refactoring to patterns](https://martinfowler.com/books/r2p.html).
+
+Osan lopun luvun [Suunnittelumalleja](#suunnittelumalleja-viikko-6) esimerkeissä tehdään tämän kaltaisia refaktorointeja, esim.
+
+- Tilien koronmaksustrategia, [replace conditional with polymorfism](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)
+- Tilien luominen, [replace constructor with factory function](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
+- Laskimen komennot, [replace function with command](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
+- Laskimen binäärioperaatiot, [form template method](https://sourcemaking.com/refactoring/form-template-method).
+
+Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaiset automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo. Refaktoroinnissa on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana, ja tästä varmistuminen ilman testejä on työlästä.
+
+Refaktoroinnissa kannattaa ehdottomasti edetä pienin askelin eli yksi hallittu muutos kerrallaan. Testit on syytä suorittaa jokaisen refaktorointioperaation jälkeen, jotta mahdollinen regressio, eli aiemmin toimineen koodin hajoaminen huomataan mahdollisimman nopeasti.
+
+Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu säilyy siistinä, on koodin laajentaminen miellyttävää ja pienien refaktorointioperaatioiden tekeminen suhteellisen vaivatonta. Jos koodin sisäinen laatu pääsee rapistumaan, muuttuu sen laajentaminen hitaaksi ja myös refaktoroinnin suorittaminen muuttuu koko ajan työläämmäksi. Joillain ohjelmistokehitystiimeillä onkin _definition of doneen_ kirjattu, että valmiin määritelmä sisältää sen, että koodi on refaktoroitu riittävän siistiksi. Siisteyttä saatetaan valvoa esim. [pull requesteina tehtävänä katselmointina](https://studies.cs.helsinki.fi/ohtu/osa3/#koodin-katselmointi-github-ja-pull-requestit).
+
+Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitkien metodien jakaminen pienemmiksi on helppoa. Aina ei näin kuitenkaan ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja, joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tällaiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
+
+Koodausagenttien kanssa refaktorointiin on kiinnitettävä erityistä huomiota. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ja lisää mieluummin uutta koodia kuin siistii olemassa olevaa. Tämä näkyy myös [GitClearin tutkimuksessa](https://www.gitclear.com/ai_assistant_code_quality_2025_research), jonka mukaan AI-avusteisen ohjelmoinnin yleistyessä copypaste-koodin osuus muutetuista riveistä kasvoi ja refaktorointiin liittyvän siirretyn koodin osuus laski selvästi (ks. tarkemmin [tekoälymateriaali](/genai/#suunnitteluperiaatteet-ja-agentti)). Refaktorointi kannattaakin pyytää agentilta omana askeleenaan [TDD:n](/osa3/#test-driven-development) red-green-refactor-syklin hengessä: ensin toiminnallisuus toimivaksi, sitten koodi siistiksi. Periaatteet, kuten olemassa olevan koodin hyödyntäminen kopioimisen sijaan, kannattaa kirjata myös projektin ohjetiedostoon (esim. `AGENTS.md`). Toisaalta agenttien myötä refaktoroinnista on tullut halpaa: kun kattavat testit ovat kunnossa, agentti tekee laajankin refaktoroinnin nopeasti.
+
+### Tekninen velka
+
+Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. [technical debt](https://martinfowler.com/bliki/TechnicalDebt.html)). Termin otti käyttöön [Ward Cunningham ](http://c2.com/doc/oopsla92.html) vuonna 1992. Hän vertasi keskeneräisen ymmärryksen varassa kirjoitettua koodia lainaan, jonka korkoja maksetaan niin kauan, kunnes koodi korjataan vastaamaan parempaa ymmärrystä.
+
+Oikoteitä ottamalla tehdyllä ohjelmoinnilla saadaan ehkä nopeasti aikaan jotain toiminnallisuutta, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin _jos_ ohjelmaa on tarkoitus laajentaa. Käytännössä käy siis niin, että koodiin kertyneet sisäisen laadun ongelmat, eli _tekninen velka_ alkaa hidastamaan kehitystyön etenemistä, ja uusien ominaisuuksien toteuttamisesta tulee koko ajan hankalammaksi ja kalliimmaksi.
+
+Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen asiakkaan kannalta kannattava ratkaisu.
+
+[Osassa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimum viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuutta voidaan testata. Kuten nimikin jo antaa ymmärtää, MVP on luonteeltaan sellainen rakennelma, jonka tekemisessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutuksi, tekninen velka maksetaan pois tekemällä toiminnallisuudelle robustimpi toteutus.
+
+Lyhytaikaisen teknisen velan ottaminen voi joskus olla jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti, tai muuten tilaisuus saattaa mennä kokonaan ohi.
+Startup-yrityksillä tilanne voi olla sellainen, että firma joutuu valitsemaan teknisen velan ja varman rahojen loppumisen välillä. Tekemällä jotain nopeasti huonolla sisäisellä laadulla firma saattaa pystyä keräämään riittävästi rahoitusta jatkaakseen toimintaansa. Tämänkaltaisissa tilanteissa otetaan tietoisesti teknistä velkaa ja sovelluksen koodin huonosta laadusta ja testauksen puuttumisesta huolehditaan myöhemmin.
+
+Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytettynä hyväkin väline, aivan kuten esim. asuntolaina, ilman lainaa kaikilla ei ole varaa omistusasuntoon. On kuitenkin oleellista mitoittaa lainan määrä oikein, muuten seurauksena saattaa olla luottokelpoisuuden menetys.
+
+Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
+
+1. Holtiton ja tietoinen (engl. reckless and deliberate): "meillä ei ole aikaa suunnittelulle" (we do not have time for design)
+2. Holtiton ja tahaton (engl. reckless and inadvertent): "mikä on kerrosarkkitehtuuri?" (what is layering?)
+3. Harkittu ja tahaton (engl. prudent and inadvertent): "nyt tiedämme, miten se olisi pitänyt tehdä" (now we know how we should have done it)
+4. Harkittu ja tietoinen (engl. prudent and deliberate): "julkaistaan nyt, seurauksista huolehditaan myöhemmin" (we must ship now and will deal with consequences)
+
+Luokkien 1 ja 2 _holtitonta_ teknistä velkaa voidaan ajatella huonoksi tekniseksi velaksi. Toinen syntyy tietoisesti, eli ajatellen että ei ole aikaa laadulle, toinen taas tahattomasti osaamattomuuden takia.
+
+Luokat 3 ja 4 ovat _harkittua_, eli harkinnan alla syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
+
+Teknistä velkaa ei kuitenkaan saada hoidettua, jos siitä ei puhuta. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
+
+### Koodin laatu ja koodausagentit
+
+Tässä osassa esitellyt laatuattribuutit eivät menetä merkitystään, vaikka yhä suurempi osa koodista syntyy koodausagenttien avulla. Agentti näkee kerrallaan vain osan koodikannasta, joten sille pätevät samat asiat kuin koodiin tutustuvalle ihmiselle. Kun koodin koheesio on korkea, riippuvuuksia on vähän ja koodi on toisteetonta ja selkeästi nimettyä, agentti löytää muutoskohdan helpommin ja muutos pysyy paikallisena. Kattavat testit ovat agentin tekemien muutosten edellytys samaan tapaan kuin refaktoroinnissa.
+
+Asiaa on myös tutkittu. [Borg ym.](https://arxiv.org/abs/2601.02200) (2026) pyysivät kielimalleja refaktoroimaan 5 000 Python-tiedostoa ja tarkastivat testien avulla, säilyikö koodin toiminta. Viisi keskikokoista kielimallia rikkoi laadultaan hyvän koodin toimintaa noin 15–30 % harvemmin kuin heikkolaatuisen koodin. Järeimmillä malleilla eroa ei kuitenkaan havaittu. Tutkijat edustavat koodin laatua mittaavaa yritystä, joten tuloksiin kannattaa suhtautua varauksella.
+
+Agentti voi myös rapauttaa koodia, sillä se saa pyydetyn toiminnallisuuden toimimaan nopeasti, mutta ei itsestään noudata hyvän suunnittelun periaatteita tai pidä huolta ohjelmiston arkkitehtuurista. Aiheesta lisää tekoälymateriaalin luvussa [Suunnitteluperiaatteet ja agentti](/genai/#suunnitteluperiaatteet-ja-agentti). Lopputulos ei kuitenkaan ole väistämättä huonompaa koodia. [Kontrolloidussa kokeessa](https://arxiv.org/abs/2507.00788) (Borg ym. 2025, 151 osallistujaa) tekoälyn avulla kirjoitettua koodia ei ollut sen vaikeampi jatkokehittää kuin ilman tekoälyä kirjoitettua. Ratkaisevaa on, kuinka hyvin agenttia ohjataan ja sen tuotosta katselmoidaan.
+
+Ääritapaus on niin sanottu [vibe-koodaus](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys), jossa agentin tuottama koodi hyväksytään sitä lukematta, kunhan se näyttää toimivan. Seurauksena on kahdenlaista velkaa. Teknistä velkaa kertyy, kun koodiin jää copypastea, tarpeettomia abstraktioita ja refaktoroimattomia rakenteita. Teknisen velan rinnalle voi syntyä myös _kognitiivista velkaa_ (engl. [cognitive debt](https://margaretstorey.com/blog/2026/02/09/cognitive-debt/)): kun agentin kirjoittamaan koodiin ei perehdytä, tiimi päätyy ylläpitämään sovellusta, jonka toimintaa kukaan ei enää ymmärrä. Tämän osan suunnitteluperiaatteet ovat juuri sitä osaamista, jolla agentin tuotosta arvioidaan.
+
+## Suunnittelumalleja [viikko 6]
+
+Tutustutaan seuraavaksi joukkoon suunnittelumalleja esimerkkien avulla. Esimerkit havainnollistavat edellä käsiteltyjä laatuattribuutteja: pankkitili- ja laskinesimerkit liittyvät [riippuvuuksien vähäisyyteen](#riippuvuuksien-vähäisyys) ja kapselointiin, Gutenberg-lukija [toisteettomuuteen](#toisteettomuus). Lopuksi tutustutaan pinoesimerkin avulla vielä suunnittelumalleihin dekoraattori ja rakentaja.
+
+### Favour composition over inheritance eli milloin ei kannata periä
+
+Kuten [riippuvuuksien vähäisyyden](#riippuvuuksien-vähäisyys) yhteydessä todettiin, perintä muodostaa riippuvuuden perivän ja perittävän luokan välille, ja tämä voi jossain tapauksissa olla ongelmallista. Eräs oliosuunnittelun kulmakivi onkin periaate [Favour composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance) eli suosi yhteistoiminnassa toimivia oliota perinnän sijaan.
 
 Tarkastellaan tilannetta havainnollistavaa esimerkkiä.
 
@@ -884,7 +1104,7 @@ euribor12 = Tili.luo_euribor_tili("4422-3355", "Lea Kutvonen", 12)
 fyrkka = Tili.luo_euribor_tili("7895-4571", "Indre Zliobaite", 1)
 ```
 
-#### Suunnittelumalli: static factory method <span style="color:blue">[viikko 6]</span>
+### Static factory method
 
 Käyttämämme periaate olioiden luomiseen staattisten metodien avulla on hyvin tunnettu suunnittelumalli _staattinen tehdasmetodi_ (engl. static factory method).
 
@@ -912,7 +1132,7 @@ maaraaikais.vaihda_korkoa(EuriborKorko(3))
 
 Eli luopumalla perinnästä oliorakenne selkeytyy huomattavasti ja saavutetaan suoritusaikaista joustavuutta (koronlaskutapa), joka perintää käyttämällä ei onnistu.
 
-#### Suunnittelumalli: strategy <span style="color:blue">[viikko 6]</span>
+### Strategy
 
 Tekniikka, jolla koronmaksu hoidetaan on myöskin suunnittelumalli, nimeltään _strategia_ (engl. strategy).
 
@@ -920,7 +1140,7 @@ Strategyn avulla voidaan hoitaa tilanne, jossa eri olioiden käyttäytyminen on 
 
 Lisätietoa strategia-suunnittelumallista [täällä](https://www.oodesign.com/strategy-pattern) ja [täällä](https://sourcemaking.com/design_patterns/strategy).
 
-#### Vastuiden eriyttäminen: tilin luominen pankissa <span style="color:blue">[viikko 6]</span>
+### Vastuiden eriyttäminen: tilin luominen pankissa
 
 Loimme äsken luokalle `Tili` staattiset apumetodit tilien luomista varten. Voisi kuitenkin olla järkevämpää siirtää vastuu tilien luomisesta erillisen luokan, `Pankki` vastuulle. Pankki voi helposti hallinnoida myös tilinumeroiden generointia:
 
@@ -961,7 +1181,7 @@ Jokaisesta tehdasmetodista on siis tehty luokan oman staattisen metodin sijaan t
 
 Luokkien vastuut ovat selkeytyneet, `Tili` vastaa yhteen tiliin liittyvistä asioista, kuten saldosta. Tili myös tuntee olion, jonka hallinnassa on tieto tiliin liittyvästä korosta. `Pankki` taas hallinnoi kaikkia tilejään, sen avulla myös generoidaan tilinumerot tilien luomisen yhteydessä.
 
-### Toiminnallisuuden kapselointi: laskin ja strategia <span style="color:blue">[viikko 6]</span>
+### Toiminnallisuuden kapselointi: laskin ja strategia
 
 Olemme laajentaneet `Laskin`-luokkaa osaamaan myös muita laskuoperaatioita:
 
@@ -1061,9 +1281,9 @@ Sovelluksen rakenne näyttää seuraavalta:
 
 ![]({{ "/images/4-10.png" | relative_url }}){:height="250px" }
 
-> Koska Pythonissa funktiot ovat arvoja, joita voi tallettaa muuttujiin ja tietorakenteisiin, strategia toteutetaan Pythonissa usein pelkkänä funktiona. Laskuoperaatiot voisi esim. tallettaa sanakirjaan `{"summa": operator.add, "tulo": operator.mul}`, jolloin erillisiä luokkia ei tarvita. Palaamme funktioiden käyttöön strategioina [toisteettomuutta](#epätriviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) käsittelevässä luvussa.
+> Koska Pythonissa funktiot ovat arvoja, joita voi tallettaa muuttujiin ja tietorakenteisiin, strategia toteutetaan Pythonissa usein pelkkänä funktiona. Laskuoperaatiot voisi esim. tallettaa sanakirjaan `{"summa": operator.add, "tulo": operator.mul}`, jolloin erillisiä luokkia ei tarvita. Palaamme funktioiden käyttöön strategioina [Gutenberg-lukijaa](#gutenberg-lukija-epätriviaalin-copypasten-poistaminen) käsittelevässä luvussa.
 
-#### Laskin ja komento-olio <span style="color:blue">[viikko 6]</span>
+### Laskin ja komento-olio
 
 Entä jos haluamme laskimelle muunkinlaisia, kuin 2 parametria ottavia operaatioita, esim. neliöjuuren? Muutetaan laskuoperaatiot toteuttavien luokkien olemusta siten, että siirretään myös käyttäjän kanssa tapahtuva kommunikointi niiden huolehdittavaksi.
 
@@ -1168,7 +1388,7 @@ Ohjelman rakenne tässä vaiheessa:
 
 ![]({{ "/images/4-11.png" | relative_url }}){:height="250px" }
 
-#### Suunnittelumalli: command <span style="color:blue">[viikko 6]</span>
+### Command
 
 Eristimme siis jokaiseen erilliseen laskuoperaatioon liittyvän toiminnallisuuden omaksi oliokseen command-suunnittelumallin ideaa noudattaen, eli siten, että kaikki operaatiot toteuttavat yksinkertaisen rajapinnan, jolla on ainoastaan metodi `suorita`.
 
@@ -1178,7 +1398,7 @@ Esimerkissä komennot luotiin tehdasmetodin tarjoavan olion avulla, if:it piilot
 
 Lisää command-suunnittelumallista esim. [täällä](https://www.oodesign.com/command-pattern) ja [täällä](https://sourcemaking.com/design_patterns/command).
 
-#### Yhteisen koodin eriyttäminen yliluokkaan <span style="color:blue">[viikko 6]</span>
+### Yhteisen koodin eriyttäminen yliluokkaan
 
 Koska kaksi parametria käyttäjältä kysyvillä komennoilla, kuten summa, tulo ja erotus on paljon yhteistä, luodaan niitä varten [abstrakti yliluokka](https://realpython.com/ref/glossary/abstract-base-class/) (eli luokka mikä on ainoastaan perintää varten tehty, luokasta itsestään ei voi tehdä olioita):
 
@@ -1231,7 +1451,7 @@ Ohjelmasta on näin ollen saatu laajennettavuuden kannalta varsin joustava. Uusi
 
 Hintana joustavuudelle on luokkien määrän kasvu. Nopealla vilkaisulla saattaakin olla vaikea havaita miten ohjelma toimii, varsinkaan jos ei ole vastaavaan tyyliin tottunut, mukaan on nimittäin piilotettu factory- ja command-suunnittelumallien lisäksi suunnittelumalli _template method_ (kaksiparametrisen komennon toteutukseen).
 
-#### Suunnittelumalli: template method <span style="color:blue">[viikko 6]</span>
+### Template method
 
 Template method -suunnittelumalli sopii tilanteisiin, missä kahden tai useamman operaation suoritus on hyvin samankaltainen ja poikkeaa ainoastaan yhden tai muutaman operaatioon liittyvän askeleen kohdalla.
 
@@ -1279,33 +1499,9 @@ Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siin�
 
 Lisää template method -suunnittelumallista [täällä](https://www.oodesign.com/template-method-pattern).
 
-### Toisteettomuus
+### Gutenberg-lukija: epätriviaalin copypasten poistaminen
 
-Olemme käsitelleet koodin laatuattribuuteista _kapselointia, koheesiota_ ja _riippuvuuksien vähäisyyttä_. Seuraavana vuorossa redundanssi eli toisteisuus.
-
-Aloittelevaa ohjelmoijaa pelotellaan toisteisuuden vaaroista uran ensiaskelista alkaen, varmaan jokainen on kuullut varoituksen: _älä copypastea koodia_!
-
-Alan piireissä toisteisuudesta varoittava periaate kuuluu [don't repeat yourself](https://wiki.c2.com/?DontRepeatYourself), ja siihen viitataan usein lyhenteellä _DRY_.
-
-Ilmeisin toiston muoto koodissa on juuri copypaste ja se on usein helppo eliminoida esimerkiksi funktioiden tai metodien avulla. Kaikki toisteisuus ei ole yhtä ilmeistä ja monissa suunnittelumalleissa on kyse juuri hienovaraisempien toisteisuuden muotojen eliminoinnista, edellisessä esimerkissä template method -suunnittelumallia käyttävän luokan `BinaariOperaatio` motivaationa oli oikeastaan se, että sama käyttäjän interaktion hoitava koodi toistui luokissa `Summa` ja `Tulo`.
-
-Moneen paikkaan kopioidun koodinpätkän ilmeisin ongelma on siinä, että jos kopioidusta koodista löytyy bugi tai sen toiminnallisuuden logiikkaa tulee muuttaa, on työlästä tehdä muutos moneen kohtaan. Yleensä moneen kohtaan kopioitu koodinpätkä on myös viite siitä että esim. koodin koheesiossa olisi parantamisen varaa. Ongelma ei ole pelkästään teoreettinen. [Juergens ym.](https://doi.org/10.1109/ICSE.2009.5070547) (2009) tutkivat useiden teollisten ohjelmistojen kopioitua koodia ja havaitsivat, että kun kopioista oli muutettu vain osaa, eikä eroa ollut tehty tarkoituksella, joka toinen tällainen epäjohdonmukaisuus oli virhe.
-
-DRY-periaate menee oikeastaan vielä paljon pelkkää koodissa olevaa toiston eliminointia pidemmälle. Kirjan [Pragmatic programmer](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) määritelmä _every piece of knowledge must have a single, unambiguous, authoritative representation within a system_ viittaa siihen, että koodin lisäksi periaate tulisi ulottaa koskemaan järjestelmän muitakin osia, kuten tietokantaskeemaa, testejä, build-skriptejä ym.
-
-Pragmatic programmerin määritelmän henkeä ei välttämättä pysty tavoittamaan täysin ilman konkreettista esimerkkiä. Oletetaan, että kehittämämme verkkokauppa otettaisiin käyttöön myös sellaisissa maissa, joissa ei käytetä rahayksikkönä euroa. Jos sovellus ei noudata DRY-periaatetta valuutan käsittelyn suhteen, on oletettavaa, että muutos vaatisi muutoksia useisiin eri kohtiin sovellusta. Jos taas valuutan käsittelyllä olisi _single authoritative representation_, esim. se olisi kapseloitu riittävän hyvin luokan `Money` vastuulle, niin muiden valuuttojen tuen lisääminen ei ehkä edellyttäisi muuta kuin yksittäisen luokan koodin modifiointia.
-
-#### Hyvä vs. paha copypaste
-
-Vaikka koodin, konfiguraatioiden, tietokantaskeeman yms. toisteettomuus on yleisesti ottaen hyvä asia, voi ajoittain olla järkevää ainakin ensin tehdä nopea copypasteen perustuva ratkaisu ja [refaktoroida](/osa4/#refaktorointi) koodi tarvittaessa myöhemmin siistimmäksi.
-
-Monissa tilanteissa nimittäin copypasten poistamisella on hinta, se saattaa muuttaa sovellusta monimutkaisemmaksi. Gutenberg-lukijan kohdalla alkuperäinen versio saattaisi olla täysin riittävä käyttöön, ja refaktorointi ei välttämättä olisi vaivan arvoinen. Mutta jos sovellukseen tulisi tarve useimpiin ehtoihin, ei sovelluksen alkuperäinen design siihen kunnolla taipuisi ja copypastea tulisi yhä suuremmat määrät. Myös tutkimus tukee tätä näkemystä: [Kapser ja Godfrey](https://doi.org/10.1007/s10664-008-9076-6) (2008) havaitsivat, että merkittävä osa avoimen lähdekoodin projektien kopioinnista oli tarkoituksellista ja perusteltua, esim. kun kopiota oli tarkoitus kehittää jatkossa alkuperäisestä erillään.
-
-Melko hyvä periaate onkin [three strikes and you refactor](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>), eli samankaltainen koodilogiikka kahdessa kohtaa on kutakuinkin ok, mutta jos se tulee kopioida vielä kolmanteen kohtaan, on parempi refaktoroida koodia siten, että copypaste saadaan eliminoitua.
-
-#### Epätriviaalin copypasten poistaminen Strategy-patternin avulla <span style="color:blue">[viikko 6]</span>
-
-Tarkastellaan [Project Gutenbergistä](https://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
+[Toisteettomuuden](#toisteettomuus) yhteydessä todettiin, että kaikki toisteisuus ei ole yhtä ilmeistä kuin suora copypaste. Tarkastellaan tästä esimerkkinä [Project Gutenbergistä](https://www.gutenberg.org/) löytyvien kirjojen sisällön analysointiin tarkoitettua luokkaa `GutenbergLukija`:
 
 ```python
 class GutenbergLukija:
@@ -1491,136 +1687,7 @@ Voimme antaa `filter`-funktiolle suoraan parametrina saadun ehdon.
 
 Pythonissa sama tehdään usein idiomaattisemmin [listakoosteella](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) (engl. list comprehension), esim. `[rivi for rivi in self._rivit if ehto(rivi)]`. Listakooste ja `map`/`filter` ovat saman funktionaalisen ajattelun eri ilmaisutapoja.
 
-### Testattavuus
-
-Tärkeä piirre hyvällä koodilla on sen testattavuus, eli koodi on helppo testata kattavasti yksikkö- ja integraatiotestein. Helppo testattavuus seuraa yleensä siitä, että koodi koostuu löyhästi kytketyistä, selkeän vastuun omaavista komponenteista.
-
-Kääntäen, jos koodin kattava testaaminen on vaikeaa, on se usein seurausta siitä, että komponenttien vastuut eivät ole selkeät, ja niillä on liikaa riippuvuuksia.
-
-Olemme pyrkineet jo kurssin ensimmäiseltä viikolta asti koodin hyvään testattavuuteen esim. purkamalla turhia riippuvuuksia riippuvuuksien injektoinnin avulla.
-
-### Selkeys
-
-Aikoinaan koneiden rajallisten resurssien takia koodia kirjoitettiin usein mahdollisimman tiiviiksi ja tehokkaaksi luettavuuden kustannuksella. Nykyään pyrkimyksenä on koodi, joka jo nimeämisen ja rakenteensa kautta ilmaisee mahdollisimman hyvin sen, mitä se tekee.
-
-Selkeän nimennän lisäksi muita luettavan eli "puhtaan" koodin (engl. clean code) tunnusmerkkejä ovat jo monet meille entuudestaan tutut asiat, joita on listattu esim. Pythonin tyyliohjeessa [PEP 8](https://peps.python.org/pep-0008/) ja Robert Martinin kirjassa [Clean Code](https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884).
-
-Miksi selkeän koodin kirjoittaminen on niin tärkeää, eikö riitä että koodari ymmärtää itse mistä koodissa on kyse? Tämä ei todellakaan riitä, sillä suurin osa ohjelmointiin kuluvasta ajasta menee olemassa olevan koodin lukemiseen ja ymmärtämiseen. [Xia ym.](https://doi.org/10.1109/TSE.2017.2734091) (2018) seurasivat 78 ammattilaisohjelmoijan työtä yhteensä yli 3 000 tunnin ajan ja havaitsivat, että noin 58 % työajasta kului koodin ymmärtämiseen. Robert Martin on arvioinut [lukemisen ja kirjoittamisen suhteeksi](https://www.goodreads.com/quotes/835238-indeed-the-ratio-of-time-spent-reading-versus-writing-is) jopa 10:1. Koodia, joko itsensä tai jonkun muun kirjoittamaa, on luettava debuggauksen yhteydessä sekä sovellusta laajennettaessa. On kovin tyypillistä että se oma aikoinaan niin selkeä koodi, ei sitten olekaan yhtä selkeää parin kuukauden kuluttua:
-
-![]({{ "/images/4-13.jpg" | relative_url }}){:height="350px"}
-
-### Yksinkertaisuus
-
-Edellä esitellyt suunnittelumallit lisäävät koodin joustavuutta, mutta joustavuudella on hintansa: laskinesimerkissä luokkien määrä kasvoi ja ohjelman toiminnan hahmottaminen vaikeutui. Siksi laatuattribuuttien listaan kuuluu myös _yksinkertaisuus_. Periaatteesta käytetään usein lyhenteitä KISS (keep it simple, stupid) ja [YAGNI](https://martinfowler.com/bliki/Yagni.html) (you aren't gonna need it). Jälkimmäinen on peräisin Extreme Programmingista, ja sen mukaan koodiin ei kannata lisätä toiminnallisuutta tai joustavuutta sen varalta, että sitä ehkä joskus tarvitaan. Ennakoidut tarpeet jäävät usein toteutumatta, ja käyttämätön joustavuus tekee koodista vaikeammin ymmärrettävää ja muutettavaa.
-
-Suunnittelumalli kannattaa siis ottaa käyttöön vasta, kun sille on todellinen tarve, esim. kun sama toisteinen rakenne tulee vastaan kolmannen kerran (ks. [three strikes and you refactor](#hyvä-vs-paha-copypaste)). Kun koodi pidetään testattuna ja siistinä, joustavuuden lisääminen [refaktoroimalla](#refaktorointi) on myöhemminkin helppoa. Periaate on ajankohtainen myös koodausagentteja käytettäessä, sillä agentit tuottavat helposti tarpeettomia abstraktioita ja varautuvat tilanteisiin, joita ei ole pyydetty.
-
-### Code smell
-
-Koodissa olevista epäilyttävistä piirteistä on ruvettu käyttämään nimitystä _code smell_ eli koodihaju.
-
-Martin Fowlerin [määritelmää mukaillen](https://martinfowler.com/books/refactoring.html) koodihaju on helpohkosti huomattava merkki siitä että koodissa on jotain pielessä. Vaikka jopa aloitteleva ohjelmoija saattaa pystyä havaitsemaan koodihajun, sen takana oleva todellinen syy voi olla jossain syvemmällä, jopa ohjelman designissa. Koodihaju siis kertoo sen, että syystä tai toisesta koodin sisäinen laatu ei ole parhaalla mahdollisella tasolla.
-
-Koodihajuja on hyvin monenlaisia ja monentasoisia. Muutamia esimerkkejä helposti tunnistettavista hajuista:
-
-- Toisteinen koodi
-- Liian pitkät metodit ja funktiot
-- Luokat joissa on liikaa oliomuuttujia
-- Luokat joissa on liikaa koodia
-- Metodien liian pitkät parametrilistat
-- Epäselkeät muuttujien, metodien tai luokkien nimet
-- Kommentit
-
-Oikeastaan kaikki näistä ovat merkkejä edellä listaamiemme hyvän koodin laatuattribuutteja heikentävistä ilmiöistä, esim. erittäin pitkä metodi todennäköisesti tarkoittaa, että metodin koheesio on huono, samoin luokka jossa on paljon koodia tai oliomuuttujia tarkoittaa suurella todennäköisyydellä että single responsibility -periaatetta ei noudateta. Jos luokan metodeilla on paljon parametreja, voi se kieliä siitä, että osa tiedoista on väärän luokan vastuulla, tai että metodin kuuluisi mielummin olla jossain toisessa luokassa. Koodihajujen haitallisuutta on myös tutkittu. Esim. [Khomh ym.](https://doi.org/10.1007/s10664-011-9171-y) (2012) analysoivat useiden avoimen lähdekoodin projektien versiohistoriaa ja havaitsivat, että hajuisia rakenteita sisältäviä luokkia jouduttiin muuttamaan useammin ja niistä löytyi useammin virheitä kuin muista luokista.
-
-Kommenttien listaaminen koodihajuksi voi tuntua yllättävältä. Kyse on siitä, että kommentti, joka selittää _mitä_ koodi tekee, on usein merkki siitä, että koodi pitäisi kirjoittaa selkeämmäksi esim. paremmalla nimeämisellä tai jakamalla se pienempiin osiin. Tällaiset kommentit myös vanhenevat helposti, kun koodia muutetaan mutta kommenttia ei. Kaikki kommentit eivät kuitenkaan ole hajuja. Arvokkaita ovat kommentit, jotka kertovat _miksi_ koodi on kirjoitettu tietyllä tavalla, esim. perustelu epätavalliselle ratkaisulle tai viittaus bugiraporttiin, sekä funktioiden ja luokkien käyttöä kuvaavat docstringit. Nämä ovat hyödyllisiä sekä ihmisille että koodausagenteille.
-
-Otetaan pari esimerkkiä hieman vähemmän ilmeisistä koodihajuista.
-
-[Primitive obsession](https://sourcemaking.com/refactoring/primitive-obsession) tarkoittaa tilannetta, jossa jokin konkreettinen käsite esim. _osoite_ tai _rahamäärä_ esitetään primitiivityyppisten muuttujien (esim. merkkijono tai kokonaisluku) avulla, sen sijaan että määriteltäisiin luokka asian esittämiseen.
-
-Nimellä [shotgun surgery](https://sourcemaking.com/refactoring/shotgun-surgery) kuvataan tilannetta, missä yhden loogisen asian muuttaminen, laajentaminen tai siihen tehtävä bugikorjaus aiheuttaakin sarjan muutoksia myös todella moneen muuhun paikkaan koodia. Tämä on oire siitä, että toiminnallisuutta ei ole kapseloitu riittävän hyvin yhteen koodimoduuliin, eli kyseessä on DRY-periaatetta rikkova design.
-
-Internetistä löytyy suuret määrät listoja koodihajuista, esim. seuraavat
-
-- <https://sourcemaking.com/refactoring/bad-smells-in-code>
-- <https://blog.codinghorror.com/code-smells/>
-
-### Refaktorointi
-
-Lääke sovelluksen koodin sisäisen laadun ongelmiin on _refaktorointi_ eli muutos koodin, esimerkiksi luokan rakenteeseen, joka kuitenkin pitää sen toiminnallisuuden ennallaan.
-
-Refaktoroinnin systemaattisena koodin sisäisen laadun parannuskeinona toi suurten massojen tietoisuuteen Martin Fowlerin vuonna 1999 julkaisema kirja [Refactoring](https://martinfowler.com/books/refactoring.html). Kirjan toinen, kokonaan uudelleenkirjoitettu painos ilmestyi 2018.
-
-Fowlerin kirja listaa lukuisia koodin rakennetta parantavia, tiettyihin tilanteisiin sopivia refaktorointioperaatioita. Kirjan listaamat refaktoroinnit löytyvät myös [internetistä](https://refactoring.com/catalog/index.html). Seuraavassa muutamia esimerkkejä
-
-- _Rename variable/method/class_, uudelleennimetään huonosti nimetty asia
-- _Extract method_, jaetaan liian pitkä metodi erottamalla siitä pienempiä metodeja
-- _Move field/method_, siirretään oliomuuttuja tai metodi toiseen luokkaan
-- _Extract superclass_, luodaan yliluokka, johon siirretään osa luokan toiminnallisuudesta
-
-Melko monissa ei niin suoraviivaisissa refaktorointioperaatioissa, epäoptimaalinen koodi refaktoroidaan paremmaksi soveltamalla jotain suunnittelumallia. Joshua Kerievsky on kirjoittanut aiheesta mainion kirjan [Refactoring to patterns](https://martinfowler.com/books/r2p.html).
-
-Aiemmissa esimerkeissä näimme tämän kaltaisia refaktorointeja, esim.
-
-- Tilien koronmaksustrategia, [replace conditional with polymorfism](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)
-- Tilien luominen, [replace constructor with factory function](https://refactoring.com/catalog/replaceConstructorWithFactoryFunction.html)
-- Laskimen komennot, [replace function with command](https://refactoring.com/catalog/replaceFunctionWithCommand.html)
-- Laskimen binäärioperaatiot, [form template method](https://sourcemaking.com/refactoring/form-template-method).
-
-Refaktoroinnin melkein ehdoton edellytys (poislukien yksinkertaiset automaattisesti suoritettavat refaktoroinnit, kuten _rename variable_) on kattavien testien olemassaolo. Refaktoroinnissa on tarkoitus ainoastaan parantaa luokan tai komponentin sisäistä rakennetta, ulospäin näkyvän toiminnallisuuden pitäisi pysyä muuttumattomana, ja tästä varmistuminen ilman testejä on työlästä.
-
-Refaktoroinnissa kannattaa ehdottomasti edetä pienin askelin eli yksi hallittu muutos kerrallaan. Testit on syytä suorittaa jokaisen refaktorointioperaation jälkeen, jotta mahdollinen regressio, eli aiemmin toimineen koodin hajoaminen huomataan mahdollisimman nopeasti.
-
-Refaktorointia kannattaa tehdä lähes koko ajan. Kun koodin sisäinen laatu säilyy siistinä, on koodin laajentaminen miellyttävää ja pienien refaktorointioperaatioiden tekeminen suhteellisen vaivatonta. Jos koodin sisäinen laatu pääsee rapistumaan, muuttuu sen laajentaminen hitaaksi ja myös refaktoroinnin suorittaminen muuttuu koko ajan työläämmäksi. Joillain ohjelmistokehitystiimeillä onkin _definition of doneen_ kirjattu, että valmiin määritelmä sisältää sen, että koodi on refaktoroitu riittävän siistiksi. Siisteyttä saatetaan valvoa esim. [pull requesteina tehtävänä katselmointina](https://studies.cs.helsinki.fi/ohtu/osa3/#koodin-katselmointi-github-ja-pull-requestit).
-
-Osa refaktoroinneista, esim. metodien tai luokkien uudelleennimeäminen tai pitkien metodien jakaminen pienemmiksi on helppoa. Aina ei näin kuitenkaan ole. Joskus on tarve tehdä suurempien mittaluokkien refaktorointeja, joissa ohjelman rakenne eli arkkitehtuuri muuttuu. Tällaiset refaktoroinnit saattavat kestää päiviä tai jopa viikkoja ja niiden suorittaminen siten, että koodi säilyy koko ajan toimivana on jo kohtuullisen haastavaa.
-
-Koodausagenttien kanssa refaktorointiin on kiinnitettävä erityistä huomiota. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ja lisää mieluummin uutta koodia kuin siistii olemassa olevaa. Tämä näkyy myös [GitClearin tutkimuksessa](https://www.gitclear.com/ai_assistant_code_quality_2025_research), jonka mukaan AI-avusteisen ohjelmoinnin yleistyessä copypaste-koodin osuus muutetuista riveistä kasvoi ja refaktorointiin liittyvän siirretyn koodin osuus laski selvästi (ks. tarkemmin [tekoälymateriaali](/genai/#suunnitteluperiaatteet-ja-agentti)). Refaktorointi kannattaakin pyytää agentilta omana askeleenaan TDD:n red-green-refactor-syklin hengessä: ensin toiminnallisuus toimivaksi, sitten koodi siistiksi. Periaatteet, kuten olemassa olevan koodin hyödyntäminen kopioimisen sijaan, kannattaa kirjata myös projektin ohjetiedostoon (esim. `AGENTS.md`). Toisaalta agenttien myötä refaktoroinnista on tullut halpaa: kun kattavat testit ovat kunnossa, agentti tekee laajankin refaktoroinnin nopeasti.
-
-### Tekninen velka
-
-Koodi ei ole aina sisäiseltä laadultaan optimaalista, ja joskus on jopa asiakkaan kannalta tarkoituksenmukaista tehdä vähemmän laadukasta koodia. Huonoa suunnittelua tai/ja ohjelmointia on ruvettu kuvaamaan käsitteellä _tekninen velka_ (engl. technical debt). Termin otti käyttöön Ward Cunningham vuonna 1992. Hän vertasi keskeneräisen ymmärryksen varassa kirjoitettua koodia lainaan, jonka korkoja maksetaan niin kauan, kunnes koodi korjataan vastaamaan parempaa ymmärrystä.
-
-Oikoteitä ottamalla tehdyllä ohjelmoinnilla saadaan ehkä nopeasti aikaan jotain toiminnallisuutta, mutta hätäinen ratkaisu tullaan maksamaan korkoineen takaisin myöhemmin _jos_ ohjelmaa on tarkoitus laajentaa. Käytännössä käy siis niin, että koodiin kertyneet sisäisen laadun ongelmat, eli _tekninen velka_ alkaa hidastamaan kehitystyön etenemistä, ja uusien ominaisuuksien toteuttamisesta tulee koko ajan hankalammaksi ja kalliimmaksi.
-
-Toisaalta jos korkojen maksun aikaa ei koskaan tule, eli ohjelma on esimerkiksi pelkkä prototyyppi tai sitä ei koskaan oteta käyttöön, on teknisen velan ottaminen asiakkaan kannalta kannattava ratkaisu.
-
-[Osassa 2](/osa2/#kokeileva-vaatimusmäärittely-lean-startup) käsiteltiin _lean startup_ -ideologian mukaista tapaa ohjelmiston uusien ominaisuuden hyödyllisyyden validointiin rakentamalla ominaisuuden toteuttama _minimum viable product (MVP)_, eli juuri ja juuri riittävä ratkaisu, jonka avulla ominaisuuden käyttökelpoisuutta voidaan testata. Kuten nimikin jo antaa ymmärtää, MVP on luonteeltaan sellainen rakennelma, jonka tekemisessä otetaan tietoisesti teknistä velkaa. _Jos_ ominaisuus osoittautuu halutuksi, tekninen velka maksetaan pois tekemällä toiminnallisuudelle robustimpi toteutus.
-
-Lyhytaikaisen teknisen velan ottaminen voi joskus olla jopa välttämätöntä. Esimerkiksi markkinatilanteen takia saattaa olla oleellista saada tuote kuluttajille mahdollisimman nopeasti, tai muuten tilaisuus saattaa mennä kokonaan ohi.
-Startup-yrityksillä tilanne voi olla sellainen, että firma joutuu valitsemaan teknisen velan ja varman rahojen loppumisen välillä. Tekemällä jotain nopeasti huonolla sisäisellä laadulla firma saattaa pystyä keräämään riittävästi rahoitusta jatkaakseen toimintaansa. Tämänkaltaisissa tilanteissa otetaan tietoisesti teknistä velkaa ja sovelluksen koodin huonosta laadusta ja testauksen puuttumisesta huolehditaan myöhemmin.
-
-Tekninen velka ei siis ole pelkästään paha asia, vaan strategisesti käytettynä hyväkin väline, aivan kuten esim. asuntolaina - ilman lainaa kaikilla ei ole varaa omistusasuntoon. On kuitenkin oleellista mitoittaa lainan määrä oikein, muuten seurauksena saattaa olla luottokelpoisuuden menetys.
-
-Teknisen velan takana voi siis olla monenlaisia syitä, esim. holtittomuus, osaamattomuus, tietämättömyys tai tarkoituksella tehty päätös. Martin Fowler [jakaa](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) teknisen velan neljään eri luokkaan:
-
-1. Holtiton ja tietoinen (engl. reckless and deliberate): "meillä ei ole aikaa suunnittelulle" (we do not have time for design)
-2. Holtiton ja tahaton (engl. reckless and inadvertent): "mikä on kerrosarkkitehtuuri?" (what is layering?)
-3. Harkittu ja tahaton (engl. prudent and inadvertent): "nyt tiedämme, miten se olisi pitänyt tehdä" (now we know how we should have done it)
-4. Harkittu ja tietoinen (engl. prudent and deliberate): "julkaistaan nyt, seurauksista huolehditaan myöhemmin" (we must ship now and will deal with consequences)
-
-Luokkien 1 ja 2 _holtitonta_ teknistä velkaa voidaan ajatella huonoksi tekniseksi velaksi. Toinen syntyy tietoisesti, eli ajatellen että ei ole aikaa laadulle, toinen taas tahattomasti osaamattomuuden takia.
-
-Luokat 3 ja 4 ovat _harkittua_, eli harkinnan alla syntynyttä teknistä velkaa. Luokka 4 on juurikin tilanne, jossa ollaan esim. tekemässä MVP:tä, tai jonkun pakon takia koodi on saatava julkaistua heti ja seuraukset päätetään hoitaa myöhemmin. Luokka 3 on kovin yleinen tilanne, ohjelmistoa suunniteltiin ja rakennettiin parhaiden aikomusten mukaan, mutta vasta paljon myöhemmin, kun arkkitehtuuri ja design on jo lyöty lukkoon, opitaan sovelluksen luonteesta sen verran, että tiedetään _kuinka sovellus olisi tullut suunnitella_. Tälläinen tilanne saatetaan päätyä ratkaisemaan refaktoroimalla sovelluksen arkkitehtuuri paremmin tarpeita vastaavaksi.
-
-Teknistä velkaa ei kuitenkaan saada hoidettua, jos siitä ei puhuta. Erityisesti osaamattomuudesta syntyneen velan myöntäminen voi tuntua oman osaamattomuuden myöntämiseltä, joten tiimissä kannattaa käsitellä velkaa yhteisenä asiana eikä etsiä sen aiheuttajaa.
-
-### Koodin laatu ja koodausagentit
-
-Tässä osassa esitellyt laatuattribuutit eivät menetä merkitystään, vaikka yhä suurempi osa koodista syntyy koodausagenttien avulla. Agentti näkee kerrallaan vain osan koodikannasta, joten sille pätevät samat asiat kuin koodiin tutustuvalle ihmiselle. Kun koodi on koheesiivista, löyhästi kytkettyä, toisteetonta ja selkeästi nimettyä, agentti löytää muutoskohdan helpommin ja muutos pysyy paikallisena. Kattavat testit ovat agentin tekemien muutosten edellytys samaan tapaan kuin refaktoroinnissa.
-
-Asiaa on myös tutkittu. [Borg ym.](https://arxiv.org/abs/2601.02200) (2026) pyysivät kielimalleja refaktoroimaan 5 000 Python-tiedostoa ja tarkastivat testien avulla, säilyikö koodin toiminta. Viisi keskikokoista kielimallia rikkoi laadultaan hyvän koodin toimintaa noin 15–30 % harvemmin kuin heikkolaatuisen koodin. Järeimmillä malleilla eroa ei kuitenkaan havaittu. Tutkijat edustavat koodin laatua mittaavaa yritystä, joten tuloksiin kannattaa suhtautua varauksella.
-
-Agentti voi myös rapauttaa koodia, sillä se saa pyydetyn toiminnallisuuden toimimaan nopeasti, mutta ei itsestään noudata tämän osan suunnitteluperiaatteita. Aiheesta lisää tekoälymateriaalin luvussa [Suunnitteluperiaatteet ja agentti](/genai/#suunnitteluperiaatteet-ja-agentti). Lopputulos ei kuitenkaan ole väistämättä huonompaa koodia. [Kontrolloidussa kokeessa](https://arxiv.org/abs/2507.00788) (Borg ym. 2025, 151 osallistujaa) tekoälyn avulla kirjoitettua koodia ei ollut sen vaikeampi jatkokehittää kuin ilman tekoälyä kirjoitettua. Ratkaisevaa on, kuinka hyvin agenttia ohjataan ja sen tuotosta katselmoidaan.
-
-Ääritapaus on niin sanottu [vibe-koodaus](/genai/#vibe-coding-vs-hallittu-agenttinen-ohjelmistokehitys), jossa agentin tuottama koodi hyväksytään sitä lukematta, kunhan se näyttää toimivan. Seurauksena on kahdenlaista velkaa. Teknistä velkaa kertyy, kun koodiin jää copypastea, tarpeettomia abstraktioita ja refaktoroimattomia rakenteita. Teknisen velan rinnalle voi syntyä myös _kognitiivista velkaa_ (engl. cognitive debt): jos koodin tuottaminen ulkoistetaan agentille ilman, että sitä ymmärretään, tiimi ylläpitää lopulta koodia, jota kukaan ei tunne. Tämän osan suunnitteluperiaatteet ovat juuri sitä osaamista, jolla agentin tuotosta arvioidaan.
-
-### Lisää suunnittelumalleja <span style="color:blue">[viikko 6]</span>
-
-Tutustutaan osan lopuksi vielä muutamaan uuteen suunnittelumalliin.
-
-#### Esimerkki Dekoroitu pino <span style="color:blue">[viikko 6]</span>
+### Dekoroitu pino
 
 Olemme toteuttaneet asiakkaalle pinon:
 
@@ -1788,7 +1855,7 @@ Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerr
 
 Lisää dekoraattori-suunnittelumallista esim. [täällä](https://sourcemaking.com/design_patterns/decorator)
 
-#### Pinotehdas <span style="color:blue">[viikko 6]</span>
+### Pinotehdas
 
 Eri ominaisuuksilla varustettujen pinojen luominen on käyttäjän kannalta hieman ikävää. Tehdään luomista helpottamaan pinotehdas:
 
@@ -1827,7 +1894,7 @@ omapino = tehdas.kryptattu_prepaid_pino(100)
 
 Kuten huomaamme, ei factory-suunnittelumalli ole tilanteeseen ideaali. Kokeillaan sen sijaan seuraavaksi _rakentaja_ (engl. builder) -suunnittelumallia.
 
-#### Pinorakentaja <span style="color:blue">[viikko 6]</span>
+### Pinorakentaja
 
 Rakentaja-suunnittelumalli sopii tilanteeseemme erittäin hyvin. Pyrkimyksenämme on mahdollistaa pinon luominen seuraavaan tyyliin:
 
@@ -1955,6 +2022,6 @@ Rakentajan toteutus perustuu tekniikkaan nimeltään [method chaining](https://e
 
 > Rakentajaa ei kannata käyttää pelkästään siksi, että oliolla on paljon valinnaisia konstruktoriparametreja. Pythonissa tähän riittävät [avainsana-argumentit](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments) ja oletusarvot, esim. `Tilaus(tuote="kirja", maara=2, lahjapaketointi=True)`. Rakentajasta on hyötyä pinorakentajan kaltaisissa tilanteissa, joissa olio kootaan vaihtelevasta määrästä toisiaan dekoroivia osia.
 
-### Ohjelmistolisenssit
+## Ohjelmistolisenssit
 
 Lue [täältä](/lisenssit) Akira Taguchin ohjelmistolisenssejä käsittelevä teksti.

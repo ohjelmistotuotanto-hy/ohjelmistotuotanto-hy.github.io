@@ -89,7 +89,7 @@ Yhtäkkiä huomaat, että mainiin tekemäsi asiat eivät olekaan kovin hyviä ja
 
 <input type="checkbox"> Poista koodista kaikki toisteisuus ja tee siitä rakenteellisesti materiaalin [osan 4](/osa4) hengessä oikeaoppinen
 
-- `pelaa`-metodi tulee toteuttaa [template-metodina](/osa4#suunnittelumalli-template-method-viikko-6)
+- `pelaa`-metodi tulee toteuttaa [template-metodina](/osa4#template-method)
 - Sopivan peliolion (kaksinpeli, helppo yksinpeli, vaikea yksinpeli) luominen tulee toteuttaa staattisen tehdasmetodin, tai funktion avulla
 - Pääohjelmalla ei saa olla riippuvuuksia konkreettisiin pelin toteuttaviin luokkiin
 

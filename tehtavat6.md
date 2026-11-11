@@ -7,7 +7,7 @@ permalink: /tehtavat6/
 
 {% include laskari_info.md part=6 %}
 
-Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) niihin lukuihin, joihin on merkitty <span style="color:blue">[viikko 6]</span>. Tehtävässä 7 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
+Tehtävät liittyvät materiaalin ohjelmistosuunnittelua käsittelevän [osan 4](/osa4/) lukuun [Suunnittelumalleja](/osa4/#suunnittelumalleja-viikko-6). Tehtävässä 7 jatketaan kurssin [tekoäly]-tehtävien sarjaa.
 
 ### Typoja tai epäselvyyksiä tehtävissä?
 
@@ -114,7 +114,7 @@ def _suorita_komento(self, komento):
     self._arvo_var.set(self._sovelluslogiikka.arvo())
 ```
 
-<input type="checkbox">  Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio-viikko-6).
+<input type="checkbox">  Refaktoroi koodi niin, ettei `_suorita_komento`-metodi sisällä pitkää `if`-hässäkkää. Hyödynnä kurssimateriaalin osassa 4 esiteltyä suunnittelumallia [command](/osa4#laskin-ja-komento-olio).
 
 Tässä tehtävässä ei tarvitse vielä toteuttaa kumoa-komennon toiminnallisuutta!
 
@@ -189,7 +189,7 @@ Myös esim. seuraavanlaisen monimutkaisemman operaatiosarjan pitää toimia oike
 
 <input type="checkbox">  Kopioi projekti palautusrepositorioosi, hakemiston viikko6 sisälle.
 
-Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](/osa4/#ep%C3%A4triviaalin-copypasten-poistaminen-strategy-patternin-avulla-viikko-6) voi olla eräs inspiraation lähde. Esimerkkiin kannattaa tutustua joka tapauksessa, jos strategy-suunnittelumalli ei ole tuttu.
+Tätä tehtävää tehdessä luentomateriaalin [Gutenberg-lukija](/osa4/#gutenberg-lukija-epätriviaalin-copypasten-poistaminen) voi olla eräs inspiraation lähde. Esimerkkiin kannattaa tutustua joka tapauksessa, jos strategy-suunnittelumalli ei ole tuttu.
 
 Tällä kertaa olemme kiinnostuneita tekemään hieman monimutkaisempia "kyselyjä" pelaajatietoihin, esim. _listaa kaikki joukkueen PHI pelaajat, joilla on vähintään 5 maalia ja vähintään 20 syöttöä_.
 
@@ -330,13 +330,13 @@ Cale Makar           COL          30 + 62 = 92
 Aleksander Barkov    FLA          20 + 51 = 71
 ```
 
-Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#esimerkki-dekoroitu-pino-viikko-6). _And_- ja _Or_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
+Kyselyt perustuvat rakenteeltaan _decorator_-suunnittelumalliin, vastaavasti kuten materiaalin osan 4 esimerkissä [dekoroitu pino](/osa4/#dekoroitu-pino). _And_- ja _Or_-muotoiset kyselyt on muodostettu myös erään suunnittelumallin, [compositen](https://sourcemaking.com/design_patterns/composite) hengessä, ne ovat _Matcher_-rajapinnan toteuttavia olioita, jotka sisältävät itse monta _Matcher_-olioa. Niiden käyttäjä ei kuitenkaan tiedä sisäisestä rakenteesta mitään.
 
 ### 5. Parannettu kyselykieli, osa 1
 
 Matcher-olioiden avulla tehtyä kyselykieltä vaivaa se, että kyselyjen rakentaminen on ikävää, sillä jokaista kyselyn osaa kohti on luotava uusi olio. Toinen ikävä puoli on se, että kyselyjä käyttävällä koodilla on suora riippuvuus sen käyttämiin Matcher-olioihin.
 
-<input type="checkbox"> Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja-viikko-6) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
+<input type="checkbox"> Tee materiaalin osassa 4 esitellyn [pinorakentajan](/osa4#pinorakentaja) hengessä _kyselyrakentaja_, jonka avulla voit luoda Matcher-olioita.
 
 Rakentaja voi toimia esim. seuraavaan tapaan.
 
