@@ -101,9 +101,9 @@ Useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien piir
 
 Arkkitehtuurityyleistä varmasti tunnetuin ja eniten käytetty on _kerrosarkkitehtuuri_ (engl. layered architecture), jossa pyrkimyksenä on jakaa sovellus käsitteellisiin kerroksiin, joissa kukin kerros suorittaa oman "abstraktiotason" tehtäväänsä käyttäen ainoastaan sen alapuolella olevan kerroksen palveluja.
 
-Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää. Ylimpänä kerroksena on yleensä käyttöliittymä ja tämän alapuolella sovelluslogiikasta vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen tai verkon yli tapahtuvaan kommunikaatioon. Seuraavassa kuvassa esimerkkinä on alempana tarkemmin esiteltävän kuvitteellisen verkkokaupan palvelinpuolen (backend) kerrosrakenne. Verkkokaupan käyttöliittymä on selaimessa toimiva sovellus, joten backendin ylimpänä kerroksena ovat reitit, eli HTTP-rajapinta, jota selainsovellus kutsuu:
+Kerrosarkkitehtuurissa ylimmät kerrokset ovat lähempänä käyttäjää. Ylimpänä kerroksena on yleensä käyttöliittymä ja tämän alapuolella sovelluslogiikasta vastaava kerros. Alimmat kerrokset taas keskittyvät koneläheisiin asioihin, kuten tiedon tallennukseen tai verkon yli tapahtuvaan kommunikaatioon. Seuraavassa kuvassa esimerkkinä on alempana tarkemmin esiteltävän kuvitteellisen verkkokaupan kerrosrakenne:
 
-![Kerrosarkkitehtuuri: reitit käyttävät sovelluslogiikan OstoskoriServiceä ja TilausServiceä, jotka käyttävät tallennuskerroksen repositorioita, jotka puolestaan käyttävät tietokantaa]({{ "/images/4-22.png" | relative_url }}){:height="350px" }
+![Kerrosarkkitehtuuri: käyttöliittymän näkymät käyttävät sovelluslogiikan OstoskoriServiceä ja TilausServiceä, jotka käyttävät tallennuskerroksen repositorioita, jotka puolestaan käyttävät tietokantaa]({{ "/images/4-22.png" | relative_url }}){:height="350px" }
 
 Käytännössä kukin kerros on kokoelma toisiinsa liittyviä olioita tai komponentteja, jotka muodostavat oman abstraktiotasonsa toiminnallisuuden suhteen loogisen kokonaisuuden.
 
@@ -115,7 +115,9 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
 
 #### Verkkokaupan arkkitehtuuri
 
-Tarkastellaan verkkokaupan backendia hieman tarkemmin. Se on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen sovellus, jonka kerrosrakenne näkyy koodin tasolla siinä, miten sovelluksen koodi jakautuu hakemistoihin:
+Tarkastellaan verkkokauppaa hieman tarkemmin. Se on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen web-sovellus, joka muodostaa käyttäjälle näytettävät HTML-sivut palvelimella templatejen avulla. Käyttöliittymäkerros koostuu siis Flaskin reiteistä, jotka käsittelevät selaimen HTTP-pyynnöt ja kutsuvat sovelluslogiikkaa, sekä templateista, joiden avulla reitit muodostavat sivut.
+
+Sovelluksen kerrosrakenne näkyy koodin tasolla siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
 ```
 src/
@@ -129,19 +131,23 @@ src/
 ├── services/
 │   ├── ostoskori_service.py
 │   └── tilaus_service.py
-├── routes/
-│   ├── ostoskori.py
-│   └── tilaukset.py
+├── ui/
+│   ├── ostoskori_routes.py
+│   ├── tilaus_routes.py
+│   └── templates/
+│       ├── tuotteet.html
+│       ├── ostoskori.html
+│       └── tilaus.html
 └── app.py
 ```
 
 Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio):
 
-![UML-pakkauskaavio: routes riippuu pakkauksesta services, joka riippuu pakkauksista repositories ja entities; repositoriot riippuvat entities-pakkauksen luokista Tuote ja Tilaus]({{ "/images/4-23.png" | relative_url }}){:height="400px" }
+![UML-pakkauskaavio: ui riippuu pakkauksesta services, joka riippuu pakkauksista repositories ja entities; repositoriot riippuvat entities-pakkauksen luokista Tuote ja Tilaus]({{ "/images/4-23.png" | relative_url }}){:height="400px" }
 
-Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Reitit _routes_ riippuvat sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_.
+Pakkauksina kuvattujen kerroksien välille on merkitty riippuvuudet katkoviivalla. Käyttöliittymä _ui_ riippuu sovelluslogiikasta _services_, joka taas riippuu tallennuskerroksesta _repositories_.
 
-Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu reittien koodia.
+Käytännössä riippuvuus tarkoittaa sitä, että ylemmän kerroksen koodista kutsutaan jotain alemman kerroksen koodin metodia. Kerrosarkkitehtuurin hengen mukaisesti riippuvuuksia on vain ylhäältä alas, eli esim. sovelluslogiikkakerroksen koodi ei kutsu käyttöliittymäkerroksen koodia.
 
 Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entities_-olioita. Vaikka kyseinen pakkaus kuuluu loogisesti ajateltuna tallennuspalveluita ylempään "bisneslogiikkakerrokseen", ohjelmakoodin tasolla alempana oleva tallennuskerros on riippuvainen pakkauksesta sillä se käsittelee pakkauksen luokkien koodia.
 
@@ -169,11 +175,11 @@ Tarkastellaan esimerkkinä edellä esiteltyä verkkokauppaa. Ylimmällä tasolla
 
 _Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa erikseen ajettavaa osaa, kuten selainsovellusta, palvelinsovellusta tai tietokantaa (kyse ei siis välttämättä ole Docker-kontista). Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
 
-![C4-container-kaavio: verkkokaupan sisällä selainsovellus kutsuu backendia REST/JSON-rajapinnan kautta, backend käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-20.png" | relative_url }}){:height="300px" }
+![C4-container-kaavio: asiakas käyttää verkkokaupan Flask-web-sovellusta selaimella HTTPS:n yli, web-sovellus käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-24.png" | relative_url }}){:height="300px" }
 
-_Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Backendin komponenttikaavio näyttää saman kerrosrakenteen, joka nähtiin jo kerrosarkkitehtuurin yhteydessä: reitit käyttävät sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta. Lisäksi kaaviosta näkyy, mitkä komponentit kommunikoivat containerin ulkopuolisten osien kanssa:
+_Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovelluksen komponenttikaavio näyttää saman kerrosrakenteen, joka nähtiin jo kerrosarkkitehtuurin yhteydessä: käyttöliittymä käyttää sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta. Lisäksi kaaviosta näkyy, mitkä komponentit kommunikoivat containerin ulkopuolisten osien kanssa:
 
-![C4-komponenttikaavio: backendin reitit kutsuvat OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-21.png" | relative_url }}){:height="400px" }
+![C4-komponenttikaavio: asiakas käyttää web-sovelluksen käyttöliittymäkomponenttia (Flask-reitit ja templatet), joka kutsuu OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-25.png" | relative_url }}){:height="400px" }
 
 Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokkakaaviolla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
 
@@ -217,7 +223,7 @@ _Mikropalveluarkkitehtuuri_ (engl. microservices), joka yleistyi 2010-luvulla er
 
 Mikropalveluihin perustuvassa sovelluksessa yksittäisistä palveluista pyritään tekemään mahdollisimman _riippumattomia_ ja löyhästi toisiinsa kytkettyjä. Palvelut eivät esimerkiksi käytä yhteistä tietokantaa eivätkä jaa koodia. Palvelut eivät kutsu suoraan toistensa metodeja, sen sijaan ne kommunikoivat verkon välityksellä.
 
-Mikropalveluiden on tarkoitus olla suhteellisen pieniä ja huolehtia vain "yhdestä asiasta". Jos edellä esimerkkinä ollut verkkokauppa toteutettaisiin yhden kerrosarkkitehtuuria noudattavan backendin sijaan mikropalveluina, erillisiä mikropalveluja voisivat olla esimerkiksi:
+Mikropalveluiden on tarkoitus olla suhteellisen pieniä ja huolehtia vain "yhdestä asiasta". Jos edellä esimerkkinä ollut verkkokauppa toteutettaisiin yhden kerrosarkkitehtuuria noudattavan sovelluksen sijaan mikropalveluina, erillisiä mikropalveluja voisivat olla esimerkiksi:
 
 - Käyttäjien hallinta
 - Tuotteiden suosittelu
