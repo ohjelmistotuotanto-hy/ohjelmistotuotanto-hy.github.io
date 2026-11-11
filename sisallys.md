@@ -164,7 +164,7 @@ permalink: /sisallys/
     - [Mikropalveluarkkitehtuuri](/osa4#mikropalveluarkkitehtuuri)
       - [Mikropalveluiden kommunikointi](/osa4#mikropalveluiden-kommunikointi)
       - [Mikropalveluiden haasteita](/osa4#mikropalveluiden-haasteita)
-      - [Modulaarinen monoliitti](/osa4#modulaarinen-monoliitti)
+    - [Modulaarinen monoliitti](/osa4#modulaarinen-monoliitti)
   - [Arkkitehtuuri ketterissä menetelmissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
     - [Kävelevä luuranko](/osa4#kävelevä-luuranko)
     - [Inkrementaalisen arkkitehtuurin etuja](/osa4#inkrementaalisen-arkkitehtuurin-etuja)

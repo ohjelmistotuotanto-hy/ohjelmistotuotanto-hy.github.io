@@ -282,7 +282,7 @@ Mikropalveluiden yhteydessä käytetäänkin paljon konttiteknologiaa (engl. con
 Aihe on tärkeä, mutta emme valitettavasti voi mennä siihen tämän kurssin
 puitteissa ollenkaan, onneksi Avoimessa yliopistossa on tarjolla sopiva kurssi aiheesta: [DevOps with Docker](https://docker-hy.github.io/).
 
-#### Modulaarinen monoliitti
+### Modulaarinen monoliitti
 
 Mikropalveluiden haasteiden takia niitä ei nykyään pidetä oletusratkaisuna. Esim. [Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html) suosittelee aloittamaan monoliitista ja pilkkomaan sen palveluiksi vasta, kun siihen on selkeä tarve. Myös toiseen suuntaan kuljetaan: Amazon Prime Videon tiimi [kertoi](https://web.archive.org/web/20231230202019/https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90) vuonna 2023 yhdistäneensä hajautetuista palveluista koostuneen videoiden laadunvalvontajärjestelmänsä yhdeksi sovellukseksi, jolloin sen infrastruktuurikustannukset putosivat 90 %.
 
