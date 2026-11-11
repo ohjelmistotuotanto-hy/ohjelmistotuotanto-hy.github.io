@@ -176,6 +176,8 @@ _Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa j
 
 ![C4-container-kaavio: asiakas käyttää verkkokaupan Flask-web-sovellusta selaimella HTTPS:n yli, web-sovellus käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-24.png" | relative_url }}){:height="300px" }
 
+> Termi _container_ on sattumalta sama kuin [Dockerin](https://www.docker.com/) kaltaisten työkalujen konteista (engl. container) käytetty nimitys, mutta C4:n container ei tarkoita konttia. C4:n container, esimerkiksi web-sovellus tai tietokanta, voidaan kyllä suorittaa kontissa, mutta yhtä hyvin suoraan palvelimella, pilvipalvelussa tai vaikkapa käyttäjän puhelimessa.
+
 _Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovelluksen komponenttikaavio näyttää saman kerrosrakenteen, joka nähtiin jo kerrosarkkitehtuurin yhteydessä: käyttöliittymä käyttää sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta. Lisäksi kaaviosta näkyy, mitkä komponentit kommunikoivat containerin ulkopuolisten osien kanssa:
 
 ![C4-komponenttikaavio: asiakas käyttää web-sovelluksen käyttöliittymäkomponenttia (Flask-reitit ja templatet), joka kutsuu OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-25.png" | relative_url }}){:height="400px" }
