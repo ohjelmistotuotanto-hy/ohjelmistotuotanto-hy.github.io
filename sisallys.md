@@ -159,7 +159,7 @@ permalink: /sisallys/
     - [Arkkitehtuuriin vaikuttavia tekijöitä](/osa4#arkkitehtuuriin-vaikuttavia-tekijöitä)
     - [Arkkitehtuurityyli](/osa4#arkkitehtuurityyli)
     - [Kerrosarkkitehtuuri](/osa4#kerrosarkkitehtuuri)
-      - [Todo-sovelluksen arkkitehtuuri](/osa4#todo-sovelluksen-arkkitehtuuri)
+      - [Verkkokaupan arkkitehtuuri](/osa4#verkkokaupan-arkkitehtuuri)
     - [Arkkitehtuurin kuvaamisesta](/osa4#arkkitehtuurin-kuvaamisesta)
     - [Mikropalveluarkkitehtuuri](/osa4#mikropalveluarkkitehtuuri)
       - [Mikropalveluiden kommunikointi](/osa4#mikropalveluiden-kommunikointi)
