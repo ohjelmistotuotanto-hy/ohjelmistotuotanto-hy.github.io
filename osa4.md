@@ -314,6 +314,8 @@ _Simplicity, the art of maximizing the amount of work not done, is essential_
 
 Arkkitehtuurin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
 
+### Inkrementaalinen arkkitehtuuri
+
 Ketterien menetelmien yhteydessä puhutaan usein [inkrementaalisesta suunnittelusta ja arkkitehtuurista](https://www.jamesshore.com/Agile-Book/incremental_design.html).
 
 Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan _riittävällä_ tasolla projektin alussa. Ohjelmiston lopullinen arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.

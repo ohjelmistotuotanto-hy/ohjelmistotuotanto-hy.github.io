@@ -167,6 +167,7 @@ permalink: /sisallys/
       - [Mikropalveluiden haasteita](/osa4#mikropalveluiden-haasteita)
     - [Modulaarinen monoliitti](/osa4#modulaarinen-monoliitti)
   - [Arkkitehtuuri ketterissä menetelmissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
+    - [Inkrementaalinen arkkitehtuuri](/osa4#inkrementaalinen-arkkitehtuuri)
     - [Kävelevä luuranko](/osa4#kävelevä-luuranko)
     - [Inkrementaalisen arkkitehtuurin etuja](/osa4#inkrementaalisen-arkkitehtuurin-etuja)
     - [Inkrementaalisen arkkitehtuurin riskit](/osa4#inkrementaalisen-arkkitehtuurin-riskit)
