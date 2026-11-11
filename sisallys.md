@@ -162,6 +162,7 @@ permalink: /sisallys/
       - [Verkkokaupan arkkitehtuuri](/osa4#verkkokaupan-arkkitehtuuri)
     - [Arkkitehtuurin kuvaamisesta](/osa4#arkkitehtuurin-kuvaamisesta)
     - [Mikropalveluarkkitehtuuri](/osa4#mikropalveluarkkitehtuuri)
+      - [Mikropalveluiden hyötyjä](/osa4#mikropalveluiden-hyötyjä)
       - [Mikropalveluiden kommunikointi](/osa4#mikropalveluiden-kommunikointi)
       - [Mikropalveluiden haasteita](/osa4#mikropalveluiden-haasteita)
     - [Modulaarinen monoliitti](/osa4#modulaarinen-monoliitti)

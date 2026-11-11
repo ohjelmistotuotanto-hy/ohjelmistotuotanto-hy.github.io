@@ -229,6 +229,8 @@ Mikropalveluiden on tarkoitus olla suhteellisen pieniä ja huolehtia vain "yhdes
 - Ostoskorin toiminnallisuus
 - Ostosten maksusta huolehtiva toiminnallisuus
 
+#### Mikropalveluiden hyötyjä
+
 Mikropalveluarkkitehtuuria noudattavaan järjestelmään lisätään toiminnallisuutta yleensä toteuttamalla uusia palveluita tai laajentamalla olemassa olevia.
 Sovelluksen laajentaminen voi näin olla helpompaa kuin kerrosarkkitehtuurissa, missä laajennus yleensä edellyttää jokaisessa kerroksessa olevan koodin muokkaamista.
 
