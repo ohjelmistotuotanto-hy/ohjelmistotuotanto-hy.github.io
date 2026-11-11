@@ -320,7 +320,7 @@ Ketterien menetelmien yhteydessä puhutaan usein [inkrementaalisesta suunnittelu
 
 Ideana on, että arkkitehtuuri mietitään ja dokumentoidaan _riittävällä_ tasolla projektin alussa. Ohjelmiston lopullinen arkkitehtuuri muodostuu iteraatio iteraatiolta samalla kun ohjelmistoon toteutetaan uutta toiminnallisuutta. Esimerkiksi kerrosarkkitehtuurin mukaista sovellusta ei rakenneta "kerros kerrallaan", vaan sen sijaan jokaisessa iteraatiossa tehdään pieni pala jokaista kerrosta, sen verran kuin iteraation toiminnallisuuksien toteuttaminen edellyttää.
 
-Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) (engl. sprint zero), jonka aikana luodaan mm. alustava arkkitehtuuri, kehitysympäristö sekä backlog. Scrum ei tunne nollasprintin käsitettä, ja sitä on kritisoitu siitä, että se houkuttelee tekemään suunnittelua tuottamatta toimivaa ohjelmistoa. Nollasprintinkin tavoitteena kannattaa siksi olla toimiva, joskin minimaalinen ohjelmisto, esim. seuraavaksi esiteltävä kävelevä luuranko.
+Melko tyypillinen tapa on aloittaa projektit ns. [nollasprintillä](https://www.infoq.com/news/2008/09/sprint_zero/) (engl. sprint zero), jonka aikana luodaan mm. alustava arkkitehtuuri, kehitysympäristö sekä backlog. Scrum ei tunne nollasprintin käsitettä, ja sitä on kritisoitu siitä, että se houkuttelee tekemään suunnittelua tuottamatta toimivaa ohjelmistoa. Nollasprintinkin tavoitteena kannattaa siksi olla toimiva, joskin minimaalinen ohjelmiston runko, esim. seuraavaksi esiteltävä kävelevä luuranko.
 
 ### Kävelevä luuranko
 
