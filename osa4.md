@@ -115,7 +115,14 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
 
 #### Verkkokaupan arkkitehtuuri
 
-Tarkastellaan verkkokauppaa hieman tarkemmin. Se on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen web-sovellus, joka muodostaa käyttäjälle näytettävät HTML-sivut palvelimella templatejen avulla. Käyttöliittymäkerros koostuu siis Flaskin reiteistä, jotka käsittelevät selaimen HTTP-pyynnöt ja kutsuvat sovelluslogiikkaa, sekä templateista, joiden avulla reitit muodostavat sivut.
+Tarkastellaan verkkokauppaa hieman tarkemmin. Se on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen web-sovellus, joka muodostaa käyttäjälle näytettävät HTML-sivut palvelimella templatejen avulla. Kerrosten työnjako on seuraava:
+
+- _Käyttöliittymä_ koostuu Flaskin reiteistä ja templateista. Reitit ottavat vastaan selaimen lähettämät HTTP-pyynnöt, kutsuvat sovelluslogiikkaa ja muodostavat vastauksena näytettävän HTML-sivun templaten avulla.
+- _Sovelluslogiikka_ koostuu palveluista. `OstoskoriService` huolehtii tuotteiden lisäämisestä ostoskoriin ja poistamisesta sieltä sekä ostoskorin hinnan laskemisesta. `TilausService` muodostaa ostoskorin sisällöstä tilauksen, veloittaa sen maksunvälittäjän kautta ja tallentaa sen.
+- _Tallennuskerroksen_ repositoriot hoitavat tietokantaoperaatiot. `TuoteRepository` hakee tuotteiden tiedot tietokannasta, ja `TilausRepository` tallentaa tehdyt tilaukset.
+- Lisäksi sovelluksessa on _entiteettejä_ eli sovelluksen käsitteitä vastaavia luokkia `Tuote`, `Ostoskori` ja `Tilaus`, joiden olioita kerrokset välittävät toisilleen.
+
+Kun asiakas esimerkiksi painaa tuotteen kohdalla nappia "lisää ostoskoriin", selain lähettää HTTP-pyynnön, jonka käsittelee ostoskorin reitti. Reitti kutsuu `OstoskoriService`:n metodia, joka hakee tuotteen tiedot `TuoteRepository`:n avulla ja lisää tuotteen asiakkaan ostoskoriin. Lopuksi reitti näyttää päivitetyn ostoskorin templaten _ostoskori.html_ avulla. Reitti ei siis itse käsittele tietokantaa eikä laske hintoja, ja palvelu taas ei tiedä mitään HTML-sivuista tai HTTP-pyynnöistä.
 
 Sovelluksen kerrosrakenne näkyy koodin tasolla siinä, miten sovelluksen koodi jakautuu hakemistoihin:
 
