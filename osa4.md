@@ -352,8 +352,6 @@ Ketterät menetelmät eivät lähtökohtaisesti tunne erillistä arkkitehdin roo
 
 - The best architectures, requirements, and designs emerge from self-organizing teams.
 
-Käytännössä tilanne ei ole näin yksiselitteinen. Monissa ketterästi toimivissakin organisaatioissa työskentelee arkkitehteja, erityisesti silloin, kun samaa järjestelmää kehittää useampi tiimi tai kun järjestelmän on sovittava yhteen organisaation muiden järjestelmien kanssa. Esim. laajan skaalan ketterä kehitysmalli [SAFe](/osa5#safe-eli-scaled-agile-framework) määrittelee useita arkkitehtirooleja. Monissa ohjelmistoyrityksissä taas tiimirajat ylittävistä teknisistä linjauksista vastaavat kokeneet kehittäjät, joiden nimike voi olla esim. _staff engineer_ tai _principal engineer_. Ketterässä hengessä toimivan arkkitehdin tehtävä on kuitenkin yleensä tukea tiimejä ja sovittaa niiden ratkaisuja yhteen, ei sanella arkkitehtuuria ylhäältä päin.
-
 Ketterän ideaalin mukaan ohjelmiston arkkitehtuuri on koodin tapaan _tiimin yhteisomistama_. Tästä on muutamiakin etuja.
 
 Kehittäjät todennäköisesti sitoutuvat paremmin tiimin luoman ja omistaman arkkitehtuurin noudattamiseen kuin "norsunluutornissa" olevan tiimin ulkopuolisen arkkitehdin määrittelemään arkkitehtuuriin. Yhteinen suunnittelu edellyttää kuitenkin, että jokainen uskaltaa ehdottaa omia ratkaisujaan ja kyseenalaistaa muiden ehdotuksia. Muuten tiimin kokeneimman jäsenen ehdotuksesta tulee helposti arkkitehtuuri vain siksi, ettei kukaan esitä muuta.
@@ -363,6 +361,8 @@ Tiimin keskenään suunnitteleman arkkitehtuurin dokumentointi voi olla kevyt ja
 Ketterissä menetelmissä oletuksena on, että parasta mahdollista arkkitehtuuria ei pystytä suunnittelemaan projektin alussa, kun vaatimuksia, toimintaympäristöä ja toteutusteknologioita ei vielä tunneta. Jo tehtyjä arkkitehtonisia ratkaisuja on järkevä muuttaa, jos ajan myötä huomataan että aiemmin tehdyt valinnat eivät tue parhaalla tavalla ohjelmiston kehittämistä.
 
 Eli kuten vaatimusmäärittelyn suhteen, myös arkkitehtuurin suunnittelussa ketterät menetelmät pyrkivät välttämään liian aikaisin tehtävää ja myöhemmin todennäköisesti turhaksi osoittautuvaa työtä.
+
+Tiimin yhteisomistama arkkitehtuuri on kuitenkin ideaali, joka ei kaikkialla toteudu sellaisenaan. Monissa ketterästi toimivissakin organisaatioissa työskentelee arkkitehteja, erityisesti silloin, kun samaa järjestelmää kehittää useampi tiimi tai kun järjestelmän on sovittava yhteen organisaation muiden järjestelmien kanssa. Esim. laajan skaalan ketterä kehitysmalli [SAFe](/osa5#safe-eli-scaled-agile-framework) määrittelee useita arkkitehtirooleja. Monissa ohjelmistoyrityksissä taas tiimirajat ylittävistä teknisistä linjauksista vastaavat kokeneet kehittäjät, joiden nimike voi olla esim. _staff engineer_ tai _principal engineer_. Ketterässä hengessä toimivan arkkitehdin tehtävä on kuitenkin yleensä tukea tiimejä ja sovittaa niiden ratkaisuja yhteen, ei sanella arkkitehtuuria ylhäältä päin.
 
 ### Inkrementaalisen arkkitehtuurin riskit
 
