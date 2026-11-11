@@ -148,7 +148,7 @@ src/
 └── app.py
 ```
 
-Hakemistojen väliset riippuvuudet voidaan havainnollistaa UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio), jossa kukin hakemisto kuvataan pakkauksena:
+Hakemistojen väliset riippuvuudet on mahdollista havainnollistaa UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio), jossa kukin hakemisto kuvataan pakkauksena:
 
 ![UML-pakkauskaavio: ui riippuu pakkauksesta services, joka riippuu pakkauksista repositories ja entities; repositoriot riippuvat entities-pakkauksen luokista Tuote ja Tilaus]({{ "/images/4-23.png" | relative_url }}){:height="400px" }
 
