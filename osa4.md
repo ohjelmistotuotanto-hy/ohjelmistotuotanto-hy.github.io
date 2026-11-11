@@ -33,7 +33,7 @@ _Arkkitehtuurisuunnittelussa_ hahmotellaan ohjelman rakenne karkealla tasolla, e
 
 _Olio- tai komponenttisuunnittelussa_ taas suunnitellaan yksityiskohtaisemmin, miten yksittäiset komponentit, luokat ja metodit tulisi toteuttaa.
 
-Näiden teknisten näkökulmien lisäksi ohjelmiston määrittelyn ja suunnittelun välimaastossa on [käyttöliittymä- ja käyttökokemussuunnittelu](https://www.itewiki.fi/opas/kayttoliittymasuunnittelu-ux-user-experience-design-eli-kayttajakokemus/), joihin kurssin materiaalissa ei valitettavasti pystytä syventymään. Osastolla on muutamia syventäviä kursseja aihepiiristä, mm. Human computer interaction.
+Näiden teknisten näkökulmien lisäksi ohjelmiston määrittelyn ja suunnittelun välimaastossa on [käyttöliittymä- ja käyttökokemussuunnittelu](https://www.itewiki.fi/opas/kayttoliittymasuunnittelu-ux-user-experience-design-eli-kayttajakokemus/), joihin kurssin materiaalissa ei valitettavasti pystytä syventymään. Osastolla on muutamia syventäviä kursseja aihepiiristä, mm. [Human computer interaction](https://studies.helsinki.fi/courses/course-unit/otm-c94acd22-fb07-4850-92d0-7f6150b11c58/CSM13401?cpId=hy-lv-77).
 
 Ohjelmiston suunnittelun ajoittuminen riippuu käytettävästä tuotantoprosessista.
 Vesiputousmallissa suunnittelu tapahtuu vaatimusmäärittelyn jälkeen ja ohjelmointi aloitetaan vasta kun suunnittelu on valmiina ja dokumentoitu. Ketterissä menetelmissä suunnittelua tehdään jokaisessa sprintissä tarpeen mukaan, eikä tarkkaa suunnitteludokumenttia yleensä laadita.
