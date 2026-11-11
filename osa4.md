@@ -182,7 +182,7 @@ _Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovellu
 
 ![C4-komponenttikaavio: asiakas käyttää web-sovelluksen käyttöliittymäkomponenttia (Flask-reitit ja templatet), joka kutsuu OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-25.png" | relative_url }}){:height="400px" }
 
-Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokkakaaviolla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
+Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokka- tai pakkauskaavioilla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
 
 C4:n eri tasot palvelevat eri tarpeita: korkean tason kaavioilla voidaan jäsentää keskusteluja eri sidosryhmien kanssa, ja yksityiskohtaisemmat kaaviot toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja laajentamisessa. Pelkät kuvat eivät kuitenkaan riitä, vaan komponenttien vastuut sekä niiden väliset rajapinnat ja kommunikaation muodot tulee myös kuvata. Muuten kasvaa riski sille, että arkkitehtuuria ei noudateta.
 
