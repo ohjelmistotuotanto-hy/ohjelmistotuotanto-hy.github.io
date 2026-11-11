@@ -284,7 +284,7 @@ Monista eduistaan huolimatta mikropalveluarkkitehtuurin soveltaminen tuo mukanaa
 
 Useista palveluista koostuvan sovelluksen debuggaaminen ja testaaminen on monimutkaisempaa kuin monoliittisen. Tämä on erityisen totta, jos mikropalvelut käyttävät viestinvälitystä.
 
-Kymmenistä tai sadoista mikropalveluista koostuvan ohjelmiston käynnistäminen ja hallinta tuotantopalvelimilla on haastavaa ja vaatii pitkälle vietyä automatisointia. Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota.
+Kymmenistä tai sadoista mikropalveluista koostuvan ohjelmiston operointi tuotantopalvelimilla on haastavaa ja vaatii pitkälle vietyä automatisointia. Sama koskee sovelluskehitysympäristöä ja jatkuvaa integraatiota.
 Mikropalveluiden menestyksekäs soveltaminen edellyttääkin vahvaa DevOps-kulttuuria.
 
 Mikropalveluiden yhteydessä käytetäänkin paljon konttiteknologiaa (engl. container), eli käytännössä [Docker](https://www.docker.com/)-ohjelmistoa. Kontit ovat hieman yksinkertaistaen sanottuna kevyitä virtuaalikoneita, joita on mahdollista suorittaa suuret määrät yksittäisellä palvelimella. Jos mikropalvelu on omassa kontissa, vastaa se käytännössä tilannetta, missä mikropalvelua suoritettaisiin omalla koneellaan.
