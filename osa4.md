@@ -148,7 +148,7 @@ src/
 └── app.py
 ```
 
-Arkkitehtuuria heijasteleva pakkausrakenne voidaan kuvata UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio):
+Kukin hakemisto on Pythonin pakkaus, ja pakkausten väliset riippuvuudet voidaan havainnollistaa UML:n [pakkauskaaviolla](https://ohjelmistotekniikka-hy.github.io/python/viikko3#pakkauskaavio):
 
 ![UML-pakkauskaavio: ui riippuu pakkauksesta services, joka riippuu pakkauksista repositories ja entities; repositoriot riippuvat entities-pakkauksen luokista Tuote ja Tilaus]({{ "/images/4-23.png" | relative_url }}){:height="400px" }
 
