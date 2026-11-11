@@ -115,7 +115,7 @@ Kerrosarkkitehtuuri on sovelluskehittäjän kannalta selkeä ja hyvin ymmärrett
 
 #### Verkkokaupan arkkitehtuuri
 
-Tarkastellaan verkkokauppaa hieman tarkemmin. Se on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen web-sovellus, joka muodostaa käyttäjälle näytettävät HTML-sivut palvelimella templatejen avulla. Kerrosten työnjako on seuraava:
+Tarkastellaan verkkokauppaa hieman tarkemmin. Kyseessä on Pythonilla ja Flask-kirjastolla toteutettu yksinkertainen web-sovellus, joka muodostaa käyttäjälle näytettävät HTML-sivut palvelimella templatejen avulla. Kerrosten työnjako on seuraava:
 
 - _Käyttöliittymä_ koostuu Flaskin reiteistä ja templateista. Reitit ottavat vastaan selaimen lähettämät HTTP-pyynnöt, kutsuvat sovelluslogiikkaa ja muodostavat vastauksena näytettävän HTML-sivun templaten avulla.
 - _Sovelluslogiikka_ koostuu palveluista. `OstoskoriService` huolehtii tuotteiden lisäämisestä ostoskoriin ja poistamisesta sieltä sekä ostoskorin hinnan laskemisesta. `TilausService` muodostaa ostoskorin sisällöstä tilauksen, veloittaa sen maksunvälittäjän kautta ja tallentaa sen.
@@ -162,15 +162,7 @@ Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entitie
 
 ### Arkkitehtuurin kuvaamisesta
 
-Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:ää käytetään jonkin verran, mutta kovin suosittu se ei ole. Edellisessä esimerkissä käytettyä pakkauskaaviota paremmin isompien sovellusten arkkitehtuurien kuvaamiseen sopii [komponenttikaavio](https://en.wikipedia.org/wiki/Component_diagram).
-
-Komponenttikaavio eroaa pakkauskaaviosta lähinnä merkintätavoiltaan ja tuo hieman paremmin esiin eri komponenttien tarjoamat sekä käyttämät rajapinnat. Esimerkiksi alla olevassa kuvassa oleva verkkokaupan sovelluslogiikasta vastaava komponentti _web store_ tarjoaa rajapinnat tuotteiden haulle, ostosten tekemiselle ja käyttäjien hallinnoinnille. Komponentti itsessään jakautuu kolmeen alikomponenttiin, joista _authentication_ tarjoaa sisäisen rajapinnan _shopping chart_ -komponentin käyttöön.
-
-![]({{ "/images/4-4.png" | relative_url }}){:height="450px" }
-
-UML:n sijaan arkkitehtuurin kuvaamiseen käytetään kuitenkin useimmiten epäformaaleja laatikko/nuoli-kaavioita.
-
-Seuraavassa esimerkki oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämästä arkkitehtuurikuvauksesta:
+Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:n kulta-aikana 1990-luvun lopulla ja 2000-luvulla arkkitehtuuria kuvattiin usein UML:n komponentti- ja pakkauskaavioilla, mutta nykyään niitä näkee harvoin. Useimmiten arkkitehtuuri kuvataan epäformaaleilla laatikko/nuoli-kaavioilla, kuten seuraavassa oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämässä arkkitehtuurikuvauksessa:
 
 ![]({{ "/images/arkkit3.png" | relative_url }}){:height="450px" }
 
@@ -190,10 +182,7 @@ _Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovellu
 
 Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokkakaaviolla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
 
-Arkkitehtuurikuvaus kannattaa tehdä _useasta näkökulmasta_, sillä ne vastaavat erilaisiin tarpeisiin.
-Korkean tason kuvauksen avulla voidaan esim. strukturoida vaatimusmäärittelyn aikana käytäviä keskusteluja eri sidosryhmien kanssa. Yksityiskohtaisemmat kuvaukset taas toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja ylläpitovaiheen aikaisessa laajentamisessa.
-
-Kannattaa huomata, että arkkitehtuurikuvaus ei suinkaan ole pelkkä kuva, mm. komponenttien vastuut tulee tarkentaa sekä niiden väliset rajapinnat ja kommunikaation muodot määritellä. Jos näin ei tehdä, kasvaa riski sille että arkkitehtuuria ei noudateta.
+C4:n eri tasot palvelevat eri tarpeita: korkean tason kaavioilla voidaan jäsentää keskusteluja eri sidosryhmien kanssa, ja yksityiskohtaisemmat kaaviot toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja laajentamisessa. Pelkät kuvat eivät kuitenkaan riitä, vaan komponenttien vastuut sekä niiden väliset rajapinnat ja kommunikaation muodot tulee myös kuvata. Muuten kasvaa riski sille, että arkkitehtuuria ei noudateta.
 
 Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
 
