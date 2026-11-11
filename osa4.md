@@ -304,13 +304,13 @@ Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järje
 
 Ketterien menetelmien kantava teema on toimivan, asiakkaalle arvoa tuottavan ohjelmiston nopea toimittaminen, tämä on mainittu selkeästi jo ketterän manifestin periaatteissa:
 
-_Our highest priority is to satisfy the customer through early and continuous delivery of valuable software._
+- _Our highest priority is to satisfy the customer through early and continuous delivery of valuable software._
 
-_Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale._
+- _Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale._
 
 Ketterät menetelmät suosivat suunnitteluratkaisujen yksinkertaisuutta:
 
-_Simplicity, the art of maximizing the amount of work not done, is essential_
+- _Simplicity, the art of maximizing the amount of work not done, is essential_
 
 Arkkitehtuurin suunnittelu ja dokumentointi taas on perinteisesti ollut melko pitkäkestoinen, ohjelmoinnin aloittamista edeltävä vaihe, eräänlainen _Big Design Up Front_. Ketterät menetelmät ja "arkkitehtuurivetoinen" ohjelmistotuotanto ovat siis jossain määrin keskenään ristiriidassa.
 
@@ -348,9 +348,11 @@ Walking skeleton ei ole pelkästään poisheitettävää koodia, vaan sovellukse
 
 Perinteisesti, esimerkiksi vesiputousmallia käytettäessä arkkitehtuurista on vastannut ohjelmistoarkkitehti ja ohjelmoijat ovat olleet velvoitettuja noudattamaan sovellukselle määriteltyä arkkitehtuuria.
 
-Ketterissä menetelmissä ei suosita erillistä arkkitehdin roolia, esimerkiksi Scrumissa kaikki inkrementin tekemiseen osallistuvat tiimin jäsenet ovat nimikkeeltään developereita, eikä tiimin sisällä tunnusteta erillisiä erikoistuneita rooleja. Ketterien menetelmien ideaalina on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi ketterän manifestin periaatteista:
+Ketterät menetelmät eivät lähtökohtaisesti tunne erillistä arkkitehdin roolia, esimerkiksi Scrumissa kaikki inkrementin tekemiseen osallistuvat tiimin jäsenet ovat nimikkeeltään developereita, eikä tiimin sisällä tunnusteta erillisiä erikoistuneita rooleja. Ketterien menetelmien ideaalina on, että kehitystiimi luo arkkitehtuurin yhdessä, tämä on myös yksi ketterän manifestin periaatteista:
 
-> The best architectures, requirements, and designs emerge from self-organizing teams.
+- The best architectures, requirements, and designs emerge from self-organizing teams.
+
+Käytännössä tilanne ei ole näin yksiselitteinen. Monissa ketterästi toimivissakin organisaatioissa työskentelee arkkitehteja, erityisesti silloin, kun samaa järjestelmää kehittää useampi tiimi tai kun järjestelmän on sovittava yhteen organisaation muiden järjestelmien kanssa. Esim. laajan skaalan ketterä kehitysmalli [SAFe](/osa5#safe-eli-scaled-agile-framework) määrittelee useita arkkitehtirooleja. Monissa ohjelmistoyrityksissä taas tiimirajat ylittävistä teknisistä linjauksista vastaavat kokeneet kehittäjät, joiden nimike voi olla esim. _staff engineer_ tai _principal engineer_. Ketterässä hengessä toimivan arkkitehdin tehtävä on kuitenkin yleensä tukea tiimejä ja sovittaa niiden ratkaisuja yhteen, ei sanella arkkitehtuuria ylhäältä päin.
 
 Ketterän ideaalin mukaan ohjelmiston arkkitehtuuri on koodin tapaan _tiimin yhteisomistama_. Tästä on muutamiakin etuja.
 
