@@ -244,7 +244,7 @@ Vaihtoehtoinen, huomattavasti joustavampi kommunikointikeino on ns. _viestinväl
 
 Palvelut eivät lähetä viestejä suoraan toisilleen, vaan käytössä on verkossa toimiva viestinvälityspalvelu, joka hoitaa viestien välityksen eri palveluiden välillä.
 
-![]({{ "/images/4-6b.png" | relative_url }}){:height="400px" }
+![Viestinvälitys: käyttäjien hallinta julkaisee viestinvälityspalveluun new_user-viestejä ja ostoskori new_order-viestejä; palvelu välittää ne aiheen tilanneille ilmoitus-, suosittelu- ja maksupalveluille]({{ "/images/4-26.png" | relative_url }}){:height="400px" }
 
 Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish) viestejä viestinvälityspalveluun. Viesteillä on tyypillisesti jokin _aihe_ (topic) ja sen lisäksi _datasisältö_, esimerkiksi:
 
@@ -260,7 +260,7 @@ Periaatteena viestinvälityksessä on se, että palvelut _julkaisevat_ (publish)
 }
 ```
 
-Palvelut voivat _tilata_ (subscribe) viestipalvelusta niihin aiheisiin liittyvät viestit joista ne ovat kiinnostuneita. Esimerkiksi käyttäjähallinnasta vastaava palvelu todennäköisesti tilaa viestit, joiden aihe on _new_user_. Viestinvälityspalvelu välittää vastaanottamansa viestit edelleen kaikille palveluille, jotka ovat kyseisen aiheen tilanneet.
+Palvelut voivat _tilata_ (subscribe) viestipalvelusta niihin aiheisiin liittyvät viestit joista ne ovat kiinnostuneita. Esimerkiksi ilmoituksista huolehtiva palvelu voisi tilata viestit, joiden aihe on _new_user_, ja lähettää uudelle käyttäjälle tervetuloviestin. Viestin julkaissut käyttäjien hallinta taas ei tiedä, mitkä palvelut viestin saavat. Viestinvälityspalvelu välittää vastaanottamansa viestit edelleen kaikille palveluille, jotka ovat kyseisen aiheen tilanneet.
 
 Kaikki viestien välitys tapahtuu siis viestinvälityspalvelun kautta, eli palvelut eivät kommunikoi suoraan toistensa kanssa. Näin mikropalveluista tulee erittäin löyhästi kytkettyjä, ja yhteen palveluun voi tehdä muutoksia vaikuttamatta muihin, kunhan viestien muoto ja merkitys säilyvät ennallaan. Viesteistä tulee siis palveluiden välinen sopimus, jonka muuttaminen vaatii yhtä lailla koordinointia kuin minkä tahansa rajapinnan muuttaminen.
 
