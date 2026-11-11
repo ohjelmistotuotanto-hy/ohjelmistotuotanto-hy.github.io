@@ -172,7 +172,7 @@ Tarkastellaan esimerkkinä edellä esiteltyä verkkokauppaa. Ylimmällä tasolla
 
 ![C4-kontekstikaavio: asiakas selaa ja ostaa tuotteita verkkokaupasta, joka välittää maksut maksunvälittäjälle ja lähettää tilausvahvistukset sähköpostipalvelun kautta]({{ "/images/4-19.png" | relative_url }}){:height="300px" }
 
-_Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa erikseen ajettavaa osaa, kuten selainsovellusta, palvelinsovellusta tai tietokantaa (kyse ei siis välttämättä ole Docker-kontista). Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
+_Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa järjestelmän erikseen ajettavaa ja käyttöönotettavaa osaa, joka suorittaa koodia tai tallentaa dataa, esimerkiksi web-sovellusta, mobiilisovellusta tai tietokantaa. Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
 
 ![C4-container-kaavio: asiakas käyttää verkkokaupan Flask-web-sovellusta selaimella HTTPS:n yli, web-sovellus käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-24.png" | relative_url }}){:height="300px" }
 
