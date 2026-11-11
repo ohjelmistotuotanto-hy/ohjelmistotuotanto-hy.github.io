@@ -236,6 +236,12 @@ Mikropalveluja hyödyntävää sovellusta voi olla helpompi skaalata, sillä suo
 
 Mikropalveluilla sovellusta voi kehittää helposti useilla ohjelmointikielillä tai eri sovelluskehyksillä. Toisin kuin monoliittisissa projekteissa, mikään ei edellytä, että kaikki mikropalvelut olisi toteutettu samalla tekniikalla.
 
+Mikropalvelut on mahdollista jakaa eri tiimien vastuulle. Kukin tiimi omistaa yhden tai muutaman palvelun ja voi kehittää niitä melko itsenäisesti: tiimi päättää palvelunsa sisäisestä toteutuksesta itse, ja muiden tiimien kanssa tarvitsee sopia ainoastaan palveluiden välisistä rajapinnoista. Isossa organisaatiossa tämä vähentää tiimien välisen koordinoinnin tarvetta merkittävästi. Taustalla on ns. [Conwayn laki](https://en.wikipedia.org/wiki/Conway%27s_law): järjestelmän rakenne heijastelee sen kehittäneen organisaation kommunikaatiorakennetta.
+
+Kunkin palvelun voi myös julkaista tuotantoon muista riippumatta. Muutokset saadaan näin käyttöön nopeasti ja pienin askelin, eikä yhden tiimin keskeneräinen työ estä muiden tiimien julkaisuja.
+
+Mikropalvelut voivat lisäksi eristää vikoja: jos esim. suosittelupalvelu kaatuu, asiakkaat voivat edelleen hakea tuotteita ja tehdä ostoksia. Tämä kuitenkin edellyttää, että palvelut on suunniteltu toimimaan, vaikka jokin niiden käyttämä palvelu ei vastaisi.
+
 #### Mikropalveluiden kommunikointi
 
 Mikropalvelut siis kommunikoivat keskenään verkon välityksellä. Erilaisia tapoja kommunikointiin on useita.
@@ -272,7 +278,7 @@ Asynkronisten viestien (joita kutsutaan usein myös _eventeiksi_) välitykseen p
 
 #### Mikropalveluiden haasteita
 
-Monista eduistaan huolimatta mikropalveluarkkitehtuurin soveltaminen tuo mukanaan koko joukon uusia haasteita. Ensinnäkin sovelluksen jakaminen järkeviin mikropalveluihin on haastavaa. Vääränlainen jako palveluihin voi tuottaa sovelluksen, jossa jokainen palvelu joutuu keskustelemaan verkon yli pahimmassa tapauksessa kymmenien palvelujen kesken ja näin sovelluksen suorituskyky kärsii.
+Monista eduistaan huolimatta mikropalveluarkkitehtuurin soveltaminen tuo mukanaan koko joukon uusia haasteita. Ensinnäkin sovelluksen jakaminen järkeviin mikropalveluihin on haastavaa. Vääränlainen jako palveluihin voi tuottaa sovelluksen, jossa jokainen palvelu joutuu keskustelemaan verkon yli pahimmassa tapauksessa kymmenien palvelujen kesken ja näin sovelluksen suorituskyky kärsii. Jos taas uusi toiminnallisuus koskee useaa palvelua, joudutaan muutokset koordinoimaan palveluiden ja niistä vastaavien tiimien kesken.
 
 Useista palveluista koostuvan sovelluksen debuggaaminen ja testaaminen on monimutkaisempaa kuin monoliittisen. Tämä on erityisen totta, jos mikropalvelut käyttävät viestinvälitystä.
 
@@ -290,7 +296,7 @@ Mikropalveluiden haasteiden takia niitä ei nykyään pidetä oletusratkaisuna. 
 
 Välimuotona on _modulaarinen monoliitti_ (engl. modular monolith). Sovellus julkaistaan yhtenä kokonaisuutena, mutta se jaetaan sisäisesti toiminnallisuuksittain moduuleihin, joilla on selkeät rajapinnat ja jotka eivät käytä toistensa sisäisiä osia tai tietokantatauluja. Moduulirajat voi tarvittaessa myöhemmin muuttaa palvelurajoiksi.
 
-Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järjestelmän osien erilaiset skaalautuvuustarpeet. Kun samaa järjestelmää kehittää kymmeniä tiimejä, erilliset palvelut mahdollistavat sen, että tiimit voivat julkaista omia osiaan toisistaan riippumatta. Taustalla on ns. [Conwayn laki](https://en.wikipedia.org/wiki/Conway%27s_law): järjestelmän rakenne heijastelee sen kehittäneen organisaation kommunikaatiorakennetta.
+Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järjestelmän osien erilaiset skaalautuvuustarpeet. Kun samaa järjestelmää kehittää kymmeniä tiimejä, palveluihin jakamisen hyödyt alkavat olla suuremmat kuin sen aiheuttama lisätyö.
 
 ## Arkkitehtuuri ketterissä menetelmissä
 
