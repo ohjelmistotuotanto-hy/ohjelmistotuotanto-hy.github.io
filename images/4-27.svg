@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" width="720" height="290" font-family="Helvetica, Arial, sans-serif">
+<rect width="720" height="290" fill="white"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker>
+<marker id="arro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dd6b20"/></marker>
+<marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#718096"/></marker>
+<marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M1,1 L11,6 L1,11 z" fill="white" stroke="#2d3748" stroke-width="1.2"/></marker>
+</defs>
+<text x="190" y="28" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Rivien läpikäynti: sama kaikille hauille</text>
+<text x="565" y="28" font-size="15" fill="#dd6b20" text-anchor="middle" font-weight="bold" xml:space="preserve">Ehto: vaihtuu</text>
+<rect x="20" y="45" width="340" height="215" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="36" y="72" font-size="13" fill="#2d3748" text-anchor="start" font-family="Menlo, Consolas, 'Courier New', monospace" font-weight="bold" xml:space="preserve">rivit_jotka_tayttavat_ehdon(ehto)</text>
+<line x1="20" y1="84" x2="360" y2="84" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="36" y="112" font-size="14" fill="#2d3748" text-anchor="start" xml:space="preserve">jokaiselle kirjan riville:</text>
+<text x="60" y="150" font-size="14" fill="#2d3748" text-anchor="start" xml:space="preserve">jos</text>
+<rect x="88" y="130" width="140" height="30" rx="4" fill="#feebc8" stroke="#dd6b20" stroke-width="2"/>
+<text x="158" y="150" font-size="13" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">ehto.test(rivi)</text>
+<text x="236" y="150" font-size="14" fill="#2d3748" text-anchor="start" xml:space="preserve">:</text>
+<text x="84" y="188" font-size="14" fill="#2d3748" text-anchor="start" xml:space="preserve">lisää rivi tulokseen</text>
+<text x="36" y="232" font-size="14" fill="#2d3748" text-anchor="start" xml:space="preserve">palauta tulos</text>
+<rect x="450" y="70" width="230" height="44" rx="4" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5"/>
+<text x="565" y="97" font-size="13" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">SisaltaaSanan("olut")</text>
+<rect x="450" y="135" width="230" height="44" rx="4" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5"/>
+<text x="565" y="162" font-size="13" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">PaattyyHuutomerkkiin()</text>
+<rect x="450" y="200" width="230" height="44" rx="4" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="565" y="227" font-size="14" fill="#2d3748" text-anchor="middle" font-style="italic" xml:space="preserve">uusi ehto…</text>
+<path d="M450,92 C340,92 330,138 232,140" fill="none" stroke="#dd6b20" stroke-width="1.8" marker-end="url(#arro)"/>
+<path d="M450,157 C380,157 320,146 232,146" fill="none" stroke="#dd6b20" stroke-width="1.8" marker-end="url(#arro)" stroke-dasharray="5,4"/>
+<path d="M450,222 C340,222 330,154 232,152" fill="none" stroke="#dd6b20" stroke-width="1.8" marker-end="url(#arro)" stroke-dasharray="5,4"/>
+</svg>

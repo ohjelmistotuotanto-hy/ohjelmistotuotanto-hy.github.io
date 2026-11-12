@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Helvetica, Arial, sans-serif">
+<rect width="720" height="400" fill="white"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker>
+<marker id="arro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dd6b20"/></marker>
+<marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#718096"/></marker>
+<marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M1,1 L11,6 L1,11 z" fill="white" stroke="#2d3748" stroke-width="1.2"/></marker>
+</defs>
+<text x="360" y="28" font-size="14" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" font-weight="bold" xml:space="preserve">pino = rakenna.kryptattu().prepaid(10).pino()</text>
+<rect x="20" y="70" width="160" height="170" rx="4" fill="#f7fafc" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="100.0" y="92" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pinorakentaja</text>
+<text x="100.0" y="110" font-size="12" fill="#718096" text-anchor="middle" xml:space="preserve">ohje pinon luomiseen:</text>
+<rect x="34" y="157.0" width="132" height="34" rx="4" fill="white" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="100.0" y="179.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pino</text>
+<rect x="280" y="70" width="160" height="170" rx="4" fill="#f7fafc" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="360.0" y="92" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pinorakentaja</text>
+<text x="360.0" y="110" font-size="12" fill="#718096" text-anchor="middle" xml:space="preserve">ohje pinon luomiseen:</text>
+<rect x="294" y="142.0" width="132" height="64" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="360.0" y="162.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">KryptattuPino</text>
+<rect x="306" y="170.0" width="108" height="28" rx="4" fill="white" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="360.0" y="189.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pino</text>
+<rect x="540" y="70" width="160" height="170" rx="4" fill="#f7fafc" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="620.0" y="92" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pinorakentaja</text>
+<text x="620.0" y="110" font-size="12" fill="#718096" text-anchor="middle" xml:space="preserve">ohje pinon luomiseen:</text>
+<rect x="554" y="127.0" width="132" height="94" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="147.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">PrepaidPino</text>
+<rect x="566" y="155.0" width="108" height="58" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="175.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">KryptattuPino</text>
+<rect x="578" y="183.0" width="84" height="22" rx="4" fill="white" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="199.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pino</text>
+<line x1="184" y1="155.0" x2="276" y2="155.0" stroke="#2d3748" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="230.0" y="145.0" font-size="12" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">.kryptattu()</text>
+<text x="230.0" y="175.0" font-size="11" fill="#718096" text-anchor="middle" xml:space="preserve">uusi rakentaja</text>
+<line x1="444" y1="155.0" x2="536" y2="155.0" stroke="#2d3748" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="490.0" y="145.0" font-size="12" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">.prepaid(10)</text>
+<text x="490.0" y="175.0" font-size="11" fill="#718096" text-anchor="middle" xml:space="preserve">uusi rakentaja</text>
+<text x="100.0" y="60" font-size="12" fill="#2d3748" text-anchor="middle" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">rakenna</text>
+<line x1="620.0" y1="244" x2="620.0" y2="282" stroke="#2d3748" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="610.0" y="268" font-size="12" fill="#2d3748" text-anchor="end" font-family="Menlo, Consolas, 'Courier New', monospace" xml:space="preserve">.pino()</text>
+<rect x="554" y="286" width="132" height="94" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="306" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">PrepaidPino</text>
+<rect x="566" y="314" width="108" height="58" rx="4" fill="#bee3f8" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="334" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">KryptattuPino</text>
+<rect x="578" y="342" width="84" height="22" rx="4" fill="white" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="620.0" y="358.0" font-size="13" fill="#2d3748" text-anchor="middle" font-weight="bold" xml:space="preserve">Pino</text>
+<text x="540" y="330" font-size="13" fill="#2d3748" text-anchor="end" font-weight="bold" xml:space="preserve">valmis pino: ohje suoritetaan</text>
+<text x="540" y="348" font-size="13" fill="#2d3748" text-anchor="end" font-weight="bold" xml:space="preserve">vasta nyt, sisimmästä alkaen</text>
+</svg>
