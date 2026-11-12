@@ -893,6 +893,12 @@ Agentti voi myös rapauttaa koodia, sillä se saa pyydetyn toiminnallisuuden toi
 
 ## Suunnittelumalleja [viikko 6]
 
+_Suunnittelumalli_ (engl. design pattern) on nimetty ja dokumentoitu ratkaisu ohjelmistosuunnittelussa toistuvasti vastaan tulevaan ongelmaan. Suunnittelumalli ei ole valmista koodia tai kirjasto, vaan kuvaus ratkaisun ideasta, joka sovitetaan kulloiseenkin tilanteeseen. Malli kertoo tyypillisesti nimensä lisäksi, mihin ongelmaan se sopii, millainen ratkaisun rakenne on ja mitä seurauksia sen käytöllä on. Nimet ovat tärkeä osa suunnittelumallien hyötyä, sillä ne antavat ohjelmistokehittäjille yhteisen sanaston: kun joku sanoo käyttävänsä strategiaa tai dekoraattoria, muut tietävät heti, millaisesta rakenteesta on kyse.
+
+Idea on peräisin rakennusarkkitehtuurista. Arkkitehti Christopher Alexander kuvasi kirjassaan [A Pattern Language](https://en.wikipedia.org/wiki/A_Pattern_Language) (1977) rakennusten ja kaupunkien suunnittelussa toistuvia ongelmia ja niiden hyviksi havaittuja ratkaisuja. Kent Beck ja Ward Cunningham toivat ajatuksen ohjelmointiin [vuonna 1987](https://c2.com/doc/oopsla87.html), ja laajaan tietoisuuteen suunnittelumallit nosti kirja [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) (Gamma, Helm, Johnson ja Vlissides, 1994), jonka kirjoittajat tunnetaan nimellä _Gang of Four_ (GoF). Kirja esittelee 23 olio-ohjelmoinnin suunnittelumallia jaoteltuna kolmeen ryhmään: olioiden luomiseen liittyvät mallit (esim. tehdas ja rakentaja), rakennemallit (esim. dekoraattori) ja käyttäytymismallit (esim. strategia, komento ja template method). Sittemmin malleja on dokumentoitu myös monille muille tasoille, esim. Martin Fowlerin kirjasta [Patterns of Enterprise Application Architecture](https://martinfowler.com/eaaCatalog/) (2002) on peräisin meille jo tuttu _repository_.
+
+Suunnittelumalleja on myös kritisoitu. Monet GoF-kirjan malleista paikkaavat 1990-luvun olio-ohjelmointikielten, kuten C++:n, rajoitteita, ja esim. Peter Norvig [osoitti](https://norvig.com/design-patterns/) jo vuonna 1996, että dynaamisissa kielissä suurin osa kirjan malleista yksinkertaistuu tai muuttuu tarpeettomaksi. Näemme saman Pythonilla: strategian voi usein toteuttaa pelkkänä parametrina välitettävänä funktiona. Lisäksi mallien innokas käyttö johtaa helposti tarpeettoman monimutkaiseen koodiin, kuten kohdassa [yksinkertaisuus](#yksinkertaisuus) todettiin.
+
 Tutustutaan seuraavaksi joukkoon suunnittelumalleja esimerkkien avulla. Esimerkit havainnollistavat edellä käsiteltyjä laatuattribuutteja: pankkitili- ja laskinesimerkit liittyvät [riippuvuuksien vähäisyyteen](#riippuvuuksien-vähäisyys) ja kapselointiin, Gutenberg-lukija [toisteettomuuteen](#toisteettomuus). Lopuksi tutustutaan pinoesimerkin avulla vielä suunnittelumalleihin dekoraattori ja rakentaja.
 
 ### Favour composition over inheritance eli milloin ei kannata periä
@@ -1495,6 +1501,8 @@ class Summa(BinaariOperaatio):
 
 Luokan metodi `suorita` on _template-metodi_, joka määrittelee suorituksen siten, että suorituksen eroava osa määritellään yliluokan metodina, jonka aliluokat ylikirjoittavat. Template-metodin avulla siis saadaan määriteltyä "geneerinen algoritmirunko", jota voidaan aliluokissa erikoistaa sopivalla tavalla.
 
+![Template method: yliluokan BinaariOperaatio metodi suorita määrittelee suorituksen rungon, aliluokat Summa, Tulo ja Erotus toteuttavat vaihtuvan askeleen laske]({{ "/images/4-28.svg" | relative_url }})
+
 Strategy-suunnittelumalli on osittain samaa sukua template-metodin kanssa, siinä kokonainen algoritmi tai algoritmin osa korvataan erillisessä luokassa toteutetulla toteutuksella. Strategioita voidaan vaihtaa suorituksen aikana, template-metodissa tietty olio toimii samalla tavalla koko elinaikansa.
 
 Lisää template method -suunnittelumallista [täällä](https://www.oodesign.com/template-method-pattern).
@@ -1556,7 +1564,19 @@ if __name__ == "__main__":
     main()
 ```
 
-Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin kriteerit täyttävä, esim. huutomerkkiin loppuva.
+Luokka on ohjelmoitu "perinteisellä" imperatiivisella tyylillä, kirjan rivejä käydään läpi for-lauseella ja kunkin rivin kohdalla tarkastetaan ehtolauseella onko rivi kyseisen metodin kriteerit täyttävä, esim. huutomerkkiin loppuva. Jokainen metodi noudattaa siis pseudokoodina ilmaistuna samaa kaavaa:
+
+```
+ehdot_tayttavat = []
+
+jokaiselle kirjan riville:
+    jos rivi täyttää metodin ehdon:
+        lisää rivi listaan ehdot_tayttavat
+
+palauta ehdot_tayttavat
+```
+
+Metodissa `rivit` ehto on aina tosi, eli kaikki rivit kelpaavat.
 
 Luokan `GutenbergLukija` tarjoamat kolme kirjan sisällön hakemiseen tarkoitettua metodia ovat selvästi rakenteeltaan hyvin samantapaisia. Kaikki käyvät läpi jokaisen kirjan rivin ja palauttavat niistä osan (tai kaikki) metodin kutsujalle. Metodit eroavat sen suhteen, _mitä kirjan riveistä ne palauttavat_. Metodit ovat siis lähes copypastea, ne kuitenkin eroavat sen verran toisistaan, että copypasten eliminoiminen ei ole täysin suoraviivaista.
 
@@ -1584,7 +1604,7 @@ Olion avulla voidaan tarkastella, sisältävätkö merkkijonot sanan _olut_:
 ```python
 ehto = SisaltaaSanan("olut")
 ehto.test("internetin paras suomenkielinen olutsivusto on olutopas.info")
-ehto.test("Python 3.9 julkaistiin 05.10.2020")
+ehto.test("Python 3.15 julkaistiin 09.10.2026")
 ```
 
 Ensimmäinen metodikutsuista palauttaisi `True` ja jälkimmäinen `False`.
@@ -1610,6 +1630,8 @@ for rivi in kirja.rivit_jotka_tayttavat_ehdon(SisaltaaSanan("olut")):
 ```
 
 Pääsemmekin sopivien ehto-luokkien määrittelyllä eroon alkuperäisistä rivien hakumetodeista. Sovellus tulee sikälikin huomattavasti joustavammaksi, että uusia hakuehtoja voidaan helposti lisätä määrittelemällä uusia luokkia, jotka toteuttavat `test`-metodin.
+
+![Strategia Gutenberg-lukijassa: rivien läpikäynti on kaikille hauille sama, ja vaihtuva ehto annetaan metodille parametrina]({{ "/images/4-27.svg" | relative_url }})
 
 Ehdot voidaan esittää luokkien sijaan myös yksinkertaisemmassa muodossa, esimerkiksi funktioina tai lambdoina. Tutustutaan seuraavaksi hieman _funktionaaliseen ohjelmointiin_, jonka kulmakivenä on juuri funktioiden hyödyntäminen. Muokataan `rivit_jotka_tayttavat_ehdon`-metodia niin, että parametrina saatu `ehto` on kutsuttava arvo:
 
@@ -1669,6 +1691,8 @@ def __init__(self, osoite):
 
     self._rivit = list(rivit_iterator)
 ```
+
+Kutsu `request.urlopen(osoite)` palauttaa kirjan sisällön rivi kerrallaan tavuina. Funktio `map` kutsuu ensimmäisenä parametrina annettua lambdaa vuorollaan jokaiselle riville: lambda muuttaa tavut merkkijonoksi metodilla `decode` ja poistaa rivin alusta ja lopusta tyhjät merkit metodilla `strip`. Tuloksena on iteraattori, jonka alkioina ovat näin siistityt rivit. Alkuperäisessä konstruktorissa sama tehtiin for-silmukalla, jossa rivit lisättiin yksi kerrallaan listaan.
 
 Huomaa, ettei `map`-funktio palauta listaa, vaan iteraattorin. Iteraattorin voi muuttaa listaksi helposti, [list](https://docs.python.org/3/library/functions.html#func-list)-funktion avulla.
 
@@ -1847,6 +1871,12 @@ loki = KonsoliLoki()
 pino = KryptattuPino(LokiPino(Pino(), loki))
 ```
 
+Dekoroitu pino muodostuu siis sisäkkäisistä kerroksista. Kun pinoon lisätään merkkijono `"olut"`, uloin kerros `KryptattuPino` kryptaa sen muotoon `"pmvu"` ja välittää eteenpäin, `LokiPino` kirjaa operaation lokiin ja sisimpänä oleva tavallinen `Pino` tallettaa alkion. Pinosta otettaessa kerrokset käydään läpi päinvastaisessa järjestyksessä:
+
+![Dekoroitu pino: push-operaatio kulkee kerrosten KryptattuPino ja LokiPino läpi sisimpänä olevaan pinoon ja pop-operaatio takaisin ulos]({{ "/images/4-29.svg" | relative_url }})
+
+Koska `LokiPino` on kryptaavan kerroksen sisäpuolella, lokiin kirjautuvat alkiot kryptattuina. Jos dekoraattorit olisivat toisessa järjestyksessä, lokissa näkyisivät selkokieliset alkiot.
+
 Dekoroinnin avulla saamme siis suhteellisen vähällä ohjelmoinnilla pinolle paljon erilaisia ominaisuuskombinaatioita. Jos olisimme yrittäneet hoitaa kaiken normaalilla perinnällä, olisi luokkien määrä kasvanut eksponentiaalisesti eri ominaisuuksien määrän suhteen ja uusiokäytöstäkään ei olisi tullut mitään.
 
 Dekorointi siis ei oleellisesti ole perintää vaan _delegointia_, jälleen kerran oliosuunnittelun periaate "favour composition over inheritance" on näyttänyt voimansa.
@@ -1957,10 +1987,21 @@ class Pinorakentaja:
         self._luo_pino = luo_pino
 
     def prepaid(self, krediitit):
-        return Pinorakentaja(lambda: PrepaidPino(self._luo_pino(), krediitit))
+        def luo_prepaid_pino():
+            pino = self._luo_pino()
+            return PrepaidPino(pino, krediitit)
+
+        return Pinorakentaja(luo_prepaid_pino)
 
     def pino(self):
         return self._luo_pino()
+```
+
+Metodin sisällä määritelty funktio `luo_prepaid_pino` on uuden rakentajan luontifunktio. Sitä ei kutsuta vielä metodissa `prepaid`, vaan se annetaan uudelle rakentajalle talteen. Koska funktio on näin lyhyt, se voidaan kirjoittaa tiiviimmin lambda-lausekkeena:
+
+```python
+    def prepaid(self, krediitit):
+        return Pinorakentaja(lambda: PrepaidPino(self._luo_pino(), krediitit))
 ```
 
 Samalla periaatteella lisätään rakentajalle metodit, joiden avulla työn alla oleva pino saadaan dekoroitua lokipinoksi tai kryptaavaksi pinoksi:
@@ -1993,7 +2034,9 @@ rakenna = Pinorakentaja()
 pino = rakenna.kryptattu().prepaid(10).pino()
 ```
 
-Tässä pyydettiin rakentajalta kryptattu prepaid-pino, jossa krediittejä on 10.
+Tässä pyydettiin rakentajalta kryptattu prepaid-pino, jossa krediittejä on 10. Jokainen ketjun metodikutsu palauttaa uuden rakentajan, jonka "ohjeeseen" on lisätty yksi dekoraattorikerros, ja varsinainen pino luodaan vasta metodin `pino` kutsulla:
+
+![Pinorakentaja: kutsut kryptattu ja prepaid palauttavat kukin uuden rakentajan, jonka ohjeessa on yksi dekoraattorikerros lisää, ja kutsu pino luo valmiin pinon]({{ "/images/4-30.svg" | relative_url }})
 
 Vastaavalla tavalla voidaan luoda pinoja muillakin ominaisuuksilla:
 
