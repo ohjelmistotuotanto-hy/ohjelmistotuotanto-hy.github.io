@@ -383,6 +383,8 @@ Tämä on muuten copypaste ylläolevasta esimerkistä, mutta `assert_called_with
 
 {% include ai_valitsin.html %}
 
+{% include opencode_hyvaksynta.md %}
+
 <input type="checkbox"> Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) osio [Agentin tekemien testien arviointi](/genai/#agentin-tekemien-testien-arviointi).
 
 Tehtävän 3 testeihin on todennäköisesti kertynyt paljon toisteisuutta, sillä jokainen testi luo samat mockit ja määrittelee niille samat toteutukset. Kaikille testeille yhteiset alustukset on mahdollista tehdä `setUp`-metodissa, joka suoritetaan ennen jokaista testiä:
@@ -430,6 +432,8 @@ Mock-oliot saattoivat tuntua hieman monimutkaisilta edellisissä tehtävissä. M
 ### 6. TDD agentin kanssa [tekoäly]
 
 {% include ai_valitsin.html %}
+
+{% include opencode_hyvaksynta.md %}
 
 <input type="checkbox"> Lue ennen tehtävän tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 4 osuus [Testit ja versionhallinta agentin suojakaiteina](/genai/#testit-ja-versionhallinta-agentin-suojakaiteina-viikko-4).
 
@@ -551,7 +555,7 @@ Ostoskori ohjelmoidaan [Test Driven Development](https://studies.cs.helsinki.fi/
 <input type="checkbox"> Lisää ohjetiedostoon ainakin seuraavat säännöt:
 - Tests executed with `uv run pytest`
 - Code of `ostos.py` and `tuote.py` should not be changed
-- Tests may not be edited unless explicitly asker
+- Tests should not be edited unless explicitly asked
 - Always implement absolutely minimal code that makes the tests pass
 
 <input type="checkbox"> Commitoi ohjetiedosto

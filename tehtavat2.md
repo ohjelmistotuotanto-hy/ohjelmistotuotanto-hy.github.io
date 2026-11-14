@@ -379,7 +379,7 @@ Jatketaan tehtävien 2-5 ja 8 _nhl-reader_-projektin parissa. Varmista, että ka
 </div>
 
 <div class="vain-opencode" markdown="1">
-<input type="checkbox"> Toisin kuin Copilot, OpenCode muokkaa tiedostoja ja suorittaa komentoja oletusarvoisesti kysymättä lupaa. Ota siksi ennen aloittamista käyttöön komentojen ja muokkausten hyväksyminen: lisää hakemistoon _viikko2/nhl-reader_ tiedosto `opencode.json`, jonka sisältö löytyy OpenCode-sivun kohdasta [Komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen)
+<input type="checkbox"> Toisin kuin Copilot, OpenCode muokkaa tiedostoja ja suorittaa komentoja oletusarvoisesti kysymättä lupaa. Ota siksi ennen aloittamista käyttöön komentojen ja muokkausten hyväksyminen: lisää palautusrepositoriosi juureen tiedosto `opencode.json`, jonka sisältö löytyy OpenCode-sivun kohdasta [Komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen). Juuressa oleva tiedosto on voimassa kaikissa repositorion alihakemistoissa, joten sitä ei tarvitse luoda myöhempien viikkojen projekteille erikseen
 
 <input type="checkbox"> Käynnistä OpenCode hakemistossa _viikko2/nhl-reader_ komennolla `opencode`
 </div>

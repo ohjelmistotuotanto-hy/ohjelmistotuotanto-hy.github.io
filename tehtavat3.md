@@ -860,7 +860,7 @@ Hyväksymiskriteerit:
 Tehtävän 7 vaatimus salasanan vähimmäispituudesta on edelleen voimassa.
 
 <div class="vain-opencode" markdown="1">
-<input type="checkbox"> OpenCode suorittaa oletusarvoisesti komentoja kysymättä, joten ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen) lisäämällä asetus tiedostoon _opencode.json_
+<input type="checkbox"> OpenCode suorittaa oletusarvoisesti komentoja kysymättä, joten ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen) lisäämällä asetus tiedostoon _opencode.json_. Jos teit tiedoston viikolla 2 palautusrepositoriosi juureen, asetus on jo voimassa
 </div>
 
 Toteuta storyt agentin avulla **yksi kerrallaan**. Tee kummallekin storylle seuraavat:

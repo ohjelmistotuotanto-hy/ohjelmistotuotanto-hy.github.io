@@ -180,6 +180,8 @@ Kaksi tiedostoa päätyi importtaamaan toisensa, eli syntyi <i>circular import</
 
 {% include ai_valitsin.html %}
 
+{% include opencode_hyvaksynta.md %}
+
 Tehdään edellisen tehtävän kivi-paperi-sakset-pelille agentin avulla web-käyttöliittymä.
 
 <input type="checkbox"> Tee palautusrepositorioosi kopio projektin hakemistosta nimellä _kivi-paperi-sakset-original_, jolloin edellisen tehtävän jälkeinen tilanne jää talteen, ja commitoi
@@ -269,6 +271,8 @@ Kerro raportissa
 ### 6. MCP ja skillsit [tekoäly]
 
 {% include ai_valitsin.html %}
+
+{% include opencode_hyvaksynta.md %}
 
 Agentti pystyy toimimaan vain niillä työkaluilla, jotka sillä on käytössään. <span class="vain-copilot">VS Coden agentti</span><span class="vain-opencode">OpenCoden Build-agentti</span> osaa lukea ja muokata tiedostoja sekä suorittaa komentoja terminaalissa, mutta se ei esimerkiksi näe, miltä edellisessä tehtävässä tehty web-käyttöliittymä näyttää selaimessa. [MCP](/genai/#mcp-eli-model-context-protocol) (Model Context Protocol) on avoin standardi, jonka avulla agentille voidaan lisätä uusia työkaluja _MCP-palvelimina_.
 
@@ -465,6 +469,8 @@ Kerro raportissa
 ### 7. Oma MCP-palvelin [tekoäly]
 
 {% include ai_valitsin.html %}
+
+{% include opencode_hyvaksynta.md %}
 
 <input type="checkbox"> Lue ennen aloittamista materiaalin luku [Oma MCP-palvelin](/genai/#oma-mcp-palvelin).
 

@@ -210,6 +210,8 @@ Lisää samankaltaisia refaktorointitehtäviä löytyy Emily Bachen [GitHubista]
 
 {% include ai_valitsin.html %}
 
+{% include opencode_hyvaksynta.md %}
+
 <input type="checkbox"> Lue ennen tehtävien 5 ja 6 tekemistä materiaalin [Tekoäly ohjelmistotuotannossa](/genai/) viikon 5 osuus [AI katselmoinnissa ja pilviagentti](/genai/#ai-katselmoinnissa-ja-pilviagentti-viikko-5).
 
 <div class="vain-copilot" markdown="1">
@@ -268,6 +270,8 @@ Kerro raportissa
 ### 6. Good vibe with warehouses [tekoäly]
 
 {% include ai_valitsin.html %}
+
+{% include opencode_hyvaksynta.md %}
 
 Palataan jälleen viikolta 1 tutun *Ohtuvaraston* pariin. Tehtävässä on tarkoitus saada <span class="vain-copilot">GitHubin pilviagentti ([Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent))</span><span class="vain-opencode">OpenCode</span> koodaamaan Ohtuvarastolle web-käyttöliittymä, esim. Flask-sovelluskehystä käyttäen
 

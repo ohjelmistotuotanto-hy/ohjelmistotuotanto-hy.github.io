@@ -135,7 +135,20 @@ Komento `/undo` peruu agentin viimeisimmät muutokset, ja komento `/redo` palaut
 }
 ```
 
-Saman asetuksen voi laittaa kaikkia projekteja koskevaan tiedostoon `~/.config/opencode/opencode.json`.
+Tiedostoa ei tarvitse luoda jokaiselle projektille erikseen. OpenCode etsii konfiguraatiota käynnistyshakemiston lisäksi kaikista sen ylähakemistoista ja yhdistää löytämiensä tiedostojen asetukset. Kurssilla helpointa onkin laittaa tiedosto **palautusrepositorion juureen**, jolloin asetus on voimassa kaikkien viikkojen projekteissa:
+
+```
+palautusrepositorio
+├── opencode.json
+├── viikko1
+├── viikko2
+│   └── nhl-reader
+└── ...
+```
+
+Jos jollain projektilla on lisäksi oma `opencode.json`, kuten viikon 7 MCP-palvelinten määrittelyt, sen asetukset yhdistetään juuressa olevan tiedoston asetuksiin. Samaa asetusta koskevissa ristiriidoissa lähempänä käynnistyshakemistoa oleva tiedosto voittaa.
+
+Asetuksen voi laittaa myös kaikkia koneesi projekteja koskevaan tiedostoon `~/.config/opencode/opencode.json`.
 
 ## Copilotin ominaisuudet OpenCodessa
 
