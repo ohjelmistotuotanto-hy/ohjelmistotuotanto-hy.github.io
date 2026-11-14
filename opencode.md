@@ -9,7 +9,7 @@ Kurssin [tekoäly]-tehtävät voi tehdä joko VS Coden GitHub Copilotilla tai av
 
 OpenCode on pelkkä agentti, eikä siinä ole omaa kielimallia. Sen käyttö edellyttää siis, että sinulla on jonkin kielimallipalvelun, esim. Anthropicin, OpenAI:n, Googlen tai OpenRouterin, API-avain. Yliopiston opiskelijat voivat kuitenkin käyttää maksutta [CurreChatin](<{{site.curre}}>) kielimalleja, ja tämä on kurssilla suositeltu tapa, ks. [CurreChatin käyttö](#currechatin-käyttö). Agentin käsitteet, kuten konteksti, ohjetiedosto, suunnittelutila ja MCP, ovat samat kuin materiaalissa [Tekoäly ohjelmistotuotannossa](/genai/), joten kurssin tehtävät onnistuvat yhtä hyvin OpenCodella.
 
-**Huom:** tehtävät on alun perin tehty Copilotille, ja viikkojen 4–7 tehtävien OpenCode-versioita ei ole vielä testattu yhtä perusteellisesti. Jos ohjeissa on virheitä tai epäselvyyksiä, ilmoita niistä.
+**Huom:** tehtävät on alun perin tehty Copilotille, ja viikkojen 5–7 tehtävien OpenCode-versioita ei ole vielä testattu yhtä perusteellisesti. Jos ohjeissa on virheitä tai epäselvyyksiä, ilmoita niistä.
 
 ## Miksi OpenCode?
 

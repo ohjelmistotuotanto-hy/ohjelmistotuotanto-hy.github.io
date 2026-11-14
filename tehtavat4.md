@@ -570,10 +570,6 @@ Askeleet 1-7 tehdään siten, että jokaisella askeleella
 4. luet agentin tekemän muutoksen (`git diff`) ja varmistat, että agentti ei koskenut testeihin
 5. commitoit muutoksen
 
-<div class="vain-opencode" markdown="1">
-Muista, että OpenCode suorittaa oletusarvoisesti komentoja ja muokkaa tiedostoja kysymättä. Agentti ei saa muuttaa osan A testejä, joten lue `git diff` jokaisen askeleen jälkeen huolellisesti, tai ota käyttöön [muutosten hyväksyminen](/opencode/#komentojen-hyväksyminen).
-</div>
-
 Pidä _kaikki_ testit koko ajan toimivina, eli jos jokin muutos hajottaa testit, älä etene seuraavaan askeleeseen ennen kuin kaikki testit menevät taas läpi. Jos agentti tekee kerralla enemmän kuin testi edellyttää, esim. toteuttaa valmiiksi myös tulevien askelten toiminnallisuuden, pyydä sitä pysymään minimitoteutuksessa.
 
 <input type="checkbox"> **1. Luodun ostoskorin hinta ja tavaroiden määrä on 0.**
@@ -591,6 +587,12 @@ class TestOstoskori(unittest.TestCase):
 ```
 
 Laajenna testiä siten, että se testaa myös tavaroiden määrän (metodin `tavaroita_korissa` paluuarvo).
+
+<input type="checkbox"> Tarkista ensimmäisen askeleen toteutuksen jälkeen erityisen huolellisesti, noudattiko agentti ohjetiedoston sääntöä minimaalisesta toteutuksesta. Agentti toteuttaa helposti esim. koodin kommenttien perusteella enemmän kuin testi vaatii. Voit kysyä asiaa myös agentilta itseltään:
+
+![]({{ "/images/agentti.png" | relative_url }})
+
+<input type="checkbox"> Jos agentti teki liikaa, muotoile ohjetiedoston sääntö tiukemmaksi, peru agentin toteutus (`git restore src/ostoskori.py`, jolloin oma testisi säilyy) ja pyydä toteutus uudestaan. Toista tätä, kunnes saat agentin aisoihin, ja jatka vasta sitten seuraavaan askeleeseen
 
 <input type="checkbox"> **2. Yhden tuotteen lisäämisen jälkeen ostoskorissa on 1 tavara.**
 
@@ -613,8 +615,6 @@ class TestOstoskori(unittest.TestCase):
 
         # ...
 ```
-
-**Muistutus:** vaikka metodin `lisaa_tuote` parametrina on Tuote-olio, **ostoskori ei tallenna tuotetta** vaan luomansa Ostos-olion, joka "tietää" mistä tuotteesta on kysymys.
 
 <input type="checkbox"> **3. Yhden tuotteen lisäämisen jälkeen ostoskorin hinta on sama kuin tuotteen hinta.**
 
@@ -642,8 +642,6 @@ Testin on siis tutkittava jälleen korin metodin `ostokset` palauttamaa listaa j
 
 <input type="checkbox"> **11. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää tasan yhden ostoksen**
 
-Eli jos korissa on jo ostos "maito" ja koriin lisätään uusi "maito", tulee tämän jälkeen korissa olla edelleen vain yksi ostos "maito", lukumäärän tulee kuitenkin kasvaa kahteen.
-
 <input type="checkbox"> **12. Kahden saman tuotteen lisäämisen jälkeen ostoskori sisältää tasan ostoksen, jolla sama nimi kuin tuotteella ja lukumäärä 2**
 
 **Osa C: loput askeleet**
@@ -658,9 +656,15 @@ Tyhjä kori tarkoittanee että tuotteita ei ole, korin hinta on nolla ja ostoksi
 
 <input type="checkbox"> **15. Metodi tyhjenna tyhjentää korin**
 
-<input type="checkbox"> On mahdollista, että agentin tekemään koodiin on jäänyt hieman toisteisuutta metodeihin `poista_tuote` ja `lisaa_tuote`. Pyydä agenttia poistamaan mahdollinen toisteisuus (engs. duplication)
+**Refaktorointi**
 
-<input type="checkbox"> Varmista, että testit menevät edelleen läpi.
+TDD:n sykliin kuuluu refaktorointi, joka jää minimitoteutuksia tehdessä helposti väliin.
+
+<input type="checkbox"> Lue lopullinen koodi ja testit läpi ja arvioi, onko niissä parannettavaa. Esim. metodeihin `poista_tuote` ja `lisaa_tuote` on voinut jäädä toisteisuutta (engl. duplication), metodit ovat voineet kasvaa pitkiksi tai testeissä voi olla toisteista alustuskoodia
+
+<input type="checkbox"> Jos löydät parannettavaa, pyydä agenttia refaktoroimaan koodi. Kerro agentille, mitä haluat parannettavan, äläkä anna sen muuttaa toiminnallisuutta
+
+<input type="checkbox"> Lue agentin tekemä muutos, varmista, että testit menevät edelleen läpi, ja commitoi
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko4_ talletettavaan tiedostoon _tdd_ai.md_
 
