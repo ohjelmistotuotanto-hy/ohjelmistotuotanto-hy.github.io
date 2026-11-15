@@ -852,6 +852,22 @@ _käyttäjätason metriikoita_ (engl. business level metrics). Jos niissä huoma
 
 Pelkkä ennalta valittujen mittareiden seuraaminen kertoo, _että_ jotain on vialla, mutta ei välttämättä _miksi_. Siksi puhutaan nykyään usein [havainnoitavuudesta](https://opentelemetry.io/docs/concepts/observability-primer/) (engl. observability): sovellus tuottaa lokeja, metriikoita ja pyyntöjen kulkua palveluiden läpi kuvaavia jälkiä (engl. traces) niin, että myös ennalta arvaamattomien ongelmien syihin päästään käsiksi. Näiden tuottamiseen on vakiintunut avoin standardi [OpenTelemetry](https://opentelemetry.io/).
 
+Katsotaan esimerkkinä muutamaa työkalua, joilla seurataan Helsingin yliopiston kurssipalautejärjestelmän Norpan toimintaa tuotannossa. Sovelluksen lokit kerätään keskitettyyn paikkaan, josta niitä on helppo hakea ja tarkastella. Norpan lokit menevät [Graylogiin](https://graylog.org/), josta nähdään esim. sovellukselle tehdyt pyynnöt ja niiden vasteajat:
+
+![Graylogin hakunäkymä: pylväskaavio Norpan lokiviestien määrästä vuorokauden ajalta ja lista yksittäisistä pyynnöistä vasteaikoineen]({{ "/images/graylog.png" | relative_url }}){:height="450px" }
+
+Lokeista ja metriikoista voidaan koostaa kojelautoja (engl. dashboard), joista järjestelmän tila näkyy yhdellä silmäyksellä. Tähän käytetään usein [Grafanaa](https://grafana.com/). Norpan kojelaudalla on palvelimen toimintaa kuvaavien lukujen, kuten pyyntöjen ja virheiden määrän sekä vasteaikojen, lisäksi myös käyttäjätason metriikoita, esim. annettujen palautteiden määrä:
+
+![Grafanan kojelauta: Norpan vuorokauden pyyntöjen, kävijöiden, annettujen palautteiden ja virheiden määrät sekä kuvaajia opiskelijoiden aktiivisuudesta]({{ "/images/grafana.png" | relative_url }}){:height="350px" }
+
+Sovelluksessa tapahtuvat virheet kannattaa kerätä talteen automaattisesti, sillä käyttäjät raportoivat kohtaamistaan virheistä vain harvoin. [Sentry](https://sentry.io/) kokoaa virheet yhteen paikkaan, ryhmittelee saman virheen toistumiset ja lähettää uusista virheistä hälytyksen, Norpan tapauksessa kehitystiimin Slack-kanavalle:
+
+![Slack-kanava, jolle Sentry on lähettänyt ilmoituksia Norpassa tapahtuneista virheistä]({{ "/images/sentry.png" | relative_url }}){:height="450px" }
+
+Yksittäisestä virheestä nähdään stack trace sekä tietoja tilanteesta, jossa virhe tapahtui, kuten käyttäjä, selain ja käytössä ollut sovelluksen versio. Virheen syy on näin usein selvitettävissä ilman, että sitä tarvitsee yrittää toistaa itse:
+
+![Sentryn näkymä yksittäisestä virheestä: virheilmoitus, käyttäjän selain ja laite sekä stack trace]({{ "/images/sentry2.png" | relative_url }}){:height="450px" }
+
 Monitoroinnin tavoitteet kannattaa määritellä etukäteen. Googlen kehittämässä Site Reliability Engineering -mallissa palvelulle asetetaan [palvelutasotavoitteita](https://sre.google/sre-book/service-level-objectives/) (engl. service level objective, SLO), esimerkiksi "99,9 % pyynnöistä onnistuu ja 95 % vastataan alle 300 millisekunnissa". Canary releasessa uusi versio voidaan perua automaattisesti, jos se alkaa rikkoa näitä tavoitteita.
 
 SLO:n avulla määritellään myös _virhebudjetti_ (engl. [error budget](https://sre.google/sre-book/embracing-risk/)). Jos tavoitteena on, että 99,9 % pyynnöistä onnistuu, saa 0,1 % pyynnöistä epäonnistua. Niin kauan kuin budjettia on jäljellä, tiimi voi viedä uusia ominaisuuksia tuotantoon normaalisti. Jos budjetti kuluu loppuun, painopiste siirretään [sovitusti](https://sre.google/workbook/error-budget-policy/) uusista ominaisuuksista luotettavuuden parantamiseen. Virhebudjetti tekee näin näkyväksi nopeuden ja vakauden välisen tasapainon, ja siitä sovitaan yhdessä kehittäjien ja liiketoiminnan kesken.
