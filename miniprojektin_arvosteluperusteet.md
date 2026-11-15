@@ -96,7 +96,36 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Toisen sprintin arvosteluperusteet
 
-_Tulossa myöhemmin!_
+Pisteitä kertyy seuraavista asioista:
+
+- (0.25p) product backlog
+  - Backlog on DEEP (storyjä ei tarvitse estimoida)
+- (0.25p) sprintin 2 backlog
+  - Sprintiin valitut user storyt jaettu teknisen tason taskeiksi
+  - Sprintin etenemistä seurataan valmistuneiden taskien perusteella burndown- tai burnup-kaaviona
+  - Jokaiseen taskiin on merkitty sen tekijä(t)
+- (0.25p) sprintiin 2 valittujen storyjen hyväksymisehdot kirjattu
+- (0.25p) ainakin osa storeista testattu storytasolla (Robot-frameworkilla)
+- (0.25p) sovellukseen on tehty ainakin yksi ryhmän itse tekemä yksikkötesti (boilerplaten valmiita testejä ei lasketa)
+  - testit voi kirjoittaa boilerplaten tapaan unittest-kirjastolla, ja ne suoritetaan pytestillä
+  - kannattaa lukea [tämä](/flask/#testeistä) testaukseen liittyvä huomio
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa testit
+  - main-haara ei ole hajonnut sprintin lopussa
+- (0.125p) projektille määritelty järkevät Pylint-säännöt, jotka tarkistetaan CI:n toimesta
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
+- (0.125p) toimivasta, demossa näytettävästä versiosta on luotu GitHubiin [release](https://help.github.com/articles/creating-releases/).
+  - releasella tulee olla järkevä nimi ja kuvaus, ks. mallia esim. [täältä](/release)
+- (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 1 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
+- (0.25p) Sprintin 1 retrospektiivin parannuskohteet ovat sprintin 2 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
+- (0.125p) sprintin katselmointiin on valmistauduttu asiallisesti
+  - Katselmoinnin pitää eri henkilö, kuin edellisessä katselmoinnissa
+  - Katselmoinnin pitäjä on sovittu ja tarvittavat esivalmistelut on tehty etukäteen
+  - Katselmoinnin aikana asiakkaalle näytetään, että jokainen sprinttiin valittu user story on toteutettu hyväksymiskriteerien mukaisesti
+- **Pitäkää sprintin päätteeksi retrospektiivi**, pisteet retrospektiivista annetaan sprintin 3 arvostelussa, ks. [ohje](/miniprojektin_arvosteluperusteet/#retrospektiivi)
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Kolmannen sprintin arvosteluperusteet
 
