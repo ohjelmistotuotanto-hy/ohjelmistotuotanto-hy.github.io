@@ -300,6 +300,64 @@ Välimuotona on _modulaarinen monoliitti_ (engl. modular monolith). Sovellus jul
 
 Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järjestelmän osien erilaiset skaalautuvuustarpeet. Kun samaa järjestelmää kehittää kymmeniä tiimejä, palveluihin jakamisen hyödyt alkavat olla suuremmat kuin sen aiheuttama lisätyö.
 
+### Esimerkki: kurssipalautejärjestelmä Norppa
+
+Tarkastellaan lopuksi, miltä arkkitehtuuri näyttää oikeassa tuotantokäytössä olevassa järjestelmässä. Esimerkkinä on Helsingin yliopiston kurssipalautejärjestelmä [Norppa](https://norppa.helsinki.fi), jonka avulla myös tämän kurssin palaute kerätään. Norppaa käyttävät Helsingin yliopiston lisäksi Tampereen yliopisto ja Jyväskylän yliopisto. Sen on kehittänyt ja sitä ylläpitää yliopiston [Toska](https://toska.dev/)-tiimi, ja sen lähdekoodi on [avoimesti GitHubissa](https://github.com/UniversityOfHelsinkiCS/palaute).
+
+Seuraava kuva näyttää Norppaan liittyvät palvelut:
+
+![Norpan kokonaisarkkitehtuuri: käyttäjän selaimessa toimiva UI kutsuu Shibboleth-kirjautumisen kautta Norpan backendiä, joka käyttää tietokantaa ja Redis-välimuistia. Updater hakee yöllä API Gatewayn kautta Importerilta kaiken datan ja kirjoittaa sen Norpan tietokantaan. Importerin Fetcher hakee SISUsta tunnin välein uudet tiedot ja julkaisee ne viestijonoon, josta Workerit kirjoittavat ne Importerin tietokantaan. Importer API lukee tietokantaa ja palvelee API Gatewayn kautta Updateria ja muita sovelluksia]({{ "/images/4-31.png" | relative_url }})
+
+Kuvassa näkyy, että Norppa ei noudata vain yhtä arkkitehtuurityyliä. Norpan oma ydin on kerrosarkkitehtuuria noudattava web-sovellus, ydin on osa laajempaa palveluista koostuvaa kokonaisuutta, ja yksi palveluista, Importer, perustuu viestinvälitykseen. Kuten aiemmin todettiin, useimmiten sovelluksen rakenteesta löytyy monien arkkitehtuuristen tyylien piirteitä.
+
+#### Norpan ydin: kerrosarkkitehtuuri
+
+Norpan ydin koostuu selaimessa toimivasta Reactilla toteutetusta käyttöliittymästä (engl. single page application, SPA) ja Node.js:llä toteutetusta palvelimesta. Käyttöliittymä keskustelee palvelimen kanssa REST-rajapinnan kautta JSON-muotoisella datalla. Pyynnöt kulkevat yliopiston HY Login -kirjautumispalvelun läpi, joten palvelin tietää aina, kuka käyttäjä on kyseessä.
+
+![Norpan kerrosarkkitehtuuri: ylimpänä esityskerroksena selaimessa toimiva UI, sen alla Shibboleth-kirjautuminen, sovelluslogiikan kerroksena Norpan backend, jossa REST-rajapinta ja sovelluslogiikka, ja alimpana tietokerroksena tietokanta ja Redis-välimuisti. Kukin kerros käyttää vain alempaa kerrosta]({{ "/images/4-32.png" | relative_url }}){:height="350px" }
+
+Myös palvelimen sisäinen rakenne on kerroksellinen, ja kerrokset näkyvät suoraan [hakemistorakenteessa](https://github.com/UniversityOfHelsinkiCS/palaute/tree/master/src/server):
+
+- _routes_ sisältää REST-rajapinnan käsittelijät, jotka ottavat vastaan HTTP-pyynnöt ja kutsuvat sovelluslogiikkaa
+- _services_ sisältää sovelluslogiikan, esim. sen, kuka saa nähdä minkäkin kurssin palautteet
+- _models_ sisältää tietokantataulujen määrittelyt, joiden avulla data tallennetaan PostgreSQL-tietokantaan
+
+Rakenne on siis hyvin samankaltainen kuin aiemmin esitellyssä verkkokaupassa. Usein tarvittavia tietoja palvelin säilyttää lisäksi Redis-välimuistissa, jotta niitä ei tarvitse hakea tietokannasta jokaisen pyynnön yhteydessä.
+
+#### Norppa osana palveluiden kokonaisuutta
+
+Kaikkea Norpan tarvitsemaa toiminnallisuutta ei ole toteutettu Norpan omassa koodissa. Osa toiminnallisuudesta on Toskan yhteisissä palveluissa, joita käyttävät Norpan lisäksi myös muut Toskan kehittämät sovellukset:
+
+- [JAMI](https://github.com/UniversityOfHelsinkiCS/jami) selvittää käyttäjän käyttöoikeudet yliopiston käyttäjähallinnan tietojen perusteella
+- Pate hoitaa sähköpostien lähettämisen, esim. muistutukset palautteen antamisesta
+- Importer hakee kurssi- ja opiskelijatiedot yliopiston opintotietojärjestelmä SISUsta ja tarjoaa ne muiden sovellusten käyttöön
+
+Lisäksi Norpalla on oma erillinen palvelunsa, [Updater](https://github.com/UniversityOfHelsinkiCS/norppa-updater), joka hakee joka yö Importerilta kaikki kurssien ja opiskelijoiden tiedot ja päivittää ne Norpan tietokantaan.
+
+![Norpan palvelut: käyttäjä käyttää Norppaa, joka käyttää omaa tietokantaansa sekä palveluita JAMI (käyttöoikeudet) ja Pate (sähköpostit). Updater kirjoittaa Norpan tietokantaan ja hakee datan API Gatewayn kautta Importerilta, jolla on oma tietokanta ja joka hakee datansa SISUsta. Myös muut sovellukset käyttävät Importeria API Gatewayn kautta]({{ "/images/4-33.png" | relative_url }})
+
+Kokonaisuudessa on paljon mikropalveluarkkitehtuurin piirteitä. Jokainen palvelu on oma sovelluksensa, joka julkaistaan erikseen ja jolla on oma tietokantansa. Palvelut kommunikoivat keskenään verkon välityksellä, ja muut sovellukset pääsevät Importerin dataan käsiksi _API Gatewayn_ kautta. API Gateway on palvelu, joka ohjaa ulkopuolelta tulevat pyynnöt oikeille palveluille.
+
+Palveluihin jakaminen tuo selviä etuja. Esimerkiksi SISUn käsittely on monimutkaista, ja koska se on toteutettu kerran Importeriin, kaikkien Toskan sovellusten ei tarvitse toteuttaa sitä itse. Vikoja voidaan myös eristää: esimerkiksi sähköpostipalvelu Paten katkos ei estä palautteen antamista. Kun Norppa otetaan käyttöön toisessa yliopistossa, riittää toteuttaa oma versio Updaterista, JAMIsta, Patesta ja Importerista, ja Norpan ydin voidaan ottaa käyttöön sellaisenaan.
+
+Kokonaisuus ei kuitenkaan noudata mikropalveluiden periaatteita orjallisesti: Updater kirjoittaa suoraan Norpan tietokantaan. Updater ja Norppa on siis kytketty toisiinsa tiukasti tietokannan rakenteen kautta, ja jos Norpan tietokantatauluja muutetaan, joudutaan usein muuttamaan myös Updateria. Ratkaisu on käytännöllinen, sillä molemmat ovat saman tiimin ylläpitämiä ja Updaterin ainoa tehtävä on tuoda dataa Norppaan.
+
+Norpan ydin ei myöskään itse ole jaettu mikropalveluihin. Se on yksi sovellus, jota kehittää yksi tiimi, eli juuri sellainen tilanne, jossa mikropalveluihin jakaminen toisi enemmän vaivaa kuin hyötyä.
+
+#### Importer: viestinvälitykseen perustuva palvelu
+
+Importerin sisäinen rakenne perustuu viestinvälitykseen. Importerin _Fetcher_ hakee SISUsta tunnin välein edellisen haun jälkeen muuttuneet tiedot. Fetcher ei kuitenkaan itse käsittele ja tallenna dataa, vaan se julkaisee sen viesteinä [BullMQ](https://bullmq.io/)-viestijonoon. Jonosta viestejä käsittelee joukko _Workereita_, jotka muokkaavat datan sopivaan muotoon ja tallentavat sen Importerin tietokantaan. Muut sovellukset lukevat tallennettua dataa _Importer API_:n kautta.
+
+![Importerin viestinvälitys: SISUsta haettu data kulkee Fetcherille, joka julkaisee sen BullMQ-viestijonoon. Jonosta kolme rinnakkaista Workeria käsittelee viestejä ja kirjoittaa ne tietokantaan, jota Importer API lukee]({{ "/images/4-34.png" | relative_url }}){:height="400px" }
+
+Viestijonon käytöllä on monta etua:
+
+- Fetcher ja Workerit ovat löyhästi kytkettyjä: Fetcher ei tiedä, kuka viestit käsittelee
+- Jono tasaa kuormaa: jos SISUsta tulee kerralla paljon muuttunutta dataa, viestit odottavat jonossa, ja käsittelyä voi nopeuttaa käynnistämällä lisää Workereita
+- Jos Worker kaatuu kesken käsittelyn, viesti ei katoa vaan jää jonoon odottamaan uutta käsittelyä
+
+BullMQ on Node.js-kirjasto, joka tallentaa jonon Redis-tietokantaan. Toisin kuin edellä esitellyssä publish-subscribe-mallissa, jossa viesti välitetään kaikille aiheen tilanneille, jonossa kukin viesti annetaan käsiteltäväksi vain yhdelle Workerille. Tällaista jonoa kutsutaan työjonoksi (engl. job queue tai work queue).
+
 ## Arkkitehtuuri ketterissä menetelmissä
 
 Ketterien menetelmien kantava teema on toimivan, asiakkaalle arvoa tuottavan ohjelmiston nopea toimittaminen, tämä on mainittu selkeästi jo ketterän manifestin periaatteissa:
