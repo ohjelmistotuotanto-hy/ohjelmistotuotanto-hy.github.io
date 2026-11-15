@@ -160,57 +160,6 @@ Sekä sovelluslogiikka, että tallennuspalvelut käyttävät pakkauksen _entitie
 
 > Kerrosarkkitehtuurin säännöt, kuten se, että sovelluslogiikka ei saa riippua käyttöliittymästä, rapautuvat helposti, jos niiden noudattamista ei valvota. Sääntöjä voi tarkastaa automaattisesti esim. työkalulla [import-linter](https://import-linter.readthedocs.io/), jolle määritellään sallitut riippuvuudet pakkausten välillä. Kun tarkastus lisätään CI-putkeen, sääntöä rikkova muutos huomataan heti. Tällaisia arkkitehtuurin ominaisuuksia valvovia automaattisia tarkastuksia kutsutaan nimellä _fitness function_.
 
-### Arkkitehtuurin kuvaamisesta
-
-Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:n kulta-aikana 1990-luvun lopulla ja 2000-luvulla arkkitehtuuria kuvattiin usein UML:n komponentti- ja pakkauskaavioilla, mutta nykyään niitä näkee harvoin. Useimmiten arkkitehtuuri kuvataan epäformaaleilla laatikko/nuoli-kaavioilla, kuten seuraavassa oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämässä arkkitehtuurikuvauksessa:
-
-![]({{ "/images/arkkit3.png" | relative_url }}){:height="450px" }
-
-Epäformaaleja kaavioita vaivaa usein se, että niistä ei käy ilmi, millä tarkkuustasolla järjestelmää kuvataan ja mitä laatikot ja nuolet oikeastaan tarkoittavat. Tähän pyrkii vastaamaan viime vuosina suosiota saavuttanut Simon Brownin [C4-malli](https://c4model.com/), jossa arkkitehtuuri kuvataan neljällä tarkentuvalla tasolla: järjestelmän konteksti (engl. system context), containerit (engl. containers), komponentit (engl. components) sekä tarvittaessa koodi (engl. code). C4 ei määrää tarkkaa merkintätapaa, vaan sen idea on, että jokaisella kaaviolla on selkeä taso ja jokainen laatikko ja nuoli on nimetty.
-
-Tarkastellaan esimerkkinä edellä esiteltyä verkkokauppaa. Ylimmällä tasolla, _kontekstikaaviossa_, järjestelmä on yksi laatikko, ja kaavio näyttää sen käyttäjät sekä ulkoiset järjestelmät, joiden kanssa se toimii:
-
-![C4-kontekstikaavio: asiakas selaa ja ostaa tuotteita verkkokaupasta, joka välittää maksut maksunvälittäjälle ja lähettää tilausvahvistukset sähköpostipalvelun kautta]({{ "/images/4-19.png" | relative_url }}){:height="300px" }
-
-_Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa järjestelmän erikseen ajettavaa ja käyttöönotettavaa osaa, joka suorittaa koodia tai tallentaa dataa, esimerkiksi web-sovellusta, mobiilisovellusta tai tietokantaa. Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
-
-![C4-container-kaavio: asiakas käyttää verkkokaupan Flask-web-sovellusta selaimella HTTPS:n yli, web-sovellus käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-24.png" | relative_url }}){:height="300px" }
-
-> Termi _container_ on sattumalta sama kuin [Dockerin](https://www.docker.com/) kaltaisten työkalujen konteista (engl. container) käytetty nimitys, mutta C4:n container ei tarkoita konttia. C4:n container, esimerkiksi web-sovellus tai tietokanta, voidaan kyllä suorittaa kontissa, mutta yhtä hyvin suoraan palvelimella, pilvipalvelussa tai vaikkapa käyttäjän puhelimessa.
-
-_Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovelluksen komponenttikaavio näyttää saman kerrosrakenteen, joka nähtiin jo kerrosarkkitehtuurin yhteydessä: käyttöliittymä käyttää sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta. Lisäksi kaaviosta näkyy, mitkä komponentit kommunikoivat containerin ulkopuolisten osien kanssa:
-
-![C4-komponenttikaavio: asiakas käyttää web-sovelluksen käyttöliittymäkomponenttia (Flask-reitit ja templatet), joka kutsuu OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-25.png" | relative_url }}){:height="400px" }
-
-Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokka- tai pakkauskaavioilla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
-
-C4:n eri tasot palvelevat eri tarpeita: korkean tason kaavioilla voidaan jäsentää keskusteluja eri sidosryhmien kanssa, ja yksityiskohtaisemmat kaaviot toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja laajentamisessa. Pelkät kuvat eivät kuitenkaan riitä, vaan komponenttien vastuut sekä niiden väliset rajapinnat ja kommunikaation muodot tulee myös kuvata. Muuten kasvaa riski sille, että arkkitehtuuria ei noudateta.
-
-Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
-
-Päätösten kirjaamiseen on vakiintunut kevyt käytäntö, _Architecture Decision Record_ (ADR). Jokaisesta merkittävästä arkkitehtuuripäätöksestä kirjoitetaan lyhyt, yleensä enintään sivun mittainen Markdown-tiedosto, joka tallennetaan versionhallintaan koodin rinnalle, esim. hakemistoon _docs/adr_. Michael Nygardin [alkuperäisen mallin](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) mukaan ADR:ssä kerrotaan päätöksen konteksti, itse päätös ja sen seuraukset, myös kielteiset. Vanhoja päätöksiä ei muokata, vaan jos päätös muuttuu, kirjoitetaan uusi ADR, joka korvaa edellisen. Näin päätösten historia perusteluineen säilyy.
-
-Esimerkiksi edellä kuvatun verkkokaupan tietokantavalinta voitaisiin kirjata seuraavasti:
-
-```markdown
-# ADR 3: Tietokannaksi PostgreSQL
-
-Tila: hyväksytty 12.3.2026
-
-## Konteksti
-Tilaus- ja tuotedata on relaatioista ja vaatii transaktioita.
-Tiimi osaa SQL:n.
-
-## Päätös
-Käytetään pilvipalvelun hallinnoimaa PostgreSQL:ää.
-
-## Seuraukset
-+ tilauksille transaktiot ja eheys
-+ ei omaa tietokantapalvelimen ylläpitoa
-- skeemamuutokset vaativat migraatiot
-- sidos pilvipalveluntarjoajaan
-```
-
 ### Mikropalveluarkkitehtuuri
 
 Kerrosarkkitehtuurin eräänä epäkohtana mainittiin, että sen soveltaminen saattaa johtaa massiivisiin monoliittisiin sovelluksiin, joita on lopulta vaikea laajentaa ja joiden skaalaaminen suurille käyttäjämäärille voi muodostua ongelmaksi.
@@ -357,6 +306,57 @@ Viestijonon käytöllä on monta etua:
 - Jos Worker kaatuu kesken käsittelyn, viesti ei katoa vaan jää jonoon odottamaan uutta käsittelyä
 
 BullMQ on Node.js-kirjasto, joka tallentaa jonon Redis-tietokantaan. Toisin kuin edellä esitellyssä publish-subscribe-mallissa, jossa viesti välitetään kaikille aiheen tilanneille, jonossa kukin viesti annetaan käsiteltäväksi vain yhdelle Workerille. Tällaista jonoa kutsutaan työjonoksi (engl. job queue tai work queue).
+
+### Arkkitehtuurin kuvaamisesta
+
+Ohjelmistojen arkkitehtuurien kuvaamiselle ei ole yhtä standardoitua notaatiota. UML:n kulta-aikana 1990-luvun lopulla ja 2000-luvulla arkkitehtuuria kuvattiin usein UML:n komponentti- ja pakkauskaavioilla, mutta nykyään niitä näkee harvoin. Useimmiten arkkitehtuuri kuvataan epäformaaleilla laatikko/nuoli-kaavioilla, kuten seuraavassa oman [sovelluskehitystiimini](https://toska.dev/) valkotaululle piirtämässä arkkitehtuurikuvauksessa:
+
+![]({{ "/images/arkkit3.png" | relative_url }}){:height="450px" }
+
+Epäformaaleja kaavioita vaivaa usein se, että niistä ei käy ilmi, millä tarkkuustasolla järjestelmää kuvataan ja mitä laatikot ja nuolet oikeastaan tarkoittavat. Tähän pyrkii vastaamaan viime vuosina suosiota saavuttanut Simon Brownin [C4-malli](https://c4model.com/), jossa arkkitehtuuri kuvataan neljällä tarkentuvalla tasolla: järjestelmän konteksti (engl. system context), containerit (engl. containers), komponentit (engl. components) sekä tarvittaessa koodi (engl. code). C4 ei määrää tarkkaa merkintätapaa, vaan sen idea on, että jokaisella kaaviolla on selkeä taso ja jokainen laatikko ja nuoli on nimetty.
+
+Tarkastellaan esimerkkinä edellä esiteltyä verkkokauppaa. Ylimmällä tasolla, _kontekstikaaviossa_, järjestelmä on yksi laatikko, ja kaavio näyttää sen käyttäjät sekä ulkoiset järjestelmät, joiden kanssa se toimii:
+
+![C4-kontekstikaavio: asiakas selaa ja ostaa tuotteita verkkokaupasta, joka välittää maksut maksunvälittäjälle ja lähettää tilausvahvistukset sähköpostipalvelun kautta]({{ "/images/4-19.png" | relative_url }}){:height="300px" }
+
+_Container-kaavio_ avaa järjestelmän sisällön. Containerilla C4 tarkoittaa järjestelmän erikseen ajettavaa ja käyttöönotettavaa osaa, joka suorittaa koodia tai tallentaa dataa, esimerkiksi web-sovellusta, mobiilisovellusta tai tietokantaa. Kaavio kertoo myös kunkin containerin toteutusteknologian ja sen, miten containerit kommunikoivat:
+
+![C4-container-kaavio: asiakas käyttää verkkokaupan Flask-web-sovellusta selaimella HTTPS:n yli, web-sovellus käyttää PostgreSQL-tietokantaa ja kutsuu ulkoisia maksunvälittäjää ja sähköpostipalvelua]({{ "/images/4-24.png" | relative_url }}){:height="300px" }
+
+> Termi _container_ on sattumalta sama kuin [Dockerin](https://www.docker.com/) kaltaisten työkalujen konteista (engl. container) käytetty nimitys, mutta C4:n container ei tarkoita konttia. C4:n container, esimerkiksi web-sovellus tai tietokanta, voidaan kyllä suorittaa kontissa, mutta yhtä hyvin suoraan palvelimella, pilvipalvelussa tai vaikkapa käyttäjän puhelimessa.
+
+_Komponenttikaavio_ tarkentaa yhden containerin sisäisen rakenteen. Web-sovelluksen komponenttikaavio näyttää saman kerrosrakenteen, joka nähtiin jo kerrosarkkitehtuurin yhteydessä: käyttöliittymä käyttää sovelluslogiikan palveluja, jotka käyttävät tietokantaa repositorioiden kautta. Lisäksi kaaviosta näkyy, mitkä komponentit kommunikoivat containerin ulkopuolisten osien kanssa:
+
+![C4-komponenttikaavio: asiakas käyttää web-sovelluksen käyttöliittymäkomponenttia (Flask-reitit ja templatet), joka kutsuu OstoskoriServiceä ja TilausServiceä, jotka käyttävät TuoteRepositoryä ja TilausRepositoryä; TilausService kutsuu myös maksunvälittäjää ja repositoriot käyttävät tietokantaa]({{ "/images/4-25.png" | relative_url }}){:height="400px" }
+
+Neljäs taso eli koodi kuvataan tarvittaessa esim. UML:n luokka- tai pakkauskaavioilla, mutta useimmiten se jätetään piirtämättä. Kaavioita piirretään yhä useammin koodina tekstimuotoisilla työkaluilla, kuten [Mermaid](https://mermaid.js.org/) ja [Structurizr](https://structurizr.com/), jolloin ne voidaan versioida koodin rinnalla.
+
+C4:n eri tasot palvelevat eri tarpeita: korkean tason kaavioilla voidaan jäsentää keskusteluja eri sidosryhmien kanssa, ja yksityiskohtaisemmat kaaviot toimivat ohjeena järjestelmän tarkemmassa suunnittelussa ja laajentamisessa. Pelkät kuvat eivät kuitenkaan riitä, vaan komponenttien vastuut sekä niiden väliset rajapinnat ja kommunikaation muodot tulee myös kuvata. Muuten kasvaa riski sille, että arkkitehtuuria ei noudateta.
+
+Hyödyllinen arkkitehtuurikuvaus myös perustelee tehtyjä [arkkitehtuurisia valintoja](https://adr.github.io/). Ei nimittäin ole ollenkaan harvinaista, että jotain ohjelmistoon tehtyjä arkkitehtuuritason suunnitteluratkaisuja ihmetellään parin vuoden päästä ja kukaan ei enää muista aikoinaan tarkasti mietittyjä perusteita tehdyille päätöksille.
+
+Päätösten kirjaamiseen on vakiintunut kevyt käytäntö, _Architecture Decision Record_ (ADR). Jokaisesta merkittävästä arkkitehtuuripäätöksestä kirjoitetaan lyhyt, yleensä enintään sivun mittainen Markdown-tiedosto, joka tallennetaan versionhallintaan koodin rinnalle, esim. hakemistoon _docs/adr_. Michael Nygardin [alkuperäisen mallin](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) mukaan ADR:ssä kerrotaan päätöksen konteksti, itse päätös ja sen seuraukset, myös kielteiset. Vanhoja päätöksiä ei muokata, vaan jos päätös muuttuu, kirjoitetaan uusi ADR, joka korvaa edellisen. Näin päätösten historia perusteluineen säilyy.
+
+Esimerkiksi edellä kuvatun verkkokaupan tietokantavalinta voitaisiin kirjata seuraavasti:
+
+```markdown
+# ADR 3: Tietokannaksi PostgreSQL
+
+Tila: hyväksytty 12.3.2026
+
+## Konteksti
+Tilaus- ja tuotedata on relaatioista ja vaatii transaktioita.
+Tiimi osaa SQL:n.
+
+## Päätös
+Käytetään pilvipalvelun hallinnoimaa PostgreSQL:ää.
+
+## Seuraukset
++ tilauksille transaktiot ja eheys
++ ei omaa tietokantapalvelimen ylläpitoa
+- skeemamuutokset vaativat migraatiot
+- sidos pilvipalveluntarjoajaan
+```
 
 ## Arkkitehtuuri ketterissä menetelmissä
 
