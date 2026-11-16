@@ -4,7 +4,7 @@ title: Dependency injection
 inheader: no
 permalink: /en/riippuvuuksien_injektointi/
 source: riippuvuuksien_injektointi.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 Dependency injection is a design pattern in which the dependencies an object needs, such as other objects or services, are given to it from the outside, for example through the constructor or a method call. This pattern improves the testability of classes and reduces unnecessary dependencies between them.

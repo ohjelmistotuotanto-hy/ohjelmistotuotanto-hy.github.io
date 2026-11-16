@@ -3,7 +3,7 @@ layout: page
 permalink: /en/unittest
 title: Unittest and testing
 source: unittest.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 _This guide is a copy of the [Unittest guide](https://ohjelmistotekniikka-hy.github.io/python/viikko2#unittest-ja-testaaminen) of the course Ohjelmistotekniikka (Software Development Methods), with a few additions. The linked original is in Finnish._

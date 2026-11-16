@@ -1,4 +1,4 @@
-{% comment %}source: _includes/ajankohtaista.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/ajankohtaista.md source_commit: 85a3af3{% endcomment %}
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
 
   <ul style="margin-bottom: -2px">

@@ -1,4 +1,4 @@
-{% comment %}source: _includes/laskari_info.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/laskari_info.md source_commit: 85a3af3{% endcomment %}
 {% assign part = include.part %} 
 
 *The deadline for the exercises below is {{site.lask-dl-en[part]}}*

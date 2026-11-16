@@ -5,7 +5,7 @@ title_long: 'Lean, scaling agile software development and agile software develop
 inheader: yes
 permalink: /en/osa5/
 source: osa5.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">

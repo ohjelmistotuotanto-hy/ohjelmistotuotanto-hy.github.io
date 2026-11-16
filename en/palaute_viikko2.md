@@ -4,7 +4,7 @@ title: Feedback on the week 2 AI exercise
 inheader: no
 permalink: /en/palaute_viikko2/
 source: palaute_viikko2.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 A summary of the feedback on the week 2 [AI] exercise ([First contact with a coding agent](/en/tehtavat2/#9-first-contact-with-a-coding-agent-ai)).

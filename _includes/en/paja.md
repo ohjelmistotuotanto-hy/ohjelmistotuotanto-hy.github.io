@@ -1,4 +1,4 @@
-{% comment %}source: _includes/paja.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/paja.md source_commit: 85a3af3{% endcomment %}
 You can get help with the exercises on the course [Discord](https://study.cs.helsinki.fi/discord/join/ohtu) channel and on campus in the help sessions (paja) in BK107:
 - Mon 16–19
 - Tue 13–16

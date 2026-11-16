@@ -5,7 +5,7 @@ inheader: yes
 title_long: 'Software design'
 permalink: /en/osa4/
 source: osa4.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">

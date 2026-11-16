@@ -1,4 +1,4 @@
-{% comment %}source: _includes/checkboxit.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/checkboxit.md source_commit: 85a3af3{% endcomment %}
 ### Checkboxes for tracking your progress in the exercises
 
 The exercise descriptions of the course are sometimes long, and it can be hard to spot the steps that require you to do something. To make the exercises clearer and easier to follow, the steps that require action are marked with **checkboxes** instead of bullet points.

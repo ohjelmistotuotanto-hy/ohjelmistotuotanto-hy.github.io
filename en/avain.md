@@ -4,7 +4,7 @@ permalink: /en/avain
 inheader: no
 title: Public key
 source: avain.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 - Create a key pair by running the command `ssh-keygen` on the command line

@@ -1,4 +1,4 @@
-{% comment %}source: _includes/paivitys_kesken.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/paivitys_kesken.md source_commit: 85a3af3{% endcomment %}
 {% assign current = include.current %} 
 
 <div style="color:black; border-style: solid; padding: 10px; margin-bottom: 15px; background-color: #add8e6;">

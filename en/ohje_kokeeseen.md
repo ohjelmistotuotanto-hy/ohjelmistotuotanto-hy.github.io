@@ -4,7 +4,7 @@ title: Exam instructions
 inheader: no
 permalink: /en/ohje_kokeeseen/
 source: ohje_kokeeseen.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 ### Separate exams

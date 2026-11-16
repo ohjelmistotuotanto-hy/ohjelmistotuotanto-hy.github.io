@@ -1,4 +1,4 @@
-{% comment %}source: _includes/ai_valinta_ohje.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/ai_valinta_ohje.md source_commit: 85a3af3{% endcomment %}
 You can do the [AI] exercises either with GitHub [Copilot](https://github.com/features/copilot) in VS Code or with the open source [OpenCode](/en/opencode/) agent in the terminal. The exercises work with both, and the instructions cover both tools. You pick the tool with the switch at the beginning of the exercise. The choice applies to all exercises, and you can change it at any time.
 
 Choose **Copilot** if

@@ -4,7 +4,7 @@ title: Robot Framework
 inheader: no
 permalink: /en/robot_framework/
 source: robot_framework.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 [Robot Framework](https://robotframework.org/) is a framework well suited for automating the acceptance testing of user stories. With Robot Framework, the tests of user stories can be written in a form the customer understands, in natural language, while still making them automatically executable.

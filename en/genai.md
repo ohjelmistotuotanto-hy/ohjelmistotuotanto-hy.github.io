@@ -4,7 +4,7 @@ title: AI in software development
 inheader: no
 permalink: /en/genai/
 source: genai.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 This page covers the use of generative AI, and coding agents in particular, in software development. The material progresses week by week at the same pace as the [AI] exercises of the weekly exercises. Sections marked with <span style="color:blue">[week N]</span> relate to the exercises of week N, so you can skip them in earlier weeks.

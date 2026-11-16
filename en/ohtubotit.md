@@ -4,7 +4,7 @@ title: OhtuBotit
 inheader: no
 permalink: /en/ohtubotit/
 source: ohtubotit.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 The course bots run in CurreChat, and using them requires logging in with your university account. Open a bot by clicking its name:

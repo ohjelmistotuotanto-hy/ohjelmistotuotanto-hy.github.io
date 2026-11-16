@@ -4,7 +4,7 @@ title: Mini project topic description
 inheader: no
 permalink: /en/speksi/
 source: speksi.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 ## Background

@@ -4,7 +4,7 @@ title: Week 2
 inheader: no
 permalink: /en/tehtavat2/
 source: tehtavat2.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 {% include en/miniproj_ilmo.md %}

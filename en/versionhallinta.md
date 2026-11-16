@@ -4,7 +4,7 @@ permalink: /en/versionhallinta
 inheader: no
 title: Version control
 source: versionhallinta.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 _This guide is a copy of the [Git tutorial](https://ohjelmistotekniikka-hy.github.io/python/viikko1#versionhallinta-tee-n%C3%A4m%C3%A4-harjoitukset-jos-ei-tunnu-tutulta) of the course Ohjelmistotekniikka (Software Development Methods), with a few additions. The linked original is in Finnish._

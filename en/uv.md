@@ -3,7 +3,7 @@ layout: page
 permalink: /en/uv
 title: uv and dependency management
 source: uv.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 In large and complex software projects, producing all the code yourself is no longer practical. For example, it does not make sense for every software project to implement its own programming interface for database operations, or a framework for testing code. So that the wheel does not have to be reinvented every time, software developers have created a huge number of open source _libraries_ that anyone can use in their projects.

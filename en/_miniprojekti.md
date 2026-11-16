@@ -5,7 +5,7 @@ title_long: 'Mini project'
 permalink: /en/miniprojekti/
 inheader: yes
 source: _miniprojekti.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 ### News

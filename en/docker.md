@@ -3,7 +3,7 @@ layout: page
 permalink: /en/docker
 title: Poetry in Docker
 source: docker.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 The best way to install Poetry is not to install it at all! More precisely, we do not install Poetry directly on our own machine, but instead use a Docker image that contains Python and Poetry and run the commands inside a Docker container created from the image.

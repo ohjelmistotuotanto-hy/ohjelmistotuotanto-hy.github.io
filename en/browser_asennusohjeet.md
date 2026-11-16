@@ -4,7 +4,7 @@ title: Installing the Browser library and troubleshooting
 inheader: no
 permalink: /en/browser_asennusohjeet/
 source: browser_asennusohjeet.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 ## Typos in the material

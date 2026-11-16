@@ -4,7 +4,7 @@ title: Week 5
 inheader: no
 permalink: /en/tehtavat5/
 source: tehtavat5.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 {% include en/laskari_info.md part=5 %}

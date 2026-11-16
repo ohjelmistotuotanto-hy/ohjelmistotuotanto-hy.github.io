@@ -4,7 +4,7 @@ title: OpenCode
 inheader: no
 permalink: /en/opencode/
 source: opencode.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 You can do the course's [AI] exercises either with GitHub Copilot in VS Code or with the open source coding agent [OpenCode](https://opencode.ai). The grounds for the choice are explained in [exercise 9](/en/tehtavat2/#9-first-contact-with-a-coding-agent-ai) of week 2. This page explains how to install OpenCode and how to use it. The exercise descriptions contain instructions for both tools: when you choose OpenCode with the switch at the beginning of an exercise, the description is shown for OpenCode.

@@ -4,7 +4,7 @@ title: Mini project grading criteria
 inheader: no
 permalink: /en/miniprojektin_arvosteluperusteet/
 source: miniprojektin_arvosteluperusteet.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 - [Grading criteria for the first sprint](/en/miniprojektin_arvosteluperusteet#grading-criteria-for-the-first-sprint)

@@ -4,7 +4,7 @@ title: Week 1
 inheader: no
 permalink: /en/tehtavat1
 source: tehtavat1.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 {% include en/miniproj_ilmo.md %}

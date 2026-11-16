@@ -5,7 +5,7 @@ title_long: "Using Flask and a database in the mini project"
 permalink: /en/flask/
 inheader: no
 source: flask.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 The mini project application is implemented with the Flask framework familiar from the course [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (Databases and Web Programming), and it must store its data in a database. The template uses an SQLite database, which does not require setting up a separate database server.

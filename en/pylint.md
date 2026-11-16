@@ -3,7 +3,7 @@ layout: page
 permalink: /en/pylint
 title: Pylint and static code analysis
 source: pylint.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 _This guide is a copy of the [Pylint guide](https://ohjelmistotekniikka-hy.github.io/python/viikko4#pylint-ja-koodin-laaduun-staattinen-analyysi) of the course Ohjelmistotekniikka (Software Development Methods), with a few additions. The linked original is in Finnish._

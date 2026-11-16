@@ -4,7 +4,7 @@ title: Software licenses
 inheader: no
 permalink: /en/lisenssit/
 source: lisenssit.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 This part of the course has covered the design and implementation of software. Next, we look at the point in software design where licensing plays a significant role.

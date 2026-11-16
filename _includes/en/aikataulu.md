@@ -1,4 +1,4 @@
-{% comment %}source: _includes/aikataulu.md source_commit: 81a8f02{% endcomment %}
+{% comment %}source: _includes/aikataulu.md source_commit: 85a3af3{% endcomment %}
 ### Week 1
 
 - Lecture 1: {{site.luennot-en[1]}}

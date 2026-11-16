@@ -4,7 +4,7 @@ title: Week 6
 inheader: no
 permalink: /en/tehtavat6/
 source: tehtavat6.md
-source_commit: 81a8f02
+source_commit: 85a3af3
 ---
 
 {% include en/laskari_info.md part=6 %}
