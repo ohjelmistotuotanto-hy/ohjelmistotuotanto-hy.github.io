@@ -39,6 +39,8 @@ Katso tarkempi ohje palautusrepositoriota koskien [täältä](/tehtavat1#teht%C3
 
 **HUOM:** jos käytät Dockeria, lue [tämä](/docker#docker-ja-robot-testit)!
 
+**HUOM 2:** jos käytät adblockeria (esim. Ublock Origin), niin ota se pois käytöstä GitHubissa tai **ÄLÄ** nimeä repositoriota nimellä **"webcounter"**. 
+
 Siirrytään seuraavaksi Web-sovellusten maailmaan. Oletuksena on, että hallitset ainakin jossain määrin kurssilta [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (vanhalta nimeltään _Aineopintojen harjoitustyö: Tietokantasovellus_) tutun [Flask](https://flask.palletsprojects.com/en/stable/)-kirjaston käytön.
 
 Tarkastellaan edellisestä tehtävästä tutun toiminnallisuuden tarjoamaa esimerkkiprojektia, joka löytyy kurssirepositorion alihakemistosta viikko3/webcounter.
