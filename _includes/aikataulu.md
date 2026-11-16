@@ -57,6 +57,7 @@
 - Luento 7: {{site.luennot[7]}}
   - [Tuotannossa tapahtuva laadunhallinta](/osa3#tuotannossa-tapahtuva-testaaminen-ja-laadunhallinta)
   - [DevOps](/osa3#devops)
+  - tallenne: [youtube](https://youtu.be/mqIe_AZUfes), [unitube](https://www.helsinki.fi/fi/unitube/video/b7dd2832-be8e-4738-a732-a217dfceafac?t=12:25)
   - vuoden 2025 tallenteet:
     - syksyn 2025 tallennus epäonnistui
     - syksy 2024: [youtube](https://youtu.be/j3DrCW3DtUw), [unitube](https://www.helsinki.fi/fi/unitube/video/39d8477a-dc78-423d-98e6-3b613acd4898)

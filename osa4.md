@@ -251,7 +251,7 @@ Mikropalveluille hyviä perusteita ovat erityisesti organisaation koko ja järje
 
 ### Esimerkki: kurssipalautejärjestelmä Norppa
 
-Tarkastellaan lopuksi, miltä arkkitehtuuri näyttää oikeassa tuotantokäytössä olevassa järjestelmässä. Esimerkkinä on Helsingin yliopiston kurssipalautejärjestelmä [Norppa](https://norppa.helsinki.fi), jonka avulla myös tämän kurssin palaute kerätään. Norppaa käyttävät Helsingin yliopiston lisäksi Tampereen yliopisto ja Jyväskylän yliopisto. Sen on kehittänyt ja sitä ylläpitää yliopiston [Toska](https://toska.dev/)-tiimi, ja sen lähdekoodi on [avoimesti GitHubissa](https://github.com/UniversityOfHelsinkiCS/palaute).
+Tarkastellaan lopuksi, miltä arkkitehtuuri näyttää oikeassa tuotantokäytössä olevassa järjestelmässä. Esimerkkinä on Helsingin yliopiston kurssipalautejärjestelmä [Norppa](https://norppa.helsinki.fi), jonka avulla myös tämän kurssin palaute kerätään. Norppaa käyttävät Helsingin yliopiston lisäksi Tampereen yliopisto ja Jyväskylän yliopisto. Norpan on kehittänyt ja sitä ylläpitää yliopiston [Toska](https://toska.dev/)-tiimi, ja sen lähdekoodi on [avoimesti GitHubissa](https://github.com/UniversityOfHelsinkiCS/palaute).
 
 Seuraava kuva näyttää Norppaan liittyvät palvelut:
 
@@ -261,7 +261,7 @@ Kuvassa näkyy, että Norppa ei noudata vain yhtä arkkitehtuurityyliä. Norpan 
 
 #### Norpan ydin: kerrosarkkitehtuuri
 
-Norpan ydin koostuu selaimessa toimivasta Reactilla toteutetusta käyttöliittymästä (engl. single page application, SPA) ja Node.js:llä toteutetusta palvelimesta. Käyttöliittymä keskustelee palvelimen kanssa REST-rajapinnan kautta JSON-muotoisella datalla. Pyynnöt kulkevat yliopiston HY Login -kirjautumispalvelun läpi, joten palvelin tietää aina, kuka käyttäjä on kyseessä.
+Norpan ydin koostuu selaimessa toimivasta Reactilla toteutetusta käyttöliittymästä (engl. single page application, SPA) ja Node.js:llä toteutetusta palvelimesta. Käyttöliittymä keskustelee palvelimen kanssa REST-rajapinnan kautta JSON-muotoista dataa käyttäen. Pyynnöt kulkevat yliopiston Shibboleth-kertakirjautumispalvelun läpi, joten palvelin tietää aina, kuka käyttäjä on kyseessä.
 
 ![Norpan kerrosarkkitehtuuri: ylimpänä esityskerroksena selaimessa toimiva UI, sen alla Shibboleth-kirjautuminen, sovelluslogiikan kerroksena Norpan backend, jossa REST-rajapinta ja sovelluslogiikka, ja alimpana tietokerroksena tietokanta ja Redis-välimuisti. Kukin kerros käyttää vain alempaa kerrosta]({{ "/images/4-32.png" | relative_url }}){:height="350px" }
 
@@ -271,7 +271,7 @@ Myös palvelimen sisäinen rakenne on kerroksellinen, ja kerrokset näkyvät suo
 - _services_ sisältää sovelluslogiikan, esim. sen, kuka saa nähdä minkäkin kurssin palautteet
 - _models_ sisältää tietokantataulujen määrittelyt, joiden avulla data tallennetaan PostgreSQL-tietokantaan
 
-Rakenne on siis hyvin samankaltainen kuin aiemmin esitellyssä verkkokaupassa. Usein tarvittavia tietoja palvelin säilyttää lisäksi Redis-välimuistissa, jotta niitä ei tarvitse hakea tietokannasta jokaisen pyynnön yhteydessä.
+Rakenne on siis hyvin samankaltainen kuin aiemmin esitellyssä verkkokaupassa. Usein tarvittavia tietoja palvelin säilyttää lisäksi Redis-välimuistissa, jonka ansiossta niitä ei tarvitse hakea SQL-tietokannasta jokaisen pyynnön yhteydessä.
 
 #### Norppa osana palveluiden kokonaisuutta
 
