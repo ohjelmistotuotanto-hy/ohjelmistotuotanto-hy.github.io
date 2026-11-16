@@ -42,7 +42,7 @@ Kurssi koostuu kolmesta komponentista, luennoista, laskuharjoituksista ja minipr
 
 ### Luennot
 
-Kurssilla on 10 luentoa sekä neljä vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
+Kurssilla on 10 luentoa sekä viisi vierailuluentoa. Luennoilla käydään pääasiassa läpi ohjelmistotuotantoon liittyvää käsitteistöä ja teoriaa, samaa asiaa mihin tämä materiaali keskittyy.
 
 Kurssin luennot pidetään salissa B123 ja tallenteet ovat nähtävillä luentojen jälkeen, jos Unitube-tallennus toimii... Vuoden 2025 tallenteet ovat myös käytettävissä, sisältö on päällisin puolin sama.
 

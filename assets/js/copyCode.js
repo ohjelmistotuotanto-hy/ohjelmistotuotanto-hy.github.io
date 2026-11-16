@@ -1,7 +1,8 @@
 (() => {
-  const COPY_TEXT = 'Kopioi';
-  const COPIED_TEXT = 'Kopioitu!';
-  const FAILED_TEXT = 'Ei onnistunut';
+  const EN = document.documentElement.lang === 'en';
+  const COPY_TEXT = EN ? 'Copy' : 'Kopioi';
+  const COPIED_TEXT = EN ? 'Copied!' : 'Kopioitu!';
+  const FAILED_TEXT = EN ? 'Failed' : 'Ei onnistunut';
 
   const copyToClipboard = async (text) => {
     if (navigator.clipboard && window.isSecureContext) {
@@ -44,7 +45,7 @@
     button.type = 'button';
     button.classList.add('code-copy-button');
     button.textContent = COPY_TEXT;
-    button.setAttribute('aria-label', 'Kopioi koodi leikepöydälle');
+    button.setAttribute('aria-label', EN ? 'Copy code to clipboard' : 'Kopioi koodi leikepöydälle');
 
     button.addEventListener('click', async () => {
       try {

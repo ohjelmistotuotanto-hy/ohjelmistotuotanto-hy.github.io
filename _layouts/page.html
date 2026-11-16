@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
+{% assign base_path = page.path | remove_first: "en/" %}
 {% assign task_pages = "tehtavat1.md,tehtavat2.md,tehtavat3.md,tehtavat4.md,tehtavat5.md,tehtavat6.md,tehtavat7.md" | split: "," %}
-{% if task_pages contains page.path %}
-<nav class="sidebar-toc" aria-label="Sisällys" hidden>
-  <a class="sidebar-toc-title" href="/tehtavat/">Kaikki tehtävät</a>
+{% if task_pages contains base_path %}
+<nav class="sidebar-toc" aria-label="{{ t.toc_short }}" hidden>
+  <a class="sidebar-toc-title" href="{{ t.prefix }}/tehtavat/">{{ t.all_exercises }}</a>
 </nav>
-{% elsif page.path contains "osa" or page.path == "genai.md" or page.path == "miniprojekti.md" or page.path == "tehtavat.md" %}
-<nav class="sidebar-toc" aria-label="Sisällys" hidden>
-  <a class="sidebar-toc-title" href="/sisallys/">Sisällysluettelo</a>
+{% elsif base_path contains "osa" or base_path == "genai.md" or base_path == "miniprojekti.md" or base_path == "tehtavat.md" %}
+<nav class="sidebar-toc" aria-label="{{ t.toc_short }}" hidden>
+  <a class="sidebar-toc-title" href="{{ t.prefix }}/sisallys/">{{ t.toc }}</a>
 </nav>
 {% endif %}
 <article class="post">
@@ -17,8 +18,8 @@ layout: default
     {% if page.title %}
     <h1 class="post-title">{{ page.title | escape }}</h1>
     {% assign pdf_pages = "osa1.md,osa2.md,osa3.md,osa4.md,osa5.md" | split: "," %}
-    {% if pdf_pages contains page.path %}
-    <button type="button" class="lataa-pdf" onclick="window.print()">Lataa PDF:nä</button>
+    {% if pdf_pages contains base_path %}
+    <button type="button" class="lataa-pdf" onclick="window.print()">{{ t.download_pdf }}</button>
     {% endif %}
     {% else %}
     <h1 class="post-title">{{ site.title | escape }}</h1>
@@ -26,9 +27,9 @@ layout: default
   </header>
 
   <div class="post-content">
-    {% if page.path == "genai.md" %}
+    {% if base_path == "genai.md" %}
     <details class="vihje tehtavalista" hidden>
-      <summary>Sisältö</summary>
+      <summary>{{ t.contents }}</summary>
       <ul></ul>
     </details>
     {% endif %}

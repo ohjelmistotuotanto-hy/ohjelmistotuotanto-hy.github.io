@@ -8,7 +8,7 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>
-            {% if site.author %} {{ site.author | escape }} {% else %} {{ site.title | escape }} {% endif %}
+            {% if site.author %} {{ site.author | escape }} {% else %} {{ t.site_title | escape }} {% endif %}
           </li>
           <li>
             <a href="mailto:{{ site.email }}">{{ site.email }}</a>
@@ -28,11 +28,11 @@
 
       <div class="footer-col footer-col-3">
           <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-            <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
+            <img alt="{{ t.license_alt }}" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
             />
           </a>
-          <br/> Materiaali on lisensoitu
-          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 -lisenssillä</a>.
+          <br/> {{ t.license_text }}
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{{ t.license_link }}</a>.
       </div>
     </div>
 

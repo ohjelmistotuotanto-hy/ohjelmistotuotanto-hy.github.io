@@ -64,7 +64,7 @@
     // on narrow screens the list opens as a drawer from a button
     const toggle = document.createElement('button');
     toggle.className = 'sidebar-toc-toggle';
-    toggle.setAttribute('aria-label', 'Sisällys');
+    toggle.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Contents' : 'Sisällys');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.innerHTML = '<svg viewBox="0 0 18 15" width="18" height="15" aria-hidden="true">'
       + '<rect y="0" width="18" height="3" rx="1.5" fill="#424242"/>'

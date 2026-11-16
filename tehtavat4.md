@@ -419,7 +419,7 @@ Katso tarvittaessa apua [tehtävän 1](/tehtavat4/#1-yksikkötestaus-ja-riippuvu
 
 <input type="checkbox">  Varmista, että kauppa pyytää uuden viitenumeron jokaiselle maksutapahtumalle. Apua löytyy jälleen tarpeen tullen mock-demon testeistä.
 
-<input type="checkbox">  Tarkasta viikoilla [1](/tehtavat1#8-unittest) ja 2 käytetyn [coveragen](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) avulla mikä on luokan `Kauppa` testauskattavuus.
+<input type="checkbox">  Tarkasta viikoilla [1](/tehtavat1#8-yksikkötestit) ja 2 käytetyn [coveragen](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) avulla mikä on luokan `Kauppa` testauskattavuus.
 
 Jotain taitaa puuttua.
 

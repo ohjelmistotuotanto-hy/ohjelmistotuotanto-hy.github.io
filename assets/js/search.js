@@ -3,6 +3,10 @@
   const SNIPPET_RADIUS = 70;
 
   const indexUrl = document.currentScript.dataset.index;
+  const EN = document.documentElement.lang === 'en';
+  const TEXT = EN
+    ? { placeholder: 'Search the material…', loading: 'Loading search index…', none: 'No results' }
+    : { placeholder: 'Hae materiaalista…', loading: 'Ladataan hakuindeksiä…', none: 'Ei osumia' };
   let sections = null;
   let loading = null;
 
@@ -168,7 +172,7 @@
     const container = document.createElement('div');
     container.className = 'site-search';
     container.innerHTML = `
-      <input type="search" class="site-search-input" placeholder="Hae materiaalista…" aria-label="Hae materiaalista" autocomplete="off">
+      <input type="search" class="site-search-input" placeholder="${TEXT.placeholder}" aria-label="${TEXT.placeholder}" autocomplete="off">
       <div class="site-search-results" hidden></div>
     `;
     const title = header.querySelector('.site-title');
@@ -179,7 +183,7 @@
 
     const render = (query) => {
       if (!sections) {
-        results.innerHTML = '<div class="site-search-info">Ladataan hakuindeksiä…</div>';
+        results.innerHTML = `<div class="site-search-info">${TEXT.loading}</div>`;
         results.hidden = false;
         return;
       }
@@ -190,7 +194,7 @@
 
       const found = search(query);
       if (found.length === 0) {
-        results.innerHTML = '<div class="site-search-info">Ei osumia</div>';
+        results.innerHTML = `<div class="site-search-info">${TEXT.none}</div>`;
       } else {
         results.innerHTML = found
           .map(({ section, terms }) => `

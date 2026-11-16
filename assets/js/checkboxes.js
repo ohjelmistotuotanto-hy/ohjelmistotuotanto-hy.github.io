@@ -61,7 +61,7 @@
 
     document.querySelectorAll('.checkbox-reset').forEach((button) => {
       button.addEventListener('click', () => {
-        if (!window.confirm('Tyhjennetäänkö kaikki tämän sivun rastit?')) {
+        if (!window.confirm(document.documentElement.lang === 'en' ? 'Clear all checkboxes on this page?' : 'Tyhjennetäänkö kaikki tämän sivun rastit?')) {
           return;
         }
 

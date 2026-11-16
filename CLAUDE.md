@@ -13,7 +13,7 @@ Local preview at http://localhost:4000:
 bundle exec jekyll serve   # j.sh, if Ruby/bundler is installed locally
 ```
 
-There are no tests or linters. Production is built from `containerization/Dockerfile` (jekyll build + `containerization/rebase.rb` rewrites links under the `/ohtu` base path, served by nginx); the GitHub Action pushes the image on every push to `master`.
+There are no tests or linters. `ruby scripts/check_links.rb _site` checks internal links and anchors of a built site. Production is built from `containerization/Dockerfile` (jekyll build + `containerization/rebase.rb` rewrites links under the `/ohtu` base path, served by nginx); the GitHub Action pushes the image on every push to `master`.
 
 ## Structure
 
@@ -24,6 +24,7 @@ There are no tests or linters. Production is built from `containerization/Docker
 - `_includes/*.md` are shared snippets pulled in with `{% include ... %}` (e.g. `submission_instructions.md` at the end of each exercise page).
 - `_config.yml` holds course-wide variables used via Liquid: `site.stats_url` (submission app), `site.curre*` (CurreChat links), `site.python_exercise_repo_url`, and the per-week arrays `moniv-dl`, `lask-dl`, `luennot` (index 0 is a `'FAIL'` placeholder so that weeks are 1-indexed).
 - Navigation menus are built in `_includes/header.html`.
+- English version: `en/X.md` translates `X.md` (permalink `/en/...`), `_includes/en/X.md` translates `_includes/X.md`. Pages under `en/` get `lang: en` from `defaults` in `_config.yml`; layouts and `.html` includes pick their UI texts from `_data/i18n.yml` by language (`t.*`, `t.prefix`), and the JS files check `document.documentElement.lang`. English pages use the `*-en` arrays of `_config.yml` (`lask-dl-en` etc.).
 
 ## Rules
 
@@ -32,3 +33,4 @@ There are no tests or linters. Production is built from `containerization/Docker
 - Internal links are root-relative (`/osa1/#scrum`); images are referenced as `![]({{ "/images/x.png" | relative_url }})`.
 - The lecture slides live in a sibling repo, `../slides` (pandoc + beamer, built with `./m`). When the material changes in ways that affect lecture content, check the corresponding slides `N.md` as well.
 - The `tarkista-materiaali` skill (`.claude/skills/`) reviews a part of the material for links, language and claims.
+- **Finnish is the source language of the English version.** Change content in the Finnish files; don't edit `en/` files' content on their own except to fix the translation. Translations record the source commit they match (`source_commit`); `ruby scripts/translation_status.rb` lists outdated ones and the `kaanna-en` skill syncs them from the git diff. When changing the per-week arrays in `_config.yml`, update the `*-en` arrays too. `en/sisallys.md` is kept up to date like `sisallys.md`.

@@ -188,7 +188,7 @@ Funktio `setup_db` luo tietokannan. Tietokannan skeema on määritelty tiedostos
 
 #### Testien alustus ja suorittaminen
 
-Robot-testit on konfiguroitu Viikon 3 [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittamien-github-actioneissa) tapaan, eli testit suoritetaan skriptin _run_robot_tests.sh_ avulla. Skriptissä on nyt pieni ero aiempaan verrattuna
+Robot-testit on konfiguroitu Viikon 3 [tehtävän 4](/tehtavat3/#4-web-sovelluksen-testien-suorittaminen-github-actioneissa) tapaan, eli testit suoritetaan skriptin _run_robot_tests.sh_ avulla. Skriptissä on nyt pieni ero aiempaan verrattuna
 
 ```sh
 #!/bin/bash

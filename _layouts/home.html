@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<nav class="sidebar-toc" aria-label="Sisällys" hidden>
-  <a class="sidebar-toc-title" href="/sisallys/">Sisällysluettelo</a>
+<nav class="sidebar-toc" aria-label="{{ t.toc_short }}" hidden>
+  <a class="sidebar-toc-title" href="{{ t.prefix }}/sisallys/">{{ t.toc }}</a>
 </nav>
 <div class="home">
   {{ content }}

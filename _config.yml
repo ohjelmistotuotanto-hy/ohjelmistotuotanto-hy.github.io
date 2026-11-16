@@ -1,5 +1,6 @@
 
 title: Ohjelmistotuotanto
+lang: fi
 email: matti.luukkainen@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ''
@@ -53,11 +54,59 @@ luennot:
   - 'tiistai 1.12. klo 12-14 B123'
   - 'maanantai 7.12. klo 12-14 B123'
   - 'tiistai 8.12. klo 12-14 B123'
+  - 'perjantai 11.12. klo 11-12 CK112'
+
+# English versions of the per-week arrays above (used by pages under en/).
+# Update these together with the Finnish ones.
+moniv-dl-en:
+  - 'FAIL'
+  - 'Sunday 1.11. at 23:59:00'
+  - 'Sunday 8.11. at 23:59:00'
+  - 'Sunday 15.11. at 23:59:00'
+  - 'Sunday 22.11. at 23:59:00'
+  - 'Sunday 6.12. at 23:59:00'
+  - 'no exercises'
+  - 'no exercises'
+
+lask-dl-en:
+  - 'FAIL'
+  - 'Monday 2.11. at 23:59'
+  - 'Monday 9.11. at 23:59'
+  - 'Monday 16.11. at 23:59'
+  - 'Monday 23.11. at 23:59'
+  - 'Monday 30.11. at 23:59'
+  - 'Monday 7.12. at 23:59'
+  - 'Sunday 20.12. at 23:59'
+
+luennot-en:
+  - 'FAIL'
+  - 'Monday 26.10. 12-14 B123'
+  - 'Tuesday 27.10. 12-14 B123'
+  - 'Monday 2.11. 12-14 B123'
+  - 'Tuesday 3.11. 12-14 B123'
+  - 'Monday 9.11. 12-14 B123'
+  - 'Tuesday 10.11. 12-14 B123'
+  - 'Monday 16.11. 12-14 B123'
+  - 'Tuesday 17.11. 12-14 B123'
+  - 'Monday 23.11. 12-14 B123'
+  - 'Tuesday 24.11. 12-14 B123'
+  - 'Monday 30.11. 12-14 B123'
+  - 'Tuesday 1.12. 12-14 B123'
+  - 'Monday 7.12. 12-14 B123'
+  - 'Tuesday 8.12. 12-14 B123'
+  - 'Friday 11.12. 11-12 CK112'
 
 header_pages:
   - osa0.md
   - tehtavat.md
   - miniprojekti.md
+
+# Pages under en/ are the English translation (Finnish is the source language)
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: en
 
 # Build settings
 markdown: kramdown

@@ -1,5 +1,18 @@
 <dialog id="koeilmo-modaali" style="max-width: 600px; border: thick solid green; padding: 16px 20px; background-color: #F1EFEF; color: black;">
-  <button id="koeilmo-sulje" aria-label="Sulje" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666; padding: 0; margin: 0 0 0 10px; line-height: 1;">×</button>
+  <button id="koeilmo-sulje" aria-label="{{ t.close }}" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666; padding: 0; margin: 0 0 0 10px; line-height: 1;">×</button>
+{% if lang == "en" %}
+  <strong>Register for the course exam in Sisu by Sat 5.12.2026 at 23:59</strong>
+  <p style="margin: 8px 0;">
+    The exam implementation is selected in your study plan in Sisu just like the course itself. Sisu has two different study plan views, and the implementation is selected slightly differently in each:
+  </p>
+  <ul>
+    <li><strong>Old view:</strong> open the course brochure by clicking the course code and select the course exam implementation on the <em>Completion methods</em> tab</li>
+    <li><strong>New view:</strong> the implementations are selected in the pop-up window that opens with the completion method</li>
+  </ul>
+  <p style="margin: 8px 0 0 0;">
+    Once the implementation is selected, register for the exam on the <em>Registration</em> tab.
+  </p>
+{% else %}
   <strong>Kurssikokeeseen ilmoittautuminen Sisussa, viimeistään la 5.12.2026 klo 23.59</strong>
   <p style="margin: 8px 0;">
     Tenttitoteutus valitaan opintosuunnitelmaan Sisussa samoin kuin itse kurssi. Sisussa on kaksi eri opintosuunnitelman näkymää, ja toteutus valitaan niissä hieman eri tavalla:
@@ -11,6 +24,7 @@
   <p style="margin: 8px 0 0 0;">
     Kun toteutus on valittuna, ilmoittaudu tenttiin <em>Ilmoittautuminen</em>-välilehdellä.
   </p>
+{% endif %}
 </dialog>
 <script>
   (function () {

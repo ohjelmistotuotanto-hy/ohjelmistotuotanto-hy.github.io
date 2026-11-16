@@ -1,7 +1,11 @@
+{% assign lang = page.lang | default: site.lang | default: "fi" %}
 <div class="ai-valitsin">
-  Käyttämäni tekoälytyökalu:
+  {{ site.data.i18n[lang].ai_tool }}
   <button data-ai="copilot">Copilot</button>
   <button data-ai="opencode">OpenCode</button>
 </div>
-{% assign viikko = page.path | remove: "tehtavat" | remove: ".md" | plus: 0 %}{% if viikko >= 5 %}<p class="vain-opencode ai-huomio"><strong>Huom:</strong> tehtävien OpenCode-versioita ei ole testattu yhtä perusteellisesti kuin Copilot-versioita. Jos ohjeissa on virheitä tai epäselvyyksiä, ilmoita niistä, ks. <a href="#typoja-tai-epäselvyyksiä-tehtävissä">Typoja tai epäselvyyksiä tehtävissä?</a></p>{% endif %}
+{% assign viikko = page.path | remove_first: "en/" | remove: "tehtavat" | remove: ".md" | plus: 0 %}{% if lang == "en" %}{% if viikko >= 5 %}<p class="vain-opencode ai-huomio"><strong>Note:</strong> the OpenCode versions of the exercises have not been tested as thoroughly as the Copilot versions. If you find errors or unclear parts in the instructions, please report them, see <a href="#typos-or-unclear-instructions-in-the-exercises">Typos or unclear instructions in the exercises?</a></p>{% endif %}
+<p class="vain-opencode ai-huomio"><strong>Note:</strong> if you run out of CurreChat tokens, you can get more by sending a message to <a href="mailto:matti.luukkainen@helsinki.fi">matti.luukkainen@helsinki.fi</a> or to the user <em>mluukkai</em> on Discord.</p>
+{% else %}{% if viikko >= 5 %}<p class="vain-opencode ai-huomio"><strong>Huom:</strong> tehtävien OpenCode-versioita ei ole testattu yhtä perusteellisesti kuin Copilot-versioita. Jos ohjeissa on virheitä tai epäselvyyksiä, ilmoita niistä, ks. <a href="#typoja-tai-epäselvyyksiä-tehtävissä">Typoja tai epäselvyyksiä tehtävissä?</a></p>{% endif %}
 <p class="vain-opencode ai-huomio"><strong>Huom:</strong> jos CurreChatin tokenit loppuvat kesken, niitä saa lisää lähettämällä viestin osoitteeseen <a href="mailto:matti.luukkainen@helsinki.fi">matti.luukkainen@helsinki.fi</a> tai Discordissa käyttäjälle <em>mluukkai</em>.</p>
+{% endif %}

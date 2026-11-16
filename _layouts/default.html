@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{% assign lang = page.lang | default: site.lang | default: "fi" %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == "en" %}{% assign other_url = page.url | remove_first: "/en" %}{% else %}{% assign other_url = "/en" | append: page.url %}{% endif %}
+{% assign other_page = site.pages | where: "url", other_url | first %}
+<html lang="{{ lang }}">
 
   {% include head.html %}
 
@@ -9,8 +13,13 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+        {% if lang == "en" %}
+        {% include konekaannos_banner.html %}
+        {% endif %}
+        {% if lang == "fi" %}
         {% include miniprojekti_ilmo_banner.html %}
         {% include uv_tietoturva.html %}
+        {% endif %}
         {{ content }}
       </div>
     </main>
@@ -27,6 +36,6 @@
   <script src="{{ "/assets/js/taskList.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/sidebarToc.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/printDetails.js" | relative_url }}"></script>
-  <script src="{{ "/assets/js/search.js" | relative_url }}" data-index="{{ "/search.json" | relative_url }}"></script>
+  <script src="{{ "/assets/js/search.js" | relative_url }}" data-index="{{ t.prefix | append: "/search.json" | relative_url }}"></script>
 
 </html>

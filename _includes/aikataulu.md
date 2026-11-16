@@ -113,6 +113,8 @@
   - Luento 14: {{site.luennot[14]}}
     - Kasper Hirvikoski (Unity): _Ohjelmistoprojektien johtaminen_
     - Aleksandr Tereshchenko ja Risto Mikkola (Unity): _AI usage at Unity_
+  - Luento 15: {{site.luennot[15]}}
+    - Tuomas Huhtala (Unity): _Työnhaku ja töiden aloittaminen AI-aikana_
 
 - Laskarit
   -  [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat7), deadline {{site.lask-dl[7]}}

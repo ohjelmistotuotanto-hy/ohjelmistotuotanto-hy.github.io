@@ -1,0 +1,49 @@
+# User interface texts of layouts and includes. Page content itself is
+# translated in the en/ directory. A page's language comes from page.lang
+# (en for everything under en/, see defaults in _config.yml), otherwise fi.
+
+fi:
+  prefix: ''
+  site_title: Ohjelmistotuotanto
+  news: Ajankohtaista
+  news_anchor: ajankohtaista
+  schedule: Aikataulu
+  schedule_anchor: aikataulu
+  material: Kurssimateriaali
+  all_exercises: Kaikki tehtävät
+  submission_app: Palautussovellus
+  grading: Arvosteluperusteet
+  toc: Sisällysluettelo
+  toc_short: Sisällys
+  contents: Sisältö
+  download_pdf: Lataa PDF:nä
+  other_language: In English
+  other_language_label: English version of this page
+  license_alt: Creative Commons -lisenssi
+  license_text: Materiaali on lisensoitu
+  license_link: Creative Commons BY-NC-SA 4.0 -lisenssillä
+  close: Sulje
+  ai_tool: "Käyttämäni tekoälytyökalu:"
+
+en:
+  prefix: /en
+  site_title: Software Engineering
+  news: News
+  news_anchor: news
+  schedule: Schedule
+  schedule_anchor: schedule
+  material: Course material
+  all_exercises: All exercises
+  submission_app: Submission app
+  grading: Grading criteria
+  toc: Table of contents
+  toc_short: Contents
+  contents: Contents
+  download_pdf: Download as PDF
+  other_language: Suomeksi
+  other_language_label: Tämän sivun suomenkielinen versio
+  license_alt: Creative Commons license
+  license_text: The material is licensed under the
+  license_link: Creative Commons BY-NC-SA 4.0 license
+  close: Close
+  ai_tool: "AI tool I use:"

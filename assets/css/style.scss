@@ -667,3 +667,9 @@ $sidebar-toc-width-narrow: 240px;
     color: inherit;
   }
 }
+
+// language switch (FI <-> EN) at the end of the main navigation
+.site-nav .lang-switch {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
