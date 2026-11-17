@@ -5,7 +5,7 @@ title_long: 'Lean, scaling agile software development and agile software develop
 inheader: yes
 permalink: /en/osa5/
 source: osa5.md
-source_commit: 85a3af3
+source_commit: 4eee3b5
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -156,13 +156,17 @@ Over the years, new forms of waste have also been proposed. One of these, _under
 
 #### Muri- and mura-type waste
 
-The various forms of _muda_-type waste just discussed are the most prominent of lean's forms of waste, and some sources do not even mention the two other types of waste, _mura_ and _muri_.
+The various forms of _muda_-type waste discussed above are the most prominent of lean's forms of waste, and some sources do not even mention the two other types of waste, _mura_ and _muri_.
 
 _Mura_-type waste is unevenness, non-uniformity or irregularity in ways of working or in the product being worked on.
 
-In software development, for example, a greatly varying size of the user stories being implemented is mura-type waste, which may result in _muda_-type waste, e.g. a need for in-process inventory. This in turn weakens the flow of value, i.e. how long it takes for a user story to go from being placed in the backlog to being a finished part of the product.
+In software development, mura-type waste is, for example, a greatly varying size of the user stories being implemented. Suppose that the sprint backlog contains a few stories that each take a day, and one story so big that implementing it takes two weeks. The big story is finished only in the last days of the sprint, and it brings one large pull request all at once. The small stories have been reviewed and tested as they were completed, but the large pull request brings so much to review and test at once that the team cannot handle it before the end of the sprint.
+
+The unevenness creates _muda_-type waste: code that is finished but not reviewed or tested is in-process inventory, and while it waits for its turn, unnecessary waiting occurs. In addition, the big story in the queue holds back small stories that could have been released to production right away. As a result, the time it takes for a user story to go from being added to the backlog to being a feature available to users becomes longer and harder to predict.
 
 The third type of waste, _muri_, means overburden or impossible demands (unreasonableness, impossible, too difficult). Thinking of a car production line, for example, running machines at 100% capacity without regular maintenance can be classified as muri. Interpreted for software development, muri could be, for example, overloading the staff. Muri-type waste, e.g. overloading the staff, is likely to result in muda, e.g. defects in the product.
+
+The types of waste are often connected. In the previous example, mura led to muri: at the end of the sprint the overloaded team has to hurry, and there is no time to go through the large pull request carefully. As a result, defects may end up in production, i.e. _muda_-type waste is created again. This is exactly why lean emphasises levelling the work, which we will return to [later](#lean-principles) in this part.
 
 ### Kaizen
 
@@ -182,11 +186,21 @@ Kaizen's cyclical improvement process often involves events held at regular inte
 
 A technique called [value stream mapping](https://en.wikipedia.org/wiki/Value-stream_mapping) is often used to find and map waste. The idea is to describe the product's path through the work steps of the process used, and to visualise the work steps that produce value for the product in relation to the product's entire manufacturing life cycle.
 
-![]({{ "/images/5-2.png" | relative_url }}){:height="400px" }
+![]({{ "/images/5-2.png" | relative_url }})
 
-The figure shows six work steps that a product, e.g. a user story, passes through. The time spent in each work step can be thought of as increasing the value of the work, e.g. the step _code and test_ takes 2 hours, which is necessary for the story to be released at all. Between the work steps, the story is in _in-process inventory_, waiting for the next work step, and in-process inventory is a form of waste. The purpose of value stream mapping is thus to bring out all the "in-process inventories", unnecessary waiting and unnecessary work steps, so that it is possible to think about how to minimise them.
+The figure shows seven work steps that a user story passes through in a team following Scrum: the product owner writes the story, it is refined in backlog refinement and taken into a sprint in sprint planning, after which it is implemented and tested, reviewed as a pull request, tested by the QA team in the staging environment, and finally deployed to production.
 
-The idea of value stream mapping has been extended to continuous monitoring of software development, called _value stream management_. The best-known example is the [Flow Framework](https://flowframework.org/) presented in Mik Kersten's book [Project to Product](https://itrevolution.com/product/project-to-product/) (2018). In it, work is divided into four types (new features, defects, risks and technical debt), and their flow is measured with metrics similar to the flow metrics presented in [part 2](/en/osa2/#limiting-work-in-progress). Particularly telling is _flow efficiency_: how large a share of the lead time is spent on really working on the item. Often it is only a fraction, and the rest of the time is spent waiting, i.e. exactly the waste that a value stream map tries to make visible.
+The green time under each work step tells how much work that produces value for the story is done in that step. For example, the step _code & test_ takes 6 hours, which is necessary for the story to be released at all. The times marked in red, on the other hand, are waste. Most of it is waiting: between the work steps, the story is in _in-process inventory_ waiting for the next work step, and the boxes at the top of the figure tell what causes the wait. The story waits longest in the product backlog, but the sprint rhythm, waiting for a reviewer, a separate QA team and releasing only at the end of the sprint also stretch the waiting. Part of the time spent inside the work steps is waste as well: resolving merge conflicts is over-processing, and fixing the defects found by QA is _defects_-type waste. Neither would arise to any great extent if changes were integrated in small pieces and quality were ensured already in the implementation step.
+
+In total, less than 8 hours of value-producing work is done on the story, but from the moment the story is added to the backlog, more than 5 weeks pass before it is available to users. The purpose of value stream mapping is thus to bring out all the "in-process inventories", unnecessary waiting and unnecessary work steps, so that it is possible to think about how to minimise them.
+
+A value stream map is a one-off snapshot. The idea has been extended to continuous monitoring of software development, called _value stream management_. The best-known example is the [Flow Framework](https://flowframework.org/) presented in Mik Kersten's book [Project to Product](https://itrevolution.com/product/project-to-product/) (2018). Continuous monitoring is based on the flow metrics presented in [part 2](/en/osa2/#limiting-work-in-progress), whose values can be obtained directly from the taskboard or issue tracker when it is known for each story when it moved from one step to another. In the example of the figure, the metrics would be as follows:
+
+- _cycle time_, i.e. the time from starting the work to its completion, is about 8.5 working days, counting from the start of the code & test step to production
+- _lead time_, i.e. the time from adding the story to the backlog to it being in production, is more than 5 weeks, and this is exactly what matters from the customer's point of view
+- _flow efficiency_, i.e. the share of value-producing work of the elapsed time, is about 4% for the whole chain and about 10% counting only from the start of the work
+
+Flow efficiency tells where improvements should be targeted. If coding became twice as fast, for example with the help of AI, i.e. the code & test step took 3 hours instead of 6, the cycle time would shorten by only about 4%. If, on the other hand, the pull request were reviewed on the same day and the team tested and released the story itself as soon as it was finished, the cycle time would drop from 8.5 days to about two days. A value stream map and flow metrics thus reveal that slowness is rarely caused by the work itself and almost always by waiting.
 
 #### Lean tool: root cause analysis - five whys
 
@@ -228,6 +242,10 @@ If manufacturing the product requires, say, five different components, the compo
 
 Only a limited number of kanban cards are in use. This controls that too much work cannot pile up in any stage of production. In this way, kanban is used to "pull" the necessary components, instead of manufacturing large quantities of components into inventory in advance just in case.
 
+![]({{ "/images/5-kanban-tehdas.png" | relative_url }})
+
+In the figure, the kanban cards (orange dashed line) travel from the customer to final assembly and from there on to the workstations manufacturing components, such as engines, which in turn order the parts they need, such as pistons, from their own workstations. The finished parts, components and finally the finished car travel with the cards back towards the customer. If, for example, only three engine cards are in circulation, at most three engines can be in production at a time. If there is no free card, the workstation does not produce anything.
+
 As already mentioned, components made for in-process inventory are one form of lean waste. Stored components tie up capital, and if not enough orders come in, they may never be needed. In-process inventory may also delay the discovery of defects: if components had a manufacturing defect, it might take a long time before the defect was revealed, and large quantities of defective components might have already been manufactured into inventory.
 
 In practice, production working on the pull principle may maintain small in-process inventories in order to optimise the lead time needed to manufacture the product.
@@ -240,27 +258,56 @@ A feature to be implemented, e.g. a user story or one of its technical tasks, co
 
 Flow, i.e. getting an individual story completed quickly, is achieved by limiting the amount of work in progress in certain work steps by setting _work in progress_ (WIP) limits.
 
-The kanban board in the figure below is divided into three work steps, _analysis, develop, test_, each of which has a WIP limit. In-process inventories, _dev ready_ and _build ready_, have also been placed between the work steps, and they too have WIP limits.
+The simple kanban board below has three work steps, _analysis, development_ and _test_, each of which has a WIP limit:
 
-![]({{ "/images/5-3.png" | relative_url }}){:height="400px" }
+![]({{ "/images/5-kanban-taulu.png" | relative_url }}){:width="550px" }
 
-The kanban board in the figure allows a maximum of twenty user stories to be placed on it. When a story has passed through all the work steps, new capacity is freed on the kanban board, and the product owner can place the next story to be implemented in the _input queue_ step.
+Unlike in factory kanban, the cards do not circulate back. The WIP limit does the same job as the limited number of cards: a new story may be pulled into a work step only if there is room in it. In the situation of the figure, both development (3/3) and test (2/2) are full. When the tester has finished testing, for example, the _Tuotekuvat_ (product images) story and moves it to the done column, a place is freed in test, and one story finished in development can be pulled there. Only after this is a place freed in development, and a developer can pull _Tilaushistoria_ (order history) into work. Work thus progresses on the board according to the pull principle: new work is started only when the next step has pulled the previous work forward.
 
-The WIP limits of the kanban board in the figure are not very strict, i.e. the amount of work in progress is quite large, at most 15 stories. Since lean considers work in progress to be waste (in-process inventory), the _flow of value_ on the kanban board in the figure is not very optimal. By lowering the WIP limits and removing in-process inventories, it might be possible to optimise the _lead time_, i.e. the time from when a user story is "ordered" until the feature it defines is ready.
+The work steps of the board can also be divided into _doing_ and _done_ parts, and in-process inventories (buffers) can be placed between the steps. In the next figure, the in-process inventories _dev ready_ and _build ready_, which also have WIP limits, have been placed between the work steps _analysis, development, test_.
+
+![]({{ "/images/5-3.png" | relative_url }})
+
+In the situation of the figure, the testing step and the build ready inventory before it are full. The already coded _Haku_ (search) therefore cannot move forward, and it is not worth the developers starting the stories waiting in the dev ready inventory; instead, they should help with testing. In this way, WIP limits make the bottleneck visible in the same way as in the Scrumban example of [part 2](/en/osa2/#scrumban).
+
+When the WIP limits are added up (5 + 4 + 3 + 4 + 2 + 2), the board in the figure can hold at most 20 user stories at the same time, in addition to the release ready column. When a story moves to the release ready column, capacity is freed on the board again, and the product owner can place the next story to be implemented in the _input queue_ step.
+
+The WIP limits of the kanban board in the figure are not very strict, i.e. the amount of work in progress is quite large. Leaving the input queue out of the count, there can be as many as 15 started but unfinished stories at the same time (4 + 3 + 4 + 2 + 2). Since lean considers work in progress to be waste (in-process inventory), the _flow of value_ on the kanban board in the figure is not very optimal. By lowering the WIP limits and removing in-process inventories, it might be possible to optimise the _lead time_, i.e. the time from when a user story is "ordered" until the feature it defines is ready.
 
 The lean ideal would be so-called _one piece flow_, i.e. working so that each user story is completed in its entirety before starting the next one. This principle is applied in many places, but if the work is poorly organised, the principle can lead to too low _utilisation_. In practice this means that several people within the software team have to wait for others before they can continue their own work. For this reason, in most cases the team works on several stories at the same time instead of one. Finding suitable WIP limits thus always requires team-specific judgement and adaptation.
 
 ### Lean principles
 
-For a pull system to work well, i.e. for customer value to flow evenly, it is beneficial if the durations of the different work steps do not vary too much. This relates to the lean principle _level the work_. Indeed, one of the three forms of lean waste was _mura_, i.e. irregularity or non-uniformity. A large variance in the duration of work steps or, in the context of software development, in the size of the user stories being implemented is one manifestation of this.
+For a pull system to work well, i.e. for customer value to flow evenly, the durations of the different work steps should not vary too much. This relates to the lean principle _level the work_ (in Japanese heijunka). The justification comes from queueing theory: the length of the queue in front of a work step, and thus the waiting time, grows the more the size and arrival rate of the work items vary, even if the average amount of work stays the same. The effect becomes stronger the closer to full capacity the work step is loaded. This is thus _mura_-type waste, and in software development its typical manifestation is a large variation in the size of user stories, see the [example](#muri--and-mura-type-waste) earlier in this part. The topic is covered in more detail in Donald Reinertsen's book _The Principles of Product Development Flow_ (2009).
+
+> The phenomenon can be illustrated with an example. Suppose that one story is finished by the developers and ready for testing every morning, and the tester can test one story a day on average.
+>
+> If testing each story takes exactly one day, every story gets into testing right away and no queue forms.
+>
+> Suppose then that the size of the stories varies: testing four stories takes half a day each, and every fifth one takes three days. Testing still takes one day on average, but now a queue forms. Testing the big story keeps the tester busy for three days, and meanwhile two new stories pile up in the queue. The small stories are tested quickly, but the queue clears only a few days later, just before the next big story. On average, a story now has to wait a day to get into testing, even though the tester's workload is exactly the same as in the first case.
+>
+> ![]({{ "/images/5-jono.png" | relative_url }}){:width="700px" }
+>
+> In both cases ten stories are finished in ten days, i.e. the team's throughput is the same. From the point of view of an individual story, however, the situation is worse: from the story being finished to the end of its testing takes two days on average instead of one, and on average one untested story is waiting in the queue, i.e. in-process inventory has been created.
+>
+> This is a problem for several reasons:
+>
+> - The customer gets each feature a day later on average, even though nobody works any slower. Lean optimises exactly this time, not how much work the team gets done in total.
+> - Feedback slows down. If the tester finds a defect in a story, the developer has already moved on to other work and has to recall the matter, which is slower than fixing it while it is still fresh.
+> - Predictability suffers. While in the first case every story has been tested one day after it was finished, in the second case it takes from one to three days depending on the story, so it is hard to promise when a feature will be ready.
+> - The example is still a lenient one, since the stories are finished regularly and the sizes vary in a regular rhythm. In reality both are random, and when the tester is almost fully loaded, the queue can at worst grow without limit.
 
 One cause of variance is defects. Lean principles therefore include _Stop and fix_ and _build quality in_.
 
 _Stop and fix_ refers to an old Toyota principle under which anyone is obliged to stop the production line when they notice a defect, for example a damaged component. The principle requires that whoever stops the line is thanked rather than blamed. Otherwise people start to keep quiet about problems.
 
-When the production line is stopped, the _root cause_ of the defect must be found out as quickly as possible (for example with the five whys method just covered), and the aim is to eliminate the possibility of the defect in the future, i.e. production must have quality built in, _build quality in_.
+When the production line is stopped, the _root cause_ of the defect must be found out as quickly as possible (for example with the [five whys](#lean-tool-root-cause-analysis---five-whys) method covered earlier), and the aim is to eliminate the possibility of the defect in the future, i.e. production must have quality built in, _build quality in_.
 
 Of the practices of software development, automated testing and continuous integration can be seen as direct manifestations of the _stop and fix_ and _build quality in_ principles.
+
+In software development, stopping the production line corresponds to the situation where the continuous integration server reports that the tests of the main branch have broken. A well-functioning team reacts to this as to the stopping of a production line: nobody merges new changes until the defect has been fixed, and fixing it takes priority over all other work. If work continues on top of broken code, new defects get mixed up with old ones, and finding the cause becomes harder the longer the defect has been left unfixed.
+
+Defects found late are also a source of variation. For example, in the [value stream map figure](#lean-tool-value-stream-mapping), fixing the defects found by QA in the staging environment took four hours, i.e. two thirds of the time spent on the implementation itself. Such unpredictable extra work stretches the cycle time of the story and lengthens queues in the same way as the variation in story size described above. When quality is ensured already in the implementation step with automated tests, defects are found right away, and fixing them is small and predictable.
 
 Traditional mass production focuses on keeping production equipment running at maximum capacity and employees busy all the time. The pay of individual employees is also often based on performance bonuses. The idea is that this makes the unit price of products as low as possible and maximises the company's productivity.
 
@@ -268,22 +315,35 @@ Instead of looking at the efficiency of individual employees and machines, lean 
 
 For example, a high utilisation rate of an individual machine or rewarding individual performance can be _local optimisation_, which may even be harmful for the company as a whole. It may lead, for example, to manufacturing a lot of components that are never needed in the end. By focusing on the flow of value from order to customer instead of the performance of individual production equipment, people or teams, improvement efforts aim to take into account the bottlenecks of the entire production system.
 
-There are far too many notorious examples of local optimisation, such as savings on premises costs made by different university departments. The rent the university pays for its buildings remains the same even if some department "saves" by leaving premises unused.
+In software development, a corresponding situation arises, for example, if developers are rewarded based on the number of stories they have coded. The developers optimise their own metric and pass more stories to testing than testing can handle, so a queue forms in front of testing. The number of coded stories grows, but not a single extra feature is finished all the way to the customer, since their number is limited by the capacity of testing. The same phenomenon shows in AI-assisted software development: if coding agents produce pull requests faster than the team can review them, faster coding only increases in-process inventory, see [AI and the software development process](/en/genai/#ai-and-the-software-development-process).
+
+<details markdown="1" class="lisatieto">
+<summary markdown="span">More information: why full utilisation slows things down</summary>
+
+The harm of local optimisation is partly explained by the same queueing theory as the _level the work_ principle presented above. The time spent waiting in a queue is proportional to the factor ρ / (1 − ρ), where ρ is the utilisation of the work step. At 80% utilisation the factor is 4, but when utilisation is raised to 95%, the factor is 19, i.e. waiting times almost quintuple. Full utilisation, which looks efficient from the point of view of an individual employee or machine, thus makes the whole system slow.
+
+The matter is described more precisely by [Kingman's formula](https://en.wikipedia.org/wiki/Kingman%27s_formula) of queueing theory, according to which the waiting time depends not only on utilisation but also on the variation of the arrival intervals and processing times of work items.
+
+</details>
 
 In pull systems, decisions related to production (e.g. how much of a product and the components it needs should be manufactured) are not usually made too early, but only when needed. In English this late decision making is characterised as _commit at the last responsible moment_, i.e. decisions are delayed, but not for so long that the delay causes problems. This is summed up in the principle _decide as late as possible_.
 
 When a decision is made late, the significant advantage is that the maximum amount of information is available to support the decision, unlike with decisions made too early in advance, which are more speculative.
+
+Delaying has its limits, however: the last responsible moment is the one after which not deciding starts to cause problems. In software development this shows, for example, in when the detailed requirements of a user story, i.e. its acceptance criteria, should be agreed on. If they are written half a year before implementation, they are based on guesses: the customer's needs and the rest of the application have time to change, and part of the specification has to be redone or thrown away. If, on the other hand, the criteria are agreed on only during implementation, the developers have to guess what is wanted, and part of the implementation is done wrong for nothing. The last responsible moment is thus when the story is taken into work.
 
 Once the decisions have been made, you act as quickly as possible in the spirit of the pull system, i.e.
 _implement rapidly_ or _deliver as fast as possible_, so that value flows to the customer without unnecessary delays.
 
 The faster value can be made to flow, the more decisions can be delayed and the better the information in light of which decisions can be made.
 
+In the [value stream map](#lean-tool-value-stream-mapping) presented earlier, completing a story took more than five weeks from the moment it was added to the backlog. The product owner thus has to decide five weeks in advance what the users will get next. If the web shop's analytics reveal that many customers abandon their purchase when choosing the delivery method, the fix can reach users five weeks later at the earliest. If a story can be finished in a couple of days, the product owner needs to decide on the next story only when the previous one is done, and the decision is always supported by the latest information on what customers do.
+
 ### The flow of value in agile software development
 
 The application of the above principles is clearly visible in agile software development. Requirements are managed with a product backlog, which at its best is [DEEP](/en/osa2#a-good-product-backlog-is-deep), i.e. Detailed appropriately, emergent, estimated, prioritized.
 
-Low-priority user stories are not defined in much detail. When the product owner selects a story to be implemented in the next sprint, the story's acceptance criteria are defined and its implementation is designed. Detailed requirements are thus not defined speculatively but _at the last responsible moment_. The stories selected for the sprint are completed during the sprint, i.e. _deliver as fast as possible_.
+Low-priority user stories are not defined in much detail. As noted above, a story's acceptance criteria are defined and its implementation is designed only when the product owner selects it to be implemented in the next sprint, i.e. _at the last responsible moment_. The stories selected for the sprint are completed during the sprint, i.e. _deliver as fast as possible_.
 
 Scrum can thus be seen as a lean _pull system_, where each sprint takes in, one sprint at a time, the orders defined by the customer's representative at the last moment (i.e. in sprint planning at the latest), which are implemented as quickly as possible, i.e. during the sprint. Value, i.e. new features implemented to a working state, flows to the customer in the rhythm defined by the sprints.
 
@@ -322,7 +382,9 @@ development_. If the aim is to develop, say, a new engine cooling system, severa
 
 The set based development method is radically different from the commonly applied _iterative_ development method, where the starting point is a single solution that is improved step by step.
 
-In software development, the set based development method is applied fairly rarely, mainly in user interface design by initially presenting the customer with several parallel proposals for a possible user interface solution.
+In software development, set based thinking has traditionally been applied fairly rarely, because implementing several alternative solutions in parallel has been expensive. Typical examples are user interface design, where the customer is first presented with several parallel sketches, and [A/B testing](/en/osa2/#experimental-requirements-engineering-lean-startup), where the better of two versions of a feature is chosen based on user data. In technical choices, the corresponding means is a short experiment (spike), for example with two alternative libraries, before one of them is chosen.
+
+AI changes the setting, since producing alternatives has become a fraction of what it used to cost. You can ask a coding agent for several implementations of the same feature following different approaches, which are produced in parallel, for example in their own git branches, and the team picks the best one by trying them out. Similarly, several [clickable prototypes](/en/osa2/#methods-for-requirements-elicitation) of a user interface can be made in hours for the customer to compare. The bottleneck then becomes evaluating the alternatives: each alternative has to be examined and tested, and the ones not chosen also have to really be thrown away so that they do not become in-process inventory.
 
 At Toyota, product development is led by a _chief engineer_ (in Japanese _shusa_), who is responsible for both the technical and the business success of the products. This is a typical lean leader working on the front line, who knows the practical work thoroughly but is also very close to the customer. Because of the technical background, the role differs from Scrum's _product owner_.
 

@@ -4,7 +4,7 @@ title: Week 3
 inheader: no
 permalink: /en/tehtavat3/
 source: tehtavat3.md
-source_commit: 85a3af3
+source_commit: 4eee3b5
 ---
 
 {% include en/laskari_info.md part=3 %}
@@ -40,6 +40,8 @@ See more detailed instructions about the submission repository [here](/en/tehtav
 ### 2. Web counter
 
 **NOTE:** if you are using Docker, read [this](/en/docker#docker-and-robot-tests)!
+
+**NOTE 2:** if you use an ad blocker (e.g. uBlock Origin), disable it on GitHub or **DO NOT** name your repository **"webcounter"**.
 
 Next we move on to the world of web applications. We assume that you are at least somewhat familiar with the [Flask](https://flask.palletsprojects.com/en/stable/) library from the course [Tietokannat ja Web-ohjelmointi](https://hy-tikawe.github.io/materiaali/) (Databases and Web Programming, formerly _Aineopintojen harjoitustyö: Tietokantasovellus_).
 
