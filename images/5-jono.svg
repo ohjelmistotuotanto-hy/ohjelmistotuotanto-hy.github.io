@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="912" viewBox="0 0 1050 912" font-family="Helvetica, Arial, sans-serif"><rect width="1050" height="912" fill="#fff"/><text x="130" y="30" font-size="20" font-weight="bold" fill="#2d3748">Every story takes 1 day to test</text>
+<text x="130" y="54" font-size="16" fill="#4a5568">one story arrives every morning, the tester tests one story a day on average</text>
+<line x1="130" y1="70" x2="130" y2="394" stroke="#e2e8f0"/>
+<line x1="218" y1="70" x2="218" y2="394" stroke="#e2e8f0"/>
+<line x1="306" y1="70" x2="306" y2="394" stroke="#e2e8f0"/>
+<line x1="394" y1="70" x2="394" y2="394" stroke="#e2e8f0"/>
+<line x1="482" y1="70" x2="482" y2="394" stroke="#e2e8f0"/>
+<line x1="570" y1="70" x2="570" y2="394" stroke="#e2e8f0"/>
+<line x1="658" y1="70" x2="658" y2="394" stroke="#e2e8f0"/>
+<line x1="746" y1="70" x2="746" y2="394" stroke="#e2e8f0"/>
+<line x1="834" y1="70" x2="834" y2="394" stroke="#e2e8f0"/>
+<line x1="922" y1="70" x2="922" y2="394" stroke="#e2e8f0"/>
+<line x1="1010" y1="70" x2="1010" y2="394" stroke="#e2e8f0"/>
+<text x="116" y="93.0" font-size="15" fill="#4a5568" text-anchor="end">story 1</text>
+<rect x="130" y="74" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="124,73 136,73 130,82" fill="#2d3748"/>
+<text x="116" y="125.0" font-size="15" fill="#4a5568" text-anchor="end">story 2</text>
+<rect x="218" y="106" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="212,105 224,105 218,114" fill="#2d3748"/>
+<text x="116" y="157.0" font-size="15" fill="#4a5568" text-anchor="end">story 3</text>
+<rect x="306" y="138" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="300,137 312,137 306,146" fill="#2d3748"/>
+<text x="116" y="189.0" font-size="15" fill="#4a5568" text-anchor="end">story 4</text>
+<rect x="394" y="170" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="388,169 400,169 394,178" fill="#2d3748"/>
+<text x="116" y="221.0" font-size="15" fill="#4a5568" text-anchor="end">story 5</text>
+<rect x="482" y="202" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="476,201 488,201 482,210" fill="#2d3748"/>
+<text x="116" y="253.0" font-size="15" fill="#4a5568" text-anchor="end">story 6</text>
+<rect x="570" y="234" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="564,233 576,233 570,242" fill="#2d3748"/>
+<text x="116" y="285.0" font-size="15" fill="#4a5568" text-anchor="end">story 7</text>
+<rect x="658" y="266" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="652,265 664,265 658,274" fill="#2d3748"/>
+<text x="116" y="317.0" font-size="15" fill="#4a5568" text-anchor="end">story 8</text>
+<rect x="746" y="298" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="740,297 752,297 746,306" fill="#2d3748"/>
+<text x="116" y="349.0" font-size="15" fill="#4a5568" text-anchor="end">story 9</text>
+<rect x="834" y="330" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="828,329 840,329 834,338" fill="#2d3748"/>
+<text x="116" y="381.0" font-size="15" fill="#4a5568" text-anchor="end">story 10</text>
+<rect x="922" y="362" width="88" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="916,361 928,361 922,370" fill="#2d3748"/>
+<text x="130" y="412" font-size="14" fill="#718096" text-anchor="middle">0</text>
+<text x="218" y="412" font-size="14" fill="#718096" text-anchor="middle">1</text>
+<text x="306" y="412" font-size="14" fill="#718096" text-anchor="middle">2</text>
+<text x="394" y="412" font-size="14" fill="#718096" text-anchor="middle">3</text>
+<text x="482" y="412" font-size="14" fill="#718096" text-anchor="middle">4</text>
+<text x="570" y="412" font-size="14" fill="#718096" text-anchor="middle">5</text>
+<text x="658" y="412" font-size="14" fill="#718096" text-anchor="middle">6</text>
+<text x="746" y="412" font-size="14" fill="#718096" text-anchor="middle">7</text>
+<text x="834" y="412" font-size="14" fill="#718096" text-anchor="middle">8</text>
+<text x="922" y="412" font-size="14" fill="#718096" text-anchor="middle">9</text>
+<text x="1010" y="412" font-size="14" fill="#718096" text-anchor="middle">10</text>
+<text x="1010" y="432" font-size="14" fill="#718096" text-anchor="end">days</text>
+<text x="1010" y="40" font-size="18" font-weight="bold" fill="#c53030" text-anchor="end">average wait: 0 days</text>
+<text x="130" y="464" font-size="20" font-weight="bold" fill="#2d3748">Story sizes vary, the average is still 1 day</text>
+<text x="130" y="488" font-size="16" fill="#4a5568">four stories take ½ day each, every fifth story takes 3 days</text>
+<line x1="130" y1="504" x2="130" y2="828" stroke="#e2e8f0"/>
+<line x1="218" y1="504" x2="218" y2="828" stroke="#e2e8f0"/>
+<line x1="306" y1="504" x2="306" y2="828" stroke="#e2e8f0"/>
+<line x1="394" y1="504" x2="394" y2="828" stroke="#e2e8f0"/>
+<line x1="482" y1="504" x2="482" y2="828" stroke="#e2e8f0"/>
+<line x1="570" y1="504" x2="570" y2="828" stroke="#e2e8f0"/>
+<line x1="658" y1="504" x2="658" y2="828" stroke="#e2e8f0"/>
+<line x1="746" y1="504" x2="746" y2="828" stroke="#e2e8f0"/>
+<line x1="834" y1="504" x2="834" y2="828" stroke="#e2e8f0"/>
+<line x1="922" y1="504" x2="922" y2="828" stroke="#e2e8f0"/>
+<line x1="1010" y1="504" x2="1010" y2="828" stroke="#e2e8f0"/>
+<text x="116" y="527.0" font-size="15" fill="#4a5568" text-anchor="end">story 1</text>
+<rect x="130" y="508" width="264" height="26" rx="4" fill="#f6ad55" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="124,507 136,507 130,516" fill="#2d3748"/>
+<text x="116" y="559.0" font-size="15" fill="#4a5568" text-anchor="end">story 2</text>
+<rect x="218" y="545" width="176" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="394" y="540" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="212,539 224,539 218,548" fill="#2d3748"/>
+<text x="116" y="591.0" font-size="15" fill="#4a5568" text-anchor="end">story 3</text>
+<rect x="306" y="577" width="132.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="438.0" y="572" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="300,571 312,571 306,580" fill="#2d3748"/>
+<text x="116" y="623.0" font-size="15" fill="#4a5568" text-anchor="end">story 4</text>
+<rect x="394" y="609" width="88.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="482.0" y="604" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="388,603 400,603 394,612" fill="#2d3748"/>
+<text x="116" y="655.0" font-size="15" fill="#4a5568" text-anchor="end">story 5</text>
+<rect x="482" y="641" width="44.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="526.0" y="636" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="476,635 488,635 482,644" fill="#2d3748"/>
+<text x="116" y="687.0" font-size="15" fill="#4a5568" text-anchor="end">story 6</text>
+<rect x="570" y="668" width="264" height="26" rx="4" fill="#f6ad55" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="564,667 576,667 570,676" fill="#2d3748"/>
+<text x="116" y="719.0" font-size="15" fill="#4a5568" text-anchor="end">story 7</text>
+<rect x="658" y="705" width="176" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="834" y="700" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="652,699 664,699 658,708" fill="#2d3748"/>
+<text x="116" y="751.0" font-size="15" fill="#4a5568" text-anchor="end">story 8</text>
+<rect x="746" y="737" width="132.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="878.0" y="732" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="740,731 752,731 746,740" fill="#2d3748"/>
+<text x="116" y="783.0" font-size="15" fill="#4a5568" text-anchor="end">story 9</text>
+<rect x="834" y="769" width="88.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="922.0" y="764" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="828,763 840,763 834,772" fill="#2d3748"/>
+<text x="116" y="815.0" font-size="15" fill="#4a5568" text-anchor="end">story 10</text>
+<rect x="922" y="801" width="44.0" height="16" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/>
+<rect x="966.0" y="796" width="44.0" height="26" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<polygon points="916,795 928,795 922,804" fill="#2d3748"/>
+<text x="130" y="846" font-size="14" fill="#718096" text-anchor="middle">0</text>
+<text x="218" y="846" font-size="14" fill="#718096" text-anchor="middle">1</text>
+<text x="306" y="846" font-size="14" fill="#718096" text-anchor="middle">2</text>
+<text x="394" y="846" font-size="14" fill="#718096" text-anchor="middle">3</text>
+<text x="482" y="846" font-size="14" fill="#718096" text-anchor="middle">4</text>
+<text x="570" y="846" font-size="14" fill="#718096" text-anchor="middle">5</text>
+<text x="658" y="846" font-size="14" fill="#718096" text-anchor="middle">6</text>
+<text x="746" y="846" font-size="14" fill="#718096" text-anchor="middle">7</text>
+<text x="834" y="846" font-size="14" fill="#718096" text-anchor="middle">8</text>
+<text x="922" y="846" font-size="14" fill="#718096" text-anchor="middle">9</text>
+<text x="1010" y="846" font-size="14" fill="#718096" text-anchor="middle">10</text>
+<text x="1010" y="866" font-size="14" fill="#718096" text-anchor="end">days</text>
+<text x="1010" y="474" font-size="18" font-weight="bold" fill="#c53030" text-anchor="end">average wait: 1 day</text>
+<rect x="130" y="874" width="30" height="18" rx="3" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/><text x="170" y="888" font-size="16" fill="#4a5568">testing</text>
+<rect x="345" y="874" width="30" height="18" rx="3" fill="#f6ad55" stroke="#2d3748" stroke-width="1.5"/><text x="385" y="888" font-size="16" fill="#4a5568">testing a big story</text>
+<rect x="560" y="874" width="30" height="18" rx="3" fill="#feb2b2" stroke="#c53030" stroke-width="1.5"/><text x="600" y="888" font-size="16" fill="#4a5568">waiting for the tester</text>
+<polygon points="769,876 781,876 775,885" fill="#2d3748"/><text x="789" y="888" font-size="16" fill="#4a5568">story ready for testing</text></svg>
