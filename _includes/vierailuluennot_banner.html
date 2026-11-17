@@ -1,0 +1,42 @@
+<div id="vierailuluennot" style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px 14px; margin-bottom: 20px; background-color: #F1EFEF;">
+  <button id="vierailuluennot-sulje" aria-label="{{ t.close }}" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666; padding: 0; margin: 0 0 0 10px; line-height: 1;">×</button>
+  {% if lang == "en" %}
+  <strong>Guest lecture sessions give course points</strong>
+  <p style="margin: 8px 0;">
+    Attending a guest lecture session on site gives you 0.33 course points, so three sessions give the full 1 point. You can also earn extra points by attending more than three sessions.
+    Guest lecture sessions (see the <a href="/en/#schedule">schedule</a>):
+  </p>
+  <ul style="margin-bottom: 0;">
+    {% for i in (10..15) %}{% unless i == 11 %}<li>{{ site.luennot-en[i] }}</li>{% endunless %}{% endfor %}
+  </ul>
+  {% else %}
+  <strong>Vierailuluentokerroilta kurssipisteitä</strong>
+  <p style="margin: 8px 0;">
+    Vierailuluentokerralle paikan päällä osallistumisesta saa 0,33 kurssipistettä, eli kolmella kerralla saa täydet 1 pisteen. Osallistumalla useampaan kuin kolmeen kertaan voit saada myös ekstrapisteitä.
+    Vierailuluentokerrat (ks. <a href="/#aikataulu">aikataulu</a>):
+  </p>
+  <ul style="margin-bottom: 0;">
+    {% for i in (10..15) %}{% unless i == 11 %}<li>{{ site.luennot[i] }}</li>{% endunless %}{% endfor %}
+  </ul>
+  {% endif %}
+</div>
+<script>
+  (function () {
+    var KEY = 'vierailuluennot-suljettu'
+    var POISTUU = new Date('2026-12-12T00:00:00+02:00')
+    var banner = document.getElementById('vierailuluennot')
+
+    // piilotetaan viimeisen vierailuluennon jälkeen ja jos käyttäjä on sulkenut bannerin
+    try {
+      if (new Date() >= POISTUU || localStorage.getItem(KEY) === '1') {
+        banner.style.display = 'none'
+        return
+      }
+    } catch (e) {}
+
+    document.getElementById('vierailuluennot-sulje').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, '1') } catch (e) {}
+      banner.style.display = 'none'
+    })
+  })()
+</script>
