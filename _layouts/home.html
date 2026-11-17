@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: site.lang | default: "fi" %}
+{% assign t = site.data.i18n[lang] %}
 
 <nav class="sidebar-toc" aria-label="{{ t.toc_short }}" hidden>
   <a class="sidebar-toc-title" href="{{ t.prefix }}/sisallys/">{{ t.toc }}</a>

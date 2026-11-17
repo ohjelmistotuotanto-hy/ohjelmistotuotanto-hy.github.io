@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: site.lang | default: "fi" %}
+{% assign t = site.data.i18n[lang] %}
 {% assign base_path = page.path | remove_first: "en/" %}
 {% assign task_pages = "tehtavat1.md,tehtavat2.md,tehtavat3.md,tehtavat4.md,tehtavat5.md,tehtavat6.md,tehtavat7.md" | split: "," %}
 {% if task_pages contains base_path %}
