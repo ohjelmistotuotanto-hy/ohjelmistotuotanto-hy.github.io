@@ -664,7 +664,7 @@ Testitapausten tulee siis testata, että "Login"- ja "Register new user"-linkkie
 
 > Muista, että selaimen tulee olla asennettuna ja sovelluksen on oltava käynnissä kun suoritat testit, ks. [tämä ohje](/browser_asennusohjeet/#mahdollisia-ongelmia)
 
-Seurauksena on todennäköisesti virheilmoitus kertoo mitä avainsanoja on määrittelemättä:
+Seurauksena on todennäköisesti virheilmoitus, joka kertoo mitä avainsanoja on määrittelemättä:
 
 ```
 Click Register Link                                                   | FAIL |
