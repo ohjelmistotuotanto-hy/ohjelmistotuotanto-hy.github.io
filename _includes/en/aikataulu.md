@@ -66,6 +66,7 @@
   - [Architectural design](/en/osa4#software-architecture)
   - [Architecture in agile methods](/en/osa4#architecture-in-agile-methods)
   - [Object and component design](/en/osa4#object-and-component-design)
+  - recording: [youtube](https://youtu.be/fTmbbDNnhgs)
   - 2025 recordings: [youtube](https://youtu.be/1H6Cf_pWXWA), [unitube](https://www.helsinki.fi/fi/unitube/video/ba831e26-0d5a-458c-b025-20544cbf1602)
 - Exercises
   - <a href="{{site.stats_url}}/quiz/4">multiple choice quizzes</a> deadline {{site.moniv-dl-en[4]}}
@@ -94,7 +95,8 @@
   - [Large-scale agile software development](/en/osa5#large-scale-agile-software-development)
   - [The use and benefits of agile methods in the light of research](/en/osa5#the-use-and-benefits-of-agile-methods-in-the-light-of-research)
   - 2025 recordings: [youtube](https://youtu.be/h11oPrXQU3s), [unitube](https://www.helsinki.fi/fi/unitube/video/4575ff19-bd89-4efa-baef-85c7bb2b91ce)
-  - Guest lectures
+- Guest lectures
+  - Attending on site earns you 1 course point (0.33 points per lecture)
   - Lecture 12: {{site.luennot-en[12]}} 
     - Ville Nordberg (Trail openers): _Can AI be done sustainably?_
     - Irene Nikkarinen (Kesko): _The life of a data scientist_

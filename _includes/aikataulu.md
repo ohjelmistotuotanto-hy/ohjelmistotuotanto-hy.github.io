@@ -65,6 +65,7 @@
   - [Arkkitehtuurisuunnittelu](/osa4#ohjelmiston-arkkitehtuuri)
   - [Arkkitehtuuri ketterissä menetemissä](/osa4#arkkitehtuuri-ketterissä-menetelmissä)
   - [Olio/komponenttisuunnittelu](/osa4#olio--ja-komponenttisuunnittelu)
+  - tallenne: [youtube](https://youtu.be/fTmbbDNnhgs)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/1H6Cf_pWXWA), [unitube](https://www.helsinki.fi/fi/unitube/video/ba831e26-0d5a-458c-b025-20544cbf1602)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/4">monivalintatehtävät</a> deadline {{site.moniv-dl[4]}}
@@ -93,7 +94,8 @@
   - [Laajan skaalan ketterä ohjelmistokehitys](/osa5#laajan-skaalan-ketter%C3%A4-ohjelmistokehitys)
   - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/h11oPrXQU3s), [unitube](https://www.helsinki.fi/fi/unitube/video/4575ff19-bd89-4efa-baef-85c7bb2b91ce)
-  - Vierailuluennot
+- Vierailuluennot
+  - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 12: {{site.luennot[12]}} 
     - Ville Nordberg (Trail openers): _Voiko tekoälyä tehdä kestävästi?_
     - Irene Nikkarinen (Kesko): _Datatieteilijän elämää_
