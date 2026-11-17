@@ -66,7 +66,7 @@
   - [Architectural design](/en/osa4#software-architecture)
   - [Architecture in agile methods](/en/osa4#architecture-in-agile-methods)
   - [Object and component design](/en/osa4#object-and-component-design)
-  - recording: [youtube](https://youtu.be/fTmbbDNnhgs)
+  - recording: [youtube](https://youtu.be/fTmbbDNnhgs), [unitube](https://www.helsinki.fi/fi/unitube/video/dd11065d-b80c-42ba-b2f3-e7e3edd4e8c7?t=12:25)
   - 2025 recordings: [youtube](https://youtu.be/1H6Cf_pWXWA), [unitube](https://www.helsinki.fi/fi/unitube/video/ba831e26-0d5a-458c-b025-20544cbf1602)
 - Exercises
   - <a href="{{site.stats_url}}/quiz/4">multiple choice quizzes</a> deadline {{site.moniv-dl-en[4]}}
