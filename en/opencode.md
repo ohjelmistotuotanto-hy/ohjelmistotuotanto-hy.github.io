@@ -4,7 +4,7 @@ title: OpenCode
 inheader: no
 permalink: /en/opencode/
 source: opencode.md
-source_commit: 85a3af3
+source_commit: 8284f30
 ---
 
 You can do the course's [AI] exercises either with GitHub Copilot in VS Code or with the open source coding agent [OpenCode](https://opencode.ai). The grounds for the choice are explained in [exercise 9](/en/tehtavat2/#9-first-contact-with-a-coding-agent-ai) of week 2. This page explains how to install OpenCode and how to use it. The exercise descriptions contain instructions for both tools: when you choose OpenCode with the switch at the beginning of an exercise, the description is shown for OpenCode.
@@ -149,6 +149,36 @@ palautusrepositorio
 ```
 
 If some project also has its own `opencode.json`, such as the MCP server definitions of week 7, its settings are merged with the settings of the file in the root. In conflicts concerning the same setting, the file closer to the start directory wins.
+
+This means you can override the approval in a single project. If, for example, you want the agent of some experimental project to work without asking, add an `opencode.json` to the project directory with the permissions set to `allow`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": "allow",
+    "edit": "allow"
+  }
+}
+```
+
+You can also fine-tune the permissions command by command. For example, the following setting allows the commands `git status`, `git diff` and `pytest` without asking, but the agent still asks for permission for other commands:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "pytest*": "allow"
+    }
+  }
+}
+```
+
+The last matching rule applies, so the general `*` rule is written first. Avoid broad rules such as `git *`, since it would also allow e.g. the commands `git push` and `git reset --hard`.
 
 You can also put the setting in the file `~/.config/opencode/opencode.json`, which applies to all projects on your machine.
 

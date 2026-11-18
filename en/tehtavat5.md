@@ -4,7 +4,7 @@ title: Week 5
 inheader: no
 permalink: /en/tehtavat5/
 source: tehtavat5.md
-source_commit: 85a3af3
+source_commit: 8284f30
 ---
 
 {% include en/laskari_info.md part=5 %}
@@ -223,7 +223,7 @@ To do the exercises you need a [GitHub Education](/en/tehtavat2/#github-educatio
 </div>
 
 <div class="vain-opencode" markdown="1">
-Copilot's review is done on GitHub, and it requires a [GitHub Education](/en/tehtavat2/#github-education) membership. With OpenCode the review is done on your own machine. If you have a GitHub Education membership, you can do this exercise with Copilot if you like by selecting Copilot above.
+You do the review with OpenCode on your own machine. If you have a [GitHub Education](/en/tehtavat2/#github-education) membership, you can alternatively do it with Copilot directly on GitHub: select Copilot with the switch at the beginning of the exercise.
 </div>
 
 <input type="checkbox"> Now create a Pull request on GitHub from the branch *tennis_refactoring* to the branch *main*
@@ -391,9 +391,9 @@ Copilot pushes the changes to the same branch that you already fetched to your m
 <div class="vain-opencode" markdown="1">
 <input type="checkbox"> Create a new branch, e.g. `git checkout -b web-ui`
 
-<input type="checkbox"> Start OpenCode in the project directory and give the issue description to the Build agent as a prompt
+<input type="checkbox"> Start OpenCode in the project directory and ask the Build agent to implement the issue by giving it the issue's URL, e.g. `Toteuta https://github.com/kayttaja/repo/issues/1` ("Implement https://github.com/kayttaja/repo/issues/1"). If your repository is private, the agent cannot read the issue, so in that case copy the issue description into the prompt.
 
-Turn on [command approval](/en/opencode/#approving-commands) if you do not want the agent to run commands without asking.
+> **Tip:** If you install GitHub's command line tool [gh](https://cli.github.com/) and log in to GitHub with it using the command `gh auth login`, the agent can read issues and pull request reviews from private repositories as well, and you don't need to copy them into the prompt. If you have turned on [command approval](/en/opencode/#approving-commands), the agent asks for permission before running `gh` commands.
 
 <input type="checkbox"> When the agent is done, make sure that the code works
 
@@ -409,9 +409,9 @@ _Doing a review requires that you understand what the code does. Code produced b
 
 You can start the review from the button "Add your review" at the top right of the Pull request's page.
 
-<input type="checkbox"> In the review, request some changes or extensions to the application. Select _Request changes_ on the form
+<input type="checkbox"> In the review, request some changes or extensions to the application. Select _Comment_ on the form, since GitHub doesn't allow the author of a pull request to select _Request changes_ on their own pull request
 
-<input type="checkbox"> Ask the Build agent to make the changes from the review, make sure that the code works after the changes, and push the changes to the same branch. One round of fixes is enough
+<input type="checkbox"> Ask the Build agent to make the changes requested in the review. The agent doesn't see the review by itself, so give it the pull request's URL, e.g. `Tee pull requestin https://github.com/kayttaja/repo/pull/1 katselmoinnissa pyydetyt muutokset` ("Make the changes requested in the review of pull request https://github.com/kayttaja/repo/pull/1"), or, if your repository is private, copy the review comments into the prompt. Make sure that the code works after the changes, and push the changes to the same branch. One round of fixes is enough
 </div>
 
 <input type="checkbox"> When you are satisfied, merge the Pull request into the main branch
