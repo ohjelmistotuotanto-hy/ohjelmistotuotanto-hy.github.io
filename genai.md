@@ -72,7 +72,7 @@ Joskus VS Coden tilavalikossa on tarjolla ainoastaan _Agent_ (sekä _Configure C
 
 ![]({{ "/images/mode1.png" | relative_url }}){: width="70%"}
 
-Tällöin Chat-näkymän alalaidasta on valittu ns. harness, jona on _Copilot_. Vaihda se valikosta muotoon _Local_, jonka jälkeen tilavalikossa ovat taas tarjolla myös _Ask_ ja _Plan_:
+Tällöin Chat-näkymän alalaidasta on valittu ns. [harness](#agenttinen-koodaus), jona on _Copilot_. Vaihda se valikosta muotoon _Local_, jonka jälkeen tilavalikossa ovat taas tarjolla myös _Ask_ ja _Plan_:
 
 ![]({{ "/images/mode2.png" | relative_url }}){: width="70%"}
 
@@ -92,6 +92,15 @@ Selitykset ovat yleensä hyviä, mutta ne voivat myös olla virheellisiä. Jos s
 2. agentti kutsuu jotain työkalua: lukee tiedoston, muokkaa koodia, suorittaa komennon terminaalissa, ajaa testit
 3. agentti havainnoi työkalun tuloksen, esim. testien virheilmoituksen
 4. agentti korjaa toimintaansa havaintojen perusteella ja palaa kohtaan 1
+
+Agentti ei kuitenkaan ole pelkkä kielimalli. Kielimalli ainoastaan tuottaa tekstiä. Se voi pyytää työkalun käyttöä, mutta se ei itse lue tiedostoja eikä suorita komentoja. Sen tekee kielimallin ympärille rakennettu ohjelma, jota kutsutaan englanniksi nimellä _harness_. Harness
+
+- kokoaa kielimallille lähetettävän kontekstin: käyttäjän pyynnön, ohjetiedoston, viitatut tiedostot ja aiempien työkalukutsujen tulokset
+- kertoo kielimallille, mitä työkaluja on käytettävissä
+- suorittaa kielimallin pyytämät työkalukutsut ja palauttaa niiden tulokset mallille
+- pyörittää silmukkaa ja kysyy tarvittaessa käyttäjältä luvan komentojen suorittamiseen.
+
+Agentti on siis kielimalli ja harness yhdessä. Esimerkiksi Copilot, OpenCode ja Claude Code ovat harnesseja, ja samaa kielimallia voi käyttää useammassa niistä. Tästä syystä sama malli voi toimia eri työkaluissa eri tavoin, ja esimerkiksi komentojen hyväksyminen ja prompt-tiedostojen tuki riippuvat harnessista eivätkä kielimallista. VS Coden Chat-näkymän harness-valikossa (ks. [Jos valikossa on vain Agent](#jos-valikossa-on-vain-agent)) valitaan juuri tämä kielimallia ympäröivä ohjelma.
 
 Ero pelkkään AI-chattiin on merkittävä: ohjelmoijan ei tarvitse kopioida koodia tai virheilmoituksia edestakaisin, vaan agentti näkee itse koko projektin ja pystyy tarkistamaan, toimiiko sen tekemä koodi. Agentit osaavat nykyään tehdä laajojakin, useisiin tiedostoihin ulottuvia muutoksia.
 
@@ -399,6 +408,15 @@ Palvelinta voi testata [MCP Inspectorilla](https://github.com/modelcontextprotoc
 - [Viikko 7, tehtävä 7: Oma MCP-palvelin](/tehtavat7/#7-oma-mcp-palvelin-tekoäly)
 
 ## Lopuksi <span style="color:blue">[viikko 7]</span>
+
+### Harness engineering
+
+Kurssilla käsitellyille agentin käytön keinoille on alettu käyttää yhteistä nimeä _harness engineering_. Kuten luvussa [Agenttinen koodaus](#agenttinen-koodaus) todettiin, harness on agentissa kaikki muu kuin kielimalli. Harness engineering tarkoittaa tämän ympäristön rakentamista ja kehittämistä niin, että agentti tekee oikeita asioita. Kun agentti tekee virheen, korjataan koodin lisäksi ympäristöä, jotta virhe ei toistu. [Birgitta Böckeler](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html) jakaa harnessin keinot kahteen ryhmään:
+
+- **ohjaimet** (feedforward) kertovat agentille etukäteen, mitä tehdään ja miten: ohjetiedosto, skillsit, prompt-tiedostot ja hyvin kirjoitetut vaatimukset
+- **sensorit** (feedback) kertovat jälkikäteen, onnistuiko agentti: testit, linterit, CI ja katselmointi.
+
+Harness engineeringin tarkoitus ei ole poistaa ihmistä prosessista, vaan ohjata ihmisen työ sinne, missä sitä eniten tarvitaan.
 
 ### Riskit koottuna
 
