@@ -221,7 +221,7 @@ Tehtävien tekeminen edellyttää, että sinulla on [GitHub Education](/tehtavat
 </div>
 
 <div class="vain-opencode" markdown="1">
-Copilotin katselmointi tehdään GitHubissa, ja se edellyttää [GitHub Education](/tehtavat2/#github-education) -jäsenyyttä. OpenCodella katselmointi tehdään omalla koneella. Jos sinulla on GitHub Education -jäsenyys, voit halutessasi tehdä tämän tehtävän Copilotilla valitsemalla yltä Copilotin.
+Teet katselmoinnin OpenCodella omalla koneellasi. Jos sinulla on [GitHub Education](/tehtavat2/#github-education) -jäsenyys, voit vaihtoehtoisesti tehdä sen Copilotilla suoraan GitHubissa: valitse Copilot tehtävän alussa olevasta valitsimesta.
 </div>
 
 <input type="checkbox"> Tee nyt GitHubissa Pull request haarasta *tennis_refactoring* haaraan *main*
@@ -389,9 +389,9 @@ Copilot pushaa muutokset samaan haaraan, jonka olet jo hakenut koneellesi. Saat 
 <div class="vain-opencode" markdown="1">
 <input type="checkbox"> Luo uusi haara, esim. `git checkout -b web-ui`
 
-<input type="checkbox"> Käynnistä OpenCode projektin hakemistossa ja anna issuen kuvaus Build-agentille promptina
+<input type="checkbox"> Käynnistä OpenCode projektin hakemistossa ja pyydä Build-agenttia toteuttamaan issue antamalla sille issuen osoite, esim. `Toteuta https://github.com/kayttaja/repo/issues/1`. Jos repositoriosi on yksityinen, agentti ei pääse lukemaan issueta, joten kopioi silloin issuen kuvaus promptiin.
 
-Ota käyttöön [komentojen hyväksyminen](/opencode/#komentojen-hyväksyminen), jos et halua agentin suorittavan komentoja kysymättä.
+> **Vinkki:** Jos asennat GitHubin komentorivityökalun [gh](https://cli.github.com/) ja kirjaudut sillä GitHubiin komennolla `gh auth login`, agentti pystyy lukemaan issueita ja pull requestien katselmointeja myös yksityisistä repositorioista, eikä niitä tarvitse kopioida promptiin. Jos olet ottanut käyttöön [komentojen hyväksymisen](/opencode/#komentojen-hyväksyminen), agentti kysyy luvan ennen `gh`-komentojen suorittamista.
 
 <input type="checkbox"> Kun agentti on valmis, varmista, että koodi toimii
 
@@ -407,9 +407,9 @@ _Katselmoinnin tekeminen edellyttää, että ymmärrät mitä koodi tekee. Agent
 
 Pääset tekemään katselmoinnin Pull requestin sivun yläoikealla olevasta napista "Add your review".
 
-<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia tai laajennuksia sovellukseen. Valitse lomakkeelta _Request changes_
+<input type="checkbox"> Vaadi katselmoinnissa jotain muutoksia tai laajennuksia sovellukseen. Valitse lomakkeelta _Comment_, sillä GitHub ei salli pull requestin tekijän valita omalle pull requestilleen vaihtoehtoa _Request changes_
 
-<input type="checkbox"> Pyydä katselmoinnin muutokset Build-agentilta, varmista että koodi toimii muutosten jälkeen, ja pushaa muutokset samaan haaraan. Yksi korjauskierros riittää
+<input type="checkbox"> Pyydä Build-agenttia tekemään katselmoinnissa vaaditut muutokset. Agentti ei näe katselmointia itsestään, joten anna sille pull requestin osoite, esim. `Tee pull requestin https://github.com/kayttaja/repo/pull/1 katselmoinnissa pyydetyt muutokset`, tai jos repositoriosi on yksityinen, kopioi katselmoinnin kommentit promptiin. Varmista, että koodi toimii muutosten jälkeen, ja pushaa muutokset samaan haaraan. Yksi korjauskierros riittää
 </div>
 
 <input type="checkbox"> Kun olet tyytyväinen mergeä Pull request main-haaraan

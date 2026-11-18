@@ -148,6 +148,36 @@ palautusrepositorio
 
 Jos jollain projektilla on lisäksi oma `opencode.json`, kuten viikon 7 MCP-palvelinten määrittelyt, sen asetukset yhdistetään juuressa olevan tiedoston asetuksiin. Samaa asetusta koskevissa ristiriidoissa lähempänä käynnistyshakemistoa oleva tiedosto voittaa.
 
+Tämän ansiosta hyväksymisen voi ohittaa yksittäisessä projektissa. Jos esimerkiksi haluat jonkin kokeiluprojektin agentin toimivan kysymättä, lisää projektin hakemistoon `opencode.json`, jossa luvat on asetettu arvoon `allow`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": "allow",
+    "edit": "allow"
+  }
+}
+```
+
+Lupia voi myös hienosäätää komennoittain. Esimerkiksi seuraava asetus sallii komennot `git status`, `git diff` ja `pytest` kysymättä, mutta muista komennoista agentti kysyy edelleen luvan:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "pytest*": "allow"
+    }
+  }
+}
+```
+
+Säännöistä sovelletaan viimeistä täsmäävää, joten yleinen `*`-sääntö kirjoitetaan ensimmäiseksi. Vältä laajoja sääntöjä kuten `git *`, sillä se sallisi myös esim. komennot `git push` ja `git reset --hard`.
+
 Asetuksen voi laittaa myös kaikkia koneesi projekteja koskevaan tiedostoon `~/.config/opencode/opencode.json`.
 
 ## Copilotin ominaisuudet OpenCodessa
