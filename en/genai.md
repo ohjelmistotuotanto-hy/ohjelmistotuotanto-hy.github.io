@@ -4,7 +4,7 @@ title: AI in software development
 inheader: no
 permalink: /en/genai/
 source: genai.md
-source_commit: 85a3af3
+source_commit: a254772
 ---
 
 This page covers the use of generative AI, and coding agents in particular, in software development. The material progresses week by week at the same pace as the [AI] exercises of the weekly exercises. Sections marked with <span style="color:blue">[week N]</span> relate to the exercises of week N, so you can skip them in earlier weeks.
@@ -74,7 +74,7 @@ Sometimes the mode menu of VS Code offers only _Agent_ (and _Configure Custom Ag
 
 ![]({{ "/images/mode1.png" | relative_url }}){: width="70%"}
 
-In this case, the so-called harness selected at the bottom of the Chat view is _Copilot_. Change it in the menu to _Local_, after which the mode menu offers _Ask_ and _Plan_ again:
+In this case, the so-called [harness](#agentic-coding) selected at the bottom of the Chat view is _Copilot_. Change it in the menu to _Local_, after which the mode menu offers _Ask_ and _Plan_ again:
 
 ![]({{ "/images/mode2.png" | relative_url }}){: width="70%"}
 
@@ -94,6 +94,15 @@ An [agent](https://cloud.google.com/discover/what-are-ai-agents) is a language m
 2. the agent calls some tool: reads a file, edits code, runs a command in the terminal, runs the tests
 3. the agent observes the result of the tool, e.g. the error message of the tests
 4. the agent corrects its course based on the observations and returns to step 1
+
+An agent is, however, not just a language model. A language model only produces text. It can request the use of a tool, but it does not read files or run commands itself. That is done by a program built around the language model, called a _harness_. The harness
+
+- assembles the context sent to the language model: the user's request, the instruction file, the referenced files and the results of earlier tool calls
+- tells the language model which tools are available
+- executes the tool calls the language model requests and returns their results to the model
+- runs the loop and asks the user for permission to run commands when needed.
+
+An agent is thus a language model and a harness together. For example, Copilot, OpenCode and Claude Code are harnesses, and the same language model can be used in several of them. This is why the same model can behave differently in different tools, and why, for example, command approval and support for prompt files depend on the harness and not on the language model. The harness menu in VS Code's Chat view (see [If the menu only has Agent](#if-the-menu-only-has-agent)) selects exactly this program around the language model.
 
 The difference from a plain AI chat is significant: the programmer does not need to copy code or error messages back and forth, since the agent sees the whole project itself and can check whether the code it wrote works. Nowadays agents can make even extensive changes spanning several files.
 
@@ -401,6 +410,15 @@ You can test the server with the [MCP Inspector](https://github.com/modelcontext
 - [Week 7, exercise 7: Your own MCP server](/en/tehtavat7/#7-your-own-mcp-server-ai)
 
 ## Finally <span style="color:blue">[week 7]</span>
+
+### Harness engineering
+
+The ways of working with agents covered in this course have started to go by a common name, _harness engineering_. As noted in [Agentic coding](#agentic-coding), the harness is everything in an agent except the language model. Harness engineering means building and developing this environment so that the agent does the right things. When the agent makes a mistake, you fix not only the code but also the environment, so that the mistake is not repeated. [Birgitta Böckeler](https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html) divides the means of a harness into two groups:
+
+- **guides** (feedforward) tell the agent in advance what to do and how: the instruction file, skills, prompt files and well-written requirements
+- **sensors** (feedback) tell afterwards whether the agent succeeded: tests, linters, CI and review.
+
+The purpose of harness engineering is not to remove people from the process, but to direct human effort to where it is needed most.
 
 ### Risks summarised
 
