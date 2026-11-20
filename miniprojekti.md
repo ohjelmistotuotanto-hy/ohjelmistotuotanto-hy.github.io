@@ -12,6 +12,7 @@ inheader: yes
   <ul style="margin-bottom: -2px">
     <li>Ensimmäisen sprintin <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
     <li>Toisen sprintin <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
+    <li>Kolmannen sprintin <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
   </ul>
 </div>
 
