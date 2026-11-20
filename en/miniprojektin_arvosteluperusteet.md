@@ -4,7 +4,7 @@ title: Mini project grading criteria
 inheader: no
 permalink: /en/miniprojektin_arvosteluperusteet/
 source: miniprojektin_arvosteluperusteet.md
-source_commit: 85a3af3
+source_commit: 364039b
 ---
 
 - [Grading criteria for the first sprint](/en/miniprojektin_arvosteluperusteet#grading-criteria-for-the-first-sprint)
@@ -131,7 +131,38 @@ The maximum for the sprint is 2.5 points.
 
 ### Grading criteria for the third sprint
 
-_Coming later!_
+Points are awarded for the following:
+
+- (0.25p) product backlog
+  - The backlog is DEEP (the stories do not need to be estimated)
+  - No junk that does not belong there remains in the backlog, the statuses of the stories are recorded correctly, etc...
+- (0.25p) the acceptance criteria of the stories selected for sprint 3 are written in Robot Framework files
+  - The acceptance criteria are **not written separately in the backlog**; instead, each story in the backlog has a link to its acceptance test file
+- (0.25p) sprint 3 backlog
+  - Requirements as in the previous sprints
+- (0.25p) fairly comprehensive testing at the story level
+- (0.25p) the program has a suitable amount of unit tests
+  - still pay attention to [this](/en/flask/#about-the-tests) note on testing
+- (0.25p) continuous integration
+  - The CI service runs the unit and story tests and PyLint
+  - the main branch has been broken in at most about 25% of the commits of the sprint 
+- (0.125p) a link from the GitHub README to the test coverage report
+  - the report covers only the files that make sense to unit test
+- (0.125p) A [retrospective](/en/miniprojektin_arvosteluperusteet/#retrospective) has been held at the end of sprint 2, proper notes have been made of it, and they contain at least three concrete improvements
+  - the notes show how the improvements from the sprint 1 retrospective were carried out
+- (0.25p) The improvements from the sprint 2 retrospective are tasks in the sprint 3 backlog, and the team has acted on them
+- (0.25p) most of the user stories of the sprint are implemented at the level required by the definition of done
+  - the stories are assessed in the version running on the OKD cluster: **if the application does not work in OKD, you get at most half of the points for this item (0.125p)**
+- (0.125p) release and license
+  - a properly named and described [release](https://help.github.com/articles/creating-releases/) has been created on GitHub of the working version shown in the demo
+  - a suitable license has been chosen for the program and defined in the repository. Read more about software licenses [here](/en/lisenssit/)
+- (0.125p) the group has prepared properly for the sprint review
+  - The review is run by a different person than in the previous review
+  - The person running the review has been agreed on and the necessary preparations have been made in advance
+  - During the review, the customer is shown that each user story selected for the sprint has been implemented according to its acceptance criteria
+  - In the review, the application is shown with a projector. Connecting the computer to the projector **must be practised** in advance, e.g. the display must already be configured correctly (display mirroring), or you must be able to do the configuration in at most five seconds
+
+The maximum for the sprint is 2.5 points.
 
 ### Grading criteria for the fourth sprint
 
