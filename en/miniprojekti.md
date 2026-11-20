@@ -5,14 +5,13 @@ title_long: 'Mini project'
 permalink: /en/miniprojekti/
 inheader: yes
 source: miniprojekti.md
-source_commit: 01e3ae2
+source_commit: 27d8f62
 ---
 
 ### News
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-first-sprint">Grading criteria</a> for the first sprint</li>
     <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-second-sprint">Grading criteria</a> for the second sprint</li>
     <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-third-sprint">Grading criteria</a> for the third sprint</li>
   </ul>
