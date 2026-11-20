@@ -10,7 +10,6 @@ inheader: yes
 
 <div style="color:black; border-style: solid; border-width: thick; border-color: green; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
   <ul style="margin-bottom: -2px">
-    <li>Ensimmäisen sprintin <a href="/miniprojektin_arvosteluperusteet/#ensimmäisen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
     <li>Toisen sprintin <a href="/miniprojektin_arvosteluperusteet/#toisen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
     <li>Kolmannen sprintin <a href="/miniprojektin_arvosteluperusteet/#kolmannen-sprintin-arvosteluperusteet">arvosteluperusteet</a></li>
   </ul>
