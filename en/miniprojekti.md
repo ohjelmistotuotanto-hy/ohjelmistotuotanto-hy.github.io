@@ -5,7 +5,7 @@ title_long: 'Mini project'
 permalink: /en/miniprojekti/
 inheader: yes
 source: miniprojekti.md
-source_commit: 85a3af3
+source_commit: 01e3ae2
 ---
 
 ### News
@@ -14,6 +14,7 @@ source_commit: 85a3af3
   <ul style="margin-bottom: -2px">
     <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-first-sprint">Grading criteria</a> for the first sprint</li>
     <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-second-sprint">Grading criteria</a> for the second sprint</li>
+    <li><a href="/en/miniprojektin_arvosteluperusteet/#grading-criteria-for-the-third-sprint">Grading criteria</a> for the third sprint</li>
   </ul>
 </div>
 
