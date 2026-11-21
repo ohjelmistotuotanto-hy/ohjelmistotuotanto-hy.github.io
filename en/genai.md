@@ -4,7 +4,7 @@ title: AI in software development
 inheader: no
 permalink: /en/genai/
 source: genai.md
-source_commit: a254772
+source_commit: d149031
 ---
 
 This page covers the use of generative AI, and coding agents in particular, in software development. The material progresses week by week at the same pace as the [AI] exercises of the weekly exercises. Sections marked with <span style="color:blue">[week N]</span> relate to the exercises of week N, so you can skip them in earlier weeks.
@@ -51,18 +51,22 @@ A few principles explain a lot about how language models behave:
 
 ### Forms of AI-assisted programming
 
-The use of AI in programming has developed enormously in just a few years. Roughly, the following ways of use can be distinguished, all of which are available in GitHub Copilot:
+The use of AI in programming has developed enormously in just a few years. Roughly, the following ways of use can be distinguished. The table also shows how each of them works in the tools used on the course:
 
-| Way of use | What it does | In Copilot |
-|---|---|---|
-| Code completion | suggests the next line or function as you type | inline suggestions in the editor |
-| Chat | answers questions, explains code | Chat view, _Ask_ |
-| Agent | independently makes changes to several files, runs commands and tests | Chat view, _Agent_ |
-| Planning agent | explores the code and draws up an implementation plan before making changes | Chat view, _Plan_ |
-| Cloud agent | does the task on GitHub's servers and opens a pull request | [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |
-| Review | comments on the code of a pull request | [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) |
+| Way of use | What it does | In Copilot | In OpenCode |
+|---|---|---|---|
+| Code completion | suggests the next line or function as you type | inline suggestions in the editor | not available, OpenCode runs in the terminal |
+| Chat | answers questions, explains code | Chat view, _Ask_ | _Plan_ agent |
+| Agent | independently makes changes to several files, runs commands and tests | Chat view, _Agent_ | _Build_ agent |
+| Planning agent | explores the code and draws up an implementation plan before making changes | Chat view, _Plan_ | _Plan_ agent |
+| Cloud agent | does the task on GitHub's servers and opens a pull request | [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) | on the course, the agent implements a GitHub issue on your own machine |
+| Review | comments on the code of a pull request | [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) | the _Plan_ agent reviews the changes of a branch on your own machine |
 
-During weeks 2–7 of the course, you will get to know all of these.
+During weeks 2–7 of the course, you will get to know all of these. The agent concepts are the same in both tools, but the user interface is different: Copilot is integrated into the VS Code editor, whereas OpenCode runs in the terminal.
+
+{% include ai_valitsin.html %}
+
+<div class="vain-copilot" markdown="1">
 
 On the course, Copilot is used mainly through VS Code. Code completion works directly in the editor. The other ways of use are in the Chat view, which opens from the "Toggle Chat" button in the top bar of the window (arrow in the picture). At the bottom of the Chat view, you select the mode Copilot works in (_Agent_, _Ask_ or _Plan_), as well as the language model to use. VS Code nowadays calls these modes agents; for clarity, this material talks about modes. You can start a new conversation from the + button at the top of the view.
 
@@ -79,6 +83,18 @@ In this case, the so-called [harness](#agentic-coding) selected at the bottom of
 ![]({{ "/images/mode2.png" | relative_url }}){: width="70%"}
 
 The harness also affects other features, e.g. the [prompt files](#prompt-files-and-custom-agents) covered in week 7 only work in the _Local_ harness.
+
+</div>
+
+<div class="vain-opencode" markdown="1">
+
+OpenCode is started in the terminal in the project directory with the command `opencode`, and the conversation with the agent takes place in the terminal. The changes made by the agent appear in the files, so you can read and edit the code in any editor. You can use OpenCode e.g. in VS Code's own terminal. Installation and setup are described on the [OpenCode](/en/opencode/) page.
+
+OpenCode has two built-in agents, between which you switch with the **Tab** key: _Build_ makes changes and runs commands, _Plan_ only explores the code, answers questions and draws up plans. The selected agent is shown in the bottom right corner of the screen. The language model is changed with the command `/models`, and a new conversation is started with the command `/new`.
+
+The examples in this material are written for Copilot, but they work in OpenCode with small changes. When the material talks about Copilot's _Agent_ mode, use the _Build_ agent in OpenCode, and instead of the _Ask_ and _Plan_ modes, use the _Plan_ agent. Other equivalences are collected on the [OpenCode page](/en/opencode/#copilot-features-in-opencode).
+
+</div>
 
 ### Understanding unfamiliar code
 
