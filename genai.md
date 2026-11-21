@@ -49,18 +49,22 @@ Muutama periaate selittää paljon kielimallien käyttäytymisestä:
 
 ### AI-avusteisen ohjelmoinnin muodot
 
-Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Karkeasti voidaan erottaa seuraavat käyttötavat, jotka kaikki ovat GitHub Copilotissa tarjolla:
+Tekoälyn käyttö ohjelmoinnissa on kehittynyt muutamassa vuodessa huimasti. Karkeasti voidaan erottaa seuraavat käyttötavat. Taulukossa on myös se, miten kukin käyttötapa toteutuu kurssilla käytettävissä työkaluissa:
 
-| Käyttötapa | Mitä tekee | Copilotissa |
-|---|---|---|
-| Koodin täydennys | ehdottaa seuraavaa riviä tai funktiota kirjoitettaessa | editorin inline-ehdotukset |
-| Chat | vastaa kysymyksiin, selittää koodia | Chat-näkymä, _Ask_ |
-| Agentti | tekee itsenäisesti muutoksia useisiin tiedostoihin, suorittaa komentoja ja testejä | Chat-näkymä, _Agent_ |
-| Suunnitteleva agentti | tutkii koodia ja laatii toteutussuunnitelman ennen muutoksia | Chat-näkymä, _Plan_ |
-| Pilviagentti | tekee tehtävän GitHubin palvelimilla ja avaa pull requestin | [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |
-| Katselmointi | kommentoi pull requestin koodia | [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) |
+| Käyttötapa | Mitä tekee | Copilotissa | OpenCodessa |
+|---|---|---|---|
+| Koodin täydennys | ehdottaa seuraavaa riviä tai funktiota kirjoitettaessa | editorin inline-ehdotukset | ei ole, OpenCode toimii terminaalissa |
+| Chat | vastaa kysymyksiin, selittää koodia | Chat-näkymä, _Ask_ | _Plan_-agentti |
+| Agentti | tekee itsenäisesti muutoksia useisiin tiedostoihin, suorittaa komentoja ja testejä | Chat-näkymä, _Agent_ | _Build_-agentti |
+| Suunnitteleva agentti | tutkii koodia ja laatii toteutussuunnitelman ennen muutoksia | Chat-näkymä, _Plan_ | _Plan_-agentti |
+| Pilviagentti | tekee tehtävän GitHubin palvelimilla ja avaa pull requestin | [Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) | kurssilla agentti toteuttaa GitHubin issuen omalla koneella |
+| Katselmointi | kommentoi pull requestin koodia | [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) | _Plan_-agentti katselmoi haaran muutokset omalla koneella |
 
-Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä.
+Kurssilla tutustutaan viikoilla 2–7 kaikkiin näistä. Agentin käsitteet ovat molemmissa työkaluissa samat, mutta käyttöliittymä on erilainen: Copilot on integroitu VS Code -editoriin, OpenCode taas toimii terminaalissa.
+
+{% include ai_valitsin.html %}
+
+<div class="vain-copilot" markdown="1">
 
 Copilotia käytetään kurssilla pääasiassa VS Coden kautta. Koodin täydennys toimii suoraan editorissa. Muut käyttötavat ovat Chat-näkymässä, joka aukeaa ikkunan yläpalkissa olevasta "Toggle Chat" -painikkeesta (kuvassa nuoli). Chat-näkymän alalaidasta valitaan, missä tilassa Copilot toimii (_Agent_, _Ask_ tai _Plan_), sekä käytettävä kielimalli. VS Code kutsuu näitä tiloja nykyään agenteiksi, tässä materiaalissa puhutaan selkeyden vuoksi tiloista. Uuden keskustelun saa aloitettua näkymän yläreunan +-painikkeesta.
 
@@ -77,6 +81,18 @@ Tällöin Chat-näkymän alalaidasta on valittu ns. [harness](#agenttinen-koodau
 ![]({{ "/images/mode2.png" | relative_url }}){: width="70%"}
 
 Harness vaikuttaa myös muihin ominaisuuksiin, esim. viikolla 7 käsiteltävät [prompt-tiedostot](#prompt-tiedostot-ja-räätälöidyt-agentit) toimivat ainoastaan _Local_-harnessissa.
+
+</div>
+
+<div class="vain-opencode" markdown="1">
+
+OpenCode käynnistetään terminaalissa projektin hakemistossa komennolla `opencode`, ja keskustelu agentin kanssa käydään terminaalissa. Agentin tekemät muutokset näkyvät tiedostoissa, joten koodia voi lukea ja muokata missä tahansa editorissa. OpenCodea voi käyttää esim. VS Coden omassa terminaalissa. Asennus ja käyttöönotto on kuvattu sivulla [OpenCode](/opencode/).
+
+OpenCodessa on kaksi sisäänrakennettua agenttia, joiden välillä vaihdetaan **Tab**-näppäimellä: _Build_ tekee muutoksia ja suorittaa komentoja, _Plan_ ainoastaan tutkii koodia, vastaa kysymyksiin ja laatii suunnitelmia. Valittu agentti näkyy näytön oikeassa alakulmassa. Kielimalli vaihdetaan komennolla `/models` ja uusi keskustelu aloitetaan komennolla `/new`.
+
+Tämän materiaalin esimerkit on kirjoitettu Copilotille, mutta ne toimivat OpenCodessa pienin muutoksin. Kun materiaalissa puhutaan Copilotin _Agent_-tilasta, käytä OpenCodessa _Build_-agenttia, ja _Ask_- ja _Plan_-tilojen sijaan _Plan_-agenttia. Muut vastaavuudet on koottu [OpenCode-sivulle](/opencode/#copilotin-ominaisuudet-opencodessa).
+
+</div>
 
 ### Tuntemattoman koodin ymmärtäminen
 
