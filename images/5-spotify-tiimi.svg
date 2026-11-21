@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="470" viewBox="0 0 560 470" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a0aec0"/></marker></defs>
+<rect width="560" height="470" fill="#fff"/>
+<rect x="150" y="110" width="100" height="212.5" rx="50" fill="#fff" stroke="#4299b8" stroke-width="2.5"/>
+<circle cx="178" cy="131.95" r="8.625" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="163.05" y="142.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="222" cy="131.95" r="8.625" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="207.05" y="142.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="178" cy="189.45" r="8.625" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="163.05" y="199.8" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="222" cy="189.45" r="8.625" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="207.05" y="199.8" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="178" cy="246.95" r="8.625" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="163.05" y="257.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="222" cy="246.95" r="8.625" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="207.05" y="257.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="200" y="352.5" font-size="20" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi (squad)</text>
+<text x="200" y="374.5" font-size="14" fill="#4a5568" text-anchor="middle">5–10 henkeä, cross-functional</text>
+<circle cx="200" cy="41.95" r="8.625" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="185.05" y="52.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="226" y="50" font-size="15" font-weight="bold" fill="#c53030" text-anchor="start">Product owner</text>
+<text x="226" y="68" font-size="13" fill="#4a5568" text-anchor="start">mitä rakennetaan seuraavaksi</text>
+<line x1="200" y1="106" x2="200" y2="82" stroke="#a0aec0" stroke-width="6" marker-end="url(#ag)"/>
+<circle cx="420" cy="201.95" r="8.625" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="3,2"/>
+<rect x="405.05" y="212.3" width="29.9" height="16.099999999999998" rx="8.049999999999999" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="420" y="250" font-size="15" font-weight="bold" fill="#2d3748" text-anchor="middle">Agile coach</text>
+<text x="420" y="268" font-size="13" fill="#4a5568" text-anchor="middle">tukee ja valmentaa</text>
+<line x1="394" y1="210" x2="258" y2="210" stroke="#4a5568" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#ap)"/>
+<circle cx="40" cy="434.4" r="6.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="29.6" y="441.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="58" y="446" font-size="14" fill="#4a5568" text-anchor="start">Frontend</text>
+<circle cx="170" cy="434.4" r="6.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="159.6" y="441.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="188" y="446" font-size="14" fill="#4a5568" text-anchor="start">Backend</text>
+<circle cx="300" cy="434.4" r="6.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="289.6" y="441.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="318" y="446" font-size="14" fill="#4a5568" text-anchor="start">Testaus</text>
+<circle cx="430" cy="434.4" r="6.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="419.6" y="441.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="448" y="446" font-size="14" fill="#4a5568" text-anchor="start">UX</text>
+</svg>

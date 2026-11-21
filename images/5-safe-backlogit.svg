@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker></defs>
+<rect width="1200" height="850" fill="#fff"/>
+<text x="30" y="76.0" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="start">Portfolio</text>
+<text x="30" y="100.0" font-size="15" fill="#4a5568" text-anchor="start">vastaa: portfolion johto</text>
+<rect x="296" y="26" width="870" height="120" rx="12" fill="#1a202c"/>
+<rect x="290" y="20" width="870" height="120" rx="12" fill="#faf5ff" stroke="#2d3748" stroke-width="2.5"/>
+<text x="310" y="52" font-size="18" font-weight="bold" fill="#2d3748" text-anchor="start">Portfolion backlog</text>
+<rect x="310" y="72" width="155" height="44" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="387.5" y="99.0" font-size="15" fill="#2d3748" text-anchor="middle">Epic</text>
+<rect x="485" y="72" width="155" height="44" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="562.5" y="99.0" font-size="15" fill="#2d3748" text-anchor="middle">Epic</text>
+<rect x="660" y="72" width="155" height="44" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="737.5" y="99.0" font-size="15" fill="#2d3748" text-anchor="middle">Epic</text>
+<line x1="725.0" y1="148" x2="725.0" y2="202" stroke="#2d3748" stroke-width="2.5" marker-end="url(#ap)"/>
+<text x="739.0" y="182" font-size="15" fill="#4a5568" text-anchor="start">epicit jaetaan ominaisuuksiksi</text>
+<text x="30" y="276.0" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="start">Toimitusjuna</text>
+<text x="30" y="300.0" font-size="15" fill="#4a5568" text-anchor="start">vastaa: product management</text>
+<rect x="296" y="216" width="870" height="140" rx="12" fill="#1a202c"/>
+<rect x="290" y="210" width="870" height="140" rx="12" fill="#fffaf0" stroke="#2d3748" stroke-width="2.5"/>
+<text x="310" y="242" font-size="18" font-weight="bold" fill="#2d3748" text-anchor="start">Junan backlog (ART backlog)</text>
+<rect x="310" y="262" width="125" height="44" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="372.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Ominaisuus</text>
+<rect x="450" y="262" width="125" height="44" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="512.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Ominaisuus</text>
+<rect x="590" y="262" width="125" height="44" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="652.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Ominaisuus</text>
+<rect x="730" y="262" width="125" height="44" rx="5" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="792.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Enabler</text>
+<rect x="870" y="262" width="125" height="44" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="932.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Ominaisuus</text>
+<rect x="1010" y="262" width="125" height="44" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1072.5" y="289.0" font-size="15" fill="#2d3748" text-anchor="middle">Ominaisuus</text>
+<text x="310" y="332" font-size="15" font-style="italic" fill="#4a5568" text-anchor="start">järjestetty WSJF:n mukaan, tärkein vasemmalla</text>
+<line x1="725.0" y1="358" x2="725.0" y2="412" stroke="#2d3748" stroke-width="2.5" marker-end="url(#ap)"/>
+<text x="739.0" y="382" font-size="15" fill="#4a5568" text-anchor="start">PI planning: tiimit pilkkovat ottamansa</text>
+<text x="739.0" y="402" font-size="15" fill="#4a5568" text-anchor="start">ominaisuudet storyiksi omaan backlogiinsa</text>
+<text x="30" y="531.0" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="start">Tiimi</text>
+<text x="30" y="555.0" font-size="15" fill="#4a5568" text-anchor="start">vastaa: product owner</text>
+<rect x="296.0" y="426" width="270" height="230" rx="12" fill="#1a202c"/>
+<rect x="290.0" y="420" width="270" height="230" rx="12" fill="#ebf8ff" stroke="#2d3748" stroke-width="2.5"/>
+<text x="308.0" y="452" font-size="18" font-weight="bold" fill="#2d3748" text-anchor="start">Tiimin A backlog</text>
+<rect x="308.0" y="470" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="425.0" y="492.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="308.0" y="512" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="425.0" y="534.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="308.0" y="554" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="425.0" y="576.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="308.0" y="596" width="234" height="34" rx="5" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="425.0" y="618.0" font-size="15" fill="#2d3748" text-anchor="middle">Tiimin oma tehtävä</text>
+<rect x="596.0" y="426" width="270" height="230" rx="12" fill="#1a202c"/>
+<rect x="590.0" y="420" width="270" height="230" rx="12" fill="#ebf8ff" stroke="#2d3748" stroke-width="2.5"/>
+<text x="608.0" y="452" font-size="18" font-weight="bold" fill="#2d3748" text-anchor="start">Tiimin B backlog</text>
+<rect x="608.0" y="470" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="725.0" y="492.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="608.0" y="512" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="725.0" y="534.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="608.0" y="554" width="234" height="34" rx="5" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="725.0" y="576.0" font-size="15" fill="#2d3748" text-anchor="middle">Tiimin oma tehtävä</text>
+<rect x="608.0" y="596" width="234" height="34" rx="5" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="725.0" y="618.0" font-size="15" fill="#2d3748" text-anchor="middle">Tiimin oma tehtävä</text>
+<rect x="896.0" y="426" width="270" height="230" rx="12" fill="#1a202c"/>
+<rect x="890.0" y="420" width="270" height="230" rx="12" fill="#ebf8ff" stroke="#2d3748" stroke-width="2.5"/>
+<text x="908.0" y="452" font-size="18" font-weight="bold" fill="#2d3748" text-anchor="start">Tiimin C backlog</text>
+<rect x="908.0" y="470" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1025.0" y="492.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="908.0" y="512" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1025.0" y="534.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="908.0" y="554" width="234" height="34" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1025.0" y="576.0" font-size="15" fill="#2d3748" text-anchor="middle">Story</text>
+<rect x="908.0" y="596" width="234" height="34" rx="5" fill="#e2e8f0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1025.0" y="618.0" font-size="15" fill="#2d3748" text-anchor="middle">Tiimin oma tehtävä</text>
+<text x="30" y="738" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="start">Rytmi</text>
+<text x="30" y="762" font-size="15" fill="#4a5568" text-anchor="start">kaikilla tiimeillä sama</text>
+<rect x="385" y="720" width="150" height="44" rx="5" fill="#f7fafc" stroke="#2d3748" stroke-width="1.5"/>
+<text x="460.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle">Iteraatio 1</text>
+<rect x="540" y="720" width="150" height="44" rx="5" fill="#f7fafc" stroke="#2d3748" stroke-width="1.5"/>
+<text x="615.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle">Iteraatio 2</text>
+<rect x="695" y="720" width="150" height="44" rx="5" fill="#f7fafc" stroke="#2d3748" stroke-width="1.5"/>
+<text x="770.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle">Iteraatio 3</text>
+<rect x="850" y="720" width="150" height="44" rx="5" fill="#f7fafc" stroke="#2d3748" stroke-width="1.5"/>
+<text x="925.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle">Iteraatio 4</text>
+<rect x="1005" y="720" width="150" height="44" rx="5" fill="#e6f4ea" stroke="#2d3748" stroke-width="1.5"/>
+<text x="1080.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle">IP-iteraatio</text>
+<rect x="290" y="720" width="88" height="44" rx="5" fill="#fefcbf" stroke="#2d3748" stroke-width="1.5"/>
+<text x="334.0" y="747.0" font-size="15" fill="#2d3748" text-anchor="middle"></text>
+<text x="334" y="738" font-size="15" font-weight="bold" fill="#2d3748" text-anchor="middle">PI</text>
+<text x="334" y="756" font-size="14" fill="#2d3748" text-anchor="middle">planning</text>
+<line x1="290" y1="780" x2="1160" y2="780" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="290" y1="774" x2="290" y2="786" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="1160" y1="774" x2="1160" y2="786" stroke="#4a5568" stroke-width="1.5"/>
+<text x="725.0" y="808" font-size="15" fill="#4a5568" text-anchor="middle">Planning interval (PI), tyypillisesti 8–12 viikkoa</text>
+</svg>

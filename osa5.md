@@ -423,8 +423,6 @@ Periaate on jo hyvin vanha: toinen Scrumin kehittäjistä, Jeff Sutherland, [ker
 
 Yhteistä näille on se, että ne laajentavat ketteryyttä ottamalla mukaan lean-ajattelua. Toisin kuin ketterät menetelmät, lean on lähtökohtaisesti tarkoitettu toimimaan todella suuressa skaalassa ja se sisältääkin enemmän koko organisaation toimintaa ohjaavia periaatteita kuin perinteinen ketterä. Käsitellään nyt hieman tarkemmin SAFe:a ja LeSS:iä.
 
-Laajan skaalan menetelmiä vertaillut systemaattinen [kirjallisuuskatsaus](https://doi.org/10.1109/TSE.2021.3069039) havaitsi, että tutkimus on keskittynyt kaupallisten menetelmien käytänteisiin niiden taustaperiaatteiden kustannuksella. Katsaus vertaili valmiiden kehysten lisäksi myös organisaatioiden, kuten Nokian ja Ericssonin, itse räätälöimiä menetelmiä.
-
 ### SAFe eli Scaled Agile Framework
 
 Scaled Agile Framework eli SAFe on suosituin laajan mittakaavan ketterä menetelmä. Vuosittaisissa [State of Agile](https://stateofagile.com/) -kyselytutkimuksissa SAFe on ollut selvästi yleisimmin mainittu skaalauskehys, joskin sen osuus on viime vuosina laskenut ja yhä useampi organisaatio kertoo, ettei käytä mitään valmista skaalauskehystä.
@@ -437,13 +435,31 @@ SAFe tarjoaa suuren määrän periaatteita (engl. principles), henkilö- ja tiim
 
 SAFe tarjoaa myös neljä erikokoista valmiiksi räätälöityä konfiguraatiota. Näistä pienin _Essential SAFe_ on tarkoitettu pienemmille yrityksille ja SAFe:n soveltamisen alkuvaiheeseen. Konfiguraatioista suurin _Full SAFe_ taas soveltuu massiivisten, useita eri tuotteita hallitsevan yrityksen käyttöön. Seuraava kuva havainnollistaa Full SAFen käsitteistöä:
 
-![]({{ "/images/5-4.png" | relative_url }}){:height="500px" }
+![]({{ "/images/safepic.png" | relative_url }})
 
-Sovelluskehityksen ytimessä (löydätkö sen kuvasta?) on SAFe:n hieman modifioima Scrum, johon on liitetty joukko XP:n periaatteita.
+Kuvan kolme vaakasuuntaista kerrosta vastaavat konfiguraatioita: alin kerros (_Essential_) kuvaa yksittäisen tuotteen kehitystä, keskimmäinen (_Large Solution_) useamman toimitusjunan yhteistyönä rakennettavia suuria järjestelmiä ja ylin (_Portfolio_) koko yrityksen tuotesalkun hallintaa.
 
-Tiimien koordinointia hallitaan ylhäältä päin (engl. top down) kokoamalla yhdestä tuotteesta vastaavien tiimien joukko käsitteen _toimitusjuna_ (engl. agile release train, ART) alle. Release trainin Scrum-tiimit toimivat synkronissa toistensa kanssa tuottaen yhdessä isompia toiminnallisia kokonaisuuksia useammasta sprintistä koostuvan _planning interval_ -jakson (PI) aikana. SAFe:n aiemmissa versioissa jaksosta käytettiin nimeä _program increment_.
+Sovelluskehityksen ytimessä (löydätkö sen kuvasta?) on SAFe:n hieman modifioima Scrum, johon on liitetty joukko XP:n periaatteita. Scrumin sijaan tiimi voi käyttää myös Kanbania.
 
-Planning intervaleja ja niitä toteuttavia release traineja taas ohjaillaan yhä korkeammalta organisaatiosta erilaisten henkilöroolien toimesta. SAFe tarjoaa tähänkin paljon tukea käsitteistön ja määrittämiensä roolien kautta.
+#### Miten SAFe laajentaa Scrumia
+
+Tiimitasolla SAFe on hyvin lähellä Scrumia. Tiimissä on product owner, scrum master (SAFe 6:ssa _Scrum Master/Team Coach_) ja kehittäjät. Tiimi työskentelee tyypillisesti kahden viikon iteraatioissa (SAFe käyttää sanaa _iteration_ eikä sprint), joissa on tutut suunnittelu-, daily-, katselmointi- ja retrospektiivipalaverit. SAFe lisää tämän päälle tiimien välisen tason, jota koordinoidaan ylhäältä päin (engl. top down) ja jonka keskeinen käsite on _toimitusjuna_.
+
+Toimitusjuna (engl. agile release train, ART) on tyypillisesti 5–12 tiimin eli noin 50–125 hengen joukko, joka kehittää yhtä tuotetta tai kokonaisuutta. Junan kaikilla tiimeillä on sama rytmi: iteraatiot alkavat ja päättyvät samaan aikaan. Iteraatiot ryhmitellään 8–12 viikon _planning interval_ -jaksoiksi (PI). Tavallisesti jakso koostuu neljästä kehitysiteraatiosta ja yhdestä _IP-iteraatiosta_ (innovation and planning). IP-iteraatio on varattu esimerkiksi teknisen velan maksamiseen, kokeiluille ja seuraavan jakson suunnitteluun.
+
+Junalle tulee myös omia roolejaan. _Release train engineer_ (RTE) on eräänlainen koko junan scrum master, joka fasilitoi sen tapahtumia. _Product management_ vastaa junan yhteisestä backlogista, ja _system architect_ junan teknisestä suunnasta. Tiimien product ownerit ylläpitävät kukin oman tiiminsä backlogia. Toimitusjunien yläpuolella on vielä suurten ratkaisujen ja portfolion tasot omine rooleineen ja käsitteineen.
+
+Backlogeja on siis useita ja ne muodostavat hierarkian. Portfolion backlogin _epicit_ jakautuvat junan backlogin (engl. ART backlog) _ominaisuuksiksi_ (engl. feature), jotka taas jakautuvat tiimien backlogien _storyiksi_. Toiminnallisuuden lisäksi backlogeissa on _enablereita_ eli esimerkiksi arkkitehtuuria ja infrastruktuuria koskevia tehtäviä, joilla rakennetaan niin sanottua _arkkitehtuurikiitorataa_ (engl. architectural runway). Ominaisuudet priorisoidaan _WSJF_-menetelmällä (weighted shortest job first). Siinä viivästyksen kustannus (engl. cost of delay) jaetaan työn koolla, joten pienet ja arvokkaat ominaisuudet nousevat jonon kärkeen. Menetelmä on peräisin [lean-tuotekehityksestä](/osa5/#lean-tuotekehityksen-periaatteita).
+
+SAFe:n tunnetuin lisäys Scrumiin on jakson alussa pidettävä _PI planning_. Siinä junan kaikki tiimit suunnittelevat kahden päivän ajan yhdessä seuraavan jakson, mieluiten samassa tilassa. Product management esittelee junan backlogin tärkeimmät ominaisuudet, ja tiimit pilkkovat ottamansa ominaisuudet storyiksi omaan backlogiinsa, sijoittelevat storyt jakson iteraatioille ja tunnistavat toistensa välisiä riippuvuuksia. Riippuvuudet kirjataan yhteiselle suunnittelutaululle. Tuloksena kukin tiimi sitoutuu _PI objectives_ -tavoitteisiin, joiden toteutumista liiketoiminnan edustajat (_business owners_) arvioivat.
+
+![SAFe:n backlogien hierarkia ja planning interval -jakson rytmi]({{ "/images/5-safe-backlogit.png" | relative_url }}){:width="750px" }
+
+Jakson aikana tiimin product owner tarkentaa tiimin backlogia, ja ominaisuuksista voi syntyä uusia storyja. Tiimin backlogissa on lisäksi tiimin omia, junan backlogista riippumattomia tehtäviä, kuten teknisen velan maksua. Myös koordinointia jatketaan. Tiimien scrum masterit tapaavat viikoittain _coach syncissä_, joka on käytännössä [edellä](/osa5/#scrum-of-scrums) kuvattu Scrum of Scrums. Product ownerit tapaavat vastaavasti _PO syncissä_. Jokaisen iteraation jälkeen pidetään _system demo_, jossa näytetään koko junan yhteinen, integroitu toiminnallisuus eikä vain yksittäisten tiimien tuotoksia. Jakson päättää _inspect & adapt_ -tilaisuus. Se on koko junan yhteinen retrospektiivi, jossa käydään läpi tavoitteiden toteutuminen ja mittarit ja etsitään ongelmien perimmäisiä syitä.
+
+Scrumiin verrattuna olennainen muutos on se, että tiimin autonomia kapenee. Scrumissa product owner päättää itse tuotteen suunnasta, mutta SAFe:ssa ominaisuuksien sisällön ja järjestyksen päättää product management, ja tiimin product owner toteuttaa sitä storytasolla. Myöskään iteraation pituutta tiimi ei voi valita, koska se on sidottu junan yhteiseen rytmiin. Tähän kohdistuu myös osa SAFe:n saamasta kritiikistä.
+
+#### SAFe:n arviointia
 
 SAFe on dokumentoitu todella tarkasti ja se antaa erittäin yksityiskohtaista ohjeistusta helpottamaan SAFe:n käyttöönottoa ja noudattamista. Ohjeistusta antavat tietysti kallispalkkaiset konsultit ja räätälöidyt koulutuspaketit ja sertifiointi.
 
@@ -478,20 +494,36 @@ LeSS:in taustalla on joukko tuttuja ketterän ja lean-kehityksen periaatteita.
 
 ![]({{ "/images/5-5.png" | relative_url }}){:height="440px" }
 
-Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille, esitetään se tässä suorana sitaattina [dokumentaatiosta](https://less.works/less/framework/introduction)
+Periaatteet ovat lähes samat kuin SAFe:ssa, yksi periaatteista tekee kuitenkin selvää eroa menetelmien välille. Esitetään se tässä suomennettuna LeSS:in [dokumentaatiosta](https://less.works/less/framework/introduction):
 
-_More with less:_
+_Vähemmällä enemmän_ (engl. more with less):
 
-- We don’t want more roles because more roles leads to less responsibility to Teams
-- We don’t want more artifacts because more artifacts leads to a greater distance between Teams and customers
-- We don’t want more process because that leads to less learning and team ownership of process, instead we want more responsible Teams by having less (fewer) roles
-- We want more customer-focused Teams building useful products by having less artifacts
-- We want more Team ownership of process and more meaningful work by having less defined processes.
-- _We want more with less_
+- Emme halua lisää rooleja, koska roolien lisääminen vähentää tiimien vastuuta
+- Emme halua lisää artefakteja, koska artefaktien lisääminen kasvattaa tiimien ja asiakkaiden välistä etäisyyttä
+- Emme halua lisää prosessia, koska se vähentää oppimista ja tiimien omistajuutta prosessista. Haluamme sen sijaan vastuullisempia tiimejä vähentämällä rooleja
+- Haluamme asiakaslähtöisempiä, hyödyllisiä tuotteita rakentavia tiimejä vähentämällä artefakteja
+- Haluamme tiimeille enemmän omistajuutta prosessista ja mielekkäämpää työtä vähentämällä määriteltyjä prosesseja
+- _Haluamme vähemmällä enemmän_
 
 Eli minimoimalla prosessin, roolien ja artefaktien määrää pyritään siihen että tiimit ottavat itse omistajuuden tuotteen kehittämisestä ja asiakkaan kanssa käytävästä kommunikaatiosta.
 
-Lisää periaatteista löytyy LeSS:in [dokumentaatiossa](https://less.works/less/framework/introduction).
+<details markdown="1" class="lisatieto">
+<summary markdown="span">Lisätietoa: LeSS:in kymmenen periaatetta</summary>
+
+- _Large-scale Scrum is Scrum_: LeSS ei ole Scrumin päälle rakennettu uusi menetelmä, vaan tavallinen Scrum sovellettuna useaan tiimiin.
+- _Transparency_ eli läpinäkyvyys: edistyminen mitataan valmiina, toimivina lisäyksinä tuotteeseen, ja tiimit työskentelevät lyhyissä sykleissä yhteisin käsittein, kuten Scrumissa (ks. [osa 1](/osa1/#scrumin-periaatteet-transparency---inspection---adaptation)).
+- _More with less_: mahdollisimman vähän rooleja, artefakteja ja prosessia, ks. yllä.
+- _Whole product focus_: tiimejä voi olla kolme tai kolmekymmentä, mutta tuotteella on silti yksi product owner, yksi product backlog, yhteinen sprintti ja yksi yhteinen valmis lisäys.
+- _Customer centric_ eli asiakaskeskeisyys: arvo ja hukka määritellään asiakkaan näkökulmasta, ja tiimit toimivat suoraan oikeiden asiakkaiden kanssa.
+- _Continuous improvement towards perfection_: tavoitteena on jatkuva parantaminen kohti saavuttamatonta ihannetta, jossa tuote toimitetaan välittömästi, virheettömästi ja ilman kustannuksia.
+- _Lean thinking_: esihenkilöt toimivat opettajina ja jatkuvan parantamisen tukijoina, ja perustana ovat leanin peruspilarit [ihmisten kunnioittaminen ja jatkuva parantaminen](/osa5/#leanin-tavoitteet-perusta-ja-peruspilarit).
+- _Systems thinking_ eli systeemiajattelu: optimoidaan kokonaisuutta eikä yksittäisiä osia, sillä [lokaali optimointi](/osa5/#leanin-periaatteita) voi heikentää koko järjestelmän toimintaa.
+- _Empirical process control_: tuotetta, prosessia ja organisaatiota parannetaan tarkkailemalla ja mukauttamalla (engl. inspect and adapt) eikä noudattamalla valmiiksi määriteltyjä käytänteitä.
+- _Queueing theory_ eli jonoteoria: ymmärretään, miten jonoja sisältävät järjestelmät käyttäytyvät, ja pienennetään jonoja ja keskeneräisen työn määrää sekä työn kokoa ja sen vaihtelua, vrt. edellä käsitelty [level the work](/osa5/#leanin-periaatteita).
+
+Lisää periaatteista löytyy LeSS:in [dokumentaatiosta](https://less.works/less/framework/introduction).
+
+</details>
 
 #### LeSS käytännössä
 
@@ -521,12 +553,16 @@ Kaikkien tiimien yhteinen aikaansaannos (one shippable product increment) katsel
 
 Kaikille tiimeille yhteisen sprintin suunnittelun ensimmäisen osan, sprint reviewin ja overall-retrospektiivin lisäksi LeSS ei edellytä muita tiimien väliseen koordinaatioon tarkoitettuja yhteisiä tapaamisia, vaan toteaa että tiimit päättävät keskenään miten koordinaatio tapahtuu.
 
-LeSS antaa joukon aiheeseen liittyviä ohjeita ja suosituksia:
+LeSS antaa kuitenkin aiheeseen liittyviä ohjeita ja suosituksia. Keskeinen periaate on, että hajautettua ja epämuodollista koordinointia suositaan keskitetyn sijaan. Tiimien ei siis pitäisi koordinoida työtään koordinaattorin tai erillisen palaverin kautta, vaan suoraan keskenään. LeSS kutsuu tätä periaatteella _just talk_: kun tiimillä on asiaa toiselle tiimille, sen jäsen menee juttelemaan toisen tiimin kanssa tai lähettää viestin suoraan.
 
-- Prefer decentralized and informal coordination over centralized coordination
-- Emphasize _just talk_ and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
+LeSS luettelee joukon tapoja, joilla suoraa ja epämuodollista koordinointia voi tukea:
 
-Periaate _just talk_ korostaa suoran kommunikoinnin tärkeyttä, _communicate in code_ tarkoittaa ryhmien välistä työskentelyä helpottavaa ohjelmointitapaa, esimerkiksi yhteisiä koodikäytänteitä sekä jatkuvaa integraatiota. _Scouteilla_ tarkoitetaan muiden tiimien daily scrumissa vierailemista.
+- _Communicate in code_ eli koordinointi koodin kautta. Kun kaikki tiimit integroivat muutoksensa yhteiseen koodikantaan jatkuvasti ja noudattavat yhteisiä koodikäytänteitä, ne näkevät koodista ja integraatiosta suoraan, mitä muut tekevät, ja ristiriidat paljastuvat heti eivätkä vasta sprintin lopussa.
+- _Tiimien yhteiset tapaamiset_ (engl. cross-team meetings). Tiimit, joiden työt liittyvät toisiinsa, voivat sopia yhteisistä palavereista tarpeen mukaan, esimerkiksi yhteisestä suunnittelu- tai design-tilaisuudesta.
+- _Komponenttimentorit_ (engl. component mentors). Koska tiimit ovat feature-tiimejä, millään tiimillä ei ole omaa komponenttia. Komponenttia hyvin tunteva kehittäjä voi kuitenkin toimia sen mentorina, joka neuvoo komponenttia muuttavia muita tiimejä ja huolehtii, että sen rakenne pysyy hyvänä.
+- _Kiertävät asiantuntijat_ (engl. travelers). Jonkin alueen, esimerkiksi testauksen tai tietyn teknologian, asiantuntija voi kiertää tiimistä toiseen työskentelemässä niiden mukana ja siirtämässä osaamistaan tiimeille.
+- _Tiedustelijat_ (engl. scouts). Tiimin jäsen käy seuraamassa toisen tiimin daily scrumia ja kertoo omalle tiimilleen asioista, jotka vaikuttavat sen työhön.
+- _Open space_ -tilaisuudet. Itseorganisoituvassa tilaisuudessa osallistujat ehdottavat itse käsiteltävät aiheet ja jakautuvat niiden ympärille keskustelemaan.
 
 LeSS mainitsee myös scrum of scrums -palaverit yhtenä mahdollisena tiimienvälisen koordinoinnin muotona, mutta suosittelee mieluummin epämuodollisempia kommunikaation muotoja.
 
@@ -534,7 +570,7 @@ LeSS mainitsee myös scrum of scrums -palaverit yhtenä mahdollisena tiimienväl
 
 Scrumissa backlogia ylläpidetään jatkuvasti (engl. backlog refinement, aiemmin myös backlog grooming), jotta se pysyy [DEEP](/osa2#hyv%C3%A4-product-backlog-on-deep):inä. Scrum Guiden aiemmat versiot arvioivat tähän kuluvan korkeintaan noin 10 % kehittäjien ajasta. Toisin kuin Scrum, LeSS kiinnittää eksplisiittisesti huomiota backlogin ylläpitämiseen ja antaa aiheeseen liittyvää ohjeistusta.
 
-Product owner on vastuussa backlogista, ja hoitaa kaiken priorisoinnin. Backlogin ylläpidossa (grooming/refinement) tulee olla mukana myös kaikkien tiimien, sekä sovelluksen eri sidosryhmien edustajia. Oletusarvoisesti kukin tiimi hoitaa niiden storyjen tarkentamista, joita tiimi tulee todennäköisesti toteuttamaan. Tarpeen mukaan tiimit kuitenkin järjestävät yhteisiä backlogin groomaustilaisuuksia tarkastellessaan toisiinsa läheisesti liittyvien storyjen tarkennusta tai miettiessään sovelluksen kehityksen suurempia linjauksia, esimerkiksi arkkitehtuuriin vaikuttavia asioita.
+Product owner on vastuussa backlogista, ja hoitaa kaiken priorisoinnin. Backlogin ylläpidossa (refinement) tulee olla mukana myös kaikkien tiimien, sekä sovelluksen eri sidosryhmien edustajia. Oletusarvoisesti kukin tiimi hoitaa niiden storyjen tarkentamista, joita tiimi tulee todennäköisesti toteuttamaan. Tarpeen mukaan tiimit kuitenkin järjestävät yhteisiä backlogin tarkennustilaisuuksia tarkastellessaan toisiinsa läheisesti liittyvien storyjen tarkennusta tai miettiessään sovelluksen kehityksen suurempia linjauksia, esimerkiksi arkkitehtuuriin vaikuttavia asioita.
 
 LeSS kannustaa kehitystiimejä kommunikoimaan mahdollisimman suoraan asiakkaiden tai loppukäyttäjien kanssa.
 
@@ -548,11 +584,25 @@ Backlog kuitenkin jaetaan nyt _vaatimusalueisiin_ (engl. requirement area), jois
 
 #### LeSS vs SAFe
 
-On erittäin mielenkiintoista että molemmat SAFe ja LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehityksen tapa oli kuitenkin täysin erilainen, ja SAFe (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteista ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
+Kiinnostavaa on, että sekä SAFe että LeSS ovat pitkälti syntyneet Suomessa ja Nokialla. Nokian organisaatiorakenteen takia Nokia Mobile Phonesin (NMP) ja Nokia Siemens Networksin (NSN) ohjelmistokehityksen tapa oli kuitenkin täysin erilainen, ja SAFe (NMP) ja LeSS (NSN) ovat samoista taustaperiaatteista ja yhteisestä syntykonsernista huolimatta hyvin erilaisia menetelmiä.
+
+Ero kiteytyy siihen, miten menetelmät suhtautuvat Scrumiin: SAFe lisää Scrumin päälle uusia kerroksia, rooleja ja tapahtumia, kun taas LeSS pyrkii skaalaamaan Scrumia lisäämällä mahdollisimman vähän (_more with less_). Seuraava taulukko tiivistää keskeiset erot:
+
+| | SAFe | LeSS |
+|---|---|---|
+| Laajuus | koko yritys, useita tuotteita ja tuotesalkun hallinta | yksi tuote |
+| Roolit | paljon uusia rooleja, esim. RTE, product management ja system architect | samat kuin Scrumissa |
+| Backlogit | hierarkia: portfolio, toimitusjuna ja tiimit | yksi product backlog |
+| Product owner | tiimikohtainen, ominaisuuksista päättää product management | yksi koko tuotteelle |
+| Suunnittelu | PI planning 8–12 viikon välein | yhteinen sprintin suunnittelu joka sprintissä |
+| Tiimien välinen koordinointi | ylhäältä päin, ennalta määritellyt tapahtumat | hajautettu ja epämuodollinen, _just talk_ |
+| Tiimien autonomia | rajattu | laaja |
+
+SAFe:n vahvuus on juuri siinä, mihin LeSS ei ota kantaa. SAFe tarjoaa mallin useiden tuotteiden, budjetoinnin ja koko tuotesalkun hallintaan, ja sen voi ottaa käyttöön muuttamatta organisaation rakennetta kovin rajusti: olemassa oleville johtajille ja asiantuntijoille löytyy SAFe:sta yleensä jokin rooli. LeSS taas edellyttää usein suuria muutoksia, kuten mahdollinen komponenttitiimien korvaamista feature-tiimeillä ja välijohdon roolien karsimista.
 
 Molempien menetelmien kanssa työskennelleiden konsulttien Aki Tikka ja Ran Nyman kirjoittama [menetelmien vertailu](https://gosei.eu/blog/less-safe-comparison/) kannattaa lukea.
 
-Kuten aiemmin todettiin, SAFe on suosittu yritysjohdon keskuudessa, mutta saanut paljon kritiikkiä arvovaltaisten ketterän kehityksen edustajien toimesta. En myöskään itse ole kuullut kenenkään sovelluskehittäjän kehuvan SAFe:a.
+Kuten aiemmin todettiin, SAFe on suosittu yritysjohdon keskuudessa, mutta se on saanut paljon kritiikkiä ketterän liikkeen keskeisiltä henkilöiltä, kuten Ken Schwaberilta. En myöskään itse ole kuullut kovin monen sovelluskehittäjän kehuvan SAFe:a.
 
 En tiedä, kuvastaako se mitään menetelmien pitkän tähtäimen toimivuudesta, mutta SAFe:n kotia Nokia Mobile Phonesia ei enää ole olemassakaan. Nokia (Siemens) Networks taas on nykyinen Nokia, jossa LeSS-menetelmää on sovellettu pitkään.
 
@@ -562,7 +612,7 @@ Henrik Knibergin ja Anders Ivarssonin 2012 ilmestynyt artikkeli [Scaling Agile @
 
 Spotifyn "malli" on melko yksinkertainen, se organisoi kehittäjät _tiimeihin_ (squad) jotka taas jakautuvat eri _heimoihin_ (tribe). Tiimi/heimorakenteen lisäksi malli sisältää myös hieman toisenlaisen jaottelun, jossa firman ihmiset jaotellaan heimojen sisällä _jaostoihin_ (chapter) sekä heimorajat ylittäviin _kiltoihin_ (guild):
 
-![]({{ "/images/5-17.png" | relative_url }}){:height="380px" }
+![Spotifyn malli: heimot, tiimit, jaostot ja kilta]({{ "/images/5-spotify-yleiskuva.png" | relative_url }}){:width="750px" }
 
 Vaikka Knibergin kuvauksen tarkoituksena ei ollutkaan se, että _muut firmat_ alkaisivat imitoimaan Spotifyn tapaa, näin kuitenkin kävi.
 
@@ -576,7 +626,7 @@ Spotifyn mallin ytimessä on noin 5–10 hengen tiimi, josta käytetään englan
 
 Tiimit ovat ketterän ideaalin tapaan _cross-functional_, eli ne sisältävät kaiken tietotaidon vastuullaan olevien ohjelmiston osien saamisesta aina ideasta tuotantoympäristöön asti. Tiimit ovat itseorganisoituvia ja päättävät vapaasti omista työnteon käytänteistään: ne voivat käyttää sisäisesti Scrumia, Kanbania, Scrumbania tai mitä tahansa muuta työskentelyn tapaa.
 
-![]({{ "/images/5-18.png" | relative_url }}){:height="250px" }
+![Tiimi, sen product owner ja agile coach]({{ "/images/5-spotify-tiimi.png" | relative_url }}){:width="400px" }
 
 Kunkin tiimin vastuulla on jokin looginen osa sovellusta, usein suoraan asiakkaalle näkyvä ja itsenäisesti arvoa tuottava palanen, esimerkiksi iPhone-sovellus, soittolistat, viikon suositukset tai laskutus. Spotifyn tiimit ovat siis _feature-tiimejä_, samoin kuin LeSS-kehitysmallissa. Osa tiimeistä vastaa muiden tiimien hyödyntämistä sisäisistä asioista, kuten taustajärjestelmän suorituskyvystä.
 
@@ -588,7 +638,7 @@ Tiimien on tarkoitus toimia mahdollisimman startupmaisesti ja olla suorassa yhte
 
 Ideaalina on, että kukin tiimi on mahdollisimman itsenäinen yksikkö, joka voi toimia ilman riippuvuutta muista tiimeistä. Tiimien välillä on kuitenkin väkisin riippuvuutta ja myös synergiaa. Samojen aihepiirien ympärillä työskentelevät tiimit onkin jaettu _heimoihin_ (engl. tribe), jotka pitävät aika ajoin yhteisiä kokoontumisia:
 
-![]({{ "/images/5-20.png" | relative_url }}){:height="380px" }
+![Heimo ja sen tiimit]({{ "/images/5-spotify-heimo.png" | relative_url }}){:width="620px" }
 
 Vuoden 2012 kuvauksessa Spotifyn tiimit työskentelivät samassa tilassa, ja kaikkien heimon tiimien oli tarkoitus työskennellä lähekkäin, samassa rakennuksessa tai jopa samassa kerroksessa. Tämä mahdollisti helpon ja epämuodollisen kanssakäymisen heimon tiimien välillä. Nykyään tilanne on toinen: vuodesta 2021 Spotify on antanut työntekijöidensä [valita](https://newsroom.spotify.com/2021-02-12/distributed-first-is-the-future-of-work-at-spotify/), työskentelevätkö he toimistolla, etänä vai näiden yhdistelmänä.
 
@@ -598,17 +648,17 @@ Heimoon kuuluu maksimissaan kymmenkunta tiimiä, sillä heimojen koko halutaan p
 
 Autonomisten tiimien varjopuolena on, että samoja ongelmia saatetaan ratkoa kerta toisensa jälkeen eri tiimeissä, eivätkä yhden tiimin oppimat asiat leviä muihin. Tätä varten Spotifyllä on _jaostot_ (engl. chapter), jotka koostuvat yhden heimon samankaltaista osaamista omaavista jäsenistä. Esimerkiksi heimon eri tiimien testaajat voivat muodostaa oman jaostonsa, samoin kaikki frontend-kehittäjät:
 
-![]({{ "/images/5-21.png" | relative_url }}){:height="320px" }
+![Heimon jaostot ja chapter leadit]({{ "/images/5-spotify-jaosto.png" | relative_url }}){:width="520px" }
 
 Jaostot kokoontuvat säännöllisesti jakamaan ongelmia ja ratkaisuja, ja ne tukevat jäsentensä ammatillista kehittymistä. Product owner vastaa kysymykseen _what to build next_, jaosto taas kysymykseen _how to build it well_. Kutakin jaostoa johtaa _chapter lead_, joka toimii jaoston jäsenten esihenkilönä mutta työskentelee itsekin jossain tiimissä. Jäljempänä esitellyn kritiikin mukaan juuri tämä rakenne osoittautui ongelmalliseksi, sillä chapter leadilla ei ollut vastuuta tiimin työn etenemisestä.
 
-![]({{ "/images/5-23.png" | relative_url }}){:height="280px" }
+![Product owner vastaa siitä mitä rakennetaan, chapter lead siitä miten rakennetaan hyvin]({{ "/images/5-spotify-mita-miten.png" | relative_url }}){:width="460px" }
 
 #### Guild eli kilta
 
 Jaostot siis koostuvat yhden _heimon_ sisällä olevista saman kompetenssin omaavista henkilöistä. Kilta (engl. guild) on heimon tapainen mutta yli heimorajojen toimiva saman kompetenssin tai intressin omaavien henkilöiden ryhmä. Esimerkiksi testaajien kilta koostuu kaikkien testausjaostojen jäsenistä mutta myös muut asiasta kiinnostuneet, esim. web-kehittäjät voivat osallistua killan järjestämiin tapahtumiin.
 
-![]({{ "/images/5-22.png" | relative_url }}){:height="360px" }
+![Killat yli heimorajojen]({{ "/images/5-spotify-kilta.png" | relative_url }}){:width="800px" }
 
 Jaostot ja killat ovat lähellä jäljempänä esiteltävän Team Topologies -mallin mahdollistavia tiimejä: kaikissa on kyse osaamisen levittämisestä tiimirajojen yli.
 
@@ -632,7 +682,7 @@ Jos Spotifyn malli kiinnostaa, kannattaa ehdottomasti katsoa [tämä](https://ww
 
 Spotifyn mallin jälkeen laajimmin omaksuttu tapa jäsentää ohjelmistokehityksen tiimirakennetta on Matthew Skeltonin ja Manuel Paisin kirjassa [Team Topologies](https://teamtopologies.com/key-concepts) (2019) esitetty malli. Toisin kuin SAFe tai LeSS, se ei ole prosessi, vaan tapa suunnitella tiimit ja niiden väliset rajapinnat niin, että työ virtaa nopeasti.
 
-Mallin keskeinen käsite on tiimin _kognitiivinen kuorma_ (engl. cognitive load): tiimin vastuulla saa olla vain sen verran, kuin se pystyy kerralla hallitsemaan. Taustalla on myös [osassa 4](/osa4/#modulaarinen-monoliitti) mainittu Conwayn laki, jonka mukaan järjestelmän rakenne heijastaa sitä tekevän organisaation kommunikaatiorakennetta. Siksi tiimirakenne kannattaa suunnitella sen mukaan, millaisen arkkitehtuurin halutaan syntyvän.
+Mallin keskeinen käsite on tiimin _kognitiivinen kuorma_ (engl. cognitive load): tiimin vastuulla saa olla vain sen verran, kuin se pystyy kerralla hallitsemaan. Taustalla on myös [osassa 4](/osa4/#modulaarinen-monoliitti) mainittu Conwayn laki, jonka mukaan järjestelmän rakenne heijastaa sitä tekevän organisaation kommunikaatiorakennetta. Siksi tiimirakenne kannattaa suunnitella sen mukaan, millaisen arkkitehtuurin halutaan syntyvän. Tätä kutsutaan _käänteiseksi Conwayn liikkeeksi_ (engl. inverse Conway maneuver).
 
 Malli tunnistaa neljä tiimityyppiä:
 
@@ -641,7 +691,11 @@ Malli tunnistaa neljä tiimityyppiä:
 - _mahdollistava tiimi_ (engl. enabling team) auttaa muita tiimejä omaksumaan uusia taitoja ja tekniikoita, hieman Spotifyn jaostojen ja kiltojen tapaan
 - _monimutkaisen osajärjestelmän tiimi_ (engl. complicated-subsystem team) vastaa erityisosaamista vaativasta osasta, esimerkiksi laskenta-algoritmista
 
-Tiimien välille määritellään kolme vuorovaikutustapaa: tiivis _yhteistyö_ (collaboration), toisen tiimin tarjoaman palvelun käyttö _palveluna_ (X-as-a-Service) ja _fasilitointi_ (facilitating), jossa tiimi auttaa toista oppimaan.
+Tiimien välille määritellään kolme vuorovaikutustapaa: tiivis _yhteistyö_ (collaboration), toisen tiimin tarjoaman palvelun käyttö _palveluna_ (X-as-a-Service) ja _fasilitointi_ (facilitating), jossa tiimi auttaa toista oppimaan. Seuraava kuva havainnollistaa tiimityyppejä ja vuorovaikutustapoja kuvitteellisessa musiikkipalvelussa:
+
+![Team Topologies -mallin tiimityypit ja vuorovaikutustavat]({{ "/images/5-team-topologies.png" | relative_url }}){:width="750px" }
+
+Vuorovaikutustapa ei ole pysyvä. Tiivis yhteistyö sopii uuden asian selvittämiseen, mutta se on kallista ja hämärtää vastuita, joten sen on tarkoitus olla määräaikaista. Esimerkiksi kun alustatiimi rakentaa uutta julkaisuputkea, se voi aluksi tehdä tiivistä yhteistyötä yhden virtaan keskittyvän tiimin kanssa, kuten kuvan maksamisesta vastaavan tiimin kanssa. Kun putki on valmis, muut tiimit käyttävät sitä palveluna ilman jatkuvaa yhteydenpitoa. Myös fasilitointi on luonteeltaan väliaikaista: kun tiimi on omaksunut uuden taidon, mahdollistava tiimi siirtyy auttamaan seuraavaa tiimiä.
 
 Alustatiimeihin liittyy 2020-luvulla yleistynyt käsite _platform engineering_: organisaatio rakentaa sisäisen kehitysalustan, jonka avulla tiimit voivat ottaa käyttöön ympäristöjä ja työkaluja itsenäisesti. Tarkoituksena on keventää virtaan keskittyvien tiimien kognitiivista kuormaa, jottei jokaisen tiimin tarvitse hallita koko infrastruktuuria itse.
 

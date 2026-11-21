@@ -238,6 +238,8 @@ permalink: /sisallys/
    - [Scrum of Scrums](/osa5#scrum-of-scrums)
    - [Laajan skaalan ketterät menetelmät](/osa5#laajan-skaalan-ketterät-menetelmät)
    - [SAFe eli Scaled Agile Framework](/osa5#safe-eli-scaled-agile-framework)
+     - [Miten SAFe laajentaa Scrumia](/osa5#miten-safe-laajentaa-scrumia)
+     - [SAFe:n arviointia](/osa5#safen-arviointia)
    - [LeSS eli Large Scale Scrum](/osa5#less-eli-large-scale-scrum)
      - [LeSS:in taustalla olevat periaatteet](/osa5#lessin-taustalla-olevat-periaatteet)
      - [LeSS käytännössä](/osa5#less-käytännössä)

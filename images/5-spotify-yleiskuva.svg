@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="490" viewBox="0 0 1040 490" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d3748"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a0aec0"/></marker></defs>
+<rect width="1040" height="490" fill="#fff"/>
+<rect x="30" y="40" width="456" height="370" rx="16" fill="#f7fafc" stroke="#718096" stroke-width="2.5"/>
+<text x="258.0" y="30" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">Heimo (tribe)</text>
+<circle cx="64" cy="71.0" r="7.5" fill="#cbd5e0" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="51.0" y="80.0" width="26.0" height="14.0" rx="7.0" fill="#cbd5e0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="84" y="76" font-size="13" fill="#4a5568" text-anchor="start">heimon</text>
+<text x="84" y="91" font-size="13" fill="#4a5568" text-anchor="start">vetäjä</text>
+<rect x="160.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="192.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="180.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="192.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="192.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="192.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="244.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="276.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="264.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="276.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="276.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="276.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="328.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="360.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="348.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="360.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="360.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="360.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="412.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="444.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="432.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="444.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="444.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="444.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="546" y="40" width="456" height="370" rx="16" fill="#f7fafc" stroke="#718096" stroke-width="2.5"/>
+<text x="774.0" y="30" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">Heimo (tribe)</text>
+<circle cx="580" cy="71.0" r="7.5" fill="#cbd5e0" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="567.0" y="80.0" width="26.0" height="14.0" rx="7.0" fill="#cbd5e0" stroke="#2d3748" stroke-width="1.5"/>
+<text x="600" y="76" font-size="13" fill="#4a5568" text-anchor="start">heimon</text>
+<text x="600" y="91" font-size="13" fill="#4a5568" text-anchor="start">vetäjä</text>
+<rect x="676.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="708.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="696.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="708.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="708.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="708.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="760.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="792.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="780.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="792.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="792.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="792.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="844.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="876.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="864.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="876.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="876.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="876.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="928.0" y="110" width="64" height="250" rx="32.0" fill="#ffffff" stroke="#4299b8" stroke-width="2"/>
+<circle cx="960.0" cy="77.7" r="6.75" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="948.3" y="85.8" width="23.400000000000002" height="12.6" rx="6.3" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="960.0" y="66" font-size="12" font-weight="bold" fill="#c53030" text-anchor="middle">PO</text>
+<circle cx="960.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="960.0" y="380" font-size="13" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Tiimi</text>
+<rect x="140" y="110" width="336" height="90" rx="10" fill="#fbd38d" fill-opacity="0.35" stroke="#fbd38d" stroke-width="2.5" filter="none"/>
+<text x="132" y="160.0" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="end">Jaosto</text>
+<rect x="140" y="248" width="336" height="44" rx="10" fill="#9ae6b4" fill-opacity="0.35" stroke="#9ae6b4" stroke-width="2.5" filter="none"/>
+<text x="132" y="275.0" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="end">Jaosto</text>
+<rect x="656" y="110" width="336" height="90" rx="10" fill="#fbd38d" fill-opacity="0.35" stroke="#fbd38d" stroke-width="2.5" filter="none"/>
+<text x="648" y="160.0" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="end">Jaosto</text>
+<rect x="656" y="248" width="336" height="44" rx="10" fill="#9ae6b4" fill-opacity="0.35" stroke="#9ae6b4" stroke-width="2.5" filter="none"/>
+<text x="648" y="275.0" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="end">Jaosto</text>
+<circle cx="192.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="192.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="179.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="276.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="263.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="360.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="347.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="444.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="431.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="708.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="695.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="792.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="779.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="876.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="863.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="125.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="134.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="171.0" r="7.5" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="180.0" width="26.0" height="14.0" rx="7.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="217.0" r="7.5" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="226.0" width="26.0" height="14.0" rx="7.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="263.0" r="7.5" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="272.0" width="26.0" height="14.0" rx="7.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<circle cx="960.0" cy="309.0" r="7.5" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="947.0" y="318.0" width="26.0" height="14.0" rx="7.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="134" y="242" width="864" height="56" rx="20" fill="none" stroke="#6b46c1" stroke-width="3" stroke-dasharray="9,6"/>
+<rect x="490" y="300" width="52" height="24" rx="6" fill="#fff" stroke="#6b46c1" stroke-width="2"/>
+<text x="516" y="317" font-size="14" font-weight="bold" fill="#6b46c1" text-anchor="middle">Kilta</text>
+<circle cx="30" cy="454.4" r="6.0" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="19.6" y="461.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#90cdf4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="48" y="466" font-size="14" fill="#4a5568" text-anchor="start">Frontend</text>
+<circle cx="160" cy="454.4" r="6.0" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="149.6" y="461.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#fbd38d" stroke="#2d3748" stroke-width="1.5"/>
+<text x="178" y="466" font-size="14" fill="#4a5568" text-anchor="start">Backend</text>
+<circle cx="290" cy="454.4" r="6.0" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="279.6" y="461.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#9ae6b4" stroke="#2d3748" stroke-width="1.5"/>
+<text x="308" y="466" font-size="14" fill="#4a5568" text-anchor="start">Testaus</text>
+<circle cx="420" cy="454.4" r="6.0" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="409.6" y="461.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#d6bcfa" stroke="#2d3748" stroke-width="1.5"/>
+<text x="438" y="466" font-size="14" fill="#4a5568" text-anchor="start">UX</text>
+<circle cx="550" cy="454.4" r="6.0" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<rect x="539.6" y="461.6" width="20.8" height="11.200000000000001" rx="5.6000000000000005" fill="#feb2b2" stroke="#2d3748" stroke-width="1.5"/>
+<text x="568" y="466" font-size="14" fill="#4a5568" text-anchor="start">product owner</text>
+</svg>
