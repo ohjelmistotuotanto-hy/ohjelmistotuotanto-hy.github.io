@@ -5,7 +5,7 @@ title_long: 'Lean, scaling agile software development and agile software develop
 inheader: yes
 permalink: /en/osa5/
 source: osa5.md
-source_commit: 4eee3b5
+source_commit: 56291b7
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -425,8 +425,6 @@ From the 2010s onwards, more attention has been paid to scaling agile, and sever
 
 What they have in common is that they extend agility by bringing in lean thinking. Unlike agile methods, lean is intended from the outset to work at a really large scale, and it contains more principles guiding the operations of the whole organisation than traditional agile. Let us now look at SAFe and LeSS in a bit more detail.
 
-A systematic [literature review](https://doi.org/10.1109/TSE.2021.3069039) comparing large-scale methods found that research has focused on the practices of commercial methods at the expense of their underlying principles. In addition to ready-made frameworks, the review also compared methods tailored in-house by organisations such as Nokia and Ericsson.
-
 ### SAFe, the Scaled Agile Framework
 
 The Scaled Agile Framework, SAFe, is the most popular large-scale agile method. In the annual [State of Agile](https://stateofagile.com/) surveys, SAFe has clearly been the most commonly mentioned scaling framework, although its share has declined in recent years and more and more organisations report that they do not use any ready-made scaling framework.
@@ -439,13 +437,31 @@ SAFe offers a large number of principles, individual and team roles, and concept
 
 SAFe also offers four pre-tailored configurations of different sizes. The smallest of these, _Essential SAFe_, is intended for smaller companies and for the early stages of adopting SAFe. The largest configuration, _Full SAFe_, on the other hand, is suitable for massive companies managing several different products. The following figure illustrates the concepts of Full SAFe:
 
-![]({{ "/images/5-4.png" | relative_url }}){:height="500px" }
+![]({{ "/images/safepic.png" | relative_url }})
 
-At the core of the software development (can you find it in the figure?) is a slightly modified version of Scrum, to which a set of XP principles has been attached.
+The three horizontal layers of the figure correspond to the configurations: the bottom layer (_Essential_) describes the development of a single product, the middle one (_Large Solution_) large systems built jointly by several release trains, and the top one (_Portfolio_) the management of the whole company's product portfolio.
 
-The coordination of teams is managed top down by grouping the set of teams responsible for one product under the concept of an _agile release train_ (ART). The Scrum teams of a release train work in sync with each other, together producing larger functional wholes during a _planning interval_ (PI) consisting of several sprints. In earlier versions of SAFe, the period was called a _program increment_.
+At the core of the software development (can you find it in the figure?) is a slightly modified version of Scrum, to which a set of XP principles has been attached. Instead of Scrum, a team can also use Kanban.
 
-Planning intervals and the release trains implementing them are in turn steered from ever higher up in the organisation by various roles. SAFe offers a lot of support for this too through its concepts and the roles it defines.
+#### How SAFe extends Scrum
+
+At the team level, SAFe is very close to Scrum. A team has a product owner, a Scrum Master (in SAFe 6, _Scrum Master/Team Coach_) and developers. The team typically works in two-week iterations (SAFe uses the word _iteration_ instead of sprint), with the familiar planning, daily, review and retrospective meetings. On top of this, SAFe adds a level between teams, which is coordinated top down and whose key concept is the _agile release train_.
+
+An agile release train (ART) is typically a group of 5–12 teams, i.e. about 50–125 people, developing one product or whole. All teams on the train share the same cadence: iterations start and end at the same time. Iterations are grouped into 8–12-week _planning intervals_ (PI). A planning interval usually consists of four development iterations and one _IP iteration_ (innovation and planning). The IP iteration is reserved for things such as paying off technical debt, experiments and planning the next interval.
+
+The train also gets roles of its own. The _release train engineer_ (RTE) is a kind of Scrum Master for the whole train who facilitates its events. _Product management_ is responsible for the train's shared backlog, and the _system architect_ for the train's technical direction. The product owners of the teams each maintain their own team's backlog. Above the release trains, there are still the large solution and portfolio levels, with their own roles and concepts.
+
+There are thus several backlogs, and they form a hierarchy. The _epics_ of the portfolio backlog are split into _features_ in the train's backlog (ART backlog), which in turn are split into _stories_ in the teams' backlogs. In addition to functionality, the backlogs contain _enablers_, i.e. tasks related to, for example, architecture and infrastructure, which build the so-called _architectural runway_. Features are prioritised with the _WSJF_ method (weighted shortest job first). In it, the cost of delay is divided by the size of the job, so small and valuable features rise to the front of the queue. The method comes from [lean product development](/en/osa5/#principles-of-lean-product-development).
+
+SAFe's best-known addition to Scrum is _PI planning_, held at the start of each planning interval. In it, all the teams of the train plan the next interval together for two days, preferably in the same room. Product management presents the most important features of the train's backlog, and the teams split the features they take into stories in their own backlogs, place the stories on the iterations of the interval and identify dependencies between each other. The dependencies are recorded on a shared planning board. As a result, each team commits to _PI objectives_, whose achievement is assessed by representatives of the business (_business owners_).
+
+![The hierarchy of SAFe backlogs and the cadence of a planning interval]({{ "/images/5-safe-backlogit-en.png" | relative_url }}){:width="750px" }
+
+During the interval, the team's product owner refines the team backlog, and new stories may emerge from the features. The team backlog also contains the team's own tasks that are independent of the train's backlog, such as paying off technical debt. Coordination also continues. The teams' Scrum Masters meet weekly in a _coach sync_, which is in practice the Scrum of Scrums described [above](/en/osa5/#scrum-of-scrums). The product owners meet similarly in a _PO sync_. After each iteration, a _system demo_ is held, showing the integrated functionality of the whole train rather than just the outputs of individual teams. The interval ends with an _inspect & adapt_ event. It is a retrospective for the whole train, going through how well the objectives were met and the metrics, and looking for the root causes of problems.
+
+Compared to Scrum, an essential change is that the team's autonomy narrows. In Scrum, the product owner decides on the direction of the product, but in SAFe, product management decides on the content and order of the features, and the team's product owner implements them at the story level. Nor can the team choose the length of its iterations, since it is tied to the train's shared cadence. Part of the criticism SAFe has received is directed at this.
+
+#### Evaluating SAFe
 
 SAFe is documented in great detail, and it gives very detailed guidance to make adopting and following SAFe easier. The guidance is of course provided by highly paid consultants and by tailored training packages and certification.
 
@@ -480,7 +496,7 @@ Behind LeSS is a set of familiar principles of agile and lean development.
 
 ![]({{ "/images/5-5.png" | relative_url }}){:height="440px" }
 
-The principles are almost the same as in SAFe, but one of them makes a clear difference between the methods. Here it is as a direct quote from the [documentation](https://less.works/less/framework/introduction)
+The principles are almost the same as in SAFe, but one of them makes a clear difference between the methods. Here it is as a direct quote from the LeSS [documentation](https://less.works/less/framework/introduction):
 
 _More with less:_
 
@@ -493,7 +509,23 @@ _More with less:_
 
 In other words, by minimising the amount of process, roles and artifacts, the aim is for the teams themselves to take ownership of developing the product and of communicating with the customer.
 
+<details markdown="1" class="lisatieto">
+<summary markdown="span">More information: the ten principles of LeSS</summary>
+
+- _Large-scale Scrum is Scrum_: LeSS is not a new method built on top of Scrum, but ordinary Scrum applied to several teams.
+- _Transparency_: progress is measured as finished, working increments of the product, and teams work in short cycles with shared definitions, as in Scrum (see [part 1](/en/osa1/#principles-of-scrum-transparency---inspection---adaptation)).
+- _More with less_: as few roles, artifacts and as little process as possible, see above.
+- _Whole product focus_: there may be three teams or thirty, but the product still has one product owner, one product backlog, a common sprint and one common finished increment.
+- _Customer centric_: value and waste are defined from the customer's point of view, and the teams work directly with real customers.
+- _Continuous improvement towards perfection_: the goal is continuous improvement towards an unattainable ideal in which the product is delivered instantly, without defects and at no cost.
+- _Lean thinking_: managers act as teachers and supporters of continuous improvement, and the foundation is formed by the pillars of lean, [respect for people and continuous improvement](/en/osa5/#the-goal-foundation-and-pillars-of-lean).
+- _Systems thinking_: optimise the whole rather than individual parts, since [local optimisation](/en/osa5/#lean-principles) can weaken the functioning of the whole system.
+- _Empirical process control_: the product, the process and the organisation are improved by inspecting and adapting, not by following predefined practices.
+- _Queueing theory_: understand how systems with queues behave, and reduce queues and the amount of work in progress as well as the size of work items and their variation, cf. [level the work](/en/osa5/#lean-principles) discussed above.
+
 More about the principles can be found in the LeSS [documentation](https://less.works/less/framework/introduction).
+
+</details>
 
 #### LeSS in practice
 
@@ -523,12 +555,16 @@ The joint result of all teams (one shippable product increment) is reviewed toge
 
 Apart from the first part of sprint planning, the sprint review and the overall retrospective, which are common to all teams, LeSS does not require any other joint meetings for coordination between teams. Instead, it states that the teams decide among themselves how coordination happens.
 
-LeSS gives a set of guidelines and recommendations on the subject:
+LeSS does, however, give guidelines and recommendations on the subject. A key principle is that decentralised and informal coordination is preferred over centralised coordination. Teams should thus not coordinate their work through a coordinator or a separate meeting, but directly with each other. LeSS calls this the principle of _just talk_: when a team has something to discuss with another team, one of its members goes to talk with the other team or sends a message directly.
 
-- Prefer decentralized and informal coordination over centralized coordination
-- Emphasize _just talk_ and informal networks via communicate in code, cross-team meetings, component mentors, travelers, scouts, and open spaces
+LeSS lists a number of ways to support direct and informal coordination:
 
-The principle _just talk_ emphasises the importance of direct communication, and _communicate in code_ means a way of programming that makes it easier for teams to work together, e.g. shared coding conventions and continuous integration. _Scouts_ refers to visiting the daily scrums of other teams.
+- _Communicate in code_, i.e. coordination through the code. When all teams integrate their changes continuously into a shared codebase and follow shared coding conventions, they can see directly from the code and the integration what the others are doing, and conflicts surface immediately instead of only at the end of the sprint.
+- _Cross-team meetings_. Teams whose work is related can agree on joint meetings as needed, for example a joint planning or design session.
+- _Component mentors_. Since the teams are feature teams, no team has a component of its own. A developer who knows a component well can, however, act as its mentor, advising other teams that change the component and making sure that its structure stays good.
+- _Travelers_. An expert in some area, for example testing or a particular technology, can travel from team to team, working with them and transferring their know-how to the teams.
+- _Scouts_. A team member attends another team's daily scrum and tells their own team about things that affect its work.
+- _Open space_ events. In a self-organising event, the participants themselves propose the topics to be discussed and split up around them.
 
 LeSS also mentions scrum of scrums meetings as one possible form of coordination between teams, but recommends more informal forms of communication instead.
 
@@ -550,11 +586,25 @@ The backlog is, however, now divided into _requirement areas_, each of which has
 
 #### LeSS vs SAFe
 
-It is very interesting that both SAFe and LeSS were largely born in Finland and at Nokia. Because of Nokia's organisational structure, however, the software development practices of Nokia Mobile Phones (NMP) and Nokia Siemens Networks (NSN) were completely different, and SAFe (NMP) and LeSS (NSN) are very different methods despite their shared underlying principles and common parent group.
+Interestingly, both SAFe and LeSS were largely born in Finland and at Nokia. Because of Nokia's organisational structure, however, the software development practices of Nokia Mobile Phones (NMP) and Nokia Siemens Networks (NSN) were completely different, and SAFe (NMP) and LeSS (NSN) are very different methods despite their shared underlying principles and common parent group.
+
+The difference boils down to how the methods relate to Scrum: SAFe adds new layers, roles and events on top of Scrum, whereas LeSS aims to scale Scrum by adding as little as possible (_more with less_). The following table summarises the key differences:
+
+| | SAFe | LeSS |
+|---|---|---|
+| Scope | the whole company, several products and portfolio management | one product |
+| Roles | many new roles, e.g. RTE, product management and system architect | the same as in Scrum |
+| Backlogs | a hierarchy: portfolio, release train and teams | one product backlog |
+| Product owner | per team, product management decides on features | one for the whole product |
+| Planning | PI planning every 8–12 weeks | joint sprint planning every sprint |
+| Coordination between teams | top down, predefined events | decentralised and informal, _just talk_ |
+| Team autonomy | limited | broad |
+
+SAFe's strength lies precisely in what LeSS takes no position on. SAFe offers a model for managing several products, budgeting and the whole product portfolio, and it can be adopted without changing the organisation's structure very drastically: existing managers and specialists can usually find some role in SAFe. LeSS, on the other hand, often requires major changes, such as replacing component teams with feature teams and cutting middle management roles.
 
 The [comparison of the methods](https://gosei.eu/blog/less-safe-comparison/) written by consultants Aki Tikka and Ran Nyman, who have worked with both methods, is well worth reading.
 
-As noted earlier, SAFe is popular among company management, but it has received a lot of criticism from respected representatives of agile development. I have also never personally heard any software developer praise SAFe.
+As noted earlier, SAFe is popular among company management, but it has received a lot of criticism from key figures of the agile movement, such as Ken Schwaber. I have also never personally heard any software developer praise SAFe.
 
 I do not know whether it says anything about the long-term viability of the methods, but the home of SAFe, Nokia Mobile Phones, no longer even exists. Nokia (Siemens) Networks, on the other hand, is today's Nokia, where the LeSS method has been applied for a long time.
 
@@ -564,7 +614,7 @@ Henrik Kniberg and Anders Ivarsson's 2012 article [Scaling Agile @ Spotify](http
 
 Spotify's "model" is fairly simple: it organises developers into _squads_, which in turn are divided into different _tribes_. In addition to the squad/tribe structure, the model also includes a somewhat different division, where the company's people are divided within tribes into _chapters_ and into _guilds_ that cross tribe boundaries:
 
-![]({{ "/images/5-17.png" | relative_url }}){:height="380px" }
+![The Spotify model: tribes, squads, chapters and a guild]({{ "/images/5-spotify-yleiskuva-en.png" | relative_url }}){:width="750px" }
 
 Although the purpose of Kniberg's description was not for _other companies_ to start imitating Spotify's way of working, that is what happened.
 
@@ -578,7 +628,7 @@ At the core of Spotify's model is a team of about 5–10 people, called a _squad
 
 In line with the agile ideal, the squads are _cross-functional_, i.e. they have all the know-how needed to take the parts of the software they are responsible for all the way from idea to the production environment. The squads are self-organising and freely decide on their own working practices: internally they can use Scrum, Kanban, Scrumban or any other way of working.
 
-![]({{ "/images/5-18.png" | relative_url }}){:height="250px" }
+![A squad, its product owner and agile coach]({{ "/images/5-spotify-tiimi-en.png" | relative_url }}){:width="400px" }
 
 Each squad is responsible for some logical part of the application, often a piece that is directly visible to the customer and produces value independently, for example the iPhone app, playlists, weekly recommendations or billing. Spotify's squads are thus _feature teams_, just as in the LeSS development model. Some squads are responsible for internal matters used by other squads, such as the performance of the backend system.
 
@@ -590,7 +640,7 @@ Squads are meant to work as much like startups as possible and to be in direct c
 
 The ideal is that each squad is as independent a unit as possible, able to work without depending on other squads. However, there are inevitably dependencies and also synergies between squads. Squads working around the same topics are therefore grouped into _tribes_, which hold joint gatherings from time to time:
 
-![]({{ "/images/5-20.png" | relative_url }}){:height="380px" }
+![A tribe and its squads]({{ "/images/5-spotify-heimo-en.png" | relative_url }}){:width="620px" }
 
 In the 2012 description, Spotify's squads worked in the same space, and all the squads of a tribe were meant to work close to each other, in the same building or even on the same floor. This enabled easy and informal interaction between the squads of a tribe. Today the situation is different: since 2021, Spotify has let its employees [choose](https://newsroom.spotify.com/2021-02-12/distributed-first-is-the-future-of-work-at-spotify/) whether they work at the office, remotely or a combination of these.
 
@@ -600,17 +650,17 @@ A tribe has at most about ten squads, since the size of tribes is to be kept und
 
 The downside of autonomous squads is that the same problems may be solved again and again in different squads, and things learned by one squad do not spread to others. For this purpose, Spotify has _chapters_, which consist of members of one tribe with similar skills. For example, the testers of the different squads of a tribe can form their own chapter, and so can all frontend developers:
 
-![]({{ "/images/5-21.png" | relative_url }}){:height="320px" }
+![The chapters of a tribe and their chapter leads]({{ "/images/5-spotify-jaosto-en.png" | relative_url }}){:width="520px" }
 
 Chapters meet regularly to share problems and solutions, and they support the professional development of their members. The product owner answers the question _what to build next_, while the chapter answers the question _how to build it well_. Each chapter is led by a _chapter lead_, who acts as the line manager of the chapter members but also works in some squad. According to the criticism presented below, this very structure turned out to be problematic, since the chapter lead had no responsibility for the progress of the squad's work.
 
-![]({{ "/images/5-23.png" | relative_url }}){:height="280px" }
+![The product owner is responsible for what to build, the chapter lead for how to build it well]({{ "/images/5-spotify-mita-miten-en.png" | relative_url }}){:width="460px" }
 
 #### Guild
 
 Chapters thus consist of people with the same competence within one _tribe_. A guild is similar to a chapter but is a group of people with the same competence or interest that works across tribe boundaries. For example, the testers' guild consists of the members of all testing chapters, but others interested in the topic, e.g. web developers, can also take part in the events organised by the guild.
 
-![]({{ "/images/5-22.png" | relative_url }}){:height="360px" }
+![Guilds across tribe boundaries]({{ "/images/5-spotify-kilta-en.png" | relative_url }}){:width="800px" }
 
 Chapters and guilds are close to the enabling teams of the Team Topologies model presented below: all of them are about spreading know-how across team boundaries.
 
@@ -634,7 +684,7 @@ If you are interested in the Spotify model, you should definitely watch [this](h
 
 After the Spotify model, the most widely adopted way of structuring software development teams is the model presented in Matthew Skelton and Manuel Pais's book [Team Topologies](https://teamtopologies.com/key-concepts) (2019). Unlike SAFe or LeSS, it is not a process, but a way of designing teams and the interfaces between them so that work flows quickly.
 
-The key concept of the model is the team's _cognitive load_: a team should be responsible for only as much as it can handle at once. Behind this is also Conway's law, mentioned in [part 4](/en/osa4/#modular-monolith), according to which the structure of a system reflects the communication structure of the organisation that builds it. This is why the team structure should be designed according to the kind of architecture you want to emerge.
+The key concept of the model is the team's _cognitive load_: a team should be responsible for only as much as it can handle at once. Behind this is also Conway's law, mentioned in [part 4](/en/osa4/#modular-monolith), according to which the structure of a system reflects the communication structure of the organisation that builds it. This is why the team structure should be designed according to the kind of architecture you want to emerge. This is called the _inverse Conway maneuver_.
 
 The model identifies four team types:
 
@@ -643,7 +693,11 @@ The model identifies four team types:
 - an _enabling team_ helps other teams adopt new skills and techniques, somewhat like Spotify's chapters and guilds
 - a _complicated-subsystem team_ is responsible for a part requiring special expertise, for example a calculation algorithm
 
-Three interaction modes are defined between teams: close _collaboration_, using a service provided by another team _as a service_ (X-as-a-Service), and _facilitating_, where one team helps another learn.
+Three interaction modes are defined between teams: close _collaboration_, using a service provided by another team _as a service_ (X-as-a-Service), and _facilitating_, where one team helps another learn. The following figure illustrates the team types and interaction modes in a fictional music service:
+
+![The team types and interaction modes of the Team Topologies model]({{ "/images/5-team-topologies-en.png" | relative_url }}){:width="750px" }
+
+The interaction mode is not permanent. Close collaboration suits exploring something new, but it is expensive and blurs responsibilities, so it is meant to be temporary. For example, when a platform team builds a new delivery pipeline, it may at first collaborate closely with one stream-aligned team, such as the payments team in the figure. Once the pipeline is ready, other teams use it as a service without constant contact. Facilitating is also temporary by nature: once a team has adopted a new skill, the enabling team moves on to help the next team.
 
 Related to platform teams is the concept of _platform engineering_, which became common in the 2020s: the organisation builds an internal development platform that lets teams set up environments and tools independently. The purpose is to lighten the cognitive load of stream-aligned teams so that every team does not have to manage the whole infrastructure itself.
 

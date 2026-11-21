@@ -4,7 +4,7 @@ title: Table of contents
 inheader: yes
 permalink: /en/sisallys/
 source: sisallys.md
-source_commit: 85a3af3
+source_commit: 56291b7
 ---
 
 ### Links
@@ -240,6 +240,8 @@ source_commit: 85a3af3
    - [Scrum of Scrums](/en/osa5#scrum-of-scrums)
    - [Large-scale agile methods](/en/osa5#large-scale-agile-methods)
    - [SAFe, the Scaled Agile Framework](/en/osa5#safe-the-scaled-agile-framework)
+     - [How SAFe extends Scrum](/en/osa5#how-safe-extends-scrum)
+     - [Evaluating SAFe](/en/osa5#evaluating-safe)
    - [LeSS, Large Scale Scrum](/en/osa5#less-large-scale-scrum)
      - [Principles behind LeSS](/en/osa5#principles-behind-less)
      - [LeSS in practice](/en/osa5#less-in-practice)
