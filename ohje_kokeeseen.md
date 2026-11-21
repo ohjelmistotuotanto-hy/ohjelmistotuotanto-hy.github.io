@@ -5,18 +5,13 @@ inheader: no
 permalink: /ohje_kokeeseen/
 ---
 
-### Erilliskokeet
-
-Erilliskoe on suoritettavissa  on suoritettavissa Examinariumissa 2.1.2026-. Ilmoittautuminen kokeeseen [täällä](https://examinarium.helsinki.fi/enrolments/109407?code=TKT20006_otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05). Examinariumiin ilmoittautumista ennen on ilmeisesti ilmoittauduttava kokeeseen [Sisussa](https://studies.helsinki.fi/kurssit/toteutus/otm-e1ba1fdc-4cb9-436d-bb65-0ab50b0daf05/TKT20006)
-
-
-**Erilliskokeita koskevat samat ohjeet kuin kurssikoetta** (ks. alla) poislukien se, että mitään lisämateriaalia ei ole käytettävissä. Koska materiaalia ei ole käytettävissä, kysymysten luonne poikkeaa hieman vuosien 2020- kurssikokeista, joissa tehtävät ovat olleen enemmän soveltavia. 
-
-Jos suoritat kurssin erilliskokeella, miniprojektin suorittamista ei vaadita.
-
 ### Kurssikoe
 
-Kurssikoe pidetään tiistaina 15.12. klo 13-16 (koeaikaa 2.5 tuntia) salissa A111 ja B123. Koe tehdään vanhaan tapaan kynällä ja paperilla. Kokeessa on sallittua olla mukana A4:n kokoinen (molemmat puolet) käsinkirjoitettu "lunttilappu".
+Kurssikoe pidetään tiistaina 15.12. klo 13-16 (koeaikaa 2.5 tuntia) salissa A111 ja B123. Koe tehdään vanhaan tapaan kynällä ja paperilla.
+
+Koe on esseepainotteinen, eli vastaukset kirjoitetaan käsin omin sanoin. Se muistuttaa siis enemmän vuoden 2019 ja sitä edeltävien vuosien kokeita kuin vuodesta 2020 alkaen Moodlessa pidettyjä open book -kokeita, joissa materiaali oli käytettävissä ja tehtävät olivat enemmän soveltavia.
+
+Kokeessa saa olla mukana yksi A4:n kokoinen "lunttilappu", johon voi kirjoittaa molemmille puolille mitä tahansa. Lapun on oltava itse käsin kirjoitettu, eli tulostettu tai kopioitu lappu ei kelpaa. Lapun laatiminen on samalla hyvä tapa kerrata kurssin asioita.
 
 Kurssilta on jaossa yhteensä 40 pistettä, jotka jakautuvat eri komponenttien kesken seuraavasti
 
@@ -33,14 +28,15 @@ Läpipääsy edellyttää lisäksi miniprojektin hyväksyttyä suoritusta (tai h
 
 ### Koealue
 
-Koealueena kurssimateriaalin osat 1-5 sekä laskarit, paitsi
+Koealueena kurssimateriaalin osat 1-5, materiaali [Tekoäly ohjelmistotuotannossa](/genai/) sekä laskarit, paitsi
 
 - Git
 - uv
 - GitHub Actions
 - unittest
 - Robot Framework ja Browser-kirjasto
-- GitHub copilot
+- GitHub Copilot ja OpenCode
+- materiaalin _Lisätietoa_-laatikot
 
 Vierailuluennot eivät kuulu koealueeseen.
 
@@ -56,4 +52,12 @@ Edellisten vuosien kokeita on nähtävillä vanhoilla kurssisivuilla, esim.
 - [kevät 2017](https://github.com/mluukkai/ohtu2017)
 - [kevät 2016](https://github.com/mluukkai/ohtu2016)
 
-Kokeet ovat olleet vuodesta 2020 asti Moodlessa pidettyjä.
+Listatuista kokeista vuosien 2020–2023 kokeet pidettiin Moodlessa open book -kokeina.
+
+### Erillis- ja uusintakokeet
+
+Erilliskoe on mahdollisesti suoritettavissa Examinariumissa 1.1.2027 alkaen. Tarkemmat tiedot ja ilmoittautumisohjeet lisätään tälle sivulle myöhemmin.
+
+**Erilliskoetta koskevat samat ohjeet kuin kurssikoetta** (ks. yllä) poislukien se, että lunttilappua tai muuta materiaalia ei saa käyttää.
+
+Jos suoritat kurssin erilliskokeella, miniprojektin suorittamista ei vaadita.
