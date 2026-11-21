@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="420" fill="#fff"/>
+<g transform="translate(0,-50)">
+<line x1="70" y1="370" x2="850" y2="370" stroke="#2d3748" stroke-width="2.5"/>
+<line x1="70" y1="278.0" x2="850" y2="278.0" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="60" y="283.0" font-size="13" fill="#4a5568" text-anchor="end">20 %</text>
+<line x1="70" y1="186.0" x2="850" y2="186.0" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="60" y="191.0" font-size="13" fill="#4a5568" text-anchor="end">40 %</text>
+<line x1="70" y1="94.0" x2="850" y2="94.0" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="60" y="99.0" font-size="13" fill="#4a5568" text-anchor="end">60 %</text>
+<rect x="131.0" y="103.60000000000002" width="90" height="271.4" rx="6" fill="#1a202c"/>
+<rect x="126.0" y="98.60000000000002" width="90" height="271.4" rx="6" fill="#90cdf4" stroke="#2d3748" stroke-width="2.5"/>
+<text x="171.0" y="86.60000000000002" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">59 %</text>
+<rect x="229.0" y="168.00000000000003" width="90" height="206.99999999999997" rx="6" fill="#1a202c"/>
+<rect x="224.0" y="163.00000000000003" width="90" height="206.99999999999997" rx="6" fill="#d6bcfa" stroke="#2d3748" stroke-width="2.5"/>
+<text x="269.0" y="151.00000000000003" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">45 %</text>
+<text x="220.0" y="400" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">Small projects</text>
+<rect x="391.0" y="218.60000000000002" width="90" height="156.39999999999998" rx="6" fill="#1a202c"/>
+<rect x="386.0" y="213.60000000000002" width="90" height="156.39999999999998" rx="6" fill="#90cdf4" stroke="#2d3748" stroke-width="2.5"/>
+<text x="431.0" y="201.60000000000002" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">34 %</text>
+<rect x="489.0" y="333.6" width="90" height="41.4" rx="6" fill="#1a202c"/>
+<rect x="484.0" y="328.6" width="90" height="41.4" rx="6" fill="#d6bcfa" stroke="#2d3748" stroke-width="2.5"/>
+<text x="529.0" y="316.6" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">9 %</text>
+<text x="480.0" y="400" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">Medium projects</text>
+<rect x="651.0" y="287.6" width="90" height="87.39999999999999" rx="6" fill="#1a202c"/>
+<rect x="646.0" y="282.6" width="90" height="87.39999999999999" rx="6" fill="#90cdf4" stroke="#2d3748" stroke-width="2.5"/>
+<text x="691.0" y="270.6" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">19 %</text>
+<rect x="749.0" y="338.2" width="90" height="36.8" rx="6" fill="#1a202c"/>
+<rect x="744.0" y="333.2" width="90" height="36.8" rx="6" fill="#d6bcfa" stroke="#2d3748" stroke-width="2.5"/>
+<text x="789.0" y="321.2" font-size="20" font-weight="bold" fill="#2d3748" text-anchor="middle">8 %</text>
+<text x="740.0" y="400" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">Large projects</text>
+<rect x="300" y="432" width="28" height="20" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="2.5"/>
+<text x="338" y="448" font-size="15" fill="#4a5568" text-anchor="start">Agile</text>
+<rect x="460" y="432" width="28" height="20" rx="4" fill="#d6bcfa" stroke="#2d3748" stroke-width="2.5"/>
+<text x="498" y="448" font-size="15" fill="#4a5568" text-anchor="start">Waterfall</text>
+</g></svg>

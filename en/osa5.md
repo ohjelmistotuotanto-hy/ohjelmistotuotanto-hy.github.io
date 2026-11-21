@@ -744,11 +744,11 @@ The report divides projects into three groups in terms of success:
 
 In the 2020 report, the success rate of projects looks as follows:
 
-![]({{ "/images/chaos10.png" | relative_url }}){:height="150px" }
+![Chaos 2020: shares of successful, challenged and failed projects in agile and waterfall projects]({{ "/images/5-chaos-menetelmat-en.png" | relative_url }}){:width="650px" }
 
 The size of a project has a really big impact on success. If the size of the project is taken into account, the success rate is as follows:
 
-![]({{ "/images/chaos11.png" | relative_url }}){:height="250px" }
+![Chaos 2020: share of successful projects by project size in agile and waterfall projects]({{ "/images/5-chaos-koko-en.png" | relative_url }}){:width="650px" }
 
 Based on the figures in the report, agile methods would seem to work better than the waterfall model regardless of project size, and the difference grows as projects get larger. The figures should, however, be taken with caution, as noted below.
 
@@ -760,7 +760,7 @@ The Chaos report's figures have also been criticised scientifically. According t
 
 The [State of Agile](https://stateofagile.com/) report breaks down the benefits achieved with agility in more detail:
 
-![]({{ "/images/5-16-2021.png" | relative_url }}){:height="400px" }
+![State of Agile 2021: benefits of agile reported by respondents]({{ "/images/5-soa-hyodyt-en.png" | relative_url }}){:width="700px" }
 
 ### Criticism of agility
 

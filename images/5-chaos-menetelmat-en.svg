@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="250" fill="#fff"/>
+<g transform="translate(0,-50)">
+<text x="152" y="109.0" font-size="19" font-weight="bold" fill="#2d3748" text-anchor="end">Agile</text>
+<rect x="175" y="75" width="680" height="64" rx="10" fill="#1a202c"/>
+<clipPath id="c0"><rect x="170" y="70" width="680" height="64" rx="10"/></clipPath>
+<g clip-path="url(#c0)">
+<rect x="170" y="70" width="285.6" height="64" fill="#9ae6b4"/>
+<text x="312.8" y="110.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">42 %</text>
+<rect x="455.6" y="70" width="319.6" height="64" fill="#fbd38d"/>
+<line x1="455.6" y1="70" x2="455.6" y2="134" stroke="#2d3748" stroke-width="2"/>
+<text x="615.4000000000001" y="110.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">47 %</text>
+<rect x="775.2" y="70" width="74.8" height="64" fill="#feb2b2"/>
+<line x1="775.2" y1="70" x2="775.2" y2="134" stroke="#2d3748" stroke-width="2"/>
+<text x="812.6" y="110.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">11 %</text>
+</g>
+<rect x="170" y="70" width="680" height="64" rx="10" fill="none" stroke="#2d3748" stroke-width="2.5"/>
+<text x="152" y="201.0" font-size="19" font-weight="bold" fill="#2d3748" text-anchor="end">Waterfall</text>
+<rect x="175" y="167" width="680" height="64" rx="10" fill="#1a202c"/>
+<clipPath id="c1"><rect x="170" y="162" width="680" height="64" rx="10"/></clipPath>
+<g clip-path="url(#c1)">
+<rect x="170" y="162" width="88.4" height="64" fill="#9ae6b4"/>
+<text x="214.2" y="202.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">13 %</text>
+<rect x="258.4" y="162" width="401.2" height="64" fill="#fbd38d"/>
+<line x1="258.4" y1="162" x2="258.4" y2="226" stroke="#2d3748" stroke-width="2"/>
+<text x="459.0" y="202.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">59 %</text>
+<rect x="659.5999999999999" y="162" width="190.4" height="64" fill="#feb2b2"/>
+<line x1="659.5999999999999" y1="162" x2="659.5999999999999" y2="226" stroke="#2d3748" stroke-width="2"/>
+<text x="754.8" y="202.0" font-size="21" font-weight="bold" fill="#2d3748" text-anchor="middle">28 %</text>
+</g>
+<rect x="170" y="162" width="680" height="64" rx="10" fill="none" stroke="#2d3748" stroke-width="2.5"/>
+<rect x="290" y="262" width="28" height="20" rx="4" fill="#9ae6b4" stroke="#2d3748" stroke-width="2.5"/>
+<text x="328" y="278" font-size="15" fill="#4a5568" text-anchor="start">successful</text>
+<rect x="460" y="262" width="28" height="20" rx="4" fill="#fbd38d" stroke="#2d3748" stroke-width="2.5"/>
+<text x="498" y="278" font-size="15" fill="#4a5568" text-anchor="start">challenged</text>
+<rect x="630" y="262" width="28" height="20" rx="4" fill="#feb2b2" stroke="#2d3748" stroke-width="2.5"/>
+<text x="668" y="278" font-size="15" fill="#4a5568" text-anchor="start">failed</text>
+</g></svg>

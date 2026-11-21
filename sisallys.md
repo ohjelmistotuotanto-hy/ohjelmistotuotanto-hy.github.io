@@ -257,8 +257,10 @@ permalink: /sisallys/
 
 - [Ketterien menetelmien käyttö ja hyödyt tutkimuksen valossa](/osa5#ketterien-menetelmien-käyttö-ja-hyödyt-tutkimuksen-valossa)
    - [Miten laajasti ketteriä menetelmiä käytetään](/osa5#miten-laajasti-ketteriä-menetelmiä-käytetään)
+   - [Miten ketteriä menetelmiä sovelletaan](/osa5#miten-ketteriä-menetelmiä-sovelletaan)
+   - [Mitä hyötyä ketteryydestä on](/osa5#mitä-hyötyä-ketteryydestä-on)
    - [Ohjelmistotoimituksen tila DORA-tutkimuksen valossa](/osa5#ohjelmistotoimituksen-tila-dora-tutkimuksen-valossa)
-   - [Toimiiko ketterä ohjelmistokehitys](/osa5#toimiiko-ketterä-ohjelmistokehitys)
+   - [Projektien onnistuminen Chaos-raportin valossa](/osa5#projektien-onnistuminen-chaos-raportin-valossa)
    - [Ketteryyden kritiikki](/osa5#ketteryyden-kritiikki)
    - [Etä- ja hybridityö](/osa5#etä--ja-hybridityö)
    - [Johtopäätöksiä](/osa5#johtopäätöksiä)

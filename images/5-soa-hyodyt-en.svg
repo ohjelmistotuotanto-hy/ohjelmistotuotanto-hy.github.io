@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="584" viewBox="0 0 900 584" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="584" fill="#fff"/>
+<g transform="translate(0,-50)">
+<line x1="476.0" y1="62" x2="476.0" y2="564" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="476.0" y="582" font-size="13" fill="#4a5568" text-anchor="middle">20 %</text>
+<line x1="612.0" y1="62" x2="612.0" y2="564" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="612.0" y="582" font-size="13" fill="#4a5568" text-anchor="middle">40 %</text>
+<line x1="748.0" y1="62" x2="748.0" y2="564" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,5"/>
+<text x="748.0" y="582" font-size="13" fill="#4a5568" text-anchor="middle">60 %</text>
+<text x="326" y="89.0" font-size="15" fill="#2d3748" text-anchor="end">Managing changing priorities</text>
+<rect x="344" y="74" width="476.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="70" width="476.0" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="828.0" y="89.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">70 %</text>
+<text x="326" y="127.0" font-size="15" fill="#2d3748" text-anchor="end">Visibility</text>
+<rect x="344" y="112" width="476.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="108" width="476.0" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="828.0" y="127.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">70 %</text>
+<text x="326" y="165.0" font-size="15" fill="#2d3748" text-anchor="end">Business/IT alignment</text>
+<rect x="344" y="150" width="448.8" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="146" width="448.8" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="800.8" y="165.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">66 %</text>
+<text x="326" y="203.0" font-size="15" fill="#2d3748" text-anchor="end">Delivery speed / time to market</text>
+<rect x="344" y="188" width="435.2" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="184" width="435.2" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="787.2" y="203.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">64 %</text>
+<text x="326" y="241.0" font-size="15" fill="#2d3748" text-anchor="end">Team productivity</text>
+<rect x="344" y="226" width="408.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="222" width="408.0" height="26" rx="5" fill="#9ae6b4" stroke="#2d3748" stroke-width="2"/>
+<text x="760.0" y="241.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">60 %</text>
+<text x="326" y="279.0" font-size="15" fill="#2d3748" text-anchor="end">Team morale</text>
+<rect x="344" y="264" width="408.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="260" width="408.0" height="26" rx="5" fill="#9ae6b4" stroke="#2d3748" stroke-width="2"/>
+<text x="760.0" y="279.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">60 %</text>
+<text x="326" y="317.0" font-size="15" fill="#2d3748" text-anchor="end">Managing distributed teams</text>
+<rect x="344" y="302" width="353.59999999999997" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="298" width="353.59999999999997" height="26" rx="5" fill="#9ae6b4" stroke="#2d3748" stroke-width="2"/>
+<text x="705.5999999999999" y="317.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">52 %</text>
+<text x="326" y="355.0" font-size="15" fill="#2d3748" text-anchor="end">Predictability</text>
+<rect x="344" y="340" width="346.8" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="336" width="346.8" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="698.8" y="355.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">51 %</text>
+<text x="326" y="393.0" font-size="15" fill="#2d3748" text-anchor="end">Risk reduction</text>
+<rect x="344" y="378" width="333.2" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="374" width="333.2" height="26" rx="5" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="685.2" y="393.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">49 %</text>
+<text x="326" y="431.0" font-size="15" fill="#2d3748" text-anchor="end">Software quality</text>
+<rect x="344" y="416" width="306.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="412" width="306.0" height="26" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="2"/>
+<text x="658.0" y="431.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">45 %</text>
+<text x="326" y="469.0" font-size="15" fill="#2d3748" text-anchor="end">Engineering discipline</text>
+<rect x="344" y="454" width="306.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="450" width="306.0" height="26" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="2"/>
+<text x="658.0" y="469.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">45 %</text>
+<text x="326" y="507.0" font-size="15" fill="#2d3748" text-anchor="end">Software maintainability</text>
+<rect x="344" y="492" width="238.0" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="488" width="238.0" height="26" rx="5" fill="#d6bcfa" stroke="#2d3748" stroke-width="2"/>
+<text x="590.0" y="507.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">35 %</text>
+<text x="326" y="545.0" font-size="15" fill="#2d3748" text-anchor="end">Cost reduction</text>
+<rect x="344" y="530" width="156.4" height="26" rx="5" fill="#1a202c"/>
+<rect x="340" y="526" width="156.4" height="26" rx="5" fill="#fbd38d" stroke="#2d3748" stroke-width="2"/>
+<text x="508.4" y="545.0" font-size="16" font-weight="bold" fill="#2d3748" text-anchor="start">23 %</text>
+<line x1="340" y1="62" x2="340" y2="564" stroke="#2d3748" stroke-width="2.5"/>
+<rect x="130" y="600" width="28" height="20" rx="4" fill="#90cdf4" stroke="#2d3748" stroke-width="2"/>
+<text x="168" y="616" font-size="15" fill="#4a5568" text-anchor="start">steering and visibility</text>
+<rect x="376.79999999999995" y="600" width="28" height="20" rx="4" fill="#9ae6b4" stroke="#2d3748" stroke-width="2"/>
+<text x="414.79999999999995" y="616" font-size="15" fill="#4a5568" text-anchor="start">team</text>
+<rect x="479.19999999999993" y="600" width="28" height="20" rx="4" fill="#d6bcfa" stroke="#2d3748" stroke-width="2"/>
+<text x="517.1999999999999" y="616" font-size="15" fill="#4a5568" text-anchor="start">technical quality</text>
+<rect x="680.3999999999999" y="600" width="28" height="20" rx="4" fill="#fbd38d" stroke="#2d3748" stroke-width="2"/>
+<text x="718.3999999999999" y="616" font-size="15" fill="#4a5568" text-anchor="start">cost</text>
+</g></svg>
