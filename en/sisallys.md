@@ -4,7 +4,7 @@ title: Table of contents
 inheader: yes
 permalink: /en/sisallys/
 source: sisallys.md
-source_commit: 56291b7
+source_commit: a96d7f7
 ---
 
 ### Links
@@ -259,8 +259,10 @@ source_commit: 56291b7
 
 - [The use and benefits of agile methods in the light of research](/en/osa5#the-use-and-benefits-of-agile-methods-in-the-light-of-research)
    - [How widely are agile methods used](/en/osa5#how-widely-are-agile-methods-used)
+   - [How are agile methods applied](/en/osa5#how-are-agile-methods-applied)
+   - [What are the benefits of agility](/en/osa5#what-are-the-benefits-of-agility)
    - [The state of software delivery in the light of DORA research](/en/osa5#the-state-of-software-delivery-in-the-light-of-dora-research)
-   - [Does agile software development work](/en/osa5#does-agile-software-development-work)
+   - [Project success in the light of the Chaos report](/en/osa5#project-success-in-the-light-of-the-chaos-report)
    - [Criticism of agility](/en/osa5#criticism-of-agility)
    - [Remote and hybrid work](/en/osa5#remote-and-hybrid-work)
    - [Conclusions](/en/osa5#conclusions)
