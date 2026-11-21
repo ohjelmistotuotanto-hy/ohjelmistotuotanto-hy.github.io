@@ -29,12 +29,6 @@ layout: default
   </header>
 
   <div class="post-content">
-    {% if base_path == "genai.md" %}
-    <details class="vihje tehtavalista" hidden>
-      <summary>{{ t.contents }}</summary>
-      <ul></ul>
-    </details>
-    {% endif %}
     {{ content }}
   </div>
 
