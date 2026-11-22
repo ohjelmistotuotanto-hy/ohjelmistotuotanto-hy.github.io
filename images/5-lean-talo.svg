@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="880" viewBox="0 0 1000 880" font-family="Helvetica, Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#2d3748">
+<rect width="1000" height="880" fill="#fff"/>
+<polygon points="507,17 977,267 37,267" fill="#1a202c"/>
+<polygon points="500,10 970,260 30,260" fill="#fae3a0" stroke="#2d3748" stroke-width="3" stroke-linejoin="round"/>
+<text x="500" y="100" font-size="20" fill="#b7791f">GOAL</text>
+<text x="500" y="135" font-size="21">Sustainable shortest lead time,</text>
+<text x="500" y="165" font-size="21">best quality and value (to people and society),</text>
+<text x="500" y="195" font-size="21">most customer delight, lowest cost,</text>
+<text x="500" y="225" font-size="21">high morale, safety</text>
+<rect x="62" y="297" width="280" height="400" rx="10" fill="#1a202c"/>
+<rect x="55" y="290" width="280" height="400" rx="10" fill="#d6c6f5" stroke="#2d3748" stroke-width="3"/>
+<text x="195.0" y="340" font-size="26">Respect</text>
+<text x="195.0" y="372" font-size="26">for People</text>
+<text x="195.0" y="418" font-size="19" font-weight="normal">don't trouble your customer</text>
+<text x="195.0" y="453" font-size="19" font-weight="normal">develop people,</text>
+<text x="195.0" y="476" font-size="19" font-weight="normal">then build products</text>
+<text x="195.0" y="511" font-size="19" font-weight="normal">no wasteful work</text>
+<text x="195.0" y="546" font-size="19" font-weight="normal">teams evolve their</text>
+<text x="195.0" y="569" font-size="19" font-weight="normal">own practices</text>
+<text x="195.0" y="604" font-size="19" font-weight="normal">build partners, trust</text>
+<text x="195.0" y="639" font-size="19" font-weight="normal">develop teams</text>
+<rect x="367" y="297" width="280" height="400" rx="10" fill="#1a202c"/>
+<rect x="360" y="290" width="280" height="400" rx="10" fill="#bfeccb" stroke="#2d3748" stroke-width="3"/>
+<text x="500.0" y="340" font-size="26">Principles</text>
+<text x="500.0" y="372" font-size="26">&amp; tools</text>
+<text x="500.0" y="418" font-size="19" font-weight="normal">long-term thinking</text>
+<text x="500.0" y="453" font-size="19" font-weight="normal">flow, pull</text>
+<text x="500.0" y="488" font-size="19" font-weight="normal">less variability</text>
+<text x="500.0" y="511" font-size="19" font-weight="normal">and overburden</text>
+<text x="500.0" y="546" font-size="19" font-weight="normal">stop &amp; fix</text>
+<text x="500.0" y="581" font-size="19" font-weight="normal">visual management</text>
+<text x="500.0" y="616" font-size="19" font-weight="normal">go see, consensus</text>
+<text x="500.0" y="651" font-size="19" font-weight="normal">Kanban</text>
+<rect x="672" y="297" width="280" height="400" rx="10" fill="#1a202c"/>
+<rect x="665" y="290" width="280" height="400" rx="10" fill="#a8d8f5" stroke="#2d3748" stroke-width="3"/>
+<text x="805.0" y="340" font-size="26">Continuous</text>
+<text x="805.0" y="372" font-size="26">Improvement</text>
+<text x="805.0" y="418" font-size="19" font-weight="normal">go see</text>
+<text x="805.0" y="453" font-size="19" font-weight="normal">kaizen: retrospectives,</text>
+<text x="805.0" y="476" font-size="19" font-weight="normal">5 whys</text>
+<text x="805.0" y="511" font-size="19" font-weight="normal">eyes for waste</text>
+<text x="805.0" y="546" font-size="19" font-weight="normal">perfection challenge</text>
+<text x="805.0" y="581" font-size="19" font-weight="normal">work toward flow</text>
+<text x="805.0" y="616" font-size="19" font-weight="normal">smaller batches</text>
+<rect x="37" y="727" width="940" height="130" rx="10" fill="#1a202c"/>
+<rect x="30" y="720" width="940" height="130" rx="10" fill="#ffd0a8" stroke="#2d3748" stroke-width="3"/>
+<text x="500" y="755" font-size="20" fill="#c05621">FOUNDATION</text>
+<text x="500" y="790" font-size="22">Management applies and teaches lean thinking,</text>
+<text x="500" y="822" font-size="22">and bases decisions on this long-term philosophy</text>
+</svg>

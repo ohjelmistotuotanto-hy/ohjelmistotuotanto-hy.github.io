@@ -62,9 +62,9 @@ Käsittelemme seuraavassa leania tarkemmin Craig Larmanin ja Bas Vodden mainioon
 
 Leania havainnollistetaan useissa lähteissä _lean thinking houseksi_ nimitettävänä kaaviona:
 
-![]({{ "/images/5-1.png" | relative_url }}){:height="550px" }
+![Lean thinking house: tavoite, perusta, kaksi peruspilaria sekä niiden välissä periaatteet ja työkalut]({{ "/images/5-lean-talo.png" | relative_url }}){:width="650px" }
 
-Leanilla on "talon ylimpänä kerroksena" sijaitseva _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ ja joukko näitä tukevia _periaatteita_ (14 principles ja product development -periaatteet). Näiden lisäksi on olemassa joukko leania tukevia työkaluja, joista kuuluisin lienee kurssinkin aikana mainittu Kanban.
+Leanilla on "talon ylimpänä kerroksena" sijaitseva _tavoite_ (engl. goal), _perusta_ (engl. foundation), kaksi _peruspilaria_ sekä pilarien välissä joukko niitä tukevia _periaatteita_ ja _työkaluja_ (engl. principles & tools). Työkaluista kuuluisin lienee kurssinkin aikana mainittu Kanban.
 
 Leanin tavoitteena on _saada aikaan pysyvä nopea tapa edetä "ideasta asiakkaalle myytyyn tuotteeseen" siten, että tämä tapahtuu työntekijöitä ja yhteistyökumppaneita riistämättä, ylläpitäen korkea laatutaso ja asiakastyytyväisyys._
 
@@ -207,6 +207,8 @@ Jos value stream mapping tai jokin muu menetelmä paljastaa tuotantoprosessista 
 Eräs root cause analysis -tekniikka on [five whys](https://en.wikipedia.org/wiki/Five_whys), minkä toimintaa on helpointa havainnollistaa esimerkillä.
 
 Edellisessä kuvassa olevasta _value stream mapista_ havaitaan, että koodin valmistumisesta (code and test) menee 1.5 viikkoa sen tuotantoon saamiseen (deploy).
+
+![Value stream map, josta on rajattu jakso code & test -vaiheesta tuotantoon]({{ "/images/5-five-whys.png" | relative_url }})
 
 - **Miksi?** QA-osaston on vielä varmistettava, että koodi toimii staging-ympäristössä.
 - **Miksi?** Ohjelmoijilla ei ole aikaa testata koodia itse staging-ympäristössä.
@@ -376,7 +378,9 @@ Sovellettaessa leania tuotannon optimoinnin sijaan _tuotekehitykseen_ (developme
 Leanissa tuotekehityksessä fokukseen nouseekin toiminnan tehostamisen lisäksi _oppimisen kiihdyttäminen_ (engl. _amplify learning_). Kannattaa pyrkiä mahdollisimman _arvokkaaseen tietoon_ (engl. _high-value information_), mm. kiinnittämällä huomio asioihin, mihin sisältyy paljon epävarmuutta (_focus on uncertain things_). Epävarmat ja suuren teknisen riskin sisältävät ideat kannattaa toteuttaa/testata nopeasti, niiden suhteen viivästyneellä tiedolla on korkea hinta (_cost of delay_).
 
 Eräs leanin tuotekehityksen mekanismi oppimisen nopeuttamiseen on _set based concurrent
-development_. Jos tarkoituksena on kehittää esim. uusi moottorin jäähdytysjärjestelmä, aletaan yhtä aikaa kehittämään useita vaihtoehtoisia ratkaisuja eri tiimien toimesta. Tasaisin väliajoin kehitettäviä ratkaisuja vertaillaan, ja osa niistä karsitaan. Lopulta parhaaksi osoittautuva ratkaisu valitaan käytettäväksi lopputuotteessa.
+development_. Jos tarkoituksena on kehittää esim. uusi moottorin jäähdytysjärjestelmä, aletaan yhtä aikaa kehittämään useita vaihtoehtoisia ratkaisuja eri tiimien toimesta. Tasaisin väliajoin kehitettäviä ratkaisuja vertaillaan, ja osa niistä karsitaan. Eri ratkaisujen hyviä puolia voidaan myös yhdistää. Lopulta parhaaksi osoittautuva ratkaisu valitaan käytettäväksi lopputuotteessa.
+
+![Set based concurrent development: neljä rinnakkaista ratkaisua, joista vertailuissa yksi karsitaan ja yksi yhdistetään toiseen, ja lopuksi parhaaksi osoittautuva valitaan]({{ "/images/5-set-based.png" | relative_url }}){:width="650px" }
 
 Set based development -menetelmä on radikaalisti erilainen kuin usein sovellettava _iteratiivinen_ kehitysmenetelmä, missä lähtökohtana on yksi askeleittain paranneltava ratkaisu.
 
