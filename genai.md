@@ -256,6 +256,23 @@ Suunnitelmaa voi iteroida niin kauan kunnes se on hyvä, ja suunnitelman korjaam
 
 Suunnitelman arviointi edellyttää, että tunnet koodin, jota suunnitelma koskee. Jos koodi on vierasta, tutustu siihen ensin esim. Ask-tilassa (ks. [Tuntemattoman koodin ymmärtäminen](#tuntemattoman-koodin-ymmärtäminen)).
 
+### Spec-driven development
+
+Plan-tilan suunnitelma elää yleensä vain yhden keskustelun ajan. _Spec-driven development_ (SDD) vie ajatuksen pidemmälle: ennen koodausta kirjoitetaan spesifikaatio, joka tallennetaan tiedostona versionhallintaan, ja agentti toteuttaa koodin sen pohjalta. Spesifikaatiosta tulee pysyvä dokumentti, jota agentti ja ihmiset voivat käyttää myöhemminkin, eikä se katoa keskusteluhistorian mukana.
+
+Tyypillisesti SDD etenee vaiheittain, ja ihminen katselmoi jokaisen vaiheen tuotoksen ennen seuraavaa:
+
+1. **Vaatimukset**: mitä rakennetaan ja miksi. Usein user storyina [hyväksymiskriteereineen](/osa2/#user-story).
+2. **Suunnitelma**: miten vaatimukset toteutetaan: arkkitehtuuri, käytettävät teknologiat ja rajapinnat.
+3. **Tehtävät**: suunnitelma pilkottuna pieniksi, erikseen toteutettaviksi ja testattaviksi askeliksi.
+4. **Toteutus**: agentti toteuttaa tehtävät yksi kerrallaan.
+
+SDD:tä varten on syntynyt myös työkaluja. GitHubin avoimen lähdekoodin [Spec Kit](https://github.com/github/spec-kit) lisää koodausagenttiin (esim. Copilot, Claude Code tai OpenCode) komennot jokaiselle vaiheelle. Lisäksi projektille kirjoitetaan _constitution_, joka määrittelee kaikkia muutoksia koskevat periaatteet, esim. testauskäytännöt. Amazonin [Kiro](https://kiro.dev) on SDD:n ympärille rakennettu editori, joka tuottaa vaiheista tiedostot `requirements.md`, `design.md` ja `tasks.md`.
+
+Idea ei ole uusi. Kurssilla on jo tullut vastaan [vaatimusmäärittely](/osa2/#vaatimusmäärittely), [user storyt hyväksymiskriteereineen](/osa2/#user-story) ja testit spesifikaationa (ks. [Vaatimukset promptina](#vaatimukset-promptina) ja [TDD agentin kanssa](#tdd-agentin-kanssa)). Uutta on se, että spesifikaation pääasiallinen lukija on agentti. Mitä selkeämmin vaatimukset ja reunaehdot on kirjattu, sitä vähemmän agentti joutuu arvaamaan.
+
+Lähestymistapaa on myös kritisoitu. Birgitta Böckeler [huomauttaa](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html), että työkalujen tuottamia markdown-dokumentteja syntyy helposti niin paljon, että niiden katselmointi on raskaampaa kuin koodin katselmointi, ja pieneen bugikorjaukseen koko prosessi on ylimitoitettu. Agentti ei myöskään välttämättä noudata spesifikaatiota, vaikka se olisi huolellisesti kirjoitettu, joten toteutus on edelleen verifioitava. Etukäteen kirjoitettu raskas spesifikaatio muistuttaa myös [vesiputousmallia](/osa1/#vesiputous--eli-lineaarinen-malli), jonka ongelmat tunnetaan. SDD toimii parhaiten silloin, kun spesifikaatio pidetään kevyenä ja sitä päivitetään iteratiivisesti ymmärryksen kasvaessa. Pienissä muutoksissa Plan-tila tai pelkkä hyvin kirjoitettu pyyntö riittää.
+
 ### Suunnitteluperiaatteet ja agentti
 
 Kurssin [osan 4](/osa4/) suunnitteluperiaatteet, kuten koheesio, DRY, riippuvuuksien minimointi ja rajapintoihin ohjelmointi, eivät toteudu agentin koodissa itsestään. Agentti optimoi yleensä sitä, että pyydetty toiminnallisuus saadaan toimimaan, ei sitä, että koodi pysyy ylläpidettävänä.
