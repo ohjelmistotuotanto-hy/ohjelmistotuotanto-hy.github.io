@@ -4,7 +4,7 @@ title: AI in software development
 inheader: no
 permalink: /en/genai/
 source: genai.md
-source_commit: d149031
+source_commit: 0fae8e9
 ---
 
 This page covers the use of generative AI, and coding agents in particular, in software development. The material progresses week by week at the same pace as the [AI] exercises of the weekly exercises. Sections marked with <span style="color:blue">[week N]</span> relate to the exercises of week N, so you can skip them in earlier weeks.
@@ -257,6 +257,23 @@ When reviewing the plan, make sure of the following:
 You can iterate on the plan until it is good, and fixing a plan is much cheaper than fixing finished code. Once the plan has been accepted, the implementation is started (_Start Implementation_) and the agent proceeds according to the plan.
 
 Evaluating the plan requires that you know the code the plan concerns. If the code is unfamiliar, get to know it first, e.g. in Ask mode (see [Understanding unfamiliar code](#understanding-unfamiliar-code)).
+
+### Spec-driven development
+
+A plan made in Plan mode usually lives only for the duration of one conversation. _Spec-driven development_ (SDD) takes the idea further: before coding, you write a specification that is saved as a file in version control, and the agent implements the code based on it. The specification becomes a lasting document that both the agent and people can use later, and it does not disappear along with the conversation history.
+
+SDD typically proceeds in phases, and a human reviews the output of each phase before moving on to the next one:
+
+1. **Requirements**: what is being built and why. Often as user stories with [acceptance criteria](/en/osa2/#user-story).
+2. **Plan**: how the requirements are implemented: architecture, technologies used, and interfaces.
+3. **Tasks**: the plan broken down into small steps that can be implemented and tested separately.
+4. **Implementation**: the agent implements the tasks one at a time.
+
+Tools have also emerged for SDD. GitHub's open source [Spec Kit](https://github.com/github/spec-kit) adds commands for each phase to a coding agent (e.g. Copilot, Claude Code or OpenCode). In addition, a _constitution_ is written for the project, defining principles that apply to all changes, e.g. testing practices. Amazon's [Kiro](https://kiro.dev) is an editor built around SDD that produces the files `requirements.md`, `design.md` and `tasks.md` from the phases.
+
+The idea is not new. The course has already covered [requirements engineering](/en/osa2/#requirements-engineering), [user stories with acceptance criteria](/en/osa2/#user-story) and tests as a specification (see [Requirements as a prompt](#requirements-as-a-prompt) and [TDD with an agent](#tdd-with-an-agent)). What is new is that the main reader of the specification is the agent. The more clearly the requirements and constraints are written down, the less the agent has to guess.
+
+The approach has also been criticized. Birgitta Böckeler [points out](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) that the tools easily produce so many markdown documents that reviewing them is more laborious than reviewing code, and that the whole process is overkill for a small bug fix. The agent also does not necessarily follow the specification even if it has been carefully written, so the implementation still has to be verified. A heavy specification written up front also resembles the [waterfall model](/en/osa1/#waterfall-or-linear-model), whose problems are well known. SDD works best when the specification is kept light and updated iteratively as understanding grows. For small changes, Plan mode or just a well-written request is enough.
 
 ### Design principles and the agent
 
