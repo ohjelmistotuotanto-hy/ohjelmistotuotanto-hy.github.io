@@ -416,7 +416,11 @@ The basic principle is still to keep the teams small, but to increase production
 
 A long-used way of scaling Scrum is the so-called _Scrum of Scrums_, where the idea is to form a coordinating team that includes one or, if needed, several members from each Scrum team, for example the Scrum Master or an experienced developer of the team. The Scrum of Scrums team can meet daily or less frequently, for example weekly.
 
-The principle is already very old: one of the creators of Scrum, Jeff Sutherland, [reports](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) having used it as early as 1996 in a company with dozens of Scrum teams. The product-specific Scrum of Scrums teams were further coordinated by a "management Scrum" of the company's management that met monthly. However, the description does not say, for example, how backlogs should be handled in larger-scale Scrum. This is addressed by the large-scale methods presented next.
+The principle is already very old: one of the creators of Scrum, Jeff Sutherland, [reports](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) having used it as early as 1996 in a company with dozens of Scrum teams. The product-specific Scrum of Scrums teams were further coordinated by a "management Scrum" of the company's management that met monthly.
+
+![Product-specific Scrum of Scrums teams with a representative from each Scrum team, coordinated monthly by a management Scrum of the company management]({{ "/images/5-scrum-of-scrums-en.png" | relative_url }}){:width="550px" }
+
+However, the description does not say, for example, how backlogs should be handled in larger-scale Scrum. This is addressed by the large-scale methods presented next.
 
 ### Large-scale agile methods
 
@@ -450,6 +454,8 @@ At the team level, SAFe is very close to Scrum. A team has a product owner, a Sc
 An agile release train (ART) is typically a group of 5–12 teams, i.e. about 50–125 people, developing one product or whole. All teams on the train share the same cadence: iterations start and end at the same time. Iterations are grouped into 8–12-week _planning intervals_ (PI). A planning interval usually consists of four development iterations and one _IP iteration_ (innovation and planning). The IP iteration is reserved for things such as paying off technical debt, experiments and planning the next interval.
 
 The train also gets roles of its own. The _release train engineer_ (RTE) is a kind of Scrum Master for the whole train who facilitates its events. _Product management_ is responsible for the train's shared backlog, and the _system architect_ for the train's technical direction. The product owners of the teams each maintain their own team's backlog. Above the release trains, there are still the large solution and portfolio levels, with their own roles and concepts.
+
+![SAFe roles: the product owner, Scrum Master and developers of the teams, the release train engineer, product management and system architect of the train, and the large solution and portfolio levels above]({{ "/images/5-safe-roolit-en.png" | relative_url }}){:width="750px" }
 
 There are thus several backlogs, and they form a hierarchy. The _epics_ of the portfolio backlog are split into _features_ in the train's backlog (ART backlog), which in turn are split into _stories_ in the teams' backlogs. In addition to functionality, the backlogs contain _enablers_, i.e. tasks related to, for example, architecture and infrastructure, which build the so-called _architectural runway_. Features are prioritised with the _WSJF_ method (weighted shortest job first). In it, the cost of delay is divided by the size of the job, so small and valuable features rise to the front of the queue. The method comes from [lean product development](/en/osa5/#principles-of-lean-product-development).
 

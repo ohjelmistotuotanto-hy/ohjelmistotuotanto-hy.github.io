@@ -418,7 +418,11 @@ Perusperiaatteena on edelleen pitää tiimit pieninä, mutta kasvattaa tuotantok
 
 Jo kauan käytetty tapa Scrumin skaalaamiseen on niin sanottu _Scrum of Scrums_, jossa ideana on muodostaa koordinoiva tiimi, johon kuuluu yksi tai tarvittaessa useampikin jäsen jokaisesta Scrum-tiimistä, esimerkiksi scrum master tai tiimin kokenut sovelluskehittäjä. Scrum of Scrums -tiimi voi tavata päivittäin tai harvemmin, esimerkiksi viikoittain.
 
-Periaate on jo hyvin vanha: toinen Scrumin kehittäjistä, Jeff Sutherland, [kertoo](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) käyttäneensä sitä jo vuonna 1996 yrityksessä, jossa oli kymmeniä Scrum-tiimejä. Tuotekohtaisia Scrum of Scrums -tiimejä koordinoi vielä kuukausittain kokoontuva yrityksen johdon "management Scrum". Kuvaus ei kuitenkaan kerro esimerkiksi sitä, miten backlogien suhteen tulisi toimia laajemman skaalan Scrumissa. Tähän vastaavat seuraavaksi esiteltävät laajan skaalan menetelmät.
+Periaate on jo hyvin vanha: toinen Scrumin kehittäjistä, Jeff Sutherland, [kertoo](https://www.researchgate.net/publication/290823579_Agile_Can_Scale_Inventing_and_Reinventing_SCRUM_in_Five_Companies) käyttäneensä sitä jo vuonna 1996 yrityksessä, jossa oli kymmeniä Scrum-tiimejä. Tuotekohtaisia Scrum of Scrums -tiimejä koordinoi vielä kuukausittain kokoontuva yrityksen johdon "management Scrum".
+
+![Tuotekohtaiset Scrum of Scrums -tiimit, joissa on edustaja jokaisesta Scrum-tiimistä, ja niitä kuukausittain koordinoiva yrityksen johdon management Scrum]({{ "/images/5-scrum-of-scrums.png" | relative_url }}){:width="550px" }
+
+Kuvaus ei kuitenkaan kerro esimerkiksi sitä, miten backlogien suhteen tulisi toimia laajemman skaalan Scrumissa. Tähän vastaavat seuraavaksi esiteltävät laajan skaalan menetelmät.
 
 ### Laajan skaalan ketterät menetelmät
 
@@ -452,6 +456,8 @@ Tiimitasolla SAFe on hyvin lähellä Scrumia. Tiimissä on product owner, scrum 
 Toimitusjuna (engl. agile release train, ART) on tyypillisesti 5–12 tiimin eli noin 50–125 hengen joukko, joka kehittää yhtä tuotetta tai kokonaisuutta. Junan kaikilla tiimeillä on sama rytmi: iteraatiot alkavat ja päättyvät samaan aikaan. Iteraatiot ryhmitellään 8–12 viikon _planning interval_ -jaksoiksi (PI). Tavallisesti jakso koostuu neljästä kehitysiteraatiosta ja yhdestä _IP-iteraatiosta_ (innovation and planning). IP-iteraatio on varattu esimerkiksi teknisen velan maksamiseen, kokeiluille ja seuraavan jakson suunnitteluun.
 
 Junalle tulee myös omia roolejaan. _Release train engineer_ (RTE) on eräänlainen koko junan scrum master, joka fasilitoi sen tapahtumia. _Product management_ vastaa junan yhteisestä backlogista, ja _system architect_ junan teknisestä suunnasta. Tiimien product ownerit ylläpitävät kukin oman tiiminsä backlogia. Toimitusjunien yläpuolella on vielä suurten ratkaisujen ja portfolion tasot omine rooleineen ja käsitteineen.
+
+![SAFen roolit: tiimien product owner, scrum master ja kehittäjät, junan release train engineer, product management ja system architect sekä ylempinä tasoina suuret ratkaisut ja portfolio]({{ "/images/5-safe-roolit.png" | relative_url }}){:width="750px" }
 
 Backlogeja on siis useita ja ne muodostavat hierarkian. Portfolion backlogin _epicit_ jakautuvat junan backlogin (engl. ART backlog) _ominaisuuksiksi_ (engl. feature), jotka taas jakautuvat tiimien backlogien _storyiksi_. Toiminnallisuuden lisäksi backlogeissa on _enablereita_ eli esimerkiksi arkkitehtuuria ja infrastruktuuria koskevia tehtäviä, joilla rakennetaan niin sanottua _arkkitehtuurikiitorataa_ (engl. architectural runway). Ominaisuudet priorisoidaan _WSJF_-menetelmällä (weighted shortest job first). Siinä viivästyksen kustannus (engl. cost of delay) jaetaan työn koolla, joten pienet ja arvokkaat ominaisuudet nousevat jonon kärkeen. Menetelmä on peräisin [lean-tuotekehityksestä](/osa5/#lean-tuotekehityksen-periaatteita).
 
