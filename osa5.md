@@ -731,18 +731,7 @@ Ketteryyden hyödyistä on myös tieteellistä tutkimusta, mutta sen tulokset ov
 
 ### Ohjelmistotoimituksen tila DORA-tutkimuksen valossa
 
-Koettuja hyötyjä konkreettisemman kuvan siitä, miten hyvin organisaatiot todella hallitsevat ohjelmistokehityksen, antaa osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) esitelty [DORA](https://dora.dev/)-tutkimusohjelma (DevOps Research and Assessment). Myös DORA perustuu kyselyihin, mutta vastaajien mielipiteiden sijaan se kysyy mitattavia asioita, kuten kuinka usein muutoksia viedään tuotantoon, ja tutkii niiden yhteyttä organisaation menestykseen. Kerrataan lyhyesti sen keskeiset ideat.
-
-DORA on kerännyt kyselyaineistoa ohjelmistoalan ammattilaisilta vuodesta 2013 alkaen. Tuloksia on julkaistu Accelerate-kirjassa (2018), vertaisarvioiduissa artikkeleissa sekä vuosittaisina raportteina, nykyään Googlen yhteydessä.
-
-Ohjelmistotoimituksen suorituskykyä mitataan [DORA-mittareilla](https://dora.dev/guides/dora-metrics-four-keys/):
-
-- tuotantoonvientien tiheys
-- muutoksen läpimenoaika versionhallinnasta tuotantoon
-- epäonnistuneiden muutosten osuus
-- palautumisaika epäonnistuneesta tuotantoonviennistä
-
-Tutkimuksen keskeinen havainto on, että nopeus ja vakaus eivät ole toistensa vastakohtia: parhaiten suoriutuvat organisaatiot ovat hyviä molemmissa. Lisäksi jatkuvan toimittamisen tekniset käytänteet ja lean-johtamisen käytänteet ennustavat parempaa toimituskykyä, joka puolestaan ennustaa organisaation menestystä.
+Koettuja hyötyjä konkreettisemman kuvan siitä, miten hyvin organisaatiot todella hallitsevat ohjelmistokehityksen, antaa osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) esitelty [DORA](https://dora.dev/)-tutkimusohjelma. Se ei kysy vastaajien mielipiteitä, vaan mitattavia asioita, kuten kuinka usein muutoksia viedään tuotantoon, ja mittaa ohjelmistotoimituksen suorituskykyä [DORA-mittareilla](https://dora.dev/guides/dora-metrics-four-keys/).
 
 Vuoteen 2024 asti DORA jakoi vastaajat neljään suoritustasoon DORA-mittareiden perusteella. [Vuoden 2024 raportissa](https://dora.dev/research/2024/dora-report/) tasot olivat seuraavat:
 
@@ -754,8 +743,6 @@ Vuoteen 2024 asti DORA jakoi vastaajat neljään suoritustasoon DORA-mittareiden
 | Low | 25 % | kuukausittain–puolivuosittain | 1–6 kuukautta | 40 % | viikosta kuukauteen |
 
 Parhaiten suoriutuvat organisaatiot vievät muutoksia tuotantoon tarpeen mukaan alle päivässä, kun heikoimmilla siihen kuluu kuukausia. Valtaosa organisaatioista on siis vielä kaukana siitä, mitä [jatkuva toimittaminen](/osa3#jatkuva-toimittaminen-ja-toimitusvalmius) mahdollistaisi, ja teknisissä käytänteissä on monella skarppaamisen paikka.
-
-Taulukossa on myös kiinnostava yksityiskohta: medium-tason organisaatiot vievät muutoksia tuotantoon harvemmin kuin high-tason, mutta niiden muutokset epäonnistuvat harvemmin. Raportin mukaan ei ole yleispätevää vastausta siihen, kumpi on parempi, tiheämmät tuotantoonviennit vai harvemmat epäonnistumiset. Se riippuu sovelluksesta ja sen käyttäjien odotuksista. Raportti korostaakin, että tärkeämpää kuin tietyn tason saavuttaminen on se, että tiimi parantaa toimintaansa jatkuvasti.
 
 Saman tutkimuksen mukaan teknisten käytänteiden lisäksi organisaatioiden tehokkuutta ennustavat mm. pienissä toimituserissä työskentely (work in small batches) ja keskeneräisen työn määrän rajoittaminen (limit work in process).
 
@@ -785,13 +772,7 @@ Chaos-raportti sisältää muutakin mielenkiintoista dataa, esim. tarkempaa erit
 
 Myös tutkijat ovat kyseenalaistaneet Chaos-raportin luvut. Eveleensin ja Verhoefin [artikkelin](https://ieeexplore.ieee.org/document/5232804) (2010) mukaan raportin onnistumisen määritelmä on yksipuolinen: projekti katsotaan onnistuneeksi vain, jos se pysyy alkuperäisessä aikataulu-, budjetti- ja laajuusarviossa. Tällöin mitataan pikemminkin alkuperäisten arvioiden osuvuutta kuin sitä, tuottiko projekti arvoa. Ketterässä kehityksessä laajuuden muuttuminen on lisäksi tarkoituksellista, joten määritelmä sopii sen arviointiin huonosti.
 
-Chaos-raporttia ja DORA-tutkimusta vertaamalla huomaa, kuinka paljon tulos riippuu siitä, mitä mitataan. Chaos-raportti mittaa, toteutuiko projekti alkuperäisen suunnitelman mukaisesti, eli se arvioi ketterää kehitystä oikeastaan vesiputousmallin onnistumiskriteereillä. DORA taas ei kysy suunnitelmien pitävyyttä, vaan sitä, kuinka nopeasti ja luotettavasti muutokset saadaan käyttäjille. Se on paljon lähempänä ketterän kehityksen omia tavoitteita. DORAn mittarit ja menetelmät on myös kuvattu julkisesti ja tuloksia on julkaistu vertaisarvioiduissa artikkeleissa, kun taas Chaos-raportin aineisto ja menetelmät eivät ole avoimia.
-
-Chaos-raportin asetelma, jossa ketterää verrataan vesiputousmalliin, on myös turhan mustavalkoinen. Kuten edellä todettiin, valtaosa organisaatioista käyttää hybridimenetelmiä, eikä menetelmän nimi kerro kovin paljon. DORAn suoritustasot kertovat saman asian toisesta suunnasta: ratkaisevaa ei ole se, kutsuuko organisaatio toimintaansa ketteräksi, vaan se, kuinka pienissä erissä ja kuinka nopeasti muutokset saadaan käyttäjille ja millaiset tekniset käytänteet sitä tukevat.
-
-Ketterää on siis monta laatua, hyvää ja huonoa. Esimerkiksi kahden viikon sprinttejä pitävä tiimi, joka vie muutoksia tuotantoon vain muutaman kerran vuodessa, on DORAn mittareilla lähempänä vesiputousta kuin jatkuvaa toimittamista. Ohjelmiston toimitustapa onkin oikeastaan laaja jatkumo, jonka toisessa päässä ovat harvoin tehtävät suuret julkaisut ja toisessa useita kertoja päivässä tuotantoon vietävät pienet muutokset.
-
-Molemmat päätyvät silti samansuuntaiseen johtopäätökseen: pienissä erissä etenevä ja palautteeseen perustuva kehitys onnistuu paremmin kuin suuret kertarysäykset.
+Chaos-raporttia ja DORA-tutkimusta vertaamalla huomaa, kuinka paljon tulos riippuu siitä, mitä mitataan. Chaos-raportti arvioi, toteutuiko projekti alkuperäisen suunnitelman mukaisesti, eli se mittaa ketterää kehitystä oikeastaan vesiputousmallin onnistumiskriteereillä. DORA taas mittaa, kuinka nopeasti ja luotettavasti muutokset saadaan käyttäjille, mikä on paljon lähempänä ketterän kehityksen omia tavoitteita. Ketterä vs. vesiputous -asetelma on myös turhan mustavalkoinen: valtaosa organisaatioista käyttää hybridimenetelmiä, ja ketterääkin on monta laatua, hyvää ja huonoa. Molemmat tutkimukset päätyvät silti samansuuntaiseen johtopäätökseen: pienissä erissä etenevä ja palautteeseen perustuva kehitys onnistuu paremmin kuin suuret kertarysäykset.
 
 ### Ketteryyden kritiikki
 
@@ -815,10 +796,10 @@ Tutkimusten perusteella hybridityö näyttää toimivan yksilötasolla hyvin, mu
 
 Evidenssiä ketterien menetelmien toimimisesta siis on. Näyttö ei kuitenkaan ole täysin kiistatonta, sillä valtaosa edellä referoiduista ketteryyttä koskevista tutkimuksista on kyselytutkimuksia, ja Dybån ja Dingsøyrin kirjallisuuskatsauksen mukaan muukin tutkimus on usein menetelmiltään heikkoa. Kyselyissä käsitteistöä ei ole välttämättä kunnolla määritelty (esim. mitä ketteryydellä tai projektin onnistumisella tarkoitetaan) ja kyselyyn osallistuneet eivät useimmiten edusta tasaisesti koko populaatiota. Kaikkien kyselyjen tekijät eivät myöskään ole puolueettomia menetelmien suhteen, esim. State of Agile -raporttia nykyään tuottava [Digital.ai](https://digital.ai/) on ketteriä projektinhallintatyökaluja tuottava yritys. Tutkimusten validiteetti siis on hieman kyseenalainen.
 
-Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Edellä kerrattu, osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) tarkemmin esitelty DORA-tutkimus lienee kattavin tällä hetkellä olemassa oleva ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus. DORA julkaisee edelleen raportteja, mutta niiden painopiste on siirtynyt: vuoden 2025 raportti ja sen jatkoselvitykset käsittelevät tekoälyavusteista ohjelmistokehitystä. Myös DORA perustuu kyselyihin, mutta sen menetelmät ovat huomattavasti huolellisemmat kuin useimmissa edellä mainituissa kyselyissä: mitattavat käsitteet on määritelty ja validoitu, ja tekijöiden välisiä yhteyksiä on analysoitu tilastollisilla malleilla. Tuloksia on julkaistu myös vertaisarvioiduissa julkaisuissa.
+Ketteristä menetelmistä on tehty myös runsaasti akateemista tutkimusta, muutama näistä mainittiinkin edellä tekstissä. Akateemisenkin tutkimuksen systemaattisuus, laatu ja tulosten yleistettävyys vaihtelee. Kattavin ketterien ja lean-periaatteiden hyötyjä erittelevä tutkimus lienee osan 3 luvussa [Tieteellinen evidenssi](/osa3/#tieteellinen-evidenssi) esitelty DORA. Sekin perustuu kyselyihin, mutta sen käsitteet on määritelty ja validoitu ja tuloksia on julkaistu vertaisarvioiduissa julkaisuissa.
 
 Olemassa on myös suuri määrä tutkimuksia, joissa rajaudutaan yksittäisten tekniikoiden, esim TDD:n, pariohjelmoinnin tai jatkuvan integraation vaikutusten arviointiin. Ohjelmistotuotannossa on kuitenkin liian paljon muuttujia, jotta jonkin yksittäisen tekijän vaikutusta voitaisiin täysin vakuuttavasti mitata empiirisesti. Menetelmiä soveltavat aina ihmiset, ja mittaustulos yhdellä ohjelmistotiimillä ei välttämättä yleisty mihinkään muihin olosuhteisiin.
 
 Lähes kaikissa yksittäisen tekniikan esim. TDD:n hyötyjä mittaavissa tutkimuksissa ongelmana on se, että ne eivät mittaa tekniikoista saatavia pitkäaikaisia hyötyjä mm. ohjelmiston ylläpidolle ja jatkokehitettävyydelle. Sekä kansanviisaus että monet tutkimukset ovat todenneet, että valtaosa ohjelmiston kustannuksista muodostuu juurikin ylläpitovaiheen, eli ensimmäisen version julkaisun jälkeisistä kustannuksista. Esimerkiksi [tämä](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) tutkimus osoittaa, että peräti 79 % ohjelmiston kustannuksista muodostuu ylläpitovaiheen aikana. Lyhyellä aikavälillä tehdyt tutkimusasetelmat eivät siis tavoita hyötyjä, jotka näkyvät vasta ajan myötä. Esimerkiksi TDD usein hidastaa kehitystä alussa, mutta sen hyödyt, kuten kattava testisarja ja koodin helpompi muutettavuus, voivat realisoitua vasta ylläpitovaiheessa. Yhtä lailla on mahdollista, että jokin tekniikka tuottaa lyhytaikaisen hyödyn, mutta heikentää tuottavuutta pitkällä aikavälillä.
 
-Tekoäly tuo tutkimukseen uuden muuttujan. DORA-ryhmän vuoden 2025 raportin keskeinen havainto on, että tekoäly toimii _vahvistimena_: se parantaa hyvin toimivien tiimien suorituskykyä, mutta voimistaa myös heikosti toimivien organisaatioiden ongelmia. Ne käytänteet, joiden hyödyistä tässä osassa ja osassa 3 on esitelty näyttöä, eivät siis menetä merkitystään tekoälyn myötä vaan pikemminkin korostuvat. Aiheesta tarkemmin materiaalissa [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
+Tekoälyn vaikutuksesta ohjelmistokehitykseen ja sen tutkimukseen kerrotaan materiaalissa [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).

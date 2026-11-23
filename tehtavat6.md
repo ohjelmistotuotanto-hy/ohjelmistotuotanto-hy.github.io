@@ -518,7 +518,11 @@ Tehdään toteutus agentin avulla, mutta tällä kertaa **suunnitellaan ensin**.
 
 <input type="checkbox"> Kun agentti on valmiina varmista, että molemmat yllä olevat esimerkkikyselyt tuottavat oikean tuloksen
 
-<input type="checkbox"> Käy lopuksi läpi valmis koodi ja agentin kirjoittamat testit. Pyydä agenttia selittämään koodin toimintaa, jotta saat siitä vähintään kohtuullisen hyvän käsityksen.
+<input type="checkbox"> Pyydä agenttia dokumentoimaan toteuttamansa ominaisuus Markdown-tiedostoon, esim. _viikko6/query-language/QUERY_LANGUAGE.md_. Dokumentaatiossa tulee kertoa kyselykielen syntaksi esimerkkeineen sekä kuvata, miten toteutus on rakennettu. Pyydä agenttia havainnollistamaan dokumentaatiota sopivilla kuvilla, jotka tehdään [Mermaid](https://mermaid.js.org/)-syntaksilla. GitHub näyttää Mermaid-kaaviot suoraan Markdown-tiedostossa
+
+<input type="checkbox"> Lue dokumentaatio ja varmista, että se vastaa toteutusta ja että kuvat näkyvät GitHubissa oikein
+
+<input type="checkbox"> Käy lopuksi läpi valmis koodi ja agentin kirjoittamat testit. Käytä apuna agentin kirjoittamaa dokumentaatiota ja pyydä tarvittaessa agenttia selittämään koodin toimintaa, jotta saat siitä vähintään kohtuullisen hyvän käsityksen.
 
 <input type="checkbox"> Kirjoita raportti kokemuksistasi hakemistoon _viikko6_ talletettavaan tiedostoon _plan.md_
 

@@ -13,6 +13,8 @@ Local preview at http://localhost:4000:
 bundle exec jekyll serve   # j.sh, if Ruby/bundler is installed locally
 ```
 
+When the user says "suorita materiaali", start the local preview in the background. `./serve.sh` uses `docker run -it`, which fails without a TTY, so run instead: `docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 mluukkai/kastomjekyl jekyll serve --watch --drafts`.
+
 There are no tests or linters. `ruby scripts/check_links.rb _site` checks internal links and anchors of a built site. Production is built from `containerization/Dockerfile` (jekyll build + `containerization/rebase.rb` rewrites links under the `/ohtu` base path, served by nginx); the GitHub Action pushes the image on every push to `master`.
 
 ## Structure
