@@ -77,6 +77,8 @@
 
 - Luento 9: {{site.luennot[9]}}
   - [Lean](/osa5#lean)
+  - tallenne: [youtube](https://youtu.be/Prx522Sz0iQ), [unitube](https://www.helsinki.fi/fi/unitube/video/206f5bee-1d02-496f-aa59-0e7ba9a661d6?t=10:38)
+    - Unitube-ongelmien takia luennosta on tallessa vain jälkimmäinen puolisko. Ensimmäisen puoliskon asiat voi katsoa vuoden 2025 tallenteesta.
   - vuoden 2025 tallenteet: [youtube](https://youtu.be/THvNdk4Y5xo), [unitube](https://www.helsinki.fi/fi/unitube/video/4fd987ce-5ef9-4197-bd54-0a42b591bb1a)
 - Vierailuluennot
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)

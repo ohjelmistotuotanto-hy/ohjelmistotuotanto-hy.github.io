@@ -78,6 +78,8 @@
 
 - Lecture 9: {{site.luennot-en[9]}}
   - [Lean](/en/osa5#lean)
+  - recording: [youtube](https://youtu.be/Prx522Sz0iQ), [unitube](https://www.helsinki.fi/fi/unitube/video/206f5bee-1d02-496f-aa59-0e7ba9a661d6?t=10:38)
+    - Due to problems with Unitube, only the second half of the lecture was recorded. You can watch the topics of the first half from the 2025 recording.
   - 2025 recordings: [youtube](https://youtu.be/THvNdk4Y5xo), [unitube](https://www.helsinki.fi/fi/unitube/video/4fd987ce-5ef9-4197-bd54-0a42b591bb1a)
 - Guest lectures
   - Attending on site earns you 1 course point (0.33 points per lecture)
