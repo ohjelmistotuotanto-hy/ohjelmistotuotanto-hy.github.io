@@ -84,6 +84,7 @@
   - Osallistumisesta paikan päällä on jaossa 1 kurssipiste (0.33 pistettä per kerta)
   - Luento 10: {{site.luennot[10]}}
     - Lauri Suomalainen (Teamit): _Ohjelmistotuotanto kokonaisuutena: DevOps, tiimitopologiat ja platform engineering_
+      - tallenne: [youtube](https://youtu.be/MdxP7-FWt-I), [unitube](https://www.helsinki.fi/fi/unitube/video/22f13a9c-faec-457d-a3f1-9005b4d6bc09?t=15:30)
 - Laskarit
   - <a href="{{site.stats_url}}/quiz/5">monivalintatehtävät</a> (viikkojen 5 ja 6 luennot) deadline {{site.moniv-dl[5]}}
   - [ohjelmointi/versionhallinta/konfigurointitehtävät](/tehtavat5), deadline {{site.lask-dl[5]}}

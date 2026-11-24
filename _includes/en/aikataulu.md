@@ -85,6 +85,7 @@
   - Attending on site earns you 1 course point (0.33 points per lecture)
   - Lecture 10: {{site.luennot-en[10]}}
     - Lauri Suomalainen (Teamit): _Software engineering as a whole: DevOps, team topologies and platform engineering_
+      - recording: [youtube](https://youtu.be/MdxP7-FWt-I), [unitube](https://www.helsinki.fi/fi/unitube/video/22f13a9c-faec-457d-a3f1-9005b4d6bc09?t=15:30)
 - Exercises
   - <a href="{{site.stats_url}}/quiz/5">multiple choice quizzes</a> (lectures of weeks 5 and 6) deadline {{site.moniv-dl-en[5]}}
   - [programming, version control and configuration exercises](/en/tehtavat5), deadline {{site.lask-dl-en[5]}}
