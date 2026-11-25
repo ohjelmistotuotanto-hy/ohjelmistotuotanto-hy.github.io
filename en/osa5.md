@@ -5,7 +5,7 @@ title_long: 'Lean, scaling agile software development and agile software develop
 inheader: yes
 permalink: /en/osa5/
 source: osa5.md
-source_commit: a96d7f7
+source_commit: 536e749
 ---
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -64,9 +64,9 @@ In the following, we discuss lean in more detail based on Craig Larman and Bas V
 
 In many sources, lean is illustrated with a diagram called the _lean thinking house_:
 
-![]({{ "/images/5-1.png" | relative_url }}){:height="550px" }
+![Lean thinking house: the goal, the foundation, two pillars and, between them, principles and tools]({{ "/images/5-lean-talo.png" | relative_url }}){:width="650px" }
 
-Lean has a _goal_ located on the "top floor of the house", a _foundation_, two _pillars_ and a set of _principles_ supporting them (the 14 principles and the product development principles). In addition, there is a set of tools supporting lean, the most famous of which is probably Kanban, which has also been mentioned during the course.
+Lean has a _goal_ located on the "top floor of the house", a _foundation_, two _pillars_ and, between the pillars, a set of _principles_ and _tools_ supporting them (principles & tools). Of the tools, the most famous of which is probably Kanban, which has also been mentioned during the course.
 
 The goal of lean is _to achieve a sustainable, fast way of getting "from idea to a product sold to the customer" without exploiting employees or partners, while maintaining a high level of quality and customer satisfaction._
 
@@ -200,6 +200,8 @@ A value stream map is a one-off snapshot. The idea has been extended to continuo
 - _lead time_, i.e. the time from adding the story to the backlog to it being in production, is more than 5 weeks, and this is exactly what matters from the customer's point of view
 - _flow efficiency_, i.e. the share of value-producing work of the elapsed time, is about 4% for the whole chain and about 10% counting only from the start of the work
 
+In everyday language, cycle time is often also called lead time, so it is worth specifying which one is meant. Lean primarily optimises lead time, since that is what the customer sees. Cycle time is only a part of it, and the rest is waiting before the work is even started.
+
 Flow efficiency tells where improvements should be targeted. If coding became twice as fast, for example with the help of AI, i.e. the code & test step took 3 hours instead of 6, the cycle time would shorten by only about 4%. If, on the other hand, the pull request were reviewed on the same day and the team tested and released the story itself as soon as it was finished, the cycle time would drop from 8.5 days to about two days. A value stream map and flow metrics thus reveal that slowness is rarely caused by the work itself and almost always by waiting.
 
 #### Lean tool: root cause analysis - five whys
@@ -209,6 +211,8 @@ If value stream mapping or some other method reveals waste in the production pro
 One root cause analysis technique is [five whys](https://en.wikipedia.org/wiki/Five_whys), whose operation is easiest to illustrate with an example.
 
 From the _value stream map_ in the previous figure, we notice that it takes 1.5 weeks from the code being completed (code and test) to getting it into production (deploy).
+
+![A value stream map with the period from the code & test step to production highlighted]({{ "/images/5-five-whys.png" | relative_url }})
 
 - **Why?** The QA department still has to verify that the code works in the staging environment.
 - **Why?** The programmers do not have time to test the code themselves in the staging environment.
@@ -248,7 +252,7 @@ In the figure, the kanban cards (orange dashed line) travel from the customer to
 
 As already mentioned, components made for in-process inventory are one form of lean waste. Stored components tie up capital, and if not enough orders come in, they may never be needed. In-process inventory may also delay the discovery of defects: if components had a manufacturing defect, it might take a long time before the defect was revealed, and large quantities of defective components might have already been manufactured into inventory.
 
-In practice, production working on the pull principle may maintain small in-process inventories in order to optimise the lead time needed to manufacture the product.
+In practice, production working on the pull principle may maintain small in-process inventories in order to optimise the lead time.
 
 #### Kanban in software development
 
@@ -378,7 +382,9 @@ When lean is applied to _product development_ instead of optimising production, 
 In lean product development, besides making operations more efficient, the focus is on _amplifying learning_ (_amplify learning_). It pays to aim for as _high-value information_ as possible, e.g. by paying attention to things that involve a lot of uncertainty (_focus on uncertain things_). Ideas that are uncertain and involve a high technical risk should be implemented/tested quickly, since delayed information about them has a high price (_cost of delay_).
 
 One mechanism of lean product development for speeding up learning is _set based concurrent
-development_. If the aim is to develop, say, a new engine cooling system, several alternative solutions are developed at the same time by different teams. The solutions being developed are compared at regular intervals, and some of them are eliminated. Finally, the solution that proves to be the best is selected for use in the final product.
+development_. If the aim is to develop, say, a new engine cooling system, several alternative solutions are developed at the same time by different teams. The solutions being developed are compared at regular intervals, and some of them are eliminated. The good sides of different solutions can also be combined. Finally, the solution that proves to be the best is selected for use in the final product.
+
+![Set based concurrent development: four parallel solutions, of which one is eliminated in the comparisons and one is combined with another, and finally the one that proves best is selected]({{ "/images/5-set-based-en.png" | relative_url }}){:width="650px" }
 
 The set based development method is radically different from the commonly applied _iterative_ development method, where the starting point is a single solution that is improved step by step.
 
@@ -735,18 +741,7 @@ There is also scientific research on the benefits of agility, but its results ar
 
 ### The state of software delivery in the light of DORA research
 
-A more concrete picture than perceived benefits of how well organisations really master software development is given by the [DORA](https://dora.dev/) research programme (DevOps Research and Assessment) presented in the Part 3 chapter [Scientific evidence](/en/osa3/#scientific-evidence). DORA is also based on surveys, but instead of respondents' opinions it asks about measurable things, such as how often changes are deployed to production, and studies how they relate to organisational success. Let us briefly recap its key ideas.
-
-DORA has collected survey data from software professionals since 2013. The results have been published in the book Accelerate (2018), in peer-reviewed articles and in annual reports, nowadays in connection with Google.
-
-Software delivery performance is measured with the [DORA metrics](https://dora.dev/guides/dora-metrics-four-keys/):
-
-- deployment frequency
-- change lead time from version control to production
-- change failure rate
-- recovery time from a failed deployment
-
-The key finding of the research is that speed and stability are not opposites: the best-performing organisations are good at both. In addition, the technical practices of continuous delivery and lean management practices predict better delivery performance, which in turn predicts organisational success.
+A more concrete picture than perceived benefits of how well organisations really master software development is given by the [DORA](https://dora.dev/) research programme presented in the Part 3 chapter [Scientific evidence](/en/osa3/#scientific-evidence). It does not ask respondents for their opinions but about measurable things, such as how often changes are deployed to production, and measures software delivery performance with the [DORA metrics](https://dora.dev/guides/dora-metrics-four-keys/).
 
 Until 2024, DORA divided respondents into four performance levels based on the DORA metrics. In the [2024 report](https://dora.dev/research/2024/dora-report/), the levels were as follows:
 
@@ -758,8 +753,6 @@ Until 2024, DORA divided respondents into four performance levels based on the D
 | Low | 25 % | monthly–every six months | 1–6 months | 40 % | a week to a month |
 
 The best-performing organisations deploy changes to production on demand in less than a day, while for the weakest it takes months. The majority of organisations are thus still far from what [continuous delivery](/en/osa3#continuous-deployment-and-delivery) would make possible, and many have room to sharpen up their technical practices.
-
-The table also has an interesting detail: medium-level organisations deploy changes to production less often than high-level ones, but their changes fail less often. According to the report, there is no universal answer to which is better, more frequent deployments or fewer failures. It depends on the application and the expectations of its users. The report therefore emphasises that more important than reaching a particular level is that the team continuously improves its way of working.
 
 According to the same research, in addition to technical practices, organisational performance is predicted by, among other things, working in small batches (work in small batches) and limiting the amount of work in progress (limit work in process).
 
@@ -789,13 +782,7 @@ The Chaos report contains other interesting data as well, e.g. a more detailed b
 
 Researchers have also questioned the Chaos report's figures. According to Eveleens and Verhoef's [article](https://ieeexplore.ieee.org/document/5232804) (2010), the report's definition of success is one-sided: a project is considered successful only if it stays within the original schedule, budget and scope estimates. This measures the accuracy of the original estimates rather than whether the project produced value. Moreover, in agile development changes in scope are intentional, so the definition is poorly suited to evaluating it.
 
-Comparing the Chaos report and the DORA research shows how much the result depends on what is measured. The Chaos report measures whether a project went according to the original plan, i.e. it actually evaluates agile development by the success criteria of the waterfall model. DORA, in turn, does not ask whether plans held, but how quickly and reliably changes reach users. This is much closer to the goals of agile development itself. DORA's metrics and methods have also been described publicly and its results published in peer-reviewed articles, whereas the Chaos report's data and methods are not open.
-
-The Chaos report's setup, comparing agile with the waterfall model, is also overly black and white. As noted above, most organisations use hybrid methods, and the name of the method does not say very much. DORA's performance levels tell the same thing from another direction: what matters is not whether an organisation calls its way of working agile, but how small the batches are, how quickly changes reach users and what technical practices support this.
-
-So there are many kinds of agile, good and bad. For example, a team running two-week sprints that deploys changes to production only a few times a year is, by DORA's metrics, closer to waterfall than to continuous delivery. The way software is delivered is really a wide spectrum, with rare large releases at one end and small changes deployed to production several times a day at the other.
-
-Both nevertheless reach a similar conclusion: development that proceeds in small batches and is based on feedback succeeds better than big-bang releases.
+Comparing the Chaos report and the DORA research shows how much the result depends on what is measured. The Chaos report assesses whether a project went according to the original plan, i.e. it actually measures agile development by the success criteria of the waterfall model. DORA, in turn, measures how quickly and reliably changes reach users, which is much closer to the goals of agile development itself. The agile vs. waterfall setup is also overly black and white: most organisations use hybrid methods, and there are many kinds of agile, good and bad. Both studies nevertheless reach a similar conclusion: development that proceeds in small batches and is based on feedback succeeds better than big-bang releases.
 
 ### Criticism of agility
 
@@ -819,10 +806,10 @@ Based on the research, hybrid work seems to work well at the individual level, b
 
 So there is evidence that agile methods work. The evidence is not entirely indisputable, however, since most of the studies on agility summarised above are surveys, and according to Dybå and Dingsøyr's literature review other research is also often methodologically weak. In the surveys, the concepts are not necessarily properly defined (e.g. what is meant by agility or project success), and the participants mostly do not represent the whole population evenly. Nor are the authors of all surveys impartial with respect to the methods; for example, [Digital.ai](https://digital.ai/), which currently produces the State of Agile report, is a company that makes agile project management tools. The validity of the studies is thus somewhat questionable.
 
-There has also been a lot of academic research on agile methods, a few of which were mentioned in the text above. The systematicity, quality and generalisability of academic research also vary. The DORA research recapped above and presented in more detail in the Part 3 chapter [Scientific evidence](/en/osa3/#scientific-evidence) is probably the most comprehensive research currently available that breaks down the benefits of agile and lean principles. DORA still publishes reports, but their focus has shifted: the 2025 report and its follow-up studies deal with AI-assisted software development. DORA too is based on surveys, but its methods are considerably more careful than in most of the surveys mentioned above: the concepts being measured have been defined and validated, and the relationships between factors have been analysed with statistical models. The results have also been published in peer-reviewed publications.
+There has also been a lot of academic research on agile methods, a few of which were mentioned in the text above. The systematicity, quality and generalisability of academic research also vary. Probably the most comprehensive research breaking down the benefits of agile and lean principles is DORA, presented in the Part 3 chapter [Scientific evidence](/en/osa3/#scientific-evidence). It too is based on surveys, but its concepts have been defined and validated, and its results have been published in peer-reviewed publications.
 
 There is also a large number of studies that limit themselves to evaluating the effects of individual techniques, e.g. TDD, pair programming or continuous integration. However, software development has too many variables for the effect of any single factor to be measured empirically in a fully convincing way. Methods are always applied by people, and a measurement result in one software team does not necessarily generalise to any other circumstances.
 
 The problem with almost all studies measuring the benefits of an individual technique, e.g. TDD, is that they do not measure the long-term benefits of the techniques, for example for the maintenance and further development of the software. Both folk wisdom and many studies have found that the majority of the costs of software arise precisely in the maintenance phase, i.e. after the release of the first version. For example, [this](https://www.researchgate.net/publication/221408114_Distribution_of_Cost_over_the_Application_Lifecycle_-_a_Multi-case_Study) study shows that as much as 79% of software costs arise during the maintenance phase. Short-term study designs thus do not capture benefits that only show over time. For example, TDD often slows development down at first, but its benefits, such as a comprehensive test suite and code that is easier to change, may only materialise in the maintenance phase. Equally, it is possible that some technique produces a short-term benefit but weakens productivity in the long run.
 
-AI brings a new variable to research. A key finding of the DORA group's 2025 report is that AI acts as an _amplifier_: it improves the performance of well-functioning teams, but also magnifies the problems of poorly functioning organisations. The practices for whose benefits evidence has been presented in this part and in part 3 thus do not lose their significance with AI, but rather become more important. More on this topic in the material [AI and the software development process](/en/genai/#ai-and-the-software-development-process).
+The impact of AI on software development and its research is discussed in the material [AI and the software development process](/en/genai/#ai-and-the-software-development-process).

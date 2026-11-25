@@ -1,4 +1,4 @@
-{% comment %}source: _includes/ai_valinta_ohje.md source_commit: 85a3af3{% endcomment %}
+{% comment %}source: _includes/ai_valinta_ohje.md source_commit: 536e749{% endcomment %}
 You can do the [AI] exercises either with GitHub [Copilot](https://github.com/features/copilot) in VS Code or with the open source [OpenCode](/en/opencode/) agent in the terminal. The exercises work with both, and the instructions cover both tools. You pick the tool with the switch at the beginning of the exercise. The choice applies to all exercises, and you can change it at any time.
 
 Choose **Copilot** if
@@ -12,7 +12,7 @@ Choose **OpenCode** if
 - you want to try an editor-independent agent that runs in the terminal and is used much like Claude Code
 - you want to use an open source tool in which you can freely switch the language model
 
-The exercises were originally written for Copilot, and the OpenCode versions of weeks 5–7 have not yet been tested as thoroughly. Their OpenCode instructions may therefore contain more errors and unclear parts.
+The exercises were originally written for Copilot, and the OpenCode versions of week 7 have not yet been tested as thoroughly. Their OpenCode instructions may therefore contain more errors and unclear parts.
 
 If you cannot decide, choose Copilot. The week 5 exercises that rely on GitHub integration are more straightforward with it, and with OpenCode they are done on your own machine.
 

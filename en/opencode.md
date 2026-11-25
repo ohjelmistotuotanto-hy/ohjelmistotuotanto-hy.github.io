@@ -4,14 +4,14 @@ title: OpenCode
 inheader: no
 permalink: /en/opencode/
 source: opencode.md
-source_commit: 8284f30
+source_commit: 536e749
 ---
 
 You can do the course's [AI] exercises either with GitHub Copilot in VS Code or with the open source coding agent [OpenCode](https://opencode.ai). The grounds for the choice are explained in [exercise 9](/en/tehtavat2/#9-first-contact-with-a-coding-agent-ai) of week 2. This page explains how to install OpenCode and how to use it. The exercise descriptions contain instructions for both tools: when you choose OpenCode with the switch at the beginning of an exercise, the description is shown for OpenCode.
 
 OpenCode is just an agent and has no language model of its own. Using it therefore requires an API key for some language model service, e.g. Anthropic, OpenAI, Google or OpenRouter. University students can, however, use the language models of [CurreChat](<{{site.curre}}>) free of charge, and this is the recommended way on the course, see [Using CurreChat](#using-currechat). The agent concepts, such as context, instruction file, plan mode and MCP, are the same as in the material [AI in software engineering](/en/genai/), so the course exercises work just as well with OpenCode.
 
-**Note:** the exercises were originally made for Copilot, and the OpenCode versions of the exercises for weeks 5–7 have not yet been tested as thoroughly. If there are errors or unclear parts in the instructions, please report them.
+**Note:** the exercises were originally made for Copilot, and the OpenCode versions of the exercises for week 7 have not yet been tested as thoroughly. If there are errors or unclear parts in the instructions, please report them.
 
 ## Why OpenCode?
 

@@ -4,7 +4,7 @@ title: Week 6
 inheader: no
 permalink: /en/tehtavat6/
 source: tehtavat6.md
-source_commit: 85a3af3
+source_commit: 536e749
 ---
 
 {% include en/laskari_info.md part=6 %}
@@ -520,7 +520,11 @@ Let us do the implementation with the help of an agent, but this time **let us p
 
 <input type="checkbox"> When the agent is done, make sure that both example queries above produce the correct result
 
-<input type="checkbox"> Finally, go through the finished code and the tests written by the agent. Ask the agent to explain how the code works, so that you get at least a reasonably good understanding of it.
+<input type="checkbox"> Ask the agent to document the feature it implemented in a Markdown file, e.g. _viikko6/query-language/QUERY_LANGUAGE.md_. The documentation should describe the syntax of the query language with examples and explain how the implementation is structured. Ask the agent to illustrate the documentation with suitable diagrams made with [Mermaid](https://mermaid.js.org/) syntax. GitHub shows Mermaid diagrams directly in a Markdown file
+
+<input type="checkbox"> Read the documentation and make sure that it matches the implementation and that the diagrams are shown correctly on GitHub
+
+<input type="checkbox"> Finally, go through the finished code and the tests written by the agent. Use the documentation written by the agent to help you, and if needed, ask the agent to explain how the code works, so that you get at least a reasonably good understanding of it.
 
 <input type="checkbox"> Write a report on your experiences into a file _plan.md_ stored in the directory _viikko6_
 
