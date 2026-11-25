@@ -889,11 +889,11 @@ WIP-rajoitteita säädetään usein retrospektiivien yhteydessä jos kehitystyö
 Kanbanissa työn etenemistä seurataan ns. flow-mittareilla. [Kanban Guide](https://kanbanguides.org/) edellyttää seuraamaan ainakin seuraavia:
 
 - _WIP_ (work in progress): työn alla olevien kohteiden määrä
-- _läpimenoaika_ (engl. cycle time): aika työn aloittamisesta sen valmistumiseen
+- _sykliaika_ (engl. cycle time): aika työn aloittamisesta sen valmistumiseen
 - _läpimenonopeus_ (engl. throughput): aikayksikössä valmistuneiden kohteiden määrä
 - _työn ikä_ (engl. work item age): kuinka kauan keskeneräinen kohde on ollut työn alla
 
-Mittarit liittyvät toisiinsa ns. [_Littlen lain_](https://en.wikipedia.org/wiki/Little%27s_law) kautta: keskimääräinen läpimenoaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
+Mittarit liittyvät toisiinsa ns. [_Littlen lain_](https://en.wikipedia.org/wiki/Little%27s_law) kautta: keskimääräinen sykliaika = keskimääräinen WIP / keskimääräinen läpimenonopeus. Kun yhtä aikaa työn alla olevan työn määrää rajoitetaan, yksittäiset storyt siis valmistuvat nopeammin, kunhan tiimin läpimenonopeus pysyy ennallaan. Tämä on WIP-rajoitusten keskeinen perustelu.
 
 Tekoäly voi siirtää pullonkaulaa: jos koodin kirjoittaminen nopeutuu mutta katselmointi ja testaus eivät, syntyy välivarastoa katselmointia odottavista muutoksista. WIP-rajoitukset ja flow-mittarit auttavat huomaamaan tilanteen, ks. [Tekoäly ja ohjelmistotuotantoprosessi](/genai/#tekoäly-ja-ohjelmistotuotantoprosessi).
 

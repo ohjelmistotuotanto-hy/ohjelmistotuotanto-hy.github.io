@@ -33,12 +33,12 @@ Toisen maailmansodan jälkeen Japanissa oli suuri jälleenrakennusbuumi, mutta p
 
 Resurssien niukkuus johti siihen, että Toyota kehitti ns. [_Just In Time (JIT)_](https://fi.wikipedia.org/wiki/Just-in-time) -tuotantomallin, missä ideaalina on aloittaa tuotteen valmistaminen vasta kun ostaja on jo tilannut tuotteen. Vastakohtana tälle on perinteinen [massatuotanto](https://fi.wikipedia.org/wiki/Massatuotanto), missä tuotteita valmistetaan etukäteen suuret määrät varastoon. Pyrkimys oli saada tuote tilauksen jälkeen mahdollisimman nopeasti kuluttajalle, eli haluttiin mahdollisimman lyhyt _läpimenoaika_ (engl. lead time) tilauksesta toimitukseen.
 
-JIT-tuotantomalli toi monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen läpimenoaika tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
+JIT-tuotantomalli toi monia hyötyjä. Asiakkaiden muuttuviin tarpeisiin oli helppo valmistautua toisin kuin massatuotannossa, missä varastoon tehdyt tuotteet oli saatava myydyksi vaikka ne eivät olisi enää asiakkaan mieleen. Koska tuotteen läpimenoaika (engl. lead time) tilauksesta asiakkaalle oli lyhyt, laatuongelmat paljastuivat nopeasti,
 toisin kuin mahdollisesti kuukausia varastossa olevilla tuotteilla.
 
 Amerikassa ja Euroopassa oli tuohon aikaan vallalla JIT:lle päinvastaiseen periaatteeseen perustuva massatuotanto. Sen tunnetuin esimerkki on Henry Fordin vuonna 1913 käyttöön ottama liukuhihna, jolla valmistettiin Ford T -mallia: työ pilkottiin pieniin, toistuviin vaiheisiin, ja valtavilla sarjoilla yhden auton valmistuskustannukset saatiin painettua murto-osaan aiemmasta.
 
-Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen läpimenoaika. Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
+Massatuotanto pyrki optimoimaan yksittäisten työntekijöiden ja koneiden työpanosta, ideaalina että koneiden käyttöaste on koko ajan 100%. Toyotan JIT-tuotantomallissa optimoinnin kohteeksi taas tuli tuotteen läpimenoaika (engl. lead time). Pyrkimyksenä oli eliminoida kaikki mahdollinen _hukka_ (engl. waste), joka ei edesauttanut työn, eli tuotannon alla olevan tuotteen, nopeaa _virtaamista_ (engl. flow) tilauksesta asiakkaalle. Virtausta haittaaviin tekijöihin, esim. laatuongelmiin tai epäoptimaalisiin työtapoihin puututtiin heti.
 
 Perinteisestä massatuotannosta poiketen Toyota myös omaksui työntekijöitä kunnioittavan, kuuntelevan ja _vastuuttavan_ (engl. empowering) tuotannon optimoimisen kulttuurin. Tärkeäksi periaatteeksi tuli koko henkilöstön tasolla tapahtuva toiminta- ja työskentelytapojen jatkuva parantaminen. Käytännössä jokainen työntekijä oli oikeutettu ja jopa velvollinen vaikka pysäyttämään koko tuotantolinjan heti havaitessaan ongelmia.
 
@@ -194,11 +194,13 @@ Yhteensä storyyn tehdään arvoa tuottavaa työtä vajaat 8 tuntia, mutta siit�
 
 Value stream map on kertaluontoinen tilannekuva. Ajatusta on laajennettu ohjelmistokehityksen jatkuvaksi seurannaksi, josta käytetään nimitystä _value stream management_. Tunnetuin esimerkki on Mik Kerstenin kirjassa [Project to Product](https://itrevolution.com/product/project-to-product/) (2018) esitetty [Flow Framework](https://flowframework.org/). Jatkuva seuranta perustuu [osassa 2](/osa2/#yhtä-aikaa-tehtävän-työn-rajoittaminen) esiteltyihin flow-mittareihin, joiden arvot saadaan suoraan taskboardilta tai issue trackerista, kun jokaisesta storysta tiedetään, milloin se on siirtynyt vaiheesta toiseen. Kuvan esimerkissä mittarit olisivat seuraavat:
 
-- _läpimenoaika_ (engl. cycle time) eli aika työn aloittamisesta sen valmistumiseen on noin 8,5 työpäivää, kun lasketaan code & test -vaiheen alusta tuotantoon
-- _lead time_ eli aika siitä, kun story lisätään backlogiin, siihen, kun se on tuotannossa, on yli 5 viikkoa, ja asiakkaan kannalta merkitsevä on juuri tämä
+- _sykliaika_ (engl. cycle time) eli aika työn aloittamisesta sen valmistumiseen on noin 8,5 työpäivää, kun lasketaan code & test -vaiheen alusta tuotantoon
+- _läpimenoaika_ (engl. lead time) eli aika siitä, kun story lisätään backlogiin, siihen, kun se on tuotannossa, on yli 5 viikkoa, ja asiakkaan kannalta merkitsevä on juuri tämä
 - _virtauksen tehokkuus_ (engl. flow efficiency) eli arvoa tuottavan työn osuus kuluneesta ajasta on koko ketjussa noin 4 % ja pelkästään työn aloittamisesta laskien noin 10 %
 
-Virtauksen tehokkuus kertoo, mihin parannukset kannattaa kohdistaa. Jos koodaaminen esimerkiksi tekoälyn avulla nopeutuisi puoleen, eli code & test -vaihe veisi 3 tuntia 6 tunnin sijaan, läpimenoaika lyhenisi vain noin 4 %. Jos taas pull request katselmoitaisiin samana päivänä ja tiimi testaisi ja julkaisisi storyn itse heti sen valmistuttua, läpimenoaika putoaisi 8,5 päivästä noin kahteen päivään. Value stream map ja flow-mittarit siis paljastavat, että hitaus johtuu harvoin itse työstä ja lähes aina odottamisesta.
+Arkikielessä myös sykliajasta puhutaan usein läpimenoaikana, joten on syytä tarkentaa, kumpaa tarkoitetaan. Lean optimoi ensisijaisesti läpimenoaikaa (lead time), sillä asiakas näkee juuri sen. Sykliaika on siitä vain osa, ja loppu on odottamista ennen kuin työ edes aloitetaan.
+
+Virtauksen tehokkuus kertoo, mihin parannukset kannattaa kohdistaa. Jos koodaaminen esimerkiksi tekoälyn avulla nopeutuisi puoleen, eli code & test -vaihe veisi 3 tuntia 6 tunnin sijaan, sykliaika (engl. cycle time) lyhenisi vain noin 4 %. Jos taas pull request katselmoitaisiin samana päivänä ja tiimi testaisi ja julkaisisi storyn itse heti sen valmistuttua, sykliaika (engl. cycle time) putoaisi 8,5 päivästä noin kahteen päivään. Value stream map ja flow-mittarit siis paljastavat, että hitaus johtuu harvoin itse työstä ja lähes aina odottamisesta.
 
 #### Lean työkalu: perimmäisen syyn analyysi - five whys
 
@@ -248,7 +250,7 @@ Kuvassa kanban-kortit (oranssi katkoviiva) kulkevat asiakkaalta loppukokoonpanoo
 
 Kuten on jo mainittu välivarastoon tehdyt komponentit on eräs leanin hukan muoto. Varastoidut komponentit sitovat pääomaa, ja jos tilauksia ei tulisi tarpeeksi, niitä ei välttämättä tarvita koskaan. Välivarastointi saattaa myös viivästyttää vikojen ilmituloa: jos komponenteissa olisi valmistusvika, saattaisi kestää kauan kunnes vika paljastuisi ja viallisia komponentteja olisi ehkä ehditty valmistamaan varastoon suuret määrät.
 
-Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen valmistamiseen kuluvan läpimenoaikaa optimoitua.
+Käytännössä pull-periaatteella toimiva tuotanto saattaa ylläpitää pieniä välivarastoja saadakseen tuotteen läpimenoajan (engl. lead time) optimoitua.
 
 #### Kanban ohjelmistotuotannossa
 
@@ -272,7 +274,7 @@ Kuvan tilanteessa testausvaihe ja sitä edeltävä build ready -välivarasto ova
 
 Kun WIP-rajat lasketaan yhteen (5 + 4 + 3 + 4 + 2 + 2), kuvan taululla voi olla release ready -sarakkeen lisäksi yhtä aikaa korkeintaan 20 user storya. Kun story etenee release ready -sarakkeeseen, vapautuu taululle taas kapasiteettia, ja product owner voi sijoittaa seuraavaksi toteutettavan storyn vaiheeseen _input queue_.
 
-Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri. Kun input queue jätetään laskuista pois, aloitettuja mutta keskeneräisiä storyja voi olla yhtä aikaa jopa 15 (4 + 3 + 4 + 2 + 2). Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanban-taululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _läpimenoaikaa_, eli sitä aikaa, joka kuluu kun user story "tilataan", siihen kun sen määrittelemä ominaisuus on valmis.
+Kuvan kanban-taulun WIP-rajoitteet eivät ole kovin tiukat, eli kesken olevan työn määrä on aika suuri. Kun input queue jätetään laskuista pois, aloitettuja mutta keskeneräisiä storyja voi olla yhtä aikaa jopa 15 (4 + 3 + 4 + 2 + 2). Koska lean pitää kesken olevaa työtä hukkana (in process inventory), ei _arvon virtaus_ olekaan kuvan kanban-taululla kovin optimaalista. Pienentämällä WIP-rajoja ja poistamalla välivarastoja saattaisikin olla mahdollisuus optimoida _läpimenoaikaa_ (engl. lead time), eli sitä aikaa, joka kuluu kun user story "tilataan", siihen kun sen määrittelemä ominaisuus on valmis.
 
 Leanin ideaalin mukaista olisi toteuttaa ns. _one piece flow_, eli toimia siten että user storyt tehtäisiin kokonaisuudessaan valmiiksi ennen seuraavan user storyn aloittamista. Monissa paikoissa sovelletaankin tätä periaatetta, mutta jos työ on organisoitu huonosti, periaate saattaa johtaa liian alhaiseen _utilisaatioon_. Käytännössä tämä tarkoittaa, että ohjelmistotiimin sisällä useat henkilöt joutuvat odottamaan toisten tekemisiä ennen kun he pystyvät jatkamaan omaa työtään. Tämän takia yhden storyn sijaan useimmissa tapauksissa tiimi työstää yhtä aikaa useampaa storyä. Eli sopivien WIP-rajoitteiden hakeminen vaatii aina tiimikohtaista harkintaa ja soveltamista.
 
@@ -288,7 +290,7 @@ Jotta pull-järjestelmä toimisi hyvin, eli asiakkaan arvo virtaisi tasaisesti, 
 >
 > ![]({{ "/images/5-jono.png" | relative_url }}){:width="700px" }
 >
-> Kymmenessä päivässä valmistuu molemmissa tapauksissa kymmenen storya, eli tiimin läpimenonopeus on sama. Yksittäisen storyn kannalta tilanne on kuitenkin huonompi: storyn valmistumisesta sen testauksen päättymiseen kuluu keskimäärin kaksi päivää yhden sijaan, ja jonossa odottaa keskimäärin yksi testaamaton story, eli välivarastoa on syntynyt.
+> Kymmenessä päivässä valmistuu molemmissa tapauksissa kymmenen storya, eli tiimin läpimenonopeus (engl. throughput) on sama. Yksittäisen storyn kannalta tilanne on kuitenkin huonompi: storyn valmistumisesta sen testauksen päättymiseen kuluu keskimäärin kaksi päivää yhden sijaan, ja jonossa odottaa keskimäärin yksi testaamaton story, eli välivarastoa on syntynyt.
 >
 > Tämä on ongelma useasta syystä:
 >
@@ -307,7 +309,7 @@ Ohjelmistotuotannon käytänteistä automatisoitu testaus ja jatkuva integraatio
 
 Ohjelmistokehityksessä tuotantolinjan pysäyttämistä vastaa tilanne, jossa jatkuvan integraation palvelin ilmoittaa pääkehityshaaran testien menneen rikki. Hyvin toimivassa tiimissä tähän reagoidaan kuten tuotantolinjan pysähtymiseen: kukaan ei mergeä uusia muutoksia ennen kuin vika on korjattu, ja korjaaminen menee kaikkien muiden töiden edelle. Jos rikkinäisen koodin päälle jatketaan työskentelyä, uudet viat sekoittuvat vanhoihin, ja vian syyn selvittäminen vaikeutuu sitä enemmän, mitä kauemmin vika on saanut olla korjaamatta.
 
-Myöhään löytyvät viat ovat myös vaihtelun lähde. Esimerkiksi [value stream map -kuvassa](#lean-työkalu-value-stream-mapping) QA:n staging-ympäristössä löytämien vikojen korjaamiseen kului neljä tuntia, eli kaksi kolmasosaa itse toteutukseen käytetystä ajasta. Tällainen ennakoimaton lisätyö venyttää storyn läpimenoaikaa ja kasvattaa jonoja samaan tapaan kuin edellä kuvattu storyjen koon vaihtelu. Kun laatu varmistetaan jo toteutusvaiheessa automaattisilla testeillä, viat löytyvät heti, ja niiden korjaaminen on pientä ja ennustettavaa.
+Myöhään löytyvät viat ovat myös vaihtelun lähde. Esimerkiksi [value stream map -kuvassa](#lean-työkalu-value-stream-mapping) QA:n staging-ympäristössä löytämien vikojen korjaamiseen kului neljä tuntia, eli kaksi kolmasosaa itse toteutukseen käytetystä ajasta. Tällainen ennakoimaton lisätyö venyttää storyn sykliaikaa (engl. cycle time) ja kasvattaa jonoja samaan tapaan kuin edellä kuvattu storyjen koon vaihtelu. Kun laatu varmistetaan jo toteutusvaiheessa automaattisilla testeillä, viat löytyvät heti, ja niiden korjaaminen on pientä ja ennustettavaa.
 
 Perinteisessä massatuotannossa keskitytään pitämään tuotantolaitteistot käynnissä maksimikapasiteetilla ja työntekijät koko ajan työllistettyinä. Yksittäisten työntekijöiden palkkauskin perustuu usein suoritusbonuksiin. Näin ajatellaan, että tuotteiden yksikköhinta saadaan mahdollisimman alhaiseksi ja yrityksen tuottavuus maksimoituu.
 
@@ -394,7 +396,7 @@ Toyotalla tuotekehitystä johtaa _chief engineer_ (japaniksi _shusa_), joka on v
 
 90-luvulta alkaen lean on herättänyt maailmalla suurta kiinnostusta ja sitä on pyritty soveltamaan lähes kaikilla aloilla ohjelmistokehitys mukaan lukien. Lean-periaatteet ovat olleet hyvin esim. Scrumin kehittäjien tiedossa ja vaikka Scrumin alkuperäiset lähteet eivät käytäkään leanin terminologiaa, on Scrumissa monin paikoin piirteitä leanista.
 
-Ketterien menetelmien myöhempi kehitys on vienyt tiettyjä ideoita, esimerkiksi user storyjen läpimenoaikojen minimointia, huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle. Puhutaankin paljon leanista ohjelmistokehityksestä.
+Ketterien menetelmien myöhempi kehitys on vienyt tiettyjä ideoita, esimerkiksi user storyjen läpimenoaikojen (engl. lead time) minimointia, huomattavasti Scrumin ja ketterän alkuaikojen käytänteitä pidemmälle. Puhutaankin paljon leanista ohjelmistokehityksestä.
 
 Sekä ketterissä menetelmissä, että leanissa on sama fundamentaali periaate: _toimintojen jatkuva kehittäminen_. Rajanveto leanin ja ketterän välillä ei olekaan ollenkaan selvä ja se on osin täysin keinotekoista. Esimerkiksi Scrumin kehittäjät eivät ole missään nimessä tarkoittaneet Scrumia staattiseksi rakennelmaksi, jota noudatetaan kirjaimellisesti tästä ikuisuuteen, sellainen toiminta ei olisi ketteryyttä.
 Ketteryyttä on _läpinäkyvyyden_ (engl. transparency) mahdollistava toimintojen jatkuvaan parantamiseen keskittyvä _inspect-and-adapt_-sykli. Käytännössä tämä on täsmälleen sama idea kuin leanin _kaizen_.
