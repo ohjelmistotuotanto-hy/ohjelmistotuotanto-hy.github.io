@@ -172,7 +172,7 @@ Pisteitä kertyy seuraavista asioista:
   - Sprintin 4 backlogin vaatimukset kuten edellisissä sprinteissä
 - (0.25p) sprintiin 4 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
   - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
-- (0.125p) relevantit osat sovellusta testauttu yksikkötestein
+- (0.125p) relevantit osat sovellusta testattu yksikkötestein
   - kattavuusraportti README-tiedostossa
   - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
 - (0.25p) kattavahko testaus storytasolla
@@ -186,7 +186,7 @@ Pisteitä kertyy seuraavista asioista:
   - muistiinpanoista käy ilmi, miten sprintin 2 retrospektiivin parannuskohteet toteutuivat
 - (0.25p) Sprintin 3 retrospektiivin parannuskohteet ovat sprintin 4 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
 - (0.25p) Koodin sisäinen laatu on kohtuullisella tasolla
-  - koodi on jaoiteltu järkevästi tiedostoihin ja hakemistoihin
+  - koodi on jaoteltu järkevästi tiedostoihin ja hakemistoihin
   - koodissa käytetään järkevää nimentää 
   - koodissa ei ole liikaa ilmeistä copypastea
   - koodissa ei ole sinne kuulumatonta roskaa, esim. pois kommentoitua koodia

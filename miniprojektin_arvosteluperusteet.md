@@ -164,7 +164,45 @@ Sprintin maksimi on 2.5 pistettä.
 
 ### Neljännen sprintin arvosteluperusteet
 
-_Tulossa myöhemmin!_
+Pisteitä kertyy seuraavista asioista:
+
+- (0.375p) backlogit
+  - Product backlog on DEEP (storyjä ei tarvitse estimoida)
+  - Backlogiin ei jää sinne kuulumatonta roskaa, storyjen statukset on kirjattu oikein, jne...
+  - Sprintin 4 backlogin vaatimukset kuten edellisissä sprinteissä
+- (0.25p) sprintiin 4 valittujen storyjen hyväksymisehdot kirjattu Robot Framework -tiedostoihin
+  - Hyväksymisehtoja ei kirjoteta erikseen backlogiin, vaan backlogista on linkki hyväksymistestin tiedostoon
+- (0.125p) relevantit osat sovellusta testattu yksikkötestein
+  - kattavuusraportti README-tiedostossa
+  - huomioi [tämä](/flask/#testeistä) liittyen testaukseen
+- (0.25p) kattavahko testaus storytasolla
+  - testit toimivat vähintään lokaalisti suoritettaessa
+- (0.25p) jatkuva integraatio
+  - CI-palvelu suorittaa yksikkö- ja storytestit sekä Pylintin
+  - main-branch ei ole hajonnut kuin korkeintaan noin 25% sprintin commiteista 
+- (0.25p) suurin osa sprintin user storyistä toteutettu definition of donen mukaisella tasolla
+  - storyt arvioidaan OKD-klusterilla toimivasta versiosta: **jos sovellus ei toimi OKD:ssä, kohdasta saa enintään puolet (0.125p)**
+- (0.125p) [Retrospektiivi](/miniprojektin_arvosteluperusteet/#retrospektiivi) on pidetty sprintin 3 lopussa, siitä on tehty asialliset muistiinpanot ja niissä on vähintään kolme konkreettista parannuskohdetta
+  - muistiinpanoista käy ilmi, miten sprintin 2 retrospektiivin parannuskohteet toteutuivat
+- (0.25p) Sprintin 3 retrospektiivin parannuskohteet ovat sprintin 4 backlogissa taskeina, ja tiimi on toiminut niiden mukaisesti
+- (0.25p) Koodin sisäinen laatu on kohtuullisella tasolla
+  - koodi on jaoteltu järkevästi tiedostoihin ja hakemistoihin
+  - koodissa käytetään järkevää nimentää 
+  - koodissa ei ole liikaa ilmeistä copypastea
+  - koodissa ei ole sinne kuulumatonta roskaa, esim. pois kommentoitua koodia
+- (0.125p) Commitit ja commit-viestit on muodostettu järkevästi (suurimmassa osassa sprintin commiteista), katso ohjeita [täältä](/commit) 
+- (0.25p) loppudemoon on valmistauduttu asiallisesti (valmistautuminen arvioidaan sen perusteella miten demo menee)
+  - Kone osataan kytkeä videotykkiin nopeasti (5 sekunnissa) siten, että näyttö on konfiguroitu oikein
+  - Sovittu etukäteen kuka tekee mitäkin
+  - Mietitty mitä esitetään
+    - Kannattaa esitellä tärkein toiminnallisuus, aikaa demossa on vähän joten ei kannata rönsyillä
+  - Testidata on järkevää
+    - tietokanta ei saa olla etukäteen tyhjä
+    - tietokannassa oleva data ja demottaessa käytettävät syötteet järkeviä, eli _ei_ esimerkiksi _12345_, _asdf_, _nimi1_, _nimi2_
+  - **Lue viimeinen bullet uudelleen** jostain syystä se jää 25% huomaamatta...
+    - jos tuollainen syöte nähdään niin pisteitä tulee heti nolla
+
+Sprintin maksimi on 2.5 pistettä.
 
 ### Lopputoimenpiteet
 

@@ -166,7 +166,45 @@ The maximum for the sprint is 2.5 points.
 
 ### Grading criteria for the fourth sprint
 
-_Coming later!_
+Points are awarded for the following:
+
+- (0.375p) backlogs
+  - The product backlog is DEEP (the stories do not need to be estimated)
+  - No junk that does not belong there remains in the backlog, the statuses of the stories are recorded correctly, etc...
+  - Requirements for the sprint 4 backlog as in the previous sprints
+- (0.25p) the acceptance criteria of the stories selected for sprint 4 are written in Robot Framework files
+  - The acceptance criteria are not written separately in the backlog; instead, the backlog links to the acceptance test file
+- (0.125p) the relevant parts of the application are tested with unit tests
+  - coverage report in the README file
+  - pay attention to [this](/en/flask/#about-the-tests) note on testing
+- (0.25p) fairly comprehensive testing at the story level
+  - the tests work at least when run locally
+- (0.25p) continuous integration
+  - The CI service runs the unit and story tests as well as Pylint
+  - the main branch has been broken in at most about 25% of the commits of the sprint 
+- (0.25p) most of the user stories of the sprint are implemented at the level required by the definition of done
+  - the stories are assessed in the version running on the OKD cluster: **if the application does not work in OKD, you get at most half of the points for this item (0.125p)**
+- (0.125p) A [retrospective](/en/miniprojektin_arvosteluperusteet/#retrospective) has been held at the end of sprint 3, proper notes have been made of it, and they contain at least three concrete improvements
+  - the notes show how the improvements from the sprint 2 retrospective were carried out
+- (0.25p) The improvements from the sprint 3 retrospective are tasks in the sprint 4 backlog, and the team has acted on them
+- (0.25p) The internal quality of the code is at a reasonable level
+  - the code is divided sensibly into files and directories
+  - the code uses sensible naming 
+  - the code does not contain too much obvious copy-paste
+  - the code contains no junk that does not belong there, e.g. commented-out code
+- (0.125p) The commits and commit messages are sensibly formed (in most of the commits of the sprint), see instructions [here](/commit) 
+- (0.25p) the group has prepared properly for the final demo (the preparation is assessed based on how the demo goes)
+  - You can connect the computer to the projector quickly (in 5 seconds) so that the display is configured correctly
+  - It has been agreed in advance who does what
+  - You have thought about what to present
+    - Present the most important functionality; there is little time in the demo, so do not get sidetracked
+  - The test data is sensible
+    - the database must not be empty beforehand
+    - the data in the database and the inputs used in the demo are sensible, i.e. _not_ for example _12345_, _asdf_, _nimi1_, _nimi2_
+  - **Read the last bullet again**; for some reason 25% miss it...
+    - if such input is seen, the points drop straight to zero
+
+The maximum for the sprint is 2.5 points.
 
 ### Final steps
 
